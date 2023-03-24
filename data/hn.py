@@ -17,7 +17,7 @@ TWITTER_SHORT_URL = "https://t.co/"
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 OPENAI_TOKEN_THRESHOLD = 2048  # It's actually 4096, but we want to be safe
 CONCURRENT = 4
-OPENAI_CONCURRENT = 4
+OPENAI_CONCURRENT = 2
 
 
 def get_story(id: int) -> Story:
