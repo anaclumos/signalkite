@@ -57,6 +57,11 @@ def title_format(title):
         title = title[1:-1]
     if title[0] == "'" and title[-1] == "'":
         title = title[1:-1]
+    title = title.replace("’", "'")
+    title = title.replace("“", '"')
+    title = title.replace("”", '"')
+    title = title.replace("‘", "'")
+    title = title.replace(" and ", " & ")
     return title
 
 
