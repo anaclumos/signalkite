@@ -2,7 +2,7 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  logo: <span>hn.cho.sh</span>,
+  logo: <strong>hn.cho.sh</strong>,
   project: {
     link: 'https://github.com/anaclumos/hn.cho.sh',
   },
