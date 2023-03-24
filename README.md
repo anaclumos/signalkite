@@ -1,1 +1,1 @@
-pages/index.en.md
+pages/README.md
