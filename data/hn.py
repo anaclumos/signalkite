@@ -17,7 +17,6 @@ TWITTER_SHORT_URL = "https://t.co/"
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 OPENAI_TOKEN_THRESHOLD = 2048  # It's actually 4096, but we want to be safe
 CONCURRENT = 4
-OPENAI_CONCURRENT = 2
 
 
 def get_story(id: int) -> Story:
@@ -73,7 +72,6 @@ def download_story(story: Story) -> Story:
             }
             tweet_id = url.split("/")[-1]
             r = requests.get(f"{api}?ids={tweet_id}", headers=headers)
-            print(r.json())
             tweet = r.json()["data"][0]["text"]
             if "https://t.co" in tweet:
                 urls = filter(lambda x: x.startswith("https://t.co"), tweet.split())
@@ -122,7 +120,7 @@ def summarize_story(story: Story) -> Story:
     from closedai import shorten, bulletpoint_summarize, get_title
 
     global OPENAI_TOKEN_THRESHOLD
-    if len(story.content.split()) > OPENAI_TOKEN_THRESHOLD:
+    while len(story.content.split()) > OPENAI_TOKEN_THRESHOLD:
         story.content = shorten(story.content, OPENAI_TOKEN_THRESHOLD)
     story.title = get_title(story.title, story.content)
     story.summary = bulletpoint_summarize(story.title, story.content)
@@ -131,9 +129,9 @@ def summarize_story(story: Story) -> Story:
 
 def summarize_stories(stories: Stories) -> Stories:
 
-    pool = multiprocessing.Pool(OPENAI_CONCURRENT)
-    stories = pool.map(summarize_story, stories)
-    pool.close()
-    pool.join()
-
-    return stories
+    new_stories = []
+    for story in stories:
+        story = summarize_story(story)
+        if story.summary:
+            new_stories.append(story)
+    return new_stories

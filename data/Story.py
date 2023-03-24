@@ -7,6 +7,15 @@ class Story:
     content = ""
     summary = ""
 
+    def __init__(self, id=id, timestamp=timestamp, title=title, url=url, hn_url=hn_url, content=content, summary=summary):
+        self.id = id
+        self.timestamp = timestamp
+        self.title = title
+        self.url = url
+        self.hn_url = hn_url
+        self.content = content
+        self.summary = summary
+
     def __init__(self, id=id, timestamp=timestamp, title=title, url=url, hn_url=hn_url):
         self.id = id
         self.timestamp = timestamp

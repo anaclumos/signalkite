@@ -20,7 +20,7 @@ def shorten(text: str, limit: int) -> str:
                     messages=[
                         {
                             "role": "user",
-                            "content": f"Summarize in less than {limit // 8} words. Capture key points. Do not waste timespace. Text: {w}",
+                            "content": f"Summarize in less than {limit // 16} words. Capture key points. Do not waste timespace. Text: {w}",
                         }
                     ],
                 )
@@ -58,7 +58,7 @@ def get_title(title, text):
             messages=[
                 {
                     "role": "user",
-                    "content": f"You are HackerNewsGPT, a Summarization Bot for Hacker News. I will give you the text content. Your job is to give a concise title for the following post. Do not waste timespace. Ignore Twitter requiring JavaScript; HARD LIMIT 10 WORDS. Text: {text}",
+                    "content": f"You are HackerNewsGPT, a Summarization Bot for Hacker News. I will give you the text content. Your job is to give a concise title for the following post. Do not waste timespace. Ignore Twitter requiring JavaScript; The original title was {title}. HARD LIMIT 10 WORDS. Text: {text}",
                 },
             ],
         )
