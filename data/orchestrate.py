@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta
 from pytz import timezone
 from hn import get_best_stories, download_stories, summarize_stories
-from hn import Story, Stories
 import json
 
 if __name__ == "__main__":
@@ -20,21 +19,6 @@ if __name__ == "__main__":
 
     with open(filename, "w") as f:
         json.dump([story.__dict__ for story in stories], f)
-
-    # read from filename
-    # stories = []
-    # with open(filename, "r") as f:
-    #     files = json.load(f)
-    #     for file in files:
-    #         story = Story()
-    #         story.id = file["id"]
-    #         story.timestamp = file["timestamp"]
-    #         story.title = file["title"]
-    #         story.url = file["url"]
-    #         story.hn_url = file["hn_url"]
-    #         story.content = file["content"]
-    #         story.summary = file["summary"]
-    #         stories.append(story)
 
     filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%Y-%m-%d')}.en.md"
 
