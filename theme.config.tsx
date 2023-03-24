@@ -8,7 +8,9 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://github.com/anaclumos/hn.cho.sh',
   footer: {
-    text: 'Sunghyun Cho\'s HN Summary',
+    text: <span>
+      MIT {new Date().getFullYear()} © <a href="https://cho.sh" target="_blank">Sunghyun Cho</a>.
+    </span>,
   },
   i18n: [
     { locale: 'bg', text: "български (bg)" },
