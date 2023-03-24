@@ -2,8 +2,11 @@ from Story import Story
 import requests
 import multiprocessing
 import os
+from dotenv import load_dotenv
 
 Stories = list[Story]
+
+load_dotenv()
 
 HN_BEST_STORIES = "https://hacker-news.firebaseio.com/v0/beststories.json"
 HN_STORY = "https://hacker-news.firebaseio.com/v0/item/{id}.json"
@@ -55,25 +58,32 @@ def download_story(story: Story) -> Story:
     global YT_URL
     global YT_SHORT_URL
     global TWITTER_URL
+    global TWITTER_SHORT_URL
+    global TWITTER_BEARER_TOKEN
 
     url = story.url
 
     if url.startswith(TWITTER_URL) or url.startswith(TWITTER_SHORT_URL):
-        api = "https://api.twitter.com/2/tweets"
-        headers: dict = {
-            "Authorization": f"Bearer {TWITTER_BEARER_TOKEN}",
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-        }
-        tweet_id = url.split("/")[-1]
-        r = requests.get(f"{api}?ids={tweet_id}", headers=headers)
-        tweet = r.json()["data"][0]["text"]
-        if "https://t.co" in tweet:
-            urls = filter(lambda x: x.startswith("https://t.co"), tweet.split())
-            for url in urls:
-                true_url = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}).url
-                r = requests.get(true_url, headers={"User-Agent": "Mozilla/5.0"})
-                story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
+        try:
+            api = "https://api.twitter.com/2/tweets"
+            headers: dict = {
+                "Authorization": f"Bearer {TWITTER_BEARER_TOKEN}",
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+            }
+            tweet_id = url.split("/")[-1]
+            r = requests.get(f"{api}?ids={tweet_id}", headers=headers)
+            print(r.json())
+            tweet = r.json()["data"][0]["text"]
+            if "https://t.co" in tweet:
+                urls = filter(lambda x: x.startswith("https://t.co"), tweet.split())
+                for url in urls:
+                    true_url = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}).url
+                    r = requests.get(true_url, headers={"User-Agent": "Mozilla/5.0"})
+                    story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
+        except Exception as e:
+            print(e)
+            print(f"Failed to download tweet from {story.title}, error: {e}")
 
     if url.startswith(YT_SHORT_URL) or url.startswith(YT_URL):
         try:
@@ -82,24 +92,18 @@ def download_story(story: Story) -> Story:
             story.content = ". ".join([t["text"] for t in transcript])
         except Exception as e:
             print(e)
-            print(f"Failed to download YT transcript from {story.title}. Trying HN link.")
-            r = requests.get(story.hn_url, headers={"User-Agent": "Mozilla/5.0"})
-
-            story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
-
-        # if the tweet includes https://t.co/ links, we need to follow them
-        # to get the full text
-        if "https://t.co" in tweet:
-            r = requests.get(f"{api}?ids={tweet_id}&expansions=attachments.media_keys&media.fields=url", headers=headers)
-            tweet = r.json()["includes"]["media"][0]["url"]
+            print(f"Failed to download YT transcript from {story.title}, error: {e}")
 
     try:
         r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
         story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
     except Exception as e:
-        print(f"Failed to download main content from {story.title}. Trying HN link.")
+        print(f"Failed to download main content from {story.title}, error: {e}")
+    try:
         r = requests.get(story.hn_url, headers={"User-Agent": "Mozilla/5.0"})
         story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
+    except Exception as e:
+        print(f"Failed to download HN comments from {story.title}, error: {e}")
     print(f"Downloaded {story.title}")
     return story
 

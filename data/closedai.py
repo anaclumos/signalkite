@@ -12,7 +12,6 @@ def shorten(text: str, limit: int) -> str:
         words = text.split()
         words_2048 = [" ".join(words[i : i + limit]) for i in range(0, len(words), limit)]
         summary = ""
-        print("Summarizing in 2048 word chunks.")
         for idx, w in enumerate(words_2048):
             print("Summarizing " + str(idx + 1) + "/" + str(len(words_2048)))
             try:
@@ -59,7 +58,7 @@ def get_title(title, text):
             messages=[
                 {
                     "role": "user",
-                    "content": f"You are HackerNewsGPT, a Summarization Bot for Hacker News. I will give you the text content. Your job is to give a concise title for the following post. Do not waste timespace. HARD LIMIT 10 WORDS. Text: {text}",
+                    "content": f"You are HackerNewsGPT, a Summarization Bot for Hacker News. I will give you the text content. Your job is to give a concise title for the following post. Do not waste timespace. Ignore Twitter requiring JavaScript; HARD LIMIT 10 WORDS. Text: {text}",
                 },
             ],
         )
