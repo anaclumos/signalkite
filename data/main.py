@@ -11,7 +11,7 @@ def save_markdown(stories, locale):
     tz = timezone("UTC")
     today = tz.localize(datetime.today()).replace(hour=0, minute=0, second=0, microsecond=0)
 
-    filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{locale}.md"
+    filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{locale}.mdx"
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w") as f:
         os.makedirs(os.path.dirname(filename), exist_ok=True)
@@ -37,7 +37,7 @@ if __name__ == "__main__":
     with open(filename, "w") as f:
         json.dump([story.__dict__ for story in stories], f)
 
-    filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.en.md"
+    filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.en.mdx"
     save_markdown(stories, "en")
 
     locales = ["bg", "cs", "da", "de", "el", "es", "et", "fi", "fr", "hu", "id", "it", "ja", "ko", "lt", "lv", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sl", "sv", "tr", "uk", "zh"]

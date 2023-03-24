@@ -100,6 +100,7 @@ def download_story(story: Story) -> Story:
         story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
     except Exception as e:
         print(f"Failed to download HN comments from {story.title}, error: {e}")
+    story.content.replace("\n", "")
     print(f"Downloaded {story.title}")
     return story
 
