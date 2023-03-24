@@ -43,6 +43,6 @@ if __name__ == "__main__":
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w") as f:
         os.makedirs(os.path.dirname(filename), exist_ok=True)
-        f.write(f"# {today.strftime('%Y-%m-%d')}\n")
+        f.write(f"# {today.strftime('%Y-%m-%d')}\n\n")
         for story in stories:
             f.write(f"{story.markdown()}\n\n")
