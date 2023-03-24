@@ -1,10 +1,8 @@
-from Story import Story
+from Story import Story, Stories
 import requests
 import multiprocessing
 import os
 from dotenv import load_dotenv
-
-Stories = list[Story]
 
 load_dotenv()
 
@@ -129,7 +127,7 @@ def summarize_story(story: Story) -> Story:
 
 def summarize_stories(stories: Stories) -> Stories:
 
-    new_stories = []
+    new_stories = Stories()
     for story in stories:
         story = summarize_story(story)
         if story.summary:

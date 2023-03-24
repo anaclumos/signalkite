@@ -1,6 +1,7 @@
 class Story:
     id = 0
     timestamp = 0
+    locale = "en"
     title = ""
     url = ""
     hn_url = ""
@@ -37,3 +38,6 @@ class Story:
 
     def markdown(self):
         return f"""## [{self.title}]({self.url})\n\n{self.summary}\n- [Discuss on HN]({self.hn_url})"""
+
+
+Stories = list[Story]

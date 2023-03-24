@@ -1,8 +1,8 @@
 import openai
-import dotenv
+from dotenv import load_dotenv
 import os
 
-dotenv.load_dotenv()
+load_dotenv()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -50,6 +50,16 @@ def bulletpoint_summarize(title, text):
     return summary
 
 
+def title_format(title):
+    if title[-1] == ".":
+        title = title[:-1]
+    if title[0] == '"' and title[-1] == '"':
+        title = title[1:-1]
+    if title[0] == "'" and title[-1] == "'":
+        title = title[1:-1]
+    return title
+
+
 def get_title(title, text):
     try:
         print(f"Woring on: {title}")
@@ -65,6 +75,4 @@ def get_title(title, text):
         title = completion["choices"][0]["message"]["content"].strip()
     except Exception as e:
         print(f"Cannot get title: {title}, error: {e}")
-    if title[-1] == ".":
-        title = title[:-1]
     return title
