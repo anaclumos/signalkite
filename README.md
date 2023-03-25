@@ -3,14 +3,12 @@
 </h1>
 
 <h6 align="center">
-What's going on in the Tech World Today? •
-오늘날 기술 업계에서는 어떤 일이 일어나고 있나요? •
-今日のテックワールドはどうなっているのか？ •
-今天的科技界发生了什么？ •
 Какво се случва в света на технологиите днес? •
+今天的科技界发生了什么？ •
 Co se dnes děje ve světě technologií? •
 Hvad sker der i den teknologiske verden i dag? •
 Wat gebeurt er vandaag in de Tech wereld? •
+What's going on in the Tech World Today? •
 Mis toimub täna tehnikamaailmas? •
 Mitä teknologiamaailmassa tapahtuu tänään? •
 Que se passe-t-il dans le monde de la technologie aujourd'hui ? •
@@ -19,6 +17,8 @@ Was ist heute in der Welt der Technik los? •
 Mi történik ma a technológiai világban? •
 Apa yang Terjadi di Dunia Teknologi Saat Ini? •
 Cosa succede oggi nel mondo tecnologico? •
+今日のテックワールドはどうなっているのか？ •
+오늘날 기술 업계에서는 어떤 일이 일어나고 있나요? •
 Kas notiek tehnoloģiju pasaulē šodien? •
 Kas šiandien vyksta technologijų pasaulyje? •
 Hva skjer i teknologiverden i dag? •
