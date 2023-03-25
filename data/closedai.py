@@ -22,7 +22,7 @@ def shorten(text: str, limit: int, title="") -> str:
                 messages=[
                     {
                         "role": "user",
-                        "content": f"Summarize. Hard limit {limit // 16} words. Capture Key Points. If there is an esoteric arcane word that aptly describes the sentence, utilize it to make the sentence shorter. Text: {w}",
+                        "content": f"Summarize. Hard limit {limit // 16} words. Capture Key Points. Please understand that some comments may include sarcasm, and you must understand it's not the main point.  If there is an esoteric arcane word that aptly describes the sentence, utilize it to make the sentence shorter. Text: {w}",
                     }
                 ],
             )
@@ -47,7 +47,7 @@ def bulletpoint_summarize(title, text):
             messages=[
                 {
                     "role": "user",
-                    "content": f"You are HackerNewsGPT, a Summarization AI for Hacker News. I will give you the text content. Your job is to give a concise summary in mutually exclusive but collectively exhaustive bullet points. The title of this post is '{title}'. Summarize in markdown bullets '-'. Do not waste timespace. Text: {text}",
+                    "content": f"You are HackerNewsGPT, a Summarization AI for Hacker News. I will give you the text content. Please understand that some comments may include sarcasm, and you must understand it's not the main point.  Your job is to give a concise summary in mutually exclusive but collectively exhaustive bullet points. The title of this post is '{title}'. Summarize in markdown bullets '-'. Do not waste timespace. Text: {text}",
                 },
             ],
         )
@@ -86,7 +86,7 @@ def get_title(title, text):
                 messages=[
                     {
                         "role": "user",
-                        "content": f"You are HackerNewsGPT, a Summarization AI for Hacker News. I will give you the text content. Your job is to give a concise title for the following post. Capitalize Important Words: Adjectives (tiny, large, etc.), Adverbs (quietly, smoothly, etc.), Nouns (tablet, kitchen, book), Pronouns (they, she, he), Subordinating conjunctions (when fewer than 5 letters), Verbs (write, type, create). Do not caplitalize: Articles (a, an, the), Coordinating Conjunctions (and, but, for), Short (fewer than 4 letters), Prepositions (at, by, to, etc.). Do not waste timespace. Do not add suffixes, such as '| Website'. Ignore Website saying You Need JavaScript; That's not the important part. No period at the end. The original title was {title}. HARD LIMIT 10 WORDS. Text: {text}",
+                        "content": f"You are HackerNewsGPT, a Summarization AI for Hacker News. I will give you the text content. Your job is to give a concise title for the following post. Capitalize Important Words: Adjectives (tiny, large, etc.), Adverbs (quietly, smoothly, etc.), Nouns (tablet, kitchen, book), Pronouns (they, she, he), Subordinating conjunctions (when fewer than 5 letters), Verbs (write, type, create). Do not caplitalize: Articles (a, an, the), Coordinating Conjunctions (and, but, for), Short (fewer than 4 letters), Prepositions (at, by, to, etc.). Do not waste timespace. Do not add suffixes, such as '| Website'. Ignore Website saying You Need JavaScript; That's not the important part. No period at the end. Please understand that some comments may include sarcasm, and you must understand it's not the main point. The original title was {title}. HARD LIMIT 10 WORDS. Text: {text}",
                     },
                 ],
             )
