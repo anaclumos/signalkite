@@ -61,6 +61,7 @@ def bulletpoint_summarize(title, text):
 
 
 def title_format(title):
+    title = title.strip()
     if title[-1] == ".":
         title = title[:-1]
     if title[0] == '"' and title[-1] == '"':
@@ -85,7 +86,7 @@ def get_title(title, text):
                 messages=[
                     {
                         "role": "user",
-                        "content": f"You are HackerNewsGPT, a Summarization AI for Hacker News. I will give you the text content. Your job is to give a concise title for the following post. Capitalize Important Words: Adjectives (tiny, large, etc.), Adverbs (quietly, smoothly, etc.), Nouns (tablet, kitchen, book), Pronouns (they, she, he), Subordinating conjunctions (when fewer than 5 letters), Verbs (write, type, create). Do not caplitalize: Articles (a, an, the), Coordinating Conjunctions (and, but, for), Short (fewer than 4 letters), Prepositions (at, by, to, etc.). Do not waste timespace. Ignore Website saying You Need JavaScript; That's not the important part. The original title was {title}. HARD LIMIT 10 WORDS. Text: {text}",
+                        "content": f"You are HackerNewsGPT, a Summarization AI for Hacker News. I will give you the text content. Your job is to give a concise title for the following post. Capitalize Important Words: Adjectives (tiny, large, etc.), Adverbs (quietly, smoothly, etc.), Nouns (tablet, kitchen, book), Pronouns (they, she, he), Subordinating conjunctions (when fewer than 5 letters), Verbs (write, type, create). Do not caplitalize: Articles (a, an, the), Coordinating Conjunctions (and, but, for), Short (fewer than 4 letters), Prepositions (at, by, to, etc.). Do not waste timespace. Do not add suffixes, such as '| Website'. Ignore Website saying You Need JavaScript; That's not the important part. The original title was {title}. HARD LIMIT 10 WORDS. Text: {text}",
                     },
                 ],
             )
