@@ -47,7 +47,7 @@ def bulletpoint_summarize(title, text):
             messages=[
                 {
                     "role": "user",
-                    "content": f"You are HackerNewsGPT, a Summarization AI for Hacker News. I will give you the text content. Please understand that some comments may include sarcasm, and you must understand it's not the main point.  Your job is to give a concise summary in mutually exclusive but collectively exhaustive bullet points. The title of this post is '{title}'. Summarize in markdown bullets '-'. Do not waste timespace. Text: {text}",
+                    "content": f"You are HackerNewsGPT, a Summarization AI for Hacker News. I will give you the text content. Please understand that some comments may include sarcasm, and you must understand it's not the main point. Each bulletpoint must end with a punctuation, such as a period. Your job is to give a concise summary in mutually exclusive but collectively exhaustive bullet points. The title of this post is '{title}'. Summarize in markdown bullets '-'. Do not waste timespace. Text: {text}",
                 },
             ],
         )
