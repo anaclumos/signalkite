@@ -12,6 +12,15 @@ const config: DocsThemeConfig = {
       MIT {new Date().getFullYear()} © <a href="https://cho.sh" target="_blank">Sunghyun Cho</a>.
     </span>,
   },
+  themeSwitch: {
+    useOptions() {
+      return {
+        light: 'Light',
+        dark: 'Dark',
+        system: 'System'
+      }
+    }
+  },
   i18n: [
     { locale: 'bg', text: "български (bg)" },
     { locale: 'cs', text: "Čeština (cs)" },
