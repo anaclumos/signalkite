@@ -57,7 +57,7 @@ def download_story(story: Story) -> Story:
     global TWITTER_SHORT_URL
     global TWITTER_BEARER_TOKEN
 
-    url = story.url
+    url = story.url if story.url else story.hn_url
 
     if url.startswith(TWITTER_URL) or url.startswith(TWITTER_SHORT_URL):
         try:
@@ -118,7 +118,7 @@ def summarize_story(story: Story) -> Story:
 
     global OPENAI_TOKEN_THRESHOLD
     while len(story.content.split()) > OPENAI_TOKEN_THRESHOLD:
-        story.content = shorten(story.content, OPENAI_TOKEN_THRESHOLD)
+        story.content = shorten(story.content, OPENAI_TOKEN_THRESHOLD, title=story.title)
     story.title = get_title(story.title, story.content)
     story.summary = bulletpoint_summarize(story.title, story.content)
     return story
