@@ -2,6 +2,7 @@ from Story import Story, Stories
 import requests
 import multiprocessing
 import os
+from closedai import title_format
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -122,6 +123,7 @@ def summarize_story(story: Story) -> Story:
         print(f"Story '{story.title}' is too long, shortening {len(story.content.split())}) tokens")
         story.content = shorten(story.content, OPENAI_TOKEN_THRESHOLD, title=story.title)
     story.title = get_title(story.title, story.content)
+    story.title = title_format(story.title)
     story.summary = bulletpoint_summarize(story.title, story.content)
     return story
 
