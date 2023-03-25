@@ -8,45 +8,50 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 def shorten(text: str, limit: int) -> str:
-    while len(text) > limit:
-        words = text.split()
-        words_2048 = [" ".join(words[i : i + limit]) for i in range(0, len(words), limit)]
-        summary = ""
-        for idx, w in enumerate(words_2048):
-            print("Summarizing " + str(idx + 1) + "/" + str(len(words_2048)))
-            try:
+    summary = ""
+    try:
+        while len(text) > limit:
+            words = text.split()
+            chunks = [" ".join(words[i : i + limit]) for i in range(0, len(words), limit)]
+            for idx, w in enumerate(chunks):
+                print("Summarizing " + str(idx + 1) + "/" + str(len(chunks)), end="..." + " " * 10 + "\r")
                 completion = openai.ChatCompletion.create(
                     model="gpt-3.5-turbo",
                     messages=[
                         {
                             "role": "user",
-                            "content": f"Summarize in less than {limit // 16} words. Capture key points. Do not waste timespace. Text: {w}",
+                            "content": f"Summarize in less than {limit // 16} words. Capture Key Points. Do not waste timespace. Text: {w}",
                         }
                     ],
                 )
-            except Exception as e:
-                print(f"Cannot summarize, error: {e}")
-                continue
-            summary += completion["choices"][0]["message"]["content"]
-        text = summary
-    return text
+                summary += completion["choices"][0]["message"]["content"]
+    except Exception as e:
+        print(f"Cannot summarize, error: {e}")
+        new_text = text.split(".")
+        new_text = ".".join(new_text[: 4 * len(new_text) // 5])  # 80% of the text
+        return shorten(new_text, limit)
+    return summary
 
 
 def bulletpoint_summarize(title, text):
+    summary = ""
     try:
-        print(f"Woring on: {title}")
+        print(f"Creating Summary for...   {title}")
         completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
                 {
                     "role": "user",
-                    "content": f"You are HackerNewsGPT, a Summarization Bot for Hacker News. I will give you the text content. Your job is to give a concise summary in mutually exclusive but collectively exhaustive bullet points. The title of this post is '{title}'. Summarize in markdown bullets. Do not waste timespace. Text: {text}",
+                    "content": f"You are HackerNewsGPT, a Summarization Bot for Hacker News. I will give you the text content. Your job is to give a concise summary in mutually exclusive but collectively exhaustive bullet points. The title of this post is '{title}'. Summarize in markdown bullets '-'. Do not waste timespace. Text: {text}",
                 },
             ],
         )
+        summary = completion["choices"][0]["message"]["content"].strip()
     except Exception as e:
-        print(f"Cannot summarize: {title}, error: {e}")
-    summary = completion["choices"][0]["message"]["content"].strip()
+        print(f"Cannot summarize: {title}, trying again with shorter text... error: {e}")
+        new_text = text.split(".")
+        new_text = ".".join(new_text[: 4 * len(new_text) // 5])  # 80% of the text
+        return bulletpoint_summarize(title, new_text)
     return summary
 
 
@@ -67,7 +72,7 @@ def title_format(title):
 
 def get_title(title, text):
     try:
-        print(f"Woring on: {title}")
+        print(f"Finding a better title... {title}")
         completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
@@ -79,5 +84,8 @@ def get_title(title, text):
         )
         title = completion["choices"][0]["message"]["content"].strip()
     except Exception as e:
-        print(f"Cannot get title: {title}, error: {e}")
+        print(f"Cannot get title: {title}, trying again with shorter text... error: {e}")
+        new_text = text.split(".")
+        new_text = ".".join(new_text[: 4 * len(new_text) // 5])  # 80% of the text
+        return get_title(title, new_text)
     return title

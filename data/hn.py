@@ -13,11 +13,11 @@ YT_SHORT_URL = "https://youtu.be/"
 TWITTER_URL = "https://twitter.com/"
 TWITTER_SHORT_URL = "https://t.co/"
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
-OPENAI_TOKEN_THRESHOLD = 2048  # It's actually 4096, but we want to be safe
+OPENAI_TOKEN_THRESHOLD = 1536  # It's actually 4096, but we want to be safe
 CONCURRENT = 4
 
 
-def get_story(id: int) -> Story:
+def get_story(id: int, start: int, end: int) -> Story:
     global HN_STORY
     with requests.get(HN_STORY.format(id=id)) as submission:
         response = submission.json()
@@ -28,7 +28,6 @@ def get_story(id: int) -> Story:
             url=response.get("url", ""),
             hn_url=f"http://news.ycombinator.com/item?id={id}",
         )
-    print(f"Downloaded {story.title}")
     return story
 
 
@@ -40,11 +39,11 @@ def get_best_stories(start: int, end: int) -> Stories:
         submissions = r.json()
 
     pool = multiprocessing.Pool(CONCURRENT)
-    stories = pool.map(get_story, submissions)
+    stories = pool.starmap(get_story, [(id, start, end) for id in submissions])
     pool.close()
     pool.join()
 
-    return filter(lambda s: s.timestamp > start and s.timestamp < end, stories)
+    return Stories([story for story in stories if start <= story.timestamp <= end])
 
 
 def download_story(story: Story) -> Story:
@@ -101,7 +100,6 @@ def download_story(story: Story) -> Story:
     except Exception as e:
         print(f"Failed to download HN comments from {story.title}, error: {e}")
     story.content.replace("\n", "")
-    print(f"Downloaded {story.title}")
     return story
 
 
@@ -127,9 +125,10 @@ def summarize_story(story: Story) -> Story:
 
 
 def summarize_stories(stories: Stories) -> Stories:
+    from tqdm import tqdm
 
     new_stories = Stories()
-    for story in stories:
+    for _, story in enumerate(tqdm(stories)):
         story = summarize_story(story)
         if story.summary:
             new_stories.append(story)
