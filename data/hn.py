@@ -13,7 +13,7 @@ YT_SHORT_URL = "https://youtu.be/"
 TWITTER_URL = "https://twitter.com/"
 TWITTER_SHORT_URL = "https://t.co/"
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
-OPENAI_TOKEN_THRESHOLD = 1536  # It's actually 4096, but we want to be safe
+OPENAI_TOKEN_THRESHOLD = 2048  # It's actually 4096, but we want to be safe
 CONCURRENT = 4
 
 
@@ -117,7 +117,9 @@ def summarize_story(story: Story) -> Story:
     from closedai import shorten, bulletpoint_summarize, get_title
 
     global OPENAI_TOKEN_THRESHOLD
+    print(f"Summarizing '{story.title}' ({len(story.content.split())} tokens)")
     while len(story.content.split()) > OPENAI_TOKEN_THRESHOLD:
+        print(f"Story '{story.title}' is too long, shortening {len(story.content.split())}) tokens")
         story.content = shorten(story.content, OPENAI_TOKEN_THRESHOLD, title=story.title)
     story.title = get_title(story.title, story.content)
     story.summary = bulletpoint_summarize(story.title, story.content)
@@ -125,11 +127,10 @@ def summarize_story(story: Story) -> Story:
 
 
 def summarize_stories(stories: Stories) -> Stories:
-    from tqdm import tqdm
-
     new_stories = Stories()
-    for _, story in enumerate(tqdm(stories)):
+    for idx, story in enumerate(stories):
         story = summarize_story(story)
         if story.summary:
             new_stories.append(story)
+        print(f"Finished summarizing {idx + 1}/{len(stories)} stories")
     return new_stories

@@ -17,13 +17,6 @@ class Story:
         self.content = content
         self.summary = summary
 
-    def __init__(self, id=id, timestamp=timestamp, title=title, url=url, hn_url=hn_url):
-        self.id = id
-        self.timestamp = timestamp
-        self.title = title
-        self.url = url
-        self.hn_url = hn_url
-
     def __str__(self):
         return f"Title: {self.title}, URL: {self.url}"
 
