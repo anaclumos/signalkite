@@ -32,7 +32,7 @@ if __name__ == "__main__":
     stories = download_stories(stories)
     stories = summarize_stories(stories)
 
-    filename = f"records/{today.strftime('%Y-%m-%d')}.en.json"
+    filename = f"records/{today.strftime('%Y-%m-%d')}/{today.strftime('%Y-%m-%d')}.en.json"
 
     with open(filename, "w") as f:
         json.dump([story.__dict__ for story in stories], f)
