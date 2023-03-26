@@ -1,17 +1,40 @@
 import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
+import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
+
+
+
+const Head = () => {
+  const { frontMatter, title } = useConfig();
+  return (
+    <>
+      <title>{title}</title>
+      <meta name="description" content={frontMatter.description} />
+      <meta name="og:title" content={title} />
+      <meta name="og:description" content={frontMatter.description} />
+      <meta name="og:type" content="website" />
+      <meta name="og:url" content="https://hn.cho.sh" />
+    </>
+  );
+};
 
 const config: DocsThemeConfig = {
   logo: <strong>hn.cho.sh</strong>,
   project: {
     link: 'https://github.com/anaclumos/hn.cho.sh',
   },
-  docsRepositoryBase: 'https://github.com/anaclumos/hn.cho.sh',
+  docsRepositoryBase: 'https://github.com/anaclumos/hn.cho.sh/blob/main/',
   footer: {
     text: <span>
       MIT {new Date().getFullYear()} © <a href="https://cho.sh" target="_blank">Sunghyun Cho</a>.
     </span>,
   },
+  editLink: {
+    text: "Edit This Page on GitHub",
+  },
+  toc: {
+    float: true,
+  },
+  head: <Head />,
   themeSwitch: {
     useOptions() {
       return {
