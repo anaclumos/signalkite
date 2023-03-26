@@ -34,6 +34,11 @@ const config: DocsThemeConfig = {
   toc: {
     float: true,
   },
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s — hn.cho.sh'
+    }
+  },
   head: <Head />,
   themeSwitch: {
     useOptions() {
