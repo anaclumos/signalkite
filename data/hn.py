@@ -29,6 +29,10 @@ def get_story(id: int, start: int, end: int) -> Story:
             url=response.get("url", ""),
             hn_url=f"http://news.ycombinator.com/item?id={id}",
         )
+        if start <= story.timestamp <= end:
+            print(f"+ {story.title}")
+        else:
+            print(f"- {story.title}")
     return story
 
 
@@ -48,48 +52,11 @@ def get_best_stories(start: int, end: int) -> Stories:
 
 
 def download_story(story: Story) -> Story:
-    from youtube_transcript_api import YouTubeTranscriptApi
     import bs4
-    from urllib import parse
-
-    global YT_URL
-    global YT_SHORT_URL
-    global TWITTER_URL
-    global TWITTER_SHORT_URL
-    global TWITTER_BEARER_TOKEN
 
     url = story.url if story.url else story.hn_url
-
-    if url.startswith(TWITTER_URL) or url.startswith(TWITTER_SHORT_URL):
-        try:
-            api = "https://api.twitter.com/2/tweets"
-            headers: dict = {
-                "Authorization": f"Bearer {TWITTER_BEARER_TOKEN}",
-                "Accept": "application/json",
-                "Content-Type": "application/json",
-            }
-            tweet_id = url.split("/")[-1]
-            r = requests.get(f"{api}?ids={tweet_id}", headers=headers)
-            tweet = r.json()["data"][0]["text"]
-            if "https://t.co" in tweet:
-                urls = filter(lambda x: x.startswith("https://t.co"), tweet.split())
-                for url in urls:
-                    true_url = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}).url
-                    r = requests.get(true_url, headers={"User-Agent": "Mozilla/5.0"})
-                    story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
-        except Exception as e:
-            print(e)
-            print(f"Failed to download tweet from {story.title}, error: {e}")
-
-    if url.startswith(YT_SHORT_URL) or url.startswith(YT_URL):
-        try:
-            video_id = parse.parse_qs(parse.urlparse(url).query)["v"][0]
-            transcript = YouTubeTranscriptApi.get_transcript(video_id)
-            story.content = ". ".join([t["text"] for t in transcript])
-        except Exception as e:
-            print(e)
-            print(f"Failed to download YT transcript from {story.title}, error: {e}")
-
+    if url.startswith(TWITTER_URL) or url.startswith(TWITTER_SHORT_URL) or url.startswith(YT_SHORT_URL) or url.startswith(YT_URL):
+        url = story.hn_url
     try:
         r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
         story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
