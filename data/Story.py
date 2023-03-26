@@ -30,7 +30,8 @@ class Story:
         return hash(self.title) + hash(self.url)
 
     def markdown(self):
-        return f"""### {self.title}\n\n{self.summary}\n- [Discuss on HN]({self.hn_url}) or [Read Original Text]({self.url})."""
+        suffix = f"- [Discuss on HN]({self.hn_url})" + f" or [Read Original Text]({self.url})" if self.url else ""
+        return f"""### {self.title}\n\n{self.summary}\n{suffix}"""
 
 
 Stories = list[Story]
