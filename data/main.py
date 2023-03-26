@@ -12,7 +12,7 @@ from collections import namedtuple
 def save_markdown(stories, locale):
     utc = timezone("UTC")
     today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
-    filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{locale}.mdx"
+    filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}/index.{locale}.mdx"
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w") as f:
         os.makedirs(os.path.dirname(filename), exist_ok=True)
