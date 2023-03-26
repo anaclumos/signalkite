@@ -54,19 +54,18 @@ def get_best_stories(start: int, end: int) -> Stories:
 def download_story(story: Story) -> Story:
     import bs4
 
-    url = story.url if story.url else story.hn_url
-    if url.startswith(TWITTER_URL) or url.startswith(TWITTER_SHORT_URL) or url.startswith(YT_SHORT_URL) or url.startswith(YT_URL):
-        url = story.hn_url
-    try:
-        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
-        story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
-    except Exception as e:
-        print(f"Failed to download main content from {story.title}, error: {e}")
     try:
         r = requests.get(story.hn_url, headers={"User-Agent": "Mozilla/5.0"})
         story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
     except Exception as e:
         print(f"Failed to download HN comments from {story.title}, error: {e}")
+    url = story.url
+    if not url.startswith(TWITTER_URL) or url.startswith(TWITTER_SHORT_URL) or url.startswith(YT_SHORT_URL) or url.startswith(YT_URL):
+        try:
+            r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
+            story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
+        except Exception as e:
+            print(f"Failed to download main content from {story.title}, error: {e}")
     story.content.replace("\n", "")
     return story
 
