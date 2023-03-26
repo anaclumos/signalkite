@@ -1,3 +1,6 @@
+from title import titlize_chicago_style
+
+
 class Story:
     id = 0
     timestamp = 0
@@ -31,7 +34,7 @@ class Story:
 
     def markdown(self):
         suffix = f"- [Discuss on HN]({self.hn_url})" + f" or [Read Original Text]({self.url})" if self.url else ""
-        return f"""### {self.title}\n\n{self.summary}\n{suffix}"""
+        return f"""### {titlize_chicago_style(self.title)}\n\n{self.summary}\n{suffix}"""
 
 
 Stories = list[Story]
