@@ -67,7 +67,7 @@ def create_campaign(title, body, lang):
             "body": body,
             "altbody": body,
             "lists": [CONFIG[lang]],
-            "send_at": f"{today.strftime('%Y-%m-%d')}T08:00:00+00:00",
+            "send_at": f"{today.strftime('%Y-%m-%d')}T09:00:00+00:00",
         },
     ).json()
     requests.put(
