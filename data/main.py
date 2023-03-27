@@ -29,6 +29,40 @@ def json_to_stories(json):
     return stories
 
 
+def meta_json_hander():
+    utc = timezone("UTC")
+    today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
+    meta_month = f"pages/{today.strftime('%Y/%m')}"
+    meta_year = f"pages/{today.strftime('%Y')}"
+    # check the folder for existing files and folders. put all of them into a json file, and dump it to the filename
+
+    if os.path.exists(meta_month):
+        files = os.listdir(meta_month)
+        meta = {}
+        for file in files:
+            if file == "_meta.en.json":
+                continue
+            filename = file.split(".")[0]
+            meta[filename] = filename
+        filename = f"pages/{today.strftime('%Y/%m')}/_meta.en.json"
+        # sort in reverse alphabet order
+        meta = {k: v for k, v in sorted(meta.items(), reverse=True)}
+        with open(filename, "w") as f:
+            json.dump(meta, f)
+    if os.path.exists(meta_year):
+        files = os.listdir(meta_year)
+        meta = {}
+        for file in files:
+            if file == "_meta.en.json":
+                continue
+            filename = file.split(".")[0]
+            meta[filename] = filename
+        filename = f"pages/{today.strftime('%Y')}/_meta.en.json"
+        meta = {k: v for k, v in sorted(meta.items(), reverse=True)}
+        with open(filename, "w") as f:
+            json.dump(meta, f)
+
+
 if __name__ == "__main__":
     utc = timezone("UTC")
     today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
@@ -53,6 +87,7 @@ if __name__ == "__main__":
 
     filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.en.mdx"
     save_markdown(stories, "en")
+    meta_json_hander()
 
     # locales = ["bg", "cs", "da", "de", "el", "es", "et", "fi", "fr", "hu", "id", "it", "ja", "ko", "lt", "lv", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sl", "sv", "tr", "uk", "zh"]
 
