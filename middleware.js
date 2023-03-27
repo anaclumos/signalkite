@@ -1,6 +1,1 @@
-import { withLocales } from 'nextra/locales'
-
-export const middleware = withLocales((request) => {
-  return
-})
-
+export { locales as middleware } from 'nextra/locales'
