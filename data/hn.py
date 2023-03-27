@@ -71,7 +71,6 @@ def download_story(story: Story) -> Story:
 
 
 def download_stories(stories: Stories) -> Stories:
-
     pool = multiprocessing.Pool(CONCURRENT)
     stories = pool.map(download_story, stories)
     pool.close()
@@ -86,7 +85,7 @@ def summarize_story(story: Story) -> Story:
     global OPENAI_TOKEN_THRESHOLD
     print(f"Summarizing '{story.title}' ({len(story.content.split())} tokens)")
     while len(story.content.split()) > OPENAI_TOKEN_THRESHOLD:
-        print(f"Story '{story.title}' is too long, shortening {len(story.content.split())}) tokens")
+        print(f"Story '{story.title}' is too long, shortening {len(story.content.split())} tokens")
         story.content = shorten(story.content, OPENAI_TOKEN_THRESHOLD, title=story.title)
     story.title = get_title(story.title, story.content)
     story.title = title_format(story.title)
