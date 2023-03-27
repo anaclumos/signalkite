@@ -1,11 +1,11 @@
-name: Update Cache
+name: Get Latest News
 on:
   schedule:
     - cron: '0 6 * * *'
 permissions: write-all
 jobs:
   get-latest-news:
-    environment: production
+    environment: Production
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -29,8 +29,8 @@ jobs:
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
       - name: Run Prettier
         run: |
-          yarn
-          yarn prettier
+          $npm_execpath run install
+          $npm_execpath run prettier
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
