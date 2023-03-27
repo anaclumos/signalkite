@@ -31,6 +31,12 @@ jobs:
         run: |
           $npm_execpath run install
           $npm_execpath run prettier
+      - name: Schedule Newsletter
+        run: python3 data/newsletter.py
+        env:
+          NEWSLETTERS_CHO_SH_USERNAME: ${{ secrets.NEWSLETTERS_CHO_SH_USERNAME }}
+          NEWSLETTERS_CHO_SH_PASSWORD: ${{ secrets.NEWSLETTERS_CHO_SH_PASSWORD }}
+          RESEND_KEY: ${{ secrets.RESEND_KEY }}
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"

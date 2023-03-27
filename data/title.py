@@ -140,11 +140,29 @@ specials = [
     "GraphiQL",
     "JWT",
     "JWTs",
+    "ChatGPT",
+    "OpenAI",
+    "LLaMA",
+    "GPT",
+    "RISC",
+    "AS3",
+    "SVB",
+    "AI",
+    "GUI",
+    "CLI",
+    "API",
+    "HTTP",
+    "ML",
+    "NLP",
+    "CPU",
+    "GPU",
+    "RIAA",
 ]
 
 # Define regular expression pattern
 word = "[^\\s'’\\(\\)!?;:\"-]"
 regex = re.compile(f"(?:(?:(\\s?(?:^|[.\\(\\)!?;:\"-])\\s*)({word}))|({word}))({word}*[’']*{word}*)", re.IGNORECASE)
+
 
 # Define the function to titlize the string
 def titlize_chicago_style(text, options=None):

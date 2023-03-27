@@ -4,6 +4,7 @@ import multiprocessing
 import os
 from closedai import title_format
 from dotenv import load_dotenv
+from time import sleep
 
 load_dotenv()
 
@@ -15,11 +16,12 @@ TWITTER_URL = "https://twitter.com/"
 TWITTER_SHORT_URL = "https://t.co/"
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 OPENAI_TOKEN_THRESHOLD = 2048  # It's actually 4096, but we want to be safe
-CONCURRENT = 2
+CONCURRENT = 1
 
 
 def get_story(id: int, start: int, end: int) -> Story:
     global HN_STORY
+    sleep(1)
     with requests.get(HN_STORY.format(id=id)) as submission:
         response = submission.json()
         story = Story(
@@ -54,6 +56,7 @@ def get_best_stories(start: int, end: int) -> Stories:
 def download_story(story: Story) -> Story:
     import bs4
 
+    sleep(1)
     try:
         r = requests.get(story.hn_url, headers={"User-Agent": "Mozilla/5.0"})
         story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
@@ -82,6 +85,7 @@ def download_stories(stories: Stories) -> Stories:
 def summarize_story(story: Story) -> Story:
     from closedai import shorten, bulletpoint_summarize, get_title
 
+    sleep(1)
     global OPENAI_TOKEN_THRESHOLD
     print(f"Summarizing '{story.title}' ({len(story.content.split())} tokens)")
     while len(story.content.split()) > OPENAI_TOKEN_THRESHOLD:
