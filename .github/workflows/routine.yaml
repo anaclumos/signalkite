@@ -29,8 +29,8 @@ jobs:
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
       - name: Run Prettier
         run: |
-          $npm_execpath run install
-          $npm_execpath run prettier
+          yarn install
+          yarn prettier
       - name: Schedule Newsletter
         run: python3 data/newsletter.py
         env:
