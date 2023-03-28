@@ -1,5 +1,5 @@
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 import os
 from pytz import timezone
 from dotenv import load_dotenv
@@ -56,6 +56,8 @@ def create_campaign(title, body, lang):
     utc = timezone("UTC")
     today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
 
+    next_hour = datetime.now().astimezone(utc).replace(minute=0, second=0, microsecond=0) + timedelta(hours=1)
+
     res = requests.post(
         server,
         auth=(username, password),
@@ -67,7 +69,7 @@ def create_campaign(title, body, lang):
             "body": body,
             "altbody": body,
             "lists": [CONFIG[lang]],
-            "send_at": f"{today.strftime('%Y-%m-%d')}T09:00:00+00:00",
+            "send_at": f"{today.strftime('%Y-%m-%d')}T{next_hour.strftime('%H:%M:%S')}+00:00",
         },
     ).json()
     requests.put(
@@ -146,8 +148,6 @@ def schedule_newsletter(lang):
                 create_campaign(title, post, lang)
     else:
         collect_notification("No newsletter for today.")
-
-
 
 
 if __name__ == "__main__":
