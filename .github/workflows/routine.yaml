@@ -27,10 +27,6 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
-      - name: Run Prettier
-        run: |
-          yarn install
-          yarn prettier
       - name: Schedule Newsletter
         run: python3 data/newsletter.py
         env:
