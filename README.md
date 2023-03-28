@@ -36,4 +36,5 @@ Kaj se danes dogaja v svetu tehnologije? •
 Vad händer i teknikvärlden idag? •
 Bugün Teknoloji Dünyasında Neler Oluyor? •
 Що відбувається у світі технологій сьогодні?
+
 </h6>

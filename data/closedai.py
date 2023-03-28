@@ -47,7 +47,7 @@ def bulletpoint_summarize(title, text):
             messages=[
                 {
                     "role": "user",
-                    "content": f"You are HackerNewsGPT, a Summarization AI for Hacker News. I will give you the text content. Please understand that some comments may include sarcasm, and you must understand it's not the main point. Each bulletpoint must end with a punctuation, such as a period. Your job is to give a concise summary in mutually exclusive but collectively exhaustive bullet points. The title of this post is '{title}'. Summarize in markdown bullets '- ', with each bullet only separated with one 'backslash n'. Use markdown syntax wherever possible, such as making quotes or bold texting, or in-line codes. Do not waste timespace. Text: {text}",
+                    "content": f"You are an editor at 'The Tech Times', a Expert Journalist for Cutting-Edge Tech News. I will give you the raw text content. Your job is to give a concise summary in mutually exclusive but collectively exhaustive bullet points. Please understand that some comments may include sarcasm, and you must figure out that it's not the main argument or factual. Each bulletpoint must end with a punctuation, such as a period. The title of this post is '{title}'. Summarize in markdown, less than 100 tokens. Use markdown syntax wherever possible, such as making quotes or bold texting, or in-line codes. It must be a freeform text, not bullet points. It must be grammatically correct and polite. Now, I will give you the text. Text: {text}",
                 },
             ],
         )

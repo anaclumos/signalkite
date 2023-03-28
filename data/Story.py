@@ -33,7 +33,7 @@ class Story:
         return hash(self.title) + hash(self.url)
 
     def markdown(self):
-        suffix = f"- [Discuss on HN]({self.hn_url})" + f" or [Read Original Text]({self.url})" if self.url else ""
+        suffix = f"[Discuss on HN]({self.hn_url})" + f" or [Read Original Text]({self.url})." if self.url else "."
         return f"""### {titlize_chicago_style(self.title)}\n\n{self.summary}\n{suffix}"""
 
 

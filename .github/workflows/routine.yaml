@@ -39,6 +39,11 @@ jobs:
           NEWSLETTERS_CHO_SH_USERNAME: ${{ secrets.NEWSLETTERS_CHO_SH_USERNAME }}
           NEWSLETTERS_CHO_SH_PASSWORD: ${{ secrets.NEWSLETTERS_CHO_SH_PASSWORD }}
           RESEND_KEY: ${{ secrets.RESEND_KEY }}
+        name: Run Prettier
+        - uses: actions/checkout@v2
+        - uses: Adzz/jest_test_action@v1.0.0
+          with:
+            command: prettier
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
