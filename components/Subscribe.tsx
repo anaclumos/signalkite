@@ -6,18 +6,18 @@ const Subscribe = () => {
   return (
     <form method="post" action="https://newsletters.cho.sh/subscription/form" id="subscribe-form">
       <Steps>
-        <h3 className="nx-font-semibold nx-tracking-tight nx-text-slate-900 dark:nx-text-slate-100 nx-mt-8 nx-text-2xl">
-          First, Your Email.
+        <h3 className="nx-font-semibold nx-tracking-tight nx-text-slate-900 dark:nx-text-slate-100 nx-mt-8 nx-mb-8 nx-text-2xl">
+          First, Your Email?
         </h3>
         <input
           type="email"
           name="email"
           required
-          placeholder="E-mail"
-          className="nextra-callout nx-overflow-x-auto nx-flex nx-rounded-lg nx-border nx-p-4 ltr:nx-pr-4 rtl:nx-pl-4 contrast-more:nx-border-current contrast-more:dark:nx-border-current nx-border-gray-200 nx-bg-gray-100 nx-text-gray-900 dark:nx-border-gray-200/30 dark:nx-bg-gray-900/30 dark:nx-text-gray-200 nx-w-full nx-my-4 invalid:nx-border-pink-500 invalid:nx-text-pink-600 focus:nx-invalid:border-pink-500 focus:invalid:nx-ring-pink-500"
+          placeholder="elon@twitter.com"
+          className="nextra-callout nx-overflow-x-auto nx-w-full nx-m-2 nx-flex nx-rounded-lg nx-border nx-p-4 ltr:nx-pr-4 rtl:nx-pl-4 contrast-more:nx-border-current contrast-more:dark:nx-border-current nx-border-gray-200 nx-text-current nx-no-underline dark:nx-shadow-none hover:nx-shadow-gray-100 dark:hover:nx-shadow-none nx-shadow-gray-100 active:nx-shadow-sm active:nx-shadow-gray-200 nx-transition-all nx-duration-200 hover:nx-border-gray-300 nx-bg-transparent nx-shadow-sm dark:nx-border-neutral-800 hover:nx-bg-slate-50 hover:nx-shadow-md dark:hover:nx-border-neutral-700 dark:hover:nx-bg-neutral-900 language-card peer-checked:border-gray-900"
         />
         <h3 className="nx-font-semibold nx-tracking-tight nx-text-slate-900 dark:nx-text-slate-100 nx-mt-8 nx-text-2xl">
-          Next, Choose Your Languages.
+          Next, Your Languages.
         </h3>
 
         <Cards>
@@ -53,6 +53,7 @@ const Subscribe = () => {
             ['中文 (zh)', '61502', '6150256a-eced-4e91-adf8-4504c176e673'],
           ].map(([text, id, value]) => (
             <label
+              key={id}
               className="nextra-card nx-group nx-flex nx-items-start nx-overflow-hidden nx-rounded-lg nx-border nx-border-gray-200 nx-text-current nx-no-underline dark:nx-shadow-none hover:nx-shadow-gray-100 dark:hover:nx-shadow-none nx-shadow-gray-100 active:nx-shadow-sm active:nx-shadow-gray-200 nx-transition-all nx-duration-200 hover:nx-border-gray-300 nx-bg-transparent nx-shadow-sm dark:nx-border-neutral-800 hover:nx-bg-slate-50 hover:nx-shadow-md dark:hover:nx-border-neutral-700 dark:hover:nx-bg-neutral-900 language-card peer-checked:border-gray-900"
               htmlFor={id}
             >
