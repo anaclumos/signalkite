@@ -87,7 +87,7 @@ def find_today_newsletters(lang):
     if os.path.exists(filename):
         with open(filename, "r") as f:
             body = f.read()
-            title = body.splitlines()[0].replace("# ", "") + " — hn.cho.sh ({lang}) "
+            title = body.splitlines()[0].replace("# ", "") + f" — hn.cho.sh ({lang}) "
             body = "\n".join(body.splitlines()[1:])
             body = body.replace("### ", "## ").replace("import { Steps } from 'nextra-theme-docs'", "").replace("<Steps>", "").replace("</Steps>", "")
             return [(title, body)]
@@ -147,7 +147,7 @@ def schedule_newsletter(lang):
                 collect_notification("Scheduling... ", title)
                 create_campaign(title, post, lang)
     else:
-        collect_notification("No newsletter for today.")
+        collect_notification(f"{lang}: No newsletter for today.")
 
 
 if __name__ == "__main__":
