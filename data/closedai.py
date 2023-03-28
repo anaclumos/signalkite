@@ -73,6 +73,8 @@ def title_format(title):
     title = title.replace("”", '"')
     title = title.replace("‘", "'")
     title = title.replace(" and ", " & ")
+    title = title.replace(" And ", " & ")
+    title = title.replace(" AND ", " & ")
     return title
 
 
@@ -96,4 +98,4 @@ def get_title(title, text):
         new_text = text.split(".")
         new_text = ".".join(new_text[: 4 * len(new_text) // 5])
         return get_title(title, new_text)
-    return title
+    return title_format(title)
