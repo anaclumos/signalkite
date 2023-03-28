@@ -16,7 +16,7 @@ def shorten(text: str, limit: int, title="") -> str:
         chunks = [" ".join(words[i : i + limit]) for i in range(0, len(words), limit)]
         for idx, w in enumerate(chunks):
             print("Summarizing (" + str(idx + 1) + "/" + str(len(chunks)) + f") {title}...")
-            sleep(4)  # OpenAI has a rate limit of 20 requests per minute
+            sleep(1)  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
             completion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[
@@ -41,7 +41,7 @@ def bulletpoint_summarize(title, text):
     summary = ""
     try:
         print(f"Creating Summary for...   {title}")
-        sleep(4)  # OpenAI has a rate limit of 20 requests per minute
+        sleep(1)  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
         completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
@@ -80,7 +80,7 @@ def get_title(title, text):
     try:
         print(f"Finding a better title... {title}")
         for _ in range(OPENAI_RETRY_COUNT):
-            sleep(4)  # OpenAI has a rate limit of 20 requests per minute
+            sleep(1)  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
             completion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[
