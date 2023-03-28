@@ -27,17 +27,6 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
-      - name: Schedule Newsletter
-        run: python3 data/newsletter.py
-        env:
-          NEWSLETTERS_CHO_SH_USERNAME: ${{ secrets.NEWSLETTERS_CHO_SH_USERNAME }}
-          NEWSLETTERS_CHO_SH_PASSWORD: ${{ secrets.NEWSLETTERS_CHO_SH_PASSWORD }}
-          RESEND_KEY: ${{ secrets.RESEND_KEY }}
-        name: Run Prettier
-        - uses: actions/checkout@v2
-        - uses: Adzz/jest_test_action@v1.0.0
-          with:
-            command: prettier
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -49,3 +38,24 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
+      - name: Run Prettier
+        uses: Adzz/jest_test_action@v1.0.0
+        with:
+            command: prettier
+      - name: Commit as Bot
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Formatting..."
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+      - name: Schedule Newsletter
+        run: python3 data/newsletter.py
+        env:
+          NEWSLETTERS_CHO_SH_USERNAME: ${{ secrets.NEWSLETTERS_CHO_SH_USERNAME }}
+          NEWSLETTERS_CHO_SH_PASSWORD: ${{ secrets.NEWSLETTERS_CHO_SH_PASSWORD }}
+          RESEND_KEY: ${{ secrets.RESEND_KEY }}
