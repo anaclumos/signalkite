@@ -2,6 +2,12 @@ name: get latest news
 on:
   schedule:
     - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Retrigger
+        default: v1.0.0
+        required: true
 permissions: write-all
 jobs:
   get-latest-news:
@@ -39,7 +45,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
       - name: Run Prettier
-        uses: Adzz/jest_test_action@v1.0.0
+        uses: Adzz/jest_test_action@v2.0.0
         with:
             command: prettier
       - name: Commit as Bot
