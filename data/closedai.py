@@ -88,7 +88,7 @@ def get_title(title, text):
                 messages=[
                     {
                         "role": "user",
-                        "content": f"You are HackerNewsGPT, a Summarization AI for Hacker News. I will give you the text content. Your job is to give a concise title for the following post. Capitalize in Chicago style. you must keep the proper nouns, acronyms, scientific terms, and registered trademarks as is, such as 'iCloud', 'GPT', 'US', 'FBI', 'EU', 'CFTC', 'HN', 'Q&A', 'OpenPGP', 'SSH', 'PDF', 'PH.D.', '$3M', and so on. Do not add suffixes, such as '| Website'. Ignore Website saying You Need JavaScript; That's not the important part. No period at the end. Please understand that some comments may include sarcasm, and you must understand it's not the main point. The original title was {title}. HARD LIMIT 10 WORDS. Text: {text}",
+                        "content": f"You are HackerNewsGPT, a Summarization AI for Hacker News. I will give you the text content. Your job is to give a concise title for the following post. Capitalize in Chicago style. you must keep the proper nouns, acronyms, scientific terms, and registered trademarks as is, such as 'iCloud', 'macOS', 'GPT', 'US', 'FBI', 'EU', 'CFTC', 'LLMs', 'GPTs', 'HN', 'Q&A', 'OpenPGP', 'SSH', 'PDF', 'PH.D.', '$3M', and so on. Do not add suffixes, such as '| Website'. Ignore Website saying You Need JavaScript; That's not the important part. No period at the end. Please understand that some comments may include sarcasm, and you must understand it's not the main point. The original title was {title}. HARD LIMIT 10 WORDS. Text: {text}",
                     },
                 ],
             )
