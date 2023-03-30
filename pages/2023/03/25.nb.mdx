@@ -1,0 +1,110 @@
+import { Steps } from 'nextra-theme-docs'
+
+<Steps>
+
+# 25. mars 2023
+
+### GitHub oppdaterer RSA SSH Host Key etter eksponering
+
+- GitHub oppdaterer RSA SSH-vertsnøkkel etter at privat nøkkel ble eksponert i offentlig depot
+- Kunder som bruker ECDSA- eller Ed25519-nøkler trenger ikke å gjøre noe, men de som bruker RSA må oppdatere filen ~/.ssh/known_hosts.
+- GitHub har ennå ikke innført en mekanisme for å tilbakekalle SSH-nøkler, noe som kan være et potensielt problem hvis de blir kompromittert.
+- Å ha en reell risiko-/trusselmodell er avgjørende for å bygge fornuftige sikkerhetskontroller.
+- Git-forfattere bør signere sine commits med sin egen private nøkkel for å sikre kodeintegritet, i stedet for å stole på vertsleverandører.
+- GitHub publiserte nøkkelen sin ved et uhell, noe som undergravde tillitsprinsippet og gjorde at all kommunikasjon siden oppstarten ble kompromittert.
+- GitHub oppfordrer til forbedringer av sertifikater som brukes til å logge inn på kodelagre.
+- GitHub og GitLab støtter begge tofaktorautentisering (2FA) via sine kommandolinjegrensesnitt (CLI).
+- Den nylige hendelsen fremhever potensielle sikkerhetsfeil i mange fintech-selskaper, inkludert blind tillit til GitHubs vertsnøkler.
+- GitHub eksponerte kort en privat nøkkel på grunn av et uhell, men tok proaktive tiltak for å tilbakekalle og distribuere nye nøkler og sertifikater, og implementere forbedrede kontroller.
+- [Diskuter på HN](http://news.ycombinator.com/item?id=35285390) eller [Les originalteksten](https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/).
+
+### En amerikansk domstol forbyr Internet Archives bokutlånsprogram.
+
+- Internet Archive (IA) brøt loven om opphavsrett ved å låne ut digitale kopier av opphavsrettsbeskyttede bøker uten tillatelse, ifølge en amerikansk dommeravgjørelse.
+- IA argumenterte for at det var unntatt på grunn av "rettferdig bruk", men dommeren fant ikke noe transformerende ved deres kopiering og utlån av bøker.
+- IA har blitt beordret til å stanse distribusjon av opphavsrettsbeskyttede bøker uten tillatelse.
+- Rettssak anlagt av forlagene Hachette, HarperCollins og Penguin Random House mot IAs skanning og digitale utlån.
+- IA vil rette seg etter domstolens pålegg og avslutte utlånsprogrammet
+- Avgjørelsen vil sannsynligvis påvirke brukere som er avhengige av IA for å få tilgang til tekster som ikke er tilgjengelige andre steder, særlig de som finner tradisjonelle biblioteker utilgjengelige.
+- [Diskuter på HN](http://news.ycombinator.com/item?id=35297117) eller [Les originalteksten](https://file770.com/judge-decides-against-internet-archive/).
+
+### Politiet saksøker rapperen Afroman for krenkelse av privatlivets fred i musikkvideoer
+
+- Politibetjenter som gjennomførte en mislykket razzia i rapperen Afromans hjem, saksøker ham for krenkelse av privatlivets fred og følelsesmessig nød etter at han brukte opptak av det i musikkvideoene sine.
+- Afroman brukte opptak tatt opp av kona og husets kameraer som en del av flere musikkvideoer som ble lagt ut på nettet, og la ut innhold fra razziaen på sine sosiale medier.
+- Politibetjentene hevder at Afromans handlinger var "forsettlige, hensynsløse, ondsinnede og gjort med bevisst eller hensynsløs tilsidesettelse" og hevder at de har blitt latterliggjort av offentligheten.
+- Hver offiser søker erstatning på 25 000 dollar per fire punkter.
+- [Diskuter på HN](http://news.ycombinator.com/item?id=35284187) eller [Les originaltekst](https://www.theguardian.com/us-news/2023/mar/23/ohio-police-sue-rapper-afroman).
+
+### Storbritannias matinflasjon når den høyeste hastigheten siden 1977, noe som vekker bekymring
+
+- Matvareinflasjonen i Storbritannia steg til 18,2% i februar, den høyeste siden 1977 på grunn av høyere grønnsakskostnader, stigende pris på korn, visse proteiner, egg og olje.
+- Britiske supermarkeder sliter med matmangel, høye energikostnader og problemer i den globale forsyningskjeden, noe som fører til tomme hyller og prisøkninger.
+- Inflasjonen i matvareprisene skaper bekymring for sårbare grupper, og noen sliter med å kjøpe nok mat.
+- Stigende energikostnader og forstyrrelser i forsyningskjeden er blant faktorene som nevnes som presserende inflasjonspress som får matvareprisene til å stige i mange land.
+- Hovedårsaken til inflasjonen er høye energipriser, ettersom energi påvirker produksjon og transport, noe som påvirker prisen på dagligvarer.
+- [Diskuter på HN](http://news.ycombinator.com/item?id=35290460) eller [Les originalteksten](https://www.grocerygazette.co.uk/2023/03/22/food-inflation-highest-rate/).
+
+### Framework lanserer bærbar PC med høy ytelse og tilpassbar grafikk som kan oppgraderes
+
+- Framework lanserer sitt nye produkt, Framework Laptop 16, som har oppgraderbar grafikk og et inndatadekk som kan tilpasses.
+- Inndatadekket gjør det mulig å bytte inndatamoduler i tre størrelser: Small, Medium (Numpad Modules) og Large (Keyboard Modules) med ulike tilpasningsmuligheter for hver.
+- Expansion Bay-systemet muliggjør oppgraderbar grafikk samtidig som det gir enorm designfleksibilitet for å håndtere fremtidige endringer i mekaniske, termiske og elektriske krav til GPU-er.
+- PCIe x8-grensesnittet på Expansion Bay muliggjør høyeffekts, høyhastighets brukstilfeller som et dobbelt M.2 SSD-kort som kan legge til 16 TB lagringsplass eller andre moduler opprettet av utviklere.
+- Framework Laptop 16 har også utvidelseskortsystemet fra Framework Laptop 13, slik at brukerne kan velge hvilke porter de vil ha på hver side sammen med å legge til annen funksjonalitet som høyhastighetslagring.
+- Utviklerdokumentasjon for alle tre systemene: Input Modules, Expansion Bay Modules og Expansion Cards, er tilgjengelig på GitHub, med Framework Marketplace for å åpne for tredjeparts modulprodusenter i fremtiden.
+- Framework Laptop 16 er bygget for å tilpasses brukerens behov, enten det er for spill, utvikling, Linux-bruk eller annet ytelseskrevende arbeid.
+- [Diskuter på HN](http://news.ycombinator.com/item?id=35286544) eller [Les originaltekst](https://frame.work/fr/fr/blog/introducing-the-framework-laptop-16).
+
+### OpenAI gir Bing-søk boost mot Google
+
+- Den Microsoft-eide søkemotoren Bing har hatt en økning på 15,8 % i sidebesøk siden integrasjonen av OpenAIs teknologi, mens Google opplevde en nedgang på nesten 1 %.
+- Tallene antyder en tidlig ledelse for Microsoft i kappløpet med Google om generativ AI-dominans.
+- Bings nylig forbedrede AI-integrasjon resulterte også i en åttedobling av nedlastinger av apper globalt, ifølge Data.ai.
+- Google har dominert søkemarkedet i flere tiår, med over 80% markedsandel, men Bing vil sannsynligvis få markedsandeler i de kommende månedene, spesielt hvis Google forsinker sin AI-integrasjon.
+- [Diskuter på HN](http://news.ycombinator.com/item?id=35293101) eller [Les originalteksten](https://www.reuters.com/technology/openai-tech-gives-microsofts-bing-boost-search-battle-with-google-2023-03-22/).
+
+### Databricks introduserer demokratiserende LLM Dolly for å bygge tilpassede modeller
+
+- Databricks introduserer Dolly, en LLM som kan generere menneskelignende tekst og opprettes på en enkelt maskin ved hjelp av åpen kildekode og treningsdata av høy kvalitet.
+- Dolly demokratiserer LLM-er og gjør dem tilgjengelige for selskaper som ikke hadde råd til dem tidligere, slik at organisasjoner kan eie og tilpasse modellene sine og forbedre produktene sine.
+- OpenAIs DALL-E 2-modell kan lage bilder av høy kvalitet fra tekstmeldinger, og Databricks finjusterte den for grensesnitt i chatbot-stil med høy nøyaktighet.
+- OpenAI står overfor priskonkurranse med andre AI-modeller på markedet, og suksessen er avhengig av å holde tritt med konkurrentene.
+- Alpaca utviklet av OpenAI brukes til å lære en mindre, mer effektiv LLM som kan brukes til spesifikke oppgaver i kombinasjon med andre spesialiserte AI-modeller, demokratisering av data og LLM-er.
+- [Diskuter på HN](http://news.ycombinator.com/item?id=35288063) eller [Les originaltekst](https://www.databricks.com/blog/2023/03/24/hello-dolly-democratizing-magic-chatgpt-open-models.html).
+
+### Problemer og løsninger for telefonfrie arrangementer: Tillit, effektivitet og preferanser
+
+- Clearspace, en YCombinator W23-oppstart, gjennomførte et telefonfritt arrangement, der deltakerne la igjen enhetene sine med oppstarten ...
+- Drikkepengepraksis i USA skaper debatt om arbeidstakeres rettigheter og rettferdig kompensasjon
+- Stjålne moderne telefoner er verdifulle for sine data, til tross for fabrikklåser og nyere telefonsikkerhetstiltak
+- Diskusjoner om bruk av Faraday-bur og låsbare vesker for å forhindre telefonbruk på sikre steder eller sosiale arrangementer.
+- Samtale om fordelene med ingen mobildekning eller Wi-Fi på samlinger, der noen foreslår bruk av Faraday-bur for å blokkere signaler.
+- Kritikk og løsninger diskutert for bruk av telefonlåsposer under komedieshow og arrangementer.
+- Diskusjon om krav til personlig informasjon og alternativer for kontroll av telefonbruk.
+- Bredere debatt om folks avhengighet av mobile enheter, med forslag til alternative kommunikasjonsmetoder og bekymring for telefonsikkerhet.
+- [Diskuter på HN](http://news.ycombinator.com/item?id=35297074) eller [Les originalteksten](https://blog.getclearspace.com/we-ran-a-phone-check-at-a-ycombinator-event-in-san-francisco-heres-how-it-went-fb920a54c755).
+
+### Docker reverserer beslutningen om gratis plan, tilbyr refusjon
+
+- Docker reverserer beslutningen om å avslutte Free Team-planen etter tilbakemeldinger fra samfunnet og tilbyr refusjon for de som oppgraderte innen den perioden.
+- Kunder som migrerte til en Personal- eller Pro-plan kan gå tilbake til sin tidligere Free Team-plan eller be om en ny Personal- eller Pro-konto via Dockers nettsted.
+- Dockers beslutning om å avslutte gratis støtte for Docker Desktop-appen på macOS og Windows har også blitt reversert, og noe kode har blitt åpen kildekode.
+- Endringer i Dockers tjenestevilkår har vakt bekymring for konkurransebegrensende taktikker, men andre hevder at det er nødvendig for forretningsmodeller.
+- Microsofts støtte for bakoverkompatibilitet er bemerket sammenlignet med andre selskaper, og noen utviklere har flyttet til GitHub Container Registry eller Quay.io som et alternativ til Docker.
+- Dockers nylige tilbaketrekning om å begrense gratis kontobruk kommer som et resultat av tilbakemeldinger fra samfunnet, men harmen kan forbli.
+- En samtale på Hacker News fremhever spenningen mellom bedriftens interesser og forbrukernes forventninger når det gjelder å håndtere negative tilbakemeldinger.
+- Docker vil beholde sin gratisversjon av Docker Teams etter tidligere å ha kunngjort at de ville gjøre det til en betalingsmodell.
+- [Diskuter på HN](http://news.ycombinator.com/item?id=35295807) eller [Les originalteksten](https://www.docker.com/blog/no-longer-sunsetting-the-free-team-plan/).
+
+### OpenAIs ChatGPT og GPT-3 opplever dataeksponering og -brudd
+
+- OpenAIs ChatGPT opplevde en dataeksponeringshendelse, slik at brukerne kunne se sensitive data fra andre brukere og betalingsrelatert informasjon fra 1,2% av ChatGPT Plus-abonnentene i løpet av et 9-timers vindu.
+- Feilen skyldtes et defekt Redis-py-bibliotek, og hendelsen understreker utfordringene ved å stole på tredjepartsprogramvare i virksomhetskritiske systemer.
+- OpenAI ble også utsatt for et sikkerhetsbrudd som eksponerte kundedata, inkludert for- og etternavn, e-postadresser og API-brukspreferanser.
+- Noen brukere har rapportert om problemer med OpenAIs feilrapporteringskanaler, og hendelsen vekker bekymring for bruken av Redis som primærdatabase og påliteligheten til OpenAIs infrastruktur fra et sikkerhets- og støtteperspektiv.
+- Utviklere og programmerere diskuterer ansvaret for å sikre kvaliteten og sikkerheten til koden i biblioteker med åpen kildekode, og hendelsen understreker viktigheten av å teste eksterne avhengigheter grundig.
+- OpenAI har iverksatt tiltak for å håndtere hendelsene, inkludert å rette feilen i Redis-klientbiblioteket, forbedre systemene sine, endre alle API-nøkler og tokens og forbedre testing, påstander, loggvarsling og feilsøkingsprosesser.
+- [Diskuter på HN](http://news.ycombinator.com/item?id=35291112) eller [Les originalteksten](https://openai.com/blog/march-20-chatgpt-outage).
+
+</Steps>

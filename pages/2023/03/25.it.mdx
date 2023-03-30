@@ -1,0 +1,110 @@
+import { Steps } from 'nextra-theme-docs'
+
+<Steps>
+
+# 25 marzo 2023
+
+### GitHub aggiorna la chiave host RSA SSH a seguito dell'esposizione
+
+- GitHub aggiorna la chiave host RSA SSH dopo l'esposizione della chiave privata nel repository pubblico.
+- I clienti che utilizzano chiavi ECDSA o Ed25519 non hanno bisogno di prendere provvedimenti, ma quelli che utilizzano RSA devono aggiornare il loro file ~/.ssh/known_hosts
+- GitHub non ha ancora introdotto un meccanismo di revoca delle chiavi SSH, che potrebbe essere un potenziale problema in caso di compromissione.
+- Avere un modello di rischio/minaccia del mondo reale è fondamentale per costruire controlli di sicurezza ragionevoli
+- Gli autori di Git dovrebbero firmare i loro commit con la propria chiave privata per garantire l'integrità del codice, piuttosto che fidarsi dei fornitori di hosting.
+- GitHub ha accidentalmente pubblicato la propria chiave, minando il principio di fiducia e lasciando compromesse tutte le comunicazioni dal suo inizio
+- GitHub sta incoraggiando miglioramenti ai certificati utilizzati per l'accesso ai repository di codice
+- GitHub e GitLab supportano entrambi l'autenticazione a due fattori (2FA) attraverso le loro interfacce a riga di comando (CLI).
+- Il recente incidente mette in luce le potenziali falle nella sicurezza di molte aziende fintech, tra cui la fiducia cieca nelle chiavi host di GitHub
+- GitHub ha esposto per breve tempo una chiave privata a causa di un incidente, ma ha adottato misure proattive per revocare e distribuire nuove chiavi e certificati e implementare controlli migliori.
+- [Discutere su HN](http://news.ycombinator.com/item?id=35285390) o [Leggere il testo originale](https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/).
+
+### Il tribunale statunitense vieta il programma di prestito di libri di Internet Archive
+
+- Internet Archive (IA) ha violato la legge sul copyright prestando copie digitali di libri protetti da copyright senza autorizzazione, secondo la sentenza di un giudice statunitense.
+- L'IA ha sostenuto di essere esente dal "fair use", ma il giudice non ha trovato nulla di trasformativo nella copia e nel prestito di libri.
+- All'IA è stato imposto di interrompere la distribuzione di libri protetti da copyright senza autorizzazione.
+- Causa intentata dagli editori Hachette, HarperCollins e Penguin Random House contro la pratica di scansione e prestito digitale di IA
+- L'IA si conformerà all'ordine del tribunale e porrà fine al programma di prestito
+- La decisione avrà probabilmente un impatto sugli utenti che si affidano all'IA per accedere a testi non disponibili altrove, in particolare quelli che trovano inaccessibili le biblioteche tradizionali.
+- [Discutere su HN](http://news.ycombinator.com/item?id=35297117) o [Leggere il testo originale](https://file770.com/judge-decides-against-internet-archive/).
+
+### La polizia denuncia il rapper Afroman per violazione della privacy nei video musicali
+
+- Gli agenti di polizia che hanno condotto un'incursione malriuscita nella casa del rapper Afroman lo stanno citando in giudizio per violazione della privacy e stress emotivo dopo che il rapper ha utilizzato le riprese nei suoi video musicali.
+- Afroman ha utilizzato le riprese registrate dalla moglie e dalle telecamere di casa come parte di diversi video musicali che sono stati diffusi online e ha pubblicato i contenuti dell'irruzione sui suoi account di social media.
+- Gli agenti di polizia sostengono che le azioni di Afroman sono state "intenzionali, volute, dolose e compiute con consapevole o sconsiderata noncuranza" e affermano di essere stati oggetto di scherno da parte del pubblico.
+- Ogni agente chiede un risarcimento di 25.000 dollari per ogni quattro capi d'accusa.
+- [Discutere su HN](http://news.ycombinator.com/item?id=35284187) o [Leggere il testo originale](https://www.theguardian.com/us-news/2023/mar/23/ohio-police-sue-rapper-afroman).
+
+### L'inflazione alimentare nel Regno Unito raggiunge il tasso più alto dal 1977, suscitando preoccupazioni
+
+- L'inflazione alimentare nel Regno Unito è salita al 18,2% a febbraio, il tasso più alto dal 1977, a causa dell'aumento dei costi dei vegetali, dei prezzi dei cereali, di alcune proteine, delle uova e dell'olio.
+- I supermercati britannici stanno lottando contro la scarsità di cibo, gli alti costi dell'energia e i problemi della catena di approvvigionamento globale, con conseguenti scaffali vuoti e aumenti dei prezzi.
+- L'inflazione dei prezzi dei generi alimentari è fonte di preoccupazione per i gruppi vulnerabili, e alcune persone faticano a comprare cibo a sufficienza.
+- L'aumento dei costi energetici e le interruzioni della catena di approvvigionamento sono tra i fattori citati come pressioni inflazionistiche che causano l'aumento dei prezzi dei prodotti alimentari in molti Paesi.
+- La causa principale dell'inflazione è l'aumento dei prezzi dell'energia, che incide sulla produzione e sul trasporto e quindi sul prezzo dei generi alimentari.
+- [Discutere su HN](http://news.ycombinator.com/item?id=35290460) o [Leggere il testo originale](https://www.grocerygazette.co.uk/2023/03/22/food-inflation-highest-rate/).
+
+### Framework lancia un computer portatile ad alte prestazioni e personalizzabile con grafica aggiornabile
+
+- Framework lancia il suo nuovo prodotto, il Framework Laptop 16, dotato di grafica aggiornabile e di un pannello di input personalizzabile.
+- Il pannello di input consente di scambiare a caldo i moduli di input in tre dimensioni: Piccolo, Medio (moduli Numpad) e Grande (moduli tastiera) con varie opzioni di personalizzazione per ciascuno di essi.
+- Il sistema Expansion Bay consente l'aggiornamento della grafica, offrendo al contempo un'immensa flessibilità di progettazione per gestire i futuri cambiamenti dei requisiti meccanici, termici ed elettrici delle GPU.
+- L'interfaccia PCIe x8 dell'Expansion Bay consente casi d'uso ad alta potenza e ad alta velocità, come una doppia scheda SSD M.2 che può aggiungere 16 TB di storage o altri moduli creati dagli sviluppatori.
+- Il Framework Laptop 16 presenta anche il sistema Expansion Card del Framework Laptop 13, che consente agli utenti di scegliere quali porte desiderano su ciascun lato e di aggiungere altre funzionalità come lo storage ad alta velocità.
+- Documentazione per gli sviluppatori per tutti e tre i sistemi: Moduli di ingresso, Moduli di espansione e Schede di espansione, è disponibile su GitHub, mentre il Marketplace del Framework sarà aperto a produttori di moduli di terze parti in futuro.
+- Il Framework Laptop 16 è costruito per essere personalizzato in base alle esigenze dell'utente, che si tratti di gioco, sviluppo, uso di Linux o altri lavori che richiedono prestazioni elevate.
+- [Discutere su HN](http://news.ycombinator.com/item?id=35286544) o [Leggere il testo originale](https://frame.work/fr/fr/blog/introducing-the-framework-laptop-16).
+
+### OpenAI dà una spinta alla ricerca di Bing contro Google
+
+- Il motore di ricerca Bing, di proprietà di Microsoft, ha registrato un aumento del 15,8% delle visite alle pagine dopo l'integrazione della tecnologia OpenAI, mentre Google ha registrato un calo vicino all'1%.
+- I dati suggeriscono un vantaggio iniziale per Microsoft nella gara con Google per il dominio dell'IA generativa.
+- Secondo Data.ai, l'integrazione dell'intelligenza artificiale di Bing, recentemente migliorata, ha anche portato a un aumento di otto volte dei download di app a livello globale.
+- Google ha dominato il mercato della ricerca per decenni, con una quota di mercato superiore all'80%, ma è probabile che Bing guadagni quote di mercato nei prossimi mesi, soprattutto se Google ritarda l'integrazione dell'IA.
+- [Discutere su HN](http://news.ycombinator.com/item?id=35293101) o [Leggere il testo originale](https://www.reuters.com/technology/openai-tech-gives-microsofts-bing-boost-search-battle-with-google-2023-03-22/).
+
+### Databricks introduce la democratizzazione di LLM Dolly per costruire modelli personalizzati
+
+- Databricks presenta Dolly, un LLM in grado di generare testi simili a quelli umani e di essere creato su un'unica macchina utilizzando codice open-source e dati di addestramento di alta qualità.
+- Dolly democratizza gli LLM, rendendoli accessibili alle aziende che in passato non potevano permetterseli, consentendo alle organizzazioni di possedere e personalizzare i propri modelli e migliorare i propri prodotti.
+- Il modello DALL-E 2 di OpenAI è in grado di creare immagini di alta qualità da richieste di testo e Databricks lo ha messo a punto per interfacce di tipo chatbot con un'elevata precisione.
+- OpenAI si trova ad affrontare la concorrenza dei prezzi con altri modelli di IA che si affacciano sul mercato e il suo successo si basa sulla capacità di stare al passo con i concorrenti.
+- Alpaca, sviluppato da OpenAI, viene utilizzato per insegnare un LLM più piccolo e più efficiente che può essere utilizzato per compiti specifici in combinazione con altri modelli di AI specializzati, democratizzando i dati e gli LLM.
+- [Discutere su HN](http://news.ycombinator.com/item?id=35288063) o [Leggere il testo originale](https://www.databricks.com/blog/2023/03/24/hello-dolly-democratizing-magic-chatgpt-open-models.html).
+
+### Problemi e soluzioni per gli eventi senza telefono: Fiducia, efficienza e preferenze
+
+- Clearspace, una startup di YCombinator W23, ha organizzato un evento senza telefono, in cui i partecipanti hanno lasciato i loro dispositivi alla startup.
+- Le pratiche di mancia negli Stati Uniti accendono il dibattito sui diritti dei lavoratori e sull'equo compenso
+- I telefoni moderni rubati sono preziosi per i loro dati, nonostante i lucchetti di fabbrica e le più recenti misure di sicurezza dei telefoni
+- Discussioni sull'uso di gabbie di Faraday e buste con serratura per impedire l'uso del telefono in luoghi sicuri o eventi sociali
+- Conversazione sui vantaggi dell'assenza di ricezione cellulare o Wi-Fi durante i raduni, con alcuni che suggeriscono l'uso di gabbie di Faraday per bloccare i segnali
+- Critiche e soluzioni discusse per l'uso dei sacchetti blocca-telefono durante gli spettacoli e gli eventi comici
+- Discussione sui requisiti delle informazioni personali e sulle alternative per il controllo dell'uso del telefono
+- Ampio dibattito sulla dipendenza delle persone dai dispositivi mobili, con suggerimenti per metodi di comunicazione alternativi e preoccupazione per la sicurezza del telefono.
+- [Discutere su HN](http://news.ycombinator.com/item?id=35297074) o [Leggere il testo originale](https://blog.getclearspace.com/we-ran-a-phone-check-at-a-ycombinator-event-in-san-francisco-heres-how-it-went-fb920a54c755).
+
+### Docker rivede la decisione sul piano gratuito e offre rimborsi
+
+- Docker rivede la decisione di terminare il piano Free Team in seguito ai commenti della comunità e offre rimborsi per coloro che hanno effettuato l'aggiornamento entro tale periodo.
+- I clienti che sono migrati a un piano Personal o Pro possono tornare al loro precedente piano Free Team o richiedere un nuovo account Personal o Pro attraverso il sito web di Docker.
+- Anche la decisione di Docker di terminare il supporto gratuito per l'applicazione Docker Desktop su macOS e Windows è stata annullata e alcuni codici sono stati resi open-sourced.
+- Le modifiche ai termini di servizio di Docker hanno sollevato preoccupazioni per le tattiche anticoncorrenziali, ma altri sostengono che sia necessario per i modelli di business.
+- Il supporto di Microsoft per la retrocompatibilità è stato notato rispetto ad altre aziende e alcuni sviluppatori si sono spostati su GitHub Container Registry o Quay.io come alternativa a Docker.
+- La recente marcia indietro di Docker sulla limitazione dell'uso degli account gratuiti è il risultato del feedback della comunità, ma il risentimento potrebbe rimanere.
+- Una conversazione su Hacker News evidenzia la tensione tra gli interessi delle aziende e le aspettative dei consumatori nell'affrontare i feedback negativi.
+- Docker manterrà la versione gratuita di Docker Teams dopo aver annunciato in precedenza di volerla rendere a pagamento.
+- [Discutere su HN](http://news.ycombinator.com/item?id=35295807) o [Leggere il testo originale](https://www.docker.com/blog/no-longer-sunsetting-the-free-team-plan/).
+
+### ChatGPT e GPT-3 di OpenAI: esposizione e violazione dei dati
+
+- ChatGPT di OpenAI ha subito un incidente di esposizione dei dati, che ha permesso agli utenti di vedere i dati sensibili di altri utenti e le informazioni relative ai pagamenti dell'1,2% degli abbonati a ChatGPT Plus durante una finestra di 9 ore.
+- Il bug è stato causato da una libreria Redis-py difettosa e l'incidente evidenzia le difficoltà di affidarsi a software di terze parti in sistemi mission-critical.
+- Anche OpenAI ha subito una violazione della sicurezza che ha esposto i dati dei clienti, tra cui nomi e cognomi, indirizzi e-mail e preferenze di utilizzo delle API.
+- Alcuni utenti hanno segnalato problemi con i canali di segnalazione dei bug di OpenAI e l'incidente solleva preoccupazioni sull'uso di Redis come database primario e sull'affidabilità dell'infrastruttura di OpenAI dal punto di vista della sicurezza e del supporto.
+- Gli sviluppatori e i programmatori discutono sulla responsabilità di garantire la qualità e la sicurezza del codice nelle librerie open-source e l'incidente evidenzia l'importanza di testare accuratamente le dipendenze esterne.
+- OpenAI ha adottato misure per affrontare gli incidenti, tra cui la correzione del bug nella libreria client Redis, il miglioramento dei propri sistemi, la modifica di tutte le chiavi e i token API e il miglioramento dei processi di test, asserzioni, avvisi di log e debug.
+- [Discutere su HN](http://news.ycombinator.com/item?id=35291112) o [Leggere il testo originale](https://openai.com/blog/march-20-chatgpt-outage).
+
+</Steps>

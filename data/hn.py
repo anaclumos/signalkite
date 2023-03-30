@@ -37,7 +37,7 @@ def get_story(id: int, start: int, end: int) -> Story:
             print(f"+ {story.title}")
         else:
             print(f"- {story.title}")
-    return story[:5] # Only return the first 5 stories... DeepL is so expensive
+    return story[:10] # Only return the first few stories... DeepL is so expensive
 
 
 def get_best_stories(start: int, end: int) -> Stories:
