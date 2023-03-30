@@ -2,25 +2,63 @@ import deepl
 from Story import Story, Stories
 import os
 from dotenv import load_dotenv
+from datetime import datetime, timedelta
+from pytz import timezone
+import json
+from time import sleep
 
 load_dotenv()
 
+language = [
+    { 'locale': 'bg', 'filename_locale': 'bg',  'text': 'български (bg)' },
+    { 'locale': 'cs', 'filename_locale': 'cs',  'text': 'Čeština (cs)' },
+    { 'locale': 'da', 'filename_locale': 'da',  'text': 'Dansk (da)' },
+    { 'locale': 'de', 'filename_locale': 'de',  'text': 'Deutsch (de)' },
+    { 'locale': 'el', 'filename_locale': 'el',  'text': 'Ελληνικά (el)' },
+    { 'locale': 'en', 'filename_locale': 'en',  'text': 'English (en)' },
+    { 'locale': 'es', 'filename_locale': 'es',  'text': 'Espanya (es)' },
+    { 'locale': 'et', 'filename_locale': 'et',  'text': 'Eesti (et)' },
+    { 'locale': 'fi', 'filename_locale': 'fi',  'text': 'Suomi (fi)' },
+    { 'locale': 'fr', 'filename_locale': 'fr',  'text': 'Français (fr)' },
+    { 'locale': 'hu', 'filename_locale': 'hu',  'text': 'Magyar (hu)' },
+    { 'locale': 'id', 'filename_locale': 'id',  'text': 'Bahasa Indonesia (id)' },
+    { 'locale': 'it', 'filename_locale': 'it',  'text': 'Italiano (it)' },
+    { 'locale': 'ja', 'filename_locale': 'ja',  'text': '日本語 (ja)' },
+    { 'locale': 'ko', 'filename_locale': 'ko',  'text': '한국어 (ko)' },
+    { 'locale': 'lt', 'filename_locale': 'lt',  'text': 'Lietuvių (lt)' },
+    { 'locale': 'lv', 'filename_locale': 'lv',  'text': 'Latviešu (lv)' },
+    { 'locale': 'nl', 'filename_locale': 'nl',  'text': 'Nederlands (nl)' },
+    { 'locale': 'nb', 'filename_locale': 'nb',  'text': 'Bokmål (nb)' },
+    { 'locale': 'pl', 'filename_locale': 'pl',  'text': 'Polski (pl)' },
+    { 'locale': 'PT-PT','filename_locale': 'pt' , 'text': 'Português (pt)' },
+    { 'locale': 'ro', 'filename_locale': 'ro',  'text': 'Română (ro)' },
+    { 'locale': 'ru', 'filename_locale': 'ru',  'text': 'Русский (ru)' },
+    { 'locale': 'sk', 'filename_locale': 'sk',  'text': 'Slovenčina (sk)' },
+    { 'locale': 'sl', 'filename_locale': 'sl',  'text': 'Slovenščina (sl)' },
+    { 'locale': 'sv', 'filename_locale': 'sv',  'text': 'Svenska (sv)' },
+    { 'locale': 'tr', 'filename_locale': 'tr',  'text': 'Türkçe (tr)' },
+    { 'locale': 'uk', 'filename_locale': 'uk',  'text': 'Українська (uk)' },
+    { 'locale': 'zh', 'filename_locale': 'zh',  'text': '中文 (zh)' },
+  ]
 
-def translate_story(story: Story, locale: str) -> Story:
+if __name__ == "__main__":
+    utc = timezone("UTC")
+    today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
+    stories = Stories()
+
+    filename = f"pages/2023/03/30.en.mdx"
+
+    with open(filename, "r") as f:
+        markdown = f.read()
+    
+    markdown = markdown.replace("import { Steps } from 'nextra-theme-docs'", "").replace("<Steps>", "").replace("</Steps>", "")
     translator = deepl.Translator(os.getenv("DEEPL_API_KEY"))
-    translated = Story()
-    translated.title = translator.translate_text(story.title, target_lang=locale)
-    translated.summary = translator.translate_text(story.url, target_lang=locale)
-    translated.locale = locale
-    translated.id = story.id
-    translated.content = story.content
-    translated.timestamp = story.timestamp
-    translated.hn_url = story.hn_url
-    return translated
-
-
-def translate_stories(stories: Stories, locale: str) -> Stories:
-    translated_stories = Stories()
-    for story in stories:
-        translated_stories.append(translate_story(story, locale))
-    return translated_stories
+    
+    for lang in language:
+        if lang['locale'] == 'en':
+            continue
+        translated = translator.translate_text(markdown, target_lang=lang['locale'], source_lang='EN')
+        translated = "import { Steps } from 'nextra-theme-docs'\n\n<Steps>\n\n" + str(translated) + "\n\n</Steps>"
+        with open(f"pages/2023/03/30.{lang['filename_locale']}.mdx", "w") as f:
+            f.write(translated)
+        print(f"Translated to {lang['text']}")

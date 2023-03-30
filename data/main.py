@@ -3,11 +3,8 @@ from pytz import timezone
 from hn import get_best_stories, download_stories, summarize_stories
 from Story import Stories, Story
 import json
-from translate import translate_story
 import os
 from babel.dates import format_date
-from collections import namedtuple
-
 
 def save_markdown(stories, locale):
     utc = timezone("UTC")

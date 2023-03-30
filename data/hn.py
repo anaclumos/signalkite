@@ -28,6 +28,8 @@ def get_story(id: int, start: int, end: int) -> Story:
             id=id,
             timestamp=int(response.get("time", 0)),
             title=response["title"],
+            hn_title=response["title"],
+            original_title=response["title"],
             url=response.get("url", ""),
             hn_url=f"http://news.ycombinator.com/item?id={id}",
         )
@@ -35,7 +37,7 @@ def get_story(id: int, start: int, end: int) -> Story:
             print(f"+ {story.title}")
         else:
             print(f"- {story.title}")
-    return story
+    return story[:10] # Only return the first 10 stories... DeepL is so expensive
 
 
 def get_best_stories(start: int, end: int) -> Stories:
@@ -67,6 +69,7 @@ def download_story(story: Story) -> Story:
         try:
             r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
             story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
+            story.original_title = r.html.find("title", first=True).text if r.html else story.title
         except Exception as e:
             print(f"Failed to download main content from {story.title}, error: {e}")
     story.content.replace("\n", "")

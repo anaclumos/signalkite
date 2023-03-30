@@ -6,6 +6,8 @@ class Story:
     timestamp = 0
     locale = "en"
     title = ""
+    hn_title = ""
+    original_title = ""
     url = ""
     hn_url = ""
     content = ""
@@ -33,8 +35,8 @@ class Story:
         return hash(self.title) + hash(self.url)
 
     def markdown(self):
-        suffix = f"[Discuss on HN]({self.hn_url})" + f" or [Read Original Text]({self.url})." if self.url else "."
-        return f"""### {titlize_chicago_style(self.title)}\n\n{self.summary}\n{suffix}"""
+        suffix = f"[Hacker News Link]({self.hn_url})" + f", [Original Post]({self.url})." if self.url else "."
+        return f"""### {self.title}\n\n{self.summary}\n{suffix}"""
 
 
 Stories = list[Story]
