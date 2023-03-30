@@ -1,11 +1,8 @@
 import deepl
-from Story import Story, Stories
 import os
 from dotenv import load_dotenv
-from datetime import datetime, timedelta
+from datetime import datetime
 from pytz import timezone
-import json
-from time import sleep
 
 load_dotenv()
 
@@ -44,9 +41,9 @@ language = [
 if __name__ == "__main__":
     utc = timezone("UTC")
     today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
-    stories = Stories()
-
+    today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
     filename = f"pages/2023/03/30.en.mdx"
+    filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.en.mdx"
 
     with open(filename, "r") as f:
         markdown = f.read()
@@ -59,6 +56,6 @@ if __name__ == "__main__":
             continue
         translated = translator.translate_text(markdown, target_lang=lang['locale'], source_lang='EN')
         translated = "import { Steps } from 'nextra-theme-docs'\n\n<Steps>\n\n" + str(translated) + "\n\n</Steps>"
-        with open(f"pages/2023/03/30.{lang['filename_locale']}.mdx", "w") as f:
+        with open(f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{lang['filename_locale']}.mdx", "w") as f:
             f.write(translated)
         print(f"Translated to {lang['text']}")
