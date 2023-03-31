@@ -9,8 +9,8 @@ const share = () => {
       url: window.location.href,
     })
   } else {
-    let text = 'Nextra is a Next.js theme for documentation https://nextra.vercel.app'
     const copyContent = async () => {
+      let text = window.location.href
       try {
         await navigator.clipboard.writeText(text);
         alert('Copied to clipboard!');
