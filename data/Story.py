@@ -35,7 +35,7 @@ class Story:
         return hash(self.title) + hash(self.url)
 
     def markdown(self):
-        prefix = f"[{self.hn_title if self.hn_title else 'Hacker News'}]({self.hn_url})""" + f", [{self.original_title if self.original_title else 'Original'}]({self.url})." if self.url else "."
+        prefix = f"[{self.hn_title + ' (HN)' if self.hn_title else 'Hacker News'}]({self.hn_url})""" + f", [{self.original_title + ' (Original)' if self.original_title else 'Original'}]({self.url})." if self.url else "."
         return f"""### {self.title}\n\n{prefix}\n{self.summary}"""
 
 
