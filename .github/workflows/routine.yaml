@@ -48,6 +48,8 @@ jobs:
         run: python3 data/translate.py
         env:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+      - name: Sanitize news
+        run: python3 data/sanitize.py
       - name: Run Prettier
         uses: Adzz/jest_test_action@v2.0.0
         with:
