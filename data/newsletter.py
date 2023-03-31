@@ -4,6 +4,7 @@ import os
 from pytz import timezone
 from dotenv import load_dotenv
 from resend import Resend
+from babel.dates import format_date
 
 load_dotenv()
 
@@ -24,7 +25,7 @@ CONFIG = {
     "ro": 27,
     "pt": 26,
     "pl": 25,
-    "no": 24,
+    "nb": 24,
     "nl": 23,
     "lv": 22,
     "lt": 21,
@@ -87,7 +88,7 @@ def find_today_newsletters(lang):
     if os.path.exists(filename):
         with open(filename, "r") as f:
             body = f.read()
-            title = body.splitlines()[0].replace("# ", "") + f" — hn.cho.sh ({lang}) "
+            title = format_date(today, format="long", locale=lang)
             body = "\n".join(body.splitlines()[1:])
             body = body.replace("### ", "## ").replace("import { Steps } from 'nextra-theme-docs'", "").replace("<Steps>", "").replace("</Steps>", "").replace("import CallToAction from '../../../components/CallToAction'", "").replace("<CallToAction />", "")
             return [(title, body)]

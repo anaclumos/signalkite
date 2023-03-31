@@ -13,7 +13,7 @@ def save_markdown(stories, locale):
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w") as f:
         os.makedirs(os.path.dirname(filename), exist_ok=True)
-        f.write("\n\nimport { Steps } from 'nextra-theme-docs'import CallToAction from '../../../components/CallToAction'\n\n<CallToAction />\n\n<Steps>\n\n"+"## " + format_date(today, format="long", locale=locale))
+        f.write("\n\nimport { Steps } from 'nextra-theme-docs'\n\nimport CallToAction from '../../../components/CallToAction'\n\n<CallToAction />\n\n<Steps>\n\n"+"## " + format_date(today, format="long", locale=locale) + "\n\n")
         for story in stories:
             f.write(f"{story.markdown()}\n\n")
         f.write("</Steps>")
