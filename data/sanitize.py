@@ -48,6 +48,7 @@ if __name__ == "__main__":
                 # Replace Rules
                 # remove all 'invisible' characters
                 REPLACE_RULES = {
+                    "import { Steps } from 'nextra-theme-docs'": "import { Steps } from 'nextra-theme-docs'\n\nimport CallToAction from '../../../components/CallToAction'\n\n<CallToAction />",
                     " ": " ",
                     "️": "",
                     "‍": "",
@@ -142,7 +143,7 @@ if __name__ == "__main__":
                 }
 
                 for rule in REPLACE_RULES:
-                    while rule in line:
+                    if rule in line:
                         COUNTER += 1
                         line = line.replace(rule, REPLACE_RULES[rule])
                     line = unicodedata.normalize("NFC", line)

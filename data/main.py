@@ -13,7 +13,7 @@ def save_markdown(stories, locale):
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w") as f:
         os.makedirs(os.path.dirname(filename), exist_ok=True)
-        f.write("# " + format_date(today, format="long", locale=locale) + "\n\nimport { Steps } from 'nextra-theme-docs'\n\n<Steps>\n\n")
+        f.write("\n\nimport { Steps } from 'nextra-theme-docs'import CallToAction from '../../../components/CallToAction'\n\n<CallToAction />\n\n<Steps>\n\n"+"## " + format_date(today, format="long", locale=locale))
         for story in stories:
             f.write(f"{story.markdown()}\n\n")
         f.write("</Steps>")
@@ -85,9 +85,3 @@ if __name__ == "__main__":
     filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.en.mdx"
     save_markdown(stories, "en")
     meta_json_hander()
-
-    # locales = ["bg", "cs", "da", "de", "el", "es", "et", "fi", "fr", "hu", "id", "it", "ja", "ko", "lt", "lv", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sl", "sv", "tr", "uk", "zh"]
-
-    # for locale in locales:
-    #     stories = translate_story(stories, locale)
-    #     save_markdown(stories, locale)

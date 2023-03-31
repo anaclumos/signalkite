@@ -89,7 +89,7 @@ def find_today_newsletters(lang):
             body = f.read()
             title = body.splitlines()[0].replace("# ", "") + f" — hn.cho.sh ({lang}) "
             body = "\n".join(body.splitlines()[1:])
-            body = body.replace("### ", "## ").replace("import { Steps } from 'nextra-theme-docs'", "").replace("<Steps>", "").replace("</Steps>", "")
+            body = body.replace("### ", "## ").replace("import { Steps } from 'nextra-theme-docs'", "").replace("<Steps>", "").replace("</Steps>", "").replace("import CallToAction from '../../../components/CallToAction'", "").replace("<CallToAction />", "")
             return [(title, body)]
 
 
