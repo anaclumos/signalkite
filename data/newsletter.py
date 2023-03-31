@@ -56,8 +56,7 @@ def create_campaign(title, body, lang):
     """Create a new campaign"""
     utc = timezone("UTC")
     today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
-
-    next_hour = datetime.now().astimezone(utc).replace(minute=0, second=0, microsecond=0) + timedelta(hours=1)
+    next_hour = datetime.now().astimezone(utc).replace(minute=0, second=0, microsecond=0) + timedelta(minutes=CONFIG[lang] * 3 + 60)
 
     res = requests.post(
         server,
