@@ -28,10 +28,10 @@ def get_story(id: int, start: int, end: int) -> Story:
             id=id,
             timestamp=int(response.get("time", 0)),
             title=response["title"],
-            original_title=response["title"],
             url=response.get("url", ""),
             hn_url=f"http://news.ycombinator.com/item?id={id}",
         )
+        story.original_title = response["title"]
         story.hn_title = response["title"]
         if start <= story.timestamp <= end:
             print(f"+ {story.title}")
