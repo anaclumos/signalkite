@@ -35,8 +35,8 @@ class Story:
         return hash(self.title) + hash(self.url)
 
     def markdown(self):
-        suffix = f"[Hacker News Link]({self.hn_url})" + f", [Original Post]({self.url})." if self.url else "."
-        return f"""### {self.title}\n\n{self.summary}\n{suffix}"""
+        prefix = f"[{self.hn_title if self.hn_title else 'Hacker News'}]({self.hn_url})""" + f", [{self.original_title if self.original_title else 'Original'}]({self.url})." if self.url else "."
+        return f"""### {self.title}\n\n{prefix}\n{self.summary}"""
 
 
 Stories = list[Story]
