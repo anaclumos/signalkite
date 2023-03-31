@@ -22,7 +22,25 @@ def shorten(text: str, limit: int, title="") -> str:
                 messages=[
                     {
                         "role": "user",
-                        "content": f"Summarize. Hard limit {limit // 16} words. Capture Key Points. Please understand that some comments may include sarcasm, and you must understand it's not the main point.  If there is an esoteric arcane word that aptly describes the sentence, utilize it to make the sentence shorter. Text: {w}",
+                        "content": f"""
+
+                        
+You are an editor at 'The Tech Times', a Expert Journalist for Cutting-Edge Tech News.
+You were writing an article, but found that the article is too long, so you decided to summarize it.
+I will give you the raw text content. Your job is to give a concise summary in mutually exclusive but collectively exhaustive sentences.
+
+You must understand that the primary readers of this post are experts in the field, and they do not what to read the same thing that they already know.
+You must keep this question in mind: What is the most important thing people should know about this post? Why is this post special?
+Is there something new or interesting thing going on?
+Why is this post, out of all the posts on Hacker News, suddenly getting so much attention?
+What made such tech-savvy people suddenly interested in this post?
+
+Hard limit {limit // 16} words.
+Please understand that some comments may include sarcasm, and you must understand it's not the main point. 
+If there is an esoteric arcane word that aptly describes the sentence, utilize it to make the sentence shorter.
+
+Text: {w}
+""",
                     }
                 ],
             )
@@ -47,7 +65,33 @@ def bulletpoint_summarize(title, text):
             messages=[
                 {
                     "role": "user",
-                    "content": f"You are an editor at 'The Tech Times', a Expert Journalist for Cutting-Edge Tech News. I will give you the raw text content. Your job is to give a concise summary in mutually exclusive but collectively exhaustive sentences. Please understand that some comments may include sarcasm, and you must figure out that it's not the main argument or factual. Each sentence must end with a punctuation, such as a period. The title of this post is '{title}'. Summarize in markdown, less than 100 tokens. Use markdown syntax wherever possible, such as making quotes or bold texting, or in-line codes. It must be a freeform text, not bullet points. It must be grammatically correct and polite. Now, I will give you the text. Text: {text}",
+                    "content": f"""
+
+You are an editor at 'The Tech Times', a Expert Journalist for Cutting-Edge Tech News.
+I will give you the raw text content. Your job is to give a concise summary in mutually exclusive but collectively exhaustive sentences.
+Please understand that some comments may include sarcasm, and you must figure out that it's not the main argument or factual.
+
+You must understand that the primary readers of this post are experts in the field, and they do not what to read the same thing that they already know.
+You must keep this question in mind: What is the most important thing people should know about this post? Why is this post special?
+Is there something new or interesting thing going on?
+Why is this post, out of all the posts on Hacker News, suddenly getting so much attention?
+What made such tech-savvy people suddenly interested in this post?
+
+Your job is to capture such key points, that would make the readers interested.
+Do not repeat dull facts, such as 'The post is about a new technology'.
+
+You must also be aware that you should be 'confident but not arrogant'.
+You must not use expressions like "this may be..." "potentially"... or such.
+Things should be 'clearly' and 'obviously' stated.
+
+Use markdown syntax wherever possible, such as making quotes or bold texting, or in-line codes.
+It must be a freeform text, not bullet points. It must be grammatically correct and polite.
+Each sentence must end with a punctuation, such as a period. The title of this post is '{title}'.
+
+Now, I will give you the text.
+Summarize in markdown, less than 100 tokens.
+Text: {text}""",
+
                 },
             ],
         )
@@ -88,7 +132,33 @@ def get_title(title, text):
                 messages=[
                     {
                         "role": "user",
-                        "content": f"You are HackerNewsGPT, a Summarization AI for Hacker News. I will give you the text content. Your job is to give a concise title for the following post. Capitalize in Chicago style. you must keep the proper nouns, acronyms, scientific terms, and registered trademarks as is, such as 'iCloud', 'macOS', 'GPT', 'US', 'FBI', 'EU', 'CFTC', 'LLMs', 'GPTs', 'HN', 'Q&A', 'OpenPGP', 'SSH', 'PDF', 'PH.D.', '$3M', and so on. Do not add suffixes, such as '| Website'. Ignore Website saying You Need JavaScript; That's not the important part. No period at the end. Please understand that some comments may include sarcasm, and you must understand it's not the main point. The original title was {title}. HARD LIMIT 10 WORDS. Text: {text}",
+                        "content": f"""
+You are an editor at 'The Tech Times', a Expert Journalist for Cutting-Edge Tech News.
+I will give you the raw text content. Your job is to give a concise title for the following post.
+
+You must understand that the primary readers of this post are experts in the field, and they do not what to read the same thing that they already know.
+You must keep this question in mind: What is the most important thing people should know about this post? Why is this post special?
+Is there something new or interesting thing going on?
+Why is this post, out of all the posts on Hacker News, suddenly getting so much attention?
+What made such tech-savvy people suddenly interested in this post?
+
+Your job is to capture such key points, that would make the readers interested.
+Do not repeat dull facts, such as 'The post is about a new technology'.
+
+Capitalize in Chicago style.
+you must keep the proper nouns, acronyms, scientific terms, and registered trademarks as is,
+such as 'iCloud', 'macOS', 'GPT', 'US', 'FBI', 'EU', 'CFTC', 'LLMs', 'GPTs', 'HN', 'Q&A', 'OpenPGP', 'SSH', 'PDF', 'PH.D.', '$3M', and so on.
+
+Do not add suffixes, such as '| Website'.
+
+Ignore Website saying You Need JavaScript; That's not the important part.
+No period at the end.
+
+Please understand that some comments may include sarcasm, and you must understand it's not the main point.
+The original title was {title}. HARD LIMIT 10 WORDS. Text: {text}
+
+What would be a better title for this post?
+""",
                     },
                 ],
             )
