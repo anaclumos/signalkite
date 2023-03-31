@@ -6,6 +6,9 @@ const Subscribe = () => {
   return (
     <form method="post" action="https://newsletters.cho.sh/subscription/form" id="subscribe-form">
       <Steps>
+        <h2 className="nx-font-semibold nx-tracking-tight nx-text-slate-900 dark:nx-text-slate-100 nx-mt-10 nx-border-b nx-pb-1 nx-text-3xl nx-border-neutral-200/70 contrast-more:nx-border-neutral-400 dark:nx-border-primary-100/10 contrast-more:dark:nx-border-neutral-400">
+          Subscribe
+        </h2>
         <h3 className="nx-font-semibold nx-tracking-tight nx-text-slate-900 dark:nx-text-slate-100 nx-mt-8 nx-mb-8 nx-text-2xl">
           First, Your Email?
         </h3>
@@ -68,7 +71,9 @@ const Subscribe = () => {
         <h3 className="nx-font-semibold nx-tracking-tight nx-text-slate-900 dark:nx-text-slate-100 nx-mt-8 nx-text-2xl">
           Can I send updates on what I'm working on?
         </h3>
-
+        <p className="nx-text-gray-700 dark:nx-text-neutral-300 nx-mt-2">
+          You don't need to select anything here, but I do send something extraordinary ;)
+        </p>
         <Cards>
           {[
             ['Yes, in English!', '5ebfb', '5ebfb430-82b5-47b8-b74b-c7b7d17bb97b'],
