@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Steps, Cards, Card } from 'nextra-theme-docs'
+import { Steps, Cards } from 'nextra-theme-docs'
 
 const Subscribe = () => {
   return (
@@ -54,7 +54,29 @@ const Subscribe = () => {
           ].map(([text, id, value]) => (
             <label
               key={id}
-              className="nextra-card nx-group nx-flex nx-items-start nx-overflow-hidden nx-rounded-lg nx-border nx-border-gray-200 nx-text-current nx-no-underline dark:nx-shadow-none hover:nx-shadow-gray-100 dark:hover:nx-shadow-none nx-shadow-gray-100 active:nx-shadow-sm active:nx-shadow-gray-200 nx-transition-all nx-duration-200 hover:nx-border-gray-300 nx-bg-transparent nx-shadow-sm dark:nx-border-neutral-800 hover:nx-bg-slate-50 hover:nx-shadow-md dark:hover:nx-border-neutral-700 dark:hover:nx-bg-neutral-900 language-card peer-checked:border-gray-900"
+              className="nextra-card nx-group nx-flex nx-items-start nx-overflow-hidden nx-rounded-lg nx-border nx-border-gray-200 nx-text-current nx-no-underline dark:nx-shadow-none hover:nx-shadow-gray-100 dark:hover:nx-shadow-none nx-shadow-gray-100 active:nx-shadow-sm active:nx-shadow-gray-200 nx-transition-all nx-duration-200 hover:nx-border-gray-300 nx-bg-transparent nx-shadow-sm dark:nx-border-neutral-800 hover:nx-bg-slate-50 hover:nx-shadow-md dark:hover:nx-border-neutral-700 dark:hover:nx-bg-neutral-900 language-card peer-checked:border-gray-900 nx-cursor-pointer"
+              htmlFor={id}
+            >
+              <input id={id} type="checkbox" name="l" value={value} className="nx-peer nx-sr-only" />
+              <span className="nx-flex nx-font-semibold nx-items-start nx-gap-2 nx-p-4 nx-text-gray-700 hover:nx-text-gray-900 dark:nx-text-neutral-200 dark:hover:nx-text-neutral-50 peer-checked:nx-text-gray-900">
+                {text}
+              </span>
+            </label>
+          ))}
+        </Cards>
+
+        <h3 className="nx-font-semibold nx-tracking-tight nx-text-slate-900 dark:nx-text-slate-100 nx-mt-8 nx-text-2xl">
+          Can I send updates on what I'm working on?
+        </h3>
+
+        <Cards>
+          {[
+            ['Yes, in English!', '5ebfb', '5ebfb430-82b5-47b8-b74b-c7b7d17bb97b'],
+            ['네, 한국어로요!', 'ed372', 'ed372c11-9f49-4d41-aecf-d8893bf48996'],
+          ].map(([text, id, value]) => (
+            <label
+              key={id}
+              className="nextra-card nx-group nx-flex nx-items-start nx-overflow-hidden nx-rounded-lg nx-border nx-border-gray-200 nx-text-current nx-no-underline dark:nx-shadow-none hover:nx-shadow-gray-100 dark:hover:nx-shadow-none nx-shadow-gray-100 active:nx-shadow-sm active:nx-shadow-gray-200 nx-transition-all nx-duration-200 hover:nx-border-gray-300 nx-bg-transparent nx-shadow-sm dark:nx-border-neutral-800 hover:nx-bg-slate-50 hover:nx-shadow-md dark:hover:nx-border-neutral-700 dark:hover:nx-bg-neutral-900 language-card peer-checked:border-gray-900 nx-cursor-pointer"
               htmlFor={id}
             >
               <input id={id} type="checkbox" name="l" value={value} className="nx-peer nx-sr-only" />
