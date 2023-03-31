@@ -53,6 +53,12 @@ if __name__ == "__main__":
         markdown = f.read()
     
     markdown = markdown.replace("import { Steps } from 'nextra-theme-docs'", "").replace("<Steps>", "").replace("</Steps>", "").replace("import CallToAction from '../../../components/CallToAction'", "").replace("<CallToAction />", "").replace('## '+format_date(today, format="long", locale="en"))
+
+    while "\n\n\n" in markdown:
+        markdown = markdown.replace("\n\n\n", "\n\n")
+    
+    markdown = markdown.strip()
+
     translator = deepl.Translator(os.getenv("DEEPL_API_KEY"))
     
     for lang in language:
