@@ -87,7 +87,7 @@ def find_today_newsletters(lang):
     if os.path.exists(filename):
         with open(filename, "r") as f:
             body = f.read()
-            title = format_date(today, format="long", locale=lang)
+            title = format_date(today, format="long", locale=lang) + " — hn.cho.sh/" + lang
             body = "\n".join(body.splitlines()[1:])
             body = body.replace("### ", "## ").replace("import { Steps } from 'nextra-theme-docs'", "").replace("<Steps>", "").replace("</Steps>", "").replace("import CallToAction from '../../../components/CallToAction'", "").replace("<CallToAction />", "")
             return [(title, body)]

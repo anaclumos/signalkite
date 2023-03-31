@@ -4,6 +4,7 @@ import os
 from dotenv import load_dotenv
 from datetime import datetime
 from pytz import timezone
+from babel.dates import format_date
 
 load_dotenv()
 
@@ -51,7 +52,7 @@ if __name__ == "__main__":
     with open(filename, "r") as f:
         markdown = f.read()
     
-    markdown = markdown.replace("import { Steps } from 'nextra-theme-docs'", "").replace("<Steps>", "").replace("</Steps>", "").replace("import CallToAction from '../../../components/CallToAction'", "").replace("<CallToAction />", "")
+    markdown = markdown.replace("import { Steps } from 'nextra-theme-docs'", "").replace("<Steps>", "").replace("</Steps>", "").replace("import CallToAction from '../../../components/CallToAction'", "").replace("<CallToAction />", "").replace('## '+format_date(today, format="long", locale="en"))
     translator = deepl.Translator(os.getenv("DEEPL_API_KEY"))
     
     for lang in language:
