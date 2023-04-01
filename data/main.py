@@ -44,6 +44,7 @@ def meta_json_hander():
         filename = f"pages/{today.strftime('%Y/%m')}/_meta.en.json"
         # sort in reverse alphabet order
         meta = {k: v for k, v in sorted(meta.items(), reverse=True)}
+        meta = {k: v for k, v in meta.items() if v}
         with open(filename, "w") as f:
             json.dump(meta, f)
     if os.path.exists(meta_year):
@@ -56,6 +57,7 @@ def meta_json_hander():
             meta[filename] = filename
         filename = f"pages/{today.strftime('%Y')}/_meta.en.json"
         meta = {k: v for k, v in sorted(meta.items(), reverse=True)}
+        meta = {k: v for k, v in meta.items() if v}
         with open(filename, "w") as f:
             json.dump(meta, f)
 
