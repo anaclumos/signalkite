@@ -46,7 +46,17 @@ class Story:
         return hash(self.title) + hash(self.url)
 
     def markdown(self):
-        prefix = f"- [{self.hn_title + ' (HN)' if self.hn_title else 'Hacker News'}]({self.hn_url})" + ", [Article]({self.url})\n" if self.hn_url and self.url else ""
-        return f"""### {self.title}\n\n{prefix}\n{self.summary}"""
+        subheading = (self.hn_title) if self.hn_title else ""
+        # if subheading does not end with punctuation, add a period
+        if subheading and subheading[-1] not in ".?!":
+            subheading += "."
+        suffix = f"[HN]({self.hn_url})" + f", [Article]({self.url})." if self.url else "."
+        return f"""
+### {self.title}
+
+**{subheading}**
+{self.summary}
+{suffix}
+"""
 
 Stories = list[Story]
