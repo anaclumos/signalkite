@@ -47,36 +47,37 @@ CONFIG = {
 }
 
 EMAIL_CTA = {
-    'bg': 'Хареса ли ви статията? Споделете я с техническите си приятели по света и в многоезичните форуми! 😄🌏🚀',
-    'cs': 'Líbil se vám článek? Podělte se o něj s kamarády techniky po celém světě a na vícejazyčných fórech! 😄🌏🚀',
-    'da': 'Elskede du artiklen? Del den med tech-venner verden over og i flersprogede fora! 😄🌏🚀',
-    'de': 'Hat Ihnen der Artikel gefallen? Teilen Sie ihn mit Technikfreunden weltweit und in mehrsprachigen Foren! 😄🌏🚀',
-    'el': 'Σας άρεσε το άρθρο; Μοιραστείτε το με φίλους τεχνολογίας σε όλο τον κόσμο και σε πολύγλωσσα φόρουμ! 😄🌏🚀',
-    'es': '¿Te ha gustado el artículo? Compártelo con tus amigos de la tecnología de todo el mundo y en foros multilingües. 😄🌏🚀',
-    'et': 'Armastasite artiklit? Jaga seda tehnikavendadega üle maailma ja mitmekeelsetes foorumites! 😄🌏🚀',
-    'en': 'Loved the article? Share it with tech pals worldwide and multilingual forums! 😄🌏🚀',
-    'fi': 'Rakastitko artikkelia? Jaa se tekniikkakavereiden kanssa maailmanlaajuisesti ja monikielisillä foorumeilla! 😄🌏🚀',
-    'fr': "Vous avez aimé l'article ? Partagez-le avec vos amis techniciens du monde entier et les forums multilingues ! 😄🌏🚀",
-    'hu': 'Tetszett a cikk? Oszd meg a tech haverokkal világszerte és a többnyelvű fórumokon! 😄🌏🚀',
-    'id': 'Anda menyukai artikel ini? Bagikan dengan teman-teman teknologi di seluruh dunia dan forum multibahasa! 😄🌏🚀',
-    'it': "Ti è piaciuto l'articolo? Condividilo con gli amici tecnologici di tutto il mondo e con i forum multilingue! 😄🌏🚀",
-    'ja': 'この記事を気に入りましたか？世界中の技術仲間や多言語フォーラムで共有しましょう！私たちのグローバルヒーローになりましょう！😄🌏🚀',
-    'ko': '기사가 마음에 드셨나요? 전 세계 기술 동료 및 다국어 포럼과 공유해주세요! 😄🌏🚀',
-    'lt': 'Patiko straipsnis? Pasidalykite juo su technikos bičiuliais visame pasaulyje ir daugiakalbiuose forumuose! 😄🌏🚀',
-    'lv': 'Patika raksts? Dalieties tajā ar tehnoloģiju draugiem visā pasaulē un daudzvalodu forumos! 😄🌏🚀',
-    'nl': 'Hield u van het artikel? Deel het met technische vrienden wereldwijd en meertalige forums! 😄🌏🚀',
-    'nb': 'Likte du artikkelen? Del den med tech-venner over hele verden og i flerspråklige fora! 😄🌏🚀',
-    'pl': 'Podobał Ci się ten artykuł? Podziel się nim z tech-przyjaciółmi na całym świecie i na wielojęzycznych forach! 😄🌏🚀',
-    'pt': 'Adorou o artigo? Partilhe-o com amigos técnicos de todo o mundo e fóruns multilingues! 😄🌏🚀',
-    'ro': 'Ți-a plăcut articolul? Împărtășiți-l cu prietenii de tehnologie din întreaga lume și pe forumurile multilingve! 😄🌏🚀',
-    'ru': 'Понравилась статья? Поделитесь ею с друзьями-техниками по всему миру и на многоязычных форумах! 😄🌏🚀',
-    'sk': 'Páčil sa vám článok? Podeľte sa oň s kamarátmi z technického sveta a viacjazyčných fór! 😄🌏🚀',
-    'sl': 'Ali vam je bil članek všeč? Delite ga s tehničnimi prijatelji po vsem svetu in na večjezičnih forumih! 😄🌏🚀',
-    'sv': 'Gillade du artikeln? Dela den med tekniska vänner världen över och i flerspråkiga forum! 😄🌏🚀',
-    'tr': 'Makaleyi beğendiniz mi? Dünya çapındaki teknoloji dostlarınızla ve çok dilli forumlarda paylaşın! 😄🌏🚀',
-    'uk': 'Сподобалася стаття? Поділіться нею з технічними друзями по всьому світу та на багатомовних форумах! 😄🌏🚀',
-    'zh': '喜欢这篇文章吗？与世界各地的技术伙伴和多语言论坛分享吧!😄🌏🚀'
+    "en": "This is hn.cho.sh, a project created to make fast tech news accessible to speakers of all languages around the world. Sharing this newsletter with your friends and colleagues will help this project grow. It's even better if you can recommend it to your foreign friends 🙊",
+    "bg": "Това е hn.cho.sh - проект, създаден, за да направи бързите технологични новини достъпни за хората, говорещи всички езици по света. Споделянето на този бюлетин с вашите приятели и колеги ще помогне за развитието на проекта. Още по-добре е, ако можете да го препоръчате на своите чуждестранни приятели 🙊",
+    "cs": "Toto je hn.cho.sh, projekt vytvořený s cílem zpřístupnit rychlé technologické zprávy mluvčím všech jazyků na celém světě. Sdílení tohoto zpravodaje s vašimi přáteli a kolegy pomůže tomuto projektu růst. Ještě lepší bude, když ho doporučíte svým zahraničním přátelům 🙊.",
+    "da": "Dette er hn.cho.sh, et projekt, der er skabt for at gøre hurtige teknologiske nyheder tilgængelige for talere af alle sprog i hele verden. Hvis du deler dette nyhedsbrev med dine venner og kolleger, vil det hjælpe projektet med at vokse. Det er endnu bedre, hvis du kan anbefale det til dine udenlandske venner 🙊",
+    "de": "Dies ist hn.cho.sh, ein Projekt, das schnelle technische Nachrichten für Sprecher aller Sprachen auf der ganzen Welt zugänglich machen soll. Wenn Sie diesen Newsletter mit Ihren Freunden und Kollegen teilen, wird dieses Projekt wachsen. Noch besser ist es, wenn Sie ihn Ihren ausländischen Freunden empfehlen können 🙊",
+    "el": "Αυτό είναι το hn.cho.sh, ένα έργο που δημιουργήθηκε για να κάνει τις γρήγορες τεχνολογικές ειδήσεις προσιτές σε ομιλητές όλων των γλωσσών σε όλο τον κόσμο. Μοιραστείτε αυτό το ενημερωτικό δελτίο με τους φίλους και τους συναδέλφους σας και θα βοηθήσετε αυτό το έργο να αναπτυχθεί. Είναι ακόμα καλύτερο αν μπορείτε να το συστήσετε στους ξένους φίλους σας 🙊.",
+    "es": "Esto es hn.cho.sh, un proyecto creado para hacer accesibles las noticias tecnológicas rápidas a hablantes de todas las lenguas del mundo. Compartir este boletín con tus amigos y colegas ayudará a que este proyecto crezca. Mejor aún si puedes recomendarlo a tus amigos extranjeros 🙊.",
+    "et": "See on hn.cho.sh, projekt, mis on loodud selleks, et teha kiired tehnoloogiauudised kättesaadavaks kõikide keelte kõnelejatele üle kogu maailma. Selle uudiskirja jagamine oma sõprade ja kolleegidega aitab sellel projektil kasvada. Veelgi parem on, kui saate seda oma välismaistele sõpradele soovitada 🙊.",
+    "fi": "Tämä on hn.cho.sh, hanke, joka on luotu tuomaan nopeat teknologiauutiset kaikkien kielten puhujien saataville ympäri maailmaa. Tämän uutiskirjeen jakaminen ystävillesi ja kollegoillesi auttaa tätä projektia kasvamaan. On vielä parempi, jos voit suositella sitä ulkomaalaisille ystävillesi 🙊.",
+    "fr": "Voici hn.cho.sh, un projet créé pour rendre l'actualité technologique rapide accessible aux locuteurs de toutes les langues à travers le monde. En partageant cette lettre d'information avec vos amis et collègues, vous aiderez ce projet à se développer. C'est encore mieux si vous pouvez la recommander à vos amis étrangers 🙊",
+    "hu": "Ez a hn.cho.sh, egy projekt, amelyet azért hoztak létre, hogy a gyors technológiai híreket a világ minden nyelvének beszélői számára elérhetővé tegye. Ha megosztod ezt a hírlevelet barátaiddal és kollégáiddal, az segíthet a projekt fejlődésében. Még jobb, ha külföldi barátaidnak is tudod ajánlani 🙊.",
+    "id": "Ini adalah hn.cho.sh, sebuah proyek yang dibuat untuk membuat berita teknologi cepat dapat diakses oleh para penutur semua bahasa di seluruh dunia. Membagikan buletin ini kepada teman dan kolega Anda akan membantu proyek ini berkembang. Lebih baik lagi jika Anda dapat merekomendasikannya kepada teman-teman Anda yang berada di luar negeri 🙊",
+    "it": "Questo è hn.cho.sh, un progetto creato per rendere accessibili le notizie tecnologiche veloci a chi parla tutte le lingue del mondo. Condividere questa newsletter con i vostri amici e colleghi aiuterà questo progetto a crescere. È ancora meglio se potete consigliarlo ai vostri amici stranieri 🙊",
+    "ja": "hn.cho.shは、世界中のあらゆる言語を話す人たちが、高速な技術ニュースにアクセスできるようにするために作られたプロジェクトです。このニュースレターをお友達や同僚と共有することで、このプロジェクトが成長することができます。外国人の友人にも勧めていただけると、さらにうれしいです🙊。",
+    "ko": "세상 모든 언어 화자들도 빠른 기술 뉴스를 접할 수 있도록 만든 프로젝트 hn.cho.sh 입니다. 친구 및 동료에게 이 뉴스레터를 공유해주시면 이 프로젝트가 성장하는 데 큰 도움이 됩니다. 외국인 친구에게 추천해주시면 더욱 좋습니다 🙊",
+    "lt": "Tai yra hn.cho.sh - projektas, sukurtas siekiant, kad greitos technologijų naujienos būtų prieinamos visų pasaulio kalbų vartotojams. Dalydamiesi šiuo naujienlaiškiu su savo draugais ir kolegomis padėsite šiam projektui augti. Dar geriau, jei galėsite jį rekomenduoti savo draugams užsieniečiams 🙊",
+    "lv": "Šis ir hn.cho.sh - projekts, kas izveidots, lai ātras tehnoloģiju ziņas būtu pieejamas visu pasaules valodu lietotājiem. Daloties ar šo jaunumu ar saviem draugiem un kolēģiem, palīdzēsiet šim projektam attīstīties. Vēl labāk, ja jūs to ieteiksiet saviem ārzemju draugiem 🙊.",
+    "nl": "Dit is hn.cho.sh, een project dat is opgezet om snel technieuws toegankelijk te maken voor sprekers van alle talen over de hele wereld. Het delen van deze nieuwsbrief met je vrienden en collega's zal dit project helpen groeien. Het is nog beter als je hem aanbeveelt aan je buitenlandse vrienden 🙊",
+    "nb": "Dette er hn.cho.sh, et prosjekt som er opprettet for å gjøre raske teknologinyheter tilgjengelig for alle språkbrukere over hele verden. Hvis du deler dette nyhetsbrevet med venner og kolleger, hjelper du prosjektet med å vokse. Det er enda bedre hvis du kan anbefale det til dine utenlandske venner 🙊.",
+    "pl": "To jest hn.cho.sh, projekt stworzony w celu udostępnienia szybkich wiadomości technologicznych osobom posługującym się wszystkimi językami na całym świecie. Dzielenie się tym newsletterem ze swoimi przyjaciółmi i kolegami pomoże temu projektowi się rozwijać. Jeszcze lepiej będzie, jeśli polecisz go swoim zagranicznym znajomym 🙊",
+    "pt": "Este é o hn.cho.sh, um projecto criado para tornar as notícias tecnológicas rápidas acessíveis a falantes de todas as línguas em todo o mundo. Partilhar este boletim informativo com os seus amigos e colegas ajudará a este projecto a crescer. É ainda melhor se o puder recomendar aos seus amigos estrangeiros 🙊",
+    "ro": "Acesta este hn.cho.sh, un proiect creat pentru a face știrile rapide din domeniul tehnologiei accesibile vorbitorilor de toate limbile din întreaga lume. Împărtășirea acestui buletin informativ cu prietenii și colegii dvs. va contribui la dezvoltarea acestui proiect. Este chiar mai bine dacă îl puteți recomanda prietenilor dvs. străini 🙊.",
+    "ru": "Это hn.cho.sh, проект, созданный для того, чтобы сделать новости быстрого технического прогресса доступными для носителей всех языков мира. Если вы поделитесь этой рассылкой со своими друзьями и коллегами, это поможет проекту развиваться. Будет еще лучше, если вы порекомендуете его своим иностранным друзьям 🙊.",
+    "sk": "Toto je hn.cho.sh, projekt vytvorený s cieľom sprístupniť rýchle technické správy používateľom všetkých jazykov na celom svete. Zdieľanie tohto spravodajcu s vašimi priateľmi a kolegami pomôže tomuto projektu rásť. Ešte lepšie bude, ak ho odporučíte svojim zahraničným priateľom 🙊",
+    "sl": "To je hn.cho.sh, projekt, ki je bil ustvarjen, da bi hitre tehnološke novice postale dostopne govorcem vseh jezikov po vsem svetu. Če boste te novice delili s svojimi prijatelji in sodelavci, boste pripomogli k rasti tega projekta. Še bolje bo, če ga boste priporočili svojim prijateljem iz tujine 🙊",
+    "sv": "Det här är hn.cho.sh, ett projekt som skapats för att göra snabba tekniska nyheter tillgängliga för talare av alla språk runt om i världen. Om du delar detta nyhetsbrev med dina vänner och kollegor hjälper du projektet att växa. Det är ännu bättre om du kan rekommendera det till dina utländska vänner 🙊.",
+    "tr": "Bu hn.cho.sh, hızlı teknoloji haberlerini dünyanın dört bir yanındaki tüm dilleri konuşanlar için erişilebilir hale getirmek için oluşturulmuş bir projedir. Bu bülteni arkadaşlarınızla ve meslektaşlarınızla paylaşmanız bu projenin büyümesine yardımcı olacaktır. Yabancı arkadaşlarınıza tavsiye edebilirseniz daha da iyi olur 🙊",
+    "uk": "Це hn.cho.sh, проект, створений для того, щоб зробити швидкі технологічні новини доступними для носіїв усіх мов світу. Якщо ви поділитеся цією розсилкою з друзями та колегами, це допоможе проекту розвиватися. Ще краще, якщо ви зможете порекомендувати його своїм іноземним друзям 🙊.",
+    "zh": "这是hn.cho.sh，一个为了让全世界所有语言的人都能获得快速科技新闻而创建的项目。与你的朋友和同事分享这份通讯将有助于这个项目的发展。如果你能把它推荐给你的外国朋友就更好了 🙊",
 }
+
 
 def get_campaigns():
     """Get all campaigns"""
@@ -87,9 +88,11 @@ def create_campaign(title, body, lang):
     """Create a new campaign"""
     utc = timezone("UTC")
     today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
-    next_hour = datetime.now().astimezone(utc).replace(minute=0, second=0, microsecond=0) + timedelta(minutes=CONFIG[lang] * 1 + 30)
+    next_hour = datetime.now().astimezone(utc).replace(minute=0, second=0, microsecond=0) + timedelta(
+        minutes=CONFIG[lang] * 1 + 30
+    )
 
-    url = 'https://hn.cho.sh/' + lang + '/' + today.strftime('%Y/%m/%d')
+    url = "https://hn.cho.sh/" + lang + "/" + today.strftime("%Y/%m/%d")
 
     md_link = f"""\n\n[hn.cho.sh/{lang}/{today.strftime('%Y/%m/%d')}]({url})\n\n"""
 
@@ -104,7 +107,7 @@ def create_campaign(title, body, lang):
             "type": "regular",
             "content_type": "markdown",
             "body": prefix + body,
-            "altbody": prefix +  body,
+            "altbody": prefix + body,
             "lists": [CONFIG[lang]],
             "send_at": f"{today.strftime('%Y-%m-%d')}T{next_hour.strftime('%H:%M:%S')}+00:00",
         },
@@ -125,7 +128,13 @@ def find_today_newsletters(lang):
         with open(filename, "r") as f:
             body = f.read()
             title = format_date(today, format="long", locale=lang) + " — hn.cho.sh/" + lang
-            body = body.replace("import { Steps } from 'nextra-theme-docs'", "").replace("<Steps>", "").replace("</Steps>", "").replace("import CallToAction from '../../../components/CallToAction'", "").replace("<CallToAction />", "")
+            body = (
+                body.replace("import { Steps } from 'nextra-theme-docs'", "")
+                .replace("<Steps>", "")
+                .replace("</Steps>", "")
+                .replace("import CallToAction from '../../../components/CallToAction'", "")
+                .replace("<CallToAction />", "")
+            )
             return [(title, body)]
 
 
