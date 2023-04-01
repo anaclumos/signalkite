@@ -14,6 +14,12 @@ I will give you the raw text content.
 You must provide a concise summary in mutually exclusive but collectively complete sentences.
 Please understand that some comments may include sarcasm, and you must figure out that it's not the central argument or factual.
 
+The text will start with an article, and then the about 20 top comments.
+The comments may digress.
+You must ignore the digression, and focus on the main points of the article,
+unless the digression is relevant to the article or article is unaccessible.
+Focus on the first part of the text, since those are the articles; the most important part.
+
 You must understand that the primary readers of this post are experts in the field, and they do not want to read the same thing they already know.
 You must consider this question: What is the most important thing people should know about this post? Why is this post special? Is there something new or exciting thing going on? Did something get released? Why is this post, out of all the posts on Hacker News, suddenly getting so much attention? What made such tech-savvy people suddenly interested in this post? Your job is to capture vital points that interest the readers.
 Do not repeat dull facts, such as 'The post is about a new technology'.

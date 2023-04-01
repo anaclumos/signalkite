@@ -39,6 +39,21 @@ def get_story(id: int, start: int, end: int) -> Story:
             print(f"- {story.title}")
     return story
 
+def get_top_hn_comments(id: int) -> list[str]:
+    global HN_STORY
+    with requests.get(HN_STORY.format(id=id)) as submission:
+        response = submission.json()
+        comments = response.get("kids", [])
+        answer = []
+        if comments:
+            for i in range(10):
+                sleep(1)
+                with requests.get(HN_STORY.format(id=comments[i])) as comment:
+                    response = comment.json()
+                    answer.append(response.get("text", ""))
+        return answer
+
+
 
 def get_best_stories(start: int, end: int) -> Stories:
     global HN_BEST_STORIES
@@ -60,11 +75,6 @@ def download_story(story: Story) -> Story:
     import bs4
 
     sleep(1)
-    try:
-        r = requests.get(story.hn_url, headers={"User-Agent": "Mozilla/5.0"})
-        story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
-    except Exception as e:
-        print(f"Failed to download HN comments from {story.title}, error: {e}")
     url = story.url
     if not url.startswith(TWITTER_URL) or url.startswith(TWITTER_SHORT_URL) or url.startswith(YT_SHORT_URL) or url.startswith(YT_URL):
         try:
@@ -73,6 +83,7 @@ def download_story(story: Story) -> Story:
             story.original_title = r.html.find("title", first=True).text if r.html else story.title
         except Exception as e:
             print(f"Failed to download main content from {story.title}, error: {e}")
+    story.content += get_top_hn_comments(story.id)
     story.content.replace("\n", "")
     return story
 
