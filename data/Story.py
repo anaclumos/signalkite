@@ -54,7 +54,7 @@ class Story:
         return f"""
 ### {self.title}
 
-**{subheading}**
+<strong>{subheading}</strong>
 {self.summary}
 {suffix}
 """
