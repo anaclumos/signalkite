@@ -1,19 +1,7 @@
 import React from 'react'
 import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
+import { useRouter } from 'next/router'
 
-const Head = () => {
-  const { frontMatter, title } = useConfig()
-  return (
-    <>
-      <title>{title}</title>
-      <meta name="description" content={frontMatter.description} />
-      <meta name="og:title" content={title} />
-      <meta name="og:description" content={frontMatter.description} />
-      <meta name="og:type" content="website" />
-      <meta name="og:url" content="https://hn.cho.sh" />
-    </>
-  )
-}
 
 const config: DocsThemeConfig = {
   logo: <strong>hn.cho.sh</strong>,
@@ -43,7 +31,19 @@ const config: DocsThemeConfig = {
       titleTemplate: '%s — hn.cho.sh',
     }
   },
-  head: <Head />,
+  head: () => {
+    let { asPath, defaultLocale, locale } = useRouter()
+    const { frontMatter } = useConfig()
+    const url = `https://hn.cho.sh/${locale === defaultLocale ? '' : locale}${asPath}`
+    return (
+      <>
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={frontMatter.title ?? 'hn.cho.sh'} />
+        <meta property="og:image" content={`/api/og?title=${frontMatter.title}&subheading=${frontMatter.subheading}`} />
+        <title>{frontMatter.title ?? 'hn.cho.sh'}</title>
+      </>
+    )
+  },
   themeSwitch: {
     useOptions() {
       return {

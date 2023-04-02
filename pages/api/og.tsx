@@ -28,8 +28,6 @@ export default function handler(req: NextRequest) {
             justifyContent: 'center',
             fontFamily: 'Inter, "Fluent Emoji"',
             fontSize: 80,
-            backgroundColor: 'white',
-            flexDirection: 'column',
             backgroundColor: '#c5daec',
             backgroundImage: 'linear-gradient(9, #c5daec 0%, #ffffff 80%)',
             letterSpacing: -3,
