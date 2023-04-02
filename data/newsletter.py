@@ -78,8 +78,6 @@ EMAIL_CTA = {
     "zh": "这里是hn.cho.sh，我们的使命是向全球各地的人提供最热门的科技新闻🌏。如果你把这份通讯传递给你的朋友，你将会给它带来蓬勃发展所需的动力🌱🚀。如果你能把它推荐给你的国际朋友就更好了🙊! 我们支持29种语言 💬",
 }
 
-text2 = {k: v + " " + text2[k] for k, v in text2.items()}
-
 
 def get_campaigns():
     """Get all campaigns"""

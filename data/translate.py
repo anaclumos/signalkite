@@ -64,6 +64,9 @@ if __name__ == "__main__":
     for lang in language:
         if lang['locale'] == 'en':
             continue
+        if os.path.exists(f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{lang['filename_locale']}.mdx"):
+            print(f"Translated to {lang['text']} already exists")
+            continue
         translated = translator.translate_text(markdown, target_lang=lang['locale'], source_lang='EN')
         translated = "import { Steps } from 'nextra-theme-docs'\n\nimport CallToAction from '../../../components/CallToAction'\n\n<CallToAction />\n\n<Steps>\n\n" '## '+format_date(today, format="long", locale=lang['filename_locale']) + str(translated) + "\n\n</Steps>"
         with open(f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{lang['filename_locale']}.mdx", "w") as f:
