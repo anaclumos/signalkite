@@ -1,0 +1,99 @@
+import { Steps } from 'nextra-theme-docs'
+
+import CallToAction from '../../../components/CallToAction'
+
+<CallToAction />
+
+<Steps>
+
+### ## 2 april 2023 Amazon Echo-enheter lagrar WiFi-lösenord i klartext, vilket gör dem sårbara för angrepp med fysisk åtkomst.
+
+**Alexa, vad är mitt wifi-lösenord?**
+Amazon Echo-enheter lagrar WiFi-lösenord i klartext, vilket gör det möjligt för angripare med fysisk åtkomst att relativt enkelt ta fram nätverkslösenord. Detta utgör en stor säkerhetsrisk för hotell eller företag som använder enheterna i sina interna eller privata trådlösa nätverk, eftersom angriparna får tillgång till all annan utrustning i nätverket och eventuellt bryter mot dataskyddslagen. Hashning av lösenord är en branschstandard, och för ett företag som har sålt sin hårdvara till miljontals människor är det helt oacceptabelt att inte kryptera dessa uppgifter. Enheten krypterar inte API-nycklarna för Spotify zeroconf- och eSDK-API:er. Fysisk säkerhet är viktigt när man utformar inbyggd hårdvara, och Amazon måste ta itu med den här frågan för att förhindra framtida säkerhetsöverträdelser.
+[HN](http://news.ycombinator.com/item?id=35399590), [Artikel](https://dragon863.github.io/blog/alexa.html).
+
+### Google Drive inför filgränser och stänger eventuellt av betalande kunder
+
+**Google Drive inför överraskande filgränser och stänger ute vissa användare.**
+Google Drive har infört en filbegränsning utan förvarning, vilket kan leda till att betalande kunder som är utestängda från nya filuppladdningar blir avstängda. Det plötsliga införandet av en filbegränsning finns inte med på vare sig Google One- eller Google Workspace-planens sidor och nämns inte heller i supportdokumenten. Det har också hindrat användarna från att utnyttja det lagringsutrymme de köpt, eftersom begränsningen hindrar dem från att använda utrymmet. Google Drive:s gräns på 5 miljoner filer anses varken acceptabel eller rimlig av många användare eftersom den inte finns dokumenterad någonstans, och kostnaden för att använda Google Workspace lagringsplan anses vara orimlig. Google hävdar att gränsen är en säkerhetsåtgärd för att förhindra missbruk av systemet som kan påverka dess stabilitet och säkerhet, men sådan kundkommunikation anses vara dålig.
+[HN](http://news.ycombinator.com/item?id=35397071), [Artikel](https://arstechnica.com/gadgets/2023/03/google-drive-does-a-surprise-rollout-of-file-limits-locking-out-some-users/).
+
+### Guide till logiska klockkonstruktioner för tillförlitlig ordnande av händelser i distribuerade system
+
+**Clocks and Causality - Ordering Events in Distributed Systems (2022).**
+Logiska klockor är viktiga för att ordna händelser i distribuerade system, med Lamport- och vektorklockor som populära konstruktioner. Lamportklockor ger stigande nummer inom en nod, medan vektorklockor spårar nod-ID:n och respektive händelse-ID:n för samtidiga händelsejämförelser. Dotted Vector Clock och Vector Timestamps optimerar kontrollerna av tidsstämplar och gör det möjligt att ordna händelser mellan noder. Versionsvektorer spårar dataversioner i lagringsnoder med flera ledare. Lamport Causal Clock fångar kausalitet men kräver mer utrymme och tidskomplexitet. Total Order kräver sekventiell ordningsföljd baserad på temporala och kausala relationer. Logiska klockor är viktiga i tillämpningar för gemensam redigering. Azure Time Sync använder PTP, medan AWS och Google Cloud använder NTP. I artikeln noteras begränsningarna med att försöka betrakta tid som absolut och vikten av händelseordning i banktransaktioner lyfts fram.
+[HN](http://news.ycombinator.com/item?id=35399603), [Artikel](https://www.exhypothesi.com/clocks-and-causality/).
+
+### Frankrikes 3034 km långa HexaTrek Trail är öppen för vandringar genom hela landet
+
+**Hexatrek: Den långväga vandringen i Frankrike.**
+Frankrikes 3034 km långa HexaTrek-led är nu öppen för vandring, som förbinder 14 nationalparker och korsar Rumäniens Via Transilvanica-led.
+[HN](http://news.ycombinator.com/item?id=35397051), [Artikel](https://en.hexatrek.com).
+
+### Utvecklaren Raph Levien flyttar från Rust till C++
+
+**Förflyttning från Rust till C++.**
+Utvecklaren Raph Levien meddelar att han har beslutat att flytta från Rust till C++ på grund av begränsningar hos Rust, t.ex. brist på valmöjligheter när det gäller byggsystem och långsamma innovationsframsteg, trots dess säkerhetsgarantier. Levien anser att han kan undvika säkerhetsproblem och att minnessäkerhetsbuggar inte är betydligt skadligare än andra buggar samt att C++ utvecklas snabbt för att bli säkrare. Levien betonar vikten av gemenskap och uttrycker oro över diskrimineringspolicyer och till synes överlägsna Rust-förespråkare. Artikeln är dock satirisk och vissa läsare uttrycker intresse för C++ framför Rust.
+[HN](http://news.ycombinator.com/item?id=35400047), [Artikel](https://raphlinus.github.io/rust/2023/04/01/rust-to-cpp.html).
+
+### Kurskamrat: Connecting Self-Learners Worldwide for Collaborative Online Learning (för att koppla samman självlärare över hela världen för samarbete på nätet).
+
+**Visa HN: Coursemate - anslut dig till andra självlärare.**
+Coursemate är en plattform för självlärare som kan ansluta och samarbeta om onlinekurser med andra i sitt eget land eller runt om i världen. Plattformen kan integreras med användarnas favoritkurser på nätet och tar mindre än en minut att installera. Vissa användare föreslår att Coursemate skulle kunna dra nytta av mer specifika inlärningsmål utöver det nuvarande fokuset på ämnen för frontend och backend. Dessutom skulle användarna vilja se fler gemenskapsexempel och möjligheter till mentorskap. Vissa användare föreslår också att man ska utöka filtrering efter ålder och land till att även tillåta filtrering efter intresse. Trots viss kritik är webbplatsen väl genomförd och enkel. Vissa användare uttrycker en önskan om en plattform för att få kontakt med experter som kan hjälpa till att förklara specifikt kursinnehåll.
+[HN](http://news.ycombinator.com/item?id=35398480), [Artikel](https://www.coursem8.com/).
+
+### Växter avger ljud när de är stressade, vilket öppnar nya dörrar för förståelse.
+
+**Ljud som växter under stress avger är luftburna och informativa.**
+Växter kan avge informativa luftburna ljud när de utsätts för stress, vilket öppnar nya vägar för att förstå deras samspel med miljön. Detta nya område för växtbioakustik introducerade potentialen för akustiska kommunikationer hos växter, som kan upptäckas av modeller för maskininlärning och som kan påverka jordbruket bortom traditionella signaler.
+[HN](http://news.ycombinator.com/item?id=35396156), [Artikel](<https://www.cell.com/cell/fulltext/S0092-8674(23)00262-3>).
+
+### Simulering av ett underjordiskt BBS-system från 1987: Chatt, spel och e-post
+
+**ChatGPT simulerar ett BBS-system från 1987.**
+Artikeln handlar om att simulera ett BBS-system från 1987, inklusive chatt, spel och e-post. Användarna kan skapa ett konto, läsa nyheter och dokumentation, visa textfiler och kommunicera med andra användare. Castle Quest, ett textbaserat spel, kan spelas på systemet. ShareGPT gör det möjligt att dela kodutdrag i konversationer. Den historiska korrektheten i ChatGPT:s resultat är tvivelaktig men intressant. En användare föreslår att man simulerar en BBS från 1987 med ytterligare funktioner. Artikeln ger en nostalgisk titt på teknik från det förflutna.
+[HN](http://news.ycombinator.com/item?id=35396165), [Artikel](https://sharegpt.com/c/ICZsSl7).
+
+### Google försenar avstängningen av Manifest V2 för Chrome-tillägg.
+
+**Påverkar ändringar i utfasningen av Manifest V2.**
+Google har skjutit upp alla experiment i januari för att stänga av Manifest V2 i förversionskanalerna av Chrome och ändringar av den presenterade symbolen i Chrome Webstore, och kommer att utvärdera alla milstolpar i efterföljande led. Utvecklare kommer att få tillräckligt med tid att uppdatera och testa sina tillägg efter lanseringen av dessa nya funktioner innan Manifest V2 stängs av. Googles åtagande att lansera Manifest V3 förväntas förbättra säkerheten, integriteten och prestandan för deras användare. Det fanns återkoppling från utvecklargemenskapen om svårigheterna med att använda Manifest V3, varav en del har åtgärdats, men det finns fortfarande förbättringar att göra och Google är fortfarande engagerad i övergången.
+[HN](http://news.ycombinator.com/item?id=35402698), [Artikel](https://groups.google.com/a/chromium.org/g/chromium-extensions/c/zQ77HkGmK9E/m/HjaaCIG-BQAJ).
+
+### Wine 8.5: Förbättrat vkd3d, WinRT-tema och felrättningar
+
+**Wine 8.5.**
+Wine version 8.5 kommer med förbättrad vkd3d, WinRT Theme och buggfixar, inklusive bättre felrapportering i IDL-kompilatorn, stöd för UIA_IsOffscreenPropertyId till MSAA-leverantörer och fullständig initialisering av i386 FPU-kontext på ARM64. Binära paket finns tillgängliga för olika distributioner, och källkoden finns tillgänglig direkt från git repository. Felrättningar inkluderar mscoree, imm32 och LDAP bind.
+[HN](http://news.ycombinator.com/item?id=35398643), [Artikel](https://www.winehq.org/announce/8.5).
+
+### CV först anställningsprocess: Exploaterande och ineffektiv
+
+**Den som lämnar in ett CV har redan förlorat.**
+Den traditionella rekryteringsprocessen med CV först är exploaterande och i slutändan ineffektiv, och arbetsgivarna använder den främst för att spara tid och sänka kostnaderna på den sökandes bekostnad. Man kan bortse från CV:n, och personliga rekommendationer och nätverkande är effektivare metoder för att få ett jobb, utan att behöva ta hänsyn till den bristfälliga och orättvisa processen. Akademisk rekrytering är otroligt demoraliserande och nepotism kan skapa etiska problem. Arbetssökande måste göra vad de kan för att kringgå systemet, men det är fortfarande nödvändigt att ta CV:n på allvar. I inlägget erbjuds verktyg för arbetssökande för att sticka ut, inklusive att skriva ett personligt brev eller använda ett AI-verktyg för att skriva det på två minuter.
+[HN](http://news.ycombinator.com/item?id=35397271), [Artikel](https://www.residentcontrarian.com/p/he-who-submits-a-resume-has-already).
+
+### Ex-SpaceX-anställda grundade dussintals rymdföretag och samlade in 3,6 miljarder dollar.
+
+**SpaceX alumner förgrenar sig och formar startup-ekonomin.**
+Tidigare SpaceX-anställda har grundat dussintals nya rymdföretag och samlat in 3,6 miljarder dollar för att driva på innovationen inom navigation i låg omloppsbana och leveranstjänster för nyttolast. Medgrundarna drar nytta av den gemenskap och den högrisktolerans som etablerades på SpaceX, och uppskjutningstjänsterna bidrar också till tekniska prototyper, maskiner och sändning av navigationssatelliter. Mjukvaruindustrin växer och tjänar det nystartade ekosystemet för rymdföretag. NASA och Boeing skulle kunna dra nytta av att främja en startup-kultur, eftersom äldre kod och oklarheter håller de etablerade företagen tillbaka. Möjligheterna inom rymdforskningen ger likviditet på marknaden och investerare får miljoner för riskfyllda månskjutningar. Vissa kommentarer menar att artikeln känns som ett pressmeddelande.
+[HN](http://news.ycombinator.com/item?id=35404823), [Artikel](https://interactive.satellitetoday.com/via/april-2023/how-spacex-alums-are-branching-out-and-shaping-the-startup-economy/).
+
+### SpaceX:s Starship flyttas till uppskjutningsplatsen, uppskjutning eventuellt den 10 april.
+
+**SpaceX flyttar Starship till uppskjutningsplatsen, och uppskjutningen kan vara bara några dagar bort.**
+SpaceX har flyttat sitt Starship till en uppskjutningsplats i södra Texas, som kan vara redo för uppskjutning redan den 10 april, i väntan på FAA-tillstånd. Den gigantiska Super Heavy-raketen är avsedd att tjäna NASA som en månlandare för Artemis månuppdrag. SpaceX har investerat över en miljard dollar i sitt start- och fångsttorn för att stödja Starship och Super Heavy, som man har varit mer försiktig med att utveckla vid sin anläggning i South Texas. Om detta lyckas skulle det kunna göra låg omloppsbana mer lättillgängligt för yrkesverksamma.
+[HN](http://news.ycombinator.com/item?id=35405030), [Artikel](https://arstechnica.com/science/2023/04/spacex-moves-starship-to-launch-site-and-liftoff-could-be-just-days-away/).
+
+### "ccurl.sh" gör det möjligt för cURL att använda Chrome-cookies på ett överskådligt sätt.
+
+**Visa HN: Använd cookies från Chrome (CDP) i cURL utan att kopiera och klistra in.**
+'ccurl.sh" är ett bash-skript som gör det möjligt för cURL att använda Chrome-cookies utan att behöva använda ett GUI-verktyg som Postman, genom att använda Chrome DevTools-protokollet för att dumpa cookies från en specifik flik i den lokala Chrome-instansen i rubriken för ett cURL-kommando och undvika att cookies läcker ut i skalets historikfil; Skriptet kräver bash, websocat och jq för att köras, och en flik med de cookies som ska användas ska öppnas i Chrome, som ska startas med "google-chrome-stable --remote-debugging-port=9222", och kan installeras genom att kopiera skriptet till "/usr/bin/ccurl" och göra det körbart.
+[HN](http://news.ycombinator.com/item?id=35399218), [Artikel](https://github.com/fipso/ccurl.sh).
+
+### MIT:s kurs om RNN och transformatorer för djup inlärning
+
+**MIT 6.S191: Recurrent Neural Networks, Transformers, and Attention.**
+MIT:s kurs 6.S191 behandlar återkommande neurala nätverk (RNN), transformatorer och uppmärksamhet för djupinlärning, som visas på YouTube. Kommentarerna till videon sträcker sig från att ifrågasätta konventionerna för namngivning av parametrar till att be om rekommendationer om var man kan lära sig neurala nätverk och grunderna för djupinlärning. Kursens användning av TensorFlow och uppladdningen av videorna till enskilda personalmedlemmars YouTube-kanaler diskuteras också.
+[HN](http://news.ycombinator.com/item?id=35405338), [Artikel](https://www.youtube.com/watch?v=ySEx_Bqxvvo).
+
+</Steps>
