@@ -21,7 +21,7 @@ CONCURRENT = 1
 
 def get_story(id: int, start: int, end: int) -> Story:
     global HN_STORY
-    sleep(1)
+    sleep(0.1)
     with requests.get(HN_STORY.format(id=id)) as submission:
         response = submission.json()
         story = Story(
@@ -45,10 +45,12 @@ def get_top_hn_comments(id: int) -> list[str]:
         response = submission.json()
         comments = response.get("kids", [])
         answer = []
+        print(f"Downloading {min(10, len(comments))} comments")
         if comments:
-            for i in range(10):
+            for i in range(min(10, len(comments))):
                 sleep(1)
                 with requests.get(HN_STORY.format(id=comments[i])) as comment:
+                    print(f"Downloading comment {i + 1}/{min(10, len(comments))}")
                     response = comment.json()
                     answer.append(response.get("text", ""))
         return answer
@@ -80,7 +82,8 @@ def download_story(story: Story) -> Story:
         try:
             r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
             story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
-            story.original_title = r.html.find("title", first=True).text if r.html else story.title
+            if r.html:
+                story.original_title = r.html.find("title", first=True).text or story.title
         except Exception as e:
             print(f"Failed to download main content from {story.title}, error: {e}")
     story.content += str(get_top_hn_comments(story.id))
