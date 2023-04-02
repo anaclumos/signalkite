@@ -70,7 +70,7 @@ def get_best_stories(start: int, end: int) -> Stories:
     pool.join()
 
     stories = Stories([story for story in stories if start <= story.timestamp <= end])
-    return stories[:15] # Only return the first few stories... DeepL is so expensive
+    return stories[:20] # Only return the first few stories... DeepL is so expensive
 
 
 def download_story(story: Story) -> Story:
