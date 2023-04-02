@@ -10,10 +10,10 @@ export default function handler(req: NextRequest) {
     const { searchParams } = new URL(req.url)
     const hasTitle = searchParams.has('title')
     const title = hasTitle
-      ? searchParams.get('title')?.slice(0, 100)
+      ? searchParams.get('title')?.slice(0, 150)
       : 'The Latest Tech News 🗞️ in Your Language 💬 in Your Inbox 📭'
 
-    const hasSubheading = searchParams.get('subheading')?.slice(0, 100)
+    const hasSubheading = searchParams.get('subheading')?.slice(0, 150)
     const subheading = hasSubheading ? searchParams.get('subheading') : 'hn.cho.sh'
 
     return new ImageResponse(
@@ -27,10 +27,11 @@ export default function handler(req: NextRequest) {
             padding: '20px 150px',
             justifyContent: 'center',
             fontFamily: 'Inter, "Fluent Emoji"',
-            fontSize: 80,
+            fontSize: 60,
             backgroundColor: '#c5daec',
             backgroundImage: 'linear-gradient(9, #c5daec 0%, #ffffff 80%)',
             letterSpacing: -3,
+            lineHeight: 1.2,
             fontWeight: 900,
             wordWrap: 'break-word',
             wordBreak: 'keep-all',
@@ -38,7 +39,7 @@ export default function handler(req: NextRequest) {
         >
           <div
             style={{
-              fontSize: 50,
+              fontSize: 40,
               color: 'gray',
               margin: '20px 0',
             }}
