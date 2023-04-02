@@ -52,6 +52,8 @@ if __name__ == "__main__":
                     "️": "",
                     "‍": "",
                     "  ": " ",
+                    "### ## ": "### ",
+                    "\*": "*",
                     " | Hacker News": "",
                     " - The New York Times": "",
                     " | The New Yorker": "",

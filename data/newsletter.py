@@ -89,7 +89,7 @@ def create_campaign(title, body, lang):
     utc = timezone("UTC")
     today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
     next_hour = datetime.now().astimezone(utc).replace(minute=0, second=0, microsecond=0) + timedelta(
-        minutes=CONFIG[lang] * 1 + 30
+        minutes=CONFIG[lang] * 1 + 60
     )
 
     url = "https://hn.cho.sh/" + lang + "/" + today.strftime("%Y/%m/%d")
@@ -112,6 +112,7 @@ def create_campaign(title, body, lang):
             "send_at": f"{today.strftime('%Y-%m-%d')}T{next_hour.strftime('%H:%M:%S')}+00:00",
         },
     ).json()
+    print(f"{today.strftime('%Y-%m-%d')}T{next_hour.strftime('%H:%M:%S')}+00:00")
     requests.put(
         server + "/" + str(res["data"]["id"]) + "/status",
         auth=(username, password),
