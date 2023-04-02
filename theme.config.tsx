@@ -2,7 +2,6 @@ import React from 'react'
 import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 
-
 const config: DocsThemeConfig = {
   logo: <strong>hn.cho.sh</strong>,
   project: {
@@ -45,7 +44,10 @@ const config: DocsThemeConfig = {
         <title>{title ?? 'hn.cho.sh'}</title>
         <meta property="og:url" content={url} />
         <meta property="og:title" content={title ?? 'hn.cho.sh'} />
-        <meta property="og:image" content={`/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(subheading)}`} />
+        <meta
+          property="og:image"
+          content={`/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(subheading)}`}
+        />
       </>
     )
   },
