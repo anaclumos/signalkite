@@ -16,7 +16,7 @@ TWITTER_URL = "https://twitter.com/"
 TWITTER_SHORT_URL = "https://t.co/"
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 OPENAI_TOKEN_THRESHOLD = 2048  # It's actually 4096, but we want to be safe
-CONCURRENT = 1
+CONCURRENT = 2
 
 
 def get_story(id: int, start: int, end: int) -> Story:
@@ -82,8 +82,6 @@ def download_story(story: Story) -> Story:
         try:
             r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
             story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
-            if r.html:
-                story.original_title = r.html.find("title", first=True).text or story.title
         except Exception as e:
             print(f"Failed to download main content from {story.title}, error: {e}")
     story.content += str(get_top_hn_comments(story.id))
