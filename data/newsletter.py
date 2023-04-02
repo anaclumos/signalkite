@@ -88,8 +88,8 @@ def create_campaign(title, body, lang):
     """Create a new campaign"""
     utc = timezone("UTC")
     today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
-    next_hour = datetime.now().astimezone(utc).replace(minute=0, second=0, microsecond=0) + timedelta(
-        minutes=CONFIG[lang] * 1 + 60
+    next_hour = datetime.now().astimezone(utc) + timedelta(
+        minutes=CONFIG[lang] * 2 + 20
     )
 
     url = "https://hn.cho.sh/" + lang + "/" + today.strftime("%Y/%m/%d")
