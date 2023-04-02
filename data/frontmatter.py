@@ -1,13 +1,7 @@
-# ---
-# title: 
-# subtitle:
-# ---
-
-
-# for all files in pages
 import os
 import frontmatter
 from babel.dates import format_date
+from datetime import datetime
 
 all_files = os.listdir('pages')
 
@@ -20,36 +14,31 @@ for file in all_files:
 for file in all_files:
     # if file is a markdown file
     if file.endswith('.mdx'):
-        # open file
         with open('pages/' + file, 'r') as f:
-            # read file
             lines = f.readlines()
-            # if file has frontmatter
             post = frontmatter.load(f)
             if post.metadata:
-                # if file has title
-                if 'title' in post.metadata:
-                    # if file has subtitle
-                    if 'subtitle' in post.metadata:
-                        print('File ' + file + ' has frontmatter and title and subtitle')
-                    else:
-                        print('File ' + file + ' has frontmatter and title but no subtitle')
-                else:
-                    print('File ' + file + ' has frontmatter but no title')    
+                continue
             else:
                 date = file.split('.')[0]
+                if len(date.split('/')) != 3:
+                    print('File ' + file + ' has no frontmatter, but the date is not in YYYY/MM/DD format')
+                    continue
                 locale = file.split('.')[1]
-                subtitle = format_date(date, format='long', locale=locale)
-                # find the first line with ###
+                day = datetime.strptime(date, '%Y/%m/%d')
+                subtitle = format_date(day, format='long', locale=locale)
                 title = ""
                 for i, line in enumerate(lines):
                     if line.startswith('###'):
                         title = line.replace('###', '').strip()
                         break
                 # write frontmatter
-                post = frontmatter.Post(title=title, subtitle=subtitle)
+                title = title.split('](')[0]
+                title = title.replace('[', '')
+                post.metadata['top_news'] = title
+                post.metadata['localized_date'] = subtitle
                 with open('pages/' + file, 'w') as f:
-                    frontmatter.dump(post, f)
+                    f.write(frontmatter.dumps(post) + '\n\n' + ''.join(lines))
                 print('File ' + file + ' has no frontmatter, added title and subtitle')
-                
+
 

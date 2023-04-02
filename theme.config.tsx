@@ -26,21 +26,18 @@ const config: DocsThemeConfig = {
   toc: {
     float: true,
   },
-  useNextSeoProps() {
-    return {
-      titleTemplate: '%s — hn.cho.sh',
-    }
-  },
   head: () => {
     let { asPath, defaultLocale, locale } = useRouter()
     const { frontMatter } = useConfig()
     const url = `https://hn.cho.sh/${locale === defaultLocale ? '' : locale}${asPath}`
+    let title = frontMatter.top_news ?? 'The Latest Tech News 🗞️ in Your Language 💬 in Your Inbox 📭'
+    let subheading = frontMatter.localized_date ?? 'hn.cho.sh'
     return (
       <>
         <meta property="og:url" content={url} />
-        <meta property="og:title" content={frontMatter.title ?? 'hn.cho.sh'} />
-        <meta property="og:image" content={`/api/og?title=${frontMatter.title}&subheading=${frontMatter.subheading}`} />
-        <title>{frontMatter.title ?? 'hn.cho.sh'}</title>
+        <meta property="og:title" content={title ?? 'hn.cho.sh'} />
+        <meta property="og:image" content={`/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(subheading)}`} />
+        <title>{title ?? 'hn.cho.sh'}</title>
       </>
     )
   },
