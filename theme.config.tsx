@@ -26,6 +26,14 @@ const config: DocsThemeConfig = {
   toc: {
     float: true,
   },
+  // seo
+  useNextSeoProps() {
+    const { frontMatter } = useConfig()
+    let title = frontMatter.top_news ?? 'The Latest Tech News 🗞️ in Your Language 💬 in Your Inbox 📭'
+    return {
+      titleTemplate: `${title} — hn.cho.sh`,
+    }
+  },
   head: () => {
     let { asPath, defaultLocale, locale } = useRouter()
     const { frontMatter } = useConfig()
@@ -34,10 +42,10 @@ const config: DocsThemeConfig = {
     let subheading = frontMatter.localized_date ?? 'hn.cho.sh'
     return (
       <>
+        <title>{title ?? 'hn.cho.sh'}</title>
         <meta property="og:url" content={url} />
         <meta property="og:title" content={title ?? 'hn.cho.sh'} />
         <meta property="og:image" content={`/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(subheading)}`} />
-        <title>{title ?? 'hn.cho.sh'}</title>
       </>
     )
   },
