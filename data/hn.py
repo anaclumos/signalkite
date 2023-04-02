@@ -83,7 +83,7 @@ def download_story(story: Story) -> Story:
             story.original_title = r.html.find("title", first=True).text if r.html else story.title
         except Exception as e:
             print(f"Failed to download main content from {story.title}, error: {e}")
-    story.content += get_top_hn_comments(story.id)
+    story.content += str(get_top_hn_comments(story.id))
     story.content.replace("\n", "")
     return story
 
