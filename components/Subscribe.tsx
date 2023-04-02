@@ -275,7 +275,7 @@ const Subscribe = () => {
         <h3 className="nx-font-semibold nx-tracking-tight nx-text-slate-900 dark:nx-text-slate-100 nx-mt-8 nx-text-2xl">
           {i18n.languageQuestion[language]}
         </h3>
-        <p className="nx-text-gray-700 dark:nx-text-neutral-300 nx-mt-2">
+        <p className="nx-text-gray-700 dark:nx-text-neutral-500 nx-mt-2">
           {i18n.languageQuestionDescription[language]}
         </p>
         <Cards>
@@ -326,7 +326,7 @@ const Subscribe = () => {
         <h3 className="nx-font-semibold nx-tracking-tight nx-text-slate-900 dark:nx-text-slate-100 nx-mt-8 nx-text-2xl">
           {i18n.personalNewsletterQuestion[language]}
         </h3>
-        <p className="nx-text-gray-700 dark:nx-text-neutral-300 nx-mt-2">
+        <p className="nx-text-gray-700 dark:nx-text-neutral-500 nx-mt-2">
           {i18n.personalNewsletterQuestionDescription[language]}
         </p>
         <Cards>
