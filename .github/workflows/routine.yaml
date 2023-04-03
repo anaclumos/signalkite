@@ -65,12 +65,6 @@ jobs:
         uses: Adzz/jest_test_action@v2.0.0
         with:
             command: prettier
-      - name: Schedule Newsletter
-        run: python3 data/newsletter.py
-        env:
-          NEWSLETTERS_CHO_SH_USERNAME: ${{ secrets.NEWSLETTERS_CHO_SH_USERNAME }}
-          NEWSLETTERS_CHO_SH_PASSWORD: ${{ secrets.NEWSLETTERS_CHO_SH_PASSWORD }}
-          RESEND_KEY: ${{ secrets.RESEND_KEY }}
       - name: Write Frontmatter
         run: python3 data/frontmatter_inject.py
       - name: Sanitize news
@@ -90,4 +84,10 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
+      - name: Schedule Newsletter
+        run: python3 data/newsletter.py
+        env:
+          NEWSLETTERS_CHO_SH_USERNAME: ${{ secrets.NEWSLETTERS_CHO_SH_USERNAME }}
+          NEWSLETTERS_CHO_SH_PASSWORD: ${{ secrets.NEWSLETTERS_CHO_SH_PASSWORD }}
+          RESEND_KEY: ${{ secrets.RESEND_KEY }}
 
