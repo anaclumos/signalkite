@@ -24,20 +24,20 @@ def get_story(id: int, start: int, end: int) -> Story:
     sleep(0.1)
     with requests.get(HN_STORY.format(id=id)) as submission:
         response = submission.json()
-        story = Story(
-            id=id,
-            timestamp=int(response.get("time", 0)),
-            title=response["title"],
-            url=response.get("url", ""),
-            hn_url=f"http://news.ycombinator.com/item?id={id}",
-        )
+        story = Story()
+        story.id = id
+        story.timestamp = int(response.get("time", 0))
+        story.title = response["title"]
+        story.url = response.get("url", "")
+        story.hn_url = f"http://news.ycombinator.com/item?id={id}"
         story.original_title = response["title"]
         story.hn_title = response["title"]
+        story.score = response.get("score", 0)
         if start <= story.timestamp <= end:
             print(f"+ {story.title}")
         else:
             print(f"- {story.title}")
-    return story
+        return story
 
 
 def get_top_hn_comments(id: int) -> list[str]:
@@ -68,9 +68,9 @@ def get_best_stories(start: int, end: int) -> Stories:
     stories = pool.starmap(get_story, [(id, start, end) for id in submissions])
     pool.close()
     pool.join()
-
     stories = Stories([story for story in stories if start <= story.timestamp <= end])
-    return stories[:20]  # Only return the first few stories... DeepL is so expensive
+    stories.sort(key=lambda x: x.score, reverse=True)
+    return stories[:20]  # Only return the top few stories... DeepL is so expensive
 
 
 def download_story(story: Story) -> Story:

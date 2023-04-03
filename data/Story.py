@@ -12,6 +12,7 @@ class Story:
     hn_url = ""
     content = ""
     summary = ""
+    score = 0
 
     def __init__(
         self, id=id, timestamp=timestamp, title=title, url=url, hn_url=hn_url, content=content, summary=summary
@@ -35,6 +36,7 @@ class Story:
         summary=summary,
         hn_title=hn_title,
         original_title=original_title,
+        score=score,
     ):
         self.id = id
         self.timestamp = timestamp
@@ -45,6 +47,7 @@ class Story:
         self.summary = summary
         self.hn_title = hn_title
         self.original_title = original_title
+        self.score = score
 
     def __str__(self):
         return f"Title: {self.title}, URL: {self.url}"
