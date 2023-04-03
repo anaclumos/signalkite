@@ -6,6 +6,7 @@ import json
 import os
 from babel.dates import format_date
 
+
 def save_markdown(stories, locale):
     utc = timezone("UTC")
     today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
@@ -13,7 +14,12 @@ def save_markdown(stories, locale):
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w") as f:
         os.makedirs(os.path.dirname(filename), exist_ok=True)
-        f.write("\n\nimport { Steps } from 'nextra-theme-docs'\n\nimport CallToAction from '../../../components/CallToAction'\n\n<CallToAction />\n\n<Steps>\n\n"+"## " + format_date(today, format="long", locale=locale) + "\n\n")
+        f.write(
+            "\n\nimport { Steps } from 'nextra-theme-docs'\n\nimport CallToAction from '../../../components/CallToAction'\n\n<CallToAction />\n\n<Steps>\n\n"
+            + "## "
+            + format_date(today, format="long", locale=locale)
+            + "\n\n"
+        )
         for story in stories:
             f.write(f"{story.markdown()}\n\n")
         f.write("</Steps>")
@@ -73,7 +79,6 @@ if __name__ == "__main__":
     if os.path.exists(filename):
         with open(filename, "r") as f:
             data = json.load(f)
-            print(data)
             stories = json_to_stories(data)
     else:
         stories = get_best_stories(start, end)

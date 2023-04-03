@@ -11,9 +11,9 @@ for file in all_files:
             all_files.append(file + "/" + subfile)
 
 for file in all_files:
-    # if file is a markdown file if file.endswith(".mdx"):
-    # skip if file is a directory
     if os.path.isdir("pages/" + file):
+        continue
+    if not file.endswith(".mdx"):
         continue
     with open("pages/" + file, "r") as f:
         lines = f.readlines()
