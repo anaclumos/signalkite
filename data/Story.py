@@ -59,15 +59,11 @@ class Story:
         return hash(self.title) + hash(self.url)
 
     def markdown(self):
-        subheading = (self.hn_title) if self.hn_title else ""
-        # if subheading does not end with punctuation, add a period
-        if subheading and subheading[-1] not in ".?!":
-            subheading += "."
+        title = (self.hn_title) if self.hn_title else self.title
         suffix = f"[HN]({self.hn_url})" + f", [Article]({self.url})." if self.url else "."
         return f"""
-### {self.title}
+### {title}
 
-{subheading}
 {self.summary}
 {suffix}
 

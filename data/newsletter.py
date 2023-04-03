@@ -1,6 +1,7 @@
 import requests
 from datetime import datetime, timedelta
 import os
+import frontmatter
 from pytz import timezone
 from dotenv import load_dotenv
 from resend import Resend
@@ -88,9 +89,7 @@ def create_campaign(title, body, lang):
     """Create a new campaign"""
     utc = timezone("UTC")
     today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
-    next_hour = datetime.now().astimezone(utc) + timedelta(
-        minutes=CONFIG[lang] * 2 + 20
-    )
+    next_hour = datetime.now().astimezone(utc) + timedelta(minutes=CONFIG[lang] * 2 + 20)
 
     url = "https://hn.cho.sh/" + lang + "/" + today.strftime("%Y/%m/%d")
 
@@ -127,8 +126,9 @@ def find_today_newsletters(lang):
     filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{lang}.mdx"
     if os.path.exists(filename):
         with open(filename, "r") as f:
-            body = f.read()
-            title = format_date(today, format="long", locale=lang) + " — hn.cho.sh/" + lang
+            post = frontmatter.load(f)
+            title = post.metadata["top_news"] or format_date(today, format="long", locale=lang) + " — hn.cho.sh/" + lang
+            body = post.content
             body = (
                 body.replace("import { Steps } from 'nextra-theme-docs'", "")
                 .replace("<Steps>", "")
