@@ -104,12 +104,6 @@ Text: {text}
 
 def title_format(title):
     title = title.strip()
-    if title[-1] == ".":
-        title = title[:-1]
-    if title[0] == '"' and title[-1] == '"':
-        title = title[1:-1]
-    if title[0] == "'" and title[-1] == "'":
-        title = title[1:-1]
     title = title.replace("’", "'")
     title = title.replace("“", '"')
     title = title.replace("”", '"')
@@ -117,6 +111,12 @@ def title_format(title):
     title = title.replace(" and ", " & ")
     title = title.replace(" And ", " & ")
     title = title.replace(" AND ", " & ")
+    if title[-1] == ".":
+        title = title[:-1]
+    if title[0] == '"' and title[-1] == '"':
+        title = title[1:-1]
+    if title[0] == "'" and title[-1] == "'":
+        title = title[1:-1]
     return title
 
 

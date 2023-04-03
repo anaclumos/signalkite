@@ -189,6 +189,7 @@ def schedule_newsletter(lang):
                 if title in campaign["name"]:
                     collect_notification("Duplicate... ", title)
                     duplicate = True
+                    break
             if not duplicate:
                 collect_notification("Scheduling... ", title)
                 create_campaign(title, post, lang)

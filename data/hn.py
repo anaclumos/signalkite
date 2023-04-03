@@ -39,6 +39,7 @@ def get_story(id: int, start: int, end: int) -> Story:
             print(f"- {story.title}")
     return story
 
+
 def get_top_hn_comments(id: int) -> list[str]:
     global HN_STORY
     with requests.get(HN_STORY.format(id=id)) as submission:
@@ -56,7 +57,6 @@ def get_top_hn_comments(id: int) -> list[str]:
         return answer
 
 
-
 def get_best_stories(start: int, end: int) -> Stories:
     global HN_BEST_STORIES
     global HN_STORY
@@ -70,7 +70,7 @@ def get_best_stories(start: int, end: int) -> Stories:
     pool.join()
 
     stories = Stories([story for story in stories if start <= story.timestamp <= end])
-    return stories[:20] # Only return the first few stories... DeepL is so expensive
+    return stories[:20]  # Only return the first few stories... DeepL is so expensive
 
 
 def download_story(story: Story) -> Story:
@@ -78,7 +78,12 @@ def download_story(story: Story) -> Story:
 
     sleep(1)
     url = story.url
-    if not url.startswith(TWITTER_URL) or url.startswith(TWITTER_SHORT_URL) or url.startswith(YT_SHORT_URL) or url.startswith(YT_URL):
+    if (
+        not url.startswith(TWITTER_URL)
+        or url.startswith(TWITTER_SHORT_URL)
+        or url.startswith(YT_SHORT_URL)
+        or url.startswith(YT_URL)
+    ):
         try:
             r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
             story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
@@ -107,7 +112,7 @@ def summarize_story(story: Story) -> Story:
     while len(story.content.split()) > OPENAI_TOKEN_THRESHOLD:
         print(f"Story '{story.title}' is too long, shortening {len(story.content.split())} tokens")
         story.content = shorten(story.content, OPENAI_TOKEN_THRESHOLD, title=story.title)
-    story.title = get_title(story.title, story.content)
+    story.title = title_format(story.title)
     story.summary = bulletpoint_summarize(story.title, story.content)
     return story
 
