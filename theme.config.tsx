@@ -3,7 +3,7 @@ import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 
 const config: DocsThemeConfig = {
-  logo: <strong>hn.cho.sh</strong>,
+  logo: <><strong>hn.cho.sh</strong><sup>beta</sup></>,
   project: {
     link: 'https://github.com/anaclumos/hn.cho.sh',
   },
