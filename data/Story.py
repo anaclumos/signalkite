@@ -13,7 +13,9 @@ class Story:
     content = ""
     summary = ""
 
-    def __init__(self, id=id, timestamp=timestamp, title=title, url=url, hn_url=hn_url, content=content, summary=summary):
+    def __init__(
+        self, id=id, timestamp=timestamp, title=title, url=url, hn_url=hn_url, content=content, summary=summary
+    ):
         self.id = id
         self.timestamp = timestamp
         self.title = title
@@ -22,7 +24,18 @@ class Story:
         self.content = content
         self.summary = summary
 
-    def __init__(self, id=id, timestamp=timestamp, title=title, url=url, hn_url=hn_url, content=content, summary=summary, hn_title=hn_title, original_title=original_title):
+    def __init__(
+        self,
+        id=id,
+        timestamp=timestamp,
+        title=title,
+        url=url,
+        hn_url=hn_url,
+        content=content,
+        summary=summary,
+        hn_title=hn_title,
+        original_title=original_title,
+    ):
         self.id = id
         self.timestamp = timestamp
         self.title = title
@@ -54,9 +67,11 @@ class Story:
         return f"""
 ### {self.title}
 
-<strong>{subheading}</strong>
+{subheading}
 {self.summary}
 {suffix}
+
 """
+
 
 Stories = list[Story]
