@@ -35,26 +35,7 @@ def get_story(id: int, start: int, end: int) -> Story:
         story.score = response.get("score", 0)
         if start <= story.timestamp <= end:
             print(f"+ {story.title}")
-        else:
-            print(f"- {story.title}")
         return story
-
-
-def get_top_hn_comments(id: int) -> list[str]:
-    global HN_STORY
-    with requests.get(HN_STORY.format(id=id)) as submission:
-        response = submission.json()
-        comments = response.get("kids", [])
-        answer = []
-        print(f"Downloading {min(10, len(comments))} comments")
-        if comments:
-            for i in range(min(10, len(comments))):
-                sleep(1)
-                with requests.get(HN_STORY.format(id=comments[i])) as comment:
-                    print(f"Downloading comment {i + 1}/{min(10, len(comments))}")
-                    response = comment.json()
-                    answer.append(response.get("text", ""))
-        return answer
 
 
 def get_best_stories(start: int, end: int) -> Stories:
@@ -89,8 +70,13 @@ def download_story(story: Story) -> Story:
             story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
         except Exception as e:
             print(f"Failed to download main content from {story.title}, error: {e}")
-    story.content += str(get_top_hn_comments(story.id))
-    story.content.replace("\n", "")
+    sleep(1)
+    try:
+        r = requests.get(story.hn_url, headers={"User-Agent": "Mozilla/5.0"})
+        story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
+    except Exception as e:
+        print(f"Failed to download HN comments from {story.title}, error: {e}")
+    story.content = story.content.replace("\n", "").replace("\t", "").replace("\r", "").replace("  ", " ").strip()
     return story
 
 
@@ -104,11 +90,11 @@ def download_stories(stories: Stories) -> Stories:
 
 
 def summarize_story(story: Story) -> Story:
-    from closedai import shorten, bulletpoint_summarize, get_title
+    from closedai import shorten, bulletpoint_summarize
 
     sleep(1)
     global OPENAI_TOKEN_THRESHOLD
-    print(f"Summarizing '{story.title}' ({len(story.content.split())} tokens)")
+    print(f"Summarizing '{story.title}' ({story.score} upvotes, {len(story.content.split())} tokens)")
     while len(story.content.split()) > OPENAI_TOKEN_THRESHOLD:
         print(f"Story '{story.title}' is too long, shortening {len(story.content.split())} tokens")
         story.content = shorten(story.content, OPENAI_TOKEN_THRESHOLD, title=story.title)
@@ -119,6 +105,10 @@ def summarize_story(story: Story) -> Story:
 
 def summarize_stories(stories: Stories) -> Stories:
     new_stories = Stories()
+
+    for idx, story in enumerate(stories):
+        print(f"{idx + 1}/{len(stories)}: {story.title}, {story.score} upvotes, {len(story.content.split())} tokens")
+
     for idx, story in enumerate(stories):
         story = summarize_story(story)
         if story.summary:
