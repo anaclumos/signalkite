@@ -63,6 +63,8 @@ class Story:
 
     def markdown(self):
         title = (self.hn_title) if self.hn_title else self.title
+        if not self.summary.endswith(".") and not self.summary.endswith("!") and not self.summary.endswith("?"):
+            self.summary += "."
         suffix = f"[HN]({self.hn_url})" + f", [Article]({self.url})." if self.url else "."
         return f"""
 ### {title}
