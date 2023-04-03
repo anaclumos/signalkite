@@ -34,6 +34,9 @@ for file in all_files:
                     title = line.replace("###", "").strip()
                     break
             # write frontmatter
+            # if file already has frontmatter, skip
+            if lines[0].startswith("---"):
+                continue
             title = title.split("](")[0]
             title = title.replace("[", "")
             post.metadata["top_news"] = title
