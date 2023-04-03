@@ -140,7 +140,7 @@ Ignore the Website saying You Need JavaScript; That's not the important part.
 No period in the end.
 Please understand that some comments may include sarcasm, and you must realize it's not the main point.
 The original title was {title}.
-HARD LIMIT 10 WORDS.
+HARD LIMIT 15 WORDS.
 Text: {text}
 
 What would be a better title for this post?
