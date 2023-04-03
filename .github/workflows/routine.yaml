@@ -48,14 +48,25 @@ jobs:
         run: python3 data/translate.py
         env:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+      - name: Commit as Bot
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Formatting..."
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
       - name: Sanitize news
         run: python3 data/sanitize.py
+      - name: Write Frontmatter
+        run: python3 data/frontmatter.py
       - name: Run Prettier
         uses: Adzz/jest_test_action@v2.0.0
         with:
             command: prettier
-      - name: Write Frontmatter
-        run: python3 data/frontmatter.py
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
