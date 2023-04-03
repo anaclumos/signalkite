@@ -6,13 +6,15 @@ from datetime import datetime
 all_files = os.listdir("pages")
 
 for file in all_files:
-    # recursively add subfolders to all files
     if os.path.isdir("pages/" + file):
         for subfile in os.listdir("pages/" + file):
             all_files.append(file + "/" + subfile)
 
 for file in all_files:
     # if file is a markdown file if file.endswith(".mdx"):
+    # skip if file is a directory
+    if os.path.isdir("pages/" + file):
+        continue
     with open("pages/" + file, "r") as f:
         lines = f.readlines()
         post = frontmatter.load(f)
