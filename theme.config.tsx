@@ -3,7 +3,12 @@ import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 
 const config: DocsThemeConfig = {
-  logo: <><strong>hn.cho.sh</strong><sup>beta</sup></>,
+  logo: (
+    <>
+      <strong>hn.cho.sh</strong>
+      <sup>beta</sup>
+    </>
+  ),
   project: {
     link: 'https://github.com/anaclumos/hn.cho.sh',
   },
@@ -48,6 +53,22 @@ const config: DocsThemeConfig = {
           property="og:image"
           content={`/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(subheading)}`}
         />
+        <meta name="description" content={title ?? 'hn.cho.sh'} />
+        <meta property="og:description" content={title ?? 'hn.cho.sh'} />
+        <meta property="og:site_name" content={'hn.cho.sh'} />
+        <meta property="og:locale" content={locale} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={url} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@anaclumos" />
+        <meta name="twitter:creator" content="@anaclumos" />
+        <meta name="twitter:title" content={title ?? 'hn.cho.sh'} />
+        <meta name="twitter:description" content={title ?? 'hn.cho.sh'} />
+        <meta
+          name="twitter:image"
+          content={`/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(subheading)}`}
+        />
+        <meta name="twitter:image:alt" content={title ?? 'hn.cho.sh'} />
       </>
     )
   },
