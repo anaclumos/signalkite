@@ -44,12 +44,25 @@ if __name__ == "__main__":
                     line = line.replace("####", "###")
                 if "###" in line:
                     COUNTER += 1
-                    line = '### ' + line.replace("###", "")
+                    line = "### " + line.replace("###", "")
                 # Replace Rules
                 # remove all 'invisible' characters
                 REPLACE_RULES = {
                     " ": " ",
                     "️": "",
+                    "‍": "",
+                    " ": " ",
+                    " ": " ",
+                    " ": " ",
+                    " ": " ",
+                    " ": " ",
+                    " ": " ",
+                    " ": " ",
+                    " ": " ",
+                    " ": " ",
+                    " ": " ",
+                    " ": " ",
+                    "‏": "",
                     "‍": "",
                     "  ": " ",
                     "### ## ": "### ",
@@ -142,9 +155,8 @@ if __name__ == "__main__":
                     " | The New York Times": "",
                     "[단독] ": "",
                     "】": "]",
-                    '【': "[",
+                    "【": "[",
                     "] (": "](",
-
                 }
 
                 for rule in REPLACE_RULES:
