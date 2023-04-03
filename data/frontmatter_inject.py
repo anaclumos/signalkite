@@ -40,4 +40,4 @@ for file in all_files:
             post.metadata["localized_date"] = subtitle
             with open("pages/" + file, "w") as f:
                 f.write(frontmatter.dumps(post) + "\n\n" + "".join(lines))
-            print("File " + file + " has no frontmatter, added title and subtitle")
+            print("File " + file + ", added title and subtitle")
