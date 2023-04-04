@@ -3,7 +3,7 @@ const SITE_URL = 'https://hn.cho.sh';
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: SITE_URL,
-  generateIndexSitemap: false,
+  sitemapSize: 128,
   alternateRefs: [
     {
       hreflang: 'bg',
@@ -128,12 +128,10 @@ module.exports = {
         return path;
       }
       const locale = path.slice(path.length - 2);
-      const directory = path.replaceAll(`/${locale}`, '').replaceAll(`.${locale}`, '').replaceAll(SITE_URL, '');
+      const directory = path.replaceAll(`/${locale}`, '').replaceAll(`.${locale}`, '').replaceAll(SITE_URL, '')
       return `${SITE_URL}/${locale}${directory}`;
     }
-    path = dotLocaleExtractor(path);
-
-    console.log('path', path);
+    path = dotLocaleExtractor(path).replace('/en/', '/');
 
     const extractLocaleIndependentPath = (path) => {
       const matches = config.alternateRefs.map((alt) =>
@@ -142,10 +140,11 @@ module.exports = {
       return matches.sort((a, b) => a.length - b.length)[0];
     };
 
-    const localeIndependentPath = extractLocaleIndependentPath(path);
+    let localeIndependentPath = extractLocaleIndependentPath(path);
     const alternateRefs = config.alternateRefs.map((alt) => {
+      alt.href = alt.href.replace('/en/', '/');
       return {
-        ...alt, href: `${alt.href}${localeIndependentPath.replace(SITE_URL, '')}`.replaceAll('//', '/'), hrefIsAbsolute: true
+        ...alt, href: `${alt.href}${localeIndependentPath.replace(SITE_URL, '')}`.replaceAll('/en/', '/'), hrefIsAbsolute: true
       };
     });
 
