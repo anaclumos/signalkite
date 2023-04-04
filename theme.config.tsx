@@ -111,6 +111,7 @@ const config: DocsThemeConfig = {
             return (
               <link
                 rel="alternate"
+                key={item.locale}
                 href={`https://hn.cho.sh/${item.locale === defaultLocale ? '' : item.locale}${asPath}`}
                 hrefLang={item.locale}
               />
