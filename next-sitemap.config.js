@@ -145,7 +145,7 @@ module.exports = {
     const localeIndependentPath = extractLocaleIndependentPath(path);
     const alternateRefs = config.alternateRefs.map((alt) => {
       return {
-        ...alt, href: `${alt.href}${localeIndependentPath.replace(SITE_URL, '')}`, hrefIsAbsolute: true
+        ...alt, href: `${alt.href}${localeIndependentPath.replace(SITE_URL, '')}`.replaceAll('//', '/'), hrefIsAbsolute: true
       };
     });
 
