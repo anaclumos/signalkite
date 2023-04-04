@@ -106,6 +106,8 @@ const config: DocsThemeConfig = {
         <meta http-equiv='content-language' content={locale} />
         {
           i18nlist.map((item) => {
+            if (item.locale === locale) return null
+            if (asPath.endsWith('/')) asPath = asPath.slice(0, -1)
             return (
               <link
                 data-rh="true"
