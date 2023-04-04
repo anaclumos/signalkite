@@ -59,14 +59,14 @@ const config: DocsThemeConfig = {
         <meta property="og:locale" content={locale} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={url} />
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image"/>
         <meta name="twitter:site" content="@anaclumos" />
         <meta name="twitter:creator" content="@anaclumos" />
         <meta name="twitter:title" content={title ?? 'hn.cho.sh'} />
         <meta name="twitter:description" content={title ?? 'hn.cho.sh'} />
         <meta
           name="twitter:image"
-          content={`/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(subheading)}`}
+          content={`https://hn.cho.sh/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(subheading)}`}
         />
         <meta name="twitter:image:alt" content={title ?? 'hn.cho.sh'} />
       </>
