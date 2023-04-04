@@ -3,36 +3,36 @@ import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 
 const i18nlist = [
-    { locale: 'bg', text: 'български (bg)' },
-    { locale: 'cs', text: 'Čeština (cs)' },
-    { locale: 'da', text: 'Dansk (da)' },
-    { locale: 'de', text: 'Deutsch (de)' },
-    { locale: 'el', text: 'Ελληνικά (el)' },
-    { locale: 'en', text: 'English (en)' },
-    { locale: 'es', text: 'Espanya (es)' },
-    { locale: 'et', text: 'Eesti (et)' },
-    { locale: 'fi', text: 'Suomi (fi)' },
-    { locale: 'fr', text: 'Français (fr)' },
-    { locale: 'hu', text: 'Magyar (hu)' },
-    { locale: 'id', text: 'Bahasa Indonesia (id)' },
-    { locale: 'it', text: 'Italiano (it)' },
-    { locale: 'ja', text: '日本語 (ja)' },
-    { locale: 'ko', text: '한국어 (ko)' },
-    { locale: 'lt', text: 'Lietuvių (lt)' },
-    { locale: 'lv', text: 'Latviešu (lv)' },
-    { locale: 'nb', text: 'Bokmål (nb)' },
-    { locale: 'nl', text: 'Nederlands (nl)' },
-    { locale: 'pl', text: 'Polski (pl)' },
-    { locale: 'pt', text: 'Português (pt)' },
-    { locale: 'ro', text: 'Română (ro)' },
-    { locale: 'ru', text: 'Русский (ru)' },
-    { locale: 'sk', text: 'Slovenčina (sk)' },
-    { locale: 'sl', text: 'Slovenščina (sl)' },
-    { locale: 'sv', text: 'Svenska (sv)' },
-    { locale: 'tr', text: 'Türkçe (tr)' },
-    { locale: 'uk', text: 'Українська (uk)' },
-    { locale: 'zh', text: '中文 (zh)' },
-  ]
+  { locale: 'bg', text: 'български (bg)' },
+  { locale: 'cs', text: 'Čeština (cs)' },
+  { locale: 'da', text: 'Dansk (da)' },
+  { locale: 'de', text: 'Deutsch (de)' },
+  { locale: 'el', text: 'Ελληνικά (el)' },
+  { locale: 'en', text: 'English (en)' },
+  { locale: 'es', text: 'Espanya (es)' },
+  { locale: 'et', text: 'Eesti (et)' },
+  { locale: 'fi', text: 'Suomi (fi)' },
+  { locale: 'fr', text: 'Français (fr)' },
+  { locale: 'hu', text: 'Magyar (hu)' },
+  { locale: 'id', text: 'Bahasa Indonesia (id)' },
+  { locale: 'it', text: 'Italiano (it)' },
+  { locale: 'ja', text: '日本語 (ja)' },
+  { locale: 'ko', text: '한국어 (ko)' },
+  { locale: 'lt', text: 'Lietuvių (lt)' },
+  { locale: 'lv', text: 'Latviešu (lv)' },
+  { locale: 'nb', text: 'Bokmål (nb)' },
+  { locale: 'nl', text: 'Nederlands (nl)' },
+  { locale: 'pl', text: 'Polski (pl)' },
+  { locale: 'pt', text: 'Português (pt)' },
+  { locale: 'ro', text: 'Română (ro)' },
+  { locale: 'ru', text: 'Русский (ru)' },
+  { locale: 'sk', text: 'Slovenčina (sk)' },
+  { locale: 'sl', text: 'Slovenščina (sl)' },
+  { locale: 'sv', text: 'Svenska (sv)' },
+  { locale: 'tr', text: 'Türkçe (tr)' },
+  { locale: 'uk', text: 'Українська (uk)' },
+  { locale: 'zh', text: '中文 (zh)' },
+]
 
 const config: DocsThemeConfig = {
   logo: (
@@ -100,25 +100,22 @@ const config: DocsThemeConfig = {
           name="twitter:image"
           content={`https://hn.cho.sh/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(
             subheading
-            )}`}
+          )}`}
         />
         <meta name="twitter:image:alt" content={title ?? 'hn.cho.sh'} />
-        <meta httpEquiv='content-language' content={locale} />
-        {
-          i18nlist.map((item) => {
-            if (item.locale === locale) return null
-            if (asPath.endsWith('/')) asPath = asPath.slice(0, -1)
-            return (
-              <link
-                rel="alternate"
-                key={item.locale}
-                href={`https://hn.cho.sh/${item.locale === defaultLocale ? '' : item.locale}${asPath}`}
-                hrefLang={item.locale}
-              />
-            )
-          })
-        }
-
+        <meta httpEquiv="content-language" content={locale} />
+        {i18nlist.map((item) => {
+          if (item.locale === locale) return null
+          if (asPath.endsWith('/')) asPath = asPath.slice(0, -1)
+          return (
+            <link
+              rel="alternate"
+              key={item.locale}
+              href={`https://hn.cho.sh/${item.locale === defaultLocale ? '' : item.locale}${asPath}`}
+              hrefLang={item.locale}
+            />
+          )
+        })}
       </>
     )
   },
