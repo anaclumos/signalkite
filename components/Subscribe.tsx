@@ -251,6 +251,30 @@ const i18n = {
     uk: 'Надіслати',
     zh: '提交',
   },
+  askForLanguage: {'en': 'Please select at least one language!', 'bg': 'Моля, изберете поне един език!', 'cs': 'Vyberte prosím alespoň jeden jazyk!', 'da': 'Vælg mindst ét sprog!', 'de': 'Bitte wählen Sie mindestens eine Sprache aus!', 'el': 'Παρακαλούμε επιλέξτε τουλάχιστον μία γλώσσα!', 'es': 'Seleccione al menos un idioma.', 'et': 'Palun valige vähemalt üks keel!', 'fi': 'Valitse vähintään yksi kieli!', 'fr': 'Veuillez sélectionner au moins une langue !', 'hu': 'Kérjük, válasszon legalább egy nyelvet!', 'id': 'Silakan pilih setidaknya satu bahasa!', 'it': 'Selezionare almeno una lingua!', 'ja': '少なくとも1つの言語を選択してください！', 'ko': '언어를 하나 이상 선택해 주세요!', 'lt': 'Pasirinkite bent vieną kalbą!', 'lv': 'Lūdzu, izvēlieties vismaz vienu valodu!', 'nl': 'Selecteer ten minste één taal!', 'nb': 'Vennligst velg minst ett språk!', 'pl': 'Proszę wybrać przynajmniej jeden język!', 'pt': 'Por favor, seleccione pelo menos uma língua!', 'ro': 'Vă rugăm să selectați cel puțin o limbă!', 'ru': 'Пожалуйста, выберите хотя бы один язык!', 'sk': 'Vyberte aspoň jeden jazyk!', 'sl': 'Izberite vsaj en jezik!', 'sv': 'Välj minst ett språk!', 'tr': 'Lütfen en az bir dil seçin!', 'uk': 'Будь ласка, оберіть принаймні одну мову!', 'zh': '请至少选择一种语言!'}
+
+}
+
+const onSubmit = (e, language) => {
+if (e) e.preventDefault()
+  const email = (document.getElementById('email') as HTMLInputElement).value
+  const languages = Array.from(
+    document.querySelectorAll('input[name="l"]:checked')
+  ).map((el : HTMLInputElement) => el.value)
+  if (!email) {
+    document.getElementById('email').focus()
+    return false
+  }
+  if (!languages.length) {
+    const y = document.getElementById('language').getBoundingClientRect().top + window.pageYOffset - 300;
+    window.scrollTo({top: y, behavior: 'smooth'});
+    alert(i18n.askForLanguage[language])
+    return false
+  }
+  if (email && languages.length) {
+    (document.getElementById('subscribe-form') as HTMLFormElement).submit()
+    return true
+  }
 }
 
 const Subscribe = () => {
@@ -268,6 +292,7 @@ const Subscribe = () => {
         <input
           type="email"
           name="email"
+          id="email"
           required
           placeholder="elon@twitter.com"
           className="nextra-callout nx-overflow-x-auto nx-w-full nx-m-2 nx-flex nx-rounded-lg nx-border nx-p-4 ltr:nx-pr-4 rtl:nx-pl-4 contrast-more:nx-border-current contrast-more:dark:nx-border-current nx-border-gray-200 nx-text-current nx-no-underline dark:nx-shadow-none hover:nx-shadow-gray-100 dark:hover:nx-shadow-none nx-shadow-gray-100 active:nx-shadow-sm active:nx-shadow-gray-200 nx-transition-all nx-duration-200 hover:nx-border-gray-300 nx-bg-transparent nx-shadow-sm dark:nx-border-neutral-800 hover:nx-bg-slate-50 hover:nx-shadow-md dark:hover:nx-border-neutral-700 dark:hover:nx-bg-neutral-900 language-card peer-checked:border-gray-900"
@@ -278,7 +303,7 @@ const Subscribe = () => {
         <p className="nx-text-gray-700 dark:nx-text-neutral-500 nx-mt-2">
           {i18n.languageQuestionDescription[language]}
         </p>
-        <Cards>
+        <Cards id="language">
           {[
             ['български (bg)', 'b883b', 'b883b09e-f87f-49d7-90a5-12e3cf35ba88'],
             ['Čeština (cs)', '306f0', '306f0b81-393a-44ac-a5c3-ecbb0e9418be'],
@@ -350,8 +375,11 @@ const Subscribe = () => {
           {i18n.submitHeader[language]}
         </h3>
         <button
-          type="submit"
           className="nx-w-full nx-py-4 nx-px-4 nx-my-4 nx-border nx-border-gray-200 nx-rounded-lg nx-bg-blue-500 nx-text-white nx-font-semibold nx-text-md hover:nx-bg-blue-600 focus:nx-outline-none focus:nx-ring-4 focus:nx-ring-blue-300 active:nx-bg-blue-700 nx-duration-150 dark:nx-shadow-none hover:nx-shadow-gray-100 dark:hover:nx-shadow-none nx-shadow-gray-100 active:nx-shadow-sm active:nx-shadow-gray-200 nx-transition-all nx-duration-200 hover:nx-border-gray-300 nx-bg-transparent nx-shadow-sm dark:nx-border-neutral-800 hover:nx-bg-slate-50 hover:nx-shadow-md dark:hover:nx-border-neutral-700 dark:hover:nx-bg-neutral-900 transition ease-in-out"
+          id="submit-button"
+          onClick={(e) => {
+            onSubmit(e, language)
+          }}
         >
           {i18n.submitButton[language]}
         </button>
