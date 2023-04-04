@@ -16,7 +16,7 @@ TWITTER_URL = "https://twitter.com/"
 TWITTER_SHORT_URL = "https://t.co/"
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 OPENAI_TOKEN_THRESHOLD = 1536  # It's actually 4096, but we want to be safe
-CONCURRENT = 2
+CONCURRENT = 1
 
 
 def get_story(id: int, start: int, end: int) -> Story:
@@ -35,6 +35,8 @@ def get_story(id: int, start: int, end: int) -> Story:
         story.score = response.get("score", 0)
         if start <= story.timestamp <= end:
             print(f"+ {story.title}")
+        else:
+            print(f"- {story.title}")
         return story
 
 
