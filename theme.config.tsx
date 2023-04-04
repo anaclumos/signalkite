@@ -110,7 +110,6 @@ const config: DocsThemeConfig = {
             if (asPath.endsWith('/')) asPath = asPath.slice(0, -1)
             return (
               <link
-                data-rh="true"
                 rel="alternate"
                 href={`https://hn.cho.sh/${item.locale === defaultLocale ? '' : item.locale}${asPath}`}
                 hrefLang={item.locale}
