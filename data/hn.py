@@ -64,7 +64,7 @@ def download_story(story: Story) -> Story:
         or url.startswith(TWITTER_SHORT_URL)
         or url.startswith(YT_SHORT_URL)
         or url.startswith(YT_URL)
-    ):
+    ) and url != "":
         try:
             r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
             story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
