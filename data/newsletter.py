@@ -127,7 +127,9 @@ def find_today_newsletters(lang):
     if os.path.exists(filename):
         with open(filename, "r") as f:
             post = frontmatter.load(f)
-            title = post.metadata["top_news"] or format_date(today, format="long", locale=lang) + " — hn.cho.sh/" + lang
+            title = (
+                (post.metadata["top_news"] or format_date(today, format="long", locale=lang)) + " — hn.cho.sh/" + lang
+            )
             body = post.content
             body = (
                 body.replace("import { Steps } from 'nextra-theme-docs'", "")
