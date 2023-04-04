@@ -1,123 +1,162 @@
+const SITE_URL = 'https://hn.cho.sh';
+
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://hn.cho.sh',
-  generateRobotsTxt: true,
+  siteUrl: SITE_URL,
+  generateIndexSitemap: false,
   alternateRefs: [
     {
       hreflang: 'bg',
-      href: 'https://hn.cho.sh/bg'
+      href: `${SITE_URL}/bg`
     },
     {
       hreflang: 'cs',
-      href: 'https://hn.cho.sh/cs'
+      href: `${SITE_URL}/cs`
     },
     {
       hreflang: 'da',
-      href: 'https://hn.cho.sh/da'
+      href: `${SITE_URL}/da`
     },
     {
       hreflang: 'de',
-      href: 'https://hn.cho.sh/de'
+      href: `${SITE_URL}/de`
     },
     {
       hreflang: 'el',
-      href: 'https://hn.cho.sh/el'
+      href: `${SITE_URL}/el`
     },
     {
       hreflang: 'en',
-      href: 'https://hn.cho.sh/'
+      href: `${SITE_URL}/`
     },
     {
       hreflang: 'es',
-      href: 'https://hn.cho.sh/es'
+      href: `${SITE_URL}/es`
     },
     {
       hreflang: 'et',
-      href: 'https://hn.cho.sh/et'
+      href: `${SITE_URL}/et`
     },
     {
       hreflang: 'fi',
-      href: 'https://hn.cho.sh/fi'
+      href: `${SITE_URL}/fi`
     },
     {
       hreflang: 'fr',
-      href: 'https://hn.cho.sh/fr'
+      href: `${SITE_URL}/fr`
     },
     {
       hreflang: 'hu',
-      href: 'https://hn.cho.sh/hu'
+      href: `${SITE_URL}/hu`
     },
     {
       hreflang: 'id',
-      href: 'https://hn.cho.sh/id'
+      href: `${SITE_URL}/id`
     },
     {
       hreflang: 'it',
-      href: 'https://hn.cho.sh/it'
+      href: `${SITE_URL}/it`
     },
     {
       hreflang: 'ja',
-      href: 'https://hn.cho.sh/ja'
+      href: `${SITE_URL}/ja`
     },
     {
       hreflang: 'ko',
-      href: 'https://hn.cho.sh/ko'
+      href: `${SITE_URL}/ko`
     },
     {
       hreflang: 'lt',
-      href: 'https://hn.cho.sh/lt'
+      href: `${SITE_URL}/lt`
     },
     {
       hreflang: 'lv',
-      href: 'https://hn.cho.sh/lv'
+      href: `${SITE_URL}/lv`
     },
     {
       hreflang: 'nb',
-      href: 'https://hn.cho.sh/nb'
+      href: `${SITE_URL}/nb`
     },
     {
       hreflang: 'nl',
-      href: 'https://hn.cho.sh/nl'
+      href: `${SITE_URL}/nl`
     },
     {
       hreflang: 'pl',
-      href: 'https://hn.cho.sh/pl'
+      href: `${SITE_URL}/pl`
     },
     {
       hreflang: 'pt',
-      href: 'https://hn.cho.sh/pt'
+      href: `${SITE_URL}/pt`
     },
     {
       hreflang: 'ro',
-      href: 'https://hn.cho.sh/ro'
+      href: `${SITE_URL}/ro`
     },
     {
       hreflang: 'ru',
-      href: 'https://hn.cho.sh/ru'
+      href: `${SITE_URL}/ru`
     },
     {
       hreflang: 'sk',
-      href: 'https://hn.cho.sh/sk'
+      href: `${SITE_URL}/sk`
     },
     {
       hreflang: 'sl',
-      href: 'https://hn.cho.sh/sl'
+      href: `${SITE_URL}/sl`
     },
     {
       hreflang: 'sv',
-      href: 'https://hn.cho.sh/sv'
+      href: `${SITE_URL}/sv`
     },
     {
       hreflang: 'tr',
-      href: 'https://hn.cho.sh/tr'
+      href: `${SITE_URL}/tr`
     },
     {
       hreflang: 'uk',
-      href: 'https://hn.cho.sh/uk'
+      href: `${SITE_URL}/uk`
     },
     {
       hreflang: 'zh',
-      href: 'https://hn.cho.sh/zh'
+      href: `${SITE_URL}/zh`
     },
   ],
-}
+  transform: async (config, path) => {
+    const dotLocaleExtractor = (path) => {
+      if (path[path.length - 3] !== '.') {
+        return path;
+      }
+      const locale = path.slice(path.length - 2);
+      const directory = path.replaceAll(`/${locale}`, '').replaceAll(`.${locale}`, '').replaceAll(SITE_URL, '');
+      return `${SITE_URL}/${locale}${directory}`;
+    }
+    path = dotLocaleExtractor(path);
+
+    console.log('path', path);
+
+    const extractLocaleIndependentPath = (path) => {
+      const matches = config.alternateRefs.map((alt) =>
+        `${config.siteUrl}${path}`.replace(alt.href, '')
+      );
+      return matches.sort((a, b) => a.length - b.length)[0];
+    };
+
+    const localeIndependentPath = extractLocaleIndependentPath(path);
+    const alternateRefs = config.alternateRefs.map((alt) => {
+      return {
+        ...alt, href: `${alt.href}${localeIndependentPath.replace(SITE_URL, '')}`, hrefIsAbsolute: true
+      };
+    });
+
+    return {
+      loc: path,
+      changefreq: config.changefreq,
+      priority: config.priority,
+      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+      alternateRefs,
+    };
+  },
+};
+
+
