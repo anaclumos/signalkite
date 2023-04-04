@@ -103,7 +103,7 @@ const config: DocsThemeConfig = {
             )}`}
         />
         <meta name="twitter:image:alt" content={title ?? 'hn.cho.sh'} />
-        <meta http-equiv='content-language' content={locale} />
+        <meta httpEquiv='content-language' content={locale} />
         {
           i18nlist.map((item) => {
             if (item.locale === locale) return null
