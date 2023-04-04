@@ -65,12 +65,16 @@ class Story:
         title = (self.hn_title) if self.hn_title else self.title
         if not self.summary.endswith(".") and not self.summary.endswith("!") and not self.summary.endswith("?"):
             self.summary += "."
-        suffix = f"[HN]({self.hn_url})" + f", [Article]({self.url})." if self.url else "."
+
+        hn = f"[HN]({self.hn_url})." if self.hn_url else ""
+        article = f"[Original]({self.url})." if self.url else ""
         return f"""
-### {title}
+
+        ### {title}
 
 {self.summary}
-{suffix}
+{hn}
+{article}
 
 """
 
