@@ -136,8 +136,7 @@ You must summarize the text, but do not repeat the article content itself. These
 and you must extract that how people are criticizing or making new point of views based on this shared knowledge.
 The contents already covered are: {summary}
 
-
-Now, given the previous text, summarize in markdown, less than 30 tokens, end with a period for each sentence.
+Now, given the previous text, summarize the following hacker news comments in markdown, in less than 50 tokens, end with a period for each sentence.
 
 Text: {text}
 """,
