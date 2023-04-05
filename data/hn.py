@@ -71,13 +71,24 @@ def download_story(story: Story) -> Story:
             r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
             story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
         except Exception as e:
-            print(f"Failed to download main content from {story.title}, error: {e}")
+            print(f"Failed to download main content from {story.title}, error: {e}. Retrying in 10 seconds...")
+            sleep(10)
+            try:
+                r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
+                story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
+            except Exception as e:
+                print(f"Failed to download main content from {story.title}, error: {e}")
     sleep(1)
     try:
         r = requests.get(story.hn_url, headers={"User-Agent": "Mozilla/5.0"})
         story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
     except Exception as e:
-        print(f"Failed to download HN comments from {story.title}, error: {e}")
+        print(f"Failed to download HN comments from {story.title}, error: {e}. Retrying in 10 seconds...")
+        try:
+            r = requests.get(story.hn_url, headers={"User-Agent": "Mozilla/5.0"})
+            story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
+        except Exception as e:
+            print(f"Failed to download HN comments from {story.title}, error: {e}")
     story.content = story.content.replace("\n", "").replace("\t", "").replace("\r", "").replace("  ", " ").strip()
     return story
 
