@@ -33,9 +33,9 @@ def get_story(id: int, start: int, end: int) -> Story:
         story.hn_title = response["title"]
         story.score = response.get("score", 0)
         if start <= story.timestamp <= end:
-            print(f"+ {story.title}")
+            print(f"+ {story.title}" + " " * 50)
         else:
-            print(f"- {story.title}")
+            print(f"- {story.title}" + " " * 50, end="\r")
         return story
 
 

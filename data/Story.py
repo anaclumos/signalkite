@@ -76,13 +76,13 @@ class Story:
         article = f"[Original]({self.url})." if self.url else ""
         return f"""
 
-        ### {title}
+### {title}
 
-{self.summary}
 {article}
+{self.summary}
 
-{self.hn_summary}
 {hn}
+{self.hn_summary}
 
 """
 

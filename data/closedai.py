@@ -113,7 +113,7 @@ Text: {text}
 def summarize_hn_comments(title, text):
     summary = ""
     try:
-        print(f"Creating Summary for... {title}")
+        print(f"Summarizing HN Comments... {title}")
         sleep(1)  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
         completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
