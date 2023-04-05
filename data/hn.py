@@ -118,7 +118,7 @@ def summarize_story(story: Story) -> Story:
         story.hn_content = shorten(story.hn_content, OPENAI_TOKEN_THRESHOLD, title=story.title)
     story.title = title_format(story.title)
     story.summary = bulletpoint_summarize(story.title, story.content)
-    story.hn_summary = summarize_hn_comments(story.title, story.hn_content)
+    story.hn_summary = summarize_hn_comments(story.title, story.hn_content, story.summary)
     return story
 
 

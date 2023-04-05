@@ -52,7 +52,7 @@ def shorten(text: str, limit: int, title="") -> str:
                         
 Hard limit {limit // 16} words.
 Please understand that some comments may include sarcasm, and you must realize it's not the main point.
-If a profound, arcane word aptly describes the sentence, utilize it to make the sentence shorter.
+If a very specific word aptly describes the sentence, utilize it to make the sentence shorter.
 
 Text: {w}
 """,
@@ -89,10 +89,10 @@ It must be grammatically correct and polite.
 Each sentence must end with punctuation, such as a period.
 The title of this post is '{title}'.
 
-These are the HN Comments. The comments may digress from the main point.
-You must ignore the digression, and focus on the main points of the article,
-unless the digression is relevant to the article or article is unaccessible.
-Focus on the first part of the text, since those are the articles; the most important part.
+You must write the summary as if you are explaining to an university student or an entry-level software engineer.
+That is, you can assume that people will know some basic technical knowledge, but you have to give more detail on the surrounding topics.
+Be sure to write the article in a well-written, natural, fluent way, so that an average software engineer will have no problem understanding the text.
+Employ transitioning phrases and native arguments, but concise and succinct.
 
 Now, I will give you the text.
 Summarize in markdown, less than 100 tokens, end with a period for each sentence.
@@ -110,7 +110,7 @@ Text: {text}
     return summary
 
 
-def summarize_hn_comments(title, text):
+def summarize_hn_comments(title, text, summary):
     summary = ""
     try:
         print(f"Summarizing HN Comments... {title}")
@@ -129,8 +129,15 @@ It must be grammatically correct and polite.
 Each sentence must end with punctuation, such as a period.
 The title of this post is '{title}'.
 
-Now, I will give you the text.
-Summarize in markdown, less than 100 tokens, end with a period for each sentence.
+These are the HN Comments. The comments may digress from the main point.
+You must ignore the digression, and focus on the main points of the article, unless the digression is relevant to the article or article is unaccessible.
+
+You must summarize the text, but do not repeat the article content itself. These are already covered somewhere else,
+and you must extract that how people are criticizing or making new point of views based on this shared knowledge.
+The contents already covered are: {summary}
+
+
+Now, given the previous text, summarize in markdown, less than 30 tokens, end with a period for each sentence.
 
 Text: {text}
 """,
