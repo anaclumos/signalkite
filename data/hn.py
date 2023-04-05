@@ -16,7 +16,6 @@ TWITTER_URL = "https://twitter.com/"
 TWITTER_SHORT_URL = "https://t.co/"
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 OPENAI_TOKEN_THRESHOLD = 1536  # It's actually 4096, but we want to be safe
-CONCURRENT = 1
 
 
 def get_story(id: int, start: int, end: int) -> Story:
@@ -47,10 +46,10 @@ def get_best_stories(start: int, end: int) -> Stories:
     with requests.get(HN_BEST_STORIES) as r:
         submissions = r.json()
 
-    pool = multiprocessing.Pool(CONCURRENT)
-    stories = pool.starmap(get_story, [(id, start, end) for id in submissions])
-    pool.close()
-    pool.join()
+    stories = []
+    for submission in submissions:
+        stories.append(get_story(submission, start, end))
+
     stories = Stories([story for story in stories if start <= story.timestamp <= end])
     stories.sort(key=lambda x: x.score, reverse=True)
     return stories[:20]  # Only return the top few stories... DeepL is so expensive
@@ -71,8 +70,8 @@ def download_story(story: Story) -> Story:
             r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
             story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
         except Exception as e:
-            print(f"Failed to download main content from {story.title}, error: {e}. Retrying in 10 seconds...")
-            sleep(10)
+            print(f"Failed to download main content from {story.title}, error: {e}. Retrying in 1 seconds...")
+            sleep(1)
             try:
                 r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
                 story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
@@ -81,29 +80,32 @@ def download_story(story: Story) -> Story:
     sleep(1)
     try:
         r = requests.get(story.hn_url, headers={"User-Agent": "Mozilla/5.0"})
-        story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
+        story.hn_content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
     except Exception as e:
-        print(f"Failed to download HN comments from {story.title}, error: {e}. Retrying in 10 seconds...")
+        print(f"Failed to download HN comments from {story.title}, error: {e}. Retrying in 1 seconds...")
+        sleep(1)
         try:
             r = requests.get(story.hn_url, headers={"User-Agent": "Mozilla/5.0"})
-            story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
+            story.hn_content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
         except Exception as e:
             print(f"Failed to download HN comments from {story.title}, error: {e}")
     story.content = story.content.replace("\n", "").replace("\t", "").replace("\r", "").replace("  ", " ").strip()
+    story.hn_content = story.hn_content.replace("\n", "").replace("\t", "").replace("\r", "").replace("  ", " ").strip()
+    print(
+        f"Downloaded '{story.title}' ({story.score} upvotes, {len(story.content.split()) + len(story.hn_content.split())} tokens)"
+    )
     return story
 
 
 def download_stories(stories: Stories) -> Stories:
-    pool = multiprocessing.Pool(CONCURRENT)
-    stories = pool.map(download_story, stories)
-    pool.close()
-    pool.join()
+    for story in stories:
+        download_story(story)
 
     return stories
 
 
 def summarize_story(story: Story) -> Story:
-    from closedai import shorten, bulletpoint_summarize
+    from closedai import shorten, bulletpoint_summarize, summarize_hn_comments
 
     sleep(1)
     global OPENAI_TOKEN_THRESHOLD
@@ -111,8 +113,12 @@ def summarize_story(story: Story) -> Story:
     while len(story.content.split()) > OPENAI_TOKEN_THRESHOLD:
         print(f"Story '{story.title}' is too long, shortening {len(story.content.split())} tokens")
         story.content = shorten(story.content, OPENAI_TOKEN_THRESHOLD, title=story.title)
+    while len(story.hn_content.split()) > OPENAI_TOKEN_THRESHOLD:
+        print(f"HN comments for '{story.title}' are too long, shortening {len(story.hn_content.split())} tokens")
+        story.hn_content = shorten(story.hn_content, OPENAI_TOKEN_THRESHOLD, title=story.title)
     story.title = title_format(story.title)
     story.summary = bulletpoint_summarize(story.title, story.content)
+    story.hn_summary = summarize_hn_comments(story.title, story.hn_content)
     return story
 
 

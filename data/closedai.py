@@ -18,11 +18,6 @@ You should not be politically biased. Always maintain professionalism.
 You must be able to write in a neutral tone, and not be biased towards any political party.
 Avoid any political or religious statements at all costs, especially because some comments will diverge and may include such statements.
 
-The text will start with an article, and then the comments. The comments may digress from the main point.
-You must ignore the digression, and focus on the main points of the article,
-unless the digression is relevant to the article or article is unaccessible.
-Focus on the first part of the text, since those are the articles; the most important part.
-
 There is one exception, and that is when the article's title starts with 'Ask HN:' or 'Tell HN:'.
 In such case, there is no article, and the text is the comments.
 In that case, you must focus on the comments.
@@ -94,6 +89,11 @@ It must be grammatically correct and polite.
 Each sentence must end with punctuation, such as a period.
 The title of this post is '{title}'.
 
+These are the HN Comments. The comments may digress from the main point.
+You must ignore the digression, and focus on the main points of the article,
+unless the digression is relevant to the article or article is unaccessible.
+Focus on the first part of the text, since those are the articles; the most important part.
+
 Now, I will give you the text.
 Summarize in markdown, less than 100 tokens, end with a period for each sentence.
 Text: {text}
@@ -107,6 +107,42 @@ Text: {text}
         new_text = text.split(".")
         new_text = ".".join(new_text[: 4 * len(new_text) // 5])
         return bulletpoint_summarize(title, new_text)
+    return summary
+
+
+def summarize_hn_comments(title, text):
+    summary = ""
+    try:
+        print(f"Creating Summary for... {title}")
+        sleep(1)  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
+        completion = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {
+                    "role": "user",
+                    "content": f"""
+{SITUATION}
+
+Use markdown syntax wherever possible, such as making quotes, bold texting, or in-line codes.
+It must be a freeform text, not bullet points.
+It must be grammatically correct and polite.
+Each sentence must end with punctuation, such as a period.
+The title of this post is '{title}'.
+
+Now, I will give you the text.
+Summarize in markdown, less than 100 tokens, end with a period for each sentence.
+
+Text: {text}
+""",
+                },
+            ],
+        )
+        summary = completion["choices"][0]["message"]["content"].strip()
+    except Exception as e:
+        print(f"Cannot summarize: {title}, trying again with shorter text... error: {e}")
+        new_text = text.split(".")
+        new_text = ".".join(new_text[: 4 * len(new_text) // 5])
+        return summarize_hn_comments(title, new_text)
     return summary
 
 

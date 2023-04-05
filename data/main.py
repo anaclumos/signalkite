@@ -82,8 +82,11 @@ if __name__ == "__main__":
             stories = json_to_stories(data)
     else:
         stories = get_best_stories(start, end)
+        print(f"Found {len(stories)} stories")
         stories = download_stories(stories)
+        print(f"Downloaded {len(stories)} stories")
         stories = summarize_stories(stories)
+        print(f"Summarized {len(stories)} stories")
 
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w") as f:
