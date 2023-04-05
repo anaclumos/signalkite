@@ -251,28 +251,57 @@ const i18n = {
     uk: 'Надіслати',
     zh: '提交',
   },
-  askForLanguage: {'en': 'Please select at least one language!', 'bg': 'Моля, изберете поне един език!', 'cs': 'Vyberte prosím alespoň jeden jazyk!', 'da': 'Vælg mindst ét sprog!', 'de': 'Bitte wählen Sie mindestens eine Sprache aus!', 'el': 'Παρακαλούμε επιλέξτε τουλάχιστον μία γλώσσα!', 'es': 'Seleccione al menos un idioma.', 'et': 'Palun valige vähemalt üks keel!', 'fi': 'Valitse vähintään yksi kieli!', 'fr': 'Veuillez sélectionner au moins une langue !', 'hu': 'Kérjük, válasszon legalább egy nyelvet!', 'id': 'Silakan pilih setidaknya satu bahasa!', 'it': 'Selezionare almeno una lingua!', 'ja': '少なくとも1つの言語を選択してください！', 'ko': '언어를 하나 이상 선택해 주세요!', 'lt': 'Pasirinkite bent vieną kalbą!', 'lv': 'Lūdzu, izvēlieties vismaz vienu valodu!', 'nl': 'Selecteer ten minste één taal!', 'nb': 'Vennligst velg minst ett språk!', 'pl': 'Proszę wybrać przynajmniej jeden język!', 'pt': 'Por favor, seleccione pelo menos uma língua!', 'ro': 'Vă rugăm să selectați cel puțin o limbă!', 'ru': 'Пожалуйста, выберите хотя бы один язык!', 'sk': 'Vyberte aspoň jeden jazyk!', 'sl': 'Izberite vsaj en jezik!', 'sv': 'Välj minst ett språk!', 'tr': 'Lütfen en az bir dil seçin!', 'uk': 'Будь ласка, оберіть принаймні одну мову!', 'zh': '请至少选择一种语言!'}
-
+  askForLanguage: {
+    en: 'Please select at least one language!',
+    bg: 'Моля, изберете поне един език!',
+    cs: 'Vyberte prosím alespoň jeden jazyk!',
+    da: 'Vælg mindst ét sprog!',
+    de: 'Bitte wählen Sie mindestens eine Sprache aus!',
+    el: 'Παρακαλούμε επιλέξτε τουλάχιστον μία γλώσσα!',
+    es: 'Seleccione al menos un idioma.',
+    et: 'Palun valige vähemalt üks keel!',
+    fi: 'Valitse vähintään yksi kieli!',
+    fr: 'Veuillez sélectionner au moins une langue !',
+    hu: 'Kérjük, válasszon legalább egy nyelvet!',
+    id: 'Silakan pilih setidaknya satu bahasa!',
+    it: 'Selezionare almeno una lingua!',
+    ja: '少なくとも1つの言語を選択してください！',
+    ko: '언어를 하나 이상 선택해 주세요!',
+    lt: 'Pasirinkite bent vieną kalbą!',
+    lv: 'Lūdzu, izvēlieties vismaz vienu valodu!',
+    nl: 'Selecteer ten minste één taal!',
+    nb: 'Vennligst velg minst ett språk!',
+    pl: 'Proszę wybrać przynajmniej jeden język!',
+    pt: 'Por favor, seleccione pelo menos uma língua!',
+    ro: 'Vă rugăm să selectați cel puțin o limbă!',
+    ru: 'Пожалуйста, выберите хотя бы один язык!',
+    sk: 'Vyberte aspoň jeden jazyk!',
+    sl: 'Izberite vsaj en jezik!',
+    sv: 'Välj minst ett språk!',
+    tr: 'Lütfen en az bir dil seçin!',
+    uk: 'Будь ласка, оберіть принаймні одну мову!',
+    zh: '请至少选择一种语言!',
+  },
 }
 
 const onSubmit = (e, language) => {
-if (e) e.preventDefault()
+  if (e) e.preventDefault()
   const email = (document.getElementById('email') as HTMLInputElement).value
-  const languages = Array.from(
-    document.querySelectorAll('input[name="l"]:checked')
-  ).map((el : HTMLInputElement) => el.value)
+  const languages = Array.from(document.querySelectorAll('input[name="l"]:checked')).map(
+    (el: HTMLInputElement) => el.value
+  )
   if (!email) {
     document.getElementById('email').focus()
     return false
   }
   if (!languages.length) {
-    const y = document.getElementById('language').getBoundingClientRect().top + window.pageYOffset - 300;
-    window.scrollTo({top: y, behavior: 'smooth'});
+    const y = document.getElementById('language').getBoundingClientRect().top + window.pageYOffset - 300
+    window.scrollTo({ top: y, behavior: 'smooth' })
     alert(i18n.askForLanguage[language])
     return false
   }
   if (email && languages.length) {
-    (document.getElementById('subscribe-form') as HTMLFormElement).submit()
+    ;(document.getElementById('subscribe-form') as HTMLFormElement).submit()
     return true
   }
 }
