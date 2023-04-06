@@ -129,12 +129,7 @@ def create_campaign(title, body, lang):
 
     prefix = EMAIL_CTA[lang] + md_link
 
-    suffix = (
-        f"""\n\n[hn.cho.sh/{lang}/{today.strftime('%Y/%m/%d')}]({url})\n\n---\n\n"""
-        + EMAIL_FOOTER[lang]
-        + md_link
-        + "\n\n"
-    )
+    suffix = f"""\n\n---\n\n""" + EMAIL_FOOTER[lang] + md_link + "\n\n"
 
     res = requests.post(
         server,
