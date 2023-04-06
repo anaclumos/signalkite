@@ -79,6 +79,38 @@ EMAIL_CTA = {
     "zh": "hn.cho.sh是一个向所有人提供最新科技新闻的倡议。请与你的朋友分享，这对你有很大的帮助。",
 }
 
+EMAIL_FOOTER = {
+    "en": "How was today's newsletter? Let me know by filling out this [survey](https://airtable.com/shrty7OlhrLuBC6UX).",
+    "bg": "Как беше днешният бюлетин? Споделете това с мен, като попълните тази [анкета](https://airtable.com/shrty7OlhrLuBC6UX).",
+    "cs": "Jaký byl dnešní zpravodaj? Dejte mi vědět vyplněním tohoto [dotazníku](https://airtable.com/shrty7OlhrLuBC6UX).",
+    "da": "Hvordan var dagens nyhedsbrev? Lad mig vide det ved at udfylde denne [undersøgelse] (https://airtable.com/shrty7OlhrLuBC6UX).",
+    "de": "Wie war der heutige Newsletter? Lassen Sie es mich wissen, indem Sie diese [Umfrage](https://airtable.com/shrty7OlhrLuBC6UX) ausfüllen.",
+    "el": "Πώς ήταν το σημερινό ενημερωτικό δελτίο; Ενημερώστε με συμπληρώνοντας αυτή την [έρευνα](https://airtable.com/shrty7OlhrLuBC6UX).",
+    "es": "¿Qué tal el boletín de hoy? Házmelo saber rellenando esta [encuesta](https://airtable.com/shrty7OlhrLuBC6UX).",
+    "et": "Kuidas oli tänane uudiskiri? Anna mulle teada, täites selle [küsitluse](https://airtable.com/shrty7OlhrLuBC6UX).",
+    "fi": "Millainen oli tämänpäiväinen uutiskirje? Kerro minulle täyttämällä tämä [kysely](https://airtable.com/shrty7OlhrLuBC6UX).",
+    "fr": "Comment s'est passée la lettre d'information d'aujourd'hui ? Faites-le moi savoir en remplissant cette [enquête] (https://airtable.com/shrty7OlhrLuBC6UX).",
+    "hu": "Milyen volt a mai hírlevél? Tudassa velem, ha kitölti ezt a [felmérést](https://airtable.com/shrty7OlhrLuBC6UX).",
+    "id": "Bagaimana buletin hari ini? Beri tahu saya dengan mengisi [survei] ini (https://airtable.com/shrty7OlhrLuBC6UX).",
+    "it": "Com'era la newsletter di oggi? Fatemelo sapere compilando questo [sondaggio](https://airtable.com/shrty7OlhrLuBC6UX).",
+    "ja": "本日のメルマガはいかがでしたでしょうか？この[アンケート](https://airtable.com/shrty7OlhrLuBC6UX)に答えて、教えてください。",
+    "ko": "오늘 뉴스레터는 어땠나요? [설문조사](https://airtable.com/shrty7OlhrLuBC6UX)를 작성하여 알려주세요.",
+    "lt": "Kaip sekėsi gauti šiandienos naujienlaiškį? Praneškite man apie tai užpildydami šią [apklausą] (https://airtable.com/shrty7OlhrLuBC6UX).",
+    "lv": "Kā bija ar šodienas biļetenu? Dodiet man zināt, aizpildot šo [aptauju](https://airtable.com/shrty7OlhrLuBC6UX).",
+    "nl": "Hoe was de nieuwsbrief van vandaag? Laat het me weten door deze [enquête] in te vullen (https://airtable.com/shrty7OlhrLuBC6UX).",
+    "nb": "Hvordan var dagens nyhetsbrev? Gi meg beskjed ved å fylle ut denne [spørreundersøkelsen] (https://airtable.com/shrty7OlhrLuBC6UX).",
+    "pl": "Jak wyglądał dzisiejszy newsletter? Daj mi znać wypełniając tę [ankietę](https://airtable.com/shrty7OlhrLuBC6UX).",
+    "pt": "Como foi o boletim informativo de hoje? Avise-me preenchendo este [inquérito](https://airtable.com/shrty7OlhrLuBC6UX).",
+    "ro": "Cum a fost buletinul informativ de astăzi? Spuneți-mi, completând acest [sondaj](https://airtable.com/shrty7OlhrLuBC6UX).",
+    "ru": "Как вам сегодняшняя рассылка? Дайте мне знать, заполнив этот [опрос] (https://airtable.com/shrty7OlhrLuBC6UX).",
+    "sk": "Aký bol dnešný bulletin? Dajte mi vedieť vyplnením tohto [dotazníka](https://airtable.com/shrty7OlhrLuBC6UX).",
+    "sl": "Kako je bilo z današnjim glasilom? Povejte mi to tako, da izpolnite to [anketo](https://airtable.com/shrty7OlhrLuBC6UX).",
+    "sv": "Hur var dagens nyhetsbrev? Låt mig veta det genom att fylla i denna [enkät] (https://airtable.com/shrty7OlhrLuBC6UX).",
+    "tr": "Bugünkü bülten nasıldı? Bu [anketi] (https://airtable.com/shrty7OlhrLuBC6UX) doldurarak bana bildirin.",
+    "uk": "Як вам сьогоднішня розсилка? Дайте мені знати, заповнивши це [опитування] (https://airtable.com/shrty7OlhrLuBC6UX).",
+    "zh": "今天的通讯怎么样？请填写这个[调查](https://airtable.com/shrty7OlhrLuBC6UX)让我知道。",
+}
+
 
 def get_campaigns():
     """Get all campaigns"""
@@ -97,6 +129,13 @@ def create_campaign(title, body, lang):
 
     prefix = EMAIL_CTA[lang] + md_link
 
+    suffix = (
+        f"""\n\n[hn.cho.sh/{lang}/{today.strftime('%Y/%m/%d')}]({url})\n\n---\n\n"""
+        + EMAIL_FOOTER[lang]
+        + md_link
+        + "\n\n"
+    )
+
     res = requests.post(
         server,
         auth=(username, password),
@@ -105,8 +144,8 @@ def create_campaign(title, body, lang):
             "subject": title,
             "type": "regular",
             "content_type": "markdown",
-            "body": prefix + body,
-            "altbody": prefix + body,
+            "body": prefix + body + suffix,
+            "altbody": prefix + body + suffix,
             "lists": [CONFIG[lang]],
             "send_at": f"{today.strftime('%Y-%m-%d')}T{next_hour.strftime('%H:%M:%S')}+00:00",
         },
