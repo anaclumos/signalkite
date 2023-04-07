@@ -62,7 +62,7 @@ const config: DocsThemeConfig = {
   },
   feedback: {
     content: 'Question? Leave a Feedback ↗',
-    labels: 'feedback'
+    labels: 'feedback',
   },
   gitTimestamp: <></>,
   toc: {
@@ -93,7 +93,9 @@ const config: DocsThemeConfig = {
         <meta property="og:title" content={title ?? 'hn.cho.sh'} />
         <meta
           property="og:image"
-          content={`https://og.cho.sh/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(subheading)}`}
+          content={`https://og.cho.sh/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(
+            subheading
+          )}`}
         />
         <meta name="description" content={title ?? 'hn.cho.sh'} />
         <meta property="og:description" content={title ?? 'hn.cho.sh'} />
