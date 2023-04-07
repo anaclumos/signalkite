@@ -38,7 +38,7 @@ const config: DocsThemeConfig = {
   logo: (
     <>
       <strong>🗞️ hn.cho.sh</strong>
-      <sup>beta</sup>
+      <sup>open beta</sup>
     </>
   ),
   project: {
