@@ -88,7 +88,7 @@ const config: DocsThemeConfig = {
         <meta property="og:title" content={title ?? 'hn.cho.sh'} />
         <meta
           property="og:image"
-          content={`/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(subheading)}`}
+          content={`https://og.cho.sh/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(subheading)}`}
         />
         <meta name="description" content={title ?? 'hn.cho.sh'} />
         <meta property="og:description" content={title ?? 'hn.cho.sh'} />
@@ -103,7 +103,7 @@ const config: DocsThemeConfig = {
         <meta name="twitter:description" content={title ?? 'hn.cho.sh'} />
         <meta
           name="twitter:image"
-          content={`https://hn.cho.sh/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(
+          content={`https://og.cho.sh/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(
             subheading
           )}`}
         />
