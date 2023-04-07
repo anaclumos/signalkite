@@ -52,7 +52,10 @@ def get_best_stories(start: int, end: int) -> Stories:
 
     stories = Stories([story for story in stories if start <= story.timestamp <= end])
     stories.sort(key=lambda x: x.score, reverse=True)
-    return stories[:20]  # Only return the top few stories... DeepL is so expensive
+    
+    if len(stories) > 30:
+        stories = stories[:30]
+    return stories
 
 
 def download_story(story: Story) -> Story:
