@@ -58,8 +58,13 @@ const config: DocsThemeConfig = {
   },
   faviconGlyph: '🗞️',
   editLink: {
-    text: 'Edit This Page on GitHub',
+    text: 'Edit This Page on GitHub ↗',
   },
+  feedback: {
+    content: 'Question? Leave a Feedback ↗',
+    labels: 'feedback'
+  },
+  gitTimestamp: <></>,
   toc: {
     float: true,
   },
