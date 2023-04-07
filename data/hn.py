@@ -52,9 +52,9 @@ def get_best_stories(start: int, end: int) -> Stories:
 
     stories = Stories([story for story in stories if start <= story.timestamp <= end])
     stories.sort(key=lambda x: x.score, reverse=True)
-    
+
     if len(stories) > 30:
-        stories = stories[:30]
+        return stories[:30]
     return stories
 
 
