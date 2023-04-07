@@ -44,6 +44,9 @@ const config: DocsThemeConfig = {
   project: {
     link: 'https://github.com/anaclumos/hn.cho.sh',
   },
+  sidebar: {
+    defaultMenuCollapseLevel: 2,
+  },
   docsRepositoryBase: 'https://github.com/anaclumos/hn.cho.sh/blob/main/',
   footer: {
     text: (
