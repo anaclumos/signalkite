@@ -30,6 +30,7 @@ def create_rss_feed(data):
         description="Hacker News, AI-summarized.",
         language="en",
         pubdate=pub_date,
+        origin="https://hn.cho.sh/{datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0).strftime('%Y/%m/%d')}",
     )
 
     for item in data:
