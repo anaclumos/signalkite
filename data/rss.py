@@ -8,6 +8,19 @@ from datetime import datetime
 
 utc = timezone("UTC")
 
+from nltk.tokenize.punkt import PunktSentenceTokenizer
+
+
+def first_sentence(paragraph):
+    # Load the pre-trained Punkt tokenizer for the English language
+    tokenizer = PunktSentenceTokenizer()
+
+    # Tokenize the paragraph into sentences
+    sentences = tokenizer.tokenize(paragraph)
+
+    # Return the first sentence or an empty string if the paragraph is empty
+    return sentences[0] if sentences else ""
+
 
 class CustomRssFeed(feedgenerator.Rss201rev2Feed):
     def add_root_elements(self, handler):
@@ -30,16 +43,17 @@ def create_rss_feed(data):
         description="Hacker News, AI-summarized.",
         language="en",
         pubdate=pub_date,
-        origin="https://hn.cho.sh/{datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0).strftime('%Y/%m/%d')}",
     )
 
     for item in data:
         pub_date = datetime.fromtimestamp(item["timestamp"], pytz.UTC)
+        oneliner = first_sentence(item["content"])
         feed.add_item(
             title=item["title"],
-            link=item["url"],
+            link=f"https://hn.cho.sh/{datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0).strftime('%Y/%m/%d')}",
             pubdate=pub_date,
-            description=item["content"],
+            content=item["content"],
+            description=oneliner,
         )
 
     return feed.writeString("utf-8")
@@ -56,7 +70,7 @@ def generate_daily_rss():
     data = load_json_file(json_file_path)
     rss_feed = create_rss_feed(data)
 
-    rss_file_path = os.path.join("public", "en.xml")
+    rss_file_path = os.path.join("public", "zapier.xml")
     with open(rss_file_path, "w", encoding="utf-8") as rss_file:
         rss_file.write(rss_feed)
 
