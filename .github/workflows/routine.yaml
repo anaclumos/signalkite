@@ -67,6 +67,8 @@ jobs:
             command: prettier
       - name: Write Frontmatter
         run: python3 data/frontmatter_inject.py
+      - name: Generate English RSS
+        run: python3 data/rss.py
       - name: Sanitize news
         run: python3 data/sanitize.py
       - name: Run Prettier
