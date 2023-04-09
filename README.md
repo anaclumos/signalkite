@@ -1,4 +1,4 @@
-![Tech News, AI-Summarized](https://og.cho.sh/api/og?title=Tech%20News,%20AI-Summarized%20%F0%9F%A4%96&subheading=AI%EA%B0%80%20%EC%84%B8%EC%A4%84%EC%9A%94%EC%95%BD%ED%95%B4%EC%A3%BC%EB%8A%94%20%EA%B8%B0%EC%88%A0%20%EB%89%B4%EC%8A%A4)
+https://og.cho.sh/api/og?title=Not%20Another%20Tech%20News%20%F0%9F%93%A8&subheading=Bird-Eye%20View%20of%20the%20Tech%20World
 
 <h1 align="center">
   <a href="https://hn.cho.sh">hn.cho.sh</a>
