@@ -104,7 +104,7 @@ const config: DocsThemeConfig = {
           rel="stylesheet"
           as="style"
           crossOrigin="anonymous"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-jp-dynamic-subset.css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/pretendard-jp/1.3.6/variable/pretendardvariable-jp-dynamic-subset.css"
         />
         <link
           rel="stylesheet"
