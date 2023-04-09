@@ -100,6 +100,18 @@ const config: DocsThemeConfig = {
             subheading
           )}`}
         />
+        <link
+          rel="stylesheet"
+          as="style"
+          crossOrigin="anonymous"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-jp-dynamic-subset.css"
+        />
+        <link
+          rel="stylesheet"
+          as="style"
+          crossOrigin="anonymous"
+          href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.6/variable/pretendardvariable-dynamic-subset.css"
+        />
         <meta name="description" content={title ?? 'hn.cho.sh'} />
         <meta property="og:description" content={title ?? 'hn.cho.sh'} />
         <meta property="og:site_name" content={'hn.cho.sh'} />
