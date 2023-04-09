@@ -48,9 +48,18 @@ def create_rss_feed(data):
     for item in data:
         pub_date = datetime.fromtimestamp(item["timestamp"], pytz.UTC)
         oneliner = first_sentence(item["summary"])
+
+        slug = item["title"]
+        for character in slug:
+            # only allow alphanumeric characters and spaces
+            if not character.isalnum() and character != " ":
+                slug = slug.replace(character, "")
+
+        slug = slug.replace(" ", "-").lower()
+
         feed.add_item(
             title=item["title"],
-            link=f"https://hn.cho.sh/{datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0).strftime('%Y/%m/%d')}",
+            link=f"https://hn.cho.sh/{datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0).strftime('%Y/%m/%d')}#{slug}",
             pubdate=pub_date,
             content=item["summary"],
             description=oneliner,
