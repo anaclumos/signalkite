@@ -96,6 +96,7 @@ Employ transitioning phrases and native arguments, but concise and succinct.
 
 Now, I will give you the text.
 Summarize in markdown, less than around 100 words, end with a period for each sentence.
+If there is not enough information to write a summary, write 'N/A'.
 Text: {text}
 """,
                 },
