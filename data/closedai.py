@@ -132,6 +132,7 @@ The title of this post is '{title}'.
 
 These are the HN Comments. The comments may digress from the main point.
 You must ignore the digression, and focus on the main points of the article, unless the digression is relevant to the article or article is unaccessible.
+Ignore Y Combinator recruiting for cohorts; that's the footer of the website.
 
 You must summarize the text, but do not repeat the article content itself. These are already covered somewhere else,
 and you must extract that how people are criticizing or making new point of views based on this shared knowledge.
