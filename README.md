@@ -1,4 +1,4 @@
-https://og.cho.sh/api/og?title=Not%20Another%20Tech%20News%20%F0%9F%93%A8&subheading=Bird-Eye%20View%20of%20the%20Tech%20World
+![Tech News, AI-Summarized](https://og.cho.sh/api/og?title=Not%20Another%20Tech%20News%20%F0%9F%93%A8&subheading=Bird-Eye%20View%20of%20the%20Tech%20World)
 
 <h1 align="center">
   <a href="https://hn.cho.sh">hn.cho.sh</a>
