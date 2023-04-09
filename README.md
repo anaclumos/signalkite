@@ -1,4 +1,4 @@
-![Tech News, AI-Summarized](https://og.cho.sh/api/og?subheading=All%20Kinds%20of%20Tech%20News.&title=Scraped,%20Summarized,%20Translated,%20Distributed.%20Every.%20Single.%20Day.)
+![Tech News, AI-Summarized](https://og.cho.sh/api/og?subheading=Project%20Epistemophilia.&title=Scraped,%20Summarized,%20Translated,%20Distributed.%20Every.%20Single.%20Day.)
 
 <h1 align="center">
   <a href="https://hn.cho.sh">hn.cho.sh</a>
