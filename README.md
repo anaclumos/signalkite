@@ -40,4 +40,3 @@ Bugün Teknoloji Dünyasında Neler Oluyor? •
 Що відбувається у світі технологій сьогодні?
 
 </h6>
-

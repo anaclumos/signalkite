@@ -143,7 +143,10 @@ module.exports = {
       alt.href = alt.href.replaceAll('/en/', '/').replaceAll('//', '/').replaceAll('https:/', 'https://')
       return {
         ...alt,
-        href: `${alt.href}${localeIndependentPath.replace(SITE_URL, '')}`.replaceAll('/en/', '/').replaceAll('//', '/').replaceAll('https:/', 'https://'),
+        href: `${alt.href}${localeIndependentPath.replace(SITE_URL, '')}`
+          .replaceAll('/en/', '/')
+          .replaceAll('//', '/')
+          .replaceAll('https:/', 'https://'),
         hrefIsAbsolute: true,
       }
     })
