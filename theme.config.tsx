@@ -71,7 +71,6 @@ const config: DocsThemeConfig = {
   toc: {
     float: true,
   },
-  // seo
   useNextSeoProps() {
     const { frontMatter } = useConfig()
     let title = frontMatter.top_news ?? 'All Kinds of Tech News. Scraped, Summarized, Translated, Distributed. Every. Single. Day.'
