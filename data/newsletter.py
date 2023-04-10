@@ -121,7 +121,7 @@ def create_campaign(title, body, lang):
     """Create a new campaign"""
     utc = timezone("UTC")
     today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
-    next_hour = datetime.now().astimezone(utc) + timedelta(minutes=CONFIG[lang] * 2 + 20)
+    next_hour = datetime.now().astimezone(utc) + timedelta(minutes=CONFIG[lang] * 1 + 20)
 
     url = "https://hn.cho.sh/" + lang + "/" + today.strftime("%Y/%m/%d")
 
@@ -145,12 +145,19 @@ def create_campaign(title, body, lang):
             "send_at": f"{today.strftime('%Y-%m-%d')}T{next_hour.strftime('%H:%M:%S')}+00:00",
         },
     ).json()
-    print(f"{today.strftime('%Y-%m-%d')}T{next_hour.strftime('%H:%M:%S')}+00:00")
-    requests.put(
-        server + "/" + str(res["data"]["id"]) + "/status",
-        auth=(username, password),
-        json={"status": "scheduled"},
-    )
+    try:
+        requests.put(
+            server + "/" + str(res["data"]["id"]) + "/status",
+            auth=(username, password),
+            json={"status": "scheduled"},
+        )
+    except Exception as e:
+        print(e)
+        print(res)
+        print("failed to create campaign for " + lang)
+        return False
+    print("successfully created campaign for " + lang)
+    return True
 
 
 def find_today_newsletters(lang):
