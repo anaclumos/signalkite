@@ -69,7 +69,11 @@ def create_rss_feed(data):
 
 
 def generate_daily_rss():
-    today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
+    today = (
+        datetime.now()
+        .astimezone(utc)
+        .replace(hour=0, minute=0, second=0, microsecond=0)
+    )
     date_str = today.strftime("%Y-%m-%d")
     json_file_path = os.path.join("records", date_str, f"{date_str}.en.json")
 

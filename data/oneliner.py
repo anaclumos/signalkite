@@ -53,7 +53,9 @@ if __name__ == "__main__":
             continue
         print("Translating to " + lang["text"])
         # translate the text
-        result = translator.translate_text(text, target_lang=lang["locale"], source_lang="EN")
+        result = translator.translate_text(
+            text, target_lang=lang["locale"], source_lang="EN"
+        )
         # add the translation to the answer
         answer[lang["filename_locale"]] = result.text
 

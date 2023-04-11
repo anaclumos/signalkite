@@ -161,7 +161,10 @@ specials = [
 
 # Define regular expression pattern
 word = "[^\\s'’\\(\\)!?;:\"-]"
-regex = re.compile(f"(?:(?:(\\s?(?:^|[.\\(\\)!?;:\"-])\\s*)({word}))|({word}))({word}*[’']*{word}*)", re.IGNORECASE)
+regex = re.compile(
+    f"(?:(?:(\\s?(?:^|[.\\(\\)!?;:\"-])\\s*)({word}))|({word}))({word}*[’']*{word}*)",
+    re.IGNORECASE,
+)
 
 
 # Define the function to titlize the string
@@ -185,11 +188,15 @@ def titlize_chicago_style(text, options=None):
 
     # Handle special cases
     for special in specials:
-        text = re.sub(rf"\b{re.escape(special.lower())}\b", special, text, flags=re.IGNORECASE)
+        text = re.sub(
+            rf"\b{re.escape(special.lower())}\b", special, text, flags=re.IGNORECASE
+        )
 
     # Handle custom special cases
     custom_specials = options.get("special", [])
     for special in custom_specials:
-        text = re.sub(rf"\b{re.escape(special.lower())}\b", special, text, flags=re.IGNORECASE)
+        text = re.sub(
+            rf"\b{re.escape(special.lower())}\b", special, text, flags=re.IGNORECASE
+        )
 
     return text

@@ -40,8 +40,16 @@ def shorten(text: str, limit: int, title="") -> str:
         words = text.split()
         chunks = [" ".join(words[i : i + limit]) for i in range(0, len(words), limit)]
         for idx, w in enumerate(chunks):
-            print("Summarizing (" + str(idx + 1) + "/" + str(len(chunks)) + f") {title}...")
-            sleep(1)  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
+            print(
+                "Summarizing ("
+                + str(idx + 1)
+                + "/"
+                + str(len(chunks))
+                + f") {title}..."
+            )
+            sleep(
+                1
+            )  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
             completion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[
@@ -74,7 +82,9 @@ def bulletpoint_summarize(title, text):
     summary = ""
     try:
         print(f"Creating Summary for... {title}")
-        sleep(1)  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
+        sleep(
+            1
+        )  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
         completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
@@ -104,7 +114,9 @@ Text: {text}
         )
         summary = completion["choices"][0]["message"]["content"].strip()
     except Exception as e:
-        print(f"Cannot summarize: {title}, trying again with shorter text... error: {e}")
+        print(
+            f"Cannot summarize: {title}, trying again with shorter text... error: {e}"
+        )
         new_text = text.split(".")
         new_text = ".".join(new_text[: 4 * len(new_text) // 5])
         return bulletpoint_summarize(title, new_text)
@@ -115,7 +127,9 @@ def summarize_hn_comments(title, text, summary):
     summary = ""
     try:
         print(f"Summarizing HN Comments... {title}")
-        sleep(1)  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
+        sleep(
+            1
+        )  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
         completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
@@ -147,7 +161,9 @@ Text: {text}
         )
         summary = completion["choices"][0]["message"]["content"].strip()
     except Exception as e:
-        print(f"Cannot summarize: {title}, trying again with shorter text... error: {e}")
+        print(
+            f"Cannot summarize: {title}, trying again with shorter text... error: {e}"
+        )
         new_text = text.split(".")
         new_text = ".".join(new_text[: 4 * len(new_text) // 5])
         return summarize_hn_comments(title, new_text)
@@ -176,7 +192,9 @@ def get_title(title, text):
     try:
         print(f"Finding a better title... {title}")
         for _ in range(OPENAI_RETRY_COUNT):
-            sleep(1)  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
+            sleep(
+                1
+            )  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
             completion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[
@@ -202,7 +220,9 @@ What would be a better title for this post?
             )
             title = completion["choices"][0]["message"]["content"].strip()
     except Exception as e:
-        print(f"Cannot get title: {title}, trying again with shorter text... error: {e}")
+        print(
+            f"Cannot get title: {title}, trying again with shorter text... error: {e}"
+        )
         new_text = text.split(".")
         new_text = ".".join(new_text[: 4 * len(new_text) // 5])
         return get_title(title, new_text)

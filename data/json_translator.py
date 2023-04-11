@@ -59,7 +59,9 @@ if __name__ == "__main__":
                 original = json_data["contact"]["title"]
             else:
                 original = json_data[key]
-            translated = translator.translate_text(original, target_lang=lang["locale"]).text
+            translated = translator.translate_text(
+                original, target_lang=lang["locale"]
+            ).text
             # replace the key with the translated key
             if key == "contact.title":
                 json_data["contact"]["title"] = translated

@@ -120,8 +120,14 @@ def get_campaigns():
 def create_campaign(title, body, lang):
     """Create a new campaign"""
     utc = timezone("UTC")
-    today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
-    next_hour = datetime.now().astimezone(utc) + timedelta(minutes=CONFIG[lang] * 1 + 20)
+    today = (
+        datetime.now()
+        .astimezone(utc)
+        .replace(hour=0, minute=0, second=0, microsecond=0)
+    )
+    next_hour = datetime.now().astimezone(utc) + timedelta(
+        minutes=CONFIG[lang] * 1 + 20
+    )
 
     url = "https://hn.cho.sh/" + lang + "/" + today.strftime("%Y/%m/%d")
 
@@ -163,20 +169,26 @@ def create_campaign(title, body, lang):
 def find_today_newsletters(lang):
     """Find the newsletter for today in the Research folder. All UTC."""
     utc = timezone("UTC")
-    today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
+    today = (
+        datetime.now()
+        .astimezone(utc)
+        .replace(hour=0, minute=0, second=0, microsecond=0)
+    )
     filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{lang}.mdx"
     if os.path.exists(filename):
         with open(filename, "r") as f:
             post = frontmatter.load(f)
-            title = (
-                (post.metadata["top_news"] or format_date(today, format="long", locale=lang)) + " — hn.cho.sh/" + lang
+            title = post.metadata["top_news"] or format_date(
+                today, format="long", locale=lang
             )
             body = post.content
             body = (
                 body.replace("import { Steps } from 'nextra-theme-docs'", "")
                 .replace("<Steps>", "")
                 .replace("</Steps>", "")
-                .replace("import CallToAction from '../../../components/CallToAction'", "")
+                .replace(
+                    "import CallToAction from '../../../components/CallToAction'", ""
+                )
                 .replace("<CallToAction />", "")
             )
             return [(title, body)]

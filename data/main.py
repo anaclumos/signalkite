@@ -9,7 +9,11 @@ from babel.dates import format_date
 
 def save_markdown(stories, locale):
     utc = timezone("UTC")
-    today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
+    today = (
+        datetime.now()
+        .astimezone(utc)
+        .replace(hour=0, minute=0, second=0, microsecond=0)
+    )
     filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{locale}.mdx"
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w") as f:
@@ -34,7 +38,11 @@ def json_to_stories(json):
 
 def meta_json_hander():
     utc = timezone("UTC")
-    today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
+    today = (
+        datetime.now()
+        .astimezone(utc)
+        .replace(hour=0, minute=0, second=0, microsecond=0)
+    )
     meta_month = f"pages/{today.strftime('%Y/%m')}"
     meta_year = f"pages/{today.strftime('%Y')}"
     # check the folder for existing files and folders. put all of them into a json file, and dump it to the filename
@@ -70,12 +78,18 @@ def meta_json_hander():
 
 if __name__ == "__main__":
     utc = timezone("UTC")
-    today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
+    today = (
+        datetime.now()
+        .astimezone(utc)
+        .replace(hour=0, minute=0, second=0, microsecond=0)
+    )
     yesterday = today - timedelta(days=1)
     start = int(yesterday.timestamp())
     end = int(today.timestamp())
 
-    filename = f"records/{today.strftime('%Y-%m-%d')}/{today.strftime('%Y-%m-%d')}.en.json"
+    filename = (
+        f"records/{today.strftime('%Y-%m-%d')}/{today.strftime('%Y-%m-%d')}.en.json"
+    )
     if os.path.exists(filename):
         with open(filename, "r") as f:
             data = json.load(f)

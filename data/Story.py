@@ -17,7 +17,14 @@ class Story:
     score = 0
 
     def __init__(
-        self, id=id, timestamp=timestamp, title=title, url=url, hn_url=hn_url, content=content, summary=summary
+        self,
+        id=id,
+        timestamp=timestamp,
+        title=title,
+        url=url,
+        hn_url=hn_url,
+        content=content,
+        summary=summary,
     ):
         self.id = id
         self.timestamp = timestamp
@@ -69,7 +76,11 @@ class Story:
 
     def markdown(self):
         title = (self.hn_title) if self.hn_title else self.title
-        if not self.summary.endswith(".") and not self.summary.endswith("!") and not self.summary.endswith("?"):
+        if (
+            not self.summary.endswith(".")
+            and not self.summary.endswith("!")
+            and not self.summary.endswith("?")
+        ):
             self.summary += "."
 
         hn = f"[HN]({self.hn_url})." if self.hn_url else ""

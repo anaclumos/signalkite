@@ -23,7 +23,11 @@ for file in all_files:
         else:
             date = file.split(".")[0]
             if len(date.split("/")) != 3:
-                print("File " + file + " has no frontmatter, but the date is not in YYYY/MM/DD format")
+                print(
+                    "File "
+                    + file
+                    + " has no frontmatter, but the date is not in YYYY/MM/DD format"
+                )
                 continue
             locale = file.split(".")[1]
             day = datetime.strptime(date, "%Y/%m/%d")

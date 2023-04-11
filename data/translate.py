@@ -42,10 +42,16 @@ language = [
 
 if __name__ == "__main__":
     utc = timezone("UTC")
-    today = datetime.now().astimezone(utc).replace(hour=0, minute=0, second=0, microsecond=0)
+    today = (
+        datetime.now()
+        .astimezone(utc)
+        .replace(hour=0, minute=0, second=0, microsecond=0)
+    )
 
     if len(sys.argv) > 1:
-        today = datetime.strptime(sys.argv[1], "%Y-%m-%d").replace(hour=0, minute=0, second=0, microsecond=0)
+        today = datetime.strptime(sys.argv[1], "%Y-%m-%d").replace(
+            hour=0, minute=0, second=0, microsecond=0
+        )
 
     filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.en.mdx"
 
@@ -71,10 +77,14 @@ if __name__ == "__main__":
     for lang in language:
         if lang["locale"] == "en":
             continue
-        if os.path.exists(f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{lang['filename_locale']}.mdx"):
+        if os.path.exists(
+            f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{lang['filename_locale']}.mdx"
+        ):
             print(f"Translated to {lang['text']} already exists")
             continue
-        translated = translator.translate_text(markdown, target_lang=lang["locale"], source_lang="EN")
+        translated = translator.translate_text(
+            markdown, target_lang=lang["locale"], source_lang="EN"
+        )
         translated = (
             "import { Steps } from 'nextra-theme-docs'\n\nimport CallToAction from '../../../components/CallToAction'\n\n<CallToAction />\n\n<Steps>\n\n"
             "## "
@@ -83,6 +93,9 @@ if __name__ == "__main__":
             + str(translated)
             + "\n\n</Steps>"
         )
-        with open(f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{lang['filename_locale']}.mdx", "w") as f:
+        with open(
+            f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{lang['filename_locale']}.mdx",
+            "w",
+        ) as f:
             f.write(translated)
         print(f"Translated to {lang['text']}")
