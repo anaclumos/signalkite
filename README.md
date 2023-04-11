@@ -40,3 +40,9 @@ Bugün Teknoloji Dünyasında Neler Oluyor? •
 Що відбувається у світі технологій сьогодні?
 
 </h6>
+
+## Debugging GitHub Actiosn On-Device
+
+```sh
+act --secret-file .env workflow_dispatch
+```
