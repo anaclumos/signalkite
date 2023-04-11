@@ -96,6 +96,7 @@ def download_story(story: Story) -> Story:
                 print(f"Failed to download main content from {story.title}, error: {e}")
     sleep(1)
     try:
+        sleep(2)
         r = requests.get(story.hn_url, headers={"User-Agent": "Mozilla/5.0"})
         story.hn_content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
     except Exception as e:
