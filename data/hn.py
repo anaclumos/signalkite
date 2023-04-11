@@ -17,7 +17,7 @@ TWITTER_SHORT_URL = "https://t.co/"
 GITHUB_URL = "https://github.com/"
 GITLAB_URL = "https://gitlab.com/"
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
-OPENAI_TOKEN_THRESHOLD = 1536  # It's actually 4096, but we want to be safe
+OPENAI_TOKEN_THRESHOLD = 2048  # It's actually 4096, but we want to be safe
 
 
 def get_story(id: int, start: int, end: int) -> Story:
