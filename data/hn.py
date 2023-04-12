@@ -36,9 +36,9 @@ def get_story(id: int, start: int, end: int) -> Story:
         story.hn_title = response["title"]
         story.score = response.get("score", 0)
         if start <= story.timestamp <= end:
-            print(f"+ {story.title}" + " " * 50)
+            print(f"+ {story.title}" + " " * 100)
         else:
-            print(f"- {story.title}" + " " * 50, end="\r")
+            print(f"- {story.title}" + " " * 100, end="\r")
         return story
 
 
@@ -76,17 +76,12 @@ def download_story(story: Story) -> Story:
         username = url.split("/")[3]
         repo = url.split("/")[4]
         url = f"https://gitlab.com/{username}/{repo}/-/raw/master/README.md"
-    if (
-        not url.startswith(TWITTER_URL)
-        or url.startswith(TWITTER_SHORT_URL)
-        or url.startswith(YT_SHORT_URL)
-        or url.startswith(YT_URL)
-    ) and url != "":
+    if not url.startswith(YT_SHORT_URL) and not url.startswith(YT_URL) and url != "":
         try:
             driver = webdriver.Chrome()
             driver.get(url)
-            wait.until(presence_of_element_located((By.CSS_SELECTOR, "article")) or presence_of_element_located((By.CSS_SELECTOR, "body")))
-            article = driver.find_element(By.TAG_NAME, "article") or driver.find_element(By.TAG_NAME, "body")
+            article = driver.find_element(By.TAG_NAME, "article")
+            print(f"Found article: {' '.join(article.text.split(' ')[0:10])}...")
             story.content += article.text
             driver.close()
         except Exception as e:
@@ -95,9 +90,14 @@ def download_story(story: Story) -> Story:
             )
             sleep(1)
             try:
-                r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
-                story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
+                driver = webdriver.Chrome()
+                driver.get(url)
+                article = driver.find_element(By.TAG_NAME, "body")
+                print(f"Found body, using that instead: {' '.join(article.text.split(' ')[0:10])}...")
+                story.content += article.text
+                driver.close()
             except Exception as e:
+                story.content = "This page does not have main article."
                 print(f"Failed to download main content from {story.title}, error: {e}")
     sleep(1)
     try:
