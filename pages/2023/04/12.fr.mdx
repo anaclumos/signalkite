@@ -1,0 +1,250 @@
+import { Steps } from 'nextra-theme-docs'
+
+import CallToAction from '../../../components/CallToAction'
+
+<CallToAction />
+
+<Steps>
+
+## 12 avril 2023
+
+### J'ai travaillé chez Google pendant -10 jours
+
+[Original] (https://andgein.ru/blog/all/20-i-worked-at-google-for-10-days/).
+L'article décrit l'expérience de l'auteur qui a été licencié de Google dix jours avant de commencer son poste de SRE à Londres en raison d'une vague de licenciements, ce qui a été un processus difficile étant donné qu'il avait déjà quitté son emploi précédent et s'était préparé au déménagement. L'auteur décrit la complexité et la longueur du processus d'embauche qu'il a suivi et sa déception de ne pas avoir eu l'opportunité de travailler chez Google après tout. Certains utilisateurs de HN ont laissé des commentaires de soutien, tandis que d'autres se sont montrés moins empathiques.
+
+[HN](http://news.ycombinator.com/item?id=35525294).
+Un article de Hacker News sur les risques et les pièges liés à la démission d'un emploi a suscité des conversations. Les utilisateurs discutent des politiques controversées d'autres entreprises en matière de démission, telles que le licenciement immédiat et les politiques de vacances pendant les périodes de préavis. L'éthique d'un nouvel emploi tout en continuant à percevoir un salaire de l'ancien employeur est également abordée, de même que les expériences de vérification des antécédents et de dépistage de drogues au cours du processus d'embauche. Certains utilisateurs suggèrent de demander une protection contre la relocalisation dans les contrats de travail et de se couvrir en ne donnant pas de préavis avant une ou deux semaines dans un nouvel emploi. Un utilisateur suggère d'imposer des lois claires sur l'annulation des offres d'emploi, tandis qu'un autre propose d'automatiser les processus d'embauche et de licenciement.
+
+### Lancement de Substack Notes
+
+(https://on.substack.com/p/notes).
+Substack a lancé "Notes" pour tous les utilisateurs, un nouvel espace où les écrivains et les créateurs peuvent publier des articles courts et partager des idées, et qui aidera le travail à voyager à travers le réseau Substack pour que de nouveaux lecteurs le découvrent. Notes, qui est un projet à long terme, permettra également d'encourager les abonnements car les articles intéressants seront largement partagés, ce qui aidera les articles à trouver un public précieux d'écrivains et de lecteurs qui sont déjà investis dans l'écosystème Substack et qui sont à un clic d'un abonnement. Cependant, un billet n'est pas envoyé aux abonnés par courriel.
+
+[HN](http://news.ycombinator.com/item?id=35526768).
+Substack a lancé une nouvelle fonctionnalité "Notes", qui a suscité des discussions sur la concurrence avec Twitter. Les utilisateurs ont exprimé des opinions diverses sur l'importance continue de Twitter et la montée en puissance de Mastodon comme alternative. La collecte de fonds par le biais du crowdsourcing et les nouvelles fonctionnalités, telles que les "Notes" de Substack, sont devenues des moyens pour les startups de pivoter vers de nouveaux modèles commerciaux. La monétisation des médias sociaux, par le biais de méthodes telles que le nouveau service d'abonnement de Twitter "Twitter Blue", a suscité des inquiétudes chez certains utilisateurs. En outre, la fonction Notes de Substack pourrait cannibaliser son propre public de contenus longs.
+
+### Nous construisons un navigateur alors que c'est censé être impossible
+
+(https://awesomekling.substack.com/p/how-were-building-a-browser-when).
+Andreas Kling évoque le processus de construction du navigateur Ladybird, qui a réalisé des progrès significatifs bien qu'il ait été considéré comme une tâche impossible. Le succès de l'équipe est attribué à des facteurs tels que des spécifications web plus solides, la concentration sur des tranches verticales, le report du travail de performance, une forte culture d'équipe et le fait d'être guidé par un leader expérimenté.
+
+[HN] (http://news.ycombinator.com/item?id=35521704).
+Les utilisateurs de HN discutent des défis posés par la création d'un navigateur utilisant l'approche par "tranches verticales", qui se concentre sur la création de fonctionnalités essentielles pour des cas d'utilisation pratiques plutôt que sur l'ensemble de l'API. Alors que certains s'interrogent sur son efficacité, d'autres mentionnent le succès de méthodes similaires dans le développement de jeux. L'exactitude des affirmations de l'article concernant le nombre de spécifications du W3C et les interactions complexes entre les différentes parties du code, les moteurs de rendu et la prise en charge des sites web défectueux lors de la création d'un navigateur web fait également l'objet d'un débat.
+
+### SQL Maxis : Pourquoi nous avons abandonné RabbitMQ et l'avons remplacé par une file d'attente Postgres
+
+[Original](https://www.prequel.co/blog/sql-maxis-why-we-ditched-rabbitmq-and-replaced-it-with-a-postgres-queue).
+Prequel a introduit une nouvelle file d'attente construite au-dessus de la base de données Postgres, en remplacement de RabbitMQ, ce qui a amélioré la fiabilité et la résilience du système et centralisé l'état de l'application. Prequel fournit un pipeline de données à grande échelle qui synchronise les données pour ses clients SaaS B2B, où chaque transfert peut être modélisé comme un travail, placé dans une file d'attente et traité par des travailleurs. Le changement a pris une demi-journée à mettre en œuvre + test, et la nouvelle file d'attente est plus simple, plus facile à surveiller, à ajuster si nécessaire, et à déboguer.
+
+[HN](http://news.ycombinator.com/item?id=35526846).
+SQL Maxis a remplacé RabbitMQ par une file d'attente Postgres en raison d'une bibliothèque de consommateurs défectueuse, et a suggéré d'utiliser différentes files d'attente en fonction de la durée du travail et d'ajouter une file d'attente pour les lettres mortes ; certains utilisateurs ont remis en question l'utilisation de RabbitMQ pour les travaux de longue durée. La discussion sur Hacker News a mis en évidence l'utilisation de Postgres comme file d'attente, certains soulignant les problèmes potentiels liés à la taille de la file d'attente et au débit du disque, mais mettant en avant les avantages de la sémantique transactionnelle ; les utilisateurs ont également discuté de l'utilisation d'autres solutions de gestion de file d'attente, telles que SQLite et les bases de données en mémoire, en mettant en garde contre l'évaluation comparative du trafic en fonction des volumes quotidiens.
+
+### Le plan de 5 milliards de dollars sur 4 ans d'Anthropic pour s'attaquer à OpenAI
+
+(Original) (https://techcrunch.com/2023/04/06/anthropics-5b-4-year-plan-to-take-on-openai/).
+Désolé, le texte fourni ne contient aucune information pertinente pour la tâche donnée. Pouvez-vous fournir le texte correct ?
+
+[HN](http://news.ycombinator.com/item?id=35523859).
+Anthropic prévoit de dépenser 5 milliards de dollars sur quatre ans pour concurrencer OpenAI dans le développement d'une technologie à fort impact. Les discussions sur Hacker News se concentrent sur la faisabilité de modèles de langage fonctionnant localement, avec des doutes exprimés sur les cas d'utilisation courants. Apple publie des bibliothèques pour utiliser son moteur neuronal dans CoreML, mais des problèmes de confiance et de confidentialité subsistent. D'autres digressions incluent des discussions sur le marché des crypto-monnaies, les paiements et les réglementations, ainsi que la rentabilité potentielle des modèles fondamentaux de l'IA.
+
+### Parrainez les projets open source dont vous dépendez
+
+[Original](https://thanks.dev/home).
+Thanks.dev' est une plateforme de financement open source.
+
+[HN](http://news.ycombinator.com/item?id=35519706).
+Thanks.dev est une plateforme de parrainage de projets open source, mais certains utilisateurs ne sont pas satisfaits des frais minimums de 5 %, tandis que d'autres suggèrent d'autres méthodes de financement. En dépit de ces préoccupations, les utilisateurs apprécient l'impact de la plateforme sur la motivation des mainteneurs et la rationalisation du financement. Certains utilisateurs du réseau HN évoquent la nécessité d'une plus grande reconnaissance et d'un financement plus important pour encourager les contributions et la maintenance des logiciels libres.
+
+### La fin d'un mythe : Les transactions distribuées peuvent évoluer
+
+(Original) (http://muratbuffalo.blogspot.com/2023/04/the-end-of-myth-distributed.html).
+Un nouvel article présenté à VLDB'17 présente NAM-DB, un système de base de données distribué évolutif qui utilise l'accès direct à la mémoire à distance (RDMA) et un oracle d'horodatage pour les transactions d'isolation instantanée (SI), réalisant une mise à l'échelle linéaire pour le débit et une faible latence. Toutefois, le blocage global causé par les défaillances du serveur de mémoire en cas de récupération pose un problème pour l'utilisation en production. En outre, un récent rapport sur l'état de l'union dans le domaine de la recherche sur les bases de données fait état d'une force et d'une croissance dues à l'informatique en nuage et à l'apprentissage automatique, et la conception d'Amazon Aurora, qui utilise MySQL ou PostgreSQL et un service de stockage multitenant à grande échelle, est digne d'intérêt.
+
+[HN](http://news.ycombinator.com/item?id=35520044).
+L'article aborde le problème du décrochage global dans les transactions distribuées et les solutions potentielles utilisant la redondance et les quorums, mais il existe des défis en matière de cohérence. La lenteur de l'adoption des conceptions de bases de données distribuées et des horloges atomiques pour obtenir une cohérence globale est mentionnée. Un utilisateur de HN signale MySQL Cluster et une architecture "shared-nothing". D'autres commentaires mentionnent le contrôle de la concurrence entre plusieurs versions et la synchronisation des horodatages dans un système distribué.
+
+### Supabase Edge Runtime : Fonctions Deno auto-hébergées
+
+(https://supabase.com/blog/edge-runtime-self-hosted-deno-functions).
+Supabase a publié le Edge Runtime, une solution auto-hébergée pour les fonctions Deno Edge qui améliore l'expérience de développement local, applique des limites de mémoire/durée, et sert toutes les fonctions. Le serveur web écrit en Rust utilise un runtime Deno personnalisable et peut servir des fonctions TypeScript, JavaScript et WASM, et il est sous licence MIT. Supabase prévoit d'intégrer Edge Runtime en tant que passerelle API vers d'autres services Supabase dans le futur.
+
+[HN] (http://news.ycombinator.com/item?id=35525222).
+Supabase a lancé Edge Runtime pour les fonctions Deno auto-hébergées, dans le but de réduire la pile technique et de fournir de meilleures façons de profiler les fonctions à l'avenir ; Supabase prend également en charge React Native et l'authentification mobile, mais les serveurs réguliers peuvent être préférés dans certains cas. La nouvelle version, Edge Functions, exécute des fonctions sans serveur en périphérie pour la vitesse et la sécurité, plusieurs commentateurs de Hacker News discutant du coût-bénéfice du VPS par rapport au PaaS et des mérites des différents fournisseurs et technologies sans serveur, tandis qu'un utilisateur signale que l'outillage de Supabase n'est pas encore mature et peut limiter l'évolutivité.
+
+### Les personnes atteintes de maladies mentales graves ont été abandonnées par un système dysfonctionnel.
+
+(Original) (https://www.theatlantic.com/magazine/archive/2023/05/american-madness-schizophrenia-mental-illness/673490/).
+L'article de Jonathan Rosen dans The Atlantic raconte l'histoire de son ami d'enfance, Michael, et met en lumière les failles du système américain de soins de santé mentale, appelant à une réforme qui fournisse des soins et un soutien adéquats à ceux qui en ont besoin, en mettant l'accent sur l'intervention précoce et le changement culturel. L'article aborde la question des soins de proximité par rapport à l'institutionnalisation, les échecs des centres communautaires de santé mentale et la nécessité de soutenir les personnes souffrant de maladies mentales. L'auteur plaide en faveur d'un traitement ambulatoire assisté et reconnaît la nature controversée de l'internement d'office dans les hôpitaux, appelant à un changement et à une concentration sur les vrais problèmes.
+
+[HN](http://news.ycombinator.com/item?id=35524881).
+Un système de santé mentale défaillant laisse les patients atteints de maladies mentales graves sans soins, car les efforts de soutien nécessaires échouent en raison des idéologies dominantes et du manque de financement adéquat. La discussion dans la section des commentaires couvre une série de sujets, notamment le sans-abrisme, la maladie mentale, la santé publique et la difficulté de trouver des solutions efficaces sans s'attaquer aux problèmes systémiques. En outre, des préoccupations concernant les abus potentiels des politiques et la difficulté d'accès aux soins de santé mentale aux États-Unis sont soulevées.
+
+### It happened to me today : $80/hr writer replaced with ChatGPT
+
+(https://old.reddit.com/r/freelanceWriters/comments/12ff5mw/it_happened_to_me_today/).
+Un rédacteur indépendant travaillant à 80 dollars de l'heure a perdu son emploi au profit de ChatGPT, un modèle linguistique d'IA, ce qui met en évidence l'impact de l'automatisation sur l'industrie de l'écriture. Si l'IA peut produire des contenus plus rapidement et à moindre coût, certains pensent que les rédacteurs humains peuvent apporter des qualités uniques telles que la créativité et la personnalité. La discussion porte sur le potentiel de l'IA à remplacer les emplois et sur l'importance de la montée en compétences pour ajouter de la valeur aux clients dans un marché en mutation.
+
+[HN] (http://news.ycombinator.com/item?id=35519229).
+La création de contenu par l'IA à l'aide d'outils tels que ChatGPT a entraîné la perte d'emplois, mais certains considèrent que l'élimination des "bullshit jobs" est une évolution positive, tandis que d'autres s'inquiètent des troubles sociaux résultant de la perte d'emplois. Les discussions d'experts portent sur la qualité et la quantité du contenu généré par l'IA, son utilisation dans diverses industries et son impact potentiel sur la sécurité de l'emploi et l'inégalité. Le débat met en évidence la nécessité pour la société de s'adapter à un paysage technologique en évolution rapide.
+
+### Jeu.de.cartes
+
+[Original] (https://deck.of.cards/old/).
+L'article "Deck.of.cards" traite d'un jeu de cartes HTML5. On ne sait pas exactement de quoi il s'agit en dehors de cela.
+
+[HN](http://news.ycombinator.com/item?id=35531989).
+Deck.of.cards est un jeu de cartes virtuel bien conçu qui permet aux joueurs de simuler la distribution des cartes en les faisant glisser sur la table. Les utilisateurs suggèrent que le site Web du jeu de cartes bénéficierait de quelques nouvelles fonctionnalités, telles que la sélection de plusieurs cartes et la possibilité d'aligner les cartes. Certains utilisateurs comparent également le site web à d'autres jeux de cartes virtuels ou à des jeux de cartes qu'ils lancent de leurs propres mains.
+
+### Règles permettant aux développeurs de concevoir de belles interfaces utilisateur sans faire appel à un designer
+
+(https://www.refactoringui.com/).
+Le développeur complet Adam Wathan et le designer Steve Schoger ont développé Refactoring UI, un ensemble complet de conception comprenant un livre de 218 pages, des tutoriels vidéo, une galerie de plus de 200 styles de composants, des palettes de couleurs, des polices de caractères et des icônes SVG. La version essentielle coûte 99 dollars, tandis que la version complète est proposée à 149 dollars. Des options de tarification par équipe sont disponibles et une garantie de remboursement de 60 jours est offerte. Tailwind Labs Inc. propose des idées de mise en page et une galerie de composants, en mettant l'accent sur les conceptions uniques.
+
+[HN](http://news.ycombinator.com/item?id=35529240).
+Le débat entre forme et fonction se poursuit : les utilisateurs de Hacker News discutent de l'importance des principes de conception en matière d'interface utilisateur et d'interface utilisateur, notamment de l'équilibre entre l'esthétique et la facilité d'utilisation, de la nécessité d'éviter une dépendance excessive à l'égard des tendances et de la priorité à accorder au retour d'information et à la fonctionnalité. Un livre sur la conception de l'interface utilisateur annoncé sur HN reçoit des critiques positives, bien que son prix de 100 dollars suscite la controverse parmi les utilisateurs.
+
+### Carnets d'apprentissage machine distribués avec Elixir et Livebook
+
+[Original] (https://news.livebook.dev/distributed2-machine-learning-notebooks-with-elixir-and-livebook---launch-week-1---day-2-1aIlaw).
+Le deuxième jour de la semaine de lancement de Livebook présente les nouvelles capacités d'apprentissage automatique de Livebook v0.9, y compris l'apprentissage automatique distribué avec Nx qui peut être accéléré par le GPU et distribué à plusieurs machines avec des ajustements de code minimaux. La version inclut également de nouvelles tâches de réseaux neuronaux telles que le speech-to-text, la détection de la langue et la ponctuation, permettant aux utilisateurs d'utiliser plus facilement des modèles modernes d'apprentissage automatique en quelques clics.
+
+[HN](http://news.ycombinator.com/item?id=35525661).
+Livebook et Nx permettent l'apprentissage automatique distribué avec Elixir, en utilisant les capacités de la VM Erlang en conjonction avec Google XLA et PyTorch's LibTorch. Nx vise à concurrencer les modèles des grandes entreprises technologiques dans le domaine de l'apprentissage automatique, et les utilisateurs de HN ont remercié les contributeurs de Livebook et de Nx pour leur travail.
+
+### Maximiser le potentiel des LLM : Un guide pour l'ingénierie rapide
+
+[Original] (https://www.ruxu.dev/articles/ai/maximizing-the-potential-of-llms/).
+L'article explore les modèles de langage (LLM), y compris leurs forces, leurs faiblesses et les stratégies d'ingénierie de l'invite pour des tâches spécifiques telles que le résumé de texte, la réponse aux questions, la génération de code et le raisonnement. Malgré certaines limitations, l'ingénierie de l'invite permet aux utilisateurs de maximiser le potentiel des LLM, et avec le développement de nouvelles stratégies, les possibilités pour les LLM à l'avenir sont passionnantes.
+
+[HN](http://news.ycombinator.com/item?id=35522080).
+Les utilisateurs de Hacker News discutent du rôle de l'ingénierie de l'invite dans l'optimisation du potentiel des modèles de langage tels que GPT3/4. Le débat porte sur la nature de l'ingénierie et la nécessité d'utiliser des messages-guides précis pour obtenir des résultats optimaux dans le traitement du langage naturel. Des inquiétudes sont soulevées quant aux vulnérabilités de sécurité liées à la concaténation de textes fiables et non fiables, et à la difficulté d'atténuer les risques en raison de la nature stochastique des modèles de langage.
+
+### Les meilleurs stylos pour 2023 : Gel, stylo à bille, roller et stylo plume
+
+(https://www.jetpens.com/blog/The-42-Best-Pens-for-2023-Gel-Ballpoint-Rollerball-and-Fountain-Pens/pt/974).
+JetPens a publié un guide complet intitulé "Les 42 meilleurs stylos pour 2023", composé de différentes catégories de stylos. Le guide comprend des échantillonneurs, des recharges, des accessoires et des fournitures artistiques, ainsi que des collections de stylos, des tendances, des comparaisons et les meilleurs choix pour la commodité des utilisateurs. En outre, JetPens offre la livraison gratuite à partir de 35 $ d'achat et une vaste gamme de produits de papeterie, ce qui en fait un guichet unique pour tous les besoins en matière de papeterie.
+
+[HN](http://news.ycombinator.com/item?id=35527873).
+Jetpens est considéré comme une source fiable de produits de papeterie, loué pour son organisation et l'absence de mélange de marchandises. Les commentaires discutent des recommandations sur les outils d'écriture, y compris les stylos à plume qui réduisent la douleur à la main et améliorent la qualité de l'écriture, ainsi que des suggestions pour les gauchers. Le billet souligne l'importance des expériences esthétiques et tactiles pour les outils d'écriture et dresse la liste des meilleurs stylos pour 2023, y compris des options pour les droitiers et les gauchers.
+
+### Htmx 1.9.0 a été publié
+
+[Original](https://htmx.org/posts/2023-04-11-htmx-1-9-0-is-released/).
+Htmx a publié la version 1.9.0, qui prend en charge les transitions de vue et la gestion généralisée des événements en ligne. La mise à jour comprend également des corrections de bogues et des améliorations, y compris une migration vers zola, réduisant le nombre de dépendances de développement. Htmx est une application basée sur l'hypertexte pour le développement web moderne.
+
+[HN](http://news.ycombinator.com/item?id=35530289).
+Htmx 1.9.0 a été publié avec le support de View Transitions, une fonctionnalité expérimentale du navigateur disponible dans Chrome 111+. Cette fonctionnalité rendra le HTML vanille beaucoup plus fluide, mais s'accompagne d'un retard notable. Les utilisateurs voient htmx comme une solution pour ajouter un peu de flair UX à des applications principalement basées sur le CRUD, et l'espoir est que les développeurs de navigateurs remarqueront htmx et décideront d'intégrer ses fonctionnalités dans le HTML lui-même, qui est l'endroit où la plupart de ces choses ont leur place.
+
+### L'avènement des LLM locaux
+
+[Original](https://nickarner.com/notes/the-coming-of-local-llms-march-23-2023/).
+Malgré les progrès réalisés dans le domaine des grands modèles de langage (LLM) formés sur des clusters de GPU plus importants, il est toujours nécessaire d'exécuter des modèles plus petits sur des appareils présentant des contraintes de mémoire et de puissance de traitement. Les LLM locaux permettent des applications plus sensibles à la confidentialité des utilisateurs et aux considérations de latence, tout en garantissant qu'elles fonctionnent toujours sans interruption du serveur ou modification des politiques ou des API des fournisseurs en amont. Les progrès des communautés open source pour l'exécution locale des LLM signifient que les entreprises d'électronique grand public sont susceptibles d'incorporer la technologie dans leurs produits, mais Apple est peut-être en retard dans ce domaine, car elle ne recrute pas activement pour des projets LLM dans ses listes d'emplois ML.
+
+[HN](http://news.ycombinator.com/item?id=35526401).
+Les utilisateurs de Hacker News discutent de l'accessibilité et des améliorations potentielles de la productivité des LLM locaux, ainsi que des préoccupations et des risques associés à leur utilisation. Les discussions portent également sur ChatGPT, les modèles open-source, les exigences matérielles et l'entrée potentielle d'Apple dans l'espace NLP, ainsi que sur les limites et la faisabilité des modèles LLM actuels.
+
+### FreeBSD 13.2
+
+[Original](https://www.freebsd.org/releases/13.2R/relnotes/).
+Les notes de FreeBSD 13.2-RELEASE détaillent les mises à jour du noyau et du userland de FreeBSD, y compris les avis de sécurité et les changements sur la ligne de développement 13-STABLE. Les mises à jour binaires et basées sur les sources sont supportées.
+
+[HN](http://news.ycombinator.com/item?id=35521846).
+FreeBSD 13.2 a été publié, et les utilisateurs apprécient sa conception modulaire et sa capacité à exécuter une interface graphique si nécessaire, ainsi que des fonctionnalités telles que ZFS intégré dans le système de base, ce qui le distingue en tant que système d'exploitation de serveur. Cependant, les utilisateurs notent que l'utilisation de FreeBSD comme système d'exploitation de bureau peut poser des problèmes de pilotes et de compatibilité avec les écosystèmes logiciels, mais ils apprécient la stabilité des paquets, l'excellente documentation et les fonctionnalités utiles de FreeBSD. Certains utilisateurs préfèrent FreeBSD à Linux sur les ordinateurs de bureau en raison d'une meilleure documentation, d'une configuration plus simple, de l'absence de systemd et d'un support solide, bien qu'il puisse ne pas être totalement compatible avec les logiciels propriétaires utilisés dans l'apprentissage automatique.
+
+### YouTube suspend le compte exclusif Patreon d'un YouTubeur pour usurpation d'identité
+
+[Original](https://twitter.com/craig1black/status/1645649300167495681).
+YouTube a suspendu le compte Patreon d'un YouTubeur après avoir accusé le créateur d'usurpation d'identité. Le créateur, connu sous le nom de YaBoiAction, affirme qu'il utilisait son compte pour partager des contenus exclusifs avec ses donateurs Patreon et que la décision de YouTube était injustifiée. Les partisans et les adeptes de YaBoiAction sont restés perplexes face aux actions de la plateforme et remettent en question les politiques de YouTube.
+
+[HN](http://news.ycombinator.com/item?id=35521345).
+YouTube a suspendu le compte Patreon d'un YouTubeur pour usurpation d'identité. Certains critiquent la façon dont YouTube traite les clients payants et les créateurs de contenu. D'autres s'inquiètent du manque de fiabilité du processus décisionnel d'Amazon concernant les articles retournés et suggèrent de meilleures solutions, telles que l'intégration de l'IA, tandis que d'autres encore soulignent la nécessité d'améliorer l'assistance à la clientèle et les procédures d'appel dans les grandes entreprises technologiques.
+
+### Widget KDE Plasma pour l'ajustement de la luminosité d'un moniteur externe
+
+[Original](https://github.com/davidhi7/ddcci-plasmoid).
+L'article explique comment configurer un widget KDE Plasma pour l'ajustement de la luminosité d'un moniteur externe en utilisant l'utilitaire en ligne de commande `ddcutil`. La configuration implique le chargement du module de noyau `i2c-dev`, l'installation et la configuration de `ddcutil`, l'installation du backend et du widget lui-même. L'article fournit également des informations sur l'histoire du widget, y compris les notes de version.
+
+[HN](http://news.ycombinator.com/item?id=35524023).
+Un nouveau widget KDE Plasma permet d'ajuster la luminosité d'un moniteur externe sous Linux, ce qui a suscité plus de 50 points de discussion sur Hacker News. Les utilisateurs partagent leurs propres méthodes et recommandent des logiciels de contrôle de moniteur compatibles avec Linux, mais le manque de standardisation de DDC présente des limitations et des contrôles fastidieux sur les écrans compatibles.
+
+### GPT-4 obtient un B à mon examen final d'informatique quantique
+
+[Original](https://scottaaronson.blog/?p=7209).
+L'IA GPT-4 de Scott Aaronson a obtenu un B à un examen d'informatique quantique de premier cycle, avec des points forts dans les questions vrai/faux et conceptuelles, selon un billet de blog d'Aaronson. Les contraintes pratiques rendent difficile l'amélioration des performances de l'informatique quantique malgré ses possibilités théoriques, et les utilisateurs de HN discutent des limitations et des facteurs associés. Un utilisateur propose une solution quantique pour factoriser $N=105$ en $3\cdot 5 \cdot 7$.
+
+[HN](http://news.ycombinator.com/item?id=35528956).
+GPT-4 obtient un B à l'examen final d'informatique quantique, mais les discussions dans les commentaires tournent autour des limites de l'IA et de la nécessité d'une supervision humaine. Les utilisateurs débattent de l'utilisation de l'IA en médecine, dans les véhicules autonomes et dans les traductions automatiques. Si certains expriment leur scepticisme, d'autres reconnaissent les avantages et les risques potentiels d'une utilisation accrue de l'IA. La performance de ChatGPT incite à une réflexion plus approfondie sur la trajectoire et l'impact potentiel de l'IA, en mettant en évidence les progrès des capacités de l'IA et les implications pour l'interaction homme-machine.
+
+### Show HN : Oubliez la taxe SSO, accédez à vos données utilisateur avec OSS
+
+[Original](https://github.com/AccessOwl/open_owl).
+OpenOwl est un outil open-source qui permet de télécharger des listes d'utilisateurs et des données supplémentaires sur les utilisateurs à partir de diverses applications SaaS sans avoir besoin d'une API publique. L'outil est destiné aux équipes d'exploitation informatique, d'InfoSec et de conformité et prend en charge diverses applications, les utilisateurs pouvant contribuer au projet en mettant en place des intégrations de fournisseurs supplémentaires. Les utilisateurs peuvent choisir d'exécuter OpenOwl avec Docker ou d'installer manuellement les versions Node, Elixir et Erlang requises.
+
+[HN] (http://news.ycombinator.com/item?id=35524328).
+L'ancien directeur technique d'Insurtech et de Fintech a développé OpenOwl, un outil open-source permettant aux utilisateurs de télécharger des données d'utilisateurs à partir d'outils SaaS afin d'éviter les limitations de prix SSO ; bien qu'il ne couvre actuellement que 7 fournisseurs SaaS, OpenOwl permet aux utilisateurs d'ajouter de nouvelles intégrations. Resmo est un autre outil visant à réduire le coût élevé du SSO, en s'intégrant à plus de 80 outils populaires et en centralisant la gestion des utilisateurs, avec une option abordable pour les petites et grandes entreprises ; le coût du SSO est souvent injustement élevé en raison des plans d'entreprise avec des fonctionnalités supplémentaires, mais la mise en œuvre du SSO met en œuvre de meilleures pratiques de sécurité.
+
+### Make Something Wonderful - Steve Jobs dans ses propres mots
+
+(https://stevejobsarchive.com/book).
+Make Something Wonderful est un livre des archives Steve Jobs qui comprend une collection de ses discours, interviews et correspondances. Le livre comprend une introduction de Laurene Powell Jobs et est édité par Leslie Berlin. Il vise à inspirer les lecteurs à créer quelque chose d'innovant qui aura un impact sur le monde.
+
+[HN](http://news.ycombinator.com/item?id=35526648).
+Un utilisateur de HN fait part de ses réactions émotionnelles face à l'impact de Steve Jobs sur la vie des gens au-delà de la technologie, tout en reconnaissant sa capacité à former des équipes efficaces. Les utilisateurs de HN discutent de l'impact complexe de Steve Jobs sur la technologie, débattent de ses compétences en matière de soins de santé et reconnaissent ses compétences en matière de leadership et de marketing. Certains utilisateurs de HN considèrent que la conception de l'interface utilisateur est essentielle à une bonne expérience utilisateur, tandis que d'autres reconnaissent que l'attention portée par Steve Jobs aux détails est à l'origine de ses produits étonnants. Le génie créatif de Steve Jobs, ses compétences en marketing et sa capacité à former des équipes sont considérés comme des facteurs importants de son impact sur l'industrie, tout comme la priorité qu'il accorde à une conception conviviale.
+
+### Le Colorado adopte le droit agricole à la réparation
+
+(https://www.ifixit.com/News/73291/colorado-approves-first-ever-agricultural-right-to-repair-bill).
+Le Colorado a adopté le tout premier projet de loi sur le droit à la réparation dans le secteur agricole, qui permet aux agriculteurs d'accéder aux outils, aux diagnostics et à la documentation nécessaires pour réparer leurs tracteurs et autres équipements agricoles. Le projet de loi doit maintenant être signé par le gouverneur Polis et devrait entrer en vigueur le 1er janvier 2025, offrant ainsi aux agriculteurs des options de réparation plus rapides et plus productives. L'adoption de ce projet de loi est une victoire pour les agriculteurs et l'on espère qu'il marquera le début de l'alignement de l'industrie agricole sur d'autres produits technologiques.
+
+[HN] (http://news.ycombinator.com/item?id=35532479).
+Le droit à la réparation dans le secteur agricole du Colorado a été adopté, avec l'optimisme du gouverneur Polis, mais avec un succès incertain. Les agriculteurs affirment que les entreprises technologiques telles que John Deere ont des pratiques commerciales monopolistiques hostiles, qui les dissuadent de réparer leurs produits et qui vont à l'encontre des besoins des agriculteurs qui ne peuvent pas attendre les pièces détachées ou un nouvel équipement pendant la saison des récoltes. Certains suggèrent qu'une entreprise comme Massey, Fendt ou similaire pourrait se différencier en prenant en charge les réparations, en répondant au besoin de signaux explicites de manuels et de logiciels disponibles en ligne pour prendre en charge les réparations.
+
+### La proposition de loi de l'UE sur l'ARC pourrait avoir des conséquences inattendues pour l'écosystème Python.
+
+(https://pyfound.blogspot.com/2023/04/the-eus-proposed-cra-law-may-have.html).
+La Python Software Foundation s'inquiète de la proposition de loi sur la résilience cybernétique et de la loi sur la responsabilité du fait des produits de l'UE, estimant qu'elle pourrait mettre en danger la communauté des logiciels libres. La PSF souligne les problèmes posés par les politiques qui pourraient rendre les auteurs de logiciels libres responsables de la façon dont leurs logiciels sont utilisés dans des produits commerciaux et suggère que la responsabilité soit attribuée aux entités ayant conclu des accords avec les consommateurs. Le PSF invite les décideurs politiques à prendre en compte l'impact sur le développement des logiciels libres lors de l'élaboration des politiques.
+
+[HN] (http://news.ycombinator.com/item?id=35525384).
+La proposition de loi sur la cyber-résilience dans l'UE a des implications pour l'écosystème Python, provoquant des divisions parmi les communautés en ligne. Les développeurs de logiciels libres qui ne monétisent pas leurs logiciels seront probablement exemptés, mais certains craignent que la vente d'assistance pour les logiciels libres ne soit considérée comme une activité commerciale, ce qui aurait des conséquences inattendues pour les développeurs. L'Union européenne devrait publier un nouveau projet de règlement en avril, sur la base des réactions des fondations de logiciels libres.
+
+### Elizabeth Holmes perd sa tentative d'échapper à la prison
+
+(https://www.cnbc.com/2023/04/11/theranos-elizabeth-holmes-loses-bid-to-stay-out-of-prison.html).
+Elizabeth Holmes, la PDG en disgrâce de Theranos, a perdu sa tentative de rester en dehors de la prison fédérale pendant qu'elle fait appel de sa condamnation pour fraude. Elle devra se rendre le 27 avril et purger plus de 11 ans de prison, à l'issue d'un procès de quatre mois qui l'a déclarée coupable de quatre chefs d'accusation de fraude et de complot. Mme Holmes n'a toujours pas exclu de faire à nouveau appel.
+
+[HN] (http://news.ycombinator.com/item?id=35528281).
+Elizabeth Holmes, fondatrice de Theranos, n'a pas réussi à éviter une peine de 20 ans de prison pour fraude. Les opinions divergentes et les critiques de la technologie de conduite autonome de Tesla et de la conduite autonome en général sont discutées, y compris la nécessité d'audits et de réglementations indépendants. La discussion a porté sur la pertinence et l'efficacité des peines d'emprisonnement pour les crimes non violents, en mettant en évidence des alternatives telles que les systèmes de surveillance à la cheville, les interdictions de détention d'actions et les punitions plus créatives.
+
+### Ask HN : Le marché de l'emploi est-il brutal ? ou est-ce juste moi ?
+
+L'article de Ask HN demande si le marché de l'emploi dans le secteur de la technologie est brutal ou s'il s'agit simplement de l'échec de l'auteur de l'article. Les réponses indiquent qu'il pourrait s'agir d'une combinaison des deux, des facteurs tels que le manque d'expérience et la concurrence jouant un rôle dans la difficulté à trouver un emploi. Un utilisateur suggère de travailler en réseau et de se constituer un portfolio pour augmenter les chances de réussite.
+
+[HN](http://news.ycombinator.com/item?id=35528595).
+Les professionnels expérimentés de la technologie ont du mal à trouver du travail malgré leurs qualifications, les compétences spécialisées étant considérées comme un suicide professionnel. La localisation n'a pas d'importance pour la plupart des emplois dans le domaine de la connaissance. Le processus de recherche d'emploi pour les postes à responsabilité est plus difficile et le recrutement a ralenti. Nombreux sont ceux qui suggèrent de personnaliser les CV et les lettres de motivation pour des postes spécifiques plutôt que d'envoyer des candidatures génériques.
+
+### L'open source et l'avenir de la physique nucléaire
+
+(https://github.com/readme/featured/nuclear-fusion-open-source).
+Je suis désolé, mais il n'y a pas de texte à résumer. Veuillez me fournir le texte afin que je puisse accomplir ma tâche.
+
+[HN](http://news.ycombinator.com/item?id=35524611).
+La communauté HN estime que les logiciels libres sont essentiels pour l'avenir du développement scientifique et technologique, en particulier dans les domaines de recherche universitaire tels que la physique nucléaire. D'autres, en revanche, estiment que les logiciels libres entravent les progrès technologiques coordonnés et à grande échelle, et que les investissements concentrés des entités publiques ou des entreprises conduisent à des progrès plus significatifs. Un utilisateur note que le CERN investit des capitaux importants dans KiCAD, un projet qui n'est pas mentionné dans l'article. Certains utilisateurs de HN racontent des anecdotes sur des essais nucléaires nécessitant des logiciels libres, ce qui prouve que les logiciels libres alimentent l'avenir des projets techniques depuis plus de 30 ans.
+
+### Rust, RR, Neovim : Une combinaison parfaite pour le débogage
+
+[Original](https://github.com/vlopes11/rrust.nvim).
+Ce billet présente `rrust.nvim`, un outil d'aide pour Rust qui enregistre et rejoue l'exécution des tests Rust en utilisant `termdebug`. Il nécessite Neovim, `nvim-treesitter`, `rr`, `jq`, et un système d'exploitation Linux. L'outil inclut des bindings de commodité pour le débogage et peut être installé en utilisant `vimPlug`.
+
+[HN](http://news.ycombinator.com/item?id=35522642).
+Les développeurs discutent des outils utiles pour le débogage dans (néo)vim, et beaucoup recommandent d'investir dans un bon outil de débogage comme Totalview, VSCode ou CLion pour améliorer la productivité. Certains s'inquiètent des obstacles à l'utilisation de rr pour le débogage de grandes applications avec beaucoup d'accès à la RAM, tandis que d'autres font l'éloge du nouveau plugin nvim-dap pour les utilisateurs de Neovim qui utilisent Rust pour utiliser l'outil de débogage RR directement à l'intérieur de Neovim. Il existe un débat sur les avantages des débogueurs spécifiques pour différents langages, comme la popularité des produits Intellij et VS Code. Les utilisateurs sont intéressés par des outils de débogage alternatifs pour le langage de programmation Rust, mais les récents changements de politique de la Rust Foundation en matière de marques déposées ont suscité la controverse et l'inquiétude de certains membres de la communauté, qui expriment leur scepticisme quant à la prise en compte du retour d'information.
+
+### La Free Software Foundation est en train de mourir
+
+[Original](https://drewdevault.com/2023/04/11/2023-04-11-The-FSF-is-dying.html).
+La Free Software Foundation (FSF), l'une des missions les plus anciennes du mouvement du logiciel libre, ne parvient pas à diffuser la philosophie du logiciel libre, à promouvoir les licences copyleft et à superviser la santé du mouvement du logiciel libre, malgré ses réalisations dans l'établissement et l'avancement de la liberté logicielle. Les messages et la gestion problématiques de la FSF, son incapacité à comprendre sa place dans le monde et l'environnement d'exclusion sous la direction de Richard Stallman nous rendent vulnérables à l'exploitation des attaques commerciales contre la marque du logiciel libre et open-source. Une réforme est nécessaire pour remplir sa mission et garder la communauté unie, y compris le leadership, le message, le découplage de GNU, le développement de nouvelles licences copyleft, et la réforme de sa vision de l'écosystème.
+
+[HN](http://news.ycombinator.com/item?id=35524297).
+La Free Software Foundation (FSF) est critiquée pour sa pertinence, son environnement de travail toxique et le leadership de Richard Stallman. Certains demandent sa démission, tandis que ses partisans s'y opposent. La FSF a besoin de changement et d'innovation pour atteindre ses objectifs. La diversité est un sujet de discussion, avec des points de vue opposés quant à son importance. L'accent devrait être mis sur la promotion des logiciels libres et sur la recherche d'un équilibre entre la défense des intérêts des utilisateurs et ceux des entreprises. La FSF doit rendre les logiciels libres plus accessibles aux utilisateurs finaux et de nouvelles licences copyleft doivent être développées. L'importance d'un traitement équitable et de l'égalité des chances dans l'industrie technologique est soulignée. Le genre, la sexualité, la race et les qualifications sont débattus en tant que priorités pour les nominations au conseil d'administration de la FSF.
+
+</Steps>
