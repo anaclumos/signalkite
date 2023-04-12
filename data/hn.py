@@ -5,6 +5,8 @@ import os
 from closedai import title_format
 from dotenv import load_dotenv
 from time import sleep
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 load_dotenv()
 
@@ -18,7 +20,6 @@ GITHUB_URL = "https://github.com/"
 GITLAB_URL = "https://gitlab.com/"
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 OPENAI_TOKEN_THRESHOLD = 2048  # It's actually 4096, but we want to be safe
-
 
 def get_story(id: int, start: int, end: int) -> Story:
     global HN_STORY
@@ -55,8 +56,8 @@ def get_best_stories(start: int, end: int) -> Stories:
     stories = Stories([story for story in stories if start <= story.timestamp <= end])
     stories.sort(key=lambda x: x.score, reverse=True)
 
-    if len(stories) > 30:
-        return stories[:30]
+    if len(stories) > 10:
+        return stories[:10]
     return stories
 
 
@@ -82,8 +83,12 @@ def download_story(story: Story) -> Story:
         or url.startswith(YT_URL)
     ) and url != "":
         try:
-            r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
-            story.content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
+            driver = webdriver.Chrome()
+            driver.get(url)
+            wait.until(presence_of_element_located((By.CSS_SELECTOR, "article")) or presence_of_element_located((By.CSS_SELECTOR, "body")))
+            article = driver.find_element(By.TAG_NAME, "article") or driver.find_element(By.TAG_NAME, "body")
+            story.content += article.text
+            driver.close()
         except Exception as e:
             print(
                 f"Failed to download main content from {story.title}, error: {e}. Retrying in 1 seconds..."
