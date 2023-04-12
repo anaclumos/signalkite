@@ -41,7 +41,7 @@ Bugün Teknoloji Dünyasında Neler Oluyor? •
 
 </h6>
 
-## Debugging GitHub Actiosn On-Device
+## Debugging GitHub Actions On-Device
 
 ```sh
 act --secret-file .env workflow_dispatch
