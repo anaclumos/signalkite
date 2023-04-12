@@ -105,7 +105,7 @@ Be sure to write the article in a well-written, natural, fluent way, so that an 
 Employ transitioning phrases and native arguments, but concise and succinct.
 
 Now, I will give you the text.
-Summarize in markdown, less than around 100 words, end with a period for each sentence.
+Summarize in markdown, in less than around 3 sentences, end with a period for each sentence.
 Text: {text}
 """,
                 },
@@ -151,7 +151,7 @@ You must summarize the text, but do not repeat the article content itself. These
 and you must extract that how people are criticizing or making new point of views based on this shared knowledge.
 The contents already covered are: {summary}
 
-Now, given the previous text, summarize the following hacker news comments in markdown, in less than 20 words, end with a period for each sentence.
+Now, given the previous text, summarize the following hacker news comments in markdown, in less than 2 sentences, end with a period for each sentence.
 
 Text: {text}
 """,
