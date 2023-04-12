@@ -6,7 +6,7 @@
 
 <h6 align="center">
 
-[![news](https://github.com/anaclumos/hn.cho.sh/actions/workflows/routine.yaml/badge.svg)](https://github.com/anaclumos/hn.cho.sh/actions/workflows/routine.yaml)
+[![news](https://github.com/anaclumos/hn.cho.sh/actions/workflows/news.yaml/badge.svg)](https://github.com/anaclumos/hn.cho.sh/actions/workflows/news.yaml)
 
 Какво се случва в света на технологиите днес? •
 今天的科技界发生了什么？ •
