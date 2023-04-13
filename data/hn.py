@@ -63,19 +63,8 @@ def get_best_stories(start: int, end: int) -> Stories:
 
 def download_story(story: Story) -> Story:
     import bs4
-
     sleep(1)
     url = story.url
-
-    if url.startswith(GITHUB_URL):
-        username = url.split("/")[3]
-        repo = url.split("/")[4]
-        url = f"https://raw.githubusercontent.com/{username}/{repo}/master/README.md"
-
-    if url.startswith(GITLAB_URL):
-        username = url.split("/")[3]
-        repo = url.split("/")[4]
-        url = f"https://gitlab.com/{username}/{repo}/-/raw/master/README.md"
     if not url.startswith(YT_SHORT_URL) and not url.startswith(YT_URL) and url != "":
         try:
             driver = webdriver.Chrome()
@@ -88,6 +77,7 @@ def download_story(story: Story) -> Story:
             print(
                 f"Failed to download main content from {story.title}, error: {e}. Retrying in 1 seconds..."
             )
+            driver.close()
             sleep(1)
             try:
                 driver = webdriver.Chrome()
@@ -98,6 +88,7 @@ def download_story(story: Story) -> Story:
                 driver.close()
             except Exception as e:
                 story.content = "This page does not have main article."
+                driver.close()
                 print(f"Failed to download main content from {story.title}, error: {e}")
     sleep(1)
     try:
