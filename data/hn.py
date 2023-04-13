@@ -25,12 +25,6 @@ GITLAB_URL = "https://gitlab.com/"
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 OPENAI_TOKEN_THRESHOLD = 2048  # It's actually 4096, but we want to be safe
 
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.core.utils import ChromeType
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-
 chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
 chrome_options = Options()
