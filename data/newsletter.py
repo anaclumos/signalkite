@@ -112,6 +112,8 @@ EMAIL_FOOTER = {
 }
 
 
+HN_SUMMARY = {'en': 'Hacker News Summary', 'bg': 'Хакерски новини Резюме', 'cs': 'Hacker News Shrnutí', 'da': 'Sammenfatning af Hacker News', 'de': 'Hacker News Zusammenfassung', 'el': 'Περίληψη Hacker News', 'es': 'Resumen de Hacker News', 'et': 'Hacker News kokkuvõte', 'fi': 'Hacker News yhteenveto', 'fr': 'Résumé de Hacker News', 'hu': 'Hacker News Összefoglaló', 'id': 'Ringkasan Berita Peretas', 'it': 'Riassunto di Hacker News', 'ja': 'ハッカーニュースまとめ', 'ko': '해커뉴스 요약', 'lt': 'Hacker News santrauka', 'lv': 'Hacker News kopsavilkums', 'nl': 'Hacker News Samenvatting', 'nb': 'Sammendrag av hackernyheter', 'pl': 'Podsumowanie Hacker News.', 'pt': 'Resumo das Notícias Hacker', 'ro': 'Rezumat Hacker News', 'ru': 'Сводка новостей Хакера', 'sk': 'Hacker News Zhrnutie', 'sl': 'Povzetek Hacker News', 'sv': 'Sammanfattning av Hacker News', 'tr': 'Hacker Haber Özeti', 'uk': 'Зведення хакерських новин', 'zh': '黑客新闻摘要'}
+
 def get_campaigns():
     """Get all campaigns"""
     return requests.get(server, auth=(username, password)).json()
@@ -141,8 +143,8 @@ def create_campaign(title, body, lang):
         server,
         auth=(username, password),
         json={
-            "name": title,
-            "subject": title,
+            "name": f"{today.strftime("%Y-%m-%d")} {lang}",
+            "subject": f"🗞️ {today.strftime("%Y-%m-%d")} {HN_SUMMARY[lang]}: {title}",
             "type": "regular",
             "content_type": "markdown",
             "body": prefix + body + suffix,
