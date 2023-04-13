@@ -13,6 +13,10 @@ jobs:
   news:
     environment: Production
     runs-on: ubuntu-latest
+    services:
+      selenium:
+        image: selenium/standalone-chrome:latest
+        options: --shm-size=2gb
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
