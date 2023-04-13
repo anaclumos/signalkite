@@ -93,22 +93,18 @@ def download_story(story: Story) -> Story:
             article = driver.find_element(By.TAG_NAME, "article")
             print(f"Found article: {' '.join(article.text.split(' ')[0:10])}...")
             story.content += article.text
-            driver.close()
         except Exception as e:
             print(
                 f"Failed to download main content from {story.title}, error: {e}. Retrying in 1 seconds..."
             )
-            driver.close()
             sleep(1)
             try:
                 driver.get(url)
                 article = driver.find_element(By.TAG_NAME, "body")
                 print(f"Found body, using that instead: {' '.join(article.text.split(' ')[0:10])}...")
                 story.content += article.text
-                driver.close()
             except Exception as e:
                 story.content = "This page does not have main article."
-                driver.close()
                 print(f"Failed to download main content from {story.title}, error: {e}")
     sleep(1)
     try:
