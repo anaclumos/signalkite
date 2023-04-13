@@ -143,8 +143,8 @@ def create_campaign(title, body, lang):
         server,
         auth=(username, password),
         json={
-            "name": f"{today.strftime("%Y-%m-%d")} {lang}",
-            "subject": f"🗞️ {today.strftime("%Y-%m-%d")} {HN_SUMMARY[lang]}: {title}",
+            "name": f"{today.strftime('%Y-%m-%d')} {lang}",
+            "subject": f"🗞️ {today.strftime('%Y-%m-%d')} {HN_SUMMARY[lang]}: {title}",
             "type": "regular",
             "content_type": "markdown",
             "body": prefix + body + suffix,
