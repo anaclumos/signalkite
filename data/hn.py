@@ -46,6 +46,8 @@ options = [
 for option in options:
     chrome_options.add_argument(option)
 
+chrome_options.setBinary("/usr/local/bin/chromedriver")
+
 driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
 def get_story(id: int, start: int, end: int) -> Story:
