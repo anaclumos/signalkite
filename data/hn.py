@@ -39,10 +39,6 @@ options = [
 for option in options:
     chrome_options.add_argument(option)
 
-driver = webdriver.Chrome(
-    options=chrome_options,
-)
-
 def get_story(id: int, start: int, end: int) -> Story:
     global HN_STORY
     sleep(0.1)
@@ -85,7 +81,9 @@ def get_best_stories(start: int, end: int) -> Stories:
 
 def download_story(story: Story) -> Story:
     import bs4
-    sleep(1)
+    driver = webdriver.Chrome(
+        options=chrome_options,
+    )
     url = story.url
     if not url.startswith(YT_SHORT_URL) and not url.startswith(YT_URL) and url != "":
         try:
@@ -108,17 +106,17 @@ def download_story(story: Story) -> Story:
                 print(f"Failed to download main content from {story.title}, error: {e}")
     sleep(1)
     try:
-        sleep(2)
-        r = requests.get(story.hn_url, headers={"User-Agent": "Mozilla/5.0"})
-        story.hn_content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
+        sleep(1)
+        driver.get(story.hn_url)
+        story.hn_content += driver.find_element(By.TAG_NAME, "body").text
     except Exception as e:
         print(
             f"Failed to download HN comments from {story.title}, error: {e}. Retrying in 1 seconds..."
         )
         sleep(1)
         try:
-            r = requests.get(story.hn_url, headers={"User-Agent": "Mozilla/5.0"})
-            story.hn_content += bs4.BeautifulSoup(r.text, "html.parser").get_text()
+            driver.get(story.hn_url)
+            story.hn_content += driver.find_element(By.TAG_NAME, "body").text
         except Exception as e:
             print(f"Failed to download HN comments from {story.title}, error: {e}")
     story.content = (
