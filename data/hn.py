@@ -39,6 +39,10 @@ options = [
 for option in options:
     chrome_options.add_argument(option)
 
+driver = webdriver.Chrome(
+    options=chrome_options,
+)
+
 def get_story(id: int, start: int, end: int) -> Story:
     global HN_STORY
     sleep(0.1)
@@ -80,10 +84,6 @@ def get_best_stories(start: int, end: int) -> Stories:
 
 
 def download_story(story: Story) -> Story:
-    import bs4
-    driver = webdriver.Chrome(
-        options=chrome_options,
-    )
     url = story.url
     if not url.startswith(YT_SHORT_URL) and not url.startswith(YT_URL) and url != "":
         try:
