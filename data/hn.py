@@ -100,9 +100,7 @@ def download_story(story: Story) -> Story:
             try:
                 driver.get(url)
                 article = driver.find_element(By.TAG_NAME, "body")
-                print(
-                    f"Found body, using that instead: {' '.join(article.text.split(' ')[0:10])}..."
-                )
+                print(f"Found body, using that instead.")
                 story.content += article.text
             except Exception as e:
                 story.content = "This page does not have main article."
