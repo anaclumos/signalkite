@@ -153,6 +153,14 @@ if __name__ == "__main__":
                     "】": "]",
                     "【": "[",
                     "] (": "](",
+                    "Show HN: ": "",
+                    "Tell HN: ": "",
+                    "Ask HN: ": "",
+                    "Launch HN: ": "",
+                    "HN: ": "",
+                    "HN:": "",
+                    "HN": "Discussion Service",
+                    "Hackers News": "Discussion Service",
                 }
 
                 for rule in REPLACE_RULES:
