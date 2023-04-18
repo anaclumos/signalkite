@@ -28,6 +28,8 @@ What made such tech-savvy people suddenly interested in this post? Your job is t
 You must also know that you should be 'confident but not arrogant'.
 It would be best not to use expressions like "this may be..." "potentially,"... or such.
 Things should be 'clearly' and 'obviously' stated.
+
+If there are no meaningful content, for example, if it looks like a simple error message, leave it blank.
 """
 
 
