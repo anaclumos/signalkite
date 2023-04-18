@@ -23,6 +23,7 @@ TWITTER_SHORT_URL = "https://t.co/"
 GITHUB_URL = "https://github.com/"
 GITLAB_URL = "https://gitlab.com/"
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
+POST_COUNT = 30
 OPENAI_TOKEN_THRESHOLD = 1536  # It's actually 4096, but we want to be safe
 
 
@@ -34,7 +35,7 @@ options = [
     "--ignore-certificate-errors",
     "--disable-extensions",
     "--no-sandbox",
-    "--disable-dev-shm-usage"
+    "--disable-dev-shm-usage",
 ]
 for option in options:
     chrome_options.add_argument(option)
@@ -42,6 +43,7 @@ for option in options:
 driver = webdriver.Chrome(
     options=chrome_options,
 )
+
 
 def get_story(id: int, start: int, end: int) -> Story:
     global HN_STORY
@@ -78,8 +80,8 @@ def get_best_stories(start: int, end: int) -> Stories:
     stories = Stories([story for story in stories if start <= story.timestamp <= end])
     stories.sort(key=lambda x: x.score, reverse=True)
 
-    if len(stories) > 10:
-        return stories[:10]
+    if len(stories) > POST_COUNT:
+        return stories[:POST_COUNT]
     return stories
 
 
@@ -99,7 +101,9 @@ def download_story(story: Story) -> Story:
             try:
                 driver.get(url)
                 article = driver.find_element(By.TAG_NAME, "body")
-                print(f"Found body, using that instead: {' '.join(article.text.split(' ')[0:10])}...")
+                print(
+                    f"Found body, using that instead: {' '.join(article.text.split(' ')[0:10])}..."
+                )
                 story.content += article.text
             except Exception as e:
                 story.content = "This page does not have main article."
