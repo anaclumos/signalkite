@@ -111,10 +111,38 @@ EMAIL_FOOTER = {
     "zh": "今天的通讯怎么样？请填写这个[调查](https://airtable.com/shrty7OlhrLuBC6UX)让我知道。",
 }
 
+SHARE = {
+    "en": "Share",
+    "bg": "Споделете",
+    "cs": "Sdílet",
+    "da": "Del",
+    "de": "Teilen Sie",
+    "el": "Μοιραστείτε το",
+    "es": "Compartir",
+    "et": "Jaga",
+    "fi": "Jaa",
+    "fr": "Partager",
+    "hu": "Megosztás",
+    "id": "Bagikan",
+    "it": "Condividi",
+    "ja": "シェア",
+    "ko": "공유",
+    "lt": "Dalintis",
+    "lv": "Dalīties",
+    "nl": "Deel",
+    "nb": "Del",
+    "pl": "Podziel się",
+    "pt": "Partilhar",
+    "ro": "Share",
+    "ru": "Поделиться",
+    "sk": "Zdieľať",
+    "sl": "Delite",
+    "sv": "Dela",
+    "tr": "Paylaş",
+    "uk": "Поділіться",
+    "zh": "分享",
+}
 
-HN_SUMMARY = {'en': 'Hacker News Summary', 'bg': 'Хакерски новини Резюме', 'cs': 'Hacker News Shrnutí', 'da': 'Sammenfatning af Hacker News', 'de': 'Hacker News Zusammenfassung', 'el': 'Περίληψη Hacker News', 'es': 'Resumen de Hacker News', 'et': 'Hacker News kokkuvõte', 'fi': 'Hacker News yhteenveto', 'fr': 'Résumé de Hacker News', 'hu': 'Hacker News Összefoglaló', 'id': 'Ringkasan Berita Peretas', 'it': 'Riassunto di Hacker News', 'ja': 'ハッカーニュースまとめ', 'ko': '해커뉴스 요약', 'lt': 'Hacker News santrauka', 'lv': 'Hacker News kopsavilkums', 'nl': 'Hacker News Samenvatting', 'nb': 'Sammendrag av hackernyheter', 'pl': 'Podsumowanie Hacker News.', 'pt': 'Resumo das Notícias Hacker', 'ro': 'Rezumat Hacker News', 'ru': 'Сводка новостей Хакера', 'sk': 'Hacker News Zhrnutie', 'sl': 'Povzetek Hacker News', 'sv': 'Sammanfattning av Hacker News', 'tr': 'Hacker Haber Özeti', 'uk': 'Зведення хакерських новин', 'zh': '黑客新闻摘要'}
-
-SHARE = {'en': 'Share', 'bg': 'Споделете', 'cs': 'Sdílet', 'da': 'Del', 'de': 'Teilen Sie', 'el': 'Μοιραστείτε το', 'es': 'Compartir', 'et': 'Jaga', 'fi': 'Jaa', 'fr': 'Partager', 'hu': 'Megosztás', 'id': 'Bagikan', 'it': 'Condividi', 'ja': 'シェア', 'ko': '공유', 'lt': 'Dalintis', 'lv': 'Dalīties', 'nl': 'Deel', 'nb': 'Del', 'pl': 'Podziel się', 'pt': 'Partilhar', 'ro': 'Share', 'ru': 'Поделиться', 'sk': 'Zdieľať', 'sl': 'Delite', 'sv': 'Dela', 'tr': 'Paylaş', 'uk': 'Поділіться', 'zh': '分享'}
 
 def get_campaigns():
     """Get all campaigns"""
@@ -146,7 +174,7 @@ def create_campaign(title, body, lang):
         auth=(username, password),
         json={
             "name": f"{today.strftime('%Y-%m-%d')} {lang}",
-            "subject": f"🗞️ {today.strftime('%Y-%m-%d')} {HN_SUMMARY[lang]}: {title}",
+            "subject": f"🗞️ {today.strftime('%Y-%m-%d')} {title}",
             "type": "regular",
             "content_type": "markdown",
             "body": prefix + body + suffix,
