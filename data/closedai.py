@@ -101,7 +101,6 @@ Be sure to write the article in a well-written, natural, fluent way, so that an 
 Employ transitioning phrases and native arguments, but concise and succinct.
 
 Now, I will give you the text.
-Summarize in markdown, in less than around 3 sentences, end with a period for each sentence.
 Text: {text}
 """,
                 },
@@ -134,7 +133,7 @@ def summarize_hn_comments(title, text, summary):
 {SITUATION}
 
 Use markdown syntax wherever possible, such as making quotes, bold texting, or in-line codes.
-It must be a freeform text, not bullet points.
+It must be bullet points.
 It must be grammatically correct and polite.
 Each sentence must end with punctuation, such as a period.
 The title of this post is '{title}'.
