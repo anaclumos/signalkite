@@ -11,25 +11,16 @@ OPENAI_RETRY_COUNT = 5
 SITUATION = """
 You are an editor at 'The Tech Times', an expert journalist for cutting-edge tech News.
 I will give you the raw text content.
-You must provide a concise summary in mutually exclusive but collectively complete sentences.
+You must provide a concise summary in mutually exclusive but collectively complete bullet points.
 Please understand that some comments may include sarcasm, and you must figure out that it's not the central argument or factual.
+Remain neutral and objective.
 
-You should not be politically biased. Always maintain professionalism.
-You must be able to write in a neutral tone, and not be biased towards any political party.
-Avoid any political or religious statements at all costs, especially because some comments will diverge and may include such statements.
-
-Do not externalize/objectify the text; For example, do not say 'The author says...' or 'The author claims...', or 'This article is about...'.
-Write the summary as if you are explaining to an university student or an entry-level software engineer.
-
-You must understand that the primary readers of this post are new to the industry, and they would want some background context.
+Write the summary as if you are explaining to a university student or an entry-level software engineer.
+The primary readers of this post are new to the industry and would want some background context.
 You must consider this question: What is the most important thing people should know about this post? Why is this post special? Is there something new or exciting thing going on? Did something get released?
 What made such tech-savvy people suddenly interested in this post? Your job is to capture vital points that interest the readers.
 
-You must also know that you should be 'confident but not arrogant'.
-It would be best not to use expressions like "this may be..." "potentially,"... or such.
-Things should be 'clearly' and 'obviously' stated.
-
-If there are no meaningful content, for example, if it looks like a simple error message, leave it blank.
+If there is no meaningful content, for example, if it looks like a simple error message, leave it blank.
 """
 
 
@@ -46,9 +37,7 @@ def shorten(text: str, limit: int, title="") -> str:
                 + str(len(chunks))
                 + f") {title}..."
             )
-            sleep(
-                1
-            )  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
+            sleep(1)
             completion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[
@@ -59,8 +48,6 @@ def shorten(text: str, limit: int, title="") -> str:
                         
 Hard limit {limit // 16} words.
 Please understand that some comments may include sarcasm, and you must realize it's not the main point.
-If a very specific word aptly describes the sentence, utilize it to make the sentence shorter.
-
 Text: {w}
 """,
                     }
@@ -81,9 +68,7 @@ def bulletpoint_summarize(title, text):
     summary = ""
     try:
         print(f"Creating Summary for... {title}")
-        sleep(
-            1
-        )  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
+        sleep(1)
         completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
@@ -123,9 +108,7 @@ def summarize_hn_comments(title, text, summary):
     summary = ""
     try:
         print(f"Summarizing HN Comments... {title}")
-        sleep(
-            1
-        )  # OpenAI has a rate limit of 60 requests per minute for pay-as-you-go users
+        sleep(1)
         completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
@@ -144,11 +127,13 @@ These are the HN Comments. The comments may digress from the main point.
 You must ignore the digression, and focus on the main points of the article, unless the digression is relevant to the article or article is unaccessible.
 Ignore Y Combinator recruiting for cohorts; that's the footer of the website.
 
+
 You must summarize the text, but do not repeat the article content itself. These are already covered somewhere else,
 and you must extract that how people are criticizing or making new point of views based on this shared knowledge.
 The contents already covered are: {summary}
 
-Now, given the previous text, summarize the following hacker news comments in markdown, in less than 2 sentences, end with a period for each sentence.
+Now, given the previous text, summarize the following hacker news comments in markdown bullets.
+It must be a bullet point list, not a freeform text; that is, start with '-' immediately followed by a space.
 
 Text: {text}
 """,
