@@ -1,6 +1,5 @@
 from Story import Story, Stories
 import requests
-import multiprocessing
 import os
 from closedai import title_format
 from dotenv import load_dotenv
@@ -95,7 +94,7 @@ def download_story(story: Story) -> Story:
             story.content += article.text
         except Exception as e:
             print(
-                f"Failed to download main content from {story.title}, error: {e}. Retrying in 1 seconds..."
+                f"Failed to download main content from {story.title}. Retrying in 1 seconds..."
             )
             sleep(1)
             try:
@@ -115,7 +114,7 @@ def download_story(story: Story) -> Story:
         story.hn_content += driver.find_element(By.TAG_NAME, "body").text
     except Exception as e:
         print(
-            f"Failed to download HN comments from {story.title}, error: {e}. Retrying in 1 seconds..."
+            f"Failed to download HN comments from {story.title}. Retrying in 1 seconds..."
         )
         sleep(1)
         try:
