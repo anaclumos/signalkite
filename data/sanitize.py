@@ -39,9 +39,6 @@ if __name__ == "__main__":
             lines = f.readlines()
         with open(md_file, "w") as f:
             for line in lines:
-                if "####" in line:
-                    COUNTER += 1
-                    line = line.replace("####", "###")
                 if "###" in line:
                     COUNTER += 1
                     line = "### " + line.replace("###", "")
