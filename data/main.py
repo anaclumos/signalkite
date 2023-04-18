@@ -35,6 +35,7 @@ def json_to_stories(json):
         stories.append(Story(**story))
     return stories
 
+
 if __name__ == "__main__":
     utc = timezone("UTC")
     today = (
@@ -55,11 +56,11 @@ if __name__ == "__main__":
             stories = json_to_stories(data)
     else:
         stories = get_best_stories(start, end)
-        print(f"Found {len(stories)} stories")
+        print(f"\nFound {len(stories)} stories")
         stories = download_stories(stories)
-        print(f"Downloaded {len(stories)} stories")
+        print(f"\nDownloaded {len(stories)} stories")
         stories = summarize_stories(stories)
-        print(f"Summarized {len(stories)} stories")
+        print(f"\nSummarized {len(stories)} stories")
 
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w") as f:
