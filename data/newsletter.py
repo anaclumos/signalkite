@@ -111,7 +111,38 @@ EMAIL_FOOTER = {
     "zh": "今天的通讯怎么样？请填写这个[调查](https://airtable.com/shrty7OlhrLuBC6UX)让我知道。",
 }
 
-SHARE ={'en': 'Please do me a favor of sharing this newsletter with your tech friends!', 'bg': 'Моля, направете ми услуга и споделете този бюлетин с вашите технологични приятели!', 'cs': 'Udělejte mi prosím laskavost a sdílejte tento newsletter se svými technickými přáteli!', 'da': 'Gør mig venligst den tjeneste at dele dette nyhedsbrev med dine tekniske venner!', 'de': 'Bitte tun Sie mir den Gefallen und teilen Sie diesen Newsletter mit Ihren Technikfreunden!', 'el': 'Παρακαλώ κάντε μου τη χάρη να μοιραστείτε αυτό το ενημερωτικό δελτίο με τους φίλους σας που ασχολούνται με την τεχνολογία!', 'es': 'Hazme el favor de compartir este boletín con tus amigos de la tecnología.', 'et': 'Palun tehke mulle teene ja jagage seda uudiskirja oma tehnikasõpradele!', 'fi': 'Tee minulle palvelus ja jaa tämä uutiskirje teknisten ystäviesi kanssa!', 'fr': "Faites-moi le plaisir de partager cette lettre d'information avec vos amis techniciens !", 'hu': 'Kérlek, tedd meg nekem azt a szívességet, hogy megosztod ezt a hírlevelet a tech barátaiddal!', 'id': 'Tolong bantu saya dengan membagikan buletin ini kepada teman-teman teknologi Anda!', 'it': 'Fatemi il favore di condividere questa newsletter con i vostri amici tecnologici!', 'ja': 'このニュースレターを技術者の友人にも教えてあげてください！', 'ko': '이 뉴스레터를 여러분의 기술 친구들에게 공유해 주세요!', 'lt': 'Padarykite man paslaugą ir pasidalykite šiuo naujienlaiškiu su savo technologijų draugais!', 'lv': 'Lūdzu, dariet man pakalpojumu un dalieties ar šo biļetenu ar saviem tehnoloģiju draugiem!', 'nl': 'Doe me een plezier en deel deze nieuwsbrief met uw technische vrienden!', 'nb': 'Gjør meg en tjeneste og del dette nyhetsbrevet med teknologivennene dine!', 'pl': 'Proszę, zrób mi przysługę i podziel się tym newsletterem ze swoimi przyjaciółmi z branży technologicznej!', 'pt': 'Faça-me o favor de partilhar este boletim informativo com os seus amigos técnicos!', 'ro': 'Vă rog să-mi faceți o favoare de a împărtăși acest newsletter cu prietenii dumneavoastră din domeniul tehnologiei!', 'ru': 'Пожалуйста, сделайте одолжение, поделитесь этой новостью со своими друзьями-технологами!', 'sk': 'Prosím, urobte mi láskavosť a zdieľajte tento newsletter so svojimi technickými priateľmi!', 'sl': 'Prosim, naredite mi uslugo in delite to glasilo s svojimi tehnološkimi prijatelji!', 'sv': 'Gör mig en tjänst och dela detta nyhetsbrev med dina tekniska vänner!', 'tr': 'Lütfen bu bülteni teknoloji dostlarınızla paylaşarak bana bir iyilik yapın!', 'uk': 'Будь ласка, поділіться цією розсилкою зі своїми друзями-технологами!', 'zh': '请帮我一个忙，与你的技术朋友们分享这篇简讯!'}
+SHARE = {
+    "en": "Please do me a favor of sharing this newsletter with your tech friends!",
+    "bg": "Моля, направете ми услуга и споделете този бюлетин с вашите технологични приятели!",
+    "cs": "Udělejte mi prosím laskavost a sdílejte tento newsletter se svými technickými přáteli!",
+    "da": "Gør mig venligst den tjeneste at dele dette nyhedsbrev med dine tekniske venner!",
+    "de": "Bitte tun Sie mir den Gefallen und teilen Sie diesen Newsletter mit Ihren Technikfreunden!",
+    "el": "Παρακαλώ κάντε μου τη χάρη να μοιραστείτε αυτό το ενημερωτικό δελτίο με τους φίλους σας που ασχολούνται με την τεχνολογία!",
+    "es": "Hazme el favor de compartir este boletín con tus amigos de la tecnología.",
+    "et": "Palun tehke mulle teene ja jagage seda uudiskirja oma tehnikasõpradele!",
+    "fi": "Tee minulle palvelus ja jaa tämä uutiskirje teknisten ystäviesi kanssa!",
+    "fr": "Faites-moi le plaisir de partager cette lettre d'information avec vos amis techniciens !",
+    "hu": "Kérlek, tedd meg nekem azt a szívességet, hogy megosztod ezt a hírlevelet a tech barátaiddal!",
+    "id": "Tolong bantu saya dengan membagikan buletin ini kepada teman-teman teknologi Anda!",
+    "it": "Fatemi il favore di condividere questa newsletter con i vostri amici tecnologici!",
+    "ja": "このニュースレターを技術者の友人にも教えてあげてください！",
+    "ko": "이 뉴스레터를 여러분의 기술 친구들에게 공유해 주세요!",
+    "lt": "Padarykite man paslaugą ir pasidalykite šiuo naujienlaiškiu su savo technologijų draugais!",
+    "lv": "Lūdzu, dariet man pakalpojumu un dalieties ar šo biļetenu ar saviem tehnoloģiju draugiem!",
+    "nl": "Doe me een plezier en deel deze nieuwsbrief met uw technische vrienden!",
+    "nb": "Gjør meg en tjeneste og del dette nyhetsbrevet med teknologivennene dine!",
+    "pl": "Proszę, zrób mi przysługę i podziel się tym newsletterem ze swoimi przyjaciółmi z branży technologicznej!",
+    "pt": "Faça-me o favor de partilhar este boletim informativo com os seus amigos técnicos!",
+    "ro": "Vă rog să-mi faceți o favoare de a împărtăși acest newsletter cu prietenii dumneavoastră din domeniul tehnologiei!",
+    "ru": "Пожалуйста, сделайте одолжение, поделитесь этой новостью со своими друзьями-технологами!",
+    "sk": "Prosím, urobte mi láskavosť a zdieľajte tento newsletter so svojimi technickými priateľmi!",
+    "sl": "Prosim, naredite mi uslugo in delite to glasilo s svojimi tehnološkimi prijatelji!",
+    "sv": "Gör mig en tjänst och dela detta nyhetsbrev med dina tekniska vänner!",
+    "tr": "Lütfen bu bülteni teknoloji dostlarınızla paylaşarak bana bir iyilik yapın!",
+    "uk": "Будь ласка, поділіться цією розсилкою зі своїми друзями-технологами!",
+    "zh": "请帮我一个忙，与你的技术朋友们分享这篇简讯!",
+}
+
 
 def get_campaigns():
     """Get all campaigns"""
