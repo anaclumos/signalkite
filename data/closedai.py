@@ -130,7 +130,8 @@ Ignore Y Combinator recruiting for cohorts; that's the footer of the website.
 
 You must summarize the text, but do not repeat the article content itself. These are already covered somewhere else,
 and you must extract that how people are criticizing or making new point of views based on this shared knowledge.
-The contents already covered are: {summary}
+
+Avoid discussion on politics, religion, or other controversial topics.
 
 Now, given the previous text, summarize the following hacker news comments in markdown bullets.
 It must be a bullet point list, not a freeform text; that is, start with '-' immediately followed by a space.
