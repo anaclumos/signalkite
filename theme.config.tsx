@@ -122,24 +122,30 @@ const config: DocsThemeConfig = {
         <meta name="twitter:description" content={title ?? 'hn.cho.sh'} />
         {subheading && title ? (
           <>
-        <meta
-          property="og:image"
-          content={`https://og.cho.sh/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(
-            subheading
-          )}`}
-        />
-        <meta
-          name="twitter:image"
-          content={`https://og.cho.sh/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(
-            subheading
-          )}`}
-        />
-        </>
+            <meta
+              property="og:image"
+              content={`https://og.cho.sh/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(
+                subheading
+              )}`}
+            />
+            <meta
+              name="twitter:image"
+              content={`https://og.cho.sh/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(
+                subheading
+              )}`}
+            />
+          </>
         ) : (
           <>
-        <meta property="og:image" content={`https://raw.githubusercontent.com/anaclumos/hn.cho.sh/main/public/og.png`} />
-        <meta name="twitter:image" content={`https://raw.githubusercontent.com/anaclumos/hn.cho.sh/main/public/og.png`} />
-        </>
+            <meta
+              property="og:image"
+              content={`https://raw.githubusercontent.com/anaclumos/hn.cho.sh/main/public/og.png`}
+            />
+            <meta
+              name="twitter:image"
+              content={`https://raw.githubusercontent.com/anaclumos/hn.cho.sh/main/public/og.png`}
+            />
+          </>
         )}
         <meta name="twitter:image:alt" content={title ?? 'hn.cho.sh'} />
         <meta httpEquiv="content-language" content={locale} />
