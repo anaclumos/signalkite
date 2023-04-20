@@ -22,7 +22,7 @@ TWITTER_SHORT_URL = "https://t.co/"
 GITHUB_URL = "https://github.com/"
 GITLAB_URL = "https://gitlab.com/"
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
-POST_COUNT = 15
+POST_COUNT = 10
 OPENAI_TOKEN_THRESHOLD = 1536  # It's actually 4096, but we want to be safe
 
 

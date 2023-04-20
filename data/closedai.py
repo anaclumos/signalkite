@@ -88,6 +88,9 @@ Be sure to write the article in a well-written, natural, fluent way, so that an 
 Employ transitioning phrases and native arguments, but concise and succinct.
 
 Now, I will give you the text.
+
+Do not exceed 5 bullet points. Keep the most important 5 key points, and ignore the rest.
+
 Text: {text}
 """,
                 },
@@ -127,7 +130,6 @@ These are the HN Comments. The comments may digress from the main point.
 You must ignore the digression, and focus on the main points of the article, unless the digression is relevant to the article or article is unaccessible.
 Ignore Y Combinator recruiting for cohorts; that's the footer of the website.
 
-
 You must summarize the text, but do not repeat the article content itself. These are already covered somewhere else,
 and you must extract that how people are criticizing or making new point of views based on this shared knowledge.
 
@@ -135,6 +137,8 @@ Avoid discussion on politics, religion, or other controversial topics.
 
 Now, given the previous text, summarize the following hacker news comments in markdown bullets.
 It must be a bullet point list, not a freeform text; that is, start with '-' immediately followed by a space.
+
+Do not exceed 3 bullet points. Keep the most important 3 key points, and ignore the rest.
 
 Text: {text}
 """,
