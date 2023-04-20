@@ -1,0 +1,331 @@
+import { Steps } from 'nextra-theme-docs'
+
+import CallToAction from '../../../components/CallToAction'
+
+<CallToAction />
+
+<Steps>
+
+## 20 avril 2023
+
+### StableLM : un nouveau modèle de langue open-source
+
+#### [Actualités](https://stability.ai/blog/stability-ai-launches-the-first-of-its-stablelm-suite-of-language-models)
+- StableLM est un nouveau modèle de langage open-source conçu pour les tâches de traitement du langage naturel.
+- Ce modèle est unique en ce sens qu'il permet aux utilisateurs de l'entraîner et de l'affiner sur leurs propres ensembles de données spécifiques, augmentant ainsi les performances de l'apprentissage du langage pour des tâches spécifiques.
+- Son architecture est basée sur BERT et est conçue pour minimiser les oublis catastrophiques.
+- Le modèle est pré-entraîné sur un large corpus de textes, y compris Wikipédia et Common Crawl.
+- Le logiciel est facile à utiliser et peut être consulté sur GitHub, avec une documentation disponible pour aider les utilisateurs à démarrer.
+- StableLM a déjà été utilisé dans diverses applications, notamment la classification de textes et l'analyse de sentiments.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=35629127)
+- Un nouveau modèle de langage open-source appelé StableLM a été publié par Stability.AI, avec des modèles allant de 3B à 65B paramètres et une largeur de contexte de 4096.
+- L'évaluation du modèle a été critiquée, mais c'est une bonne option pour les développeurs qui veulent améliorer le modèle puisqu'il s'agit d'une source ouverte.
+- Le modèle alpha de StableLM est actuellement testé et devrait surpasser Pythia 6.9B. Il sera entraîné sur 1,5 trillion de tokens.
+- Les grands modèles apprennent plus vite, mais ils sont susceptibles d'être surajoutés et les entreprises obligent les consommateurs à payer d'emblée pour la puissance de calcul.
+- Les cadres de ML optimisés deviennent plus accessibles sur le matériel grand public, mais les bons modèles de langage nécessitent actuellement des GPU coûteux, ce qui fait des API dans le nuage la seule option.
+- L'utilisation de modèles de langage par le biais d'API permet une inférence hautement optimisée, mais le calcul local permet une plus grande confidentialité dans les applications d'intelligence artificielle.
+- Les chercheurs de Stanford ont publié StableLM sous une licence open-source, ce qui a suscité des réactions diverses.
+- Le développement et l'utilisation de l'IA sont des sujets brûlants, les avis divergeant quant à l'arrivée d'une IA superintelligente dans le monde.
+
+### Faire dormir un serveur Linux domestique au repos et le réveiller à la demande - la méthode la plus simple
+
+#### [Actualités](https://dgross.ca/blog/linux-home-server-auto-sleep/)
+- Cet article explique comment configurer un serveur domestique fonctionnant sous Ubuntu Linux pour qu'il se mette en veille et se réveille à la demande afin d'héberger des sauvegardes Time Machine.
+- Wake-on-LAN activé pour réveiller le serveur via des paquets unicast.
+- Les services réseau, y compris ARP Stand-in et Avahi, sont configurés pour maintenir la connectivité réseau pendant que le serveur dort.
+- Code partagé pour déterminer l'état inactif/occupé et automatiser la suspension vers la RAM via un travail cron.
+- Un dispositif Linux séparé toujours actif et un dispositif d'interface réseau qui prend en charge Wake-on-LAN avec des paquets unicast sont nécessaires.
+- ARP Stand-in permet à un périphérique réseau de répondre aux requêtes ARP au nom d'un serveur endormi, déclenchant ainsi son réveil.
+- L'auteur a utilisé Ruby et libpcap avec un filtre pour les paquets de requêtes ARP ciblant l'adresse IP du serveur endormi pour implémenter ARP Stand-in.
+- Les problèmes de réveil indésirables causés par les paquets AFP et les requêtes NetBIOS ont été résolus.
+- L'article explique comment désactiver IPv6 et utiliser la mise en miroir des ports pour capturer les paquets d'un dispositif intermédiaire entre le serveur et le reste du réseau.
+- Avahi est utilisé par l'auteur comme service de remplacement pour ARP.
+- L'auteur a utilisé avahi-publish pour configurer Raspberry Pi.
+- L'auteur a créé une définition de service systemd qui exécute automatiquement avahi-publish au démarrage.
+- L'installation s'est déroulée avec succès pendant plus d'un mois.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=35627107)
+- Le Raspberry Pi est une option populaire pour les serveurs à faible consommation d'énergie, mais certains utilisateurs recommandent de l'utiliser pour synchroniser les fichiers avec un "vrai" serveur de sauvegarde au lieu d'une configuration à la demande.
+- Les suggestions pour le fonctionnement d'un serveur à faible consommation d'énergie comprennent l'utilisation du wifi et la configuration de l'Ethernet pour un fonctionnement à faible consommation d'énergie.
+- Des mini-PC alternatifs tels que les cartes NAS Beelink et Topton sont suggérés.
+- ChatGPT est recommandé pour un dépannage plus rapide.
+- Les fonctions d'économie d'énergie et les difficultés liées à la définition de "l'inactivité" sont abordées.
+- Le débat porte sur les configurations de réseau local et les sauvegardes auto-hébergées par rapport aux services en nuage, ainsi que sur les préoccupations relatives à la protection de la vie privée et à la surveillance.
+- Les lecteurs partagent des conseils sur la manière d'optimiser la consommation d'énergie, tels que la mise en veille des disques durs et l'utilisation de blocs d'alimentation à faible consommation d'énergie.
+- La technologie IPv6 et ses avantages sont abordés.
+- Des stratégies visant à minimiser la consommation d'énergie des serveurs domestiques sont examinées.
+- L'usurpation d'adresse ARP peut être utilisée pour réveiller un serveur endormi.
+
+### Utilisateur : Junnn11
+
+#### [Actualités](https://en.wikipedia.org/wiki/User:Junnn11)
+- Ce billet présente des reconstructions et des diagrammes de divers arthropodes anciens, notamment des Euarthropodes, des Dinocaridés, des Lobopodiens et bien d'autres encore.
+- L'utilisateur, Junnn11, est un passionné d'arthropodes qui s'intéresse aux problèmes de tête des panarthropodes, à la phylogénie des sous-phylas et des lignées d'arthropodes, aux chélicérates basaux, aux dinocaridiens et aux lobopodiens.
+- Le billet comprend une liste de diverses espèces de fuxianhuiidés, de mégacheirans, de pycnogonidés, de synziphosurines, de chasmataspidés, d'euryptéridés, d'arachnides, et bien d'autres encore.
+- On y trouve également des dessins interprétatifs de divers arthropodes anciens.
+- L'article contient des liens vers la page Wikipédia japonaise et le compte Twitter de l'utilisateur.
+- Aucune publication nouvelle ou récente n'est mentionnée dans le message.
+
+#### [Réactions de l'industrie] (http://news.ycombinator.com/item?id=35630423)
+- Le message sur HN présente des personnes profondément investies dans des sujets de niche, notamment la technologie, la biologie et la modélisation.
+- Les utilisateurs discutent des avantages et des inconvénients d'être investi dans de tels sujets, y compris l'impact sur la motivation et la légitimation de ses intérêts par le doctorat.
+- Les illustrations de l'utilisateur Junnn11 représentant la biomécanique et le mouvement des arthropodes sur une page Wikipédia ont suscité des discussions sur la biologie, la génétique et le concept de vision.
+- Les utilisateurs discutent également du "problème de la tête de l'arthropode" et des préférences des utilisateurs en matière de conception, telles que les images à chargement paresseux.
+- Le chargement paresseux des balises <img/> sur les pages web par défaut pose des problèmes de confidentialité et n'est actuellement pas implémenté dans Safari ou Firefox, ce qui risque d'endommager certains sites web.
+- L'application MediaWiki est une plateforme PHP permettant de créer du contenu généré par les utilisateurs, et les illustrations d'insectes de Junnn11 sur une page d'utilisateur ont attiré l'attention.
+- Y Combinator accepte les candidatures pour l'été 2023.
+
+### Hors ligne est juste en ligne avec une latence extrême
+
+#### [Actualités](https://blog.jim-nielsen.com/2023/offline-is-online-with-extreme-latency/)
+- Peter Van Hardenberg plaide en faveur d'un logiciel local d'abord, où les programmes s'exécutent sur des appareils et tirent parti du nuage pour la "durabilité ou l'accessibilité" sans en dépendre.
+- Les logiciels d'entreprise traditionnels et les services en nuage reviennent à construire des porte-avions coûteux alors qu'il faudrait des outils simples, personnels et faciles à entretenir.
+- Les notions de "en ligne" et de "hors ligne" doivent être considérées comme un continuum avec différents niveaux de latence.
+- La mise hors ligne n'est que la forme la plus extrême de latence et comporte ses propres gradations de secondes, minutes, heures, jours, etc.
+- Passer de l'idée de binaires en ligne/hors ligne à un spectre de latence ouvre de nouvelles portes pour construire des choses différentes.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=35626015)
+- L'article aborde le concept des applications hors ligne et en ligne et le débat sur la question de savoir s'il faut les considérer comme des catégories identiques ou distinctes avec leurs propres exigences.
+- La conversation porte sur l'interface utilisateur pessimiste ou optimiste et sur la localité des données ou la propriété des données.
+- La résolution des conflits est une question complexe lorsqu'il s'agit d'applications hors ligne et les solutions doivent être conçues pour gérer à la fois l'environnement en ligne et hors ligne.
+- L'évolution vers une approche des produits basée sur la synchronisation des données est proposée.
+- Les expériences hors ligne doivent être soigneusement conçues pour traiter tout comme une source de vérité et gérer les migrations de schémas et de logiques d'entreprise.
+- Certains utilisateurs préfèrent les applications peer-to-peer aux services basés sur l'internet pour des raisons de confidentialité et de contrôle.
+- Le choix de l'approche (locale ou en nuage) dépend des besoins et des préférences de l'utilisateur.
+- La discussion porte sur les défis techniques, tels que les systèmes NAT et de découverte, et examine les solutions potentielles, y compris les normes fédérées et les réseaux maillés.
+- L'importance de la tolérance hors ligne dans des applications telles que Google Maps, iMessage et les applications météorologiques est mentionnée.
+- La discussion porte sur la question de savoir si la priorité à la mise hors ligne est une solution viable pour les outils de collaboration.
+- Plusieurs commentateurs discutent des avantages et des inconvénients de la communication hors ligne par rapport à la communication en ligne et de l'importance d'une conception résiliente.
+
+### La plupart de mes compétences ne valent plus rien, mais 10 % valent 1000 fois plus.
+
+#### [Actualités](https://tidyfirst.substack.com/p/90-of-my-skills-are-now-worth-0)
+- Une technologie d'IA comme ChatGPT peut transformer la valeur des compétences en matière de développement de logiciels
+- Bien que certaines compétences puissent perdre de leur valeur, l'IA peut offrir de nouvelles possibilités d'utilisation des compétences restantes.
+- ChatGPT peut automatiser des tâches, développer des solutions à des problèmes complexes et aider les développeurs à collaborer.
+- Le maintien de l'expertise des développeurs humains est essentiel, et la validation des résultats de l'IA est cruciale
+- L'intégration d'outils d'IA peut améliorer l'efficacité sans sacrifier la qualité
+- La créativité, l'expertise et la pensée critique humaines ne peuvent être remplacées par l'IA.
+- Les développeurs de logiciels devraient adopter l'IA tout en reconnaissant sa valeur unique.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=35627779)
+- ChatGPT peut fournir des réponses précises pour des tâches techniques simples, mais peut se tromper en toute confiance pour des tâches plus compliquées.
+- La qualité des réponses de ChatGPT pourrait être améliorée en l'entraînant sur des corpus de meilleure qualité, tandis que d'autres mettent en garde contre une trop grande dépendance à l'égard de l'IA pour l'apprentissage.
+- Les grands modèles linguistiques peuvent manquer de matériel source dans certains domaines, mais la possibilité d'interagir avec ChatGPT et les corrections peuvent être utiles.
+- ChatGPT peut fournir des informations de base aux non-experts, mais peut nécessiter une validation et une vérification.
+- Les modèles génératifs pourraient démocratiser l'écriture et aider à produire plus de texte, mais les sceptiques pensent qu'ils pourraient conduire à l'analphabétisme et à l'élimination de certains emplois dans le domaine de l'écriture.
+- Les textes générés par l'IA pourraient conduire à l'élimination des emplois de rédacteurs les moins bien rémunérés, mais n'auraient pas d'incidence sur les emplois de rédacteurs bien rémunérés et de grande qualité.
+- Les chatbots d'IA peuvent générer des codes de mauvaise qualité, et les législateurs et les juges qui adoptent des textes générés sont une source de préoccupation.
+- Les modèles linguistiques alimentés par l'IA améliorent la productivité des rédacteurs, mais ne peuvent pas remplacer entièrement les bons rédacteurs.
+- L'écriture pourrait bientôt devenir une part importante du travail de chacun, mais de nombreux rédacteurs et éditeurs pourraient devoir changer de carrière.
+- La technologie et l'IA ont à maintes reprises rendu obsolètes d'anciennes façons de faire, notamment les ordinateurs humains dans les banques et les feuilles de calcul, mais elles ne peuvent pas remplacer les compétences de base des graphistes.
+
+### Pourquoi certains chercheurs pensent que je me trompe sur les médias sociaux et la maladie mentale
+
+#### [Actualités](https://jonathanhaidt.substack.com/p/why-some-researchers-think-im-wrong)
+- Les chercheurs en sciences sociales débattent actuellement de la question de savoir si les médias sociaux sont la cause principale de l'épidémie de maladies mentales chez les adolescents.
+- Les critiques affirment que les preuves ne sont pas assez solides pour étayer les allégations de dommages.
+- Les partisans affirment qu'il se passe quelque chose d'important au niveau de la santé mentale des adolescents, qui a commencé vers 2012, sans qu'il y ait d'autre explication.
+- Les taux de maladie mentale et d'utilisation des médias sociaux n'ont pas de relation claire de cause à effet, mais les sceptiques ne peuvent pas expliquer l'épidémie aussi clairement que la théorie des MSS.
+- Les sceptiques exigent un haut niveau de scepticisme fondé sur le principe "au-delà de tout doute raisonnable", ce qui n'est pas approprié pour les affaires civiles.
+- Les scientifiques ne s'accordent pas sur l'ampleur de la corrélation entre l'utilisation des médias sociaux et les problèmes de santé mentale.
+- Les médias sociaux peuvent être particulièrement nocifs pour les filles.
+- Les chercheurs se concentrent souvent sur un modèle de causalité lorsqu'ils transforment une question en variables mesurables, ce qui peut occulter d'autres voies de causalité potentielles.
+- Deux des modèles de causalité qui pourraient expliquer l'augmentation des maladies mentales chez les adolescents sont le modèle de la période sensible et le modèle de la perte d'IRL.
+- L'auteur recommande des mesures telles que le retardement de l'utilisation des smartphones jusqu'à l'école secondaire, la création d'écoles sans téléphone et l'augmentation de l'âge de "l'âge adulte sur internet" à 16 ans.
+- Le gouvernement fédéral n'a rien fait pour réduire l'utilisation des smartphones par les mineurs, et il est nécessaire d'engager un débat national et mondial sur la question de savoir si les smartphones et les médias sociaux interfèrent avec le développement sain des adolescents.
+- Les sceptiques sont nécessaires pour opposer des contre-arguments aux lanceurs d'alerte et pour mettre en évidence les faiblesses des preuves.
+- La vérification de l'âge sur les smartphones peut se faire grâce à des méthodes innovantes déjà proposées par des entreprises comme Clear.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=35626755)
+- La surveillance constante des médias sociaux par les pairs et leur caractère addictif sont à l'origine de problèmes de santé mentale, de manque de sommeil et de développement personnel.
+- La discussion souligne la nécessité d'une compréhension nuancée des effets des médias sociaux sur la santé mentale, y compris la dépression, le harcèlement et le suicide.
+- L'évolution vers des jeux vidéo toujours en ligne qui encouragent les comportements addictifs est préoccupante, et certains plaident pour des mesures visant à protéger les personnes de moins de 18 ans.
+- Les médias sociaux ont affecté la vie des enfants en limitant leur développement de l'indépendance, et le manque d'activités de plein air est un problème qui doit être résolu.
+- La fiabilité des données autodéclarées et des données au niveau de la population est discutée dans le cadre de la compréhension des causes de la dépression.
+- Les données disponibles soutiennent l'affirmation selon laquelle les médias sociaux sont à l'origine de problèmes de santé mentale, mais la direction de la causalité est difficile à établir.
+- L'impact du changement climatique sur la santé mentale des jeunes, le manque d'activisme qui l'entoure et le rôle des entreprises, des gouvernements et des individus sont examinés.
+- La consommation d'énergie et l'absence d'alternatives idéales aux combustibles fossiles, ainsi que les mauvaises pratiques parentales, sont également mentionnées.
+
+### ChatPDF - Chat avec n'importe quel PDF
+
+#### [Actualités](https://www.chatpdf.com)
+- ChatPDF offre un outil permettant d'améliorer les expériences d'apprentissage des étudiants, en les aidant à comprendre les manuels et les documents de recherche.
+- La plateforme peut analyser efficacement toute une série de documents, y compris les rapports financiers et commerciaux, les propositions de projet, les manuels de formation et les contrats légaux.
+- ChatPDF offre un stockage en nuage sécurisé pour les données confidentielles et la possibilité de les supprimer à tout moment.
+- Pour les esprits curieux, ChatPDF peut révéler une mine de connaissances à partir de documents historiques, de littérature et d'autres sources.
+- L'outil peut comprendre n'importe quelle langue et répondre dans la langue préférée de l'utilisateur.
+- ChatPDF propose une API, des options tarifaires, une FAQ, un programme d'affiliation et une assistance par Twitter et par courriel.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=35626312)
+- ChatPDF est un nouveau service qui permet aux utilisateurs de poser des questions sur les documents PDF en utilisant l'API GPT d'OpenAI pour générer des réponses
+- Les suggestions faites pour améliorer le service comprennent l'ajustement de la taille des morceaux, l'optimisation de la recherche sémantique ou de la récursion pour les PDF plus complexes, et le découpage du texte PDF.
+- Certains utilisateurs se montrent sceptiques, tandis que d'autres soulignent les avantages du service, tels que l'amélioration des résultats de recherche et l'indexation sémantique.
+- Des solutions alternatives auto-hébergées pour l'utilisation de ChatGPT sont suggérées pour l'utilisation de documents sensibles.
+- ChatPDF est similaire à d'autres services d'indexation sémantique, avec des suggestions d'améliorations potentielles telles qu'une version d'essai.
+- Certains commentateurs se moquent de l'engouement pour les modèles d'IA GPT et suggèrent d'autres types de fichiers à analyser.
+
+### Le portage GTK+3 de GIMP est officiellement terminé
+
+#### [News](https://twitter.com/zemarmot/status/1646272510701236229)
+- Aucun contenu significatif n'a été trouvé dans le texte fourni.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=35630681)
+- Le portage GTK+3 de GIMP est maintenant terminé.
+- La rétrocompatibilité est cruciale pour l'espace utilisateur et le niveau de compatibilité de Windows est loué pour les applications individuelles.
+- Il existe peu de solutions pour faire fonctionner les vieux logiciels Linux avec les bibliothèques correspondantes.
+- Debian 12 continuera à inclure GTK2, même si certaines distributions essaient de le supprimer.
+- La construction d'une boîte à outils d'interface graphique de haute qualité nécessite de la maturité, de l'exhaustivité et des efforts.
+- Certaines boîtes à outils d'interface graphique manquent de widgets communs et obligent les développeurs à utiliser des widgets tiers.
+- Un développeur propose d'utiliser un arbre syntaxique abstrait pour permettre une compatibilité binaire transparente dans les API et les interfaces.
+- GIMP souhaite passer à GTK4 pour une meilleure compatibilité avec Wayland, la prise en charge de HiDPI et un aspect plus épuré.
+- L'édition non destructive devrait être introduite dans GIMP 3.2.
+- Les utilisateurs sont encouragés à passer à GTK3 ou GTK4, mais les avis sont partagés.
+- KDE et ses applications sont une alternative potentielle à GTK.
+
+### Un satellite prend l'image d'un autre satellite
+
+#### [News](https://twitter.com/NASA_Landsat/status/1642954595377750027)
+- Aucun contenu significatif n'est présent ; le résumé ne peut pas être fourni.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=35632721)
+- Le satellite Landsat de la NASA a pris une image d'un autre satellite, ce qui a déclenché une discussion sur la technologie et l'ingénierie des satellites.
+- Les utilisateurs ont partagé des informations intéressantes sur divers satellites, notamment des satellites de télémétrie laser et de renseignement.
+- Des entreprises travaillent sur des projets visant à améliorer l'imagerie en envoyant des satellites plus près de la Terre.
+- Maxar Technologies a publié une vidéo montrant son satellite WorldView-4 prenant des images d'un autre satellite en orbite, avec des vecteurs supplémentaires pour le positionnement.
+- Certains commentateurs ont remarqué les reflets "étincelants" causés par l'isolation réfléchissante des engins spatiaux.
+- La vidéo est considérée comme une preuve de la viabilité commerciale croissante de l'imagerie dans l'espace, malgré les commentaires négatifs des médias sociaux.
+
+### Comment créer de bons petits jeux
+
+#### [Actualités](http://farawaytimes.blogspot.com/2023/02/how-to-make-good-small-games.html)
+- La création de petits jeux avec des outils plus simples peut augmenter les chances de succès des nouveaux développeurs.
+- Se battre avec des moteurs complexes peut décourager les gens de créer des jeux.
+- La portée émotionnelle d'un jeu ne détermine pas sa qualité.
+- Les petits jeux peuvent avoir différentes définitions du succès, et il est important d'être à l'écoute de ces émotions plus subtiles pour que l'expérience soit complète.
+- Inspirez-vous de diverses sources pour créer des jeux uniques.
+- Le choix d'un facteur de forme influe sur les attentes des joueurs ; tenez-en compte lors du choix d'un moteur et de la préparation de la sortie.
+- Terminez votre jeu avant de le sortir et évitez de sortir des jeux "à suivre".
+- Il est important d'obtenir un retour d'information de la part d'une communauté qui vous soutient.
+- Concentrez-vous sur la création de jeux qui vous plaisent et vous satisfont, plutôt que d'essayer de créer un chef-d'œuvre ou quelque chose de "génial".
+- L'auteur encourage les lecteurs à se concentrer sur la création de communautés positives et solidaires et à trouver un épanouissement créatif dans leur travail, plutôt que de devenir amers ou désillusionnés.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=35625543)
+- L'article aborde les moyens de créer de bons petits jeux et d'éviter le perfectionnisme, notamment en hiérarchisant les idées et en incubant plusieurs idées de jeu.
+- L'importance des tests de jeu et de la conception de petites versions itératives des jeux est soulignée, de même que l'équilibre des jeux dans un souci d'équité et la limitation de la portée du projet.
+- Certains commentateurs font remarquer que certains genres de jeux peuvent être difficiles à distiller dans des jeux plus petits sans les modifier fondamentalement.
+- L'article souligne les avantages de la création de petits jeux, notamment la possibilité d'explorer différents mécanismes de jeu et les limites du support, ainsi que la satisfaction de créer quelque chose d'unique.
+- Les gens devraient aborder le développement de jeux avec un goût critique et une compréhension du médium.
+
+### Firefly - Un nouveau compilateur et runtime pour les langages BEAM
+
+#### [Actualités](https://github.com/GetFirefly/firefly)
+- Firefly est un compilateur et un runtime pour les langages BEAM, écrit en Rust, qui permet de compiler des applications Elixir ciblant WebAssembly
+- Firefly peut compiler des exécutables ou des bibliothèques qui agissent comme des versions OTP, mais ne gère pas les dépendances.
+- Firefly se compose de trois éléments principaux : Compilateur, Bibliothèques et Programmes d'exécution, et sacrifie certaines fonctionnalités pour permettre des optimisations supplémentaires.
+- LLVM 15 est nécessaire pour construire Firefly, et les contributeurs doivent communiquer avec l'équipe principale avant de mettre en œuvre des changements.
+- Firefly n'est pas destiné à remplacer BEAM et peut manquer des fonctionnalités nécessaires, mais offre une implémentation alternative d'Erlang/OTP avec des caractéristiques uniques.
+- La conception du runtime est la même que celle d'OTP mais varie en fonction du backend codegen utilisé, et Firefly permet d'étendre facilement le runtime avec des fonctions natives implémentées en Rust.
+- Firefly s'appelait auparavant Lumen et est sous licence Apache 2.0.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=35622622)
+- Firefly, un nouveau compilateur et moteur d'exécution spécialement conçu pour les langages BEAM, a été lancé en mettant l'accent sur la compilation WASI et sur la possibilité de créer des binaires autonomes ciblant divers jeux de puces.
+- Un aspect passionnant de Firefly est son potentiel à exécuter efficacement Elixir sur des microcontrôleurs tout en conservant son esprit de concurence.
+- BEAM est la machine virtuelle qui supporte plusieurs langages de programmation, et le changement de nom du projet Lumen en Firefly a été rendu nécessaire par de nombreux projets aux noms similaires.
+- Les développeurs discutent de l'optimisation du moteur d'exécution BEAM pour Elixir, certains affirmant qu'il n'est pas optimisé pour les mathématiques.
+- Le moteur d'exécution BEAM est axé sur les E/S, avec des performances conçues autour de la latence, et prend désormais en charge la compilation JIT en utilisant un JIT écrit à partir de zéro au lieu de LLVM.
+- Firefly permet aux développeurs de compiler des applications Elixir pour cibler WebAssembly, ce qui est utile pour exécuter Elixir sur le frontend malgré les défis que pose la manipulation du DOM dans un environnement de test Elixir.
+
+### Align Your Latents : Synthèse vidéo haute résolution avec des modèles de diffusion latente
+
+#### [Nouvelles](https://research.nvidia.com/labs/toronto-ai/VideoLDM/)
+- Une équipe a mis au point des modèles de diffusion latente (Video LDM) pour la génération de vidéos haute résolution, atteignant des performances de pointe à une résolution de 512 x 1024.
+- Le modèle utilise l'attention temporelle et les convolutions 3D pour obtenir des performances de décodage finement ajustées pour la génération de vidéos de haute qualité.
+- La nouvelle approche est également capable de générer du texte à partir de la vidéo, ce qui ouvre des perspectives intéressantes pour la création de contenu à l'avenir.
+- L'équipe a montré que les couches temporelles de sa méthode se généralisent à différents MLD texte-image finement réglés.
+- Cette recherche a été présentée par Andreas Blattmann, Robin Rombach, Huan Ling, Tim Dockhorn, Seung Wook Kim, Sanja Fidler et Karsten Kreis lors de la 2023 IEEE Conference on Computer Vision and Pattern Recognition (conférence de l'IEEE sur la vision par ordinateur et la reconnaissance des formes).
+- Cette recherche pourrait être utile dans l'industrie du film et du divertissement.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=35624544)
+- Nvidia a mis au point une méthode de synthèse vidéo haute résolution utilisant des modèles de diffusion latente formés sur des ensembles de données vidéo.
+- La génération vidéo future pourrait utiliser des outils de modélisation multimodaux en 3D qui seront affinés par des filtres basés sur la diffusion.
+- Les outils de rendu différentiables utilisant des représentations volumétriques et des champs de distance sont une solution potentielle pour la discrétisation des scènes vidéo.
+- Le concept de "vallée de l'étrange" est abordé dans la section des commentaires.
+- Nvidia a entraîné un modèle texte-vidéo capable de générer des scènes de conduite réalistes avec une fluidité de mouvement sans précédent.
+- Des inquiétudes ont été soulevées quant à l'utilisation potentiellement abusive de cette technologie et la question de savoir si le modèle sera rendu public a été soulevée.
+- Le financement est un défi en raison de la "tragédie des biens communs".
+- Les chercheurs se sont concentrés sur la simulation vidéo pour former des modèles d'IA complexes utilisés dans les véhicules autonomes.
+
+### NaturalSpeech 2 : synthétiseurs de parole et de chant à zéro coup
+
+#### [Actualités](https://speechresearch.github.io/naturalspeech2/)
+- NaturalSpeech 2, un nouveau système TTS de Microsoft Research Asia et Microsoft Azure Speech, utilise un modèle de diffusion latente pour synthétiser des voix naturelles avec une grande expressivité et une forte capacité de zéro-coup.
+- Le système surpasse les systèmes TTS précédents et offre une qualité vocale, une robustesse et une similarité prosodie/timbre supérieures à celles des autres systèmes TTS.
+- Le système utilise un codec audio neuronal, des quantificateurs de vecteurs résiduels et un modèle de diffusion conditionné par l'entrée de texte, ce qui améliore la capacité de zéro-coup.
+- En développant cette technologie, Microsoft s'engage à respecter les principes de l'IA responsable.
+- Il existe un potentiel d'utilisation malveillante dans l'imitation du locuteur et l'usurpation de la voix, et les praticiens sont invités à ne pas abuser de cette technologie.
+- Ce billet souligne la nécessité d'un développement et d'une utilisation responsables de la technologie de l'IA et l'importance des outils de défense pour détecter les voix synthétisées par l'IA.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=35627790)
+- Des chercheurs ont mis au point des synthétiseurs de voix et de chants sans aucun effet, ce qui suscite des inquiétudes quant à l'utilisation abusive des techniques d'usurpation de voix.
+- La discussion a donné lieu à un débat sur l'alignement de l'IA, la complexité des valeurs humaines et les questions éthiques liées à la contribution de données personnelles à des ensembles massifs de données.
+- Une expérience montre que le GPT-3 peut créer de fausses voix, ce qui soulève des inquiétudes quant à la diffusion de fausses informations.
+- Les experts discutent des modèles d'apprentissage des langues et du potentiel des traducteurs universels, tout en s'inquiétant de l'authentification de l'identité numérique et de la cybercriminalité.
+- Débat sur l'authentification de l'humain par rapport à l'IA au téléphone, avec des discussions sur les aspects techniques de l'authentification vocale et de la technologie de synthèse.
+- NaturalSpeech 2 de Microsoft est un exemple d'apprentissage à partir de zéro qui peut donner lieu à des abus, ce qui a incité l'entreprise à faire une déclaration d'éthique.
+- FADR isole le MIDI, la batterie, la basse et les voix d'un fichier audio, avec des possibilités d'amélioration.
+- Des chercheurs explorent des modèles d'IA pour les voix d'opéra et de chœur.
+- YourTTS est un système de synthèse vocale rapide et efficace.
+- Les candidatures pour YC Summer 2023 sont ouvertes.
+
+### Qantas ramène des Airbus A380 du désert californien
+
+#### [News](https://www.smh.com.au/business/companies/california-to-sydney-how-do-you-wake-an-a380-after-1000-days-in-the-desert-20221227-p5c8zp.html)
+- Qantas a récupéré son dernier Airbus A380 du chantier naval de Victorville en Californie, après près de 1000 jours de stockage en raison de l'immobilisation des avions long-courriers due à la pandémie.
+- La remise en service d'un A380 nécessite des efforts considérables, notamment 4 500 heures de main-d'œuvre et le remplacement de pièces cruciales, ce qui a entraîné des retards pour certaines compagnies aériennes.
+- Les ingénieurs de Qantas ont passé deux mois par avion dans le désert de Mojave pour redonner vie aux A380, qui ont été enveloppés pour se protéger de l'humidité, de la poussière et des insectes.
+- Bien que Qantas soit sur le point de remettre ses A380 en service, la compagnie ne s'attend pas à ce que les vols internationaux retrouvent leur niveau d'avant la pandémie avant au moins 2024.
+- Qantas a beaucoup investi dans le lancement de l'industrie australienne des carburants aéronautiques durables, tout en s'efforçant d'atteindre son objectif de réduction des émissions, à savoir la neutralité carbone d'ici à 2050.
+- Qantas n'a pas encore annoncé de plan de remplacement de sa flotte vieillissante d'A380, mais prévoit de dépenser 5 milliards de dollars américains (7,4 milliards de dollars) pour investir dans sa flotte au cours des quatre prochaines années, y compris une douzaine d'A350-1000.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=35632058)
+- Qantas fait revenir des Airbus A380 stockés en Californie du Sud pour des vols entre Sydney et Melbourne et Dubaï, en raison de la forte demande de vols entre l'Australie et l'Europe.
+- Emirates, le plus grand propriétaire d'A380, demande un avion plus grand pour répondre à la forte demande de vols, mais aucun des motoristes n'est intéressé par le développement de nouveaux moteurs pour l'A380, ce qui remet en question l'avenir de l'avion.
+- Les coûts élevés de l'A380 et la faible demande du marché ont réduit sa compétitivité par rapport aux autres gros-porteurs, et les problèmes de moteur ont limité sa capacité.
+- Le problème du Boeing 737 Max MCAS n'est pas le premier que l'avion rencontre, et Boeing n'aura pas de remplaçant au 737/757 avant 10 à 15 ans, ce qui donne un avantage concurrentiel à Airbus.
+- Une collusion passive sur les marchés peut entraîner une hausse des prix et une réduction de la concurrence, et une collusion tacite dans l'industrie aéronautique pourrait se traduire par des profits plus élevés.
+- L'A380 peut encore être utilisé comme avion-cargo pour des charges hors normes, mais il ne possède pas les caractéristiques nécessaires pour une utilisation générale.
+- Avec l'A380, Airbus s'est détourné des routes à succès pour se concentrer sur la couronne "nous sommes les plus gros", mais il a maintenant des concurrents pour ces routes avec des avions comme l'A350, l'A321-XLR, et les avions néo.
+- Les compagnies aériennes qui ont un hub offrent une plus grande fréquence de vols, mais les passagers préfèrent les compagnies aériennes qui proposent plusieurs vols à des heures différentes tout au long de la journée.
+- Les experts discutent des solutions pour que les carburants d'aviation atteignent la neutralité carbone, comme les biocarburants, les arbres et les investissements dans les carburants d'aviation durables.
+
+### La construction de télescopes sur la Lune pourrait transformer l'astronomie
+
+#### [Actualités](https://theconversation.com/building-telescopes-on-the-moon-could-transform-astronomy-and-its-becoming-an-achievable-goal-203308)
+- La construction de télescopes sur la Lune pourrait transformer l'astronomie
+- L'exploration lunaire connaît une renaissance avec de nombreuses missions prévues, dont le programme Artemis de la NASA qui vise à ramener des humains sur la surface lunaire d'ici le milieu de la décennie.
+- La Lune offre des avantages pour l'astronomie d'observation grâce à sa surface stable et à ses cratères qui ne reçoivent pas la lumière du soleil.
+- La face cachée de la Lune est particulièrement intéressante pour la radioastronomie, car elle est protégée en permanence des signaux radio générés par les humains sur Terre, ce qui en fait probablement l'endroit le plus "radio-tranquille" de tout le système solaire.
+- La face cachée de la Lune est également un endroit idéal pour la radioastronomie à basse fréquence, qui permet de sonder la structure de l'univers primitif.
+- La faible gravité de la Lune permet également de construire des télescopes beaucoup plus grands que ceux que l'on peut installer sur des satellites en vol libre.
+- L'environnement froid et stable des cratères ombragés en permanence peut également présenter des avantages pour les instruments de détection des ondes gravitationnelles et pour l'étude du vent solaire et des rayons cosmiques galactiques.
+- Cependant, il existe une tension entre les activités humaines sur la face cachée de la Lune et les interférences radio indésirables, et les projets d'extraction de glace d'eau des cratères ombragés pourraient rendre difficile l'utilisation de ces mêmes cratères pour l'astronomie.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=35633490)
+- La construction de télescopes sur la lune pourrait révolutionner l'astronomie en offrant une plus grande sensibilité et une meilleure résolution spectrographique.
+- Le coût élevé de la construction de télescopes est justifié par l'espoir de faire des découvertes scientifiques révolutionnaires, d'inspirer les générations futures et de stimuler l'innovation technique.
+- La valeur de la découverte scientifique ne peut être quantifiée en $/unité et partage avec des domaines tels que la physique des particules une approche à coût élevé et à récompense élevée.
+- Les dépenses militaires ont toujours été à l'origine des progrès scientifiques.
+- Les avantages tangibles du financement de la recherche scientifique comprennent la création d'un cadre pour le fonctionnement de la technologie, le bénéfice pour la société des découvertes issues de recherches inattendues et la formation d'une main-d'œuvre hautement qualifiée.
+- Le projet de télescope FOCAL pourrait permettre d'obtenir des mesures scientifiques autrement impossibles et est plus important que la colonisation de Mars.
+- Le programme Artemis de la NASA vise à construire un radiotélescope sur la face cachée de la Lune, dont l'environnement est radio-silencieux et qui pourrait produire des images de meilleure qualité que n'importe quel observatoire sur Terre en ce qui concerne le rayonnement cosmique du Big Bang.
+- L'emplacement du télescope sur la Lune permet de surmonter l'une des plus grandes difficultés des télescopes spatiaux, car la roche lunaire fait écran à la plupart des sources de bruit à haute fréquence provenant des satellites, qu'ils soient artificiels ou naturels.
+- Les complications techniques liées à l'environnement lunaire, telles que la fine poussière qui recouvre le matériel, le contrôle thermique et les problèmes de communication avec la Terre, doivent être résolues par les ingénieurs spatiaux.
+- La communication avec Mars pourrait être améliorée par l'utilisation de la technologie moderne de stockage, des satellites de Vénus ou d'une orbite en halo à L2, L4 ou L5 entre la Terre et la Lune, mais la Lune est difficile à mettre en orbite en raison de l'irrégularité de la gravité.
+- L'existence réelle et la détection de la matière et de l'énergie "sombres" restent insaisissables, et l'utilisation de planètes ou d'astéroïdes pour obtenir un effet de lentille gravitationnelle n'est pas pratique en raison de l'importance du point focal.
+- La découverte des mascons a conduit à l'étude de leurs effets sur les engins spatiaux et à la découverte des "orbites gelées".
+- Un télescope sur la Lune est plus accessible et présente moins de risques en termes de maintenance que des télescopes comme le JWST qui sont trop éloignés pour être observés par Hubble.
+- La section des commentaires débat de la probabilité et du coût d'un projet de télescope lunaire et de la tendance à rechercher de l'eau dans les corps célestes.
+
+</Steps>

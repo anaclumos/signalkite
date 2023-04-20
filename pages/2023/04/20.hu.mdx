@@ -1,0 +1,331 @@
+import { Steps } from 'nextra-theme-docs'
+
+import CallToAction from '../../../components/CallToAction'
+
+<CallToAction />
+
+<Steps>
+
+## 2023. április 20.
+
+### StableLM: Egy új nyílt forráskódú nyelvi modell
+
+#### [Hírek](https://stability.ai/blog/stability-ai-launches-the-first-of-its-stablelm-suite-of-language-models)
+- A StableLM egy új, nyílt forráskódú nyelvi modell, amelyet természetes nyelvfeldolgozási feladatokhoz terveztek.
+- A modell egyedülálló abban, hogy lehetővé teszi a felhasználók számára, hogy saját, specifikus adathalmazokon eddzék és finomhangolják azt, így növelve a feladatspecifikus nyelvtanulási teljesítményt.
+- Architektúrája a BERT-en alapul, és úgy tervezték, hogy minimalizálja a katasztrofális felejtést.
+- A modellt egy nagy szövegkorpuszon, többek között a Wikipédián és a Common Crawl-on előzetesen betanítottuk.
+- A szoftver könnyen használható, és a GitHubon érhető el, a felhasználók számára pedig dokumentáció segíti az elindulást.
+- A StableLM-et már számos alkalmazásban használták, többek között szövegosztályozásban és hangulatelemzésben.
+
+#### [Ipari reakciók](http://news.ycombinator.com/item?id=35629127)
+- A Stability.AI új nyílt forráskódú nyelvi modellt adott ki StableLM néven, 3B és 65B paraméterű modellekkel és 4096-os kontextusszélességgel.
+- A modell kiértékelését kritika érte, de mivel nyílt forráskódú, jó lehetőség a fejlesztők számára, akik javítani szeretnék a modellt.
+- A StableLM alfa modell tesztelés alatt áll, és várhatóan felülmúlja a Pythia 6.9B modelljét, és akár 1,5 trillió tokenre is betanítható lesz.
+- A nagyobb modellek gyorsabban tanulnak, de hajlamosak a túlillesztésre, és a vállalatok arra kényszerítik a fogyasztókat, hogy előre fizessenek a számítási teljesítményért.
+- Az optimalizált ML-keretrendszerek egyre inkább elérhetővé válnak a fogyasztói hardvereken, de a jó nyelvi modellekhez jelenleg drága GPU-kra van szükség, ami miatt a felhő API-k az egyetlen lehetőség.
+- A nyelvi modellek API-kon keresztül történő kiszolgálása nagymértékben optimalizált következtetést tesz lehetővé, de a helyi számítás nagyobb magánéletet tesz lehetővé az AI-alkalmazásokban.
+- A Stanford kutatói a StableLM-et nyílt forráskódú licenc alatt adták ki, ami eltérő véleményekkel találkozott.
+- A mesterséges intelligencia fejlesztése és használata forró téma, és a szuperintelligens mesterséges intelligencia világuralomra törésével kapcsolatban megoszlanak a vélemények.
+
+### Egy Linux otthoni szerver alvó üzemmódba helyezése üresjáratban és ébredés igény szerint - egyszerű módon
+
+#### [Hírek](https://dgross.ca/blog/linux-home-server-auto-sleep/)
+- A cikk részletezi, hogyan lehet egy Ubuntu Linuxot futtató otthoni szervert úgy konfigurálni, hogy üresjáratban aludjon és igény szerint ébredjen a Time Machine biztonsági mentések tárolására.
+- Wake-on-LAN engedélyezve a szerver ébresztéséhez unicast csomagok segítségével.
+- Hálózati szolgáltatások, köztük az ARP Stand-in és az Avahi beállítása a hálózati kapcsolat fenntartására, amíg a kiszolgáló alvó üzemmódban van.
+- Megosztott kód az üres/elfoglalt állapot meghatározására és a RAM-ba való felfüggesztés automatizálására egy cron-feladaton keresztül.
+- Különálló, mindig bekapcsolt Linux eszköz és olyan hálózati interfész eszköz szükséges, amely támogatja a Wake-on-LAN-t unicast csomagokkal.
+- Az ARP Stand-in lehetővé teszi, hogy egy hálózati eszköz válaszoljon az ARP-kérdésekre az alvó kiszolgáló nevében, és ezzel kiváltsa annak ébredését.
+- A szerző Ruby-t és libpcap-ot használt az ARP Stand-in megvalósításához, az alvó szerver IP-címét célzó ARP-kérőcsomagok szűrőjével.
+- Az AFP csomagok és NetBIOS lekérdezések által okozott nem kívánt ébredési problémák megoldása.
+- A cikk elmagyarázza, hogyan lehet letiltani az IPv6-ot és porttükrözést használni a kiszolgáló és a hálózat többi része közötti közvetítő eszköz csomagjainak rögzítésére.
+- A szerző az ARP helyettesítő szolgáltatásaként használt Avahi.
+- A szerző az avahi-publish-t használta a Raspberry Pi konfigurálásához.
+- A szerző létrehozott egy systemd szolgáltatásdefiníciót, amely automatikusan futtatja az avahi-publish-t a rendszerindításkor.
+- A telepítés több mint egy hónapja sikeresen működik.
+
+#### [Ipari reakciók](http://news.ycombinator.com/item?id=35627107)
+- A Raspberry Pi népszerű választás az alacsony fogyasztású szerverekhez, de néhány felhasználó azt javasolja, hogy a fájlok szinkronizálására használják egy "valódi" biztonsági mentési szerverre, nem pedig egy igény szerinti beállításra.
+- Az alacsony fogyasztású szerver működésére vonatkozó javaslatok közé tartozik a wifi használata és az ethernet alacsony fogyasztású működésre való konfigurálása.
+- Alternatív mini PC-ket, például Beelink és Topton NAS-kártyákat javasolnak.
+- A gyorsabb hibaelhárítás érdekében ajánlott a ChatGPT.
+- Az energiatakarékossági funkciók és az "üresjárat" meghatározásával kapcsolatos nehézségek kerülnek megvitatásra.
+- Szóba kerülnek a LAN-konfigurációk és a saját üzemeltetésű biztonsági mentések a felhőszolgáltatásokkal szemben, valamint a magánélet és a felügyelet körüli aggályok.
+- Az olvasók tippeket osztanak meg az energiafelhasználás optimalizálására, például a merevlemezek leállítására és az energiatakarékos tápegységek használatára.
+- Szó esik az IPv6 technológiáról és annak előnyeiről.
+- Az otthoni szerverek energiafelhasználásának minimalizálására vonatkozó stratégiák kerülnek megvitatásra.
+- Az ARP hamisítással fel lehet ébreszteni egy alvó szervert.
+
+### Felhasználó: Junnn11
+
+#### [Hírek](https://en.wikipedia.org/wiki/User:Junnn11)
+- A poszt különböző ősi ízeltlábúak rekonstrukcióit és ábráit tartalmazza, beleértve az Euarthropodákat, a Dinocarididákat, a Lobopodákat és még sok mást.
+- A felhasználó, Junnn11, egy ízeltlábúakért rajongó, aki a panarthropodák fejproblémájára, az ízeltlábúak alfajai és törzsvonalai közötti filogeniára, a bazális cheliceratákra, a dinocarididákra és a lobopodákra összpontosít.
+- A posztban a fuxianhuiidák, megacheirák, pycnogonidák, synziphosurinák, chasmataspidák, eurypteridák, arachnidák és más pókfélék különböző fajainak felsorolása található.
+- A különböző ősi ízeltlábúakról értelmező rajzok is találhatók.
+- A bejegyzésben linkek találhatók a felhasználó japán Wikipédia-oldalára és Twitter-fiókjára.
+- A posztban nincs új vagy nemrégiben megjelent kiadvány említve.
+
+#### [Ipari reakciók](http://news.ycombinator.com/item?id=35630423)
+- A HN posztja olyan egyéneket mutat be, akik mélyen elkötelezettek a hiánypótló témákban, beleértve a technológiát, a biológiát és a modellezést.
+- A felhasználók megvitatják az ilyen témákba való befektetés előnyeit és hátrányait, beleértve a motivációra gyakorolt hatást és a PhD legitimálja az érdeklődésüket.
+- Junnn11 felhasználónak az ízeltlábúak biomechanikáját és mozgását ábrázoló illusztrációi egy Wikipedia-oldalon vitát váltottak ki a biológiáról, a genetikáról és a látás fogalmáról.
+- A felhasználók megvitatják az "ízeltlábúak fejének problémáját" és a felhasználói tervezési preferenciákat is, mint például a lustán betöltött képek.
+- A <img/> címkék alapértelmezés szerinti lusta betöltése a weboldalakon adatvédelmi aggályokat vet fel, és jelenleg a Safariban vagy a Firefoxban nincs implementálva, és egyes weboldalakat tönkretehet.
+- A MediaWiki alkalmazás egy PHP platform a felhasználók által generált tartalmak létrehozására, és Junnn11 rovarillusztrációi egy felhasználói oldalon figyelmet keltettek.
+- A Y Combinator 2023 nyarára fogad jelentkezéseket.
+
+### Az offline csak online, extrém késleltetéssel.
+
+#### [Hírek](https://blog.jim-nielsen.com/2023/offline-is-online-with-extreme-latency/)
+- Peter Van Hardenberg a local-first szoftverek mellett érvel, ahol a programok az eszközökön futnak, és a "tartósság vagy elérhetőség" érdekében kihasználják a felhőt anélkül, hogy attól függnének.
+- A hagyományos vállalati szintű szoftverek és felhőszolgáltatások olyanok, mintha drága repülőgép-hordozókat építenénk, amikor egyszerű, személyes és könnyen karbantartható eszközökre lenne szükség.
+- Az online és az offline egy kontinuumként kell elképzelni, különböző késleltetési szintekkel.
+- Az offline csupán a késleltetés legszélsőségesebb formája, és a másodpercek, percek, órák, napok és még több fokozatai vannak.
+- Az online/offline binárisok gondolatának a késleltetés spektrumára való áthelyezése új ajtókat nyit a különböző dolgok építéséhez.
+
+#### [Ipari reakciók](http://news.ycombinator.com/item?id=35626015)
+- A cikk az offline vs. online alkalmazások fogalmát tárgyalja, és a vita arról, hogy ugyanannak vagy külön kategóriának tekinthetők-e, saját követelményekkel.
+- A beszélgetés kitér a pesszimista vs. optimista UI és az adatlokalitás vs. adattulajdonlás kérdéskörére.
+- A konfliktusmegoldás összetett kérdés az offline alkalmazások esetében, és a megoldásokat úgy kell megtervezni, hogy mind az online, mind az offline környezetet kezelni tudják.
+- Javaslatot tesznek az adatszinkronizáción alapuló termékmegközelítés felé való elmozdulásra.
+- Az offline-első tapasztalatokat gondosan kell megtervezni, hogy mindent az igazság forrásaként kezeljenek, és kezelni tudják a séma és az üzleti logika migrációit.
+- A peer-to-peer alkalmazásokat egyes felhasználók az adatvédelmi és ellenőrzési aggályok miatt előnyben részesítik az internetalapú szolgáltatásokkal szemben.
+- A megközelítés (helyi vs. felhőalapú) megválasztása a felhasználó igényeitől és preferenciáitól függ.
+- A vita kitér az olyan technikai kihívásokra, mint a NAT és a felderítési rendszerek, és megvitatja a lehetséges megoldásokat, beleértve a szövetségi szabványokat és a hálós hálózatokat.
+- Megemlítésre kerül az offline tolerancia fontossága az olyan alkalmazásokban, mint a Google Maps, az iMessage és az időjárási alkalmazások.
+- A vita középpontjában az áll, hogy az offline-first életképes megoldás-e a kollaboratív eszközök számára.
+- A különböző hozzászólók megvitatják az offline és az online kommunikáció előnyeit és hátrányait, valamint a rugalmas tervezés fontosságát.
+
+### A legtöbb készségem ma már semmit sem ér, de 10%-uk 1000x többet ér.
+
+#### [Hírek](https://tidyfirst.substack.com/p/90-of-my-skills-are-now-worth-0)
+- A ChatGPT-hez hasonló AI-technológia átalakíthatja a szoftverfejlesztési készségek értékét
+- Bár egyes készségek értéktelenné válhatnak, az AI új lehetőségeket kínálhat a megmaradt készségek hasznosítására
+- A ChatGPT automatizálhatja a feladatokat és megoldásokat dolgozhat ki összetett problémákra, és segítheti a fejlesztők együttműködését.
+- Az emberi fejlesztők szaktudásának fenntartása elengedhetetlen, és az AI kimenetének validálása kulcsfontosságú.
+- Az AI-eszközök integrálása a minőség feláldozása nélkül növelheti a hatékonyságot.
+- Az emberi kreativitás, szakértelem és kritikus gondolkodás nem helyettesíthető a mesterséges intelligenciával.
+- A szoftverfejlesztőknek el kell fogadniuk a mesterséges intelligenciát, miközben felismerik annak egyedi értékét.
+
+#### [Ipari reakciók](http://news.ycombinator.com/item?id=35627779)
+- A ChatGPT pontos válaszokat adhat az egyszerű technikai feladatokra, de a bonyolultabbaknál magabiztosan tévedhet.
+- A ChatGPT válaszainak minősége javítható lenne, ha jobb minőségű korpuszokon képeznék ki, míg mások óva intenek attól, hogy túlságosan a mesterséges intelligenciára hagyatkozzanak a tanulásban.
+- A nagy nyelvi modellek bizonyos területeken hiányolhatják a forrásanyagokat, de a ChatGPT-vel való interakció és a javítások lehetősége hasznos lehet.
+- A ChatGPT alapvető információkat nyújthat a nem szakértők számára, de szükség lehet validálásra és ellenőrzésre.
+- A generatív modellek demokratizálhatják az írást, és segíthetnek több szöveget generálni, de a szkeptikusok szerint ez az írástudatlansághoz és egyes írói munkakörök megszűnéséhez vezethet.
+- A mesterséges intelligencia által generált szöveg az alacsonyabb fizetésű írói állások megszűnéséhez vezethet, de nem biztos, hogy a magas fizetésű és magas színvonalú írói munkákat érinti.
+- Az AI chatbotok rossz kódot generálhatnak, és a törvényhozók és a bírák, akik elfogadják a generált szöveget, aggodalomra adnak okot.
+- A mesterséges intelligencia által működtetett nyelvi modellek javítják az írók termelékenységét, de nem helyettesíthetik teljesen a jó írókat.
+- Az írás hamarosan mindenki munkájának jelentős részévé válhat, de sok írónak és szerkesztőnek pályát kell majd váltania.
+- A technológia és a mesterséges intelligencia többször is elavulttá tette a dolgok régi módozatait, beleértve a bankokban és táblázatokban dolgozó emberi számítógépeket, de a grafikusok alapvető kompetenciáit nem helyettesítheti.
+
+### Miért gondolják egyes kutatók, hogy tévedek a közösségi médiával és a mentális betegségekkel kapcsolatban?
+
+#### [Hírek](https://jonathanhaidt.substack.com/p/why-some-researchers-think-im-wrong)
+- A társadalomtudósok között vita folyik arról, hogy a közösségi média-e a tinédzserek mentális betegség-járványának elsődleges oka.
+- A kritikusok azzal érvelnek, hogy a bizonyítékok nem elég erősek ahhoz, hogy alátámasszák az ártalmakra vonatkozó állításokat.
+- A támogatók azzal érvelnek, hogy valami jelentős dolog történik a tizenévesek mentális egészségével, ami 2012 körül kezdődött, és nincs rá alternatív magyarázat.
+- A mentális betegségek és a közösségi médiahasználat aránya nem mutat egyértelmű ok-okozati összefüggést, de a szkeptikusok nem tudják olyan szépen megmagyarázni a járványt, mint az SSM-elmélet.
+- A szkeptikusok magas szintű szkepticizmust követelnek, amely a "minden kétséget kizáróan" alapokon nyugszik, ami nem megfelelő a polgári ügyekben.
+- A tudósok között nézeteltérés van a közösségi média használata és a mentális egészségügyi problémák közötti összefüggés nagyságát illetően.
+- A közösségi média különösen káros lehet a lányok számára.
+- A kutatók gyakran egy ok-okozati modellre összpontosítanak, amikor egy kérdést mérhető változókká alakítanak, ami elfedhet más lehetséges ok-okozati utakat.
+- A tinédzserek mentális betegségeinek növekedését magyarázó ok-okozati modellek közül kettő az érzékeny időszak modellje és az IRL-vesztés modellje.
+- A szerző olyan intézkedéseket javasol, mint az okostelefonok középiskoláig történő késleltetése, telefonmentes iskolák, és az "internetes felnőttkor" korhatárának 16 évre emelése.
+- A szövetségi kormány semmit sem tett a kiskorúak okostelefon-használatának csökkentése érdekében, és nemzeti és globális vitára van szükség arról, hogy az okostelefonok és a közösségi média zavarja-e a serdülők egészséges fejlődését.
+- Szkeptikusokra van szükség, akik ellenérveket hoznak fel a riogatókkal szemben, és rámutatnak a bizonyítékok gyengeségeire.
+- Az okostelefonok életkorának ellenőrzése olyan innovatív módszerekkel történhet, amelyeket már most is kínálnak az olyan cégek, mint a Clear.
+
+#### [Ipari reakciók](http://news.ycombinator.com/item?id=35626755)
+- A közösségi média folyamatos társkereséses felügyelete és függőséget okozó jellege mentális egészségügyi problémákat, alváshiányt és személyes fejlődést okoz.
+- A vita rávilágít arra, hogy árnyaltan meg kell érteni a közösségi média mentális egészségre gyakorolt hatásait, beleértve a depressziót, a zaklatást és az öngyilkosságot.
+- Aggasztó a függőségre ösztönző, állandóan online videojátékok felé való elmozdulás, és egyesek a 18 éven aluliak védelmét szolgáló intézkedések mellett érvelnek.
+- A közösségi média hatással van a gyermekek életére azáltal, hogy korlátozza a függetlenségük fejlődését, és a szabadtéri tevékenységek hiánya is olyan probléma, amellyel foglalkozni kell.
+- Az önbevallás és a népességszintű adatok megbízhatóságát a depresszió okainak megértésével kapcsolatban tárgyalják.
+- A rendelkezésre álló bizonyítékok alátámasztják azt az állítást, hogy a közösségi média mentális egészségügyi problémákat okoz, és az ok-okozati összefüggés irányát nehéz megállapítani.
+- Megvitatásra kerül az éghajlatváltozás hatása a fiatalok mentális egészségére, az ezzel kapcsolatos aktivizmus hiánya, valamint a vállalatok, a kormányok és az egyének szerepe.
+- Az energiafogyasztás és a fosszilis tüzelőanyagok ideális alternatíváinak hiánya, valamint a rossz szülői gyakorlatok is szóba kerülnek.
+
+### ChatPDF - Csevegés bármilyen PDF formátummal
+
+#### [Hírek](https://www.chatpdf.com)
+- A ChatPDF a tanulók számára egy olyan eszközt kínál, amely a tanulási élményt fokozza, segítve a tankönyvek és a kutatási dolgozatok megértését.
+- A platform számos dokumentum hatékony elemzésére képes, beleértve a pénzügyi és értékesítési jelentéseket, projektjavaslatokat, képzési kézikönyveket és jogi szerződéseket.
+- A ChatPDF biztonságos felhőalapú tárolást kínál a bizalmas adatok számára, és bármikor törölhetővé teszi azokat.
+- A kíváncsi elmék számára a ChatPDF történelmi dokumentumokból, irodalomból és más forrásokból származó tudás gazdagságát tárhatja fel.
+- Az eszköz bármilyen nyelvet megért, és a felhasználó által preferált nyelven tud válaszolni.
+- A ChatPDF API-t, árképzési lehetőségeket, GYIK-et, partnerprogramot, valamint Twitteren és e-mailen keresztüli támogatást kínál.
+
+#### [Ipari reakciók](http://news.ycombinator.com/item?id=35626312)
+- A ChatPDF egy új szolgáltatás, amely lehetővé teszi a felhasználók számára, hogy kérdéseket tegyenek fel PDF dokumentumokkal kapcsolatban, és az OpenAI GPT API-ját használva válaszokat generáljanak.
+- A szolgáltatás fejlesztésére tett javaslatok között szerepel a chunk méretének beállítása, a szemantikus keresés vagy a rekurzió optimalizálása összetettebb PDF-ek esetében, valamint a PDF-szövegek darabolásának javítása.
+- Egyes felhasználók szkeptikusak, míg mások olyan előnyökre hívják fel a figyelmet, mint a jobb keresési eredmények és a szemantikus indexelés.
+- A ChatGPT használatára alternatív, saját hosztolt megoldásokat javasolnak az érzékeny dokumentumok használatához
+- A ChatPDF hasonló más szemantikus indexelési szolgáltatásokhoz, a lehetséges fejlesztésekre vonatkozó javaslatokkal, például egy próbaverzióval.
+- Néhány hozzászóló viccelődik a GPT körüli felhajtással kapcsolatban A mesterséges intelligencia modellek más fájltípusokat javasolnak elemzésre.
+
+### A GIMP GTK+3 portja hivatalosan is elkészült
+
+#### [News](https://twitter.com/zemarmot/status/1646272510701236229)
+- A megadott szövegben nem találtunk értelmes tartalmat.
+
+#### [Ipari reakciók](http://news.ycombinator.com/item?id=35630681)
+- A GIMP GTK+3 portja elkészült.
+- A visszafelé kompatibilitás kulcsfontosságú a felhasználói térben, és a Windows kompatibilitási szintje dicséretes az egyes alkalmazások számára.
+- Kevés megoldás létezik a régi Linux cuccok futtatására a megfelelő könyvtárakkal.
+- A Debian 12 továbbra is tartalmazni fogja a GTK2-t, még akkor is, ha egyes disztribúciók megpróbálják eltávolítani.
+- Egy kiváló minőségű GUI eszközkészlet építése érettséget, teljességet és erőfeszítést igényel.
+- Néhány UI eszközkészletből hiányoznak a közös widgetek, és arra kényszerítik a fejlesztőket, hogy harmadik féltől származó widgeteket használjanak.
+- Egy fejlesztő javasolja egy absztrakt szintaxisfa használatát, hogy lehetővé tegye a zökkenőmentes bináris kompatibilitást az API-kban és a felületeken.
+- A GIMP a jobb Wayland-kompatibilitás, a HiDPI támogatása és a letisztultabb megjelenés érdekében a GTK4-re szeretne áttérni.
+- A GIMP 3.2-ben tervezik bevezetni a nem-destruktív szerkesztést.
+- A felhasználókat a GTK3-ra vagy GTK4-re való átállásra ösztönzik, de a vélemények megoszlanak.
+- A KDE és alkalmazásai a GTK potenciális alternatíváját jelentik.
+
+### Műhold egy másik műhold képét veszi fel
+
+#### [News](https://twitter.com/NASA_Landsat/status/1642954595377750027)
+- Nincs értelmes tartalom jelen; összefoglaló nem adható.
+
+#### [Ipari reakciók](http://news.ycombinator.com/item?id=35632721)
+- A NASA Landsat műholdja felvételt készített egy másik műholdról, ami vitát váltott ki a műholdas technológia és a mérnöki munka körül.
+- A felhasználók érdekes tényeket osztottak meg különböző műholdakról, többek között lézeres mérő- és hírszerző műholdakról.
+- A vállalatok a műholdak Földhöz való közelebb küldésével jobb képalkotást célzó projekteken dolgoznak.
+- A Maxar Technologies közzétett egy videót, amelyen a WorldView-4 műholdjuk egy másik, pályán keringő műholdról készít képeket, a helymeghatározáshoz hozzáadott vektorokkal.
+- Néhány kommentátor megjegyezte a "szikrázó" visszaverődéseket, amelyeket a fényvisszaverő űrhajó szigetelése okoz.
+- A videót a negatív közösségi médiakommentárok ellenére az űrbeli képalkotás növekvő kereskedelmi életképességének bizonyítékának tekintik.
+
+### Hogyan készítsünk jó kis játékokat
+
+#### [Hírek](http://farawaytimes.blogspot.com/2023/02/how-to-make-good-small-games.html)
+- A kis játékok készítése egyszerűbb eszközökkel növelheti az új fejlesztők sikerének esélyét.
+- A bonyolult motorokkal való küszködés elriaszthatja az embereket a játékkészítéstől.
+- Egy játék érzelmi terjedelme nem határozza meg a minőségét.
+- A kis játékok sikerének különböző definíciói lehetnek, és fontos, hogy ezekre a finomabb érzelmekre is ráhangolódjunk a teljes élmény érdekében.
+- Merítsünk inspirációt különböző forrásokból, hogy egyedi játékokat hozzunk létre.
+- A formafaktor kiválasztása hatással van a játékosok elvárásaira, ezért ezt vegye figyelembe a motor kiválasztásakor és a kiadásra való felkészüléskor.
+- Fejezd be a játékodat, mielőtt kiadnád, és kerüld a "folytatásra váró" játékok kiadását.
+- Fontos, hogy visszajelzést kapj egy támogató közösségtől.
+- Koncentrálj arra, hogy olyan játékokat készíts, amelyeket szeretsz és amelyekkel elégedett vagy, ahelyett, hogy mesterművet vagy valami "nagyszerűt" próbálnál készíteni.
+- A szerző arra bátorítja az olvasókat, hogy a pozitív és támogató közösségek építésére és a kreatív kiteljesedésre összpontosítsanak a munkájukban, ahelyett, hogy megkeserednének vagy kiábrándulnának.
+
+#### [Ipari reakciók](http://news.ycombinator.com/item?id=35625543)
+- A cikk a jó kis játékok készítésének és a perfekcionizmus elkerülésének módjait tárgyalja, például az ötletek rangsorolását és több játékötlet inkubálását.
+- Hangsúlyozzák a játéktesztelés és a játékok kis, iteratív változatainak tervezésének fontosságát, valamint a játékok kiegyensúlyozását a méltányosság és a projekt terjedelmének korlátozása érdekében.
+- Néhány hozzászóló megjegyzi, hogy bizonyos játékműfajokat nehéz lehet kisebb játékokká alakítani anélkül, hogy alapvetően megváltoztatnánk őket.
+- A bejegyzés kiemeli a kis játékok készítésének előnyeit, többek között a különböző játékmechanikák és a médium korlátainak felfedezésének lehetőségét, valamint az egyedi játék létrehozásának örömét.
+- Az embereknek kritikus ízléssel és a médium megértésével kell megközelíteniük a játékfejlesztést.
+
+### Firefly - Egy új fordító és futtató a BEAM nyelvekhez
+
+#### [Hírek](https://github.com/GetFirefly/firefly)
+- A Firefly egy Rust nyelven írt fordító és futtató a BEAM nyelvekhez, amely lehetővé teszi a WebAssembly-t megcélzó Elixir alkalmazások fordítását.
+- A Firefly képes olyan futtatható állományok vagy könyvtárak fordítására, amelyek OTP kiadásokként viselkednek, de nem kezeli a függőségeket
+- A Firefly három fő komponensből áll: Compiler, Libraries és Runtimes, és feláldoz néhány funkciót, hogy további optimalizációkat tegyen lehetővé.
+- A Firefly építéséhez LLVM 15 szükséges, és a közreműködőknek a változtatások végrehajtása előtt először a core csapattal kell kommunikálniuk.
+- A Firefly nem hivatott helyettesíteni a BEAM-et, és lehet, hogy nem rendelkezik a szükséges funkciókkal, de az Erlang/OTP alternatív implementációját kínálja egyedi funkciókkal.
+- A futási idő kialakítása megegyezik az OTP-vel, de a használt codegen backendtől függ, és a Firefly megkönnyíti a futási idő Rust nyelven implementált natív függvényekkel való bővítését.
+- A Firefly korábbi neve Lumen volt, és Apache 2.0 licenc alatt áll.
+
+#### [Ipari reakciók](http://news.ycombinator.com/item?id=35622622)
+- Elindult a Firefly, egy új fordító és futásidő kifejezetten a BEAM nyelvekhez, amely a WASI-fordításra és a különböző chipkészleteket megcélzó, önálló binárisok készítésének képességére összpontosít.
+- A Firefly egyik izgalmas aspektusa az Elixir hatékony futtatásának lehetősége mikrokontrollereken, miközben megőrzi a Concurrency szellemiségét.
+- A BEAM az a virtuális gép, amely több programozási nyelvet is támogat, és a Lumen projekt Firefly-ra való átnevezését több hasonló nevű projekt tette szükségessé.
+- A fejlesztők vitatják a BEAM futtatási idejének Elixirre való optimalizálását, egyesek azzal érvelnek, hogy a matematika körül nem optimalizált.
+- A BEAM futtatási idő az I/O-ra összpontosít, a teljesítményt a késleltetés köré tervezték, és mostantól támogatja a JIT-fordítást, amely az LLVM helyett egy újonnan írt JIT-et használ.
+- A Firefly lehetővé teszi a fejlesztők számára, hogy Elixir alkalmazásokat fordítsanak le a WebAssembly megcélzására, ami hasznos az Elixir futtatásához a frontendben, annak ellenére, hogy a DOM manipulálása kihívást jelent egy Elixir tesztkörnyezetben.
+
+### Align Your Latents: Nagy felbontású videószintézis latens diffúziós modellekkel
+
+#### [Hírek](https://research.nvidia.com/labs/toronto-ai/VideoLDM/)
+- Egy kutatócsoport nagy felbontású videók előállításához fejlesztette ki a videó látens diffúziós modelleket (Video LDM), amelyek 512 x 1024-es felbontásnál a legmodernebb teljesítményt nyújtják.
+- A modell időbeli figyelmet és 3D-s konvolúciókat használ a kiváló minőségű videógeneráláshoz szükséges finomhangolt dekóderteljesítmény eléréséhez.
+- Az új megközelítés képes szövegből videó generálására is, ami izgalmas irányokat nyit a jövőbeli tartalomkészítés előtt.
+- A csapat megmutatta, hogy módszerük időbeli rétegei általánosíthatók különböző finomhangolt szöveg-kép LDM-ekre.
+- A kutatást Andreas Blattmann, Robin Rombach, Huan Ling, Tim Dockhorn, Seung Wook Kim, Sanja Fidler és Karsten Kreis mutatta be a 2023-as IEEE Computer Vision and Pattern Recognition konferencián.
+- Ez a kutatás hasznos lehet a film- és szórakoztatóiparban.
+
+#### [Ipari reakciók](http://news.ycombinator.com/item?id=35624544)
+- Az Nvidia nagy felbontású videószintézis módszert fejlesztett ki, amely videós adathalmazokon betanított látens diffúziós modelleket használ.
+- A jövőbeni videógenerálás többmódú, 3D-s modellező eszközöket használhat, amelyek diffúzióalapú szűrőkkel finomodnak.
+- A térfogati reprezentációkat és távolságmezőket használó differenciálható renderelők potenciális megoldást jelentenek a videojelenetek diszkretizálására.
+- Az "Uncanny valley" fogalmát a hozzászólások részben tárgyaljuk.
+- Az Nvidia olyan szöveg-videó modellt képzett ki, amely képes valósághű vezetési jeleneteket generálni, amelyek mozgása példátlanul sima.
+- Aggályok merültek fel a technológia lehetséges visszaélése miatt, és megkérdőjeleződött, hogy a modell nyilvánosságra kerül-e.
+- A finanszírozás a "közösek tragédiája" miatt kihívást jelent.
+- A kutatók az autonóm járművekben használt összetett mesterséges intelligenciamodellek betanítására irányuló videószimulációra összpontosítottak.
+
+### NaturalSpeech 2: Nulla lövéses beszéd- és énekszintetizátorok
+
+#### [Hírek](https://speechresearch.github.io/naturalspeech2/)
+- A Microsoft Research Asia és a Microsoft Azure Speech új TTS-rendszere, a NaturalSpeech 2 egy látens diffúziós modellt használ a természetes hangok magas kifejezőképességű és erős nullszavas képességű szintetizálásához.
+- A rendszer felülmúlja a korábbi TTS-rendszerek teljesítményét, és más TTS-rendszerekhez képest kiváló hangminőséget, robusztusságot és prozódia/hangszín hasonlóságot kínál.
+- A rendszer neurális hangkódolót, maradékvektor-kvantálókat és szöveges bemenetre kondicionált diffúziós modellt használ, ami növeli a nullszúrás-képességet.
+- A Microsoft e technológia kifejlesztése során elkötelezettséget mutat a felelős mesterséges intelligencia elvei iránt.
+- Lehetséges a rosszindulatú felhasználás a beszélő utánzása és a hanghamisítás terén, ezért a szakemberek számára ajánlott, hogy ne éljenek vissza a technológiával.
+- Ez a bejegyzés rávilágít az AI-technológia felelős fejlesztésének és használatának szükségességére, valamint az AI-szintetizált hangok felismerésére szolgáló védelmi eszközök fontosságára.
+
+#### [Ipari reakciók](http://news.ycombinator.com/item?id=35627790)
+- A kutatók zéró lövéses beszéd- és énekszintetizátorokat fejlesztettek ki, ami aggodalmat kelt a deepfake hanghamisítási technikákkal való esetleges visszaéléssel kapcsolatban.
+- A vita a mesterséges intelligencia összehangolásáról, az emberi értékek összetettségéről és a hatalmas adathalmazokhoz való személyes adat-hozzájárulás etikai kérdéseiről folytatott vitához vezetett.
+- A kísérlet azt mutatja, hogy a GPT-3 képes mély hamis hangokat létrehozni, ami aggodalomra ad okot a félretájékoztatás terjedésével kapcsolatban.
+- A szakértők megvitatják a nyelvtanulási modelleket és az univerzális fordítókban rejlő lehetőségeket, valamint a digitális személyazonosság hitelesítésével és a kiberbűnözéssel kapcsolatos aggályokat.
+- Vita az emberi és a mesterséges intelligencia telefonos hitelesítéséről, a hanghitelesítés és a szintézis technológia technikai szempontjai körül is zajló viták.
+- A Microsoft NaturalSpeech 2 példája a nullszavas tanulásnak a visszaélések lehetőségével, ami etikai nyilatkozatot vált ki a vállalat részéről.
+- A FADR a MIDI-t, a dobokat, a basszust és a vokált különíti el egy hangfájlból, és még van hová fejlődnie.
+- Kutatók operai és kórusénekesi hangok mesterséges intelligenciamodelljeit vizsgálják.
+- A YourTTS egy gyors és hatékony szöveg-beszéd rendszer.
+- A YC Summer 2023-ra való jelentkezés nyitott.
+
+### A Qantas visszahozza az Airbus A380-asokat a kaliforniai sivatagból.
+
+#### [Hírek](https://www.smh.com.au/business/companies/california-to-sydney-how-do-you-wake-an-a380-after-1000-days-in-the-desert-20221227-p5c8zp.html)
+- A Qantas visszahozta utolsó Airbus A380-asát a kaliforniai Victorville-i roncstelepről, miután közel 1000 napig tárolták a hosszú távú járatokra közlekedő repülőgépek járvány okozta repülési tilalom miatt.
+- Az A380-asok üzembe helyezése jelentős erőfeszítéseket igényel, többek között 4500 munkaórát és kulcsfontosságú alkatrészek cseréjét, ami egyes légitársaságoknál késésekhez vezetett.
+- A Qantas mérnökei repülőgépenként két hónapot töltöttek a Mojave-sivatagban az A380-asok felélesztésével, amelyeket bebugyoláltak, hogy megvédjék magukat a nedvességtől, portól és rovaroktól.
+- Bár a Qantas közel áll ahhoz, hogy A380-asait újra üzemképessé tegye, a légitársaság szerint a nemzetközi repülés legalább 2024-ig nem térhet vissza a járvány előtti szintre.
+- A Qantas nagy összegeket fektetett be az ausztrál fenntartható repülőgép-üzemanyagipar beindításába, miközben küzd azért, hogy elérje a 2050-re kitűzött szén-dioxid-semlegességre vonatkozó kibocsátás-csökkentési célját.
+- A Qantas még nem jelentett be tervet az A380-asokból álló elöregedő flottájának lecserélésére, de a következő négy évben 5 milliárd dollárt (7,4 milliárd dollár) kíván költeni flottaberuházásokra, többek között egy tucat A350-1000-esre.
+
+#### [Ipari reakciók](http://news.ycombinator.com/item?id=35632058)
+- A Qantas az Ausztráliából Európába tartó járatok iránti nagy kereslet miatt visszahozza a dél-kaliforniai raktárból az Airbus A380-asokat a Sydneyből és Melbourne-ből Dubajba közlekedő járatokra.
+- Az Emirates, az A380-asok legnagyobb tulajdonosa nagyobb gépet kér a nagy kereslet kielégítésére, de egyik hajtóműgyártó sem érdekelt új hajtóművek kifejlesztésében az A380-ashoz, ami kétségessé teszi a gép jövőjét.
+- Az A380-as drága költségei és a csökkent piaci kereslet miatt csökkent a versenyképessége más nagy törzsű repülőgépekkel szemben, a hajtóműproblémák pedig korlátozzák a kapacitását.
+- A Boeing 737 Max MCAS problémája nem az első eset, hogy a repülőgép problémákkal küzd, és a Boeingnek 10-15 évig nem lesz 737/757-es utódja, ami versenyelőnyhöz juttatja az Airbus-t.
+- A passzívan összejátszó piacok magasabb árakhoz és csökkentett versenyhez vezethetnek, a repülőgépiparban a hallgatólagos összejátszás pedig magasabb profitot eredményezhet.
+- Az A380-as továbbra is használható teherszállító repülőgépként a túlméretezett rakományok szállítására, de az általános teherszállításhoz szükséges tulajdonságok hiányoznak belőle.
+- Az Airbus a sikeres útvonalakról a "mi vagyunk a legnagyobbak" koronára helyezte át a hangsúlyt az A380-assal, de most már versenytársai vannak ezekre az útvonalakra olyan gépekkel, mint az A350, az A321-XLR és a neo gépek.
+- A hub-légitársaságok nagyobb járatsűrűséget kínálnak, de az utasok jobban kedvelik azokat a légitársaságokat, amelyek több járatot indítanak a nap folyamán változó időpontokban.
+- A szakértők megvitatják a repülési üzemanyaggal kapcsolatos megoldásokat a szén-dioxid-semlegesség elérése érdekében, például a bioüzemanyagokat, a fákat és a fenntartható repülési üzemanyagokkal kapcsolatos beruházásokat.
+
+### A teleszkópok építése a Holdon átalakíthatja a csillagászatot
+
+#### [Hírek](https://theconversation.com/building-telescopes-on-the-moon-could-transform-astronomy-and-its-becoming-an-achievable-goal-203308)
+- Teleszkópok építése a Holdon átalakíthatja a csillagászatot
+- A holdkutatás reneszánszát éli, számos küldetést terveznek, köztük a NASA Artemis programját, amelynek célja, hogy az évtized közepére embereket juttasson vissza a Hold felszínére.
+- A Hold stabil felszínével és napfényt nem kapó krátereivel előnyös a megfigyelő csillagászat számára.
+- A Hold túlsó oldala különösen vonzó a rádiócsillagászat számára, mivel állandóan védve van a földi emberek által keltett rádiójelektől, így valószínűleg az egész Naprendszerben ez a "rádiócsendes" hely.
+- A Hold túlsó oldala ideális hely az alacsony frekvenciájú rádiócsillagászat számára is, amely a korai világegyetem szerkezetét vizsgálhatja.
+- A Hold alacsony gravitációja sokkal nagyobb távcsövek építését is lehetővé teszi, mint ami a szabadon repülő műholdak esetében megvalósítható.
+- Az állandó árnyékban lévő kráterek hideg, stabil környezete előnyös lehet a gravitációs hullámok észlelésére, valamint a napszél és a galaktikus kozmikus sugárzás tanulmányozására szolgáló műszerek számára is.
+- A Hold túlsó oldalán folyó emberi tevékenységek és a nem kívánt rádiózavarok között azonban feszültség van, és az árnyékos kráterek vízjég-kinyerésére irányuló tervek megnehezíthetik ugyanezen kráterek csillagászati célú felhasználását.
+
+#### [Ipari reakciók](http://news.ycombinator.com/item?id=35633490)
+- A teleszkópok építése a Holdon forradalmasíthatná a csillagászatot, mivel nagyobb érzékenységet és spektrográfiai felbontást biztosítana.
+- A teleszkópok építésének magas költségeit az úttörő tudományos felfedezések, a jövő generációinak inspirálása és a technikai innováció ösztönzése indokolja.
+- A tudományos felfedezések értéke nem számszerűsíthető dollár/egységben, és a magas költségű, magas hozamú megközelítés olyan területekkel közös, mint a részecskefizika.
+- A katonai kiadások történelmileg a tudományos fejlődés motorjai voltak.
+- A tudományos kutatás finanszírozásának kézzelfogható előnyei közé tartozik a technológia működésének kereteinek megteremtése, a váratlan kutatásokból származó felfedezések révén a társadalom hasznára válás, valamint a magasan képzett munkaerő kinevelése.
+- A javasolt FOCAL teleszkóp potenciálisan egyébként lehetetlen tudományos méréseket tudna végezni, és fontosabb, mint a Marsra település.
+- A NASA Artemis programjának célja egy rádióteleszkóp megépítése a Hold túlsó oldalán, ahol rádiócsendes környezet van, és amely az ősrobbanás kozmikus sugárzását illetően minden földi obszervatóriumnál jobb minőségű képeket tudna készíteni.
+- A teleszkóp elhelyezése a Holdon áthidalja az űrbe telepített teleszkópok egyik legnagyobb nehézségét, mivel a holdi kőzet árnyékolja a műholdak által keltett - ember alkotta vagy természetes - nagyfrekvenciás zajforrások többségét.
+- A Hold környezetével kapcsolatos technikai komplikációkat, mint például a hardvert borító finom por, a hőszabályozás és a Földdel való kommunikációs problémák, az űrmérnököknek kell megoldaniuk.
+- A Marssal való kommunikáció javulhatna a modern tárolási technológia, a Vénusz műholdak, vagy a Föld-Hold L2, L4 vagy L5 halo pályán való keringés révén, de a Holdat nehéz megkerülni a gravitáció egyenetlensége miatt.
+- A "sötét" anyag és energia tényleges létezése és kimutatása továbbra is megfoghatatlan, és a bolygók vagy aszteroidák használata a gravitációs lencsehatáshoz a nagy fókuszpont miatt kivitelezhetetlen.
+- A maszkonok felfedezése vezetett az űreszközökre gyakorolt hatásuk tanulmányozásához és a "fagyott pályák" felfedezéséhez.
+- A Holdon lévő teleszkóp könnyebb hozzáférést és kisebb karbantartási kockázatot jelent, mint a JWST-hez hasonló teleszkópok, amelyek túl messze vannak a Hubble megfigyeléséhez.
+- A hozzászólási szekcióban a javasolt holdi teleszkópprojekt valószínűségét és költségeit, valamint az égitesteken a víz keresésének tendenciáját vitatják meg.
+
+</Steps>

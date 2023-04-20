@@ -1,0 +1,331 @@
+import { Steps } from 'nextra-theme-docs'
+
+import CallToAction from '../../../components/CallToAction'
+
+<CallToAction />
+
+<Steps>
+
+## 20 Nisan 2023
+
+### StableLM: Yeni bir açık kaynak dil modeli
+
+#### [Haberler](https://stability.ai/blog/stability-ai-launches-the-first-of-its-stablelm-suite-of-language-models)
+- StableLM, doğal dil işleme görevleri için tasarlanmış yeni bir açık kaynaklı dil modelidir.
+- Model, kullanıcıların kendi özel veri kümeleri üzerinde eğitmelerine ve ince ayar yapmalarına olanak sağlaması ve böylece göreve özgü dil öğreniminde performansı artırması açısından benzersizdir.
+- Mimarisi BERT'e dayanmaktadır ve yıkıcı unutmayı en aza indirecek şekilde tasarlanmıştır.
+- Model, Wikipedia ve Common Crawl dahil olmak üzere geniş bir metin külliyatı üzerinde önceden eğitilmiştir.
+- Yazılımın kullanımı kolaydır ve GitHub üzerinden erişilebilir ve kullanıcıların başlamasına yardımcı olacak belgeler mevcuttur.
+- StableLM, metin sınıflandırma ve duygu analizi dahil olmak üzere çeşitli uygulamalarda zaten kullanılmıştır.
+
+#### [Sektör Tepkileri](http://news.ycombinator.com/item?id=35629127)
+- StableLM adlı yeni bir açık kaynak dil modeli, Stability.AI tarafından 3B ila 65B parametre arasında değişen modeller ve 4096 bağlam genişliği ile piyasaya sürüldü.
+- Model değerlendirmesi eleştiri aldı ancak açık kaynak olduğu için modeli geliştirmek isteyen geliştiriciler için iyi bir seçenek.
+- StableLM alfa modeli test ediliyor ve Pythia 6.9B'den daha iyi performans göstermesi bekleniyor ve 1.5 trilyona kadar token üzerinde eğitilecek.
+- Daha büyük modeller daha hızlı öğrenir, ancak aşırı uyum sağlamaya eğilimlidir ve şirketler tüketicilerin hesaplama gücü için önceden ödeme yapmasını sağlar.
+- Optimize edilmiş makine öğrenimi çerçeveleri tüketici donanımında daha erişilebilir hale geliyor, ancak iyi dil modelleri şu anda bulut API'lerini tek seçenek haline getiren pahalı GPU'lar gerektiriyor.
+- Dil modellerinin API'ler aracılığıyla sunulması, yüksek düzeyde optimize edilmiş çıkarımlara olanak tanır, ancak yerel hesaplama, yapay zeka uygulamalarında daha fazla gizlilik sağlar.
+- Stanford araştırmacıları StableLM'yi açık kaynak lisansı altında yayınladılar ve bu da farklı görüşlerle karşılandı.
+- YZ'nin geliştirilmesi ve kullanımı, süper zeki YZ'nin dünyayı ele geçirmesi konusundaki farklı görüşlerle birlikte sıcak konulardır.
+
+### Bir Linux ev sunucusunu boşta uyutmak ve talep üzerine uyandırmak - basit yol
+
+#### [Haberler](https://dgross.ca/blog/linux-home-server-auto-sleep/)
+- Makale, Ubuntu Linux çalıştıran bir ev sunucusunun boşta uyuyacak ve Time Machine yedeklemelerini barındırmak için talep üzerine uyanacak şekilde nasıl yapılandırılacağını detaylandırmaktadır.
+- Sunucuyu tek noktaya yayın paketleri aracılığıyla uyandırmak için Wake-on-LAN etkinleştirildi.
+- ARP Stand-in ve Avahi dahil olmak üzere ağ hizmetleri, sunucu uyurken ağ bağlantısını sürdürmek için yapılandırıldı.
+- Boşta / meşgul durumunu belirlemek ve bir cron işi aracılığıyla RAM'e askıya almayı otomatikleştirmek için paylaşılan kod.
+- Ayrı bir her zaman açık Linux cihazı ve tek noktaya yayın paketleriyle Wake-on-LAN'ı destekleyen ağ arayüz cihazı gereklidir.
+- ARP Stand-in, bir ağ aygıtının uyuyan bir sunucu adına ARP isteklerine yanıt vermesini ve uyanmasını tetiklemesini sağlar.
+- Yazar, ARP Stand-in'i uygulamak için uyuyan sunucunun IP adresini hedefleyen ARP istek paketleri için bir filtre ile Ruby ve libpcap kullandı.
+- AFP paketleri ve NetBIOS sorgularının neden olduğu istenmeyen uyandırma sorunları ele alındı.
+- Makale, IPv6'nın nasıl devre dışı bırakılacağını ve sunucu ile ağın geri kalanı arasındaki bir aracı cihazdan paketleri yakalamak için bağlantı noktası yansıtmanın nasıl kullanılacağını açıklar.
+- Avahi, yazar tarafından ARP için bir stand-in hizmeti olarak kullanılmıştır.
+- Yazar Raspberry Pi'yi yapılandırmak için avahi-publish kullandı.
+- Yazar, önyükleme sırasında avahi-publish'i otomatik olarak çalıştıran bir systemd hizmet tanımı oluşturdu.
+- Kurulum bir aydan uzun süredir başarılı.
+
+#### [Sektör Tepkileri](http://news.ycombinator.com/item?id=35627107)
+- Raspberry Pi düşük güçlü sunucular için popüler bir seçenektir, ancak bazı kullanıcılar bunu isteğe bağlı bir kurulum yerine dosyaları 'gerçek' bir yedekleme sunucusuna senkronize etmek için kullanmayı önermektedir.
+- Düşük güçte sunucu kullanımı için öneriler arasında wifi kullanımı ve düşük güçte çalışma için ethernet yapılandırması yer alıyor.
+- Beelink ve Topton NAS kartları gibi alternatif mini bilgisayarlar önerilmektedir.
+- Daha hızlı sorun giderme için ChatGPT önerilir.
+- Güç tasarrufu özellikleri ve "boşta" tanımını çevreleyen zorluklar tartışılmaktadır.
+- LAN kurulumları ve bulut hizmetlerine karşı kendi kendine barındırılan yedeklemelerin yanı sıra gizlilik ve gözetimle ilgili endişeler de tartışılıyor.
+- Güç kullanımının nasıl optimize edileceğine dair ipuçları okuyucular tarafından paylaşılıyor, örneğin sabit sürücüleri kısmak ve güç tasarruflu güç kaynakları kullanmak gibi.
+- IPv6 teknolojisi ve faydaları tartışılıyor.
+- Ev sunucuları tarafından güç kullanımını en aza indirme stratejileri tartışılmaktadır.
+- ARP sahtekarlığı uyuyan bir sunucuyu uyandırmak için kullanılabilir.
+
+### Kullanıcı: Junnn11
+
+#### [Haberler](https://en.wikipedia.org/wiki/User:Junnn11)
+- Yazı, Euarthropodlar, Dinocarididler, lobopodianlar ve daha fazlası dahil olmak üzere çeşitli eski eklembacaklıların rekonstrüksiyonlarını ve diyagramlarını sunmaktadır.
+- Junnn11 adlı kullanıcı, panarthropod kafa problemi, eklembacaklı alt filogenisi ve kök soyu, bazal chelicerates, dinocaridids ve lobopodians üzerine odaklanan bir eklembacaklı meraklısıdır.
+- Yazı, çeşitli fuxianhuiid, megacheirans, pycnogonid, synziphosurines, chasmataspidids, eurypterids, arachnids ve daha fazlasının bir listesini içermektedir.
+- Ayrıca çeşitli antik eklembacaklıların yorumlayıcı çizimleri de bulunmaktadır.
+- Gönderide kullanıcının Japonca Wikipedia sayfasına ve Twitter hesabına bağlantılar veriliyor.
+- Gönderide bahsedilen yeni veya yakın tarihli bir sürüm yok.
+
+#### [Sektör Tepkileri](http://news.ycombinator.com/item?id=35630423)
+- HN'deki yazı, teknoloji, biyoloji ve modelleme gibi niş konulara derinlemesine yatırım yapan bireyleri sergiliyor.
+- Kullanıcılar, bu tür konulara yatırım yapmanın motivasyon üzerindeki etkisi ve PhD'nin kişinin ilgi alanlarını meşrulaştırması da dahil olmak üzere fayda ve dezavantajlarını tartışıyor.
+- Kullanıcı Junnn11'in bir Wikipedia sayfasında eklembacaklıların biyomekaniğini ve hareketlerini tasvir eden çizimleri biyoloji, genetik ve görme kavramı üzerine tartışmalara yol açtı.
+- Kullanıcılar ayrıca 'Eklembacaklı kafası sorunu' ve tembel yüklenen resimler gibi kullanıcı tasarım tercihlerini de tartışıyor.
+- Web sayfalarındaki <img/> etiketlerinin varsayılan olarak tembel yüklenmesi bir gizlilik sorunudur ve şu anda Safari veya Firefox'ta uygulanmamaktadır ve bazı web sitelerini bozabilir.
+- MediaWiki uygulaması, kullanıcı tarafından oluşturulan içerik oluşturmak için bir PHP platformudur ve Junnn11'in bir kullanıcı sayfasındaki böcek illüstrasyonları dikkat çekmiştir.
+- Y Combinator 2023 Yaz dönemi için başvuruları kabul ediyor.
+
+### Çevrimdışı sadece aşırı gecikme ile çevrimiçidir
+
+#### [Haberler](https://blog.jim-nielsen.com/2023/offline-is-online-with-extreme-latency/)
+- Peter Van Hardenberg, programların cihazlarda çalıştığı ve buluta bağımlı olmadan "dayanıklılık veya erişilebilirlik" için buluttan yararlandığı yerel öncelikli yazılımı savunuyor.
+- Geleneksel kurumsal düzeydeki yazılım ve bulut hizmetleri, basit, kişisel ve bakımı kolay araçlara ihtiyaç duyulduğunda pahalı uçak gemileri inşa etmeye benziyor.
+- Çevrimiçi ve çevrimdışı, farklı gecikme seviyelerine sahip bir süreklilik olarak düşünülmelidir.
+- Çevrimdışı, gecikmenin yalnızca en uç şeklidir ve saniyeler, dakikalar, saatler, günler ve daha fazlası gibi kendi derecelerine sahiptir.
+- Çevrimiçi/çevrimdışı ikilileri fikrini bir gecikme spektrumuna kaydırmak, farklı şeyler inşa etmek için yeni kapılar açar.
+
+#### [Sektör Tepkileri](http://news.ycombinator.com/item?id=35626015)
+- Makale, çevrimdışı ve çevrimiçi uygulamalar kavramını ve bunların aynı mı yoksa kendi gereksinimleri olan farklı kategoriler olarak mı değerlendirilmesi gerektiği konusundaki tartışmaları ele alıyor.
+- Konuşma, kötümser ve iyimser kullanıcı arayüzü ve veri yerelliği ve veri sahipliği konularını ele alıyor.
+- Çevrimdışı uygulamalarla uğraşırken çakışma çözümü karmaşık bir konudur ve çözümler hem çevrimiçi hem de çevrimdışı ortamı idare edecek şekilde tasarlanmalıdır.
+- Ürünlerde veri senkronizasyonuna dayalı bir yaklaşıma geçilmesi önerilmektedir.
+- Çevrimdışı öncelikli deneyimler, her şeyi bir doğruluk kaynağı olarak ele almak ve şema ve iş mantığı geçişlerini idare etmek için dikkatlice tasarlanmalıdır.
+- Eşler arası uygulamalar, gizlilik ve kontrol kaygıları nedeniyle bazı kullanıcılar tarafından internet tabanlı hizmetlere tercih edilmektedir.
+- Yaklaşım seçimi (yerel ya da bulut tabanlı) kullanıcının ihtiyaçlarına ve tercihlerine bağlıdır.
+- Tartışma, NAT ve keşif sistemleri gibi teknik zorluklara değinmekte ve federe standartlar ve örgü ağlar dahil olmak üzere potansiyel çözümleri tartışmaktadır.
+- Google Maps, iMessage ve hava durumu uygulamaları gibi uygulamalarda çevrimdışı toleransın öneminden bahsedilmektedir.
+- Tartışma, çevrimdışı önceliğin işbirliğine dayalı araçlar için uygun bir çözüm olup olmadığı etrafında yoğunlaşıyor.
+- Çeşitli yorumcular çevrimdışı ve çevrimiçi iletişimin artılarını ve eksilerini ve esnek tasarımın önemini tartışıyor.
+
+### Becerilerimin çoğunun artık hiçbir değeri yok, ancak %10'u 1000 kat değerli
+
+#### [Haberler](https://tidyfirst.substack.com/p/90-of-my-skills-are-now-worth-0)
+- ChatGPT gibi yapay zeka teknolojileri yazılım geliştirme becerilerinin değerini dönüştürebilir
+- Bazı beceriler daha az değerli hale gelse de, yapay zeka kalan becerileri kullanmak için yeni fırsatlar sunabilir
+- ChatGPT görevleri otomatikleştirebilir ve karmaşık sorunlara çözümler geliştirebilir ve geliştiricilerin işbirliği yapmasına yardımcı olabilir
+- İnsan geliştiricilerin uzmanlığını korumak çok önemlidir ve yapay zeka çıktılarını doğrulamak çok önemlidir
+- Yapay zeka araçlarının entegrasyonu kaliteden ödün vermeden verimliliği artırabilir
+- İnsan yaratıcılığı, uzmanlığı ve eleştirel düşüncesi yapay zeka ile değiştirilemez
+- Yazılım geliştiriciler, yapay zekanın benzersiz değerini kabul ederken onu kucaklamalıdır.
+
+#### [Sektör Tepkileri](http://news.ycombinator.com/item?id=35627779)
+- ChatGPT basit teknik görevler için doğru yanıtlar verebilir, ancak daha karmaşık olanlarda kesinlikle yanılabilir.
+- ChatGPT'nin cevap kalitesi, daha yüksek kaliteli derlemler üzerinde eğitilerek geliştirilebilirken, diğerleri öğrenme için yapay zekaya çok fazla güvenilmemesi konusunda uyarıyor.
+- Büyük dil modelleri belirli alanlarda kaynak materyallerden yoksun olabilir, ancak ChatGPT ve düzeltmelerle etkileşime girme yeteneği yardımcı olabilir.
+- ChatGPT uzman olmayanlar için temel bilgiler sağlayabilir ancak doğrulama ve onaylamaya ihtiyaç duyabilir.
+- Üretici modeller yazmayı demokratikleştirebilir ve daha fazla metin üretilmesine yardımcı olabilir, ancak şüpheciler bunun okuma yazma bilmemeye ve bazı yazma işlerinin ortadan kaldırılmasına yol açabileceğine inanmaktadır.
+- Yapay zeka tarafından üretilen metinler düşük ücretli yazarlık işlerinin ortadan kalkmasına yol açabilir ancak yüksek maaşlı ve yüksek kaliteli yazarlığı etkilemeyebilir.
+- YZ sohbet robotları kötü kodlar üretebilir ve kanun yapıcıların ve hakimlerin üretilen metinleri benimsemesi endişe vericidir.
+- Yapay zeka destekli dil modelleri yazarlar için üretkenliği artırır ancak iyi yazarların yerini tamamen alamaz.
+- Yazmak yakında herkesin işinin önemli bir parçası haline gelebilir, ancak birçok yazar ve editörün kariyer değiştirmesi gerekebilir.
+- Teknoloji ve yapay zeka, bankalardaki ve elektronik tablolardaki insan bilgisayarlar da dahil olmak üzere eski iş yapma yöntemlerini defalarca modası geçmiş hale getirdi, ancak grafik tasarımcıların temel yetkinliklerinin yerini alamaz.
+
+### Neden bazı araştırmacılar sosyal medya ve akıl hastalıkları konusunda yanıldığımı düşünüyor?
+
+#### [Haberler](https://jonathanhaidt.substack.com/p/why-some-researchers-think-im-wrong)
+- Sosyal bilimciler arasında, ergenlik çağındaki ruhsal hastalık salgınının başlıca nedeninin sosyal medya olup olmadığı konusunda bir tartışma sürüyor.
+- Eleştirmenler, kanıtların zarar iddialarını destekleyecek kadar güçlü olmadığını savunuyor.
+- Savunucuları ise, 2012 yılı civarında başlayan ve alternatif bir açıklaması olmayan, gençlerin ruh sağlığında önemli bir değişim yaşandığını iddia ediyor.
+- Ruhsal hastalık oranları ve sosyal medya kullanımı arasında net bir neden-sonuç ilişkisi yoktur, ancak şüpheciler salgını SSM teorisi kadar düzgün bir şekilde açıklayamamaktadır.
+- Şüpheciler, hukuk davaları için uygun olmayan "makul şüphenin ötesinde" temeline dayanan yüksek düzeyde bir şüphecilik talep etmektedir.
+- Sosyal medya kullanımı ile ruh sağlığı sorunları arasındaki korelasyonun boyutu konusunda bilim insanları arasında anlaşmazlıklar bulunmaktadır.
+- Sosyal medya özellikle kız çocukları için zararlı olabilir.
+- Araştırmacılar bir soruyu ölçebilecekleri değişkenlere dönüştürürken genellikle tek bir nedensel modele odaklanmakta, bu da diğer potansiyel nedensel yolları gizleyebilmektedir.
+- Gençlerin ruhsal hastalıklarındaki artışı açıklayabilecek nedensel modellerden ikisi hassas dönem modeli ve IRL kaybı modelidir.
+- Yazar, akıllı telefonların liseye kadar ertelenmesi, okulların telefonsuz olması ve "internet yetişkinliği" yaşının 16'ya yükseltilmesi gibi önlemler önermektedir.
+- Federal hükümet, reşit olmayanların akıllı telefon kullanımını azaltmak için hiçbir şey yapmamıştır ve akıllı telefonların ve sosyal medyanın sağlıklı ergen gelişimine müdahale edip etmediği konusunda ulusal ve küresel bir tartışmaya ihtiyaç vardır.
+- Alarm zillerini çalanlara karşı argümanlar geliştirmek ve kanıtlardaki zayıflıklara işaret etmek için şüphecilere ihtiyaç vardır.
+- Akıllı telefonlar için yaş doğrulaması Clear gibi şirketler tarafından halihazırda sunulan yenilikçi yöntemlerle yapılabilir.
+
+#### [Sektör Tepkileri](http://news.ycombinator.com/item?id=35626755)
+- Sosyal medyanın sürekli akran gözetimi ve bağımlılık yaratan doğası, ruh sağlığı sorunlarına, uyku eksikliğine ve kişisel gelişime neden oluyor.
+- Tartışma, sosyal medyanın depresyon, zorbalık ve intihar da dahil olmak üzere ruh sağlığı üzerindeki etkilerinin incelikli bir şekilde anlaşılması ihtiyacını vurgulamaktadır.
+- Bağımlılık yapıcı davranışları teşvik eden her zaman çevrimiçi video oyunlarına geçiş endişe vericidir ve bazıları 18 yaşın altındaki kişileri korumak için önlemler alınmasını savunmaktadır.
+- Sosyal medya, bağımsızlık gelişimlerini sınırlandırarak çocukların hayatlarını etkilemiştir ve açık hava aktivitesinin eksikliği ele alınması gereken bir sorundur.
+- Depresyonun nedenlerinin anlaşılmasıyla ilgili olarak öz bildirim ve nüfus düzeyindeki verilerin güvenilirliği tartışılmaktadır.
+- Mevcut kanıtlar, sosyal medyanın ruh sağlığı sorunlarına neden olduğu iddiasını desteklemektedir ve nedenselliğin yönünü belirlemek zordur.
+- İklim değişikliğinin gençlerin ruh sağlığı üzerindeki etkisi, bu konudaki aktivizm eksikliği ve şirketlerin, hükümetlerin ve bireylerin rolü tartışılmaktadır.
+- Enerji tüketimi ve fosil yakıtlara ideal alternatiflerin bulunmamasının yanı sıra kötü ebeveynlik uygulamalarından da bahsedilmektedir.
+
+### ChatPDF - Herhangi Bir PDF ile Sohbet Edin
+
+#### [Haberler](https://www.chatpdf.com)
+- ChatPDF, ders kitaplarını ve araştırma makalelerini anlamaya yardımcı olarak öğrenciler için gelişmiş öğrenme deneyimleri için bir araç sunar.
+- Platform, finans ve satış raporları, proje teklifleri, eğitim kılavuzları ve yasal sözleşmeler dahil olmak üzere bir dizi belgeyi verimli bir şekilde analiz edebilir.
+- ChatPDF gizli veriler için güvenli bulut depolama ve istenildiği zaman silme olanağı sunar.
+- Meraklı zihinler için ChatPDF tarihi belgelerden, literatürden ve diğer kaynaklardan zengin bir bilgi birikiminin kilidini açabilir.
+- Araç her dili anlayabilir ve kullanıcının tercih ettiği dilde yanıt verebilir.
+- ChatPDF bir API, fiyatlandırma seçenekleri, SSS, ortaklık programı ve Twitter ve e-posta yoluyla destek sunuyor.
+
+#### [Sektör Tepkileri](http://news.ycombinator.com/item?id=35626312)
+- ChatPDF, kullanıcıların OpenAI'nin GPT API'sini kullanarak PDF belgeleri hakkında sorular sormasına ve yanıtlar üretmesine olanak tanıyan yeni bir hizmettir
+- Hizmeti geliştirmek için yapılan öneriler arasında yığın boyutunu ayarlama, daha karmaşık PDF'ler için anlamsal arama veya özyinelemeyi optimize etme ve PDF metnini yığın haline getirme yer alıyor
+- Bazı kullanıcılar kuşkularını dile getirirken, diğerleri gelişmiş arama sonuçları ve semantik indeksleme gibi faydalara dikkat çekiyor
+- ChatGPT kullanımı için alternatif kendi kendine barındırılan çözümler hassas belgelerin kullanımı için önerilmektedir
+- ChatPDF, deneme sürümü gibi potansiyel iyileştirmeler için önerilerle birlikte diğer semantik indeksleme hizmetlerine benzer
+- Bazı yorumcular GPT AI modellerini çevreleyen yutturmaca hakkında şaka yaparak analiz için başka dosya türleri önermektedir
+
+### GIMP'in GTK+3 portu resmi olarak tamamlandı
+
+#### [News](https://twitter.com/zemarmot/status/1646272510701236229)
+- Sağlanan metinde anlamlı bir içerik bulunamamıştır.
+
+#### [Sektör Tepkileri](http://news.ycombinator.com/item?id=35630681)
+- GIMP'in GTK+3 portu artık tamamlandı.
+- Geriye dönük uyumluluk kullanıcı alanı için çok önemlidir ve Windows'un uyumluluk seviyesi bireysel uygulamalar için övgüye değerdir.
+- Eski Linux uygulamalarını ilgili kütüphanelerle çalıştırmak için çok az geçici çözüm mevcut.
+- Debian 12, bazı dağıtımlar kaldırmaya çalışsa da GTK2'yi içermeye devam edecek.
+- Yüksek kaliteli bir GUI araç seti oluşturmak olgunluk, bütünlük ve çaba gerektirir.
+- Bazı UI araç setleri ortak widget'lardan yoksundur ve geliştiricileri üçüncü taraf widget'ları kullanmaya zorlar.
+- Bir geliştirici, API'lerde ve arayüzlerde kesintisiz ikili uyumluluğu sağlamak için Soyut Sözdizimi Ağacı kullanmayı öneriyor.
+- GIMP, daha iyi Wayland uyumluluğu, HiDPI desteği ve daha temiz bir görünüm için GTK4'e geçmek istiyor.
+- Tahribatsız düzenlemenin GIMP 3.2'de tanıtılması planlanıyor.
+- Kullanıcılar GTK3 veya GTK4'e geçmeye teşvik ediliyor, ancak görüşler karışık.
+- KDE ve uygulamaları GTK'ya potansiyel bir alternatiftir.
+
+### Uydu başka bir uydunun görüntüsünü alır
+
+#### [News](https://twitter.com/NASA_Landsat/status/1642954595377750027)
+- Anlamlı içerik mevcut değil; özet sağlanamıyor.
+
+#### [Sektör Tepkileri](http://news.ycombinator.com/item?id=35632721)
+- NASA'nın Landsat uydusunun başka bir uydunun görüntüsünü çekmesi, uydu teknolojisi ve mühendisliği üzerine bir tartışma başlattı.
+- Kullanıcılar, lazer menzilli ve istihbarat uyduları da dahil olmak üzere çeşitli uydular hakkında ilginç bilgiler paylaştı.
+- Şirketler, uyduları Dünya'ya daha yakın göndererek daha iyi görüntüleme projeleri üzerinde çalışıyor.
+- Maxar Technologies, WorldView-4 uydusunun yörüngedeki başka bir uydunun görüntülerini çektiğini ve konumlandırma için vektörler eklediğini gösteren bir video yayınladı.
+- Bazı yorumcular, yansıtıcı uzay aracı yalıtımının neden olduğu "ışıltılı" yansımalara dikkat çekti.
+- Olumsuz sosyal medya yorumlarına rağmen video, uzayda görüntülemenin artan ticari uygulanabilirliğinin kanıtı olarak görülüyor.
+
+### İyi küçük oyunlar nasıl yapılır
+
+#### [Haberler](http://farawaytimes.blogspot.com/2023/02/how-to-make-good-small-games.html)
+- Daha basit araçlarla küçük oyunlar yapmak, yeni geliştiricilerin başarı şansını artırabilir.
+- Karmaşık motorlarla boğuşmak insanları oyun yapmaktan vazgeçirebilir.
+- Bir oyunun duygusal kapsamı kalitesini belirlemez.
+- Küçük oyunların farklı başarı tanımları olabilir ve çok yönlü bir deneyim için bu daha ince duygulara uyum sağlamak önemlidir.
+- Benzersiz oyunlar yaratmak için çeşitli kaynaklardan ilham alın.
+- Bir form faktörü seçmek oyuncuların beklentilerini etkiler, bu nedenle bir motor seçerken ve piyasaya sürmeye hazırlanırken bunu göz önünde bulundurun.
+- Oyununuzu yayınlamadan önce bitirin ve "Devam Edilecek" oyunları yayınlamaktan kaçının.
+- Destekleyici bir topluluktan geri bildirim almak önemlidir.
+- Bir başyapıt ya da "harika" bir şey yapmaya çalışmak yerine sevdiğiniz ve memnun olduğunuz oyunlar yapmaya odaklanın.
+- Yazar, okuyucuları olumlu ve destekleyici topluluklar oluşturmaya ve hayal kırıklığına uğramak yerine işlerinde yaratıcı tatmin bulmaya odaklanmaya teşvik ediyor.
+
+#### [Sektör Tepkileri](http://news.ycombinator.com/item?id=35625543)
+- Makalede, fikirlere öncelik vermek ve birden fazla oyun fikrini kuluçkaya yatırmak gibi iyi küçük oyunlar yapmanın ve mükemmeliyetçilikten kaçınmanın yolları tartışılıyor.
+- Oyunların küçük, yinelemeli sürümlerini tasarlamanın ve oynamanın yanı sıra oyunları adil bir şekilde dengelemenin ve proje kapsamını sınırlandırmanın önemi vurgulanıyor.
+- Bazı yorumcular, belirli oyun türlerinin temelden değiştirilmeden daha küçük oyunlara dönüştürülmesinin zor olabileceğini belirtiyor.
+- Yazıda, farklı oyun mekaniklerini ve ortamın sınırlarını keşfetme fırsatı ve benzersiz bir şey yaratmanın verdiği tatmin de dahil olmak üzere küçük oyunlar yapmanın faydaları vurgulanıyor.
+- İnsanlar oyun geliştirmeye eleştirel bir zevkle ve mecrayı anlayarak yaklaşmalıdır.
+
+### Firefly - BEAM dilleri için yeni bir derleyici ve çalışma zamanı
+
+#### [Haberler](https://github.com/GetFirefly/firefly)
+- Firefly, WebAssembly'yi hedefleyen Elixir uygulamalarının derlenmesini sağlayan, Rust dilinde yazılmış BEAM dilleri için bir derleyici ve çalışma zamanıdır
+- Firefly, OTP sürümleri gibi davranan yürütülebilir dosyaları veya kütüphaneleri derleyebilir, ancak bağımlılıkları yönetmez
+- Firefly üç ana bileşenden oluşur: Derleyici, Kütüphaneler ve Çalışma Zamanları ve ek optimizasyonlar sağlamak için bazı özelliklerden fedakarlık eder
+- Firefly'ı oluşturmak için LLVM 15 gereklidir ve katkıda bulunanlar değişiklikleri uygulamadan önce çekirdek ekiple iletişim kurmalıdır
+- Firefly, BEAM'in yerini almak için tasarlanmamıştır ve gerekli işlevsellikten yoksun olabilir, ancak benzersiz özelliklere sahip alternatif bir Erlang/OTP uygulaması sunar
+- Çalışma zamanı tasarımı OTP ile aynıdır, ancak kullanılan codegen arka ucuna göre değişir ve Firefly, çalışma zamanını Rust'ta uygulanan yerel işlevlerle genişletmeyi kolaylaştırır
+- Firefly daha önce Lumen olarak adlandırılmıştı ve Apache 2.0 altında lisanslanmıştır.
+
+#### [Sektör Tepkileri](http://news.ycombinator.com/item?id=35622622)
+- Özellikle BEAM dilleri için yeni bir derleyici ve çalışma zamanı olan Firefly, WASI derlemesine ve çeşitli yonga setlerini hedefleyen bağımsız ikili dosyalar oluşturma yeteneğine odaklanarak piyasaya sürüldü.
+- Firefly'ın heyecan verici bir yönü, Eşzamanlılık ruhunu korurken Elixir'i mikrodenetleyiciler üzerinde verimli bir şekilde çalıştırma potansiyelidir.
+- BEAM, çeşitli programlama dillerini destekleyen sanal bir makinedir ve Lumen projesinin Firefly olarak yeniden adlandırılması, benzer şekilde adlandırılan birden fazla proje nedeniyle gerekli olmuştur.
+- Geliştiriciler, BEAM çalışma zamanının Elixir için optimizasyonunu tartışıyor ve bazıları matematik konusunda optimize edilmediğini savunuyor.
+- BEAM çalışma zamanı I/O odaklıdır, performansı gecikme süresine göre tasarlanmıştır ve artık LLVM yerine sıfırdan yazılmış bir JIT kullanarak JIT derlemesini desteklemektedir.
+- Firefly, geliştiricilerin WebAssembly'yi hedeflemek için Elixir uygulamalarını derlemelerine olanak tanır; bu, bir Elixir test ortamında DOM'u manipüle etmenin zorluklarına rağmen Elixir'i ön uçta çalıştırmak için kullanışlıdır.
+
+### Örtüklerinizi Hizalayın: Gizli Difüzyon Modelleri ile Yüksek Çözünürlüklü Video Sentezi
+
+#### [Haberler](https://research.nvidia.com/labs/toronto-ai/VideoLDM/)
+- Bir ekip, yüksek çözünürlüklü video üretimi için Video Gizli Difüzyon Modelleri (Video LDM'ler) geliştirdi ve 512 x 1024 çözünürlükte son teknoloji performans elde etti.
+- Model, yüksek kaliteli video üretimi için ince ayarlı kod çözücü performansı elde etmek için zamansal dikkat ve 3D konvolüsyonlar kullanıyor.
+- Yeni yaklaşım aynı zamanda metinden video üretme yeteneğine de sahip ve gelecekteki içerik oluşturma için heyecan verici yönler ortaya koyuyor.
+- Ekip, yöntemlerinin zamansal katmanlarının farklı ince ayarlı metinden görüntüye LDM'lere genelleştirilebileceğini göstermiştir.
+- Araştırma, Andreas Blattmann, Robin Rombach, Huan Ling, Tim Dockhorn, Seung Wook Kim, Sanja Fidler ve Karsten Kreis tarafından 2023 IEEE Bilgisayarla Görme ve Örüntü Tanıma Konferansı'nda sunuldu.
+- Bu araştırma, film ve eğlence endüstrisinde faydalı olma potansiyeline sahiptir.
+
+#### [Sektör Tepkileri](http://news.ycombinator.com/item?id=35624544)
+- Nvidia, video veri kümeleri üzerinde eğitilmiş gizli difüzyon modellerini kullanarak yüksek çözünürlüklü bir video sentezleme yöntemi geliştirdi.
+- Gelecekteki video üretimi, difüzyon tabanlı filtrelerle rafine edilen çok modlu, 3D modelleme araçlarını kullanabilir.
+- Hacimsel temsiller ve mesafe alanları kullanan farklılaştırılabilir işleyiciler, video sahnelerinin ayrıklaştırılması için potansiyel bir çözümdür.
+- Yorumlar bölümünde "Tekinsiz Vadi" kavramı tartışılmaktadır.
+- Nvidia, hareketinde benzeri görülmemiş bir pürüzsüzlükle gerçekçi sürüş sahneleri oluşturabilen bir metinden videoya modeli eğitti.
+- Teknolojinin potansiyel kötüye kullanımı konusunda endişeler dile getirildi ve modelin kamuya açıklanıp açıklanmayacağı sorgulandı.
+- Finansman, "müştereklerin trajedisi" nedeniyle bir zorluktur.
+- Araştırmacılar otonom araçlarda kullanılan karmaşık yapay zeka modellerini eğitmek için video simülasyonuna odaklandı.
+
+### NaturalSpeech 2: Sıfır vuruşlu konuşma ve şarkı sentezleyicileri
+
+#### [Haberler](https://speechresearch.github.io/naturalspeech2/)
+- Microsoft Research Asia ve Microsoft Azure Speech'in yeni bir TTS sistemi olan NaturalSpeech 2, yüksek ifade gücüne ve güçlü sıfır çekim yeteneğine sahip doğal sesleri sentezlemek için gizli bir difüzyon modeli kullanır.
+- Sistem, önceki TTS sistemlerinden daha iyi performans gösteriyor ve diğer TTS sistemlerine göre üstün ses kalitesi, sağlamlık ve prozodi/tını benzerliği sunuyor.
+- Sistem, nöral bir ses codec'i, artık vektör niceleyicileri ve sıfır çekim yeteneğini geliştiren metin girişine koşullandırılmış bir difüzyon modeli kullanıyor.
+- Microsoft bu teknolojiyi geliştirirken sorumlu yapay zeka ilkelerine bağlılığını göstermektedir.
+- Konuşmacı taklidi ve ses sahteciliğinde kötü niyetli kullanım potansiyeli vardır ve uygulayıcıların teknolojiyi kötüye kullanmamaları tavsiye edilir.
+- Bu yazı, YZ teknolojisinin sorumlu bir şekilde geliştirilmesi ve kullanılması ihtiyacını ve YZ tarafından sentezlenen sesleri tespit etmek için savunma araçlarının önemini vurgulamaktadır.
+
+#### [Sektör Tepkileri](http://news.ycombinator.com/item?id=35627790)
+- Araştırmacılar Zero-shot konuşma ve şarkı sentezleyicileri geliştirerek deepfake ses sahteciliği tekniklerinin potansiyel kötüye kullanımına ilişkin endişeleri artırdı.
+- Tartışma, yapay zeka uyumu, insani değerlerin karmaşıklığı ve devasa veri kümelerine kişisel veri katkısını çevreleyen etik sorular üzerine tartışmalara yol açtı.
+- Deney, GPT-3'ün deepfake sesler oluşturabildiğini göstererek yanlış bilgi yayılması endişelerini artırdı.
+- Uzmanlar, dijital kimlik doğrulama ve siber suçlarla ilgili endişelerle birlikte Dil Öğrenme Modellerini ve evrensel çevirmenlerin potansiyelini tartışıyor.
+- Telefon üzerinden insan ve yapay zeka kimlik doğrulaması üzerine tartışmalar, sesli kimlik doğrulama ve sentez teknolojisinin teknik yönleri etrafında da dönüyor.
+- Microsoft'un NaturalSpeech 2'si, kötüye kullanım potansiyeli olan sıfır atış öğrenmenin bir örneğidir ve şirketten bir etik beyanı istenmektedir.
+- FADR, bir ses dosyasından MIDI, davul, bas ve vokalleri izole ederek iyileştirme olanağı sunuyor.
+- Araştırmacılar opera ve koro sesleri için yapay zeka modellerini araştırıyor.
+- YourTTS, hızlı ve verimli bir metinden konuşmaya sistemidir.
+- YC Summer 2023 için başvurular başladı.
+
+### Qantas, Airbus A380'leri Kaliforniya çölünden geri getiriyor
+
+#### [Haberler](https://www.smh.com.au/business/companies/california-to-sydney-how-do-you-wake-an-a380-after-1000-days-in-the-desert-20221227-p5c8zp.html)
+- Qantas, pandemi nedeniyle uzun menzilli uçakların yere indirilmesi nedeniyle yaklaşık 1000 gün depoda kaldıktan sonra son Airbus A380'ini Kaliforniya'daki Victorville mezarlığından geri aldı.
+- Bir A380'i hizmete geri döndürmek, 4500 saatlik insan gücü ve bazı havayollarında gecikmelere yol açan önemli parçaların değiştirilmesi de dahil olmak üzere önemli bir çaba gerektiriyor.
+- Qantas mühendisleri, kendilerini nem, toz ve böceklerden korumak için sarılan A380'leri yeniden canlandırmak için Mojave Çölü'nde uçak başına iki ay geçirdi.
+- Qantas A380'lerini yeniden faaliyete geçirmeye çok yaklaşmış olsa da, havayolu şirketi uluslararası uçuşların en az 2024 yılına kadar salgın öncesi seviyelere dönmesini beklemiyor.
+- Qantas, Avustralya'nın sürdürülebilir havacılık yakıtı endüstrisini başlatmak için büyük yatırımlar yaparken, bir yandan da 2050 yılına kadar karbon nötr olma hedefine ulaşmak için mücadele ediyor.
+- Qantas, yaşlanan A380 filosunu değiştirmek için henüz bir plan açıklamadı ancak önümüzdeki dört yıl içinde bir düzine A350-1000 de dahil olmak üzere filo yatırımı için 5 milyar ABD Doları (7,4 milyar ABD Doları) harcamayı bekliyor.
+
+#### [Sektör Tepkileri](http://news.ycombinator.com/item?id=35632058)
+- Qantas, Avustralya'dan Avrupa'ya uçuşlara olan yüksek talep nedeniyle Sidney ve Melbourne'den Dubai'ye uçuşlar için Airbus A380'leri Güney Kaliforniya'daki depodan geri getiriyor.
+- A380'lerin en büyük sahibi olan Emirates, yüksek uçuş talebini karşılamak için daha büyük bir uçak istiyor, ancak motor üreticilerinin hiçbiri A380 için yeni motor geliştirmekle ilgilenmiyor ve bu da uçağın geleceğini belirsizliğe sokuyor.
+- A380'in pahalı maliyetleri ve azalan pazar talebi, diğer geniş gövdeli uçaklara kıyasla rekabet gücünü azalttı ve motor sorunları kapasitesini sınırladı.
+- Boeing 737 Max MCAS sorunu, uçağın ilk kez karşılaştığı bir sorun değil ve Boeing'in 10-15 yıl daha 737/757'nin yerini alacak bir uçağı olmayacak, bu da Airbus'a rekabet avantajı sağlıyor.
+- Pasif olarak gizli anlaşma yapan piyasalar daha yüksek fiyatlara ve daha az rekabete yol açabilir ve uçak endüstrisindeki zımni gizli anlaşma daha yüksek karlara yol açabilir.
+- A380 hala büyük boyutlu yükler için bir kargo uçağı olarak kullanılabilir ancak genel kargo kullanımı için gerekli özelliklerden yoksundur.
+- Airbus, A380 ile odak noktasını başarılı rotalardan "en büyük biziz" tacına çevirdi, ancak şimdi A350, A321-XLR ve neo uçaklar gibi uçaklarla bu rotalar için rakipleri var.
+- Hub havayolları daha fazla uçuş sıklığı sunuyor, ancak yolcular gün boyunca farklı saatlerde birden fazla uçuşu olan havayollarını tercih ediyor.
+- Uzmanlar, havacılık yakıtlarının karbon nötrlüğüne ulaşması için biyoyakıtlar, ağaçlar ve sürdürülebilir havacılık yakıtları yatırımı gibi çözümleri tartışıyor.
+
+### Ay'da teleskoplar inşa etmek astronomiyi dönüştürebilir
+
+#### [Haberler](https://theconversation.com/building-telescopes-on-the-moon-could-transform-astronomy-and-its-becoming-an-achievable-goal-203308)
+- Ay'da teleskoplar inşa etmek astronomiyi dönüştürebilir
+- Ay keşfi, NASA'nın on yılın ortasına kadar insanları Ay yüzeyine geri döndürmeyi amaçlayan Artemis programı da dahil olmak üzere planlanan birçok görevle bir rönesans geçiriyor
+- Ay, sabit yüzeyi ve güneş ışığı almayan kraterleri ile gözlemsel astronomi için avantajlar sunar
+- Ay'ın uzak tarafı radyo astronomi için özellikle caziptir, çünkü Dünya'daki insanlar tarafından üretilen radyo sinyallerinden sürekli olarak korunur, bu da onu muhtemelen tüm güneş sistemindeki en "radyo-sessiz" konum haline getirir
+- Ay'ın uzak tarafı, evrenin erken dönemlerinin yapısını araştırabilecek düşük frekanslı radyo astronomi için de ideal bir konumdur
+- Ay'ın düşük yerçekimi, serbest uçan uydular için mümkün olandan çok daha büyük teleskopların inşa edilmesini de sağlar
+- Kalıcı olarak gölgelenmiş kraterlerin soğuk ve istikrarlı ortamı, yerçekimi dalgalarını tespit eden araçlar için ve güneş rüzgarı ve galaktik kozmik ışınları incelemek için de avantajlara sahip olabilir
+- Bununla birlikte, Ay'ın uzak tarafındaki insan faaliyetleri ile istenmeyen radyo paraziti arasında bir gerilim vardır ve gölgeli kraterlerden su-buz çıkarma planları, aynı kraterlerin astronomi için kullanılmasını zorlaştırabilir.
+
+#### [Sektör Tepkileri](http://news.ycombinator.com/item?id=35633490)
+- Ay'da teleskoplar inşa etmek, daha yüksek hassasiyet ve spektrografik çözünürlük sağlayarak astronomide devrim yaratabilir.
+- Teleskop inşa etmenin yüksek maliyeti, çığır açan bilimsel keşifler yapma, gelecek nesillere ilham verme ve teknik yenilikleri teşvik etme umuduyla haklı çıkarılmaktadır.
+- Bilimsel keşiflerin değeri $/birim ile ölçülemez ve parçacık fiziği gibi alanlarla yüksek maliyet, yüksek ödül yaklaşımını paylaşır.
+- Askeri harcamalar tarihsel olarak bilimsel gelişmeleri yönlendirmiştir.
+- Bilimsel araştırmalara fon sağlamanın somut faydaları arasında teknolojinin nasıl işlediğine dair bir çerçeve sunmak, beklenmedik araştırmalardan elde edilen keşifler yoluyla topluma fayda sağlamak ve yüksek eğitimli bir işgücü yetiştirmek yer almaktadır.
+- Önerilen teleskop FOCAL potansiyel olarak başka türlü mümkün olmayan bilimsel ölçümler sağlayabilir ve Mars'a yerleşmekten daha önemlidir.
+- NASA'nın Artemis programı, radyo-sessiz bir ortama sahip olan ve Büyük Patlama'nın kozmik radyasyonuna ilişkin Dünya'daki herhangi bir gözlemevinden daha yüksek kalitede görüntüler üretebilecek olan Ay'ın uzak tarafında bir radyo teleskopu inşa etmeyi amaçlamaktadır.
+- Teleskobun Ay'da konumlandırılması, uzay tabanlı teleskopların en büyük zorluklarından birinin üstesinden geliyor çünkü Ay kayası, insan yapımı ya da doğal uydulardan gelen yüksek frekanslı gürültü kaynaklarının çoğuna karşı kalkan oluşturuyor.
+- Donanımı kaplayan ince toz, termal kontrol ve Dünya ile iletişim sorunları gibi Ay'ın ortamıyla ilgili teknik komplikasyonların uzay mühendisleri tarafından çözülmesi gerekmektedir.
+- Mars ile iletişim, modern depolama teknolojisi, Venüs uyduları ya da Dünya-Ay L2, L4 ya da L5'te bir halo yörünge kullanılarak geliştirilebilir, ancak yerçekiminin düzensizliği nedeniyle Ay'ın yörüngeye oturtulması zordur.
+- "Karanlık" madde ve enerjinin gerçek varlığı ve tespiti zor olmaya devam etmektedir ve yerçekimi mercekleme etkisi için gezegenleri veya asteroitleri kullanmak büyük odak noktası nedeniyle pratik değildir.
+- Maskonların keşfi, uzay araçları üzerindeki etkilerinin incelenmesine ve "donmuş yörüngelerin" keşfine yol açmıştır.
+- Ay'daki teleskop, Hubble'ın gözlemleyemeyeceği kadar uzakta olan JWST gibi teleskoplara göre daha fazla erişim ve daha az bakım riski sunmaktadır.
+- Yorum bölümünde, önerilen bir Ay teleskopu projesinin olasılığı ve maliyeti ile gök cisimlerinde su arama eğilimi tartışılıyor.
+
+</Steps>
