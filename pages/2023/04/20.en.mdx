@@ -1,0 +1,393 @@
+
+
+import { Steps } from 'nextra-theme-docs'
+
+import CallToAction from '../../../components/CallToAction'
+
+<CallToAction />
+
+<Steps>
+
+## April 20, 2023
+
+
+
+### StableLM: A new open-source language model
+
+#### [News](https://stability.ai/blog/stability-ai-launches-the-first-of-its-stablelm-suite-of-language-models)
+- StableLM is a new open-source language model designed for natural language processing tasks.
+- The model is unique in that it allows users to train and fine-tune it on their own specific datasets, thus increasing performance on task-specific language learning.
+- Its architecture is based on BERT, and it is designed to minimize catastrophic forgetting.
+- The model is pre-trained on a large corpus of text, including Wikipedia and Common Crawl.
+- The software is easy to use and can be accessed on GitHub, with documentation available to help users get started.
+- StableLM has already been used in various applications, including text classification and sentiment analysis.
+
+#### [Industry Reactions](http://news.ycombinator.com/item?id=35629127)
+- A new open-source language model called StableLM has been released by Stability.AI, with models ranging from 3B to 65B parameters and a context width of 4096.
+- Model evaluation has received criticism but it is a good option for developers who want to improve the model since it's open source.
+- StableLM alpha model is being tested and expected to outperform Pythia 6.9B and will be trained on up to 1.5 trillion tokens.
+- Larger models learn faster but are prone to overfitting and corporations make consumers pay for computation power up front.
+- Optimized ML frameworks are becoming more accessible on consumer hardware, but good language models currently require expensive GPUs that make cloud APIs the only option.
+- Serving language models through APIs allows for highly optimized inference, but local computation enables more privacy in AI applications.
+- Stanford researchers have released StableLM under an open-source license, which has been met with varying opinions.
+- The development and use of AI are hot topics with varying opinions on superintelligent AI taking over the world.
+
+
+
+
+
+### Making a Linux home server sleep on idle and wake on demand – the simple way
+
+#### [News](https://dgross.ca/blog/linux-home-server-auto-sleep/)
+- Article details how to configure a home server running Ubuntu Linux to sleep on idle and wake on demand for hosting Time Machine backups.
+- Wake-on-LAN enabled to wake the server via unicast packets.
+- Network services, including ARP Stand-in and Avahi, configured to maintain network connectivity while the server sleeps.
+- Code shared to determine idle/busy state and automate suspension to RAM via a cron job.
+- A separate always-on Linux device and network interface device that supports Wake-on-LAN with unicast packets are needed.
+- ARP Stand-in allows a network device to respond to ARP requests on behalf of a sleeping server, triggering its wake-up.
+- Author used Ruby and libpcap with a filter for ARP request packets targeting the sleeping server's IP address to implement ARP Stand-in.
+- Unwanted wake-up issues caused by AFP packets and NetBIOS queries addressed.
+- Article explains how to disable IPv6 and use port mirroring to capture packets from an intermediary device between the server and the rest of the network.
+- Avahi used as a stand-in service for ARP by the author.
+- The author used avahi-publish to configure Raspberry Pi.
+- The author created a systemd service definition that automatically runs avahi-publish on boot.
+- Setup has been successful for over a month.
+
+#### [Industry Reactions](http://news.ycombinator.com/item?id=35627107)
+- Raspberry Pi is a popular option for low-power servers, but some users recommend using it for syncing files to a 'real' backup server instead of an on-demand setup.
+- Suggestions for low-power server operation include using wifi and configuring ethernet for low-power operation.
+- Alternative mini PCs such as Beelink and Topton NAS boards are suggested.
+- ChatGPT is recommended for quicker troubleshooting.
+- Power-saving features and the difficulties surrounding the definition of "idle" are discussed.
+- Wake on LAN setups and self-hosted backups versus cloud services are debated, as well as concerns around privacy and surveillance.
+- Tips on how to optimize power usage are shared by readers, such as spinning down hard drives and using power-efficient power supplies.
+- IPv6 technology and its benefits are discussed.
+- Strategies for minimizing power usage by home servers are discussed.
+- ARP spoofing can be used to wake up a sleeping server.
+
+
+
+
+
+### User: Junnn11
+
+#### [News](https://en.wikipedia.org/wiki/User:Junnn11)
+- The post provides reconstructions and diagrams of various ancient arthropods including Euarthropods, Dinocaridids, lobopodians, and more.
+- The user, Junnn11, is an arthropod enthusiast with a focus on panarthropod head problem, phylogeny across arthropod subphyla and stem lineage, basal chelicerates, dinocaridids, and lobopodians.
+- The post includes a list of various species of fuxianhuiids, megacheirans, pycnogonids, synziphosurines, chasmataspidids, eurypterids, arachnids, and more.
+- There are also interpretive drawings of various ancient arthropods.
+- The post provides links to the user's Japanese Wikipedia page and Twitter account.
+- There is no new or recent release mentioned in the post.
+
+#### [Industry Reactions](http://news.ycombinator.com/item?id=35630423)
+- The post on HN showcases individuals deeply invested in niche subjects, including technology, biology, and modeling.
+- Users discuss the benefits and drawbacks of being invested in such topics, including impact on motivation and PhD legitimizing one's interests.
+- The illustrations of User Junnn11 depicting the biomechanics and movement of arthropods on a Wikipedia page have sparked discussion on biology, genetics, and the concept of seeing.
+- Users also discuss the 'Arthropod head problem' and user design preferences such as lazy-loaded images.
+- Lazy-loading <img/> tags on webpages by default is a privacy concern and not currently implemented in Safari or Firefox, and may break some websites.
+- The MediaWiki application is a PHP platform for creating user-generated content, and Junnn11's insect illustrations on a user page have gained attention.
+- Y Combinator is accepting applications for Summer 2023.
+
+
+
+
+
+### Offline is just online with extreme latency
+
+#### [News](https://blog.jim-nielsen.com/2023/offline-is-online-with-extreme-latency/)
+- Peter Van Hardenberg advocates for local-first software where programs run on devices and leverage the cloud for "durability or accessibility" without being dependent on it.
+- Traditional enterprise-level software and cloud services are like building expensive aircraft carriers when simple, personal, and easy-to-maintain tools are needed.
+- Online and offline should be thought of as a continuum with different levels of latency.
+- Offline is merely the most extreme form of latency and has its own gradations of seconds, minutes, hours, days, and more.
+- Shifting the idea of online/offline binaries to a spectrum of latency opens new doors for building different things.
+
+#### [Industry Reactions](http://news.ycombinator.com/item?id=35626015)
+- The article discusses the concept of offline vs. online applications and the debate around whether they should be considered as the same or distinct categories with their own requirements.
+- The conversation delves into pessimistic vs. optimistic UI and data locality vs. data ownership.
+- Conflict resolution is a complex issue when dealing with offline apps and solutions should be designed to handle both the online and offline environment.
+- The move towards a data synchronization-based approach to products is proposed.
+- Offline-first experiences have to be carefully designed to treat everything as a source of truth and handle schema and business logic migrations.
+- Peer-to-peer applications are preferred by some users over internet-based services due to privacy and control concerns.
+- The choice of approach (local vs. cloud-based) depends on the user's needs and preferences.
+- The discussion touches upon technical challenges, such as NAT and discovery systems, and discusses potential solutions, including federated standards and mesh networks.
+- The importance of offline tolerance in apps like Google Maps, iMessage, and weather apps is mentioned.
+- The discussion centers around whether offline-first is a viable solution for collaborative tools.
+- Various commenters discuss the pros and cons of offline vs. online communication and the importance of resilient design.
+
+
+
+
+
+### Most of my skills are now worth nothing, but 10% are worth 1000x
+
+#### [News](https://tidyfirst.substack.com/p/90-of-my-skills-are-now-worth-0)
+- AI tech like ChatGPT can transform the value of software development skills 
+- Though some skills may become less valuable, AI can offer new opportunities for utilizing remaining skills 
+- ChatGPT can automate tasks & develop solutions to complex problems, and help developers collaborate 
+- Maintaining the expertise of human developers is integral, and validating AI output is crucial 
+- Integrating AI tools can enhance efficiency without sacrificing quality 
+- Human creativity, expertise, & critical thinking cannot be replaced by AI 
+- Software developers should embrace AI while recognizing its unique value.
+
+#### [Industry Reactions](http://news.ycombinator.com/item?id=35627779)
+- ChatGPT can provide accurate answers for simple technical tasks but can be confidently wrong on more complicated ones.
+- ChatGPT's quality of answers could be improved by training it on higher quality corpus, while others warn against relying too heavily on AI for learning.
+- Large language models can lack source materials in certain areas, but the ability to interact with ChatGPT and corrections can be helpful.
+- ChatGPT can provide basic information for non-experts but may need validation and verification.
+- Generative models could democratize writing and help generate more text, but skeptics believe it could lead to illiteracy and elimination of some writing jobs.
+- AI-generated text could lead to the elimination of lower-paying writing jobs but may not affect high-salary and high-quality writing.
+- AI chatbots can generate poor code, and lawmakers and judges adopting generated text are a concern.
+- AI-powered language models improve productivity for writers but cannot replace good writers entirely.
+- Writing may soon become a significant part of everyone's job, but many writers and editors may need to change careers. 
+- Technology and AI have repeatedly made old ways of doing things obsolete, including human computers in banks and spreadsheets, but it cannot replace the core competencies of graphic designers.
+
+
+
+
+
+### Why some researchers think I’m wrong about social media and mental illness
+
+#### [News](https://jonathanhaidt.substack.com/p/why-some-researchers-think-im-wrong)
+- A debate among social scientists is ongoing on whether social media is the primary cause of the teenage mental illness epidemic.
+- Critics argue that the evidence is not strong enough to support claims of harm.
+- Proponents argue that something significant is happening to the mental health of teenagers that began around 2012, with no alternative explanation.
+- Rates of mental illness and social media usage don't have a clear cause-and-effect relationship, but skeptics can't explain the epidemic as neatly as the SSM theory.
+- Skeptics demand a high level of skepticism grounded in "beyond reasonable doubt," which is inappropriate for civil cases.
+- Disagreement exists between scientists over the size of the correlation between social media use and mental health problems.
+- Social media may be particularly harmful to girls.
+- Researchers often focus on one causal model when turning a question into variables they can measure, which may obscure other potential causal pathways.
+- Two of the causal models that could explain the rise in teen mental illness are the sensitive period model and the loss-of-IRL model.
+- The author recommends measures such as delaying smartphones until high school, having phone-free schools, and raising the age of "internet adulthood" to 16.
+- The federal government has done nothing to reduce underage use of smartphones, and there is a need for a national and global discussion about whether smartphones and social media interfere with healthy adolescent development.
+- Skeptics are needed to raise counterarguments against alarm ringers and to point out weaknesses in evidence.
+- Age verification for smartphones can be done through innovative methods already offered by companies like Clear.
+
+#### [Industry Reactions](http://news.ycombinator.com/item?id=35626755)
+- Social media's constant peer surveillance and addictive nature are causing mental health issues, lack of sleep, and personal growth.
+- The discussion highlights the need for a nuanced understanding of the effects of social media on mental health, including depression, bullying, and suicide.
+- The shift towards always-online video games that encourage addictive behavior is concerning, and some argue for measures to protect people under 18.
+- Social media has affected the lives of children by limiting their development of independence, and the lack of outdoor activity is a problem that needs addressing.
+- The reliability of self-reporting and population-level data is discussed in relation to understanding the causes of depression.
+- The available evidence supports the claim that social media causes mental health issues, and the direction of causality is difficult to establish.
+- The impact of climate change on young people's mental health, the lack of activism surrounding it, and the role of corporations, governments, and individuals are discussed.
+- Energy consumption and the lack of ideal alternatives to fossil fuels, as well as poor parenting practices, are also mentioned.
+
+
+
+
+
+### ChatPDF – Chat with Any PDF
+
+#### [News](https://www.chatpdf.com)
+- ChatPDF offers a tool for enhanced learning experiences for students, aiding in comprehending textbooks and research papers.
+- The platform can efficiently analyze a range of documents, including financial and sales reports, project proposals, training manuals and legal contracts.
+- ChatPDF offers secure cloud storage for confidential data and the ability to delete at any time.
+- For curious minds, ChatPDF can unlock a wealth of knowledge from historical documents, literature, and other sources.
+- The tool can understand any language and can reply in the user's preferred language.
+- ChatPDF offers an API, pricing options, FAQ, affiliate program and support via Twitter and email.
+
+#### [Industry Reactions](http://news.ycombinator.com/item?id=35626312)
+- ChatPDF is a new service that allows users to ask questions about PDF documents using OpenAI's GPT API to generate answers
+- Suggestions made for improving the service include adjusting chunk size, optimizing semantic search or recursion for more complex PDFs, and chunking PDF text
+- Some users express skepticism, while others point out benefits such as improved search results and semantic indexing
+- Alternative self-hosted solutions for using ChatGPT are suggested for using sensitive documents
+- ChatPDF is similar to other semantic indexing services, with suggestions for potential improvements such as a trial version
+- Some commenters joke about the hype surrounding GPT AI models suggest other file types for analysis
+
+
+
+
+
+### The GTK+3 port of GIMP is officially finished
+
+#### [News](https://twitter.com/zemarmot/status/1646272510701236229)
+- No meaningful content was found in the provided text.
+
+#### [Industry Reactions](http://news.ycombinator.com/item?id=35630681)
+- The GTK+3 port of GIMP is now complete.
+- Backwards compatibility is crucial for user space and Windows' level of compatibility is praised for individual applications.
+- Few workarounds exist for running old Linux stuff with relevant libraries.
+- Debian 12 will continue to include GTK2, even though some distributions are trying to remove it.
+- Building a high-quality GUI toolkit requires maturity, completeness, and effort.
+- Some UI toolkits lack common widgets and force developers to use third-party ones.
+- A developer proposes using an Abstract Syntax Tree to enable seamless binary compatibility in APIs and interfaces.
+- GIMP wants to move to GTK4 for better Wayland compatibility, support for HiDPI, and a cleaner look.
+- Non-destructive editing is planned for introduction in GIMP 3.2.
+- Users are encouraged to switch to GTK3 or GTK4, but opinions are mixed.
+- KDE and its applications are a potential alternative to GTK.
+
+
+
+
+
+### Satellite takes image of another satellite
+
+#### [News](https://twitter.com/NASA_Landsat/status/1642954595377750027)
+- No meaningful content present; summary cannot be provided.
+
+#### [Industry Reactions](http://news.ycombinator.com/item?id=35632721)
+- NASA's Landsat satellite took an image of another satellite, sparking discussion around satellite technology and engineering.
+- Users shared interesting facts about various satellites, including laser-ranging and intelligence satellites.
+- Companies are working on projects for better imaging by sending satellites closer to the Earth.
+- Maxar Technologies released a video showing their WorldView-4 satellite taking images of another satellite in orbit, with added vectors for positioning.
+- Some commentators noted the "sparkly" reflections caused by reflective spacecraft insulation.
+- The video is seen as evidence of growing commercial viability of imaging in space, despite negative social media comments.
+
+
+
+
+
+### How to make good small games
+
+#### [News](http://farawaytimes.blogspot.com/2023/02/how-to-make-good-small-games.html)
+- Making small games with simpler tools can increase the chances of success for new developers.
+- Struggling with complex engines can discourage people from making games.
+- A game's emotional scope does not determine its quality.
+- Small games can have different definitions of success, and it's important to be attuned to these subtler emotions for a well-rounded experience.
+- Draw inspiration from various sources to create unique games.
+- Choosing a form factor affects players' expectations, so consider this when choosing an engine and preparing for release.
+- Finish your game before releasing it and avoid releasing "To Be Continued" games.
+- Getting feedback from a supportive community is important.
+- Focus on making games that you like and are satisfied with, rather than trying to make a masterpiece or something "great."
+- The author encourages readers to focus on building positive and supportive communities and finding creative fulfillment in their work, rather than becoming bitter or disillusioned.
+
+#### [Industry Reactions](http://news.ycombinator.com/item?id=35625543)
+- The article discusses ways to make good small games and avoid perfectionism, such as prioritizing ideas and incubating multiple game ideas.
+- The importance of playtesting and designing small, iterative versions of games is emphasized, as well as balancing games for fairness and limiting project scope.
+- Some commenters note that certain game genres may be difficult to distill into smaller games without altering them fundamentally.
+- The post highlights the benefits of making small games, including the opportunity to explore different game mechanics and limits of the medium, and the satisfaction of creating something unique.
+- People should approach game development with a critical taste and an understanding of the medium.
+
+
+
+
+
+### Firefly – A new compiler and runtime for BEAM languages
+
+#### [News](https://github.com/GetFirefly/firefly)
+- Firefly is a compiler and runtime for BEAM languages, written in Rust, that enables compiling Elixir applications targeting WebAssembly
+- Firefly can compile executables or libraries that act like OTP releases, but does not manage dependencies
+- Firefly consists of three major components: Compiler, Libraries, and Runtimes, and sacrifices some features to enable additional optimizations
+- LLVM 15 is required to build Firefly, and contributors should communicate with the core team first before implementing changes
+- Firefly is not meant to replace BEAM and may lack required functionality, but offers an alternative implementation of Erlang/OTP with unique features
+- The runtime design is the same as OTP but varies on codegen backend used, and Firefly makes it easy to extend the runtime with native functions implemented in Rust
+- Firefly was previously named Lumen and is licensed under Apache 2.0.
+
+#### [Industry Reactions](http://news.ycombinator.com/item?id=35622622)
+- Firefly, a new compiler and runtime specifically for BEAM languages, has been launched with a focus on WASI compilation and the ability to build self-contained binaries targeting various chipsets.
+- One exciting aspect of Firefly is its potential to efficiently run Elixir on microcontrollers while retaining its Concurrency spirit.
+- BEAM is the virtual machine that supports several programming languages, and the rebranding of the Lumen project to Firefly was necessitated by multiple similarly named projects.
+- Developers are discussing the optimization of the BEAM runtime for Elixir, with some arguing it is unoptimized around math.
+- BEAM runtime is I/O focused, with performance designed around latency, and now supports JIT compilation using a JIT written from scratch instead of LLVM.
+- Firefly allows developers to compile Elixir apps for targeting WebAssembly, which is useful for running Elixir on the frontend despite the challenges of manipulating the DOM within an Elixir test environment.
+
+
+
+
+
+### Align Your Latents: High-Resolution Video Synthesis with Latent Diffusion Models
+
+#### [News](https://research.nvidia.com/labs/toronto-ai/VideoLDM/)
+- A team has developed Video Latent Diffusion Models (Video LDMs) for high-resolution video generation, achieving state-of-the-art performance at 512 x 1024 resolution.
+- The model uses temporal attention and 3D convolutions to achieve fine-tuned decoder performance for high-quality video generation.
+- The new approach is also capable of text-to-video generation, paving exciting directions for future content creation.
+- The team has shown that their method's temporal layers generalize to different fine-tuned text-to-image LDMs.
+- The research was presented by Andreas Blattmann, Robin Rombach, Huan Ling, Tim Dockhorn, Seung Wook Kim, Sanja Fidler, and Karsten Kreis at the 2023 IEEE Conference on Computer Vision and Pattern Recognition.
+- This research has the potential to be useful in the film and entertainment industry.
+
+#### [Industry Reactions](http://news.ycombinator.com/item?id=35624544)
+- Nvidia has developed a high-resolution video synthesis method using latent diffusion models trained on video datasets.
+- Future video generation may use multi-modal, 3D modeling tools that get refined with diffusion-based filters.
+- Differentiable renderers using volumetric representations and distance fields are a potential solution for discretization of video scenes.
+- "Uncanny valley" concept is discussed in the comments section.
+- Nvidia trained a text-to-video model capable of generating realistic driving scenes with unprecedented smoothness in its motion.
+- Concerns raised about the potential misuse of the technology and questioned whether the model will be released to the public.
+- Funding is a challenge due to the "tragedy of the commons."
+- Researchers focused on video simulation to train complex AI models used in autonomous vehicles.
+
+
+
+
+
+### NaturalSpeech 2: Zero-shot speech and singing synthesizers
+
+#### [News](https://speechresearch.github.io/naturalspeech2/)
+- NaturalSpeech 2, a new TTS system from Microsoft Research Asia and Microsoft Azure Speech, utilizes a latent diffusion model to synthesize natural voices with high expressiveness and strong zero-shot ability.
+- The system outperforms previous TTS systems and offers superior voice quality, robustness, and prosody/timbre similarity over other TTS systems.
+- The system uses a neural audio codec, residual vector quantizers, and a diffusion model conditioned on text input, which enhances zero-shot capability.
+- Microsoft shows commitment to responsible AI principles in developing this technology.
+- There is a potential for malicious use in speaker mimicking and voice spoofing, and practitioners are urged not to abuse the technology.
+- This post highlights the need for responsible development and use of AI technology and the importance of defending tools to detect AI-synthesized voices.
+
+#### [Industry Reactions](http://news.ycombinator.com/item?id=35627790)
+- Researchers have developed Zero-shot speech and singing synthesizers, raising concerns about potential abuse of deepfake voice spoofing techniques.
+- Discussion led to debate on AI alignment, complexity of human values, and ethical questions surrounding personal data contribution to massive datasets.
+- Experiment shows GPT-3 can create deepfake voices, raising concerns of misinformation spread.
+- Experts discuss Language Learning Models and potential for universal translators, with concerns for digital identity authentication and cyber crime.
+- Debate on authenticating human vs AI over the phone, with discussions also revolving around technical aspects of voice authentication and synthesis technology.
+- Microsoft's NaturalSpeech 2 is an example of zero-shot learning with potential for misuse, prompting an ethics statement from the company.
+- FADR isolates MIDI, drums, bass, vocals from an audio file with room for improvement.
+- Researchers exploring AI models for operatic and choir singing voices.
+- YourTTS is a fast and efficient text-to-speech system.
+- Applications for YC Summer 2023 are open.
+
+
+
+
+
+### Qantas is bringing back Airbus A380s from the California desert
+
+#### [News](https://www.smh.com.au/business/companies/california-to-sydney-how-do-you-wake-an-a380-after-1000-days-in-the-desert-20221227-p5c8zp.html)
+- Qantas has retrieved their last Airbus A380 from the Victorville boneyard in California after almost 1000 days of storage due to the pandemic-induced grounding of long-haul aircraft.
+- Returning an A380 to service requires significant effort, including 4500 hours of manpower and the replacement of crucial parts, which led to delays for some airlines.
+- Qantas engineers spent two months per aircraft in the Mojave Desert to revive the A380s, which were wrapped to protect themselves from moisture, dust, and insects.
+- Although Qantas is close to bringing their A380s back to action, the airline does not expect international flying to return to pre-pandemic levels until at least 2024.
+- Qantas has heavily invested in kick-starting Australia's sustainable aviation fuel industry while struggling to meet its emissions-reduction goal of carbon neutrality by 2050.
+- Qantas has not yet announced a plan to replace its ageing fleet of A380s but expects to spend $US5 billion ($7.4 billion) on fleet investment over the next four years, including a dozen A350-1000s.
+
+#### [Industry Reactions](http://news.ycombinator.com/item?id=35632058)
+- Qantas is bringing back Airbus A380s from storage in Southern California for flights from Sydney and Melbourne to Dubai due to high demand for flights from Australia to Europe.
+- Emirates, the largest owner of A380s, is asking for a bigger plane to meet high demand for flying, but none of the engine manufacturers are interested in developing new engines for the A380, putting the future of the plane in doubt.
+- The A380's expensive costs and reduced market demand have reduced its competitiveness compared to other wide-body planes, and engine problems have limited its capacity.
+- Boeing 737 Max MCAS issue is not the first time the aircraft has encountered issues, and Boeing will not have a 737/757 replacement for another 10-15 years, giving Airbus a competitive edge.
+- Passively colluding markets can lead to higher prices and reduced competition, and tacit collusion in the airplane industry could lead to higher profits.
+- The A380 may still be used as a cargo plane for outsized loads but lacks necessary features for general cargo use.
+- Airbus changed their focus from successful routes to the "we are the biggest" crown with the A380, but now has competitors for these routes with planes like A350, A321-XLR, and neo planes.
+- Hub airlines offer more frequency of flights, but passengers prefer airlines with multiple flights at varying times throughout the day.
+- Experts discuss solutions for aviation fuel to achieve carbon neutrality, such as biofuels, trees, and sustainable aviation fuels investment.
+
+
+
+
+
+### Building telescopes on the Moon could transform astronomy
+
+#### [News](https://theconversation.com/building-telescopes-on-the-moon-could-transform-astronomy-and-its-becoming-an-achievable-goal-203308)
+- Building telescopes on the Moon could transform astronomy
+- Lunar exploration is undergoing a renaissance with many missions planned, including NASA's Artemis program which aims to return humans to the lunar surface by the middle of the decade
+- The Moon offers advantages for observational astronomy with its stable surface and craters that receive no sunlight
+- The far side of the Moon is particularly attractive for radio astronomy as it is permanently shielded from radio signals generated by humans on Earth, making it probably the most "radio-quiet" location in the whole solar system
+- The lunar far side is also an ideal location for low-frequency radio astronomy, which can probe the structure of the early universe
+- The Moon's low gravity also enables the construction of much larger telescopes than is feasible for free-flying satellites
+- The cold, stable environment of permanently shadowed craters may also have advantages for instruments to detect gravitational waves and for studying solar wind and galactic cosmic rays
+- However, there is a tension between human activities on the lunar far side and unwanted radio interference, and plans to extract water-ice from shadowed craters might make it difficult for those same craters to be used for astronomy.
+
+#### [Industry Reactions](http://news.ycombinator.com/item?id=35633490)
+- Building telescopes on the moon could revolutionize astronomy by providing higher sensitivity and spectrographic resolution.
+- High cost of building telescopes is justified in the hopes of making groundbreaking scientific discoveries, inspiring future generations, and driving technical innovation.
+- Scientific discovery's value cannot be quantified by $/unit and shares a high-cost, high-reward approach with fields like particle physics.
+- Military spending has historically driven scientific advancements.
+- Tangible benefits of funding scientific research include providing a framework for how technology operates, benefiting society through discoveries from unexpected research, and cultivating a highly-trained workforce.
+- Proposed telescope FOCAL could potentially provide otherwise impossible scientific measurements and is more important than settling on Mars.
+- NASA's Artemis program aims to build a radio telescope on the far side of the Moon, which has a radio-quiet environment and could produce higher-quality images than any observatory on Earth regarding the Big Bang's cosmic radiation.
+- Location of the telescope on the Moon overcomes one of the biggest difficulties of space-based telescopes because the lunar rock shields against most sources of high-frequency noise from satellites, man-made or natural.
+- Technical complications related to the Moon's environment, such as fine dust covering the hardware, thermal control, and communication problems with Earth, need to be solved by space engineers.
+- Communication with Mars could improve by using modern storage technology, Venus satellites, or a halo orbit at earth-moon L2, L4, or L5, but the moon is difficult to orbit due to the unevenness of gravity.
+- The actual existence and detection of "dark" matter and energy remains elusive, and using planets or asteroids for a gravity lensing effect is impractical due to the large focal point.
+- Discovery of mascons led to the study of their effect on spacecraft, and the discovery of "frozen orbits."
+- Telescope on the Moon presents more access and less risk for maintenance than telescopes like JWST that are too far for Hubble to observe it.
+- The comment section debates the likelihood and cost of a proposed lunar telescope project and the tendency to search for water in celestial bodies.
+
+
+
+</Steps>
