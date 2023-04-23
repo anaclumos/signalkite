@@ -40,6 +40,14 @@ if __name__ == "__main__":
         with open(md_file, "w") as f:
             for line in lines:
                 # Replace Rules
+                if '####' in line:
+                    line = '#### ' + line.replace('####', '').strip()
+                elif '###' in line:
+                    # pull the ### to the front
+                    line = '### ' + line.replace('###', '').strip()
+                elif '##' in line:
+                    # pull the ## to the front
+                    line = '## ' + line.replace('##', '').strip()
                 # remove all 'invisible' characters
                 REPLACE_RULES = {
                     " ": " ",
