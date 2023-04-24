@@ -90,9 +90,11 @@ class Story:
 ### {title}
 
 #### {article}
+
 {self.summary}
 
 #### {hn}
+
 {self.hn_summary}
 
 """
