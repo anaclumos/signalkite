@@ -68,7 +68,7 @@ jobs:
       - name: Run Prettier
         uses: Adzz/jest_test_action@v2.0.0
         with:
-          command: prettier
+          command: pprettier
       - name: Write Frontmatter
         run: python3 data/frontmatter_inject.py
       - name: Generate English RSS
@@ -78,7 +78,7 @@ jobs:
       - name: Run Prettier
         uses: Adzz/jest_test_action@v2.0.0
         with:
-          command: prettier
+          command: pprettier
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
