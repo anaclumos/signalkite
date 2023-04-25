@@ -89,7 +89,7 @@ Employ transitioning phrases and native arguments, but concise and succinct.
 
 Now, I will give you the text.
 
-Do not exceed 5 bullet points. Keep the most important 5 key points, and ignore the rest.
+Do not exceed 3 bullet points. Keep the most important 3 key points, and ignore the rest.
 
 Text: {text}
 """,
@@ -153,6 +153,7 @@ Text: {text}
         new_text = text.split(".")
         new_text = ".".join(new_text[: 4 * len(new_text) // 5])
         return summarize_hn_comments(title, new_text)
+    summary = "\n".join(summary.split("\n")[1:])
     return summary
 
 
