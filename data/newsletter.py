@@ -174,7 +174,7 @@ def create_campaign(title, body, lang):
         auth=(username, password),
         json={
             "name": f"{today.strftime('%Y-%m-%d')} {lang}",
-            "subject": f"🗞️ {today.strftime('%Y-%m-%d')} {title}",
+            "subject": f"🗞️ {title} ({today.strftime('%Y-%m-%d')})",
             "type": "regular",
             "content_type": "markdown",
             "body": prefix + body + suffix,
