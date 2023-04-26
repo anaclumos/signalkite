@@ -26,6 +26,7 @@ If there is no meaningful content, for example, if it looks like a simple error 
 
 def shorten(text: str, limit: int, title="") -> str:
     summary = ""
+    error_occurred = False
     try:
         words = text.split()
         chunks = [" ".join(words[i : i + limit]) for i in range(0, len(words), limit)]
@@ -57,6 +58,8 @@ Text: {w}
         text = summary
     except Exception as e:
         print(f"Cannot summarize, error: {e}")
+        error_occurred = True
+    if error_occurred:
         new_text = text.split(".")
         new_text = ".".join(new_text[: 4 * len(new_text) // 5])  # 80% of the text
         return shorten(new_text, limit, title)
@@ -66,6 +69,7 @@ Text: {w}
 
 def bulletpoint_summarize(title, text):
     summary = ""
+    error_occurred = False
     try:
         print(f"Creating Summary for... {title}")
         sleep(1)
@@ -101,6 +105,8 @@ Text: {text}
         print(
             f"Cannot summarize: {title}, trying again with shorter text... error: {e}"
         )
+        error_occurred = True
+    if error_occurred:
         new_text = text.split(".")
         new_text = ".".join(new_text[: 4 * len(new_text) // 5])
         return bulletpoint_summarize(title, new_text)
@@ -109,6 +115,7 @@ Text: {text}
 
 def summarize_hn_comments(title, text, summary):
     summary = ""
+    error_occurred = False
     try:
         print(f"Summarizing HN Comments... {title}")
         sleep(1)
@@ -147,6 +154,9 @@ Text: {text}
         )
         summary = completion["choices"][0]["message"]["content"].strip()
     except Exception as e:
+        error_occurred = True
+    if error_occurred:
+        sleep(1)
         print(
             f"Cannot summarize: {title}, trying again with shorter text... error: {e}"
         )
