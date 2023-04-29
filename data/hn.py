@@ -23,7 +23,7 @@ GITHUB_URL = "https://github.com/"
 GITLAB_URL = "https://gitlab.com/"
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 POST_COUNT = 10
-OPENAI_TOKEN_THRESHOLD = 5000  # It's actually 8K, but we want to be safe
+OPENAI_TOKEN_THRESHOLD = 5000  # It's actually 8Kj, but we want to be safe
 
 
 chrome_options = Options()
@@ -87,24 +87,40 @@ def get_best_stories(start: int, end: int) -> Stories:
 def download_story(story: Story) -> Story:
     url = story.url
     if not url.startswith(YT_SHORT_URL) and not url.startswith(YT_URL) and url != "":
+        done = False
         try:
             driver.get(url)
             article = driver.find_element(By.TAG_NAME, "article")
             print(f"Found article: {' '.join(article.text.split(' ')[0:10])}...")
             story.content += article.text
+            done = True
         except Exception as e:
             print(
                 f"Failed to download main content from {story.title}. Retrying in 1 seconds..."
             )
             sleep(1)
+        try:
+            driver.get(url)
+            article = driver.find_element(By.CLASS_NAME, "scrollable")
+            print(f"Found article: {' '.join(article.text.split(' ')[0:10])}...")
+            story.content += article.text
+            done = True
+        except Exception as e:
+            print(
+                f"Failed to download main content from {story.title}. Retrying in 1 seconds..."
+            )
+            sleep(1)
+        if not done:
             try:
                 driver.get(url)
                 article = driver.find_element(By.TAG_NAME, "body")
                 print(f"Found body, using that instead.")
                 story.content += article.text
+                done = True
             except Exception as e:
                 story.content = "This page does not have main article."
                 print(f"Failed to download main content from {story.title}, error: {e}")
+
     sleep(1)
     try:
         sleep(1)

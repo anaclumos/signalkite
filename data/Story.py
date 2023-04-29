@@ -83,8 +83,12 @@ class Story:
         ):
             self.summary += "."
 
-        hn = f"[Industry Reactions]({self.hn_url})" if self.hn_url else ""
-        article = f"[News]({self.url})" if self.url else ""
+        hn = (
+            f"[Industry Reactions]({self.hn_url})"
+            if self.hn_url
+            else "Industry Reactions"
+        )
+        article = f"[News]({self.url})" if self.url else "Summary"
         return f"""
 
 ### {title}

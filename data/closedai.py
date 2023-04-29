@@ -82,7 +82,8 @@ def bulletpoint_summarize(title, text):
 {SITUATION}
                     
 Use markdown syntax wherever possible, such as making quotes, bold texting, or in-line codes.
-It must be a bullet point list, not a freeform text; that is, start with '-' immediately followed by a space.
+It must be a bullet point list, not a freeform text; that is, start with '-' immediately followed by a space. Therefore, it will look like '- '.
+Each bullet should terminate with one return '\n'. Do not change line twice between bullets.
 It must be grammatically correct and polite.
 The title of this post is '{title}'.
 
