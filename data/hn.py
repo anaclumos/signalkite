@@ -107,7 +107,18 @@ def download_story(story: Story) -> Story:
             done = True
         except Exception as e:
             print(
-                f"Failed to download main content from {story.title}. Retrying in 1 seconds..."
+                f"Failed to download scrollable content from {story.title}. Retrying in 1 seconds..."
+            )
+            sleep(1)
+        try:
+            driver.get(url)
+            article = driver.find_element(By.CLASS_NAME, "column")
+            print(f"Found article: {' '.join(article.text.split(' ')[0:10])}...")
+            story.content += article.text
+            done = True
+        except Exception as e:
+            print(
+                f"Failed to download 'column' content from {story.title}. Retrying in 1 seconds..."
             )
             sleep(1)
         if not done:

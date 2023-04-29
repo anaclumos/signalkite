@@ -101,6 +101,9 @@ Text: {text}
                 },
             ],
         )
+        print()
+        print(completion["choices"][0]["message"]["content"].strip())
+        print()
         summary = completion["choices"][0]["message"]["content"].strip()
     except Exception as e:
         print(
@@ -153,6 +156,9 @@ Text: {text}
                 },
             ],
         )
+        print()
+        print(completion["choices"][0]["message"]["content"].strip())
+        print()
         summary = completion["choices"][0]["message"]["content"].strip()
     except Exception as e:
         error_occurred = True
