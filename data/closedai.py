@@ -40,7 +40,7 @@ def shorten(text: str, limit: int, title="") -> str:
             )
             sleep(1)
             completion = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4",
                 messages=[
                     {
                         "role": "user",
@@ -74,7 +74,7 @@ def bulletpoint_summarize(title, text):
         print(f"Creating Summary for... {title}")
         sleep(1)
         completion = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4",
             messages=[
                 {
                     "role": "user",
@@ -120,7 +120,7 @@ def summarize_hn_comments(title, text, summary):
         print(f"Summarizing HN Comments... {title}")
         sleep(1)
         completion = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4",
             messages=[
                 {
                     "role": "user",
