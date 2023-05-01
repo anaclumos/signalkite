@@ -89,11 +89,10 @@ class Story:
             else "Industry Reactions"
         )
         article = f"[News]({self.url})" if self.url else "Summary"
+        title = f"[{title}]({self.url})" if self.url else title
         return f"""
 
 ### {title}
-
-#### {article}
 
 {self.summary}
 
