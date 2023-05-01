@@ -92,6 +92,8 @@ That is, you can assume that people will know some basic technical knowledge, bu
 Be sure to write the article in a well-written, natural, fluent way, so that an average software engineer will have no problem understanding the text.
 Employ transitioning phrases and native arguments, but concise and succinct.
 
+If you get a message that it requires a security access check, or the website is unreachable, simply print the following lines: "- This website is best experienced by visiting the website directly.\n- Please visit the website to read the article."
+
 Now, I will give you the text.
 
 Do not exceed 3 bullet points. Keep the most important 3 key points, and ignore the rest.
