@@ -37,6 +37,12 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+      - name: Sanitize news
+        run: python3 data/sanitize.py
+      - name: Run Prettier
+        uses: Adzz/jest_test_action@v2.0.0
+        with:
+          command: pprettier
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -52,6 +58,12 @@ jobs:
         run: python3 data/translate.py
         env:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+      - name: Sanitize news
+        run: python3 data/sanitize.py
+      - name: Run Prettier
+        uses: Adzz/jest_test_action@v2.0.0
+        with:
+          command: pprettier
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -63,12 +75,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
-      - name: Sanitize news
-        run: python3 data/sanitize.py
-      - name: Run Prettier
-        uses: Adzz/jest_test_action@v2.0.0
-        with:
-          command: pprettier
       - name: Write Frontmatter
         run: python3 data/frontmatter_inject.py
       - name: Generate English RSS
