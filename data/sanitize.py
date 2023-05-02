@@ -179,10 +179,21 @@ if __name__ == "__main__":
                     and line[1] != "-"
                 ):
                     line = line.replace("-", "- ")
+
                 for rule in REPLACE_RULES:
                     while rule in line:
                         COUNTER += 1
                         line = line.replace(rule, REPLACE_RULES[rule])
                     line = unicodedata.normalize("NFC", line)
+                if (
+                    len(line) > 5
+                    and line.startswith("### ")
+                    and line[4] != "["
+                    and "](" in line
+                    and "http" in line
+                ):
+                    line = line.replace("### ", "### [")
+                if "### []" in line:
+                    line = line.replace("### []", "### [")
                 f.write(line)
     print("Replaced " + str(COUNTER) + " texts.")
