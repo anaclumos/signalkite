@@ -171,6 +171,14 @@ if __name__ == "__main__":
                     "Hackers News": "Discussion Service",
                 }
 
+                # if - in the line immediately followed by a non-space character, replace - with - (space)
+                if (
+                    len(line) > 2
+                    and line[0] == "-"
+                    and line[1] != " "
+                    and line[1] != "-"
+                ):
+                    line = line.replace("-", "- ")
                 for rule in REPLACE_RULES:
                     while rule in line:
                         COUNTER += 1
