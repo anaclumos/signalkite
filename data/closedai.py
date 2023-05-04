@@ -87,9 +87,7 @@ Each bullet should terminate with one return '\n'. Do not change line twice betw
 It must be grammatically correct and polite.
 The title of this post is '{title}'.
 
-You must write the summary as if you are explaining to an university student or an entry-level software engineer.
-That is, you can assume that people will know some basic technical knowledge, but you have to give more detail on the surrounding topics.
-Be sure to write the article in a well-written, natural, fluent way, so that an average software engineer will have no problem understanding the text.
+You must write the summary as if you are explaining to a middle schooler. Explain all jargons and acronyms.
 Employ transitioning phrases and native arguments, but concise and succinct.
 
 If you get a message that it requires a security access check, or the website is unreachable, simply print the following lines: "- This website is best experienced by visiting the website directly.\n- Please visit the website to read the article."
