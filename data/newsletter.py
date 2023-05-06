@@ -48,35 +48,35 @@ CONFIG = {
 }
 
 EMAIL_CTA = {
-    "en": "This is an early research beta, so surprises and mistakes are possible 😃 Please hold tight while we learn and improve! You can leave a feedback here: [survey link](https://airtable.com/shrty7OlhrLuBC6UX).",
-    "bg": "Това е ранна изследователска бета-версия, така че са възможни изненади и грешки 😃 Моля, не се колебайте, докато се учим и подобряваме! Можете да оставите обратна връзка тук: [линк за проучване] (https://airtable.com/shrty7OlhrLuBC6UX).",
-    "cs": "Jedná se o ranou výzkumnou betaverzi, takže je možné, že vás překvapí a uděláte chyby 😃 Prosím, vydržte, dokud se budeme učit a zlepšovat! Zpětnou vazbu můžete zanechat zde: [odkaz na průzkum](https://airtable.com/shrty7OlhrLuBC6UX).",
-    "da": "Dette er en tidlig forskningsbetaversion, så overraskelser og fejl er mulige 😃 Hold ud, mens vi lærer og forbedrer! Du kan give os feedback her: [link til undersøgelsen] (https://airtable.com/shrty7OlhrLuBC6UX).",
-    "de": "Dies ist eine frühe Forschungs-Beta, also sind Überraschungen und Fehler möglich 😃 Bitte haltet durch, während wir lernen und uns verbessern! Du kannst hier ein Feedback hinterlassen: [Umfrage-Link](https://airtable.com/shrty7OlhrLuBC6UX).",
-    "el": "Αυτή είναι μια πρώιμη ερευνητική beta έκδοση, οπότε είναι πιθανές οι εκπλήξεις και τα λάθη 😃 Παρακαλώ κρατηθείτε όσο μαθαίνουμε και βελτιωνόμαστε! Μπορείτε να αφήσετε ένα σχόλιο εδώ: (https://airtable.com/shrty7OlhrLuBC6UX).",
-    "es": "Se trata de una beta de investigación temprana, por lo que es posible que haya sorpresas y errores 😃 ¡Por favor, agárrate fuerte mientras aprendemos y mejoramos! Puedes dejar tu opinión aquí: [enlace a la encuesta](https://airtable.com/shrty7OlhrLuBC6UX).",
-    "et": "Tegemist on varase uurimisbeta versiooniga, nii et üllatused ja vead on võimalikud 😃 Palun hoidke kinni, kuni me õpime ja täiustame! Tagasiside saate jätta siin: (https://airtable.com/shrty7OlhrLuBC6UX).",
-    "fi": "Tämä on varhainen tutkimusbeta, joten yllätykset ja virheet ovat mahdollisia 😃 Pidä kiinni, kun opimme ja parannamme! Voit jättää palautetta täällä: [tutkimuslinkki](https://airtable.com/shrty7OlhrLuBC6UX).",
-    "fr": "Il s'agit d'une version bêta de recherche précoce, des surprises et des erreurs sont donc possibles 😃 Veuillez patienter pendant que nous apprenons et que nous nous améliorons ! Vous pouvez laisser un commentaire ici : [lien d'enquête] (https://airtable.com/shrty7OlhrLuBC6UX).",
-    "hu": "Ez egy korai kutatási béta, így lehetségesek meglepetések és hibák 😃 Kérjük, tartsatok ki, amíg tanulunk és javítunk! Visszajelzést itt tudsz hagyni: [felmérés link](https://airtable.com/shrty7OlhrLuBC6UX).",
-    "id": "Ini adalah penelitian beta awal, jadi kejutan dan kesalahan mungkin saja terjadi 😃 Mohon bersabar sementara kami belajar dan memperbaiki diri! Anda dapat memberikan umpan balik di sini: [tautan survei] (https://airtable.com/shrty7OlhrLuBC6UX).",
-    "it": "Si tratta di una beta di ricerca iniziale, quindi sono possibili sorprese ed errori 😃 Vi preghiamo di tenere duro mentre impariamo e miglioriamo! Potete lasciare un feedback qui: [link al sondaggio](https://airtable.com/shrty7OlhrLuBC6UX).",
-    "ja": "これは初期研究のベータ版なので、驚きや間違いはありえます😃 私たちが学び、改善する間、じっと耐えていてください！ここにフィードバックを残すことができます：[アンケートリンク](https://airtable.com/shrty7OlhrLuBC6UX)。",
-    "ko": "현재 모델은 연구용 베타이기에 예상치 못한 오류나 실수가 있을 수 있습니다 😃 모델을 학습하고 개선하는 동안 기다려주세요! 여기에서 피드백을 남기실 수 있습니다: [설문조사 링크](https://airtable.com/shrty7OlhrLuBC6UX).",
-    "lt": "Tai ankstyvoji beta versija, todėl galimi netikėtumai ir klaidos 😃 Prašome laikytis, kol mokysimės ir tobulėsime! Atsiliepimus galite palikti čia: [apklausos nuoroda] (https://airtable.com/shrty7OlhrLuBC6UX).",
-    "lv": "Šī ir agrīna izpētes beta versija, tāpēc iespējami pārsteigumi un kļūdas 😃 Lūdzu, turieties cieši, kamēr mēs mācāmies un uzlabojamies! Jūs varat atstāt atsauksmes šeit: [aptaujas saite] (https://airtable.com/shrty7OlhrLuBC6UX).",
-    "nl": "Dit is een vroege onderzoeksbèta, dus verrassingen en fouten zijn mogelijk 😃 Hou je vast terwijl we leren en verbeteren! U kunt hier feedback achterlaten: [enquête link](https://airtable.com/shrty7OlhrLuBC6UX).",
-    "nb": "Dette er en tidlig forskningsbeta, så overraskelser og feil er mulig 😃 Vennligst hold deg fast mens vi lærer og forbedrer oss! Du kan legge igjen en tilbakemelding her: [lenke til undersøkelsen](https://airtable.com/shrty7OlhrLuBC6UX).",
-    "pl": "To jest wczesna beta badawcza, więc niespodzianki i błędy są możliwe 😃 Proszę trzymać się mocno, podczas gdy my uczymy się i poprawiamy! Możesz zostawić opinię tutaj: [link do ankiety](https://airtable.com/shrty7OlhrLuBC6UX).",
-    "pt": "Este é um beta de investigação precoce, por isso são possíveis surpresas e erros 😃 Por favor, segurem-se bem enquanto aprendemos e melhoramos! Pode deixar aqui um feedback: [link do inquérito](https://airtable.com/shrty7OlhrLuBC6UX).",
-    "ro": "Aceasta este o versiune beta de cercetare timpurie, așa că sunt posibile surprize și greșeli 😃 Vă rugăm să țineți bine în timp ce învățăm și îmbunătățim! Puteți lăsa un feedback aici: [link sondaj](https://airtable.com/shrty7OlhrLuBC6UX).",
-    "ru": "Это ранняя исследовательская бета-версия, поэтому возможны сюрпризы и ошибки 😃 Пожалуйста, держитесь крепче, пока мы учимся и совершенствуемся! Вы можете оставить отзыв здесь: [ссылка на опрос] (https://airtable.com/shrty7OlhrLuBC6UX).",
-    "sk": "Ide o skorú výskumnú beta verziu, takže sú možné prekvapenia a chyby 😃 Prosím, vydržte, kým sa budeme učiť a zlepšovať! Spätnú väzbu môžete zanechať tu: [odkaz na prieskum](https://airtable.com/shrty7OlhrLuBC6UX).",
-    "sl": "To je zgodnja raziskovalna beta različica, zato so možna presenečenja in napake 😃 Počakajte z nami, medtem ko se učimo in izboljšujemo! Povratne informacije lahko pustite tukaj: [povezava do raziskave] (https://airtable.com/shrty7OlhrLuBC6UX).",
-    "sv": "Detta är en tidig betaversion, så överraskningar och misstag är möjliga 😃 Vänligen håll ut medan vi lär oss och förbättrar! Du kan lämna feedback här: [enkätlänk] (https://airtable.com/shrty7OlhrLuBC6UX).",
-    "tr": "Bu bir erken araştırma betasıdır, bu nedenle sürprizler ve hatalar mümkündür 😃 Biz öğrenirken ve geliştirirken lütfen sıkı durun! Buradan geri bildirim bırakabilirsiniz: [anket bağlantısı] (https://airtable.com/shrty7OlhrLuBC6UX).",
-    "uk": "Це рання бета-версія дослідження, тому можливі сюрпризи та помилки 😃 Будь ласка, тримайтеся міцніше, поки ми вчимося та вдосконалюємося! Ви можете залишити відгук тут: [посилання на опитування] (https://airtable.com/shrty7OlhrLuBC6UX).",
-    "zh": "这是一个早期的研究测试版，所以可能会出现意外和错误😃请在我们学习和改进的时候抓紧时间!你可以在这里留下反馈：[调查链接](https://airtable.com/shrty7OlhrLuBC6UX)。",
+    "en": "This is an early research beta, so surprises and mistakes are possible 😃 Please hold tight while we learn and improve!",
+    "bg": "Това е ранна изследователска бета-версия, така че са възможни изненади и грешки 😃 Моля, не се колебайте, докато се учим и подобряваме!",
+    "cs": "Jedná se o ranou výzkumnou betaverzi, takže je možné, že vás překvapí a uděláte chyby 😃 Prosím, vydržte, dokud se budeme učit a zlepšovat!",
+    "da": "Dette er en tidlig forskningsbetaversion, så overraskelser og fejl er mulige 😃 Hold ud, mens vi lærer og forbedrer!",
+    "de": "Dies ist eine frühe Forschungs-Beta, also sind Überraschungen und Fehler möglich 😃 Bitte haltet durch, während wir lernen und uns verbessern!",
+    "el": "Αυτή είναι μια πρώιμη ερευνητική beta έκδοση, οπότε είναι πιθανές οι εκπλήξεις και τα λάθη 😃 Παρακαλώ κρατηθείτε όσο μαθαίνουμε και βελτιωνόμαστε!",
+    "es": "Se trata de una beta de investigación temprana, por lo que es posible que haya sorpresas y errores 😃 ¡Por favor, agárrate fuerte mientras aprendemos y mejoramos!",
+    "et": "Tegemist on varase uurimisbeta versiooniga, nii et üllatused ja vead on võimalikud 😃 Palun hoidke kinni, kuni me õpime ja täiustame!",
+    "fi": "Tämä on varhainen tutkimusbeta, joten yllätykset ja virheet ovat mahdollisia 😃 Pidä kiinni, kun opimme ja parannamme!",
+    "fr": "Il s'agit d'une version bêta de recherche précoce, des surprises et des erreurs sont donc possibles 😃 Veuillez patienter pendant que nous apprenons et que nous nous améliorons !",
+    "hu": "Ez egy korai kutatási béta, így lehetségesek meglepetések és hibák 😃 Kérjük, tartsatok ki, amíg tanulunk és javítunk!",
+    "id": "Ini adalah penelitian beta awal, jadi kejutan dan kesalahan mungkin saja terjadi 😃 Mohon bersabar sementara kami belajar dan memperbaiki diri!",
+    "it": "Si tratta di una beta di ricerca iniziale, quindi sono possibili sorprese ed errori 😃 Vi preghiamo di tenere duro mentre impariamo e miglioriamo!",
+    "ja": "これは初期研究のベータ版なので、驚きや間違いはありえます😃 私たちが学び、改善する間、じっと耐えていてください！",
+    "ko": "현재 모델은 연구용 베타이기에 예상치 못한 오류나 실수가 있을 수 있습니다 😃 모델을 학습하고 개선하는 동안 기다려주세요!",
+    "lt": "Tai ankstyvoji beta versija, todėl galimi netikėtumai ir klaidos 😃 Prašome laikytis, kol mokysimės ir tobulėsime!",
+    "lv": "Šī ir agrīna izpētes beta versija, tāpēc iespējami pārsteigumi un kļūdas 😃 Lūdzu, turieties cieši, kamēr mēs mācāmies un uzlabojamies!",
+    "nl": "Dit is een vroege onderzoeksbèta, dus verrassingen en fouten zijn mogelijk 😃 Hou je vast terwijl we leren en verbeteren!",
+    "nb": "Dette er en tidlig forskningsbeta, så overraskelser og feil er mulig 😃 Vennligst hold deg fast mens vi lærer og forbedrer oss!",
+    "pl": "To jest wczesna beta badawcza, więc niespodzianki i błędy są możliwe 😃 Proszę trzymać się mocno, podczas gdy my uczymy się i poprawiamy!",
+    "pt": "Este é um beta de investigação precoce, por isso são possíveis surpresas e erros 😃 Por favor, segurem-se bem enquanto aprendemos e melhoramos!",
+    "ro": "Aceasta este o versiune beta de cercetare timpurie, așa că sunt posibile surprize și greșeli 😃 Vă rugăm să țineți bine în timp ce învățăm și îmbunătățim!",
+    "ru": "Это ранняя исследовательская бета-версия, поэтому возможны сюрпризы и ошибки 😃 Пожалуйста, держитесь крепче, пока мы учимся и совершенствуемся!",
+    "sk": "Ide o skorú výskumnú beta verziu, takže sú možné prekvapenia a chyby 😃 Prosím, vydržte, kým sa budeme učiť a zlepšovať!",
+    "sl": "To je zgodnja raziskovalna beta različica, zato so možna presenečenja in napake 😃 Počakajte z nami, medtem ko se učimo in izboljšujemo!",
+    "sv": "Detta är en tidig betaversion, så överraskningar och misstag är möjliga 😃 Vänligen håll ut medan vi lär oss och förbättrar!",
+    "tr": "Bu bir erken araştırma betasıdır, bu nedenle sürprizler ve hatalar mümkündür 😃 Biz öğrenirken ve geliştirirken lütfen sıkı durun!",
+    "uk": "Це рання бета-версія дослідження, тому можливі сюрпризи та помилки 😃 Будь ласка, тримайтеся міцніше, поки ми вчимося та вдосконалюємося!",
+    "zh": "这是一个早期的研究测试版，所以可能会出现意外和错误😃请在我们学习和改进的时候抓紧时间!",
 }
 
 EMAIL_FOOTER = {
@@ -144,6 +144,71 @@ SHARE = {
 }
 
 
+FEEDBACK = {
+    "en": "Feedback",
+    "bg": "Обратна връзка",
+    "cs": "Zpětná vazba",
+    "da": "Feedback",
+    "de": "Rückmeldung",
+    "el": "Ανατροφοδότηση",
+    "es": "Comentarios",
+    "et": "Tagasiside",
+    "fi": "Palaute",
+    "fr": "Retour d'information",
+    "hu": "Visszajelzés",
+    "id": "Umpan balik",
+    "it": "Feedback",
+    "ja": "フィードバック",
+    "ko": "피드백",
+    "lt": "Atsiliepimai",
+    "lv": "Atsauksmes",
+    "nl": "Feedback",
+    "nb": "Tilbakemelding",
+    "pl": "Informacja zwrotna",
+    "pt": "Feedback",
+    "ro": "Feedback",
+    "ru": "Обратная связь",
+    "sk": "Spätná väzba",
+    "sl": "Povratne informacije",
+    "sv": "Feedback",
+    "tr": "Geri bildirim",
+    "uk": "Зворотній зв'язок",
+    "zh": "反馈信息",
+}
+
+SPONSOR = {
+    "en": "Sponsor",
+    "bg": "Спонсор",
+    "cs": "Sponzor",
+    "da": "Sponsor",
+    "de": "Förderer",
+    "el": "Χορηγός",
+    "es": "Patrocinador",
+    "et": "Sponsor",
+    "fi": "Sponsori",
+    "fr": "Parrainage",
+    "hu": "Szponzor",
+    "id": "Sponsor",
+    "it": "Sponsor",
+    "ja": "スポンサー",
+    "ko": "스폰서",
+    "lt": "Rėmėjas",
+    "lv": "Sponsors",
+    "nl": "Sponsor",
+    "nb": "Sponsor",
+    "pl": "Sponsor",
+    "pt": "Patrocinador",
+    "ro": "Sponsor",
+    "ru": "Спонсор",
+    "sk": "Sponzor",
+    "sl": "Sponzor",
+    "sv": "Sponsor",
+    "tr": "Sponsor",
+    "uk": "Спонсор",
+    "zh": "赞助商",
+}
+
+
 def get_campaigns():
     """Get all campaigns"""
     return requests.get(server, auth=(username, password)).json()
@@ -163,11 +228,11 @@ def create_campaign(title, body, lang):
 
     url = "https://hn.cho.sh/" + lang + "/" + today.strftime("%Y/%m/%d")
 
-    md_link = f"""\n\n[{SHARE[lang]}]({url})\n\n"""
+    menu = f"""\n\n[{SHARE[lang]}]({url}) • [{FEEDBACK[lang]}](https://airtable.com/shrty7OlhrLuBC6UX) • [{SPONSOR[lang]}](https://github.com/sponsors/anaclumos)"""
 
-    prefix = EMAIL_CTA[lang] + "\n\n\n" + md_link
+    prefix = EMAIL_CTA[lang] + "\n\n\n" + menu
 
-    suffix = f"""\n\n---\n\n""" + EMAIL_FOOTER[lang] + md_link + "\n\n"
+    suffix = f"""\n\n---\n\n""" + EMAIL_FOOTER[lang] + menu + "\n\n"
 
     res = requests.post(
         server,
