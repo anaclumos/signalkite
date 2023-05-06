@@ -73,9 +73,7 @@ const config: DocsThemeConfig = {
   },
   useNextSeoProps() {
     const { frontMatter } = useConfig()
-    let title =
-      frontMatter.top_news ??
-      'All Kinds of Tech News. Scraped, Summarized, Translated, Distributed. Every. Single. Day.'
+    let title = frontMatter.top_news ?? 'Tech News Summarized'
     return {
       titleTemplate: `${title} — hn.cho.sh`,
     }
@@ -84,10 +82,8 @@ const config: DocsThemeConfig = {
     let { asPath, defaultLocale, locale } = useRouter()
     const { frontMatter } = useConfig()
     const url = `https://hn.cho.sh/${locale === defaultLocale ? '' : locale}${asPath}`
-    let title =
-      frontMatter.top_news ??
-      'All Kinds of Tech News. Scraped, Summarized, Translated, Distributed. Every. Single. Day.'
-    let subheading = frontMatter.localized_date ?? 'hn.cho.sh'
+    let title = frontMatter.top_news
+    let subheading = frontMatter.localized_date
     return (
       <>
         <title>{title ?? 'hn.cho.sh'}</title>
