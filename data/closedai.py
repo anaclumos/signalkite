@@ -31,13 +31,7 @@ def shorten(text: str, limit: int, title="") -> str:
         words = text.split()
         chunks = [" ".join(words[i : i + limit]) for i in range(0, len(words), limit)]
         for idx, w in enumerate(chunks):
-            print(
-                "Summarizing ("
-                + str(idx + 1)
-                + "/"
-                + str(len(chunks))
-                + f") {title}..."
-            )
+            print("Summarizing (" + str(idx + 1) + "/" + str(len(chunks)) + f") {title}...")
             sleep(1)
             completion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
@@ -57,7 +51,7 @@ Text: {w}
             summary += completion["choices"][0]["message"]["content"]
         text = summary
     except Exception as e:
-        print(f"Cannot summarize, error: {e}")
+        print(f"Cannot summarize,")
         error_occurred = True
     if error_occurred:
         new_text = text.split(".")
@@ -106,9 +100,7 @@ Text: {text}
         print()
         summary = completion["choices"][0]["message"]["content"].strip()
     except Exception as e:
-        print(
-            f"Cannot summarize: {title}, trying again with shorter text... error: {e}"
-        )
+        print(f"Cannot summarize: {title}, trying again with shorter text...")
         error_occurred = True
     if error_occurred:
         new_text = text.split(".")
@@ -164,9 +156,7 @@ Text: {text}
         error_occurred = True
     if error_occurred:
         sleep(1)
-        print(
-            f"Cannot summarize: {title}, trying again with shorter text... error: {e}"
-        )
+        print(f"Cannot summarize: {title}, trying again with shorter text...")
         new_text = text.split(".")
         new_text = ".".join(new_text[: 4 * len(new_text) // 5])
         return summarize_hn_comments(title, new_text)
