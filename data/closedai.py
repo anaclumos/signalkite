@@ -159,7 +159,7 @@ Text: {text}
         print(f"Cannot summarize: {title}, trying again with shorter text...")
         new_text = text.split(".")
         new_text = ".".join(new_text[: 4 * len(new_text) // 5])
-        return summarize_hn_comments(title, new_text)
+        return summarize_hn_comments(title, new_text, summary)
     try:
         summary = "\n".join(summary.split("\n")[1:])
     except:

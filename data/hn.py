@@ -21,7 +21,6 @@ TWITTER_URL = "https://twitter.com/"
 TWITTER_SHORT_URL = "https://t.co/"
 GITHUB_URL = "https://github.com/"
 GITLAB_URL = "https://gitlab.com/"
-TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 POST_COUNT = 10
 OPENAI_TOKEN_THRESHOLD = 2500  # It's actually 4K, but we want to be safe
 
@@ -88,8 +87,14 @@ def download_story(story: Story) -> Story:
     url = story.url
     if not url.startswith(YT_SHORT_URL) and not url.startswith(YT_URL) and url != "":
         done = False
-        try:
+        if url.startswith(TWITTER_SHORT_URL) or url.startswith(TWITTER_URL):
+            driver.get("https://threadreaderapp.com/")
+            driver.find_element(By.NAME, "q").send_keys(url)
+            driver.find_element(By.CLASS_NAME, "btn-primary").click()
+            sleep(1)
+        else:
             driver.get(url)
+        try:
             article = driver.find_element(By.TAG_NAME, "article")
             print(f"Found article: {' '.join(article.text.split(' ')[0:10])}...")
             story.content += article.text
@@ -100,7 +105,6 @@ def download_story(story: Story) -> Story:
             )
             sleep(1)
         try:
-            driver.get(url)
             article = driver.find_element(By.CLASS_NAME, "scrollable")
             print(f"Found article: {' '.join(article.text.split(' ')[0:10])}...")
             story.content += article.text
@@ -111,7 +115,6 @@ def download_story(story: Story) -> Story:
             )
             sleep(1)
         try:
-            driver.get(url)
             article = driver.find_element(By.CLASS_NAME, "column")
             print(f"Found article: {' '.join(article.text.split(' ')[0:10])}...")
             story.content += article.text
