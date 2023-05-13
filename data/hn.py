@@ -88,10 +88,7 @@ def download_story(story: Story) -> Story:
     if not url.startswith(YT_SHORT_URL) and not url.startswith(YT_URL) and url != "":
         done = False
         if url.startswith(TWITTER_SHORT_URL) or url.startswith(TWITTER_URL):
-            driver.get("https://threadreaderapp.com/")
-            driver.find_element(By.NAME, "q").send_keys(url)
-            driver.find_element(By.CLASS_NAME, "btn-primary").click()
-            sleep(1)
+            driver.get("https://threadreaderapp.com/search?q=" + url)
         else:
             driver.get(url)
         try:
