@@ -85,12 +85,11 @@ def get_best_stories(start: int, end: int) -> Stories:
 
 def download_story(story: Story) -> Story:
     url = story.url
+    if url.startswith(TWITTER_SHORT_URL) or url.startswith(TWITTER_URL):
+        url = "https://threadreaderapp.com/search?q=" + url
     if not url.startswith(YT_SHORT_URL) and not url.startswith(YT_URL) and url != "":
         done = False
-        if url.startswith(TWITTER_SHORT_URL) or url.startswith(TWITTER_URL):
-            driver.get("https://threadreaderapp.com/search?q=" + url)
-        else:
-            driver.get(url)
+        driver.get(url)
         try:
             article = driver.find_element(By.TAG_NAME, "article")
             print(f"Found article: {' '.join(article.text.split(' ')[0:10])}...")
