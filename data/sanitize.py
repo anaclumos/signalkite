@@ -171,6 +171,7 @@ if __name__ == "__main__":
                     "HN:": "",
                     "HN": "Discussion Service",
                     "Hackers News": "Discussion Service",
+                    ")()": ")",
                 }
 
                 # if - in the line immediately followed by a non-space character, replace - with - (space)
