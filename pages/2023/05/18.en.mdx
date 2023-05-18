@@ -32,6 +32,10 @@ import CallToAction from '../../../components/CallToAction'
 
 ### Can someone ELI5 transformers and the "Attention is all we need" paper?
 
+- A Transformer is a type of machine learning model designed for working with sequences of data, where the input is processed in parallel "lanes". These lanes are shifted one position left until they reach the output, making a prediction in the right-most lane that becomes available. A key aspect of its design is the use of attention, which provides extensive interconnectivity among layers, compared to densely connected layers.
+- Attention masks function like high-dimensional dropout, preventing the Transformer from simply repeating its inputs. Each layer, up to the mid-point of the Transformer, handles increasingly higher contextual representations. From the middle layer onwards, these are transformed back to lower contexts that correspond to the original input identities.
+- The power of the Transformer lies significantly in its ability to learn and modify the vector embeddings that represent the input/output identities. This makes it impractical to impose external similarity or logic rules on these identities, as the Transformer can deduce these from the sequence data it's trained on. It understands the data based on the occurrence of identities in the sequence, finding patterns and logic independently.
+
 #### [Industry Reactions](http://news.ycombinator.com/item?id=35977891)
 
 - The attention mechanism allows the network to choose words that fit well within the context of the sequence and increase coherence, allowing for a deep understanding of sequences and better downstream tasks
