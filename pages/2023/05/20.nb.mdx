@@ -1,0 +1,120 @@
+import { Steps } from 'nextra-theme-docs'
+
+import CallToAction from '../../../components/CallToAction'
+
+<CallToAction />
+
+<Steps>
+
+## 20. mai 2023
+
+### [Googles fotorealistiske 3D-fliser og Unreal Engine](https://nilsbakker.nl/portfolio/3d-tiles/)
+
+- En utvikler brukte Google Photorealistic 3D tiles API og Unreal Engine 5.1 for å skape en oppslukende opplevelse som kombinerer stedsdata med dynamiske svar fra ChatGPT API.
+- Opplevelsen lar brukerne skrive inn spørsmål i et bestemt format og motta informasjon om et sted, inkludert interessante fakta, som vises i 3D-tekst i den virtuelle verdenen.
+- Utvikleren brukte Google Maps API og Cesium-plattformen til å hente posisjons- og geometridata og opprettet en smart portalmekanisme ved hjelp av Niagara-partikkel-systemet for å overføre brukeren fra sin nåværende posisjon til den nye posisjonen.
+
+#### [Reaksjoner fra bransjen](http://news.ycombinator.com/item?id=36000631)
+
+- Cesium og Unreal Engine støtter nå dette API-et, noe som potensielt muliggjør 3D-gjennomkjøringer av brukernes hjembyer i spill.
+- API-et har kvotebegrensninger i betaversjonen, og noen har uttrykt bekymring for lovligheten av å bruke Google Maps-data og droneforskrifter til kartlegging.
+
+### [Orb Farm](https://orb.farm/)
+
+- Orb Farm er et personlig tilpasset akvatisk økosystem for pleie, skulpturering og observasjon.
+- Systemet inneholder ulike komponenter som sand, stein, tre, vann, alger, dafnier, gress, bakterier, fisk og gullfisk.
+- Nettstedet lar brukerne tilbakestille, vise informasjon og tømme økosystemet sitt.
+
+#### [Reaksjoner fra industrien](http://news.ycombinator.com/item?id=35999835)
+
+- Brukerne beundrer skaperen Max Bittker og sammenligner det med andre simuleringsprosjekter som Sandspiel.
+- Noen brukere påpeker balanseringsfeil i Orb.farm, men synes likevel at prosjektet er underholdende, mens andre diskuterer Sandspiel Studio og andre visuelt programmerte prosjekter basert på kunstig liv.
+
+### [Linux-verktøy for å vise fremgang for cp, mv, dd](https://github.com/Xfennec/progress)
+
+- Progress er et verktøy som kjører på Linux, FreeBSD og macOS og viser prosentandelen kopierte data for grunnleggende kommandoer som cp, mv, dd, tar, gzip/gunzip og cat.
+- Det kan vise estimert tid, gjennomstrømning og har en "topplignende" modus for overvåking.
+- Progress er enkelt å installere og kjøre på deb-baserte, archlinux, rpm-baserte systemer, macOS med homebrew eller MacPorts, og kan bygges fra kildekode med ncurses-biblioteket.
+
+#### [Reaksjoner fra industrien](http://news.ycombinator.com/item?id=36000407)
+
+- Diskusjoner om bruk av fremdriftsindikatorer i Linux-kommandoer, inkludert forslag til verktøy som pv og Pipe Watch.
+- Alternativer til dd, som ddrescue eller rsync, diskuteres, sammen med fordelene ved å bremse overføringer for å forhindre overbelastning av delte tilkoblinger.
+
+### [Nyxt: Hackerens nettleser](https://nyxt.atlas.engineer/)
+
+- Nyxt er en nettleser med mange innebygde funksjoner for å analysere, navigere og hente ut informasjon fra internett.
+- Nettleseren er fullt tilpassbar og kan hackes, med kildekoden åpen og tilgjengelig for endring.
+- Noen av Nyxts unike funksjoner inkluderer kraftig lenkehinting, smart bokmerkesøk og innebygd programmerbarhet gjennom en REPL.
+
+#### [Reaksjoner fra bransjen](http://news.ycombinator.com/item?id=36006423)
+
+- Nyxt hadde nettopp en stor 3.0.0-utgivelse, og noen brukere er glade for å prøve den.
+- Utviklere søker å lage modulære nettlesere med API-er for automatisering og tilpasning som gir mer frihet og kontroll enn tradisjonelle nettlesere.
+
+### [Cities Aren't Loud: Biler er bråkete (2021) [video]](https://www.youtube.com/watch?v=CTV-wwszGw8)
+
+- En video delt av YouTube-kanalen Vox utforsker hvordan biler er den største kilden til støyforurensning i byer, og at bråkete biler ikke er en nødvendig del av transportteknologien.
+- Videoen argumenterer for at bilselskapene fremmer ideen om bråkete biler for å signalisere status og tiltrekke seg oppmerksomhet, og at mer stillegående alternativer, som elektriske kjøretøy, kan gi et mer bærekraftig og hyggelig bymiljø.
+- Videoen foreslår at byene bør prioritere politikk som reduserer bilbruk og fremmer offentlig transport og aktive transportformer, som sykling og gåing.
+
+#### [Reaksjoner fra industrien](http://news.ycombinator.com/item?id=35999950)
+
+- Mulige løsninger inkluderer fysiske barrierer for å dempe dekkstøy, prioritering av gang- og sykkelinfrastruktur og redusert bilbruk gjennom økt bevissthet, politiske tiltak og kollektivtransportsystemer.
+- Elektrifisering kan bidra til å redusere støy- og forurensningsnivåene i byene, men det er en debatt om hvorvidt elektriske kjøretøy må lage kunstig støy av hensyn til fotgjengernes sikkerhet.
+
+### [FreeBSD bruker 7 % av oppstartstiden på å kjøre en bubblesort på sine SYSINIT-er](https://twitter.com/cperciva/status/1659558311920914432)
+
+- Når FreeBSD-kjernen starter opp i Firecracker (1 CPU, 128 MB RAM), bruker den nå 7% av tiden på å kjøre en bubblesort på sine SYSINIT-er.
+- O(N^2) kan bite hardt når du sorterer over tusen elementer. På tide å erstatte bubblesort med noe raskere.
+
+#### [Reaksjoner fra bransjen](http://news.ycombinator.com/item?id=36002574)
+
+- Sorteringsalgoritmer er komplekse å implementere i programmeringsspråket C og C++, Rust kan være et bedre alternativ for generisk programmering eller enkel oppretting av generiske datastrukturer og sorteringsalgoritmer.
+- Amazon tester en ny sorteringsteknikk for å optimalisere oppstartstiden i EC2-instanser for kaldstart, mens FreeBSD har begynt å bruke den raskere qsort-metoden for å telle opp SATA-stasjoner i AHCI-driveren for å redusere oppstartstiden for kjernen. Den tregeste delen av kjernens oppstartstid og de potensielle optimaliseringene som kan gjøres ble diskutert.
+
+### [Migrere fra Supabase](https://blog.val.town/blog/migrating-from-supabase)
+
+- Val Town migrerte fra Supabase til Render på grunn av problemer med skalerbarhet og lokale utviklingsproblemer.
+- Supabases mangel på dokumentasjon og ødelagte verktøykjede for CLI gjorde lokal utvikling vanskelig, og det å være begrenset til produksjon var et stort problem.
+- Val Town byttet til slutt til en enklere "vanilje" Postgres-tjeneste hos Render, noe som eliminerte komplekse funksjoner og avhengigheter for en mer strømlinjeformet databasearkitektur.
+
+#### [Reaksjoner fra bransjen](http://news.ycombinator.com/item?id=36004925)
+
+- Supabases mål er å gjøre Postgres enklere, men ikke obligatorisk; bedre dokumentasjon og flere eksempler anbefales.
+- Forslag til forbedring av CLI-verktøy, forhåndsvisning og håndheving av migrering, og behandling av databasen som et persistenslag, ikke en applikasjon.
+
+### [Apple begrenser ansattes bruk av ChatGPT, og slutter seg til andre selskaper som er skeptiske til lekkasjer](https://www.wsj.com/articles/apple-restricts-use-of-chatgpt-joining-other-companies-wary-of-leaks-d44d7d34)
+
+- Apple har begrenset bruken av ChatGPT og andre AI-verktøy for noen ansatte.
+- Dette er i tråd med Apples utvikling av sin egen lignende teknologi.
+- Tiltaket er et svar på lekkasjer fra ansatte, ettersom andre selskaper også har vært på vakt mot slike lekkasjer de siste årene.
+
+#### [Reaksjoner fra bransjen](http://news.ycombinator.com/item?id=36000079)
+
+- OpenAI introduserer bedriftsabonnement med mer detaljert datakontroll for å berolige kundene med hensyn til personvern og oppfordre dem til å registrere seg for beskyttelse.
+- Innlegget diskuterer potensialet og begrensningene til AI-verktøy som ChatGPT og LLM for ulike oppgaver og den pågående debatten om deres etiske og juridiske implikasjoner.
+
+### [Venture Predation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4437360)
+
+- Rovprising er en strategi som brukes av bedrifter for å undertrykke konkurranse.
+- Venture predators er oppstartsbedrifter som bruker venturefinansiering til å prise under sine kostnader og jage rivaler ut av markedet for å kapre markedsandeler.
+- Underprising kan skade forbrukerne og flytte kapital bort fra ekte innovasjoner, og det kan være behov for reformer av antitrustlovgivningen og verdipapirreguleringen for å hindre dette.
+
+#### [Næringslivets reaksjoner](http://news.ycombinator.com/item?id=36003096)
+
+- Debatten dreier seg om hvorvidt oppstartsbedrifter som selger til underpris, gjør seg skyldige i "dumping", og om dette er unikt for VC-støttede selskaper.
+- Økningen i etterspørselen etter "enhjørninger" har ført til et press i retning av "venture predation", noe som vekker bekymring for etikk og konsekvenser for innovasjon og økonomi.
+
+### [Satellitter avslører utbredt nedgang i den globale vannlagringen i innsjøer](https://www.science.org/doi/10.1126/science.abo2812)
+
+- Satellittobservasjoner, klimamodeller og hydrologiske modeller viser at mer enn 50 % av de store naturlige innsjøene og reservoarene har opplevd volumtap de siste 30 årene på grunn av både menneskelige aktiviteter og klimatiske faktorer.
+- Det synkende vannvolumet i disse innsjøene og reservoarene utgjør en betydelig trussel mot viktige økosystemtjenester, blant annet lagring av ferskvann, matforsyning, vannfuglhabitater, kretsløpet av forurensende stoffer og næringsstoffer og rekreasjon.
+- Yao et al.s funn understreker det presserende behovet for forbedrede vannforvaltningsstrategier for å bevare og beskytte disse viktige ferskvannsressursene.
+
+#### [Reaksjoner fra industrien](http://news.ycombinator.com/item?id=35999438)
+
+- Artikkelen etterlyser ansvar fra samfunnene for å forvalte naturressursene sine på en bærekraftig måte.
+- Diskusjon Tjenestens brukere diskuterer mulige løsninger på vannmangel, blant annet avsalting drevet av ren energi, bevaring og avfallsreduksjon, skogplanting, bedre vanndistribusjon og flytting av vannintensive industriprosesser til vannkilder.
+
+</Steps>
