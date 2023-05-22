@@ -31,7 +31,13 @@ def shorten(text: str, limit: int, title="") -> str:
         words = text.split()
         chunks = [" ".join(words[i : i + limit]) for i in range(0, len(words), limit)]
         for idx, w in enumerate(chunks):
-            print("Summarizing (" + str(idx + 1) + "/" + str(len(chunks)) + f") {title}...")
+            print(
+                "Summarizing ("
+                + str(idx + 1)
+                + "/"
+                + str(len(chunks))
+                + f") {title}..."
+            )
             sleep(1)
             completion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
@@ -160,10 +166,6 @@ Text: {text}
         new_text = text.split(".")
         new_text = ".".join(new_text[: 4 * len(new_text) // 5])
         return summarize_hn_comments(title, new_text, summary)
-    try:
-        summary = "\n".join(summary.split("\n")[1:])
-    except:
-        pass
     return summary
 
 
