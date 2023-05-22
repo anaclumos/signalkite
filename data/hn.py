@@ -60,7 +60,7 @@ def get_story(id: int, start: int, end: int) -> Story:
         if start <= story.timestamp <= end:
             print(f"+ {story.title}" + " " * 100)
         else:
-            print(f"- {story.title}" + " " * 100, end="\r")
+            print(f"- {story.title}" + " " * 100)
         return story
 
 
