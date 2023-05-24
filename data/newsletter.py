@@ -230,7 +230,7 @@ def create_campaign(title, body, lang):
 
     menu = f"""\n\n[{SHARE[lang]}]({url}) • [{FEEDBACK[lang]}](https://airtable.com/shrty7OlhrLuBC6UX) • [{SPONSOR[lang]}](https://github.com/sponsors/anaclumos)"""
 
-    prefix = EMAIL_CTA[lang] + "\n\n\n" + menu
+    prefix = menu
 
     suffix = f"""\n\n---\n\n""" + EMAIL_FOOTER[lang] + menu + "\n\n"
 

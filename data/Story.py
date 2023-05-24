@@ -80,6 +80,7 @@ class Story:
             not self.summary.endswith(".")
             and not self.summary.endswith("!")
             and not self.summary.endswith("?")
+            and self.summary
         ):
             self.summary += "."
 
