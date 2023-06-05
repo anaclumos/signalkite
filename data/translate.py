@@ -38,6 +38,7 @@ language = [
     {"locale": "tr", "filename_locale": "tr", "text": "Türkçe (tr)"},
     {"locale": "uk", "filename_locale": "uk", "text": "Українська (uk)"},
     {"locale": "zh", "filename_locale": "zh", "text": "中文 (zh)"},
+    {"locale": "zh-TW", "filename_locale": "zh-tw", "text": "正體中文 (zh-tw)"},
 ]
 
 if __name__ == "__main__":
