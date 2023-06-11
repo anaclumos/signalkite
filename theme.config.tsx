@@ -31,7 +31,7 @@ const i18nlist = [
   { locale: 'sv', text: 'Svenska (sv)' },
   { locale: 'tr', text: 'Türkçe (tr)' },
   { locale: 'uk', text: 'Українська (uk)' },
-  { locale: 'zh', text: '中文 (zh)' },
+  { locale: 'zh', text: '中文 (zh-CN)' },
 ]
 
 const config: DocsThemeConfig = {
@@ -53,7 +53,7 @@ const config: DocsThemeConfig = {
       <span>
         MIT {new Date().getFullYear()} ©{' '}
         <a href="https://cho.sh" target="_blank">
-          Sunghyun Cho
+          Sunghyun Cho from 불가사리 ★ Starfish Company
         </a>
         .
       </span>
