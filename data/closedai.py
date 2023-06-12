@@ -90,7 +90,7 @@ The title of this post is '{title}'.
 You must write the summary as if you are explaining to a middle schooler. Explain all jargons and acronyms.
 Employ transitioning phrases and native arguments, but concise and succinct.
 
-If you get a message that it requires a security access check, or the website is unreachable, simply print the following lines: "- This website is best experienced by visiting the website directly.\n- Please visit the website to read the article."
+If you get a message that it requires a security access check, or the website is unreachable, simply print "N/A"
 
 Now, I will give you the text.
 
