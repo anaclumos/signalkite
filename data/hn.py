@@ -22,7 +22,7 @@ TWITTER_SHORT_URL = "https://t.co/"
 GITHUB_URL = "https://github.com/"
 GITLAB_URL = "https://gitlab.com/"
 POST_COUNT = 10
-OPENAI_TOKEN_THRESHOLD = 2500  # It's actually 4K, but we want to be safe
+OPENAI_TOKEN_THRESHOLD = 10000  # It's actually 16K, but we want to be safe
 
 
 chrome_options = Options()
