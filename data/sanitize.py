@@ -172,6 +172,7 @@ if __name__ == "__main__":
                     "HN": "Discussion Service",
                     "Hackers News": "Discussion Service",
                     ")()": ")",
+                    "N/A.": "",
                     "N/A": "",
                     ".-": ".\n-",
                     "\n\n-": "\n-",

@@ -22,7 +22,7 @@ TWITTER_SHORT_URL = "https://t.co/"
 GITHUB_URL = "https://github.com/"
 GITLAB_URL = "https://gitlab.com/"
 POST_COUNT = 10
-OPENAI_TOKEN_THRESHOLD = 4096 * 3  # It's actually 16K, but we want to be safe
+OPENAI_TOKEN_THRESHOLD = 11000  # It's actually 16K, but we want to be safe
 
 
 chrome_options = Options()
@@ -96,9 +96,7 @@ def download_story(story: Story) -> Story:
             story.content += article.text
             done = True
         except Exception as e:
-            print(
-                f"Failed to download main content from {story.title}. "
-            )
+            print(f"Failed to download main content from {story.title}. ")
 
         try:
             article = driver.find_element(By.CLASS_NAME, "scrollable")
@@ -106,9 +104,7 @@ def download_story(story: Story) -> Story:
             story.content += article.text
             done = True
         except Exception as e:
-            print(
-                f"Failed to download scrollable content from {story.title}. "
-            )
+            print(f"Failed to download scrollable content from {story.title}. ")
 
         try:
             article = driver.find_element(By.CLASS_NAME, "column")
@@ -116,9 +112,7 @@ def download_story(story: Story) -> Story:
             story.content += article.text
             done = True
         except Exception as e:
-            print(
-                f"Failed to download 'column' content from {story.title}. "
-            )
+            print(f"Failed to download 'column' content from {story.title}. ")
 
         if not done:
             try:
@@ -137,9 +131,7 @@ def download_story(story: Story) -> Story:
         driver.get(story.hn_url)
         story.hn_content += driver.find_element(By.TAG_NAME, "body").text
     except Exception as e:
-        print(
-            f"Failed to download HN comments from {story.title}. "
-        )
+        print(f"Failed to download HN comments from {story.title}. ")
         sleep(1)
         try:
             driver.get(story.hn_url)
