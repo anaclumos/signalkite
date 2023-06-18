@@ -1,7 +1,7 @@
 import os
 import unicodedata
 
-targets = ["./pages"]
+targets = ["./legacy/pages"]
 COUNTER = 0
 
 all_md_files = []
