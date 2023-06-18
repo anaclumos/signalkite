@@ -128,19 +128,27 @@ module.exports = {
         return path
       }
       const locale = path.slice(path.length - 2)
-      const directory = path.replaceAll(`/${locale}`, '').replaceAll(`.${locale}`, '').replaceAll(SITE_URL, '')
+      const directory = path
+        .replaceAll(`/${locale}`, '')
+        .replaceAll(`.${locale}`, '')
+        .replaceAll(SITE_URL, '')
       return `${SITE_URL}/${locale}${directory}`
     }
     path = dotLocaleExtractor(path).replace('/en/', '/')
 
     const extractLocaleIndependentPath = (path) => {
-      const matches = config.alternateRefs.map((alt) => `${config.siteUrl}/${path}`.replace(alt.href, ''))
+      const matches = config.alternateRefs.map((alt) =>
+        `${config.siteUrl}/${path}`.replace(alt.href, '')
+      )
       return matches.sort((a, b) => a.length - b.length)[0]
     }
 
     let localeIndependentPath = extractLocaleIndependentPath(path)
     const alternateRefs = config.alternateRefs.map((alt) => {
-      alt.href = alt.href.replaceAll('/en/', '/').replaceAll('//', '/').replaceAll('https:/', 'https://')
+      alt.href = alt.href
+        .replaceAll('/en/', '/')
+        .replaceAll('//', '/')
+        .replaceAll('https:/', 'https://')
       return {
         ...alt,
         href: `${alt.href}${localeIndependentPath.replace(SITE_URL, '')}`

@@ -81,7 +81,9 @@ const config: DocsThemeConfig = {
   head: () => {
     let { asPath, defaultLocale, locale } = useRouter()
     const { frontMatter } = useConfig()
-    const url = `https://hn.cho.sh/${locale === defaultLocale ? '' : locale}${asPath}`
+    const url = `https://hn.cho.sh/${
+      locale === defaultLocale ? '' : locale
+    }${asPath}`
     let title = frontMatter.top_news
     let subheading = frontMatter.localized_date
     return (
@@ -120,15 +122,15 @@ const config: DocsThemeConfig = {
           <>
             <meta
               property="og:image"
-              content={`https://og.cho.sh/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(
-                subheading
-              )}`}
+              content={`https://og.cho.sh/api/og?title=${encodeURIComponent(
+                title
+              )}&subheading=${encodeURIComponent(subheading)}`}
             />
             <meta
               name="twitter:image"
-              content={`https://og.cho.sh/api/og?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(
-                subheading
-              )}`}
+              content={`https://og.cho.sh/api/og?title=${encodeURIComponent(
+                title
+              )}&subheading=${encodeURIComponent(subheading)}`}
             />
           </>
         ) : (
@@ -152,7 +154,9 @@ const config: DocsThemeConfig = {
             <link
               rel="alternate"
               key={item.locale}
-              href={`https://hn.cho.sh/${item.locale === defaultLocale ? '' : item.locale}${asPath}`}
+              href={`https://hn.cho.sh/${
+                item.locale === defaultLocale ? '' : item.locale
+              }${asPath}`}
               hrefLang={item.locale}
             />
           )

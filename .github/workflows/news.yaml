@@ -43,8 +43,7 @@ jobs:
       - name: Run Prettier
         uses: borales/actions-yarn@v4
         with:
-          cmd: pprettier
-          dir: legacy
+          cmd: format:parallel
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -65,8 +64,7 @@ jobs:
       - name: Run Prettier
         uses: borales/actions-yarn@v4
         with:
-          cmd: pprettier
-          dir: legacy
+          cmd: format:parallel
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -87,8 +85,7 @@ jobs:
       - name: Run Prettier
         uses: borales/actions-yarn@v4
         with:
-          cmd: pprettier
-          dir: legacy
+          cmd: format:parallel
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
