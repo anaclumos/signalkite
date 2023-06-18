@@ -27,18 +27,18 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r data/requirements.txt
+          pip install -r legacy/data/requirements.txt
       - name: Rebase Before Running
         run: |
           git config pull.rebase true
           git pull
       - name: Update News
-        run: python3 data/main.py
+        run: python3 legacy/data/main.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
       - name: Sanitize news
-        run: python3 data/sanitize.py
+        run: python3 legacy/data/sanitize.py
       - name: Run Prettier
         uses: Adzz/jest_test_action@v2.0.0
         with:
@@ -55,11 +55,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
       - name: Translate news
-        run: python3 data/translate.py
+        run: python3 legacy/data/translate.py
         env:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
       - name: Sanitize news
-        run: python3 data/sanitize.py
+        run: python3 legacy/data/sanitize.py
       - name: Run Prettier
         uses: Adzz/jest_test_action@v2.0.0
         with:
@@ -76,11 +76,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
       - name: Write Frontmatter
-        run: python3 data/frontmatter_inject.py
+        run: python3 legacy/data/frontmatter_inject.py
       - name: Generate English RSS
-        run: python3 data/rss.py
+        run: python3 legacy/data/rss.py
       - name: Sanitize news
-        run: python3 data/sanitize.py
+        run: python3 legacy/data/sanitize.py
       - name: Run Prettier
         uses: Adzz/jest_test_action@v2.0.0
         with:
@@ -97,7 +97,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
       - name: Schedule Newsletter
-        run: python3 data/newsletter.py
+        run: python3 legacy/data/newsletter.py
         env:
           NEWSLETTERS_CHO_SH_USERNAME: ${{ secrets.NEWSLETTERS_CHO_SH_USERNAME }}
           NEWSLETTERS_CHO_SH_PASSWORD: ${{ secrets.NEWSLETTERS_CHO_SH_PASSWORD }}
