@@ -83,7 +83,7 @@ def generate_daily_rss():
     data = load_json_file(json_file_path)
     rss_feed = create_rss_feed(data)
 
-    rss_file_path = os.path.join("public", "zapier.xml")
+    rss_file_path = os.path.join("legacy/public", "zapier.xml")
     with open(rss_file_path, "w", encoding="utf-8") as rss_file:
         rss_file.write(rss_feed)
 
