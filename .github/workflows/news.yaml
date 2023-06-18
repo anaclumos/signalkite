@@ -28,6 +28,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r legacy/data/requirements.txt
+          yarn install
       - name: Rebase Before Running
         run: |
           git config pull.rebase true
