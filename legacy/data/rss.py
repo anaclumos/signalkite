@@ -75,7 +75,7 @@ def generate_daily_rss():
         .replace(hour=0, minute=0, second=0, microsecond=0)
     )
     date_str = today.strftime("%Y-%m-%d")
-    json_file_path = os.path.join("records", date_str, f"{date_str}.en.json")
+    json_file_path = os.path.join("legacy/records", date_str, f"{date_str}.en.json")
 
     if not os.path.isfile(json_file_path):
         raise FileNotFoundError(f"JSON file not found: {json_file_path}")
