@@ -46,7 +46,7 @@ def shorten(text: str, limit: int, title="") -> str:
                         "role": "user",
                         "content": f"""
 {SITUATION}
-                        
+
 Hard limit {limit // 16} words.
 Please understand that some comments may include sarcasm, and you must realize it's not the main point.
 Text: {w}
@@ -80,7 +80,7 @@ def bulletpoint_summarize(title, text):
                     "role": "user",
                     "content": f"""
 {SITUATION}
-                    
+
 Use markdown syntax wherever possible, such as making quotes, bold texting, or in-line codes.
 It must be a bullet point list, not a freeform text; that is, start with '-' immediately followed by a space. Therefore, it will look like '- '.
 Each bullet should terminate with one return '\n'. Do not change line twice between bullets.
@@ -94,9 +94,10 @@ If you get a message that it requires a security access check, or the website is
 
 Now, I will give you the text.
 
-Do not exceed 3 bullet points. Keep the most important 3 key points, and ignore the rest.
 
 Text: {text}
+
+Do not exceed 3 bullet points. Keep the most important 3 key points, and ignore the rest.
 """,
                 },
             ],
@@ -147,9 +148,9 @@ Avoid discussion on politics, religion, or other controversial topics.
 Now, given the previous text, summarize the following hacker news comments in markdown bullets.
 It must be a bullet point list, not a freeform text; that is, start with '-' immediately followed by a space.
 
-Do not exceed 3 bullet points. Keep the most important 3 key points, and ignore the rest.
-
 Text: {text}
+
+Do not exceed 3 bullet points. Keep the most important 3 key points, and ignore the rest.
 """,
                 },
             ],
