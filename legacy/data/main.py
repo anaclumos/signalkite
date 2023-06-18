@@ -14,7 +14,9 @@ def save_markdown(stories, locale):
         .astimezone(utc)
         .replace(hour=0, minute=0, second=0, microsecond=0)
     )
-    filename = f"legacy/pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{locale}.mdx"
+    filename = (
+        f"legacy/pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{locale}.mdx"
+    )
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w") as f:
         os.makedirs(os.path.dirname(filename), exist_ok=True)
@@ -47,9 +49,7 @@ if __name__ == "__main__":
     start = int(yesterday.timestamp())
     end = int(today.timestamp())
 
-    filename = (
-        f"legacy/records/{today.strftime('%Y-%m-%d')}/{today.strftime('%Y-%m-%d')}.en.json"
-    )
+    filename = f"legacy/records/{today.strftime('%Y-%m-%d')}/{today.strftime('%Y-%m-%d')}.en.json"
     if os.path.exists(filename):
         with open(filename, "r") as f:
             data = json.load(f)
