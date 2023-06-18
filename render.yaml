@@ -1,0 +1,38 @@
+services:
+- name: heimdall-web
+  type: web
+  env: static
+  buildCommand: yarn install && yarn rw deploy render web
+  staticPublishPath: ./web/dist
+  envVars:
+  - key: NODE_VERSION
+    value: 16
+  - key: SKIP_INSTALL_DEPS
+    value: true
+  routes:
+  - type: rewrite
+    source: /.redwood/functions/*
+    destination: heimdall-api.cho.sh/*
+  - type: rewrite
+    source: /*
+    destination: /index.html
+
+- name: heimdall-api
+  type: web
+  plan: free
+  env: node
+  region: oregon
+  buildCommand: yarn && yarn rw build api
+  startCommand: yarn rw deploy render api
+  envVars:
+  - key: NODE_VERSION
+    value: 16
+  - key: DATABASE_URL
+    fromDatabase:
+      name: heimdall-db
+      property: connectionString
+
+databases:
+  - name: heimdall-db
+    region: oregon
+

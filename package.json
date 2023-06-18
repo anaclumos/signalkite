@@ -1,0 +1,30 @@
+{
+  "name": "heimdall",
+  "workspaces": {
+    "packages": [
+      "api",
+      "web",
+      "legacy"
+    ]
+  },
+  "scripts": {
+    "lint": "yarn rw lint --fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
+  },
+  "devDependencies": {
+    "@redwoodjs/core": "5.3.1",
+    "prettier": "^2.8.8"
+  },
+  "eslintConfig": {
+    "extends": "@redwoodjs/eslint-config",
+    "root": true
+  },
+  "engines": {
+    "node": "=18.x",
+    "yarn": ">=1.15"
+  },
+  "prisma": {
+    "seed": "yarn rw exec seed"
+  },
+  "packageManager": "yarn@3.6.0"
+}
