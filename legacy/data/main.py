@@ -66,6 +66,6 @@ if __name__ == "__main__":
     with open(filename, "w") as f:
         json.dump(stories, f, indent=4, default=lambda o: o.__dict__)
 
-    filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.en.mdx"
+    filename = f"legacy/pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.en.mdx"
     save_markdown(stories, "en")
     # meta_json_hander()

@@ -176,7 +176,7 @@ if __name__ == "__main__":
                     "N/A": "",
                     ".-": ".\n-",
                     "\n\n-": "\n-",
-                    ")-": ")\n-",
+                    ")-": ")\n\n-",
                 }
 
                 # if - in the line immediately followed by a non-space character, replace - with - (space)
