@@ -3,19 +3,19 @@ import frontmatter
 from babel.dates import format_date
 from datetime import datetime
 
-all_files = os.listdir("pages")
+all_files = os.listdir("legacy/pages")
 
 for file in all_files:
-    if os.path.isdir("pages/" + file):
-        for subfile in os.listdir("pages/" + file):
+    if os.path.isdir("legacy/pages/" + file):
+        for subfile in os.listdir("legacy/pages/" + file):
             all_files.append(file + "/" + subfile)
 
 for file in all_files:
-    if os.path.isdir("pages/" + file):
+    if os.path.isdir("legacy/pages/" + file):
         continue
     if not file.endswith(".mdx"):
         continue
-    with open("pages/" + file, "r") as f:
+    with open("legacy/pages/" + file, "r") as f:
         lines = f.readlines()
         post = frontmatter.load(f)
         if post.metadata:
@@ -45,6 +45,6 @@ for file in all_files:
             title = title.replace("[", "")
             post.metadata["top_news"] = title
             post.metadata["localized_date"] = subtitle
-            with open("pages/" + file, "w") as f:
+            with open("legacy/pages/" + file, "w") as f:
                 f.write(frontmatter.dumps(post) + "\n\n" + "".join(lines))
             print("File " + file + ", added title and subtitle")

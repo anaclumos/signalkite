@@ -271,7 +271,7 @@ def find_today_newsletters(lang):
         .astimezone(utc)
         .replace(hour=0, minute=0, second=0, microsecond=0)
     )
-    filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{lang}.mdx"
+    filename = f"legacy/pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{lang}.mdx"
     if os.path.exists(filename):
         with open(filename, "r") as f:
             post = frontmatter.load(f)

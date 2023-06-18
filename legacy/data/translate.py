@@ -53,7 +53,7 @@ if __name__ == "__main__":
             hour=0, minute=0, second=0, microsecond=0
         )
 
-    filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.en.mdx"
+    filename = f"legacy/pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.en.mdx"
 
     with open(filename, "r") as f:
         markdown = f.read()
@@ -78,7 +78,7 @@ if __name__ == "__main__":
         if lang["locale"] == "en":
             continue
         if os.path.exists(
-            f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{lang['filename_locale']}.mdx"
+            f"legacy/pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{lang['filename_locale']}.mdx"
         ):
             print(f"Translated to {lang['text']} already exists")
             continue
@@ -94,7 +94,7 @@ if __name__ == "__main__":
             + "\n\n</Steps>"
         )
         with open(
-            f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{lang['filename_locale']}.mdx",
+            f"legacy/pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.{lang['filename_locale']}.mdx",
             "w",
         ) as f:
             f.write(translated)

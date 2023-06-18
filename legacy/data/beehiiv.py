@@ -45,12 +45,12 @@ if __name__ == "__main__":
             hour=0, minute=0, second=0, microsecond=0
         )
 
-    filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.en.mdx"
+    filename = f"legacy/pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.en.mdx"
 
     while not os.path.exists(filename):
         print("File not found, looking for yesterday's file")
         today = today - timedelta(days=1)
-        filename = f"pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.en.mdx"
+        filename = f"legacy/pages/{today.strftime('%Y/%m')}/{today.strftime('%d')}.en.mdx"
 
     post = ""
     with open(filename, "r") as f:

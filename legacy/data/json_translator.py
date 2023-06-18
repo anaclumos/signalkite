@@ -38,7 +38,7 @@ language = [
 
 if __name__ == "__main__":
     # ask for user input in English
-    file = open("pages/_meta.en.json", "r")
+    file = open("legacy/pages/_meta.en.json", "r")
     text = file.read()
     file.close()
     translator = deepl.Translator(os.getenv("DEEPL_API_KEY"))
@@ -69,6 +69,6 @@ if __name__ == "__main__":
                 json_data[key] = translated
             # copy other keys
         # write the translated json to a file
-        with open(f"pages/_meta.{lang['filename_locale']}.json", "w") as f:
+        with open(f"legacy/pages/_meta.{lang['filename_locale']}.json", "w") as f:
             json.dump(json_data, f, indent=4, ensure_ascii=False)
             print(f"Translated to {lang['text']}")
