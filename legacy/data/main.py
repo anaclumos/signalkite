@@ -48,7 +48,7 @@ if __name__ == "__main__":
     end = int(today.timestamp())
 
     filename = (
-        f"records/{today.strftime('%Y-%m-%d')}/{today.strftime('%Y-%m-%d')}.en.json"
+        f"legacy/records/{today.strftime('%Y-%m-%d')}/{today.strftime('%Y-%m-%d')}.en.json"
     )
     if os.path.exists(filename):
         with open(filename, "r") as f:
