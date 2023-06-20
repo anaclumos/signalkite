@@ -4,6 +4,10 @@
 
 Heimdall is a tool that automates industry analysis by gathering and presenting the latest sector-specific news.
 
-
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fanaclumos%2Fheimdall.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fanaclumos%2Fheimdall?ref=badge_large)
+
+## Translation
+
+[![translation badge](https://inlang.com/badge?url=github.com/anaclumos/heimdall)](https://inlang.com/editor/github.com/anaclumos/heimdall?ref=badge)
+

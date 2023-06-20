@@ -14,9 +14,8 @@ export const useLocaleRedirect = ({ locale }) => {
     console.warn(
       `Invalid locale '${locale}' detected. Redirecting to default locale.`
     )
-    const redirectLocale = allowedLocalesList.includes(navigator.language)
-      ? navigator.language
-      : 'en-US'
+    const navlang = navigator.language?.split('-')[0] ?? 'en'
+    const redirectLocale = allowedLocalesList.includes(navlang) ? navlang : 'en'
     navigate(routes.home({ locale: redirectLocale }))
   }
 }

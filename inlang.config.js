@@ -11,7 +11,7 @@ export async function defineConfig(env) {
   )
 
   return {
-    referenceLanguage: 'en-US',
+    referenceLanguage: 'en',
     plugins: [
       jsonPlugin({ pathPattern: 'web/src/locales/{language}.json' }),
       standardLintRules(),
