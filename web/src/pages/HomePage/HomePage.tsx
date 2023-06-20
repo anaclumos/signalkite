@@ -13,9 +13,7 @@ const HomePage = ({ locale }) => {
 
   return (
     <>
-      <Head>
-        <MetaTags title="Home" description="Home page" />
-        <html lang={locale} />
+      <MetaTags title="Home" description="Home page" locale={locale}>
         {allowedLocalesList.map((locale) => (
           <link
             key={locale}
@@ -24,7 +22,8 @@ const HomePage = ({ locale }) => {
             href={`https://heimdall.cho.sh/${locale}`}
           />
         ))}
-      </Head>
+      </MetaTags>
+
       <Box mb={20}>
         <Box as="section" pt="6rem" pb={{ base: '0', md: '5rem' }}>
           <Box
