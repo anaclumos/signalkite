@@ -14,7 +14,7 @@ const extendedTheme = extendTheme(theme)
 
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
-    <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
+    <RedwoodProvider titleTemplate="%PageTitle @ %AppTitle">
       <ColorModeScript />
       <ChakraProvider theme={extendedTheme}>
         <RedwoodApolloProvider>
