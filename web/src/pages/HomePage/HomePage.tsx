@@ -1,7 +1,7 @@
 import { Box, Button, Stack, Text, chakra } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 
-import { Head, MetaTags } from '@redwoodjs/web'
+import { MetaTags } from '@redwoodjs/web'
 
 import { useLocaleRedirect } from 'src/hooks/useLocaleRedirect'
 import { allowedLocalesList } from 'src/i18n'
