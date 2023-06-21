@@ -32,7 +32,7 @@ import { Link as RedwoodLink, routes } from '@redwoodjs/router'
 const WithSubnavigation = () => {
   const { isOpen, onToggle } = useDisclosure()
   const { colorMode, toggleColorMode } = useColorMode()
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
 
   return (
     <Box>
@@ -68,7 +68,7 @@ const WithSubnavigation = () => {
             fontWeight={700}
           >
             <RedwoodLink to={routes.home({ locale: i18n.language })}>
-              Project Heimdall
+              {t('navigation.logo')}
             </RedwoodLink>
           </Link>
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -110,10 +110,10 @@ const WithSubnavigation = () => {
             fontSize={'sm'}
             fontWeight={600}
             color={'white'}
-            bg={'pink.400'}
+            bg={'teal.500'}
             href={'#'}
             _hover={{
-              bg: 'pink.300',
+              bg: 'teal.400',
             }}
           >
             Sign Up
@@ -130,10 +130,11 @@ const WithSubnavigation = () => {
 const DesktopNav = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200')
   const linkHoverColor = useColorModeValue('gray.800', 'white')
-  const popoverContentBgColor = useColorModeValue('white', 'gray.800')
+  const popoverContentBgColor = useColorModeValue('white', 'gray.700')
+  const items = useNavigationItems()
   return (
     <Stack direction={'row'} spacing={4}>
-      {NAV_ITEMS.map((navItem) => (
+      {items.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
@@ -175,7 +176,7 @@ const DesktopNav = () => {
   )
 }
 
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+const DesktopSubNav = ({ label, href, sublabel }: NavItem) => {
   return (
     <Link
       href={href}
@@ -189,12 +190,12 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
         <Box>
           <Text
             transition={'all .3s ease'}
-            _groupHover={{ color: 'pink.400' }}
+            _groupHover={{ color: 'teal.300' }}
             fontWeight={700}
           >
             {label}
           </Text>
-          <Text fontSize={'sm'}>{subLabel}</Text>
+          <Text fontSize={'sm'}>{sublabel}</Text>
         </Box>
         <Flex
           transition={'all .3s ease'}
@@ -205,7 +206,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           align={'center'}
           flex={1}
         >
-          <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={'teal.500'} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>
@@ -213,13 +214,14 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 }
 
 const MobileNav = () => {
+  const items = useNavigationItems()
   return (
     <Stack
       bg={useColorModeValue('white', 'gray.800')}
       p={4}
       display={{ md: 'none' }}
     >
-      {NAV_ITEMS.map((navItem) => (
+      {items.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
     </Stack>
@@ -274,55 +276,58 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
 
 type NavItem = {
   label: string
-  subLabel?: string
+  sublabel?: string
   children?: Array<NavItem>
   href?: string
 }
 
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: 'Explore Reports',
-    children: [
-      {
-        label: 'Hacker News',
-        subLabel: 'The (Venture) Capital City of Technoland',
-        href: '#',
-      },
-      {
-        label: 'Lobste.rs',
-        subLabel: "HN's More Tech Oriented Alternative",
-        href: '#',
-      },
-      {
-        label: 'diff.blog',
-        subLabel: 'A Federated Network of Tech Blogs',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Create Personal Reports',
-    children: [
-      {
-        label: 'Daily Industry Monitoring',
-        subLabel: 'Keep up with the latest news in your industry',
-        href: '#',
-      },
-      {
-        label: 'Brand Monitoring',
-        subLabel: 'Monitor the web for mentions of your brand',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Pricing',
-    href: '#',
-  },
-  {
-    label: 'Support',
-    href: '#',
-  },
-]
+const useNavigationItems = (): Array<NavItem> => {
+  const { t } = useTranslation()
+  return [
+    {
+      label: t('navigation.explore.title'),
+      children: [
+        {
+          label: t('navigation.explore.hackernews.label'),
+          sublabel: t('navigation.explore.hackernews.sublabel'),
+          href: '#',
+        },
+        {
+          label: t('navigation.explore.lobsters.label'),
+          sublabel: t('navigation.explore.lobsters.sublabel'),
+          href: '#',
+        },
+        {
+          label: t('navigation.explore.diffblog.label'),
+          sublabel: t('navigation.explore.diffblog.sublabel'),
+          href: '#',
+        },
+      ],
+    },
+    {
+      label: t('navigation.personal.title'),
+      children: [
+        {
+          label: t('navigation.personal.industry.label'),
+          sublabel: t('navigation.personal.industry.sublabel'),
+          href: '#',
+        },
+        {
+          label: t('navigation.personal.brand.label'),
+          sublabel: t('navigation.personal.brand.sublabel'),
+          href: '#',
+        },
+      ],
+    },
+    {
+      label: t('navigation.pricing'),
+      href: '#',
+    },
+    {
+      label: t('navigation.support'),
+      href: '#',
+    },
+  ]
+}
 
 export default WithSubnavigation
