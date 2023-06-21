@@ -102,7 +102,7 @@ const WithSubnavigation = () => {
             variant={'link'}
             href={'#'}
           >
-            Sign In
+            {t('navigation.signin')}
           </Button>
           <Button
             as={'a'}
@@ -116,7 +116,7 @@ const WithSubnavigation = () => {
               bg: 'teal.400',
             }}
           >
-            Sign Up
+            {t('navigation.signup')}
           </Button>
         </Stack>
       </Flex>
