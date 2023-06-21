@@ -8,7 +8,7 @@ import HomePage from './HomePage'
 describe('HomePage', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<HomePage />)
+      render(<HomePage locale="en" />)
     }).not.toThrow()
   })
 })
