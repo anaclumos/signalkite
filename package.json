@@ -10,11 +10,13 @@
   "scripts": {
     "lint": "yarn rw lint --fix",
     "format": "prettier --write \"**/*.{ts,tsx,json,md,mdx,css,scss,html,yml,yaml,js,jsx}\"",
-    "format:parallel": "pprettier  --write \"**/*.{ts,tsx,json,md,mdx,css,scss,html,yml,yaml,js,jsx}\""
+    "format:parallel": "pprettier  --write \"**/*.{ts,tsx,json,md,mdx,css,scss,html,yml,yaml,js,jsx}\"",
+    "translate": "yarn dlx i18next-parser 'web/**/*.tsx' -o 'web/src/locales/$LOCALE.json' -c 'web/src/i18next-parser.config.ts'"
   },
   "devDependencies": {
     "@mixer/parallel-prettier": "^2.0.3",
     "@redwoodjs/core": "5.3.1",
+    "i18next-parser": "^8.0.0",
     "prettier": "^2.8.8"
   },
   "eslintConfig": {
