@@ -1,6 +1,6 @@
-import { allowedLocalesList } from './i18n'
+// import { allowedLocalesList } from './i18n'
 
 export default {
-  locales: allowedLocalesList,
+  locales: ['en', 'ko'],
   sort: true,
 }
