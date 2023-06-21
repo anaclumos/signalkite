@@ -11,15 +11,15 @@
 //
 // See https://storybook.js.org/docs/react/writing-stories/args.
 
-import type { ComponentMeta } from "@storybook/react";
+import type { ComponentMeta } from '@storybook/react'
 
-import Navigation from "./Navigation";
+import Navigation from './Navigation'
 
 export const generated = () => {
-  return <Navigation />;
-};
+  return <Navigation />
+}
 
 export default {
-  title: "Components/Navigation",
+  title: 'Components/Navigation',
   component: Navigation,
-} as ComponentMeta<typeof Navigation>;
+} as ComponentMeta<typeof Navigation>

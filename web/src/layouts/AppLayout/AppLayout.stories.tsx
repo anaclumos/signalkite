@@ -1,12 +1,12 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import AppLayout from "./AppLayout";
+import AppLayout from './AppLayout'
 
 export const generated: ComponentStory<typeof AppLayout> = (args) => {
-  return <AppLayout {...args} />;
-};
+  return <AppLayout {...args} />
+}
 
 export default {
-  title: "Layouts/AppLayout",
+  title: 'Layouts/AppLayout',
   component: AppLayout,
-} as ComponentMeta<typeof AppLayout>;
+} as ComponentMeta<typeof AppLayout>

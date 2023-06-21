@@ -1,14 +1,14 @@
-import { render } from "@redwoodjs/testing/web";
+import { render } from '@redwoodjs/testing/web'
 
-import Navigation from "./Navigation";
+import Navigation from './Navigation'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
 
-describe("Navigation", () => {
-  it("renders successfully", () => {
+describe('Navigation', () => {
+  it('renders successfully', () => {
     expect(() => {
-      render(<Navigation />);
-    }).not.toThrow();
-  });
-});
+      render(<Navigation />)
+    }).not.toThrow()
+  })
+})

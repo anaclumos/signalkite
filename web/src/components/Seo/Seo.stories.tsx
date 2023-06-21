@@ -11,15 +11,15 @@
 //
 // See https://storybook.js.org/docs/react/writing-stories/args.
 
-import type { ComponentMeta } from "@storybook/react";
+import type { ComponentMeta } from '@storybook/react'
 
-import Seo from "./Seo";
+import Seo from './Seo'
 
 export const generated = () => {
-  return <Seo />;
-};
+  return <Seo />
+}
 
 export default {
-  title: "Components/Seo",
+  title: 'Components/Seo',
   component: Seo,
-} as ComponentMeta<typeof Seo>;
+} as ComponentMeta<typeof Seo>
