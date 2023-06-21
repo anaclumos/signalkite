@@ -1,10 +1,7 @@
 import { Box, Button, Stack, Text, chakra } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 
-import { MetaTags } from '@redwoodjs/web'
-
 import { useLocaleRedirect } from 'src/hooks/useLocaleRedirect'
-import { allowedLocalesList } from 'src/i18n'
 
 const HomePage = ({ locale }) => {
   useLocaleRedirect({ locale })
@@ -13,17 +10,6 @@ const HomePage = ({ locale }) => {
 
   return (
     <>
-      <MetaTags title="Home" description="Home page" locale={locale}>
-        {allowedLocalesList.map((locale) => (
-          <link
-            key={locale}
-            rel="alternate"
-            hrefLang={locale}
-            href={`https://heimdall.cho.sh/${locale}`}
-          />
-        ))}
-      </MetaTags>
-
       <Box mb={20}>
         <Box as="section" pt="6rem" pb={{ base: '0', md: '5rem' }}>
           <Box
