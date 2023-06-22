@@ -14,8 +14,8 @@ const Routes = () => {
           <Route path="/profile/" page={ProfilePage} name="profile" />
           <Route path="/profile/{locale:String}" page={ProfilePage} name="profile" />
         </Private>
-        <Route path="/" page={HomePage} name="home" prerender />
-        <Route path="/{locale:String}" page={HomePage} name="home" prerender />
+        <Route path="/" page={HomePage} name="home" />
+        <Route path="/{locale:String}" page={HomePage} name="home" />
       </Set>
       <Route path="/fallback" page={FallbackPage} name="fallback" />
       <Route notfound page={NotFoundPage} prerender />
