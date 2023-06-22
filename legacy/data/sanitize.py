@@ -40,6 +40,11 @@ if __name__ == "__main__":
         with open(md_file, "w") as f:
             for line in lines:
                 # Replace Rules
+                if line.startswith("###") and line.count("[") > 2 and '[pdf]' not in line:
+                    components = line.split("[")
+                    line = '## ' + components[1].strip() + "\n### [" + components[2].strip()
+                    f.write(line)
+                    continue
                 if "####" in line:
                     COUNTER += 1
                     line = "#### " + line.replace("####", "").strip()
