@@ -188,6 +188,7 @@ if __name__ == "__main__":
                     ".-": ".\n-",
                     "\n\n-": "\n-",
                     ")-": ")\n\n-",
+                    "  </Steps>": "\n</Steps>",
                 }
 
                 # if - in the line immediately followed by a non-space character, replace - with - (space)
