@@ -1,4 +1,4 @@
-import { Box, Button, Stack, Text, chakra } from '@chakra-ui/react'
+import { Box, Button, chakra, Stack, Text } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 
 import { useLocaleRedirect } from 'src/hooks/useLocaleRedirect'
