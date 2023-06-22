@@ -1,6 +1,7 @@
 import React from 'react'
-import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
+
 import { useRouter } from 'next/router'
+import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
 
 const i18nlist = [
   { locale: 'bg', text: 'български (bg)' },
@@ -52,7 +53,7 @@ const config: DocsThemeConfig = {
     text: (
       <span>
         MIT {new Date().getFullYear()} ©{' '}
-        <a href="https://cho.sh" target="_blank">
+        <a href="https://cho.sh" target="_blank" rel="noreferrer">
           Sunghyun Cho from 불가사리 ★ Starfish Company
         </a>
         .
@@ -73,7 +74,7 @@ const config: DocsThemeConfig = {
   },
   useNextSeoProps() {
     const { frontMatter } = useConfig()
-    let title = frontMatter.top_news ?? 'Tech News Summarized'
+    const title = frontMatter.top_news ?? 'Tech News Summarized'
     return {
       titleTemplate: `${title} — hn.cho.sh`,
     }
@@ -84,8 +85,8 @@ const config: DocsThemeConfig = {
     const url = `https://hn.cho.sh/${
       locale === defaultLocale ? '' : locale
     }${asPath}`
-    let title = frontMatter.top_news
-    let subheading = frontMatter.localized_date
+    const title = frontMatter.top_news
+    const subheading = frontMatter.localized_date
     return (
       <>
         <title>{title ?? 'hn.cho.sh'}</title>

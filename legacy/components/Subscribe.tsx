@@ -1,6 +1,7 @@
 import React from 'react'
+
 import { useRouter } from 'next/router'
-import { Steps, Cards } from 'nextra-theme-docs'
+import { Cards, Steps } from 'nextra-theme-docs'
 
 const i18n = {
   subscribeHeader: {

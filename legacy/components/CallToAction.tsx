@@ -1,7 +1,8 @@
 import React from 'react'
-import { Cards } from 'nextra-theme-docs'
+
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { Cards } from 'nextra-theme-docs'
 
 const i18n = {
   copiedToClipboard: {
@@ -138,7 +139,7 @@ const share = (language) => {
     })
   } else {
     const copyContent = async () => {
-      let text = window.location.href
+      const text = window.location.href
       try {
         await navigator.clipboard.writeText(text)
         alert(i18n.copiedToClipboard[language])
