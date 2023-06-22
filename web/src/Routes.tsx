@@ -18,7 +18,7 @@ const Routes = () => {
         <Route path="/{locale:String}" page={HomePage} name="home" />
       </Set>
       <Route path="/fallback" page={FallbackPage} name="fallback" />
-      <Route notfound page={NotFoundPage} prerender />
+      <Route notfound page={NotFoundPage} />
     </Router>
   )
 }
