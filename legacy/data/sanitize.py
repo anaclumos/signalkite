@@ -33,7 +33,7 @@ if __name__ == "__main__":
 
     for md_file in all_md_files:
         # ignore files with Template in the name
-        if "template" in md_file.lower():
+        if "template" in md_file.lower() or "readme" in md_file.lower() or "index" in md_file.lower() or "manifesto" in md_file.lower():
             continue
         with open(md_file, "r") as f:
             lines = f.readlines()
@@ -188,7 +188,6 @@ if __name__ == "__main__":
                     ".-": ".\n-",
                     "\n\n-": "\n-",
                     ")-": ")\n\n-",
-                    "  </Steps>": "\n</Steps>",
                 }
 
                 # if - in the line immediately followed by a non-space character, replace - with - (space)
@@ -205,6 +204,8 @@ if __name__ == "__main__":
                         COUNTER += 1
                         line = line.replace(rule, REPLACE_RULES[rule])
                     line = unicodedata.normalize("NFC", line)
+                if "</Steps>" in line:
+                    line = line.replace("</Steps>", "\n\n</Steps>")
                 if (
                     len(line) > 5
                     and line.startswith("### ")
