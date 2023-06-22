@@ -41,8 +41,6 @@ import { useTranslation } from 'react-i18next'
 
 import { Link as RedwoodLink, routes } from '@redwoodjs/router'
 
-import { useAuth } from 'src/auth'
-
 const withUnmountFunction = (WrappedComponent, onUnmount) => {
   return function (props) {
     useEffect(() => {
@@ -60,7 +58,6 @@ const WithSubnavigation = () => {
   const { isOpen, onToggle } = useDisclosure()
   const { colorMode, toggleColorMode } = useColorMode()
   const { i18n, t } = useTranslation()
-  const { isAuthenticated, signUp } = useAuth()
   const { isSignedIn, user } = useUser()
   const { signOut } = useClerk()
   const [signInOpen, setSignInOpen] = useState<boolean>(false)
@@ -172,7 +169,7 @@ const WithSubnavigation = () => {
             direction={'row'}
             spacing={6}
           >
-            {isAuthenticated ? (
+            {isSignedIn ? (
               <Menu>
                 <MenuButton
                   as={Button}
