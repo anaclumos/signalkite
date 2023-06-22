@@ -36,7 +36,7 @@ import {
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react'
-import { SignIn, useUser, useClerk } from '@clerk/clerk-react'
+import { SignIn, useUser, useClerk, SignUp } from '@clerk/clerk-react'
 import { useTranslation } from 'react-i18next'
 
 import { Link as RedwoodLink, routes } from '@redwoodjs/router'
@@ -64,9 +64,13 @@ const WithSubnavigation = () => {
   const { isSignedIn, user } = useUser()
   const { signOut } = useClerk()
   const [signInOpen, setSignInOpen] = useState<boolean>(false)
+  const [signUpOpen, setSignUpOpen] = useState<boolean>(false)
   const cancelRef = useRef()
   const SignInWithUnmountFunction = withUnmountFunction(SignIn, () => {
     setSignInOpen(false)
+  })
+  const SignUpWithUnmountFunction = withUnmountFunction(SignUp, () => {
+    setSignUpOpen(false)
   })
   return (
     <>
@@ -83,6 +87,23 @@ const WithSubnavigation = () => {
               shadow={'none'}
             >
               <SignInWithUnmountFunction />
+            </AlertDialogContent>
+          </AlertDialogOverlay>
+        </AlertDialog>
+      )}
+      {!isSignedIn && (
+        <AlertDialog
+          isOpen={signUpOpen}
+          onClose={() => setSignUpOpen(false)}
+          leastDestructiveRef={cancelRef}
+        >
+          <AlertDialogOverlay>
+            <AlertDialogContent
+              bg={'rgba(0, 0, 0, 0)'}
+              border={0}
+              shadow={'none'}
+            >
+              <SignUpWithUnmountFunction />
             </AlertDialogContent>
           </AlertDialogOverlay>
         </AlertDialog>
@@ -204,7 +225,7 @@ const WithSubnavigation = () => {
                   _hover={{
                     bg: 'teal.400',
                   }}
-                  onClick={() => signUp()}
+                  onClick={() => setSignUpOpen(!signInOpen)}
                 >
                   {t('navigation.signup')}
                 </Button>
