@@ -1,7 +1,7 @@
 import os
 import unicodedata
 
-targets = ["./legacy/pages"]
+targets = ["./legacy/pages", "legacy/pages", "pages"]
 COUNTER = 0
 
 all_md_files = []
@@ -41,13 +41,19 @@ if __name__ == "__main__":
             for line in lines:
                 # Replace Rules
                 if "####" in line:
+                    COUNTER += 1
                     line = "#### " + line.replace("####", "").strip()
                 elif "###" in line:
                     # pull the ### to the front
+                    COUNTER += 1
                     line = "### " + line.replace("###", "").strip()
                 elif "##" in line:
+                    COUNTER += 1
                     # pull the ## to the front
                     line = "## " + line.replace("##", "").strip()
+                elif "-" == line.strip():
+                    COUNTER += 1
+                    line = ""
                 # remove all 'invisible' characters
                 REPLACE_RULES = {
                     " ": " ",
