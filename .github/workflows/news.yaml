@@ -3,14 +3,13 @@ on:
   schedule:
     - cron: '59 9 * * *'
   workflow_dispatch:
-    inputs:
-      version:
-        description: Retrigger
-        default: v1.0.0
-        required: true
 permissions: write-all
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  news:
+  setup:
     environment: Production
     runs-on: ubuntu-latest
     services:
@@ -33,6 +32,14 @@ jobs:
         run: |
           git config pull.rebase true
           git pull
+  generate:
+    environment: Production
+    runs-on: ubuntu-latest
+    services:
+      selenium:
+        image: selenium/standalone-chrome:latest
+        options: --shm-size=2gb
+    steps:
       - name: Update News
         run: python3 legacy/data/main.py
         env:
@@ -55,6 +62,14 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
+  translate:
+    environment: Production
+    runs-on: ubuntu-latest
+    services:
+      selenium:
+        image: selenium/standalone-chrome:latest
+        options: --shm-size=2gb
+    steps:
       - name: Translate news
         run: python3 legacy/data/translate.py
         env:
@@ -97,6 +112,14 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
+  schedule:
+    environment: Production
+    runs-on: ubuntu-latest
+    services:
+      selenium:
+        image: selenium/standalone-chrome:latest
+        options: --shm-size=2gb
+    steps:
       - name: Schedule Newsletter
         run: python3 legacy/data/newsletter.py
         env:
