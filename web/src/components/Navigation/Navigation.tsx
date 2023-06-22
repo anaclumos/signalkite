@@ -1,129 +1,222 @@
 // Base code from https://chakra-templates.dev/
 
+import { useRef, useState, useEffect } from 'react'
+
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import {
-  HamburgerIcon,
-  CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  CloseIcon,
+  HamburgerIcon,
 } from '@chakra-ui/icons'
 import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogOverlay,
+  Avatar,
   Box,
-  Flex,
-  Text,
-  IconButton,
   Button,
-  Stack,
   Collapse,
+  Flex,
   Icon,
+  IconButton,
   Link,
+  Menu,
+  MenuButton,
+  MenuDivider,
+  MenuItem,
+  MenuList,
   Popover,
-  PopoverTrigger,
   PopoverContent,
-  useColorModeValue,
+  PopoverTrigger,
+  Stack,
+  Text,
   useBreakpointValue,
-  useDisclosure,
   useColorMode,
+  useColorModeValue,
+  useDisclosure,
 } from '@chakra-ui/react'
+import { SignIn, useUser, useClerk } from '@clerk/clerk-react'
 import { useTranslation } from 'react-i18next'
 
 import { Link as RedwoodLink, routes } from '@redwoodjs/router'
+
+import { useAuth } from 'src/auth'
+
+const withUnmountFunction = (WrappedComponent, onUnmount) => {
+  return function (props) {
+    useEffect(() => {
+      return () => {
+        if (typeof onUnmount === 'function') {
+          onUnmount()
+        }
+      }
+    }, [])
+    return <WrappedComponent {...props} />
+  }
+}
 
 const WithSubnavigation = () => {
   const { isOpen, onToggle } = useDisclosure()
   const { colorMode, toggleColorMode } = useColorMode()
   const { i18n, t } = useTranslation()
-
+  const { isAuthenticated, signUp } = useAuth()
+  const { isSignedIn, user } = useUser()
+  const { signOut } = useClerk()
+  const [signInOpen, setSignInOpen] = useState<boolean>(false)
+  const cancelRef = useRef()
+  const SignInWithUnmountFunction = withUnmountFunction(SignIn, () => {
+    setSignInOpen(false)
+  })
   return (
-    <Box>
-      <Flex
-        bg={useColorModeValue('white', 'gray.800')}
-        color={useColorModeValue('gray.600', 'white')}
-        minH={'5rem'}
-        maxW={'1200px'}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        m={'auto'}
-        align={'center'}
-      >
+    <>
+      {!isSignedIn && (
+        <AlertDialog
+          isOpen={signInOpen}
+          onClose={() => setSignInOpen(false)}
+          leastDestructiveRef={cancelRef}
+        >
+          <AlertDialogOverlay>
+            <AlertDialogContent
+              bg={'rgba(0, 0, 0, 0)'}
+              border={0}
+              shadow={'none'}
+            >
+              <SignInWithUnmountFunction />
+            </AlertDialogContent>
+          </AlertDialogOverlay>
+        </AlertDialog>
+      )}
+      <Box>
         <Flex
-          flex={{ base: 1, md: 'auto' }}
-          ml={{ base: -2 }}
-          display={{ base: 'flex', md: 'none' }}
-        >
-          <IconButton
-            onClick={onToggle}
-            icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-            }
-            variant={'ghost'}
-            aria-label={'Toggle Navigation'}
-          />
-        </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Link
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}
-            fontWeight={700}
-          >
-            <RedwoodLink to={routes.home({ locale: i18n.language })}>
-              {t('navigation.logo')}
-            </RedwoodLink>
-          </Link>
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-            <DesktopNav />
-          </Flex>
-        </Flex>
-        <IconButton
           bg={useColorModeValue('white', 'gray.800')}
-          display={{ base: 'none', md: 'inline-flex' }}
-          onClick={toggleColorMode}
-          m={2}
-          icon={
-            colorMode === 'light' ? (
-              <MoonIcon color="black" />
-            ) : (
-              <SunIcon color="white" />
-            )
-          }
-          aria-label="Toggle Color Mode"
-        />
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={'flex-end'}
-          direction={'row'}
-          spacing={6}
+          color={useColorModeValue('gray.600', 'white')}
+          minH={'5rem'}
+          maxW={'1200px'}
+          py={{ base: 2 }}
+          px={{ base: 4 }}
+          m={'auto'}
+          align={'center'}
         >
-          <Button
-            as={'a'}
-            fontSize={'sm'}
-            fontWeight={400}
-            variant={'link'}
-            href={'#'}
+          <Flex
+            flex={{ base: 1, md: 'auto' }}
+            ml={{ base: -2 }}
+            display={{ base: 'flex', md: 'none' }}
           >
-            {t('navigation.signin')}
-          </Button>
-          <Button
-            as={'a'}
+            <IconButton
+              onClick={onToggle}
+              icon={
+                isOpen ? (
+                  <CloseIcon w={3} h={3} />
+                ) : (
+                  <HamburgerIcon w={5} h={5} />
+                )
+              }
+              variant={'ghost'}
+              aria-label={'Toggle Navigation'}
+            />
+          </Flex>
+          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+            <RedwoodLink to={routes.home({ locale: i18n.language })}>
+              <Text
+                textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+                fontFamily={'heading'}
+                color={useColorModeValue('gray.800', 'white')}
+                fontWeight={700}
+              >
+                {t('navigation.logo')}
+              </Text>
+            </RedwoodLink>
+            <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+              <DesktopNav />
+            </Flex>
+          </Flex>
+          <IconButton
+            bg={useColorModeValue('white', 'gray.800')}
             display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'sm'}
-            fontWeight={600}
-            color={'white'}
-            bg={'teal.500'}
-            href={'#'}
-            _hover={{
-              bg: 'teal.400',
-            }}
+            onClick={toggleColorMode}
+            m={2}
+            icon={
+              colorMode === 'light' ? (
+                <MoonIcon color="black" />
+              ) : (
+                <SunIcon color="white" />
+              )
+            }
+            aria-label="Toggle Color Mode"
+          />
+          <Stack
+            flex={{ base: 1, md: 0 }}
+            justify={'flex-end'}
+            direction={'row'}
+            spacing={6}
           >
-            {t('navigation.signup')}
-          </Button>
-        </Stack>
-      </Flex>
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
-      </Collapse>
-    </Box>
+            {isAuthenticated ? (
+              <Menu>
+                <MenuButton
+                  as={Button}
+                  rounded={'full'}
+                  variant={'link'}
+                  cursor={'pointer'}
+                  minW={0}
+                >
+                  <Avatar size={'sm'} src={user?.profileImageUrl} />
+                </MenuButton>
+                <MenuList>
+                  <RedwoodLink to={routes.profile({ locale: i18n.language })}>
+                    <MenuItem>{t('navigation.profile')}</MenuItem>
+                  </RedwoodLink>
+                  <RedwoodLink to={routes.settings({ locale: i18n.language })}>
+                    <MenuItem>{t('navigation.settings')}</MenuItem>
+                  </RedwoodLink>
+                  <MenuDivider />
+                  <Link
+                    onClick={() => signOut()}
+                    textDecor={'none'}
+                    cursor={'pointer'}
+                    _hover={{ textDecor: 'none' }}
+                    minW={0}
+                  >
+                    <MenuItem>{t('navigation.signout')}</MenuItem>
+                  </Link>
+                </MenuList>
+              </Menu>
+            ) : (
+              <>
+                <Button
+                  as={'a'}
+                  fontSize={'sm'}
+                  fontWeight={400}
+                  variant={'link'}
+                  onClick={() => setSignInOpen(!signInOpen)}
+                  cursor={'pointer'}
+                >
+                  {t('navigation.signin')}
+                </Button>
+                <Button
+                  as={'a'}
+                  display={{ base: 'none', md: 'inline-flex' }}
+                  fontSize={'sm'}
+                  fontWeight={600}
+                  color={'white'}
+                  cursor={'pointer'}
+                  bg={'teal.500'}
+                  _hover={{
+                    bg: 'teal.400',
+                  }}
+                  onClick={() => signUp()}
+                >
+                  {t('navigation.signup')}
+                </Button>
+              </>
+            )}
+          </Stack>
+        </Flex>
+        <Collapse in={isOpen} animateOpacity>
+          <MobileNav />
+        </Collapse>
+      </Box>
+    </>
   )
 }
 
@@ -190,7 +283,7 @@ const DesktopSubNav = ({ label, href, sublabel }: NavItem) => {
         <Box>
           <Text
             transition={'all .3s ease'}
-            _groupHover={{ color: 'teal.300' }}
+            _groupHover={{ color: 'teal.500' }}
             fontWeight={700}
           >
             {label}
@@ -290,17 +383,17 @@ const useNavigationItems = (): Array<NavItem> => {
         {
           label: t('navigation.explore.hackernews.label'),
           sublabel: t('navigation.explore.hackernews.sublabel'),
-          href: '#',
+          href: '',
         },
         {
           label: t('navigation.explore.lobsters.label'),
           sublabel: t('navigation.explore.lobsters.sublabel'),
-          href: '#',
+          href: '',
         },
         {
           label: t('navigation.explore.diffblog.label'),
           sublabel: t('navigation.explore.diffblog.sublabel'),
-          href: '#',
+          href: '',
         },
       ],
     },
@@ -310,22 +403,22 @@ const useNavigationItems = (): Array<NavItem> => {
         {
           label: t('navigation.personal.industry.label'),
           sublabel: t('navigation.personal.industry.sublabel'),
-          href: '#',
+          href: '',
         },
         {
           label: t('navigation.personal.brand.label'),
           sublabel: t('navigation.personal.brand.sublabel'),
-          href: '#',
+          href: '',
         },
       ],
     },
     {
       label: t('navigation.pricing'),
-      href: '#',
+      href: '',
     },
     {
       label: t('navigation.support'),
-      href: '#',
+      href: '',
     },
   ]
 }

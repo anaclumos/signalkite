@@ -1,3 +1,5 @@
+import { Box } from '@chakra-ui/react'
+
 import Navigation from 'src/components/Navigation/Navigation'
 import Seo from 'src/components/Seo/Seo'
 
@@ -10,7 +12,9 @@ const AppLayout = ({ children }: AppLayoutProps) => {
     <>
       <Seo />
       <Navigation />
-      {children}
+      <Box maxW={'1200px'} mx={'auto'} py={{ base: 2 }} px={{ base: 4 }}>
+        {children}
+      </Box>
     </>
   )
 }
