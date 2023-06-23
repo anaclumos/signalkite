@@ -74,19 +74,13 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: NODE_OPTIONS=\"--max_old_space_size=7168\" ${{ steps.detect-package-manager.outputs.runner }} workspace heimdall-v1 next build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Vercel Deploy
+        uses: amondnet/vercel-action@v20 #deploy
         with:
-          path: ./out
-
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+          zeit-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
+          vercel-args: '--prod' #Optional
+          vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
+          working-directory: ./sub-directory
