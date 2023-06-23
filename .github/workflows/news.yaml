@@ -33,12 +33,10 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
-      - name: Sanitize news
-        run: python3 legacy/data/sanitize.py
       - name: Run Prettier
         uses: borales/actions-yarn@v4
         with:
-          cmd: format:parallel
+          cmd: workspace heimdall-v1 cleanup
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -54,12 +52,10 @@ jobs:
         run: python3 legacy/data/translate.py
         env:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
-      - name: Sanitize news
-        run: python3 legacy/data/sanitize.py
       - name: Run Prettier
         uses: borales/actions-yarn@v4
         with:
-          cmd: format:parallel
+          cmd: workspace heimdall-v1 cleanup
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -75,12 +71,10 @@ jobs:
         run: python3 legacy/data/frontmatter_inject.py
       - name: Generate English RSS
         run: python3 legacy/data/rss.py
-      - name: Sanitize news
-        run: python3 legacy/data/sanitize.py
       - name: Run Prettier
         uses: borales/actions-yarn@v4
         with:
-          cmd: format:parallel
+          cmd: workspace heimdall-v1 cleanup
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
