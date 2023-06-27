@@ -16,6 +16,7 @@ const timedFetch = async (url: string, timeout = 10000) => {
 
 const fetchContent = async (url: string) => {
   let body = ''
+
   // youtube
   if (url.includes('youtu')) {
     try {
@@ -25,13 +26,13 @@ const fetchContent = async (url: string) => {
         url.split('youtu.be/')[1].split('&')[0] ??
         url.split('youtube.com/embed/')[1].split('&')[0] ??
         url.split('youtube.com/watch?v=')[1].split('&')[0]
-      body = (await YoutubeTranscript.fetchTranscript(videoId)).toString()
-      if (body.toString().trim() === '') {
+      body = (await YoutubeTranscript.fetchTranscript(videoId))?.toString()
+      if (body?.toString().trim() === '') {
         throw new Error('😵 Youtube Transcript is empty')
       }
       logger.info(
         `✅ Downloaded Youtube Transcript for ${url}, ${body
-          .toString()
+          ?.toString()
           .substring(0, 100)}`
       )
     } catch (e) {
@@ -53,11 +54,11 @@ const fetchContent = async (url: string) => {
       const buffer = Buffer.from(arrayBuffer)
       const data = await pdf(buffer)
       body = data.text
-      if (body.toString().trim() === '') {
+      if (body?.toString().trim() === '') {
         throw new Error('😵 PDF is empty')
       }
       logger.info(
-        `✅ Downloaded PDF for ${url}, ${body.toString().substring(0, 100)}`
+        `✅ Downloaded PDF for ${url}, ${body?.toString().substring(0, 100)}`
       )
     } catch (e) {
       logger.error(`❌ Cannot Download PDF for ${url}, ${e}`)
@@ -72,16 +73,17 @@ const fetchContent = async (url: string) => {
         `https://web.scraper.workers.dev/?selector=article,+main,+body,+noscript&scrape=text&url=${url}`
       )
       const json = await res.json()
-      console.log(json)
       body =
         json?.result?.article?.toString() ||
         json?.result?.main?.toString() ||
         json?.result?.body?.toString()
-      if (body.toString().trim() === '') {
+      if (body?.toString().trim() === '') {
         throw new Error('😵 Article is empty')
       }
       logger.info(
-        `✅ Downloaded Article for ${url}, ${body.toString().substring(0, 100)}`
+        `✅ Downloaded Article for ${url}, ${body
+          ?.toString()
+          .substring(0, 100)}`
       )
     } catch (e) {
       logger.error(`❌ Cannot Download Article for ${url}, ${e}`)
@@ -98,11 +100,13 @@ const fetchContent = async (url: string) => {
       await page.goto(url)
       body = await page.innerText('body')
       await browser.close()
-      if (body.toString().trim() === '') {
+      if (body?.toString().trim() === '') {
         throw new Error('😵 Default Download is empty')
       }
       logger.info(
-        `✅ Downloaded Default for ${url}, ${body.toString().substring(0, 100)}`
+        `✅ Downloaded Default for ${url}, ${body
+          ?.toString()
+          .substring(0, 100)}`
       )
     } catch (e) {
       logger.error(`❌ Cannot Download Default for ${url}, ${e}`)
@@ -121,11 +125,11 @@ export default async () => {
       const body = await fetchContent(linkUrl)
       await db.linkSummary.update({
         where: { id },
-        data: { body: body.toString() },
+        data: { body: body?.toString().replace(/\n/g, ' ') },
       })
       logger.info(
         `💾 Updated LinkSummary ${id} with body ${body
-          .toString()
+          ?.toString()
           .substring(0, 100)}`
       )
     })
