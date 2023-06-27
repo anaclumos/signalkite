@@ -10,7 +10,7 @@ generator client {
 
 model User {
   id                Int                 @id @default(autoincrement())
-  username          String
+  username          String              @unique
   password          String
   email             String              @unique
   displayName       String?
@@ -107,8 +107,8 @@ model Outbox {
 }
 
 model LinkSummary {
-  id                 Int                  @id @default(autoincrement())
-  linkUrl            String
+  id                 Int                  @id
+  linkUrl            String               @unique
   title              String
   linkSummary        String
   BCP47              String

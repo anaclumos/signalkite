@@ -14,10 +14,6 @@ export default async () => {
         timezone: 'US/Pacific',
       },
     ]
-    console.log(
-      "\nUsing the default './scripts/seed.{js,ts}' template\nEdit the file to add seed data\n"
-    )
-
     Promise.all(
       data.map(async (data: Prisma.UserCreateArgs['data']) => {
         const record = await db.user.create({ data })
@@ -25,7 +21,34 @@ export default async () => {
       })
     )
   } catch (error) {
-    console.warn('Please define your seed data.')
+    console.warn('Cannot Populate User')
+    console.error(error)
+  }
+
+  // insert curated newsletter
+  try {
+    const data: Prisma.CuratedNewsletterCreateArgs['data'][] = [
+      {
+        newsletterName: 'Hacker News',
+        description: 'The (Venture) Capital of Startups',
+        publicNewsletterHandle: 'hackernews',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        User: {
+          connect: {
+            username: 'anaclumos',
+          },
+        },
+      },
+    ]
+    Promise.all(
+      data.map(async (data: Prisma.CuratedNewsletterCreateArgs['data']) => {
+        const record = await db.curatedNewsletter.create({ data })
+        console.log(record)
+      })
+    )
+  } catch (error) {
+    console.warn('Cannot Populate Curated Newsletter')
     console.error(error)
   }
 }
