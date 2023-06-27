@@ -19,12 +19,11 @@ export default async () => {
         await db.user.create({ data })
       })
     )
+    console.log('Successfully Populated User')
   } catch (error) {
     console.warn('Cannot Populate User')
-    console.error(error)
   }
 
-  // insert curated newsletter
   try {
     const data: Prisma.CuratedNewsletterCreateArgs['data'][] = [
       {
@@ -45,8 +44,8 @@ export default async () => {
         await db.curatedNewsletter.create({ data })
       })
     )
+    console.log('Successfully Populated Curated Newsletter')
   } catch (error) {
     console.warn('Cannot Populate Curated Newsletter')
-    console.error(error)
   }
 }

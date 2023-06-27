@@ -26,7 +26,7 @@ model User {
 
 model CuratedNewsletter {
   id                     Int            @id @default(autoincrement())
-  publicNewsletterHandle String
+  publicNewsletterHandle String         @unique
   newsletterName         String
   description            String?
   userId                 Int
@@ -39,7 +39,7 @@ model CuratedNewsletter {
 
 model CustomNewsletter {
   id                     Int            @id @default(autoincrement())
-  publicNewsletterHandle String
+  publicNewsletterHandle String         @unique
   keyword                String
   targetRegion           String
   userId                 Int
@@ -107,7 +107,7 @@ model Outbox {
 }
 
 model LinkSummary {
-  id                 Int                  @id
+  id                 Int                  @id @default(autoincrement())
   linkUrl            String               @unique
   title              String
   linkSummary        String
