@@ -14,4 +14,8 @@ import { createLogger } from '@redwoodjs/api/logger'
  * @param {string | DestinationStream} destination - defines where to log, such as a transport stream or file
  * @param {boolean} showConfig - whether to display logger configuration on initialization
  */
-export const logger = createLogger({})
+export const logger = createLogger({
+  options: {
+    level: 'debug',
+  },
+})
