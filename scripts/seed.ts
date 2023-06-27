@@ -16,8 +16,7 @@ export default async () => {
     ]
     Promise.all(
       data.map(async (data: Prisma.UserCreateArgs['data']) => {
-        const record = await db.user.create({ data })
-        console.log(record)
+        await db.user.create({ data })
       })
     )
   } catch (error) {
@@ -43,8 +42,7 @@ export default async () => {
     ]
     Promise.all(
       data.map(async (data: Prisma.CuratedNewsletterCreateArgs['data']) => {
-        const record = await db.curatedNewsletter.create({ data })
-        console.log(record)
+        await db.curatedNewsletter.create({ data })
       })
     )
   } catch (error) {
