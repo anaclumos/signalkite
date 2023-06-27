@@ -1,4 +1,5 @@
 import { db } from 'api/src/lib/db'
+import { logger } from 'api/src/lib/logger'
 
 const main = async () => {
   const bestStories = await fetch(
@@ -10,11 +11,15 @@ const main = async () => {
       const story = await fetch(
         `https://hacker-news.firebaseio.com/v0/item/${id}.json`
       ).then((res) => res.json())
-      const link = await db.linkSummary.upsert({
-        where: { linkUrl: story.url },
+      const url =
+        story.url != null && story.url !== ''
+          ? story.url
+          : `http://news.ycombinator.com/item?id=${id}`
+      const result = await db.linkSummary.upsert({
+        where: { linkUrl: url },
         create: {
+          linkUrl: url,
           title: story.title,
-          linkUrl: story.url,
           linkSummary: '',
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -22,11 +27,11 @@ const main = async () => {
         },
         update: {
           title: story.title,
-          linkUrl: story.url,
+          linkUrl: url,
           updatedAt: new Date(),
         },
       })
-      console.log(link)
+      logger.info(`updateHackerNewsLinks: Updated ${result.linkUrl}`)
     })
   )
 }
