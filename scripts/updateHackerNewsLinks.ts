@@ -23,12 +23,14 @@ const main = async () => {
           linkSummary: '',
           createdAt: new Date(),
           updatedAt: new Date(),
-          BCP47: 'en-US', // Hacker News is in English
+          BCP47: 'en-US', // Hacker News is in English, initially
+          body: '',
         },
         update: {
           title: story.title,
           linkUrl: url,
           updatedAt: new Date(),
+          body: '',
         },
       })
       logger.info(`updateHackerNewsLinks: Updated ${result.linkUrl}`)
