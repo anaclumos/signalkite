@@ -1,8 +1,6 @@
-// To access your database
-// Append api/* to import from api and web/* to import from web
 import { db } from 'api/src/lib/db'
 
-export default async () => {
+const main = async () => {
   const bestStories = await fetch(
     'https://hacker-news.firebaseio.com/v0/beststories.json'
   ).then((res) => res.json())
@@ -12,9 +10,7 @@ export default async () => {
       const story = await fetch(
         `https://hacker-news.firebaseio.com/v0/item/${id}.json`
       ).then((res) => res.json())
-      console.log(story)
-
-      db.linkSummary.upsert({
+      const link = await db.linkSummary.upsert({
         where: { linkUrl: story.url },
         create: {
           title: story.title,
@@ -30,6 +26,19 @@ export default async () => {
           updatedAt: new Date(),
         },
       })
+      console.log(link)
     })
   )
+}
+
+export default async () => {
+  main()
+    .then(async () => {
+      await db.$disconnect()
+    })
+    .catch(async (e) => {
+      console.error(e)
+      await db.$disconnect()
+      process.exit(1)
+    })
 }
