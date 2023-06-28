@@ -107,13 +107,25 @@ model Outbox {
 }
 
 model LinkSummary {
-  id                 Int                  @id @default(autoincrement())
-  linkUrl            String               @unique
+  id                 Int                      @id @default(autoincrement())
+  linkUrl            String                   @unique
   title              String
   linkSummary        String
   BCP47              String
-  createdAt          DateTime             @default(now())
-  updatedAt          DateTime             @updatedAt
+  createdAt          DateTime                 @default(now())
+  updatedAt          DateTime                 @updatedAt
   body               String?
   ContentLinkSummary ContentLinkSummary[]
+  Translation        LinkSummaryTranslation[]
+}
+
+model LinkSummaryTranslation {
+  id            Int         @id @default(autoincrement())
+  linkSummaryId Int
+  BCP47         String
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  title         String
+  linkSummary   String
+  LinkSummary   LinkSummary @relation(fields: [linkSummaryId], references: [id])
 }
