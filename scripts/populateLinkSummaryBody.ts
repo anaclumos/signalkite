@@ -31,13 +31,17 @@ const fetchContent = async (url: string) => {
         url.split('youtu.be/')[1].split('&')[0] ??
         url.split('youtube.com/embed/')[1].split('&')[0] ??
         url.split('youtube.com/watch?v=')[1].split('&')[0]
-      body = JSON.stringify(await YoutubeTranscript.fetchTranscript(videoId))
+
+      const transcript = await YoutubeTranscript.fetchTranscript(videoId)
+      body = transcript.map((t) => t.text).join(' ')
+
       if (body?.toString().trim() === '') {
         throw new Error('😵 Youtube Transcript is empty')
       }
       log(`✅ Downloaded Youtube Transcript for ${url}`, 'info')
     } catch (e) {
       log(`❌ Cannot Download Youtube Transcript for ${url}, ${e}`, 'error')
+      return '' // OpenAI Whisper
     }
   }
 
