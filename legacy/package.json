@@ -10,7 +10,7 @@
     "clean": "rm -rf .next",
     "prettier": "prettier --config .prettierrc -w '**/*.{ts,tsx,json,md,mdx,css,scss,html,yml,yaml,js,jsx}'",
     "pprettier": "pprettier --write '**/*.{ts,tsx,json,md,mdx,css,scss,html,yml,yaml,js,jsx}'",
-    "cleanup": "python3 data/sanitize.py && yarn pprettier",
+    "cleanup": "python3 data/sanitize.py && yarn prettier",
     "step1": "python3 data/main.py",
     "step2": "python3 data/translate.py",
     "step3": "python3 data/frontmatter_inject.py && python3 data/rss.py"
