@@ -89,7 +89,6 @@ const main = async () => {
             { commentBody: { not: '' } },
             { commentBody: { not: null } },
             { title: { not: '' } },
-            { title: { not: null } },
           ],
         },
       ],
