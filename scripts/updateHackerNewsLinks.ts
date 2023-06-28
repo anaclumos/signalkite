@@ -1,5 +1,5 @@
 import { db } from 'api/src/lib/db'
-import { logger } from 'api/src/lib/logger'
+import { log } from 'log'
 
 const main = async () => {
   const bestStories = await fetch(
@@ -38,7 +38,7 @@ const main = async () => {
           body: '',
         },
       })
-      logger.info(`updateHackerNewsLinks: Updated ${result.linkUrl}`)
+      log(`✅ Updated ${result.linkUrl}`, 'info')
     })
   )
 }
@@ -47,6 +47,7 @@ export default async () => {
   main()
     .then(async () => {
       await db.$disconnect()
+      process.exit(0)
     })
     .catch(async (e) => {
       console.error(e)
