@@ -130,7 +130,12 @@ const fetchContent = async (url: string) => {
 const main = async () => {
   const linkSummaries = await db.linkSummary.findMany({
     where: {
-      OR: [{ body: null }, { body: '' }],
+      OR: [
+        { body: '' },
+        { body: null },
+        { commentBody: '' },
+        { commentBody: null },
+      ],
     },
     take: 100,
   })
@@ -138,8 +143,7 @@ const main = async () => {
   await Promise.all(
     linkSummaries.map(async (linkSummary) => {
       const { id, linkUrl, commentUrl } = linkSummary
-      log(`⏳ Trying LinkSummary ${id} (${linkUrl})`, 'info')
-
+      log(`⏳ Trying to download ${id} (${linkUrl})`, 'info')
       if (linkUrl?.includes('twitter.com')) {
         log(
           `❌ Ignoring Twitter LinkSummary ${id} with body ${linkUrl}`,
@@ -153,8 +157,8 @@ const main = async () => {
         where: { id },
         data: { body, commentBody },
       })
-      return Promise.resolve()
       log(`💾 Updated LinkSummary ${id} (${linkUrl})`, 'info')
+      return Promise.resolve()
     })
   )
 
