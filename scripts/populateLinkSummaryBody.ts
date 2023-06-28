@@ -1,21 +1,8 @@
 import { db } from 'api/src/lib/db'
-import { logger } from 'api/src/lib/logger'
+import { log } from 'log'
 import pdf from 'pdf-parse'
 import playwright from 'playwright'
 import { YoutubeTranscript } from 'youtube-transcript'
-
-const log = (message: string, level: 'info' | 'error' = 'info') => {
-  if (process.env.NODE_ENV === 'production') {
-    if (level === 'info') {
-      logger.info(message)
-    } else {
-      logger.error(message)
-    }
-  } else {
-    // In development, we want to see these messages on the console
-    console.log(message)
-  }
-}
 
 const timedFetch = async (url: string, timeout = 10000) => {
   const controller = new AbortController()
@@ -66,7 +53,7 @@ const fetchContent = async (url: string) => {
       const data = await pdf(buffer)
       body = data.text
       if (body?.toString().trim() === '') {
-        throw new Error('😵 PDF is empty')
+        throw new Error('PDF is empty')
       }
       log(`✅ Downloaded PDF for ${url}`, 'info')
     } catch (e) {
@@ -138,7 +125,7 @@ const fetchContent = async (url: string) => {
   return body
 }
 
-export default async () => {
+const main = async () => {
   const linkSummaries = await db.linkSummary.findMany({
     where: { body: '' },
     take: 100,
@@ -170,4 +157,17 @@ export default async () => {
   log(`🏁 Finished`, 'info')
   await db.$disconnect()
   process.exit(0)
+}
+
+export default async () => {
+  main()
+    .then(async () => {
+      await db.$disconnect()
+      process.exit(0)
+    })
+    .catch(async (e) => {
+      console.error(e)
+      await db.$disconnect()
+      process.exit(1)
+    })
 }
