@@ -129,7 +129,9 @@ const fetchContent = async (url: string) => {
 
 const main = async () => {
   const linkSummaries = await db.linkSummary.findMany({
-    where: { body: '' },
+    where: {
+      OR: [{ body: null }, { body: '' }],
+    },
     take: 100,
   })
 
