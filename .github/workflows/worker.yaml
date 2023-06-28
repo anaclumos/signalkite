@@ -17,5 +17,6 @@ jobs:
         uses: borales/actions-yarn@v4
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         with:
           cmd: worker
