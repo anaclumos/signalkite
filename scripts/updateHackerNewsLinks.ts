@@ -26,17 +26,14 @@ const main = async () => {
               ? ''
               : `https://news.ycombinator.com/item?id=${id}`,
           title: story.title,
-          linkSummary: '',
           createdAt: new Date(),
           updatedAt: new Date(),
           BCP47: 'en-US', // Hacker News is in English, initially
-          body: '',
         },
         update: {
           title: story.title,
           linkUrl: url,
           updatedAt: new Date(),
-          body: '',
         },
       })
       log(`✅ Updated ${result.linkUrl}`, 'info')
