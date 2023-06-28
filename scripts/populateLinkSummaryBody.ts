@@ -44,9 +44,7 @@ const fetchContent = async (url: string) => {
         throw new Error('😵 Youtube Transcript is empty')
       }
       log(
-        `✅ Downloaded Youtube Transcript for ${url}, ${body
-          ?.toString()
-          .substring(0, 20)}`,
+        `✅ Downloaded Youtube Transcript for ${url}, ${body?.toString()}`,
         'info'
       )
     } catch (e) {
@@ -69,10 +67,7 @@ const fetchContent = async (url: string) => {
       if (body?.toString().trim() === '') {
         throw new Error('😵 PDF is empty')
       }
-      log(
-        `✅ Downloaded PDF for ${url}, ${body?.toString().substring(0, 20)}`,
-        'info'
-      )
+      log(`✅ Downloaded PDF for ${url}, ${body?.toString()}`, 'info')
     } catch (e) {
       log(`❌ Cannot Download PDF for ${url}, ${e}`, 'info')
     }
@@ -96,12 +91,7 @@ const fetchContent = async (url: string) => {
       if (body?.toString().trim() === '') {
         throw new Error('😵 Article is empty')
       }
-      log(
-        `✅ Downloaded Article for ${url}, ${body
-          ?.toString()
-          .substring(0, 20)}`,
-        'info'
-      )
+      log(`✅ Downloaded Article for ${url}, ${body?.toString()}`, 'info')
     } catch (e) {
       log(`❌ Cannot Download Article for ${url}, ${e}`, 'info')
     }
@@ -116,10 +106,7 @@ const fetchContent = async (url: string) => {
       if (body?.toString().trim() === '') {
         throw new Error('😵 Naive Download is empty')
       }
-      log(
-        `✅ Downloaded Naive for ${url}, ${body?.toString().substring(0, 20)}`,
-        'info'
-      )
+      log(`✅ Downloaded Naive for ${url}, ${body?.toString()}`, 'info')
     } catch (e) {
       log(`❌ Cannot Download Naive for ${url}, ${e}`, 'info')
     }
@@ -138,12 +125,7 @@ const fetchContent = async (url: string) => {
       if (body?.toString().trim() === '') {
         throw new Error('😵 Default Download is empty')
       }
-      log(
-        `✅ Downloaded Default for ${url}, ${body
-          ?.toString()
-          .substring(0, 20)}`,
-        'info'
-      )
+      log(`✅ Downloaded Default for ${url}, ${body?.toString()}`, 'info')
     } catch (e) {
       log(`❌ Cannot Download Default for ${url}, ${e}`, 'info')
       body = 'error'
@@ -159,7 +141,7 @@ export default async () => {
   })
 
   for (const linkSummary of linkSummaries) {
-    const { id, linkUrl } = linkSummary
+    const { id, linkUrl, commentUrl } = linkSummary
     log(`⏳ Trying LinkSummary ${id} with body ${linkUrl}`, 'info')
 
     if (linkUrl.includes('twitter.com')) {
@@ -168,17 +150,13 @@ export default async () => {
     }
 
     const body = await fetchContent(linkUrl)
+    const commentBody = await fetchContent(commentUrl)
     await db.linkSummary.update({
       where: { id },
-      data: { body },
+      data: { body, commentBody },
     })
 
-    log(
-      `💾 Updated LinkSummary ${id} with body ${body
-        ?.toString()
-        .substring(0, 20)}`,
-      'info'
-    )
+    log(`💾 Updated LinkSummary ${id} with body ${body?.toString()}`, 'info')
   }
 
   log(`🏁 Finished`, 'info')

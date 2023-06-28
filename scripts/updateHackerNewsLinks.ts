@@ -19,6 +19,11 @@ const main = async () => {
         where: { linkUrl: url },
         create: {
           linkUrl: url,
+          commentUrl:
+            // If the URL is the same as the HN URL, don't store it
+            `https://news.ycombinator.com/item?id=${id}` === url
+              ? ''
+              : `https://news.ycombinator.com/item?id=${id}`,
           title: story.title,
           linkSummary: '',
           createdAt: new Date(),
