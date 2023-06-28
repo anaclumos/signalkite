@@ -6,9 +6,10 @@ import { ChatOpenAI } from 'langchain/chat_models/openai'
 import { OpenAI } from 'langchain/llms/openai'
 import { HumanChatMessage, SystemChatMessage } from 'langchain/schema'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
-import { log } from 'log'
 
-const createBulletPointSummary = async (rawText) => {
+import { log } from './log'
+
+const createBulletPointSummary = async (rawText, title) => {
   // for summarizing and context generating
   const model = new OpenAI({ modelName: 'gpt-3.5-turbo-16k' })
   // for generating the actual chat
@@ -20,7 +21,7 @@ const createBulletPointSummary = async (rawText) => {
       chunkSize: 8192,
     })
 
-    log(`⏳ Shortening ${rawText.substring(0, 100)}`, 'info')
+    log(`⏳ Shortening ${title}`, 'info')
     const bodyDoc = await textSplitter.createDocuments([rawText])
     const bodyRes = await chain.call({
       input_documents: bodyDoc,
@@ -29,7 +30,7 @@ const createBulletPointSummary = async (rawText) => {
 
     const summary = bodyRes.text
 
-    log(`⏳ Generating Summary for ${rawText.substring(0, 100)}`, 'info')
+    log(`⏳ Generating Summary for ${title}`, 'info')
 
     const response = await chat.call([
       new SystemChatMessage(
@@ -77,9 +78,12 @@ const main = async () => {
 
   await Promise.all(
     linkSummaries.map(async (link) => {
-      const linkSummary = await createBulletPointSummary(link.body)
+      const linkSummary = await createBulletPointSummary(link.body, link.title)
       log(`✅ Summary for ${link.title} created`)
-      const commentSummary = await createBulletPointSummary(link.commentBody)
+      const commentSummary = await createBulletPointSummary(
+        link.commentBody,
+        link.title
+      )
       log(`✅ Comment summary for ${link.title} created`)
 
       await db.linkSummary.update({

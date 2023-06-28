@@ -1,8 +1,9 @@
 import { db } from 'api/src/lib/db'
-import { log } from 'log'
 import pdf from 'pdf-parse'
 import playwright from 'playwright'
 import { YoutubeTranscript } from 'youtube-transcript'
+
+import { log } from './log'
 
 const timedFetch = async (url: string, timeout = 10000) => {
   const controller = new AbortController()

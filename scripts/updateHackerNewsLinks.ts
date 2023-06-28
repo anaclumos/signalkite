@@ -1,5 +1,6 @@
 import { db } from 'api/src/lib/db'
-import { log } from 'log'
+
+import { log } from './log'
 
 const main = async () => {
   const bestStories = await fetch(
