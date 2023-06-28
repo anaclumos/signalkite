@@ -28,10 +28,14 @@ const timedFetch = async (url: string, timeout = 10000) => {
 }
 
 const fetchContent = async (url: string) => {
+  if (url === '') {
+    return ''
+  }
+
   let body = ''
 
   // youtube
-  if (url.includes('youtu')) {
+  if (url?.includes('youtu')) {
     try {
       log(`⏳ Downloading Youtube Transcript for ${url}`, 'info')
       const videoId =
@@ -43,17 +47,14 @@ const fetchContent = async (url: string) => {
       if (body?.toString().trim() === '') {
         throw new Error('😵 Youtube Transcript is empty')
       }
-      log(
-        `✅ Downloaded Youtube Transcript for ${url}, ${body?.toString()}`,
-        'info'
-      )
+      log(`✅ Downloaded Youtube Transcript for ${url}`, 'info')
     } catch (e) {
       log(`❌ Cannot Download Youtube Transcript for ${url}, ${e}`, 'error')
     }
   }
 
   if (
-    (body === '' && url.toLowerCase().includes('.pdf')) ||
+    (body === '' && url?.toLowerCase()?.includes('.pdf')) ||
     (await timedFetch(url).then((res) => res.headers.get('content-type'))) ===
       'application/pdf'
   ) {
@@ -67,7 +68,7 @@ const fetchContent = async (url: string) => {
       if (body?.toString().trim() === '') {
         throw new Error('😵 PDF is empty')
       }
-      log(`✅ Downloaded PDF for ${url}, ${body?.toString()}`, 'info')
+      log(`✅ Downloaded PDF for ${url}`, 'info')
     } catch (e) {
       log(`❌ Cannot Download PDF for ${url}, ${e}`, 'info')
     }
@@ -91,7 +92,7 @@ const fetchContent = async (url: string) => {
       if (body?.toString().trim() === '') {
         throw new Error('😵 Article is empty')
       }
-      log(`✅ Downloaded Article for ${url}, ${body?.toString()}`, 'info')
+      log(`✅ Downloaded Article for ${url}`, 'info')
     } catch (e) {
       log(`❌ Cannot Download Article for ${url}, ${e}`, 'info')
     }
@@ -106,14 +107,17 @@ const fetchContent = async (url: string) => {
       if (body?.toString().trim() === '') {
         throw new Error('😵 Naive Download is empty')
       }
-      log(`✅ Downloaded Naive for ${url}, ${body?.toString()}`, 'info')
+      log(`✅ Downloaded Naive for ${url}`, 'info')
     } catch (e) {
       log(`❌ Cannot Download Naive for ${url}, ${e}`, 'info')
     }
   }
 
   // final fallback, use playwright (very slow)
-  if (body === '' || String(body).toLowerCase().includes('enable javascript')) {
+  if (
+    body === '' ||
+    String(body)?.toLowerCase()?.includes('enable javascript')
+  ) {
     try {
       log(`⏳ Downloading Default for ${url}`, 'info')
       const browser = await playwright.chromium.launch()
@@ -125,7 +129,7 @@ const fetchContent = async (url: string) => {
       if (body?.toString().trim() === '') {
         throw new Error('😵 Default Download is empty')
       }
-      log(`✅ Downloaded Default for ${url}, ${body?.toString()}`, 'info')
+      log(`✅ Downloaded Default for ${url}`, 'info')
     } catch (e) {
       log(`❌ Cannot Download Default for ${url}, ${e}`, 'info')
       body = 'error'
@@ -140,26 +144,30 @@ export default async () => {
     take: 100,
   })
 
-  for (const linkSummary of linkSummaries) {
-    const { id, linkUrl, commentUrl } = linkSummary
-    log(`⏳ Trying LinkSummary ${id} with body ${linkUrl}`, 'info')
+  await Promise.all(
+    linkSummaries.map(async (linkSummary) => {
+      const { id, linkUrl, commentUrl } = linkSummary
+      log(`⏳ Trying LinkSummary ${id} (${linkUrl})`, 'info')
 
-    if (linkUrl.includes('twitter.com')) {
-      log(`❌ Ignoring Twitter LinkSummary ${id} with body ${linkUrl}`, 'info')
-      continue
-    }
-
-    const body = await fetchContent(linkUrl)
-    const commentBody = await fetchContent(commentUrl)
-    await db.linkSummary.update({
-      where: { id },
-      data: { body, commentBody },
+      if (linkUrl?.includes('twitter.com')) {
+        log(
+          `❌ Ignoring Twitter LinkSummary ${id} with body ${linkUrl}`,
+          'info'
+        )
+        return Promise.resolve()
+      }
+      const body = await fetchContent(linkUrl)
+      const commentBody = await fetchContent(commentUrl)
+      await db.linkSummary.update({
+        where: { id },
+        data: { body, commentBody },
+      })
+      return Promise.resolve()
+      log(`💾 Updated LinkSummary ${id} (${linkUrl})`, 'info')
     })
-
-    log(`💾 Updated LinkSummary ${id} with body ${body?.toString()}`, 'info')
-  }
+  )
 
   log(`🏁 Finished`, 'info')
-  // kill all remaining connections
+  await db.$disconnect()
   process.exit(0)
 }
