@@ -128,8 +128,8 @@ const fetchContent = async (url: string) => {
 
 const main = async () => {
   const linkSummaries = await db.linkSummary.findMany({
-    where: { body: '' },
-    take: 100,
+    where: { body: '', commentBody: '' },
+    take: 10,
   })
 
   await Promise.all(
