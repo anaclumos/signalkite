@@ -11,7 +11,8 @@
     "lint": "yarn rw lint --fix",
     "format": "prettier --write \"**/*.{ts,tsx,json,md,mdx,css,scss,html,yml,yaml,js,jsx}\"",
     "format:parallel": "pprettier  --write \"**/*.{ts,tsx,json,md,mdx,css,scss,html,yml,yaml,js,jsx}\"",
-    "translate": "yarn dlx i18next-parser 'web/**/*.tsx' -o 'web/src/locales/$LOCALE.json' -c 'web/src/i18next-parser.config.ts'"
+    "translate": "yarn dlx i18next-parser 'web/**/*.tsx' -o 'web/src/locales/$LOCALE.json' -c 'web/src/i18next-parser.config.ts'",
+    "hn-ai": "yarn rw exec updateHackerNewsLinks && yarn rw exec populateLinkSummaryBody && yarn rw exec generateGptLinkSummary"
   },
   "devDependencies": {
     "@mixer/parallel-prettier": "^2.0.3",
