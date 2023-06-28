@@ -5,12 +5,16 @@ import playwright from 'playwright'
 import { YoutubeTranscript } from 'youtube-transcript'
 
 const log = (message: string, level: 'info' | 'error' = 'info') => {
-  if (level === 'info') {
-    logger.info(message)
+  if (process.env.NODE_ENV === 'production') {
+    if (level === 'info') {
+      logger.info(message)
+    } else {
+      logger.error(message)
+    }
   } else {
-    logger.error(message)
+    // In development, we want to see these messages on the console
+    console.log(message)
   }
-  console.log(message)
 }
 
 const timedFetch = async (url: string, timeout = 10000) => {
@@ -35,14 +39,14 @@ const fetchContent = async (url: string) => {
         url.split('youtu.be/')[1].split('&')[0] ??
         url.split('youtube.com/embed/')[1].split('&')[0] ??
         url.split('youtube.com/watch?v=')[1].split('&')[0]
-      body = (await YoutubeTranscript.fetchTranscript(videoId))?.toString()
+      body = JSON.stringify(await YoutubeTranscript.fetchTranscript(videoId))
       if (body?.toString().trim() === '') {
         throw new Error('😵 Youtube Transcript is empty')
       }
       log(
         `✅ Downloaded Youtube Transcript for ${url}, ${body
           ?.toString()
-          .substring(0, 100)}`,
+          .substring(0, 20)}`,
         'info'
       )
     } catch (e) {
@@ -66,7 +70,7 @@ const fetchContent = async (url: string) => {
         throw new Error('😵 PDF is empty')
       }
       log(
-        `✅ Downloaded PDF for ${url}, ${body?.toString().substring(0, 100)}`,
+        `✅ Downloaded PDF for ${url}, ${body?.toString().substring(0, 20)}`,
         'info'
       )
     } catch (e) {
@@ -82,6 +86,9 @@ const fetchContent = async (url: string) => {
         `https://web.scraper.workers.dev/?selector=article,+main,+body,+noscript&scrape=text&url=${url}`
       )
       const json = await res.json()
+      if (json?.error) {
+        throw new Error(json?.result?.error)
+      }
       body =
         json?.result?.article?.toString() ||
         json?.result?.main?.toString() ||
@@ -92,11 +99,29 @@ const fetchContent = async (url: string) => {
       log(
         `✅ Downloaded Article for ${url}, ${body
           ?.toString()
-          .substring(0, 100)}`,
+          .substring(0, 20)}`,
         'info'
       )
     } catch (e) {
       log(`❌ Cannot Download Article for ${url}, ${e}`, 'info')
+    }
+  }
+
+  // try naive fetch as Googlebot
+  if (body === '') {
+    try {
+      log(`⏳ Downloading Naive for ${url}`, 'info')
+      const res = await timedFetch(url, 30000)
+      body = await res.text()
+      if (body?.toString().trim() === '') {
+        throw new Error('😵 Naive Download is empty')
+      }
+      log(
+        `✅ Downloaded Naive for ${url}, ${body?.toString().substring(0, 20)}`,
+        'info'
+      )
+    } catch (e) {
+      log(`❌ Cannot Download Naive for ${url}, ${e}`, 'info')
     }
   }
 
@@ -116,7 +141,7 @@ const fetchContent = async (url: string) => {
       log(
         `✅ Downloaded Default for ${url}, ${body
           ?.toString()
-          .substring(0, 100)}`,
+          .substring(0, 20)}`,
         'info'
       )
     } catch (e) {
@@ -130,7 +155,7 @@ const fetchContent = async (url: string) => {
 export default async () => {
   const linkSummaries = await db.linkSummary.findMany({
     where: { body: '' },
-    take: 20,
+    take: 100,
   })
 
   for (const linkSummary of linkSummaries) {
@@ -145,16 +170,18 @@ export default async () => {
     const body = await fetchContent(linkUrl)
     await db.linkSummary.update({
       where: { id },
-      data: { body: body?.toString().replace(/\n/g, ' ') },
+      data: { body },
     })
 
     log(
       `💾 Updated LinkSummary ${id} with body ${body
         ?.toString()
-        .substring(0, 100)}`,
+        .substring(0, 20)}`,
       'info'
     )
   }
 
   log(`🏁 Finished`, 'info')
+  // kill all remaining connections
+  process.exit(0)
 }
