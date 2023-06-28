@@ -6,24 +6,30 @@ import { ChatOpenAI } from 'langchain/chat_models/openai'
 import { OpenAI } from 'langchain/llms/openai'
 import { HumanChatMessage, SystemChatMessage } from 'langchain/schema'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
+import { log } from 'log'
 
 const createBulletPointSummary = async (rawText) => {
   // for summarizing and context generating
-  const model = new OpenAI({ modelName: 'gpt-3.5-turbo' })
+  const model = new OpenAI({ modelName: 'gpt-3.5-turbo-16k' })
   // for generating the actual chat
   const chat = new ChatOpenAI({ modelName: 'gpt-3.5-turbo' })
 
   const chain = loadSummarizationChain(model, { type: 'map_reduce' })
   try {
     const textSplitter = new RecursiveCharacterTextSplitter({
-      chunkSize: 1000,
+      chunkSize: 8192,
     })
+
+    log(`⏳ Shortening ${rawText.substring(0, 100)}`, 'info')
     const bodyDoc = await textSplitter.createDocuments([rawText])
     const bodyRes = await chain.call({
       input_documents: bodyDoc,
     })
     if (!bodyRes?.text) return
+
     const summary = bodyRes.text
+
+    log(`⏳ Generating Summary for ${rawText.substring(0, 100)}`, 'info')
 
     const response = await chat.call([
       new SystemChatMessage(
@@ -63,7 +69,7 @@ const createBulletPointSummary = async (rawText) => {
   }
 }
 
-export default async () => {
+const main = async () => {
   const linkSummaries = await db.linkSummary.findMany({
     where: { linkSummary: '', body: { not: '' } },
     take: 5,
@@ -72,7 +78,9 @@ export default async () => {
   await Promise.all(
     linkSummaries.map(async (link) => {
       const linkSummary = await createBulletPointSummary(link.body)
+      log(`✅ Summary for ${link.title} created`)
       const commentSummary = await createBulletPointSummary(link.commentBody)
+      log(`✅ Comment summary for ${link.title} created`)
 
       await db.linkSummary.update({
         where: { id: link.id },
@@ -83,4 +91,17 @@ export default async () => {
       })
     })
   )
+}
+
+export default async () => {
+  main()
+    .then(async () => {
+      await db.$disconnect()
+      process.exit(0)
+    })
+    .catch(async (e) => {
+      console.error(e)
+      await db.$disconnect()
+      process.exit(1)
+    })
 }
