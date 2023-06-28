@@ -73,7 +73,26 @@ const createBulletPointSummary = async (rawText, title) => {
 const main = async () => {
   const linkSummaries = await db.linkSummary.findMany({
     where: {
-      AND: [{ linkSummary: '' }, { body: { not: '' } }],
+      AND: [
+        {
+          OR: [
+            { linkSummary: null },
+            { linkSummary: '' },
+            { commentSummary: null },
+            { commentSummary: '' },
+          ],
+        },
+        {
+          AND: [
+            { body: { not: '' } },
+            { body: { not: null } },
+            { commentBody: { not: '' } },
+            { commentBody: { not: null } },
+            { title: { not: '' } },
+            { title: { not: null } },
+          ],
+        },
+      ],
     },
     take: 10,
   })
