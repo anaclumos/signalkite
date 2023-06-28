@@ -110,10 +110,10 @@ model LinkSummary {
   id                 Int                      @id @default(autoincrement())
   title              String
   linkUrl            String                   @unique
-  linkSummary        String
+  BCP47              String
+  linkSummary        String?
   commentUrl         String?
   commentSummary     String?
-  BCP47              String
   createdAt          DateTime                 @default(now())
   updatedAt          DateTime                 @updatedAt
   body               String?
