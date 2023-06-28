@@ -1,0 +1,21 @@
+name: worker
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
+permissions: write-all
+jobs:
+  news:
+    environment: Production
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: yarn install
+      - name: Run worker
+        uses: borales/actions-yarn@v4
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        with:
+          cmd: worker
