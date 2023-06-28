@@ -5,7 +5,7 @@ import { YoutubeTranscript } from 'youtube-transcript'
 
 import { log } from './log'
 
-const timedFetch = async (url: string, timeout = 10000) => {
+const timedFetch = async (url: string, timeout = 60000) => {
   const controller = new AbortController()
   const id = setTimeout(() => controller.abort(), timeout)
   const response = await fetch(url, {
@@ -42,9 +42,10 @@ const fetchContent = async (url: string) => {
   }
 
   if (
-    (body === '' && url?.toLowerCase()?.includes('.pdf')) ||
-    (await timedFetch(url).then((res) => res.headers.get('content-type'))) ===
-      'application/pdf'
+    body === '' &&
+    (url?.toLowerCase()?.includes('.pdf') ||
+      (await timedFetch(url).then((res) => res.headers.get('content-type'))) ===
+        'application/pdf')
   ) {
     try {
       log(`⏳ Downloading PDF for ${url}`, 'info')
