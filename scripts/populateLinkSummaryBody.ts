@@ -72,16 +72,13 @@ const fetchContent = async (url: string) => {
     try {
       log(`⏳ Downloading Article for ${url}`, 'info')
       const res = await timedFetch(
-        `https://web.scraper.workers.dev/?selector=article,+main,+body,+noscript&scrape=text&url=${url}`
+        `https://web.scraper.workers.dev/?selector=article,+main,+noscript&scrape=text&url=${url}`
       )
       const json = await res.json()
       if (json?.error) {
         throw new Error(json?.result?.error)
       }
-      body =
-        json?.result?.article?.toString() ||
-        json?.result?.main?.toString() ||
-        json?.result?.body?.toString()
+      body = json?.result?.article?.toString() || json?.result?.main?.toString()
       if (body?.toString().trim() === '') {
         throw new Error('😵 Article is empty')
       }
@@ -129,6 +126,37 @@ const fetchContent = async (url: string) => {
     }
   }
   return body
+    .replaceAll('\n', ' ')
+    .replaceAll('\t', ' ')
+    .replaceAll('\r', ' ')
+    .replaceAll(/<[^>]*>/g, '')
+    .replaceAll(/&nbsp;/g, ' ')
+    .replaceAll(/&amp;/g, '&')
+    .replaceAll(/&quot;/g, '"')
+    .replaceAll(/&apos;/g, "'")
+    .replaceAll(/&lt;/g, '<')
+    .replaceAll(/&gt;/g, '>')
+    .replaceAll(/&cent;/g, '¢')
+    .replaceAll(/&pound;/g, '£')
+    .replaceAll(/&yen;/g, '¥')
+    .replaceAll(/&euro;/g, '€')
+    .replaceAll(/&copy;/g, '©')
+    .replaceAll(/&reg;/g, '®')
+    .replaceAll(/&trade;/g, '™')
+    .replaceAll(/&times;/g, '×')
+    .replaceAll(/&divide;/g, '÷')
+    .replaceAll(/&para;/g, '¶')
+    .replaceAll(/&sect;/g, '§')
+    .replaceAll(/&bull;/g, '•')
+    .replaceAll(/&hellip;/g, '…')
+    .replaceAll(/&ndash;/g, '–')
+    .replaceAll(/&mdash;/g, '—')
+    .replaceAll(/&lsquo;/g, '‘')
+    .replaceAll(/&rsquo;/g, '’')
+    .replaceAll(/&sbquo;/g, '‚')
+    .replaceAll(/&ldquo;/g, '“')
+    .replaceAll(/&rdquo;/g, '”')
+    .trim()
 }
 
 const main = async () => {
