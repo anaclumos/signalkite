@@ -3,7 +3,7 @@ import pdf from 'pdf-parse'
 import playwright from 'playwright'
 import { YoutubeTranscript } from 'youtube-transcript'
 
-import { log } from './log'
+import { log, sanitize } from './util'
 
 const timedFetch = async (url: string, timeout = 60000) => {
   const controller = new AbortController()
@@ -125,38 +125,7 @@ const fetchContent = async (url: string) => {
       body = 'error'
     }
   }
-  return body
-    .replaceAll('\n', ' ')
-    .replaceAll('\t', ' ')
-    .replaceAll('\r', ' ')
-    .replaceAll(/<[^>]*>/g, '')
-    .replaceAll(/&nbsp;/g, ' ')
-    .replaceAll(/&amp;/g, '&')
-    .replaceAll(/&quot;/g, '"')
-    .replaceAll(/&apos;/g, "'")
-    .replaceAll(/&lt;/g, '<')
-    .replaceAll(/&gt;/g, '>')
-    .replaceAll(/&cent;/g, '¢')
-    .replaceAll(/&pound;/g, '£')
-    .replaceAll(/&yen;/g, '¥')
-    .replaceAll(/&euro;/g, '€')
-    .replaceAll(/&copy;/g, '©')
-    .replaceAll(/&reg;/g, '®')
-    .replaceAll(/&trade;/g, '™')
-    .replaceAll(/&times;/g, '×')
-    .replaceAll(/&divide;/g, '÷')
-    .replaceAll(/&para;/g, '¶')
-    .replaceAll(/&sect;/g, '§')
-    .replaceAll(/&bull;/g, '•')
-    .replaceAll(/&hellip;/g, '…')
-    .replaceAll(/&ndash;/g, '–')
-    .replaceAll(/&mdash;/g, '—')
-    .replaceAll(/&lsquo;/g, '‘')
-    .replaceAll(/&rsquo;/g, '’')
-    .replaceAll(/&sbquo;/g, '‚')
-    .replaceAll(/&ldquo;/g, '“')
-    .replaceAll(/&rdquo;/g, '”')
-    .trim()
+  return sanitize(body)
 }
 
 const main = async () => {

@@ -7,7 +7,7 @@ import { OpenAI } from 'langchain/llms/openai'
 import { HumanChatMessage, SystemChatMessage } from 'langchain/schema'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 
-import { log } from './log'
+import { log, sanitize } from './util'
 
 const createBulletPointSummary = async (rawText, title) => {
   // for summarizing and context generating
@@ -22,13 +22,13 @@ const createBulletPointSummary = async (rawText, title) => {
     })
 
     log(`⏳ Shortening ${title}`, 'info')
-    const bodyDoc = await textSplitter.createDocuments([rawText])
+    const bodyDoc = await textSplitter.createDocuments([sanitize(rawText)])
     const bodyRes = await chain.call({
       input_documents: bodyDoc,
     })
     if (!bodyRes?.text) return
 
-    const summary = bodyRes.text
+    const summary = sanitize(bodyRes.text)
 
     log(`⏳ Generating Summary for ${title}`, 'info')
 
@@ -57,12 +57,12 @@ const createBulletPointSummary = async (rawText, title) => {
     const { text } = response
     let arr = text.split('\n')
 
-    arr = arr.map((item) => item.trim())
+    arr = arr.map((item) => sanitize(item))
     arr = arr.map((item) => {
       if (item.startsWith('- ')) {
         item = item.substring(2)
       }
-      return item
+      return sanitize(item)
     })
     return arr
   } catch (e) {
