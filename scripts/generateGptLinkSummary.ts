@@ -21,7 +21,7 @@ const createBulletPointSummary = async (rawText, title) => {
       chunkSize: 8192,
     })
 
-    log(`⏳ Shortening ${title}`, 'info')
+    log(`⏳ Shortening "${title}"`, 'info')
     const bodyDoc = await textSplitter.createDocuments([sanitize(rawText)])
     const bodyRes = await chain.call({
       input_documents: bodyDoc,
@@ -30,7 +30,7 @@ const createBulletPointSummary = async (rawText, title) => {
 
     const summary = sanitize(bodyRes.text)
 
-    log(`⏳ Generating Summary for ${title}`, 'info')
+    log(`⏳ Generating Summary for "${title}"`, 'info')
 
     const response = await chat.call([
       new SystemChatMessage(
