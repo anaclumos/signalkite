@@ -93,7 +93,7 @@ const main = async () => {
         },
       ],
     },
-    take: 10,
+    take: 20,
   })
 
   await Promise.all(
