@@ -141,7 +141,7 @@ const main = async () => {
     take: 100,
   })
 
-  await Promise.all(
+  await Promise.allSettled(
     linkSummaries.map(async (linkSummary) => {
       const { id, linkUrl, commentUrl } = linkSummary
       log(`⏳ Trying to download ${id} (${linkUrl})`, 'info')
