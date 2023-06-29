@@ -72,13 +72,16 @@ const fetchContent = async (url: string) => {
     try {
       log(`⏳ Downloading Article for ${url}`, 'info')
       const res = await timedFetch(
-        `https://web.scraper.workers.dev/?selector=article,+main,+noscript&scrape=text&url=${url}`
+        `https://web.scraper.workers.dev/?selector=article,+main,+table&scrape=text&url=${url}`
       )
       const json = await res.json()
       if (json?.error) {
         throw new Error(json?.result?.error)
       }
-      body = json?.result?.article?.toString() || json?.result?.main?.toString()
+      body =
+        json?.result?.article?.toString() ||
+        json?.result?.main?.toString() ||
+        json?.result?.table?.toString()
       if (body?.toString().trim() === '') {
         throw new Error('😵 Article is empty')
       }
