@@ -4,6 +4,7 @@
     "packages": [
       "api",
       "web",
+      "email",
       "legacy"
     ]
   },
@@ -12,7 +13,12 @@
     "format": "prettier --write \"**/*.{ts,tsx,json,md,mdx,css,scss,html,yml,yaml,js,jsx}\"",
     "format:parallel": "pprettier  --write \"**/*.{ts,tsx,json,md,mdx,css,scss,html,yml,yaml,js,jsx}\"",
     "translate": "yarn dlx i18next-parser 'web/**/*.tsx' -o 'web/src/locales/$LOCALE.json' -c 'web/src/i18next-parser.config.ts'",
-    "worker": "yarn rw prisma migrate deploy && yarn rw prisma generate && yarn rw dataMigrate up && yarn rw exec updateHackerNewsLinks && yarn rw exec populateLinkSummaryBody && yarn rw exec generateGptLinkSummary"
+    "worker": "yarn rw prisma migrate deploy && yarn rw prisma generate && yarn rw dataMigrate up && yarn rw exec updateHackerNewsLinks && yarn rw exec populateLinkSummaryBody && yarn rw exec generateGptLinkSummary",
+    "quick:web": "yarn rw dev",
+    "quick:email": "yarn workspace email dev",
+    "quick:storybook": "yarn rw storybook",
+    "quick:prisma": "yarn rw prisma studio",
+    "quick:migrate": "yarn rw prisma migrate dev"
   },
   "devDependencies": {
     "@mixer/parallel-prettier": "^2.0.3",
