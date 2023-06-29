@@ -3,7 +3,7 @@ import pdf from 'pdf-parse'
 import playwright from 'playwright'
 import { YoutubeTranscript } from 'youtube-transcript'
 
-import { log, sanitize } from './util'
+import { log, sanitize, throttle } from './util'
 
 const timedFetch = async (url: string, timeout = 60000) => {
   const controller = new AbortController()
@@ -155,7 +155,9 @@ const main = async () => {
         )
         return Promise.resolve()
       }
+      throttle()
       const body = await fetchContent(linkUrl)
+      throttle()
       const commentBody = await fetchContent(commentUrl)
       await db.linkSummary.update({
         where: { id },

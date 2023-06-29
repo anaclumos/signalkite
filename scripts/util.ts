@@ -12,6 +12,12 @@ export const log = (message: string, level: 'info' | 'error' = 'info') => {
   }
 }
 
+export const throttle = async (minimum: number = 1, maximum: number = 10) => {
+  await new Promise((r) =>
+    setTimeout(r, Math.floor(Math.random() * (maximum - minimum)) + minimum)
+  )
+}
+
 export const sanitize = (text: string) => {
   return text
     .replaceAll('\n', ' ')

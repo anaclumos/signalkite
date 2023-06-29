@@ -7,7 +7,7 @@ import { OpenAI } from 'langchain/llms/openai'
 import { HumanChatMessage, SystemChatMessage } from 'langchain/schema'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 
-import { log, sanitize } from './util'
+import { log, sanitize, throttle } from './util'
 
 const createBulletPointSummary = async (rawText, title) => {
   // for summarizing and context generating
@@ -120,8 +120,10 @@ const main = async () => {
 
   await Promise.all(
     linkSummaries.map(async (link) => {
+      throttle()
       const linkSummary = await createBulletPointSummary(link.body, link.title)
       log(`✅ Summary for ${link.title} created`)
+      throttle()
       const commentSummary = await createBulletPointSummary(
         link.commentBody,
         link.title
