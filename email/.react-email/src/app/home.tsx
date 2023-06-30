@@ -7,7 +7,7 @@ import { Shell } from '../components/shell';
 export default function Home({ navItems }) {
   return (
     <Shell navItems={navItems}>
-      <div className="max-w-md border border-slate-6 mx-auto mt-56 rounded-md p-8">
+      <div className="mx-auto mt-56 max-w-md rounded-md border border-slate-6 p-8">
         <Heading as="h2" weight="medium">
           Welcome to the React Email preview!
         </Heading>

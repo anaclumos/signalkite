@@ -19,10 +19,10 @@ export const Sidebar = React.forwardRef<SidebarElement, Readonly<SidebarProps>>(
     return (
       <aside
         ref={forwardedRef}
-        className="px-6 min-w-[275px] max-w-[275px] flex flex-col gap-4 border-r border-slate-6"
+        className="flex min-w-[275px] max-w-[275px] flex-col gap-4 border-r border-slate-6 px-6"
         {...props}
       >
-        <div className="h-[70px] flex items-center">
+        <div className="flex h-[70px] items-center">
           <Logo />
         </div>
 
@@ -57,13 +57,13 @@ export const Sidebar = React.forwardRef<SidebarElement, Readonly<SidebarProps>>(
                 />
               </svg>
 
-              <div className="flex items-center text-slate-11 transition ease-in-out duration-200 hover:text-slate-12">
+              <div className="flex items-center text-slate-11 transition duration-200 ease-in-out hover:text-slate-12">
                 <Heading
                   as="h3"
                   color="gray"
                   size="2"
                   weight="medium"
-                  className="transition ease-in-out duration-200 hover:text-slate-12"
+                  className="transition duration-200 ease-in-out hover:text-slate-12"
                 >
                   All emails
                 </Heading>
@@ -86,9 +86,9 @@ export const Sidebar = React.forwardRef<SidebarElement, Readonly<SidebarProps>>(
 
             {navItems && navItems.length > 0 && (
               <Collapsible.Content className="relative mt-3">
-                <div className="absolute left-2.5  w-px h-full bg-slate-6" />
+                <div className="absolute left-2.5  h-full w-px bg-slate-6" />
 
-                <div className="py-2 flex flex-col truncate">
+                <div className="flex flex-col truncate py-2">
                   <LayoutGroup id="sidebar">
                     {navItems &&
                       navItems.map((item) => {
@@ -97,7 +97,7 @@ export const Sidebar = React.forwardRef<SidebarElement, Readonly<SidebarProps>>(
                           <Link key={item} href={`/preview/${item}`}>
                             <motion.span
                               className={classnames(
-                                'text-[14px] flex items-center font-medium gap-2 w-full pl-4 h-8 rounded-md text-slate-11 relative transition ease-in-out duration-200',
+                                'relative flex h-8 w-full items-center gap-2 rounded-md pl-4 text-[14px] font-medium text-slate-11 transition duration-200 ease-in-out',
                                 {
                                   'text-cyan-11': isCurrentPage,
                                   'hover:text-slate-12': title !== item,
@@ -112,7 +112,7 @@ export const Sidebar = React.forwardRef<SidebarElement, Readonly<SidebarProps>>(
                                   animate={{ opacity: 1 }}
                                   exit={{ opacity: 0 }}
                                 >
-                                  <div className="bg-cyan-11 w-px absolute top-1 left-2.5 h-6" />
+                                  <div className="absolute top-1 left-2.5 h-6 w-px bg-cyan-11" />
                                 </motion.span>
                               )}
                               <svg

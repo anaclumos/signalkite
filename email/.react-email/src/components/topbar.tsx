@@ -26,7 +26,7 @@ export const Topbar = React.forwardRef<TopbarElement, Readonly<TopbarProps>>(
       <header
         ref={forwardedRef}
         className={classnames(
-          'bg-black flex relative items-center px-6 justify-between h-[70px] border-b border-slate-6',
+          'relative flex h-[70px] items-center justify-between border-b border-slate-6 bg-black px-6',
           className,
         )}
         {...props}
@@ -41,7 +41,7 @@ export const Topbar = React.forwardRef<TopbarElement, Readonly<TopbarProps>>(
           <LayoutGroup id="topbar">
             {setActiveView && (
               <ToggleGroup.Root
-                className="inline-block items-center bg-slate-2 border border-slate-6 rounded-md overflow-hidden"
+                className="inline-block items-center overflow-hidden rounded-md border border-slate-6 bg-slate-2"
                 type="single"
                 value={activeView}
                 aria-label="View mode"
@@ -53,7 +53,7 @@ export const Topbar = React.forwardRef<TopbarElement, Readonly<TopbarProps>>(
                 <ToggleGroup.Item value="desktop">
                   <motion.div
                     className={classnames(
-                      'text-sm font-medium px-3 py-2 transition ease-in-out duration-200 relative hover:text-slate-12',
+                      'relative px-3 py-2 text-sm font-medium transition duration-200 ease-in-out hover:text-slate-12',
                       {
                         'text-slate-11': activeView === 'source',
                         'text-slate-12': activeView === 'desktop',
@@ -75,7 +75,7 @@ export const Topbar = React.forwardRef<TopbarElement, Readonly<TopbarProps>>(
                 <ToggleGroup.Item value="source">
                   <motion.div
                     className={classnames(
-                      'text-sm font-medium px-3 py-2 transition ease-in-out duration-200 relative hover:text-slate-12',
+                      'relative px-3 py-2 text-sm font-medium transition duration-200 ease-in-out hover:text-slate-12',
                       {
                         'text-slate-11': activeView === 'desktop',
                         'text-slate-12': activeView === 'source',

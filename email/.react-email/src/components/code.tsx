@@ -68,14 +68,14 @@ export const Code: React.FC<Readonly<CodeProps>> = ({
                 'linear-gradient(90deg, rgba(56, 189, 248, 0) 0%, rgba(56, 189, 248, 0) 0%, rgba(232, 232, 232, 0.2) 33.02%, rgba(143, 143, 143, 0.6719) 64.41%, rgba(236, 72, 153, 0) 98.93%)',
             }}
           />
-          <div className="p-4 h-[650px] overflow-auto">
+          <div className="h-[650px] overflow-auto p-4">
             {tokens.map((line, i) => {
               return (
                 <div
                   key={i}
                   {...getLineProps({ line, key: i })}
                   className={classnames('whitespace-pre', {
-                    "before:text-slate-11 before:mr-2 before:content-['$']":
+                    "before:mr-2 before:text-slate-11 before:content-['$']":
                       language === 'bash' && tokens && tokens.length === 1,
                   })}
                 >

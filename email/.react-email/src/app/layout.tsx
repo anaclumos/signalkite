@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black text-slate-12 font-sans">
+      <body className="bg-black font-sans text-slate-12">
         <div className={classnames(inter.variable, 'font-sans')}>
           {children}
         </div>

@@ -18,7 +18,7 @@ export const Shell = React.forwardRef<ShellElement, Readonly<ShellProps>>(
     forwardedRef,
   ) => {
     return (
-      <div ref={forwardedRef} className="flex justify-between h-screen">
+      <div ref={forwardedRef} className="flex h-screen justify-between">
         <Sidebar navItems={navItems} title={title} />
         <main className="w-[calc(100%_-_275px)] bg-slate-2">
           {title && (

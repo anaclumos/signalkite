@@ -37,7 +37,7 @@ export const CodeContainer: React.FC<Readonly<CodeContainerProps>> = ({
       <a
         href={url}
         download={file.name}
-        className="text-slate-11 transition ease-in-out duration-200 hover:text-slate-12"
+        className="text-slate-11 transition duration-200 ease-in-out hover:text-slate-12"
       >
         <IconDownload />
       </a>
@@ -68,7 +68,7 @@ export const CodeContainer: React.FC<Readonly<CodeContainerProps>> = ({
   return (
     <pre
       className={
-        'border-slate-6 relative w-full items-center whitespace-pre rounded-md border text-sm backdrop-blur-md'
+        'relative w-full items-center whitespace-pre rounded-md border border-slate-6 text-sm backdrop-blur-md'
       }
       style={{
         lineHeight: '130%',
@@ -84,7 +84,7 @@ export const CodeContainer: React.FC<Readonly<CodeContainerProps>> = ({
               const isCurrentLang = activeLang === language;
               return (
                 <motion.button
-                  className={`relative py-[8px] px-4 text-sm font-medium font-sans transition ease-in-out duration-200 hover:text-slate-12 ${
+                  className={`relative py-[8px] px-4 font-sans text-sm font-medium transition duration-200 ease-in-out hover:text-slate-12 ${
                     activeLang !== language ? 'text-slate-11' : 'text-slate-12'
                   }`}
                   onClick={() => setActiveLang(language)}
