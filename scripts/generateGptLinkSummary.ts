@@ -47,6 +47,7 @@ const createBulletPointSummary = async (rawText, title) => {
         - Did something get released? What made such tech-savvy people suddenly interested in this post?
         Your job is to capture vital points that interest the readers.
         If there is no meaningful content, for example, if it looks like a simple error message, simply print "N/A."
+        Ignore any mention or sentenses on CSS contents and any referral, marketing, or promotional links/coupon codes.
 
         It must be a bullet point list, not a freeform text; that is, start with '-' immediately followed by a space.
         Therefore, it will start with '- '.
