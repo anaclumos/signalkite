@@ -100,26 +100,29 @@ export const NewsletterEmail = ({
                 <li key={`${sectionIndex}-${bulletIndex}`}>{`${bullet}`}</li>
               ))}
             </ul>
-            {
-              section.commentLink && section.commentBullets
-              && (<><Link href={section.commentLink}>
-              <Heading as="h3" key={`${sectionIndex}-comment`}>
-                Comments
-              </Heading>
-            </Link>
-            <ul
-              style={{
-                lineHeight: '1.5',
-                color: '#484848',
-                listStylePosition: 'outside',
-                paddingInlineStart: '20px',
-              }}
-            >
-              {section?.commentBullets?.map((bullet, bulletIndex) => (
-                <li key={`${sectionIndex}-${bulletIndex}`}>{`${bullet}`}</li>
-              ))}
-            </ul></>)
-            }
+            {section.commentLink && section.commentBullets && (
+              <>
+                <Link href={section.commentLink}>
+                  <Heading as="h3" key={`${sectionIndex}-comment`}>
+                    Comments
+                  </Heading>
+                </Link>
+                <ul
+                  style={{
+                    lineHeight: '1.5',
+                    color: '#484848',
+                    listStylePosition: 'outside',
+                    paddingInlineStart: '20px',
+                  }}
+                >
+                  {section?.commentBullets?.map((bullet, bulletIndex) => (
+                    <li
+                      key={`${sectionIndex}-${bulletIndex}`}
+                    >{`${bullet}`}</li>
+                  ))}
+                </ul>
+              </>
+            )}
           </>
         ))}
         <Hr style={hr} />
@@ -143,7 +146,6 @@ const container = {
   margin: '0 auto',
   maxWidth: '600px',
 }
-
 
 const footer = {
   fontSize: '14px',
