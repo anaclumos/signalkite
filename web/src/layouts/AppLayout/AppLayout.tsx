@@ -11,9 +11,16 @@ const AppLayout = ({ children }: AppLayoutProps) => {
   return (
     <>
       <Seo />
-      <Navigation />
-      <Box maxW={'1200px'} mx={'auto'} py={{ base: 2 }} px={{ base: 4 }}>
-        {children}
+      <Box
+        maxW={'1600px'}
+        mx={'auto'}
+        h="100dvh"
+        py={{ base: 2 }}
+        px={{ base: 4 }}
+        display={{ base: 'block', md: 'flex' }}
+      >
+        <Navigation />
+        <Box>{children}</Box>
       </Box>
     </>
   )
