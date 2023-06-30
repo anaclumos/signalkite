@@ -21,8 +21,8 @@ type NewsletterEmailProps = {
     headline: string
     link: string
     bullets: string[]
-    commentLink: string
-    commentBullets: string[]
+    commentLink?: string
+    commentBullets?: string[]
   }[]
 }
 
@@ -100,7 +100,9 @@ export const NewsletterEmail = ({
                 <li key={`${sectionIndex}-${bulletIndex}`}>{`${bullet}`}</li>
               ))}
             </ul>
-            <Link href={section.commentLink}>
+            {
+              section.commentLink && section.commentBullets
+              && (<><Link href={section.commentLink}>
               <Heading as="h3" key={`${sectionIndex}-comment`}>
                 Comments
               </Heading>
@@ -113,10 +115,11 @@ export const NewsletterEmail = ({
                 paddingInlineStart: '20px',
               }}
             >
-              {section.commentBullets.map((bullet, bulletIndex) => (
+              {section?.commentBullets?.map((bullet, bulletIndex) => (
                 <li key={`${sectionIndex}-${bulletIndex}`}>{`${bullet}`}</li>
               ))}
-            </ul>
+            </ul></>)
+            }
           </>
         ))}
         <Hr style={hr} />
