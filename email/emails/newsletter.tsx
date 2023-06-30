@@ -138,17 +138,9 @@ const main = {
 
 const container = {
   margin: '0 auto',
-  padding: '20px',
-  width: '600px',
+  maxWidth: '600px',
 }
 
-const heading = {
-  fontSize: '24px',
-  letterSpacing: '-0.5px',
-  lineHeight: '1.3',
-  color: '#484848',
-  padding: '17px 0 0',
-}
 
 const footer = {
   fontSize: '14px',
