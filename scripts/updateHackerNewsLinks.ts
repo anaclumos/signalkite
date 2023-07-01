@@ -22,6 +22,7 @@ const main = async () => {
           linkUrl: url,
           commentUrl:
             // If the URL is the same as the HN URL, don't store it
+            `http://news.ycombinator.com/item?id=${id}` === url ||
             `https://news.ycombinator.com/item?id=${id}` === url
               ? ''
               : `https://news.ycombinator.com/item?id=${id}`,
