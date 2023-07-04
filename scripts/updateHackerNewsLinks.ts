@@ -3,15 +3,25 @@ import { db } from 'api/src/lib/db'
 import { log } from './util'
 
 const main = async () => {
-  const bestStories = await fetch(
+  let bestStories = await fetch(
     'https://hacker-news.firebaseio.com/v0/beststories.json'
   ).then((res) => res.json())
 
+  bestStories = await Promise.all(
+    bestStories.map(
+      async (id) =>
+        await fetch(
+          `https://hacker-news.firebaseio.com/v0/item/${id}.json`
+        ).then((res) => res.json())
+    )
+  )
+
+  // cut down on the number of requests by only fetching the top 10
+  bestStories = bestStories.slice(0, 10)
+
   await Promise.all(
-    bestStories.map(async (id) => {
-      const story = await fetch(
-        `https://hacker-news.firebaseio.com/v0/item/${id}.json`
-      ).then((res) => res.json())
+    bestStories.map(async (story) => {
+      const id = story.id
       const url =
         story.url != null && story.url !== ''
           ? story.url
