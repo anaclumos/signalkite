@@ -13,7 +13,7 @@ model User {
   displayName         String?
   username            String    @unique
   email               String    @unique
-  loginToken          String
+  loginToken          String?
   loginTokenExpiresAt DateTime?
   isActive            Boolean   @default(false)
   timezone            String
