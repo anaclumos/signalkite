@@ -85,10 +85,10 @@ const createBulletPointSummary = async (rawText, title) => {
       if (item.startsWith('- ')) {
         item = item.substring(2)
       }
-      if (item.endsWith('\' -')) {
+      if (item.endsWith("' -")) {
         item = item.substring(0, item.length - 3)
       }
-      if (item.endsWith('\'')) {
+      if (item.endsWith("'")) {
         item = item.substring(0, item.length - 1)
       }
 
