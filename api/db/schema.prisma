@@ -9,127 +9,96 @@ generator client {
 }
 
 model User {
-  id                Int                 @id @default(autoincrement())
-  username          String              @unique
-  password          String
-  email             String              @unique
-  displayName       String?
-  isActive          Boolean             @default(false)
-  emailVerified     Boolean             @default(false)
-  timezone          String
-  createdAt         DateTime            @default(now())
-  updatedAt         DateTime            @updatedAt
-  Subscription      Subscription[]
-  CustomNewsletter  CustomNewsletter[]
-  CuratedNewsletter CuratedNewsletter[]
+  id                  Int       @id @default(autoincrement())
+  displayName         String?
+  username            String    @unique
+  email               String    @unique
+  loginToken          String
+  loginTokenExpiresAt DateTime?
+  isActive            Boolean   @default(false)
+  timezone            String
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
 }
 
-model CuratedNewsletter {
-  id                     Int            @id @default(autoincrement())
-  publicNewsletterHandle String         @unique
+model Newsletter {
+  id                     Int      @id @default(autoincrement())
+  publicNewsletterHandle String   @unique
   newsletterName         String
-  description            String?
-  userId                 Int
-  createdAt              DateTime       @default(now())
-  updatedAt              DateTime       @updatedAt
-  Subscription           Subscription[]
-  Content                Content[]
-  User                   User           @relation(fields: [userId], references: [id])
-}
-
-model CustomNewsletter {
-  id                     Int            @id @default(autoincrement())
-  publicNewsletterHandle String         @unique
   keyword                String
   targetRegion           String
   userId                 Int
-  active                 Boolean        @default(false)
-  createdAt              DateTime       @default(now())
-  updatedAt              DateTime       @updatedAt
-  Subscription           Subscription[]
-  Content                Content[]
-  User                   User           @relation(fields: [userId], references: [id])
+  active                 Boolean  @default(false)
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
 }
 
 model Subscription {
-  id                  Int                @id @default(autoincrement())
+  id                  Int      @id @default(autoincrement())
   userId              Int
   curatedNewsletterId Int?
-  customNewsletterId  Int?
+  newsletterId        Int?
   frequency           String
   time                String
   length              String
   BCP47               String
-  active              Boolean            @default(false)
-  createdAt           DateTime           @default(now())
-  updatedAt           DateTime           @updatedAt
-  User                User               @relation(fields: [userId], references: [id])
-  CuratedNewsletter   CuratedNewsletter? @relation(fields: [curatedNewsletterId], references: [id])
-  CustomNewsletter    CustomNewsletter?  @relation(fields: [customNewsletterId], references: [id])
-  Outbox              Outbox[]
+  active              Boolean  @default(false)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
 }
 
 model Content {
-  id                  Int                  @id @default(autoincrement())
+  id                  Int      @id @default(autoincrement())
   markdownContent     String?
   BCP47               String
   curatedNewsletterId Int?
-  customNewsletterId  Int?
-  createdAt           DateTime             @default(now())
-  updatedAt           DateTime             @updatedAt
-  CuratedNewsletter   CuratedNewsletter?   @relation(fields: [curatedNewsletterId], references: [id])
-  CustomNewsletter    CustomNewsletter?    @relation(fields: [customNewsletterId], references: [id])
-  ContentLinkSummary  ContentLinkSummary[]
-  Outbox              Outbox[]
+  newsletterId        Int?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
 }
 
 model ContentLinkSummary {
-  id            Int         @id @default(autoincrement())
+  id            Int      @id @default(autoincrement())
   contentId     Int
   linkSummaryId Int
   order         Int
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
-  Content       Content     @relation(fields: [contentId], references: [id])
-  LinkSummary   LinkSummary @relation(fields: [linkSummaryId], references: [id])
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 }
 
 model Outbox {
-  contentSubscriptionId Int          @id @default(autoincrement())
+  contentSubscriptionId Int      @id @default(autoincrement())
   contentId             Int
   subscriptionId        Int
   status                String
   errorMessage          String?
-  createdAt             DateTime     @default(now())
-  updatedAt             DateTime     @updatedAt
-  Content               Content      @relation(fields: [contentId], references: [id])
-  Subscription          Subscription @relation(fields: [subscriptionId], references: [id])
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
 }
 
 model LinkSummary {
-  id                 Int                      @id @default(autoincrement())
-  title              String
-  linkUrl            String                   @unique
-  BCP47              String
-  linkSummary        String?
-  commentUrl         String?
-  commentSummary     String?
-  createdAt          DateTime                 @default(now())
-  updatedAt          DateTime                 @updatedAt
-  body               String?
-  commentBody        String?
-  ContentLinkSummary ContentLinkSummary[]
-  Translation        LinkSummaryTranslation[]
+  id             Int      @id @default(autoincrement())
+  title          String
+  linkUrl        String   @unique
+  BCP47          String
+  linkSummary    String?
+  commentUrl     String?
+  commentSummary String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  body           String?
+  commentBody    String?
+  downloadMethod String?
+  retryCount     Int      @default(0)
 }
 
 model LinkSummaryTranslation {
-  id             Int         @id @default(autoincrement())
+  id             Int      @id @default(autoincrement())
   title          String
   linkSummaryId  Int
   linkSummary    String
   commentSummary String?
   BCP47          String
-  createdAt      DateTime    @default(now())
-  updatedAt      DateTime    @updatedAt
-  LinkSummary    LinkSummary @relation(fields: [linkSummaryId], references: [id])
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }
