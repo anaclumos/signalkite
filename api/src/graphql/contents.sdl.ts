@@ -4,13 +4,9 @@ export const schema = gql`
     markdownContent: String
     BCP47: String!
     curatedNewsletterId: Int
-    customNewsletterId: Int
+    newsletterId: Int
     createdAt: DateTime!
     updatedAt: DateTime!
-    CuratedNewsletter: CuratedNewsletter
-    CustomNewsletter: CustomNewsletter
-    ContentLinkSummary: [ContentLinkSummary]!
-    Outbox: [Outbox]!
   }
 
   type Query {
@@ -22,14 +18,14 @@ export const schema = gql`
     markdownContent: String
     BCP47: String!
     curatedNewsletterId: Int
-    customNewsletterId: Int
+    newsletterId: Int
   }
 
   input UpdateContentInput {
     markdownContent: String
     BCP47: String
     curatedNewsletterId: Int
-    customNewsletterId: Int
+    newsletterId: Int
   }
 
   type Mutation {
@@ -37,4 +33,4 @@ export const schema = gql`
     updateContent(id: Int!, input: UpdateContentInput!): Content! @requireAuth
     deleteContent(id: Int!): Content! @requireAuth
   }
-`
+`;

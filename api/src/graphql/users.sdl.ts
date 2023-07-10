@@ -1,18 +1,15 @@
 export const schema = gql`
   type User {
     id: Int!
-    username: String!
-    password: String!
-    email: String!
     displayName: String
+    username: String!
+    email: String!
+    loginToken: String
+    loginTokenExpiresAt: DateTime
     isActive: Boolean!
-    emailVerified: Boolean!
     timezone: String!
     createdAt: DateTime!
     updatedAt: DateTime!
-    Subscription: [Subscription]!
-    CustomNewsletter: [CustomNewsletter]!
-    CuratedNewsletter: [CuratedNewsletter]!
   }
 
   type Query {
@@ -21,22 +18,22 @@ export const schema = gql`
   }
 
   input CreateUserInput {
-    username: String!
-    password: String!
-    email: String!
     displayName: String
+    username: String!
+    email: String!
+    loginToken: String
+    loginTokenExpiresAt: DateTime
     isActive: Boolean!
-    emailVerified: Boolean!
     timezone: String!
   }
 
   input UpdateUserInput {
-    username: String
-    password: String
-    email: String
     displayName: String
+    username: String
+    email: String
+    loginToken: String
+    loginTokenExpiresAt: DateTime
     isActive: Boolean
-    emailVerified: Boolean
     timezone: String
   }
 
@@ -44,5 +41,6 @@ export const schema = gql`
     createUser(input: CreateUserInput!): User! @requireAuth
     updateUser(id: Int!, input: UpdateUserInput!): User! @requireAuth
     deleteUser(id: Int!): User! @requireAuth
+    generateToken(email: String!): userTokenResponse! @skipAuth
   }
-`
+`;

@@ -3,7 +3,7 @@ export const schema = gql`
     id: Int!
     userId: Int!
     curatedNewsletterId: Int
-    customNewsletterId: Int
+    newsletterId: Int
     frequency: String!
     time: String!
     length: String!
@@ -11,10 +11,6 @@ export const schema = gql`
     active: Boolean!
     createdAt: DateTime!
     updatedAt: DateTime!
-    User: User!
-    CuratedNewsletter: CuratedNewsletter
-    CustomNewsletter: CustomNewsletter
-    Outbox: [Outbox]!
   }
 
   type Query {
@@ -25,7 +21,7 @@ export const schema = gql`
   input CreateSubscriptionInput {
     userId: Int!
     curatedNewsletterId: Int
-    customNewsletterId: Int
+    newsletterId: Int
     frequency: String!
     time: String!
     length: String!
@@ -36,7 +32,7 @@ export const schema = gql`
   input UpdateSubscriptionInput {
     userId: Int
     curatedNewsletterId: Int
-    customNewsletterId: Int
+    newsletterId: Int
     frequency: String
     time: String
     length: String
@@ -53,4 +49,4 @@ export const schema = gql`
     ): Subscription! @requireAuth
     deleteSubscription(id: Int!): Subscription! @requireAuth
   }
-`
+`;

@@ -6,8 +6,6 @@ export const schema = gql`
     order: Int!
     createdAt: DateTime!
     updatedAt: DateTime!
-    Content: Content!
-    LinkSummary: LinkSummary!
   }
 
   type Query {
@@ -37,4 +35,4 @@ export const schema = gql`
     ): ContentLinkSummary! @requireAuth
     deleteContentLinkSummary(id: Int!): ContentLinkSummary! @requireAuth
   }
-`
+`;

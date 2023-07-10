@@ -1,48 +1,35 @@
-import type {
-  QueryResolvers,
-  MutationResolvers,
-  OutboxRelationResolvers,
-} from 'types/graphql'
+import type { QueryResolvers, MutationResolvers } from "types/graphql";
 
-import { db } from 'src/lib/db'
+import { db } from "src/lib/db";
 
-export const outboxes: QueryResolvers['outboxes'] = () => {
-  return db.outbox.findMany()
-}
+export const outboxes: QueryResolvers["outboxes"] = () => {
+  return db.outbox.findMany();
+};
 
-export const outbox: QueryResolvers['outbox'] = ({ id }) => {
+export const outbox: QueryResolvers["outbox"] = ({ id }) => {
   return db.outbox.findUnique({
     where: { id },
-  })
-}
+  });
+};
 
-export const createOutbox: MutationResolvers['createOutbox'] = ({ input }) => {
+export const createOutbox: MutationResolvers["createOutbox"] = ({ input }) => {
   return db.outbox.create({
     data: input,
-  })
-}
+  });
+};
 
-export const updateOutbox: MutationResolvers['updateOutbox'] = ({
+export const updateOutbox: MutationResolvers["updateOutbox"] = ({
   id,
   input,
 }) => {
   return db.outbox.update({
     data: input,
     where: { id },
-  })
-}
+  });
+};
 
-export const deleteOutbox: MutationResolvers['deleteOutbox'] = ({ id }) => {
+export const deleteOutbox: MutationResolvers["deleteOutbox"] = ({ id }) => {
   return db.outbox.delete({
     where: { id },
-  })
-}
-
-export const Outbox: OutboxRelationResolvers = {
-  Content: (_obj, { root }) => {
-    return db.outbox.findUnique({ where: { id: root?.id } }).Content()
-  },
-  Subscription: (_obj, { root }) => {
-    return db.outbox.findUnique({ where: { id: root?.id } }).Subscription()
-  },
-}
+  });
+};

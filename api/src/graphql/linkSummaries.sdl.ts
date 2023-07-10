@@ -1,13 +1,18 @@
 export const schema = gql`
   type LinkSummary {
     id: Int!
-    linkUrl: String!
     title: String!
-    linkSummary: String!
+    linkUrl: String!
     BCP47: String!
+    linkSummary: String
+    commentUrl: String
+    commentSummary: String
     createdAt: DateTime!
     updatedAt: DateTime!
-    ContentLinkSummary: [ContentLinkSummary]!
+    body: String
+    commentBody: String
+    downloadMethod: String
+    retryCount: Int!
   }
 
   type Query {
@@ -16,17 +21,29 @@ export const schema = gql`
   }
 
   input CreateLinkSummaryInput {
-    linkUrl: String!
     title: String!
-    linkSummary: String!
+    linkUrl: String!
     BCP47: String!
+    linkSummary: String
+    commentUrl: String
+    commentSummary: String
+    body: String
+    commentBody: String
+    downloadMethod: String
+    retryCount: Int!
   }
 
   input UpdateLinkSummaryInput {
-    linkUrl: String
     title: String
-    linkSummary: String
+    linkUrl: String
     BCP47: String
+    linkSummary: String
+    commentUrl: String
+    commentSummary: String
+    body: String
+    commentBody: String
+    downloadMethod: String
+    retryCount: Int
   }
 
   type Mutation {
@@ -35,4 +52,4 @@ export const schema = gql`
       @requireAuth
     deleteLinkSummary(id: Int!): LinkSummary! @requireAuth
   }
-`
+`;

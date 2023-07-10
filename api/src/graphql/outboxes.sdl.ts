@@ -7,8 +7,6 @@ export const schema = gql`
     errorMessage: String
     createdAt: DateTime!
     updatedAt: DateTime!
-    Content: Content!
-    Subscription: Subscription!
   }
 
   type Query {
@@ -37,4 +35,4 @@ export const schema = gql`
     updateOutbox(id: Int!, input: UpdateOutboxInput!): Outbox! @requireAuth
     deleteOutbox(id: Int!): Outbox! @requireAuth
   }
-`
+`;
