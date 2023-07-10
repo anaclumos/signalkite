@@ -14,11 +14,10 @@ import { MetaTags } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
 
 import { useAuth } from 'src/auth'
-import { useLocaleRedirect } from 'src/hooks/useLocaleRedirect'
 
 const WELCOME_MESSAGE = 'Welcome back!'
 
-const LoginPage = ({ type, locale }) => {
+const LoginPage = ({ type }) => {
   const {
     isAuthenticated,
     client: webAuthn,
@@ -34,7 +33,7 @@ const LoginPage = ({ type, locale }) => {
   // should redirect right after login or wait to show the webAuthn prompts?
   useEffect(() => {
     if (isAuthenticated && (!shouldShowWebAuthn || webAuthn.isEnabled())) {
-      navigate(routes.home({ locale }))
+      navigate(routes.home())
     }
   }, [isAuthenticated, shouldShowWebAuthn])
 
@@ -83,7 +82,7 @@ const LoginPage = ({ type, locale }) => {
       await webAuthn.authenticate()
       await reauthenticate()
       toast.success(WELCOME_MESSAGE)
-      navigate(routes.home({ locale }))
+      navigate(routes.home())
     } catch (e) {
       if (e.name === 'WebAuthnDeviceNotFoundError') {
         toast.error('Device not found, log in with Email/Password to continue')
@@ -98,7 +97,7 @@ const LoginPage = ({ type, locale }) => {
     try {
       await webAuthn.register()
       toast.success(WELCOME_MESSAGE)
-      navigate(routes.home({ locale }))
+      navigate(routes.home())
     } catch (e) {
       toast.error(e.message)
     }
@@ -109,7 +108,7 @@ const LoginPage = ({ type, locale }) => {
     setShouldShowWebAuthn(false)
   }
 
-  const AuthWebAuthnPrompt = ({locale}) => {
+  const AuthWebAuthnPrompt = () => {
     return (
       <div className="rw-webauthn-wrapper">
         <h2>WebAuthn Login Enabled</h2>
@@ -123,7 +122,7 @@ const LoginPage = ({ type, locale }) => {
     )
   }
 
-  const RegisterWebAuthnPrompt = ({locale}) => (
+  const RegisterWebAuthnPrompt = () => (
     <div className="rw-webauthn-wrapper">
       <h2>No more Passwords!</h2>
       <p>
@@ -141,7 +140,7 @@ const LoginPage = ({ type, locale }) => {
     </div>
   )
 
-  const PasswordForm = ({ locale }) => (
+  const PasswordForm = () => (
     <Form onSubmit={onSubmit} className="rw-form-wrapper">
       <Label
         name="email"
@@ -187,7 +186,7 @@ const LoginPage = ({ type, locale }) => {
       />
 
       <div className="rw-forgot-link">
-        <Link to={routes.forgotPassword({ locale })} className="rw-forgot-link">
+        <Link to={routes.forgotPassword()} className="rw-forgot-link">
           Forgot Password?
         </Link>
       </div>
@@ -200,19 +199,19 @@ const LoginPage = ({ type, locale }) => {
     </Form>
   )
 
-  const formToRender = ({ locale }) => {
+  const formToRender = () => {
     if (showWebAuthn) {
       if (webAuthn.isEnabled()) {
-        return <AuthWebAuthnPrompt  locale={locale} />
+        return <AuthWebAuthnPrompt />
       } else {
-        return <RegisterWebAuthnPrompt  locale={locale} />
+        return <RegisterWebAuthnPrompt />
       }
     } else {
-      return <PasswordForm locale={locale} />
+      return <PasswordForm/>
     }
   }
 
-  const linkToRender = ({ locale }) => {
+  const linkToRender = () => {
     if (showWebAuthn) {
       if (webAuthn.isEnabled()) {
         return (
@@ -228,7 +227,7 @@ const LoginPage = ({ type, locale }) => {
       return (
         <div className="rw-login-link">
           <span>Don&apos;t have an account?</span>{' '}
-          <Link to={routes.signup({ locale: 'en' })} className="rw-link">
+          <Link to={routes.signup()} className="rw-link">
             Sign up!
           </Link>
         </div>
@@ -252,10 +251,10 @@ const LoginPage = ({ type, locale }) => {
               <h2 className="rw-heading rw-heading-secondary">Login</h2>
             </header>
             <div className="rw-segment-main">
-              <div className="rw-form-wrapper">{formToRender({ locale })}</div>
+              <div className="rw-form-wrapper">{formToRender()}</div>
             </div>
           </div>
-          {linkToRender({ locale })}
+          {linkToRender()}
         </div>
       </main>
     </>

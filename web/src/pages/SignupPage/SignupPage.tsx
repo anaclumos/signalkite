@@ -16,12 +16,12 @@ import { toast, Toaster } from "@redwoodjs/web/toast";
 import { useAuth } from "src/auth";
 
 
-const SignupPage = ({ locale }) => {
+const SignupPage = () => {
   const { isAuthenticated, signUp } = useAuth();
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate(routes.home({locale}));
+      navigate(routes.home());
     }
   }, [isAuthenticated]);
 
@@ -116,7 +116,7 @@ const SignupPage = ({ locale }) => {
           </div>
           <div className="rw-login-link">
             <span>Already have an account?</span>{" "}
-            <Link to={routes.login({locale})} className="rw-link">
+            <Link to={routes.login()} className="rw-link">
               Log in!
             </Link>
           </div>

@@ -13,7 +13,7 @@ import { toast, Toaster } from "@redwoodjs/web/toast";
 
 import { useAuth } from "src/auth";
 
-const ResetPasswordPage = ({ resetToken, locale }: { resetToken: string, locale?: string }) => {
+const ResetPasswordPage = ({ resetToken }: { resetToken: string }) => {
 
 
   const { isAuthenticated, reauthenticate, validateResetToken, resetPassword } =
@@ -22,7 +22,7 @@ const ResetPasswordPage = ({ resetToken, locale }: { resetToken: string, locale?
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate(routes.home({ locale }));
+      navigate(routes.home());
     }
   }, [isAuthenticated]);
 
@@ -55,7 +55,7 @@ const ResetPasswordPage = ({ resetToken, locale }: { resetToken: string, locale?
     } else {
       toast.success("Password changed!");
       await reauthenticate();
-      navigate(routes.login({locale}));
+      navigate(routes.login());
     }
   };
 

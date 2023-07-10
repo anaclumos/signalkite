@@ -2,9 +2,9 @@ import { Heading } from '@chakra-ui/react'
 
 import { MetaTags } from '@redwoodjs/web'
 
-import { useLocaleRedirect } from 'src/hooks/useLocaleRedirect'
 
-const ProfilePage = ({ locale }) => {
+
+const ProfilePage = () => {
   return (
     <>
       <MetaTags title="Profile" description="Profile page" />

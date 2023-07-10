@@ -1,9 +1,9 @@
 import { Box, Button, chakra, Stack, Text } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 
-import { useLocaleRedirect } from 'src/hooks/useLocaleRedirect'
 
-const HomePage = ({ locale }) => {
+
+const HomePage = () => {
 
   const { t } = useTranslation()
 

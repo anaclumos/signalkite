@@ -4,7 +4,7 @@ import { MetaTags } from '@redwoodjs/web'
 
 
 
-const SettingsPage = ({ locale }) => {
+const SettingsPage = () => {
   return (
     <>
       <MetaTags title="Settings" description="Settings page" />

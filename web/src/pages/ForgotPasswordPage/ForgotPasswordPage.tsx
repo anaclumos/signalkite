@@ -8,13 +8,13 @@ import { toast, Toaster } from "@redwoodjs/web/toast";
 import { useAuth } from "src/auth";
 
 
-const ForgotPasswordPage = ({locale}) => {
+const ForgotPasswordPage = () => {
 
   const { isAuthenticated, forgotPassword } = useAuth();
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate(routes.home({locale}));
+      navigate(routes.home());
     }
   }, [isAuthenticated]);
 
@@ -35,7 +35,7 @@ const ForgotPasswordPage = ({locale}) => {
       toast.success(
         "A link to reset your password was sent to " + response.email
       );
-      navigate(routes.login({locale}));
+      navigate(routes.login());
     }
   };
 
