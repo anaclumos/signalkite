@@ -20,6 +20,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
         display={{ base: 'block', md: 'flex' }}
       >
         <Navigation />
+        HELLO
         <Box>{children}</Box>
       </Box>
     </>

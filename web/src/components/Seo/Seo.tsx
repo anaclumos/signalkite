@@ -15,7 +15,7 @@ const Seo = () => {
           key={locale}
           rel="alternate"
           hrefLang={locale}
-          href={`https://heimdall.cho.sh/${locale}`}
+          href={`https://heimdall.cho.sh/?locale=${locale}`}
         />
       ))}
     </Head>

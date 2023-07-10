@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next'
 import { useLocaleRedirect } from 'src/hooks/useLocaleRedirect'
 
 const HomePage = ({ locale }) => {
-  useLocaleRedirect({ locale })
 
   const { t } = useTranslation()
 

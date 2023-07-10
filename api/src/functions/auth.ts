@@ -113,7 +113,8 @@ export const handler = async (
           email: username,
           hashedPassword: hashedPassword,
           salt: salt,
-          // name: userAttributes.name
+          username: username,
+          timezone: userAttributes.timezone,
         },
       })
     },

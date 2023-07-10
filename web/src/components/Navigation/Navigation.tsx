@@ -6,7 +6,6 @@ import {
   ListItem,
   ListProps,
 } from '@chakra-ui/react'
-import { useLocation } from '@redwoodjs/router'
 import { ReactElement, ReactNode } from 'react'
 import { Link as RedwoodLink } from '@redwoodjs/router'
 import { FaHackerNews } from 'react-icons/fa6'

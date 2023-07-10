@@ -5,7 +5,6 @@ import { MetaTags } from '@redwoodjs/web'
 import { useLocaleRedirect } from 'src/hooks/useLocaleRedirect'
 
 const ProfilePage = ({ locale }) => {
-  useLocaleRedirect({ locale })
   return (
     <>
       <MetaTags title="Profile" description="Profile page" />
