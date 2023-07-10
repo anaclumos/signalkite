@@ -11,7 +11,7 @@ export default function Home({ navItems }) {
         <Heading as="h2" weight="medium">
           Welcome to the React Email preview!
         </Heading>
-        <Text as="p" className="mt-2 mb-4">
+        <Text as="p" className="mb-4 mt-2">
           To start developing your next email template, you can create a{' '}
           <code>.jsx</code> or <code>.tsx</code> file under the "emails" folder.
         </Text>
