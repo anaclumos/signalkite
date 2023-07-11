@@ -41,7 +41,7 @@ export const Topbar = React.forwardRef<TopbarElement, Readonly<TopbarProps>>(
           <LayoutGroup id="topbar">
             {setActiveView && (
               <ToggleGroup.Root
-                className="items-center inline-block overflow-hidden border rounded-md border-slate-6 bg-slate-2"
+                className="inline-block items-center overflow-hidden rounded-md border border-slate-6 bg-slate-2"
                 type="single"
                 value={activeView}
                 aria-label="View mode"
@@ -63,7 +63,7 @@ export const Topbar = React.forwardRef<TopbarElement, Readonly<TopbarProps>>(
                     {activeView === 'desktop' && (
                       <motion.span
                         layoutId="topbar"
-                        className="absolute top-0 bottom-0 left-0 right-0 bg-slate-4"
+                        className="absolute bottom-0 left-0 right-0 top-0 bg-slate-4"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -85,7 +85,7 @@ export const Topbar = React.forwardRef<TopbarElement, Readonly<TopbarProps>>(
                     {activeView === 'source' && (
                       <motion.span
                         layoutId="nav"
-                        className="absolute top-0 bottom-0 left-0 right-0 bg-slate-4"
+                        className="absolute bottom-0 left-0 right-0 top-0 bg-slate-4"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
