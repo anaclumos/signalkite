@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react'
 
 import {
   Form,
@@ -6,65 +6,63 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from "@redwoodjs/forms";
-import { navigate, routes } from "@redwoodjs/router";
-import { MetaTags } from "@redwoodjs/web";
-import { toast, Toaster } from "@redwoodjs/web/toast";
+} from '@redwoodjs/forms'
+import { navigate, routes } from '@redwoodjs/router'
+import { MetaTags } from '@redwoodjs/web'
+import { toast, Toaster } from '@redwoodjs/web/toast'
 
-import { useAuth } from "src/auth";
+import { useAuth } from 'src/auth'
 
 const ResetPasswordPage = ({ resetToken }: { resetToken: string }) => {
-
-
   const { isAuthenticated, reauthenticate, validateResetToken, resetPassword } =
-    useAuth();
-  const [enabled, setEnabled] = useState(true);
+    useAuth()
+  const [enabled, setEnabled] = useState(true)
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate(routes.home());
+      navigate(routes.home())
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated])
 
   useEffect(() => {
     const validateToken = async () => {
-      const response = await validateResetToken(resetToken);
+      const response = await validateResetToken(resetToken)
       if (response.error) {
-        setEnabled(false);
-        toast.error(response.error);
+        setEnabled(false)
+        toast.error(response.error)
       } else {
-        setEnabled(true);
+        setEnabled(true)
       }
-    };
-    validateToken();
-  }, [resetToken, validateResetToken]);
+    }
+    validateToken()
+  }, [resetToken, validateResetToken])
 
-  const passwordRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null)
   useEffect(() => {
-    passwordRef.current?.focus();
-  }, []);
+    passwordRef.current?.focus()
+  }, [])
 
   const onSubmit = async (data: Record<string, string>) => {
     const response = await resetPassword({
       resetToken,
       password: data.password,
-    });
+    })
 
     if (response.error) {
-      toast.error(response.error);
+      toast.error(response.error)
     } else {
-      toast.success("Password changed!");
-      await reauthenticate();
-      navigate(routes.login());
+      toast.success('Password changed!')
+      await reauthenticate()
+      navigate(routes.login())
     }
-  };
+  }
 
   return (
     <>
       <MetaTags title="Reset Password" />
 
       <main className="rw-main">
-        <Toaster toastOptions={{ className: "rw-toast", duration: 6000 }} />
+        <Toaster toastOptions={{ className: 'rw-toast', duration: 6000 }} />
         <div className="rw-scaffold rw-login-container">
           <div className="rw-segment">
             <header className="rw-segment-header">
@@ -94,7 +92,7 @@ const ResetPasswordPage = ({ resetToken }: { resetToken: string }) => {
                       validation={{
                         required: {
                           value: true,
-                          message: "New Password is required",
+                          message: 'New Password is required',
                         },
                       }}
                     />
@@ -117,7 +115,7 @@ const ResetPasswordPage = ({ resetToken }: { resetToken: string }) => {
         </div>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default ResetPasswordPage;
+export default ResetPasswordPage

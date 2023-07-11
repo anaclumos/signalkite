@@ -207,7 +207,7 @@ const LoginPage = ({ type }) => {
         return <RegisterWebAuthnPrompt />
       }
     } else {
-      return <PasswordForm/>
+      return <PasswordForm />
     }
   }
 

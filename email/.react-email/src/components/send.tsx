@@ -38,7 +38,7 @@ export const Send = ({ markup }: { markup: string }) => {
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
-        <button className="box-border flex h-5 w-20 items-center justify-center self-center rounded-lg border border-slate-6 px-4 py-4 text-center font-sans text-sm text-slate-11 outline-none transition duration-300 ease-in-out hover:border-slate-12 hover:text-slate-12">
+        <button className="box-border flex items-center self-center justify-center w-20 h-5 px-4 py-4 font-sans text-sm text-center transition duration-300 ease-in-out border rounded-lg outline-none border-slate-6 text-slate-11 hover:border-slate-12 hover:text-slate-12">
           Send
         </button>
       </Popover.Trigger>
@@ -50,20 +50,20 @@ export const Send = ({ markup }: { markup: string }) => {
         >
           <Popover.Close
             aria-label="Close"
-            className="absolute right-2 flex h-6 w-6 items-center justify-center rounded-full text-xs text-slate-11 transition duration-300 ease-in-out hover:text-slate-12"
+            className="absolute flex items-center justify-center w-6 h-6 text-xs transition duration-300 ease-in-out rounded-full right-2 text-slate-11 hover:text-slate-12"
           >
             ✕
           </Popover.Close>
           <form onSubmit={onFormSubmit} className="mt-1">
             <label
               htmlFor="to"
-              className="mb-2 block text-xs uppercase text-slate-10"
+              className="block mb-2 text-xs uppercase text-slate-10"
             >
               Recipient
             </label>
             <input
               autoFocus={true}
-              className="mb-3 w-full appearance-none rounded-lg border border-slate-6 bg-slate-3 px-2 py-1 text-sm text-slate-12 placeholder-slate-8 outline-none transition duration-300 ease-in-out focus:ring-1 focus:ring-slate-12"
+              className="w-full px-2 py-1 mb-3 text-sm transition duration-300 ease-in-out border rounded-lg outline-none appearance-none border-slate-6 bg-slate-3 text-slate-12 placeholder-slate-8 focus:ring-1 focus:ring-slate-12"
               onChange={(e) => setTo(e.target.value)}
               defaultValue={to}
               placeholder="you@example.com"
@@ -73,12 +73,12 @@ export const Send = ({ markup }: { markup: string }) => {
             />
             <label
               htmlFor="subject"
-              className="mb-2 block text-xs uppercase text-slate-10"
+              className="block mb-2 text-xs uppercase text-slate-10"
             >
               Subject
             </label>
             <input
-              className="mb-3 w-full appearance-none rounded-lg border border-slate-6 bg-slate-3 px-2 py-1 text-sm text-slate-12 placeholder-slate-8 outline-none transition duration-300 ease-in-out focus:ring-1 focus:ring-slate-12"
+              className="w-full px-2 py-1 mb-3 text-sm transition duration-300 ease-in-out border rounded-lg outline-none appearance-none border-slate-6 bg-slate-3 text-slate-12 placeholder-slate-8 focus:ring-1 focus:ring-slate-12"
               onChange={(e) => setSubject(e.target.value)}
               defaultValue={subject}
               placeholder="My Email"

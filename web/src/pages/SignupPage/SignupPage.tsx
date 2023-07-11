@@ -1,5 +1,5 @@
-import { useRef } from "react";
-import { useEffect } from "react";
+import { useRef } from 'react'
+import { useEffect } from 'react'
 
 import {
   Form,
@@ -8,52 +8,51 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from "@redwoodjs/forms";
-import { Link, navigate, routes } from "@redwoodjs/router";
-import { MetaTags } from "@redwoodjs/web";
-import { toast, Toaster } from "@redwoodjs/web/toast";
+} from '@redwoodjs/forms'
+import { Link, navigate, routes } from '@redwoodjs/router'
+import { MetaTags } from '@redwoodjs/web'
+import { toast, Toaster } from '@redwoodjs/web/toast'
 
-import { useAuth } from "src/auth";
-
+import { useAuth } from 'src/auth'
 
 const SignupPage = () => {
-  const { isAuthenticated, signUp } = useAuth();
+  const { isAuthenticated, signUp } = useAuth()
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate(routes.home());
+      navigate(routes.home())
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated])
 
   // focus on email box on page load
-  const emailRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null)
   useEffect(() => {
-    emailRef.current?.focus();
-  }, []);
+    emailRef.current?.focus()
+  }, [])
 
   const onSubmit = async (data: Record<string, string>) => {
     const response = await signUp({
       username: data.email,
       password: data.password,
       timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-    });
+    })
 
     if (response.message) {
-      toast(response.message);
+      toast(response.message)
     } else if (response.error) {
-      toast.error(response.error);
+      toast.error(response.error)
     } else {
       // user is signed in automatically
-      toast.success("Welcome!");
+      toast.success('Welcome!')
     }
-  };
+  }
 
   return (
     <>
       <MetaTags title="Signup" />
 
       <main className="rw-main">
-        <Toaster toastOptions={{ className: "rw-toast", duration: 6000 }} />
+        <Toaster toastOptions={{ className: 'rw-toast', duration: 6000 }} />
         <div className="rw-scaffold rw-login-container">
           <div className="rw-segment">
             <header className="rw-segment-header">
@@ -78,7 +77,7 @@ const SignupPage = () => {
                     validation={{
                       required: {
                         value: true,
-                        message: "Email is required",
+                        message: 'Email is required',
                       },
                     }}
                   />
@@ -99,7 +98,7 @@ const SignupPage = () => {
                     validation={{
                       required: {
                         value: true,
-                        message: "Password is required",
+                        message: 'Password is required',
                       },
                     }}
                   />
@@ -115,7 +114,7 @@ const SignupPage = () => {
             </div>
           </div>
           <div className="rw-login-link">
-            <span>Already have an account?</span>{" "}
+            <span>Already have an account?</span>{' '}
             <Link to={routes.login()} className="rw-link">
               Log in!
             </Link>
@@ -123,7 +122,7 @@ const SignupPage = () => {
         </div>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default SignupPage;
+export default SignupPage

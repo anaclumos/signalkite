@@ -33,4 +33,4 @@ export const schema = gql`
     updateContent(id: Int!, input: UpdateContentInput!): Content! @requireAuth
     deleteContent(id: Int!): Content! @requireAuth
   }
-`;
+`

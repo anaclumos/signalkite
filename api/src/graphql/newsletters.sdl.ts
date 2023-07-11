@@ -40,4 +40,4 @@ export const schema = gql`
       @requireAuth
     deleteNewsletter(id: Int!): Newsletter! @requireAuth
   }
-`;
+`

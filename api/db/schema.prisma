@@ -9,30 +9,30 @@ generator client {
 }
 
 model User {
-  id                  Int       @id @default(autoincrement())
+  id                  Int              @id @default(autoincrement())
   displayName         String?
   timezone            String
-  createdAt           DateTime  @default(now())
-  updatedAt           DateTime  @updatedAt
-  username            String    @unique
-  email               String    @unique
+  createdAt           DateTime         @default(now())
+  updatedAt           DateTime         @updatedAt
+  username            String           @unique
+  email               String           @unique
   hashedPassword      String
   salt                String
   resetToken          String?
   resetTokenExpiresAt DateTime?
-  webAuthnChallenge   String? @unique
+  webAuthnChallenge   String?          @unique
   credentials         UserCredential[]
-  deleted            Boolean   @default(false)
+  deleted             Boolean          @default(false)
 }
 
 model UserCredential {
-  id         String @id
+  id         String  @id
   userId     Int
-  user       User   @relation(fields: [userId], references: [id])
+  user       User    @relation(fields: [userId], references: [id])
   publicKey  Bytes
   transports String?
   counter    BigInt
-  deleted            Boolean   @default(false)
+  deleted    Boolean @default(false)
 }
 
 model Newsletter {
@@ -45,7 +45,7 @@ model Newsletter {
   active                 Boolean  @default(false)
   createdAt              DateTime @default(now())
   updatedAt              DateTime @updatedAt
-  deleted            Boolean   @default(false)
+  deleted                Boolean  @default(false)
 }
 
 model Subscription {
@@ -60,7 +60,7 @@ model Subscription {
   active              Boolean  @default(false)
   createdAt           DateTime @default(now())
   updatedAt           DateTime @updatedAt
-  deleted            Boolean   @default(false)
+  deleted             Boolean  @default(false)
 }
 
 model Content {
@@ -71,7 +71,7 @@ model Content {
   newsletterId        Int?
   createdAt           DateTime @default(now())
   updatedAt           DateTime @updatedAt
-  deleted            Boolean   @default(false)
+  deleted             Boolean  @default(false)
 }
 
 model ContentLinkSummary {
@@ -81,7 +81,7 @@ model ContentLinkSummary {
   order         Int
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
-  deleted            Boolean   @default(false)
+  deleted       Boolean  @default(false)
 }
 
 model Outbox {
@@ -92,7 +92,7 @@ model Outbox {
   errorMessage          String?
   createdAt             DateTime @default(now())
   updatedAt             DateTime @updatedAt
-  deleted            Boolean   @default(false)
+  deleted               Boolean  @default(false)
 }
 
 model LinkSummary {
@@ -109,7 +109,7 @@ model LinkSummary {
   commentBody    String?
   downloadMethod String?
   retryCount     Int      @default(0)
-  deleted            Boolean   @default(false)
+  deleted        Boolean  @default(false)
 }
 
 model LinkSummaryTranslation {
@@ -121,5 +121,5 @@ model LinkSummaryTranslation {
   BCP47          String
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
-  deleted            Boolean   @default(false)
+  deleted        Boolean  @default(false)
 }

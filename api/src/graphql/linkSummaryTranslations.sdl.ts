@@ -41,4 +41,4 @@ export const schema = gql`
     ): LinkSummaryTranslation! @requireAuth
     deleteLinkSummaryTranslation(id: Int!): LinkSummaryTranslation! @requireAuth
   }
-`;
+`

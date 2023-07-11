@@ -452,7 +452,7 @@ const Subscribe = () => {
           {i18n.submitHeader[language]}
         </h3>
         <button
-          className="nx-w-full nx-py-4 nx-px-4 nx-my-4 nx-border nx-border-gray-200 nx-rounded-lg nx-bg-blue-500 nx-text-white nx-font-semibold nx-text-md hover:nx-bg-blue-600 focus:nx-outline-none focus:nx-ring-4 focus:nx-ring-blue-300 active:nx-bg-blue-700 nx-duration-150 dark:nx-shadow-none hover:nx-shadow-gray-100 dark:hover:nx-shadow-none nx-shadow-gray-100 active:nx-shadow-sm active:nx-shadow-gray-200 nx-transition-all nx-duration-200 hover:nx-border-gray-300 nx-bg-transparent nx-shadow-sm dark:nx-border-neutral-800 hover:nx-bg-slate-50 hover:nx-shadow-md dark:hover:nx-border-neutral-700 dark:hover:nx-bg-neutral-900 transition ease-in-out"
+          className="transition ease-in-out nx-w-full nx-py-4 nx-px-4 nx-my-4 nx-border nx-border-gray-200 nx-rounded-lg nx-bg-blue-500 nx-text-white nx-font-semibold nx-text-md hover:nx-bg-blue-600 focus:nx-outline-none focus:nx-ring-4 focus:nx-ring-blue-300 active:nx-bg-blue-700 nx-duration-150 dark:nx-shadow-none hover:nx-shadow-gray-100 dark:hover:nx-shadow-none nx-shadow-gray-100 active:nx-shadow-sm active:nx-shadow-gray-200 nx-transition-all nx-duration-200 hover:nx-border-gray-300 nx-bg-transparent nx-shadow-sm dark:nx-border-neutral-800 hover:nx-bg-slate-50 hover:nx-shadow-md dark:hover:nx-border-neutral-700 dark:hover:nx-bg-neutral-900"
           id="submit-button"
           onClick={(e) => {
             onSubmit(e, language)

@@ -35,4 +35,4 @@ export const schema = gql`
     updateOutbox(id: Int!, input: UpdateOutboxInput!): Outbox! @requireAuth
     deleteOutbox(id: Int!): Outbox! @requireAuth
   }
-`;
+`

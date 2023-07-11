@@ -37,7 +37,7 @@ export const CodeContainer: React.FC<Readonly<CodeContainerProps>> = ({
       <a
         href={url}
         download={file.name}
-        className="text-slate-11 transition duration-200 ease-in-out hover:text-slate-12"
+        className="transition duration-200 ease-in-out text-slate-11 hover:text-slate-12"
       >
         <IconDownload />
       </a>
@@ -77,7 +77,7 @@ export const CodeContainer: React.FC<Readonly<CodeContainerProps>> = ({
         boxShadow: 'rgb(0 0 0 / 10%) 0px 5px 30px -5px',
       }}
     >
-      <div className="h-9 border-b border-slate-6">
+      <div className="border-b h-9 border-slate-6">
         <div className="flex">
           <LayoutGroup id="code">
             {markups.map(({ language }) => {
@@ -93,7 +93,7 @@ export const CodeContainer: React.FC<Readonly<CodeContainerProps>> = ({
                   {isCurrentLang && (
                     <motion.span
                       layoutId="code"
-                      className="absolute bottom-0 left-0 right-0 top-0 bg-slate-4"
+                      className="absolute top-0 bottom-0 left-0 right-0 bg-slate-4"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
@@ -106,13 +106,13 @@ export const CodeContainer: React.FC<Readonly<CodeContainerProps>> = ({
           </LayoutGroup>
         </div>
         <Tooltip>
-          <Tooltip.Trigger className="absolute right-2 top-2 hidden md:block">
+          <Tooltip.Trigger className="absolute hidden right-2 top-2 md:block">
             {renderClipboardIcon()}
           </Tooltip.Trigger>
           <Tooltip.Content>Copy to Clipboard</Tooltip.Content>
         </Tooltip>
         <Tooltip>
-          <Tooltip.Trigger className="text-gray-11 absolute right-8 top-2 hidden md:block">
+          <Tooltip.Trigger className="absolute hidden text-gray-11 right-8 top-2 md:block">
             {renderDownloadIcon()}
           </Tooltip.Trigger>
           <Tooltip.Content>Download</Tooltip.Content>

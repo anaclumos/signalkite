@@ -1,10 +1,7 @@
 import { Box, Button, chakra, Stack, Text } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 
-
-
 const HomePage = () => {
-
   const { t } = useTranslation()
 
   return (

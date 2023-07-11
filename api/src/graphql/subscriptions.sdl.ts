@@ -49,4 +49,4 @@ export const schema = gql`
     ): Subscription! @requireAuth
     deleteSubscription(id: Int!): Subscription! @requireAuth
   }
-`;
+`

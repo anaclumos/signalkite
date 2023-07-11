@@ -57,7 +57,7 @@ export const Sidebar = React.forwardRef<SidebarElement, Readonly<SidebarProps>>(
                 />
               </svg>
 
-              <div className="flex items-center text-slate-11 transition duration-200 ease-in-out hover:text-slate-12">
+              <div className="flex items-center transition duration-200 ease-in-out text-slate-11 hover:text-slate-12">
                 <Heading
                   as="h3"
                   color="gray"
@@ -88,7 +88,7 @@ export const Sidebar = React.forwardRef<SidebarElement, Readonly<SidebarProps>>(
               <Collapsible.Content className="relative mt-3">
                 <div className="absolute left-2.5  h-full w-px bg-slate-6" />
 
-                <div className="flex flex-col truncate py-2">
+                <div className="flex flex-col py-2 truncate">
                   <LayoutGroup id="sidebar">
                     {navItems &&
                       navItems.map((item) => {
@@ -107,7 +107,7 @@ export const Sidebar = React.forwardRef<SidebarElement, Readonly<SidebarProps>>(
                               {isCurrentPage && (
                                 <motion.span
                                   layoutId="sidebar"
-                                  className="absolute bottom-0 left-0 right-0 top-0 rounded-md bg-cyan-5"
+                                  className="absolute top-0 bottom-0 left-0 right-0 rounded-md bg-cyan-5"
                                   initial={{ opacity: 0 }}
                                   animate={{ opacity: 1 }}
                                   exit={{ opacity: 0 }}

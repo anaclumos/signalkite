@@ -35,4 +35,4 @@ export const schema = gql`
     ): ContentLinkSummary! @requireAuth
     deleteContentLinkSummary(id: Int!): ContentLinkSummary! @requireAuth
   }
-`;
+`
