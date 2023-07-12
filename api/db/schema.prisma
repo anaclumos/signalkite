@@ -40,6 +40,7 @@ model Newsletter {
   name      String
   keyword   String
   locale    String
+  region    String
   userId    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -84,7 +85,7 @@ model NewsletterContent {
   // then is it from HN channel? Or is it from the user-defined newsletter?
   id           String   @id @default(cuid())
   newsletterId String
-  summaryId    String
+  summaryLink  String
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
   deleted      Boolean  @default(false)
