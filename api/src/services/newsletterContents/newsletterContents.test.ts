@@ -42,14 +42,14 @@ describe('newsletterContents', () => {
     const result = await createNewsletterContent({
       input: {
         newsletterId: 'String',
-        summaryId: 'String',
-        updatedAt: '2023-07-12T04:40:32.912Z',
+        summaryLink: 'String',
+        updatedAt: '2023-07-12T05:03:47.167Z',
       },
     })
 
     expect(result.newsletterId).toEqual('String')
-    expect(result.summaryId).toEqual('String')
-    expect(result.updatedAt).toEqual(new Date('2023-07-12T04:40:32.912Z'))
+    expect(result.summaryLink).toEqual('String')
+    expect(result.updatedAt).toEqual(new Date('2023-07-12T05:03:47.167Z'))
   })
 
   scenario(

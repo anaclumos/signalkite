@@ -4,6 +4,7 @@ export const schema = gql`
     handle: String!
     name: String!
     keyword: String!
+    locale: String!
     region: String!
     userId: String!
     createdAt: DateTime!
@@ -20,6 +21,7 @@ export const schema = gql`
     handle: String!
     name: String!
     keyword: String!
+    locale: String!
     region: String!
     userId: String!
     deleted: Boolean!
@@ -29,6 +31,7 @@ export const schema = gql`
     handle: String
     name: String
     keyword: String
+    locale: String
     region: String
     userId: String
     deleted: Boolean

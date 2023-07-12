@@ -6,7 +6,6 @@ export const schema = gql`
     frequency: String!
     time: String!
     length: String!
-    locale: String!
     active: Boolean!
     createdAt: DateTime!
     updatedAt: DateTime!
@@ -24,7 +23,6 @@ export const schema = gql`
     frequency: String!
     time: String!
     length: String!
-    locale: String!
     active: Boolean!
     deleted: Boolean!
   }
@@ -35,7 +33,6 @@ export const schema = gql`
     frequency: String
     time: String
     length: String
-    locale: String
     active: Boolean
     deleted: Boolean
   }

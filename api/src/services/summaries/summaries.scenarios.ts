@@ -7,14 +7,14 @@ export const standard = defineScenario<Prisma.SummaryCreateArgs>({
       data: {
         title: 'String',
         origin: 'String',
-        updatedAt: '2023-07-12T04:40:39.509Z',
+        updatedAt: '2023-07-12T05:03:53.716Z',
       },
     },
     two: {
       data: {
         title: 'String',
         origin: 'String',
-        updatedAt: '2023-07-12T04:40:39.509Z',
+        updatedAt: '2023-07-12T05:03:53.716Z',
       },
     },
   },

@@ -39,8 +39,7 @@ describe('subscriptions', () => {
         frequency: 'String',
         time: 'String',
         length: 'String',
-        locale: 'String',
-        updatedAt: '2023-07-12T04:40:37.293Z',
+        updatedAt: '2023-07-12T05:03:51.508Z',
       },
     })
 
@@ -49,8 +48,7 @@ describe('subscriptions', () => {
     expect(result.frequency).toEqual('String')
     expect(result.time).toEqual('String')
     expect(result.length).toEqual('String')
-    expect(result.locale).toEqual('String')
-    expect(result.updatedAt).toEqual(new Date('2023-07-12T04:40:37.293Z'))
+    expect(result.updatedAt).toEqual(new Date('2023-07-12T05:03:51.508Z'))
   })
 
   scenario('updates a subscription', async (scenario: StandardScenario) => {

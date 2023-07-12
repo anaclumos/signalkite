@@ -2,7 +2,7 @@ export const schema = gql`
   type NewsletterContent {
     id: String!
     newsletterId: String!
-    summaryId: String!
+    summaryLink: String!
     createdAt: DateTime!
     updatedAt: DateTime!
     deleted: Boolean!
@@ -15,13 +15,13 @@ export const schema = gql`
 
   input CreateNewsletterContentInput {
     newsletterId: String!
-    summaryId: String!
+    summaryLink: String!
     deleted: Boolean!
   }
 
   input UpdateNewsletterContentInput {
     newsletterId: String
-    summaryId: String
+    summaryLink: String
     deleted: Boolean
   }
 

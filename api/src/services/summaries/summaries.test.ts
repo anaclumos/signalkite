@@ -33,13 +33,13 @@ describe('summaries', () => {
       input: {
         title: 'String',
         origin: 'String',
-        updatedAt: '2023-07-12T04:40:39.492Z',
+        updatedAt: '2023-07-12T05:03:53.698Z',
       },
     })
 
     expect(result.title).toEqual('String')
     expect(result.origin).toEqual('String')
-    expect(result.updatedAt).toEqual(new Date('2023-07-12T04:40:39.492Z'))
+    expect(result.updatedAt).toEqual(new Date('2023-07-12T05:03:53.698Z'))
   })
 
   scenario('updates a summary', async (scenario: StandardScenario) => {

@@ -6,15 +6,15 @@ export const standard = defineScenario<Prisma.NewsletterContentCreateArgs>({
     one: {
       data: {
         newsletterId: 'String',
-        summaryId: 'String',
-        updatedAt: '2023-07-12T04:40:32.924Z',
+        summaryLink: 'String',
+        updatedAt: '2023-07-12T05:03:47.179Z',
       },
     },
     two: {
       data: {
         newsletterId: 'String',
-        summaryId: 'String',
-        updatedAt: '2023-07-12T04:40:32.924Z',
+        summaryLink: 'String',
+        updatedAt: '2023-07-12T05:03:47.179Z',
       },
     },
   },

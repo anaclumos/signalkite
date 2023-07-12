@@ -34,21 +34,23 @@ describe('newsletters', () => {
   scenario('creates a newsletter', async () => {
     const result = await createNewsletter({
       input: {
-        handle: 'String796639',
+        handle: 'String2821492',
         name: 'String',
         keyword: 'String',
+        locale: 'String',
         region: 'String',
         userId: 'String',
-        updatedAt: '2023-07-12T04:40:35.098Z',
+        updatedAt: '2023-07-12T05:03:49.354Z',
       },
     })
 
-    expect(result.handle).toEqual('String796639')
+    expect(result.handle).toEqual('String2821492')
     expect(result.name).toEqual('String')
     expect(result.keyword).toEqual('String')
+    expect(result.locale).toEqual('String')
     expect(result.region).toEqual('String')
     expect(result.userId).toEqual('String')
-    expect(result.updatedAt).toEqual(new Date('2023-07-12T04:40:35.098Z'))
+    expect(result.updatedAt).toEqual(new Date('2023-07-12T05:03:49.354Z'))
   })
 
   scenario('updates a newsletter', async (scenario: StandardScenario) => {
@@ -57,10 +59,10 @@ describe('newsletters', () => {
     })) as Newsletter
     const result = await updateNewsletter({
       id: original.id,
-      input: { handle: 'String24562392' },
+      input: { handle: 'String42070202' },
     })
 
-    expect(result.handle).toEqual('String24562392')
+    expect(result.handle).toEqual('String42070202')
   })
 
   scenario('deletes a newsletter', async (scenario: StandardScenario) => {
