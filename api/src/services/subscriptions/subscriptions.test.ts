@@ -34,21 +34,23 @@ describe('subscriptions', () => {
   scenario('creates a subscription', async () => {
     const result = await createSubscription({
       input: {
-        userId: 4009889,
+        userId: 'String',
+        newsletterId: 'String',
         frequency: 'String',
         time: 'String',
         length: 'String',
-        BCP47: 'String',
-        updatedAt: '2023-07-10T22:12:18.671Z',
+        locale: 'String',
+        updatedAt: '2023-07-12T04:40:37.293Z',
       },
     })
 
-    expect(result.userId).toEqual(4009889)
+    expect(result.userId).toEqual('String')
+    expect(result.newsletterId).toEqual('String')
     expect(result.frequency).toEqual('String')
     expect(result.time).toEqual('String')
     expect(result.length).toEqual('String')
-    expect(result.BCP47).toEqual('String')
-    expect(result.updatedAt).toEqual(new Date('2023-07-10T22:12:18.671Z'))
+    expect(result.locale).toEqual('String')
+    expect(result.updatedAt).toEqual(new Date('2023-07-12T04:40:37.293Z'))
   })
 
   scenario('updates a subscription', async (scenario: StandardScenario) => {
@@ -57,10 +59,10 @@ describe('subscriptions', () => {
     })) as Subscription
     const result = await updateSubscription({
       id: original.id,
-      input: { userId: 8267919 },
+      input: { userId: 'String2' },
     })
 
-    expect(result.userId).toEqual(8267919)
+    expect(result.userId).toEqual('String2')
   })
 
   scenario('deletes a subscription', async (scenario: StandardScenario) => {

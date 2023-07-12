@@ -5,22 +5,22 @@ export const standard = defineScenario<Prisma.NewsletterCreateArgs>({
   newsletter: {
     one: {
       data: {
-        publicNewsletterHandle: 'String3224425',
-        newsletterName: 'String',
+        handle: 'String2599065',
+        name: 'String',
         keyword: 'String',
-        targetRegion: 'String',
-        userId: 9964047,
-        updatedAt: '2023-07-10T22:12:16.333Z',
+        region: 'String',
+        userId: 'String',
+        updatedAt: '2023-07-12T04:40:35.117Z',
       },
     },
     two: {
       data: {
-        publicNewsletterHandle: 'String1698450',
-        newsletterName: 'String',
+        handle: 'String6983430',
+        name: 'String',
         keyword: 'String',
-        targetRegion: 'String',
-        userId: 9132215,
-        updatedAt: '2023-07-10T22:12:16.333Z',
+        region: 'String',
+        userId: 'String',
+        updatedAt: '2023-07-12T04:40:35.117Z',
       },
     },
   },

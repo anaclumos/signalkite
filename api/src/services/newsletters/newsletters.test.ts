@@ -34,21 +34,21 @@ describe('newsletters', () => {
   scenario('creates a newsletter', async () => {
     const result = await createNewsletter({
       input: {
-        publicNewsletterHandle: 'String9800290',
-        newsletterName: 'String',
+        handle: 'String796639',
+        name: 'String',
         keyword: 'String',
-        targetRegion: 'String',
-        userId: 5557880,
-        updatedAt: '2023-07-10T22:12:16.313Z',
+        region: 'String',
+        userId: 'String',
+        updatedAt: '2023-07-12T04:40:35.098Z',
       },
     })
 
-    expect(result.publicNewsletterHandle).toEqual('String9800290')
-    expect(result.newsletterName).toEqual('String')
+    expect(result.handle).toEqual('String796639')
+    expect(result.name).toEqual('String')
     expect(result.keyword).toEqual('String')
-    expect(result.targetRegion).toEqual('String')
-    expect(result.userId).toEqual(5557880)
-    expect(result.updatedAt).toEqual(new Date('2023-07-10T22:12:16.313Z'))
+    expect(result.region).toEqual('String')
+    expect(result.userId).toEqual('String')
+    expect(result.updatedAt).toEqual(new Date('2023-07-12T04:40:35.098Z'))
   })
 
   scenario('updates a newsletter', async (scenario: StandardScenario) => {
@@ -57,10 +57,10 @@ describe('newsletters', () => {
     })) as Newsletter
     const result = await updateNewsletter({
       id: original.id,
-      input: { publicNewsletterHandle: 'String9496342' },
+      input: { handle: 'String24562392' },
     })
 
-    expect(result.publicNewsletterHandle).toEqual('String9496342')
+    expect(result.handle).toEqual('String24562392')
   })
 
   scenario('deletes a newsletter', async (scenario: StandardScenario) => {

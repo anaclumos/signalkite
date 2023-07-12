@@ -1,43 +1,43 @@
 export const schema = gql`
   type Newsletter {
-    id: Int!
-    publicNewsletterHandle: String!
-    newsletterName: String!
+    id: String!
+    handle: String!
+    name: String!
     keyword: String!
-    targetRegion: String!
-    userId: Int!
-    active: Boolean!
+    region: String!
+    userId: String!
     createdAt: DateTime!
     updatedAt: DateTime!
+    deleted: Boolean!
   }
 
   type Query {
     newsletters: [Newsletter!]! @requireAuth
-    newsletter(id: Int!): Newsletter @requireAuth
+    newsletter(id: String!): Newsletter @requireAuth
   }
 
   input CreateNewsletterInput {
-    publicNewsletterHandle: String!
-    newsletterName: String!
+    handle: String!
+    name: String!
     keyword: String!
-    targetRegion: String!
-    userId: Int!
-    active: Boolean!
+    region: String!
+    userId: String!
+    deleted: Boolean!
   }
 
   input UpdateNewsletterInput {
-    publicNewsletterHandle: String
-    newsletterName: String
+    handle: String
+    name: String
     keyword: String
-    targetRegion: String
-    userId: Int
-    active: Boolean
+    region: String
+    userId: String
+    deleted: Boolean
   }
 
   type Mutation {
     createNewsletter(input: CreateNewsletterInput!): Newsletter! @requireAuth
-    updateNewsletter(id: Int!, input: UpdateNewsletterInput!): Newsletter!
+    updateNewsletter(id: String!, input: UpdateNewsletterInput!): Newsletter!
       @requireAuth
-    deleteNewsletter(id: Int!): Newsletter! @requireAuth
+    deleteNewsletter(id: String!): Newsletter! @requireAuth
   }
 `

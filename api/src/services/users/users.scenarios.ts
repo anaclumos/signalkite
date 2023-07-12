@@ -6,21 +6,21 @@ export const standard = defineScenario<Prisma.UserCreateArgs>({
     one: {
       data: {
         timezone: 'String',
-        updatedAt: '2023-07-10T22:33:16.357Z',
-        username: 'String5229575',
-        email: 'String3495383',
+        handle: 'String3292758',
+        email: 'String5272915',
         hashedPassword: 'String',
         salt: 'String',
+        updatedAt: '2023-07-12T04:40:30.739Z',
       },
     },
     two: {
       data: {
         timezone: 'String',
-        updatedAt: '2023-07-10T22:33:16.357Z',
-        username: 'String3425501',
-        email: 'String4892139',
+        handle: 'String6739506',
+        email: 'String6897123',
         hashedPassword: 'String',
         salt: 'String',
+        updatedAt: '2023-07-12T04:40:30.739Z',
       },
     },
   },

@@ -9,12 +9,11 @@ generator client {
 }
 
 model User {
-  id                  Int              @id @default(autoincrement())
+  id                  String           @id @default(cuid())
   name                String?
   timezone            String
   handle              String           @unique
   email               String           @unique
-  webAuthnChallenge   String?          @unique
   hashedPassword      String
   salt                String
   resetToken          String?
@@ -27,7 +26,7 @@ model User {
 
 model UserCredential {
   id         String  @id
-  userId     Int
+  userId     String
   user       User    @relation(fields: [userId], references: [id])
   publicKey  Bytes
   transports String?
@@ -36,34 +35,33 @@ model UserCredential {
 }
 
 model Newsletter {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(cuid())
   handle    String   @unique
   name      String
   keyword   String
   region    String
-  userId    Int
+  userId    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   deleted   Boolean  @default(false)
 }
 
 model Subscription {
-  id                  Int      @id @default(autoincrement())
-  userId              Int
-  curatedNewsletterId Int?
-  newsletterId        Int?
-  frequency           String
-  time                String
-  length              String
-  locale              String
-  active              Boolean  @default(false)
-  createdAt           DateTime @default(now())
-  updatedAt           DateTime @updatedAt
-  deleted             Boolean  @default(false)
+  id           String   @id @default(cuid())
+  userId       String
+  newsletterId String
+  frequency    String
+  time         String
+  length       String
+  locale       String
+  active       Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  deleted      Boolean  @default(false)
 }
 
 model Summary {
-  id             Int      @id @default(autoincrement())
+  id             String   @id @default(cuid())
   title          String
   origin         String
   originBody     String?
@@ -85,9 +83,9 @@ model Summary {
 model NewsletterContent {
   // Where does the content belong to? If I have a link https://google.com/some-blog,
   // then is it from HN channel? Or is it from the user-defined newsletter?
-  id           Int      @id @default(autoincrement())
-  newsletterId Int
-  summaryId    Int
+  id           String   @id @default(cuid())
+  newsletterId String
+  summaryId    String
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
   deleted      Boolean  @default(false)

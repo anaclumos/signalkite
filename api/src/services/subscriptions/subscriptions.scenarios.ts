@@ -5,22 +5,24 @@ export const standard = defineScenario<Prisma.SubscriptionCreateArgs>({
   subscription: {
     one: {
       data: {
-        userId: 6881014,
+        userId: 'String',
+        newsletterId: 'String',
         frequency: 'String',
         time: 'String',
         length: 'String',
-        BCP47: 'String',
-        updatedAt: '2023-07-10T22:12:18.685Z',
+        locale: 'String',
+        updatedAt: '2023-07-12T04:40:37.311Z',
       },
     },
     two: {
       data: {
-        userId: 8211421,
+        userId: 'String',
+        newsletterId: 'String',
         frequency: 'String',
         time: 'String',
         length: 'String',
-        BCP47: 'String',
-        updatedAt: '2023-07-10T22:12:18.685Z',
+        locale: 'String',
+        updatedAt: '2023-07-12T04:40:37.311Z',
       },
     },
   },

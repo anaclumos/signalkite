@@ -26,20 +26,20 @@ describe('users', () => {
     const result = await createUser({
       input: {
         timezone: 'String',
-        updatedAt: '2023-07-10T22:33:16.345Z',
-        username: 'String3095099',
-        email: 'String8148665',
+        handle: 'String702290',
+        email: 'String5549032',
         hashedPassword: 'String',
         salt: 'String',
+        updatedAt: '2023-07-12T04:40:30.721Z',
       },
     })
 
     expect(result.timezone).toEqual('String')
-    expect(result.updatedAt).toEqual(new Date('2023-07-10T22:33:16.345Z'))
-    expect(result.username).toEqual('String3095099')
-    expect(result.email).toEqual('String8148665')
+    expect(result.handle).toEqual('String702290')
+    expect(result.email).toEqual('String5549032')
     expect(result.hashedPassword).toEqual('String')
     expect(result.salt).toEqual('String')
+    expect(result.updatedAt).toEqual(new Date('2023-07-12T04:40:30.721Z'))
   })
 
   scenario('updates a user', async (scenario: StandardScenario) => {
