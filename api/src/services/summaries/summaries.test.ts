@@ -32,14 +32,14 @@ describe('summaries', () => {
     const result = await createSummary({
       input: {
         title: 'String',
-        origin: 'String',
-        updatedAt: '2023-07-12T05:03:53.698Z',
+        originLink: 'String',
+        updatedAt: '2023-07-12T05:15:37.314Z',
       },
     })
 
     expect(result.title).toEqual('String')
-    expect(result.origin).toEqual('String')
-    expect(result.updatedAt).toEqual(new Date('2023-07-12T05:03:53.698Z'))
+    expect(result.originLink).toEqual('String')
+    expect(result.updatedAt).toEqual(new Date('2023-07-12T05:15:37.314Z'))
   })
 
   scenario('updates a summary', async (scenario: StandardScenario) => {

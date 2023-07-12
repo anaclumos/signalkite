@@ -2,14 +2,15 @@ export const schema = gql`
   type Summary {
     id: String!
     title: String!
-    origin: String!
+    originLink: String!
     originBody: String
-    originSummary: String
     originLocale: String
     commentLink: String
-    commentBody: String
-    commentSummary: String
     commentLocale: String
+    commentBody: String
+    summaryLocale: String
+    summaryOrigin: String
+    summaryComment: String
     points: Int
     commentCount: Int
     downloadMethod: String
@@ -26,14 +27,15 @@ export const schema = gql`
 
   input CreateSummaryInput {
     title: String!
-    origin: String!
+    originLink: String!
     originBody: String
-    originSummary: String
     originLocale: String
     commentLink: String
-    commentBody: String
-    commentSummary: String
     commentLocale: String
+    commentBody: String
+    summaryLocale: String
+    summaryOrigin: String
+    summaryComment: String
     points: Int
     commentCount: Int
     downloadMethod: String
@@ -43,14 +45,15 @@ export const schema = gql`
 
   input UpdateSummaryInput {
     title: String
-    origin: String
+    originLink: String
     originBody: String
-    originSummary: String
     originLocale: String
     commentLink: String
-    commentBody: String
-    commentSummary: String
     commentLocale: String
+    commentBody: String
+    summaryLocale: String
+    summaryOrigin: String
+    summaryComment: String
     points: Int
     commentCount: Int
     downloadMethod: String

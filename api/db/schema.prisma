@@ -63,21 +63,33 @@ model Subscription {
 model Summary {
   id             String   @id @default(cuid())
   title          String
-  origin         String
+
+  // The link to the original content
+  originLink     String
   originBody     String?
-  originSummary  String?
   originLocale   String?
+
+  // The link to the comment
   commentLink    String?
-  commentBody    String?
-  commentSummary String?
   commentLocale  String?
+  commentBody    String?
+
+  // The link to the summary
+  summaryLocale  String?
+  summaryOrigin  String?
+  summaryComment String?
+
+  // Metadata
   points         Int? // Optional. For HN
   commentCount   Int? // Optional. For HN
   downloadMethod String?
   retryCount     Int      @default(0)
+
+  // Default
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
   deleted        Boolean  @default(false)
+  @@unique([originLink, summaryLocale])
 }
 
 model NewsletterContent {

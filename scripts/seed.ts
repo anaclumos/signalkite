@@ -24,4 +24,38 @@ export default async () => {
   } catch (error) {
     console.warn('Cannot Populate User')
   }
+
+
+  try {
+
+    // get user's id
+    const user = await db.user.findUnique({
+      where: {
+        handle: 'anaclumos',
+      },
+    })
+
+    const data: Prisma.NewsletterCreateArgs['data'][] = [
+      {
+        name: 'Hacker News',
+        handle: 'hn',
+        keyword : '',
+        locale: 'en',
+        region: 'US',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        deleted: false,
+        userId: user?.id ?? '',
+      },
+    ]
+    Promise.all(
+      data.map(async (data: Prisma.NewsletterCreateArgs['data']) => {
+        await db.newsletter.create({ data })
+      })
+    )
+    console.log('Successfully Populated Newsletter')
+  }
+  catch (error) {
+    console.warn('Cannot Populate Newsletter')
+  }
 }

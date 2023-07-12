@@ -6,15 +6,15 @@ export const standard = defineScenario<Prisma.SummaryCreateArgs>({
     one: {
       data: {
         title: 'String',
-        origin: 'String',
-        updatedAt: '2023-07-12T05:03:53.716Z',
+        originLink: 'String',
+        updatedAt: '2023-07-12T05:15:37.331Z',
       },
     },
     two: {
       data: {
         title: 'String',
-        origin: 'String',
-        updatedAt: '2023-07-12T05:03:53.716Z',
+        originLink: 'String',
+        updatedAt: '2023-07-12T05:15:37.331Z',
       },
     },
   },
