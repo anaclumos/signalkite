@@ -10,18 +10,18 @@ generator client {
 
 model User {
   id                  Int              @id @default(autoincrement())
-  displayName         String?
+  name                String?
   timezone            String
-  createdAt           DateTime         @default(now())
-  updatedAt           DateTime         @updatedAt
-  username            String           @unique
+  handle              String           @unique
   email               String           @unique
+  webAuthnChallenge   String?          @unique
   hashedPassword      String
   salt                String
   resetToken          String?
   resetTokenExpiresAt DateTime?
-  webAuthnChallenge   String?          @unique
   credentials         UserCredential[]
+  createdAt           DateTime         @default(now())
+  updatedAt           DateTime         @updatedAt
   deleted             Boolean          @default(false)
 }
 
@@ -36,16 +36,15 @@ model UserCredential {
 }
 
 model Newsletter {
-  id                     Int      @id @default(autoincrement())
-  publicNewsletterHandle String   @unique
-  newsletterName         String
-  keyword                String
-  targetRegion           String
-  userId                 Int
-  active                 Boolean  @default(false)
-  createdAt              DateTime @default(now())
-  updatedAt              DateTime @updatedAt
-  deleted                Boolean  @default(false)
+  id        Int      @id @default(autoincrement())
+  handle    String   @unique
+  name      String
+  keyword   String
+  region    String
+  userId    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deleted   Boolean  @default(false)
 }
 
 model Subscription {
@@ -56,70 +55,40 @@ model Subscription {
   frequency           String
   time                String
   length              String
-  BCP47               String
+  locale              String
   active              Boolean  @default(false)
   createdAt           DateTime @default(now())
   updatedAt           DateTime @updatedAt
   deleted             Boolean  @default(false)
 }
 
-model Content {
-  id                  Int      @id @default(autoincrement())
-  markdownContent     String?
-  BCP47               String
-  curatedNewsletterId Int?
-  newsletterId        Int?
-  createdAt           DateTime @default(now())
-  updatedAt           DateTime @updatedAt
-  deleted             Boolean  @default(false)
-}
-
-model ContentLinkSummary {
-  id            Int      @id @default(autoincrement())
-  contentId     Int
-  linkSummaryId Int
-  order         Int
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-  deleted       Boolean  @default(false)
-}
-
-model Outbox {
-  contentSubscriptionId Int      @id @default(autoincrement())
-  contentId             Int
-  subscriptionId        Int
-  status                String
-  errorMessage          String?
-  createdAt             DateTime @default(now())
-  updatedAt             DateTime @updatedAt
-  deleted               Boolean  @default(false)
-}
-
-model LinkSummary {
+model Summary {
   id             Int      @id @default(autoincrement())
   title          String
-  linkUrl        String   @unique
-  BCP47          String
-  linkSummary    String?
-  commentUrl     String?
-  commentSummary String?
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
-  body           String?
+  origin         String
+  originBody     String?
+  originSummary  String?
+  originLocale   String?
+  commentLink    String?
   commentBody    String?
+  commentSummary String?
+  commentLocale  String?
+  points         Int? // Optional. For HN
+  commentCount   Int? // Optional. For HN
   downloadMethod String?
   retryCount     Int      @default(0)
-  deleted        Boolean  @default(false)
-}
-
-model LinkSummaryTranslation {
-  id             Int      @id @default(autoincrement())
-  title          String
-  linkSummaryId  Int
-  linkSummary    String
-  commentSummary String?
-  BCP47          String
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
   deleted        Boolean  @default(false)
+}
+
+model NewsletterContent {
+  // Where does the content belong to? If I have a link https://google.com/some-blog,
+  // then is it from HN channel? Or is it from the user-defined newsletter?
+  id           Int      @id @default(autoincrement())
+  newsletterId Int
+  summaryId    Int
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  deleted      Boolean  @default(false)
 }
