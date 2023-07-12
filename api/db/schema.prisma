@@ -39,7 +39,7 @@ model Newsletter {
   handle    String   @unique
   name      String
   keyword   String
-  region    String
+  locale    String
   userId    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -53,7 +53,6 @@ model Subscription {
   frequency    String
   time         String
   length       String
-  locale       String
   active       Boolean  @default(false)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
