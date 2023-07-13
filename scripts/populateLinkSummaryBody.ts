@@ -132,11 +132,11 @@ const fetchContent = async (url: string) => {
 }
 
 const main = async () => {
-  const linkSummaries = await db.linkSummary.findMany({
+  const linkSummaries = await db.summary.findMany({
     where: {
       OR: [
-        { body: '' },
-        { body: null },
+        { originBody: '' },
+        { originBody: null },
         { commentBody: '' },
         { commentBody: null },
       ],
@@ -146,24 +146,24 @@ const main = async () => {
 
   await Promise.allSettled(
     linkSummaries.map(async (linkSummary) => {
-      const { id, linkUrl, commentUrl } = linkSummary
-      log(`⏳ Trying to download ${id} (${linkUrl})`, 'info')
-      if (linkUrl?.includes('twitter.com')) {
+      const { id, originLink, commentLink } = linkSummary
+      log(`⏳ Trying to download ${id} (${originLink})`, 'info')
+      if (originLink?.includes('twitter.com')) {
         log(
-          `❌ Ignoring Twitter LinkSummary ${id} with body ${linkUrl}`,
+          `❌ Ignoring Twitter LinkSummary ${id} with body ${originLink}`,
           'info'
         )
         return Promise.resolve()
       }
       throttle()
-      const body = await fetchContent(linkUrl)
+      const originBody = await fetchContent(originLink)
       throttle()
-      const commentBody = await fetchContent(commentUrl)
-      await db.linkSummary.update({
+      const commentBody = await fetchContent(commentLink)
+      await db.summary.update({
         where: { id },
-        data: { body, commentBody },
+        data: { originBody, commentBody },
       })
-      log(`💾 Updated LinkSummary ${id} (${linkUrl})`, 'info')
+      log(`💾 Updated LinkSummary ${id} (${originLink})`, 'info')
       return Promise.resolve()
     })
   )
