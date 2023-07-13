@@ -1080,10 +1080,10 @@ export default async () => {
         userId: user?.id ?? '',
       },
       {
-        name: 'HN (Norwegian)',
-        handle: 'hn-no',
+        name: 'HN (Norwegian Bokmål)',
+        handle: 'hn-nb',
         keyword: '',
-        locale: 'no',
+        locale: 'nb',
         region: 'US',
         createdAt: new Date(),
         updatedAt: new Date(),
