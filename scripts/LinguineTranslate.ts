@@ -94,7 +94,11 @@ export const translate = async (
 export default async () => {
   const linguine = Object.keys(LinguineConfig)
   for (const target of linguine) {
-    await translate('Linguine Engine combines Google Translate, Azure Translate, and DeepL to translate 150+ languages, covering 99.9% of the global audience.', 'en', target)
+    await translate(
+      'Linguine Engine combines Google Translate, Azure Translate, and DeepL to translate 150+ languages, covering 99.9% of the global audience.',
+      'en',
+      target
+    )
       .then(async (r) => {
         log(`✅\t${LinguineConfig[target].provider}\t${target}\t${r}`, 'info')
       })
