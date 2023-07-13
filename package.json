@@ -17,12 +17,17 @@
     "quick:email": "yarn workspace email dev",
     "quick:storybook": "yarn rw storybook",
     "quick:prisma": "yarn rw prisma studio",
-    "quick:migrate": "yarn rw prisma migrate dev"
+    "quick:migrate": "yarn rw prisma migrate dev",
+    "postinstall": "husky install",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
   },
   "devDependencies": {
     "@redwoodjs/auth-dbauth-setup": "5.4.3",
     "@redwoodjs/core": "5.4.3",
+    "husky": "^8.0.0",
     "i18next-parser": "^8.2.0",
+    "pinst": "^3.0.0",
     "prettier": "^3.0.0"
   },
   "eslintConfig": {
