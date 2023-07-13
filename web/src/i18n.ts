@@ -97,7 +97,7 @@ import mww from './locales/mww.json' // Hmong Daw, Provided By Bing
 import my from './locales/my.json' // Myanmar (Burmese), Provided By Bing
 import ne from './locales/ne.json' // Nepali, Provided By Bing
 import nl from './locales/nl.json' // Dutch, Provided By DeepL
-import no from './locales/no.json' // Norwegian, Provided By DeepL
+import nb from './locales/nb.json' // Norwegian Bokmål, Provided By DeepL
 import nso from './locales/nso.json' // Sepedi, Provided By Google
 import ny from './locales/ny.json' // Nyanja (Chichewa), Provided By Google
 import om from './locales/om.json' // Oromo, Provided By Google
@@ -248,7 +248,7 @@ const locales = {
   my: { translation: my }, // Myanmar (Burmese), Provided By Bing
   ne: { translation: ne }, // Nepali, Provided By Bing
   nl: { translation: nl }, // Dutch, Provided By DeepL
-  no: { translation: no }, // Norwegian, Provided By DeepL
+  nb: { translation: nb }, // Norwegian Bokmål, Provided By DeepL
   nso: { translation: nso }, // Sepedi, Provided By Google
   ny: { translation: ny }, // Nyanja (Chichewa), Provided By Google
   om: { translation: om }, // Oromo, Provided By Google
