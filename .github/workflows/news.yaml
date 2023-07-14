@@ -28,6 +28,10 @@ jobs:
         run: |
           git config pull.rebase true
           git pull
+      - name: Run Prettier
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: workspace heimdall-v1 cleanup
       - name: Update News
         run: python3 legacy/data/main.py
         env:
