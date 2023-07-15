@@ -9,7 +9,6 @@ import { log } from './util'
  * @returns {Promise<[]>}
  * @example
  * const bestStories = await updateHN()
- * console.log(bestStories)
  */
 export const updateHN = async () => {
   let bestStories = await fetch(
