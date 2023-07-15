@@ -8,7 +8,7 @@ import type {
 import { v4 as uuidv4 } from 'uuid'
 
 import { LinguineConfig } from './LinguineConfig'
-import { log } from './util'
+import { log } from './tools/util'
 
 export const translate = async (
   text: string,
