@@ -214,7 +214,7 @@ export const summarizeWithAssumption = async ({
     })
   } catch (e) {
     log(`❌ Failed to summarize ${originLink}`, 'error')
-    await db.summary.update({
+    return await db.summary.update({
       where: {
         originLink_summaryLocale: {
           originLink,
