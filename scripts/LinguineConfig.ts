@@ -62,7 +62,7 @@ export const LinguineConfig = {
   it: { name: 'Italian', provider: 'DEEPL' },
   iu: { name: 'Inuktitut', provider: 'BING' },
   ja: { name: 'Japanese', provider: 'DEEPL' },
-  jv: { name: 'Javanese', provider: 'BING' },
+  jv: { name: 'Javanese', provider: 'GOOGLE' },
   ka: { name: 'Georgian', provider: 'GOOGLE' },
   kk: { name: 'Kazakh', provider: 'BING' },
   km: { name: 'Khmer', provider: 'BING' },
