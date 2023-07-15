@@ -1,24 +1,24 @@
 import { logger } from 'api/src/lib/logger'
 
+export const logs = []
+
 export const log = (message: string, level: 'info' | 'error' = 'info') => {
   if (process.env.NODE_ENV === 'production') {
     if (level === 'info') {
       logger.info(message)
+      logs.push(message)
     } else {
       logger.error(message)
+      logs.push(message)
     }
   } else {
     console.log(message)
+    logs.push(message)
   }
 }
 
-export const throttle = async (minimum: number = 1, maximum: number = 10) => {
-  await new Promise((r) =>
-    setTimeout(r, Math.floor(Math.random() * (maximum - minimum)) + minimum)
-  )
-}
-
 export const sanitize = (text: string) => {
+  if (!text) return ''
   return text
     .replaceAll('\n', ' ')
     .replaceAll('\t', ' ')
@@ -51,5 +51,15 @@ export const sanitize = (text: string) => {
     .replaceAll(/&ldquo;/g, '“')
     .replaceAll(/&rdquo;/g, '”')
     .replaceAll('\u0000', '')
+    .replaceAll('  ', '')
+    .replaceAll('\n\n', '\n')
+    .replaceAll(
+      'Hacker News new | past | comments | ask | show | jobs | submit login',
+      ''
+    )
+    .replaceAll(
+      'Guidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact Search:',
+      ''
+    )
     .trim()
 }
