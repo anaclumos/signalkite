@@ -312,14 +312,7 @@ def collect_device_info():
     collect_notification(f"Total CPU Usage: {psutil.cpu_percent()}%")
 
 
-def notify(title, text):
-    """Notify me about newsletter results."""
-    resend.send_email(
-        sender="notification@resend.dev",
-        to="hey@cho.sh",
-        subject=title,
-        text=text,
-    )
+
 
 
 def collect_notification(*args):
@@ -352,8 +345,3 @@ def schedule_newsletter(lang):
 if __name__ == "__main__":
     for lang in CONFIG:
         schedule_newsletter(lang)
-    collect_device_info()
-    notify(
-        f"Newsletter Job {datetime.now().astimezone(timezone('US/Pacific')).strftime('%Y-%m-%d %H:%M:%S')}",
-        notification,
-    )
