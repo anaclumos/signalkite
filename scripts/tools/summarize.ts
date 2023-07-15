@@ -135,7 +135,7 @@ export const summarize = async ({
   const originSummaryArray = await createBulletPointSummary(originBody, title)
   const commentSummaryArray = await createBulletPointSummary(commentBody, title)
 
-  await db.summary.upsert({
+  return await db.summary.upsert({
     where: {
       originLink_summaryLocale: {
         originLink,
@@ -175,7 +175,6 @@ export const summarizeWithAssumption = async ({
   originLink: string
   summaryLocale: string
 }) => {
-  console.log(`🔍 Summarizing\t${originLink}...`)
   const origin = await db.summary.findUnique({
     where: {
       originLink_summaryLocale: {
@@ -199,8 +198,14 @@ export const summarizeWithAssumption = async ({
   const originBody = origin.originBody
   const commentBody = origin.commentBody
 
+  if (origin.summaryOrigin) {
+    log(`✅ Already summarized ${originLink}`)
+    return origin
+  }
+
   try {
-    await summarize({
+    log(`🔍 Summarizing\t${originLink}...`, 'info')
+    return await summarize({
       title,
       originBody,
       commentBody,
