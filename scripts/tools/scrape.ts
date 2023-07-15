@@ -69,7 +69,7 @@ export const fetchContent = async (url: string, commentUrl?: string) => {
         downloadMethod = 'youtube'
       } catch (e) {
         log(`❌ Error\tCannot Download Youtube Transcript for ${url}`, 'error')
-        return '' // OpenAI Whisper?
+        return existingContent
       }
     }
 
@@ -217,37 +217,47 @@ export const fetchContent = async (url: string, commentUrl?: string) => {
   const origin = sanitize(body)
   const comment = sanitize(commentBody)
 
+  if (locale === '') {
+    locale = 'en'
+  }
+
   try {
     locale = locale.split('-')[0]
   } catch (e) {
     // do nothing
   }
 
-  return await db.summary
-    .findFirst({
-      where: {
-        originLink: url,
-        originLocale: locale,
-      },
-    })
-    .then(async (summary) => {
-      // if summary exists, update the content
-      if (summary) {
-        await db.summary.update({
-          where: {
-            id: summary.id,
-          },
-          data: {
-            originBody: origin,
-            commentBody: comment,
-            originLink: url,
-            originLocale: locale,
-            commentLink: commentUrl,
-            commentLocale,
-            downloadMethod,
-          },
-        })
-        return summary
-      }
-    })
+  try {
+    return await db.summary
+      .findFirstOrThrow({
+        where: {
+          originLink: url,
+          originLocale: locale,
+        },
+      })
+      .then(async (summary) => {
+        // if summary exists, update the content
+        if (summary) {
+          await db.summary.update({
+            where: {
+              id: summary.id,
+            },
+            data: {
+              originBody: origin,
+              commentBody: comment,
+              originLink: url,
+              originLocale: locale,
+              commentLink: commentUrl,
+              commentLocale,
+              downloadMethod,
+            },
+          })
+          log(`✅ Saved\t${url}`, 'info')
+          return summary
+        }
+      })
+  } catch (e) {
+    log(`❌ Error\tCannot Save ${url}, ${locale}, ${e}`, 'info')
+    return null
+  }
 }
