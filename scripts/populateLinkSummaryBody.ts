@@ -1,9 +1,10 @@
 import { db } from 'api/src/lib/db'
+import { JSDOM } from 'jsdom'
 import pdf from 'pdf-parse'
 import playwright from 'playwright'
 import { YoutubeTranscript } from 'youtube-transcript'
 
-import { log, sanitize, throttle } from './util'
+import { log, sanitize } from './util'
 
 const timedFetch = async (url: string, timeout = 60000) => {
   const controller = new AbortController()
@@ -15,7 +16,7 @@ const timedFetch = async (url: string, timeout = 60000) => {
   return response
 }
 
-const fetchContent = async (url: string) => {
+export const fetchContent = async (url: string) => {
   if (url === '') {
     return ''
   }
@@ -71,20 +72,32 @@ const fetchContent = async (url: string) => {
   if (body === '') {
     try {
       log(`⏳ Downloading Article for ${url}`, 'info')
-      const res = await timedFetch(
-        `https://web.scraper.workers.dev/?selector=article,+main,+table&scrape=text&url=${url}`
-      )
-      const json = await res.json()
-      if (json?.error) {
-        throw new Error(json?.result?.error)
+
+      const res = await require('request-promise')({
+        url: url,
+        proxy: process.env.PROXY,
+        rejectUnauthorized: false,
+      })
+
+      const dom = new JSDOM(res)
+      // Remove all script and noscript tags
+      dom.window.document.querySelectorAll('script').forEach((item) => {
+        item.remove()
+      })
+
+      // Remove all style tags
+      dom.window.document.querySelectorAll('style').forEach((item) => {
+        item.remove()
+      })
+
+      // check if article exists. stringify that if it does
+      const article = dom.window.document.querySelector('article')
+      if (article) {
+        body = article.textContent
+      } else {
+        body = dom.window.document.body.textContent
       }
-      body =
-        json?.result?.article?.toString() ||
-        json?.result?.main?.toString() ||
-        json?.result?.table?.toString()
-      if (body?.toString().trim() === '') {
-        throw new Error('😵 Article is empty')
-      }
+
       log(`✅ Downloaded Article for ${url}`, 'info')
     } catch (e) {
       log(`❌ Cannot Download Article for ${url}, ${e}`, 'info')
@@ -132,45 +145,7 @@ const fetchContent = async (url: string) => {
 }
 
 const main = async () => {
-  const linkSummaries = await db.summary.findMany({
-    where: {
-      OR: [
-        { originBody: '' },
-        { originBody: null },
-        { commentBody: '' },
-        { commentBody: null },
-      ],
-    },
-    take: 100,
-  })
-
-  await Promise.allSettled(
-    linkSummaries.map(async (linkSummary) => {
-      const { id, originLink, commentLink } = linkSummary
-      log(`⏳ Trying to download ${id} (${originLink})`, 'info')
-      if (originLink?.includes('twitter.com')) {
-        log(
-          `❌ Ignoring Twitter LinkSummary ${id} with body ${originLink}`,
-          'info'
-        )
-        return Promise.resolve()
-      }
-      throttle()
-      const originBody = await fetchContent(originLink)
-      throttle()
-      const commentBody = await fetchContent(commentLink)
-      await db.summary.update({
-        where: { id },
-        data: { originBody, commentBody },
-      })
-      log(`💾 Updated LinkSummary ${id} (${originLink})`, 'info')
-      return Promise.resolve()
-    })
-  )
-
-  log(`🏁 Finished`, 'info')
-  await db.$disconnect()
-  process.exit(0)
+  // main business logic goes here
 }
 
 export default async () => {
