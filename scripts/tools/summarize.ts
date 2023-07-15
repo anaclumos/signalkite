@@ -4,12 +4,13 @@ import { db } from 'api/src/lib/db'
 import { loadSummarizationChain } from 'langchain/chains'
 import { ChatOpenAI } from 'langchain/chat_models/openai'
 import { OpenAI } from 'langchain/llms/openai'
-import { HumanChatMessage, SystemChatMessage } from 'langchain/schema'
+import { HumanMessage, SystemMessage } from 'langchain/schema'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 
-import { log, sanitize, throttle } from './util'
+import { GPT_RETRY_LIMIT } from './config'
+import { log, sanitize } from './util'
 
-const createBulletPointSummary = async (rawText, title) => {
+export const createBulletPointSummary = async (rawText, title) => {
   // for summarizing and context generating
   const model = new OpenAI({ modelName: 'gpt-3.5-turbo-16k' })
   // for generating the actual chat
@@ -21,7 +22,7 @@ const createBulletPointSummary = async (rawText, title) => {
       chunkSize: 8192,
     })
 
-    log(`⏳ Shortening "${title}"`, 'info')
+    log(`⏳ Shortening\t${title}`, 'info')
     const bodyDoc = await textSplitter.createDocuments([sanitize(rawText)])
     const bodyRes = await chain.call({
       input_documents: bodyDoc,
@@ -30,10 +31,10 @@ const createBulletPointSummary = async (rawText, title) => {
 
     const summary = sanitize(bodyRes.text)
 
-    log(`⏳ Generating Summary for "${title}"`, 'info')
+    log(`🍵 Distilling\t${title}`, 'info')
 
     const response = await chat.call([
-      new SystemChatMessage(
+      new SystemMessage(
         `
         You are a professional, fair, and intelligent expert journalist for cutting-edge tech news.
         You must provide a concise summary in mutually exclusive but collectively complete bullet points.
@@ -74,18 +75,18 @@ const createBulletPointSummary = async (rawText, title) => {
         Now, I will give you the text.
         `
       ),
-      new HumanChatMessage(`TEXT:\n${summary}\n\nRESULT:\n`),
+      new HumanMessage(`TEXT:\n${summary}\n\nRESULT:\n`),
     ])
 
-    const { text } = response
-    let arr = text.split('\n')
+    const { content } = response
+    let arr = content.split('\n')
 
     arr = arr.map((item) => sanitize(item))
     arr = arr.map((item) => {
       if (item.startsWith('- ')) {
         item = item.substring(2)
       }
-      if (item.endsWith("' -")) {
+      if (item.startsWith("' -")) {
         item = item.substring(0, item.length - 3)
       }
       if (item.endsWith("'")) {
@@ -94,70 +95,127 @@ const createBulletPointSummary = async (rawText, title) => {
 
       return sanitize(item)
     })
+    arr = arr.filter((item) => item !== '')
+    arr = arr.filter((item) => item !== 'N/A')
+    arr = arr.filter((item) => item !== 'N/A.')
     return arr
   } catch (e) {
     console.error(e)
   }
 }
 
-const main = async () => {
-  const linkSummaries = await db.linkSummary.findMany({
+/**
+ *
+ * Summarize the origin and comment body and store it in the database.
+ * If the summary already exists, it will be updated.
+ * Not functional programming. Updates the database.
+ *
+ * @param { string } title
+ * @param { string } originBody
+ * @param { string } commentBody
+ * @param { string } originLink
+ * @param { string } summaryLocale
+ */
+export const summarize = async ({
+  title,
+  originBody,
+  commentBody,
+  originLink,
+  summaryLocale,
+}: {
+  title: string
+  originBody: string
+  commentBody: string
+  originLink: string
+  summaryLocale: string
+}) => {
+  const originSummaryArray = await createBulletPointSummary(originBody, title)
+  const commentSummaryArray = await createBulletPointSummary(commentBody, title)
+
+  await db.summary.upsert({
     where: {
-      AND: [
-        {
-          OR: [
-            { linkSummary: null },
-            { linkSummary: '' },
-            { commentSummary: null },
-            { commentSummary: '' },
-          ],
-        },
-        {
-          AND: [
-            { body: { not: '' } },
-            { body: { not: null } },
-            { commentBody: { not: '' } },
-            { commentBody: { not: null } },
-            { title: { not: '' } },
-          ],
-        },
-      ],
+      originLink_summaryLocale: {
+        originLink,
+        summaryLocale,
+      },
     },
-    take: 20,
+    create: {
+      title,
+      originLink,
+      summaryLocale,
+      originBody,
+      commentBody,
+      summaryOrigin: JSON.stringify(originSummaryArray),
+      summaryComment: JSON.stringify(commentSummaryArray),
+    },
+    update: {
+      originBody,
+      commentBody,
+      summaryOrigin: JSON.stringify(originSummaryArray),
+      summaryComment: JSON.stringify(commentSummaryArray),
+    },
   })
-
-  await Promise.all(
-    linkSummaries.map(async (link) => {
-      throttle()
-      const linkSummary = await createBulletPointSummary(link.body, link.title)
-      log(`✅ Summary for ${link.title} created`)
-      throttle()
-      const commentSummary = await createBulletPointSummary(
-        link.commentBody,
-        link.title
-      )
-      log(`✅ Comment summary for ${link.title} created`)
-
-      await db.linkSummary.update({
-        where: { id: link.id },
-        data: {
-          linkSummary: JSON.stringify(linkSummary),
-          commentSummary: JSON.stringify(commentSummary),
-        },
-      })
-    })
-  )
 }
 
-export default async () => {
-  main()
-    .then(async () => {
-      await db.$disconnect()
-      process.exit(0)
+/**
+ * Assume that all required information already exists in the database.
+ * Summarize the origin and comment body and store it in the database.
+ *
+ * @param { string } originLink
+ * @param { string } summaryLocale
+ * @returns
+ */
+export const summarizeWithAssumption = async ({
+  originLink,
+  summaryLocale,
+}: {
+  originLink: string
+  summaryLocale: string
+}) => {
+  console.log(`🔍 Summarizing\t${originLink}...`)
+  const origin = await db.summary.findUnique({
+    where: {
+      originLink_summaryLocale: {
+        originLink,
+        summaryLocale,
+      },
+    },
+  })
+
+  if (!origin) {
+    log(`❌ Origin not found for ${originLink}`, 'error')
+    return
+  }
+
+  if (origin.retryCount > GPT_RETRY_LIMIT) {
+    log(`❌ Retry count exceeded for ${originLink}`, 'error')
+    return
+  }
+
+  const title = origin.title
+  const originBody = origin.originBody
+  const commentBody = origin.commentBody
+
+  try {
+    await summarize({
+      title,
+      originBody,
+      commentBody,
+      originLink,
+      summaryLocale,
     })
-    .catch(async (e) => {
-      console.error(e)
-      await db.$disconnect()
-      process.exit(1)
+  } catch (e) {
+    log(`❌ Failed to summarize ${originLink}`, 'error')
+    await db.summary.update({
+      where: {
+        originLink_summaryLocale: {
+          originLink,
+          summaryLocale,
+        },
+      },
+      data: {
+        retryCount: origin.retryCount + 1,
+      },
     })
+  }
 }
