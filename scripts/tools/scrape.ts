@@ -49,7 +49,7 @@ export const fetchContent = async (url: string, commentUrl?: string) => {
   }
 
   if (!originBodyAlreadyExists) {
-    // 1. youtube
+    // 1. youtube or twitter
     if (url?.includes('youtu')) {
       try {
         log(`⏳ Downloading\tYoutube Transcript for ${url}`, 'info')
@@ -72,6 +72,13 @@ export const fetchContent = async (url: string, commentUrl?: string) => {
         return '' // OpenAI Whisper?
       }
     }
+
+    if (url?.includes('twitter')) {
+      // ignore
+      body = 'N/A'
+    }
+
+    // 2. pdf
 
     if (
       body === '' &&
@@ -134,7 +141,7 @@ export const fetchContent = async (url: string, commentUrl?: string) => {
         locale = dom.window.document.documentElement.lang
 
         log(`✅ Downloaded\tBrightData for ${url}`, 'info')
-        downloadMethod = 'BrightData'
+        downloadMethod = 'brightdata'
       } catch (e) {
         log(`❌ Error\tCannot Download BrightData for ${url}`, 'info')
       }
@@ -157,14 +164,23 @@ export const fetchContent = async (url: string, commentUrl?: string) => {
     }
 
     // 4. final fallback, use playwright (very slow)
-    if (body === '') {
+    if (
+      body === '' ||
+      body.toLowerCase().includes('enable javascript') ||
+      body.toLowerCase().includes('have javascript enabled') // mastodon
+    ) {
       try {
         log(`⏳ Downloading\tDefault for ${url}`, 'info')
         const browser = await playwright.chromium.launch()
         const context = await browser.newContext()
         const page = await context.newPage()
         await page.goto(url)
-        body = await page.innerText('body')
+        // try to get .columns-area, if not, get body. This is for Mastodon
+        try {
+          body = await page.innerText('.columns-area')
+        } catch (e) {
+          body = await page.innerText('body')
+        }
         locale = await page.getAttribute('html', 'lang')
         await browser.close()
         if (body?.toString().trim() === '') {
@@ -173,7 +189,7 @@ export const fetchContent = async (url: string, commentUrl?: string) => {
         log(`✅ Downloaded\tDefault for ${url}`, 'info')
         downloadMethod = 'playwright'
       } catch (e) {
-        log(`❌ Error\tCannot Download Default for ${url}`, 'info')
+        log(`❌ Error\tCannot Download Default for ${url}, ${e}`, 'info')
         body = 'error'
       }
     }
@@ -231,7 +247,6 @@ export const fetchContent = async (url: string, commentUrl?: string) => {
             downloadMethod,
           },
         })
-        log(`✅ Updated Summary for ${url}`, 'info')
         return summary
       }
     })
