@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { useEffect } from 'react'
 
 import {
@@ -30,19 +30,35 @@ const LoginPage = ({ type }) => {
     webAuthn.isEnabled() && type !== 'password'
   )
 
+  const onAuthenticate = useCallback(async () => {
+    try {
+      await webAuthn.authenticate()
+      await reauthenticate()
+      toast.success(WELCOME_MESSAGE)
+      navigate(routes.home())
+    } catch (e) {
+      if (e.name === 'WebAuthnDeviceNotFoundError') {
+        toast.error('Device not found, log in with Email/Password to continue')
+        setShowWebAuthn(false)
+      } else {
+        toast.error(e.message)
+      }
+    }
+  }, [reauthenticate, webAuthn])
+
   // should redirect right after login or wait to show the webAuthn prompts?
   useEffect(() => {
     if (isAuthenticated && (!shouldShowWebAuthn || webAuthn.isEnabled())) {
       navigate(routes.home())
     }
-  }, [isAuthenticated, shouldShowWebAuthn])
+  }, [isAuthenticated, shouldShowWebAuthn, webAuthn])
 
   // if WebAuthn is enabled, show the prompt as soon as the page loads
   useEffect(() => {
     if (!loading && !isAuthenticated && showWebAuthn) {
       onAuthenticate()
     }
-  }, [loading, isAuthenticated])
+  }, [loading, isAuthenticated, onAuthenticate, showWebAuthn])
 
   // focus on the email field as soon as the page loads
   const emailRef = useRef<HTMLInputElement>(null)
@@ -73,22 +89,6 @@ const LoginPage = ({ type }) => {
         setShowWebAuthn(true)
       } else {
         toast.success(WELCOME_MESSAGE)
-      }
-    }
-  }
-
-  const onAuthenticate = async () => {
-    try {
-      await webAuthn.authenticate()
-      await reauthenticate()
-      toast.success(WELCOME_MESSAGE)
-      navigate(routes.home())
-    } catch (e) {
-      if (e.name === 'WebAuthnDeviceNotFoundError') {
-        toast.error('Device not found, log in with Email/Password to continue')
-        setShowWebAuthn(false)
-      } else {
-        toast.error(e.message)
       }
     }
   }
@@ -154,7 +154,6 @@ const LoginPage = ({ type }) => {
         className="rw-input"
         errorClassName="rw-input rw-input-error"
         ref={emailRef}
-        autoFocus
         validation={{
           required: {
             value: true,
