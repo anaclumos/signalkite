@@ -5,9 +5,10 @@ import type {
   TargetLanguageCode as DeeplTargetLanguageCode,
   TextResult as DeeplTextResult,
 } from 'deepl-node'
+import { v4 as uuidv4 } from 'uuid'
+
 import { LinguineConfig } from './LinguineConfig'
 import { log } from './util'
-import { v4 as uuidv4 } from 'uuid'
 
 export const translate = async (
   text: string,
@@ -45,9 +46,9 @@ export const translate = async (
 
     return response.translations[0]?.translatedText
   } else if (provider === 'BING') {
-    let key = process.env.BING_TRANSLATE_KEY
-    let location = process.env.BING_TRANSLATE_REGION
-    let endpoint = 'https://api.cognitive.microsofttranslator.com'
+    const key = process.env.BING_TRANSLATE_KEY
+    const location = process.env.BING_TRANSLATE_REGION
+    const endpoint = 'https://api.cognitive.microsofttranslator.com'
     const result = await fetch(
       `${endpoint}/translate?api-version=3.0&from=${source}&to=${target}`,
       {
@@ -78,8 +79,8 @@ export const translate = async (
     if (target === 'pt') target = 'pt-BR'
     if (target === 'en') target = 'en-US'
 
-    let sourceLanguageCode = (source as DeeplSourceLanguageCode) || 'en'
-    let targetLanguageCode = (target as DeeplTargetLanguageCode) || 'en-US'
+    const sourceLanguageCode = (source as DeeplSourceLanguageCode) || 'en'
+    const targetLanguageCode = (target as DeeplTargetLanguageCode) || 'en-US'
 
     const result: DeeplTextResult = await translator
       .translateText(text, sourceLanguageCode, targetLanguageCode)

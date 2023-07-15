@@ -1,4 +1,5 @@
 import { Link, routes } from '@redwoodjs/router'
+
 import { useAuth } from 'src/auth'
 
 const Sidebar = () => {

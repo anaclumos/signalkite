@@ -1,4 +1,5 @@
 import { db } from 'api/src/lib/db'
+
 import { log } from './util'
 
 export const updateHackerNews = async () => {

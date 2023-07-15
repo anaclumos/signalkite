@@ -95,9 +95,9 @@ import ms from './locales/ms.json' // Malay, Provided By Bing
 import mt from './locales/mt.json' // Maltese, Provided By Bing
 import mww from './locales/mww.json' // Hmong Daw, Provided By Bing
 import my from './locales/my.json' // Myanmar (Burmese), Provided By Bing
+import nb from './locales/nb.json' // Norwegian Bokmål, Provided By DeepL
 import ne from './locales/ne.json' // Nepali, Provided By Bing
 import nl from './locales/nl.json' // Dutch, Provided By DeepL
-import nb from './locales/nb.json' // Norwegian Bokmål, Provided By DeepL
 import nso from './locales/nso.json' // Sepedi, Provided By Google
 import ny from './locales/ny.json' // Nyanja (Chichewa), Provided By Google
 import om from './locales/om.json' // Oromo, Provided By Google
