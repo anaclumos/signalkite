@@ -19,6 +19,7 @@ export const log = (message: string, level: 'info' | 'error' = 'info') => {
 
 export const sanitize = (text: string) => {
   if (!text) return ''
+  if (text === 'error') return ''
   return text
     .replaceAll('\n', ' ')
     .replaceAll('\t', ' ')
@@ -61,5 +62,6 @@ export const sanitize = (text: string) => {
       'Guidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact Search:',
       ''
     )
+    .replaceAll('N/A', '')
     .trim()
 }
