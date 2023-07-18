@@ -120,6 +120,7 @@ export const fetchContent = async (url: string, commentUrl?: string) => {
         } else {
           body = await page.evaluate(() => document.body.textContent)
         }
+        downloadMethod = 'brightdata puppeteer'
       } catch (e) {
         log(`❌ Error\tCannot Download BrightData for ${url}`, 'info')
       }
@@ -162,7 +163,7 @@ export const fetchContent = async (url: string, commentUrl?: string) => {
         locale = dom.window.document.documentElement.lang
 
         log(`✅ Downloaded\tBrightData for ${url}`, 'info')
-        downloadMethod = 'brightdata'
+        downloadMethod = 'brightdata jsdom'
       } catch (e) {
         log(`❌ Error\tCannot Download BrightData for ${url}`, 'info')
       }
