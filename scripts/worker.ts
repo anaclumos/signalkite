@@ -20,7 +20,6 @@ export default async () => {
     stories = await Promise.all(
       stories.map(async (story, idx) => {
         await new Promise((resolve) => setTimeout(resolve, 2000 * idx))
-
         return await summarizeWithAssumption({
           originLink: story.originLink,
           summaryLocale: story.originLocale,
