@@ -47,8 +47,7 @@ export const createBulletPointSummary = async (rawText, title) => {
         - Why is this post special? Is there something new or exciting thing going on?
         - Did something get released? What made such tech-savvy people suddenly interested in this post?
         Your job is to capture vital points that interest the readers.
-        If there is no meaningful content, for example, if it looks like a simple error message, simply print "N/A."
-        Ignore any mention or sentenses on CSS contents and any referral, marketing, or promotional links/coupon codes.
+
 
         It must be a bullet point list, not a freeform text; that is, start with '-' immediately followed by a space.
         Therefore, it will start with '- '.
@@ -73,6 +72,8 @@ export const createBulletPointSummary = async (rawText, title) => {
         '- Evidence suggests that some of the URLs targeted in the notices have never been accessed or even worked.\n',
 
         Now, I will give you the text.
+        If there is no meaningful content, for example, if it looks like a simple error message, simply print "N/A."
+        Ignore any mention or sentenses on CSS contents and any referral, marketing, or promotional links/coupon codes.
         `
       ),
       new HumanMessage(`TEXT:\n${summary}\n\nRESULT:\n`),
