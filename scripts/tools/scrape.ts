@@ -7,14 +7,21 @@ import { YoutubeTranscript } from 'youtube-transcript'
 
 import { log, sanitize } from './util'
 
-const timedFetch = async (url: string, timeout = 60000) => {
+const TIMEOUT = 60000
+
+const timedFetch = async (url: string, timeout = TIMEOUT) => {
   const controller = new AbortController()
   const id = setTimeout(() => controller.abort(), timeout)
-  const response = await fetch(url, {
-    signal: controller.signal,
-  })
-  clearTimeout(id)
-  return response
+  try {
+    const response = await fetch(url, {
+      signal: controller.signal,
+    })
+    clearTimeout(id)
+    return response
+  } catch (error) {
+    log(`❌ Error\tCannot Download ${url}`, 'error')
+    return new Response('', { status: 404 })
+  }
 }
 
 /**
@@ -50,7 +57,7 @@ export const fetchContent = async (url: string, commentUrl?: string) => {
   }
 
   if (!originBodyAlreadyExists) {
-    // 1. youtube or twitter
+    // 1. youtube
     if (url?.includes('youtu')) {
       try {
         log(`⏳ Downloading\tYoutube Transcript for ${url}`, 'info')
@@ -75,7 +82,7 @@ export const fetchContent = async (url: string, commentUrl?: string) => {
     }
 
     if (url?.includes('twitter')) {
-      // ignore
+      // handle twitter and mastodon
       body = 'N/A'
     }
 
@@ -111,14 +118,18 @@ export const fetchContent = async (url: string, commentUrl?: string) => {
         browserWSEndpoint: `wss://${auth}@${process.env.BRIGHTDATA_WSS}`,
       })
       const page = await browser.newPage()
-      page.setDefaultNavigationTimeout(2 * 60 * 1000)
+      page.setDefaultNavigationTimeout(TIMEOUT)
       await page.goto(url, { waitUntil: 'networkidle2' })
       try {
         const article = await page.$('article')
         if (article) {
-          body = await page.evaluate((el) => el.textContent, article)
+          body = await page.evaluate(
+            () => document.querySelector('article').textContent
+          )
         } else {
-          body = await page.evaluate(() => document.body.textContent)
+          body = await page.evaluate(
+            () => document.querySelector('body').textContent
+          )
         }
         downloadMethod = 'brightdata puppeteer'
       } catch (e) {
