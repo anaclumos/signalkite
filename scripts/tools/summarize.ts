@@ -200,7 +200,7 @@ export const summarizeWithAssumption = async ({
   const commentBody = origin.commentBody
 
   if (origin.summaryOrigin) {
-    log(`✅ Already summarized ${originLink}`)
+    log(`✅ Summary Exists\t${originLink}`)
     return origin
   }
 
