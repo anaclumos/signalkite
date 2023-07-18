@@ -10,6 +10,7 @@ import type {
 import { v4 as uuidv4 } from 'uuid'
 
 import { LinguineConfig, LinguineProvider } from '../Linguine'
+import { Story } from '../type'
 
 import { log } from './util'
 
@@ -45,6 +46,7 @@ export const translate = async (
     const request = {
       parent: `projects/${projectId}/locations/${location}`,
       contents: text,
+
       mimeType: 'text/plain',
       sourceLanguageCode: source,
       targetLanguageCode: target,
@@ -107,7 +109,7 @@ export const translateWithAssumption = async ({
 }: {
   originLink: string
   summaryLocale: string
-}) => {
+}): Promise<Story> => {
   // find from db
   const summary = await db.summary.findFirst({
     where: {
@@ -121,7 +123,6 @@ export const translateWithAssumption = async ({
   }
 
   // find from db with different locale
-
   const summaryWithEnglish = await db.summary.findFirst({
     where: {
       originLink,
