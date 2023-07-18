@@ -2,6 +2,7 @@ import { db } from 'api/src/lib/db'
 import { JSDOM, VirtualConsole } from 'jsdom'
 import pdf from 'pdf-parse'
 import playwright from 'playwright'
+import puppeteer from 'puppeteer-core'
 import { YoutubeTranscript } from 'youtube-transcript'
 
 import { log, sanitize } from './util'
@@ -79,7 +80,6 @@ export const fetchContent = async (url: string, commentUrl?: string) => {
     }
 
     // 2. pdf
-
     if (
       body === '' &&
       (url?.toLowerCase()?.includes('.pdf') ||
@@ -105,6 +105,27 @@ export const fetchContent = async (url: string, commentUrl?: string) => {
     }
 
     // 2. BrightData, default
+    if (body === '') {
+      const auth = `${process.env.BRIGHTDATA_USERNAME}:${process.env.BRIGHTDATA_PASSWORD}`
+      const browser = await puppeteer.connect({
+        browserWSEndpoint: `wss://${auth}@${process.env.BRIGHTDATA_WSS}`,
+      })
+      const page = await browser.newPage()
+      page.setDefaultNavigationTimeout(2 * 60 * 1000)
+      await page.goto(url, { waitUntil: 'networkidle2' })
+      try {
+        const article = await page.$('article')
+        if (article) {
+          body = await page.evaluate((el) => el.textContent, article)
+        } else {
+          body = await page.evaluate(() => document.body.textContent)
+        }
+      } catch (e) {
+        log(`❌ Error\tCannot Download BrightData for ${url}`, 'info')
+      }
+    }
+
+    // 2.5. Try BrightData with request-promise
     if (body === '') {
       try {
         log(`⏳ Downloading\tBrightData for ${url}`, 'info')
