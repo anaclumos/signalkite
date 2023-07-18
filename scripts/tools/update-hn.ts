@@ -1,4 +1,5 @@
 import { db } from 'api/src/lib/db'
+import { Story } from 'type'
 
 import { HACKER_NEWS_PER_HOUR } from './config'
 import { log } from './util'
@@ -10,7 +11,7 @@ import { log } from './util'
  * @example
  * const bestStories = await updateHN()
  */
-export const updateHN = async () => {
+export const updateHN = async (): Promise<Story[]> => {
   let bestStories = await fetch(
     'https://hacker-news.firebaseio.com/v0/beststories.json'
   ).then((res) => res.json())
