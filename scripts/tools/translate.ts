@@ -164,8 +164,6 @@ export const translateWithAssumption = async ({
     summaryLocale
   )
 
-  console.log('SummryLocale', summaryLocale)
-
   const translatedSummary = await db.summary.create({
     data: {
       ...summaryWithEnglish,
