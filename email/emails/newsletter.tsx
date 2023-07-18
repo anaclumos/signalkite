@@ -1,3 +1,5 @@
+import React from 'react'
+
 import {
   Body,
   Container,
@@ -8,8 +10,6 @@ import {
   Link,
   Preview,
 } from '@react-email/components'
-
-import React from 'react'
 
 type NewsletterEmailProps = {
   title?: string
