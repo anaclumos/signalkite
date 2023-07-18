@@ -21,17 +21,17 @@ model User {
   credentials         UserCredential[]
   createdAt           DateTime         @default(now())
   updatedAt           DateTime         @updatedAt
-  deleted             Boolean          @default(false)
+  deletedAt           DateTime?
 }
 
 model UserCredential {
-  id         String  @id
+  id         String    @id
   userId     String
-  user       User    @relation(fields: [userId], references: [id])
+  user       User      @relation(fields: [userId], references: [id])
   publicKey  Bytes
   transports String?
   counter    BigInt
-  deleted    Boolean @default(false)
+  deletedAt  DateTime?
 }
 
 model Newsletter {
@@ -44,7 +44,7 @@ model Newsletter {
   userId    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  deleted   Boolean  @default(false)
+  deletedAt DateTime?
 }
 
 model Subscription {
@@ -56,22 +56,22 @@ model Subscription {
   length       String
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
-  deleted      Boolean  @default(false)
+  deletedAt    DateTime?
 }
 
 model Summary {
-  id             String   @id @default(cuid())
-  title          String
+  id    String @id @default(cuid())
+  title String
 
   // The link to the original content
-  originLink     String
-  originBody     String?
-  originLocale   String?
+  originLink   String
+  originBody   String?
+  originLocale String?
 
   // The link to the comment
-  commentLink    String?
-  commentLocale  String?
-  commentBody    String?
+  commentLink   String?
+  commentLocale String?
+  commentBody   String?
 
   // The link to the summary
   summaryLocale  String?
@@ -82,12 +82,13 @@ model Summary {
   points         Int? // Optional. For HN
   commentCount   Int? // Optional. For HN
   downloadMethod String?
-  retryCount     Int      @default(0)
+  retryCount     Int     @default(0)
 
   // Default
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
-  deleted        Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+
   @@unique([originLink, summaryLocale])
 }
 
@@ -96,8 +97,8 @@ model NewsletterContent {
   // then is it from HN channel? Or is it from the user-defined newsletter?
   id           String   @id @default(cuid())
   newsletterId String
-  summaryLink  String
+  summaryId    String
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
-  deleted      Boolean  @default(false)
+  deletedAt    DateTime?
 }
