@@ -62,6 +62,8 @@ export const sanitize = (text: string) => {
       'Guidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact Search:',
       ''
     )
+    .replaceAll('N/A. ', '')
+    .replaceAll('N/A.', '')
     .replaceAll('N/A', '')
     .trim()
 }
