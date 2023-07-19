@@ -51,7 +51,8 @@ export default async () => {
     const data = createHN(user)
 
     Promise.all(
-      data.map(async (data: Prisma.NewsletterCreateArgs['data']) => {
+      data.map(async (data: Prisma.NewsletterCreateArgs['data'], idx) => {
+        await new Promise((resolve) => setTimeout(resolve, 500 * idx))
         await db.newsletter.create({ data })
       })
     )
