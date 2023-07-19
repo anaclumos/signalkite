@@ -130,7 +130,9 @@ export default async () => {
             await resend.emails.send({
               from: 'heimdall <heimdall@newsletters.cho.sh>',
               to: [user.email],
-              subject: lingualStories['stories'][0]?.title,
+              subject: lingualStories.filter(
+                (lingualStory) => lingualStory.locale === locale
+              )[0].stories[0].title,
               html: transformIntoHTML(lingualStory.stories, newsletter.name),
             })
             log(`Email sent to ${user.email}`, 'info')
