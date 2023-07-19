@@ -18,5 +18,17 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+          GOOGLE_TRANSLATE_PROJECT_ID: ${{ secrets.GOOGLE_TRANSLATE_PROJECT_ID }}
+          GOOGLE_TRANSLATE_LOCATION: ${{ secrets.GOOGLE_TRANSLATE_LOCATION }}
+          GOOGLE_TRANSLATE_PRIVATE_KEY: ${{ secrets.GOOGLE_TRANSLATE_PRIVATE_KEY }}
+          GOOGLE_TRANSLATE_CLIENT_EMAIL: ${{ secrets.GOOGLE_TRANSLATE_CLIENT_EMAIL }}
+          BING_TRANSLATE_KEY: ${{ secrets.BING_TRANSLATE_KEY }}
+          BING_TRANSLATE_REGION: ${{ secrets.BING_TRANSLATE_REGION }}
+          PROXY: ${{ secrets.PROXY }}
+          BRIGHTDATA_WSS: ${{ secrets.BRIGHTDATA_WSS }}
+          BRIGHTDATA_USERNAME: ${{ secrets.BRIGHTDATA_USERNAME }}
+          BRIGHTDATA_PASSWORD: ${{ secrets.BRIGHTDATA_PASSWORD }}
         with:
           cmd: worker
