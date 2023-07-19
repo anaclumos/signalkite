@@ -5,18 +5,6 @@ import { createHN } from './tools/all-hn'
 import { log } from './tools/util'
 
 export default async () => {
-  // try {
-  //   await db.$executeRaw`TRUNCATE TABLE "Newsletter" CASCADE;`
-  //   await db.$executeRaw`TRUNCATE TABLE "Subscription" CASCADE;`
-  //   await db.$executeRaw`TRUNCATE TABLE "Summary" CASCADE;`
-  //   await db.$executeRaw`TRUNCATE TABLE "User" CASCADE;`
-  //   await db.$executeRaw`TRUNCATE TABLE "NewsletterContent" CASCADE;`
-  //   await db.$executeRaw`TRUNCATE TABLE "UserCredential" CASCADE;`
-  //   log('Successfully Wiped All Data', 'info')
-  // } catch (error) {
-  //   log(`Cannot Wipe All Data ${error}`, 'error')
-  // }
-
   try {
     const data: Prisma.UserCreateArgs['data'][] = [
       {
@@ -30,7 +18,7 @@ export default async () => {
         timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
       },
     ]
-    Promise.all(
+    await Promise.all(
       data.map(async (data: Prisma.UserCreateArgs['data']) => {
         await db.user.create({ data })
       })
@@ -50,7 +38,7 @@ export default async () => {
 
     const data = createHN(user)
 
-    Promise.all(
+    await Promise.all(
       data.map(async (data: Prisma.NewsletterCreateArgs['data'], idx) => {
         await new Promise((resolve) => setTimeout(resolve, 500 * idx))
         await db.newsletter.create({ data })
