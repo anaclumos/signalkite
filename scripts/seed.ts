@@ -70,8 +70,8 @@ export default async () => {
         userId: user.id,
         createdAt: new Date(),
         updatedAt: new Date(),
-        frequency: 'EVERYDAY',
-        time: '9',
+        frequency: 'DAILY',
+        time: 'HOURLY',
         length: 'SHORT',
       },
     })

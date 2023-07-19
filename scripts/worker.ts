@@ -23,8 +23,8 @@ export default async () => {
     const subscriptions = await db.subscription.findMany({
       where: {
         AND: [
-          { OR: [{ frequency: 'EVERYDAY' }, { frequency: today }] },
-          { time: hour },
+          { OR: [{ frequency: 'DAILY' }, { frequency: today }] },
+          { OR: [{ time: hour }, { time: 'HOURLY' }] },
           { deletedAt: null },
         ],
       },
