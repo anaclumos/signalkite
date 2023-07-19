@@ -1,6 +1,7 @@
 import { db } from 'api/src/lib/db'
 import { Resend } from 'resend'
 
+import seed from './seed'
 import { transformIntoHTML } from './tools/email'
 import { fetchContent } from './tools/scrape'
 import { summarizeWithAssumption } from './tools/summarize'
@@ -9,6 +10,11 @@ import { translateWithAssumption } from './tools/translate'
 import { updateHN } from './tools/update-hn'
 import { log } from './tools/util'
 export default async () => {
+  const users = await db.user.findMany()
+  if (users.length === 0) {
+    await seed()
+  }
+
   try {
     // get all subscriptions that match today and hour
     const today = getCurrentZuluDay()
