@@ -74,6 +74,7 @@ export const createBulletPointSummary = async (rawText, title) => {
         Now, I will give you the text.
         If there is no meaningful content, for example, if it looks like a simple error message, simply print "N/A."
         Ignore any mention or sentenses on CSS contents and any referral, marketing, or promotional links/coupon codes.
+        Do not exceed 100 words.
         `
       ),
       new HumanMessage(`TEXT:\n${summary}\n\nRESULT:\n`),
@@ -88,10 +89,10 @@ export const createBulletPointSummary = async (rawText, title) => {
         item = item.substring(2)
       }
       if (item.startsWith("' -")) {
-        item = item.substring(0, item.length - 3)
+        item = item.substring(3)
       }
       if (item.startsWith("'- ")) {
-        item = item.substring(0, item.length - 3)
+        item = item.substring(3)
       }
       if (item.endsWith("'")) {
         item = item.substring(0, item.length - 1)
