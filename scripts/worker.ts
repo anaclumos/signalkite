@@ -142,5 +142,7 @@ export default async () => {
     )
   } catch (error) {
     log(error, 'error')
+    process.exit(1)
   }
+  process.exit(0)
 }
