@@ -1,6 +1,8 @@
 import { Story } from '../type'
 
 export const storyToHTML = (story: Story) => {
+  const COMMENT = require('../../i18n/Comments.json')
+
   return `
 
   <a
@@ -32,7 +34,7 @@ export const storyToHTML = (story: Story) => {
               target="_blank"
               style="color: #067df7; text-decoration: none"
               ><h3 data-id="react-email-heading">
-              ${story.commentCount} comments
+              ${COMMENT[story.summaryLocale]}
               </h3></a
             >
             <ul
