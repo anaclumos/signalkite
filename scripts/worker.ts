@@ -15,10 +15,10 @@ export default async () => {
     await seed()
   }
 
+  // get all subscriptions that match today and hour
+  const today = getCurrentZuluDay()
+  const hour = getCurrentZuluHour()
   try {
-    // get all subscriptions that match today and hour
-    const today = getCurrentZuluDay()
-    const hour = getCurrentZuluHour()
     log(`Today: ${today}, Hour: ${hour}`, 'info')
     const subscriptions = await db.subscription.findMany({
       where: {
@@ -128,11 +128,13 @@ export default async () => {
             })
 
             await resend.emails.send({
-              from: 'heimdall <heimdall@newsletters.cho.sh>',
+              from: 'Heimdall <heimdall@newsletters.cho.sh>',
               to: [user.email],
-              subject: lingualStories.filter(
-                (lingualStory) => lingualStory.locale === locale
-              )[0].stories[0].title,
+              subject: `📰 ${
+                lingualStories.filter(
+                  (lingualStory) => lingualStory.locale === locale
+                )[0].stories[0].title
+              }`,
               html: transformIntoHTML(lingualStory.stories, newsletter.name),
             })
             log(`Email sent to ${user.email}`, 'info')
