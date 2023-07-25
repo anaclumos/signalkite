@@ -1,0 +1,140 @@
+import { Steps } from 'nextra-theme-docs'
+
+import CallToAction from '../../../components/CallToAction'
+
+<CallToAction />
+
+<Steps>
+
+## 25. júla 2023
+
+### [Zenbleed](https://lock.cmpxchg8b.com/zenbleed.html)
+
+- Bola objavená zraniteľnosť s názvom Zenbleed, ktorá sa týka všetkých procesorov triedy Zen 2 vrátane procesorov AMD Ryzen a EPYC.
+- Túto zraniteľnosť možno zneužiť na špehovanie operácií, ako sú strlen, memcpy a strcmp, ktoré sa v systéme vykonávajú, čo umožňuje prístup k citlivým informáciám, ako sú šifrovacie kľúče a heslá.
+- Spoločnosť AMD vydala aktualizáciu mikrokódu na opravu zraniteľnosti a ak sa aktualizácia nedá použiť, je k dispozícii softvérové riešenie.
+
+#### [Reakcie odvetvia](http://news.ycombinator.com/item?id=36848680)
+
+- Zenbleed je bezpečnostná zraniteľnosť, ktorá sa týka procesorov AMD Ryzen, konkrétne procesorov architektúry Zen 2.
+- Útočníkom umožňuje únik citlivých informácií z registračného súboru procesora, a to aj pri behu v chránenom prostredí, napríklad vo virtuálnom počítači.
+- Spoločnosť AMD vydala aktualizácie mikrokódu na riešenie tohto problému, ale na odstránenie zraniteľností je potrebná neustála ostražitosť a spolupráca medzi softvérom a hardvérom.
+
+### [Attention Is Off By One](https://www.evanmiller.org/attention-is-off-by-one.html)
+
+- Vzorec pozornosti, kľúčová rovnica v modernej umelej inteligencii, obsahuje chybu off-by-one, ktorá ovplyvňuje stlačiteľnosť a nasaditeľnosť modelov Transformer.
+- Chyba off-by-one je spôsobená funkciou softmax v mechanizme pozornosti, ktorá priraďuje neúmerne vysoké váhy nesémantickým tokenom, čo sťažuje kompresiu.
+- Navrhovaným riešením tejto chyby je jednoduchá úprava funkcie softmax s názvom softmax1, ktorá pridáva jednotku do menovateľa a umožňuje hlavám pozornosti "držať hubu". Očakáva sa, že táto úprava vyrieši spätnú väzbu odľahlých hodnôt a zlepší kvantizáciu modelu.
+
+#### [Reakcie odvetvia](http://news.ycombinator.com/item?id=36851494)
+
+- Autor navrhuje úpravu funkcie Softmax nazvanú "tichý Softmax", ktorá umožňuje hlavám pozornosti v transformačných modeloch ignorovať určité tokeny.
+- Táto modifikácia môže viesť ku kompaktnejším modelom a lepšiemu výkonu v úlohách, ako je kvantizácia a využitie pamäte.
+- Na posúdenie účinnosti tejto modifikácie je potrebné ďalšie testovanie a experimentovanie.
+
+### [Nočná mora spoločnosti Google "Web Integrity API" chce byť strážcom DRM pre web](https://arstechnica.com/gadgets/2023/07/googles-web-integrity-api-sounds-like-drm-for-the-web/)
+
+- Spoločnosť Google navrhuje nový webový štandard s názvom "Web Integrity API", ktorého cieľom je overiť dôveryhodnosť prehliadača používateľa a zabrániť podvodom a neoprávneným úpravám.
+- Navrhované API sa inšpiruje existujúcimi atestačnými signálmi, ktoré používajú spoločnosti Apple a Android na zabezpečenie integrity a bezpečnosti svojich platforiem.
+- Cieľom Web Integrity API je poskytovať užitočné údaje inzerentom, zastaviť botov sociálnych sietí, presadzovať práva duševného vlastníctva, zabrániť podvádzaniu vo webových hrách a zvýšiť bezpečnosť finančných transakcií.
+
+#### [Reakcie odvetvia](http://news.ycombinator.com/item?id=36854114)
+
+- Rozhranie API Web Integrity, ktoré navrhuje spoločnosť Google, by mohlo fungovať ako strážca DRM pre web, čo by mohlo mať vplyv na streamovacie služby, ako sú Netflix a Hulu.
+- Rozhranie API vyvoláva obavy z narušenia súkromia a konsolidovanej moci v rukách niekoľkých technologických spoločností, najmä spoločnosti Google.
+- Kritici tvrdia, že implementácia Web Integrity API môže viesť k obmedzeným možnostiam škrabania webu a diskriminácii niektorých používateľov.
+
+### [Twitter oficiálne zmenil svoje logo na "X"](https://techcrunch.com/2023/07/24/twitter-has-officially-changed-its-logo-to-x/)
+
+- Spoločnosť Twitter oficiálne zmenila svoje logo z ikonického vtáčika na písmeno "X" po tom, ako Elon Musk cez víkend oznámil túto zmenu.
+- Musk naznačil, že v budúcnosti môže dôjsť k ďalším zmenám loga, keďže logo "X" označil za "dočasné" logo.
+- Musk tiež spomenul, že Twitter sa nakoniec rozlúči so značkou Twitter a postupne odstráni všetky odkazy na vtáka.
+
+#### [Reakcie odvetvia](http://news.ycombinator.com/item?id=36845111)
+
+- Twitter zmenil svoje logo na písmeno "X", čo vyvolalo záujem medzi technicky zdatnými jednotlivcami kvôli angažovanosti Elona Muska a potenciálnemu vplyvu na imidž platformy.
+- Niektorí ľudia sú z rebrandingu nahnevaní a sklamaní a spochybňujú hodnotu zbavenia sa takej rozpoznateľnej značky, akou je Twitter.
+- Úspešné výsledky Elona Muska so spoločnosťami ako PayPal, SpaceX, Tesla a The Boring Company viedli k očakávaniu jeho ďalšieho podniku.
+
+### [Strávil som 2 roky vytváraním simulátora osobných financií](https://projectionlab.com/)
+
+- ProjectionLab je simulátor osobných financií, ktorý umožňuje používateľom vytvárať finančné plány a analyzovať rôzne scenáre svojej budúcnosti.
+- Pomáha používateľom definovať ich finančné ciele, odhadnúť ich šancu na úspech a znížiť obavy z financií.
+- Simulátor nie je prepojený so skutočnými finančnými účtami používateľov a ponúka rôzne možnosti uchovávania údajov na ochranu súkromia.
+
+#### [Reakcie odvetvia](http://news.ycombinator.com/item?id=36849502)
+
+- ProjectionLab je nástroj na plánovanie osobných financií, ktorý ponúka pokročilé funkcie nad rámec štandardných dôchodkových kalkulačiek a umožňuje používateľom vytvárať finančné plány a vizualizovať peňažné toky, daňové analýzy a ďalšie funkcie.
+- Nástroj nedávno prešiel zásadnou zmenou dizajnu a teraz ponúka samoobslužný hosting pre celoživotných používateľov a získal pozitívne ohlasy na svoje používateľské rozhranie, funkčnosť a schopnosť modelovať rôzne scenáre.
+- Používatelia požadovali ďalšie funkcie, ako je prístup k API, synchronizácia s diskom Google a viac vzdelávacieho obsahu, a diskutuje sa o cenovej štruktúre a bezpečnostných opatreniach aplikácie.
+
+### [Pred 40 rokmi včera letu Air Canada 143 došlo v polovici letu palivo](https://www.damninteresting.com/the-gimli-glider/)
+
+- Let Air Canada 143, známy aj ako "Gimli Glider", sa v roku 1983 dostal na titulné stránky novín, keď mu uprostred letu došlo palivo.
+- Posádka lietadla sa pred štartom stretla s viacerými mechanickými problémami vrátane chybných palivomerov.
+- Kapitán Bob Pearson a prvý dôstojník Maurice Quintal úspešne pristáli na opustenej pristávacej dráhe v Gimli v Manitobe, čím zachránili všetkých 69 cestujúcich a členov posádky na palube.
+
+#### [Reakcie odvetvia](http://news.ycombinator.com/item?id=36850111)
+
+- Pred 40 rokmi letu 143 spoločnosti Air Canada došlo palivo uprostred letu a úspešne núdzovo pristálo, čo poukázalo na dôležitosť bezpečnostných postupov.
+- Príčinou incidentu boli chyby pri prepočítavaní hmotnosti paliva a nedodržanie bezpečnostných predpisov, čo viedlo k zmenám v postupoch spoločnosti Air Canada.
+- Príbeh vzbudil záujem vďaka pozoruhodnému pristátiu a ponaučeniu z incidentu.
+
+### [Klesá pozornosť?](https://slimemoldtimemold.com/2023/07/24/your-mystery-have-attention-spans-been-declining/)
+
+- Autor skúma, či sa za posledné dve desaťročia znižuje rozsah pozornosti jednotlivcov, k čomu ho viedla zvedavosť o potenciálnej škodlivosti internetu na kognitívny výkon.
+- Na túto tému sa napriek jej širokému záberu vykonalo len málo priamych prác, ale autor konštatuje, že rozsah individuálnej pozornosti sa skutočne mohol znížiť.
+- Rozsah pozornosti je dôležitý pre prácu so znalosťami, a ak sa znižuje, mohlo by to negatívne ovplyvniť produktivitu pri komplexných úlohách.
+
+#### [Reakcie odvetvia](http://news.ycombinator.com/item?id=36851644)
+
+- Vedie sa diskusia o tom, či sa rozsah pozornosti znižuje v dôsledku množstva obsahu a rozptyľovania, pričom niektorí tvrdia, že kratšie formáty môžu byť efektívnejšie na komunikáciu a učenie, zatiaľ čo iní sa obávajú nedostatočného sústredenia a neschopnosti udržať pozornosť.
+- Nárast krátkeho obsahu a neustále rozptyľovanie mobilnými zariadeniami môže prispievať ku skracovaniu doby pozornosti, čo vyvoláva záujem technicky zdatných ľudí.
+- Na pokles dĺžky pozornosti má vplyv množstvo ľahko dostupného obsahu, dopyt po okamžitom uspokojení, nárast možností zábavy a schopnosť rýchlo určiť, čo si zaslúži pozornosť.
+
+### [Návrh zákona amerického Senátu vypracovaný s DEA sa zameriava na koncové šifrovanie](https://therecord.media/senate-dea-bill-targets-end-to-end-encryption-requires-companies-to-report-drugs)
+
+- Cieľom senátneho návrhu zákona s názvom Cooper Davis Act je vyžadovať od spoločností sociálnych médií a online služieb, aby hlásili protidrogovú aktivitu na svojich platformách americkému úradu pre kontrolu drog (DEA).
+- Obhajcovia ochrany súkromia tvrdia, že tento návrh zákona ohrozuje služby end-to-end šifrovania a de facto mení spoločnosti na agentov na presadzovanie práva v oblasti drog.
+- Obzvlášť kontroverzné je ustanovenie návrhu zákona, podľa ktorého sa spoločnosti budú zodpovedať za konanie, ktoré neoznámia, ak "úmyselne zaslepia" porušenia.
+
+#### [Reakcie odvetvia](http://news.ycombinator.com/item?id=36841369)
+
+- Senát USA navrhuje zákon zameraný na koncové šifrovanie, čo vyvoláva diskusiu o dôsledkoch takejto legislatívy.
+- Táto diskusia poukazuje na potrebu komplexného prístupu k drogovej politike a na možné dôsledky pokračujúcej prohibície.
+- Zdôrazňuje sa význam ochrany práv jednotlivca a potenciálne nebezpečenstvá štátu dohľadu.
+
+### [Inkscape 1.3](https://inkscape.org/news/2023/07/23/inkscape-launches-version-13-focus-organizing-work/)
+
+- Program Inkscape vydal verziu 1.3, ktorá sa zameriava na zlepšenie výkonu a efektívnu organizáciu práce.
+- Nová verzia obsahuje funkcie, ako napríklad nástroj Shape Builder, dialógové okno Document Resources a kolekcie písiem, ktoré pomáhajú používateľom efektívnejšie organizovať prácu.
+- Vylepšené sú aj existujúce funkcie, ako napríklad dialógové okno Vrstvy a objekty a lišta trvalých záberov, ktoré používateľom uľahčujú navigáciu a úpravu nastavení.
+
+#### [Reakcie odvetvia](http://news.ycombinator.com/item?id=36843794)
+
+- V aplikácii Inkscape 1.3 boli vykonané významné vylepšenia, ktoré riešia frustráciu používateľov a zlepšujú používateľské rozhranie (UI) a používateľský zážitok (UX).
+- Medzi nové funkcie patrí vylepšené správanie pri odstraňovaní uzlov, rozšírené prispôsobenie palety farieb, jednoduchší výber lasa a viacvláknové vykresľovanie pre vyšší výkon.
+- Vydanie tiež prináša lepší výber písma, vylepšené vzory a experimentálny backend OpenGL pre stabilitu a výkon.
+- Používatelia sú z týchto aktualizácií nadšení a tešia sa na používanie novej verzie.
+- Niektorí používatelia vyjadrili obavy týkajúce sa používateľského rozhrania a UX, iní však oceňujú bezplatný a otvorený charakter aplikácie Inkscape.
+- Vydanie prináša aj pokroky v oblasti importu PDF, okrajov strán a spadávky, ako aj ďalšie cenné funkcie, ako napríklad nástroj na tvorbu tvarov, ktoré boli veľmi žiadané.
+- Používatelia oceňujú možnosti presného zarovnania programu Inkscape a jeho užitočnosť v tlačových pracovných postupoch.
+- Niekoľko používateľov uvádza potrebu lepšej dokumentácie a zdrojov na učenie sa programu Inkscape.
+- Niektorí používatelia porovnávajú program Inkscape s inými profesionálnymi softvérmi na grafický dizajn, ako sú Adobe Illustrator a Affinity Designer, pričom si všímajú absenciu akcelerácie grafického procesora v programe Inkscape.
+- Pozitívne sa hodnotí zlepšenie použiteľnosti a výkonu počítačov Mac, ako aj nárast vývoja.
+- Používatelia odporúčajú Inkscape na úpravu exportov SVG z iných softvérov na navrhovanie, ako je napríklad Figma.
+- Celkovo je Inkscape chválený ako výkonný a všestranný nástroj na navrhovanie, hoci niektorí používatelia vyjadrujú nespokojnosť so špecifickými funkciami, ako sú kaligrafické pero a možnosti vytláčania hrán.
+
+### [Znak Unicode "𝕏" (U+1D54F)](https://www.compart.com/en/unicode/U+1D54F)
+
+- Príspevok sa zaoberá konkrétnym znakom Unicode s názvom "𝕏" (U+1D54F) a poskytuje podrobnosti o jeho názve, verzii Unicode, bloku, rovine, skriptu, kategórii, obojsmernej triede, kombinovanej triede a vlastnostiach zrkadlenia.
+- Znak patrí do bloku Matematické alfanumerické symboly v doplnkovej viacjazyčnej rovine Unicode.
+- V príspevku sa uvádzajú kódovania UTF-8, UTF-16 a UTF-32 pre tento znak a poskytuje sa rozklad znaku na ďalšie súvisiace znaky.
+
+#### [Reakcie odvetvia](http://news.ycombinator.com/item?id=36846076)
+
+- Znak Unicode "𝕏" (U+1D54F) sa podporuje v rôznych typoch písma a bežne sa používa v matematickom zápise.
+- Tento znak je užitočný vo funkcionálnom programovaní a pri použití veľkých písmen predstavuje funkciu.
+- Skutočným kameňom úrazu pri týchto znakoch je spracovanie UTF-16 na platformách Windows.
+
+</Steps>

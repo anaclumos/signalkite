@@ -1,0 +1,140 @@
+import { Steps } from 'nextra-theme-docs'
+
+import CallToAction from '../../../components/CallToAction'
+
+<CallToAction />
+
+<Steps>
+
+## 25 juillet 2023
+
+### [Zenbleed](https://lock.cmpxchg8b.com/zenbleed.html)
+
+- Une vulnérabilité nommée Zenbleed a été découverte et affecte tous les processeurs de classe Zen 2, y compris les processeurs AMD Ryzen et EPYC.
+- Cette vulnérabilité peut être exploitée pour espionner des opérations telles que strlen, memcpy et strcmp qui se déroulent sur un système, ce qui permet d'accéder à des informations sensibles telles que des clés de chiffrement et des mots de passe.
+- AMD a publié une mise à jour du microcode pour corriger la vulnérabilité, et une solution de contournement logicielle est disponible si la mise à jour ne peut pas être appliquée.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=36848680)
+
+- Zenbleed est une faille de sécurité qui affecte les processeurs Ryzen d'AMD, en particulier ceux de l'architecture Zen 2.
+- Elle permet aux attaquants de faire fuir des informations sensibles du fichier de registre du processeur, même lorsqu'il fonctionne dans un environnement protégé tel qu'une machine virtuelle.
+- AMD a publié des mises à jour du microcode pour résoudre le problème, mais une vigilance constante et une collaboration entre les logiciels et le matériel sont nécessaires pour remédier aux vulnérabilités.
+
+### [Attention Is Off By One](https://www.evanmiller.org/attention-is-off-by-one.html)
+
+- La formule d'attention, une équation cruciale dans l'IA moderne, contient une erreur qui affecte la compressibilité et la déployabilité des modèles Transformer.
+- Cette erreur est due à la fonction softmax du mécanisme d'attention, qui attribue des poids disproportionnés aux mots non sémantiques, ce qui rend la compression difficile.
+- La solution proposée à cette erreur est une simple modification de la fonction softmax, appelée softmax1, qui ajoute un au dénominateur et permet aux chefs d'attention de "fermer leur gueule". Cette modification devrait permettre de résoudre la boucle de rétroaction des valeurs aberrantes et d'améliorer la quantification du modèle.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=36851494)
+
+- L'auteur propose une modification de la fonction Softmax appelée "quiet softmax" qui permet aux têtes d'attention dans les modèles de transformateurs d'ignorer certains tokens.
+- Cette modification peut conduire à des modèles plus compacts et à de meilleures performances dans des tâches telles que la quantification et l'utilisation de la mémoire.
+- D'autres tests et expériences sont nécessaires pour évaluer l'efficacité de cette modification.
+
+### [Le cauchemar de Google "Web Integrity API" veut un gardien DRM pour le web](https://arstechnica.com/gadgets/2023/07/googles-web-integrity-api-sounds-like-drm-for-the-web/)
+
+- Google propose une nouvelle norme web appelée "Web Integrity API" qui vise à vérifier la fiabilité du navigateur d'un utilisateur et à empêcher la tricherie et les modifications non autorisées.
+- L'API proposée s'inspire des signaux d'attestation existants utilisés par Apple et Android pour garantir l'intégrité et la sécurité de leurs plateformes.
+- L'objectif de l'API est de fournir des données utiles aux annonceurs, d'arrêter les robots des réseaux sociaux, de faire respecter les droits de propriété intellectuelle, d'empêcher la tricherie dans les jeux en ligne et de renforcer la sécurité des transactions financières.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=36854114)
+
+- L'API d'intégrité Web proposée par Google pourrait servir de gardien DRM pour le Web, ce qui pourrait avoir un impact sur les services de streaming tels que Netflix et Hulu.
+- L'API suscite des inquiétudes quant à l'érosion de la vie privée et à la consolidation du pouvoir entre les mains de quelques entreprises technologiques, en particulier Google.
+- Les critiques soutiennent que la mise en œuvre de l'API de l'intégrité du web pourrait conduire à des capacités limitées de grattage du web et à une discrimination à l'encontre de certains utilisateurs.
+
+### [Twitter a officiellement changé son logo en "X"](https://techcrunch.com/2023/07/24/twitter-has-officially-changed-its-logo-to-x/)
+
+- Twitter a officiellement changé son logo, passant de l'oiseau emblématique à un "X", après qu'Elon Musk a annoncé le changement au cours du week-end.
+- Elon Musk a laissé entendre qu'il pourrait y avoir d'autres changements de logo à l'avenir, car il a qualifié le logo "X" de logo "provisoire".
+- Elon Musk a également indiqué que Twitter finirait par faire ses adieux à la marque Twitter et supprimerait progressivement toutes les références à l'oiseau.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=36845111)
+
+- Twitter a remplacé son logo par la lettre "X", ce qui a suscité l'intérêt des passionnés de technologie en raison de l'implication d'Elon Musk et de l'impact potentiel sur l'image de la plateforme.
+- Certaines personnes sont mécontentes et déçues de ce changement de marque, et s'interrogent sur l'intérêt de se débarrasser d'une marque aussi reconnaissable que Twitter.
+- La réussite d'Elon Musk avec des entreprises comme PayPal, SpaceX, Tesla et The Boring Company a suscité l'attente de sa prochaine entreprise.
+
+### [J'ai passé deux ans à construire un simulateur de finances personnelles](https://projectionlab.com/)
+
+- ProjectionLab est un simulateur de finances personnelles qui permet aux utilisateurs d'élaborer des plans financiers et d'analyser différents scénarios pour leur avenir.
+- Il aide les utilisateurs à définir leurs objectifs financiers, à évaluer leurs chances de réussite et à réduire l'anxiété liée à leurs finances.
+- Le simulateur n'est pas lié aux comptes financiers réels des utilisateurs et offre diverses options de persistance des données pour la protection de la vie privée.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=36849502)
+
+- ProjectionLab est un outil de planification des finances personnelles qui offre des fonctions avancées au-delà des calculateurs de retraite standard, permettant aux utilisateurs de créer des plans financiers et de visualiser les flux de trésorerie, l'analyse fiscale, et plus encore.
+- L'outil a récemment fait l'objet d'une refonte majeure et propose désormais l'auto-hébergement pour les utilisateurs de Lifetime. Il a reçu des commentaires positifs pour son interface utilisateur, ses fonctionnalités et sa capacité à modéliser divers scénarios.
+- Les utilisateurs ont demandé des fonctionnalités supplémentaires telles que l'accès à l'API, la synchronisation avec Google Drive et davantage de contenu éducatif, et il y a des discussions sur la structure des prix et les mesures de sécurité de l'application.
+
+### [Il y a 40 ans hier, le vol 143 d'Air Canada est tombé en panne de carburant en plein vol](https://www.damninteresting.com/the-gimli-glider/)
+
+- Le vol 143 d'Air Canada, également connu sous le nom de "Gimli Glider", a fait les gros titres en 1983 lorsqu'il est tombé en panne de carburant en plein vol.
+- Avant le décollage, l'équipage a rencontré plusieurs problèmes mécaniques, notamment des jauges de carburant défectueuses.
+- Le commandant de bord Bob Pearson et le copilote Maurice Quintal ont réussi à se poser sur une piste d'atterrissage abandonnée à Gimli, au Manitoba, sauvant ainsi les 69 passagers et membres d'équipage qui se trouvaient à bord.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=36850111)
+
+- Il y a 40 ans, le vol 143 d'Air Canada tombait en panne de carburant en plein vol et effectuait un atterrissage d'urgence réussi, soulignant l'importance des procédures de sécurité.
+- L'incident a été causé par des erreurs dans la conversion du poids du carburant et le non-respect des règles de sécurité, ce qui a conduit à des changements dans les procédures d'Air Canada.
+- L'histoire a suscité de l'intérêt en raison de l'atterrissage remarquable et des leçons tirées de l'incident.
+
+### [La durée d'attention a-t-elle diminué ?](https://slimemoldtimemold.com/2023/07/24/your-mystery-have-attention-spans-been-declining/)
+
+- L'auteur cherche à savoir si les capacités d'attention individuelles ont diminué au cours des deux dernières décennies, en raison de la curiosité suscitée par les effets potentiellement néfastes de l'internet sur les performances cognitives.
+- Peu de travaux directs ont été réalisés sur ce sujet, malgré son grand intérêt, mais l'auteur constate que les capacités d'attention individuelles pourraient effectivement avoir diminué.
+- Les capacités d'attention sont importantes pour le travail intellectuel, et si elles diminuent, cela pourrait avoir un impact négatif sur la productivité dans les tâches complexes.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=36851644)
+
+- Certains soutiennent que des formats plus courts peuvent être plus efficaces pour la communication et l'apprentissage, tandis que d'autres s'inquiètent d'un manque de concentration et d'une incapacité à maintenir l'attention.
+- L'augmentation des contenus courts et les distractions constantes des appareils mobiles peuvent contribuer à réduire la durée d'attention, ce qui suscite l'intérêt des personnes férues de technologie.
+- La diminution de la durée d'attention est influencée par l'abondance de contenus facilement accessibles, la demande de gratification instantanée, l'augmentation des options de divertissement et la capacité à déterminer rapidement ce qui mérite de l'attention.
+
+### [Le projet de loi du Sénat américain élaboré avec la DEA vise le cryptage de bout en bout](https://therecord.media/senate-dea-bill-targets-end-to-end-encryption-requires-companies-to-report-drugs)
+
+- Un projet de loi du Sénat appelé Cooper Davis Act vise à obliger les entreprises de médias sociaux et les services en ligne à signaler à la Drug Enforcement Administration (DEA) des États-Unis les activités liées à la drogue sur leurs plateformes.
+- Les défenseurs de la vie privée estiment que ce projet de loi menace les services de cryptage de bout en bout et transforme les entreprises en agents de police des drogues de facto.
+- La disposition du projet de loi qui consiste à tenir les entreprises responsables des comportements qu'elles ne signalent pas si elles s'aveuglent délibérément sur les violations est particulièrement controversée.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=36841369)
+
+- Le Sénat américain propose un projet de loi visant le chiffrement de bout en bout, ce qui suscite un débat sur les implications d'une telle législation.
+- Le débat met en évidence la nécessité d'adopter des approches globales en matière de politique des drogues et les conséquences potentielles de la poursuite de la prohibition.
+- L'importance de la protection des droits individuels et les dangers potentiels d'un État de surveillance sont soulignés.
+
+### [Inkscape 1.3](https://inkscape.org/news/2023/07/23/inkscape-launches-version-13-focus-organizing-work/)
+
+- Inkscape a publié la version 1.3, qui met l'accent sur l'amélioration des performances et l'organisation efficace du travail.
+- La nouvelle version comprend des fonctionnalités telles que l'outil Shape Builder, la boîte de dialogue Document Resources et les collections de polices, qui aident les utilisateurs à organiser leur travail de manière plus efficace.
+- Des améliorations ont également été apportées aux fonctionnalités existantes, telles que la boîte de dialogue Calques et objets et la barre d'accrochage persistante, afin de faciliter la navigation et l'ajustement des paramètres.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=36843794)
+
+- Inkscape 1.3 a apporté des améliorations significatives pour répondre aux frustrations des utilisateurs et améliorer l'interface utilisateur (UI) et l'expérience utilisateur (UX).
+- Les nouvelles fonctionnalités incluent un meilleur comportement lors de la suppression de nœuds, une meilleure personnalisation de la palette de couleurs, une sélection plus facile du lasso et un rendu multithread pour des performances plus rapides.
+- La version introduit également une meilleure sélection de polices, des motifs améliorés et un backend OpenGL expérimental pour la stabilité et la performance.
+- Les utilisateurs sont ravis de ces mises à jour et sont impatients d'utiliser la nouvelle version.
+- Certains utilisateurs ont exprimé des inquiétudes concernant l'interface utilisateur et l'UX, mais d'autres apprécient la nature gratuite et open-source d'Inkscape.
+- La nouvelle version apporte également des améliorations dans l'importation de PDF, les marges de page et les fonds perdus, ainsi que d'autres fonctionnalités précieuses comme l'outil de construction de formes, qui ont été très demandées.
+- Les utilisateurs apprécient les capacités d'alignement précis d'Inkscape et son utilité dans les flux de travail d'impression.
+- Plusieurs utilisateurs mentionnent la nécessité d'améliorer la documentation et les ressources pour l'apprentissage d'Inkscape.
+- Certains utilisateurs comparent Inkscape à d'autres logiciels professionnels de conception graphique tels qu'Adobe Illustrator et Affinity Designer, en notant l'absence d'accélération GPU dans Inkscape.
+- Les améliorations apportées à la convivialité et aux performances du Mac, ainsi que l'augmentation du développement, ont été positivement reconnues.
+- Les utilisateurs recommandent Inkscape pour l'édition des exportations SVG à partir d'autres logiciels de conception comme Figma.
+- Dans l'ensemble, Inkscape est considéré comme un outil de conception puissant et polyvalent, bien que certains utilisateurs expriment leur frustration à l'égard de fonctionnalités spécifiques telles que le stylo calligraphique et les capacités d'extrusion des bords.
+
+### [Caractère Unicode "𝕏" (U+1D54F)](https://www.compart.com/en/unicode/U+1D54F)
+
+- Ce billet traite d'un caractère Unicode spécifique appelé "𝕏" (U+1D54F) et fournit des détails sur son nom, sa version Unicode, son bloc, son plan, son script, sa catégorie, sa classe bidirectionnelle, sa classe de combinaison et ses propriétés de mise en miroir.
+- Le caractère appartient au bloc Symboles Alphanumériques Mathématiques dans le Plan Multilingue Supplémentaire d'Unicode.
+- Le billet mentionne les encodages UTF-8, UTF-16 et UTF-32 pour le caractère et fournit une décomposition du caractère en d'autres caractères apparentés.
+
+#### [Réactions de l'industrie](http://news.ycombinator.com/item?id=36846076)
+
+- Le caractère Unicode "𝕏" (U+1D54F) est pris en charge dans divers types de polices et est couramment utilisé dans la notation mathématique.
+- Ce caractère est utile dans la programmation fonctionnelle et représente une fonction lorsqu'il est utilisé en majuscule.
+- Le véritable point d'achoppement de ces caractères est la gestion de l'UTF-16 sur les plateformes Windows.
+
+</Steps>
