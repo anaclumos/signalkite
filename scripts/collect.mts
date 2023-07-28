@@ -32,7 +32,7 @@ export const collect = async (url: string): Promise<string> => {
 
   if (body === '') {
     try {
-      log(`⏳ Downloading\t${url}`, 'info')
+      log(`⏳ Downloading\t ${url}`, 'info')
       let browser: Browser = null
       try {
         const browser = await puppeteer.connect({
@@ -60,9 +60,9 @@ export const collect = async (url: string): Promise<string> => {
       } finally {
         await browser?.close()
       }
-      log(`✅ Downloaded\tBrightData for ${url}`, 'info')
+      log(`✅ Downloaded\t BrightData for ${url}`, 'info')
     } catch (e) {
-      log(`❌ Error\tCannot Download BrightData for ${url}\n${e}`, 'info')
+      log(`❌ Error\t Cannot Download BrightData for ${url}\n${e}`, 'info')
     }
   }
   return sanitize(body)
