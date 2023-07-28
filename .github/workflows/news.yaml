@@ -15,10 +15,10 @@ jobs:
           cache: yarn
       - name: Checkout repo
         uses: actions/checkout@v3
-      - name: Install dependencies
-        run: yarn install
       - name: Update News
-        run: yarn worker
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: worker
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           DEEPL_API_KEY: ${{secrets.DEEPL_API_KEY}}
@@ -30,7 +30,9 @@ jobs:
           NEWSLETTERS_CHO_SH_USERNAME: ${{secrets.NEWSLETTERS_CHO_SH_USERNAME}}
           NEWSLETTERS_CHO_SH_PASSWORD: ${{secrets.NEWSLETTERS_CHO_SH_PASSWORD}}
       - name: Run Prettier
-        run: yarn format
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: format
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
