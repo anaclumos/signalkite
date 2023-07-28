@@ -26,8 +26,7 @@ export const collect = async (url: string): Promise<string> => {
   }
 
   if (url?.includes('twitter')) {
-    // handle twitter and mastodon
-    body = 'N/A'
+    url = `https://publish.twitter.com/oembed?url=${encodeURIComponent(url)}`
   }
 
   if (body === '') {
