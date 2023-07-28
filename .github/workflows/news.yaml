@@ -8,38 +8,27 @@ jobs:
   news:
     environment: Production
     runs-on: ubuntu-latest
-    services:
-      selenium:
-        image: selenium/standalone-chrome:latest
-        options: --shm-size=2gb
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-      - name: Set Up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-      - name: Install Dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r legacy/data/requirements.txt
-          yarn install
-      - name: Rebase Before Running
-        run: |
-          git config pull.rebase true
-          git pull
-      - name: Run Prettier
+      - name: Update News
         uses: borales/actions-yarn@v4
         with:
-          cmd: workspace heimdall-v1 cleanup
-      - name: Update News
-        run: python3 legacy/data/main.py
+          cmd: worker
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DEEPL_API_KEY: ${{secrets.DEEPL_API_KEY}}
+          BING_TRANSLATE_KEY: ${{secrets.BING_TRANSLATE_KEY}}
+          BING_TRANSLATE_REGION: ${{secrets.BING_TRANSLATE_REGION}}
+          BRIGHTDATA_USERNAME: ${{secrets.BRIGHTDATA_USERNAME}}
+          BRIGHTDATA_PASSWORD: ${{secrets.BRIGHTDATA_PASSWORD}}
+          BRIGHTDATA_PROXY: ${{secrets.BRIGHTDATA_PROXY}}
+          NEWSLETTERS_CHO_SH_USERNAME: ${{secrets.NEWSLETTERS_CHO_SH_USERNAME}}
+          NEWSLETTERS_CHO_SH_PASSWORD: ${{secrets.NEWSLETTERS_CHO_SH_PASSWORD}}
       - name: Run Prettier
         uses: borales/actions-yarn@v4
         with:
-          cmd: workspace heimdall-v1 cleanup
+          cmd: format
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -51,47 +40,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
-      - name: Translate news
-        run: python3 legacy/data/translate.py
-        env:
-          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
-      - name: Run Prettier
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: workspace heimdall-v1 cleanup
-      - name: Commit as Bot
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add .
-          git diff-index --quiet HEAD || git commit -m "Formatting..."
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-      - name: Write Frontmatter
-        run: python3 legacy/data/frontmatter_inject.py
-      - name: Generate English RSS
-        run: python3 legacy/data/rss.py
-      - name: Run Prettier
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: workspace heimdall-v1 cleanup
-      - name: Commit as Bot
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add .
-          git diff-index --quiet HEAD || git commit -m "Formatting..."
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-      - name: Schedule Newsletter
-        run: python3 legacy/data/newsletter.py
-        env:
-          NEWSLETTERS_CHO_SH_USERNAME: ${{ secrets.NEWSLETTERS_CHO_SH_USERNAME }}
-          NEWSLETTERS_CHO_SH_PASSWORD: ${{ secrets.NEWSLETTERS_CHO_SH_PASSWORD }}
-          RESEND_KEY: ${{ secrets.RESEND_KEY }}
