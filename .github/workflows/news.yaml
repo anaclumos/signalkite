@@ -9,12 +9,16 @@ jobs:
     environment: Production
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: yarn
       - name: Checkout repo
         uses: actions/checkout@v3
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
       - name: Update News
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: worker
+        run: yarn worker
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           DEEPL_API_KEY: ${{secrets.DEEPL_API_KEY}}
@@ -26,9 +30,7 @@ jobs:
           NEWSLETTERS_CHO_SH_USERNAME: ${{secrets.NEWSLETTERS_CHO_SH_USERNAME}}
           NEWSLETTERS_CHO_SH_PASSWORD: ${{secrets.NEWSLETTERS_CHO_SH_PASSWORD}}
       - name: Run Prettier
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: format
+        run: yarn format
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -40,3 +42,12 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
+      - name: Build website
+        run: yarn build
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
