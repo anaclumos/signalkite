@@ -28,6 +28,7 @@ const config = {
     defaultLocale: 'en',
     locales: [
       'ar',
+      'bn',
       'cs',
       'da',
       'de',
@@ -51,6 +52,7 @@ const config = {
       'ru',
       'sk',
       'sv',
+      'ta',
       'th',
       'tr',
       'zh-Hans',
