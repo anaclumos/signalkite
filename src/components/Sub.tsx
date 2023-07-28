@@ -116,7 +116,7 @@ export const Sub = () => {
             />
             <div className={clsx(styles.lang)}>
               <span className={clsx(styles.localeCode)}>es</span>
-              Espanya
+              Español
             </div>
           </label>
           <label htmlFor="d473a" className={clsx(styles.locale)}>
@@ -246,7 +246,7 @@ export const Sub = () => {
             />
             <div className={clsx(styles.lang)}>
               <span className={clsx(styles.localeCode)}>nb</span>
-              Bokmål
+              Norsk bokmål
             </div>
           </label>
           <label htmlFor="b0ab7" className={clsx(styles.locale)}>
@@ -389,7 +389,7 @@ export const Sub = () => {
             />
             <div className={clsx(styles.lang)}>
               <span className={clsx(styles.localeCode)}>zh-Hans</span>
-              中文 (简体中文)
+              简体中文
             </div>
           </label>
 
@@ -403,7 +403,7 @@ export const Sub = () => {
             />
             <div className={clsx(styles.lang)}>
               <span className={clsx(styles.localeCode)}>zh-Hant</span>
-              中文 繁體
+              繁體中文
             </div>
           </label>
         </section>
