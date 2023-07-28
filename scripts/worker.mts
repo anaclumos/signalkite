@@ -60,10 +60,10 @@ const main = async () => {
     }
     localeStories[locale] = await Promise.all(
       stories.map(async (s) => {
-        console.log(s)
+        const title = await translate([s.title], 'en', locale)
         return {
           ...s,
-          title: await translate([s.title], 'en', locale)[0],
+          title: title[0],
           originSummary: await translate(s.originSummary, 'en', locale),
           commentSummary: await translate(s.commentSummary, 'en', locale),
           originBody: '',
@@ -84,11 +84,22 @@ const main = async () => {
 
   for (let i = 0; i < LinguineList.length; i++) {
     const locale = LinguineList[i]
-    fs.mkdirSync(`./docs/${day.replaceAll('-', '/')}`, { recursive: true })
-    fs.writeFileSync(
-      `./docs/${day.replaceAll('-', '/')}.${locale}.md`,
-      createContent(locale, localeStories[locale])
-    )
+
+    if (locale === 'en') {
+      fs.mkdirSync(`./docs/${day.replaceAll('-', '/')}`, { recursive: true })
+      fs.writeFileSync(
+        `./docs/${day.replaceAll('-', '/')}.${locale}2.md`,
+        createContent(locale, localeStories[locale])
+      )
+    } else {
+      fs.mkdirSync(`./i18n/${locale}/docusaurus-plugin-content-docs/${day.replaceAll('-', '/')}`, {
+        recursive: true,
+      })
+      fs.writeFileSync(
+        `./i18n/${locale}/docusaurus-plugin-content-docs/${day.replaceAll('-', '/')}.${locale}.md`,
+        createContent(locale, localeStories[locale])
+      )
+    }
   }
 
   // await scheduleNewsletter(localeStories)
