@@ -47,6 +47,10 @@ const main = async () => {
 
   for (let i = 0; i < LinguineList.length; i++) {
     const locale = LinguineList[i]
+    if (locale === 'en') {
+      localeStories[locale] = stories
+      continue
+    }
     if (fs.existsSync(`./records/${day}/${day}.${locale}.json`)) {
       console.log('💘 Tran Exists\t', locale)
       localeStories[locale] = JSON.parse(
@@ -56,11 +60,14 @@ const main = async () => {
     }
     localeStories[locale] = await Promise.all(
       stories.map(async (s) => {
+        console.log(s)
         return {
           ...s,
           title: await translate([s.title], 'en', locale)[0],
           originSummary: await translate(s.originSummary, 'en', locale),
           commentSummary: await translate(s.commentSummary, 'en', locale),
+          originBody: '',
+          commentBody: '',
         }
       })
     )
@@ -84,7 +91,7 @@ const main = async () => {
     )
   }
 
-  await scheduleNewsletter(localeStories)
+  // await scheduleNewsletter(localeStories)
 }
 
 main().then(() => process.exit(0))
