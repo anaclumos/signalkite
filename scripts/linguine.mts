@@ -4,8 +4,11 @@ export const LinguineProvider = {
   DEEPL: 'DEEPL',
 } as const
 
+// ['ar', 'bn', 'cs', 'da', 'de', 'el', 'en', 'es', 'fi', 'fr', 'he', 'hi', 'hu', 'id', 'it', 'jp', 'ko', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sk', 'sv', 'ta', 'th', 'tr', 'zh-Hans', 'zh-Hant']
+
 export const LinguineCore = {
   ar: { name: 'Arabic', provider: 'BING', native: 'العربية' },
+  bn: { name: 'Bengali', provider: 'BING', native: 'বাংলা' },
   cs: { name: 'Czech', provider: 'DEEPL', native: 'čeština' },
   da: { name: 'Danish', provider: 'DEEPL', native: 'dansk' },
   de: { name: 'German', provider: 'DEEPL', native: 'Deutsch' },
@@ -29,6 +32,7 @@ export const LinguineCore = {
   ru: { name: 'Russian', provider: 'DEEPL', native: 'русский' },
   sk: { name: 'Slovak', provider: 'DEEPL', native: 'slovenčina' },
   sv: { name: 'Swedish', provider: 'DEEPL', native: 'svenska' },
+  ta: { name: 'Tamil', provider: 'BING', native: 'தமிழ்' },
   th: { name: 'Thai', provider: 'BING', native: 'ไทย' },
   tr: { name: 'Turkish', provider: 'DEEPL', native: 'Türkçe' },
   'zh-Hans': {
@@ -41,8 +45,6 @@ export const LinguineCore = {
     provider: 'BING',
     native: '中文 (繁體)',
   },
-  zu: { name: 'Zulu', provider: 'BING', native: 'isiZulu' },
 }
 
-// export const LinguineList = Object.keys(LinguineCore)
-export const LinguineList = ['en', 'ko']
+export const LinguineList = Object.keys(LinguineCore)

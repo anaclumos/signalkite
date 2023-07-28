@@ -6,7 +6,8 @@ import { Story } from './type.mjs'
 import { summarize } from './summarize.mjs'
 import { LinguineList } from './linguine.mjs'
 import { translate } from './translate.mjs'
-import { scheduleNewsletter } from './newsletter.mjs'
+import { createContent, scheduleNewsletter } from './newsletter.mjs'
+import { log } from './util.mjs'
 
 const main = async () => {
   let stories: Story[] = await updateHN()
@@ -63,7 +64,7 @@ const main = async () => {
         }
       })
     )
-    console.log('📝 Writing\t', locale)
+    log(`🤟 Translating\t ${locale}`, 'info')
   }
 
   for (let i = 0; i < LinguineList.length; i++) {
@@ -73,6 +74,16 @@ const main = async () => {
       JSON.stringify(localeStories[locale], null, 2)
     )
   }
+
+  for (let i = 0; i < LinguineList.length; i++) {
+    const locale = LinguineList[i]
+    fs.mkdirSync(`./docs/${day.replaceAll('-', '/')}`, { recursive: true })
+    fs.writeFileSync(
+      `./docs/${day.replaceAll('-', '/')}.${locale}.md`,
+      createContent(locale, localeStories[locale])
+    )
+  }
+
   await scheduleNewsletter(localeStories)
 }
 

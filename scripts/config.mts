@@ -5,6 +5,7 @@ export const username = process.env.NEWSLETTERS_CHO_SH_USERNAME
 export const password = process.env.NEWSLETTERS_CHO_SH_PASSWORD
 export const newsletterId = {
   ar: 35,
+  bn: 39,
   cs: 7,
   da: 8,
   de: 9,
@@ -28,6 +29,8 @@ export const newsletterId = {
   ru: 28,
   sk: 29,
   sv: 31,
+  ta: 41,
+  th: 40,
   tr: 32,
   'zh-Hans': 34,
   'zh-Hant': 38,

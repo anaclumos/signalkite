@@ -32,8 +32,8 @@ const createCampaign = async (locale: string, stories: Story[]) => {
         subject: `🗞️ ${stories[0].title} (${new Date().toISOString().split('T')[0]})`,
         type: 'regular',
         content_type: 'markdown',
-        body: 'hello',
-        altbody: 'hello',
+        body: createContent(locale, stories),
+        altbody: createContent(locale, stories),
         lists: [newsletterId[locale]],
         send_at: timeToSend.toISOString(),
       }),
@@ -44,14 +44,14 @@ const createCampaign = async (locale: string, stories: Story[]) => {
   }
 }
 
-const createContent = (locale: string, stories: Story[]) => {
+export const createContent = (locale: string, stories: Story[]) => {
   const today = new Date()
   let content = `# ${today.toLocaleDateString(locale, {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  })} ${locale}\n\n`
+  })}\n\n`
 
   for (let i = 0; i < stories.length; i++) {
     const story = stories[i]
@@ -63,6 +63,7 @@ const createContent = (locale: string, stories: Story[]) => {
     for (let j = 0; j < story.commentSummary.length; j++) {
       content += `- ${story.commentSummary[j]}\n`
     }
+    content += '\n\n'
   }
   return content
 }
