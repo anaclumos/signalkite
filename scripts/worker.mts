@@ -53,9 +53,7 @@ const main = async () => {
     }
     if (fs.existsSync(`./records/${day}/${day}.${locale}.json`)) {
       console.log('💘 Tran Exists\t', locale)
-      localeStories[locale] = JSON.parse(
-        fs.readFileSync(`./records/${day}/${day}.${locale}.json`, 'utf8')
-      )
+      localeStories[locale] = JSON.parse(fs.readFileSync(`./records/${day}/${day}.${locale}.json`, 'utf8'))
       continue
     }
     localeStories[locale] = await Promise.all(
@@ -76,10 +74,7 @@ const main = async () => {
 
   for (let i = 0; i < LinguineList.length; i++) {
     const locale = LinguineList[i]
-    fs.writeFileSync(
-      `./records/${day}/${day}.${locale}.json`,
-      JSON.stringify(localeStories[locale], null, 2)
-    )
+    fs.writeFileSync(`./records/${day}/${day}.${locale}.json`, JSON.stringify(localeStories[locale], null, 2))
   }
 
   for (let i = 0; i < LinguineList.length; i++) {
@@ -87,17 +82,11 @@ const main = async () => {
 
     if (locale === 'en') {
       fs.mkdirSync(`./docs/${day.replaceAll('-', '/')}`, { recursive: true })
-      fs.writeFileSync(
-        `./docs/${day.replaceAll('-', '/')}.md`,
-        createContent(locale, localeStories[locale])
-      )
+      fs.writeFileSync(`./docs/${day.replaceAll('-', '/')}.md`, createContent(locale, localeStories[locale]))
     } else {
-      fs.mkdirSync(
-        `./i18n/${locale}/docusaurus-plugin-content-docs/current/${day.replaceAll('-', '/')}`,
-        {
-          recursive: true,
-        }
-      )
+      fs.mkdirSync(`./i18n/${locale}/docusaurus-plugin-content-docs/current/${day.replaceAll('-', '/')}`, {
+        recursive: true,
+      })
       fs.writeFileSync(
         `./i18n/${locale}/docusaurus-plugin-content-docs/current/${day.replaceAll('-', '/')}.md`,
         createContent(locale, localeStories[locale])

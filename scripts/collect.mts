@@ -27,7 +27,9 @@ export const collect = async (url: string): Promise<string> => {
 
   if (url?.includes('twitter')) {
     url = `https://publish.twitter.com/oembed?url=${encodeURIComponent(url)}`
-    body = await fetch(url).then((r) => r.json()).then((r) => r.html)
+    body = await fetch(url)
+      .then((r) => r.json())
+      .then((r) => r.html)
   }
 
   if (body === '') {

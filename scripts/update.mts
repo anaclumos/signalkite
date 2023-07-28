@@ -9,21 +9,17 @@ import { HACKER_NEWS_PER_HOUR } from './config.mjs'
  * const bestStories = await updateHN()
  */
 export const updateHN = async (): Promise<Story[]> => {
-  let hnResponse = await fetch('https://hacker-news.firebaseio.com/v0/beststories.json').then(
-    (res) => res.json()
-  )
+  let hnResponse = await fetch('https://hacker-news.firebaseio.com/v0/beststories.json').then((res) => res.json())
   let bestStories: Story[] = await Promise.all(
     hnResponse.map(async (id, idx) => {
       await new Promise((resolve) => setTimeout(resolve, 10 * idx))
-      const response = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(
-        (res) => {
-          if (res.status === 200) {
-            return res.json()
-          } else {
-            throw new Error(`Hacker News API returned ${res.status}`)
-          }
+      const response = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then((res) => {
+        if (res.status === 200) {
+          return res.json()
+        } else {
+          throw new Error(`Hacker News API returned ${res.status}`)
         }
-      )
+      })
       return {
         id: response.id,
         title: response.title,

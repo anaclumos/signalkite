@@ -44,10 +44,8 @@ export const sanitize = (text: string) => {
     .replaceAll('  ', '')
     .replaceAll('\n\n', '\n')
     .replaceAll('Hacker News new | past | comments | ask | show | jobs | submit login', '')
-    .replaceAll(
-      'Guidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact Search:',
-      ''
-    )
+    .replaceAll('Guidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact Search:', '')
+    .replaceAll('hours ago | hide | past | favorite |', '')
     .replaceAll('N/A. ', '')
     .replaceAll('N/A.', '')
     .replaceAll('N/A', '')
