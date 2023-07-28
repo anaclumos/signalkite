@@ -94,7 +94,7 @@ const main = async () => {
     }
   }
 
-  // await scheduleNewsletter(localeStories)
+  await scheduleNewsletter(localeStories)
 }
 
 main().then(() => process.exit(0))
