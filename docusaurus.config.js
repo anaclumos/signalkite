@@ -75,10 +75,10 @@ const config = {
     ({
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Heimdall',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Heimdall Logo',
+          src: 'img/android-chrome-512x512.png',
         },
         items: [
           {
@@ -92,7 +92,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/anaclumos/heimdall',
             label: 'GitHub',
             position: 'right',
           },
@@ -100,7 +100,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Sunghyun Cho`,
       },
       prism: {
         theme: lightCodeTheme,
