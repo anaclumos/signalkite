@@ -1,7 +1,7 @@
 import { newsletterId, password, server, username } from './config.mjs'
 import { Story } from './type.mjs'
 import { LOCAL_REACTIONS } from './default.mjs'
-import { LinguineList } from './linguine.mjs'
+import { LinguineCore, LinguineList } from './linguine.mjs'
 import { log } from './util.mjs'
 
 export const scheduleNewsletter = async (localeStories: Record<string, Story[]>) => {
@@ -19,6 +19,11 @@ const createCampaign = async (locale: string, stories: Story[]) => {
   timeToSend.setSeconds(0)
   timeToSend.setMilliseconds(0)
 
+  const title =
+    `🗞️ ${stories[0].title} (${new Date().toISOString().split('T')[0]})`.length <= 50
+      ? `🗞️ ${stories[0].title} (${new Date().toISOString().split('T')[0]})`
+      : `🗞️ HN (${LinguineCore[locale].native}) ${new Date().toISOString().split('T')[0]}`
+
   try {
     log(`📧 Creating\t ${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
     const res = await fetch(server, {
@@ -29,7 +34,7 @@ const createCampaign = async (locale: string, stories: Story[]) => {
       },
       body: JSON.stringify({
         name: `${new Date().toISOString().split('T')[0]} ${locale}`,
-        subject: `🗞️ ${stories[0].title} (${new Date().toISOString().split('T')[0]})`,
+        subject: title,
         type: 'regular',
         content_type: 'markdown',
         body: createContent(locale, stories),

@@ -27,12 +27,12 @@ const main = async () => {
     if (!stories[i].originBody) {
       stories[i].originBody = await collect(stories[i].originLink)
     } else {
-      console.log('💘 Body Exists\t', stories[i].title)
+      log(`💘 Body Exists\t ${stories[i].title}`, 'info')
     }
     if (!stories[i].commentBody) {
       stories[i].commentBody = await collect(stories[i].commentLink)
     } else {
-      console.log('💘 Comm Exists\t', stories[i].commentLink)
+      log(`💘 Comm Exists\t ${stories[i].commentLink}`, 'info')
     }
   }
 
@@ -52,7 +52,7 @@ const main = async () => {
       continue
     }
     if (fs.existsSync(`./records/${day}/${day}.${locale}.json`)) {
-      console.log('💘 Tran Exists\t', locale)
+      log(`💘 Tran Exists\t ${locale}`)
       localeStories[locale] = JSON.parse(fs.readFileSync(`./records/${day}/${day}.${locale}.json`, 'utf8'))
       continue
     }
