@@ -14,7 +14,8 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "worker": "tsc --project scripts --outDir scripts/dist && node -r dotenv/config --experimental-modules scripts/dist/worker.mjs",
+    "worker:all": "tsc --project scripts --outDir scripts/release && node -r dotenv/config --experimental-modules scripts/release/worker.mjs",
+    "worker": "node -r dotenv/config --experimental-modules scripts/release/worker.mjs",
     "translate:cli": "tsc --project scripts --outDir scripts/dist && node -r dotenv/config --experimental-modules scripts/dist/translate-cli.mjs",
     "format": "prettier --write ."
   },
