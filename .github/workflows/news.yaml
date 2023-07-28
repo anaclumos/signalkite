@@ -15,6 +15,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
       - name: Update News
         uses: borales/actions-yarn@v4
         with:
