@@ -21,7 +21,7 @@ const createCampaign = async (locale: string, stories: Story[]) => {
 
   try {
     log(`📧 Creating\t ${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
-    await fetch(server, {
+    const res = await fetch(server, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -39,6 +39,20 @@ const createCampaign = async (locale: string, stories: Story[]) => {
       }),
     })
     log(`💌 Creating\t ${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
+
+    const response = await res.json()
+
+    await fetch(server + '/' + response.data.id + '/status', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Basic ' + Buffer.from(username + ':' + password).toString('base64'),
+      },
+      body: JSON.stringify({
+        status: 'scheduled',
+      }),
+    })
+    log(`📮 Scheduled\t ${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
   } catch (e) {
     log(e, 'error')
   }
