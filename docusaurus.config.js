@@ -75,9 +75,9 @@ const config = {
     ({
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Heimdall',
+        title: 'hn.cho.sh',
         logo: {
-          alt: 'Heimdall Logo',
+          alt: 'hn.cho.sh Logo',
           src: 'img/android-chrome-512x512.png',
         },
         items: [

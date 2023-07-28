@@ -73,7 +73,7 @@ export const createContent = (locale: string, stories: Story[]) => {
     for (let j = 0; j < story.originSummary.length; j++) {
       content += `- ${story.originSummary[j]}\n`
     }
-    content += `\n### [${LOCAL_REACTIONS[locale]}](${story.commentLink})\n\n`
+    content += `\n#### [${LOCAL_REACTIONS[locale]}](${story.commentLink})\n\n`
     for (let j = 0; j < story.commentSummary.length; j++) {
       content += `- ${story.commentSummary[j]}\n`
     }

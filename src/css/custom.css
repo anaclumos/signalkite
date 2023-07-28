@@ -1,39 +1,44 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+* {
+  --primary-color-50: #e5f2fd;
+  --primary-color-100: #c1defa;
+  --primary-color-200: #9ccaf7;
+  --primary-color-300: #79b5f2;
+  --primary-color-400: #64a5f0;
+  --primary-color-500: #5596ec;
+  --primary-color-600: #5088de;
+  --primary-color-700: #4976ca;
+  --primary-color-800: #4365b8;
+  --primary-color-900: #384897;
+}
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: var(--primary-color-700);
+  --ifm-color-primary-dark: var(--primary-color-800);
+  --ifm-color-primary-darker: var(--primary-color-900);
+  --ifm-color-primary-darkest: var(--primary-color-900);
+  --ifm-color-primary-light: var(--primary-color-500);
+  --ifm-color-primary-lighter: var(--primary-color-400);
+  --ifm-color-primary-lightest: var(--primary-color-300);
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: var(--primary-color-300);
+  --ifm-color-primary-dark: var(--primary-color-400);
+  --ifm-color-primary-darker: var(--primary-color-500);
+  --ifm-color-primary-darkest: var(--primary-color-600);
+  --ifm-color-primary-light: var(--primary-color-200);
+  --ifm-color-primary-lighter: var(--primary-color-100);
+  --ifm-color-primary-lightest: var(--primary-color-50);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 * {
-  --font-family-headline: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple Color Emoji', 'Segoe UI Emoji',
-    system-ui, -system-ui, sans-serif;
-  --font-family-text: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple Color Emoji', 'Segoe UI Emoji',
-    system-ui, -system-ui, sans-serif;
+  --font-family-headline: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple Color Emoji',
+    'Segoe UI Emoji', system-ui, -system-ui, sans-serif;
+  --font-family-text: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple Color Emoji',
+    'Segoe UI Emoji', system-ui, -system-ui, sans-serif;
   --font-family-monospace: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
   word-wrap: break-word;
   word-break: keep-all;

@@ -1,75 +1,101 @@
 .form {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    --border-radius: 12px;
-    --background-color: var(--ifm-color-secondary-contrast-background);
-    --border-color: var(--ifm-color-secondary-contrast-background);
-    --text-color: var(--ifm-color-primary);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  --border-radius: 12px;
+  --background-color: var(--ifm-color-secondary-contrast-background);
+  --border-color: var(--ifm-color-gray-500);
+  --text-color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .form {
+  --border-color: var(--ifm-color-gray-800);
+  --text-color: var(--ifm-color-primary);
 }
 
 .input {
-    width: 100%;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    border-radius: 4px;
-    box-sizing: border-box;
-    border: var(--border-color);
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
 }
 
 .locale {
-    display: flex;
-    align-items: center;
-    background: var(--background-color);
-    border: var(--border-color);
-    padding: 1rem;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    user-select: none;
+  display: flex;
+  align-items: center;
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  user-select: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 2px -1px;
+  transition: all 0.2s ease-in-out;
 }
 
 .locale input {
-    margin-right: 0.5rem;
+  margin-right: 0.5rem;
 }
 
+.locale:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 5px 10px 4px;
+}
+
+.locale:active {
+  transform: scale(0.98);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 0px 0px 0px;
+}
 .localeSection {
-    margin: 2rem 0;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 1rem;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1rem;
 }
 
 @media (max-width: 1000px) {
-    .localeSection {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .localeSection {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
-    .localeSection {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .localeSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 400px) {
-    .localeSection {
-        grid-template-columns: repeat(1, 1fr);
-    }
+  .localeSection {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .submit {
-    background: var(--background-color);
-    border: var(--border-color);
-    color: var(--text-color);
-    padding: 1rem;
-    border-radius: var(--border-radius);
-    cursor: pointer;
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin: 1rem auto;
+  width: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 2px -1px;
+  transition: all 0.2s ease-in-out;
 }
 
 .localeCode {
-    font-family: var(--font-family-monospace);
-    color: var(--ifm-color-secondary-darkest);
-    font-size: 0.7rem;
-    letter-spacing: -0.02rem;
-    display: block;
+  font-family: var(--font-family-monospace);
+  color: var(--ifm-color-secondary-darkest);
+  font-size: 0.7rem;
+  letter-spacing: -0.02rem;
+  display: block;
+}
+.submit:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 5px 10px 4px;
+}
+
+.submit:active {
+  transform: scale(0.98);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 0px 0px 0px;
 }
