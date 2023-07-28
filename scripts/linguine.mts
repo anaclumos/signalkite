@@ -47,5 +47,5 @@ export const LinguineCore = {
   },
 }
 
-// export const LinguineList = Object.keys(LinguineCore)
-export const LinguineList = ['en','ko']
+export const LinguineList = Object.keys(LinguineCore)
+

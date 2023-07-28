@@ -46,12 +46,7 @@ const createCampaign = async (locale: string, stories: Story[]) => {
 
 export const createContent = (locale: string, stories: Story[]) => {
   const today = new Date()
-  let content = `# ${today.toLocaleDateString(locale, {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })}\n\n`
+  let content = `# ${new Date().toISOString().split('T')[0]}\n\n`
 
   for (let i = 0; i < stories.length; i++) {
     const story = stories[i]

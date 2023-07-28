@@ -92,11 +92,14 @@ const main = async () => {
         createContent(locale, localeStories[locale])
       )
     } else {
-      fs.mkdirSync(`./i18n/${locale}/docusaurus-plugin-content-docs/${day.replaceAll('-', '/')}`, {
-        recursive: true,
-      })
+      fs.mkdirSync(
+        `./i18n/${locale}/docusaurus-plugin-content-docs/current/${day.replaceAll('-', '/')}`,
+        {
+          recursive: true,
+        }
+      )
       fs.writeFileSync(
-        `./i18n/${locale}/docusaurus-plugin-content-docs/${day.replaceAll('-', '/')}.md`,
+        `./i18n/${locale}/docusaurus-plugin-content-docs/current/${day.replaceAll('-', '/')}.md`,
         createContent(locale, localeStories[locale])
       )
     }
