@@ -1,30 +1,29 @@
-import { loadSummarizationChain } from 'langchain/chains';
-import { ChatOpenAI } from 'langchain/chat_models/openai';
-import { OpenAI } from 'langchain/llms/openai';
-import { HumanMessage, SystemMessage } from 'langchain/schema';
-import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
-import { log, sanitize } from './util.mjs';
+import { loadSummarizationChain } from 'langchain/chains'
+import { ChatOpenAI } from 'langchain/chat_models/openai'
+import { OpenAI } from 'langchain/llms/openai'
+import { HumanMessage, SystemMessage } from 'langchain/schema'
+import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
+import { log, sanitize } from './util.mjs'
 export const createBulletPointSummary = async (rawText, title) => {
-    // for summarizing and context generating
-    const model = new OpenAI({ modelName: 'gpt-3.5-turbo-16k' });
-    // for generating the actual chat
-    const chat = new ChatOpenAI({ modelName: 'gpt-3.5-turbo' });
-    const chain = loadSummarizationChain(model, { type: 'map_reduce' });
-    try {
-        const textSplitter = new RecursiveCharacterTextSplitter({
-            chunkSize: 8192,
-        });
-        log(`⏳ Shortening\t ${title}`, 'info');
-        const bodyDoc = await textSplitter.createDocuments([sanitize(rawText)]);
-        const bodyRes = await chain.call({
-            input_documents: bodyDoc,
-        });
-        if (!bodyRes?.text)
-            return;
-        const summary = sanitize(bodyRes.text);
-        log(`🍵 Distilling\t ${title}`, 'info');
-        const response = await chat.call([
-            new SystemMessage(`
+  // for summarizing and context generating
+  const model = new OpenAI({ modelName: 'gpt-3.5-turbo-16k' })
+  // for generating the actual chat
+  const chat = new ChatOpenAI({ modelName: 'gpt-3.5-turbo' })
+  const chain = loadSummarizationChain(model, { type: 'map_reduce' })
+  try {
+    const textSplitter = new RecursiveCharacterTextSplitter({
+      chunkSize: 8192,
+    })
+    log(`⏳ Shortening\t ${title}`, 'info')
+    const bodyDoc = await textSplitter.createDocuments([sanitize(rawText)])
+    const bodyRes = await chain.call({
+      input_documents: bodyDoc,
+    })
+    if (!bodyRes?.text) return
+    const summary = sanitize(bodyRes.text)
+    log(`🍵 Distilling\t ${title}`, 'info')
+    const response = await chat.call([
+      new SystemMessage(`
         You are a professional, fair, and intelligent expert journalist for cutting-edge tech news.
         You must provide a concise summary in mutually exclusive but collectively complete bullet points.
         Some comments may include sarcasm, and you must figure out that it's not the central argument or factual.
@@ -65,49 +64,48 @@ export const createBulletPointSummary = async (rawText, title) => {
         Ignore any mention or sentenses on CSS contents and any referral, marketing, or promotional links/coupon codes.
         Do not exceed 100 words.
         `),
-            new HumanMessage(`TEXT:\n${summary}\n\nRESULT:\n`),
-        ]);
-        const { content } = response;
-        let arr = content.split('\n');
-        arr = arr.map((item) => sanitize(item));
-        arr = arr.map((item) => {
-            if (item.startsWith('- ')) {
-                item = item.substring(2);
-            }
-            if (item.startsWith("' -")) {
-                item = item.substring(3);
-            }
-            if (item.startsWith("'- ")) {
-                item = item.substring(3);
-            }
-            if (item.endsWith("'")) {
-                item = item.substring(0, item.length - 1);
-            }
-            return sanitize(item);
-        });
-        arr = arr.filter((item) => item !== '');
-        arr = arr.filter((item) => item !== 'N/A');
-        arr = arr.filter((item) => item !== 'N/A.');
-        return arr;
-    }
-    catch (e) {
-        console.error(e);
-    }
-};
+      new HumanMessage(`TEXT:\n${summary}\n\nRESULT:\n`),
+    ])
+    const { content } = response
+    let arr = content.split('\n')
+    arr = arr.map((item) => sanitize(item))
+    arr = arr.map((item) => {
+      if (item.startsWith('- ')) {
+        item = item.substring(2)
+      }
+      if (item.startsWith("' -")) {
+        item = item.substring(3)
+      }
+      if (item.startsWith("'- ")) {
+        item = item.substring(3)
+      }
+      if (item.endsWith("'")) {
+        item = item.substring(0, item.length - 1)
+      }
+      return sanitize(item)
+    })
+    arr = arr.filter((item) => item !== '')
+    arr = arr.filter((item) => item !== 'N/A')
+    arr = arr.filter((item) => item !== 'N/A.')
+    return arr
+  } catch (e) {
+    console.error(e)
+  }
+}
 export const summarize = async (story) => {
-    if (!story.originBody || !story.commentBody) {
-        log(`🚨 Missing body\t ${story.title}`, 'error');
-        return story;
-    }
-    if ((story.originSummary.length ?? 0) !== 0 && (story.commentSummary.length ?? 0) !== 0) {
-        log(`💘 Summ Exists\t ${story.title}`, 'error');
-        return story;
-    }
-    const originSummary = await createBulletPointSummary(story.originBody, story.title);
-    const commentSummary = await createBulletPointSummary(story.commentBody, story.title);
-    return {
-        ...story,
-        originSummary,
-        commentSummary,
-    };
-};
+  if (!story.originBody || !story.commentBody) {
+    log(`🚨 Missing body\t ${story.title}`, 'error')
+    return story
+  }
+  if ((story.originSummary.length ?? 0) !== 0 && (story.commentSummary.length ?? 0) !== 0) {
+    log(`💘 Summ Exists\t ${story.title}`, 'error')
+    return story
+  }
+  const originSummary = await createBulletPointSummary(story.originBody, story.title)
+  const commentSummary = await createBulletPointSummary(story.commentBody, story.title)
+  return {
+    ...story,
+    originSummary,
+    commentSummary,
+  }
+}
