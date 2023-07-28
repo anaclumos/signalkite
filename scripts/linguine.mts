@@ -48,4 +48,3 @@ export const LinguineCore = {
 }
 
 export const LinguineList = Object.keys(LinguineCore)
-
