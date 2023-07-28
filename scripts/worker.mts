@@ -6,6 +6,7 @@ import { Story } from './type.mjs'
 import { summarize } from './summarize.mjs'
 import { LinguineList } from './linguine.mjs'
 import { translate } from './translate.mjs'
+import { scheduleNewsletter } from './newsletter.mjs'
 
 const main = async () => {
   let stories: Story[] = await updateHN()
@@ -45,11 +46,18 @@ const main = async () => {
 
   for (let i = 0; i < LinguineList.length; i++) {
     const locale = LinguineList[i]
+    if (fs.existsSync(`./records/${day}/${day}.${locale}.json`)) {
+      console.log('💘 Tran Exists\t', locale)
+      localeStories[locale] = JSON.parse(
+        fs.readFileSync(`./records/${day}/${day}.${locale}.json`, 'utf8')
+      )
+      continue
+    }
     localeStories[locale] = await Promise.all(
       stories.map(async (s) => {
-        console.log('translating', s)
         return {
           ...s,
+          title: await translate([s.title], 'en', locale)[0],
           originSummary: await translate(s.originSummary, 'en', locale),
           commentSummary: await translate(s.commentSummary, 'en', locale),
         }
@@ -58,8 +66,6 @@ const main = async () => {
     console.log('📝 Writing\t', locale)
   }
 
-  // write to file
-  // const path = `./records/${day}/${day}.${locale}.json`
   for (let i = 0; i < LinguineList.length; i++) {
     const locale = LinguineList[i]
     fs.writeFileSync(
@@ -67,6 +73,7 @@ const main = async () => {
       JSON.stringify(localeStories[locale], null, 2)
     )
   }
+  await scheduleNewsletter(localeStories)
 }
 
 main().then(() => process.exit(0))
