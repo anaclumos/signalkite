@@ -1,6 +1,6 @@
 import { newsletterId, password, server, username } from './config.mjs'
 import { Story } from './type.mjs'
-import { LOCAL_REACTIONS } from './default.mjs'
+import { LOCAL_FEEDBACK, LOCAL_REACTIONS, LOCAL_SHARE, LOCAL_SPONSOR } from './default.mjs'
 import { LinguineCore, LinguineList } from './linguine.mjs'
 import { log } from './util.mjs'
 
@@ -10,6 +10,12 @@ export const scheduleNewsletter = async (localeStories: Record<string, Story[]>)
     const locale = LinguineList[i]
     await createCampaign(locale, localeStories[locale])
   }
+}
+
+const createHeader = (locale: string) => {
+  return `[${LOCAL_SHARE[locale]}}](https://hn.cho.sh/${locale}/${new Date().toISOString().split('T')[0]}) • [${
+    LOCAL_FEEDBACK[locale]
+  }](https://airtable.com/shrty7OlhrLuBC6UX) • [${LOCAL_SPONSOR[locale]}](https://github.com/sponsors/anaclumos)\n\n`
 }
 
 const createCampaign = async (locale: string, stories: Story[]) => {
@@ -37,7 +43,7 @@ const createCampaign = async (locale: string, stories: Story[]) => {
         subject: title,
         type: 'regular',
         content_type: 'markdown',
-        body: createContent(locale, stories),
+        body: createHeader(locale) + createContent(locale, stories),
         altbody: createContent(locale, stories),
         lists: [newsletterId[locale]],
         send_at: timeToSend.toISOString(),
@@ -64,9 +70,7 @@ const createCampaign = async (locale: string, stories: Story[]) => {
 }
 
 export const createContent = (locale: string, stories: Story[]) => {
-  const today = new Date()
   let content = `# ${new Date().toISOString().split('T')[0]}\n\n`
-
   for (let i = 0; i < stories.length; i++) {
     const story = stories[i]
     content += `## [${story.title}](${story.originLink})\n\n`
