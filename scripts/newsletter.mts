@@ -1,6 +1,14 @@
 import { newsletterId, password, server, username } from './config.mjs'
 import { Story } from './type.mjs'
-import { LOCAL_FEEDBACK, LOCAL_REACTIONS, LOCAL_SHARE, LOCAL_SPONSOR } from './default.mjs'
+import {
+  LOCAL_ADVERTISE_FIRST,
+  LOCAL_ADVERTISE_SECOND,
+  LOCAL_CONTACT,
+  LOCAL_FEEDBACK,
+  LOCAL_REACTIONS,
+  LOCAL_SHARE,
+  LOCAL_SPONSOR,
+} from './default.mjs'
 import { LinguineCore, LinguineList } from './linguine.mjs'
 import { log } from './util.mjs'
 
@@ -16,6 +24,10 @@ const createHeader = (locale: string) => {
   return `[${LOCAL_SHARE[locale]}](https://hn.cho.sh/${locale}/${new Date().toISOString().split('T')[0]}) • [${
     LOCAL_FEEDBACK[locale]
   }](https://airtable.com/shrty7OlhrLuBC6UX) • [${LOCAL_SPONSOR[locale]}](https://github.com/sponsors/anaclumos)\n\n`
+}
+
+const createFooter = (locale: string) => {
+  return `---\n\n- ${LOCAL_ADVERTISE_FIRST[locale]}\n- ${LOCAL_ADVERTISE_SECOND[locale]}\n- ${LOCAL_CONTACT[locale]}`
 }
 
 const createCampaign = async (locale: string, stories: Story[]) => {
@@ -43,8 +55,8 @@ const createCampaign = async (locale: string, stories: Story[]) => {
         subject: title,
         type: 'regular',
         content_type: 'markdown',
-        body: createHeader(locale) + createContent(locale, stories),
-        altbody: createContent(locale, stories),
+        body: createHeader(locale) + createContent(locale, stories) + createFooter(locale),
+        altbody: createHeader(locale) + createContent(locale, stories) + createFooter(locale),
         lists: [newsletterId[locale]],
         send_at: timeToSend.toISOString(),
       }),
