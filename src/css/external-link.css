@@ -31,31 +31,31 @@ a:has(img)::after,
 a:has(img)::before,
 a:has(i)::after,
 a:has(i)::before {
-    -webkit-mask-image: none !important;
-    mask-image: none !important;
-    content: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  content: none !important;
 }
 
 * {
-    --linkflags-color: var(--ifm-link-color);
+  --linkflags-color: var(--ifm-link-color);
 }
 
 article a[href^='http']::before {
-    background-color: var(--linkflags-color);
-    height: 1.25em;
-    width: 1.25em;
-    margin: 0 0.2em 0.2em 0.1em;
-    display: inline-block;
-    vertical-align: middle !important;
-    mask-repeat: no-repeat;
+  background-color: var(--linkflags-color);
+  height: 1.25em;
+  width: 1.25em;
+  margin: 0 0.2em 0.2em 0.1em;
+  display: inline-block;
+  vertical-align: middle !important;
+  mask-repeat: no-repeat;
 }
 
 article a[href^='http']::after {
-    padding: 0 0.1em;
-    content: '↗';
+  padding: 0 0.1em;
+  content: '↗';
 }
 
 .theme-edit-this-page::before {
-    content: '\00a0';
-    display: none !important;
+  content: '\00a0';
+  display: none !important;
 }
