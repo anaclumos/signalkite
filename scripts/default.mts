@@ -30,7 +30,6 @@ export const LOCAL_REACTIONS = {
   sv: 'Reaktioner',
 }
 
-
 export const LOCAL_SHARE = {
   en: 'Share',
   'zh-Hant': '共用',
@@ -186,7 +185,7 @@ export const LOCAL_ADVERTISE_SECOND = {
   sk: 'Ak chcete propagovať svoju spoločnosť alebo produkt, neváhajte ma kontaktovať.',
   nl: 'Als je reclame wilt maken voor je bedrijf of product, aarzel dan niet om contact met me op te nemen.',
   id: 'Jika Anda ingin mengiklankan perusahaan atau produk Anda, jangan ragu untuk menghubungi saya.',
-  ko: '회사나 제품을 광고하고 싶으시다면 주저하지 마시고 저에게 연락주세요.',
+  ko: '회사나 제품을 광고하고 싶으시다면 주저하지 마시고 연락주세요.',
   fi: 'Jos haluat mainostaa yritystäsi tai tuotteitasi, älä epäröi ottaa minuun yhteyttä.',
   tr: 'Şirketinizin veya ürününüzün reklamını yapmak istiyorsanız, benimle iletişime geçmekten çekinmeyin.',
   de: 'Wenn Sie für Ihr Unternehmen oder Produkt werben möchten, zögern Sie nicht, mich zu kontaktieren.',
