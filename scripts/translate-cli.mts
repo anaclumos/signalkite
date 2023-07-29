@@ -26,12 +26,6 @@ const main = async () => {
   )
 
   console.log(translatedMap)
-
-  // create new file
-  fs.writeFile(`${word}.json`, JSON.stringify(translatedMap), function (err) {
-    if (err) throw err
-    console.log('Saved!')
-  })
 }
 
 main().then(() => process.exit(0))
