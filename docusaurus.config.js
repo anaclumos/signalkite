@@ -60,7 +60,7 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/anaclumos/heimdall/tree/main/',
         },
         blog: false,
         theme: {
@@ -91,16 +91,14 @@ const config = {
             type: 'localeDropdown',
             position: 'right',
           },
+
           {
             href: 'https://github.com/anaclumos/heimdall',
-            label: 'GitHub',
             position: 'right',
+            className: 'navbar-github-link',
+            'aria-label': 'GitHub repository',
           },
         ],
-      },
-      footer: {
-        style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} Sunghyun Cho`,
       },
       prism: {
         theme: lightCodeTheme,
