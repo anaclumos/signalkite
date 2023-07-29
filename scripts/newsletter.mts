@@ -38,8 +38,8 @@ const createCampaign = async (locale: string, stories: Story[]) => {
   timeToSend.setMilliseconds(0)
 
   const title =
-    `🗞️ ${stories[0].title} (${new Date().toISOString().split('T')[0]})`.length <= 75
-      ? `🗞️ ${stories[0].title} (${new Date().toISOString().split('T')[0]})`
+    `🗞️ ${stories[0].title}`.length <= 70
+      ? `🗞️ ${stories[0].title}`
       : `🗞️ HN (${LinguineCore[locale].native}) ${new Date().toISOString().split('T')[0]}`
 
   try {
