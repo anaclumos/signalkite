@@ -1,19 +1,25 @@
 import React from 'react'
 import clsx from 'clsx'
 import styles from './Sub.module.css'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import Translate from '@docusaurus/Translate'
 
 export const Sub = () => {
-  const { i18n } = useDocusaurusContext()
-  const { currentLocale } = i18n
-
   return (
     <form method="post" action="https://newsletters.cho.sh/subscription/form" className={clsx(styles.form)}>
       <div>
-        <h3>Subscribe</h3>
+        <h1>
+          <Translate>Subscribe</Translate>
+        </h1>
+
         <input type="hidden" name="nonce" />
+        <h2 className={clsx(styles.question)}>
+          <Translate>First, may I have your contact?</Translate>
+        </h2>
         <input type="email" name="email" required placeholder="Email" className={clsx(styles.input)} />
         <input type="text" name="name" placeholder="Name" className={clsx(styles.input)} />
+        <h2 className={clsx(styles.question)}>
+          <Translate>Next, what languages do you speak?</Translate>
+        </h2>
         <section className={clsx(styles.localeSection)}>
           <label htmlFor="d23b0" className={clsx(styles.locale)}>
             <input
@@ -194,7 +200,7 @@ export const Sub = () => {
             />
             <div className={clsx(styles.lang)}>
               <span className={clsx(styles.localeCode)}>id</span>
-              Bahasa Indonesia
+              Indonesia
             </div>
           </label>
           <label htmlFor="b2c1f" className={clsx(styles.locale)}>
@@ -246,7 +252,7 @@ export const Sub = () => {
             />
             <div className={clsx(styles.lang)}>
               <span className={clsx(styles.localeCode)}>nb</span>
-              Norsk bokmål
+              Bokmål
             </div>
           </label>
           <label htmlFor="b0ab7" className={clsx(styles.locale)}>
@@ -404,6 +410,37 @@ export const Sub = () => {
             <div className={clsx(styles.lang)}>
               <span className={clsx(styles.localeCode)}>zh-Hant</span>
               繁體中文
+            </div>
+          </label>
+        </section>
+
+        <h2 className={clsx(styles.question)}>Would you mind receiving updates on what I'm working on?</h2>
+
+        <section className={clsx(styles.localeSection)}>
+          <label htmlFor="ed372" className={clsx(styles.locale)}>
+            <input
+              id="ed372"
+              type="checkbox"
+              name="l"
+              value="ed372c11-9f49-4d41-aecf-d8893bf48996"
+              className={clsx(styles.localeCheckbox)}
+            />
+            <div className={clsx(styles.lang)}>
+              <span className={clsx(styles.localeCode)}>개발자의 새 소식</span>
+              한국어
+            </div>
+          </label>
+          <label htmlFor="5ebfb" className={clsx(styles.locale)}>
+            <input
+              id="5ebfb"
+              type="checkbox"
+              name="l"
+              value="5ebfb430-82b5-47b8-b74b-c7b7d17bb97b"
+              className={clsx(styles.localeCheckbox)}
+            />
+            <div className={clsx(styles.lang)}>
+              <span className={clsx(styles.localeCode)}>Developer's Updates</span>
+              English
             </div>
           </label>
         </section>
