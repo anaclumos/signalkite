@@ -20,6 +20,7 @@
   border-radius: 8px;
   box-sizing: border-box;
   border: 1px solid var(--border-color);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 2px -1px;
 }
 
 .locale {
@@ -27,7 +28,7 @@
   align-items: center;
   background: var(--background-color);
   border: 1px solid var(--border-color);
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: var(--border-radius);
   cursor: pointer;
   user-select: none;
@@ -36,7 +37,7 @@
 }
 
 .locale input {
-  margin-right: 0.5rem;
+  margin-right: 0.6rem;
 }
 
 .locale:hover {
@@ -50,25 +51,19 @@
 .localeSection {
   margin: 2rem 0;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 1rem;
 }
 
 @media (max-width: 1000px) {
   .localeSection {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
 @media (max-width: 600px) {
   .localeSection {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 400px) {
-  .localeSection {
-    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -82,6 +77,9 @@
   width: 100%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 2px -1px;
   transition: all 0.2s ease-in-out;
+  color: var(--text-color);
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .localeCode {
@@ -98,4 +96,8 @@
 .submit:active {
   transform: scale(0.98);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 0px 0px 0px;
+}
+
+.question {
+  margin-top: 1rem;
 }
