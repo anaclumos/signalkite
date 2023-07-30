@@ -21,9 +21,12 @@ export const scheduleNewsletter = async (localeStories: Record<string, Story[]>)
 }
 
 const createHeader = (locale: string) => {
-  return `[${LOCAL_SHARE[locale]}](https://hn.cho.sh/${locale}/${new Date().toISOString().split('T')[0]}) • [${
-    LOCAL_FEEDBACK[locale]
-  }](https://airtable.com/shrty7OlhrLuBC6UX) • [${LOCAL_SPONSOR[locale]}](https://github.com/sponsors/anaclumos)\n\n`
+  return `[${LOCAL_SHARE[locale]}](https://hn.cho.sh/${locale}/${new Date()
+    .toISOString()
+    .split('T')[0]
+    .replaceAll('-', '/')}) • [${LOCAL_FEEDBACK[locale]}](https://airtable.com/shrty7OlhrLuBC6UX) • [${
+    LOCAL_SPONSOR[locale]
+  }](https://github.com/sponsors/anaclumos)\n\n`
 }
 
 const createFooter = (locale: string) => {
