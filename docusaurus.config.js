@@ -19,16 +19,19 @@ const getMostRecentNewsLink = () => {
   }
 }
 
+
+
+
+
 const reverseProcessor = (items) => {
-  const orderedItems = []
-  const result = orderedItems.map((item) => {
+  // Reverse child items of categories
+  const result = items.map((item) => {
     if (item.type === 'category') {
-      item.collapsible = true
-      item.collapsed = true
-      item.items = item.items.sort().reverse()
+      return { ...item, items: reverseProcessor(item.items) }
     }
     return item
   })
+  result.reverse()
   return result
 }
 
@@ -37,7 +40,7 @@ const config = {
   title: 'Heimdall',
   tagline: 'Hacker News in All Languages',
   favicon: 'img/favicon.ico',
-  url: 'https://hn.cho.sh',
+  url: 'https://Heimdall',
   baseUrl: '/',
   organizationName: 'anaclumos', // Usually your GitHub org/user name.
   projectName: 'heimdall', // Usually your repo name.
@@ -87,8 +90,17 @@ const config = {
       ({
         docs: {
           routeBasePath: '/',
-          async sidebarItemsGenerator({ defaultSidebarItemsGenerator, ...args }) {
-            const sidebarItems = await defaultSidebarItemsGenerator(args)
+          async sidebarItemsGenerator({
+            isCategoryIndex: defaultCategoryIndexMatcher,
+            defaultSidebarItemsGenerator,
+            ...args
+          }) {
+            const sidebarItems = await defaultSidebarItemsGenerator({
+              isCategoryIndex() {
+                return false
+              },
+              ...args,
+            })
             return reverseProcessor(sidebarItems)
           },
           editUrl: 'https://github.com/anaclumos/heimdall/tree/main/',
@@ -106,9 +118,9 @@ const config = {
     ({
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'hn.cho.sh',
+        title: 'Heimdall',
         logo: {
-          alt: 'hn.cho.sh Logo',
+          alt: 'Heimdall Logo',
           src: 'img/android-chrome-512x512.png',
         },
         items: [
