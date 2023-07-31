@@ -16,7 +16,6 @@ export const Sub = () => {
           <Translate>First, may I have your contact?</Translate>
         </h2>
         <input type="email" name="email" required placeholder="Email" className={clsx(styles.input)} />
-        <input type="text" name="name" placeholder="Name" className={clsx(styles.input)} />
         <h2 className={clsx(styles.question)}>
           <Translate>Next, what languages do you speak?</Translate>
         </h2>
