@@ -3,6 +3,21 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+const fs = require('fs')
+const path = require('path')
+
+const getMostRecentNewsLink = () => {
+  const today = new Date()
+  today.setDate(today.getDate() + 2)
+  let file = ''
+  while ((file = today.toISOString().split('T')[0])) {
+    const filePath = path.join(__dirname, 'docs', `${file.replaceAll('-', '/')}.md`)
+    if (fs.existsSync(filePath)) {
+      return `/${file.replaceAll('-', '/')}`
+    }
+    today.setDate(today.getDate() - 1)
+  }
+}
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -82,10 +97,8 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Records',
+            label: 'Archive',
+            to: getMostRecentNewsLink(),
           },
           {
             type: 'localeDropdown',
