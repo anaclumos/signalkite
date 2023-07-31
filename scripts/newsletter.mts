@@ -88,11 +88,14 @@ export const createContent = (locale: string, stories: Story[]) => {
   let content = `# ${new Date().toISOString().split('T')[0]}\n\n`
   for (let i = 0; i < stories.length; i++) {
     const story = stories[i]
-    content += `## [${story.title}](${story.originLink})\n\n`
+    content += story.originLink !== undefined ? `## [${story.title}](${story.originLink})\n\n` : `## ${story.title}\n\n`
     for (let j = 0; j < story.originSummary.length; j++) {
       content += `- ${story.originSummary[j]}\n`
     }
-    content += `\n#### [${LOCAL_REACTIONS[locale]}](${story.commentLink})\n\n`
+    content +=
+      story.commentLink !== undefined
+        ? `\n#### [${LOCAL_REACTIONS[locale]}](${story.commentLink})\n\n`
+        : `\n#### ${LOCAL_REACTIONS[locale]}\n\n`
     for (let j = 0; j < story.commentSummary.length; j++) {
       content += `- ${story.commentSummary[j]}\n`
     }
