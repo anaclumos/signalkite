@@ -19,6 +19,19 @@ const getMostRecentNewsLink = () => {
   }
 }
 
+const reverseProcessor = (items) => {
+  const orderedItems = []
+  const result = orderedItems.map((item) => {
+    if (item.type === 'category') {
+      item.collapsible = true
+      item.collapsed = true
+      item.items = item.items.sort().reverse()
+    }
+    return item
+  })
+  return result
+}
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Heimdall',
@@ -74,7 +87,10 @@ const config = {
       ({
         docs: {
           routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
+          async sidebarItemsGenerator({ defaultSidebarItemsGenerator, ...args }) {
+            const sidebarItems = await defaultSidebarItemsGenerator(args)
+            return reverseProcessor(sidebarItems)
+          },
           editUrl: 'https://github.com/anaclumos/heimdall/tree/main/',
         },
         blog: false,
