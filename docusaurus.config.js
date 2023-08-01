@@ -150,6 +150,14 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+  scripts: [
+    {
+      src: 'https://sa.cho.sh/latest.js',
+      async: true,
+      defer: true,
+      'data-collect-dnt': 'true',
+    },
+  ],
 }
 
 module.exports = config
