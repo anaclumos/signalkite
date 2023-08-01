@@ -16,7 +16,7 @@
     "typecheck": "tsc",
     "worker": "tsc --project scripts --outDir scripts/dist && node -r dotenv/config --experimental-modules scripts/dist/worker.mjs",
     "translate:cli": "tsc --project scripts --outDir scripts/dist && node -r dotenv/config --experimental-modules scripts/dist/translate-cli.mjs",
-    "format": "prettier --write ."
+    "format": "prettier --config .prettierrc -w '**/*.{ts,tsx,json,md,mdx,css,scss,html,yml,yaml}'"
   },
   "dependencies": {
     "@docusaurus/core": "2.4.1",
@@ -24,6 +24,7 @@
     "@docusaurus/types": "^2.4.1",
     "@google-cloud/translate": "^7.2.2",
     "@mdx-js/react": "^1.6.22",
+    "@vercel/analytics": "^1.0.1",
     "clsx": "^2.0.0",
     "deepl-node": "^1.10.2",
     "dotenv": "^16.3.1",

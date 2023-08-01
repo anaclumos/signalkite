@@ -19,10 +19,6 @@ const getMostRecentNewsLink = () => {
   }
 }
 
-
-
-
-
 const reverseProcessor = (items) => {
   // Reverse child items of categories
   const result = items.map((item) => {
@@ -156,6 +152,11 @@ const config = {
       async: true,
       defer: true,
       'data-collect-dnt': 'true',
+    },
+    {
+      src: '/_vercel/insights/script.js',
+      async: true,
+      defer: true,
     },
   ],
 }
