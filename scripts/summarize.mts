@@ -108,10 +108,6 @@ export const createBulletPointSummary = async (rawText, title) => {
 }
 
 export const summarize = async (story: Story) => {
-  if (!story.originBody || !story.commentBody) {
-    log(`🚨 Missing body\t ${story.title}`, 'error')
-    return story
-  }
   if ((story.originSummary.length ?? 0) !== 0 && (story.commentSummary.length ?? 0) !== 0) {
     log(`💘 Summ Exists\t ${story.title}`, 'error')
     return story
@@ -121,11 +117,17 @@ export const summarize = async (story: Story) => {
   let commentSummary = []
 
   try {
+    if (story.originBody.length === 0) {
+      throw new Error('🚨\t originBody is empty')
+    }
     originSummary = await createBulletPointSummary(story.originBody, story.title)
   } catch (e) {
     log(e, 'error')
   }
   try {
+    if (story.commentBody.length === 0) {
+      throw new Error('🚨\t commentBody is empty')
+    }
     commentSummary = await createBulletPointSummary(story.commentBody, story.title)
   } catch (e) {
     log(e, 'error')
