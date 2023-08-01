@@ -445,9 +445,9 @@ export const Sub = () => {
             </div>
           </label>
         </section>
-        <input type="submit" value="Subscribe" className={clsx(styles.submit)}>
+        <button type="submit" value="Subscribe" className={clsx(styles.submit)}>
           <Translate>Subscribe</Translate>
-        </input>
+        </button>
       </div>
     </form>
   )
