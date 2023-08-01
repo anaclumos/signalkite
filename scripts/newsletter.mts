@@ -21,7 +21,7 @@ export const scheduleNewsletter = async (localeStories: Record<string, Story[]>)
 }
 
 const createHeader = (locale: string) => {
-  return `[${LOCAL_SHARE[locale]}](https://hn.cho.sh/${locale}/${new Date()
+  return `[${LOCAL_SHARE[locale]}](https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${new Date()
     .toISOString()
     .split('T')[0]
     .replaceAll('-', '/')}) • [${LOCAL_FEEDBACK[locale]}](https://airtable.com/shrty7OlhrLuBC6UX) • [${
