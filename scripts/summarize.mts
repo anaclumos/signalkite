@@ -102,7 +102,8 @@ export const createBulletPointSummary = async (rawText, title) => {
     arr = arr.filter((item) => item !== 'N/A.')
     return arr
   } catch (e) {
-    console.error(e)
+    log(e, 'error')
+    return []
   }
 }
 
@@ -115,8 +116,21 @@ export const summarize = async (story: Story) => {
     log(`💘 Summ Exists\t ${story.title}`, 'error')
     return story
   }
-  const originSummary = await createBulletPointSummary(story.originBody, story.title)
-  const commentSummary = await createBulletPointSummary(story.commentBody, story.title)
+
+  let originSummary = []
+  let commentSummary = []
+
+  try {
+    originSummary = await createBulletPointSummary(story.originBody, story.title)
+  } catch (e) {
+    log(e, 'error')
+  }
+  try {
+    commentSummary = await createBulletPointSummary(story.commentBody, story.title)
+  } catch (e) {
+    log(e, 'error')
+  }
+
   return {
     ...story,
     originSummary,
