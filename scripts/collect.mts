@@ -1,6 +1,6 @@
 import { log, sanitize } from './util.mjs'
 import { YoutubeTranscript } from 'youtube-transcript'
-import puppeteer, { Browser } from 'puppeteer-core'
+import Puppeteer, { Browser as PuppeteerBrowser, Page as PuppeteerPage } from 'puppeteer'
 
 export const collect = async (url: string): Promise<string> => {
   if (url === '') return ''
@@ -33,39 +33,42 @@ export const collect = async (url: string): Promise<string> => {
   }
 
   if (body === '') {
-    let browser: Browser = null
+    let browser: PuppeteerBrowser
     try {
-      browser = await puppeteer.connect({
+      browser = await Puppeteer.connect({
         browserWSEndpoint: `wss://${process.env.BRIGHTDATA_USERNAME}:${process.env.BRIGHTDATA_PASSWORD}@${process.env.BRIGHTDATA_PROXY}`,
       })
     } catch (e) {
-      log(`🚨\t BrightData Proxy is not available`, 'error')
-      browser = await puppeteer.launch()
+      log(`🚨\t BrightData Proxy is not available, attempting local, ${e.message}`, 'error')
+      browser = await Puppeteer.launch({ headless: 'new' })
     }
     body = await extract(url, browser)
     log(`✅ Downloaded\t BrightData for ${url}`, 'info')
   }
 
+  if (body === '') {
+    log(`❌ Error\tCannot Download for ${url}`, 'error')
+  }
+
   return sanitize(body)
 }
 
-const extract = async (url: string, browser: Browser): Promise<string> => {
+const extract = async (url: string, browser: PuppeteerBrowser): Promise<string> => {
   let body = ''
   try {
-    const page = await browser.newPage()
+    const page: PuppeteerPage = await browser.newPage()
     page.setDefaultNavigationTimeout(2 * 60 * 1000)
     await page.goto(url)
     await page.waitForSelector('body')
-    const article = await page.$('article')
-    if (article) {
+    if (await page.$('article')) {
       body = await page.$eval('article', (el) => el.innerText)
     }
-    const main = await page.$('main')
-    if (main) {
+
+    if (await page.$('main')) {
       body = await page.$eval('main', (el) => el.innerText)
     }
-    const bodyEl = await page.$('body')
-    if (bodyEl) {
+
+    if (await page.$('body')) {
       body = await page.$eval('body', (el) => el.innerText)
     }
   } catch (e) {
