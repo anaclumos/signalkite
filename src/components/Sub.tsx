@@ -413,7 +413,9 @@ export const Sub = () => {
           </label>
         </section>
 
-        <h2 className={clsx(styles.question)}>Would you mind receiving updates on what I'm working on?</h2>
+        <h2 className={clsx(styles.question)}>
+          <Translate>Would you mind receiving updates on what I'm working on?</Translate>
+        </h2>
 
         <section className={clsx(styles.localeSection)}>
           <label htmlFor="ed372" className={clsx(styles.locale)}>
@@ -443,7 +445,9 @@ export const Sub = () => {
             </div>
           </label>
         </section>
-        <input type="submit" value="Subscribe" className={clsx(styles.submit)} />
+        <input type="submit" value="Subscribe" className={clsx(styles.submit)}>
+          <Translate>Subscribe</Translate>
+        </input>
       </div>
     </form>
   )
