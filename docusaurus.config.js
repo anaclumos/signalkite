@@ -125,6 +125,10 @@ const config = {
         },
         items: [
           {
+            label: 'Subscribe',
+            to: '/subscribe',
+          },
+          {
             label: 'Archive',
             to: getMostRecentNewsLink(),
           },
