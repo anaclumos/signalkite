@@ -33,39 +33,45 @@ export const collect = async (url: string): Promise<string> => {
   }
 
   if (body === '') {
+    let browser: Browser = null
     try {
-      log(`⏳ Downloading\t ${url}`, 'info')
-      let browser: Browser = null
-      try {
-        const browser = await puppeteer.connect({
-          browserWSEndpoint: `wss://${process.env.BRIGHTDATA_USERNAME}:${process.env.BRIGHTDATA_PASSWORD}@${process.env.BRIGHTDATA_PROXY}`,
-        })
-        const page = await browser.newPage()
-        page.setDefaultNavigationTimeout(2 * 60 * 1000)
-        await page.goto(url)
-        await page.waitForSelector('body')
-        const article = await page.$('article')
-        if (article) {
-          body = await page.$eval('article', (el) => el.innerText)
-        }
-        const main = await page.$('main')
-        if (main) {
-          body = await page.$eval('main', (el) => el.innerText)
-        }
-
-        const bodyEl = await page.$('body')
-        if (bodyEl) {
-          body = await page.$eval('body', (el) => el.innerText)
-        }
-      } catch (e) {
-        console.error('run failed', e)
-      } finally {
-        await browser?.close()
-      }
-      log(`✅ Downloaded\t BrightData for ${url}`, 'info')
+      browser = await puppeteer.connect({
+        browserWSEndpoint: `wss://${process.env.BRIGHTDATA_USERNAME}:${process.env.BRIGHTDATA_PASSWORD}@${process.env.BRIGHTDATA_PROXY}`,
+      })
     } catch (e) {
-      log(`❌ Error\t Cannot Download BrightData for ${url}\n${e}`, 'info')
+      log(`🚨\t BrightData Proxy is not available`, 'error')
+      browser = await puppeteer.launch()
     }
+    body = await extract(url, browser)
+    log(`✅ Downloaded\t BrightData for ${url}`, 'info')
+  }
+
+  return sanitize(body)
+}
+
+const extract = async (url: string, browser: Browser): Promise<string> => {
+  let body = ''
+  try {
+    const page = await browser.newPage()
+    page.setDefaultNavigationTimeout(2 * 60 * 1000)
+    await page.goto(url)
+    await page.waitForSelector('body')
+    const article = await page.$('article')
+    if (article) {
+      body = await page.$eval('article', (el) => el.innerText)
+    }
+    const main = await page.$('main')
+    if (main) {
+      body = await page.$eval('main', (el) => el.innerText)
+    }
+    const bodyEl = await page.$('body')
+    if (bodyEl) {
+      body = await page.$eval('body', (el) => el.innerText)
+    }
+  } catch (e) {
+    console.error('run failed', e)
+  } finally {
+    await browser?.close()
   }
   return sanitize(body)
 }
