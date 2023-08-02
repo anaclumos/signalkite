@@ -21,7 +21,7 @@ export const scheduleNewsletter = async (localeStories: Record<string, Story[]>)
 
 const createHeader = (locale: string) => {
   return `<a href="https://airtable.com/appLfbX7pNQxpBx00/shrfpPSEbLVSXz4r7" target="_blank" rel="noopener noreferrer">
-    <img src="https://github.com/anaclumos/heimdall/assets/31657298/68912f3d-e62a-432b-aa22-d98f5ab3af23" alt="sponsor" width="250"/>
+    <img src="https://github.com/anaclumos/heimdall/assets/31657298/68912f3d-e62a-432b-aa22-d98f5ab3af23" alt="sponsor" width="200"/>
   </a>
   
   [${LOCAL_SHARE[locale]}](https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${new Date()
