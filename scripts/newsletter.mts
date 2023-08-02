@@ -7,7 +7,6 @@ import {
   LOCAL_FEEDBACK,
   LOCAL_REACTIONS,
   LOCAL_SHARE,
-  LOCAL_SPONSOR,
 } from './default.mjs'
 import { LinguineCore, LinguineList } from './linguine.mjs'
 import { log } from './util.mjs'
@@ -21,12 +20,14 @@ export const scheduleNewsletter = async (localeStories: Record<string, Story[]>)
 }
 
 const createHeader = (locale: string) => {
-  return `[${LOCAL_SHARE[locale]}](https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${new Date()
+  return `<a href="https://airtable.com/appLfbX7pNQxpBx00/shrfpPSEbLVSXz4r7" target="_blank" rel="noopener noreferrer">
+    <img src="https://github.com/anaclumos/heimdall/assets/31657298/957d858a-68e7-481a-8949-bb427861cfe4" alt="sponsor" width="250"/>
+  </a>
+  
+  [${LOCAL_SHARE[locale]}](https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${new Date()
     .toISOString()
     .split('T')[0]
-    .replaceAll('-', '/')}) • [${LOCAL_FEEDBACK[locale]}](https://airtable.com/shrty7OlhrLuBC6UX) • [${
-    LOCAL_SPONSOR[locale]
-  }](https://github.com/sponsors/anaclumos)\n\n`
+    .replaceAll('-', '/')}) • [${LOCAL_FEEDBACK[locale]}](https://airtable.com/shrty7OlhrLuBC6UX)\n\n`
 }
 
 const createFooter = (locale: string) => {
