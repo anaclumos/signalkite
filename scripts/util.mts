@@ -10,6 +10,8 @@ export const sanitize = (text: string) => {
   if (!text) return ''
   if (text === 'error') return ''
   return text
+    .replaceAll('<script>', '')
+    .replaceAll('</script>', '')
     .replaceAll('\n', ' ')
     .replaceAll('\t', ' ')
     .replaceAll('\r', ' ')
