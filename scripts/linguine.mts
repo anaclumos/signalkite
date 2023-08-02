@@ -4,8 +4,6 @@ export const LinguineProvider = {
   DEEPL: 'DEEPL',
 } as const
 
-// ['ar', 'bn', 'cs', 'da', 'de', 'el', 'en', 'es', 'fi', 'fr', 'he', 'hi', 'hu', 'id', 'it', 'jp', 'ko', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sk', 'sv', 'ta', 'th', 'tr', 'zh-Hans', 'zh-Hant']
-
 export const LinguineCore = {
   ar: { name: 'Arabic', provider: 'BING', native: 'العربية' },
   bn: { name: 'Bengali', provider: 'BING', native: 'বাংলা' },
