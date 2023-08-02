@@ -18,7 +18,7 @@
 | עברית (Hebrew)                  | https://hn.cho.sh/he      |
 | हिंदी (Hindi)                   | https://hn.cho.sh/hi      |
 | magyar (Hungarian)              | https://hn.cho.sh/hu      |
-| Bahasa (Indonesian) Indonesia   | https://hn.cho.sh/id      |
+| Bahasa Indonesia (Indonesian)   | https://hn.cho.sh/id      |
 | italiano (Italian)              | https://hn.cho.sh/it      |
 | 日本語 (Japanese)               | https://hn.cho.sh/ja      |
 | 한국어 (Korean)                 | https://hn.cho.sh/ko      |
