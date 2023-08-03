@@ -150,7 +150,7 @@ export const LOCAL_ADVERTISE_FIRST = {
   de: 'Dieser Newsletter wird täglich von Tausenden von Entwicklern gelesen und hat eine beeindruckende Öffnungsrate von über 50 %.',
   pt: 'Esse boletim informativo tem um público diário de milhares de desenvolvedores, com uma taxa de abertura impressionante de mais de 50%.',
   nl: 'Deze nieuwsbrief heeft een dagelijks lezerspubliek van duizenden ontwikkelaars, met een indrukwekkende open rate van meer dan 50%.',
-  ko: '이 뉴스레터에는 매일 수천 명의 개발자가 구독하고 있으며, 50%가 넘는 놀라운 열람률을 자랑합니다.',
+  ko: '이 뉴스레터는 매일 전세계 수천 명의 개발자가 읽고 있으며, 50%가 넘는 놀라운 열람률을 자랑합니다.',
   'zh-Hans': '这份时事通讯每天有数千名开发人员阅读，打开率超过 50%，令人印象深刻。',
   da: 'Dette nyhedsbrev læses dagligt af tusindvis af udviklere og har en imponerende åbningsrate på over 50 %.',
   el: 'Αυτό το ενημερωτικό δελτίο διαβάζεται καθημερινά από χιλιάδες προγραμματιστές, με εντυπωσιακό ποσοστό ανοίγματος πάνω από 50%.',
