@@ -23,8 +23,8 @@ const createHeader = (locale: string) => {
   return `<a href="https://airtable.com/appLfbX7pNQxpBx00/shrfpPSEbLVSXz4r7" target="_blank" rel="noopener noreferrer">
     <img src="https://github.com/anaclumos/heimdall/assets/31657298/397a222c-dcb9-41ce-b14c-da2c0849083b" alt="sponsor" width="200"/>
   </a>
-  
-  [${LOCAL_SHARE[locale]}](https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${new Date()
+
+[${LOCAL_SHARE[locale]}](https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${new Date()
     .toISOString()
     .split('T')[0]
     .replaceAll('-', '/')}) • [${LOCAL_FEEDBACK[locale]}](https://airtable.com/shrty7OlhrLuBC6UX)\n\n`
