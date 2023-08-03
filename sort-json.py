@@ -16,7 +16,7 @@ for file in all_files:
         with open('i18n/' + file, 'r') as f:
             content = f.read()
         # sort by key
-        content = json.dumps(json.loads(content), sort_keys=True, indent=4, separators=(',', ': '))
+        content = json.dumps(json.loads(content), sort_keys=True, indent=4, separators=(',', ': '), ensure_ascii=False)
         with open('i18n/' + file, 'w') as f:
             f.write(content)
 
