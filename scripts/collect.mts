@@ -6,9 +6,11 @@ import {
   tryDownloadingWithPlaywright,
   tryDownloadingWithPuppeteer,
   tryDownloadingYoutube,
-} from 'collectionStrategies.mjs'
+} from './collectionStrategies.mjs'
 
 export const collect = async (url: string): Promise<string> => {
+  log(`📥 Downloading\t ${url}`, 'info')
+
   if (url === '') return ''
 
   let body = ''
@@ -17,12 +19,12 @@ export const collect = async (url: string): Promise<string> => {
     body = await tryDownloadingAsGooglebot(url, body)
   }
 
-  body = await tryDownloadingYoutube(url, body)
   body = await tryDownloadingTwitter(url, body)
+  body = await tryDownloadingYoutube(url, body)
   body = await tryDownloadingWithPuppeteer(url, body)
-  body = await tryDownloadingPdf(url, body)
-  body = await tryDownloadingAsGooglebot(url, body)
   body = await tryDownloadingWithPlaywright(url, body)
+  body = await tryDownloadingAsGooglebot(url, body)
+  body = await tryDownloadingPdf(url, body)
 
   if (body.length === 0) log(`❌ Error\t Download All Failed ${url}`, 'error')
 
