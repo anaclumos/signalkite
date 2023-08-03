@@ -13,7 +13,7 @@ export const Sub = () => {
 
         <input type="hidden" name="nonce" />
         <h2 className={clsx(styles.question)}>
-          <Translate>First, may I have your contact?</Translate>
+          <Translate>First, may I have your email?</Translate>
         </h2>
         <input type="email" name="email" required placeholder="Email" className={clsx(styles.input)} />
         <h2 className={clsx(styles.question)}>

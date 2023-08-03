@@ -5,8 +5,8 @@ import fs from 'fs'
 
 const main = async () => {
   const strings = {
-    'First, may I have your contact?': {
-      message: 'First, may I have your contact?',
+    'First, may I have your email?': {
+      message: 'First, may I have your email?',
     },
     'Next, what languages do you speak?': {
       message: 'Next, what languages do you speak?',
