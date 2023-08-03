@@ -1,12 +1,5 @@
-import fs from 'fs'
-
-import { updateHN } from './update.mjs'
 import { collect } from './collect.mjs'
 import { Story } from './type.mjs'
-import { summarize } from './summarize.mjs'
-import { LinguineList } from './linguine.mjs'
-import { translate } from './translate.mjs'
-import { createContent, scheduleNewsletter } from './newsletter.mjs'
 import { log } from './util.mjs'
 
 const main = async () => {
@@ -30,11 +23,13 @@ const main = async () => {
   for (let i = 0; i < stories.length; i++) {
     if (!stories[i].originBody) {
       stories[i].originBody = await collect(stories[i].originLink)
+      log(`✅ Origin\t ${stories[i].originLink}`, 'info')
     } else {
       log(`💘 Body Exists\t ${stories[i].title}`, 'info')
     }
     if (!stories[i].commentBody) {
       stories[i].commentBody = await collect(stories[i].commentLink)
+      log(`✅ Comment\t ${stories[i].commentLink}`, 'info')
     } else {
       log(`💘 Comm Exists\t ${stories[i].commentLink}`, 'info')
     }
