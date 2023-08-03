@@ -1,6 +1,6 @@
 # Heimdall 🔭 summarizes Hacker News in your language.
 
-[![translation badge](https://inlang.com/badge?url=github.com/anaclumos/heimdall)](https://inlang.com/editor/github.com/anaclumos/heimdall?ref=badge)
+<a href="https://inlang.com/editor/github.com/anaclumos/heimdall?ref=badge"><img align="right" width="300" src="https://inlang.com/badge?url=github.com/anaclumos/heimdall" alt="translation badge"></a>
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fanaclumos%2Fheimdall.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fanaclumos%2Fheimdall?ref=badge_shield) [![news](https://github.com/anaclumos/heimdall/actions/workflows/news.yaml/badge.svg)](https://github.com/anaclumos/heimdall/actions/workflows/news.yaml)
 
