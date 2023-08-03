@@ -62,16 +62,15 @@ export const createBulletPointSummary = async (rawText, title) => {
         "Major publishing companies are bombarding volunteers who operate IPFS gateways with tens of thousands of DMCA notices, despite knowing that these volunteers are not responsible for the content and cannot take it down. One gateway operator has already shut down their service due to the pressure. The notices are being sent to abuse addresses at the host of the gateways, rather than directly to the volunteers. The notices demand the takedown of thousands of URLs that have nothing to do with the volunteers and are often not even accessible. This demonstrates that IPFS, although technically resilient against censorship, can still be affected by self-censorship due to the pressure from copyright complaints."
 
         RESULT:
-        '- Major publishing companies are sending a large number of DMCA notices to volunteers who run IPFS gateways.\n'
-        '- These volunteers are not responsible for the content and cannot remove it, but they are being targeted anyway.\n'
-        '- One gateway operator has already stopped their service because of this pressure.\n'
-        '- Despite its technical resilience against censorship, the IPFS network can still be affected by chilling effects and censorship through DMCA notices.\n'
-        '- Evidence suggests that some of the URLs targeted in the notices have never been accessed or even worked.\n',
+        
+        '- Major publishers are inundating volunteers running IPFS gateways with a flood of DMCA notices, despite knowing these volunteers cannot control or remove the content.\n'
+        '- One gateway operator has ceased their service due to this pressure, showing that while IPFS is robust against censorship, it's susceptible to self-censorship from copyright complaints.\n'
+        '- The DMCA notices, demanding the removal of thousands of unrelated URLs, are being directed to the hosts of the gateways, not the volunteers themselves.\n'
 
         Now, I will give you the text.
         If there is no meaningful content, for example, if it looks like a simple error message, simply print "N/A."
         Ignore any mention or sentenses on CSS contents and any referral, marketing, or promotional links/coupon codes.
-        Do not exceed 100 words.
+        Do not exceed 100 words. Do not exceed more than 3 bullet points.
         `
       ),
       new HumanMessage(`TEXT:\n${summary}\n\nRESULT:\n`),
