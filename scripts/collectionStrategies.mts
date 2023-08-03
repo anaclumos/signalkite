@@ -1,12 +1,15 @@
-import { log, sanitize } from 'util.mjs'
 import { YoutubeTranscript } from 'youtube-transcript'
 import Puppeteer, { Browser as PuppeteerBrowser, Page as PuppeteerPage } from 'puppeteer'
-import { JSDOM, VirtualConsole } from 'jsdom'
 import pdf from 'pdf-parse'
 import playwright from 'playwright'
 
+import { log, sanitize } from './util.mjs'
+
 export const tryDownloadingYoutube = async (url: string, body: string): Promise<string> => {
-  if (body.length > 0) return sanitize(body)
+  if (body.length > 0) {
+    log(`💘 Body Exists\t tryDownloadingYoutube, ${url}`, 'info')
+    return sanitize(body)
+  }
   if (!url?.startsWith('https://youtu.be') && !url?.startsWith('https://www.youtube.com')) return ''
 
   try {
@@ -25,7 +28,10 @@ export const tryDownloadingYoutube = async (url: string, body: string): Promise<
 }
 
 export const tryDownloadingTwitter = async (url: string, body: string): Promise<string> => {
-  if (body.length > 0) return sanitize(body)
+  if (body.length > 0) {
+    log(`💘 Body Exists\t tryDownloadingTwitter, ${url}`, 'info')
+    return sanitize(body)
+  }
   if (
     !url?.startsWith('https://twitter.com') &&
     !url?.startsWith('https://mobile.twitter.com') &&
@@ -44,7 +50,10 @@ export const tryDownloadingTwitter = async (url: string, body: string): Promise<
 }
 
 export const tryDownloadingWithPuppeteer = async (url: string, body: string): Promise<string> => {
-  if (body.length > 0) return sanitize(body)
+  if (body.length > 0) {
+    log(`💘 Body Exists\t tryDownloadingWithPuppeteer, ${url}`, 'info')
+    return sanitize(body)
+  }
   let browser: PuppeteerBrowser
   try {
     browser = await Puppeteer.connect({
@@ -55,9 +64,7 @@ export const tryDownloadingWithPuppeteer = async (url: string, body: string): Pr
     browser = await Puppeteer.launch({ headless: 'new' })
   }
   body = await extract(url, browser)
-  if (body?.toString().trim() === '') {
-    throw new Error('😵 Puppeteer Transcript is empty')
-  }
+  log(`✅ Success\tDownloaded with Puppeteer for ${url}`)
   return sanitize(body)
 }
 
@@ -88,7 +95,10 @@ export const extract = async (url: string, browser: PuppeteerBrowser): Promise<s
 }
 
 export const tryDownloadingPdf = async (url: string, body: string): Promise<string> => {
-  if (body.length > 0) return sanitize(body)
+  if (body.length > 0) {
+    log(`💘 Body Exists\t tryDownloadingPdf, ${url}`, 'info')
+    return sanitize(body)
+  }
   if (
     !url?.toLowerCase()?.includes('.pdf') &&
     (await fetch(url).then((res) => res.headers.get('content-type'))) !== 'application/pdf'
@@ -98,10 +108,8 @@ export const tryDownloadingPdf = async (url: string, body: string): Promise<stri
   try {
     log(`⏳ Downloading\t PDF for ${url}`, 'info')
     const res = await fetch(url)
-    const arrayBuffer = await res.arrayBuffer()
-    const buffer = Buffer.from(arrayBuffer)
-    const data = await pdf(buffer)
-    body = data.text
+    const data = await pdf(await res.arrayBuffer())
+    body = data.text()
     log(`✅ Downloaded\tPDF for ${url}`, 'info')
   } catch (e) {
     log(`❌ Error\tCannot Download PDF for ${url}`, 'info')
@@ -110,7 +118,10 @@ export const tryDownloadingPdf = async (url: string, body: string): Promise<stri
 }
 
 export const tryDownloadingAsGooglebot = async (url: string, body: string): Promise<string> => {
-  if (body.length > 0) return sanitize(body)
+  if (body.length > 0) {
+    log(`💘 Body Exists\t tryDownloadingAsGooglebot, ${url}`, 'info')
+    return sanitize(body)
+  }
   try {
     log(`⏳ Downloading\t Naive for ${url}`, 'info')
     const res = await fetch(url, {
@@ -124,10 +135,14 @@ export const tryDownloadingAsGooglebot = async (url: string, body: string): Prom
   } catch (e) {
     log(`❌ Error\tCannot Download Naive for ${url}`, 'info')
   }
+  return sanitize(body)
 }
 
 export const tryDownloadingWithPlaywright = async (url: string, body: string): Promise<string> => {
-  if (body.length > 0) return sanitize(body)
+  if (body.length > 0) {
+    log(`💘 Body Exists\t tryDownloadingWithPlaywright, ${url}`, 'info')
+    return sanitize(body)
+  }
   try {
     log(`⏳ Downloading\t Playwrite for ${url}`, 'info')
     const browser = await playwright.chromium.launch()
