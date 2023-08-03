@@ -63,6 +63,7 @@ const createCampaign = async (locale: string, stories: Story[]) => {
         altbody: createHeader(locale) + createContent(locale, stories) + createFooter(locale),
         lists: [newsletterId[locale]],
         send_at: timeToSend.toISOString(),
+        template_id: ['ja', 'zh-Hans', 'zh-Hant'].includes(locale) ? 3 : 1,
       }),
     })
     log(`💌 Creating\t ${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
