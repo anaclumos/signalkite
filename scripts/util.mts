@@ -51,6 +51,21 @@ export const sanitize = (text: string) => {
     .replaceAll('  ', '')
     .replaceAll('\n\n', '\n')
     .replaceAll('Hacker News new | past | comments | ask | show | jobs | submit login', '')
+    .replaceAll('Hacker News new', '')
+    .replaceAll(' | new', '')
+    .replaceAll(' | comments', '')
+    .replaceAll(' | ask', '')
+    .replaceAll(' | show', '')
+    .replaceAll(' | jobs', '')
+    .replaceAll(' | submit', '')
+    .replaceAll(' | login', '')
+    .replaceAll(' | ', '')
+    .replaceAll('Hacker Newslogin', '')
+    .replaceAll('Newslogin', '')
+    .replaceAll('submit login', '')
+    .replaceAll('submitlogin', '')
+    .replaceAll('Attention Required!Cloudflare You are unable to access ', '')
+    .replaceAll('Attention Required!, ', '')
     .replaceAll('Guidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact Search:', '')
     .replaceAll('1 hour ago | ', '')
     .replaceAll('2 hours ago | ', '')
@@ -88,6 +103,27 @@ export const sanitize = (text: string) => {
     .replaceAll('N/A. ', '')
     .replaceAll('N/A.', '')
     .replaceAll('N/A', '')
+    .replaceAll('Attention Required! | Cloudflare, ', '')
+    .replaceAll(
+      "body{margin:0;padding:0}if (!navigator.cookieEnabled) { window.addEventListener('DOMContentLoaded', function () { var cookieEl = document.getElementById('cookie-alert'); cookieEl.style.display = 'block'; }) }",
+      ''
+    )
+    .replaceAll('Please enable cookies', '')
+    .replaceAll('Sorry, you have been blocked', '')
+    .replaceAll('You are unable to access', '')
+    .replaceAll(
+      'Why have I been blocked? This website is using a security service to protect itself from online attacks. The action you just performed triggered the security solution. There are several actions that could trigger this block including submitting a certain word or phrase, a SQL command or malformed data. What can I do to resolve this? You can email the site owner to let them know you were blocked. Please include what you were doing when this page came up and the Cloudflare Ray ID found at the bottom of this page.',
+      ''
+    )
+    .replaceAll('Your IP: Click to reveal', '')
+    .replaceAll(
+      '(function(){function d(){var b=a.getElementById("cf-footer-item-ip"),c=a.getElementById("cf-footer-ip-reveal");b&&"classList"in b&&(b.classList.remove("hidden"),c.addEventListener("click",function(){c.classList.add("hidden");a.getElementById("cf-footer-ip").classList.remove("hidden")}))}var a=document;document.addEventListener&&a.addEventListener("DOMContentLoaded",d)})();window._cf_translation = {};',
+      ''
+    )
+    .replaceAll('Checking if the site connection is secure', '')
+    .replaceAll('needs to review the security of your connection before proceeding.', '')
+    .replaceAll('Ray ID:', '')
+    .replaceAll('Performance & security by Cloudflare', '')
     .trim()
     .slice(0, 100000)
 }
