@@ -8,6 +8,7 @@ import { LinguineList } from './linguine.mjs'
 import { translate } from './translate.mjs'
 import { createContent, scheduleNewsletter } from './newsletter.mjs'
 import { log, sanitize } from './util.mjs'
+import { writeAllRss } from './rss.mjs'
 
 const main = async () => {
   let stories: Story[] = await updateHN()
@@ -45,7 +46,7 @@ const main = async () => {
   )
 
   // locale -> Stories map
-  const localeStories = {}
+  const localeStories: Record<string, Story[]> = {}
 
   for (let i = 0; i < LinguineList.length; i++) {
     const locale = LinguineList[i]
@@ -94,7 +95,8 @@ const main = async () => {
       )
     }
   }
-  // await scheduleNewsletter(localeStories)
+  await scheduleNewsletter(localeStories)
+  await writeAllRss(localeStories)
 }
 
 main().then(() => process.exit(0))
