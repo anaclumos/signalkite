@@ -7,7 +7,7 @@ import { summarize } from './summarize.mjs'
 import { LinguineList } from './linguine.mjs'
 import { translate } from './translate.mjs'
 import { createContent, scheduleNewsletter } from './newsletter.mjs'
-import { log } from './util.mjs'
+import { log, sanitize } from './util.mjs'
 
 const main = async () => {
   let stories: Story[] = await updateHN()
@@ -28,11 +28,13 @@ const main = async () => {
       stories[i].originBody = await collect(stories[i].originLink)
     } else {
       log(`💘 Body Exists\t ${stories[i].title}`, 'info')
+      stories[i].originBody = sanitize(stories[i].originBody)
     }
     if (!stories[i].commentBody) {
       stories[i].commentBody = await collect(stories[i].commentLink)
     } else {
       log(`💘 Comm Exists\t ${stories[i].commentLink}`, 'info')
+      stories[i].commentBody = sanitize(stories[i].commentBody)
     }
   }
 
@@ -92,7 +94,7 @@ const main = async () => {
       )
     }
   }
-  await scheduleNewsletter(localeStories)
+  // await scheduleNewsletter(localeStories)
 }
 
 main().then(() => process.exit(0))
