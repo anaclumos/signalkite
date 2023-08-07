@@ -157,11 +157,6 @@ const config = {
       defer: true,
       'data-collect-dnt': 'true',
     },
-    {
-      src: '/_vercel/insights/script.js',
-      async: true,
-      defer: true,
-    },
   ],
 }
 
