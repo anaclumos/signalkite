@@ -36,10 +36,10 @@ const config = {
   title: 'Heimdall',
   tagline: 'Hacker News in All Languages',
   favicon: 'img/favicon.ico',
-  url: 'https://Heimdall',
+  url: 'https://hn.cho.sh',
   baseUrl: '/',
-  organizationName: 'anaclumos', // Usually your GitHub org/user name.
-  projectName: 'heimdall', // Usually your repo name.
+  organizationName: 'anaclumos',
+  projectName: 'heimdall',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   trailingSlash: true,

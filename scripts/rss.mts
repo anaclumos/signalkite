@@ -5,7 +5,12 @@ import crypto from 'crypto'
 import fs from 'fs'
 
 const escapeAsXml = (str: string) => {
-  return str.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;')
+  return str
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&apos;')
 }
 
 const writeRss = async (stories: Story[], locale: string) => {

@@ -3,6 +3,7 @@ import { Story } from './type.mjs'
 import {
   LOCAL_ADVERTISE_FIRST,
   LOCAL_ADVERTISE_SECOND,
+  LOCAL_HEIMDALL,
   LOCAL_CONTACT,
   LOCAL_FEEDBACK,
   LOCAL_REACTIONS,
@@ -17,6 +18,16 @@ export const scheduleNewsletter = async (localeStories: Record<string, Story[]>)
     const locale = LinguineList[i]
     await createCampaign(locale, localeStories[locale])
   }
+}
+
+export const createDocHead = (locale: string, title: string) => {
+  return `<head>
+  <meta property="og:title" content="${title}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=${encodeURI(title)}&subheading=${encodeURI(
+    LOCAL_HEIMDALL[locale]
+  )} />
+</head>`
 }
 
 const createHeader = (locale: string) => {
@@ -59,8 +70,8 @@ const createCampaign = async (locale: string, stories: Story[]) => {
         subject: title,
         type: 'regular',
         content_type: 'markdown',
-        body: createHeader(locale) + createContent(locale, stories) + createFooter(locale),
-        altbody: createHeader(locale) + createContent(locale, stories) + createFooter(locale),
+        body: createHeader(locale) + createContent(locale, stories, true) + createFooter(locale),
+        altbody: createHeader(locale) + createContent(locale, stories, true) + createFooter(locale),
         lists: [newsletterId[locale]],
         send_at: timeToSend.toISOString(),
         template_id: ['ja', 'zh-Hans', 'zh-Hant'].includes(locale) ? 3 : 1,
@@ -86,7 +97,7 @@ const createCampaign = async (locale: string, stories: Story[]) => {
   }
 }
 
-export const createContent = (locale: string, stories: Story[]) => {
+export const createContent = (locale: string, stories: Story[], isEmail = false) => {
   let content = `# ${new Date().toISOString().split('T')[0]}\n\n`
   for (let i = 0; i < stories.length; i++) {
     const story = stories[i]
@@ -103,5 +114,10 @@ export const createContent = (locale: string, stories: Story[]) => {
     }
     content += '\n\n'
   }
+
+  if (!isEmail) {
+    content += createDocHead(locale, stories[0].title)
+  }
+
   return content
 }
