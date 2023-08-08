@@ -10,6 +10,7 @@ export const sanitize = (text: string) => {
   if (!text) return ''
   if (text === 'error') return ''
   return text
+    .replaceAll(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, '')
     .replaceAll('<script>', '')
     .replaceAll('</script>', '')
     .replaceAll('\n', ' ')

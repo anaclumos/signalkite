@@ -100,8 +100,7 @@ const createCampaign = async (locale: string, stories: Story[]) => {
 }
 
 export const createContent = (locale: string, stories: Story[], isEmail = false) => {
-  let content = `# ${new Date().toISOString().split('T')[0]}\n\n`
-
+  let content = isEmail ? `# ${new Date().toISOString().split('T')[0]}\n\n` : `---\n\nslug: "/${new Date().toISOString().split('T')[0].replaceAll('-', '/')}"\n\n---\n\n# ${new Date().toISOString().split('T')[0]}\n\n`
   for (let i = 0; i < stories.length; i++) {
     const story = stories[i]
     const h2link = isEmail
