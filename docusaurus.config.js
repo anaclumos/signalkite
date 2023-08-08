@@ -40,7 +40,7 @@ const config = {
   baseUrl: '/',
   organizationName: 'anaclumos',
   projectName: 'heimdall',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   trailingSlash: true,
   i18n: {
