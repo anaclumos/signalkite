@@ -23,15 +23,15 @@ const main = async () => {
   for (let i = 0; i < stories.length; i++) {
     if (!stories[i].originBody) {
       stories[i].originBody = await collect(stories[i].originLink)
-      log(`✅ Origin\t ${stories[i].originLink}`, 'info')
+      log(`✅ Origin\t${stories[i].originLink}`, 'info')
     } else {
-      log(`💘 Body Exists\t ${stories[i].title}`, 'info')
+      log(`💘 Body Exists\t${stories[i].title}`, 'info')
     }
     if (!stories[i].commentBody) {
       stories[i].commentBody = await collect(stories[i].commentLink)
-      log(`✅ Comment\t ${stories[i].commentLink}`, 'info')
+      log(`✅ Comment\t${stories[i].commentLink}`, 'info')
     } else {
-      log(`💘 Comm Exists\t ${stories[i].commentLink}`, 'info')
+      log(`💘 Comm Exists\t${stories[i].commentLink}`, 'info')
     }
   }
 

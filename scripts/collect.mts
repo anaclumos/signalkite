@@ -9,7 +9,7 @@ import {
 } from './collectionStrategies.mjs'
 
 export const collect = async (url: string): Promise<string> => {
-  log(`📥 Downloading\t ${url}`, 'info')
+  log(`📥 Downloading\t${url}`, 'info')
 
   if (url === '') return ''
 
@@ -26,7 +26,7 @@ export const collect = async (url: string): Promise<string> => {
   body = await tryDownloadingAsGooglebot(url, body)
   body = await tryDownloadingPdf(url, body)
 
-  if (body.length === 0) log(`❌ Error\t Download All Failed ${url}`, 'error')
+  if (body.length === 0) log(`❌ Error\tDownload All Failed ${url}`, 'error')
 
   return sanitize(body)
 }

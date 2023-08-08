@@ -7,7 +7,7 @@ import { log, sanitize } from './util.mjs'
 
 export const tryDownloadingYoutube = async (url: string, body: string): Promise<string> => {
   if (body.length > 0) {
-    log(`💘 Body Exists\t tryDownloadingYoutube, ${url}`, 'info')
+    log(`💘 Body Exists\ttryDownloadingYoutube, ${url}`, 'info')
     return sanitize(body)
   }
   if (!url?.startsWith('https://youtu.be') && !url?.startsWith('https://www.youtube.com')) return ''
@@ -29,7 +29,7 @@ export const tryDownloadingYoutube = async (url: string, body: string): Promise<
 
 export const tryDownloadingTwitter = async (url: string, body: string): Promise<string> => {
   if (body.length > 0) {
-    log(`💘 Body Exists\t tryDownloadingTwitter, ${url}`, 'info')
+    log(`💘 Body Exists\ttryDownloadingTwitter, ${url}`, 'info')
     return sanitize(body)
   }
   if (
@@ -51,7 +51,7 @@ export const tryDownloadingTwitter = async (url: string, body: string): Promise<
 
 export const tryDownloadingWithPuppeteer = async (url: string, body: string): Promise<string> => {
   if (body.length > 0) {
-    log(`💘 Body Exists\t tryDownloadingWithPuppeteer, ${url}`, 'info')
+    log(`💘 Body Exists\ttryDownloadingWithPuppeteer, ${url}`, 'info')
     return sanitize(body)
   }
   let browser: PuppeteerBrowser
@@ -60,7 +60,7 @@ export const tryDownloadingWithPuppeteer = async (url: string, body: string): Pr
       browserWSEndpoint: `wss://${process.env.BRIGHTDATA_USERNAME}:${process.env.BRIGHTDATA_PASSWORD}@${process.env.BRIGHTDATA_PROXY}`,
     })
   } catch (e) {
-    log(`🚨\t BrightData Proxy is not available, attempting local, ${e.message}`, 'error')
+    log(`🚨\tBrightData Proxy is not available, attempting local, ${e.message}`, 'error')
     browser = await Puppeteer.launch({ headless: 'new' })
   }
   body = await extract(url, browser)
@@ -97,7 +97,7 @@ export const extract = async (url: string, browser: PuppeteerBrowser): Promise<s
 
 export const tryDownloadingPdf = async (url: string, body: string): Promise<string> => {
   if (body.length > 0) {
-    log(`💘 Body Exists\t tryDownloadingPdf, ${url}`, 'info')
+    log(`💘 Body Exists\ttryDownloadingPdf, ${url}`, 'info')
     return sanitize(body)
   }
   if (
@@ -107,7 +107,7 @@ export const tryDownloadingPdf = async (url: string, body: string): Promise<stri
     return ''
 
   try {
-    log(`⏳ Downloading\t PDF for ${url}`, 'info')
+    log(`⏳ Downloading\tPDF for ${url}`, 'info')
     const res = await fetch(url)
     const data = await pdf(await res.arrayBuffer())
     body = data.text()
@@ -120,11 +120,11 @@ export const tryDownloadingPdf = async (url: string, body: string): Promise<stri
 
 export const tryDownloadingAsGooglebot = async (url: string, body: string): Promise<string> => {
   if (body.length > 0) {
-    log(`💘 Body Exists\t tryDownloadingAsGooglebot, ${url}`, 'info')
+    log(`💘 Body Exists\ttryDownloadingAsGooglebot, ${url}`, 'info')
     return sanitize(body)
   }
   try {
-    log(`⏳ Downloading\t Naive for ${url}`, 'info')
+    log(`⏳ Downloading\tNaive for ${url}`, 'info')
     const res = await fetch(url, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
@@ -141,11 +141,11 @@ export const tryDownloadingAsGooglebot = async (url: string, body: string): Prom
 
 export const tryDownloadingWithPlaywright = async (url: string, body: string): Promise<string> => {
   if (body.length > 0) {
-    log(`💘 Body Exists\t tryDownloadingWithPlaywright, ${url}`, 'info')
+    log(`💘 Body Exists\ttryDownloadingWithPlaywright, ${url}`, 'info')
     return sanitize(body)
   }
   try {
-    log(`⏳ Downloading\t Playwrite for ${url}`, 'info')
+    log(`⏳ Downloading\tPlaywright for ${url}`, 'info')
     const browser = await playwright.chromium.launch()
     const context = await browser.newContext()
     const page = await context.newPage()

@@ -19,7 +19,7 @@ export const createBulletPointSummary = async (rawText, title) => {
       chunkSize: 8192,
     })
 
-    log(`⏳ Shortening\t ${title}`, 'info')
+    log(`⏳ Shortening\t${title}`, 'info')
     const bodyDoc = await textSplitter.createDocuments([sanitize(rawText)])
     const bodyRes = await chain.call({
       input_documents: bodyDoc,
@@ -28,7 +28,7 @@ export const createBulletPointSummary = async (rawText, title) => {
 
     const summary = sanitize(bodyRes.text)
 
-    log(`🍵 Distilling\t ${title}`, 'info')
+    log(`🍵 Distilling\t${title}`, 'info')
 
     const response = await chat.call([
       new SystemMessage(
@@ -108,7 +108,7 @@ export const createBulletPointSummary = async (rawText, title) => {
 
 export const summarize = async (story: Story) => {
   if ((story.originSummary.length ?? 0) !== 0 && (story.commentSummary.length ?? 0) !== 0) {
-    log(`💘 Summ Exists\t ${story.title}`, 'error')
+    log(`💘 Summ Exists\t${story.title}`, 'error')
     return story
   }
 
@@ -117,7 +117,7 @@ export const summarize = async (story: Story) => {
 
   try {
     if (story.originBody.length === 0) {
-      throw new Error('🚨\t originBody is empty')
+      throw new Error('🚨\toriginBody is empty')
     }
     originSummary = await createBulletPointSummary(story.originBody, story.title)
   } catch (e) {
@@ -125,7 +125,7 @@ export const summarize = async (story: Story) => {
   }
   try {
     if (story.commentBody.length === 0) {
-      throw new Error('🚨\t commentBody is empty')
+      throw new Error('🚨\tcommentBody is empty')
     }
     commentSummary = await createBulletPointSummary(story.commentBody, story.title)
   } catch (e) {

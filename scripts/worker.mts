@@ -28,13 +28,13 @@ const main = async () => {
     if (!stories[i].originBody) {
       stories[i].originBody = await collect(stories[i].originLink)
     } else {
-      log(`💘 Body Exists\t ${stories[i].title}`, 'info')
+      log(`💘 Body Exists\t${stories[i].title}`, 'info')
       stories[i].originBody = sanitize(stories[i].originBody)
     }
     if (!stories[i].commentBody) {
       stories[i].commentBody = await collect(stories[i].commentLink)
     } else {
-      log(`💘 Comm Exists\t ${stories[i].commentLink}`, 'info')
+      log(`💘 Comm Exists\t${stories[i].commentLink}`, 'info')
       stories[i].commentBody = sanitize(stories[i].commentBody)
     }
   }
@@ -55,7 +55,7 @@ const main = async () => {
       continue
     }
     if (fs.existsSync(`./records/${day}/${day}.${locale}.json`)) {
-      log(`💘 Tran Exists\t ${locale}`)
+      log(`💘 Tran Exists\t${locale}`)
       localeStories[locale] = JSON.parse(fs.readFileSync(`./records/${day}/${day}.${locale}.json`, 'utf8'))
       continue
     }
@@ -72,7 +72,7 @@ const main = async () => {
         }
       })
     )
-    log(`🤟 Translating\t ${locale}`, 'info')
+    log(`🤟 Translating\t${locale}`, 'info')
   }
 
   for (let i = 0; i < LinguineList.length; i++) {
