@@ -26,7 +26,7 @@ export const createDocHead = (locale: string, title: string) => {
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://og.cho.sh/api/og/?title=${encodeURI(title)}&subheading=${encodeURI(
     LOCAL_HEIMDALL[locale]
-  )} />
+  )}" />
 </head>`
 }
 
