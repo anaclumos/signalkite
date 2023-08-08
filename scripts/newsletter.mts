@@ -38,7 +38,9 @@ const createHeader = (locale: string) => {
 [${LOCAL_SHARE[locale]}](https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${new Date()
     .toISOString()
     .split('T')[0]
-    .replaceAll('-', '/')}) • [${LOCAL_FEEDBACK[locale]}](https://airtable.com/shrty7OlhrLuBC6UX)\n\n`
+    .replaceAll('-', '/')}@TrackLink) • [${
+    LOCAL_FEEDBACK[locale]
+  }](https://airtable.com/shrty7OlhrLuBC6UX@TrackLink)\n\n`
 }
 
 const createFooter = (locale: string) => {
@@ -58,7 +60,7 @@ const createCampaign = async (locale: string, stories: Story[]) => {
       : `🗞️ HN (${LinguineCore[locale].native}) ${new Date().toISOString().split('T')[0]}`
 
   try {
-    log(`📧 Creating\t ${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
+    log(`📧 Creating\t${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
     const res = await fetch(server, {
       method: 'POST',
       headers: {
@@ -77,7 +79,7 @@ const createCampaign = async (locale: string, stories: Story[]) => {
         template_id: ['ja', 'zh-Hans', 'zh-Hant'].includes(locale) ? 3 : 1,
       }),
     })
-    log(`💌 Creating\t ${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
+    log(`💌 Creating\t${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
 
     const response = await res.json()
 
@@ -91,7 +93,7 @@ const createCampaign = async (locale: string, stories: Story[]) => {
         status: 'scheduled',
       }),
     })
-    log(`📮 Scheduled\t ${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
+    log(`📮 Scheduled\t${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
   } catch (e) {
     log(e, 'error')
   }
@@ -99,16 +101,24 @@ const createCampaign = async (locale: string, stories: Story[]) => {
 
 export const createContent = (locale: string, stories: Story[], isEmail = false) => {
   let content = `# ${new Date().toISOString().split('T')[0]}\n\n`
+
   for (let i = 0; i < stories.length; i++) {
     const story = stories[i]
-    content += story.originLink !== undefined ? `## [${story.title}](${story.originLink})\n\n` : `## ${story.title}\n\n`
+    const h2link = isEmail
+      ? `## [${story.title}](${story.originLink}@TrackLink)`
+      : `## [${story.title}](${story.originLink})`
+
+    const h3link = isEmail
+      ? `### [${LOCAL_REACTIONS[locale]}](${story.commentLink}@TrackLink)`
+      : `### [${LOCAL_REACTIONS[locale]}](${story.commentLink})`
+
+    content += story.originLink !== undefined ? `${h2link}\n\n` : `## ${story.title}\n\n`
+
     for (let j = 0; j < story.originSummary.length; j++) {
       content += `- ${story.originSummary[j]}\n`
     }
-    content +=
-      story.commentLink !== undefined
-        ? `\n### [${LOCAL_REACTIONS[locale]}](${story.commentLink})\n\n`
-        : `\n### ${LOCAL_REACTIONS[locale]}\n\n`
+    content += story.commentLink !== undefined ? `\n${h3link}\n\n` : `\n### ${LOCAL_REACTIONS[locale]}\n\n`
+
     for (let j = 0; j < story.commentSummary.length; j++) {
       content += `- ${story.commentSummary[j]}\n`
     }
