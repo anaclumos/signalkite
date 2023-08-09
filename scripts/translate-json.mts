@@ -5,18 +5,18 @@ import fs from 'fs'
 
 const main = async () => {
   const strings = {
-    'First, may I have your email?': {
-      message: 'First, may I have your email?',
+    "Heimdall": {
+      "message": "Heimdall"
     },
-    'Next, what languages do you speak?': {
-      message: 'Next, what languages do you speak?',
+    "Heimdall summarizes Hacker News in 30 Languages.": {
+      "message": "Heimdall summarizes Hacker News in 30 Languages."
     },
-    Subscribe: {
-      message: 'Subscribe',
+    "Trusted by Professionals at Apple, Microsoft, Amazon, and More.": {
+      "message": "Trusted by Professionals at Apple, Microsoft, Amazon, and More."
     },
-    "Would you mind receiving updates on what I'm working on?": {
-      message: "Would you mind receiving updates on what I'm working on?",
-    },
+    "No Hidden Fees. Completely Free.": {
+      "message": "No Hidden Fees. Completely Free."
+    }
   }
 
   const translatedMap = {}
@@ -39,8 +39,14 @@ const main = async () => {
   await Promise.all(
     Object.keys(translatedMap).map(async (locale) => {
       const path = `i18n/${locale}/code.json`
-      const data = JSON.stringify(translatedMap[locale], null, 2)
-      fs.writeFileSync(path, data)
+      // we must append to the file, not overwrite it
+      const json = JSON.parse(fs.readFileSync(path, 'utf8'))
+      const newJson = {
+        ...json,
+        ...translatedMap[locale]
+      }
+      fs.writeFileSync(path, JSON.stringify(newJson, null, 2))
+
     })
   )
 }
