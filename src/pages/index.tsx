@@ -33,7 +33,9 @@ export default function Home(): JSX.Element {
               <Translate>Subscribe</Translate>
             </Link>
             <Link to={'/today'} className={clsx('button button--secondary button--lg', styles.readFirstButton)}>
+              <Translate>
             Read First
+                </Translate>
             </Link>
           </div>
         </div>

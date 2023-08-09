@@ -5,17 +5,8 @@ import fs from 'fs'
 
 const main = async () => {
   const strings = {
-    "Heimdall": {
-      "message": "Heimdall"
-    },
-    "Heimdall summarizes Hacker News in 30 Languages.": {
-      "message": "Heimdall summarizes Hacker News in 30 Languages."
-    },
-    "Trusted by Professionals at Apple, Microsoft, Amazon, and More.": {
-      "message": "Trusted by Professionals at Apple, Microsoft, Amazon, and More."
-    },
-    "No Hidden Fees. Completely Free.": {
-      "message": "No Hidden Fees. Completely Free."
+    "Read First": {
+      "message": "Read First"
     }
   }
 
