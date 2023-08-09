@@ -102,7 +102,7 @@ const createCampaign = async (locale: string, stories: Story[]) => {
 export const createContent = (locale: string, stories: Story[], isEmail = false) => {
   let content = isEmail
     ? `# ${new Date().toISOString().split('T')[0]}\n\n`
-    : `---\n\nslug: "/${new Date().toISOString().split('T')[0].replaceAll('-', '/')}"\n\n---\n\n# ${
+    : `---\nslug: '/${new Date().toISOString().split('T')[0].replaceAll('-', '/')}'\n---\n\n# ${
         new Date().toISOString().split('T')[0]
       }\n\n`
   for (let i = 0; i < stories.length; i++) {
@@ -125,11 +125,11 @@ export const createContent = (locale: string, stories: Story[], isEmail = false)
     for (let j = 0; j < story.commentSummary.length; j++) {
       content += `- ${story.commentSummary[j]}\n`
     }
-    content += '\n\n'
+    content += '\n'
   }
 
   if (!isEmail) {
-    content += createDocHead(locale, stories[0].title)
+    content += createDocHead(locale, stories[0].title) + '\n'
   }
 
   return content
