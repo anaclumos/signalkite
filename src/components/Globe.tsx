@@ -3,8 +3,6 @@ import React from 'react'
 import { useEffect, useRef } from 'react'
 import { useSpring } from 'react-spring'
 
-
-
 export const Globe = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const pointerInteracting = useRef(null)

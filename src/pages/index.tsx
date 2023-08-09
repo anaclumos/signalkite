@@ -29,17 +29,16 @@ export default function Home(): JSX.Element {
                 <Translate>No Hidden Fees. Completely Free.</Translate>
               </li>
             </ul>
-            <Link to="/subscribe" className={clsx('button button--primary button--lg', styles.subscribeButton)}>
-              <Translate>Subscribe</Translate>
-            </Link>
-            <Link to={'/today'} className={clsx('button button--secondary button--lg', styles.readFirstButton)}>
-              <Translate>
-            Read First
-                </Translate>
-            </Link>
+            <div className={styles.buttons}>
+              <Link to="/subscribe" className={clsx('button button--primary button--lg', styles.subscribeButton)}>
+                <Translate>Subscribe</Translate>
+              </Link>
+              <Link to={'/today/'} className={clsx('button button--secondary button--lg', styles.readFirstButton)}>
+                <Translate>Read First</Translate>
+              </Link>
+            </div>
           </div>
         </div>
-
         <div className={styles.background}>
           <Globe />
         </div>
