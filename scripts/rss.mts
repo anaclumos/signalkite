@@ -27,7 +27,7 @@ const writeStoryRss = async (storyHistory: { [key: string]: Story[] }, locale: s
     for (const story of stories) {
       rss.item({
         title: story.title,
-        guid: crypto.randomUUID(),
+        guid: new Date(day).toISOString() + story.title,
         description: parse(
           '- ' + story.originSummary.join('\n- ').replaceAll(/[\u200B\u200C\u200D\u200E\u200F\uFEFF]/g, '')
         ),
@@ -64,7 +64,7 @@ export const writeNewsletterRss = async (storyHistory: { [key: string]: Story[] 
     const stories = storyHistory[day]
     rss.item({
       title: new Date().toISOString().split('T')[0].replaceAll('-', '/'),
-      guid: crypto.randomUUID(),
+      guid: new Date(day).toISOString(),
       url: link,
       description: parse(
         createContent(locale, stories, true).replaceAll(/[\u200B\u200C\u200D\u200E\u200F\uFEFF]/g, '')
