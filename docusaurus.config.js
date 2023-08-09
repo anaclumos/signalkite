@@ -165,7 +165,7 @@ const config = {
         redirects: [
           {
             to: getMostRecentNewsLink(),
-            from: ['/today', '/today/'],
+            from: ['/today/'],
           },
         ],
       },
