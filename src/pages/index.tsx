@@ -26,7 +26,7 @@ export default function Home(): JSX.Element {
                 <Translate>Trusted by Professionals at Apple, Microsoft, Amazon, and More.</Translate>
               </li>
               <li className={styles.bullet}>
-                <Translate>No Hidden Fees. No Premium.</Translate>
+                <Translate>No Hidden Fees. Completely Free.</Translate>
               </li>
             </ul>
             <Link to="/subscribe" className={clsx('button button--primary button--lg', styles.subscribeButton)}>
