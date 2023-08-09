@@ -5,9 +5,9 @@ import fs from 'fs'
 
 const main = async () => {
   const strings = {
-    "Read First": {
-      "message": "Read First"
-    }
+    'Read First': {
+      message: 'Read First',
+    },
   }
 
   const translatedMap = {}
@@ -34,10 +34,9 @@ const main = async () => {
       const json = JSON.parse(fs.readFileSync(path, 'utf8'))
       const newJson = {
         ...json,
-        ...translatedMap[locale]
+        ...translatedMap[locale],
       }
       fs.writeFileSync(path, JSON.stringify(newJson, null, 2))
-
     })
   )
 }
