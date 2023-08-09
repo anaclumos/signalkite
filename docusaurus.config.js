@@ -158,6 +158,19 @@ const config = {
       'data-collect-dnt': 'true',
     },
   ],
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: getMostRecentNewsLink(),
+            from: '/today',
+          },
+        ],
+      },
+    ],
+  ],
 }
 
 module.exports = config
