@@ -77,7 +77,7 @@ const main = async () => {
 
   for (let i = 0; i < LinguineList.length; i++) {
     const locale = LinguineList[i]
-    fs.writeFileSync(`./records/${day}/${day}.${locale}.json`, JSON.stringify(localeStories[locale], null, 2))
+    fs.writeFileSync(`./records/${day}/${day}.${locale}.json`, JSON.stringify(localeStories[locale], null, 2) + '\n')
   }
 
   for (let i = 0; i < LinguineList.length; i++) {
