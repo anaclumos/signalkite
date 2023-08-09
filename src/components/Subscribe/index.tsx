@@ -1,9 +1,9 @@
 import React from 'react'
 import clsx from 'clsx'
-import styles from './Sub.module.css'
+import styles from './index.module.css'
 import Translate from '@docusaurus/Translate'
 
-export const Sub = () => {
+export const Subscribe = () => {
   return (
     <form method="post" action="https://newsletters.cho.sh/subscription/form" className={clsx(styles.form)}>
       <div>
