@@ -1,7 +1,6 @@
 import { Story } from 'type.mjs'
 import { LOCAL_HEIMDALL } from './default.mjs'
 import RSS from 'rss'
-import crypto from 'crypto'
 import { parse } from 'marked'
 import fs from 'fs'
 import { createContent } from './newsletter.mjs'
