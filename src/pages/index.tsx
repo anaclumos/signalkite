@@ -8,7 +8,9 @@ import clsx from 'clsx'
 import { Globe } from '../components/Globe'
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext()
+  const { siteConfig, i18n } = useDocusaurusContext()
+  const { currentLocale } = i18n
+  const todayLink = currentLocale === 'en' ? `/today/` : `/${currentLocale}/today/`
   return (
     <Layout title={`${siteConfig.title}`} description={`${siteConfig.tagline}`}>
       <main className={styles.main}>
@@ -34,7 +36,7 @@ export default function Home(): JSX.Element {
                 <Translate>Subscribe</Translate>
               </Link>
               {/* Link doesn't work for docusaurus redirects */}
-              <a href={'/today/'} className={clsx('button button--secondary button--lg', styles.readFirstButton)}>
+              <a href={todayLink} className={clsx('button button--secondary button--lg', styles.readFirstButton)}>
                 <Translate>Read First</Translate>
               </a>
             </div>
