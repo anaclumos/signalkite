@@ -68,7 +68,7 @@ export const writeNewsletterRss = async (storyHistory: { [key: string]: Story[] 
       description: parse(
         createContent(locale, stories, true).replaceAll(/[\u200B\u200C\u200D\u200E\u200F\uFEFF]/g, '')
       ),
-      date: new Date(),
+      date: new Date(day),
     })
   }
 
