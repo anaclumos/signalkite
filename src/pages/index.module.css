@@ -1,23 +1,88 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
+@media (max-width: 800px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    max-height: 800px;
+  }
+
+  .background {
+    max-height: 800px;
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (min-width: 800px) {
+  .background {
+    height: calc(100dvh - var(--ifm-navbar-height));
+  }
+
+  .hero {
+    height: calc(100dvh - var(--ifm-navbar-height));
+  }
+}
+
+.hero {
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+}
+
+.heroElement {
+  padding: 2rem 1rem;
+}
+
+.features {
+  margin: 1rem auto;
+}
+
+.bullet {
+  padding: 0.5rem 0;
+}
+
+.background {
+  background-color: #000000;
+  padding: 2rem 0;
+  height: 100%;
+}
+
+.subscribeButton {
+  margin: 0.5rem 1rem 0.5rem 0;
+  box-shadow: rgba(29, 29, 111, 0.25) 0px 2px 2px -1px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.subscribeButton:hover {
+  transform: scale(1.02);
+  box-shadow: rgba(11, 11, 128, 0.25) 0px 5px 10px 4px;
+}
+
+.subscribeButton:active {
+  transform: scale(0.98);
+  box-shadow: rgba(11, 11, 128, 0.25) 0px 0px 0px 0px;
+}
+
+.readFirstButton {
+  margin: 0.5rem 0;
+  box-shadow: rgba(50, 50, 93, 0.1) 0px 2px 2px -1px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.readFirstButton:hover {
+  transform: scale(1.02);
+  box-shadow: rgba(50, 50, 93, 0.1) 0px 5px 10px 4px;
+}
+
+.readFirstButton:active {
+  transform: scale(0.98);
+  box-shadow: rgba(50, 50, 93, 0.1) 0px 0px 0px 0px;
 }
