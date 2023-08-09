@@ -2,14 +2,14 @@ import React from 'react'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Layout from '@theme/Layout'
 
-import { Sub } from '../components/Sub'
+import { Subscribe } from '../components/Subscribe'
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext()
   return (
     <Layout title={`${siteConfig.title}`} description={`${siteConfig.tagline}`}>
       <main>
-        <Sub />
+        <Subscribe />
       </main>
     </Layout>
   )

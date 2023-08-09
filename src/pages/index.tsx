@@ -5,7 +5,7 @@ import Translate from '@docusaurus/Translate'
 import Link from '@docusaurus/Link'
 import styles from './index.module.css'
 import clsx from 'clsx'
-import { Globe } from '../components/Cobe'
+import { Globe } from '../components/Globe'
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext()
@@ -33,7 +33,7 @@ export default function Home(): JSX.Element {
               <Translate>Subscribe</Translate>
             </Link>
             <Link to={'/today'} className={clsx('button button--secondary button--lg', styles.readFirstButton)}>
-              Read First
+            Read First
             </Link>
           </div>
         </div>
