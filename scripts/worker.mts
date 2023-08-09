@@ -13,7 +13,7 @@ import { writeAllRss } from './rss.mjs'
 const main = async () => {
   let stories: Story[] = await updateHN()
 
-  // day in YYYY-MM-DD format
+  // const day = new Date(new Date().getTime() - 24 * 60 * 60 * 1000).toISOString().split('T')[0]
   const day = new Date().toISOString().split('T')[0]
   const path = `./records/${day}/${day}.en.json`
 
@@ -96,7 +96,7 @@ const main = async () => {
     }
   }
   await scheduleNewsletter(localeStories)
-  await writeAllRss(localeStories)
+  await writeAllRss()
 }
 
 main().then(() => process.exit(0))
