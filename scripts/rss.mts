@@ -46,7 +46,7 @@ export const writeNewsletterRss = async (storyHistory: { [key: string]: Story[] 
     image_url: 'https://hn.cho.sh/img/android-chrome-512x512.png',
     copyright: '2023 Sunghyun Cho',
     language: locale,
-    pubDate: new Date().toISOString(),
+    pubDate: new Date().toISOString().split('T')[0] ,
     ttl: '60',
   })
 
@@ -82,7 +82,6 @@ export const writeAllRss = async () => {
   const localeStoryHistory: { [key: string]: { [key: string]: Story[] } } = {}
   const DAY_TO_GO_BACK = 10
 
-  // Read from records/2023-08-08/2023-08-08.{locale}.json
   const today = new Date()
 
   for (let i = 0; i < DAY_TO_GO_BACK; i++) {
