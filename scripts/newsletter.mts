@@ -3,11 +3,11 @@ import { Story } from './type.mjs'
 import {
   LOCAL_ADVERTISE_FIRST,
   LOCAL_ADVERTISE_SECOND,
-  LOCAL_HEIMDALL,
   LOCAL_CONTACT,
   LOCAL_FEEDBACK,
   LOCAL_REACTIONS,
   LOCAL_SHARE,
+  LOCAL_HACKERNEWS_SUMMARY,
 } from './default.mjs'
 import { LinguineCore, LinguineList } from './linguine.mjs'
 import { log } from './util.mjs'
@@ -20,12 +20,19 @@ export const scheduleNewsletter = async (localeStories: Record<string, Story[]>)
   }
 }
 
-export const createDocHead = (locale: string, title: string) => {
+export const createDocHead = (locale: string, title: string, day = new Date()) => {
   return `<head>
   <meta property="og:title" content="${title}" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://og.cho.sh/api/og/?title=${encodeURI(title)}&subheading=${encodeURI(
-    LOCAL_HEIMDALL[locale]
+    day.toLocaleDateString(locale, {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }) +
+      ': ' +
+      LOCAL_HACKERNEWS_SUMMARY[locale]
   )}" />
 </head>`
 }
@@ -129,7 +136,7 @@ export const createContent = (locale: string, stories: Story[], isEmail = false,
   }
 
   if (!isEmail) {
-    content += createDocHead(locale, stories[0].title) + '\n'
+    content += createDocHead(locale, stories[0].title, day) + '\n'
   }
 
   return content
