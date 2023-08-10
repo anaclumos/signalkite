@@ -37,7 +37,7 @@ export const useShare = (locale: string = 'en') => {
   return useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search)
     const query = urlParams.get('share')
-    if (query) {
+    if (query === 'true') {
       if (navigator.share) {
         navigator.share({
           url: window.location.href,
