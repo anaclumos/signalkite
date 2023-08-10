@@ -7,10 +7,6 @@ import { createContent } from './newsletter.mjs'
 import { LinguineList } from './linguine.mjs'
 
 const writeStoryRss = async (storyHistory: { [key: string]: Story[] }, locale: string) => {
-  const link = `https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${new Date()
-    .toISOString()
-    .split('T')[0]
-    .replaceAll('-', '/')}`
   const rss = new RSS({
     title: LOCAL_HEIMDALL[locale],
     feed_url: `https://hn.cho.sh/rss/story/${locale}.xml`,
@@ -30,7 +26,7 @@ const writeStoryRss = async (storyHistory: { [key: string]: Story[] }, locale: s
         description: parse(
           '- ' + story.originSummary.join('\n- ').replaceAll(/[\u200B\u200C\u200D\u200E\u200F\uFEFF]/g, '')
         ),
-        url: link,
+        url: (story.originLink ?? story.commentLink).replaceAll('@TrackLink', ''),
         date: new Date(day),
       })
     }
@@ -64,9 +60,11 @@ export const writeNewsletterRss = async (storyHistory: { [key: string]: Story[] 
     rss.item({
       title: new Date().toISOString().split('T')[0].replaceAll('-', '/'),
       guid: new Date(day).toISOString(),
-      url: link,
+      url: link.replaceAll('@TrackLink', ''),
       description: parse(
-        createContent(locale, stories, true).replaceAll(/[\u200B\u200C\u200D\u200E\u200F\uFEFF]/g, '')
+        createContent(locale, stories, true)
+          .replaceAll(/[\u200B\u200C\u200D\u200E\u200F\uFEFF]/g, '')
+          .replaceAll('@TrackLink', '')
       ),
       date: new Date(day),
     })
