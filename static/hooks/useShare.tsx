@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from 'react'
-
 const LINK_COPIED_TO_CLIPBOARD = {
   ar: 'رابط نسخ إلى الحافظة!',
   bn: 'ক্লিপবোর্ডে লিঙ্ক অনুলিপি করা হয়েছে!',
@@ -34,6 +32,7 @@ const LINK_COPIED_TO_CLIPBOARD = {
 }
 
 export const useShare = async (locale: string = 'en') => {
+  if (typeof window === 'undefined') return null
   const urlParams = new URLSearchParams(window.location.search)
   const query = urlParams.get('share')
   if (query === 'true') {
