@@ -50,17 +50,13 @@ export const writeNewsletterRss = async (storyHistory: { [key: string]: Story[] 
     ttl: '60',
   })
 
-  const link = `https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${new Date()
-    .toISOString()
-    .split('T')[0]
-    .replaceAll('-', '/')}`
-
   for (const day of Object.keys(storyHistory)) {
     const stories = storyHistory[day]
+    const link = `https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${day.replaceAll('-', '/')}`
     rss.item({
       title: new Date(day).toISOString().split('T')[0],
       guid: new Date(day).toISOString(),
-      url: link.replaceAll('@TrackLink', ''),
+      url: link.replaceAll('@TrackLink', '').replaceAll('-', '/'),
       description: parse(
         createContent(locale, stories, true, new Date(day))
           .replaceAll(/[\u200B\u200C\u200D\u200E\u200F\uFEFF]/g, '')
