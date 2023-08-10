@@ -6,6 +6,7 @@ import Link from '@docusaurus/Link'
 import styles from './index.module.css'
 import clsx from 'clsx'
 import { Globe } from '../components/Globe'
+import BrowserOnly from '@docusaurus/BrowserOnly'
 
 export default function Home(): JSX.Element {
   const { siteConfig, i18n } = useDocusaurusContext()
@@ -43,7 +44,7 @@ export default function Home(): JSX.Element {
           </div>
         </div>
         <div className={styles.background}>
-          <Globe />
+          <BrowserOnly>{() => <Globe />}</BrowserOnly>
         </div>
       </main>
     </Layout>
