@@ -5,9 +5,9 @@ import fs from 'fs'
 
 const main = async () => {
   const strings = {
-    "Heimdall: Hacker News Summary": {
-      "message": "Heimdall: Hacker News Summary"
-    }
+    'Heimdall: Hacker News Summary': {
+      message: 'Heimdall: Hacker News Summary',
+    },
   }
 
   const translatedMap = {}
