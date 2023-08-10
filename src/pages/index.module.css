@@ -3,6 +3,13 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.bullet {
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+  list-style: none;
+  user-select: none;
+}
+
 @media (max-width: 800px) {
   .main {
     grid-template-columns: 1fr;
@@ -14,6 +21,10 @@
 
   .background {
     max-height: 800px;
+  }
+
+  .bullet {
+    font-size: 1rem;
   }
 }
 
@@ -44,16 +55,21 @@
   padding: 1rem 0;
 }
 
-.bullet {
-  font-size: 1.5rem;
-  padding: 0.5rem 0;
-  list-style: none;
-  user-select: none;
-}
-
 .bullet::before {
   content: '✅';
   padding-right: 0.5rem;
+}
+
+.firstBullet::before {
+  content: '🗞️';
+}
+
+.secondBullet::before {
+  content: '❤️';
+}
+
+.thirdBullet::before {
+  content: '💸';
 }
 
 .background {
