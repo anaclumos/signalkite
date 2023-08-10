@@ -35,15 +35,14 @@ export const useShare = async (locale: string = 'en') => {
   if (typeof window === 'undefined') return null
   const urlParams = new URLSearchParams(window.location.search)
   const query = urlParams.get('share')
+  const payload = {
+    url: window.location.href,
+  }
   if (query === 'true') {
-    if (navigator.share) {
-      navigator
-        .share({
-          url: window.location.href,
-        })
-        .catch((error) => {
-          console.log('Error sharing', error)
-        })
+    if (navigator.share && navigator.canShare(payload)) {
+      navigator.share(payload).catch((error) => {
+        console.log('Error sharing', error)
+      })
     } else {
       navigator.clipboard.writeText(window.location.href.split('?')[0] + '?ref=share').then(() => {
         alert(LINK_COPIED_TO_CLIPBOARD[locale])
