@@ -33,20 +33,22 @@ const LINK_COPIED_TO_CLIPBOARD = {
   'zh-Hant': '連結已複製到剪貼簿！',
 }
 
-export const useShare = (locale: string = 'en') => {
-  return useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search)
-    const query = urlParams.get('share')
-    if (query === 'true') {
-      if (navigator.share) {
-        navigator.share({
+export const useShare = async (locale: string = 'en') => {
+  const urlParams = new URLSearchParams(window.location.search)
+  const query = urlParams.get('share')
+  if (query === 'true') {
+    if (navigator.share) {
+      navigator
+        .share({
           url: window.location.href,
         })
-      } else {
-        navigator.clipboard.writeText(window.location.href.split('?')[0] + '?ref=share').then(() => {
-          alert(LINK_COPIED_TO_CLIPBOARD[locale])
+        .catch((error) => {
+          console.log('Error sharing', error)
         })
-      }
+    } else {
+      navigator.clipboard.writeText(window.location.href.split('?')[0] + '?ref=share').then(() => {
+        alert(LINK_COPIED_TO_CLIPBOARD[locale])
+      })
     }
-  }, [])
+  }
 }
