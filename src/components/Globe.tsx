@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react'
 import { useSpring } from 'react-spring'
 
 export const Globe = () => {
+  if (typeof window === 'undefined') return null
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const pointerInteracting = useRef(null)
   const pointerInteractionMovement = useRef(0)
@@ -11,7 +12,7 @@ export const Globe = () => {
     r: 0,
     config: {
       mass: 1,
-      tension: 280,
+      tension: 200,
       friction: 40,
       precision: 0.001,
     },
@@ -27,7 +28,7 @@ export const Globe = () => {
       width: width * 2,
       height: width * 2,
       phi: 0,
-      theta: 0.3,
+      theta: (23.5 * Math.PI) / 180,
       dark: 1,
       diffuse: 2,
       mapSamples: 32000,
@@ -103,7 +104,7 @@ export const Globe = () => {
       ],
       onRender: (state) => {
         if (!pointerInteracting.current) {
-          phi += 0.002
+          phi += 0.004
         }
         state.phi = phi + r.get()
         state.width = width * 2
@@ -140,7 +141,7 @@ export const Globe = () => {
             const delta = e.clientX - pointerInteracting.current
             pointerInteractionMovement.current = delta
             api.start({
-              r: delta / 3000,
+              r: delta / 300,
             })
           }
         }}
