@@ -36,6 +36,22 @@ const config = {
   title: 'Heimdall',
   tagline: 'Hacker News in All Languages',
   favicon: 'img/favicon.ico',
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'theme-color',
+        content: '#5596ec',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'og:image',
+        content: 'https://hn.cho.sh/img/og.png',
+      },
+    },
+  ],
   url: 'https://hn.cho.sh',
   baseUrl: '/',
   organizationName: 'anaclumos',
@@ -112,7 +128,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/og.png',
       navbar: {
         title: 'Heimdall',
         logo: {
