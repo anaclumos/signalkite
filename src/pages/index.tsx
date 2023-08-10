@@ -18,18 +18,18 @@ export default function Home(): JSX.Element {
         <div className={styles.hero}>
           <div className={styles.heroElement}>
             <h1>
-              <Translate>Heimdall</Translate>
+              <Translate>Heimdall: Hacker News Summary</Translate>
             </h1>
 
             <ul className={styles.features}>
-              <li className={styles.bullet}>
-                <Translate>Heimdall summarizes Hacker News in 30 Languages.</Translate>
+              <li className={clsx(styles.bullet, styles.firstBullet)}>
+                <Translate>Summarizes Silicon Valley News in 30 Languages.</Translate>
               </li>
-              <li className={styles.bullet}>
-                <Translate>Trusted by Professionals at Apple, Microsoft, Amazon, and More.</Translate>
+              <li className={clsx(styles.bullet, styles.secondBullet)}>
+                <Translate>Already Loved by Professionals at Apple, Microsoft, etc.</Translate>
               </li>
-              <li className={styles.bullet}>
-                <Translate>No Hidden Fees. Completely Free.</Translate>
+              <li className={clsx(styles.bullet, styles.thirdBullet)}>
+                <Translate>Completely Free.</Translate>
               </li>
             </ul>
             <div className={styles.buttons}>
