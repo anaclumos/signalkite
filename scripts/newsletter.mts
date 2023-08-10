@@ -99,11 +99,11 @@ const createCampaign = async (locale: string, stories: Story[]) => {
   }
 }
 
-export const createContent = (locale: string, stories: Story[], isEmail = false) => {
+export const createContent = (locale: string, stories: Story[], isEmail = false, day = new Date()) => {
   let content = isEmail
-    ? `# ${new Date().toISOString().split('T')[0]}\n\n`
-    : `---\nslug: '/${new Date().toISOString().split('T')[0].replaceAll('-', '/')}'\n---\n\n# ${
-        new Date().toISOString().split('T')[0]
+    ? `# ${day.toISOString().split('T')[0]}\n\n`
+    : `---\nslug: '/${day.toISOString().split('T')[0].replaceAll('-', '/')}'\n---\n\n# ${
+        day.toISOString().split('T')[0]
       }\n\n`
   for (let i = 0; i < stories.length; i++) {
     const story = stories[i]

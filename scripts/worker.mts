@@ -84,14 +84,17 @@ const main = async () => {
     const locale = LinguineList[i]
     if (locale === 'en') {
       fs.mkdirSync(`./docs/${day.replaceAll('-', '/')}`, { recursive: true })
-      fs.writeFileSync(`./docs/${day.replaceAll('-', '/')}.md`, createContent(locale, localeStories[locale]))
+      fs.writeFileSync(
+        `./docs/${day.replaceAll('-', '/')}.md`,
+        createContent(locale, localeStories[locale], false, new Date(day))
+      )
     } else {
       fs.mkdirSync(`./i18n/${locale}/docusaurus-plugin-content-docs/current/${day.replaceAll('-', '/')}`, {
         recursive: true,
       })
       fs.writeFileSync(
         `./i18n/${locale}/docusaurus-plugin-content-docs/current/${day.replaceAll('-', '/')}.md`,
-        createContent(locale, localeStories[locale])
+        createContent(locale, localeStories[locale], false, new Date(day))
       )
     }
   }
