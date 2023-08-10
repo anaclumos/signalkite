@@ -13,7 +13,7 @@ const writeStoryRss = async (storyHistory: { [key: string]: Story[] }, locale: s
     site_url: 'https://hn.cho.sh',
     image_url: 'https://hn.cho.sh/img/android-chrome-512x512.png',
     language: locale,
-    pubDate: new Date().toISOString(),
+    pubDate: new Date().toISOString().split('T')[0],
     ttl: '60',
   })
 
