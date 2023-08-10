@@ -5,9 +5,9 @@ import fs from 'fs'
 
 const main = async () => {
   const strings = {
-    'Read First': {
-      message: 'Read First',
-    },
+    "Heimdall: Hacker News Summary": {
+      "message": "Heimdall: Hacker News Summary"
+    }
   }
 
   const translatedMap = {}
@@ -22,7 +22,6 @@ const main = async () => {
           localeCopy[key].message = translation[0]
         })
       )
-      // add the translated copy to the translatedMap
       translatedMap[locale] = localeCopy
     })
   )
