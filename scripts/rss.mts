@@ -46,7 +46,7 @@ export const writeNewsletterRss = async (storyHistory: { [key: string]: Story[] 
     image_url: 'https://hn.cho.sh/img/android-chrome-512x512.png',
     copyright: '2023 Sunghyun Cho',
     language: locale,
-    pubDate: new Date().toISOString().split('T')[0] ,
+    pubDate: new Date().toISOString().split('T')[0],
     ttl: '60',
   })
 
