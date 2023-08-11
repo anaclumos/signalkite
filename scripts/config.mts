@@ -3,6 +3,7 @@ export const GPT_RETRY_LIMIT = 3
 export const server = 'https://newsletters.cho.sh/api/campaigns'
 export const username = process.env.NEWSLETTERS_CHO_SH_USERNAME
 export const password = process.env.NEWSLETTERS_CHO_SH_PASSWORD
+export const subjectLengthLimit = 700
 export const newsletterId = {
   ar: 35,
   bn: 39,

@@ -1,4 +1,4 @@
-import { newsletterId, password, server, username } from './config.mjs'
+import { newsletterId, password, server, username, subjectLengthLimit } from './config.mjs'
 import { Story } from './type.mjs'
 import {
   LOCAL_ADVERTISE_FIRST,
@@ -61,8 +61,8 @@ const createCampaign = async (locale: string, stories: Story[]) => {
   timeToSend.setSeconds(0)
   timeToSend.setMilliseconds(0)
 
-  const title =
-    `🗞️ ${stories[0].title}`.length <= 70
+  const subject =
+    `🗞️ ${stories[0].title}`.length <= subjectLengthLimit
       ? `🗞️ ${stories[0].title}`
       : `🗞️ HN (${LinguineCore[locale].native}) ${new Date().toISOString().split('T')[0]}`
 
@@ -76,7 +76,7 @@ const createCampaign = async (locale: string, stories: Story[]) => {
       },
       body: JSON.stringify({
         name: `${new Date().toISOString().split('T')[0]} ${locale}`,
-        subject: title,
+        subject: subject,
         type: 'regular',
         content_type: 'markdown',
         body: createHeader(locale) + createContent(locale, stories, true) + createFooter(locale),
