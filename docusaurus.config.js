@@ -133,6 +133,15 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: 'img/og.png',
+      algolia: {
+        appId: '1NHQP43IBE',
+        apiKey: '6c908ff8d0b4e4f607ac4f79339e72a4',
+        indexName: 'hn-cho',
+        contextualSearch: true,
+        searchParameters: {},
+        searchPagePath: 'search',
+        debug: false,
+      },
       navbar: {
         title: 'Heimdall',
         logo: {
