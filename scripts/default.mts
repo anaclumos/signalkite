@@ -328,7 +328,6 @@ export const LOCAL_CONTACT = {
   'zh-Hant': '[聯繫](https://airtable.com/appLfbX7pNQxpBx00/shrfpPSEbLVSXz4r7@TrackLink)',
 }
 
-
 export const LOCAL_TODAYS_HN = {
   ar: 'ملخص أخبار القراصنة اليوم',
   bn: 'আজকের হ্যাকার নিউজ সারসংক্ষেপ',
@@ -346,7 +345,7 @@ export const LOCAL_TODAYS_HN = {
   id: 'Ringkasan Berita Peretas Hari Ini',
   it: 'Riassunto delle notizie Hacker di oggi',
   ja: '本日のハッカーニュースまとめ',
-  ko: '오늘의 해커 뉴스 요약',
+  ko: '오늘의 해커뉴스 요약',
   nb: 'Sammendrag av dagens Hacker News',
   nl: 'Hacker News samenvatting van vandaag',
   pl: 'Dzisiejsze podsumowanie Hacker News',
