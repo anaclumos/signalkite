@@ -45,6 +45,16 @@ const main = async () => {
     })
   )
 
+  // Ensure that the title and summary are sanitized
+  stories = stories.map((s) => {
+    return {
+      ...s,
+      title: sanitize(s.title),
+      originSummary: s.originSummary.map((s) => sanitize(s)),
+      commentSummary: s.commentSummary.map((s) => sanitize(s)),
+    }
+  })
+
   // locale -> Stories map
   const localeStories: Record<string, Story[]> = {}
 
