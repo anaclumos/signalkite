@@ -1,7 +1,6 @@
 import { LinguineCore } from './linguine.mjs'
 import { translate } from './translate.mjs'
 import { createInterface } from 'readline'
-import fs from 'fs'
 
 const main = async () => {
   const readline = createInterface({
