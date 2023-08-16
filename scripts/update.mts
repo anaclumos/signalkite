@@ -23,7 +23,7 @@ export const updateHN = async (): Promise<Story[]> => {
       return {
         id: response.id,
         title: response.title,
-        originLink: response.url,
+        originLink: response.url ?? `https://news.ycombinator.com/item?id=${response.id}`,
         originBody: response.text,
         commentLink: `https://news.ycombinator.com/item?id=${response.id}`,
         commentBody: '',
