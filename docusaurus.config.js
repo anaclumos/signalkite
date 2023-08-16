@@ -115,7 +115,11 @@ const config = {
             })
             return reverseProcessor(sidebarItems)
           },
-          editUrl: 'https://github.com/anaclumos/heimdall/tree/main/',
+          editUrl: ({ locale, docPath }) => {
+            const isEnglish = locale === 'en'
+            const baseDir = isEnglish ? '' : `i18n/${locale}/docusaurus-plugin-content-docs/`
+            return `https://github.com/anaclumos/heimdall/blob/main/${baseDir}/current/${docPath}`
+          },
         },
         blog: false,
         theme: {
