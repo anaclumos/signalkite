@@ -150,6 +150,10 @@ export const sanitize = (text: string) => {
     .replaceAll('needs to review the security of your connection before proceeding.', '')
     .replaceAll('Ray ID:', '')
     .replaceAll('Performance & security by Cloudflare', '')
+    .replaceAll('Show HN: ', '')
+    .replaceAll('Ask HN: ', '')
+    .replaceAll('Launch HN', '')
+    .replaceAll('Tell HN: ', '')
     .trim()
     .slice(0, 100000)
 }
