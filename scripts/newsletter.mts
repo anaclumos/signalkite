@@ -6,6 +6,7 @@ import {
   LOCAL_CONTACT,
   LOCAL_FEEDBACK,
   LOCAL_REACTIONS,
+  LOCAL_TODAYS_HN,
   LOCAL_SHARE,
   LOCAL_HACKERNEWS_SUMMARY,
 } from './default.mjs'
@@ -81,6 +82,7 @@ const createCampaign = async (locale: string, stories: Story[]) => {
         content_type: 'markdown',
         body: createHeader(locale) + createContent(locale, stories, true) + createFooter(locale),
         altbody: createHeader(locale) + createContent(locale, stories, true) + createFooter(locale),
+        from_email: `${LOCAL_TODAYS_HN[locale]} <heimdall@newsletters.cho.sh>`,
         lists: [newsletterId[locale]],
         send_at: timeToSend.toISOString(),
         template_id: ['ja', 'zh-Hans', 'zh-Hant'].includes(locale) ? 3 : 1,
