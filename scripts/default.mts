@@ -330,7 +330,7 @@ export const LOCAL_CONTACT = {
 
 export const LOCAL_TODAYS_HN = {
   ar: 'ملخص أخبار القراصنة اليوم',
-  bn: 'আজকের হ্যাকার নিউজ সারসংক্ষেপ',
+  bn: 'আজকের এইচএন সারসংক্ষেপ',
   cs: 'Dnešní shrnutí Hacker News',
   da: 'Dagens resumé af Hacker News',
   de: 'Die heutige Zusammenfassung der Hacker News',
@@ -354,7 +354,7 @@ export const LOCAL_TODAYS_HN = {
   ru: 'Сегодняшняя сводка новостей Hacker News',
   sk: 'Dnešné zhrnutie Hacker News',
   sv: 'Sammanfattning av dagens Hacker News',
-  ta: 'இன்றைய ஹேக்கர் செய்தி சுருக்கம்',
+  ta: 'இன்றைய HN சுருக்கம்',
   th: 'สรุปข่าวแฮ็กเกอร์วันนี้',
   tr: 'Bugünün Hacker Haber Özeti',
   'zh-Hans': '今日黑客新闻摘要',
