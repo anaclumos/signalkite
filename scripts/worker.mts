@@ -10,6 +10,25 @@ import { createContent, scheduleNewsletter } from './newsletter.mjs'
 import { log, sanitize } from './util.mjs'
 import { writeAllRss } from './rss.mjs'
 
+const MAX_RETRIES = 3
+const RETRY_DELAY = 60_000 // 1 minute
+
+async function retryTranslation(func, args, maxRetries) {
+  const { locale } = args
+  let tryCount = 0
+  while (tryCount < maxRetries) {
+    try {
+      return await func(...args)
+    } catch (e) {
+      log(`🤔 Retrying\t${locale}`, 'error')
+      await new Promise((r) => setTimeout(r, RETRY_DELAY))
+      tryCount++
+    }
+  }
+  log(`🤬 Failed\t${locale}`, 'error')
+  throw new Error('Failed to translate')
+}
+
 const main = async () => {
   let stories: Story[] = await updateHN()
 
@@ -71,12 +90,11 @@ const main = async () => {
     }
     localeStories[locale] = await Promise.all(
       stories.map(async (s) => {
-        const title = await translate([s.title], 'en', locale)
         return {
           ...s,
-          title: title[0],
-          originSummary: await translate(s.originSummary, 'en', locale),
-          commentSummary: await translate(s.commentSummary, 'en', locale),
+          title: (await retryTranslation(translate, [[s.title], 'en', locale], MAX_RETRIES))[0],
+          originSummary: await retryTranslation(translate, [s.originSummary, 'en', locale], MAX_RETRIES),
+          commentSummary: await retryTranslation(translate, [s.commentSummary, 'en', locale], MAX_RETRIES),
           originBody: '',
           commentBody: '',
         }
@@ -108,7 +126,7 @@ const main = async () => {
       )
     }
   }
-  await scheduleNewsletter(localeStories)
+  // await scheduleNewsletter(localeStories)
   await writeAllRss()
 }
 
