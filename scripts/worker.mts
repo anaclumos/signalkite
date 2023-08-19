@@ -126,7 +126,7 @@ const main = async () => {
       )
     }
   }
-  // await scheduleNewsletter(localeStories)
+  await scheduleNewsletter(localeStories)
   await writeAllRss()
 }
 
