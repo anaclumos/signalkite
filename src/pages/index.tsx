@@ -3,6 +3,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Layout from '@theme/Layout'
 import Translate from '@docusaurus/Translate'
 import Link from '@docusaurus/Link'
+import Head from '@docusaurus/Head'
 import styles from './index.module.css'
 import clsx from 'clsx'
 import { Globe } from '../components/Globe'
@@ -14,6 +15,26 @@ export default function Home(): JSX.Element {
   const todayLink = currentLocale === 'en' ? `/today/` : `/${currentLocale}/today/`
   return (
     <Layout title={`${siteConfig.title}`} description={`${siteConfig.tagline}`}>
+      <Head>
+        {i18n.locales.map((locale) => (
+          <link
+            key={`rss-story-${locale}`}
+            rel="alternate"
+            type="application/rss+xml"
+            title={`Heimdall RSS - Story (${locale})`}
+            href={`https://hn.cho.sh/rss/story/${locale}.xml`}
+          />
+        ))}
+        {i18n.locales.map((locale) => (
+          <link
+            key={`rss-newsletter-${locale}`}
+            rel="alternate"
+            type="application/rss+xml"
+            title={`Heimdall RSS - Newsletter (${locale})`}
+            href={`https://hn.cho.sh/rss/newsletter/${locale}.xml`}
+          />
+        ))}
+      </Head>
       <main className={styles.main}>
         <div className={styles.hero}>
           <div className={styles.heroElement}>
