@@ -23,9 +23,9 @@ export const scheduleNewsletter = async (localeStories: Record<string, Story[]>)
 
 export const createDocHead = (locale: string, title: string, day = new Date()) => {
   return `<head>
-  <meta property="og:title" content="${title}" />
+  <meta property="og:title" content="${title.replaceAll('"', "'")}" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=${encodeURI(title)}&subheading=${encodeURI(
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(
     day.toLocaleDateString(locale, {
       weekday: 'long',
       year: 'numeric',
