@@ -1,4 +1,4 @@
-import { newsletterId, password, server, username, subjectLengthLimit } from './config.mjs'
+import { newsletterId, newsletterDelay, password, server, username, subjectLengthLimit } from './config.mjs'
 import { Story } from './type.mjs'
 import {
   LOCAL_ADVERTISE_FIRST,
@@ -25,7 +25,9 @@ export const createDocHead = (locale: string, title: string, day = new Date()) =
   return `<head>
   <meta property="og:title" content="${title.replaceAll('"', "'")}" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=${encodeURIComponent(title)}&subheading=${encodeURIComponent(
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=${encodeURIComponent(
+    title
+  )}&subheading=${encodeURIComponent(
     day.toLocaleDateString(locale, {
       weekday: 'long',
       year: 'numeric',
@@ -49,11 +51,8 @@ const createFooter = (locale: string) => {
 }
 
 const createCampaign = async (locale: string, stories: Story[]) => {
-  const timeToSend = new Date()
-  timeToSend.setHours(timeToSend.getHours() + 1)
-  timeToSend.setMinutes(newsletterId[locale])
-  timeToSend.setSeconds(0)
-  timeToSend.setMilliseconds(0)
+  const ONE_MINUTE = 60 * 1000
+  const timeToSend = new Date(new Date().getTime() + ONE_MINUTE * newsletterDelay[locale])
 
   const subject =
     `🗞️ ${stories[0].title}`.length <= subjectLengthLimit
