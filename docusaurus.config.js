@@ -158,6 +158,10 @@ const config = {
             to: getMostRecentNewsLink(),
           },
           {
+            label: 'Free Starbucks ☕',
+            href: 'https://go.cho.sh/hn-cho-sh-bring-a-friend',
+          },
+          {
             type: 'localeDropdown',
             position: 'right',
           },
