@@ -44,7 +44,7 @@ const createHeader = (locale: string) => {
     <img src="https://github.com/anaclumos/heimdall/assets/31657298/397a222c-dcb9-41ce-b14c-da2c0849083b" alt="sponsor" width="150"/>
   </a>\n\n
   
-  [${LOCAL_STARBUCKS}](https://go.cho.sh/hn-cho-sh-bring-a-friend@TrackLink)\n\n
+  [${LOCAL_STARBUCKS[locale]}](https://go.cho.sh/hn-cho-sh-bring-a-friend@TrackLink)\n\n
   `
 }
 
@@ -54,7 +54,7 @@ const createFooter = (locale: string) => {
 
 const createCampaign = async (locale: string, stories: Story[]) => {
   const ONE_MINUTE = 60 * 1000
-  const timeToSend = new Date(new Date().getTime() + ONE_MINUTE * newsletterDelay[locale])
+  const timeToSend = new Date(new Date().getTime() + ONE_MINUTE * newsletterDelay[locale] + ONE_MINUTE * 30)
 
   const subject =
     `🗞️ ${stories[0].title}`.length <= subjectLengthLimit
