@@ -5,8 +5,9 @@ import fs from 'fs'
 
 const main = async () => {
   const strings = {
-    'Heimdall: Hacker News Summary': {
-      message: 'Heimdall: Hacker News Summary',
+    'item.label.Free Starbucks ☕': {
+      message: 'Free Starbucks ☕',
+      description: 'Navbar item with label Free Starbucks ☕',
     },
   }
 
@@ -28,6 +29,7 @@ const main = async () => {
 
   await Promise.all(
     Object.keys(translatedMap).map(async (locale) => {
+      // const path = `i18n/${locale}/docusaurus-theme-classic/navbar.json`
       const path = `i18n/${locale}/code.json`
       // we must append to the file, not overwrite it
       const json = JSON.parse(fs.readFileSync(path, 'utf8'))
