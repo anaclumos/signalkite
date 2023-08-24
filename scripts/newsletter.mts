@@ -4,10 +4,9 @@ import {
   LOCAL_ADVERTISE_FIRST,
   LOCAL_ADVERTISE_SECOND,
   LOCAL_CONTACT,
-  LOCAL_FEEDBACK,
+  LOCAL_STARBUCKS,
   LOCAL_REACTIONS,
   LOCAL_TODAYS_HN,
-  LOCAL_SHARE,
   LOCAL_HACKERNEWS_SUMMARY,
 } from './default.mjs'
 import { LinguineCore, LinguineList } from './linguine.mjs'
@@ -43,7 +42,10 @@ export const createDocHead = (locale: string, title: string, day = new Date()) =
 const createHeader = (locale: string) => {
   return `<a href="https://airtable.com/appLfbX7pNQxpBx00/shrfpPSEbLVSXz4r7" target="_blank" rel="noopener noreferrer">
     <img src="https://github.com/anaclumos/heimdall/assets/31657298/397a222c-dcb9-41ce-b14c-da2c0849083b" alt="sponsor" width="150"/>
-  </a>\n\n`
+  </a>\n\n
+  
+  [${LOCAL_STARBUCKS}](https://go.cho.sh/hn-cho-sh-bring-a-friend@TrackLink)\n\n
+  `
 }
 
 const createFooter = (locale: string) => {
