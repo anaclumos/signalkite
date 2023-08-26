@@ -1,14 +1,6 @@
 import { newsletterId, newsletterDelay, password, server, username, subjectLengthLimit } from './config.mjs'
 import { Story } from './type.mjs'
-import {
-  LOCAL_ADVERTISE_FIRST,
-  LOCAL_ADVERTISE_SECOND,
-  LOCAL_CONTACT,
-  LOCAL_STARBUCKS,
-  LOCAL_REACTIONS,
-  LOCAL_TODAYS_HN,
-  LOCAL_HACKERNEWS_SUMMARY,
-} from './default.mjs'
+import { LOCAL_STARBUCKS, LOCAL_REACTIONS, LOCAL_TODAYS_HN, LOCAL_HACKERNEWS_SUMMARY } from './default.mjs'
 import { LinguineCore, LinguineList } from './linguine.mjs'
 import { log } from './util.mjs'
 
@@ -39,12 +31,8 @@ export const createDocHead = (locale: string, title: string, day = new Date()) =
 </head>`
 }
 
-const createHeader = (locale: string) => {
-  return `[${LOCAL_STARBUCKS[locale]}](https://go.cho.sh/hn-cho-sh-bring-a-friend@TrackLink)\n\n`
-}
-
 const createFooter = (locale: string) => {
-  return `---\n\n- ${LOCAL_ADVERTISE_FIRST[locale]}\n- ${LOCAL_ADVERTISE_SECOND[locale]}\n- ${LOCAL_CONTACT[locale]}`
+  return `---\n\n[${LOCAL_STARBUCKS[locale]}](https://go.cho.sh/hn-cho-sh-bring-a-friend@TrackLink)\n\n`
 }
 
 const createCampaign = async (locale: string, stories: Story[]) => {
@@ -69,8 +57,8 @@ const createCampaign = async (locale: string, stories: Story[]) => {
         subject: subject,
         type: 'regular',
         content_type: 'markdown',
-        body: createHeader(locale) + createContent(locale, stories, true) + createFooter(locale),
-        altbody: createHeader(locale) + createContent(locale, stories, true) + createFooter(locale),
+        body: createContent(locale, stories, true) + createFooter(locale),
+        altbody: createContent(locale, stories, true) + createFooter(locale),
         from_email: `${LOCAL_TODAYS_HN[locale]} <hello@newsletters.cho.sh>`,
         lists: [newsletterId[locale]],
         send_at: timeToSend.toISOString(),
