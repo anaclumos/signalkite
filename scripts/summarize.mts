@@ -11,7 +11,7 @@ export const createBulletPointSummary = async (rawText, title) => {
   // for summarizing and context generating
   const model = new OpenAI({ modelName: 'gpt-3.5-turbo-16k' })
   // for generating the actual chat
-  const chat = new ChatOpenAI({ modelName: 'gpt-3.5-turbo' })
+  const chat = new ChatOpenAI({ modelName: 'gpt-4' })
 
   const chain = loadSummarizationChain(model, { type: 'map_reduce' })
   try {
