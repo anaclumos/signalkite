@@ -1,10 +1,14 @@
-# Heimdall 🔭 summarizes Hacker News in your language.
+<h1 align="center">
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fanaclumos%2Fheimdall.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fanaclumos%2Fheimdall?ref=badge_shield) [![news](https://github.com/anaclumos/heimdall/actions/workflows/news.yaml/badge.svg)](https://github.com/anaclumos/heimdall/actions/workflows/news.yaml)
+Heimdall
 
-That's more than 5B people covered around the world!
+</h1>
 
 <div align="center">
+
+summarizes HN in 30 Languages 💬
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fanaclumos%2Fheimdall.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fanaclumos%2Fheimdall?ref=badge_shield) [![news](https://github.com/anaclumos/heimdall/actions/workflows/news.yaml/badge.svg)](https://github.com/anaclumos/heimdall/actions/workflows/news.yaml)
   
 [العربية](https://hn.cho.sh/ar)
 [বাংলা](https://hn.cho.sh/bn)
