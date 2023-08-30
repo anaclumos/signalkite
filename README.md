@@ -9,7 +9,7 @@ Heimdall
 summarizes HN in 30 Languages 💬
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fanaclumos%2Fheimdall.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fanaclumos%2Fheimdall?ref=badge_shield) [![news](https://github.com/anaclumos/heimdall/actions/workflows/news.yaml/badge.svg)](https://github.com/anaclumos/heimdall/actions/workflows/news.yaml)
-  
+
 [العربية](https://hn.cho.sh/ar)
 [বাংলা](https://hn.cho.sh/bn)
 [Čeština](https://hn.cho.sh/cs)
