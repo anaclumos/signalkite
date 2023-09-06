@@ -103,6 +103,16 @@ const main = async () => {
     log(`🤟 Translating\t${locale}`, 'info')
   }
 
+  // Ensure that the title and summary are sanitized
+  stories = stories.map((s) => {
+    return {
+      ...s,
+      title: sanitize(s.title),
+      originSummary: s.originSummary.map((s) => sanitize(s)),
+      commentSummary: s.commentSummary.map((s) => sanitize(s)),
+    }
+  })
+
   for (let i = 0; i < LinguineList.length; i++) {
     const locale = LinguineList[i]
     fs.writeFileSync(`./records/${day}/${day}.${locale}.json`, JSON.stringify(localeStories[locale], null, 2) + '\n')
