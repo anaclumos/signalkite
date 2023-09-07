@@ -42,3 +42,9 @@ summarizes HN in 30 Languages 💬
 [繁體中文](https://hn.cho.sh/zh-Hant)
 
 </div>
+
+<div align="center">
+
+![Repobeats analytics image](https://repobeats.axiom.co/api/embed/a1c452e1ca6a2929a1bdea415fdd28a7b7dfb3e9.svg)
+
+</div>
