@@ -10,14 +10,13 @@ export const sanitize = (text: string) => {
   if (!text) return ''
   if (text === 'error') return ''
 
-
   if (text === "'") return ''
-  if (text === '\'') return ''
+  if (text === "'") return ''
   if (text === "''") return ''
-  if (text === '\'\'') return ''
+  if (text === "''") return ''
   if (text === '"') return ''
   if (text === '""') return ''
-  if (text === '\"\"') return ''
+  if (text === '""') return ''
   if (text.length < 5) return ''
 
   return text
