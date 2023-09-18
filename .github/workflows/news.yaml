@@ -15,14 +15,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-      - name: Run install
-        uses: borales/actions-yarn@v4
+      - uses: pnpm/action-setup@v2
         with:
-          cmd: install
+          version: 8
+      - name: Install dependencies
+        run: pnpm install
       - name: Update News
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: worker
+        run: pnpm run worker
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           DEEPL_API_KEY: ${{secrets.DEEPL_API_KEY}}
@@ -34,9 +33,7 @@ jobs:
           NEWSLETTERS_CHO_SH_USERNAME: ${{secrets.NEWSLETTERS_CHO_SH_USERNAME}}
           NEWSLETTERS_CHO_SH_PASSWORD: ${{secrets.NEWSLETTERS_CHO_SH_PASSWORD}}
       - name: Run Prettier
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: format
+        run: pnpm run format
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
