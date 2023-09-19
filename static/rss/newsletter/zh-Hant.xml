@@ -1,10 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss
-  xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:content="http://purl.org/rss/1.0/modules/content/"
-  xmlns:atom="http://www.w3.org/2005/Atom"
-  version="2.0"
->
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title><![CDATA[海姆達爾]]></title>
         <description><![CDATA[海姆達爾]]></description>
@@ -15,16 +9,263 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 18 Sep 2023 14:11:43 GMT</lastBuildDate>
-        <atom:link href="https://hn.cho.sh/rss/newsletter/zh-Hant.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Mon, 18 Sep 2023 00:00:00 GMT</pubDate>
+        <lastBuildDate>Tue, 19 Sep 2023 10:39:42 GMT</lastBuildDate>
+        <atom:link href="https://hn.cho.sh/rss/newsletter/zh-Hant.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Tue, 19 Sep 2023 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[zh-Hant]]></language>
         <ttl>60</ttl>
         <item>
+            <title><![CDATA[2023-09-19]]></title>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/19">2023-09-19</a></h1>
+<h2><a href="https://www.wiz.io/blog/38-terabytes-of-private-data-accidentally-exposed-by-microsoft-ai-researchers">Microsoft AI研究人員意外暴露的數據</a></h2>
+<ul>
+<li>由於共用訪問簽名 （SAS） 令牌配置錯誤，Microsoft 的 AI 研究人員無意中暴露了 38 TB 的私有數據，包括備份、密碼和消息。</li>
+<li>這一事件突顯了在人工智慧專案中管理大量訓練數據可能產生的安全風險，特別是考慮到Microsoft缺乏集中的方式來管理這些代幣。</li>
+<li>該帖子建議使用替代方法進行外部數據共用，並在AI開發中優先考慮雲安全性。建議使用 FortiGate 下一代防火牆 （NGFW） 和 Wiz 等解決方案來監控和保護雲環境。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37556605">反應</a></h3>
+<ul>
+<li>討論涵蓋了網路安全的各種元素，包括 AI 模型中對安全序列化方法的要求、全面滲透測試的重要性以及對 Azure 安全措施的擔憂。</li>
+<li>其他討論主題包括使用過時技術的風險，尤其是在處理 NAS 設備時，強調了持續升級和更新的必要性。</li>
+<li>加密和數據洩露仍然是緊迫的主題，引起了人們對管理大量數據的複雜性的關注，從而加強了數據保護的關鍵作用。</li>
+</ul>
+<h2><a href="https://github.com/hyperdxio/hyperdx">HyperDX – 開源開發友好的數據狗替代品</a></h2>
+<ul>
+<li>HyperDX 是一個平臺，使用戶能夠在一個位置搜索和關聯不同類型的數據，例如日誌、跟蹤、指標和會話重播，從而覆蓋當前工具的限制。</li>
+<li>該工具利用OpenTelemetry繪製和關聯數據，利用Clickhouse進行經濟高效的存儲和高效的查詢處理。</li>
+<li>該平台強調直觀的開發人員體驗，其功能包括本機 JSON 日誌解析和輕鬆創建警報。存在用於使用者探索和反饋的演示和開源選項。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37558357">反應</a></h3>
+<ul>
+<li>HyperDX 是 Datadog 的開源替代方案，提供整合的日誌、跟蹤、指標和會話重放。它使用OpenTelemetry進行數據收集，使用Clickhouse進行高效查詢和低存儲成本。</li>
+<li>該平臺旨在提供流暢的開發人員體驗，提供市場差異化，具有擴展數據攝取、監控工具之間的比較評估以及展示自託管平台的優勢。</li>
+<li>這篇文章討論了礦工的默認統計數據，與systemd journalctl的集成，開放核心和SaaS模型的融合，以及端到端日誌記錄對診斷問題的重要性等問題。</li>
+</ul>
+<h2><a href="https://tailscale.com/blog/apple-tv/">Apple TV，現在具有更多尾鱗</a></h2>
+<ul>
+<li>Tailscale是一個用於創建安全網路的平臺，由於引入了tvOS 17，現在可以與Apple TV相容，這使得Apple TV能夠集成到使用者的Tailscale網路中。</li>
+<li>這種集成的功能包括安全的媒體共用和流媒體，以及使用Tailscale的Apple TV應用程式重新路由流量以獲得額外的隱私，並在旅行期間訪問地理封鎖的頻道。</li>
+<li>Apple TV還可以作為Tailscale網路中的出口節點，允許用戶通過家庭互聯網連接路由流量，即使他們不在家。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37560787">反應</a></h3>
+<ul>
+<li>虛擬專用網路（VPN）軟體Tailscale現在為Apple TV提供支援，使其能夠充當網路中其他設備的出口節點。</li>
+<li>使用者討論強調了 Tailscale 的優勢，例如存取遠端機器、繞過地理位置限制以及啟用流媒體服務共用。</li>
+<li>Tailscale 成功地為一系列使用場景提供了安全、無縫的網路，包括遠端伺服器訪問和繞過流媒體位置限制。一些使用者表示希望Tailscale與LG TV和Android等其他設備相容。</li>
+</ul>
+<h2><a href="http://www.cypherspace.org/adam/hacks/lotus-nsa-key.html">來自Lotus-Notes的NSA後門鑰匙（1997）</a></h2>
+<ul>
+<li>本文討論了 Lotus Notes 匯出版本中存在名為「差分加密」的後門功能，該功能使 NSA 能夠通過暴力破解部分加密密鑰來訪問加密數據。</li>
+<li>作者對國家安全局的公鑰進行了逆向工程，發現它帶有組織名稱“MiniTruth”和通用名稱“老大哥”，讓人想起喬治·奧威爾小說《1984》中的極權主義政權。</li>
+<li>該文本還提供了原始公鑰模數和 NSA 公鑰的格式化再現。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37554504">反應</a></h3>
+<ul>
+<li>討論圍繞加密方面展開，強調了NSA在Lotus-Notes軟體中使用“後門密鑰”以及在此期間對穩健加密的限制。</li>
+<li>它調查了與Intel ME相關的漏洞和風險，Let&#39;s Encrypt使用的ACME協議的安全性以及美國情報機構涉嫌侵犯人權的行為。</li>
+<li>總體而言，該帖子強調了與加密和隱私有關的難題和擔憂。</li>
+</ul>
+<h2><a href="https://www.technologynetworks.com/applied-sciences/news/replanting-logged-forests-with-diverse-mixtures-of-seedlings-accelerates-restoration-378916">用各種幼苗重新種植砍伐的森林加速恢復</a></h2>
+<ul>
+<li>牛津大學東南亞雨林研究夥伴關係的一項研究發現，重新種植採伐的森林，種植不同的幼苗可以加速它們的恢復。</li>
+<li>該研究評估了被砍伐的熱帶森林中的125個地塊，發現與物種較少的地塊相比，重新種植16種本地樹種的地塊恢復更快。</li>
+<li>生物多樣性的增加導致生態系統功能和穩定性的提高，因為不同的物種佔據不同的生態位。這種森林恢復戰略對於生物多樣性維護和氣候保護工作至關重要。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37556025">反應</a></h3>
+<ul>
+<li>該摘要強調了不同幼苗在恢復被砍伐的森林方面的作用，有助於生態系統的復原力，並減輕降雨量減少和昆蟲損害的影響。</li>
+<li>它回顧了關於保護原始森林以獲得經濟收益和在森林管理中使用除草劑的辯論，同時促進具有本地幼苗的多樣化森林以增強生物多樣性。</li>
+<li>該論述揭示了氣候變化對森林生長的影響、非法木材採伐問題以及宮脅法和種子庫等成功的重新造林方法。</li>
+</ul>
+<h2><a href="https://www.cnbc.com/2023/09/15/striking-uaw-auto-workers-want-a-40percent-pay-increase-how-much-they-make-now.html">罷工的汽車工人希望加薪40%——與CEO的加薪速度相同</a></h2>
+<ul>
+<li>福特，通用汽車和Stellantis的聯合汽車工人（UAW）成員在未能與公司就工人賠償達成一致后發起了罷工。</li>
+<li>UAW希望在四年內實現40%的時薪增長。他們聲稱，雖然汽車公司的利潤從2013年到2022年增長了92%，但工人並沒有按比例受益。</li>
+<li>罷工旨在廢除薪酬等級和提高工作場所安全性，有可能停止主要工廠的活動，並可能根據談判結果擴大。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37563231">反應</a></h3>
+<ul>
+<li>該文本討論了與首席執行官薪酬、工人薪酬、工會和公司內部權力動態相關的一系列主題。</li>
+<li>關注的領域包括收入不平等、首席執行官的角色和壓力水準、工人罷工的影響以及圍繞財富分配和資金分配的問題。</li>
+<li>這些討論的特點是相互矛盾的意見，強調了圍繞這些主題的複雜性和不同觀點。</li>
+</ul>
+<h2><a href="https://alic.dev/blog/dense-enums">Zig中的記憶體高效枚舉陣列</a></h2>
+<ul>
+<li>這篇博客文章討論了 Rust 中的記憶體碎片問題，因為需要為 enum 陣列中的最大變體分配足夠的空間。</li>
+<li>作者提到了減少碎片的方法，如數位結構方法和變體數位列數位方法，特別是在編譯器和 AST（抽象語法樹）的上下文中。</li>
+<li>Zig 的記憶體高效數據結構相對於 Rust 的優勢得到了強調，包括執行簡潔轉換的能力以及在編譯時設置索引位寬以提高記憶體效率的潛力。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37555028">反應</a></h3>
+<ul>
+<li>對話的重點是Zig，Rust和C++等程式設計語言，討論從記憶體高效數位到圖靈完備性，comptime類型和記憶體安全的主題。</li>
+<li>參與者將研究這些語言對各種應用程式的適用性、挑戰和成熟度，以及它們的優缺點。</li>
+<li>討論強調了語言採用、開發人員體驗以及程式設計中不同方法和方法之間的權衡的重要性。</li>
+</ul>
+<h2><a href="https://journals.sagepub.com/doi/10.1177/0963721420917687">大腦不是裡面有小爬行動物的洋蔥 （2020）</a></h2>
+<ul>
+<li>這篇文章駁斥了心理學中的普遍理解，即大腦的進化是由於通過覆蓋舊結構的額外新結構而增加的複雜性，這種觀點現在被神經生物學家所否定。</li>
+<li>作者強調，這種誤解可能阻礙了該領域的進展，強調需要正確理解神經進化，以防止研究偏差並確定跨物種相關性。</li>
+<li>該摘要還強調了跨學科研究在衝動性、抑制和延遲滿足等領域的重要性，並否定了人類具有與特定認知功能相關的獨特神經結構的觀點。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37555118">反應</a></h3>
+<ul>
+<li>這篇文章批判性地評估了三位一體的大腦模型，認為它過於簡單，沒有精確地描繪大腦進化的複雜性。</li>
+<li>文章強調了大腦和身體之間的相互作用，被忽視的大腦區域的重要性，以及簡化複雜科學思想所固有的問題。</li>
+<li>這篇文章還深入研究了心理學作為一門科學的局限性和障礙，特別是關於該學科內研究的可信度和可靠性。</li>
+</ul>
+<h2><a href="https://www.techdirt.com/2023/09/18/ftc-warns-pharma-companies-that-it-may-go-after-them-for-sham-patent-listings-designed-to-delay-generic-competitors/">聯邦貿易委員會警告製藥公司關於旨在延遲仿製葯的虛假專利清單</a></h2>
+<ul>
+<li>聯邦貿易委員會（FTC）已向製藥公司發出警告，不要在FDA的橙皮書中錯誤地列出藥物，以抵禦仿製葯競爭並保持高價格。</li>
+<li>聯邦貿易委員會將徹底審查不適當的橙皮書清單，以識別不公平競爭和潛在的非法壟斷。</li>
+<li>對製藥公司的問責制和審查程式不足的批評已經表達，突顯了該行業更廣泛的擔憂。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37561696">反應</a></h3>
+<ul>
+<li>聯邦貿易委員會警告製藥公司不要使用虛假的專利清單來阻礙仿製葯進入市場，這種做法扼殺了競爭並保持產品獨佔性。</li>
+<li>專利在藥品獲取和定價方面的爭議作用是焦點討論，導致呼籲對專利制度進行根本性改革，更嚴格的監管，潛在的國會行動以及對反競爭行為的嚴厲懲罰。</li>
+<li>有關於FDA等監管機構的作用的討論，並強調了Lina Khan的任命，推測她對解決製藥行業專利問題的潛在影響。</li>
+</ul>
+<h2><a href="https://www.kalzumeus.com/2018/10/19/japanese-hometown-tax/">日本的家鄉稅 （2018）</a></h2>
+<ul>
+<li>Furusato Nouzei是一項日本稅收政策，允許納稅人將其部分居住稅捐贈給任何選定的城市或縣以獲得稅收抵免。</li>
+<li>該系統最初旨在縮小經濟差距並促進與家鄉的聯繫，現已演變成一個競爭激烈的市場，捐助者可以根據提供的禮物或服務選擇家鄉。</li>
+<li>儘管資源重新分配可能效率低下，但該系統的受歡迎程度是由競標戰和在線平台推動的。它是可持續的，並通過加強與僑民的聯繫使城市受益。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37555004">反應</a></h3>
+<ul>
+<li>這篇文章討論了許多主題，如大城市的人才保留、祖父母在育兒方面的影響以及家鄉稅的概念，展示了社會結構的複雜性。</li>
+<li>它深入研究了教會在促進社區聯繫方面的有效性，並將其與政府支出進行了對比，觸及了民主環境中代理的運作。</li>
+<li>這篇文章探討了城鄉差距和政治機會的差異，同時也指出日本的家鄉稅計劃是一種獨特的農村地區融資方法。</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=37554736">谷歌銷毀“ 「功能後如何進行字面網路搜索？</a></h2>
+<ul>
+<li>谷歌最近的更新改變了搜索功能的行為方式，這引起了用戶的不滿。以前功能良好的功能（例如在引號中搜索功能變數名稱）現在會產生次優結果。</li>
+<li>Google現在不再為引號內不匹配的精確搜索提供任何結果，而是返回不相關的內容，這讓依賴此功能的使用者感到沮喪。</li>
+<li>用戶現在正在尋求解決Google內搜索功能更改問題的解決方案或解決方法。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37554736">反應</a></h3>
+<ul>
+<li>用戶表達了他們對谷歌搜索的不滿，引發了對隱私、定向廣告和刪除“完全匹配”功能的擔憂。</li>
+<li>Kagi是一個另類搜尋引擎，因其相關性和無廣告體驗而受到稱讚。辯論主題包括Kagi的功能，它被Google收購的可能性，以及在當地語系化搜索和多語言支援方面的表現。</li>
+<li>用戶還建議將DuckDuckGo作為可行的替代方案，並哀歎Google“逐字”搜索功能的使用量減少。他們正在尋找優先考慮數據隱私、搜索準確性和使用者對數據控制的平臺。</li>
+</ul>
+<h2><a href="https://time.com/6315261/missing-military-f35-jet/">美國軍方要求幫助尋找失蹤的F-35</a></h2>
+<ul>
+<li>在南卡羅來納州發生「事故」後，美國軍方正在尋找一架失蹤的F-35戰鬥機，由於飛機的隱身能力，要求公眾協助搜索。</li>
+<li>噴氣式飛機的飛行員安全彈射，表明該事件沒有造成人員傷亡。</li>
+<li>值得注意的是，這不是F-35第一次捲入墜機或技術問題等事件，這是美國歷史上最昂貴的武器計劃的一部分。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37555172">反應</a></h3>
+<ul>
+<li>正如駭客新聞所討論的那樣，美國軍方正在尋求幫助尋找一架失蹤的F-35飛機。</li>
+<li>論壇上的討論包括關於新聞來源可信度的辯論。</li>
+<li>還有評論涉及發佈時間的問題。</li>
+</ul>
+<h2><a href="https://www.kdpcommunity.com/s/article/Update-on-KDP-Title-Creation-Limits?language=en_US&forum=KDP%20Forum">有關 KDP 標題創建限制的更新</a></h2>
+<ul>
+<li>Kindle直接出版（KDP）分享了一項更新，稱他們將減少新標題創作的數量限制，以防止濫用。</li>
+<li>此更改僅影響少數發佈商，這些發佈商將收到通知並可以選擇申請豁免。</li>
+<li>KDP強調有必要遵循其內容準則，並承諾在行動中優先考慮作者，出版商和讀者的利益。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37561668">反應</a></h3>
+<ul>
+<li>討論的焦點是針對亞馬遜的批評，即亞馬遜允許人工智慧生成的低品質書籍和虛假評論使其平台飽和，這可能會誤導科技領域的新來者。</li>
+<li>關於解決方案的意見各不相同，一些人強調需要精心策劃的內容，另一些人則強調多樣性的重要性，並討論了亞馬遜監管措施的有效性，包括要求作者聲明內容是否是人工智慧生成的。</li>
+<li>這次對話反映了關於人工智慧在各個領域的作用、可信來源的必要性以及對積極消費者保護措施的呼籲的更廣泛辯論。</li>
+</ul>
+<h2><a href="https://www.wcnews.com/news/update/16279">流言終結者：聯隊指揮官 I 版</a></h2>
+<ul>
+<li>本文深入探討了一個流行的遊戲社區故事的起源和可信度，該故事講述了原始 Wing Commander 遊戲中的程式師。</li>
+<li>據報導，程式師使用駭客在遊戲遇到錯誤時顯示幽默消息。</li>
+<li>人們發現，儘管故事部分準確，並得到了遊戲首席程式師的證實，但幽默的信息並沒有按照敘述顯示在遊戲中。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37564217">反應</a></h3>
+<ul>
+<li>這篇文章挑戰了關於遊戲《機翼指揮官 I》中隱藏關卡選擇螢幕的神話，最初被認為是一個復活節彩蛋。</li>
+<li>實際上，它是由遊戲創建者開發的自定義崩潰處理程式，用於規避由於世嘉質量保證（QA）團隊可能拒絕而導致發佈中的潛在延遲。</li>
+<li>本文進一步探討了QA在遊戲開發中的作用，並評估了與視頻遊戲相關的記憶的可靠性。</li>
+</ul>
+<h2><a href="https://www.electrospaces.net/2023/09/some-new-snippets-from-snowden-documents.html">斯諾登檔中的一些新片段</a></h2>
+<ul>
+<li>這篇文章概述了雅各·阿佩爾鮑姆（Jacob Appelbaum）的博士論文，揭示了斯諾登檔中關於國家安全局協定安全破壞和干擾合法攔截系統的見解。</li>
+<li>這篇文章糾正了論文中提出的關於國家安全局行動和監視的誤解，敦促在學術出版物中制定更精確的標準。</li>
+<li>它還提供了有關美國國防紅色開關網路的詳細資訊，並啟發了美國政府和武裝部隊使用的顏色代碼，從非機密或公開來源中提取數據。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37562225">反應</a></h3>
+<ul>
+<li>該摘要討論了幾個主題，包括政府監控，加密演算法的弱點以及安全協定的潛在操縱，並明確提到了NSA可能篡改協定安全和加密標準。</li>
+<li>它深入研究了與XML簽名驗證和JWT（JSON Web令牌）相關的複雜問題和缺陷，提出了有關加密和政府監控的各種觀點。</li>
+<li>它還涉及有關NSA能力和可能的後門的猜測，最後，引起人們對某個平臺上與DJB人相關的一些爭議和不確定性的關注。</li>
+</ul>
+<h2><a href="https://blogs.windows.com/windows-insider/2023/09/18/paint-app-update-adding-support-for-layers-and-transparency-begins-rolling-out-to-windows-insiders/">Windows上的繪畫正在獲得圖層和透明度支援</a></h2>
+<ul>
+<li>Microsoft正在引入Paint應用程式的更新，可供Windows Insiders使用，其中包括對圖層和透明度的支援。</li>
+<li>此更新允許用戶通過分層形狀、文本和圖像元素來製作更複雜的數字藝術。</li>
+<li>此更新還有助於打開和保存透明 PNG，反饋中心可供使用者提出建議和評論。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37559256">反應</a></h3>
+<ul>
+<li>Microsoft Paint是Windows上的一項功能，正在更新以包含圖層和透明度支援，由於該應用程式以前過時的印象，這讓使用者感到驚訝。</li>
+<li>更新后的計算機應用程式引起了各種反應，批評者引用了性能緩慢和功能缺陷。此外，關於應用程式的價值和性能存在爭議。</li>
+<li>雖然一些用戶贊同逐步改進Paint的功能，但其他人建議探索替代程式。人們對AI圖像生成未來的潛在集成存在預期。</li>
+</ul>
+<h2><a href="https://sampruden.github.io/posts/godot-is-not-the-new-unity/">戈多 API 調用的剖析</a></h2>
+<ul>
+<li>本文比較了 Unity 和 Godot 遊戲引擎，主要關注 API 調用性能以及記憶體使用效率。</li>
+<li>它仔細檢查了Godot中光線投射的性能，提供了代碼示例和基準測試，並提出了記憶體管理和API設計的改進建議。</li>
+<li>作者暗示了潛在的解決方案，例如對 API 進行全面改革，或者可能使用 C# 而不是 GDScript，強調需要增強這些方面以有效地與 Unity 等引擎競爭。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37561762">反應</a></h3>
+<ul>
+<li>討論的重點是Godot遊戲引擎的性能，腳本語言（GDScript和C#），並將其與其他遊戲引擎（如Unity，Unreal和Lumberyard）進行比較。</li>
+<li>有一個積極的批評和支援，提供了對戈多的局限性和增強潛力的見解。</li>
+<li>一些出席者提出了替代遊戲引擎和戈多可以改進的領域。</li>
+</ul>
+<h2><a href="https://mrereports.substack.com/p/your-wifi-can-see-you">您的無線網路可以看到您</a></h2>
+<ul>
+<li>研究人員已經開發出一種利用WiFi信號對室內人類活動進行成像和監測的技術，最近取得了長足的進步，可以實現詳細的2D和3D成像。</li>
+<li>由於潛在的隱私侵犯以及當局或情報機構的潛在濫用，圍繞這項技術存在重大擔憂。</li>
+<li>隨著技術的進步和普及，它可以在個人不知情或同意的情況下對他們進行廣泛的監視。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37564952">反應</a></h3>
+<ul>
+<li>討論強調了未經許可或知情使用WiFi信號進行監控，引發了對隱私權，合法性和可能的濫用的嚴重擔憂。</li>
+<li>與會者強調了隱私的重要性以及防止未經授權的政府監控的必要性。</li>
+<li>進步包括演講中的穿牆監控功能，以及對抗不需要的WiFi信號的方法。</li>
+</ul>
+<h2><a href="https://www.getlago.com/blog/the-4-biggest-problems-with-homemade-billing-systems">自製計費系統的問題</a></h2>
+<ul>
+<li>本文重點介紹了自製B2B新銀行計費系統的四個關鍵問題：頻繁定價更改的要求，可擴展性問題，祖父當前計劃的問題以及對專門計費團隊的需求。</li>
+<li>作者建議不要創建內部計費系統，並強調在開發早期考慮預製解決方案。</li>
+<li>本文以Algolia在內部計費方面的掙扎為例，文章最後強調了儘早選擇計費系統實施的重要性，以避免複雜性和相容性問題。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37555139">反應</a></h3>
+<ul>
+<li>本文介紹了在自定義內部計費系統或現成解決方案之間進行選擇的困境，討論了支援複雜需求和遷移過程的第三方選項的潛在困難。</li>
+<li>它強調了對潛在客戶軟體選擇進行適合差距分析的重要性，並提到了公司由於限制而從定製系統轉向商業ERP（企業資源規劃）系統的趨勢。</li>
+<li>重點是瞭解財務會計軟體的複雜性、供應商鎖定的風險以及構建彈性計費系統的複雜性 - 所有這些都強調了對計費程式的全面瞭解以進行明智決策的必要性。</li>
+</ul>
+<h2><a href="https://utcc.utoronto.ca/~cks/space/blog/sysadmin/UnixShellsNoMoreAccessControl">Unix shell通常不再是可行的訪問控制機制</a></h2>
+<ul>
+<li>Unix shell在現代Unix環境中正在失去其作為訪問控制機制的功效，因為許多服務只關注Unix登錄進行身份驗證，而忽略了登錄的shell。</li>
+<li>身份驗證服務通常無法識別登錄名的shell，從而在限制某些登錄名訪問特定服務方面帶來挑戰。</li>
+<li>可行的解決方案包括加擾登錄名的密碼或從身份驗證數據源中完全排除登錄名。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37554406">反應</a></h3>
+<ul>
+<li>討論主要集中在Unix shell，訪問控制機制，密碼管理，可伸縮性和Unix系統中的取消授權。</li>
+<li>用戶質疑shell在身份驗證和訪問控制方面的功效，提出其他密碼管理和處理可擴充性的方法，並討論在Unix系統中取消使用者授權的複雜性。</li>
+<li>本文闡明瞭各種Unix元件的限制和漏洞，並提出了應對這些挑戰的可能解決方案，概述了Unix/Linux系統使用的複雜性和注意事項。</li>
+</ul>
+]]></description>
+            <link>https://hn.cho.sh/zh/Hant/2023/09/19</link>
+            <guid isPermaLink="false">2023-09-19T00:00:00.000Z</guid>
+            <pubDate>Tue, 19 Sep 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[2023-09-18]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/18">2023-09-18</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/19">2023-09-18</a></h1>
 <h2><a href="https://github.com/CatalaLang/catala">CatalaLang/catala：法律規範的程式設計語言</a></h2>
 <ul>
 <li>Catala是一種新的特定領域語言，可以從法律檔創建演算法，確保代碼和法律之間的高保真度。</li>
@@ -270,8 +511,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-17]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/18">2023-09-17</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/19">2023-09-17</a></h1>
 <h2><a href="https://github.com/jesseduffield/horcrux">魂器：將檔拆分為加密片段</a></h2>
 <ul>
 <li>Horcrux是一個開源工具，可以將檔分解為加密部分，無需使用者調用密碼來保護分散式存儲。</li>
@@ -513,8 +753,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-16]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/18">2023-09-16</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/19">2023-09-16</a></h1>
 <h2><a href="https://csvbase.com/blog/5">我最喜歡的API是歐洲央行網站上的zip檔</a></h2>
 <ul>
 <li>作者詳細介紹了他們利用csvbase（一個基本的網路資料庫）從歐洲中央銀行（ECB）提取和轉換外匯匯率數據的方法。</li>
@@ -762,8 +1001,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-15]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/18">2023-09-15</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/19">2023-09-15</a></h1>
 <h2><a href="https://nothinghuman.substack.com/p/the-tyranny-of-the-marginal-user">邊緣使用者的暴政</a></h2>
 <ul>
 <li>這篇文章批評了消費者軟體的衰落，例如OKCupid等約會應用程式，原因是重點轉向以改善現有用戶體驗為代價來吸引新使用者。</li>
@@ -1011,8 +1249,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-14]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/18">2023-09-14</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/19">2023-09-14</a></h1>
 <h2><a href="https://mullvad.net/en/blog/2023/9/13/bug-in-macos-14-sonoma-prevents-our-app-from-working/">macOS 14 索諾瑪中的錯誤阻止我們的應用程式運行</a></h2>
 <ul>
 <li>Mullvad VPN 應用程式當前遇到與macOS 14 索諾瑪的相容性問題，因為防火牆錯誤會破壞正確的流量過濾。</li>
@@ -1259,8 +1496,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-13]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/18">2023-09-13</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/19">2023-09-13</a></h1>
 <h2><a href="https://news.ycombinator.com/item?id=37484135">微調您自己的 Llama 2 以替換 GPT-3.5/4</a></h2>
 <ul>
 <li>作者討論了微調開源LLM（語言學習模型）的實用性和好處，這涉及在特定任務上訓練預先存在的模型，從而實現更可控的模型性能。</li>
@@ -1508,8 +1744,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-12]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/18">2023-09-12</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/19">2023-09-12</a></h1>
 <h2><a href="https://marhamilresearch4.blob.core.windows.net/gutenberg-public/Website/index.html">古騰堡計劃開放有聲讀物收藏</a></h2>
 <ul>
 <li>古騰堡專案和Microsoft正在合作開發大量使用先進的神經文本轉語音技術的免費開放有聲讀物。</li>
@@ -1755,8 +1990,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-11]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/18">2023-09-11</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/19">2023-09-11</a></h1>
 <h2><a href="https://www.ctrl.blog/entry/windows-system-components-default-edge.html">Microsoft並沒有停止在Windows 11用戶上強制使用Edge。</a></h2>
 <ul>
 <li>Windows 11 中的預設網路瀏覽器設置保持不變，儘管在一篇博客文章中聲稱Microsoft會考慮使用者的瀏覽器偏好。</li>
@@ -1999,8 +2233,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-10]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/18">2023-09-10</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/19">2023-09-10</a></h1>
 <h2><a href="https://benchmarks.llmonitor.com">問60個LLM一組20個問題</a></h2>
 <ul>
 <li>該人開發了一個腳本，旨在測試60多個模型的基本推理，指令遵循和創造力。</li>
@@ -2125,135 +2358,6 @@
             <link>https://hn.cho.sh/zh/Hant/2023/09/10</link>
             <guid isPermaLink="false">2023-09-10T00:00:00.000Z</guid>
             <pubDate>Sun, 10 Sep 2023 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2023-09-09]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/09/18">2023-09-09</a></h1>
-<h2><a href="https://bun.sh/blog/bun-v1.0">包子 v1.0.0</a></h2>
-<ul>
-<li>Bun 1.0 是一個工具包，旨在簡化 JavaScript 和 TypeScript 開發，取代多個工具並提供與現有 Node.js 應用程式的相容性。</li>
-<li>它帶有TypeScript，JSX支援和內置的Web API，使其成為一個功能強大的JavaScript運行時，據報導每秒可以處理比Node.js更多的請求。</li>
-<li>其他功能包括 WebSockets 支援和包管理。開發Bun 1.0的公司位於三藩市，目前正在招聘員工。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37434117">反應</a></h3>
-<ul>
-<li>討論集中在 Bun 上，這是 Node.js 生態系統中的一個工具，它同時支援 CommonJS 和 ES 模組，用戶強調了優點和缺點。</li>
-<li>對話還闡明瞭使用 Discord 和 GitHub 作為開源專案的交流平臺。</li>
-<li>將Bun工具與Deno和Vite等其他工具進行比較，對其穩定性和許可提出了其他擔憂。</li>
-</ul>
-<h2><a href="https://bitbashing.io/async-rust.html">也許 Rust 不是大規模併發使用者空間軟體的好工具</a></h2>
-<ul>
-<li>作者闡明瞭Async Rust的目的，Async Rust是一種專注於現代併發的程式設計語言，區分並行性和併發性，並概述了代碼拆分的局限性。</li>
-<li>由於競爭條件和死鎖的風險，基於互斥的併發被認為是有害的;因此，建議使用通道或佇列進行線程間通信。但是，對於高級併發問題，線程可能不夠用，這促使 Rust 的“異步/等待”模型。</li>
-<li>儘管有這些優點，但 Async Rust 仍存在挑戰，例如確保編譯器對對對象的安全性和 Arc（原子引用計數）的普遍使用。Rust 的大規模併發使用者空間軟體應用程式的適用性仍然值得懷疑。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37435515">反應</a></h3>
-<ul>
-<li>該演講涵蓋了圍繞 Rust 程式設計的各種主題，例如記憶體安全、併發性、圖形開發、生產力和記憶體管理。</li>
-<li>參與者的分享經驗闡明瞭使用 Rust 的優勢和挑戰，以及它在各種用例中的適用性。</li>
-<li>該交互還提供了與其他語言（如 Python 和 Go）的比較，並討論了繼承和抽象等多種程式設計概念，提供了對 Rust 的優勢、劣勢和不斷增強努力的看法。</li>
-</ul>
-<h2><a href="https://mtlynch.io/aardvarkd/">Aardvark&#39;d： The Fog Creek紀錄片，18年後</a></h2>
-<ul>
-<li>該帖子分析了紀錄片「Aardvark』d“，該紀錄片跟蹤了Fog Creek Software的實習生，並包括對有成就的科技行業人士的採訪。</li>
-<li>它側重於2005年獨立軟體開發的狀態，包括Y Combinator的基礎和Reddit的創始。</li>
-<li>它批評了電影缺乏解析度，突出了關於改進軟體創作的視頻課程的發佈，並提供了紀錄片和YouTube課程的連結。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37433186">反應</a></h3>
-<ul>
-<li>這篇文章對Fog Creek的紀錄片“Aardvark&#39;d”進行了詳細的評論，提供了電影參與者的更正和補充背景。</li>
-<li>它探討了多個主題，例如Fog Creek Software的歷史，與產品相關的挑戰和勝利，以及從波士頓搬遷到矽谷。</li>
-<li>討論的很大一部分圍繞著 Atlassian JIRA 的廣泛使用以及軟體開發中功能規範的流行，提供了對技術演變的懷舊視角。</li>
-</ul>
-<h2><a href="https://procreate.com/dreams">生育夢想</a></h2>
-<ul>
-<li>Procreate Dreams是一款新推出的動畫應用程式，旨在創建手繪動畫，動態圖形等。</li>
-<li>該應用程式具有多種工具，例如繪圖，繪畫，音訊和視頻編輯，舞臺創建，實時動畫和效果，關鍵幀，即時渲染，洋蔥皮以及文本和文字動畫。</li>
-<li>該應用程式與iPad和Apple Pencil相容，將於11月22日起以19.99美元的價格出售。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37434918">反應</a></h3>
-<ul>
-<li>Procreate 應用程式以其品質和可負擔性而聞名，推出其 Procreate 5X 版本讓用戶興奮不已，引入了新的動畫功能。</li>
-<li>即將推出的Procreate動畫應用程式Dreams引起了不同的反應，一些使用者表現出熱情，而另一些使用者則質疑廣告的必要性。</li>
-<li>在對iPad應用程式的積極反饋中，關於Procreate在Android平板電腦上的潛在發展的討論已經浮出水面。</li>
-</ul>
-<h2><a href="https://growth.design/case-studies/apple-privacy-policy">蘋果與元：隱私的幻覺</a></h2>
-<ul>
-<li>本文調查了蘋果和元維琪以提供隱私為幌子收集用戶數據的策略。</li>
-<li>它深入研究了心理學和用戶體驗（UX）技術在數據收集策略中的作用。</li>
-<li>雖然這些公司聲稱保護用戶隱私，但他們的基本方法可能與這些保證相矛盾。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37433495">反應</a></h3>
-<ul>
-<li>這篇文章提出了圍繞蘋果、Meta（Facebook的新名稱）和谷歌等科技公司的隱私問題，用戶和廣告商對有針對性的廣告和數據收集表示擔憂。</li>
-<li>關於各種科技公司數據實踐的道德影響存在爭議，一些批評針對蘋果對用戶數據的控制，而另一些則讚揚蘋果的隱私措施與其他行業領導者相比。</li>
-<li>對話還涉及面部識別技術和侵入性廣告的使用，強調了所有科技公司對隱私保護和更高透明度的更廣泛需求。</li>
-</ul>
-<h2><a href="https://twitter.com/typesfast/status/1700092765798048093">Flexport正在撤銷一堆簽署的錄取通知書</a></h2>
-<ul>
-<li>商業實體Flexport已經撤回了原定於周一開始工作的工人的工作機會。</li>
-<li>該公司首席執行官里安·彼得森（Ryan Petersen）對這一事件表示遺憾。</li>
-<li>由於招聘過程中遇到的問題，這一決定是必要的。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37433681">反應</a></h3>
-<ul>
-<li>物流公司Flexport因撤回工作機會和停止發佈職位而受到批評，引發了關於其招聘做法和突然離職後果的辯論。</li>
-<li>Hacker News上的話語概括了廣泛的問題，包括勞工權利，雇主忠誠度和裁員的影響，強調了與取消工作機會相關的道德困境。</li>
-<li>該對話還闡明瞭遠端工作的優缺點，引發了在家工作與現場辦公室執行的可行性之間的比較。</li>
-</ul>
-<h2><a href="https://emoji.fly.dev">表情符號生成器與人工智慧</a></h2>
-<ul>
-<li>EmojiGen 是一個託管在 Copy 上的開源表情符號生成器，允許使用者設計和創建自定義表情符號。</li>
-<li>它通過允許使用者在 GitHub 上分叉應用程式來擴展其功能，特別是支援創建獨特的表情符號，例如軟盤三明治、刻錄的 GPU 和各種流行文化圖示。</li>
-<li>用戶可以生成表情符號，下載，然後在Slack等平臺上使用它們，從而培養更加個人化的消息傳遞體驗。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37433523">反應</a></h3>
-<ul>
-<li>這篇文章回顧了一個人工智慧驅動的表情符號生成器，用戶反饋揭示了對偏見和集成到聊天平臺的潛力的擔憂。</li>
-<li>討論還集中在網站服務 Fly.io 上，圍繞可靠性、數據丟失和連接等問題，以及積極的體驗和有競爭力的價格，反饋不一。</li>
-<li>表情符號生成器的局限性，特別是在準確性和偏見方面，引發了關於人工智慧模型創建者在解決這些偏見方面的責任的更廣泛討論。</li>
-</ul>
-<h2><a href="https://www.theverge.com/2023/9/8/23864538/turbotax-intuit-ftc-deceptive-practices-free-tax-filing">FTC法官裁定Intuit的「免費」TurboTax廣告誤導了消費者</a></h2>
-<ul>
-<li>聯邦貿易委員會（FTC）裁定，TurboTax的母公司Intuit通過宣傳其報稅服務“免費”來誤導消費者。</li>
-<li>在 FTC 訴訟後做出裁決並支付 1.41 億美元後，Intuit 現在被要求明確披露任何限制其免費產品供應的條款。</li>
-<li>鑒於在嘗試查找Intuit的實際免費報稅服務「免費報稅」時遇到的困難，國稅局正在開發一項政府支持的免費報稅服務，該服務將在2024年報稅季節進行試點。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37437311">反應</a></h3>
-<ul>
-<li>討論圍繞著使用者對Intuit的TurboTax產品的不滿，因為未公開的費用，欺騙性的促銷和缺乏透明度。</li>
-<li>替代報稅選項，如FreeTaxUSA和Cash App Tax，建議作為更透明和更具成本效益的解決方案。</li>
-<li>遊說影響、稅收制度腐敗、誤導性廣告和制度改革呼籲等話題突出了這些用戶投訴的更大背景，並暗示需要對納稅申報系統進行重大改革。</li>
-</ul>
-<h2><a href="https://www.birmingham.ac.uk/news/2023/bees-struggle-to-find-flowers-because-of-air-pollution">由於空氣污染，蜜蜂難以找到鮮花</a></h2>
-<ul>
-<li>英國生態與水文中心和多所大學的一項新研究表明，空氣污染阻礙了蜜蜂尋找花朵的能力，因為臭氧會降低花朵的香味。</li>
-<li>研究發現，蜜蜂的氣味識別能力降低了90%，這表明對野花豐度和作物產量有潛在的不利影響，因為蜜蜂在對糧食安全至關重要的授粉中起著至關重要的作用。</li>
-<li>該研究還表明，臭氧可能會影響昆蟲的其他氣味影響行為，例如配偶吸引，因此有必要對空氣污染採取行動以保護糧食生產和生物多樣性。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37434381">反應</a></h3>
-<ul>
-<li>據稱，空氣污染導致蜜蜂活動減少和難以找到花朵，導致昆蟲種群減少。其他因素可能包括交通和噪音污染，以及蜜蜂資源的減少。</li>
-<li>一些出席者指出，蜜蜂活動和野生動物有所增加，這可能是由於有利的條件或為培育昆蟲友好環境所做的努力。</li>
-<li>討論指出了污染對蜜蜂對特定植物的吸引力的可能影響，導致蜜蜂適應污染的進化壓力的暗示，以及通過催化轉換器解決車輛污染的創新解決方案。</li>
-</ul>
-<h2><a href="https://maizure.org/projects/decoded-gnu-coreutils/">解碼：GNU Coreutils （2018）</a></h2>
-<ul>
-<li>該報告涵蓋了MaiZure揭開GNU coreutils 8.3版神秘面紗的專案，該專案專為初學者程序師設計。</li>
-<li>本文的主要內容是對已完成階段的概述，並深入探討實用程序的設計和功能，包括有關應用於每個實用程式的解碼框架和流行概念的資訊。</li>
-<li>此外，它還具有對公用事業維護、更新和為專案做出貢獻的流程的見解。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37439535">反應</a></h3>
-<ul>
-<li>討論主要集中在GNU Coreutils中的“yes”命令上，突出了程式效率和簡潔性之間的權衡。</li>
-<li>它強調了在編寫系統實用程式中使用 C 程式設計語言的優勢，因為這種選擇可以提高性能。</li>
-<li>一個值得注意的諷刺是，有時可以在設計為不執行重要任務的程式中找到冗長的代碼。</li>
-</ul>
-]]></description>
-            <link>https://hn.cho.sh/zh/Hant/2023/09/09</link>
-            <guid isPermaLink="false">2023-09-09T00:00:00.000Z</guid>
-            <pubDate>Sat, 09 Sep 2023 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
