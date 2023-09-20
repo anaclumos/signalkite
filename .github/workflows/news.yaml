@@ -20,6 +20,8 @@ jobs:
           version: 8
       - name: Install dependencies
         run: pnpm install
+      - name: Install Playwright
+        run:  pnpm exec playwright install
       - name: Update News
         run: pnpm run worker
         env:
