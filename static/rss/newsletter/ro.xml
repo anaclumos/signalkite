@@ -1,10 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss
-  xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:content="http://purl.org/rss/1.0/modules/content/"
-  xmlns:atom="http://www.w3.org/2005/Atom"
-  version="2.0"
->
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title><![CDATA[Heimdall]]></title>
         <description><![CDATA[Heimdall]]></description>
@@ -15,16 +9,258 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 23 Sep 2023 11:06:35 GMT</lastBuildDate>
-        <atom:link href="https://hn.cho.sh/rss/newsletter/ro.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 23 Sep 2023 00:00:00 GMT</pubDate>
+        <lastBuildDate>Sun, 24 Sep 2023 13:59:57 GMT</lastBuildDate>
+        <atom:link href="https://hn.cho.sh/rss/newsletter/ro.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Sun, 24 Sep 2023 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[ro]]></language>
         <ttl>60</ttl>
         <item>
+            <title><![CDATA[2023-09-24]]></title>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/24">2023-09-24</a></h1>
+<h2><a href="https://www.dominikmayer.com/2023/09/icloud-drive-silently-deletes-your-content/">iCloud Drive îți șterge în tăcere conținutul</a></h2>
+<ul>
+<li>Articolul abordează o problemă cu iCloud Drive, care șterge în liniște conținutul utilizatorilor din cauza unor conflicte de fișiere.</li>
+<li>Autorul se bazează pe experiențele personale de pierdere a unor fișiere vitale și recomandă utilizatorilor să mute datele cruciale din iCloud Drive până la remedierea problemei.</li>
+<li>O strategie de atenuare propusă este configurarea unui depozit Git, un sistem de control al versiunilor, care ajută la urmărirea modificărilor din fișiere și la prevenirea pierderii de date.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37626273">Reacții</a></h3>
+<ul>
+<li>Utilizatorii își exprimă îngrijorarea cu privire la iCloud Drive, semnalând probleme precum ștergerea nejustificată a conținutului și posibile vulnerabilități de securitate.</li>
+<li>Există o dezbatere cu privire la eficiența utilizării funcției Switch Control de la Apple pentru asistență de la distanță, probleme cu software-ul Apple, probleme de sincronizare a datelor cu depozitele git și deficiențe în ceea ce privește criptarea de la un capăt la altul și mecanismele de gestionare a conflictelor.</li>
+<li>Utilizatorii sugerează alternative precum syncthing pentru sincronizarea și stocarea datelor, ceea ce reflectă o nemulțumire generală și un deficit de încredere în iCloud Drive și întărește importanța fiabilității și securității datelor.</li>
+</ul>
+<h2><a href="https://ipfyx.fr/post/visual-studio-code-tunnel/">Blocarea shell-ului inversat încorporat în Visual Studio Code înainte de a fi prea târziu</a></h2>
+<ul>
+<li>Articolul discută riscurile de securitate asociate cu funcția reverse shell din Visual Studio Code de la Microsoft.</li>
+<li>Acesta recomandă utilizarea tehnologiei de blocare a domeniilor și a listelor albe pentru a minimiza aceste riscuri, deși menționează că regula Applocker ar putea să nu fie aplicabilă, ceea ce face posibilă necesitatea unor condiții hash.</li>
+<li>Acesta subliniază faptul că Visual Studio Code nu dispune în prezent de controale încorporate pentru această caracteristică și pledează pentru măsuri de securitate îmbunătățite.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37623562">Reacții</a></h3>
+<ul>
+<li>Subiectul principal este reprezentat de vulnerabilitățile de securitate ale funcției reverse shell încorporate în Visual Studio Code, un editor de text și un mediu de dezvoltare integrat (IDE) popular.</li>
+<li>Există o perspectivă variată în ceea ce privește riscurile pe care le-ar putea prezenta această funcție, unii participanți exprimându-și îngrijorarea cu privire la un potențial acces neautorizat și la furtul de date.</li>
+<li>Discuția cuprinde, de asemenea, aspecte mai largi legate de securitatea în editorii de text și în IDE-uri, subliniind eficacitatea măsurilor de securitate și importanța evitării încălcărilor.</li>
+</ul>
+<h2><a href="https://bottlerocket.dev">Bottlerocket - Sistem de operare Linux minimalist și imuabil cu boot verificat</a></h2>
+<ul>
+<li>Bottlerocket este un sistem de operare bazat pe Linux conceput special pentru găzduirea containerelor, ideal pentru orchestratorii de containere precum Kubernetes.</li>
+<li>Sistemul de operare este caracterizat de o suprasolicitare minimă, de actualizări sigure și de o concentrare pronunțată asupra caracteristicilor de securitate, inclusiv utilizarea limbajelor compilate, a unui sistem de fișiere rădăcină imuabil și a politicilor SELinux aplicate.</li>
+<li>Acesta oferă diverse variante personalizate adaptate la diferite medii și poate fi gestionat prin intermediul unor containere gazdă privilegiate. Actualizările sunt livrate prin intermediul imaginilor și pot fi inversate dacă este necesar.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37626731">Reacții</a></h3>
+<ul>
+<li>Bottlerocket este un sistem de operare bazat pe Linux, dezvoltat de AWS special conceput pentru a rula containere, cu asemănări cu CoreOS și Flatcar Linux.</li>
+<li>Printre caracteristicile unice ale Bottlerocket se numără scanarea vulnerabilităților și o schemă de partiționare A/B pentru actualizări, însă, în prezent, nu are o cale vizibilă de a deveni un produs de sine stătător și are probleme în ceea ce privește încorporarea suportului FIPS.</li>
+<li>Discuțiile în jurul Bottlerocket evidențiază, de asemenea, incertitudinile privind implementarea sa în afara AWS, compatibilitatea sa în mediul AWS, absența unui shell pentru mașina gazdă, caracteristicile de securitate și o comparație cu NixOS.</li>
+</ul>
+<h2><a href="https://media.defcon.org/DEF%20CON%2031/DEF%20CON%2031%20presentations/byt3bl33d3r%20-%20SpamChannel%20Spoofing%20Emails%20From%202%20Million%20Domains%20and%20Virtually%20Becoming%20Satan.pdf">SpamChannel: Spoofing e-mailuri de la 2M domenii și devenind practic Satana [pdf]</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=37628337">Reacții</a></h3>
+<ul>
+<li>Discursul se concentrează pe un hacker care a falsificat e-mailuri de la două milioane de domenii folosind o tehnică neobservată, ridicând astfel semne de întrebare cu privire la eficacitatea metodelor convenționale de autentificare a e-mailurilor.</li>
+<li>Recomandă creșterea încrederii în DKIM și DMARC și discută despre necesitatea standardizării verificării domeniilor, subliniind vulnerabilitățile în securitatea e-mailurilor.</li>
+<li>De asemenea, sunt discutate potențialele beneficii și probleme ale tehnologiei ARC în îmbunătățirea filtrării spam-ului, ceea ce întărește necesitatea unor strategii îmbunătățite de combatere a spam-ului.</li>
+</ul>
+<h2><a href="https://www.bonappetit.com/story/can-you-put-plastic-in-the-microwave">Nu puneți plasticul în cuptorul cu microunde</a></h2>
+<ul>
+<li>Un studiu al Universității din Nebraska-Lincoln a arătat că microundele din recipiente de plastic eliberează microplastice și nanoplastice în alimente, ceea ce ar putea perturba sistemele endocrine și prezenta riscuri pentru sănătate.</li>
+<li>Eticheta &quot;rezistent la cuptorul cu microunde&quot; de pe recipientele din plastic indică doar rezistența la căldură a plasticului, nu și siguranța acestuia. Astfel de recipiente ar putea totuși să elibereze particule nocive, inclusiv bisfenoli și ftalați.</li>
+<li>Materialele plastice de tipurile unu și șase prezintă riscuri mai mari pentru sănătate atunci când sunt preparate la microunde, în timp ce tipurile doi și cinci sunt considerate mai sigure. Experții recomandă utilizarea recipientelor din sticlă în locul celor din plastic pentru încălzirea alimentelor la microunde.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37624070">Reacții</a></h3>
+<ul>
+<li>Discuția se axează în principal pe problemele de siguranță legate de utilizarea recipientelor din plastic în cuptorul cu microunde și analizează alternative precum recipientele din sticlă.</li>
+<li>Această postare investighează legătura potențială dintre utilizarea materialelor plastice, creșterea ratelor de cancer și implicațiile microplasticelor asupra sănătății.</li>
+<li>De asemenea, evaluează caracterul practic și eficiența gătitului cu microunde, evaluând în același timp riscurile și beneficiile pentru sănătate ale utilizării plasticului.</li>
+</ul>
+<h2><a href="https://www.neowin.net/news/eu-fines-intel-400-million-for-blocking-amds-market-access-through-payments-to-pc-makers/">UE amendează Intel cu 400 de milioane de dolari pentru că a blocat accesul pe piață al AMD</a></h2>
+<ul>
+<li>Comisia Europeană a impus o amendă de 400 de milioane de dolari companiei Intel pentru că a împiedicat intrarea pe piață a AMD prin efectuarea de plăți către producătorii de PC-uri între 2002 și 2007.</li>
+<li>S-a stabilit că Intel a mituit producătorii de PC-uri pentru a întârzia sau restricționa produsele care utilizează procesoare AMD, având un impact negativ asupra concurenței pe piața procesoarelor x86.</li>
+<li>Deși Intel a fost amendată cu 1,13 miliarde de dolari în 2009 pentru abuz de poziție dominantă, încă se confruntă cu potențiale amenzi suplimentare, deoarece Comisia a făcut apel la respingerea componentei de reduceri din acest caz.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37627745">Reacții</a></h3>
+<ul>
+<li>Uniunea Europeană a impus o amendă de 400 de milioane de dolari companiei Intel pentru că a împiedicat accesul pe piață al AMD, declanșând o discuție despre practicile anticoncurențiale din industria tehnologică.</li>
+<li>Există o dezbatere continuă cu privire la impactul unor astfel de comportamente asupra creșterii AMD, la acuzațiile de manipulare a pieței și la lipsa de disponibilitate și de opțiuni pentru laptopurile AMD în comparație cu Intel.</li>
+<li>Discursul include în continuare speculații despre performanța stagnantă a acțiunilor Intel în ultimii 15 ani, despre potențialele repercusiuni ale vânzării produselor la prețuri sub cost, precum și apeluri pentru un sprijin mai bun din partea AMD și preocupări legate de tratamentul geopolitic al Taiwanului.</li>
+</ul>
+<h2><a href="https://github.com/microsoft/windows-drivers-rs">Platforma care permite dezvoltarea de drivere Windows în Rust</a></h2>
+<ul>
+<li>&quot;windows-drivers-rs&quot; este un depozit bazat pe Rust care permite dezvoltarea de drivere Windows, suportând atât modelul WDM (Windows Driver Model), cât și WDF (Windows Driver Framework).</li>
+<li>Depozitul oferă mai multe crates care fac legătura cu Windows Development Kit (WDK), inclusiv legături, biblioteci și macro-uri.</li>
+<li>Aflat încă în stadii incipiente de dezvoltare, &quot;windows-drivers-rs&quot; suportă configurații pentru driverele WDM, KMDF (Kernel-Mode Driver Framework) și UMDF (User-Mode Driver Framework), urmând ca în viitor să includă și alte configurații. Cu toate acestea, în prezent nu este recomandat pentru utilizare comercială.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37629874">Reacții</a></h3>
+<ul>
+<li>Microsoft a creat o platformă de promovare a utilizării Rust pentru dezvoltarea de drivere pentru Windows, subliniind provocările și beneficiile pe care le implică scrierea de drivere cu Rust atât pentru sistemele Windows, cât și pentru Linux.</li>
+<li>Discuția evidențiază avantajele optării pentru un limbaj gestionat de memorie precum C# în dezvoltarea de drivere de dispozitiv și pune în paralel argumentul cu semnificația performanței software.</li>
+<li>Discursul explorează, de asemenea, avantajele Rust în dezvoltarea kernelului, rolul garbage collection în dezvoltarea de drivere și subliniază potențialul unei abordări microkernel și al proiectului Midori.</li>
+</ul>
+<h2><a href="https://www.404media.co/why-scalpers-can-get-olivia-rodrigo-tickets-and-fans-cannot/">De ce pot face rost de bilete cei care vând bilete</a></h2>
+<ul>
+<li>Sistemul &quot;Verified Fan&quot; al Ticketmaster, conceput inițial pentru a limita vânzarea la negru, este manipulat de către vânzătorii la negru în avantajul lor.</li>
+<li>Escrocii folosesc conturi multiple, browsere de internet specializate și numere de telefon cumpărate în masă pentru a-și spori șansele de a obține bilete la concerte populare.</li>
+<li>Aceștia pot vinde bilete chiar înainte ca acestea să fie puse în vânzare în mod oficial și le pot înlocui cu bilete mai bune pe cele vândute anterior, ceea ce indică faptul că sistemul favorizează cumpărătorii profesioniști de bilete mai degrabă decât fanii obișnuiți.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37623955">Reacții</a></h3>
+<ul>
+<li>Conversația se axează pe problema vânzării de bilete la negru, explorând diversele motivații care stau la baza acesteia și propunând potențiale soluții.</li>
+<li>Participanții iau în considerare diverse strategii, cum ar fi legarea biletelor de numele cumpărătorilor și verificarea identității, stabilirea dinamică a prețurilor și loteriile, pledând pentru o inovație substanțială în platformele de vânzare de bilete, cum ar fi Ticketmaster.</li>
+<li>Dialogul subliniază necesitatea unei reglementări consolidate, abordând în același timp problemele structurale ale industriei de vânzare de bilete, subliniind impactul asupra fanilor și artiștilor.</li>
+</ul>
+<h2><a href="https://twitter.com/bmann/status/1705572964068930010">Suportul IPFS a fuzionat în curl</a></h2>
+<ul>
+<li>IPFS (InterPlanetary File System), un protocol conceput pentru stocarea și partajarea descentralizată a fișierelor, a fost acum încorporat în software-ul curl.</li>
+<li>Această integrare semnifică continuitatea și importanța de durată a IPFS și a tehnologiei de adresare a conținutului în infrastructura web.</li>
+<li>curl, un instrument utilizat pe scară largă pentru transferul de date prin diverse protocoale de rețea, va extinde domeniul de aplicare și utilitatea IPFS prin susținerea modelului său de adresare descentralizat, bazat pe conținut.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37628525">Reacții</a></h3>
+<ul>
+<li>Curl a adăugat suportul IPFS (InterPlanetary File System) la sistemul său, deși există o dezbatere continuă cu privire la faptul dacă această implementare este un adevărat suport IPFS sau doar URL-uri rescrise.</li>
+<li>Implementarea actuală nu dispune de o funcție de verificare pentru a verifica dacă ieșirea corespunde adresei IPFS; se propune ca îmbunătățire verificarea continuă prin intermediul gateway-urilor IPFS.</li>
+<li>Se discută despre riscurile potențiale implicate în adoptarea IPFS și despre motivul pentru care utilizatorii preferă, în general, să folosească gateway-uri IPFS în loc să ruleze noduri IPFS, precum și despre adăugarea suportului pentru URL-uri magnet și .onion în instrumentul curl.</li>
+</ul>
+<h2><a href="https://www.economist.com/books-and-arts/2021/07/10/the-vital-art-of-talking-to-strangers">Arta vitală de a vorbi cu străinii (2021)</a></h2>
+<ul>
+<li>Articolul analizează semnificația și posibilele provocări ale interacțiunii cu străinii, un subiect detaliat în trei cărți.</li>
+<li>Acesta se concentrează pe evoluția atitudinilor față de străini, care progresează de la prudență în copilărie la o dorință de interacțiune în adolescență și la începutul vieții adulte.</li>
+<li>Emoția și posibilitatea de evadare care apar în urma contactului cu străinii reprezintă un aspect cheie al articolului.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37624201">Reacții</a></h3>
+<ul>
+<li>Secțiunea de comentarii discută atitudinile față de interacțiunea cu străinii în diferite zone, comparând amabilitatea urbană cu cea rurală.</li>
+<li>Printre subiectele explorate se numără depășirea anxietății sociale, stângăcia conversațiilor din avion, beneficiile întâlnirilor neprevăzute și sfaturi pentru începerea conversațiilor.</li>
+<li>Discuția subliniază importanța interacțiunilor pozitive și evidențiază variațiile individuale în ceea ce privește preferințele și prioritățile în relațiile cu străinii.</li>
+</ul>
+<h2><a href="https://theconversation.com/spyware-can-infect-your-phone-or-computer-via-the-ads-you-see-online-report-213685">Spyware-ul vă poate infecta telefonul sau calculatorul prin intermediul reclamelor pe care le vedeți online - raport</a></h2>
+<ul>
+<li>Compania israeliană de tehnologie Insanet a creat un spyware numit Sherlock, care este distribuit prin intermediul rețelelor de publicitate online, transformând anumite reclame în cai troieni.</li>
+<li>Spre deosebire de programele spion tradiționale care exploatează vulnerabilitățile telefonului, Sherlock folosește rețelele de anunțuri pentru a se instala pe ascuns, permițând accesul la conținutul dispozitivului țintă.</li>
+<li>Sherlock poate infecta computere și telefoane Android, precum și iPhone-uri, fiind suspectat de a avea o asemănare cu spyware-ul Pegasus, identificat anterior, ceea ce ridică îngrijorări cu privire la supravegherea civilă și la o potențială utilizare abuzivă.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37623479">Reacții</a></h3>
+<ul>
+<li>Articolul discută problema programelor spyware, în special a lui &quot;Sherlock&quot;, care exploatează reclamele online pentru a infecta dispozitivele, potențial prin intermediul vulnerabilităților browserului sau ale sistemului de operare.</li>
+<li>Se preconizează o schimbare în domeniul tehnologiei publicitare, prin introducerea unui nou model numit Sellff Offers. Sunt recomandate măsuri de apărare, cum ar fi dezactivarea JavaScript și utilizarea de ad-blockers.</li>
+<li>Discuția abordează implicațiile etice, susținerea creatorilor de conținut și metodele alternative de monetizare, autorul exprimându-și preferința pentru susținerea directă a creatorilor de conținut, mai degrabă decât pentru utilizarea tehnologiei publicitare.</li>
+</ul>
+<h2><a href="https://efe.com/en/science-and-technology/2023-09-22/india-fails-to-re-establish-communication-with-its-moon-probe/">India nu reușește să restabilească comunicarea cu sonda sa lunară</a></h2>
+<ul>
+<li>Organizația indiană de cercetare spațială (ISRO) nu a reușit să restabilească comunicarea cu sonda sa lunară, cu modulul de aterizare Vikram și cu roverul Pragyan, punând astfel capăt speranțelor de continuare a activității acestora.</li>
+<li>Modulul de aselenizare Vikram și roverul Pragyan au fost trimise la polul sud al Lunii, ceea ce face ca ISRO să fie a patra entitate la nivel mondial care reușește o aselenizare, în ciuda îndoielilor privind rezistența vehiculelor la temperaturile extreme ale Lunii.</li>
+<li>Eforturile de restabilire a contactului cu vehiculele lunare menționate vor continua, semnalând voința persistentă a ISRO de a cuceri provocările prezentate în explorarea spațială.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37623405">Reacții</a></h3>
+<ul>
+<li>Efortul Indiei de a restabili comunicarea cu o sondă lunară a eșuat, însă misiunea este considerată în continuare un succes.</li>
+<li>Discuția evidențiază provocările tehnice și impactul temperaturilor extrem de scăzute de pe Lună, care afectează performanța vehiculelor și a echipamentelor.</li>
+<li>Generatoarele termoelectrice cu radioizotopi, o tehnologie esențială utilizată în explorarea spațială, sunt menționate în contextul depășirii unor astfel de condiții adverse.</li>
+</ul>
+<h2><a href="https://github.com/rdaum/moor">Am rescris serverul LambdaMOO din 1990.</a></h2>
+<ul>
+<li>Persoana în cauză a fost implicată în utilizarea și îmbunătățirea LambdaMOO, un mediu virtual și un sistem de programare multiutilizator, încă de la începutul anilor &#39;90.</li>
+<li>Aceștia și-au asumat sarcina de a revizui LambdaMOO pentru a beneficia de avantajele tehnologiilor contemporane și pentru a-i îmbunătăți compatibilitatea.</li>
+<li>Implementarea, aproape finalizată, este acum scrisă în Rust (un limbaj de programare de sistem modern) și încurajează sprijinul persoanelor fascinate de acest tip de mediu social virtual.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37624400">Reacții</a></h3>
+<ul>
+<li>Subiectul principal al discuției este despre o persoană care a recreat serverul LambdaMOO folosind limbajul de programare Rust pentru a îmbunătăți sistemul de spațiu social virtual, concentrându-se pe interacțiunea socială și programarea comună.</li>
+<li>Persoana care s-a ocupat de acest proiect caută ajutor și feedback, în special în ceea ce privește problemele legate de compatibilitatea cu sistemul retroactiv.</li>
+<li>Participanții discută despre motoarele MOO, limbaje de programare alternative și despre dificultățile întâmpinate în păstrarea instanțelor LambdaMOO existente, exprimându-și entuziasmul și împărtășind resurse LambdaMOO relevante.</li>
+</ul>
+<h2><a href="https://support.google.com/mail/answer/15049?hl=en">Google omoară vizualizarea HTML de bază a Gmail la începutul anului 2024</a></h2>
+<ul>
+<li>Utilizatorii Gmail vor putea utiliza vizualizarea Basic HTML până în ianuarie 2024, după care platforma va trece automat la vizualizarea Standard.</li>
+<li>În cazul în care utilizatorii întâmpină probleme la încărcarea vizualizării Standard, aceștia pot să își rezolve problemele legate de browser, de conexiunea la internet sau de dispozitiv.</li>
+<li>Vizualizarea HTML de bază nu dispune de unele caracteristici disponibile în vizualizarea standard, iar utilizatorii sunt sfătuiți să treacă la aplicația Gmail sau la un alt client de e-mail dacă problemele persistă.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37630914">Reacții</a></h3>
+<ul>
+<li>Google a declarat că va renunța la vizualizarea HTML de bază a Gmail, ceea ce a dus la discuții despre viitorul webmail-ului, despre fiabilitatea e-mailului față de aplicațiile de mesagerie și despre rolul Google ca afacere publicitară.</li>
+<li>Discuțiile cuprind recomandări pentru servicii de e-mail alternative, temeri legate de utilizarea intensă a JavaScript și de timpii de încărcare lenți care rezultă, precum și accentul pus pe adaptarea la scenarii cu lățime de bandă redusă.</li>
+<li>De asemenea, sunt menționate preocupările legate de mediile cu date limitate, obligația întreprinderilor de a răspunde diferitelor cerințe ale clienților și diverse subiecte, cum ar fi monopolurile pe navele de croazieră și accesibilitatea în cazuri limită.</li>
+</ul>
+<h2><a href="https://arstechnica.com/health/2023/09/worm-that-jumps-from-rats-to-slugs-to-human-brains-has-invaded-southeast-us/">Viermele care sare de la șobolani la melci și la creierul uman a invadat sud-estul SUA</a></h2>
+<ul>
+<li>Studiul publicat în Emerging Infectious Diseases confirmă stabilirea viermelui pulmonar al șobolanului, un parazit capabil să infecteze creierul uman, în sud-estul SUA.</li>
+<li>Dovezi ale parazitului au fost detectate la șapte din cei 33 de șobolani testați la grădina zoologică din Atlanta. Plămânul șobolanului trăiește de obicei la șobolani, se transferă la melci sau melci și poate infecta oamenii dacă este ingerat, provocând disfuncții neurologice grave și chiar moartea.</li>
+<li>Studiul indică faptul că parazitul se răspândește rapid în regiune.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37624506">Reacții</a></h3>
+<ul>
+<li>Un vierme, Angiostrongylus cantonensis, răspândit în sud-estul SUA, a infectat șobolani, melci și chiar oameni, putând provoca simptome precum dureri de cap, insomnie și, în cazuri grave, meningită.</li>
+<li>Infecția cu viermele poate fi contractată prin consumul de melci insuficient gătiți sau de melci infectați, ceea ce îi determină pe oameni să spele și să pregătească bine legumele pentru a evita o eventuală infecție.</li>
+<li>Există îngrijorări tot mai mari cu privire la prezența melcilor și a paraziților în verdețuri, la transmiterea de boli prin intermediul acestor resurse contaminate și la impactul potențial asupra piețelor locale de locuințe.</li>
+</ul>
+<h2><a href="https://arxiv.org/abs/2309.12269">The Cambridge Law Corpus: Un corpus pentru cercetarea juridică AI</a></h2>
+<ul>
+<li>A fost introdus Cambridge Law Corpus, un nou set de date pentru cercetarea juridică prin inteligență artificială, format din peste 250.000 de cazuri judiciare din Marea Britanie, din secolul al XVI-lea până în prezent.</li>
+<li>Pe lângă textul brut și metadatele, corpus-ul include adnotări privind rezultatele cazurilor pentru 638 de cazuri, iar lucrarea ilustrează procesul de formare și testare a modelelor de extragere a rezultatelor cazurilor folosind datele adnotate.</li>
+<li>În timp ce sunt furnizate repere comparative de performanță pentru modele precum GPT-3, GPT-4 și RoBERTa, accesibilitatea corpusului este limitată la cercetare din considerente etice.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37627129">Reacții</a></h3>
+<ul>
+<li>Cambridge Law Corpus, o colecție cuprinzătoare de texte juridice, a fost creată în mod explicit pentru cercetarea în domeniul juridic al inteligenței artificiale (AI).</li>
+<li>Harvard Law&#39;s Library Innovation Lab a înființat proiectul Caselaw Access Project, care permite accesul la un set complet de jurisprudență americană, ceea ce a fost dificil din cauza zidurilor de plată.</li>
+<li>Laboratorul este, de asemenea, în curs de a lansa Collaborative Open Legal Dataset (COLD cases) pentru proiecte de inteligență artificială și învățare automată (ML), dar accesul la Cambridge Law Corpus este în prezent limitat la cercetătorii din instituțiile recunoscute.</li>
+</ul>
+<h2><a href="https://www.genengnews.com/topics/genome-editing/crispr-silkworms-make-spider-silk-that-defies-scientific-constraints/">Viermii de mătase CRISPR produc mătase de păianjen care sfidează constrângerile</a></h2>
+<ul>
+<li>Cercetătorii au reușit să manipuleze cu succes viermii de mătase prin intermediul tehnologiei CRISPR pentru a produce prima mătase de păianjen de lungime completă, deschizând calea pentru producția durabilă de materiale ușoare și robuste.</li>
+<li>Mătasea de păianjen creată este de peste șase ori mai rezistentă decât Kevlar și are o rezistență ridicată la tracțiune, depășind majoritatea celorlalte fibre naturale și sintetice, ceea ce o face o alternativă mai ecologică la fibrele sintetice precum nailon și Kevlar.</li>
+<li>Această realizare are potențial pentru comercializarea mătăsii de păianjen, oferind o opțiune sustenabilă pentru diverse aplicații, promovând în același timp dezvoltarea de &quot;supermateriale&quot;.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37623314">Reacții</a></h3>
+<ul>
+<li>Oamenii de știință au utilizat tehnologia de editare genetică CRISPR pentru a crea viermi de mătase care produc mătase de păianjen, un material cu 160% mai rezistent decât mătasea tradițională a viermilor de mătase.</li>
+<li>Acest progres ar putea fi utilizat în diverse domenii, cum ar fi fabricarea de materiale mai rezistente pentru ascensoarele spațiale sau fabricarea de rezervoare pentru stocarea hidrogenului.</li>
+<li>Cu toate acestea, aplicarea mătăsii de păianjen poate fi limitată în scenarii care necesită o rigiditate ridicată, din cauza lipsei sale inerente.</li>
+</ul>
+<h2><a href="https://www.elim.app/eng/home">Un &quot;CRM&quot; pentru relațiile personale</a></h2>
+<ul>
+<li>A fost lansată &quot;The New Elim&quot;, o nouă aplicație menită să combată singurătatea și să acorde prioritate relațiilor personale.</li>
+<li>Aplicația oferă funcții precum identificarea și conectarea utilizatorilor cu persoanele importante din viața lor, memento-uri zilnice pentru a rămâne conectați și trimiterea de cărți poștale virtuale cu diverse modele.</li>
+<li>Aflat în prezent în faza inițială, dezvoltatorii &quot;The New Elim&quot; sunt în căutare de feedback din partea utilizatorilor pentru a ghida viitoarele îmbunătățiri.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37625283">Reacții</a></h3>
+<ul>
+<li>Elim.app a lansat un MVP (Minimum Viable Product), conceput pentru a ajuta persoanele fizice să se concentreze asupra relațiilor esențiale, cu funcții precum notificări și cărți poștale digitale.</li>
+<li>Utilizatorii au sugerat îmbunătățiri precum includerea introducerii manuale a contactelor și integrarea cu aplicațiile de mesagerie. Dezvoltatorii și-au arătat intenția de a nu afișa reclame sau de a vinde datele utilizatorilor, dar iau în considerare un model de abonament premium.</li>
+<li>Au fost exprimate îngrijorări cu privire la faptul că site-ul web al aplicației este în limba germană, ceea ce a dus la discuții despre potențialul și îmbunătățirile aplicației, precum și despre limitele unei abordări excesiv de puternice a problemelor sociale prin intermediul tehnologiei.</li>
+</ul>
+<h2><a href="https://blog.nationalarchives.gov.uk/20speople-investigating-the-strange-disappearance-of-mrs-agatha-christie/">Ciudata dispariție a doamnei Agatha Christie (2022)</a></h2>
+<ul>
+<li>Această postare analizează dispariția enigmatică a renumitei scriitoare de romane polițiste Agatha Christie în 1926, investigația polițienească care a urmat și intriga publică legată de acest caz.</li>
+<li>Articolul analizează diferite teorii și conjecturi cu privire la dispariția ei, împreună cu critici privind răspunsul poliției și costul căutărilor.</li>
+<li>Autorul semnalează unele inexactități în acoperirea mediatică din acea perioadă.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37625291">Reacții</a></h3>
+<ul>
+<li>Primul articol examinează teoriile care au înconjurat dispariția inexplicabilă a Agathei Christie, inclusiv posibilitatea ca aceasta să fi fost făcută pentru publicitate, oferind un context istoric.</li>
+<li>Cea de-a doua piesă analizează inconsecvențele găsite în poveștile lui Sherlock Holmes și explorează convingerile lui Arthur Conan Doyle.</li>
+<li>A treia și a patra discuție sunt foarte variate: alchimia, religia și operele unor autori renumiți; dezbaterea rolului poliției în dispariția Agathei Christie și numărarea celor mai bine vândute cărți și autori.</li>
+</ul>
+<h2><a href="https://www.tsa.gov/travel/security-screening/whatcanibring/items/light-saber">Politica TSA cu privire la sabie de lumină</a></h2>
+<ul>
+<li>Administrația pentru Securitatea Transporturilor (TSA) permite pasagerilor să transporte săbii laser de jucărie atât în bagajele de mână, cât și în cele de cală.</li>
+<li>Decizia finală de a decide dacă un obiect poate trece prin punctul de control de securitate este în mâinile ofițerului TSA.</li>
+<li>Aceste informații sunt furnizate public pe site-ul oficial al TSA, care face parte din Departamentul pentru Securitate Internă al SUA.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37624112">Reacții</a></h3>
+<ul>
+<li>Tema centrală a discuțiilor se referă la eficacitatea și rolul procedurilor de securitate aplicate de TSA în aeroporturi.</li>
+<li>Există puncte de vedere diferite, unii participanți punând sub semnul întrebării eficiența acestor practici, iar alții apărând importanța lor.</li>
+<li>În plus, conversația abordează subiecte precum schemele de sprijin guvernamental, natura în continuă evoluție a muncii, inconsecvențele TSA în aplicarea normelor și detalii privind articolele specifice permise sau interzise de TSA.</li>
+</ul>
+]]></description>
+            <link>https://hn.cho.sh/ro/2023/09/24</link>
+            <guid isPermaLink="false">2023-09-24T00:00:00.000Z</guid>
+            <pubDate>Sun, 24 Sep 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[2023-09-23]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/23">2023-09-23</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/24">2023-09-23</a></h1>
 <h2><a href="https://www.phoronix.com/news/Valve-Upstream-Everything-OSS">Valve este un contribuitor minunat la Linux și la comunitatea open-source.</a></h2>
 <ul>
 <li>Valve contribuie în mod semnificativ la comunitatea Linux și open-source prin intermediul muncii sale la Steam Deck și SteamOS, colaborând cu firma de consultanță open-source Igalia la diverse îmbunătățiri în ecosistemul Linux.</li>
@@ -272,8 +508,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-22]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/23">2023-09-22</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/24">2023-09-22</a></h1>
 <h2><a href="https://blog.kagi.com/unlimited-searches-for-10">Căutări Kagi nelimitate pentru $10 pe lună</a></h2>
 <ul>
 <li>Kagi, un motor de căutare, și-a actualizat ofertele cu un plan Professional care include căutări nelimitate pentru 10 dolari pe lună și un plan Starter reînnoit de 5 dolari pe lună pentru 300 de căutări.</li>
@@ -521,8 +756,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-21]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/23">2023-09-21</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/24">2023-09-21</a></h1>
 <h2><a href="http://www.cs.cmu.edu/~wkw/humour/carproblems.txt">Mașină alergică la înghețata de vanilie (2000)</a></h2>
 <ul>
 <li>Un client a raportat că mașina sa Pontiac nu a reușit să pornească decât atunci când a cumpărat înghețată de vanilie, dar a funcționat conform așteptărilor cu alte arome.</li>
@@ -770,8 +1004,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-20]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/23">2023-09-20</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/24">2023-09-20</a></h1>
 <h2><a href="https://web.mit.edu/jemorris/humor/500-miles">Nu pot trimite e-mailuri la mai mult de 500 de mile (2002)</a></h2>
 <ul>
 <li>Problema centrală, relatată de Trey Harris, a fost incapacitatea sistemului de e-mail al campusului de a trimite e-mailuri la o distanță de peste 500 de mile.</li>
@@ -1014,8 +1247,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-19]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/23">2023-09-19</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/24">2023-09-19</a></h1>
 <h2><a href="https://www.wiz.io/blog/38-terabytes-of-private-data-accidentally-exposed-by-microsoft-ai-researchers">Date expuse din greșeală de cercetătorii Microsoft AI</a></h2>
 <ul>
 <li>Cercetătorii de inteligență artificială de la Microsoft au expus involuntar 38 de terabytes de date private, inclusiv copii de rezervă, parole și mesaje, din cauza unei configurări greșite a token-urilor SAS (Shared Access Signature).</li>
@@ -1263,8 +1495,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-18]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/23">2023-09-18</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/24">2023-09-18</a></h1>
 <h2><a href="https://github.com/CatalaLang/catala">CatalaLang/catala: Limbaj de programare pentru specificarea legislației</a></h2>
 <ul>
 <li>Catala este un nou limbaj specific domeniului care poate crea algoritmi din documente juridice, asigurând o fidelitate ridicată între cod și lege.</li>
@@ -1510,8 +1741,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-17]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/23">2023-09-17</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/24">2023-09-17</a></h1>
 <h2><a href="https://github.com/jesseduffield/horcrux">Horcrux: Împărțiți fișierul în fragmente criptate</a></h2>
 <ul>
 <li>Horcrux este un instrument open-source care împarte un fișier în secțiuni criptate, eliminând necesitatea ca utilizatorii să rețină un cod de acces pentru securizarea stocării distribuite.</li>
@@ -1753,8 +1983,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-16]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/23">2023-09-16</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/24">2023-09-16</a></h1>
 <h2><a href="https://csvbase.com/blog/5">API-ul meu preferat este un fișier zip de pe site-ul Băncii Centrale Europene</a></h2>
 <ul>
 <li>Autorul detaliază metodologia de utilizare a csvbase, o bază de date web de bază, pentru extragerea și transformarea datelor privind cursul de schimb valutar de la Banca Centrală Europeană (BCE).</li>
@@ -2002,8 +2231,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-15]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/23">2023-09-15</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/24">2023-09-15</a></h1>
 <h2><a href="https://nothinghuman.substack.com/p/the-tyranny-of-the-marginal-user">Tirania utilizatorului marginal</a></h2>
 <ul>
 <li>Articolul critică declinul software-ului pentru consumatori, exemplificat de aplicațiile de dating precum OKCupid, din cauza unei schimbări de orientare către atragerea de noi utilizatori, în detrimentul îmbunătățirii experienței celor existenți.</li>
@@ -2248,254 +2476,6 @@
             <link>https://hn.cho.sh/ro/2023/09/15</link>
             <guid isPermaLink="false">2023-09-15T00:00:00.000Z</guid>
             <pubDate>Fri, 15 Sep 2023 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2023-09-14]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/ro/2023/09/23">2023-09-14</a></h1>
-<h2><a href="https://mullvad.net/en/blog/2023/9/13/bug-in-macos-14-sonoma-prevents-our-app-from-working/">Un bug din macOS 14 Sonoma împiedică aplicația noastră să funcționeze</a></h2>
-<ul>
-<li>Aplicația Mullvad VPN se confruntă în prezent cu probleme de compatibilitate cu macOS 14 Sonoma din cauza unei erori de firewall care întrerupe filtrarea corectă a traficului.</li>
-<li>Această eroare poate duce la scurgeri de informații în anumite setări, ceea ce reprezintă un potențial risc de securitate pentru utilizatori.</li>
-<li>Deși problema a fost raportată la Apple, nu există încă niciun remediu disponibil; prin urmare, utilizatorilor li se recomandă să rămână pe macOS 13 Ventura până când va fi prezentată o soluție.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37498979">Reacții</a></h3>
-<ul>
-<li>Utilizatorii întâmpină probleme cu funcționalitățile de rețea ale versiunii beta a macOS 14 Sonoma, posibil din cauza unei erori în firewall-ul macOS.</li>
-<li>Există o discuție în jurul unor potențiale remedii și servicii VPN alternative pentru a remedia problema, indicând nemulțumirea față de stabilitatea și ușurința de utilizare a macOS și față de abordarea închisă a Apple.</li>
-<li>Utilizatorii pun sub semnul întrebării utilitatea raportării de erori către Apple, indicând probleme legate de suita de testare și de gestionarea feedback-ului utilizatorilor.</li>
-</ul>
-<h2><a href="https://meduza.io/en/feature/2023/09/13/the-million-dollar-reporter">Telefonul co-fondatorului Meduza, infectat cu Pegasus</a></h2>
-<ul>
-<li>Galina Timchenko, co-fondatoare și editor al publicației rusești de știri Meduza, a devenit prima jurnalistă rusă care a fost infectată cu spyware Pegasus, dezvoltat de NSO Group.</li>
-<li>Administrația Biden a pus pe lista neagră a NSO Group în 2021, interzicându-i accesul la tehnologiile americane din cauza preocupărilor legate de utilizarea abuzivă și de supravegherea de reglementare.</li>
-<li>Meduza, Access Now și Citizen Lab au investigat împreună incidentul, expunând o utilizare abuzivă pe scară largă a Pegasus și consolidând preocupările legate de supravegherea guvernamentală și de urmărirea jurnaliștilor, a oponenților și a activiștilor.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37496589">Reacții</a></h3>
-<ul>
-<li>Subiectele dezbaterii includ utilizarea programului spion Pegasus împotriva jurnaliștilor, vulnerabilitățile diferitelor sisteme de operare, preocupările legate de hacking-ul sponsorizat de stat și dificultatea de a găsi surse de știri imparțiale.</li>
-<li>Se discută despre eficiența măsurilor de securitate și despre diferitele abordări în ceea ce privește consumul de știri, alături de criticile la adresa instituțiilor media pentru părtinire și lipsă de responsabilitate.</li>
-<li>Referirile la situațiile geopolitice, inclusiv la rolul statelor occidentale în conflictul ucrainean, evidențiază contextul mai larg și implicațiile pentru sectoarele tehnologiei și informației.</li>
-</ul>
-<h2><a href="https://shreevatsa.wordpress.com/2010/06/04/dont-mess-with-a-genius/">Nu te pune cu un geniu (2010)</a></h2>
-<ul>
-<li>Textul evidențiază mandatul lui Isaac Newton ca director al Monetăriei din Anglia, unde a urmărit în mod activ falsificatorii.</li>
-<li>Acesta subliniază eforturile sale de succes în prinderea multor falsificatori, cu un accent deosebit asupra dușmanului său de moarte, William Chaloner.</li>
-<li>Contribuția semnificativă a lui Newton la Marele Recoinage semnifică aportul său remarcabil la menținerea integrității monedei.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37501231">Reacții</a></h3>
-<ul>
-<li>Discuția de pe Hacker News oferă perspective variate asupra vieții lui Isaac Newton, cuprinzând conflictele sale, asocierea cu alchimia, cruciadele împotriva falsificatorilor și contribuțiile sale la calcul.</li>
-<li>Participanții la discuție dezbat caracterul individual și contribuțiile științifice ale lui Newton, unii manifestând scepticism, iar alții apărându-i reputația.</li>
-<li>Articolul dezvăluie, de asemenea, aspectul uman al lui Newton, evidențiind prejudecățile noastre cognitive care pot determina chiar și persoanele foarte inteligente să cadă pradă escrocheriilor și manipulărilor.</li>
-</ul>
-<h2><a href="https://caoyuan.scripts.mit.edu/ir_spec.html">Un spectrometru DIY pentru infraroșu apropiat</a></h2>
-<ul>
-<li>Yuan Cao a dezvoltat un spectrometru în infraroșu apropiat (near-IR) ușor de realizat, cu o rezoluție de 6 nm.</li>
-<li>Spectrometrul funcționează cu ajutorul unei rețele de difracție și a unor fotodiode, printre alte componente; acesta măsoară rezoluția spectrală și lungimea de undă a luminii.</li>
-<li>Pe lângă discutarea provocărilor legate de reducerea zgomotului și a interferențelor, Cao vorbește, de asemenea, despre calibrare, gama dinamică a spectrometrului și măsurarea spectrelor de transmisie. S-ar putea să dezvăluie mai multe spectre în viitor.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37498142">Reacții</a></h3>
-<ul>
-<li>O persoană a dezvoltat un spectrometru în infraroșu apropiat, realizat de ea însăși, cu costuri reduse, care poate fi utilizat în diverse sectoare.</li>
-<li>Creatorul dorește să fabrice spectrometre accesibile pentru țările din lumea a treia, cu scopul de a ajuta la identificarea medicamentelor contrafăcute.</li>
-<li>Textul subliniază provocările legate de calibrarea și certificarea acestor instrumente și evidențiază lipsa unor articole solide pe platforme precum Hacker News.</li>
-</ul>
-<h2><a href="https://retool.com/blog/mfa-isnt-mfa/">Când MFA nu este MFA sau cum am fost păcăliți</a></h2>
-<ul>
-<li>Retool, o platformă pentru crearea de instrumente interne, s-a confruntat cu un atac de spear phishing care a dus la accesul neautorizat la 27 de conturi de clienți cloud, dezvăluind vulnerabilitatea sistemului la atacurile de inginerie socială.</li>
-<li>Atacul a avut loc atunci când un angajat a cedat unui atac de phishing prin SMS și a furnizat coduri de autentificare multifactorială (MFA), care au compromis ulterior VPN-ul și sistemele de administrare internă ale companiei.</li>
-<li>Retool recomandă îmbunătățirea securității, cum ar fi evitarea stocării codurilor MFA în cloud, promovarea instruirii angajaților și a utilizării cheilor de securitate hardware pentru MFA, precum și adoptarea unor strategii de apărare în profunzime. Compania colaborează în prezent cu forțele de ordine și cu o firmă de criminalistică pentru a cerceta incidentul.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37500895">Reacții</a></h3>
-<ul>
-<li>Discuția din Hacker News cuprinde aspecte precum precauția față de apelurile/messajele care solicită informații personale, necesitatea de a valida identitatea apelantului și nevoia de sisteme standard de autentificare inversă.</li>
-<li>Participanții discută punctele forte și limitele diferitelor măsuri de securitate, inclusiv criptarea parolelor, autentificarea cu mai mulți factori și biometria, și împărtășesc cazuri de gestionare defectuoasă a problemelor de fraudă.</li>
-<li>De asemenea, sunt prezentate în detaliu aspecte precum utilizarea tehnologiei deepfake în cazul încălcărilor de securitate, protecția activelor digitale și acordul general cu privire la necesitatea unor soluții de securitate robuste și ușor de utilizat.</li>
-</ul>
-<h2><a href="https://kraktoos.com/posts/dont-use-discord-as-forum/">Nu folosiți Discord ca forum de întrebări și răspunsuri</a></h2>
-<ul>
-<li>Autorul descurajează utilizarea Discord ca forum de întrebări și răspunsuri (Q&amp;A) pentru proiecte, invocând natura haotică a acestuia, funcțiile de căutare și descoperire sub așteptări și riscul potențial de discontinuitate.</li>
-<li>Textul sugerează alternative mai bune, cum ar fi forumurile dedicate comunității, site-urile web de renume precum Stack Overflow sau Reddit și sistemele de urmărire a problemelor bazate pe Git.</li>
-<li>Autorul subliniază importanța selectării meticuloase a unei platforme pentru întrebări și răspunsuri, recunoscând impactul acesteia asupra progresului proiectului și a interacțiunii cu comunitatea.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37502258">Reacții</a></h3>
-<ul>
-<li>Dezbaterea se concentrează în principal pe utilizarea Discord ca forum de întrebări și răspunsuri, cu opinii diferite în ceea ce privește eficiența acestuia față de platforme precum GitHub issues, forumuri dedicate și liste de discuții.</li>
-<li>Informalitatea și ușurința de utilizare a Discord sunt lăudate, dar sunt evidențiate limitările în ceea ce privește capacitatea de căutare și organizarea. Alegerea platformei depinde de nevoile individuale, cum ar fi controlul, costul, ușurința de configurare și tendințele demografice.</li>
-<li>De asemenea, au fost menționate discuțiile legate de potențiala obsolescență a forumurilor tradiționale și a listelor de discuții și posibilitatea unei platforme mai cuprinzătoare, cu motoare de căutare indexate, răspunsuri imbricate și funcționalitate vocală.</li>
-</ul>
-<h2><a href="https://fly.io/blog/skip-the-api/">Săriți peste API, livrați baza de date</a></h2>
-<ul>
-<li>LiteFS este o bază de date SQLite distribuită la nivel global, concepută inițial pentru a distribui datele la nivel geografic, asigurând timpi de răspuns rapizi.</li>
-<li>A fost descoperită o nouă utilizare a LiteFS, care îi permite să înlocuiască straturile API între servicii. Acest lucru se realizează prin distribuirea bazei de date complete pe partea clientului, permițând interogări SQL și îmbinarea datelor în funcție de cerințele clientului.</li>
-<li>Replicile sunt numai pentru citire, ceea ce necesită o API pentru actualizarea datelor. Deși are unele constrângeri, această tehnică poate fi benefică în situațiile în care API-urile convenționale sunt inadecvate.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37497345">Reacții</a></h3>
-<ul>
-<li>Articolul explorează conceptul de utilizare a bazelor de date ca API-uri, subliniind provocările și obstacolele potențiale ale acestei metode.</li>
-<li>Discursul recomandă utilizarea contractelor API și a unor instrumente precum vizualizările și procedurile stocate pentru gestionarea modificărilor în sistemele software. De asemenea, sunt abordate subiecte precum viabilitatea descărcării unor întregi baze de date în timpul încărcării inițiale a paginii, dificultățile de implementare a unui model de bază de date per utilizator și problema necinstei furnizorilor în cadrul calculului fără server.</li>
-<li>Se pune accentul pe avantajele și dezavantajele utilizării bazelor de date ca API-uri, inclusiv pe practica utilizării vizualizărilor și a redenumirii tabelelor în PostgreSQL pentru modificarea schemelor.</li>
-</ul>
-<h2><a href="https://www.science.org/content/blog-post/uselessness-phenylephrine">Inutilitatea fenilefrinei (2022)</a></h2>
-<ul>
-<li>Autorul afirmă că fenilefrina este un decongestionant mai puțin eficient în comparație cu pseudoefedrina, având în vedere metabolizarea extinsă a acesteia în organism.</li>
-<li>Se presupune că fenilefrina este vândută ca o alternativă la pseudoefedrină, din cauza restricțiilor impuse pseudoefedrinei pentru potențiala sa utilizare în producția ilegală de metamfetamină.</li>
-<li>Articolul se încheie cu o recomandare pentru FDA de a reconsidera vânzarea de fenilefrină, sugerând că aceasta nu justifică includerea sa pe lista actuală.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37499106">Reacții</a></h3>
-<ul>
-<li>Discuția explorează subiecte precum reglementarea drogurilor, dependența, producția de metamfetamină și eficiența diferitelor medicamente, inclusiv a decongestionantelor.</li>
-<li>De asemenea, sunt dezbătute aspecte precum impactul reglementărilor asupra disponibilității medicamentelor, rolul aplicării legii, intervențiile sociale, preocupările legate de confidențialitate și limitările medicamentelor farmaceutice.</li>
-<li>Sunt evidențiați factori precum efectul placebo, schimbările în stilul de viață și răspunsurile individuale la medicamente, care prezintă complexitatea și provocările asociate cu reglementarea medicamentelor și potența medicamentelor.</li>
-</ul>
-<h2><a href="https://fennel-lang.org/rationale">De ce Fenicul?</a></h2>
-<ul>
-<li>Fennel este un limbaj de programare bazat pe timpul de execuție Lua, care își propune să ofere o sintaxă mai simplă și mai concisă, eliminând complexitățile întâlnite în Lua.</li>
-<li>Acest limbaj îmbunătățește elemente precum gestionarea variabilelor globale, tabelele, buclele, funcțiile și introduce caracteristici precum potrivirea modelelor și destructurarea structurilor de date.</li>
-<li>Fennel este compatibil cu bibliotecile și instrumentele Lua existente și încorporează un sistem de macro pentru a extinde limbajul cu noi forme sintactice.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37497131">Reacții</a></h3>
-<ul>
-<li>Postul se axează pe utilizarea limbajului de programare Fennel, un limbaj de programare, în configurațiile Neovim și Hammerspoon, apreciat pentru scurtimea și ergonomia sa superioară față de Lua.</li>
-<li>Se fac comparații între Lua și alte limbaje care se compilează în Lua, cum ar fi Moonscript și Yuescript, accentuând beneficiile verificărilor de aritate ale lui Fennel, care lipsesc în Lua.</li>
-<li>Acesta abordează subiectul indentației față de limbajele bazate pe delimitatori și utilizarea practică a Lua în diferite contexte și include referințe la site-ul web al lui Fennel și la disponibilitatea actuală a aplicațiilor pentru YC Winter 2024.</li>
-</ul>
-<h2><a href="https://www.eff.org/press/releases/appeals-court-upholds-publicresourceorgs-right-post-public-laws-and-regulations">Curtea de Apel susține dreptul de a posta online legile publice</a></h2>
-<ul>
-<li>O curte de apel federală a decis că standardele tehnice încorporate în dreptul public pot fi partajate fără a risca încălcarea drepturilor de autor, reflectând opinia că legile aparțin tuturor și ar trebui să fie accesibile gratuit și fără înregistrare.</li>
-<li>Cazul a fost inițiat de organizația nonprofit Public.Resource.org, reprezentată de Electronic Frontier Foundation, împotriva organismelor private care creează coduri și standarde.</li>
-<li>Instanța s-a pronunțat în favoarea Public.Resource.org, marcând un triumf pentru accesul public la legi, în principal datorită naturii educaționale și non-profit a utilizării standardelor.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37498473">Reacții</a></h3>
-<ul>
-<li>O curte de apel a stabilit că publicarea online a legilor publice nu încalcă drepturile de autor și este considerată o utilizare corectă.</li>
-<li>Acest caz sensibilizează cu privire la legislația inaccesibilă și la întrebările legate de protecția drepturilor de autor, evidențiind cazuri de legi privind drepturile de autor care impun plata pentru acces.</li>
-<li>Discursul implică, de asemenea, încorporarea de standarde private în legi fără compensații și evidențiază practicile diferite din diferite țări în ceea ce privește disponibilitatea textelor și standardelor juridice.</li>
-</ul>
-<h2><a href="https://paladin-t.github.io/bitty/">Motorul Bitty: Un motor de joc itty bitty</a></h2>
-<ul>
-<li>Bitty Engine este un motor de joc cross-platform cu editori încorporați, care permite o programare ușoară în Lua, însoțită de caracteristici precum un depanator, documentație API și diverse instrumente de editare.</li>
-<li>Capabil să creeze fișiere binare independente, motorul poate fi utilizat atât în scopuri necomerciale, cât și comerciale. Este disponibil pentru platforme precum Windows 7, MacOS 10.7 sau Ubuntu 14, cu cerințe de sistem reduse.</li>
-<li>Bitty Engine, distribuit pe Steam și Itch, este identic în ceea ce privește caracteristicile pe ambele platforme, iar o versiune de încercare este disponibilă pe Steam.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37497956">Reacții</a></h3>
-<ul>
-<li>Articolul evidențiază entuziasmul provocat de recenta lansare a motorului Bitty Engine, cu discuții axate pe sfaturi de dezvoltare a jocurilor și a motoarelor și pe aplicarea JavaScript/TypeScript în motoarele de jocuri.</li>
-<li>Se discută, de asemenea, despre potențialul jocurilor fizice cu computere încorporate și despre popularitatea în creștere a limbajului Lua în dezvoltarea de jocuri.</li>
-<li>Sunt subliniate avantajele cheie ale Lua, cum ar fi încorporarea ușoară în bazele de cod, simplitatea învățării, compatibilitatea cu motoarele C și C++, împreună cu alternativa de înaltă performanță LuaJIT. &quot;Consolele fantastice&quot; reprezintă, de asemenea, un subiect de conversație.</li>
-</ul>
-<h2><a href="https://www.science.org/doi/10.1126/sciadv.adh2458">Pământul dincolo de șase din cele nouă limite planetare</a></h2>
-<ul>
-<li>Actualizarea cadrului limitelor planetare arată că șase din cele nouă limite au fost depășite, ceea ce sugerează că Pământul se află în prezent în afara zonei de siguranță pentru activitatea umană.</li>
-<li>Textul introduce un concept numit &quot;entități noi&quot;, care ar putea perturba granițele de bază și subliniază nevoia de transformări pentru a spori impactul producției și a reglementa cererea.</li>
-<li>Acesta evidențiază impactul activităților umane asupra ecosistemelor oceanice și terestre, inclusiv efectul despăduririlor și al schimbărilor climatice asupra stocurilor de carbon și a temperaturii globale a solului, și subliniază necesitatea urgentă de a acționa pentru a preveni daune ireversibile asupra mediului.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37500752">Reacții</a></h3>
-<ul>
-<li>Pasajul dezbate echilibrul delicat dintre preocupările de mediu și interesele economice sau de securitate națională, în special în ceea ce privește schimbările climatice.</li>
-<li>Se discută impactul consumului de carne asupra schimbărilor climatice, subliniind necesitatea unei producții alimentare durabile și a adoptării unor diete bazate pe plante.</li>
-<li>Soluțiile tehnologice, utilizarea surselor de energie regenerabilă și efectele temperaturilor extreme asupra ratelor de supraviețuire sunt, de asemenea, abordate ca potențiale probleme și remedii în gestionarea mediului.</li>
-</ul>
-<h2><a href="http://prize.hutter1.net/">Premiul Hutter pentru comprimarea cunoașterii umane</a></h2>
-<ul>
-<li>Premiul Hutter este o competiție care recompensează participanții pentru crearea de software care poate comprima fișiere de mari dimensiuni la dimensiuni mai mici, cu scopul de a promova tehnologia de compresie a datelor.</li>
-<li>Participanților li se cere să trimită pentru evaluare atât fișierele finale comprimate, cât și codul sursă, promovând astfel transparența în procesare.</li>
-<li>Articolul îl menționează pe Alexander Rhatushnyak, un inginer de software, care a adus contribuții substanțiale la concursurile de comprimare a datelor, prezentând participanții de succes pentru a-i inspira și ghida pe noii participanți.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37502329">Reacții</a></h3>
-<ul>
-<li>Discuția principală se concentrează asupra rolului compresiei în inteligența generală artificială (AGI), subliniind atât valoarea compresiei fără pierderi, cât și cea cu pierderi, limitările și corelația cu inteligența.</li>
-<li>Sunt menționate creșterea și implicațiile accesibilității GPU asupra cercetării AGI, împreună cu câteva perspective istorice.</li>
-<li>Conversația se încheie cu o referire la procesul de aplicare pentru programul Winter 2024 al Y Combinator, un program de finanțare pentru start-up-uri.</li>
-</ul>
-<h2><a href="https://docs.lantern.dev/blog/2023/09/13/hello-world">Lantern - o bază de date vectoriale PostgreSQL pentru crearea de aplicații AI</a></h2>
-<ul>
-<li>Lantern este o extensie a bazei de date vectoriale pentru PostgreSQL, menită să susțină dezvoltarea de aplicații de inteligență artificială, oferind capabilități precum generarea de încorporări și crearea de indici paraleli.</li>
-<li>Proiectul se poziționează ca o soluție de întreprindere dezvoltată pe PostgreSQL, exploatând baza extinsă de utilizatori și funcționalitățile de stocare a datelor, și susține că depășește extensiile similare în ceea ce privește parametrii cheie de performanță.</li>
-<li>Lantern este open-source, cu o foaie de parcurs de caracteristici viitoare, inclusiv o variantă bazată pe cloud, șabloane specifice industriei, control al versiunilor și suport vectorial îmbunătățit. Proiectul invită comunitatea să se implice și să contribuie.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37499375">Reacții</a></h3>
-<ul>
-<li>Lantern, o nouă extensie a bazei de date vectoriale PostgreSQL, a fost lansată; aceasta se mândrește cu caracteristici avansate și parametri de performanță care le depășesc pe cele ale unor extensii similare.</li>
-<li>Această extensie are ca scop îmbunătățirea dezvoltării aplicațiilor de inteligență artificială și încurajează contribuțiile colaborative. Utilizatorii și-au exprimat îngrijorarea cu privire la performanță și la actualizările indexului, ceea ce a determinat Lantern să planifice viitoarele optimizări.</li>
-<li>În ciuda faptului că este puțin mai rapid decât pgvector și că îmbunătățește dezvoltarea aplicațiilor și experiența utilizatorului, Lantern a stârnit îngrijorări legate de utilizarea intensivă a resurselor. Lantern Cloud, propria lor soluție găzduită, este planificată, chiar dacă în prezent există incompatibilitate cu Supabase.</li>
-</ul>
-<h2><a href="https://www.cnbc.com/2023/09/13/spacex-no-longer-taking-losses-to-produce-starlink-satellite-antennas.html">SpaceX nu mai acceptă pierderi pentru a produce antene de satelit Starlink</a></h2>
-<ul>
-<li>SpaceX nu va mai suporta costul antenelor Starlink vândute împreună cu serviciul său de internet prin satelit, ca parte a unei măsuri de creștere a profitabilității companiei.</li>
-<li>Antenele Starlink pentru consumatori sunt vândute la prețul de 599 de dolari fiecare, în timp ce prețurile pentru clienții cu cerere mare pot varia între 2.500 și 150.000 de dolari fiecare.</li>
-<li>Succesul SpaceX a fost legat de reducerea costurilor de producție a terminalelor, a căror fabricație costă acum mai puțin de 600 de dolari fiecare.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37498830">Reacții</a></h3>
-<ul>
-<li>SpaceX a reușit să reducă costurile de producție ale antenelor sale de satelit Starlink, permițând o expansiune mai rapidă și servicii mai accesibile atât în regiunile rurale, cât și în cele cu densitate mare de populație.</li>
-<li>În timp ce veniturile Starlink pentru 2022 nu au fost pe măsura previziunilor, compania a demonstrat progrese semnificative în ceea ce privește performanța și creșterea, și există o dezbatere în curs de desfășurare cu privire la beneficiile densității constelației Starlink și la posibila sa extindere în țările în curs de dezvoltare.</li>
-<li>Vânzarea recentă a hardware-ului de internet prin satelit al companiei către canadienii din zonele rurale și progresele preconizate în proiectarea cipurilor RF, care ar putea reduce și mai mult costurile sistemelor de antene, indică o posibilă comercializare a tehnologiei phased array.</li>
-</ul>
-<h2><a href="https://explosion.ai/blog/against-llm-maximalism/">Împotriva LLM Maximalismul LLM</a></h2>
-<ul>
-<li>Articolul abordează dificultățile legate de utilizarea eficientă a modelelor de limbaj de mari dimensiuni (LLM) în sarcinile de procesare a limbajului natural (NLP) și sugerează împărțirea problemei în componente modulare, cu LLM-urile ca o componentă.</li>
-<li>Utilizarea învățării supravegheate este recomandată pentru anumite sarcini, iar instrumente precum spaCy și HF Transformers sunt recunoscute ca fiind benefice pentru etichetarea datelor și antrenarea modelelor NLP.</li>
-<li>De asemenea, autorul notează utilitatea Prodigy, un instrument de adnotare, pentru fluxurile de lucru asistate de modele și concluzionează subliniind importanța politicilor specifice în locul abilităților generale de raționament sau a cunoștințelor de bază pentru sarcinile practice.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37495873">Reacții</a></h3>
-<ul>
-<li>Articolul pune accentul pe integrarea modelelor de limbaj de mari dimensiuni (LLM) cu sarcinile de procesare a limbajului natural (NLP) pentru crearea de seturi de date sau pentru a stimula modelele supravegheate, mai degrabă decât să se bazeze exclusiv pe LLM.</li>
-<li>Acesta detaliază limitările infrastructurii actuale de NLP și avantajele potențiale ale utilizării LLM-urilor pentru reprezentarea eficientă a textului și pentru sarcinile de clasificare. Învățarea prin transfer și modelele mai mici pot spori precizia și atenua întârzierile.</li>
-<li>Discuția se extinde asupra importanței evaluării componentelor de învățare automată, a dificultăților asociate cu aceasta și a potențialelor implicații și dezavantaje ale tehnologiilor AI și Web3.</li>
-</ul>
-<h2><a href="https://go.dev/blog/wasi">Suport WASI în Go</a></h2>
-<ul>
-<li>Go 1.21 a introdus un nou port pentru API-ul syscall WebAssembly System Interface (WASI) prin intermediul noii valori GOOS, wasip1. Aceasta permite dezvoltatorilor să ruleze direct codul Go compilat în WebAssembly, ocolind necesitatea unui mediu de execuție JavaScript.</li>
-<li>În ciuda progresului, există limitări, inclusiv absența suportului pentru socket-uri de rețea în API-ul wasip1. Cu toate acestea, extensiile de la gazde precum Wasmer și WasmEdge și o bibliotecă terță parte, stealthrocket/net, ar putea fi utilizate pentru funcționalitatea de rețea.</li>
-<li>Direcțiile viitoare pentru Go includ exportul funcțiilor Go în WebAssembly și compatibilitatea cu API-ul WASI în evoluție, iar dezvoltatorii au la dispoziție canale precum Gophers Slack și Go issue tracker pentru a contribui.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37498820">Reacții</a></h3>
-<ul>
-<li>Conversația din GoHacker News se învârte în jurul introducerii suportului WASI în limbajul de programare Go, atingând obstacole precum exportul funcțiilor WebAssembly, performanța și dimensiunea binarelor.</li>
-<li>Participanții la discuție sugerează îmbunătățiri pentru performanța WebAssembly Go, făcând comparații cu Rust și .NET, subliniind în același timp avantajele utilizării WebAssembly și WASI pentru optimizarea aplicațiilor Go.</li>
-<li>În ciuda preocupărilor legate de vulnerabilitățile de securitate atunci când se utilizează WebAssembly pentru plugin-uri și aplicații desktop, participanții percep în general WebAssembly (WASM) ca pe un instrument care facilitează interoperabilitatea codului și minimizează dependența de hardware și sisteme de operare.</li>
-</ul>
-<h2><a href="https://old.reddit.com/r/gamedev/comments/16hnibp/unity_silently_removed_their_github_repo_to_track/">Unity a eliminat în tăcere clauza care vă permitea să folosiți TOS din versiunea cu care ați livrat-o.</a></h2>
-<ul>
-<li>Unity, o platformă de dezvoltare de jocuri foarte utilizată, a fost criticată pentru că a eliminat discret un depozit GitHub care monitoriza modificările aduse termenilor săi de serviciu.</li>
-<li>Utilizatorii își exprimă îngrijorarea cu privire la transparența platformei, temându-se de creșteri mascate ale taxelor, ceea ce duce la îndoieli cu privire la fiabilitatea Unity și la potențiale ramificații juridice.</li>
-<li>Există dezbateri continue cu privire la problemele de management ale Unity, la potențialul său colaps, la impactul asupra utilizatorilor și a comunității de jucători, precum și la nemulțumirea față de modificările aduse licențelor și taxelor.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37499731">Reacții</a></h3>
-<ul>
-<li>Unity, o platformă de dezvoltare de jocuri, și-a modificat în mod subtil termenii serviciului, ceea ce a dus la taxarea utilizatorilor pentru instalarea produselor și la noi taxe - chiar dacă aceștia nu mai folosesc Unity pentru proiecte viitoare.</li>
-<li>Aceste schimbări au generat neliniște și neîncredere din partea utilizatorilor, din cauza percepției că aceste schimbări sunt nedrepte și prost concepute, precum și a îngrijorărilor legate de taxele pentru instalări multiple și de taxele retroactive.</li>
-<li>Discuțiile se extind la provocările produselor deschise și gratuite susținute de companii comerciale, la lupta Unity pentru a genera venituri și la îndoielile privind transparența și situația financiară a modelului său de afaceri.</li>
-</ul>
-<h2><a href="https://www.computerenhance.com/p/game-development-post-unity">Dezvoltarea jocurilor post-Unitate</a></h2>
-<ul>
-<li>Unity, un motor de dezvoltare de jocuri utilizat pe scară largă, își revizuiește termenii de licență pentru a implementa o taxă notabilă pe unitate, ceea ce a stârnit îngrijorări în comunitatea dezvoltatorilor.</li>
-<li>Această modificare a termenilor de licențiere a Unity îi determină pe unii dezvoltatori să se gândească la tranziția către alte motoare, inclusiv Godot, Unreal, Defold și RayLib, fiecare dintre acestea oferind caracteristici distincte, ușurința în utilizare și suport pentru limbajele de scripting.</li>
-<li>Casey Muratori solicită informații de la dezvoltatori cu privire la experiențele lor cu aceste motoare alternative pentru a facilita luarea unor decizii în cunoștință de cauză.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37503351">Reacții</a></h3>
-<ul>
-<li>Dezbaterea în cercurile de dezvoltare a jocurilor se învârte în jurul motoarelor precum Unity, Unreal Engine, Godot și Blender. Orientarea Unity către generarea de venituri prin publicitate este criticată din cauza problemelor de stabilitate și a dependenței dezvoltatorilor.</li>
-<li>Godot este evidențiat ca o potențială alternativă, dar nu reușește să concureze cu ecosistemul robust al Unity. Comparația și dezbaterea se extind la popularitatea și modelele de preț ale Unity, Unreal Engine și la utilizarea Blender în industria jocurilor independente.</li>
-<li>Discuțiile includ, de asemenea, declinul motorului de jocuri Blender, utilizarea Python în dezvoltarea de jocuri și preocupările legate de structura drepturilor de autor a Unity. De asemenea, este explorată și pledoaria pentru un model de împărțire a veniturilor similar cu cel al Unreal.</li>
-</ul>
-<h2><a href="https://www.cnbc.com/2023/09/13/marvel-vfx-artists-unanimously-vote-to-unionize.html">Artiștii de efecte vizuale Marvel votează în unanimitate pentru sindicalizare</a></h2>
-<ul>
-<li>Artiștii specializați în efecte vizuale (VFX) de la Marvel Studios au votat în unanimitate pentru a se sindicaliza în cadrul Alianței Internaționale a Angajaților de Scenă Teatrală (IATSE), o premieră pentru o echipă axată exclusiv pe VFX.</li>
-<li>Această mișcare spre sindicalizare apare pe fondul unor greve duble ale scriitorilor și actorilor de la Hollywood. Artiștii speră să negocieze salarii echitabile, beneficii de sănătate și un mediu de lucru sigur, ca răspuns la creșterea volumului de muncă și la termenele stricte.</li>
-<li>Odată cu ratificarea votului de sindicalizare, lucrătorii VFX vor intra în negocieri colective cu studiourile Marvel, deși negocierile în curs cu alte grupuri sindicale pot întârzia aceste discuții.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37502892">Reacții</a></h3>
-<ul>
-<li>Artiștii de efecte vizuale care lucrează pentru Marvel au decis în unanimitate să formeze un sindicat.</li>
-<li>Această știre a stârnit conversații pe Hacker News, un site de știri sociale axat pe tehnologie și antreprenoriat.</li>
-</ul>
-]]></description>
-            <link>https://hn.cho.sh/ro/2023/09/14</link>
-            <guid isPermaLink="false">2023-09-14T00:00:00.000Z</guid>
-            <pubDate>Thu, 14 Sep 2023 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
