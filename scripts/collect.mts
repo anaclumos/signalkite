@@ -19,13 +19,19 @@ export const collect = async (url: string): Promise<string> => {
     body = await tryDownloadingAsGooglebot(url, body)
   }
 
-  body = await tryDownloadingTwitter(url, body)
-  body = await tryDownloadingYoutube(url, body)
-  body = await tryDownloadingWithPuppeteer(url, body)
-  body = await tryDownloadingWithPlaywright(url, body)
-  body = await tryDownloadingAsGooglebot(url, body)
-  body = await tryDownloadingPdf(url, body)
-
+  try {
+    body = await tryDownloadingTwitter(url, body)
+    body = await tryDownloadingYoutube(url, body)
+    body = await tryDownloadingWithPuppeteer(url, body)
+    body = await tryDownloadingWithPlaywright(url, body)
+    body = await tryDownloadingAsGooglebot(url, body)
+    body = await tryDownloadingPdf(url, body)
+  } catch (e) {
+    log(`❌ Error\tDownload All Failed ${url}`, 'error')
+    await new Promise((resolve) => setTimeout(resolve, 5000))
+    body = await collect(url)
+  }
+    
   if (body.length === 0) log(`❌ Error\tDownload All Failed ${url}`, 'error')
 
   return sanitize(body)
