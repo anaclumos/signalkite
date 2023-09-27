@@ -59,7 +59,7 @@
     "swizzle": "docusaurus swizzle",
     "translate:cli": "tsc --project scripts --outDir scripts/dist && node -r dotenv/config --experimental-modules scripts/dist/translate-cli.mjs",
     "typecheck": "tsc",
-    "worker": "tsc --project scripts --outDir scripts/dist && node -r dotenv/config --experimental-modules scripts/dist/worker.mjs",
+    "worker": "pnpm exec playwright install && tsc --project scripts --outDir scripts/dist && node -r dotenv/config --experimental-modules scripts/dist/worker.mjs",
     "worker:test": "tsc --project scripts --outDir scripts/dist && node -r dotenv/config --experimental-modules scripts/dist/worker-test.mjs",
     "translate:json": "tsc --project scripts --outDir scripts/dist && node -r dotenv/config --experimental-modules scripts/dist/translate-json.mjs",
     "write-heading-ids": "docusaurus write-heading-ids",
