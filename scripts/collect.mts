@@ -31,7 +31,7 @@ export const collect = async (url: string): Promise<string> => {
     await new Promise((resolve) => setTimeout(resolve, 5000))
     body = await collect(url)
   }
-    
+
   if (body.length === 0) log(`❌ Error\tDownload All Failed ${url}`, 'error')
 
   return sanitize(body)
