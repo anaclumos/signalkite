@@ -1,10 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss
-  xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:content="http://purl.org/rss/1.0/modules/content/"
-  xmlns:atom="http://www.w3.org/2005/Atom"
-  version="2.0"
->
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title><![CDATA[海姆達爾]]></title>
         <description><![CDATA[海姆達爾]]></description>
@@ -15,16 +9,202 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 03 Oct 2023 10:12:15 GMT</lastBuildDate>
-        <atom:link href="https://hn.cho.sh/rss/newsletter/zh-Hant.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Tue, 03 Oct 2023 00:00:00 GMT</pubDate>
+        <lastBuildDate>Wed, 04 Oct 2023 10:20:54 GMT</lastBuildDate>
+        <atom:link href="https://hn.cho.sh/rss/newsletter/zh-Hant.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Wed, 04 Oct 2023 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[zh-Hant]]></language>
         <ttl>60</ttl>
         <item>
+            <title><![CDATA[2023-10-04]]></title>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/04">2023-10-04</a></h1>
+<h2><a href="https://github.com/vitoplantamura/OnnxStream/tree/846da873570a737b49154e8f835704264864b0fe">在 298MB 記憶體中運行穩定的擴散 XL 1.0</a></h2>
+<ul>
+<li>存儲庫“vitoplantamura/OnnxStream”具有開源推理庫OnnxStream，旨在限制機器學習模型執行期間的記憶體使用。</li>
+<li>OnnxStream 通過動態和靜態量化，在 RAM 有限的設備（如 Raspberry Pi Zero 2）上執行穩定擴散模型，這是一種比 OnnxRuntime 更低的記憶體使用率的優化方法。</li>
+<li>該存儲庫提供了穩定擴散工具的示例實現、性能基準和詳細功能，以及原始專案的功勞、版本資訊、資源詳細資訊和相關程式設計語言。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37752632">反應</a></h3>
+<ul>
+<li>這篇文章重點介紹了Stable Diffusion XL 1.0軟體的性能，特彆強調了記憶體使用和速度的權衡。</li>
+<li>廣泛討論了使用者對軟體的體驗和建議，特別是其用於圖像生成的使用，並對其記憶體使用、推理時間和硬體要求存在某些擔憂。</li>
+<li>討論還揭示了與此類新興技術監管相關的問題，並區分了盜竊和盜版，以及有關SD模型和ONNX流元件可用性的新聞。</li>
+</ul>
+<h2><a href="https://blog.cr.yp.to/20231003-countcorrectly.html">揭穿NIST對Kyber-512安全級別的計算</a></h2>
+<ul>
+<li>該帖子對NIST（美國國家標準與技術研究院）對Kyber-512密碼系統的評估據稱計算不準確和缺乏透明度表示擔憂。</li>
+<li>NIST的審查過程受到質疑，有利於涉及NSA（國家安全局）的Kyber-512，導致爭議並呼籲更清晰的透明度和理解。</li>
+<li>作者強調了NTRU等替代加密系統的潛在優勢，並批評了NIST安全評估中的潛在偏見和所謂的缺陷。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37756656">反應</a></h3>
+<ul>
+<li>討論的中心焦點是美國國家標準與技術研究院（NIST）在選擇加密演算法時的可信度和可信度。</li>
+<li>有人猜測國家安全局可能會干擾，從而導致潛在的後門或受損演算法。</li>
+<li>強調了演演算法標準化中透明度、清晰溝通和獨立評估的必要性，強調了這些方面在維護信任方面的重要性。</li>
+</ul>
+<h2><a href="https://xata.io/blog/pgroll-schema-migrations-postgres">Pgroll：針對 Postgres 的零停機時間、可逆模式遷移</a></h2>
+<ul>
+<li>Xata引入了pgroll的第一次反覆運算，這是一個命令行實用程式，旨在促進PostgreSQL的安全和可逆模式遷移。</li>
+<li>pgroll 透過啟用使用 JSON 格式定義遷移、在遷移期間保持雙架構版本、允許即時回滾並確保零停機時間來降低資料庫架構遷移風險。</li>
+<li>Xata致力於進一步發展pgroll;此工具可自動執行架構更改的完整生命週期，並提供使用者友好的命令行介面。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37752366">反應</a></h3>
+<ul>
+<li>討論的主要焦點是 pgroll，這是一種用於在 PostgreSQL 資料庫中進行零停機、可逆模式遷移的工具，允許在保持對舊版本和新版本的訪問的同時更改模式。</li>
+<li>pgroll 的性能及其處理複雜模式的能力是比較中關注的關鍵點。</li>
+<li>其他流行的遷移工具，如Flyway和Liquibase，出於比較目的。</li>
+</ul>
+<h2><a href="https://serce.me/posts/02-10-2023-hey-computer-make-me-a-font">嘿，電腦，給我做一個字體</a></h2>
+<ul>
+<li>作者在一個名為「FontoGen」的項目中講述了他們開發生成機器學習模型以教計算機創建字體的經驗。</li>
+<li>本文深入探討了生成字體的挑戰，並解釋了模型結構，包括使用預先訓練的BERT和字體嵌入。</li>
+<li>這篇文章以作者對該專案的潛力以及人工智慧和字體生成領域未來應用的前景的熱情結束。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37750859">反應</a></h3>
+<ul>
+<li>對話集中在人工智慧的應用上，特別是 GPT-4 代碼解釋器，將黑白字形轉換為 SVG 以生成字體。</li>
+<li>參與者對人工智慧生成字體的潛力和限制以及包括版權問題在內的對設計行業的預期影響持有不同觀點。</li>
+<li>對工藝破壞和人類工作價值潛在降低的擔憂被對人工智慧在字體構建中提供的機會和可訪問性的熱情所抵消。</li>
+</ul>
+<h2><a href="https://darnell.day/bbc-gives-up-on-threads-by-instagram-sticks-with-mastodon">BBC放棄了Threads，堅持使用Mastodon</a></h2>
+<ul>
+<li>由於用戶參與度低，英國廣播公司（BBC），國家橄欖球聯盟和CBS新聞等幾個品牌已停止使用Instagram的Threads。</li>
+<li>儘管發生了這一變化，BBC仍在維護其自託管的Mastodon帳戶，這表明它更喜歡提供更大控制和靈活性的平臺。</li>
+<li>BBC的決定可能會受到對Instagram母公司Meta的地理禁令政策的擔憂以及缺乏用於Threads自動帖子的公共API的影響。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37759871">反應</a></h3>
+<ul>
+<li>BBC決定在其應用程式上放棄其新聞特定功能Threads，由於用戶的不滿，例如Instagram上不需要的內容推薦，將重點轉移到Mastodon上。</li>
+<li>文章中強調了社交媒體對話語的有害影響以及建立成功社交網路的困難，強調了Bluesky和Mastodon等替代平臺上新聞可信度的不確定性。</li>
+<li>還提到了Instagram上用於獲取有價值的行為數據的線程，以及在電影「線程」中對冷戰創傷影響的描述。</li>
+</ul>
+<h2><a href="https://www.fox2detroit.com/news/detroit-man-steals-800-gallons-using-bluetooth-to-hack-gas-pumps-at-station">底特律男子使用藍牙竊取 800 加侖在車站入侵加油泵</a></h2>
+<ul>
+<li>一名來自底特律的男子一直在利用藍牙技術遠端訪問和控制氣泵，使他無需付費即可竊取天然氣。</li>
+<li>加油站擁有者受到了重大影響，這次駭客攻擊造成的損失接近3,000美元。儘管在監控錄像中抓獲了一名嫌疑人，但該男子仍然逍遙法外。</li>
+<li>類似的事件以前也發生過，導致加油站職員提高了警惕性，建議他們在出現任何可疑活動的跡象時讓警方參與進來。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37751140">反應</a></h3>
+<ul>
+<li>這篇文章是圍繞加油站的各種安全問題的全面討論，包括駭客攻擊、盜竊和鎖的功效。</li>
+<li>它深入研究了盜竊相關損失的保險範圍、加油站職員的責任和付款方式等主題。</li>
+<li>還強調了盜竊的道德和安全影響以及加油站擁有者面臨的無數挑戰。</li>
+</ul>
+<h2><a href="https://github.com/google/graph-mining">圖挖掘庫</a></h2>
+<ul>
+<li>“圖挖掘”是由谷歌開發的一個開源專案，託管在GitHub上，提供圖形挖掘工具，包括記憶體聚類。</li>
+<li>該工具包在需要圖形結構的數據挖掘和機器學習應用程式中非常有用。</li>
+<li>伴隨著文檔、行為準則和安全策略，該專案在 Apache-2.0 許可證下獲得許可。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37753442">反應</a></h3>
+<ul>
+<li>谷歌開源了一個新的圖挖掘庫，由於缺乏文檔或示例，引起了人們的關注和討論。</li>
+<li>對話圍繞著擁有足夠文檔的重要性以及在沒有文檔的情況下破譯圖書館使用方式的挑戰。</li>
+<li>討論還涉及與其他圖形處理庫的比較，並提到適用於 Y Combinator 的程式。</li>
+</ul>
+<h2><a href="https://www.wsj.com/business/retail/amazon-used-secret-project-nessie-algorithm-to-raise-prices-6c593706">亞馬遜使用演算法來測試它可以提高多少價格：FTC</a></h2>
+<ul>
+<li>正如聯邦貿易委員會（FTC）所透露的那樣，亞馬遜採用了一種名為「尼斯湖水怪計劃」的策略來探索它可以在多大程度上提高價格，希望競爭對手能夠效仿。</li>
+<li>這一策略是FTC對亞馬遜提起訴訟的一部分，聲稱這家科技巨頭對消費者價格產生了不當影響。</li>
+<li>“尼斯湖水怪計劃”的披露凸顯了對主導科技公司潛在反競爭行為的擔憂和關注。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37755648">反應</a></h3>
+<ul>
+<li>英國《金融時報》透露，亞馬遜採用演算法來測試可容忍的價格上漲，但價格上漲仍然取決於管理層的批准。</li>
+<li>人們擔心亞馬遜潛在的反競爭行為，包括價格匹配、掠奪性定價以及由於其市場主導地位而可能違反反壟斷慣例。</li>
+<li>這篇文章還深入探討了股東在公司決策中的作用、壟斷的弊端、埃隆·馬斯克（Elon Musk）的Starlink的可信度，以及亞馬遜上的假冒產品問題，包括大多數假冒的蘋果充電器。</li>
+</ul>
+<h2><a href="https://www.careerfair.io/online-maze">我申請了250個工作，並計算了每個工作需要多長時間</a></h2>
+<ul>
+<li>筆者對申請250個職位所需的時間進行了研究，發現平均申請時間為2.7分鐘。</li>
+<li>該研究表明，申請時間往往會隨著公司規模的擴大而增加，政府、航空航太和諮詢等行業的申請時間很長。</li>
+<li>作者指出，較舊的申請人跟蹤系統（ATS），如Workday和Taleo，往往會大大延長工作申請的持續時間。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37753292">反應</a></h3>
+<ul>
+<li>該文本列舉了工作申請過程中遇到的多種挑戰和挫折，包括自動化系統的負面經歷和漫長的申請期。</li>
+<li>它提出了關於使用人工智慧（AI）評估簡歷的辯論，對欺詐性簡歷的擔憂，並討論了限制工作申請對申請人和僱主的影響。</li>
+<li>該文本強調了簡歷和求職信定製的必要性，闡明瞭公司不同的響應時間，並強調了加強招聘程式的必要性。</li>
+</ul>
+<h2><a href="https://moxie.org/2013/01/07/career-advice.html">職業建議 （2013）</a></h2>
+<ul>
+<li>作者建議年輕人仔細考慮他們的職業選擇，堅持工作可以顯著塑造他們的個性。</li>
+<li>他們建議觀察未來領域的老年專業人士可以為一個人的潛在未來提供有價值的見解。</li>
+<li>這篇文章強調自我發現和在做出職業決策時挑戰社會規範的必要性，促進對非傳統經驗的追求，並將個人滿意度置於金錢利益之上。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37759873">反應</a></h3>
+<ul>
+<li>作者描述了他們從音樂到軟體開發的轉變，強調了獲得觀點、向年長同事學習和保持工作與生活平衡的優點。</li>
+<li>他們質疑環境和工作對身份認同的影響程度，引用斯坦福監獄實驗，並強調追求個人激情和保持批判性思維的重要性。</li>
+<li>作者強調做出與自己的價值觀和目標一致的選擇，養成良好的習慣，並在工作之外實現個人成就感;他們還考慮生活方式選擇（如飲酒）對整體健康的影響。</li>
+</ul>
+<h2><a href="https://www.openculture.com/2020/10/daisugi.html">大杉，日本用其他樹木種植樹木的技術（2020）</a></h2>
+<ul>
+<li>大杉是一種日本方法，從一棵樹種植多棵樹以產生直木，主要用於建築。</li>
+<li>開放文化是一個在線平臺，提供各種免費的教育資源和學位課程，旨在促進更廣泛地獲取文化和教育材料。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37759366">反應</a></h3>
+<ul>
+<li>本文探討了日本的大杉技術，並將其與歐洲技術進行了對比。</li>
+<li>它審議了日本向非接觸式卡支付的過渡、其局限性以及繼續使用過時的技術。</li>
+<li>討論強調了文化保護和互聯網使用者全球多樣性的重要性。</li>
+</ul>
+<h2><a href="https://arstechnica.com/gadgets/2023/10/review-framework-laptop-finally-gets-an-amd-ryzen-config-and-its-pretty-good/">評論：框架筆記型電腦終於獲得了AMD Ryzen配置 - 而且非常好</a></h2>
+<ul>
+<li>框架筆記型電腦13引入了AMD Ryzen配置，與英特爾同類產品相比，可提供卓越的圖形性能。</li>
+<li>筆記型電腦的設計保持不變，銳龍主機板與現有的框架筆記型電腦 13 機箱相容，確保向後相容。</li>
+<li>雖然擴展模組可以自定義埠，但使用者需要注意某些模組在特定埠中性能更好。特別是，當USB-A模組連接到某些埠時，電池壽命可能會縮短。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37752950">反應</a></h3>
+<ul>
+<li>談話的重點是框架筆記型電腦，其功能，如AMD Ryzen處理器選項，以及與ThinkPad等品牌的比較。</li>
+<li>用戶報告說，AMD型號的電池壽命較短，可能是由於USB埠佈置，他們爭論焊接RAM與插座RAM的優點。</li>
+<li>討論延伸到可升級部件生態系統的前景，高性能計算機元件PCB的生產可行性，以及將Framework筆記型電腦運往中國的可行性和擔憂。</li>
+</ul>
+<h2><a href="https://trigger.dev">Trigger.dev V2 – TypeScript 開發人員的臨時替代方案</a></h2>
+<ul>
+<li>Trigger.dev 是 Zapier 的開源替代品，通過簡化其自託管和促進貢獻的架構來回應用戶反饋。</li>
+<li>該團隊計劃將支援擴展到長時間運行的伺服器、多個框架、後台函數和輪詢觸發器等。</li>
+<li>公司鼓勵社區持續反饋，並保持進度的透明度。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37750763">反應</a></h3>
+<ul>
+<li>Trigger.dev V2 是 Zapier 新發佈的開源替代品，在自託管、架構和 API 集成方面提供了增強功能。</li>
+<li>該工具因其易用性、處理長時間運行的作業的能力、高效的 API 集成和 UI 更新而備受讚譽。</li>
+<li>有希望的未來更新及其與其他平臺的結構差異引起了積極的反饋，使其成為尋求替代BullMQ，Windmill和Temporal等平臺的使用者的引人注目的選擇。</li>
+</ul>
+<h2><a href="https://www.calculatedriskblog.com/2023/10/update-lumber-prices-down-11-yoy.html">木材價格同比下降11%</a></h2>
+<ul>
+<li>文章報告稱，與上一年相比，木材價格下降了11%。</li>
+<li>這表明，向新的實物交割木材期貨合約的過渡影響了長期價格比較。</li>
+<li>木材的季節性需求趨勢有所體現，價格通常在 4 月或 5 月達到頂峰。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37756714">反應</a></h3>
+<ul>
+<li>本文強調了在大流行推動的激增之後導致木材價格下跌的潛在正常化市場條件。</li>
+<li>它還深入研究了柑橘綠化病和氣候變化對農業的影響，這對建築和食品服務等行業感興趣。</li>
+<li>討論的焦點是送餐服務的高價格和影響膠合板價格的因素，為這些變化如何影響各個行業提供了多種觀點。</li>
+</ul>
+<h2><a href="https://www.androidpolice.com/fairphone-5-review/">Fairphone 5評測：迄今為止最不折不扣的可維修手機</a></h2>
+<ul>
+<li>Fairphone最近發佈了Fairphone 5，這是一款因其專注於可維修性和環境責任而受到稱讚的智能手機，具有現代設計，1224x2770 OLED顯示幕，4,200mAh電池，256GB存儲空間和8GB RAM。</li>
+<li>雖然目前的可用性僅限於歐洲，但未來有可能在美國推出。儘管相機的平均性能和價格受到批評，但它仍然是優先考慮環境影響和社會責任的消費者的首選。</li>
+<li>Fairphone 5聲稱提供長達八年的更長支援窗口，並且可以用標準螺絲刀完全拆卸，表明其對使用壽命和可維修性的承諾。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37751924">反應</a></h3>
+<ul>
+<li>討論主要集中在手機的可維修性、可持續性和使用者偏好上，重點是 Fairphone 型號。提出的問題包括更換零件的可用性和對舊型號的長壽命支援。</li>
+<li>涵蓋的重要主題包括維修與新購買的成本效益，電子廢物對環境的影響，使用可持續材料的重要性，以及移除耳機插孔或藍牙在音訊中的應用等因素。</li>
+<li>人們對印度iPhone等高端手機型號提供的持續操作系統和安全更新以及關於潛在未來技術趨勢的討論表示欽佩。</li>
+</ul>
+]]></description>
+            <link>https://hn.cho.sh/zh/Hant/2023/10/04</link>
+            <guid isPermaLink="false">2023-10-04T00:00:00.000Z</guid>
+            <pubDate>Wed, 04 Oct 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[2023-10-03]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/03">2023-10-03</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/04">2023-10-03</a></h1>
 <h2><a href="https://soatok.blog/2023/10/02/return-to-office-is-bullshit-and-everyone-knows-it/">重返辦公室是胡說八道，每個人都知道</a></h2>
 <ul>
 <li>作者詳細介紹了他們因執行辦公室回報政策而辭職的負面經歷，這表明這可能導致士氣下降和人才流失。</li>
@@ -212,8 +392,7 @@
         </item>
         <item>
             <title><![CDATA[2023-10-02]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/03">2023-10-02</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/04">2023-10-02</a></h1>
 <h2><a href="https://www.thedrive.com/news/tire-dust-makes-up-the-majority-of-ocean-microplastics-study-finds">輪胎粉塵佔海洋微塑膠的大部分</a></h2>
 <ul>
 <li>最近的一項研究表明，海洋中的大多數微塑膠來自輪胎粉塵，這會損害海洋生物和潛在的人類健康。</li>
@@ -401,8 +580,7 @@
         </item>
         <item>
             <title><![CDATA[2023-10-01]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/03">2023-10-01</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/04">2023-10-01</a></h1>
 <h2><a href="https://www.theverge.com/2023/9/29/23896151/onewheel-cpsc-recall-future-motion-crash-death">在四人死亡后，每一個Onewheel都被召回</a></h2>
 <ul>
 <li>Onewheel電動滑板的創造者Future Motion正在召回其在美國的所有30萬輛自動平衡車，原因是據報導有四人死亡。</li>
@@ -590,8 +768,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-30]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/03">2023-09-30</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/04">2023-09-30</a></h1>
 <h2><a href="https://www.redblobgames.com/making-of/draggable/">undefined</a></h2>
 <ul>
 <li>null</li>
@@ -834,8 +1011,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-29]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/03">2023-09-29</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/04">2023-09-29</a></h1>
 <h2><a href="https://jamesbvaughan.com/southwest-wifi/">undefined</a></h2>
 <ul>
 <li>null</li>
@@ -1074,8 +1250,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-28]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/03">2023-09-28</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/04">2023-09-28</a></h1>
 <h2><a href="https://www.raspberrypi.com/products/raspberry-pi-5/">undefined</a></h2>
 <ul>
 <li>null</li>
@@ -1323,8 +1498,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-27]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/03">2023-09-27</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/04">2023-09-27</a></h1>
 <h2><a href="https://www.ftc.gov/news-events/news/press-releases/2023/09/ftc-sues-amazon-illegally-maintaining-monopoly-power">undefined</a></h2>
 <ul>
 <li>null</li>
@@ -1572,8 +1746,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-26]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/03">2023-09-26</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/04">2023-09-26</a></h1>
 <h2><a href="https://openai.com/blog/chatgpt-can-now-see-hear-and-speak">undefined</a></h2>
 <ul>
 <li>null</li>
@@ -1821,8 +1994,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-25]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/03">2023-09-25</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/04">2023-09-25</a></h1>
 <h2><a href="https://adriano.fyi/posts/2023-09-24-choose-postgres-queue-technology/">undefined</a></h2>
 <ul>
 <li>null</li>
@@ -2062,250 +2234,6 @@
             <link>https://hn.cho.sh/zh/Hant/2023/09/25</link>
             <guid isPermaLink="false">2023-09-25T00:00:00.000Z</guid>
             <pubDate>Mon, 25 Sep 2023 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2023-09-24]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/zh-Hant/2023/10/03">2023-09-24</a></h1>
-<h2><a href="https://www.dominikmayer.com/2023/09/icloud-drive-silently-deletes-your-content/">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37626273">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://ipfyx.fr/post/visual-studio-code-tunnel/">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37623562">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://bottlerocket.dev">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37626731">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://media.defcon.org/DEF%20CON%2031/DEF%20CON%2031%20presentations/byt3bl33d3r%20-%20SpamChannel%20Spoofing%20Emails%20From%202%20Million%20Domains%20and%20Virtually%20Becoming%20Satan.pdf">undefined</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=37628337">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://www.bonappetit.com/story/can-you-put-plastic-in-the-microwave">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37624070">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://www.neowin.net/news/eu-fines-intel-400-million-for-blocking-amds-market-access-through-payments-to-pc-makers/">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37627745">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://github.com/microsoft/windows-drivers-rs">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37629874">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://www.404media.co/why-scalpers-can-get-olivia-rodrigo-tickets-and-fans-cannot/">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37623955">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://twitter.com/bmann/status/1705572964068930010">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37628525">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://www.economist.com/books-and-arts/2021/07/10/the-vital-art-of-talking-to-strangers">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37624201">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://theconversation.com/spyware-can-infect-your-phone-or-computer-via-the-ads-you-see-online-report-213685">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37623479">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://efe.com/en/science-and-technology/2023-09-22/india-fails-to-re-establish-communication-with-its-moon-probe/">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37623405">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://github.com/rdaum/moor">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37624400">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://support.google.com/mail/answer/15049?hl=en">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37630914">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://arstechnica.com/health/2023/09/worm-that-jumps-from-rats-to-slugs-to-human-brains-has-invaded-southeast-us/">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37624506">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://arxiv.org/abs/2309.12269">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37627129">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://www.genengnews.com/topics/genome-editing/crispr-silkworms-make-spider-silk-that-defies-scientific-constraints/">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37623314">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://www.elim.app/eng/home">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37625283">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://blog.nationalarchives.gov.uk/20speople-investigating-the-strange-disappearance-of-mrs-agatha-christie/">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37625291">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h2><a href="https://www.tsa.gov/travel/security-screening/whatcanibring/items/light-saber">undefined</a></h2>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37624112">反應</a></h3>
-<ul>
-<li>null</li>
-<li>null</li>
-<li>null</li>
-</ul>
-]]></description>
-            <link>https://hn.cho.sh/zh/Hant/2023/09/24</link>
-            <guid isPermaLink="false">2023-09-24T00:00:00.000Z</guid>
-            <pubDate>Sun, 24 Sep 2023 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
