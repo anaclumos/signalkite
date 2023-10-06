@@ -1,10 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss
-  xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:content="http://purl.org/rss/1.0/modules/content/"
-  xmlns:atom="http://www.w3.org/2005/Atom"
-  version="2.0"
->
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title><![CDATA[Heimdall]]></title>
         <description><![CDATA[Heimdall]]></description>
@@ -15,16 +9,203 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 05 Oct 2023 10:23:48 GMT</lastBuildDate>
-        <atom:link href="https://hn.cho.sh/rss/newsletter/en.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Thu, 05 Oct 2023 00:00:00 GMT</pubDate>
+        <lastBuildDate>Fri, 06 Oct 2023 10:29:55 GMT</lastBuildDate>
+        <atom:link href="https://hn.cho.sh/rss/newsletter/en.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Fri, 06 Oct 2023 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[en]]></language>
         <ttl>60</ttl>
         <item>
+            <title><![CDATA[2023-10-06]]></title>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/06">2023-10-06</a></h1>
+<h2><a href="https://dotat.at/@/2023-05-26-whence-time.html">Where does my computer get the time from?</a></h2>
+<ul>
+<li>The blog post provides an in-depth exploration of the sources and systems computers utilize to keep accurate time, starting from Network Time Protocol (NTP) servers to high-level international measurement systems.</li>
+<li>The discussion also delves into the history of time measurement, shedding light on the shift from astronomical-based timekeeping to the more precise atomic clocks.</li>
+<li>The author clarifies that contrary to popular belief, computers do not source their time from the Royal Greenwich Observatory.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37778496">Reactions</a></h3>
+<ul>
+<li>The discussions prominently cover technical aspects including source of time for computers, utilization of blockchain, and challenges related to time synchronization.</li>
+<li>There is an exploration of the accuracy of clocks in cars and the inconvenience of manually adjusting them, along with details about institutions and technologies involved in timekeeping.</li>
+<li>It concludes with an examination of how handheld devices like smartphones determine and synchronize time, briefly touching upon the topic of the animal&#39;s time perception through anecdotes about pets.</li>
+</ul>
+<h2><a href="https://blog.apnic.net/2023/09/25/why-http-3-is-eating-the-world/">HTTP/3 adoption is growing rapidly</a></h2>
+<ul>
+<li>HTTP/3, a new version of the Hypertext Transfer Protocol (HTTP), has quickly been incorporated into the public web after being standardized by the Internet Engineering Task Force (IETF).</li>
+<li>HTTP/3, along with the associated QUIC protocol, is extensively utilized by major companies like Google and Meta, and it replaces the Transport Control Protocol (TCP) with QUIC, offering enhanced encryption and performance improvements.</li>
+<li>The new protocol delivers better speed for web page loading and video streaming, contributing to its rapid acceptance in the industry.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37777050">Reactions</a></h3>
+<ul>
+<li>The discussions revolve around several topics such as the use of QUIC protocol to navigate internet restrictions in China, benefits and hurdles of the QUIC protocol, and implementing QoS in QUIC.</li>
+<li>Corporate dissatisfaction with Zscaler network security service, SSL interception usage within corporate networks, and video packaging and encoding strategies each form part of the dialogue.</li>
+<li>Finally, the discussions ponder over the necessity for a standard QUIC API and the benefits of employing mmap() over read() for handling large datasets.</li>
+</ul>
+<h2><a href="https://bitmagnet.io/">Bitmagnet: A self-hosted BitTorrent indexer, DHT crawler, and torrent search</a></h2>
+<ul>
+<li>Bitmagnet is a self-hosted BitTorrent indexer with unique features like a Distributed Hash Table (DHT) crawler, content classifier, and torrent search engine; these enable users to search for torrents without relying on external entities.</li>
+<li>The project is still in the alpha phase but already has several promising features, such as a generic BitTorrent indexer, a content classifier, a torrent search engine, and a GraphQL API – a technology making it easier to get data from a server to a client.</li>
+<li>The team is working on high-priority features not yet implemented, like classifiers for other content types, search result ordering, search performance optimization, and other handy features such as authentication, saved searches, and support for BitTorrent v2 protocol. It&#39;s open to support on GitHub.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37777347">Reactions</a></h3>
+<ul>
+<li>The discussion focuses on different elements of DHT crawling, namely its implementation and optimization of its tools.</li>
+<li>Other pressing concerns include illegal and counterfeit content, the requirement for moderation and reputation systems.</li>
+<li>There&#39;s also a debate on the potential of governments to scrutinize encrypted content.</li>
+</ul>
+<h2><a href="https://mazzo.li/posts/fast-pipes.html">How fast are Linux pipes anyway? (2022)</a></h2>
+<ul>
+<li>The article elaborates on the functioning of Unix pipes in Linux with an emphasis on optimizing a test program for data writing and reading through a pipe.</li>
+<li>It delves into the usage of techniques such as vmsplice and splice to enhance throughput by lessening data copying, and the employment of the perf tool for performance analysis.</li>
+<li>It also discusses the role of paging, virtual memory in data transfer, translation of virtual to physical addresses, and the application of huge pages to lower TLB (Translation Lookaside Buffer) misses.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37782493">Reactions</a></h3>
+<ul>
+<li>The article details the implementation and performance of Linux pipes, emphasizing the potential benefits of vmsplice, a shared memory mechanism, despite the challenges in optimizing its versions.</li>
+<li>It delves into libraries, APIs for data handling and optimizations, the unpredictable behavior of Linux pipes, and discusses the repercussions of broken pipes.</li>
+<li>Alternative data transfer methods like shared memory or message queues, and optimization techniques such as io_uring and mmap are explored. Also discussed are the application of pipes in shell scripting for high-performance tasks, as well as the trade-offs and performance outcomes when choosing between threads and pipes.</li>
+</ul>
+<h2><a href="https://store.app">An app store just for installable web apps</a></h2>
+<ul>
+<li>Store.app, a mobile app developed by PWA Labs, Inc, provides features that allow users to login, sign up, navigate, make profiles, modify settings, create lists, and save favorites.</li>
+<li>The app offers a wide range of categories including AI, crypto, games, productivity, shopping, and social, enabling users to install and operate different applications within these groups.</li>
+<li>Among the popular apps are Wordi Games, Replit Dev Tools, friend.tech, Canva, and numerous AI apps.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37782513">Reactions</a></h3>
+<ul>
+<li>The central topic of discussion is Progressive Web Apps (PWAs), and their potential benefits over native apps regarding usability and functionality.</li>
+<li>Feedback is shared on a specific app store for PWAs, covering features like filters, installation process, user impressions, and security concerns alongside suggestions to improve.</li>
+<li>An up-and-coming platform called Store.app, aimed at assisting web developers, is covered. It provides useful tools and widgets, but some users report installation and update issues. The ongoing debate between the advantages and disadvantages of apps over websites is also noted.</li>
+</ul>
+<h2><a href="https://words.filippo.io/dispatches/seeds-bounty/">NIST Elliptic Curves Seeds Bounty</a></h2>
+<ul>
+<li>A bounty of $12,000 is being offered to anyone who can decode five hashes contributing to NIST elliptic curves, prevalent in contemporary cryptography.</li>
+<li>An increase to $36,000 is promised if the recipient opts to donate the reward to charity. This is seen as an incentive to encourage more participation in solving the cryptographic problem.</li>
+<li>The initiative aims to dispel any suspicions or concerns regarding the security of the NIST curves, formed from allegedly hashed English sentences by a now-deceased researcher.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37784499">Reactions</a></h3>
+<ul>
+<li>A reward is being offered for discovering the string used to generate random seeds for the NIST P-curves, a type of elliptical-curve cryptography.</li>
+<li>The debate hinges on the possibility of &quot;backdoors&quot; in cryptographic algorithms and the challenge in securely integrating them, with skepticism expressed over the NIST curves&#39; security.</li>
+<li>Discussion also covers the origin of seeds provided by the NSA (National Security Agency) and potential alternative methods for their generation.</li>
+</ul>
+<h2><a href="https://www.scylladb.com/2023/10/02/introducing-database-performance-at-scale-a-free-open-source-book/">Database Performance at Scale – A free book</a></h2>
+<ul>
+<li>The new open-source book &quot;Database Performance at Scale,&quot; authored by ScyllaDB employees and contributors, provides practical advice for enhancing database performance.</li>
+<li>Although written by ScyllaDB team members, its principles apply to users of any database, covering diverse elements affecting performance.</li>
+<li>The book, which offers a unique author perspective on tradeoffs and recommendations, is available for free in digital format and can be bought in print. It&#39;s under the Creative Commons Attribution 4.0 International License.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37778069">Reactions</a></h3>
+<ul>
+<li>ScyllaDB is providing a complimentary book titled &quot;Database Performance at Scale&quot; that delves into multiple aspects of database optimization and scalability.</li>
+<li>The book discusses several topics, including the difficulties of employing Elasticsearch, the advantages of denormalizing data, and considerations for selecting a database with high write capacity.</li>
+<li>It also underscores the significance of meticulous evaluation when picking a database and discusses issues that come with using a database as a primary storage for a system, highlighting the necessity for effective database query optimization.</li>
+</ul>
+<h2><a href="https://abcnews.go.com/Technology/wireStory/hp-fails-derail-claims-bricks-scanners-multifunction-printers-102286365">HP fails to derail claims that it bricks scanners on printers when ink runs low</a></h2>
+<ul>
+<li>HP Inc. is confronting a class-action lawsuit, alleging that the company deactivates scanning and faxing features on its printers when ink levels deplete.</li>
+<li>The lawsuit accuses HP of deliberately concealing this information from consumers to boost sales from expensive ink cartridges.</li>
+<li>A federal judge has allowed the lawsuit to move forward, dismissing HP&#39;s plea to discard the case. This represents a recurring issue, with another group suing Canon Inc. in 2021 for similar practices.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37781862">Reactions</a></h3>
+<ul>
+<li>Users express frustration over HP printers, believing them designed to cease functioning when ink levels are low, sparking discussions on reliable and cost-saving printing alternatives.</li>
+<li>Brother laser printers and Canon Pixma printers with refillable toner tanks receive mention for their cost-effectiveness, though mixed reviews cite issues such as WiFi connectivity troubles with Brother printers.</li>
+<li>Beyond printer type, debates reveal issues with the availability of affordable scanners, printer cartridge complications, the need for hard copies in various contexts, and calls for improved regulations and ethics within the printer industry.</li>
+</ul>
+<h2><a href="https://fund.krita.org/">Krita fund has no corporate support</a></h2>
+<ul>
+<li>The Krita Development Fund is campaigning for financial assistance to hire over ten full-time developers for Krita, a popular open-source digital painting software.</li>
+<li>Individuals and corporations may join the fund by selecting a membership level and pledging a monthly contribution. Different membership options offering varying levels of public or private acknowledgment are available.</li>
+<li>Currently, the fund has 349 individual contributors but no corporate ones, with its total monthly contributions amounting to €4426.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37777301">Reactions</a></h3>
+<ul>
+<li>The discourse encompassed various facets of open-source software, touching aspects like funding, potential regulatory requirements, and the pros and cons of such tools.</li>
+<li>The conversation also focused on Krita software, detailing its use-cases, restrictions, licensing and funding models, as well as constructive criticism and its role in corporates.</li>
+<li>Other broader topics covered were the pay disparities among software developers and the influence of economies of scale on business success.</li>
+</ul>
+<h2><a href="https://www.theguardian.com/science/2023/oct/02/fcc-space-debris-fine-dish-network-satellite">US Government issues first-ever space debris penalty to Dish Network</a></h2>
+<ul>
+<li>The US Federal Communications Commission (FCC) has fined Dish Network $150,000 for breaching its anti-space debris regulations.</li>
+<li>Dish Network is penalized for improperly deorbiting its EchoStar-7 satellite, triggering the potential for increased orbital debris.</li>
+<li>This instance marks the first ever penalty for space debris enforced by the US government, highlighting the FCC&#39;s intent to uphold its space debris rules amidst a rapidly growing space economy.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37777440">Reactions</a></h3>
+<ul>
+<li>The US government has issued its inaugural space debris penalty, charging Dish Network $150,000 for regulatory violations and an additional fine of $126 million by the FCC for improper satellite disposal.</li>
+<li>Swarm Technologies, another satellite company, has been fined $900,000 for unauthorized satellite launches.</li>
+<li>The penalties have sparked discussions on the challenges in rescuing stranded satellites, the importance of disposal plans and regulatory compliance to alleviate space debris, and the potential profitability in tackling space debris issues.</li>
+</ul>
+<h2><a href="https://www.scientificamerican.com/article/september-was-the-most-anomalously-hot-month-ever/">September was the most anomalously hot month ever</a></h2>
+<ul>
+<li>September 2023 marked the hottest month on record, featuring a temperature anomaly 0.5 degrees Celsius higher than the previous record.</li>
+<li>The year 2023 may become the first-ever to exceed 1.5 degrees Celsius above preindustrial temperatures, driven by escalating greenhouse gas emissions from burning fossil fuels and an El Niño event.</li>
+<li>These record-breaking temperatures underscore the immediate necessity for action to curb global warming.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37776854">Reactions</a></h3>
+<ul>
+<li>The conversation covers various aspects of climate change, such as its causes, effects, scientific understanding limitations, government&#39;s role, economic implications, and the imperative need for alternative energy sources.</li>
+<li>The discourse also delves into the societal impact, with discussions about behavior and diet choices, plastic production&#39;s effect, the need for government intervention, and different responses to the crisis.</li>
+<li>The diverse views and perspectives on each topic have ignited debates and disagreements, underscoring the complexity of the climate crisis and the difficulty in finding effective solutions.</li>
+</ul>
+<h2><a href="https://www.theguardian.com/business/2023/oct/03/bookingcom-makes-a-fortune-so-why-is-it-leaving-its-bills-to-small-hotels-unpaid">Booking.com makes a fortune – so why is it leaving its bills to hotels unpaid?</a></h2>
+<ul>
+<li>Numerous small hotels and partners of Booking.com have reported payment delays since July, causing financial stress for these businesses.</li>
+<li>Despite reporting record profits, Booking.com has been largely silent and unresponsive when approached by partners regarding the payments they are owed.</li>
+<li>The lack of payment and poor communication has led to significant financial difficulties for these businesses, impacting their ability to cover costs and repay debts. Partners are urging for immediate action, transparency, and timely payments from Booking.com.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37781022">Reactions</a></h3>
+<ul>
+<li>The primary discussion pertains to criticism and negative experiences with Booking.com, focusing on issues such as payment delays, delayed reimbursements, and customer support.</li>
+<li>There&#39;s a debate on the pros and cons of using third-party booking sites as opposed to direct hotel bookings, with added concerns over credit card security and finding suitable accommodations.</li>
+<li>The conversation also calls for enhanced consumer protections and the need to address the market dominance in the travel industry.</li>
+</ul>
+<h2><a href="https://www.wired.com/story/fast-forward-chatbot-hallucinations-are-poisoning-web-search/">Generative AI could make search harder to trust</a></h2>
+<ul>
+<li>Microsoft&#39;s Bing search engine inadvertently served false facts generated by chatbots as accurate information, highlighting issues with the reliability of AI in web search results.</li>
+<li>This accidental experiment exposed how AI-powered systems can potentially amplify the propagation of misinformation on the web.</li>
+<li>The problem could escalate with an increase in AI-generated content on search platforms and social media, raising serious questions about their dependability.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37781231">Reactions</a></h3>
+<ul>
+<li>The central topic is concerns about the spread of misinformation due to the use of artificial intelligence (AI) in generating content for search results.</li>
+<li>The forum discusses the limitations of AI in producing accurate information and the difficulty of distinguishing false narratives, suggesting different platforms and tools for verifying sources.</li>
+<li>There&#39;s also dialogue on the influence of AI on diverse industries and criticisms of Wired magazine&#39;s coverage of the tech sector, emphasizing the need for improved curation and access to trusted information sources.</li>
+</ul>
+<h2><a href="https://www.ronpatrickstuff.com/">Ron Patrick&#39;s Street-Legal Jet Powered Volkswagen Beetle (2006)</a></h2>
+<ul>
+<li>Ron Patrick has constructed a road-legal, jet-powered Volkswagen Beetle, a personal project that contains both a gasoline engine for normal driving and a jet engine for an adrenaline rush.</li>
+<li>Although the car looks like a standard Beetle and is registered in California, engine modifications could prevent it from passing new car smog checks. It uses a repurposed helicopter turboshaft engine for its jet power.</li>
+<li>Despite its unconventional design, it has been well-received at car shows and has attracted significant attention. The California Department of Motor Vehicles is reviewing whether the dual-engine vehicle poses a security risk.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37778531">Reactions</a></h3>
+<ul>
+<li>The discussion encompasses various topics such as the application of jet engines and turbines in different fields, including hybrid cars and vehicle modifications.</li>
+<li>Major topics include the efficiency and confines of turbines, along with the legal and safety concerns surrounding the fitting of a jet engine in a car.</li>
+<li>It also delves into examples of turbine-powered vehicles, their commercial triumph, cultural variations in regulations, and the technical nitty-gritty of altering a car with a jet engine.</li>
+</ul>
+<h2><a href="https://www.theregister.com/2023/10/05/lenovo_pc_boss_4_in/">Lenovo PC boss: 4 in 5 of our devices will be repairable by 2025</a></h2>
+<ul>
+<li>Lenovo, the leading global PC manufacturer, has revealed plans to make 80% of its devices, including repair parts, repairable by 2025.</li>
+<li>The initiative is part of the company&#39;s commitment to achieving net zero emissions by 2050, and aligns with efforts by the European Council to revise EU regulations on right-to-repair.</li>
+<li>Lenovo maintains that emphasizing repairability will not hinder business, and is a necessary step towards sustainability and informing consumers about product lifespan.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=37778771">Reactions</a></h3>
+<ul>
+<li>Lenovo plans to make 80% of their devices repairable by 2025, a move appreciated by customers concerned about the non-repairability of current devices.</li>
+<li>Some users express concerns over Lenovo&#39;s previous incidents involving malware and backdoors, cautioning others to remain vigilant.</li>
+<li>The plan resonates positively with a discontent expressed over soldered RAM and the preclusion to upgrades, showing a demand for more repairable and upgradable devices in today&#39;s market.</li>
+</ul>
+]]></description>
+            <link>https://hn.cho.sh/2023/10/06</link>
+            <guid isPermaLink="false">2023-10-06T00:00:00.000Z</guid>
+            <pubDate>Fri, 06 Oct 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[2023-10-05]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/05">2023-10-05</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/06">2023-10-05</a></h1>
 <h2><a href="https://jakelazaroff.com/words/an-interactive-intro-to-crdts/">An interactive intro to CRDTs</a></h2>
 <ul>
 <li>The post delves into the idea of Conflict-free Replicated Data Types (CRDTs) and their role in developing collaborative applications.</li>
@@ -207,8 +388,7 @@
         </item>
         <item>
             <title><![CDATA[2023-10-04]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/05">2023-10-04</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/06">2023-10-04</a></h1>
 <h2><a href="https://github.com/vitoplantamura/OnnxStream/tree/846da873570a737b49154e8f835704264864b0fe">Running Stable Diffusion XL 1.0 in 298MB of RAM</a></h2>
 <ul>
 <li>The repository &quot;vitoplantamura/OnnxStream&quot; features an open-source inference library, OnnxStream, designed to limit memory usage during machine learning model execution.</li>
@@ -395,8 +575,7 @@
         </item>
         <item>
             <title><![CDATA[2023-10-03]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/05">2023-10-03</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/06">2023-10-03</a></h1>
 <h2><a href="https://soatok.blog/2023/10/02/return-to-office-is-bullshit-and-everyone-knows-it/">Return to Office Is Bullshit and Everyone Knows It</a></h2>
 <ul>
 <li>The author details their negative experience regarding quitting their job due to enforced office return policies, suggesting it could lead to decreased morale and loss of talent.</li>
@@ -584,8 +763,7 @@
         </item>
         <item>
             <title><![CDATA[2023-10-02]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/05">2023-10-02</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/06">2023-10-02</a></h1>
 <h2><a href="https://www.thedrive.com/news/tire-dust-makes-up-the-majority-of-ocean-microplastics-study-finds">Tire dust makes up the majority of ocean microplastics</a></h2>
 <ul>
 <li>A recent study revealed that the majority of microplastics in the ocean originate from tire dust, which can harm marine life and potentially human health.</li>
@@ -773,8 +951,7 @@
         </item>
         <item>
             <title><![CDATA[2023-10-01]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/05">2023-10-01</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/06">2023-10-01</a></h1>
 <h2><a href="https://www.theverge.com/2023/9/29/23896151/onewheel-cpsc-recall-future-motion-crash-death">Every single Onewheel is being recalled after four deaths</a></h2>
 <ul>
 <li>Future Motion, the creator of Onewheel electric skateboards, is recalling all 300,000 of its self-balancing vehicles in the US due to four reported deaths.</li>
@@ -962,8 +1139,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-30]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/05">2023-09-30</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/06">2023-09-30</a></h1>
 <h2><a href="https://www.redblobgames.com/making-of/draggable/">Draggable objects</a></h2>
 <ul>
 <li>The blog post provides a guide on how to implement draggable functionality for interactive diagrams using mouse and touch events, complete with code examples and explanations.</li>
@@ -1206,8 +1382,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-29]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/05">2023-09-29</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/06">2023-09-29</a></h1>
 <h2><a href="https://jamesbvaughan.com/southwest-wifi/">WiFi without internet on a Southwest flight</a></h2>
 <ul>
 <li>The author narrates their experience on a Southwest flight where they were unable to directly buy internet access but found a way to use the flight&#39;s Wi-Fi status page.</li>
@@ -1446,8 +1621,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-28]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/05">2023-09-28</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/06">2023-09-28</a></h1>
 <h2><a href="https://www.raspberrypi.com/products/raspberry-pi-5/">Raspberry Pi 5</a></h2>
 <ul>
 <li>The Raspberry Pi 5 is a newly released upgrade of the popular Raspberry Pi computer, delivering 2-3 times faster performance owing to an optimized silicon design.</li>
@@ -1695,8 +1869,7 @@
         </item>
         <item>
             <title><![CDATA[2023-09-27]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/05">2023-09-27</a></h1>
+            <description><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/06">2023-09-27</a></h1>
 <h2><a href="https://www.ftc.gov/news-events/news/press-releases/2023/09/ftc-sues-amazon-illegally-maintaining-monopoly-power">FTC sues Amazon for illegally maintaining monopoly power</a></h2>
 <ul>
 <li>The Federal Trade Commission (FTC) and 17 state attorneys general have filed a lawsuit against Amazon, claiming that the company illegally maintains its monopoly power.</li>
@@ -1941,255 +2114,6 @@
             <link>https://hn.cho.sh/2023/09/27</link>
             <guid isPermaLink="false">2023-09-27T00:00:00.000Z</guid>
             <pubDate>Wed, 27 Sep 2023 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2023-09-26]]></title>
-            <description
-      ><![CDATA[<h1><a href="https://hn.cho.sh/2023/10/05">2023-09-26</a></h1>
-<h2><a href="https://openai.com/blog/chatgpt-can-now-see-hear-and-speak">We are beginning to roll out new voice and image capabilities in ChatGPT</a></h2>
-<ul>
-<li>OpenAI is adding voice and image capabilities to their ChatGPT AI system, enabling a more interactive interface where users can discuss images and have voice conversations.</li>
-<li>These features bring wide applications including discussing travel photos, identifying food items, and aiding in solving mathematical problems.</li>
-<li>The updates will be available to Plus and Enterprise users in the coming two weeks, with voice accessibility on both iOS and Android, and image compatibility across all platforms. OpenAI addresses concerns about impersonation and privacy related to these new capabilities, asserting they have taken steps to alleviate these risks.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37642335">Reactions</a></h3>
-<ul>
-<li>OpenAI aims to improve the voice and image capabilities of ChatGPT, based on users&#39; feedback of low-latency voice ordering and requests for faster voice responses and system interruptibility.</li>
-<li>Despite concerns over speed, accuracy, and ecological impact, ChatGPT&#39;s potential use in robotics planning and tasks is seen as promising. There&#39;s an ongoing debate over the trustworthiness and value of AI-generated information.</li>
-<li>OpenAI plans to launch a new image generation model, DALLE-3, amidst discussions on AI business models, the influence on internet search, and the withdrawal of a web browsing feature from an AI platform.</li>
-</ul>
-<h2><a href="http://farewell.bostonunitygroup.com/">Unity&#39;s oldest community announces dissolution</a></h2>
-<ul>
-<li>The Boston Unity Group (BUG), the first official Unity user group globally, has announced its final event on September 27th, citing disappointment in the company&#39;s recent direction and lack of support for developer communities.</li>
-<li>The organizers believe their contributions are better directed towards creating opportunities within the broader local development community.</li>
-<li>BUG members are invited to join the Boston Game Dev meetup group to continue networking with other industry professionals. The last BUG meeting will be a social event on Zoom.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37648068">Reactions</a></h3>
-<ul>
-<li>The longstanding community of Unity, Boston Unity Group (BUG), has disbanded due to Unity&#39;s recent pricing changes, signaling a loss of trust in the company.</li>
-<li>There&#39;s a widespread discussion on the decline of trust in various well-known brands, like Unity and Craftsman, due to perceived negative business practices like censorships, short-term profit focus, and decreased product reliability.</li>
-<li>Issues in open-source game development, like limitations of game engines such as Godot, personnel changes, communication failures, and Unity&#39;s questionable support for independent developers, have also been highlighted.</li>
-</ul>
-<h2><a href="https://www.fieggen.com/shoelace/">Ian&#39;s Shoelace Site</a></h2>
-<ul>
-<li>Ian&#39;s Shoelace Site offers detailed information and resources about shoelaces, including tutorials on lacing shoes, tying knots, and understanding shoelace construction.</li>
-<li>The website is known for the &quot;Ian Knot,&quot; a quick and secure shoelace knot, and showcases various shoe lacing photos.</li>
-<li>It provides a search functionality for easy navigation and regularly updates its content based on visitor feedback, making it a thorough resource for all shoelace-related inquiries.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37646964">Reactions</a></h3>
-<ul>
-<li>Ian&#39;s Shoelace Site is receiving appreciation from users for featuring different shoelace tying techniques and knots, which they find educating and helpful.</li>
-<li>The Ian Knot, advertised as the quickest shoelace knot, has garnered positive reviews, with users also sharing their own preferred tying methods.</li>
-<li>Users have suggested the creation of YouTube videos based on the website&#39;s content, hinting at a potential new platform for Ian&#39;s Shoelace Site to expand into.</li>
-</ul>
-<h2><a href="https://onlyfans.web.cern.ch/">The Fantilator Page</a></h2>
-<ul>
-<li>The &quot;Fantilator&quot; is a project which links multiple fans together to develop a larger apparatus; its design has been improved over time to reduce thickness and improve power supply.</li>
-<li>The Fantilator design later undergoes a phase upgrade with enhanced cable management, and a Fanbase. At this stage, it utilizes 64 fans, and introduces control of a single fan using PWM (Pulse Width Modulation) with Arduino.</li>
-<li>Eventually, the Fantilator project achieved success, with all fans being controlled by Arduino running a specific operating system, FantilatorOS.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37641706">Reactions</a></h3>
-<ul>
-<li>A subdomain named &quot;Fantilator Page&quot; has been humorously created on the CERN website, sparking debates and humor in the comment section of the website.</li>
-<li>Users have shared links to related sites and crafted puns about fans and ventilation systems in response to this joke subdomain.</li>
-<li>The reactions to this joke are mixed, with some users appreciating the humor, while others question its relevance or appropriateness.</li>
-</ul>
-<h2><a href="https://en.wikipedia.org/wiki/Rhythm_0">Rhythm 0</a></h2>
-<ul>
-<li>&quot;Rhythm 0&quot; was a six-hour performance piece by artist Marina Abramović in 1974, where she allowed attendees to interact with her using provided objects, testing the extent of public behavior.</li>
-<li>As the performance progressed, audience actions escalated from gentle interactions to extreme violence, including cutting her clothes, slashing at her throat, and threatening her with a loaded gun.</li>
-<li>The piece, culminating in Abramović rising and the fleeing of the audience, is hailed as a seminal work in performance art history.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37642610">Reactions</a></h3>
-<ul>
-<li>The central theme revolves around the interpretation of Marina Abramović&#39;s performance art &quot;Rhythm 0&quot;, debating the generalization of audience behavior and art&#39;s ability to depict humanity&#39;s perspectives which science cannot.</li>
-<li>The discussions also explore the impact of marketing and context on audience behavior and contemplate the potential legal implications of the performance, questioning morality and agenda behind the artwork.</li>
-<li>The debate also encompasses Christian ethics, the intertwining roles of art and law, and the authenticity and effectiveness of the art piece in provoking thought and precipitating violent behavior.</li>
-</ul>
-<h2><a href="https://minecraft.wiki/w/Minecraft_Wiki:Moving_from_Fandom">Minecraft Wiki has forked from Fandom</a></h2>
-<ul>
-<li>The Minecraft Wiki has transitioned from Fandom to a new site, minecraft.wiki, which introduces enhanced features such as a fresh design, faster page loads, fewer advertisements, better search capabilities, and anonymous editing.</li>
-<li>Users are being urged to share the news, use minecraft.wiki links instead of Fandom ones, and contribute to improving the new wiki. They may also transfer their Gamepedia/Fandom accounts to the new site.</li>
-<li>The new Minecraft Wiki is hosted by Weird Gloop, and currently, only the English edition has moved. Non-English versions could possibly shift in the future.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37644047">Reactions</a></h3>
-<ul>
-<li>The Minecraft Wiki, previously a part of Fandom, has now become an independent entity.</li>
-<li>This separation occurred 20 hours ago and has sparked discussions on platforms such as the Hacker News forum.</li>
-<li>It signifies a transition in the management of this resource, potentially affecting its structure and content.</li>
-</ul>
-<h2><a href="https://www.dji.com/mini-4-pro">DJI Mini 4 Pro</a></h2>
-<ul>
-<li>The DJI Mini 4 Pro camera drone, a lightweight and advanced drone with high-quality imaging capabilities and a long battery life, is offering free express shipping for a limited time.</li>
-<li>The drone boasts of intelligent features like waypoint flight and advanced return-to-home functionality, and offers multiple shooting modes for versatile photography and video experience.</li>
-<li>Users are provided with easy editing features and have access to a community for gaining inspiration and tips. Additional accessories related to the drone can be bought separately.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37649448">Reactions</a></h3>
-<ul>
-<li>The discussion encompasses multiple facets of DJI drones including user experience, concerns about their durability and geofencing, and the US Department of Defense labelling DJI as a domestic security threat.</li>
-<li>The discourse also covers the rivalry between Chinese and western drone enterprises, the proficiency of DJI drones, alternative drone options, and the controversy around DJI&#39;s software liaising with Chinese policies.</li>
-<li>Moreover, subjects like wireless transmission distance, noise levels, lawfulness, privacy, and the worthiness of DJI drones were also handled.</li>
-</ul>
-<h2><a href="https://rocket9labs.com/post/its-time-to-let-go-apache-software-foundation/">Apache Open Office as an unmaintained project?</a></h2>
-<ul>
-<li>The author gives an overview of Apache Open Office, an office productivity software by Apache Software Foundation, emphasizing its lack of major updates since 2014.</li>
-<li>They question the active status of the project, citing numerous commits to the software&#39;s repository that only involve whitespace changes.</li>
-<li>The author urges users to express their worries to the Apache Software Foundation and proposes a link to another, better-maintained office software.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37645160">Reactions</a></h3>
-<ul>
-<li>Key topics discussed include the perception of Apache OpenOffice as an undermaintained project, Apache Software Foundation&#39;s role and effectiveness, and comparisons between OpenOffice and LibreOffice.</li>
-<li>Open-source software&#39;s challenges are highlighted, such as balancing open-source commitment with profitability and addressing OpenOffice&#39;s build process and complexity.</li>
-<li>An undercurrent theme emerges about ageism in the tech industry, backed by a mention of Mark Zuckerberg&#39;s statement about preferring young hires.</li>
-</ul>
-<h2><a href="https://theaviationgeekclub.com/the-sr-71-blackbird-astro-nav-system-aka-r2-d2-worked-by-tracking-the-stars-and-was-so-powerful-that-it-could-see-the-stars-even-in-daylight/">The SR-71 Blackbird Astro-Nav System worked by tracking the stars</a></h2>
-<ul>
-<li>The SR-71 Blackbird, a Cold War strategic reconnaissance aircraft, employed an Astro-Nav System (referred to as &quot;R2-D2&quot;) that used star sightings to provide navigational guidance.</li>
-<li>The Astro-Nav System, akin to a 1960s variant of GPS, enabled the Blackbird to update its inertial navigation system and offer course advice.</li>
-<li>The Blackbird&#39;s pilots and Reconnaissance Systems Officers (RSOs) managed this system along with other surveillance and defensive technology onboard.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37651171">Reactions</a></h3>
-<ul>
-<li>The text revolves around several aspects related to navigation systems, including the SR-71 Blackbird&#39;s Astro-Nav system&#39;s efficiency and celestial navigation particulars.</li>
-<li>It highlights on the limitations of mapping software, radar, and navigation reference systems, and the significance of collaboration during World War II in aerospace technology.</li>
-<li>Besides, it mentions the use of star trackers and a brief note on an inexpensive CPU and application possibilities for Y Combinator (YC) Winter 2024, a startup accelerator program.</li>
-</ul>
-<h2><a href="https://english.elpais.com/economy-and-business/2023-09-17/new-york-employers-must-include-pay-rates-in-job-ads-under-new-state-law.html">New York employers must include pay rates in job ads under new state law</a></h2>
-<ul>
-<li>A recent New York law obliges employers to reveal pay rates in job adverts, aiming to encourage salary transparency and tackle pay disparities related to age, gender, and race.</li>
-<li>The law applies to businesses with a minimum of four employees, incorporating remote workers reporting to New York-based managers.</li>
-<li>Critics suggest that compliance might be difficult for small employers and that the law imposes an extra administrative load on businesses. Comparable pay transparency laws are in place in California and Colorado.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37641583">Reactions</a></h3>
-<ul>
-<li>A newly introduced law in New York mandates employers to include pay rates in all job advertisements.</li>
-<li>Discussions show divergent views, with some questioning the law&#39;s efficacy and others arguing it could help job seekers avoid underpaying jobs while promoting pay equivalence.</li>
-<li>The conversation extends to deciding salary brackets, considering factors like value and performance of software engineers, impact of sexism and racism in compensation, and advantages or challenges of publicizing salary details.</li>
-</ul>
-<h2><a href="https://forum.kerbalspaceprogram.com/topic/219607-ksp2-is-spamming-the-windows-registry-over-weeksmonths-until-the-game-will-stop-working-permanently/">KSP2 is spamming the Windows Registry until the game stops working</a></h2>
-<ul>
-<li>Users of Kerbal Space Program 2 have encountered a bug causing the game to populate the Windows registry with redundant data, triggering a malfunction in the game.</li>
-<li>The developers are cognizant of this issue and are currently testing a solution for a hotfix release.</li>
-<li>An interim solution suggested by users is to delete the registry entries, but caution is recommended due to potential risks. Criticisms have been raised about the capability of the development team and the safety implications for personal computers.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37644952">Reactions</a></h3>
-<ul>
-<li>Discussions surround a range of topics relating to Kerbal Space Program 2 (KSP2), including technical issues with the Windows Registry causing game problems and criticism of the registry as a system for configuration management.</li>
-<li>Other topics include debates over KSP2&#39;s development and performance, concerns about the acquisition by Take-Two Interactive, comparisons between the Windows Registry and Unix file systems, and disappointment regarding the game&#39;s features and its development team.</li>
-<li>Overall, there is a diversity of viewpoints and critiques concerning KSP2 and its ongoing development process.</li>
-</ul>
-<h2><a href="https://github.com/davidhampgonsalves/life-dashboard">E-Ink Day Schedule</a></h2>
-<ul>
-<li>The &quot;life-dashboard&quot; project repurposes used Kindle devices, exploiting their large e-ink screens, wifi connectivity, and ARM processors for a low-power, heads-up display for daily life.</li>
-<li>The second version of the project, rewritten due to complications with image generation and display, now uses FBInk to showcase images from an API Gateway/Lambda backend and is deployable with Terraform. It also includes instructions for jailbreaking, setting up SSH, and installing dependencies.</li>
-<li>Having garnered over 1.1k stars and 19 forks on GitHub, the project aims to extend the product-life of a Kindle by 5+ years and leverage 3D printed frames using wood-filled filament.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37642671">Reactions</a></h3>
-<ul>
-<li>The discussions are centered on hacking and customizing Amazon Kindles, repurposing old e-readers, and using e-ink displays for various functions.</li>
-<li>Participants actively share their experiences, provide advice, and deliberate the constraints of e-ink technology.</li>
-<li>Specific products such as &quot;Invisible Calendar&quot; and alternative options like ESP32 e-ink screens have also been mentioned.</li>
-</ul>
-<h2><a href="https://eclecticlight.co/2023/09/25/postscripts-sudden-death-in-sonoma/">PostScript’s sudden death in Sonoma</a></h2>
-<ul>
-<li>Apple has withdrawn support for PostScript and EPS files in its macOS Sonoma operating system citing security issues.</li>
-<li>Users have provided diverse reactions to this removal; while some understand the necessity for enhanced security, others are nostalgic and stress the significant role of PostScript.</li>
-<li>Due to this change, users will require alternative software to convert these files, or they may still utilize PostScript via a virtual machine.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37650040">Reactions</a></h3>
-<ul>
-<li>PostScript, a publishing format, is being phased out from WebKit/Safari and Microsoft Office due to its associated security risks; such a trend is similarly occurring with EPS files and may see Ghostscript as their replacement.</li>
-<li>Apple is distancing itself from different scripting environments, such as Perl, with a shift towards Swift for their codebase, provoking user agitation over the changes.</li>
-<li>Significant frustration exists among users due to Apple&#39;s decision to remove support for PostScript and EPS in macOS, leading to discussions about potential alternatives and the effects on user experience.</li>
-</ul>
-<h2><a href="https://twitter.com/TeamBlind/status/1706266044871086271">What was behind Microsoft&#39;s layoffs of over 20k people in the last year?</a></h2>
-<ul>
-<li>A Microsoft representative confirms the company&#39;s decision to lay off more than 20,000 employees in the last year, providing insight into the factors influencing this move.</li>
-<li>This decision was partly driven by the impact of the COVID-19 pandemic, which significantly affected the company&#39;s operation and revenue streams.</li>
-<li>The representative provides a behind-the-scenes look at the decision-making process involved in these mass layoffs, shedding light on how large corporations tackle such large-scale changes.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37643608">Reactions</a></h3>
-<ul>
-<li>The discussion focuses on myriad subjects including job cuts at Microsoft, class struggles, hate speech on Twitter, communication aptitudes for engineers, Google&#39;s employment protocols, the part of investors, and outsourcing in the tech field.</li>
-<li>Key concerns related to labor rights and protections, income disparity, and effects of job layoffs are being highlighted.</li>
-<li>The conversation underscores fears about wealth redistribution, inequality, and the handling of employees in the tech industry.</li>
-</ul>
-<h2><a href="https://blog.curtii.com/blog/posts/wordscapes-the-casino-in-your-pocket/">The Casino in Your Pocket</a></h2>
-<ul>
-<li>The blog post examines the monetization tactics of &quot;Wordscapes&quot;, specifically focusing on its mini-game &quot;Mt. Fortune&quot;.</li>
-<li>The author found, after a 28-day analysis, the impediments (rocks) in the game aren&#39;t random but designed to push players to spend in-game currency, suggesting that the game is manipulating to extract real money.</li>
-<li>Concerns are raised about the ethicality of games permitting real-money purchases, particularly those targeting all age groups, due to such potentially exploitative practices.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37642538">Reactions</a></h3>
-<ul>
-<li>The article scrutinizes the adverse effects and unethical practices of mobile casino games, especially on younger users, emphasizing the necessity for stricter regulations and age-appropriate online shops.</li>
-<li>It highlights common issues like monetization, loot crates (virtual items with randomized rewards), in-app purchases, and corporate accountability, while also discussing manipulation of probabilities and the pressing need for widespread awareness and stringent regulation.</li>
-<li>The discussion broadens to criticize the quality and monetization hurdles of mobile gaming, the limited selection on Apple Arcade, and associated concerns, such as NFTs (non-fungible tokens) and the financial risk posed to young people.</li>
-</ul>
-<h2><a href="http://sainthelenaisland.info/communications.htm">Saint Helena Island Communications</a></h2>
-<ul>
-<li>The summary discusses communication in St Helena, covering topics such as post, freight, telephones, internet and email services, and communication companies, including their limitations and high costs.</li>
-<li>Government initiatives to improve the internet, like using satellite services (Starlink, OneWeb), and the soon-to-come Equiano Cable, are highlighted, which will potentially enhance island&#39;s web services.</li>
-<li>It briefly highlights the role of St Helena Radio in radio communications, Sure&#39;s limited television services, and the engagement of Maestro Technologies for new data and voice networks. It also traces back St Helena&#39;s history in telegraph development and its connection to the Equiano subsea cable.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37645945">Reactions</a></h3>
-<ul>
-<li>St Helena Island is enhancing its internet connectivity through the installation of an undersea fiber-optic cable, enabling it to become a communications hub.</li>
-<li>The island&#39;s government is planning to create satellite uplink stations and a new cloud region despite concerns about reliable utilities and remoteness of the location.</li>
-<li>Discussions revolve around the monopolistic nature of the internet service provider and exclusive governmental telecommunications deal, but measures are being initiated to equip small businesses with fiber-optic internet, along with recent ISP decisions to supply unlimited data.</li>
-</ul>
-<h2><a href="https://www.cbsnews.com/news/costco-virtual-medical-checkups-for-29/">Costco now offering virtual medical care for $29</a></h2>
-<ul>
-<li>Costco has partnered with online marketplace Sesame to provide virtual primary care services to its members for $29, including virtual checkups and mental health visits.</li>
-<li>The service is positioned towards the uninsured and individuals with high deductibles.</li>
-<li>Costco&#39;s move parallels other major retailers like Amazon and Walmart, who have also expanded into the realm of healthcare services.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37653831">Reactions</a></h3>
-<ul>
-<li>The debate focuses on several healthcare industry elements, including the benefits of partnerships like Costco and Sesame providing low-cost medical care.</li>
-<li>Discussed shortcomings encompass health insurance inadequacy, healthcare pricing opacity, challenges in healthcare allocation, and high costs associated with medical procedures and education.</li>
-<li>There&#39;s a compelling appeal for reform and more affordable options in healthcare, reflecting frustrations with the American healthcare system and acknowledging the efficiency of other systems like Israel&#39;s.</li>
-</ul>
-<h2><a href="https://macoscontainers.org/">macOS Containers v0.0.1</a></h2>
-<ul>
-<li>A new release allows for the creation of macOS native containers, enabling users to run macOS within macOS, and build and distribute images using Docker.</li>
-<li>This software can be installed via Homebrew, a package management system that simplifies the installation of software on macOS.</li>
-<li>Important to note is that this initiative is independent, meaning it is not approved or endorsed by Apple Inc.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37655477">Reactions</a></h3>
-<ul>
-<li>The discussion is centered around the use and implications of macOS containers, exploring matters such as security concerns and the advantages of using macOS and Homebrew.</li>
-<li>A challenge highlighted is running Linux on Apple Silicon, which demonstrates the tech-specific obstacles in using macOS containers.</li>
-<li>Emphasis is also given to the technical and licensing considerations of distributing macOS in containers, pointing towards the regulatory hurdles involved in the process.</li>
-</ul>
-<h2><a href="https://howtomarketagame.com/2023/09/25/john-romero-on-his-book-doom-guy-and-developing-games-at-a-small-scale/">John Romero on his book “Doom Guy” and developing games at a small scale</a></h2>
-<ul>
-<li>The article explores reasons behind indie game failures, advocating for starting with smaller projects before advancing to larger ones.</li>
-<li>John Romero, co-founder of id Software, shared his insights on the importance of scoping, discipline in game development, financial stability, and conservative spending.</li>
-<li>Romero reflects on the swift production of games in the 90s, emphasizing the value of learning from past experiences and offering advice to aspiring developers.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37649594">Reactions</a></h3>
-<ul>
-<li>The discussion thread explores a range of issues pertinent to game development, including the industry&#39;s ever-evolving landscape and hurdles encountered by developers.</li>
-<li>Highlighted are renowned figures in the field, John Romero and John Carmack, and topics such as success in indie game development, the allure of retro-style graphics, and the influence of technology on game development.</li>
-<li>The discourse includes insights on John Romero&#39;s experience with the creation of games like &#39;Doom&#39; and &#39;Daikatana&#39;, plus useful recommendations for further reading and documentaries about game development.</li>
-</ul>
-<h2><a href="https://undark.org/2023/09/22/book-review-the-long-strange-history-of-mdma/">MDMA and the Quest for Connection in a Fractured World</a></h2>
-<ul>
-<li>&quot;I Feel Love: MDMA and the Quest for Connection in a Fractured World&quot; by Rachel Nuwer delves into the history and possible medicinal applications of MDMA, chiefly for treating PTSD.</li>
-<li>Nuwer presents a balanced view, discussing both the benefits and drawbacks of MDMA, emphasizing its capability to cultivate feelings of connection.</li>
-<li>The book suggests that MDMA may help alleviate feelings of loneliness and disconnection in the modern world, which implies its potential importance in mental health treatments.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=37644506">Reactions</a></h3>
-<ul>
-<li>The Hacker News discussion focuses on the therapeutic and recreational use of MDMA (ecstasy), highlighting its positive effects on mental wellness and relationships, while also noting potential negative impacts.</li>
-<li>The topics of potential addiction, long-term effects, and responsible use are raised, with comparisons made between MDMA and alcohol. Community support and the right environment are emphasized in impacting the MDMA experience.</li>
-<li>The discussion also delves into the controversy of self-medication and the role of pharmaceutical companies in mental health treatment. It underscores the necessity for further research into the therapeutic potential of MDMA and other psychedelic substances.</li>
-</ul>
-]]></description>
-            <link>https://hn.cho.sh/2023/09/26</link>
-            <guid isPermaLink="false">2023-09-26T00:00:00.000Z</guid>
-            <pubDate>Tue, 26 Sep 2023 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
