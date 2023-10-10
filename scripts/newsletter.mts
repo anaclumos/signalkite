@@ -33,7 +33,7 @@ export const createDocHead = (locale: string, title: string, day = new Date()) =
 }
 
 const createHeader = (locale: string) => {
-  return getAdImgHtml("https://raw.githubusercontent.com/anaclumos/heimdall/main/static/img/sponsor.png") + '\n\n'
+  return getAdImgHtml('https://raw.githubusercontent.com/anaclumos/heimdall/main/static/img/sponsor.png') + '\n\n'
 }
 
 const createPreview = (story: Story) => {
