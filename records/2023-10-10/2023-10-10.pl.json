@@ -51,12 +51,12 @@
     "commentLink": "https://news.ycombinator.com/item?id=37831062",
     "commentBody": "",
     "originSummary": [
-      "Google z powodzeniem udaremnił największy do tej pory rozproszony atak typu \"odmowa usługi\" (DDoS), osiągając szczytową wartość 398 milionów żądań na sekundę (rps) przy użyciu nowej techniki o nazwie HTTP/2 Rapid Reset.",
+      "Google z powodzeniem udaremnił największy do tej pory rozproszony atak typu \"odmowa usługi\" (DDoS), osiągając wartość szczytową 398 milionów żądań na sekundę (rps) przy użyciu nowej techniki o nazwie HTTP/2 Rapid Reset.",
       "Celując w głównych dostawców infrastruktury, w tym usługi i infrastrukturę Google, globalna infrastruktura Google do równoważenia obciążenia i ograniczania ataków DDoS odegrała znaczącą rolę w obronie, dodatkowo współpracując z partnerami branżowymi w celu kompleksowego zrozumienia i opracowania środków zaradczych.",
       "Zidentyfikowana luka została oznaczona jako CVE-2023-44487, z zaleceniem dla organizacji obsługujących obciążenia oparte na protokole HTTP, aby zastosowały poprawki lub zweryfikowały podatność swoich serwerów. Google Cloud oferuje ochronę DDoS za pośrednictwem Cloud Armor i zaleca przyjęcie dodatkowych środków bezpieczeństwa, takich jak niestandardowe zasady bezpieczeństwa i reguły ograniczające szybkość."
     ],
     "commentSummary": [
-      "Rozmowy koncentrują się wokół problemu ataków DDoS (Distributed Denial of Service) oraz wymogu skutecznych zabezpieczeń i odpowiedzialności.",
+      "Rozmowy koncentrują się wokół problemu ataków typu Distributed Denial of Service (DDoS) oraz wymogu skutecznych zabezpieczeń i odpowiedzialności.",
       "Wspomniano o różnych strategiach, takich jak blokowanie określonych adresów IP lub egzekwowanie solidnych środków uwierzytelniania, podczas omawiania wyzwań i ograniczeń obecnych technik łagodzenia.",
       "Podkreślono rolę dostawców usług internetowych, firm takich jak Google oraz kwestie dotyczące prywatności, nadużyć i wpływu na użytkowników działających w dobrej wierze. Wspólnie uzgodniono przeprojektowanie Internetu i wprowadzenie lepszych metod bezpieczeństwa w celu przeciwdziałania atakom DDoS."
     ],
@@ -74,13 +74,13 @@
     "commentBody": "",
     "originSummary": [
       "W artykule zbadano brak wbudowanej obsługi ECC (Error Correcting Code) pamięci RAM w procesorach AMD (Advanced Micro Devices) Ryzen 7000 do komputerów stacjonarnych (Central Processing Units).",
-      "Autor potwierdza, że ECC RAM działa na płycie głównej ASRock ze zaktualizowanym UEFI (Unified Extensible Firmware Interface), w oparciu o twierdzenie użytkownika i jego replikację procesu.",
+      "Autor potwierdza, że ECC RAM działa na płycie głównej ASRock ze zaktualizowanym UEFI (Unified Extensible Firmware Interface), bazując na twierdzeniu użytkownika i jego replikacji procesu.",
       "Artykuł zawiera instrukcje dotyczące sprawdzania, czy ECC jest włączone w systemie Linux przy użyciu sterownika ryzen_smu, podkreślając zalety pamięci RAM ECC dla niezawodności i zaangażowania jądra Linux w raportowanie stanu ECC."
     ],
     "commentSummary": [
       "Artykuł koncentruje się na obecności i wydajności pamięci RAM ECC (Error-Correcting Code) w procesorach AMD Ryzen, odnotowując doświadczenia z konkretnymi płytami głównymi i podkreślając jej znaczenie dla niezawodności obliczeń.",
       "Omówiono w nim różne poziomy obsługi ECC na różnych platformach sprzętowych oraz zalety i praktyczne konsekwencje korzystania z modułów ECC DIMM (Dual In-line Memory Module).",
-      "Podczas gdy niektórzy argumentują jego znaczenie dla integralności danych oraz wykrywania i korekcji błędów, inni kwestionują jego znaczenie i możliwe wady, sygnalizując różne opinie na temat potrzeby i korzyści ECC."
+      "Podczas gdy niektórzy argumentują jego znaczenie dla integralności danych oraz wykrywania i korygowania błędów, inni kwestionują jego znaczenie i możliwe wady, sygnalizując różne opinie na temat potrzeby i korzyści ECC."
     ],
     "points": 307,
     "commentCount": 164,
@@ -124,7 +124,7 @@
     "commentSummary": [
       "Dyskusja zagłębia się w tendencyjność zaobserwowaną podczas rzucania monetą, jej czynniki przyczyniające się do tego, takie jak ruchy dłoni, oraz różne strategie osiągania lepszych wyników.",
       "Zaproponowano symulacje w celu zrozumienia prawdopodobieństwa, użycia par monet i innych technik w celu zminimalizowania tego błędu. Sugerowane jest również użycie generowanych komputerowo funkcji losowych w celu zapewnienia uczciwości.",
-      "Przytoczono badanie ujawniające stronniczość początkowej strony monety, wraz z przypomnieniem jego implikacji dla innych eksperymentów i tego, jak badania empiryczne mogą pomóc w uzyskaniu lepszego wglądu."
+      "Przytoczono badanie ujawniające tendencyjność początkowej strony monety, przypominając o jego konsekwencjach dla innych eksperymentów i o tym, jak badania empiryczne mogą pomóc w uzyskaniu lepszego wglądu."
     ],
     "points": 283,
     "commentCount": 173,
@@ -248,11 +248,15 @@
     "originBody": "",
     "commentLink": "https://news.ycombinator.com/item?id=37822927",
     "commentBody": "",
-    "originSummary": [],
+    "originSummary": [
+      "Artykuł wyjaśnia, że Linux wykorzystuje nieużywaną pamięć do buforowania dysku, co może fałszywie wskazywać na niski poziom pamięci, ale nie utrudnia działania aplikacji.",
+      "Buforowanie dyskowe zwiększa wydajność systemu i nie kradnie pamięci z aplikacji, obalając błędne przekonania na temat wykorzystania pamięci.",
+      "Artykuł odradza wyłączanie buforowania dysku, biorąc pod uwagę jego zalety dla aplikacji, jednocześnie oferując sposoby dokładnej oceny dostępnej pamięci i identyfikacji objawów niskiego poziomu pamięci."
+    ],
     "commentSummary": [
-      "Dyskusja toczy się wokół wykorzystania i zarządzania pamięcią w systemach Linux, z frustracjami użytkowników wskazującymi na blokady systemu spowodowane niskim poziomem pamięci i wątpliwym zachowaniem zabójcy Out of Memory (OOM).",
-      "Możliwe rozwiązania/narzędzia, takie jak DAMON, kompresja pamięci RAM i ZRAM, są analizowane w celu zwiększenia wydajności systemu i zapobiegania blokadom.",
-      "Wpływ buforowania dyskowego na wydajność systemu jest przedmiotem dyskusji, co pokazuje złożoność i kompromisy nieodłącznie związane z zarządzaniem pamięcią w systemie Linux."
+      "Rozmowa koncentruje się na wielu elementach zarządzania pamięcią w systemach Linux, takich jak przekształcanie pustej pamięci w pamięci podręczne i koszty buforów oraz zachowanie zabójcy Out-of-Memory (OOM).",
+      "Kładzie również nacisk na brak kompresji pamięci RAM, włączenie kompresji swap i RAM, późniejszy wpływ na wydajność systemu i korygowanie błędnych przekonań dotyczących nieużywanej pamięci RAM.",
+      "Uczestnicy dzielą się osobistymi doświadczeniami, proponują rozwiązania i ulepszenia oraz angażują się w dyskusję na temat trudności i przeszkód związanych z zarządzaniem pamięcią w systemie Linux."
     ],
     "points": 239,
     "commentCount": 180,
@@ -273,7 +277,7 @@
     ],
     "commentSummary": [
       "Debata koncentruje się na regulacji i kontroli technologii w UE, obejmując takie tematy, jak skuteczność i ograniczenia technologii nadzoru oraz wpływ przepisów na gromadzenie danych i prywatność.",
-      "Post wspomina również o bałkanizacji Internetu i potencjalnych reperkusjach włączenia norm kulturowych i moralnych do infrastruktury krytycznej.",
+      "Post wspomina również o bałkanizacji Internetu i potencjalnych konsekwencjach włączenia norm kulturowych i moralnych do infrastruktury krytycznej.",
       "Panuje zgoda co do tego, że potrzebne są lepsze regulacje i głębsze zrozumienie kwestii związanych z technologią."
     ],
     "points": 183,
@@ -311,7 +315,7 @@
     "commentLink": "https://news.ycombinator.com/item?id=37823543",
     "commentBody": "",
     "originSummary": [
-      "Niedawne badanie przeprowadzone przez Google DeepMind i University of Illinois podważyło obecne rozumienie autokorekty w dużych modelach językowych (LLM), ujawniając, że często mają one trudności z udoskonaleniem swoich odpowiedzi bez zewnętrznej informacji zwrotnej.",
+      "Niedawne badanie przeprowadzone przez Google DeepMind i University of Illinois podważyło obecne rozumienie autokorekty w dużych modelach językowych (LLM), ujawniając, że często mają one trudności z udoskonaleniem swoich odpowiedzi bez zewnętrznych informacji zwrotnych.",
       "Badanie sugeruje, że autokorekta w LLM jest bardziej skuteczna, gdy mogą one korzystać z zewnętrznych źródeł, takich jak ludzkie opinie lub baza wiedzy; bez nich ich wydajność znacznie spada.",
       "Badania podkreślają również znaczenie dobrze zaprojektowanych początkowych podpowiedzi dla LLM i ostrożnego stosowania autokorekty w celu zwiększenia ich dokładności i niezawodności, zwłaszcza w zadaniach takich jak zmiana stylistyczna LLM lub zapewnienie bezpieczniejszych odpowiedzi."
     ],

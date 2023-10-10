@@ -15,7 +15,7 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 10 Oct 2023 16:35:14 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 10 Oct 2023 18:32:28 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/ro.xml" rel="self" type="application/rss+xml" />
         <pubDate>Tue, 10 Oct 2023 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
@@ -99,7 +99,7 @@
 </ul>
 <h2><a href="https://www.dslinux.org/">DSLinux - Linux pentru Nintendo DS</a></h2>
 <ul>
-<li>Proiectul DSLinux a atins o piatră de hotar: a portat sistemul de operare Linux pe Nintendo DS și DS Lite și este compatibil cu anumite emulatoare NDS.</li>
+<li>Proiectul DSLinux a atins o piatră de hotar: a portat sistemul de operare Linux pe Nintendo DS și DS Lite, fiind compatibil cu anumite emulatoare NDS.</li>
 <li>Deși nu există dezvoltatori activi contemporani, noi contribuitori sunt invitați să se alăture, cu o documentație abundentă disponibilă pe wiki-ul proiectului pentru îndrumare.</li>
 <li>În ciuda faptului că forumurile DSLinux sunt inactive, listele de discuții și un depozit SVN (Subversion) sunt acolo pentru o comunicare mai bună și pentru controlul online al versiunilor de cod și resurse.</li>
 </ul>
@@ -124,7 +124,7 @@
 <h2><a href="https://security.googleblog.com/2023/10/bare-metal-rust-in-android.html">Rust de tip Bare-metal în Android</a></h2>
 <ul>
 <li>Echipa Android Rust de la Google a rescris firmware-ul pentru cadrul de virtualizare Android în Rust pentru a spori securitatea și siguranța pe dispozitivele Android, atenuând în mod eficient vulnerabilitățile adesea legate de limbajele cu memorie nesigură, cum ar fi C.</li>
-<li>Echipa a contribuit în mod activ la comunitatea Rust prin remedierea erorilor, îmbunătățirea crates-urilor existente și crearea unora noi, dezvăluind în același timp provocările continue legate de memoria partajată, pointeri bruti și lipsa instrumentelor de încapsulare și abstractizarea secțiunilor critice.</li>
+<li>Echipa a contribuit în mod activ la comunitatea Rust prin remedierea erorilor, îmbunătățirea crates-urilor existente și crearea unora noi, dezvăluind în același timp provocările continue legate de memoria partajată, pointeri bruti și lipsa de instrumente pentru încapsulare și abstractizări pentru secțiunile critice.</li>
 <li>În ciuda faptului că Rust are o dimensiune binară mai mare decât C, prin optimizare atentă și prin evitarea dependențelor inutile, poate oferi rezultate comparabile; cu toate acestea, suportul arhitectural specific rămâne încă limitat.</li>
 </ul>
 <h3><a href="https://news.ycombinator.com/item?id=37823377">Reacții</a></h3>
@@ -158,11 +158,16 @@
 <li>Articolul explorează, de asemenea, perspectiva de a cultiva cristale de bismut în formă de piramidă.</li>
 </ul>
 <h2><a href="https://www.linuxatemyram.com/">Linux mi-a mâncat memoria RAM (2009)</a></h2>
+<ul>
+<li>Articolul clarifică faptul că Linux utilizează memoria neutilizată pentru memoria cache de pe disc, ceea ce poate indica în mod fals o memorie redusă, dar nu împiedică rularea aplicațiilor.</li>
+<li>Memoria cache de pe disc îmbunătățește performanța sistemului și nu fură memorie de la aplicații, dezmințind concepțiile greșite despre utilizarea memoriei.</li>
+<li>Articolul recomandă să nu dezactivați memoria cache pe disc, având în vedere beneficiile pe care le aduce aplicațiilor, oferind în același timp modalități de evaluare exactă a memoriei disponibile și de identificare a simptomelor de memorie redusă.</li>
+</ul>
 <h3><a href="https://news.ycombinator.com/item?id=37822927">Reacții</a></h3>
 <ul>
-<li>Discuția se învârte în jurul utilizării și gestionării memoriei în sistemele Linux, frustrările utilizatorilor fiind legate de blocarea sistemului din cauza memoriei insuficiente și de comportamentul îndoielnic al ucigașului OOM (Out of Memory).</li>
-<li>Soluțiile/instrumentele posibile, cum ar fi DAMON, compresia RAM și ZRAM, sunt analizate pentru a îmbunătăți performanța sistemului și a preveni blocajele.</li>
-<li>Efectul cache-ului pe disc asupra performanțelor sistemului este dezbătut, arătând complexitatea și compromisurile inerente în gestionarea memoriei Linux.</li>
+<li>Conversația se concentrează în jurul mai multor elemente de gestionare a memoriei în sistemele Linux, cum ar fi transformarea memoriei goale în memorie cache și costurile bufferilor, precum și comportamentul ucigașului Out-of-Memory (OOM).</li>
+<li>De asemenea, se pune accentul pe absența compresiei RAM, pe încorporarea compresiei swap și RAM, pe efectele ulterioare asupra performanței sistemului și pe rectificarea concepțiilor greșite legate de memoria RAM neutilizată.</li>
+<li>Participanții își împărtășesc experiențele personale, propun soluții și îmbunătățiri și se angajează în discuții despre dificultățile și obstacolele legate de gestionarea memoriei Linux.</li>
 </ul>
 <h2><a href="https://stopchatcontrol.eu/">Stop EU Chat Control</a></h2>
 <ul>
@@ -192,7 +197,7 @@
 <ul>
 <li>Un studiu recent realizat de Google DeepMind și de Universitatea din Illinois a pus la îndoială înțelegerea actuală a autocorecției în modelele lingvistice mari (LLM), dezvăluind că acestea se străduiesc adesea să își perfecționeze răspunsurile fără feedback extern.</li>
 <li>Studiul sugerează că autocorecția în cadrul LLM-urilor este mai eficientă atunci când acestea pot utiliza surse externe, cum ar fi feedback-ul uman sau o bază de cunoștințe; în lipsa acestora, performanța lor scade semnificativ.</li>
-<li>Cercetarea subliniază, de asemenea, importanța unor indicații inițiale bine concepute pentru LLM și a aplicării prudente a autocorecției pentru a spori acuratețea și fiabilitatea acestora, în special în sarcini precum modificarea stilului de ieșire al LLM sau asigurarea unor răspunsuri mai sigure.</li>
+<li>Cercetarea subliniază, de asemenea, importanța unor indicații inițiale bine concepute pentru LLM-uri și aplicarea prudentă a autocorecției pentru a spori acuratețea și fiabilitatea acestora, în special în sarcini precum modificarea stilisticii LLM-urilor sau asigurarea unor răspunsuri mai sigure.</li>
 </ul>
 <h3><a href="https://news.ycombinator.com/item?id=37823543">Reacții</a></h3>
 <ul>

@@ -53,7 +53,7 @@
     "originSummary": [
       "O Google conseguiu impedir o maior ataque de negação de serviço distribuído (DDoS) até o momento, com um pico de 398 milhões de solicitações por segundo (rps), usando uma nova técnica chamada HTTP/2 Rapid Reset.",
       "Visando os principais provedores de infraestrutura, incluindo os serviços e a infraestrutura do Google, a infraestrutura global de balanceamento de carga e mitigação de DDoS do Google desempenhou um papel significativo na defesa, além de colaborar com parceiros do setor para uma compreensão abrangente e o desenvolvimento de contramedidas.",
-      "A vulnerabilidade identificada foi rotulada como CVE-2023-44487, com recomendações às organizações que operam cargas de trabalho baseadas em HTTP para aplicar correções ou verificar a vulnerabilidade de seus servidores. O Google Cloud oferece proteção contra DDoS por meio do Cloud Armor e recomenda a adoção de medidas de segurança adicionais, como políticas de segurança personalizadas e regras de limitação de taxa."
+      "A vulnerabilidade identificada foi rotulada como CVE-2023-44487, com recomendações às organizações que operam cargas de trabalho baseadas em HTTP para que apliquem correções ou verifiquem a vulnerabilidade de seus servidores. O Google Cloud oferece proteção contra DDoS por meio do Cloud Armor e recomenda a adoção de medidas de segurança adicionais, como políticas de segurança personalizadas e regras de limitação de taxa."
     ],
     "commentSummary": [
       "As palestras estão centradas no problema dos ataques de negação de serviço distribuído (DDoS) e na necessidade de salvaguardas e responsabilidade eficazes.",
@@ -139,7 +139,7 @@
     "commentLink": "https://news.ycombinator.com/item?id=37826357",
     "commentBody": "",
     "originSummary": [
-      "O projeto DSLinux alcançou o marco de portar o sistema operacional Linux para o Nintendo DS e DS Lite, e é compatível com determinados emuladores de NDS.",
+      "O projeto DSLinux alcançou o marco de portar o sistema operacional Linux para o Nintendo DS e o DS Lite, e é compatível com determinados emuladores de NDS.",
       "Embora não existam desenvolvedores ativos atuais, novos colaboradores estão sendo convidados a participar, com uma vasta documentação disponível no wiki do projeto para orientação.",
       "Apesar de inativos, os fóruns do DSLinux, as listas de discussão e um repositório SVN (Subversion) estão disponíveis para comunicação adicional e controle de versão on-line de código e recursos."
     ],
@@ -168,7 +168,7 @@
     "commentSummary": [
       "O artigo aborda as complexidades do streaming de vídeo, incluindo o gerenciamento de uma infinidade de formatos e idiomas, restrições de direitos autorais e as complexidades da colocação de anúncios e do streaming linear.",
       "A discussão envolve o uso de soluções pré-existentes ou ferramentas de gerenciamento de catálogos de ativos de código aberto, sugere hardware no local para codificação de vídeo em vez de bloqueio no AWS e explora o uso potencial do Kubernetes na estrutura de uma empresa.",
-      "As soluções de segurança e otimização de vídeo, como Gumlet e Mux, são mencionadas durante o diálogo, embora o texto principal não forneça uma exploração aprofundada das abordagens avançadas de dimensionamento ou do MPEG-DASH."
+      "As soluções de otimização e segurança de vídeo, como Gumlet e Mux, são mencionadas durante o diálogo, embora o texto principal não forneça uma exploração aprofundada das abordagens avançadas de dimensionamento ou do MPEG-DASH."
     ],
     "points": 263,
     "commentCount": 83,
@@ -205,9 +205,9 @@
     "commentLink": "https://news.ycombinator.com/item?id=37821821",
     "commentBody": "",
     "originSummary": [
-      "O módulo 3 do DNS for Developers oferece 10 lições sobre DNS operacional, ensinando como encontrar registros de DNS e entender os servidores DNS autoritativos e locais.",
+      "O módulo 3 do DNS para desenvolvedores oferece 10 lições sobre DNS operacional, ensinando como encontrar registros de DNS e entender os servidores DNS autoritativos e locais.",
       "Os registros DNS fornecidos para hn.algolia.com incluem registros A com endereços IPv4, mas nenhum registro AAAA, CNAME, TXT, NS ou MX foi encontrado.",
-      "As ferramentas de pesquisa de DNS recomendadas no módulo incluem pesquisa de IP reverso, verificador de DNS, pesquisa de site para IP, pesquisa de CNAME e pesquisa de TXT. O módulo também oferece recursos adicionais, como um centro de aprendizado, um blog e informações de contato."
+      "As ferramentas de pesquisa de DNS recomendadas no módulo incluem pesquisa de IP reverso, verificador de DNS, pesquisa de site para IP, pesquisa de CNAME e pesquisa de TXT. O módulo também fornece recursos adicionais, como um centro de aprendizado, um blog e informações de contato."
     ],
     "commentSummary": [
       "O registro DNS de \"hn.algolia.com\" foi removido involuntariamente, o que levou à inatividade da função de pesquisa do Hacker News.",
@@ -248,11 +248,15 @@
     "originBody": "",
     "commentLink": "https://news.ycombinator.com/item?id=37822927",
     "commentBody": "",
-    "originSummary": [],
+    "originSummary": [
+      "O artigo esclarece que o Linux utiliza a memória não utilizada para o armazenamento em cache do disco, o que pode indicar falsamente pouca memória, mas não prejudica a execução dos aplicativos.",
+      "O armazenamento em cache do disco melhora o desempenho do sistema e não rouba memória dos aplicativos, desmascarando os conceitos errôneos sobre o uso da memória.",
+      "O artigo desaconselha a desativação do cache de disco devido aos benefícios que ele traz aos aplicativos e oferece maneiras de avaliar com precisão a memória disponível e identificar sintomas de pouca memória."
+    ],
     "commentSummary": [
-      "A discussão gira em torno do uso e do gerenciamento da memória nos sistemas Linux, com as frustrações dos usuários apontando para bloqueios do sistema devido à falta de memória e ao comportamento questionável do OOM (Out of Memory) killer.",
-      "Possíveis soluções/ferramentas como DAMON, compactação de RAM e ZRAM são examinadas para aprimorar o desempenho do sistema e evitar travamentos.",
-      "O efeito do cache de disco no desempenho do sistema é debatido, mostrando as complexidades e as compensações inerentes ao gerenciamento de memória do Linux."
+      "A conversa gira em torno de vários elementos de gerenciamento de memória em sistemas Linux, como a transformação de memória vazia em caches e custos de buffers, e a conduta do assassino Out-of-Memory (OOM).",
+      "Ele também enfatiza a ausência de compactação de RAM, incorporando a compactação de swap e RAM, os efeitos subsequentes sobre o desempenho do sistema e a retificação de conceitos errôneos sobre a RAM não utilizada.",
+      "Os participantes compartilham experiências pessoais, propõem soluções e aprimoramentos e discutem as dificuldades e os obstáculos relacionados ao gerenciamento de memória do Linux."
     ],
     "points": 239,
     "commentCount": 180,
@@ -312,7 +316,7 @@
     "commentBody": "",
     "originSummary": [
       "Um estudo recente realizado pelo Google DeepMind e pela Universidade de Illinois desafiou a compreensão atual da autocorreção em modelos de linguagem de grande porte (LLMs), revelando que eles frequentemente lutam para refinar suas respostas sem feedback externo.",
-      "O estudo sugere que a autocorreção em LLMs é mais eficaz quando eles podem utilizar fontes externas, como feedback humano ou uma base de conhecimento; sem isso, seu desempenho cai significativamente.",
+      "O estudo sugere que a autocorreção nos LLMs é mais eficaz quando eles podem utilizar fontes externas, como feedback humano ou uma base de conhecimento; sem isso, seu desempenho cai significativamente.",
       "A pesquisa também enfatiza a importância de prompts iniciais bem elaborados para os LLMs e a aplicação cautelosa da autocorreção para aumentar sua precisão e confiabilidade, especialmente em tarefas como a alteração da produção estilística do LLM ou a garantia de respostas mais seguras."
     ],
     "commentSummary": [

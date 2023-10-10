@@ -141,7 +141,7 @@
     "originSummary": [
       "DSLinux-projekti on saavuttanut virstanpylvään, kun Linux-käyttöjärjestelmä on siirretty Nintendo DS:lle ja DS Litelle, ja se on yhteensopiva tiettyjen NDS-emulaattoreiden kanssa.",
       "Vaikka nykyisiä aktiivisia kehittäjiä ei ole, uusia osallistujia kutsutaan mukaan, ja projektin wikissä on runsaasti dokumentaatiota opastusta varten.",
-      "Vaikka DSLinuxin foorumit eivät olekaan aktiivisia, postituslistat ja SVN-tietovarasto (Subversion) ovat olemassa kommunikaation jatkamista ja koodin ja resurssien online-versionhallintaa varten."
+      "Vaikka DSLinux ei olekaan aktiivinen, foorumit, postituslistat ja SVN-tietovarasto (Subversion) ovat olemassa yhteydenpitoa ja koodin ja resurssien online-versionhallintaa varten."
     ],
     "commentSummary": [
       "DSLinux on ainutlaatuinen projekti, jonka tarkoituksena on mahdollistaa Linuxin käyttö Nintendo DS -käsikonsolilla ja voittaa laitteen muistirajoitukset käyttämällä kotitekoisia kasetteja, joissa on suurempi RAM-kapasiteetti.",
@@ -188,7 +188,7 @@
       "Huolimatta siitä, että Rustin binäärikoko on suurempi kuin C:n, huolellisen optimoinnin ja tarpeettomien riippuvuuksien välttämisen avulla sillä voidaan saada aikaan vertailukelpoisia tuloksia; erityinen arkkitehtuurituki on kuitenkin edelleen rajallinen."
     ],
     "commentSummary": [
-      "Keskustelussa keskitytään Rust-ohjelmointikielen soveltamiseen Android-kehityksessä ja kommentoidaan sen soveltuvuutta matalan tason ohjelmointiin ja yhteensopivuutta C:n kanssa.",
+      "Keskustelussa keskitytään Rust-ohjelmointikielen soveltamiseen Android-kehityksessä ja kommentoidaan sen soveltuvuutta matalan tason ohjelmointiin ja yhteensopivuutta C-kielen kanssa.",
       "Rustin potentiaalia sovelluskehityksessä käsitellään sen kykyjen vuoksi, joilla se pystyy eliminoimaan datakilpailut. Sitä kuitenkin verrataan ja asetetaan vastakkain muiden kielten, kuten C:n ja Javan, kanssa.",
       "Keskustelussa käsitellään myös Rustin käytön rajoituksia ja haasteita, kuten yhteensopivuusongelmia Androidin käyttöliittymäkehyksen kanssa sekä kompromisseja muistin kulutuksen, ulottuvuuden ja ajonaikaisen suorituskyvyn välillä."
     ],
@@ -206,7 +206,7 @@
     "commentBody": "",
     "originSummary": [
       "DNS for Developers -moduuli 3 tarjoaa 10 oppituntia toiminnallisesta DNS:stä, jossa opetetaan DNS-tietueiden etsimistä ja auktoriteetti- ja paikallisten DNS-palvelimien ymmärtämistä.",
-      "Toimitetut DNS-tietueet hn.algolia.com-sivustolle sisältävät A-tunnuksia IPv4-osoitteilla, mutta AAAA-, CNAME-, TXT-, NS- tai MX-tietueita ei löydy.",
+      "Toimitetut DNS-tietueet hn.algolia.com:lle sisältävät A-tunnuksia IPv4-osoitteilla, mutta AAAA-, CNAME-, TXT-, NS- tai MX-tietueita ei löydy.",
       "Moduulissa suositellut DNS-etsintätyökalut sisältävät käänteisen IP-etsinnän, DNS-tarkistimen, verkkosivuston IP-etsinnän, CNAME-etsinnän ja TXT-etsinnän. Moduuli tarjoaa myös lisäresursseja, kuten oppimiskeskuksen, blogin ja yhteystiedot."
     ],
     "commentSummary": [
@@ -248,11 +248,15 @@
     "originBody": "",
     "commentLink": "https://news.ycombinator.com/item?id=37822927",
     "commentBody": "",
-    "originSummary": [],
+    "originSummary": [
+      "Artikkelissa selvitetään, että Linux käyttää käyttämätöntä muistia levyn välimuistiin, mikä saattaa virheellisesti osoittaa muistin vähäisyyttä, mutta ei haittaa sovellusten toimintaa.",
+      "Levyn välimuistitallennus parantaa järjestelmän suorituskykyä, eikä se vie muistia sovelluksilta, mikä kumoaa muistinkäyttöä koskevat väärinkäsitykset.",
+      "Kirjoituksessa neuvotaan olemaan poistamatta levyn välimuistia käytöstä, koska siitä on hyötyä sovelluksille, ja tarjotaan keinoja käytettävissä olevan muistin tarkkaan arviointiin ja muistin vähyyden oireiden tunnistamiseen."
+    ],
     "commentSummary": [
-      "Keskustelu pyörii muistin käytön ja hallinnan ympärillä Linux-järjestelmissä, ja käyttäjät ovat turhautuneet järjestelmän lukkiutumiseen muistin vähyyden vuoksi sekä Out of Memory (OOM) -tappajan kyseenalaiseen toimintaan.",
-      "Mahdollisia ratkaisuja/työkaluja, kuten DAMON, RAM-pakkaus ja ZRAM, tutkitaan järjestelmän suorituskyvyn parantamiseksi ja lukkiutumisen estämiseksi.",
-      "Levyjen välimuistitallennuksen vaikutuksesta järjestelmän suorituskykyyn käydään keskustelua, mikä osoittaa Linuxin muistinhallintaan liittyvät monimutkaisuudet ja kompromissit."
+      "Keskustelu keskittyy useisiin Linux-järjestelmien muistinhallinnan elementteihin, kuten tyhjän muistin muuttamiseen välimuisteiksi ja puskureiden kustannuksiin sekä Out-of-Memory (OOM) -tappajan toimintaan.",
+      "Siinä painotetaan myös RAM-muistin pakkauksen puuttumista, swap- ja RAM-muistin pakkauksen sisällyttämistä, sen vaikutuksia järjestelmän suorituskykyyn ja käyttämättömään RAM-muistiin liittyvien väärinkäsitysten oikaisemista.",
+      "Osallistujat jakavat henkilökohtaisia kokemuksiaan, ehdottavat ratkaisuja ja parannuksia sekä keskustelevat Linuxin muistinhallintaan liittyvistä vaikeuksista ja esteistä."
     ],
     "points": 239,
     "commentCount": 180,
@@ -269,7 +273,7 @@
     "originSummary": [
       "Aloitteella pyritään pysäyttämään Euroopan komission toteuttama lasten hyväksikäytön ja houkuttelun hillitsemiseen tähtäävä \"chat-valvonta\", koska se loukkaa perusoikeuksia ja yksityisyyttä.",
       "Aloitteessa väitetään, että chat-valvonta tuottaa vääriä tuloksia, rasittaa viranomaisia, mikä saattaa haitata tutkinnan tuloksia, rikkoo perusoikeuskirjaa ja vahingoittaa salausinfrastruktuuria.",
-      "Niissä ehdotetaan muita keinoja lastensuojeluun, kannustetaan ottamaan yhteyttä paikallisiin Euroopan parlamentin jäseniin ja ilmaisemaan eriävä mielipiteensä, tarjotaan tekoälyn luomia sähköpostimalleja tehokasta viestintää varten ja kehotetaan allekirjoittamaan vetoomus, jotta lainsäätäjiä voidaan painostaa enemmän."
+      "Niissä ehdotetaan muita keinoja lastensuojeluun, kannustetaan ottamaan yhteyttä paikallisiin Euroopan parlamentin jäseniin ja ilmaisemaan eriävä mielipide, tarjotaan tekoälyn luomia sähköpostimalleja tehokasta viestintää varten ja kehotetaan allekirjoittamaan vetoomus, jotta lainsäätäjiä voidaan painostaa enemmän."
     ],
     "commentSummary": [
       "Keskustelussa keskitytään teknologian sääntelyyn ja valvontaan EU:ssa ja käsitellään muun muassa valvontateknologian tehokkuutta ja rajoituksia sekä sääntelyn vaikutusta tiedonkeruuseen ja yksityisyyteen.",
@@ -312,12 +316,12 @@
     "commentBody": "",
     "originSummary": [
       "Googlen DeepMindin ja Illinoisin yliopiston hiljattain tekemä tutkimus kyseenalaisti nykyiset käsitykset suurten kielimallien (LLM) itsekorjauksesta ja paljasti, että ne pyrkivät usein parantamaan vastauksiaan ilman ulkoista palautetta.",
-      "Tutkimus osoittaa, että LLM:n itsekorjaus on tehokkaampaa, kun se voi hyödyntää ulkoisia lähteitä, kuten ihmisten antamaa palautetta tai tietopohjaa; ilman niitä sen suorituskyky heikkenee merkittävästi.",
+      "Tutkimus osoittaa, että LLM:n itsekorjaus on tehokkaampaa, kun se voi hyödyntää ulkoisia lähteitä, kuten inhimillistä palautetta tai tietopohjaa; ilman niitä sen suorituskyky heikkenee merkittävästi.",
       "Tutkimuksessa korostetaan myös hyvin suunniteltujen alkukehotusten merkitystä elinikäisen oppimisen ohjaajille ja itsekorjauksen varovaista soveltamista niiden tarkkuuden ja luotettavuuden lisäämiseksi, erityisesti tehtävissä, kuten elinikäisen oppimisen ohjaajan tyylillisen tuotoksen muuttamisessa tai turvallisempien vastausten varmistamisessa."
     ],
     "commentSummary": [
       "Keskusteluissa keskitytään kielimallien (LLM) rajoituksiin ihmisen älykkyyden jäljittelyssä ja kyseenalaistetaan, ymmärtävätkö tai päättelevätkö ne todella.",
-      "Terminologian määrittelyn tärkeyttä korostetaan, jotta vältettäisiin LLM-hype, ja korostetaan ihmisen kognition ja tekoälyn välistä kuilua.",
+      "Terminologioiden määrittelyn tärkeyttä korostetaan, jotta vältettäisiin LLM-hype, ja korostetaan ihmisen kognition ja tekoälyn välistä kuilua.",
       "Käsitteen taustalla on vaatimus lisätutkimuksesta ja selkeämmästä ymmärryksestä, mikä viittaa tekoälyjärjestelmien monimutkaisuuteen ja huomattaviin eroihin ihmisen kognitiosta."
     ],
     "points": 161,
