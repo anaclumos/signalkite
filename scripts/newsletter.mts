@@ -3,6 +3,7 @@ import { Story } from './type.mjs'
 import { LOCAL_STARBUCKS, LOCAL_REACTIONS, LOCAL_TODAYS_HN, LOCAL_HACKERNEWS_SUMMARY } from './default.mjs'
 import { LinguineCore, LinguineList } from './linguine.mjs'
 import { log } from './util.mjs'
+import { getAdImgHtml } from 'ad.mjs'
 
 export const scheduleNewsletter = async (localeStories: Record<string, Story[]>) => {
   log('📧 Scheduling Newsletter...', 'info')
@@ -31,6 +32,18 @@ export const createDocHead = (locale: string, title: string, day = new Date()) =
 </head>`
 }
 
+const createHeader = (locale: string) => {
+  return `<a href="https://airtable.com/appLfbX7pNQxpBx00/shrfpPSEbLVSXz4r7" target="_blank" rel="noopener noreferrer">
+    ${getAdImgHtml}
+  </a>\n\n`
+}
+
+const createPreview = (story: Story) => {
+  return `<div style="display: none;">
+  ${story.originSummary.join('. ') ?? ''}
+  </div>`
+}
+
 const createFooter = (locale: string) => {
   return `---\n\n[${LOCAL_STARBUCKS[locale]}](https://go.cho.sh/hn-cho-sh-bring-a-friend@TrackLink)\n\n`
 }
@@ -57,8 +70,12 @@ const createCampaign = async (locale: string, stories: Story[]) => {
         subject: subject,
         type: 'regular',
         content_type: 'markdown',
-        body: createContent(locale, stories, true) + createFooter(locale),
-        altbody: createContent(locale, stories, true) + createFooter(locale),
+        body:
+          createPreview(stories[0]) +
+          createHeader(locale) +
+          createContent(locale, stories, true) +
+          createFooter(locale),
+        altbody: createHeader(locale) + createContent(locale, stories, true) + createFooter(locale),
         from_email: `${LOCAL_TODAYS_HN[locale]} <hello@newsletters.cho.sh>`,
         lists: [newsletterId[locale]],
         send_at: timeToSend.toISOString(),
