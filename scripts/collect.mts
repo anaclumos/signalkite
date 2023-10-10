@@ -8,7 +8,7 @@ import {
   tryDownloadingYoutube,
 } from './collectionStrategies.mjs'
 
-export const collect = async (url: string, count=0): Promise<string> => {
+export const collect = async (url: string, count = 0): Promise<string> => {
   log(`📥 Downloading\t${url}`, 'info')
 
   if (url === '') return ''
