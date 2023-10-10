@@ -3,7 +3,7 @@ import { Story } from './type.mjs'
 import { LOCAL_STARBUCKS, LOCAL_REACTIONS, LOCAL_TODAYS_HN, LOCAL_HACKERNEWS_SUMMARY } from './default.mjs'
 import { LinguineCore, LinguineList } from './linguine.mjs'
 import { log } from './util.mjs'
-import { getAdImgHtml } from 'ad.mjs'
+import { getAdImgHtml } from './ad.mjs'
 
 export const scheduleNewsletter = async (localeStories: Record<string, Story[]>) => {
   log('📧 Scheduling Newsletter...', 'info')
