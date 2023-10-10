@@ -34,13 +34,13 @@ export const createDocHead = (locale: string, title: string, day = new Date()) =
 
 const createHeader = (locale: string) => {
   return `<a href="https://airtable.com/appLfbX7pNQxpBx00/shrfpPSEbLVSXz4r7" target="_blank" rel="noopener noreferrer">
-    ${getAdImgHtml}
+    ${getAdImgHtml()}
   </a>\n\n`
 }
 
 const createPreview = (story: Story) => {
   return `<div style="display: none;">
-  ${story.originSummary.join('. ') ?? ''}
+  ${story.originSummary.join(' ') ?? ''}
   </div>`
 }
 
