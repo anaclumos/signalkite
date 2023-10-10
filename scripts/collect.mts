@@ -8,10 +8,15 @@ import {
   tryDownloadingYoutube,
 } from './collectionStrategies.mjs'
 
-export const collect = async (url: string): Promise<string> => {
+export const collect = async (url: string, count=0): Promise<string> => {
   log(`📥 Downloading\t${url}`, 'info')
 
   if (url === '') return ''
+
+  if (count > 5) {
+    log(`❌ Error\tDownload Failed 5 times ${url}`, 'error')
+    return ''
+  }
 
   let body = ''
 
@@ -29,7 +34,7 @@ export const collect = async (url: string): Promise<string> => {
   } catch (e) {
     log(`❌ Error\tDownload All Failed ${url}`, 'error')
     await new Promise((resolve) => setTimeout(resolve, 5000))
-    body = await collect(url)
+    body = await collect(url, count + 1)
   }
 
   if (body.length === 0) log(`❌ Error\tDownload All Failed ${url}`, 'error')
