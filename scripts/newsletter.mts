@@ -5,7 +5,7 @@ import { LinguineCore, LinguineList } from './linguine.mjs'
 import { log } from './util.mjs'
 import { getAdImgHtml } from './ad.mjs'
 import { render } from '@react-email/render'
-import { NewsletterTemplate } from '../emails/NewsletterTemplate'
+import Newsletter from '../emails/NewsletterTemplate'
 
 export const scheduleNewsletter = async (localeStories: Record<string, Story[]>) => {
   log('📧 Scheduling Newsletter...', 'info')
@@ -123,7 +123,7 @@ export const createContent = (locale: string, stories: Story[], day = new Date()
 
 const createHtmlEmail = (locale: string, stories: Story[], day = new Date()) => {
   return render(
-    NewsletterTemplate({
+    Newsletter({
       title: `[${day.toISOString().split('T')[0]}](https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${new Date()
         .toISOString()
         .split('T')[0]
@@ -134,9 +134,10 @@ const createHtmlEmail = (locale: string, stories: Story[], day = new Date()) => 
         bullets: story.originSummary,
         commentLink: story.commentLink + '@TrackLink',
         commentBullets: story.commentSummary,
+        starbucks: LOCAL_STARBUCKS[locale],
       })),
       commentTitle: LOCAL_REACTIONS[locale],
-      lang: locale,
+      locale,
       dir: locale === 'ar' ? 'rtl' : 'ltr',
     })
   )
