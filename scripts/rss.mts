@@ -58,7 +58,7 @@ export const writeNewsletterRss = async (storyHistory: { [key: string]: Story[] 
       guid: new Date(day).toISOString(),
       url: link.replaceAll('@TrackLink', '').replaceAll('-', '/'),
       description: parse(
-        createContent(locale, stories, true, new Date(day))
+        createContent(locale, stories, new Date(day))
           .replaceAll(/[\u200B\u200C\u200D\u200E\u200F\uFEFF]/g, '')
           .replaceAll('@TrackLink', '')
       ),
