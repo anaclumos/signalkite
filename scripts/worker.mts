@@ -124,7 +124,7 @@ const main = async () => {
       fs.mkdirSync(`./docs/${day.replaceAll('-', '/')}`, { recursive: true })
       fs.writeFileSync(
         `./docs/${day.replaceAll('-', '/')}.md`,
-        createContent(locale, localeStories[locale], false, new Date(day))
+        createContent(locale, localeStories[locale], new Date(day))
       )
     } else {
       fs.mkdirSync(`./i18n/${locale}/docusaurus-plugin-content-docs/current/${day.replaceAll('-', '/')}`, {
@@ -132,7 +132,7 @@ const main = async () => {
       })
       fs.writeFileSync(
         `./i18n/${locale}/docusaurus-plugin-content-docs/current/${day.replaceAll('-', '/')}.md`,
-        createContent(locale, localeStories[locale], false, new Date(day))
+        createContent(locale, localeStories[locale], new Date(day))
       )
     }
   }
