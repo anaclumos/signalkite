@@ -10,9 +10,8 @@ import {
   Link,
   Preview,
 } from '@react-email/components'
-import { LOCAL_STARBUCKS } from '@site/scripts/default.mjs'
 
-type NewsletterEmailProps = {
+type NewsletterProps = {
   title?: string
   content: {
     headline: string
@@ -27,7 +26,7 @@ type NewsletterEmailProps = {
   starbucks?: string
 }
 
-export const NewsletterEmail = ({
+export const Newsletter = ({
   title = 'Hacker News Daily',
   content = [
     {
@@ -75,7 +74,8 @@ export const NewsletterEmail = ({
   locale = 'en',
   dir = 'ltr',
   commentTitle = 'HN Comments',
-}: NewsletterEmailProps) => (
+  starbucks = "Enjoy this newsletter? Tell your friends, and I'll buy Starbucks ☕ for all of you."
+}: NewsletterProps) => (
   <Html lang={locale} dir={dir}>
     <Head />
     <Preview>
@@ -131,14 +131,14 @@ export const NewsletterEmail = ({
         ))}
         <Hr style={hr} />
         <Link href="https://go.cho.sh/hn-cho-sh-bring-a-friend@TrackLink" style={footer}>
-        {LOCAL_STARBUCKS[locale]}
+          {starbucks}
         </Link>
       </Container>
     </Body>
   </Html>
 )
 
-export default NewsletterEmail
+export default Newsletter
 
 const main = {
   backgroundColor: '#ffffff',
