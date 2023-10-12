@@ -5,7 +5,7 @@ import { LinguineCore, LinguineList } from './linguine.mjs'
 import { log } from './util.mjs'
 import { getAdImgHtml } from './ad.mjs'
 import { render } from '@react-email/render'
-import Newsletter from './emails/NewsletterTemplate'
+import Newsletter from './emails/NewsletterTemplate.js'
 
 export const scheduleNewsletter = async (localeStories: Record<string, Story[]>) => {
   log('📧 Scheduling Newsletter...', 'info')
