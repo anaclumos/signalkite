@@ -6,6 +6,7 @@
   --background-color: var(--ifm-color-secondary-contrast-background);
   --border-color: var(--ifm-color-gray-500);
   --text-color: var(--ifm-color-primary);
+  --selected-background-color: var(--ifm-color-primary);
 }
 
 [data-theme='dark'] .form {
@@ -33,10 +34,38 @@
   cursor: pointer;
   user-select: none;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 2px -1px;
-  transition: all 0.2s ease-in-out;
+  transition: background, color, box-shadow 0.2s ease-in-out;
 }
 
-.locale input {
+.lang {
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+/* make checkbox invisible */
+.localeCheckbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* When checkbox is checked, style the adjacent label */
+.localeCheckbox:checked + .locale,
+.localeCheckbox:checked + .locale .lang .localeCode {
+  background-color: var(--selected-background-color); /* background color when selected */
+  color: #fff; /* text color when selected */
+}
+
+/* darkmode */
+[data-theme='dark'] .localeCheckbox:checked + .locale,
+[data-theme='dark'] .localeCheckbox:checked + .locale .lang .localeCode {
+  background-color: var(--ifm-color-primary);
+  color: #000;
+}
+
+.localeCheckbox {
   margin-right: 0.6rem;
 }
 
@@ -76,7 +105,7 @@
   margin: 1rem auto;
   width: 100%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 2px -1px;
-  transition: all 0.2s ease-in-out;
+  transition: background, color, box-shadow 0.2s ease-in-out;
   color: var(--text-color);
   font-weight: bold;
   font-size: 1.2rem;
