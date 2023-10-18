@@ -6,11 +6,11 @@ def delete_md_files_with_undefined(directory):
     """
     for root, dirs, files in os.walk(directory):
         for filename in files:
-            if filename.endswith(".md"):
+            if filename.endswith(".json"):
                 filepath = os.path.join(root, filename)
                 with open(filepath, 'r', encoding='utf-8') as file:
                     content = file.read()
-                    if "- undefined" in content:
+                    if "null, null" in content:
                         print(f"Deleting {filepath}...")
                         os.remove(filepath)
 
