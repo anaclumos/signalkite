@@ -66,11 +66,12 @@ const createCampaign = async (locale: string, stories: Story[]) => {
         subject: subject,
         type: 'regular',
         content_type: 'html',
-        body: createPreview(stories[0]) + createHeader(locale) + createHtmlEmail(locale, stories),
+        body: createHtmlEmail(locale, stories).replaceAll('dtd">', 'dtd"/>\n'),
+        alt_body: createHtmlEmail(locale, stories, true),
         from_email: `${LOCAL_TODAYS_HN[locale]} <hello@newsletters.cho.sh>`,
         lists: [newsletterId[locale]],
         send_at: timeToSend.toISOString(),
-        template_id: ['ja', 'zh-Hans', 'zh-Hant'].includes(locale) ? 3 : 1,
+        template: 4,
       }),
     })
     log(`💌 Creating\t${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
@@ -121,13 +122,14 @@ export const createContent = (locale: string, stories: Story[], day = new Date()
   return content
 }
 
-const createHtmlEmail = (locale: string, stories: Story[], day = new Date()) => {
+const createHtmlEmail = (locale: string, stories: Story[], plain = false, day = new Date()) => {
   return render(
     Newsletter({
-      title: `[${day.toISOString().split('T')[0]}](https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${new Date()
+      title: day.toISOString().split('T')[0],
+      titleLink: `https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${day
         .toISOString()
         .split('T')[0]
-        .replaceAll('-', '/')}@TrackLink)\n\n`,
+        .replaceAll('-', '/')}`,
       content: stories.map((story) => ({
         headline: story.title,
         link: story.originLink + '@TrackLink',
@@ -139,6 +141,10 @@ const createHtmlEmail = (locale: string, stories: Story[], day = new Date()) => 
       commentTitle: LOCAL_REACTIONS[locale],
       locale,
       dir: locale === 'ar' ? 'rtl' : 'ltr',
-    })
+    }),
+    {
+      pretty: true,
+      plainText: plain,
+    }
   )
 }

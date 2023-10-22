@@ -1,18 +1,10 @@
 import React from 'react'
 
-import {
-  Body,
-  Container,
-  Head,
-  Heading,
-  Hr,
-  Html,
-  Link,
-  Preview,
-} from '@react-email/components'
+import { Body, Container, Head, Heading, Hr, Html, Link, Preview } from '@react-email/components'
 
 type NewsletterProps = {
   title?: string
+  titleLink?: string
   content: {
     headline: string
     link: string
@@ -28,6 +20,7 @@ type NewsletterProps = {
 
 export const Newsletter = ({
   title = 'Hacker News Daily',
+  titleLink = 'https://go.cho.sh/hn-cho-sh@TrackLink',
   content = [
     {
       headline: 'Google has a secret browser hidden inside the settings',
@@ -74,18 +67,18 @@ export const Newsletter = ({
   locale = 'en',
   dir = 'ltr',
   commentTitle = 'HN Comments',
-  starbucks = "Enjoy this newsletter? Tell your friends, and I'll buy Starbucks ☕ for all of you."
+  starbucks = "Enjoy this newsletter? Tell your friends, and I'll buy Starbucks ☕ for all of you.",
 }: NewsletterProps) => (
   <Html lang={locale} dir={dir}>
     <Head />
-    <Preview>
-      {content?.[0]?.bullets.join(' ') ?? title ?? 'Here is your weekly newsletter'}
-    </Preview>
+    <Preview>{content?.[0]?.bullets.join(' ') ?? title ?? 'Here is your weekly newsletter'}</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Heading as="h1">{title}</Heading>
+        <Heading as="h1">
+          <Link href={titleLink}>{title}</Link>
+        </Heading>
         {content?.map((section, sectionIndex) => (
-          <>
+          <div key={`${sectionIndex}-section`}>
             <Hr style={hr} />
             <Link href={section.link}>
               <Heading as="h2" key={`${sectionIndex}-headline`}>
@@ -120,14 +113,12 @@ export const Newsletter = ({
                   }}
                 >
                   {section?.commentBullets?.map((bullet, bulletIndex) => (
-                    <li
-                      key={`${sectionIndex}-${bulletIndex}`}
-                    >{`${bullet}`}</li>
+                    <li key={`${sectionIndex}-${bulletIndex}`}>{`${bullet}`}</li>
                   ))}
                 </ul>
               </>
             )}
-          </>
+          </div>
         ))}
         <Hr style={hr} />
         <Link href="https://go.cho.sh/hn-cho-sh-bring-a-friend@TrackLink" style={footer}>
