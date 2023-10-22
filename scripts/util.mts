@@ -161,7 +161,7 @@ export const sanitize = (text: string) => {
     .replaceAll('Performance & security by Cloudflare', '')
     .replaceAll('Show HN: ', '')
     .replaceAll('Ask HN: ', '')
-    .replaceAll('Launch HN', '')
+    .replaceAll('Launch HN: ', '')
     .replaceAll('Tell HN: ', '')
     .trim()
     .slice(0, 100000)
