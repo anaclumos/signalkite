@@ -77,7 +77,7 @@ const createCampaign = async (locale: string, stories: Story[]) => {
         from_email: `${LOCAL_TODAYS_HN[locale]} <hello@newsletters.cho.sh>`,
         lists: [newsletterId[locale]],
         send_at: timeToSend.toISOString(),
-        template_id: ['ja', 'zh-Hans', 'zh-Hant'].includes(locale) ? 3 : 1,
+        template_id: getTemplateId(locale),
       }),
     })
     log(`💌 Creating\t${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
@@ -137,4 +137,16 @@ export const createContent = (locale: string, stories: Story[], isEmail = false,
   }
 
   return content
+}
+
+const getTemplateId = (locale: string) => {
+  const NO_WORD_WRAP = 3
+  const RTL = 5
+  const DEFAULT = 1
+
+  if (['ja', 'zh-Hans', 'zh-Hant'].includes(locale)) return NO_WORD_WRAP
+
+  if (['he', 'ar'].includes(locale)) return RTL
+
+  return DEFAULT
 }
