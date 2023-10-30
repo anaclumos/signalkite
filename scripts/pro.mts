@@ -124,7 +124,7 @@ const sendEmail = async (obj: { email: string; query: string; locale: string }) 
   )
 
   const resend = new Resend(process.env.RESEND_KEY)
-  resend.sendEmail({
+  resend.emails.send({
     from: 'hello@newsletters.cho.sh',
     to: email,
     subject: day + ' ' + query,
