@@ -1,5 +1,5 @@
 import { Story } from './type.mjs'
-import { HACKER_NEWS_COUNT_PER_WORKER } from './config.mjs'
+import { HN_COUNT_PER_WORKER } from './config.mjs'
 import rp from 'request-promise'
 
 /**
@@ -45,7 +45,7 @@ export const updateHN = async (): Promise<Story[]> => {
     return diffHours < 24
   })
   bestStories.sort((a, b) => b.points - a.points)
-  bestStories = bestStories.slice(0, HACKER_NEWS_COUNT_PER_WORKER)
+  bestStories = bestStories.slice(0, HN_COUNT_PER_WORKER)
   return bestStories
 }
 
