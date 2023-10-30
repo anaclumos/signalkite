@@ -6,10 +6,8 @@ import { collect } from './collect.mjs'
 import { Story } from './type.mjs'
 import { summarize } from './summarize.mjs'
 import { translate } from './translate.mjs'
-import { scheduleHnNewsletter } from './newsletter.mjs'
 import { log, sanitize } from './util.mjs'
-import { writeAllRss } from './rss.mjs'
-import Newsletter from './emails/NewsletterTemplate'
+import Newsletter from './emails/NewsletterTemplate.js'
 
 const MAX_RETRIES = 3
 const RETRY_DELAY = 60_000 // 1 minute
@@ -86,7 +84,6 @@ const sendEmail = async (obj: { email: string; query: string; locale: string }) 
       ...s,
       title: sanitize(s.title),
       originSummary: s.originSummary.map((s) => sanitize(s)),
-      commentSummary: s.commentSummary.map((s) => sanitize(s)),
     }
   })
 
@@ -106,13 +103,11 @@ const sendEmail = async (obj: { email: string; query: string; locale: string }) 
         ...s,
         title: (await retryTranslation(translate, [[s.title], 'en', locale], MAX_RETRIES))[0],
         originSummary: await retryTranslation(translate, [s.originSummary, 'en', locale], MAX_RETRIES),
-        commentSummary: await retryTranslation(translate, [s.commentSummary, 'en', locale], MAX_RETRIES),
         originBody: '',
         commentBody: '',
       }
     })
   )
-  log(`🤟 Translating\t${locale}`, 'info')
 
   // Ensure that the title and summary are sanitized
   stories = stories.map((s) => {
@@ -120,7 +115,6 @@ const sendEmail = async (obj: { email: string; query: string; locale: string }) 
       ...s,
       title: sanitize(s.title),
       originSummary: s.originSummary.map((s) => sanitize(s)),
-      commentSummary: s.commentSummary.map((s) => sanitize(s)),
     }
   })
 
@@ -128,9 +122,6 @@ const sendEmail = async (obj: { email: string; query: string; locale: string }) 
     `./pro/${query}/records/${day}/${day}.${locale}.json`,
     JSON.stringify(localeStories[locale], null, 2) + '\n'
   )
-
-  await scheduleHnNewsletter(localeStories)
-  await writeAllRss()
 
   const resend = new Resend(process.env.RESEND_KEY)
   resend.sendEmail({
@@ -151,6 +142,6 @@ const sendEmail = async (obj: { email: string; query: string; locale: string }) 
   })
 }
 
-config.forEach((c) => {
-  sendEmail(c)
+config.forEach(async (c) => {
+  await sendEmail(c)
 })
