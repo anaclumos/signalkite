@@ -486,7 +486,7 @@ export const Subscribe = () => {
           <input
             id="5ebfb"
             type="checkbox"
-            defaultChecked={locale === 'en'}
+            defaultChecked={locale !== 'ko'}
             name="l"
             value="5ebfb430-82b5-47b8-b74b-c7b7d17bb97b"
             className={clsx(styles.localeCheckbox)}
