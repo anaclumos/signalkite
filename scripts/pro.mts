@@ -1,6 +1,7 @@
 import fs from 'fs'
+import { Resend } from 'resend'
 
-import { updateHN, updateNews } from './update.mjs'
+import { updateNews } from './update.mjs'
 import { collect } from './collect.mjs'
 import { Story } from './type.mjs'
 import { summarize } from './summarize.mjs'
@@ -8,8 +9,7 @@ import { translate } from './translate.mjs'
 import { scheduleHnNewsletter } from './newsletter.mjs'
 import { log, sanitize } from './util.mjs'
 import { writeAllRss } from './rss.mjs'
-import { Resend } from 'resend'
-import Newsletter from 'emails/NewsletterTemplate'
+import Newsletter from './emails/NewsletterTemplate'
 
 const MAX_RETRIES = 3
 const RETRY_DELAY = 60_000 // 1 minute
