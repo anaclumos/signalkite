@@ -159,7 +159,7 @@ const createHtmlEmail = (locale: string, stories: Story[], plain = false, day = 
       })),
       commentTitle: LOCAL_REACTIONS[locale],
       locale,
-      dir: locale === 'ar' ? 'rtl' : 'ltr',
+      dir:  ['he', 'ar'].includes(locale) ? 'rtl' : 'ltr',
     }),
     {
       pretty: true,
