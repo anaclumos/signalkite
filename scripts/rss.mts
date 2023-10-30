@@ -3,7 +3,7 @@ import { LOCAL_HEIMDALL } from './default.mjs'
 import RSS from 'rss'
 import { parse } from 'marked'
 import fs from 'fs'
-import { createContent } from './newsletter.mjs'
+import { createHnContent } from './newsletter.mjs'
 import { LinguineList } from './linguine.mjs'
 
 const writeStoryRss = async (storyHistory: { [key: string]: Story[] }, locale: string) => {
@@ -58,7 +58,7 @@ export const writeNewsletterRss = async (storyHistory: { [key: string]: Story[] 
       guid: new Date(day).toISOString(),
       url: link.replaceAll('@TrackLink', '').replaceAll('-', '/'),
       description: parse(
-        createContent(locale, stories, new Date(day))
+        createHnContent(locale, stories, false, new Date(day))
           .replaceAll(/[\u200B\u200C\u200D\u200E\u200F\uFEFF]/g, '')
           .replaceAll('@TrackLink', '')
       ),
