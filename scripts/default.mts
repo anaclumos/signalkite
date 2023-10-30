@@ -31,7 +31,7 @@ export const LOCAL_HEIMDALL = {
   'zh-Hant': '海姆達爾',
 }
 
-export const LOCAL_HACKERNEWS = {
+export const LOCAL_HN = {
   ar: 'أخبار القراصنة',
   bn: 'হ্যাকার নিউজ',
   cs: 'Hacker News',
@@ -64,7 +64,7 @@ export const LOCAL_HACKERNEWS = {
   'zh-Hant': '駭客新聞',
 }
 
-export const LOCAL_HACKERNEWS_SUMMARY = {
+export const LOCAL_HN_SUMMARY = {
   ar: 'ملخص أخبار القراصنة',
   bn: 'হ্যাকার নিউজ সারসংক্ষেপ',
   cs: 'Hacker News Shrnutí',

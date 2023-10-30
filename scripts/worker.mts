@@ -6,7 +6,7 @@ import { Story } from './type.mjs'
 import { summarize } from './summarize.mjs'
 import { LinguineList } from './linguine.mjs'
 import { translate } from './translate.mjs'
-import { createContent, scheduleNewsletter } from './newsletter.mjs'
+import { createHnContent, scheduleHnNewsletter } from './newsletter.mjs'
 import { log, sanitize } from './util.mjs'
 import { writeAllRss } from './rss.mjs'
 
@@ -124,7 +124,7 @@ const main = async () => {
       fs.mkdirSync(`./docs/${day.replaceAll('-', '/')}`, { recursive: true })
       fs.writeFileSync(
         `./docs/${day.replaceAll('-', '/')}.md`,
-        createContent(locale, localeStories[locale], new Date(day))
+        createHnContent(locale, localeStories[locale], false, new Date(day))
       )
     } else {
       fs.mkdirSync(`./i18n/${locale}/docusaurus-plugin-content-docs/current/${day.replaceAll('-', '/')}`, {
@@ -132,11 +132,11 @@ const main = async () => {
       })
       fs.writeFileSync(
         `./i18n/${locale}/docusaurus-plugin-content-docs/current/${day.replaceAll('-', '/')}.md`,
-        createContent(locale, localeStories[locale], new Date(day))
+        createHnContent(locale, localeStories[locale], false, new Date(day))
       )
     }
   }
-  await scheduleNewsletter(localeStories)
+  await scheduleHnNewsletter(localeStories)
   await writeAllRss()
 }
 

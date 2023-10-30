@@ -1,4 +1,4 @@
-export const HACKER_NEWS_COUNT_PER_WORKER = 15
+export const HN_COUNT_PER_WORKER = 15
 export const GPT_RETRY_LIMIT = 3
 export const server = 'https://newsletters.cho.sh/api/campaigns'
 export const username = process.env.NEWSLETTERS_CHO_SH_USERNAME
