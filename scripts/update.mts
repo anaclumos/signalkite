@@ -1,5 +1,6 @@
 import { Story } from './type.mjs'
 import { HACKER_NEWS_COUNT_PER_WORKER } from './config.mjs'
+import rp from 'request-promise'
 
 /**
  * Update Hacker News
@@ -46,4 +47,41 @@ export const updateHN = async (): Promise<Story[]> => {
   bestStories.sort((a, b) => b.points - a.points)
   bestStories = bestStories.slice(0, HACKER_NEWS_COUNT_PER_WORKER)
   return bestStories
+}
+
+export const updateNews = async (obj: {
+  query: string
+}): Promise<Story[]> => {
+  const { query } = obj
+
+  const USERNAME = process.env.SERP_USERNAME
+  const PASSWORD = process.env.SERP_PASSWORD
+  const HOST = process.env.SERP_HOST
+
+  try {
+    const options = {
+      url: `https://www.google.com/search?q=${query}&tbm=nws&brd_json=1`,
+      proxy:
+        `http://${USERNAME}:${PASSWORD}@${HOST}`,
+      rejectUnauthorized: false,
+      json: true,
+    }
+    const data = await rp(options)
+    return data?.news.map((story: any) => {
+      return {
+        title: story.title,
+        originLink: story.link,
+        originBody: "",
+        originSummary: [],
+        commentBody: "N/A",
+        commentSummary: ['N/A'],
+        downloadMethod: "",
+        retryCount: 0,
+        time: Date.now(),
+      }
+    })
+  } catch (err) {
+    console.error('Error updating stories:', err)
+    throw err
+  }
 }
