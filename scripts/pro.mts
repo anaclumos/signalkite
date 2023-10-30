@@ -1,0 +1,156 @@
+import fs from 'fs'
+
+import { updateHN, updateNews } from './update.mjs'
+import { collect } from './collect.mjs'
+import { Story } from './type.mjs'
+import { summarize } from './summarize.mjs'
+import { translate } from './translate.mjs'
+import { scheduleHnNewsletter } from './newsletter.mjs'
+import { log, sanitize } from './util.mjs'
+import { writeAllRss } from './rss.mjs'
+import { Resend } from 'resend'
+import Newsletter from 'emails/NewsletterTemplate'
+
+const MAX_RETRIES = 3
+const RETRY_DELAY = 60_000 // 1 minute
+
+const config = [
+  {
+    query: 'CRM',
+    locale: 'en',
+    email: 'hey@cho.sh',
+  },
+  {
+    query: 'CRM',
+    locale: 'ko',
+    email: 'hey@cho.sh',
+  },
+  {
+    query: 'Bitcoin',
+    locale: 'ko',
+    email: 'hey@cho.sh',
+  },
+]
+
+async function retryTranslation(func, args, maxRetries) {
+  const { locale } = args
+  let tryCount = 0
+  while (tryCount < maxRetries) {
+    try {
+      return await func(...args)
+    } catch (e) {
+      log(`🤔 Retrying\t${locale}`, 'error')
+      await new Promise((r) => setTimeout(r, RETRY_DELAY))
+      tryCount++
+    }
+  }
+  log(`🤬 Failed\t${locale}`, 'error')
+  throw new Error('Failed to translate')
+}
+
+const sendEmail = async (obj: { email: string; query: string; locale: string }) => {
+  const { email, query, locale } = obj
+  let stories: Story[] = await updateNews({
+    query: query,
+  })
+
+  // const day = new Date(new Date().getTime() - 24 * 60 * 60 * 1000).toISOString().split('T')[0]
+  const day = new Date().toISOString().split('T')[0]
+  const path = `./pro/${query}/records/${day}/${day}.en.json`
+
+  if (!fs.existsSync(path)) {
+    fs.mkdirSync(`./pro/${query}/records/${day}`, { recursive: true })
+  } else {
+    stories = JSON.parse(fs.readFileSync(path, 'utf8'))
+  }
+
+  // this is to throttle the requests
+  for (let i = 0; i < stories.length; i++) {
+    if (!stories[i].originBody) {
+      stories[i].originBody = await collect(stories[i].originLink)
+    } else {
+      log(`💘 Body Exists\t${stories[i].title}`, 'info')
+      stories[i].originBody = sanitize(stories[i].originBody)
+    }
+  }
+
+  stories = await Promise.all(
+    stories.map(async (s) => {
+      return summarize(s)
+    })
+  )
+
+  // Ensure that the title and summary are sanitized
+  stories = stories.map((s) => {
+    return {
+      ...s,
+      title: sanitize(s.title),
+      originSummary: s.originSummary.map((s) => sanitize(s)),
+      commentSummary: s.commentSummary.map((s) => sanitize(s)),
+    }
+  })
+
+  // locale -> Stories map
+  const localeStories: Record<string, Story[]> = {}
+
+  if (locale === 'en') {
+    localeStories[locale] = stories
+  }
+  if (fs.existsSync(`./pro/${query}/records/${day}/${day}.${locale}.json`)) {
+    log(`💘 Tran Exists\t${locale}`)
+    localeStories[locale] = JSON.parse(fs.readFileSync(`./pro/${query}/records/${day}/${day}.${locale}.json`, 'utf8'))
+  }
+  localeStories[locale] = await Promise.all(
+    stories.map(async (s) => {
+      return {
+        ...s,
+        title: (await retryTranslation(translate, [[s.title], 'en', locale], MAX_RETRIES))[0],
+        originSummary: await retryTranslation(translate, [s.originSummary, 'en', locale], MAX_RETRIES),
+        commentSummary: await retryTranslation(translate, [s.commentSummary, 'en', locale], MAX_RETRIES),
+        originBody: '',
+        commentBody: '',
+      }
+    })
+  )
+  log(`🤟 Translating\t${locale}`, 'info')
+
+  // Ensure that the title and summary are sanitized
+  stories = stories.map((s) => {
+    return {
+      ...s,
+      title: sanitize(s.title),
+      originSummary: s.originSummary.map((s) => sanitize(s)),
+      commentSummary: s.commentSummary.map((s) => sanitize(s)),
+    }
+  })
+
+  fs.writeFileSync(
+    `./pro/${query}/records/${day}/${day}.${locale}.json`,
+    JSON.stringify(localeStories[locale], null, 2) + '\n'
+  )
+
+  await scheduleHnNewsletter(localeStories)
+  await writeAllRss()
+
+  const resend = new Resend(process.env.RESEND_KEY)
+  resend.sendEmail({
+    from: 'hello@newsletters.cho.sh',
+    to: email,
+    subject: day + ' ' + query,
+    react: Newsletter({
+      title: day,
+      content: stories.map((story) => ({
+        headline: story.title,
+        link: story.originLink,
+        bullets: story.originSummary,
+        starbucks: '',
+      })),
+      locale,
+      dir: ['he', 'ar'].includes(locale) ? 'rtl' : 'ltr',
+    }),
+  })
+}
+
+config.forEach((c) => {
+  sendEmail(c)
+})
