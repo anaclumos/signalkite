@@ -16,17 +16,17 @@ const config = [
   {
     query: 'CRM',
     locale: 'en',
-    email: 'hey@cho.sh',
+    email: 'anaclumos@gmail.com',
   },
   {
     query: 'CRM',
     locale: 'ko',
-    email: 'hey@cho.sh',
+    email: 'anaclumos@gmail.com',
   },
   {
     query: 'Bitcoin',
     locale: 'ko',
-    email: 'hey@cho.sh',
+    email: 'anaclumos@gmail.com',
   },
 ]
 
@@ -130,7 +130,7 @@ const sendEmail = async (obj: { email: string; query: string; locale: string }) 
     subject: day + ' ' + query,
     react: Newsletter({
       title: day,
-      content: stories.map((story) => ({
+      content: localeStories[locale].map((story) => ({
         headline: story.title,
         link: story.originLink,
         bullets: story.originSummary,
