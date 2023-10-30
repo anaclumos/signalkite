@@ -75,7 +75,11 @@ export const Newsletter = ({
     <Body style={main}>
       <Container style={container}>
         <Heading as="h1">
-          <Link href={titleLink}>{title}</Link>
+          {titleLink ? (
+            <Link href={titleLink}>{title}</Link>
+          ) : (
+            title
+          )}
         </Heading>
         {content?.map((section, sectionIndex) => (
           <div key={`${sectionIndex}-section`}>
@@ -121,9 +125,12 @@ export const Newsletter = ({
           </div>
         ))}
         <Hr style={hr} />
-        <Link href="https://go.cho.sh/hn-cho-sh-bring-a-friend@TrackLink" style={footer}>
-          {starbucks}
-        </Link>
+        {
+          starbucks &&
+          <Link href="https://go.cho.sh/hn-cho-sh-bring-a-friend@TrackLink" style={footer}>
+            {starbucks}
+          </Link>
+        }
       </Container>
     </Body>
   </Html>
