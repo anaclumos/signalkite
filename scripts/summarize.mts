@@ -125,7 +125,7 @@ export const summarize = async (story: Story) => {
   }
   try {
     if (story.commentBody.length === 0) {
-      throw new Error('🚨\tcommentBody is empty')
+      log('⚠️ Warning\tcommentBody is empty')
     }
     commentSummary = await createBulletPointSummary(story.commentBody, story.title)
   } catch (e) {
