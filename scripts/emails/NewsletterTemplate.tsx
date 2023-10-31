@@ -139,9 +139,9 @@ export const Newsletter = ({
 export default Newsletter
 
 const main = {
-  backgroundColor: '#ffffff',
   fontFamily:
     "ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple Color Emoji', 'Segoe UI Emoji', system-ui, -system-ui, sans-serif",
+  width: '100%',
 }
 
 const container = {
