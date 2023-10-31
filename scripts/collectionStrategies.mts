@@ -49,7 +49,13 @@ export const tryDownloadingTwitter = async (url: string, body: string): Promise<
   return sanitize(body)
 }
 
-export const tryDownloadingWithPuppeteer = async (url: string, body: string): Promise<string> => {
+export const tryDownloadingWithPuppeteer = async (url: string, body: string, retry = 0): Promise<string> => {
+  log(`⏳ Downloading\tPuppeteer for ${url}`, 'info')
+  if (retry > 5) {
+    log(`❌ Error\tCannot Download with Puppeteer for ${url}`, 'error')
+    return ''
+  }
+
   if (body.length > 0) {
     log(`💘 Body Exists\ttryDownloadingWithPuppeteer, ${url}`, 'info')
     return sanitize(body)
@@ -63,14 +69,22 @@ export const tryDownloadingWithPuppeteer = async (url: string, body: string): Pr
     log(`🚨\tBrightData Proxy is not available, attempting local, ${e.message}`, 'error')
     browser = await Puppeteer.launch({ headless: 'new' })
   }
-  body = await extract(url, browser)
+  try {
+    body = await extract(url, browser)
+    await browser.close()
+  } catch (e) {
+    log(`❌ Error\tCannot Download with Puppeteer for ${url}, ${e}`, 'error')
+    await browser.close()
+    await new Promise((r) => setTimeout(r, 1000))
+    body = await tryDownloadingWithPuppeteer(url, body, retry + 1)
+  }
   log(`✅ Success\tDownloaded with Puppeteer for ${url}`)
   return sanitize(body)
 }
 
 export const extract = async (url: string, browser: PuppeteerBrowser): Promise<string> => {
   let body = ''
-  try {
+
     const page: PuppeteerPage = await browser.newPage()
     page.setDefaultNavigationTimeout(10 * 60 * 1000)
     await page.goto(url)
@@ -90,11 +104,6 @@ export const extract = async (url: string, browser: PuppeteerBrowser): Promise<s
     if (await page.$('body')) {
       body = await page.$eval('body', (el) => el.innerText)
     }
-  } catch (e) {
-    console.error('run failed', e)
-  } finally {
-    await browser?.close()
-  }
   return sanitize(body)
 }
 
