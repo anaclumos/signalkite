@@ -15,16 +15,19 @@ const RETRY_DELAY = 60_000 // 1 minute
 const config = [
   {
     query: 'Gen AI',
+    serachResultLang: 'en',
     locale: 'ko',
     email: 'anaclumos@gmail.com',
   },
   {
-    query: 'Commerce',
+    query: 'Apple',
+    serachResultLang: 'en',
     locale: 'ko',
     email: 'anaclumos@gmail.com',
   },
   {
-    query: '3D ',
+    query: '당근',
+    serachResultLang: 'ko',
     locale: 'ko',
     email: 'anaclumos@gmail.com',
   },
@@ -46,10 +49,11 @@ async function retryTranslation(func, args, maxRetries) {
   throw new Error('Failed to translate')
 }
 
-const sendEmail = async (obj: { email: string; query: string; locale: string }) => {
-  const { email, query, locale } = obj
+const sendEmail = async (obj: { email: string; query: string; serachResultLang: string; locale: string }) => {
+  const { email, query, serachResultLang, locale } = obj
   let stories: Story[] = await updateNews({
-    query: query,
+    query,
+    serachResultLang,
   })
 
   // const day = new Date(new Date().getTime() - 24 * 60 * 60 * 1000).toISOString().split('T')[0]
@@ -87,12 +91,13 @@ const sendEmail = async (obj: { email: string; query: string; locale: string }) 
     }
   })
 
+  fs.writeFileSync(
+    `./pro/${query}/records/${day}/${day}.${serachResultLang}.json`,
+    JSON.stringify(stories, null, 2) + '\n'
+  )
+
   // locale -> Stories map
   const localeStories: Record<string, Story[]> = {}
-
-  if (locale === 'en') {
-    localeStories[locale] = stories
-  }
   if (fs.existsSync(`./pro/${query}/records/${day}/${day}.${locale}.json`)) {
     log(`💘 Tran Exists\t${locale}`)
     localeStories[locale] = JSON.parse(fs.readFileSync(`./pro/${query}/records/${day}/${day}.${locale}.json`, 'utf8'))
@@ -101,8 +106,8 @@ const sendEmail = async (obj: { email: string; query: string; locale: string }) 
     stories.map(async (s) => {
       return {
         ...s,
-        title: (await retryTranslation(translate, [[s.title], 'en', locale], MAX_RETRIES))[0],
-        originSummary: await retryTranslation(translate, [s.originSummary, 'en', locale], MAX_RETRIES),
+        title: (await retryTranslation(translate, [[s.title], serachResultLang, locale], MAX_RETRIES))[0],
+        originSummary: await retryTranslation(translate, [s.originSummary, serachResultLang, locale], MAX_RETRIES),
         originBody: '',
         commentBody: '',
       }
@@ -141,7 +146,6 @@ const sendEmail = async (obj: { email: string; query: string; locale: string }) 
     }),
   })
 }
-
 
 config.forEach(async (c) => {
   await sendEmail(c)
