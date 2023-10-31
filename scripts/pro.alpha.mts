@@ -6,6 +6,18 @@ export const subscriptions = [
       email: 'anaclumos@gmail.com',
     },
     {
+      query: 'Gen AI',
+      serachResultLang: 'ko',
+      locale: 'ko',
+      email: 'anaclumos@gmail.com',
+    },
+    {
+      query: 'Apple',
+      serachResultLang: 'en',
+      locale: 'en',
+      email: 'anaclumos@gmail.com',
+    },
+    {
       query: 'Apple',
       serachResultLang: 'en',
       locale: 'ko',
