@@ -50,7 +50,7 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
 
   // this is to throttle the requests
   for (let i = 0; i < stories.length; i++) {
-    if (!stories[i].originBody && !stories[i].originSummary) {
+    if (!stories[i].originBody && stories[i].originSummary.length === 0) {
       stories[i].originBody = await collect(stories[i].originLink)
     } else {
       log(`💘 Body Exists\t${stories[i].title}`, 'info')
@@ -115,10 +115,10 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
   const resend = new Resend(process.env.RESEND_KEY)
   resend.emails.send({
     to: email,
-    from: `${query} ${KEYWORD_MONITORING[locale]}<hello@newsletters.cho.sh>`,
-    subject: `${day} ${query} ${KEYWORD_MONITORING[locale]}`,
+    from: `"${query}" ${KEYWORD_MONITORING[locale]}<hello@newsletters.cho.sh>`,
+    subject: `${day} "${query}" ${KEYWORD_MONITORING[locale]}`,
     react: Newsletter({
-      title: day + ' ' + query,
+      title: `${day} "${query}" ${KEYWORD_MONITORING[locale]}`,
       titleLink: '',
       content: localeStories[locale].map((story) => ({
         headline: story.title,
