@@ -22,12 +22,12 @@ const writeStoryRss = async (storyHistory: { [key: string]: Story[] }, locale: s
     for (const story of stories) {
       rss.item({
         title: story.title,
-        guid: new Date(day).toISOString() + story.title,
+        guid: new Date(day.replace(/-/g, '/').replace(/T.+/, '')).toISOString() + story.title,
         description: parse(
           '- ' + story.originSummary.join('\n- ').replaceAll(/[\u200B\u200C\u200D\u200E\u200F\uFEFF]/g, '')
         ),
         url: (story.originLink ?? story.commentLink).replaceAll('@TrackLink', ''),
-        date: new Date(day),
+        date: new Date(day.replace(/-/g, '/').replace(/T.+/, '')),
       })
     }
   }
@@ -54,15 +54,15 @@ export const writeNewsletterRss = async (storyHistory: { [key: string]: Story[] 
     const stories = storyHistory[day]
     const link = `https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${day.replaceAll('-', '/')}`
     rss.item({
-      title: new Date(day).toISOString().split('T')[0],
-      guid: new Date(day).toISOString(),
+      title: new Date(day.replace(/-/g, '/').replace(/T.+/, '')).toISOString().split('T')[0],
+      guid: new Date(day.replace(/-/g, '/').replace(/T.+/, '')).toISOString(),
       url: link.replaceAll('@TrackLink', '').replaceAll('-', '/'),
       description: parse(
-        createHnContent(locale, stories, false, new Date(day))
+        createHnContent(locale, stories, false, new Date(day.replace(/-/g, '/').replace(/T.+/, '')))
           .replaceAll(/[\u200B\u200C\u200D\u200E\u200F\uFEFF]/g, '')
           .replaceAll('@TrackLink', '')
       ),
-      date: new Date(day),
+      date: new Date(day.replace(/-/g, '/').replace(/T.+/, '')),
     })
   }
 

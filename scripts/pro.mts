@@ -114,7 +114,7 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
 
   const resend = new Resend(process.env.RESEND_KEY)
   const options: Intl.DateTimeFormatOptions = {
-    weekday: 'short', // "long" | "short" | "narrow"
+    weekday: 'long', // "long" | "short" | "narrow"
     year: 'numeric', // "numeric" | "2-digit"
     month: 'long', // "numeric" | "2-digit" | "long" | "short" | "narrow"
     day: 'numeric', // "numeric" | "2-digit"
@@ -125,7 +125,7 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
     subject: `${query} ${KEYWORD_MONITORING[locale]} (${day})`,
     react: Newsletter({
       title: [
-        { title: new Date(day).toLocaleDateString(locale, options) },
+        { title: new Date(day.replace(/-/g, '/').replace(/T.+/, '')).toLocaleDateString(locale, options) },
         {
           title: query,
           link: `https://www.google.com/search?q=${encodeURIComponent(query)}&tbm=nws&lang=${serachResultLang}`,
