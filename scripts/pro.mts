@@ -113,18 +113,24 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
   )
 
   const resend = new Resend(process.env.RESEND_KEY)
+  const options: Intl.DateTimeFormatOptions = {
+    weekday: 'short', // "long" | "short" | "narrow"
+    year: 'numeric', // "numeric" | "2-digit"
+    month: 'long', // "numeric" | "2-digit" | "long" | "short" | "narrow"
+    day: 'numeric', // "numeric" | "2-digit"
+  }
   resend.emails.send({
     to: email,
     from: `${query} ${KEYWORD_MONITORING[locale]} (${day})<hello@newsletters.cho.sh>`,
     subject: `${query} ${KEYWORD_MONITORING[locale]} (${day})`,
     react: Newsletter({
       title: [
+        { title: new Date(day).toLocaleDateString(locale, options) },
         {
           title: query,
           link: `https://www.google.com/search?q=${encodeURIComponent(query)}&tbm=nws&lang=${serachResultLang}`,
         },
         { title: KEYWORD_MONITORING[locale] },
-        { title: day },
       ],
       content: localeStories[locale].map((story) => ({
         headline: story.title,
