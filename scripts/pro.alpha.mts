@@ -36,7 +36,7 @@ export const subscriptions = [
     email: 'anaclumos@gmail.com',
   },
   {
-    query: '토스',
+    query: '토스 금융',
     serachResultLang: 'ko',
     locale: 'ko',
     email: 'anaclumos@gmail.com',
