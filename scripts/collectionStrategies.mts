@@ -77,7 +77,7 @@ export const extract = async (url: string, browser: PuppeteerBrowser): Promise<s
     try {
       await page.waitForSelector('article', { timeout: 10000 })
     } catch (e) {
-      console.error('article not found')
+      // do nothing
     }
     await page.waitForSelector('body')
     if (await page.$('article')) {
