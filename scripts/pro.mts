@@ -14,17 +14,17 @@ const RETRY_DELAY = 60_000 // 1 minute
 
 const config = [
   {
-    query: 'Apple',
+    query: 'Gen AI',
     locale: 'ko',
     email: 'anaclumos@gmail.com',
   },
   {
-    query: 'CRM',
+    query: 'Commerce',
     locale: 'ko',
     email: 'anaclumos@gmail.com',
   },
   {
-    query: 'Sunghyun Cho',
+    query: '3D ',
     locale: 'ko',
     email: 'anaclumos@gmail.com',
   },
