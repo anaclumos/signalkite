@@ -49,11 +49,8 @@ export const updateHN = async (): Promise<Story[]> => {
   return bestStories
 }
 
-export const updateNews = async (obj: {
-  query: string,
-  serachResultLang: string,
-}): Promise<Story[]> => {
-  const { query,serachResultLang } = obj
+export const updateNews = async (obj: { query: string; serachResultLang: string }): Promise<Story[]> => {
+  const { query, serachResultLang } = obj
 
   const USERNAME = process.env.SERP_USERNAME
   const PASSWORD = process.env.SERP_PASSWORD
@@ -62,8 +59,7 @@ export const updateNews = async (obj: {
   try {
     const options = {
       url: `https://www.google.com/search?q=${encodeURIComponent(query)}&tbm=nws&lang=${serachResultLang}&brd_json=1`,
-      proxy:
-        `http://${USERNAME}:${PASSWORD}@${HOST}`,
+      proxy: `http://${USERNAME}:${PASSWORD}@${HOST}`,
       rejectUnauthorized: false,
       json: true,
     }
@@ -72,11 +68,11 @@ export const updateNews = async (obj: {
       return {
         title: story.title,
         originLink: story.link,
-        originBody: "",
+        originBody: '',
         originSummary: [],
-        commentBody: "",
+        commentBody: '',
         commentSummary: [],
-        downloadMethod: "",
+        downloadMethod: '',
         retryCount: 0,
         time: Date.now(),
       }

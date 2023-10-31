@@ -80,7 +80,9 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
   const localeStories: Record<string, Story[]> = {}
   if (fs.existsSync(`./pro/${serachResultLang}/${query}/records/${day}/${day}.${locale}.json`)) {
     log(`💘 Tran Exists\t${locale}`)
-    localeStories[locale] = JSON.parse(fs.readFileSync(`./pro/${serachResultLang}/${query}/records/${day}/${day}.${locale}.json`, 'utf8'))
+    localeStories[locale] = JSON.parse(
+      fs.readFileSync(`./pro/${serachResultLang}/${query}/records/${day}/${day}.${locale}.json`, 'utf8')
+    )
   }
   localeStories[locale] = await Promise.all(
     stories.map(async (s) => {

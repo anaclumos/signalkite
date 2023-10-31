@@ -74,13 +74,7 @@ export const Newsletter = ({
     <Preview>{content?.[0]?.bullets.join(' ') ?? title ?? 'Here is your weekly newsletter'}</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Heading as="h1">
-          {titleLink ? (
-            <Link href={titleLink}>{title}</Link>
-          ) : (
-            title
-          )}
-        </Heading>
+        <Heading as="h1">{titleLink ? <Link href={titleLink}>{title}</Link> : title}</Heading>
         {content?.map((section, sectionIndex) => (
           <div key={`${sectionIndex}-section`}>
             <Hr style={hr} />
@@ -125,12 +119,11 @@ export const Newsletter = ({
           </div>
         ))}
         <Hr style={hr} />
-        {
-          starbucks.length > 0 &&
+        {starbucks.length > 0 && (
           <Link href="https://go.cho.sh/hn-cho-sh-bring-a-friend@TrackLink" style={footer}>
             {starbucks}
           </Link>
-        }
+        )}
       </Container>
     </Body>
   </Html>
