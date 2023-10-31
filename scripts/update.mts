@@ -50,9 +50,10 @@ export const updateHN = async (): Promise<Story[]> => {
 }
 
 export const updateNews = async (obj: {
-  query: string
+  query: string,
+  serachResultLang: string,
 }): Promise<Story[]> => {
-  const { query } = obj
+  const { query,serachResultLang } = obj
 
   const USERNAME = process.env.SERP_USERNAME
   const PASSWORD = process.env.SERP_PASSWORD
@@ -60,7 +61,7 @@ export const updateNews = async (obj: {
 
   try {
     const options = {
-      url: `https://www.google.com/search?q=${query.replaceAll(' ', '+')}&tbm=nws&brd_json=1`,
+      url: `https://www.google.com/search?q=${encodeURIComponent(query)}&tbm=nws&lang=${serachResultLang}&brd_json=1`,
       proxy:
         `http://${USERNAME}:${PASSWORD}@${HOST}`,
       rejectUnauthorized: false,
