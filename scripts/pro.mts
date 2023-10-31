@@ -9,7 +9,7 @@ import { translate } from './translate.mjs'
 import { log, sanitize } from './util.mjs'
 import Newsletter from './emails/NewsletterTemplate.js'
 import { subscriptions } from './pro.alpha.mjs'
-import { KEYWORD_MONITORING } from './default.mjs'
+import { KEYWORD_REPORT } from './default.mjs'
 
 const MAX_RETRIES = 3
 const RETRY_DELAY = 10_000
@@ -121,7 +121,7 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
   }
   resend.emails.send({
     to: email,
-    from: `${query} ${KEYWORD_MONITORING[locale]} <hello@newsletters.cho.sh>`,
+    from: `${query} ${KEYWORD_REPORT[locale]} <hello@newsletters.cho.sh>`,
     subject: `${query} (${day})`,
     react: Newsletter({
       title: [
@@ -130,7 +130,7 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
           title: query,
           link: `https://www.google.com/search?q=${encodeURIComponent(query)}&tbm=nws&lang=${serachResultLang}`,
         },
-        { title: KEYWORD_MONITORING[locale] },
+        { title: KEYWORD_REPORT[locale] },
       ],
       content: localeStories[locale].map((story) => ({
         headline: story.title,

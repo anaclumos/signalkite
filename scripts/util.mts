@@ -164,6 +164,7 @@ export const sanitize = (text: string) => {
     .replaceAll('Launch HN: ', '')
     .replaceAll('Tell HN: ', '')
     .replaceAll('- 서울경제', '')
+    .replaceAll('- 조선비즈', '')
     .replaceAll('[단독]', '')
     .replaceAll('[포토]', '')
     .replaceAll(' : IT : 경제 : 뉴스', '')
