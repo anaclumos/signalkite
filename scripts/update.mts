@@ -60,7 +60,7 @@ export const updateNews = async (obj: {
 
   try {
     const options = {
-      url: `https://www.google.com/search?q=${query}&tbm=nws&brd_json=1`,
+      url: `https://www.google.com/search?q=${query.replaceAll(' ', '+')}&tbm=nws&brd_json=1`,
       proxy:
         `http://${USERNAME}:${PASSWORD}@${HOST}`,
       rejectUnauthorized: false,
