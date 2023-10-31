@@ -146,8 +146,11 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
 
 const main = async () => {
   // This is to throttle the requests
-  for await (const s of subscriptions) {
-    await sendEmail(s)
+  // for await (const s of subscriptions) {
+  //   await sendEmail(s)
+  // }
+  for (const s of subscriptions) {
+    sendEmail(s)
   }
 }
 
