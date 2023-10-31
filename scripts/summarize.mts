@@ -16,7 +16,7 @@ export const createBulletPointSummary = async (rawText, title, lang = 'en') => {
   const chain = loadSummarizationChain(model, { type: 'map_reduce' })
   try {
     const textSplitter = new RecursiveCharacterTextSplitter({
-      chunkSize: 8192,
+      chunkSize: 6144,
     })
 
     log(`⏳ Shortening\t${title}`, 'info')
