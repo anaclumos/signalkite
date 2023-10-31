@@ -14,8 +14,8 @@ const RETRY_DELAY = 60_000 // 1 minute
 
 const config = [
   {
-    query: 'CRM',
-    locale: 'en',
+    query: 'Apple',
+    locale: 'ko',
     email: 'anaclumos@gmail.com',
   },
   {
@@ -24,7 +24,7 @@ const config = [
     email: 'anaclumos@gmail.com',
   },
   {
-    query: 'Bitcoin',
+    query: 'Sunghyun Cho',
     locale: 'ko',
     email: 'anaclumos@gmail.com',
   },
@@ -141,6 +141,7 @@ const sendEmail = async (obj: { email: string; query: string; locale: string }) 
     }),
   })
 }
+
 
 config.forEach(async (c) => {
   await sendEmail(c)
