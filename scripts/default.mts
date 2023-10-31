@@ -411,7 +411,7 @@ export const KEYWORD_REPORT = {
   id: 'Laporan Kata Kunci',
   it: 'Rapporto sulle parole chiave',
   ja: 'キーワードレポート',
-  ko: '키워드 보고서',
+  ko: '키워드 리포트',
   nb: 'Søkeordrapport',
   nl: 'Trefwoord Rapport',
   pl: 'Raport słów kluczowych',
