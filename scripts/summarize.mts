@@ -9,7 +9,7 @@ import { Story } from './type.mjs'
 
 export const createBulletPointSummary = async (rawText, title, lang = 'en') => {
   // for summarizing and context generating
-  const model = new OpenAI({ modelName: 'gpt-3.5-turbo-16k' })
+  const model = new OpenAI({ modelName: 'gpt-4' })
   // for generating the actual chat
   const chat = new ChatOpenAI({ modelName: 'gpt-4' })
 
@@ -72,7 +72,7 @@ export const createBulletPointSummary = async (rawText, title, lang = 'en') => {
         Ignore any mention or sentenses on CSS contents and any referral, marketing, or promotional links/coupon codes.
         Do not exceed 100 words. Do not exceed more than 3 bullet points.
 
-        You must summarize in ${lang.toUpperCase()}.
+        YOU MUST SUMMARIZE IN LANGUAGE: ${lang.toUpperCase()}.
         `
       ),
       new HumanMessage(`TEXT:\n${summary}\n\nRESULT:\n`),
@@ -126,9 +126,6 @@ export const summarize = async (story: Story, lang = 'en') => {
     log(e, 'error')
   }
   try {
-    if (story.commentBody.length === 0) {
-      log('⚠️ Warning\tcommentBody is empty')
-    }
     commentSummary = await createBulletPointSummary(story.commentBody, story.title, lang)
   } catch (e) {
     log(e, 'error')
