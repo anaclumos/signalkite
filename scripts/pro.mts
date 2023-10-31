@@ -50,7 +50,7 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
 
   // this is to throttle the requests
   for (let i = 0; i < stories.length; i++) {
-    if (!stories[i].originBody) {
+    if (!stories[i].originBody && !stories[i].originSummary) {
       stories[i].originBody = await collect(stories[i].originLink)
     } else {
       log(`💘 Body Exists\t${stories[i].title}`, 'info')
