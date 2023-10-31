@@ -126,7 +126,7 @@ export const Newsletter = ({
         ))}
         <Hr style={hr} />
         {
-          starbucks &&
+          starbucks.length > 0 &&
           <Link href="https://go.cho.sh/hn-cho-sh-bring-a-friend@TrackLink" style={footer}>
             {starbucks}
           </Link>

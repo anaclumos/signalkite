@@ -107,7 +107,7 @@ export const createBulletPointSummary = async (rawText, title) => {
 }
 
 export const summarize = async (story: Story) => {
-  if ((story.originSummary.length ?? 0) !== 0 && (story.commentSummary.length ?? 0) !== 0) {
+  if ((story.originSummary.length ?? 0) !== 0) {
     log(`💘 Summ Exists\t${story.title}`, 'error')
     return story
   }

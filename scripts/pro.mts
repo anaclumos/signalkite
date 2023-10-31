@@ -115,12 +115,13 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
     subject: day + ' ' + query,
     react: Newsletter({
       title: day,
+      titleLink: '',
       content: localeStories[locale].map((story) => ({
         headline: story.title,
         link: story.originLink,
         bullets: story.originSummary,
-        starbucks: '',
       })),
+      starbucks: '',
       locale,
       dir: ['he', 'ar'].includes(locale) ? 'rtl' : 'ltr',
     }),
