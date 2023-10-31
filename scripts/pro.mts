@@ -114,7 +114,7 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
     to: email,
     subject: day + ' ' + query,
     react: Newsletter({
-      title: day,
+      title: day + ' ' + query,
       titleLink: '',
       content: localeStories[locale].map((story) => ({
         headline: story.title,
