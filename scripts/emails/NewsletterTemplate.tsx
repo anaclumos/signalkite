@@ -78,7 +78,7 @@ export const Newsletter = ({
       <Body style={main}>
         <Container style={container}>
           <Preview>{content?.[0]?.bullets.join(' ') ?? 'Here is your weekly newsletter'}</Preview>
-          <Heading as="h1">
+          <Heading as="h1" style={heading}>
             {title.map((item, index) => (
               <React.Fragment key={index}>
                 {item.link ? <Link href={item.link}>{item.title}</Link> : <span>{item.title}</span>}
@@ -162,3 +162,5 @@ const hr = {
   borderColor: '#dfe1e4',
   margin: '42px 0 26px',
 }
+
+const heading = { fontSize: '24px', lineHeight: '1.5' }
