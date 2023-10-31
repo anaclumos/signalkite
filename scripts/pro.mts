@@ -38,10 +38,10 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
 
   // const day = new Date(new Date().getTime() - 24 * 60 * 60 * 1000).toISOString().split('T')[0]
   const day = new Date().toISOString().split('T')[0]
-  const path = `./pro/${query}/records/${day}/${day}.en.json`
+  const path = `./pro/${serachResultLang}/${query}/records/${day}/${day}.${serachResultLang}.json`
 
   if (!fs.existsSync(path)) {
-    fs.mkdirSync(`./pro/${query}/records/${day}`, { recursive: true })
+    fs.mkdirSync(`./pro/${serachResultLang}/${query}/records/${day}`, { recursive: true })
   } else {
     stories = JSON.parse(fs.readFileSync(path, 'utf8'))
   }
@@ -72,15 +72,15 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
   })
 
   fs.writeFileSync(
-    `./pro/${query}/records/${day}/${day}.${serachResultLang}.json`,
+    `./pro/${serachResultLang}/${query}/records/${day}/${day}.${serachResultLang}.json`,
     JSON.stringify(stories, null, 2) + '\n'
   )
 
   // locale -> Stories map
   const localeStories: Record<string, Story[]> = {}
-  if (fs.existsSync(`./pro/${query}/records/${day}/${day}.${locale}.json`)) {
+  if (fs.existsSync(`./pro/${serachResultLang}/${query}/records/${day}/${day}.${locale}.json`)) {
     log(`💘 Tran Exists\t${locale}`)
-    localeStories[locale] = JSON.parse(fs.readFileSync(`./pro/${query}/records/${day}/${day}.${locale}.json`, 'utf8'))
+    localeStories[locale] = JSON.parse(fs.readFileSync(`./pro/${serachResultLang}/${query}/records/${day}/${day}.${locale}.json`, 'utf8'))
   }
   localeStories[locale] = await Promise.all(
     stories.map(async (s) => {
@@ -104,7 +104,7 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
   })
 
   fs.writeFileSync(
-    `./pro/${query}/records/${day}/${day}.${locale}.json`,
+    `./pro/${serachResultLang}/${query}/records/${day}/${day}.${locale}.json`,
     JSON.stringify(localeStories[locale], null, 2) + '\n'
   )
 
