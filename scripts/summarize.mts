@@ -7,7 +7,7 @@ import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 import { log, sanitize } from './util.mjs'
 import { Story } from './type.mjs'
 
-export const createBulletPointSummary = async (rawText, title) => {
+export const createBulletPointSummary = async (rawText, title, lang = 'en') => {
   // for summarizing and context generating
   const model = new OpenAI({ modelName: 'gpt-3.5-turbo-16k' })
   // for generating the actual chat
@@ -71,6 +71,8 @@ export const createBulletPointSummary = async (rawText, title) => {
         If there is no meaningful content, for example, if it looks like a simple error message, simply print "N/A."
         Ignore any mention or sentenses on CSS contents and any referral, marketing, or promotional links/coupon codes.
         Do not exceed 100 words. Do not exceed more than 3 bullet points.
+
+        You must summarize in ${lang.toUpperCase()}.
         `
       ),
       new HumanMessage(`TEXT:\n${summary}\n\nRESULT:\n`),
@@ -106,7 +108,7 @@ export const createBulletPointSummary = async (rawText, title) => {
   }
 }
 
-export const summarize = async (story: Story) => {
+export const summarize = async (story: Story, lang = 'en') => {
   if ((story.originSummary.length ?? 0) !== 0) {
     log(`💘 Summ Exists\t${story.title}`, 'error')
     return story
@@ -119,7 +121,7 @@ export const summarize = async (story: Story) => {
     if (story.originBody.length === 0) {
       throw new Error('🚨\toriginBody is empty')
     }
-    originSummary = await createBulletPointSummary(story.originBody, story.title)
+    originSummary = await createBulletPointSummary(story.originBody, story.title, lang)
   } catch (e) {
     log(e, 'error')
   }
@@ -127,7 +129,7 @@ export const summarize = async (story: Story) => {
     if (story.commentBody.length === 0) {
       log('⚠️ Warning\tcommentBody is empty')
     }
-    commentSummary = await createBulletPointSummary(story.commentBody, story.title)
+    commentSummary = await createBulletPointSummary(story.commentBody, story.title, lang)
   } catch (e) {
     log(e, 'error')
   }
