@@ -75,9 +75,9 @@ export const extract = async (url: string, browser: PuppeteerBrowser): Promise<s
     page.setDefaultNavigationTimeout(10 * 60 * 1000)
     await page.goto(url)
     try {
-      await page.waitForSelector('article', { timeout: 30000 })
+      await page.waitForSelector('article', { timeout: 10000 })
     } catch (e) {
-      console.error('article not found', e)
+      console.error('article not found')
     }
     await page.waitForSelector('body')
     if (await page.$('article')) {
