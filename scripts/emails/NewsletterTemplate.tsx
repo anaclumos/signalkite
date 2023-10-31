@@ -2,9 +2,13 @@ import React from 'react'
 
 import { Body, Container, Head, Heading, Hr, Html, Link, Preview } from '@react-email/components'
 
+type TitleLinkPair = {
+  title: string
+  link?: string
+}
+
 type NewsletterProps = {
-  title?: string
-  titleLink?: string
+  title?: TitleLinkPair[]
   content: {
     headline: string
     link: string
@@ -19,8 +23,7 @@ type NewsletterProps = {
 }
 
 export const Newsletter = ({
-  title = 'Hacker News Daily',
-  titleLink = 'https://go.cho.sh/hn-cho-sh@TrackLink',
+  title = [{ title: 'Hacker News Daily', link: 'https://go.cho.sh/hn-cho-sh@TrackLink' }],
   content = [
     {
       headline: 'Google has a secret browser hidden inside the settings',
@@ -68,66 +71,75 @@ export const Newsletter = ({
   dir = 'ltr',
   commentTitle = 'HN Comments',
   starbucks = "Enjoy this newsletter? Tell your friends, and I'll buy Starbucks ☕ for all of you.",
-}: NewsletterProps) => (
-  <Html lang={locale} dir={dir}>
-    <Head />
-    <Preview>{content?.[0]?.bullets.join(' ') ?? title ?? 'Here is your weekly newsletter'}</Preview>
-    <Body style={main}>
-      <Container style={container}>
-        <Heading as="h1">{titleLink ? <Link href={titleLink}>{title}</Link> : title}</Heading>
-        {content?.map((section, sectionIndex) => (
-          <div key={`${sectionIndex}-section`}>
-            <Hr style={hr} />
-            <Link href={section.link}>
-              <Heading as="h2" key={`${sectionIndex}-headline`}>
-                {section.headline}
-              </Heading>
+}: NewsletterProps) => {
+  return (
+    <Html lang={locale} dir={dir}>
+      <Head />
+      <Body style={main}>
+        <Container style={container}>
+          <Preview>{content?.[0]?.bullets.join(' ') ?? 'Here is your weekly newsletter'}</Preview>
+          <Heading as="h1">
+            {title.map((item, index) => (
+              <React.Fragment key={index}>
+                <Link href={item.link}>{item.title}</Link>
+                {index < title.length - 1 && <br />}
+              </React.Fragment>
+            ))}
+          </Heading>
+          {content?.map((section, sectionIndex) => (
+            <div key={`${sectionIndex}-section`}>
+              <Hr style={hr} />
+              <Link href={section.link}>
+                <Heading as="h2" key={`${sectionIndex}-headline`}>
+                  {section.headline}
+                </Heading>
+              </Link>
+              <ul
+                style={{
+                  lineHeight: '1.5',
+                  color: '#484848',
+                  listStylePosition: 'outside',
+                  paddingInlineStart: '20px',
+                }}
+              >
+                {section.bullets.map((bullet, bulletIndex) => (
+                  <li key={`${sectionIndex}-${bulletIndex}`}>{`${bullet}`}</li>
+                ))}
+              </ul>
+              {section.commentLink && section.commentBullets && (
+                <>
+                  <Link href={section.commentLink}>
+                    <Heading as="h3" key={`${sectionIndex}-comment`}>
+                      {commentTitle ?? 'Comments'}
+                    </Heading>
+                  </Link>
+                  <ul
+                    style={{
+                      lineHeight: '1.5',
+                      color: '#484848',
+                      listStylePosition: 'outside',
+                      paddingInlineStart: '20px',
+                    }}
+                  >
+                    {section?.commentBullets?.map((bullet, bulletIndex) => (
+                      <li key={`${sectionIndex}-${bulletIndex}`}>{`${bullet}`}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </div>
+          ))}
+          <Hr style={hr} />
+          {starbucks.length > 0 && (
+            <Link href="https://go.cho.sh/hn-cho-sh-bring-a-friend@TrackLink" style={footer}>
+              {starbucks}
             </Link>
-            <ul
-              style={{
-                lineHeight: '1.5',
-                color: '#484848',
-                listStylePosition: 'outside',
-                paddingInlineStart: '20px',
-              }}
-            >
-              {section.bullets.map((bullet, bulletIndex) => (
-                <li key={`${sectionIndex}-${bulletIndex}`}>{`${bullet}`}</li>
-              ))}
-            </ul>
-            {section.commentLink && section.commentBullets && (
-              <>
-                <Link href={section.commentLink}>
-                  <Heading as="h3" key={`${sectionIndex}-comment`}>
-                    {commentTitle ?? 'Comments'}
-                  </Heading>
-                </Link>
-                <ul
-                  style={{
-                    lineHeight: '1.5',
-                    color: '#484848',
-                    listStylePosition: 'outside',
-                    paddingInlineStart: '20px',
-                  }}
-                >
-                  {section?.commentBullets?.map((bullet, bulletIndex) => (
-                    <li key={`${sectionIndex}-${bulletIndex}`}>{`${bullet}`}</li>
-                  ))}
-                </ul>
-              </>
-            )}
-          </div>
-        ))}
-        <Hr style={hr} />
-        {starbucks.length > 0 && (
-          <Link href="https://go.cho.sh/hn-cho-sh-bring-a-friend@TrackLink" style={footer}>
-            {starbucks}
-          </Link>
-        )}
-      </Container>
-    </Body>
-  </Html>
-)
+          )}
+        </Container>
+      </Body>
+    </Html>
+  )
+}
 
 export default Newsletter
 

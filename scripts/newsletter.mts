@@ -144,11 +144,15 @@ export const createHnContent = (locale: string, stories: Story[], isEmail = fals
 const createHtmlEmail = (locale: string, stories: Story[], plain = false, day = new Date()) => {
   return render(
     Newsletter({
-      title: day.toISOString().split('T')[0],
-      titleLink: `https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${day
-        .toISOString()
-        .split('T')[0]
-        .replaceAll('-', '/')}`,
+      title: [
+        {
+          title: day.toISOString().split('T')[0],
+          link: `https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${day
+            .toISOString()
+            .split('T')[0]
+            .replaceAll('-', '/')}`,
+        },
+      ],
       content: stories.map((story) => ({
         headline: story.title,
         link: story.originLink + '@TrackLink',

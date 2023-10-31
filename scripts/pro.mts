@@ -115,11 +115,17 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
   const resend = new Resend(process.env.RESEND_KEY)
   resend.emails.send({
     to: email,
-    from: `"${query}" ${KEYWORD_MONITORING[locale]}<hello@newsletters.cho.sh>`,
-    subject: `${day} "${query}" ${KEYWORD_MONITORING[locale]}`,
+    from: `${query} ${KEYWORD_MONITORING[locale]} (${day})<hello@newsletters.cho.sh>`,
+    subject: `${query} ${KEYWORD_MONITORING[locale]} (${day})`,
     react: Newsletter({
-      title: `${day} "${query}" ${KEYWORD_MONITORING[locale]}`,
-      titleLink: '',
+      title: [
+        {
+          title: query,
+          link: `https://www.google.com/search?q=${encodeURIComponent(query)}&tbm=nws&lang=${serachResultLang}`,
+        },
+        { title: KEYWORD_MONITORING[locale] },
+        { title: day },
+      ],
       content: localeStories[locale].map((story) => ({
         headline: story.title,
         link: story.originLink,
