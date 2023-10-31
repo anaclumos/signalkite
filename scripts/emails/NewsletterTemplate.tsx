@@ -81,7 +81,7 @@ export const Newsletter = ({
           <Heading as="h1">
             {title.map((item, index) => (
               <React.Fragment key={index}>
-                <Link href={item.link}>{item.title}</Link>
+                {item.link ? <Link href={item.link}>{item.title}</Link> : <span>{item.title}</span>}
                 {index < title.length - 1 && <br />}
               </React.Fragment>
             ))}
