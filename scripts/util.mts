@@ -163,6 +163,10 @@ export const sanitize = (text: string) => {
     .replaceAll('Ask HN: ', '')
     .replaceAll('Launch HN: ', '')
     .replaceAll('Tell HN: ', '')
+    .replaceAll('- 서울경제', '')
+    .replaceAll('[단독]', '')
+    .replaceAll('[포토]', '')
+    .replaceAll(' : IT : 경제 : 뉴스', '')
     .trim()
     .slice(0, 100000)
 }
