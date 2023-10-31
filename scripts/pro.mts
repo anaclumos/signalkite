@@ -9,6 +9,7 @@ import { translate } from './translate.mjs'
 import { log, sanitize } from './util.mjs'
 import Newsletter from './emails/NewsletterTemplate.js'
 import { subscriptions } from './pro.alpha.mjs'
+import { KEYWORD_MONITORING } from './default.mjs'
 
 const MAX_RETRIES = 3
 const RETRY_DELAY = 10_000
@@ -43,6 +44,7 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
   if (!fs.existsSync(path)) {
     fs.mkdirSync(`./pro/${serachResultLang}/${query}/records/${day}`, { recursive: true })
   } else {
+    log(`💘 Cache Exists\t${path}`, 'info')
     stories = JSON.parse(fs.readFileSync(path, 'utf8'))
   }
 
@@ -112,9 +114,9 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
 
   const resend = new Resend(process.env.RESEND_KEY)
   resend.emails.send({
-    from: 'hello@newsletters.cho.sh',
     to: email,
-    subject: day + ' ' + query,
+    from: `${query} ${KEYWORD_MONITORING[locale]}<hello@newsletters.cho.sh>`,
+    subject: `${day} ${query} ${KEYWORD_MONITORING[locale]}`,
     react: Newsletter({
       title: day + ' ' + query,
       titleLink: '',
