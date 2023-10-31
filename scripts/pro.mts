@@ -8,30 +8,10 @@ import { summarize } from './summarize.mjs'
 import { translate } from './translate.mjs'
 import { log, sanitize } from './util.mjs'
 import Newsletter from './emails/NewsletterTemplate.js'
+import { subscriptions } from './pro.alpha.mjs'
 
 const MAX_RETRIES = 3
-const RETRY_DELAY = 60_000 // 1 minute
-
-const config = [
-  {
-    query: 'Gen AI',
-    serachResultLang: 'en',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
-    query: 'Apple',
-    serachResultLang: 'en',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
-    query: '당근',
-    serachResultLang: 'ko',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-]
+const RETRY_DELAY = 10_000
 
 async function retryTranslation(func, args, maxRetries) {
   const { locale } = args
@@ -147,6 +127,10 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
   })
 }
 
-config.forEach(async (c) => {
-  await sendEmail(c)
-})
+const main = async () => {
+  for await (const s of subscriptions) {
+    await sendEmail(s)
+  }
+}
+
+main()
