@@ -121,8 +121,8 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
   }
   resend.emails.send({
     to: email,
-    from: `${query} ${KEYWORD_MONITORING[locale]} (${day})<hello@newsletters.cho.sh>`,
-    subject: `${query} ${KEYWORD_MONITORING[locale]} (${day})`,
+    from: `${query} ${KEYWORD_MONITORING[locale]} <hello@newsletters.cho.sh>`,
+    subject: `${query} (${day})`,
     react: Newsletter({
       title: [
         { title: new Date(day.replace(/-/g, '/').replace(/T.+/, '')).toLocaleDateString(locale, options) },
