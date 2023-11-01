@@ -1,7 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-import { themes } from 'prism-react-renderer'
+const lightCodeTheme = require('prism-react-renderer/themes/github')
+const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 const fs = require('fs')
 const path = require('path')
 
@@ -174,8 +175,8 @@ const config = {
         ],
       },
       prism: {
-        theme: themes.github,
-        darkTheme: themes.dracula,
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
       },
       tableOfContents: {
         minHeadingLevel: 2,
