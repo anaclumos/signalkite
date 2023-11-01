@@ -84,26 +84,25 @@ export const tryDownloadingWithPuppeteer = async (url: string, body: string, ret
 
 export const extract = async (url: string, browser: PuppeteerBrowser): Promise<string> => {
   let body = ''
+  const page: PuppeteerPage = await browser.newPage()
+  page.setDefaultNavigationTimeout(10 * 60 * 1000)
+  await page.goto(url)
+  try {
+    await page.waitForSelector('article', { timeout: 10000 })
+  } catch (e) {
+    // do nothing
+  }
+  await page.waitForSelector('body')
+  if (await page.$('article')) {
+    body = await page.$eval('article', (el) => el.innerText)
+  }
+  if (await page.$('main')) {
+    body = await page.$eval('main', (el) => el.innerText)
+  }
 
-    const page: PuppeteerPage = await browser.newPage()
-    page.setDefaultNavigationTimeout(10 * 60 * 1000)
-    await page.goto(url)
-    try {
-      await page.waitForSelector('article', { timeout: 10000 })
-    } catch (e) {
-      // do nothing
-    }
-    await page.waitForSelector('body')
-    if (await page.$('article')) {
-      body = await page.$eval('article', (el) => el.innerText)
-    }
-    if (await page.$('main')) {
-      body = await page.$eval('main', (el) => el.innerText)
-    }
-
-    if (await page.$('body')) {
-      body = await page.$eval('body', (el) => el.innerText)
-    }
+  if (await page.$('body')) {
+    body = await page.$eval('body', (el) => el.innerText)
+  }
   return sanitize(body)
 }
 
