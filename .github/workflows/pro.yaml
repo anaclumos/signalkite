@@ -1,0 +1,56 @@
+name: News
+on:
+  schedule:
+    - cron: '59 12 * * *'
+  workflow_dispatch:
+permissions: write-all
+jobs:
+  news:
+    environment: Production
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Set Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Install dependencies
+        run: pnpm install
+      - name: Install Playwright
+        run: pnpm exec playwright install
+      - name: Update News
+        run: pnpm run worker:pro
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DEEPL_API_KEY: ${{secrets.DEEPL_API_KEY}}
+          BING_TRANSLATE_KEY: ${{secrets.BING_TRANSLATE_KEY}}
+          BING_TRANSLATE_REGION: ${{secrets.BING_TRANSLATE_REGION}}
+          BRIGHTDATA_USERNAME: ${{secrets.BRIGHTDATA_USERNAME}}
+          BRIGHTDATA_PASSWORD: ${{secrets.BRIGHTDATA_PASSWORD}}
+          BRIGHTDATA_PROXY: ${{secrets.BRIGHTDATA_PROXY}}
+          NEWSLETTERS_CHO_SH_USERNAME: ${{secrets.NEWSLETTERS_CHO_SH_USERNAME}}
+          NEWSLETTERS_CHO_SH_PASSWORD: ${{secrets.NEWSLETTERS_CHO_SH_PASSWORD}}
+          RESEND_KEY: ${{secrets.RESEND_KEY}}
+      - name: Commit as Bot
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Updating News..."
+      - name: Run Prettier
+        run: pnpm run format
+      - name: Commit as Bot
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Updating News..."
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main

@@ -2,19 +2,7 @@ export const subscriptions = [
   {
     query: 'Gen AI',
     serachResultLang: 'en',
-    locale: 'en',
-    email: 'anaclumos@gmail.com',
-  },
-  {
-    query: 'Gen AI',
-    serachResultLang: 'en',
     locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
-    query: 'Apple',
-    serachResultLang: 'en',
-    locale: 'en',
     email: 'anaclumos@gmail.com',
   },
   {
@@ -42,21 +30,9 @@ export const subscriptions = [
     email: 'anaclumos@gmail.com',
   },
   {
-    query: '게임 규제',
-    serachResultLang: 'ko',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
     query: '의료 인공지능',
     serachResultLang: 'ko',
     locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
-    query: 'Medical AI',
-    serachResultLang: 'en',
-    locale: 'en',
     email: 'anaclumos@gmail.com',
   },
   {
@@ -71,24 +47,14 @@ export const subscriptions = [
     locale: 'ko',
     email: 'anaclumos@gmail.com',
   },
-  {
-    query: 'Health Tech',
-    serachResultLang: 'en',
-    locale: 'en',
-    email: 'anaclumos@gmail.com',
-  },
+
   {
     query: 'Health Tech',
     serachResultLang: 'en',
     locale: 'ko',
     email: 'anaclumos@gmail.com',
   },
-  {
-    query: 'FED',
-    serachResultLang: 'en',
-    locale: 'en',
-    email: 'anaclumos@gmail.com',
-  },
+
   {
     query: 'FED',
     serachResultLang: 'en',

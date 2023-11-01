@@ -58,7 +58,7 @@ export const updateNews = async (obj: { query: string; serachResultLang: string 
 
   try {
     const options = {
-      url: `https://www.google.com/search?q=${encodeURIComponent(query)}&tbm=nws&lang=${serachResultLang}&brd_json=1`,
+      url: `https://www.google.com/search?q=${encodeURIComponent(query)}&tbm=nws&tbs=qdr:w&brd_json=1&lang=${serachResultLang}`,
       proxy: `http://${USERNAME}:${PASSWORD}@${HOST}`,
       rejectUnauthorized: false,
       json: true,
