@@ -35,6 +35,9 @@ jobs:
           NEWSLETTERS_CHO_SH_USERNAME: ${{secrets.NEWSLETTERS_CHO_SH_USERNAME}}
           NEWSLETTERS_CHO_SH_PASSWORD: ${{secrets.NEWSLETTERS_CHO_SH_PASSWORD}}
           RESEND_KEY: ${{secrets.RESEND_KEY}}
+          SERP_USERNAME: ${{secrets.SERP_USERNAME}}
+          SERP_PASSWORD: ${{secrets.SERP_PASSWORD}}
+          SERP_HOST: ${{secrets.SERP_PROXY}}
       - name: Commit as Bot
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
