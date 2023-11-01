@@ -168,6 +168,7 @@ export const sanitize = (text: string) => {
     .replaceAll('- 조선비즈', '')
     .replaceAll('[단독]', '')
     .replaceAll('[포토]', '')
+    .replaceAll('[강세 토픽]', '')
     .replaceAll(' : IT : 경제 : 뉴스', '')
     .trim()
     .slice(0, 100000)
