@@ -23,7 +23,6 @@ function useAutoSelectLocale(initialValue = '') {
 export const Subscribe = () => {
   const { i18n } = useDocusaurusContext()
   const [locale, setLocale] = useAutoSelectLocale(i18n.currentLocale)
-  console.log('locale', locale)
 
   return (
     <form method="post" action="https://newsletters.cho.sh/subscription/form" className={clsx(styles.form)}>
