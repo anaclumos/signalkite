@@ -1,5 +1,5 @@
 export const log = (message: string, level: 'info' | 'error' = 'info') => {
-  if (message.startsWith('💘')) return
+  if (message?.startsWith('💘')) return
   if (level === 'error') {
     console.error(message)
   } else {
