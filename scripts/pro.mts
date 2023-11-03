@@ -57,7 +57,13 @@ const sendEmail = async (obj: { email: string; query: string; serachResultLang: 
   // this is to throttle the requests
   for (let i = 0; i < stories.length; i++) {
     if (!stories[i].originBody && stories[i].originSummary.length === 0) {
-      stories[i].originBody = await collect(stories[i].originLink)
+      try {
+        stories[i].originBody = await collect(stories[i].originLink)
+      } catch (e) {
+        log(`❌ Error\tCannot Download with Puppeteer for ${stories[i].originLink}, ${e}`, 'error')
+        await new Promise((r) => setTimeout(r, 1000))
+        i -= 1 // retry
+      }
     } else {
       log(`💘 Body Exists\t${stories[i].title}`, 'info')
       stories[i].originBody = sanitize(stories[i].originBody)
