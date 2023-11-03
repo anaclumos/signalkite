@@ -62,6 +62,7 @@ export const tryDownloadingWithPuppeteer = async (url: string, body: string, ret
   }
   let browser: PuppeteerBrowser
   try {
+    log(`⏳ Trying\tBrightData Proxy for ${url}`, 'info')
     browser = await Puppeteer.connect({
       browserWSEndpoint: `wss://${process.env.BRIGHTDATA_USERNAME}:${process.env.BRIGHTDATA_PASSWORD}@${process.env.BRIGHTDATA_PROXY}`,
     })
