@@ -35,6 +35,7 @@ const reverseProcessor = (items) => {
 const config = {
   title: 'Heimdall',
   tagline: 'Hacker News in All Languages',
+  titleDelimiter: '•',
   favicon: 'img/favicon.ico',
   headTags: [
     {
