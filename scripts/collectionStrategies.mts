@@ -62,20 +62,23 @@ export const tryDownloadingWithPuppeteer = async (url: string, body: string, ret
   }
   let browser: PuppeteerBrowser
   try {
-    log(`⏳ Trying\tBrightData Proxy for ${url}`, 'info')
-    browser = await Puppeteer.connect({
-      browserWSEndpoint: `wss://${process.env.BRIGHTDATA_USERNAME}:${process.env.BRIGHTDATA_PASSWORD}@${process.env.BRIGHTDATA_PROXY}`,
-    })
+    try {
+      log(`⏳ Trying\tBrightData Proxy for ${url}`, 'info')
+      browser = await Puppeteer.connect({
+        browserWSEndpoint: `wss://${process.env.BRIGHTDATA_USERNAME}:${process.env.BRIGHTDATA_PASSWORD}@${process.env.BRIGHTDATA_PROXY}`,
+      })
+    } catch (e) {
+      log(`🚨\tBrightData Proxy is not available, attempting local, ${e.message}`, 'error')
+      browser = await Puppeteer.launch({ headless: 'new' })
+    }
+    try {
+      body = await extract(url, browser)
+      await browser.close()
+    } catch (e) {
+      log(`❌ Error\tCannot Download with Puppeteer for ${url}, ${e}`, 'error')
+      await browser.close()
+    }
   } catch (e) {
-    log(`🚨\tBrightData Proxy is not available, attempting local, ${e.message}`, 'error')
-    browser = await Puppeteer.launch({ headless: 'new' })
-  }
-  try {
-    body = await extract(url, browser)
-    await browser.close()
-  } catch (e) {
-    log(`❌ Error\tCannot Download with Puppeteer for ${url}, ${e}`, 'error')
-    await browser.close()
     await new Promise((r) => setTimeout(r, 1000))
     body = await tryDownloadingWithPuppeteer(url, body, retry + 1)
   }
