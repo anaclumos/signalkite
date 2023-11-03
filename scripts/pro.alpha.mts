@@ -9,7 +9,7 @@ export const subscriptions = [
     query: 'Tech Companies',
     serachResultLang: 'en',
     locale: 'ko',
-    email: 'kimkj@usc.edu'
+    email: 'kimkj@usc.edu',
   },
   {
     query: 'AI',
@@ -21,7 +21,7 @@ export const subscriptions = [
     query: 'Tech Companies',
     serachResultLang: 'en',
     locale: 'ko',
-    email: 'anaclumos@gmail.com'
+    email: 'anaclumos@gmail.com',
   },
   {
     query: 'junhoyeo',
