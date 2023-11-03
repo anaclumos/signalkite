@@ -104,7 +104,7 @@ export const createTitle = async (title, context, lang = 'en'): Promise<string> 
         You must provide a concise title of the article, that captures the essence of the article.
         The original title was "${title}", which may or may not be click-baity, cut off, or lack of context.
         YOU MUST SUMMARIZE IN LANGUAGE: ${lang.toUpperCase()}.
-        Now, I will give you the text.
+        Now, I will give you the text. Ignore the text if it simply mentions copyrights, general legal information, or an error message, because in that case the crawling might have failed.
         `
       ),
       new HumanMessage(`TEXT:\n${context}\n\nRESULT:\n`),
