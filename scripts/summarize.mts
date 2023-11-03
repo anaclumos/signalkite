@@ -95,8 +95,7 @@ export const createTitle = async (title, context, lang = 'en'): Promise<string> 
   // for generating the actual chat
   const chat = new ChatOpenAI({ modelName: 'gpt-4' })
   try {
-    log(`🍵 Distilling\t${title}`, 'info')
-
+    log(`📰 Original\t${title}`, 'info')
     const response = await chat.call([
       new SystemMessage(
         `
@@ -111,7 +110,9 @@ export const createTitle = async (title, context, lang = 'en'): Promise<string> 
     ])
 
     const { content } = response
-    return sanitize(content)
+    const newTitle= sanitize(content)
+    log(`📰 New Title\t${newTitle}`, 'info')
+    return newTitle
   } catch (e) {
     log(e, 'error')
     return ''
