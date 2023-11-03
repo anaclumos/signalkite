@@ -65,4 +65,10 @@ export const subscriptions = [
     locale: 'ko',
     email: 'anaclumos@gmail.com',
   },
+  {
+    query: '스타트업',
+    serachResultLang: 'ko',
+    locale: 'ko',
+    email: 'anaclumos@gmail.com',
+  },
 ]
