@@ -1,20 +1,32 @@
 export const subscriptions = [
   {
-    query: 'iMessage',
+    query: 'AI',
+    serachResultLang: 'en',
+    locale: 'en',
+    email: 'kimkj@usc.edu',
+  },
+  {
+    query: 'Tech Companies',
+    serachResultLang: 'en',
+    locale: 'ko',
+    email: 'kimkj@usc.edu'
+  },
+  {
+    query: 'AI',
     serachResultLang: 'en',
     locale: 'ko',
     email: 'anaclumos@gmail.com',
   },
   {
-    query: 'StarCraft',
+    query: 'Tech Companies',
     serachResultLang: 'en',
     locale: 'ko',
-    email: 'anaclumos@gmail.com',
+    email: 'anaclumos@gmail.com'
   },
   {
-    query: 'Medical AI',
+    query: 'junhoyeo',
     serachResultLang: 'en',
     locale: 'ko',
-    email: 'anaclumos@gmail.com',
+    email: 'i@junho.io',
   },
 ]
