@@ -91,8 +91,7 @@ export const createBulletPointSummary = async (title, context, lang = 'en') => {
   }
 }
 
-
-export const createTitle = async (title, context, lang = 'en') : Promise<string> => {
+export const createTitle = async (title, context, lang = 'en'): Promise<string> => {
   // for generating the actual chat
   const chat = new ChatOpenAI({ modelName: 'gpt-4' })
   try {
@@ -115,7 +114,7 @@ export const createTitle = async (title, context, lang = 'en') : Promise<string>
     return sanitize(content)
   } catch (e) {
     log(e, 'error')
-    return ""
+    return ''
   }
 }
 
@@ -143,9 +142,7 @@ export const generateContext = async (rawText, title, lang = 'en') => {
   }
 }
 
-
-
-export const summarize = async (story: Story, lang = 'en') : Promise<Story> => {
+export const summarize = async (story: Story, lang = 'en'): Promise<Story> => {
   if ((story.originSummary.length ?? 0) !== 0) {
     log(`💘 Summ Exists\t${story.title}`, 'error')
     return story
@@ -153,7 +150,7 @@ export const summarize = async (story: Story, lang = 'en') : Promise<Story> => {
 
   let originSummary = []
   let commentSummary = []
-  let title = ""
+  let title = ''
 
   const context = await generateContext(story.originBody, story.title, lang)
 
@@ -180,6 +177,6 @@ export const summarize = async (story: Story, lang = 'en') : Promise<Story> => {
     ...story,
     originSummary,
     commentSummary,
-    title
+    title,
   }
 }

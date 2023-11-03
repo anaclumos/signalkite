@@ -32,10 +32,16 @@ async function retryTranslation(func, args, maxRetries) {
 
 const sendEmail = async (obj: { email: string; query: string; serachResultLang: string; locale: string }) => {
   const { email, query, serachResultLang, locale } = obj
-  let stories: Story[] = await updateNews({
-    query,
-    serachResultLang,
-  })
+  let stories: Story[] = []
+  try {
+    stories = await updateNews({
+      query,
+      serachResultLang,
+    })
+  } catch (e) {
+    log(`❌ Error\t${e}`, 'error')
+    return
+  }
 
   // const day = new Date(new Date().getTime() - 24 * 60 * 60 * 1000).toISOString().split('T')[0]
   const day = new Date().toISOString().split('T')[0]
