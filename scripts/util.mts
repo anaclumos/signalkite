@@ -18,6 +18,13 @@ export const sanitize = (text: string) => {
   if (text === '""') return ''
   if (text === '""') return ''
 
+  if (text.startsWith('"') && text.endsWith('"')) {
+    text = text.slice(1, -1)
+  }
+  if (text.startsWith("'") && text.endsWith("'")) {
+    text = text.slice(1, -1)
+  }
+
   return text
     .replaceAll(/[\u200B\u200C\u200D\u200E\u200F\uFEFF]/g, '')
     .replaceAll(' ', ' ')
