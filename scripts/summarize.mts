@@ -7,27 +7,10 @@ import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 import { log, sanitize } from './util.mjs'
 import { Story } from './type.mjs'
 
-export const createBulletPointSummary = async (rawText, title, lang = 'en') => {
-  // for summarizing and context generating
-  const model = new OpenAI({ modelName: 'gpt-4' })
+export const createBulletPointSummary = async (title, context, lang = 'en') => {
   // for generating the actual chat
   const chat = new ChatOpenAI({ modelName: 'gpt-4' })
-
-  const chain = loadSummarizationChain(model, { type: 'map_reduce' })
   try {
-    const textSplitter = new RecursiveCharacterTextSplitter({
-      chunkSize: 6144,
-    })
-
-    log(`⏳ Shortening\t${title}`, 'info')
-    const bodyDoc = await textSplitter.createDocuments([sanitize(rawText)])
-    const bodyRes = await chain.call({
-      input_documents: bodyDoc,
-    })
-    if (!bodyRes?.text) return
-
-    const summary = sanitize(bodyRes.text)
-
     log(`🍵 Distilling\t${title}`, 'info')
 
     const response = await chat.call([
@@ -75,7 +58,7 @@ export const createBulletPointSummary = async (rawText, title, lang = 'en') => {
         YOU MUST SUMMARIZE IN LANGUAGE: ${lang.toUpperCase()}.
         `
       ),
-      new HumanMessage(`TEXT:\n${summary}\n\nRESULT:\n`),
+      new HumanMessage(`TEXT:\n${context}\n\nRESULT:\n`),
     ])
 
     const { content } = response
@@ -108,7 +91,61 @@ export const createBulletPointSummary = async (rawText, title, lang = 'en') => {
   }
 }
 
-export const summarize = async (story: Story, lang = 'en') => {
+
+export const createTitle = async (title, context, lang = 'en') : Promise<string> => {
+  // for generating the actual chat
+  const chat = new ChatOpenAI({ modelName: 'gpt-4' })
+  try {
+    log(`🍵 Distilling\t${title}`, 'info')
+
+    const response = await chat.call([
+      new SystemMessage(
+        `
+        You are a professional, fair, and intelligent expert journalist for cutting-edge tech news.
+        You must provide a concise title of the article, that captures the essence of the article.
+        The original title was "${title}", which may or may not be click-baity, cut off, or lack of context.
+        YOU MUST SUMMARIZE IN LANGUAGE: ${lang.toUpperCase()}.
+        Now, I will give you the text.
+        `
+      ),
+      new HumanMessage(`TEXT:\n${context}\n\nRESULT:\n`),
+    ])
+
+    const { content } = response
+    return sanitize(content)
+  } catch (e) {
+    log(e, 'error')
+    return ""
+  }
+}
+
+export const generateContext = async (rawText, title, lang = 'en') => {
+  const model = new OpenAI({ modelName: 'gpt-4' })
+
+  const chain = loadSummarizationChain(model, { type: 'map_reduce' })
+  try {
+    const textSplitter = new RecursiveCharacterTextSplitter({
+      chunkSize: 6144,
+    })
+
+    log(`⏳ Shortening\t${title}`, 'info')
+    const bodyDoc = await textSplitter.createDocuments([sanitize(rawText)])
+    const bodyRes = await chain.call({
+      input_documents: bodyDoc,
+    })
+    if (!bodyRes?.text) return
+
+    const summary = sanitize(bodyRes.text)
+    return summary
+  } catch (e) {
+    log(e, 'error')
+    return ''
+  }
+}
+
+
+
+export const summarize = async (story: Story, lang = 'en') : Promise<Story> => {
   if ((story.originSummary.length ?? 0) !== 0) {
     log(`💘 Summ Exists\t${story.title}`, 'error')
     return story
@@ -116,17 +153,25 @@ export const summarize = async (story: Story, lang = 'en') => {
 
   let originSummary = []
   let commentSummary = []
+  let title = ""
+
+  const context = await generateContext(story.originBody, story.title, lang)
 
   try {
     if (story.originBody.length === 0) {
       throw new Error('🚨\toriginBody is empty')
     }
-    originSummary = await createBulletPointSummary(story.originBody, story.title, lang)
+    originSummary = await createBulletPointSummary(story.title, context, lang)
   } catch (e) {
     log(e, 'error')
   }
   try {
-    commentSummary = await createBulletPointSummary(story.commentBody, story.title, lang)
+    commentSummary = await createBulletPointSummary(story.title, context, lang)
+  } catch (e) {
+    log(e, 'error')
+  }
+  try {
+    title = await createTitle(story.title, context, lang)
   } catch (e) {
     log(e, 'error')
   }
@@ -135,5 +180,6 @@ export const summarize = async (story: Story, lang = 'en') => {
     ...story,
     originSummary,
     commentSummary,
+    title
   }
 }
