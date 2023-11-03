@@ -66,7 +66,20 @@ export const updateNews = async (obj: { query: string; serachResultLang: string 
       json: true,
     }
     const data = await rp(options)
-    return data?.news.map((story: any) => {
+
+    if (!data) {
+      throw new Error('No data returned from SERP')
+    }
+
+    if (!data.news) {
+      throw new Error('No news returned from SERP')
+    }
+
+    if (!data.news.length) {
+      throw new Error('No news returned from SERP')
+    }
+
+    return data?.news?.map((story: any) => {
       return {
         title: story.title,
         originLink: story.link,
