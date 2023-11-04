@@ -67,9 +67,11 @@ export const tryDownloadingWithPuppeteer = async (url: string, body: string, ret
       browser = await Puppeteer.connect({
         browserWSEndpoint: `wss://${process.env.BRIGHTDATA_USERNAME}:${process.env.BRIGHTDATA_PASSWORD}@${process.env.BRIGHTDATA_PROXY}`,
       })
+      browser.createIncognitoBrowserContext()
     } catch (e) {
       log(`🚨\tBrightData Proxy is not available, attempting local, ${e.message}`, 'error')
       browser = await Puppeteer.launch({ headless: 'new' })
+      browser.createIncognitoBrowserContext()
     }
     try {
       body = await extract(url, browser)
