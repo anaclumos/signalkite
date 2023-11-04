@@ -71,4 +71,40 @@ export const subscriptions = [
     locale: 'ko',
     email: 'anaclumos@gmail.com',
   },
+  {
+    query: '시스템반도체',
+    serachResultLang: 'ko',
+    locale: 'ko',
+    email: 'youjin.ahn@gwanakanalog.com',
+  },
+  {
+    query: '시스템반도체',
+    serachResultLang: 'ko',
+    locale: 'ko',
+    email: 'anaclumos@gmail.com',
+  },
+  {
+    query: 'Generative AI',
+    serachResultLang: 'en',
+    locale: 'en',
+    email: 'jungwoolee0419@gmail.com',
+  },
+  {
+    query: 'Generative AI',
+    serachResultLang: 'en',
+    locale: 'ko',
+    email: 'jungwoolee0419@gmail.com',
+  },
+  {
+    query: 'Generative AI',
+    serachResultLang: 'en',
+    locale: 'en',
+    email: 'anaclumos@gmail.com',
+  },
+  {
+    query: 'Generative AI',
+    serachResultLang: 'en',
+    locale: 'ko',
+    email: 'anaclumos@gmail.com',
+  },
 ]
