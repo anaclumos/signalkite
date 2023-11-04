@@ -110,7 +110,7 @@ export const createTitle = async (title, context, lang = 'en'): Promise<string> 
     ])
 
     const { content } = response
-    const newTitle= sanitize(content)
+    const newTitle = sanitize(content)
     log(`📰 New Title\t${newTitle}`, 'info')
     return newTitle
   } catch (e) {
