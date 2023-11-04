@@ -107,4 +107,34 @@ export const subscriptions = [
     locale: 'ko',
     email: 'anaclumos@gmail.com',
   },
+  {
+    query: 'Second Hand Marketplace',
+    serachResultLang: 'en',
+    locale: 'en',
+    email: 'jaewha@gmail.com'
+  },
+  {
+    query: 'Second Hand Marketplace',
+    serachResultLang: 'en',
+    locale: 'ko',
+    email: 'jaewha@gmail.com'
+  },
+  {
+    query: 'Second Hand Marketplace',
+    serachResultLang: 'en',
+    locale: 'ko',
+    email: 'anaclumos@gmail.com'
+  },
+  {
+    query: '중고거래',
+    serachResultLang: 'ko',
+    locale: 'ko',
+    email: 'jaewha@gmail.com'
+  },
+  {
+    query: '중고거래',
+    serachResultLang: 'ko',
+    locale: 'ko',
+    email: 'anaclumos@gmail.com'
+  }
 ]
