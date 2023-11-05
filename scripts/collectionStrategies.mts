@@ -110,8 +110,7 @@ export const tryDownloadingWithPlaywright = async (url: string, body: string, re
 
   try {
     const proxyAuth = process.env.BRIGHTDATA_USERNAME + ':' + process.env.BRIGHTDATA_PASSWORD
-    browser = await chromium.connectOverCDP({
-      endpointURL: `wss://${proxyAuth}@${process.env.BRIGHTDATA_PROXY}`,
+    browser = await chromium.connect(`wss://${proxyAuth}@${process.env.BRIGHTDATA_PROXY}`, {
       timeout: 600 * 1000,
     })
   } catch (error) {
