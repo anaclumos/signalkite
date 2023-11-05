@@ -122,7 +122,7 @@ export const tryDownloadingWithPlaywright = async (url: string, body: string, re
   try {
     context = await browser.newContext()
     const page = await context.newPage()
-    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 600 * 1000 })
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60 * 1000 })
 
     let content = await page.evaluate(() => {
       const article = document.querySelector('article')
