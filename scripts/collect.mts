@@ -4,7 +4,6 @@ import {
   tryDownloadingPdf,
   tryDownloadingTwitter,
   tryDownloadingWithPlaywright,
-  tryDownloadingWithPuppeteer,
   tryDownloadingYoutube,
 } from './collectionStrategies.mjs'
 
@@ -27,7 +26,6 @@ export const collect = async (url: string, count = 0): Promise<string> => {
   try {
     body = await tryDownloadingTwitter(url, body)
     body = await tryDownloadingYoutube(url, body)
-    body = await tryDownloadingWithPuppeteer(url, body)
     body = await tryDownloadingWithPlaywright(url, body)
     body = await tryDownloadingAsGooglebot(url, body)
     body = await tryDownloadingPdf(url, body)

@@ -1,7 +1,6 @@
 import { YoutubeTranscript } from 'youtube-transcript'
-import Puppeteer, { Browser as PuppeteerBrowser, Page as PuppeteerPage } from 'puppeteer'
 import pdf from 'pdf-parse'
-import playwright from 'playwright'
+import { chromium, Browser, BrowserContext } from 'playwright'
 
 import { log, sanitize } from './util.mjs'
 
@@ -45,69 +44,6 @@ export const tryDownloadingTwitter = async (url: string, body: string): Promise<
       .then((r) => r.html)
   } catch (e) {
     log(`❌ Error\tCannot Download Twitter Transcript for ${url}, ${e}`, 'error')
-  }
-  return sanitize(body)
-}
-
-export const tryDownloadingWithPuppeteer = async (url: string, body: string, retry = 0): Promise<string> => {
-  log(`⏳ Downloading\tPuppeteer for ${url}`, 'info')
-  if (retry > 5) {
-    log(`❌ Error\tCannot Download with Puppeteer for ${url}`, 'error')
-    return ''
-  }
-
-  if (body.length > 0) {
-    log(`💘 Body Exists\ttryDownloadingWithPuppeteer, ${url}`, 'info')
-    return sanitize(body)
-  }
-  let browser: PuppeteerBrowser
-  try {
-    try {
-      log(`⏳ Trying\tBrightData Proxy for ${url}`, 'info')
-      browser = await Puppeteer.connect({
-        browserWSEndpoint: `wss://${process.env.BRIGHTDATA_USERNAME}:${process.env.BRIGHTDATA_PASSWORD}@${process.env.BRIGHTDATA_PROXY}`,
-      })
-      browser.createIncognitoBrowserContext()
-    } catch (e) {
-      log(`🚨\tBrightData Proxy is not available, attempting local, ${e.message}`, 'error')
-      browser = await Puppeteer.launch({ headless: 'new' })
-      browser.createIncognitoBrowserContext()
-    }
-    try {
-      body = await extract(url, browser)
-      await browser.close()
-    } catch (e) {
-      log(`❌ Error\tCannot Download with Puppeteer for ${url}, ${e}`, 'error')
-      await browser.close()
-    }
-  } catch (e) {
-    await new Promise((r) => setTimeout(r, 1000))
-    body = await tryDownloadingWithPuppeteer(url, body, retry + 1)
-  }
-  log(`✅ Success\tDownloaded with Puppeteer for ${url}`)
-  return sanitize(body)
-}
-
-export const extract = async (url: string, browser: PuppeteerBrowser): Promise<string> => {
-  let body = ''
-  const page: PuppeteerPage = await browser.newPage()
-  page.setDefaultNavigationTimeout(10 * 60 * 1000)
-  await page.goto(url)
-  try {
-    await page.waitForSelector('article', { timeout: 10000 })
-  } catch (e) {
-    // do nothing
-  }
-  await page.waitForSelector('body')
-  if (await page.$('article')) {
-    body = await page.$eval('article', (el) => el.innerText)
-  }
-  if (await page.$('main')) {
-    body = await page.$eval('main', (el) => el.innerText)
-  }
-
-  if (await page.$('body')) {
-    body = await page.$eval('body', (el) => el.innerText)
   }
   return sanitize(body)
 }
@@ -156,28 +92,64 @@ export const tryDownloadingAsGooglebot = async (url: string, body: string): Prom
   return sanitize(body)
 }
 
-export const tryDownloadingWithPlaywright = async (url: string, body: string): Promise<string> => {
+export const tryDownloadingWithPlaywright = async (url: string, body: string, retry = 0): Promise<string> => {
   if (body.length > 0) {
     log(`💘 Body Exists\ttryDownloadingWithPlaywright, ${url}`, 'info')
     return sanitize(body)
   }
-  try {
-    log(`⏳ Downloading\tPlaywright for ${url}`, 'info')
-    const browser = await playwright.chromium.launch()
-    const context = await browser.newContext()
-    const page = await context.newPage()
-    await page.goto(url)
-    try {
-      body = await page.innerText('.columns-area')
-    } catch (e) {
-      body = await page.innerText('body')
-    }
-    log(`✅ Downloaded\tDefault for ${url}`, 'info')
-    await browser.close()
-  } catch (e) {
-    log(`❌ Error\tCannot Download Default for ${url}, ${e}`, 'info')
-    body = 'error'
+
+  log(`⏳ Downloading\tPlaywright for ${url}`)
+
+  if (retry > 5) {
+    log(`Cannot download with Playwright after ${retry} retries for ${url}`, 'error')
+    return ''
   }
 
-  return sanitize(body)
+  let browser: Browser | null = null
+  let context: BrowserContext | null = null
+
+  try {
+    const proxyAuth = process.env.BRIGHTDATA_USERNAME + ':' + process.env.BRIGHTDATA_PASSWORD
+    browser = await chromium.connectOverCDP({
+      endpointURL: `wss://${proxyAuth}@${process.env.BRIGHTDATA_PROXY}`,
+      timeout: 600 * 1000,
+    })
+  } catch (error) {
+    log(`Remote connection failed, launching local Playwright instance: ${error}`, 'error')
+    browser = await chromium.launch() // Fall back to a local instance
+  }
+
+  try {
+    context = await browser.newContext()
+    const page = await context.newPage()
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 600 * 1000 })
+
+    let content = await page.evaluate(() => {
+      const article = document.querySelector('article')
+      if (article) {
+        return article.innerText
+      }
+      const main = document.querySelector('main')
+      if (main) {
+        return main.innerText
+      }
+      const body = document.querySelector('body')
+      if (body) {
+        return body.innerText
+      }
+    })
+
+    log(`✅ Success\tDownloaded content with Playwright for ${url}`)
+    return content
+  } catch (error) {
+    log(`Error during download with Playwright for ${url}: ${error}`, 'error')
+    return await tryDownloadingWithPlaywright(url, body, retry + 1)
+  } finally {
+    if (context) {
+      await context.close()
+    }
+    if (browser) {
+      await browser.close()
+    }
+  }
 }
