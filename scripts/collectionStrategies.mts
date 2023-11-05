@@ -110,18 +110,16 @@ export const tryDownloadingWithPlaywright = async (url: string, body: string, re
 
   try {
     const proxyAuth = process.env.BRIGHTDATA_USERNAME + ':' + process.env.BRIGHTDATA_PASSWORD
-    browser = await chromium.connect(`wss://${proxyAuth}@${process.env.BRIGHTDATA_PROXY}`, {
-      timeout: 600 * 1000,
-    })
+    browser = await chromium.connect(`wss://${proxyAuth}@${process.env.BRIGHTDATA_PROXY}`)
   } catch (error) {
     log(`Remote connection failed, launching local Playwright instance: ${error}`, 'error')
-    browser = await chromium.launch() // Fall back to a local instance
+    browser = await chromium.launch()
   }
 
   try {
     context = await browser.newContext()
     const page = await context.newPage()
-    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60 * 1000 })
+    await page.goto(url, { waitUntil: 'domcontentloaded' })
 
     let content = await page.evaluate(() => {
       const article = document.querySelector('article')
