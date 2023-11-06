@@ -77,8 +77,11 @@ const main = async () => {
   // locale -> Stories map
   const localeStories: Record<string, Story[]> = {}
 
+  log(`🤟 Translating\t${LinguineList.join(', ')}`, 'info')
+
   for (let i = 0; i < LinguineList.length; i++) {
     const locale = LinguineList[i]
+    log(`🤟 Translating\t${locale}`, 'info')
     if (locale === 'en') {
       localeStories[locale] = stories
       continue
@@ -100,7 +103,6 @@ const main = async () => {
         }
       })
     )
-    log(`🤟 Translating\t${locale}`, 'info')
   }
 
   // Ensure that the title and summary are sanitized
