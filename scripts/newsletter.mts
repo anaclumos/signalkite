@@ -6,6 +6,7 @@ import { log } from './util.mjs'
 import { getAdImgHtml } from './ad.mjs'
 import { render } from '@react-email/render'
 import Newsletter from './emails/NewsletterTemplate.js'
+import { relateStoryAd } from 'relateStoryAd.js'
 
 export const scheduleHnNewsletter = async (localeStories: Record<string, Story[]>) => {
   log('📧 Scheduling Newsletter...', 'info')
@@ -35,7 +36,10 @@ export const createHnDocHead = (locale: string, title: string, day = new Date())
 }
 
 const createHnHeader = (locale: string) => {
-  return getAdImgHtml('https://raw.githubusercontent.com/anaclumos/heimdall/main/static/img/sponsor.png') + '\n\n'
+  if(locale === 'ko') {
+    return getAdImgHtml('https://raw.githubusercontent.com/anaclumos/heimdall/main/static/img/sponsor.png', "https://www.relate.kr/?ref=heimdall@TrackLink") + '\n\n'
+  }
+  return getAdImgHtml('https://raw.githubusercontent.com/anaclumos/heimdall/main/static/img/sponsor.png', "https://www.relate.so/?ref=heimdall@TrackLink") + '\n\n'
 }
 
 const createHnPreview = (story: Story) => {
@@ -111,6 +115,12 @@ export const createHnContent = (locale: string, stories: Story[], isEmail = fals
     : `---\nslug: '/${day.toISOString().split('T')[0].replaceAll('-', '/')}'\n---\n\n# ${
         day.toISOString().split('T')[0]
       }\n\n`
+  if(day.toISOString().split('T')[0] === '2023-11-07') {
+    content += `## [${relateStoryAd[locale].title}](${relateStoryAd[locale].originLink}@TrackLink) <sup>ad</sup>\n\n`
+    for (let j = 0; j < relateStoryAd[locale].summary.length; j++) {
+      content += `- ${relateStoryAd[locale].summary[j]}\n`
+    }
+  }
   for (let i = 0; i < stories.length; i++) {
     const story = stories[i]
     const h2link = isEmail
