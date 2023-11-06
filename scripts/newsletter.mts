@@ -56,13 +56,18 @@ const createHnCampaign = async (locale: string, stories: Story[]) => {
   const ONE_MINUTE = 60 * 1000
   const timeToSend = new Date(new Date().getTime() + ONE_MINUTE * newsletterDelay[locale] + ONE_MINUTE * 30)
 
-  const subject =
-    `🗞️ ${stories[0].title}`.length <= subjectLengthLimit
-      ? `🗞️ ${stories[0].title}`
-      : `🗞️ HN (${LinguineCore[locale].native}) ${new Date().toISOString().split('T')[0]}`
+  const day = new Date().toISOString().split('T')[0]
+
+  
+  let subject =
+  `🗞️ ${stories[0].title}`.length <= subjectLengthLimit
+  ? `🗞️ ${stories[0].title}`
+  : `🗞️ HN (${LinguineCore[locale].native}) ${day}`
+  
+  subject = day === '2023-11-07' ? `🗞️ ${relateStoryAd[locale].title}` : subject
 
   try {
-    log(`📧 Creating\t${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
+    log(`📧 Creating\t${day} ${locale}`, 'info')
     const res = await fetch(server, {
       method: 'POST',
       headers: {
@@ -70,12 +75,12 @@ const createHnCampaign = async (locale: string, stories: Story[]) => {
         Authorization: 'Basic ' + Buffer.from(username + ':' + password).toString('base64'),
       },
       body: JSON.stringify({
-        name: `${new Date().toISOString().split('T')[0]} ${locale}`,
+        name: `${day} ${locale}`,
         subject: subject,
         type: 'regular',
         content_type: 'markdown',
         body:
-          createHnPreview(stories[0]) +
+          createHnPreview(day === '2023-11-07' ? relateStoryAd[locale] : stories[0]) +
           createHnHeader(locale) +
           createHnContent(locale, stories, true) +
           createHnFooter(locale),
@@ -86,7 +91,7 @@ const createHnCampaign = async (locale: string, stories: Story[]) => {
         template_id: getTemplateId(locale),
       }),
     })
-    log(`💌 Creating\t${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
+    log(`💌 Creating\t${day} ${locale}`, 'info')
 
     const response = await res.json()
 
@@ -100,7 +105,7 @@ const createHnCampaign = async (locale: string, stories: Story[]) => {
         status: 'scheduled',
       }),
     })
-    log(`📮 Scheduled\t${new Date().toISOString().split('T')[0]} ${locale}`, 'info')
+    log(`📮 Scheduled\t${day} ${locale}`, 'info')
   } catch (e) {
     log(e, 'error')
   }
