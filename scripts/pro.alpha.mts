@@ -159,7 +159,7 @@ export const subscriptions = [
     query: '친환경',
     serachResultLang: 'ko',
     locale: 'ko',
-    email: 'sunjaeianchoi@gmail.com',
+    email: 'anaclumos@gmail.com',
   },
   {
     query: '포장재',
@@ -171,7 +171,7 @@ export const subscriptions = [
     query: '포장재',
     serachResultLang: 'ko',
     locale: 'ko',
-    email: 'sunjaeianchoi@gmail.com',
+    email: 'anaclumos@gmail.com',
   },
   {
     query: '대체',
@@ -183,7 +183,7 @@ export const subscriptions = [
     query: '대체',
     serachResultLang: 'ko',
     locale: 'ko',
-    email: 'sunjaeianchoi@gmail.com',
+    email: 'anaclumos@gmail.com',
   },
   {
     query: 'AI',
@@ -195,7 +195,7 @@ export const subscriptions = [
     query: 'AI',
     serachResultLang: 'en',
     locale: 'ko',
-    email: 'sunjaeianchoi@gmail.com',
+    email: 'anaclumos@gmail.com',
   },
   {
     query: 'Legal AI',
@@ -207,7 +207,7 @@ export const subscriptions = [
     query: 'Legal AI',
     serachResultLang: 'en',
     locale: 'ko',
-    email: 'sunjaeianchoi@gmail.com',
+    email: 'anaclumos@gmail.com',
   },
   {
     query: 'BHSN',
@@ -219,7 +219,7 @@ export const subscriptions = [
     query: 'BHSN',
     serachResultLang: 'en',
     locale: 'ko',
-    email: 'sunjaeianchoi@gmail.com',
+    email: 'anaclumos@gmail.com',
   },
   {
     query: 'Blockchain',
@@ -231,6 +231,6 @@ export const subscriptions = [
     query: 'Blockchain',
     serachResultLang: 'en',
     locale: 'ko',
-    email: 'sunjaeianchoi@gmail.com',
+    email: 'anaclumos@gmail.com',
   },
 ]
