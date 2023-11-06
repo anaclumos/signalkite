@@ -96,6 +96,8 @@ const sendEmail = async (obj: {
       }
     })
 
+    stories = stories.filter((s) => s?.title?.length > 0)
+
     fs.writeFileSync(
       `./pro/${serachResultLang}/${query}/records/${day}/${day}.${serachResultLang}.json`,
       JSON.stringify(stories, null, 2) + '\n'
