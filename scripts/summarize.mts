@@ -7,9 +7,13 @@ import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 import { log, sanitize } from './util.mjs'
 import { Story } from './type.mjs'
 
+export const sleep = async (ms = 10000) => {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
 export const createBulletPointSummary = async (title, context, lang = 'en') => {
-  // for generating the actual chat
-  const chat = new ChatOpenAI({ modelName: 'gpt-4-1106-preview' })
+  sleep(10000)
+  const chat = new ChatOpenAI({ modelName: 'gpt-4' })
   try {
     log(`🍵 Distilling\t${title}`, 'info')
 
@@ -93,7 +97,8 @@ export const createBulletPointSummary = async (title, context, lang = 'en') => {
 
 export const createTitle = async (title, context, lang = 'en'): Promise<string> => {
   // for generating the actual chat
-  const chat = new ChatOpenAI({ modelName: 'gpt-4-1106-preview' })
+  sleep(10000)
+  const chat = new ChatOpenAI({ modelName: 'gpt-4' })
   try {
     log(`📰 Original\t${title}`, 'info')
     const response = await chat.call([
@@ -121,12 +126,13 @@ export const createTitle = async (title, context, lang = 'en'): Promise<string> 
 }
 
 export const generateContext = async (rawText, title, lang = 'en') => {
-  const model = new OpenAI({ modelName: 'gpt-4-1106-preview' })
+  sleep(10000)
+  const model = new OpenAI({ modelName: 'gpt-4' })
 
   const chain = loadSummarizationChain(model, { type: 'map_reduce' })
   try {
     const textSplitter = new RecursiveCharacterTextSplitter({
-      chunkSize: 96000,
+      chunkSize: 8000,
     })
 
     log(`⏳ Shortening\t${title}`, 'info')
