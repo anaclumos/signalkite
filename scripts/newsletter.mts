@@ -3,10 +3,9 @@ import { Story } from './type.mjs'
 import { LOCAL_STARBUCKS, LOCAL_REACTIONS, LOCAL_TODAYS_HN, LOCAL_HN_SUMMARY } from './default.mjs'
 import { LinguineCore, LinguineList } from './linguine.mjs'
 import { log } from './util.mjs'
-import { getAdImgHtml } from './ad.mjs'
+import { getAdImgHtml, storyAd } from './ad.mjs'
 import { render } from '@react-email/render'
 import Newsletter from './emails/NewsletterTemplate.js'
-import { relateStoryAd } from './relateStoryAd.js'
 
 export const scheduleHnNewsletter = async (localeStories: Record<string, Story[]>) => {
   log('📧 Scheduling Newsletter...', 'info')
@@ -73,7 +72,7 @@ const createHnCampaign = async (locale: string, stories: Story[]) => {
       ? `🗞️ ${stories[0].title}`
       : `🗞️ HN (${LinguineCore[locale].native}) ${day}`
 
-  subject = day === '2023-11-07' ? `🗞️ ${relateStoryAd[locale].title}` : subject
+  subject = day === storyAd.day ? `🗞️ ${storyAd[locale].title}` : subject
 
   try {
     log(`📧 Creating\t${day} ${locale}`, 'info')
@@ -89,7 +88,7 @@ const createHnCampaign = async (locale: string, stories: Story[]) => {
         type: 'regular',
         content_type: 'markdown',
         body:
-          createHnPreview(day === '2023-11-07' ? relateStoryAd[locale] : stories[0]) +
+          createHnPreview(day === storyAd.day ? storyAd[locale] : stories[0]) +
           createHnHeader(locale) +
           createHnContent(locale, stories, true) +
           createHnFooter(locale),
@@ -129,10 +128,10 @@ export const createHnContent = (locale: string, stories: Story[], isEmail = fals
     : `---\nslug: '/${day.toISOString().split('T')[0].replaceAll('-', '/')}'\n---\n\n# ${
         day.toISOString().split('T')[0]
       }\n\n`
-  if (day.toISOString().split('T')[0] === '2023-11-07' || day.toISOString().split('T')[0] === '2023-11-06') {
-    content += `## [${relateStoryAd[locale].title}](${relateStoryAd[locale].originLink}@TrackLink) <sup style="color: #888888;">ad</sup>\n\n`
-    for (let j = 0; j < relateStoryAd[locale].originSummary.length; j++) {
-      content += `- ${relateStoryAd[locale].originSummary[j]}\n`
+  if (day.toISOString().split('T')[0] === storyAd.day) {
+    content += `## [${storyAd[locale].title}](${storyAd[locale].originLink}@TrackLink) <sup style="color: #888888;">ad</sup>\n\n`
+    for (let j = 0; j < storyAd[locale].originSummary.length; j++) {
+      content += `- ${storyAd[locale].originSummary[j]}\n`
     }
   }
   for (let i = 0; i < stories.length; i++) {
