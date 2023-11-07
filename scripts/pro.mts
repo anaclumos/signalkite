@@ -115,8 +115,14 @@ const sendEmail = async (obj: {
       stories.map(async (s) => {
         return {
           ...s,
-          title: (await retryTranslation(translate, [[s.title], serachResultLang, locale], MAX_RETRIES))[0],
-          originSummary: await retryTranslation(translate, [s.originSummary, serachResultLang, locale], MAX_RETRIES),
+          title: (
+            await retryTranslation(translate, { payload: [s.title], source: serachResultLang, locale }, MAX_RETRIES)
+          )[0],
+          originSummary: await retryTranslation(
+            translate,
+            { payload: s.originSummary, source: serachResultLang, locale },
+            MAX_RETRIES
+          ),
           originBody: '',
           commentBody: '',
         }
