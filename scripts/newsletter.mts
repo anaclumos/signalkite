@@ -36,10 +36,20 @@ export const createHnDocHead = (locale: string, title: string, day = new Date())
 }
 
 const createHnHeader = (locale: string) => {
-  if(locale === 'ko') {
-    return getAdImgHtml('https://github.com/anaclumos/heimdall/assets/31657298/1b9e8392-c766-414d-a9d6-f53782c5ec50', "https://www.relate.kr/?ref=heimdall@TrackLink") + '\n\n'
+  if (locale === 'ko') {
+    return (
+      getAdImgHtml(
+        'https://github.com/anaclumos/heimdall/assets/31657298/1b9e8392-c766-414d-a9d6-f53782c5ec50',
+        'https://www.relate.kr/?ref=heimdall@TrackLink'
+      ) + '\n\n'
+    )
   }
-  return getAdImgHtml('https://github.com/anaclumos/heimdall/assets/31657298/1b9e8392-c766-414d-a9d6-f53782c5ec50', "https://www.relate.so/?ref=heimdall@TrackLink") + '\n\n'
+  return (
+    getAdImgHtml(
+      'https://github.com/anaclumos/heimdall/assets/31657298/1b9e8392-c766-414d-a9d6-f53782c5ec50',
+      'https://www.relate.so/?ref=heimdall@TrackLink'
+    ) + '\n\n'
+  )
 }
 
 const createHnPreview = (story: Story) => {
@@ -58,12 +68,11 @@ const createHnCampaign = async (locale: string, stories: Story[]) => {
 
   const day = new Date().toISOString().split('T')[0]
 
-  
   let subject =
-  `🗞️ ${stories[0].title}`.length <= subjectLengthLimit
-  ? `🗞️ ${stories[0].title}`
-  : `🗞️ HN (${LinguineCore[locale].native}) ${day}`
-  
+    `🗞️ ${stories[0].title}`.length <= subjectLengthLimit
+      ? `🗞️ ${stories[0].title}`
+      : `🗞️ HN (${LinguineCore[locale].native}) ${day}`
+
   subject = day === '2023-11-07' ? `🗞️ ${relateStoryAd[locale].title}` : subject
 
   try {
@@ -120,7 +129,7 @@ export const createHnContent = (locale: string, stories: Story[], isEmail = fals
     : `---\nslug: '/${day.toISOString().split('T')[0].replaceAll('-', '/')}'\n---\n\n# ${
         day.toISOString().split('T')[0]
       }\n\n`
-  if(day.toISOString().split('T')[0] === '2023-11-07' || day.toISOString().split('T')[0] === '2023-11-06') {
+  if (day.toISOString().split('T')[0] === '2023-11-07' || day.toISOString().split('T')[0] === '2023-11-06') {
     content += `## [${relateStoryAd[locale].title}](${relateStoryAd[locale].originLink}@TrackLink) <sup style="color: #888888;">ad</sup>\n\n`
     for (let j = 0; j < relateStoryAd[locale].summary.length; j++) {
       content += `- ${relateStoryAd[locale].summary[j]}\n`
