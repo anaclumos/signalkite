@@ -9,7 +9,7 @@ import { Story } from './type.mjs'
 
 export const createBulletPointSummary = async (title, context, lang = 'en') => {
   // for generating the actual chat
-  const chat = new ChatOpenAI({ modelName: 'gpt-4' })
+  const chat = new ChatOpenAI({ modelName: 'gpt-4-1106-preview' })
   try {
     log(`🍵 Distilling\t${title}`, 'info')
 
@@ -93,7 +93,7 @@ export const createBulletPointSummary = async (title, context, lang = 'en') => {
 
 export const createTitle = async (title, context, lang = 'en'): Promise<string> => {
   // for generating the actual chat
-  const chat = new ChatOpenAI({ modelName: 'gpt-4' })
+  const chat = new ChatOpenAI({ modelName: 'gpt-4-1106-preview' })
   try {
     log(`📰 Original\t${title}`, 'info')
     const response = await chat.call([
@@ -121,12 +121,12 @@ export const createTitle = async (title, context, lang = 'en'): Promise<string> 
 }
 
 export const generateContext = async (rawText, title, lang = 'en') => {
-  const model = new OpenAI({ modelName: 'gpt-4' })
+  const model = new OpenAI({ modelName: 'gpt-4-1106-preview' })
 
   const chain = loadSummarizationChain(model, { type: 'map_reduce' })
   try {
     const textSplitter = new RecursiveCharacterTextSplitter({
-      chunkSize: 6144,
+      chunkSize: 96000,
     })
 
     log(`⏳ Shortening\t${title}`, 'info')
