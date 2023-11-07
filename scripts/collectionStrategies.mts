@@ -1,8 +1,9 @@
 import { YoutubeTranscript } from 'youtube-transcript'
 import pdf from 'pdf-parse'
 import { chromium, Browser, BrowserContext } from 'playwright'
-
 import { log, sanitize } from './util.mjs'
+
+const DONT_DOWNLOAD = ['image', 'stylesheet', 'media', 'font', 'other']
 
 export const tryDownloadingYoutube = async (url: string, body: string): Promise<string> => {
   if (body.length > 0) {
@@ -123,6 +124,9 @@ export const tryDownloadingWithPlaywright = async (url: string, body: string, re
   try {
     context = await browser.newContext()
     const page = await context.newPage()
+    await page.route('**/*', (route) => {
+      return DONT_DOWNLOAD.includes(route.request().resourceType()) ? route.abort() : route.continue()
+    })
     await page.goto(url, { waitUntil: 'domcontentloaded' })
 
     let content = await page.evaluate(() => {
