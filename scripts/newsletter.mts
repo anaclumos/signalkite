@@ -131,8 +131,8 @@ export const createHnContent = (locale: string, stories: Story[], isEmail = fals
       }\n\n`
   if (day.toISOString().split('T')[0] === '2023-11-07' || day.toISOString().split('T')[0] === '2023-11-06') {
     content += `## [${relateStoryAd[locale].title}](${relateStoryAd[locale].originLink}@TrackLink) <sup style="color: #888888;">ad</sup>\n\n`
-    for (let j = 0; j < relateStoryAd[locale].summary.length; j++) {
-      content += `- ${relateStoryAd[locale].summary[j]}\n`
+    for (let j = 0; j < relateStoryAd[locale].originSummary.length; j++) {
+      content += `- ${relateStoryAd[locale].originSummary[j]}\n`
     }
   }
   for (let i = 0; i < stories.length; i++) {
