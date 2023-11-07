@@ -5,32 +5,12 @@ import { collect } from './collect.mjs'
 import { Story } from './type.mjs'
 import { summarize } from './summarize.mjs'
 import { LinguineList } from './linguine.mjs'
-import { translate } from './translate.mjs'
+import { retryTranslation, translate } from './translate.mjs'
 import { createHnContent, scheduleHnNewsletter } from './newsletter.mjs'
 import { log, sanitize } from './util.mjs'
 import { writeAllRss } from './rss.mjs'
 
 const MAX_RETRIES = 3
-const RETRY_DELAY = 60_000 // 1 minute
-
-async function retryTranslation(func, args, maxRetries) {
-  let tryCount = 0
-  while (tryCount < maxRetries) {
-    try {
-      return await func({
-        text: args?.payload,
-        source: args?.source,
-        target: args?.locale,
-      })
-    } catch (e) {
-      log(`🤔 Retrying\t${args?.locale} ${e}`, 'error')
-      await new Promise((r) => setTimeout(r, RETRY_DELAY))
-      tryCount++
-    }
-  }
-  log(`🤬 Failed\t${args?.locale}`, 'error')
-  throw new Error('Failed to translate')
-}
 
 const main = async () => {
   let stories: Story[] = await updateHN()

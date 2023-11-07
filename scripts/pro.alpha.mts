@@ -123,6 +123,12 @@ export const subscriptions = [
     query: 'Second Hand Marketplace',
     serachResultLang: 'en',
     locale: 'ko',
+    email: 'ron@daangn.com',
+  },
+  {
+    query: 'Second Hand Marketplace',
+    serachResultLang: 'en',
+    locale: 'ko',
     email: 'anaclumos@gmail.com',
   },
   {
@@ -130,6 +136,12 @@ export const subscriptions = [
     serachResultLang: 'ko',
     locale: 'ko',
     email: 'jaewha@gmail.com',
+  },
+  {
+    query: '중고거래',
+    serachResultLang: 'ko',
+    locale: 'ko',
+    email: 'ron@daangn.com',
   },
   {
     query: '중고거래',
@@ -250,5 +262,53 @@ export const subscriptions = [
     serachResultLang: 'en',
     locale: 'ko',
     email: 'wlstjq9608@naver.com',
+  },
+  {
+    query: 'Swift Programming Language',
+    serachResultLang: 'en',
+    locale: 'en',
+    email: '1017jennykim@gmail.com',
+  },
+  {
+    query: 'Swift Programming Language',
+    serachResultLang: 'en',
+    locale: 'ko',
+    email: '1017jennykim@gmail.com',
+  },
+  {
+    query: 'Swift Programming Language',
+    serachResultLang: 'en',
+    locale: 'en',
+    email: 'anaclumos@gmail.com',
+  },
+  {
+    query: 'Swift Programming Language',
+    serachResultLang: 'en',
+    locale: 'ko',
+    email: 'anaclumos@gmail.com',
+  },
+  {
+    query: 'Apple Vision Pro',
+    serachResultLang: 'en',
+    locale: 'en',
+    email: '1017jennykim@gmail.com',
+  },
+  {
+    query: 'Apple Vision Pro',
+    serachResultLang: 'en',
+    locale: 'ko',
+    email: '1017jennykim@gmail.com',
+  },
+  {
+    query: 'Apple Vision Pro',
+    serachResultLang: 'en',
+    locale: 'en',
+    email: 'anaclumos@gmail.com',
+  },
+  {
+    query: 'Apple Vision Pro',
+    serachResultLang: 'en',
+    locale: 'ko',
+    email: 'anaclumos@gmail.com',
   },
 ]

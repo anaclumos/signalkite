@@ -9,6 +9,28 @@ import type {
 import { v4 as uuidv4 } from 'uuid'
 
 import { LinguineCore, LinguineProvider } from './linguine.mjs'
+import { log } from './util.mjs'
+
+const RETRY_DELAY = 60_000 // 1 minute
+
+export async function retryTranslation(func, args, maxRetries) {
+  let tryCount = 0
+  while (tryCount < maxRetries) {
+    try {
+      return await func({
+        text: args?.payload,
+        source: args?.source,
+        target: args?.locale,
+      })
+    } catch (e) {
+      log(`🤔 Retrying\t${args?.locale} ${e}`, 'error')
+      await new Promise((r) => setTimeout(r, RETRY_DELAY))
+      tryCount++
+    }
+  }
+  log(`🤬 Failed\t${args?.locale}`, 'error')
+  throw new Error('Failed to translate')
+}
 
 export const translate = async ({
   text,

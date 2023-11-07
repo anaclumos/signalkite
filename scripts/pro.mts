@@ -5,30 +5,13 @@ import { updateNews } from './update.mjs'
 import { collect } from './collect.mjs'
 import { Story } from './type.mjs'
 import { summarize } from './summarize.mjs'
-import { translate } from './translate.mjs'
+import { retryTranslation, translate } from './translate.mjs'
 import { log, sanitize } from './util.mjs'
 import Newsletter from './emails/NewsletterTemplate.js'
 import { subscriptions } from './pro.alpha.mjs'
 import { KEYWORD_REPORT } from './default.mjs'
 
 const MAX_RETRIES = 3
-const RETRY_DELAY = 10_000
-
-async function retryTranslation(func, args, maxRetries) {
-  const { locale } = args
-  let tryCount = 0
-  while (tryCount < maxRetries) {
-    try {
-      return await func(...args)
-    } catch (e) {
-      log(`🤔 Retrying\t${locale}`, 'error')
-      await new Promise((r) => setTimeout(r, RETRY_DELAY))
-      tryCount++
-    }
-  }
-  log(`🤬 Failed\t${locale}`, 'error')
-  throw new Error('Failed to translate')
-}
 
 const sendEmail = async (obj: {
   email: string
