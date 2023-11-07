@@ -10,7 +10,15 @@ import { v4 as uuidv4 } from 'uuid'
 
 import { LinguineCore, LinguineProvider } from './linguine.mjs'
 
-export const translate = async (text: string[], source: string, target: string) => {
+export const translate = async ({
+  text,
+  source,
+  target,
+}: {
+  text: string[]
+  source: string
+  target: string
+}): Promise<string[]> => {
   if (source === target) {
     return text
   }

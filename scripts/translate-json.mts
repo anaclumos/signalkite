@@ -19,7 +19,7 @@ const main = async () => {
       // translate the values of the copy
       await Promise.all(
         Object.keys(localeCopy).map(async (key) => {
-          const translation = await translate([localeCopy[key].message], 'en', locale)
+          const translation = await translate({ text: [localeCopy[key].message], source: 'en', target: locale })
           localeCopy[key].message = translation[0]
         })
       )

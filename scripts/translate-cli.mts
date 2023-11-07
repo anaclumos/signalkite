@@ -19,7 +19,7 @@ const main = async () => {
 
   await Promise.all(
     Object.keys(LinguineCore).map(async (locale) => {
-      const translation = await translate([String(word)], 'en', locale)
+      const translation = await translate({ text: [String(word)], source: 'en', target: locale })
       translatedMap[locale] = translation[0]
     })
   )

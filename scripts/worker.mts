@@ -14,18 +14,21 @@ const MAX_RETRIES = 3
 const RETRY_DELAY = 60_000 // 1 minute
 
 async function retryTranslation(func, args, maxRetries) {
-  const { locale } = args
   let tryCount = 0
   while (tryCount < maxRetries) {
     try {
-      return await func(...args)
+      return await func({
+        text: args?.payload,
+        source: args?.source,
+        target: args?.locale,
+      })
     } catch (e) {
-      log(`🤔 Retrying\t${locale}`, 'error')
+      log(`🤔 Retrying\t${args?.locale} ${e}`, 'error')
       await new Promise((r) => setTimeout(r, RETRY_DELAY))
       tryCount++
     }
   }
-  log(`🤬 Failed\t${locale}`, 'error')
+  log(`🤬 Failed\t${args?.locale}`, 'error')
   throw new Error('Failed to translate')
 }
 
@@ -76,7 +79,7 @@ const main = async () => {
 
   // locale -> Stories map
   const localeStories: Record<string, Story[]> = {}
-
+  stories = stories.filter((s) => s?.title?.length > 0)
   log(`🤟 Translating\t${LinguineList.join(', ')}`, 'info')
 
   for (let i = 0; i < LinguineList.length; i++) {
@@ -95,9 +98,17 @@ const main = async () => {
       stories.map(async (s) => {
         return {
           ...s,
-          title: (await retryTranslation(translate, [[s.title], 'en', locale], MAX_RETRIES))[0],
-          originSummary: await retryTranslation(translate, [s.originSummary, 'en', locale], MAX_RETRIES),
-          commentSummary: await retryTranslation(translate, [s.commentSummary, 'en', locale], MAX_RETRIES),
+          title: (await retryTranslation(translate, { payload: [s.title], source: 'en', locale }, MAX_RETRIES))[0],
+          originSummary: await retryTranslation(
+            translate,
+            { payload: s.originSummary, source: 'en', locale },
+            MAX_RETRIES
+          ),
+          commentSummary: await retryTranslation(
+            translate,
+            { payload: s.commentSummary, source: 'en', locale },
+            MAX_RETRIES
+          ),
           originBody: '',
           commentBody: '',
         }
