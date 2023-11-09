@@ -114,6 +114,7 @@ export const createTitle = async (title, context, lang = 'en'): Promise<string> 
         The original title was "${title}", which may or may not be click-baity, cut off, or lack of context.
         YOU MUST SUMMARIZE IN LANGUAGE: ${lang.toUpperCase()}.
         Now, I will give you the text. Ignore the text if it simply mentions copyrights, general legal information, or an error message, because in that case the crawling might have failed.
+        Do not generate categories, such as [NEWS] or [TECH] or [경제뉴스]. The categories are already provided in different columns.
         If you cannot generate the title, for example there is no content provided, or translation failed, simply print "N/A".
         `
       ),
