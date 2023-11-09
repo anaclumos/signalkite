@@ -60,6 +60,11 @@ const main = async () => {
   // locale -> Stories map
   const localeStories: Record<string, Story[]> = {}
   stories = stories.filter((s) => s?.title?.length > 0)
+  if (stories.length === 0) {
+    log(`❌ Error\tAll Stories are Empty`, 'error')
+    return
+  }
+
   log(`🤟 Translating\t${LinguineList.join(', ')}`, 'info')
 
   for (let i = 0; i < LinguineList.length; i++) {

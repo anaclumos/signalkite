@@ -81,6 +81,11 @@ const sendEmail = async (obj: {
 
     stories = stories.filter((s) => s?.title?.length > 0)
 
+    if (stories.length === 0) {
+      log(`❌ Error\tAll Stories are Empty`, 'error')
+      return
+    }
+
     fs.writeFileSync(
       `./pro/${serachResultLang}/${query}/records/${day}/${day}.${serachResultLang}.json`,
       JSON.stringify(stories, null, 2) + '\n'
