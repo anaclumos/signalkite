@@ -6,22 +6,10 @@ export const subscriptions = [
     email: 'kimkj@usc.edu',
   },
   {
-    query: 'AI',
-    serachResultLang: 'en',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
     query: 'Tech Companies',
     serachResultLang: 'en',
     locale: 'ko',
     email: 'kimkj@usc.edu',
-  },
-  {
-    query: 'Tech Companies',
-    serachResultLang: 'en',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
   },
   {
     query: 'junhoyeo',
@@ -36,26 +24,8 @@ export const subscriptions = [
     email: 'yunjj0223@gmail.com',
   },
   {
-    query: 'Pinduoduo',
-    serachResultLang: 'en',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
     query: '拼多多',
     serachResultLang: 'zh',
-    locale: 'ko',
-    email: 'yunjj0223@gmail.com',
-  },
-  {
-    query: '拼多多',
-    serachResultLang: 'zh',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
-    query: 'TEMU marketplace',
-    serachResultLang: 'en',
     locale: 'ko',
     email: 'yunjj0223@gmail.com',
   },
@@ -63,13 +33,7 @@ export const subscriptions = [
     query: 'TEMU marketplace',
     serachResultLang: 'en',
     locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
-    query: '스타트업',
-    serachResultLang: 'ko',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
+    email: 'yunjj0223@gmail.com',
   },
   {
     query: '시스템반도체',
@@ -78,12 +42,6 @@ export const subscriptions = [
     email: 'youjin.ahn@gwanakanalog.com',
   },
   {
-    query: '시스템반도체',
-    serachResultLang: 'ko',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
     query: 'Generative AI',
     serachResultLang: 'en',
     locale: 'en',
@@ -94,18 +52,6 @@ export const subscriptions = [
     serachResultLang: 'en',
     locale: 'ko',
     email: 'jungwoolee0419@gmail.com',
-  },
-  {
-    query: 'Generative AI',
-    serachResultLang: 'en',
-    locale: 'en',
-    email: 'anaclumos@gmail.com',
-  },
-  {
-    query: 'Generative AI',
-    serachResultLang: 'en',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
   },
   {
     query: 'Second Hand Marketplace',
@@ -126,12 +72,6 @@ export const subscriptions = [
     email: 'ron@daangn.com',
   },
   {
-    query: 'Second Hand Marketplace',
-    serachResultLang: 'en',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
     query: '중고거래',
     serachResultLang: 'ko',
     locale: 'ko',
@@ -142,18 +82,6 @@ export const subscriptions = [
     serachResultLang: 'ko',
     locale: 'ko',
     email: 'ron@daangn.com',
-  },
-  {
-    query: '중고거래',
-    serachResultLang: 'ko',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
-    query: '시황',
-    serachResultLang: 'ko',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
   },
   {
     query: '시황',
@@ -162,16 +90,34 @@ export const subscriptions = [
     email: 'sunjaeianchoi@gmail.com',
   },
   {
-    query: '친환경',
+    query: '경제',
     serachResultLang: 'ko',
     locale: 'ko',
-    email: 'ys.kim@modusign.co.kr',
+    email: 'sunjaeianchoi@gmail.com',
+  },
+  {
+    query: 'Economy',
+    serachResultLang: 'en',
+    locale: 'ko',
+    email: 'sunjaeianchoi@gmail.com',
+  },
+  {
+    query: '네트워킹 이벤트',
+    serachResultLang: 'ko',
+    locale: 'ko',
+    email: 'sunjaeianchoi@gmail.com',
+  },
+  {
+    query: '전문연구요원',
+    serachResultLang: 'ko',
+    locale: 'ko',
+    email: 'anaclumos@naver.com',
   },
   {
     query: '친환경',
     serachResultLang: 'ko',
     locale: 'ko',
-    email: 'anaclumos@gmail.com',
+    email: 'ys.kim@modusign.co.kr',
   },
   {
     query: '포장재',
@@ -180,22 +126,10 @@ export const subscriptions = [
     email: 'ys.kim@modusign.co.kr',
   },
   {
-    query: '포장재',
-    serachResultLang: 'ko',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
     query: '대체',
     serachResultLang: 'ko',
     locale: 'ko',
     email: 'ys.kim@modusign.co.kr',
-  },
-  {
-    query: '대체',
-    serachResultLang: 'ko',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
   },
   {
     query: 'AI',
@@ -204,22 +138,10 @@ export const subscriptions = [
     email: 'ys.kim@modusign.co.kr',
   },
   {
-    query: 'AI',
-    serachResultLang: 'en',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
     query: 'Legal AI',
     serachResultLang: 'en',
     locale: 'ko',
     email: 'ys.kim@modusign.co.kr',
-  },
-  {
-    query: 'Legal AI',
-    serachResultLang: 'en',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
   },
   {
     query: 'BHSN',
@@ -228,34 +150,16 @@ export const subscriptions = [
     email: 'ys.kim@modusign.co.kr',
   },
   {
-    query: 'BHSN',
-    serachResultLang: 'en',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
     query: 'Blockchain',
     serachResultLang: 'en',
     locale: 'ko',
     email: 'ys.kim@modusign.co.kr',
-  },
-  {
-    query: 'Blockchain',
-    serachResultLang: 'en',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
   },
   {
     query: 'Blockchain',
     serachResultLang: 'en',
     locale: 'ko',
     email: 'wlstjq9608@naver.com',
-  },
-  {
-    query: 'Layer 0 Blockchain',
-    serachResultLang: 'en',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
   },
   {
     query: 'Layer 0 Blockchain',
@@ -276,18 +180,6 @@ export const subscriptions = [
     email: '1017jennykim@gmail.com',
   },
   {
-    query: 'Swift Programming Language',
-    serachResultLang: 'en',
-    locale: 'en',
-    email: 'anaclumos@gmail.com',
-  },
-  {
-    query: 'Swift Programming Language',
-    serachResultLang: 'en',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
-  },
-  {
     query: 'Apple Vision Pro',
     serachResultLang: 'en',
     locale: 'en',
@@ -298,17 +190,5 @@ export const subscriptions = [
     serachResultLang: 'en',
     locale: 'ko',
     email: '1017jennykim@gmail.com',
-  },
-  {
-    query: 'Apple Vision Pro',
-    serachResultLang: 'en',
-    locale: 'en',
-    email: 'anaclumos@gmail.com',
-  },
-  {
-    query: 'Apple Vision Pro',
-    serachResultLang: 'en',
-    locale: 'ko',
-    email: 'anaclumos@gmail.com',
   },
 ]
