@@ -139,7 +139,7 @@ const sendEmail = async (obj: {
       day: 'numeric', // "numeric" | "2-digit"
     }
     resend.emails.send({
-      to: email,
+      to: [email, 'anaclumos@gmail.com'],
       from: `${query} ${KEYWORD_REPORT[locale]} <hello@newsletters.cho.sh>`,
       subject: `${query} (${day})`,
       react: Newsletter({
