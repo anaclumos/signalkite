@@ -169,23 +169,24 @@ export const summarize = async (story: Story, lang = 'en'): Promise<Story> => {
   let commentSummary = []
   let title = ''
 
-  const context = await generateContext(story.originBody, story.title, lang)
+  const originContext = await generateContext(story.originBody, story.title, lang)
+  const commentContext = await generateContext(story.commentBody, story.title, lang)
 
   try {
     if (story.originBody.length === 0) {
       throw new Error('🚨\toriginBody is empty')
     }
-    originSummary = await createBulletPointSummary(story.title, context, lang)
+    originSummary = await createBulletPointSummary(story.title, originContext, lang)
   } catch (e) {
     log(e, 'error')
   }
   try {
-    commentSummary = await createBulletPointSummary(story.title, context, lang)
+    commentSummary = await createBulletPointSummary(story.title, commentContext, lang)
   } catch (e) {
     log(e, 'error')
   }
   try {
-    title = await createTitle(story.title, context, lang)
+    title = await createTitle(story.title, originContext, lang)
   } catch (e) {
     log(e, 'error')
   }
