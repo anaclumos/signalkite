@@ -41,11 +41,16 @@ const main = async () => {
     }
   }
 
-  stories = await Promise.all(
-    stories.map(async (s) => {
-      return summarize(s)
-    })
-  )
+  // stories = await Promise.all(
+  //   stories.map(async (s) => {
+  //     return summarize(s)
+  //   })
+  // )
+
+  // this is to throttle the requests
+  for (let i = 0; i < stories.length; i++) {
+    stories[i] = await summarize(stories[i])
+  }
 
   // Ensure that the title and summary are sanitized
   stories = stories.map((s) => {
