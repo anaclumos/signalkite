@@ -70,6 +70,12 @@ export const createBulletPointSummary = async (title, context, lang = 'en') => {
     ])
 
     const { content } = response
+
+    if (typeof content !== 'string') {
+      log(`🚨\t${title}\t${content}`, 'error')
+      return []
+    }
+
     let arr = content.split('\n')
 
     arr = arr.map((item) => sanitize(item))
@@ -122,6 +128,10 @@ export const createTitle = async (title, context, lang = 'en'): Promise<string> 
     ])
 
     const { content } = response
+    if (typeof content !== 'string') {
+      log(`🚨\t${title}\t${content}`, 'error')
+      return ''
+    }
     const newTitle = sanitize(content)
     log(`📰 New Title\t${newTitle}`, 'info')
     return newTitle
