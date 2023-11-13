@@ -1,8 +1,5 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
-const lightCodeTheme = require('prism-react-renderer/themes/github')
-const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 const fs = require('fs')
 const path = require('path')
 
@@ -174,10 +171,6 @@ const config = {
             'aria-label': 'GitHub repository',
           },
         ],
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
       },
       tableOfContents: {
         minHeadingLevel: 2,
