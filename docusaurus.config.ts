@@ -97,7 +97,7 @@ const config = {
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
           routeBasePath: '/',
           async sidebarItemsGenerator({
@@ -123,13 +123,13 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      }),
+      },
     ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
       image: 'img/og.png',
       algolia: {
         appId: '1NHQP43IBE',
@@ -176,7 +176,7 @@ const config = {
         minHeadingLevel: 2,
         maxHeadingLevel: 2,
       },
-    }),
+    },
   scripts: [
     {
       src: 'https://sa.cho.sh/latest.js',
