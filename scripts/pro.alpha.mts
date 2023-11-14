@@ -191,4 +191,22 @@ export const subscriptions = [
     locale: 'ko',
     email: '1017jennykim@gmail.com',
   },
+  {
+    query: 'Tesla Motors',
+    serachResultLang: 'en',
+    locale: 'ko',
+    email: 'ron@daangn.com',
+  },
+  {
+    query: 'LLM',
+    serachResultLang: 'en',
+    locale: 'ko',
+    email: 'ron@daangn.com',
+  },
+  {
+    query: 'Unmanned Arial Systems',
+    serachResultLang: 'en',
+    locale: 'en',
+    email: 'jacobpitsenberger@gmail.com'
+  }
 ]
