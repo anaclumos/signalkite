@@ -207,6 +207,6 @@ export const subscriptions = [
     query: 'Unmanned Arial Systems',
     serachResultLang: 'en',
     locale: 'en',
-    email: 'jacobpitsenberger@gmail.com'
-  }
+    email: 'jacobpitsenberger@gmail.com',
+  },
 ]
