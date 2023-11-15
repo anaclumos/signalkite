@@ -204,7 +204,13 @@ export const subscriptions = [
     email: 'ron@daangn.com',
   },
   {
-    query: 'Unmanned Arial Systems',
+    query: 'Unmanned Aircraft Systems',
+    serachResultLang: 'en',
+    locale: 'en',
+    email: 'jacobpitsenberger@gmail.com',
+  },
+  {
+    query: 'Drone Technology',
     serachResultLang: 'en',
     locale: 'en',
     email: 'jacobpitsenberger@gmail.com',
