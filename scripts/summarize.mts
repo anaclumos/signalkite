@@ -6,7 +6,7 @@ import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 
 import { log, sanitize } from './util.mjs'
 import { Story } from './type.mjs'
-import { CREATE_BULLETPOINT_SUMMARY, CREATE_TITLE } from './default.mjs'
+import { CREATE_BULLETPOINT_SUMMARY, CREATE_TITLE, YOU_MUST_WRITE_IN } from './default.mjs'
 
 export const sleep = async (ms = 10000) => {
   return new Promise((resolve) => setTimeout(resolve, ms))
@@ -23,7 +23,7 @@ export const createBulletPointSummary = async (title, context, lang = 'en') => {
   try {
     log(`🍵 Distilling\t${title}`, 'info')
     const response = await chat.call([
-      new SystemMessage(CREATE_BULLETPOINT_SUMMARY[lang]),
+      new SystemMessage(CREATE_BULLETPOINT_SUMMARY[lang] + YOU_MUST_WRITE_IN[lang]),
       new HumanMessage(`TEXT:\n${context}\n\nRESULT:\n`),
     ])
 
@@ -73,7 +73,7 @@ export const createTitle = async (title, context, lang = 'en'): Promise<string> 
   try {
     log(`📰 Original\t${title}`, 'info')
     const response = await chat.call([
-      new SystemMessage(CREATE_TITLE[lang].replace('${title}', title)),
+      new SystemMessage(CREATE_TITLE[lang].replace('${title}', title) + YOU_MUST_WRITE_IN[lang]),
       new HumanMessage(`TEXT:\n${context}\n\nRESULT:\n`),
     ])
 
