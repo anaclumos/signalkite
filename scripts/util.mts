@@ -146,6 +146,7 @@ export const sanitize = (text: string) => {
     .replaceAll('N/A.', '')
     .replaceAll('N/A', '')
     .replaceAll("-'", '')
+    .replaceAll('\\n', '')
     .replaceAll('Attention Required! | Cloudflare, ', '')
     .replaceAll(
       "body{margin:0;padding:0}if (!navigator.cookieEnabled) { window.addEventListener('DOMContentLoaded', function () { var cookieEl = document.getElementById('cookie-alert'); cookieEl.style.display = 'block'; }) }",
