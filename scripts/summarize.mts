@@ -14,10 +14,14 @@ export const sleep = async (ms = 10000) => {
 
 export const createBulletPointSummary = async (title, context, lang = 'en') => {
   sleep(10000)
-  let chat = new ChatOpenAI({ modelName: 'gpt-3.5-turbo' })
+  let chat = new ChatOpenAI({ modelName: 'gpt-4' })
+
+  if (lang === 'en') {
+    chat = new ChatOpenAI({ modelName: 'gpt-3.5-turbo' })
+  }
+
   try {
     log(`🍵 Distilling\t${title}`, 'info')
-
     const response = await chat.call([
       new SystemMessage(CREATE_BULLETPOINT_SUMMARY[lang]),
       new HumanMessage(`TEXT:\n${context}\n\nRESULT:\n`),
@@ -61,7 +65,11 @@ export const createBulletPointSummary = async (title, context, lang = 'en') => {
 
 export const createTitle = async (title, context, lang = 'en'): Promise<string> => {
   sleep(10000)
-  let chat = new ChatOpenAI({ modelName: 'gpt-3.5-turbo' })
+  let chat = new ChatOpenAI({ modelName: 'gpt-4' })
+
+  if (lang === 'en') {
+    chat = new ChatOpenAI({ modelName: 'gpt-3.5-turbo' })
+  }
   try {
     log(`📰 Original\t${title}`, 'info')
     const response = await chat.call([
@@ -86,11 +94,14 @@ export const createTitle = async (title, context, lang = 'en'): Promise<string> 
 export const generateContext = async (rawText, title, lang = 'en') => {
   sleep(10000)
 
-  let model = new OpenAI({ modelName: 'gpt-3.5-turbo' })
+  let model = new OpenAI({ modelName: 'gpt-4' })
+  if (lang === 'en') {
+    model = new OpenAI({ modelName: 'gpt-3.5-turbo' })
+  }
   const chain = loadSummarizationChain(model, { type: 'map_reduce' })
   try {
     const textSplitter = new RecursiveCharacterTextSplitter({
-      chunkSize: 8000,
+      chunkSize: 3000,
     })
 
     log(`⏳ Shortening\t${title}`, 'info')

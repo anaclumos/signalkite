@@ -227,4 +227,22 @@ export const subscriptions = [
     locale: 'ko',
     email: 'anaclumos@naver.com',
   },
+  {
+    query: 'Web Analytics',
+    serachResultLang: 'en',
+    locale: 'en',
+    email: 'liu.z.jonathan@gmail.com',
+  },
+  {
+    query: 'Scheduling Platform',
+    serachResultLang: 'en',
+    locale: 'en',
+    email: 'liu.z.jonathan@gmail.com',
+  },
+  {
+    query: 'OpenAI GPTs App Store',
+    serachResultLang: 'en',
+    locale: 'en',
+    email: 'jameszhou02@gmail.com',
+  },
 ]
