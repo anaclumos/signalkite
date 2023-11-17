@@ -6,7 +6,7 @@ import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 
 import { log, sanitize } from './util.mjs'
 import { Story } from './type.mjs'
-import { CREATE_BULLETPOINT_SUMMARY, CREATE_TITLE } from 'default.mjs'
+import { CREATE_BULLETPOINT_SUMMARY, CREATE_TITLE } from './default.mjs'
 
 export const sleep = async (ms = 10000) => {
   return new Promise((resolve) => setTimeout(resolve, ms))
