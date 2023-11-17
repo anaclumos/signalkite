@@ -215,4 +215,16 @@ export const subscriptions = [
     locale: 'en',
     email: 'jacobpitsenberger@gmail.com',
   },
+  {
+    query: 'AI Safety and Governance',
+    serachResultLang: 'en',
+    locale: 'en',
+    email: 'allisoncyhuang@gmail.com',
+  },
+  {
+    query: 'AI Safety and Governance',
+    serachResultLang: 'en',
+    locale: 'ko',
+    email: 'anaclumos@naver.com',
+  },
 ]
