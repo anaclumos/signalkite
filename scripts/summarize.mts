@@ -71,7 +71,7 @@ export const createTitle = async (title, context, lang = 'en'): Promise<string> 
     chat = new ChatOpenAI({ modelName: 'gpt-3.5-turbo' })
   }
   try {
-    log(`📰 Original\t${title}`, 'info')
+    const originalTitle = title
     const response = await chat.call([
       new SystemMessage(CREATE_TITLE[lang].replace('${title}', title) + YOU_MUST_WRITE_IN[lang]),
       new HumanMessage(`TEXT:\n${context}\n\nRESULT:\n`),
@@ -83,7 +83,7 @@ export const createTitle = async (title, context, lang = 'en'): Promise<string> 
       return ''
     }
     const newTitle = sanitize(content)
-    log(`📰 New Title\t${newTitle}`, 'info')
+    log(`📰 ${originalTitle}\t${newTitle}`, 'info')
     return newTitle
   } catch (e) {
     log(e, 'error')
