@@ -6,6 +6,7 @@ import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 
 import { log, sanitize } from './util.mjs'
 import { Story } from './type.mjs'
+import { CREATE_BULLETPOINT_SUMMARY, CREATE_TITLE } from 'default.mjs'
 
 export const sleep = async (ms = 10000) => {
   return new Promise((resolve) => setTimeout(resolve, ms))
@@ -13,56 +14,12 @@ export const sleep = async (ms = 10000) => {
 
 export const createBulletPointSummary = async (title, context, lang = 'en') => {
   sleep(10000)
-
   let chat = new ChatOpenAI({ modelName: 'gpt-3.5-turbo' })
   try {
     log(`🍵 Distilling\t${title}`, 'info')
 
     const response = await chat.call([
-      new SystemMessage(
-        `
-        You are a professional, fair, and intelligent expert journalist for cutting-edge tech news.
-        You must provide a concise summary in mutually exclusive but collectively complete bullet points.
-        Some comments may include sarcasm, and you must figure out that it's not the central argument or factual.
-        Remain neutral and objective.
-        Write the summary as if you are explaining to a university student or an entry-level software engineer.
-        The primary readers of this post are new to the industry and would want some background context.
-        You must consider this question:
-        - What is the most important thing people should know about this post?
-        - Why is this post special? Is there something new or exciting thing going on?
-        - Did something get released? What made such tech-savvy people suddenly interested in this post?
-        Your job is to capture vital points that interest the readers.
-
-
-        It must be a bullet point list, not a freeform text; that is, start with '-' immediately followed by a space.
-        Therefore, it will start with '- '.
-        Each bullet should terminate with one return '\n'.
-        Do not change line twice between bullets.
-        It must be grammatically correct and polite.
-        The sentence should not be insensitive or offensive.
-        Explain all jargons and acronyms.
-        Employ transitioning phrases and native arguments, but concise and succinct.
-        If you get a message that it requires a security access check, or the website is unreachable, simply print "N/A."
-
-        For example:
-
-        TEXT:
-        "Major publishing companies are bombarding volunteers who operate IPFS gateways with tens of thousands of DMCA notices, despite knowing that these volunteers are not responsible for the content and cannot take it down. One gateway operator has already shut down their service due to the pressure. The notices are being sent to abuse addresses at the host of the gateways, rather than directly to the volunteers. The notices demand the takedown of thousands of URLs that have nothing to do with the volunteers and are often not even accessible. This demonstrates that IPFS, although technically resilient against censorship, can still be affected by self-censorship due to the pressure from copyright complaints."
-
-        RESULT:
-        
-        '- Major publishers are inundating volunteers running IPFS gateways with a flood of DMCA notices, despite knowing these volunteers cannot control or remove the content.\n'
-        '- One gateway operator has ceased their service due to this pressure, showing that while IPFS is robust against censorship, it's susceptible to self-censorship from copyright complaints.\n'
-        '- The DMCA notices, demanding the removal of thousands of unrelated URLs, are being directed to the hosts of the gateways, not the volunteers themselves.\n'
-
-        Now, I will give you the text.
-        If there is no meaningful content, for example, if it looks like a simple error message, simply print "N/A."
-        Ignore any mention or sentenses on CSS contents and any referral, marketing, or promotional links/coupon codes.
-        Do not exceed 100 words. Do not exceed more than 3 bullet points.
-
-        YOU MUST SUMMARIZE IN LANGUAGE: ${lang.toUpperCase()}.
-        `
-      ),
+      new SystemMessage(CREATE_BULLETPOINT_SUMMARY[lang]),
       new HumanMessage(`TEXT:\n${context}\n\nRESULT:\n`),
     ])
 
@@ -103,23 +60,12 @@ export const createBulletPointSummary = async (title, context, lang = 'en') => {
 }
 
 export const createTitle = async (title, context, lang = 'en'): Promise<string> => {
-  // for generating the actual chat
   sleep(10000)
   let chat = new ChatOpenAI({ modelName: 'gpt-3.5-turbo' })
   try {
     log(`📰 Original\t${title}`, 'info')
     const response = await chat.call([
-      new SystemMessage(
-        `
-        You are a professional, fair, and intelligent expert journalist for cutting-edge tech news.
-        You must provide a concise title of the article, that captures the essence of the article.
-        The original title was "${title}", which may or may not be click-baity, cut off, or lack of context.
-        YOU MUST SUMMARIZE IN LANGUAGE: ${lang.toUpperCase()}.
-        Now, I will give you the text. Ignore the text if it simply mentions copyrights, general legal information, or an error message, because in that case the crawling might have failed.
-        Do not generate categories, such as [NEWS] or [TECH] or [경제뉴스]. The categories are already provided in different columns.
-        If you cannot generate the title, for example there is no content provided, or translation failed, simply print "N/A".
-        `
-      ),
+      new SystemMessage(CREATE_TITLE[lang].replace('${title}', title)),
       new HumanMessage(`TEXT:\n${context}\n\nRESULT:\n`),
     ])
 
