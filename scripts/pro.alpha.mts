@@ -245,4 +245,28 @@ export const subscriptions = [
     locale: 'en',
     email: 'jameszhou02@gmail.com',
   },
+  {
+    query: 'Deep Learning',
+    serachResultLang: 'en',
+    locale: 'ko',
+    email: 'jason002009@gmail.com',
+  },
+  {
+    query: 'Information Security',
+    serachResultLang: 'en',
+    locale: 'ko',
+    email: 'jason002009@gmail.com',
+  },
+  {
+    query: '딥러닝',
+    serachResultLang: 'ko',
+    locale: 'ko',
+    email: 'jason002009@gmail.com',
+  },
+  {
+    query: '정보보안',
+    serachResultLang: 'ko',
+    locale: 'ko',
+    email: 'jason002009@gmail.com',
+  },
 ]
