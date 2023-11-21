@@ -269,4 +269,10 @@ export const subscriptions = [
     locale: 'ko',
     email: 'jason002009@gmail.com',
   },
+  {
+    query: 'Social Media',
+    serachResultLang: 'en',
+    locale: 'zh-Hans',
+    email: 'yazminsbrunch@gmail.com',
+  },
 ]
