@@ -272,7 +272,7 @@ export const subscriptions = [
   {
     query: 'Social Media',
     serachResultLang: 'en',
-    locale: 'zh-Hans',
+    locale: 'zh',
     email: 'yazminsbrunch@gmail.com',
   },
 ]
