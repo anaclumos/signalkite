@@ -36,13 +36,11 @@ export const createHnDocHead = (locale: string, title: string, day = new Date())
 
 const createHnHeader = (locale: string) => {
   if (locale === 'ko') {
-    return getAdImgHtml(
-      // INSERT AD HERE
-    )
-  }
-  return getAdImgHtml(
+    return getAdImgHtml()
     // INSERT AD HERE
-  )
+  }
+  return getAdImgHtml()
+  // INSERT AD HERE
 }
 
 const createHnPreview = (story: Story) => {
