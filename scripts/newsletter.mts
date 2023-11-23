@@ -36,18 +36,12 @@ export const createHnDocHead = (locale: string, title: string, day = new Date())
 
 const createHnHeader = (locale: string) => {
   if (locale === 'ko') {
-    return (
-      getAdImgHtml(
-        'https://github.com/anaclumos/heimdall/assets/31657298/1b9e8392-c766-414d-a9d6-f53782c5ec50',
-        'https://www.relate.kr/?ref=heimdall@TrackLink'
-      ) + '\n\n'
+    return getAdImgHtml(
+      // INSERT AD HERE
     )
   }
-  return (
-    getAdImgHtml(
-      'https://github.com/anaclumos/heimdall/assets/31657298/1b9e8392-c766-414d-a9d6-f53782c5ec50',
-      'https://www.relate.so/?ref=heimdall@TrackLink'
-    ) + '\n\n'
+  return getAdImgHtml(
+    // INSERT AD HERE
   )
 }
 
