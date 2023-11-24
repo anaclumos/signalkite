@@ -225,7 +225,7 @@ export const storyAd = {
   ko: {
     title: title['ko'],
     originSummary: [bulletOne['ko'], bulletTwo['ko'], bulletThree['ko']],
-    originLink: 'https://relate.kr/?ref=heimdall',
+    originLink: 'https://youtu.be/fHRzHEwn5ac',
   },
   nl: {
     title: title['nl'],
