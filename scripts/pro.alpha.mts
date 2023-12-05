@@ -4,5 +4,5 @@ export const subscriptions = [
     serachResultLang: 'ko',
     locale: 'ko',
     email: 'anaclumos@usc.edu',
-  },   
+  },
 ]
