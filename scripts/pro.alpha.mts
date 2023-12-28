@@ -3,6 +3,6 @@ export const subscriptions = [
     query: '전문연구요원',
     serachResultLang: 'ko',
     locale: 'ko',
-    email: 'anaclumos@usc.edu',
+    email: 'anaclumos@gmail.com',
   },
 ]
