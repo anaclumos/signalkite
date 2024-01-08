@@ -3,8 +3,8 @@ import shutil
 
 def move_files(lang):
     # Define source and destination directories
-    source_dir = f'archive/{lang}/2023/12'
-    dest_dir = f'i18n/{lang}/docusaurus-plugin-content-docs/current/2023/12'
+    source_dir = f'archive/{lang}/2023/10'
+    dest_dir = f'i18n/{lang}/docusaurus-plugin-content-docs/current/2023/10'
 
 
     # Check if the source directory exists
