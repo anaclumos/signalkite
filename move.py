@@ -3,8 +3,8 @@ import shutil
 
 def move_files(lang):
     # Define source and destination directories
-    source_dir = f'archive/{lang}/2023/10'
-    dest_dir = f'i18n/{lang}/docusaurus-plugin-content-docs/current/2023/10'
+    source_dir = f'archive/{lang}/2023/09'
+    dest_dir = f'i18n/{lang}/docusaurus-plugin-content-docs/current/2023/09'
 
 
     # Check if the source directory exists
@@ -24,7 +24,7 @@ def move_files(lang):
         print(f"Moved file {file} to {dest_dir}")
 
 locales = [
-    'ar', 'bn', 'cs', 'da', 'de', 'el', 'en', 'es', 'fi', 'fr', 'he', 'hi', 'hu', 
+    'ar', 'bn', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hi', 'hu', 
     'id', 'it', 'ja', 'ko', 'nl', 'nb', 'pl', 'pt', 'ro', 'ru', 'sk', 'sv', 'ta', 
     'th', 'tr', 'zh-Hans', 'zh-Hant',
 ]
