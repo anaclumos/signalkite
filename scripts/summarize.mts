@@ -1,7 +1,7 @@
 import { loadSummarizationChain } from 'langchain/chains'
 import { ChatOpenAI } from '@langchain/openai'
-import { OpenAI } from 'langchain/llms/openai'
-import { HumanMessage, SystemMessage } from 'langchain/schema'
+import { OpenAI } from '@langchain/openai'
+import { HumanMessage, SystemMessage } from '@langchain/core/messages'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 
 import { log, sanitize } from './util.mjs'
