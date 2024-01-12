@@ -19,10 +19,6 @@ export const collect = async (url: string, count = 0): Promise<string> => {
 
   let body = ''
 
-  if (url.includes('news.ycombinator.com')) {
-    body = await tryDownloadingAsGooglebot(url, body)
-  }
-
   try {
     body = await tryDownloadingTwitter(url, body)
     body = await tryDownloadingYoutube(url, body)
