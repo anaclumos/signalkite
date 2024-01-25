@@ -14,7 +14,7 @@ summarizes HN in 30 Languages 💬
 
 </div>
 
-- Not Seeing Your Language? Leave an issue!
+- Not seeing your language? Please leave us an issue!
 - [العربية](https://hn.cho.sh/ar)
 - [বাংলা](https://hn.cho.sh/bn)
 - [Čeština](https://hn.cho.sh/cs)
