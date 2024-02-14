@@ -4,8 +4,6 @@ import { LOCAL_STARBUCKS, LOCAL_REACTIONS, LOCAL_TODAYS_HN, LOCAL_HN_SUMMARY } f
 import { LinguineCore, LinguineList } from './linguine.mjs'
 import { log } from './util.mjs'
 import { getAdImgHtml, storyAd } from './ad.mjs'
-import { render } from '@react-email/render'
-import Newsletter from './emails/NewsletterTemplate.js'
 
 export const scheduleHnNewsletter = async (localeStories: Record<string, Story[]>) => {
   log('📧 Scheduling Newsletter...', 'info')
@@ -34,23 +32,10 @@ export const createHnDocHead = (locale: string, title: string, day = new Date())
 </head>`
 }
 
-const createHnHeader = (locale: string) => {
-  if (locale === 'ko') {
-    return getAdImgHtml()
-    // INSERT AD HERE
-  }
-  return getAdImgHtml()
-  // INSERT AD HERE
-}
-
 const createHnPreview = (story: Story) => {
   return `<div style="display: none;">
   ${story.originSummary.join(' ') ?? ''}
-  </div>`
-}
-
-const createHnFooter = (locale: string) => {
-  return `---\n\n[${LOCAL_STARBUCKS[locale]}](https://go.cho.sh/hn-cho-sh-bring-a-friend@TrackLink)\n\n`
+  </div>\n\n`
 }
 
 const createHnCampaign = async (locale: string, stories: Story[]) => {
@@ -80,11 +65,8 @@ const createHnCampaign = async (locale: string, stories: Story[]) => {
         type: 'regular',
         content_type: 'markdown',
         body:
-          createHnPreview(day === storyAd.day ? storyAd[locale] : stories[0]) +
-          createHnHeader(locale) +
-          createHnContent(locale, stories, true) +
-          createHnFooter(locale),
-        altbody: createHnHeader(locale) + createHnContent(locale, stories, true) + createHnFooter(locale),
+          createHnPreview(day === storyAd.day ? storyAd[locale] : stories[0]) + createHnContent(locale, stories, true),
+        altbody: createHnContent(locale, stories, true),
         from_email: `${LOCAL_TODAYS_HN[locale]} <hello@newsletters.cho.sh>`,
         lists: [newsletterId[locale]],
         send_at: timeToSend.toISOString(),
@@ -154,37 +136,6 @@ export const createHnContent = (locale: string, stories: Story[], isEmail = fals
   }
 
   return content
-}
-
-const createHtmlEmail = (locale: string, stories: Story[], plain = false, day = new Date()) => {
-  return render(
-    Newsletter({
-      title: [
-        {
-          title: day.toISOString().split('T')[0],
-          link: `https://hn.cho.sh${locale !== 'en' ? '/' + locale : ''}/${day
-            .toISOString()
-            .split('T')[0]
-            .replaceAll('-', '/')}`,
-        },
-      ],
-      content: stories.map((story) => ({
-        headline: story.title,
-        link: story.originLink + '@TrackLink',
-        bullets: story.originSummary,
-        commentLink: story.commentLink + '@TrackLink',
-        commentBullets: story.commentSummary,
-        starbucks: LOCAL_STARBUCKS[locale],
-      })),
-      commentTitle: LOCAL_REACTIONS[locale],
-      locale,
-      dir: ['he', 'ar'].includes(locale) ? 'rtl' : 'ltr',
-    }),
-    {
-      pretty: true,
-      plainText: plain,
-    }
-  )
 }
 
 const getTemplateId = (locale: string) => {
