@@ -20,8 +20,6 @@ jobs:
           version: 8
       - name: Install dependencies
         run: pnpm install
-      - name: Install Playwright
-        run: pnpm exec playwright install
       - name: Update News
         run: pnpm run worker
         env:
@@ -34,12 +32,6 @@ jobs:
           BRIGHTDATA_PROXY: ${{secrets.BRIGHTDATA_PROXY}}
           NEWSLETTERS_CHO_SH_USERNAME: ${{secrets.NEWSLETTERS_CHO_SH_USERNAME}}
           NEWSLETTERS_CHO_SH_PASSWORD: ${{secrets.NEWSLETTERS_CHO_SH_PASSWORD}}
-      - name: Commit as Bot
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add .
-          git diff-index --quiet HEAD || git commit -m "Updating News..."
       - name: Run Prettier
         run: pnpm run format
       - name: Commit as Bot
