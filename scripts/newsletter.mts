@@ -40,7 +40,7 @@ const createHnPreview = (story: Story) => {
 
 const createHnCampaign = async (locale: string, stories: Story[]) => {
   const ONE_MINUTE = 60 * 1000
-  const timeToSend = new Date(new Date().getTime() + ONE_MINUTE * newsletterDelay[locale] + ONE_MINUTE * 30)
+  const timeToSend = new Date(new Date().getTime() + 10 * ONE_MINUTE * newsletterDelay[locale] + ONE_MINUTE * 60)
 
   const day = new Date().toISOString().split('T')[0]
 
