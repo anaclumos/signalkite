@@ -14,10 +14,10 @@ export const sleep = async (ms = 10000) => {
 
 export const createBulletPointSummary = async (title, context, lang = 'en') => {
   sleep(10000)
-  let chat = new ChatOpenAI({ modelName: 'gpt-4' })
+  let chat = new ChatOpenAI({ modelName: 'gpt-4o' })
 
   if (lang === 'en') {
-    chat = new ChatOpenAI({ modelName: 'gpt-3.5-turbo' })
+    chat = new ChatOpenAI({ modelName: 'gpt-4o' })
   }
 
   try {
@@ -65,10 +65,10 @@ export const createBulletPointSummary = async (title, context, lang = 'en') => {
 
 export const createTitle = async (title, context, lang = 'en'): Promise<string> => {
   sleep(10000)
-  let chat = new ChatOpenAI({ modelName: 'gpt-4' })
+  let chat = new ChatOpenAI({ modelName: 'gpt-4o' })
 
   if (lang === 'en') {
-    chat = new ChatOpenAI({ modelName: 'gpt-3.5-turbo' })
+    chat = new ChatOpenAI({ modelName: 'gpt-4o' })
   }
   try {
     const originalTitle = title
@@ -94,9 +94,9 @@ export const createTitle = async (title, context, lang = 'en'): Promise<string> 
 export const generateContext = async (rawText, title, lang = 'en') => {
   sleep(10000)
 
-  let model = new OpenAI({ modelName: 'gpt-4' })
+  let model = new OpenAI({ modelName: 'gpt-4o' })
   if (lang === 'en') {
-    model = new OpenAI({ modelName: 'gpt-3.5-turbo' })
+    model = new OpenAI({ modelName: 'gpt-4o' })
   }
   const chain = loadSummarizationChain(model, { type: 'map_reduce' })
   try {
