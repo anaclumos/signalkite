@@ -14,11 +14,7 @@ export const sleep = async (ms = 10000) => {
 
 export const createBulletPointSummary = async (title, context, lang = 'en') => {
   sleep(10000)
-  let chat = new ChatOpenAI({ modelName: 'gpt-4o' })
-
-  if (lang === 'en') {
-    chat = new ChatOpenAI({ modelName: 'gpt-4o' })
-  }
+  let chat = new ChatOpenAI({ modelName: 'gpt-4o', temperature: 0 })
 
   try {
     log(`🍵 Distilling\t${title}`, 'info')
@@ -65,11 +61,8 @@ export const createBulletPointSummary = async (title, context, lang = 'en') => {
 
 export const createTitle = async (title, context, lang = 'en'): Promise<string> => {
   sleep(10000)
-  let chat = new ChatOpenAI({ modelName: 'gpt-4o' })
+  let chat = new ChatOpenAI({ modelName: 'gpt-4o', temperature: 0 })
 
-  if (lang === 'en') {
-    chat = new ChatOpenAI({ modelName: 'gpt-4o' })
-  }
   try {
     const originalTitle = title
     const response = await chat.call([
@@ -94,10 +87,7 @@ export const createTitle = async (title, context, lang = 'en'): Promise<string> 
 export const generateContext = async (rawText, title, lang = 'en') => {
   sleep(10000)
 
-  let model = new OpenAI({ modelName: 'gpt-4o' })
-  if (lang === 'en') {
-    model = new OpenAI({ modelName: 'gpt-4o' })
-  }
+  let model = new OpenAI({ modelName: 'gpt-4o', temperature: 0 })
   const chain = loadSummarizationChain(model, { type: 'map_reduce' })
   try {
     const textSplitter = new RecursiveCharacterTextSplitter({
