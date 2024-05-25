@@ -1,0 +1,328 @@
+[
+  {
+    "id": 40469592,
+    "title": "Spot: Go 개발자를 위한 새로운 크로스 플랫폼, 반응형 GUI 툴킷",
+    "originLink": "https://github.com/roblillack/spot",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40469592",
+    "commentBody": "",
+    "originSummary": [
+      "Spot은 React에서 영감을 받은 Go 프로그래밍 언어를 위한 새로운 크로스 플랫폼 GUI 라이브러리로, Mac, Linux 및 BSD에서 일관된 API를 제공하는 것을 목표로 하며 향후 Windows 지원도 계획하고 있습니다.",
+      "FLTK와 Cocoa를 사용하여 전통적인 네이티브 위젯 세트를 제공하고 반응형 UI 모델을 채택합니다.",
+      "제작자는 Go에서 전통적인 모양의 크로스 플랫폼 GUI 툴킷에 대한 필요성을 해결하기 위해 Spot을 개발했으며, 디자인 피드백과 기여를 구하고 있습니다."
+    ],
+    "commentSummary": [
+      "Spot은 React에서 영감을 받은 새로운 Go용 크로스 플랫폼 GUI 툴킷으로, Mac, Linux 및 BSD에서 일관된 API를 제공하도록 설계되었으며 향후 Windows 지원도 계획하고 있습니다.",
+      "네이티브 위젯에 FLTK와 Cocoa를 사용하여 Go의 성능과 최신 반응형 UI 접근 방식을 결합하는 것을 목표로 하며, 개발자는 커뮤니티의 피드백과 기여를 구하고 있습니다.",
+      "토론에서는 상태 관리를 위한 가상 컨트롤 트리의 장점을 강조하고 선언적 GUI와 비교하며, 사용자들은 GTK 및 Fyne과 같은 다른 프레임워크의 경험을 공유하면서 크로스 플랫폼 빌드 과제와 효율적인 상태 관리의 필요성을 강조합니다."
+    ],
+    "points": 276,
+    "commentCount": 47,
+    "retryCount": 0,
+    "time": 1716578371
+  },
+  {
+    "id": 40474712,
+    "title": "Go의 체크섬 데이터베이스 내 비 Go 리포지토리에 대한 보안 문제 제기",
+    "originLink": "https://reverse.put.as/2024/05/24/abusing-go-infrastructure/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40474712",
+    "commentBody": "",
+    "originSummary": [
+      "저자는 Go의 체크섬 데이터베이스에서 Go가 아닌 저장소를 발견하여 무결성과 보안에 대한 우려를 제기했습니다.",
+      "이들은 파일 크기 제약에도 불구하고 잠재적인 취약점을 강조하면서 GitHub 리포지토리를 사용하여 임의의 데이터를 Go 퍼블릭 프록시에 로드하는 기능을 시연했습니다.",
+      "저자는 Go 인프라가 심각하게 취약하지는 않지만 악용될 수 있다며, 체크섬 데이터베이스에 Go가 아닌 프로젝트를 포함하는 것에 대한 추가 조사가 필요하다고 제안합니다."
+    ],
+    "commentSummary": [
+      "트위터, 텔레그램, 깃허브와 같은 온라인 서비스는 악의적인 활동에 악용되는 경우가 많으며, 이중 사용이라는 특성으로 인해 합법적인 사용에 영향을 주지 않으면서 남용을 차단하려는 노력이 복잡해집니다.",
+      "개인정보 보호 문제는 사용자 데이터를 모니터링하여 오용을 감지하는 과정에서 발생하며, 파일 배포를 위한 Gmail, Google 드라이브, HuggingFace, GitHub와 같은 플랫폼으로 논의가 확대되고 있습니다.",
+      "CUE 팀은 모듈 시스템에 대해 Go 팀과 협력하여 보안 문제로 인해 Go의 프록시 대신 OCI 레지스트리를 선택했으며, 임의의 데이터를 저장하기 위해 Go 모듈 프록시가 오용될 수 있다는 사소한 문제에 대해 논의했습니다."
+    ],
+    "points": 231,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1716641400
+  },
+  {
+    "id": 40473198,
+    "title": "LoRA 훈련 패러다임으로 미스트랄 모델의 효율적인 미세 조정",
+    "originLink": "https://github.com/mistralai/mistral-finetune",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40473198",
+    "commentBody": "",
+    "originSummary": [
+      "미스트랄-파인튠은 LoRA(저순위 적응) 훈련 패러다임을 사용하여 메모리 효율적이고 고성능의 미스트랄 모델 미세 조정을 위해 설계된 경량 코드베이스입니다.",
+      "A100 또는 H100 GPU에서 최적의 성능을 발휘하는 멀티 GPU 및 단일 GPU 설정을 모두 지원하며, 데이터 포맷, 설치 및 데이터 세트 준비에 대한 포괄적인 지침이 포함되어 있습니다.",
+      "코드베이스는 데이터 세트 재포맷 및 검증을 위한 툴, 상세한 훈련 설정 및 관리 단계, 모델 상호 작용을 위한 미스트랄 추론 사용 및 CUDA 메모리 오류와 같은 일반적인 문제 해결을 위한 가이드라인을 제공합니다."
+    ],
+    "commentSummary": [
+      "이 토론에서는 급속한 발전 속에서 언어 모델(LM) 미세 조정의 관련성과 전략에 초점을 맞추고 틈새 애플리케이션에 대한 가치를 강조하지만 모델 노후화로 인한 문제를 지적합니다.",
+      "검색 증강 생성(RAG)은 특정 데이터를 통합하기 위한 실용적인 대안으로 부각되고 있으며, 미세 조정에 대한 다른 접근 방식을 제공합니다.",
+      "모델을 실행할 때는 노트북보다 게이밍 데스크톱을 사용하고, 클라우드 서비스 및 eGPU를 고려하며, 모델 성능을 최적화하기 위해 HuggingFace의 SFTTrainer와 같은 도구를 활용하는 것이 좋습니다."
+    ],
+    "points": 181,
+    "commentCount": 58,
+    "retryCount": 0,
+    "time": 1716620987
+  },
+  {
+    "id": 40474202,
+    "title": "구글의 알고리즘 업데이트, 독립 퍼블리셔와 대형 사이트 및 레딧을 강타하다",
+    "originLink": "https://www.bbc.com/future/article/20240524-how-googles-new-algorithm-will-shape-your-internet",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40474202",
+    "commentBody": "",
+    "originSummary": [
+      "Google의 최근 검색 알고리즘 업데이트는 독립 퍼블리셔에게 큰 영향을 미쳐 대형 라이프스타일 매거진과 Reddit과 같은 사용자 제작 플랫폼에 유리하게 작용하고 있습니다.",
+      "AI 생성 답변의 도입은 저품질 콘텐츠를 줄이는 것을 목표로 하지만 소규모 사이트의 경우 트래픽과 수익이 급격히 감소하여 일부 사이트는 규모를 축소해야 했습니다.",
+      "구글은 검색 엔진 업계에서 불법적인 독점을 유지하고 있다는 혐의로 미국 법무부로부터 소송을 당하는 등 여러 건의 반독점 소송에 직면해 있습니다."
+    ],
+    "commentSummary": [
+      "Google의 검색 알고리즘 업데이트로 인해 웹사이트 트래픽이 크게 감소하고 SEO 전략이 강제 변경되어 일부 사이트가 폐쇄될 가능성이 있습니다.",
+      "사용자들은 광고가 많은 Google의 검색 결과에 불만을 표하며, 보다 관련성 높은 결과를 얻기 위해 검색어에 'Reddit'을 추가하는 경우가 많으며, Kagi 및 DuckDuckGo와 같은 대안을 모색하고 있습니다.",
+      "이 토론은 현재 검색 엔진에 대한 광범위한 불만을 반영하며, 새로운 경쟁자들의 도전에도 불구하고 AI 기반 콘텐츠로의 전환과 더 나은 검색 도구의 필요성을 강조합니다."
+    ],
+    "points": 161,
+    "commentCount": 155,
+    "retryCount": 0,
+    "time": 1716635666
+  },
+  {
+    "id": 40472374,
+    "title": "실수를 포용하기: 소프트웨어 개발에서 건설적인 비평의 필요성",
+    "originLink": "https://rachelbythebay.com/w/2018/04/28/meta/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40472374",
+    "commentBody": "",
+    "originSummary": [
+      "이 블로그 게시물은 코드 품질 저하, 채용 문제, 테스트 불충분 등 소프트웨어 개발에서 흔히 발생하는 비판을 다룹니다.",
+      "저자는 숙련된 개발자라도 실수는 피할 수 없다고 강조하며 프로그래밍의 협업적 특성을 강조합니다.",
+      "이 게시물은 비평가들이 자신의 우월성을 선언하고 다른 사람들이 실질적인 문제를 해결하도록 해야 한다는 비꼬는 발언으로 마무리됩니다."
+    ],
+    "commentSummary": [
+      "이 토론에서는 완벽한 코드를 위한 노력과 팀 환경에서 기술 부채를 관리하는 것 사이의 균형을 강조합니다.",
+      "건설적인 피드백, 코딩 결정의 맥락 이해, 전문성 유지의 중요성을 강조합니다.",
+      "버그의 불가피성과 완벽함의 비현실성을 인정하며 개방성, 지속적인 개선, 공감의 문화를 옹호합니다."
+    ],
+    "points": 161,
+    "commentCount": 65,
+    "retryCount": 0,
+    "time": 1716606788
+  },
+  {
+    "id": 40472146,
+    "title": "JetBrains, 러스트 개발을 위한 AI 지원 기능을 갖춘 RustRover IDE 공개",
+    "originLink": "https://www.infoworld.com/article/3715317/jetbrains-releases-rustrover-ide-for-rust-development.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40472146",
+    "commentBody": "",
+    "originSummary": [
+      "JetBrains는 2024년 5월 21일에 출시된 Rust 프로그래밍을 위한 전문 통합 개발 환경(IDE)인 RustRover를 출시했습니다.",
+      "RustRover는 통합된 Rust 도구 체인, 실시간 피드백, 코드 제안, 간소화된 도구 체인 관리, 팀 협업과 같은 기능을 제공합니다.",
+      "유료 상용 라이선스와 무료 비상업용 라이선스 모두에서 사용 가능한 RustRover는 Rust 컴파일러, 버전 관리, 오류 감지, 프런트엔드 기술, 데이터베이스, 단위 테스트 및 JetBrains AI Assistant 플러그인을 지원합니다."
+    ],
+    "commentSummary": [
+      "JetBrains는 Rust용 무료 비상업용 IDE인 RustRover를 출시했지만, JavaScript/TypeScript 지원을 제거하여 유료 IntelliJ 구독 전용으로 만들었습니다.",
+      "이러한 변화는 현재 Rust와 웹 프로젝트를 모두 완벽하게 지원하는 단일 IDE가 없기 때문에 논란을 불러일으켰지만, JetBrains는 IntelliJ IDEA Ultimate에서 Rust 플러그인 지원을 무료로 제공할 계획입니다.",
+      "사용자들은 사용자 지정, 편의성, 비용 및 라이선스 간의 절충점을 강조하면서 Vim, Neovim, VSCode, IntelliJ 및 곧 출시될 Fleet IDE 등 다양한 IDE와 텍스트 편집기에 대해 논의하고 있습니다."
+    ],
+    "points": 161,
+    "commentCount": 85,
+    "retryCount": 0,
+    "time": 1716603358
+  },
+  {
+    "id": 40474236,
+    "title": "구글의 AI 러시가 검색 품질을 떨어뜨린다고 존 그루버는 말합니다.",
+    "originLink": "https://daringfireball.net/linked/2024/05/24/publishing-ai-slop-is-a-choice",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40474236",
+    "commentBody": "",
+    "originSummary": [
+      "존 그루버는 구글이 검색 엔진에 AI를 빠르게 통합하면서 오류와 검색 품질 저하를 초래했다고 비판합니다.",
+      "그는 구글이 품질에 집중할 수 있음에도 불구하고 경쟁사와 경쟁하기 위해 장기적인 사용자 신뢰를 희생하고 있다고 주장합니다.",
+      "그루버는 구글이 '뒤처진' 것처럼 보이지 않기 위해 서두르다 보니 신뢰할 수 없는 정보가 유포되는 결과를 낳았다고 생각합니다."
+    ],
+    "commentSummary": [
+      "구글은 AGREE 프레임워크로 정확도를 개선하려는 노력에도 불구하고 미국에서 AI 오버뷰를 공개적으로 발표하여 신뢰성과 조작 가능성에 대한 우려를 불러일으켰습니다.",
+      "사용자들은 광고가 많은 Google의 AI 기반 검색 결과에 불만을 품고 있으며, Phind 및 OpenAI와 같은 대안을 모색하고 보다 신뢰할 수 있는 소셜 기반 검색 솔루션에 대한 필요성을 표명하고 있습니다.",
+      "이 토론에서는 규제되지 않은 급속한 AI 개발, 잠재적인 잘못된 정보, 기술 기업의 AI 결과물 이해력 및 책임성 향상에 대한 필요성 등 보다 광범위한 문제를 강조합니다."
+    ],
+    "points": 158,
+    "commentCount": 61,
+    "retryCount": 0,
+    "time": 1716636352
+  },
+  {
+    "id": 40471798,
+    "title": "CSS 및 JavaScript를 사용한 동적 웹페이지 스타일링 및 보안",
+    "originLink": "https://email.ml/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40471798",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "미니멀한 임시 이메일 서비스인 Email.ml에 대한 해커 뉴스의 토론에서는 이 서비스가 인기를 얻으면서 차단되거나 블랙리스트에 오르는 등의 어려움을 강조합니다.",
+      "사용자들은 별칭과 필터가 있는 개인 도메인 등의 대안을 제시하고, 정교한 탐지 방법으로 인해 임시 이메일 서비스의 효과가 다양하다고 지적합니다.",
+      "일부 서비스, 특히 .ml 도메인을 사용하는 서비스의 투명성과 신뢰성에 대한 우려가 제기되고 있으며 스팸 방지와 사용자 접근성 보장 간의 균형에 대한 논의가 이루어지고 있습니다."
+    ],
+    "points": 152,
+    "commentCount": 74,
+    "retryCount": 0,
+    "time": 1716598322
+  },
+  {
+    "id": 40474165,
+    "title": "Lapis 1.16.0: 새로운 기능으로 향상된 OpenResty용 Lua 웹 프레임워크",
+    "originLink": "https://leafo.net/lapis/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40474165",
+    "commentBody": "",
+    "originSummary": [
+      "Lapis는 고성능 OpenResty 플랫폼에 최적화되어 있지만 다른 서버 환경과도 호환되는 Lua 또는 MoonScript로 애플리케이션을 구축하기 위한 웹 프레임워크입니다.",
+      "버전 1.16.0은 `types.params_map`과 개선된 `model:update`를 도입하여 기능을 향상시켰습니다.",
+      "주요 기능으로는 URL 라우팅, HTML 템플릿, CSRF 보호, 세션 지원, PostgreSQL, MySQL 및 SQLite용 데이터베이스 모델, Nginx 내에서 효율적인 실행을 위해 LuaJIT를 활용하고 Lua 코루틴을 통한 비동기 작업을 지원하는 기능이 있습니다."
+    ],
+    "commentSummary": [
+      "itch.io에서 사용하는 Lua 웹 프레임워크인 Lapis는 주로 itch.io의 필요에 의해 구동되므로 OpenResty의 API 제한으로 인해 웹소켓 지원과 같은 기능이 지연될 수 있습니다.",
+      "해커 뉴스의 토론에서는 프로젝트 관리자가 비핵심 기능 풀 리퀘스트를 거부하고 프로젝트 제한에 대한 투명성을 옹호할 수 있는 권리를 강조합니다.",
+      "사용자들은 넬루아, 틸, 루아우와 같은 대안을 선호하면서 루아와 그 변형의 장단점에 대해 토론을 벌이고 있지만, 단순성과 안정성을 위해 바닐라 루아를 배우는 것을 선호한다는 의견이 지배적입니다."
+    ],
+    "points": 136,
+    "commentCount": 39,
+    "retryCount": 0,
+    "time": 1716634601
+  },
+  {
+    "id": 40472226,
+    "title": "넷핵을 배우는 신경망, 기괴한 버그와 마주치다",
+    "originLink": "https://twitter.com/cupiabart/status/1793930355617259811",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40472226",
+    "commentBody": "",
+    "originSummary": [
+      "로그라이크 게임 NetHack을 플레이하기 위해 신경망을 훈련하는 과정에서 발생한 특이한 버그에 대해 Bartłomiej Cupiał가 이야기했습니다.",
+      "이 프로젝트는 마키에 왈치크(Maciej Wolczyk)와의 협업을 통해 AI 학습의 복잡성과 예상치 못한 문제점을 강조했습니다.",
+      "이 사례는 특히 게임과 같은 복잡한 환경에서 AI 시스템 개발의 예측 불가능한 특성을 강조합니다."
+    ],
+    "commentSummary": [
+      "해커 뉴스 사용자들은 특히 로그인이 필요한 여러 개의 스레드에서 트위터의 사용성에 불만을 표하며 스레드 리더나 페디버스 같은 대안을 제시합니다.",
+      "이 토론에서는 컴퓨터 문제를 '보름달' 또는 '태양 플레어'로 유머러스하게 비유하고 전자기 간섭(EMI) 및 케이블 종단 불량 등 예측할 수 없는 소프트웨어 동작에 대한 기술적 설명을 살펴봅니다.",
+      "이 스레드에서는 넷핵과 같은 AI 모델과 게임에 대한 실제 시간의 영향을 다루며, 고정된 시드로 AI를 학습시킬 때의 어려움과 오버튜닝의 위험성을 강조합니다."
+    ],
+    "points": 134,
+    "commentCount": 49,
+    "retryCount": 0,
+    "time": 1716604556
+  },
+  {
+    "id": 40475578,
+    "title": "구글, 기괴한 응답 오류 후 AI 검색 도구 수정 서두르다",
+    "originLink": "https://www.theverge.com/2024/5/24/24164119/google-ai-overview-mistakes-search-race-openai",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40475578",
+    "commentBody": "",
+    "originSummary": [
+      "구글은 피자에 접착제를 바르거나 돌을 먹는 등의 제안에 대한 소셜 미디어의 반발에 따라 AI 검색 도구인 AI 개요의 기괴하고 잘못된 응답을 긴급히 수정하고 있습니다.",
+      "광범위한 테스트와 비용 절감에도 불구하고, 구글은 대부분의 문제를 흔하지 않은 쿼리나 조작된 예제에서 기인한다고 밝히며 품질이 낮다는 비판을 받아왔습니다.",
+      "전문가들은 완벽에 가까운 AI 응답을 달성하는 것이 어렵다는 점을 강조하며 고급 추론 능력이 필요하다고 지적하는 한편, Bing 및 OpenAI와 같은 경쟁사와 경쟁해야 한다는 압박감으로 인해 문제가 발생하여 Google의 평판에 영향을 미쳤다고 지적합니다."
+    ],
+    "commentSummary": [
+      "구글은 과거 알고리즘 조정을 연상시키는 AI 생성 검색 오류를 수동으로 수정하고 있어 검색 엔진의 역할에 대한 논쟁을 불러일으키고 있습니다.",
+      "비평가들은 대규모 언어 모델(LLM)이 확률적이고 종종 검증할 수 없는 텍스트를 생성하여 '환각'과 일관성 없는 출력으로 이어져 그 신뢰성에 의문이 든다고 주장합니다.",
+      "이 토론에서는 Google이 검색 품질에서 광고 수익으로 전환하면서 AI의 신뢰성, 큐레이션되지 않은 데이터 사용, 더 나은 위험 관리 및 표준 준수의 필요성에 대한 우려를 제기하며 비판합니다."
+    ],
+    "points": 131,
+    "commentCount": 185,
+    "retryCount": 0,
+    "time": 1716650667
+  },
+  {
+    "id": 40475178,
+    "title": "히키코모리: 사회적 위축의 글로벌 도전 과제",
+    "originLink": "https://www.cnn.com/interactive/2024/05/world/hikikomori-asia-personal-stories-wellness/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40475178",
+    "commentBody": "",
+    "originSummary": [
+      "CNN 기사에서는 심리적, 사회적, 문화적 요인으로 인해 장기간 집에서 스스로를 고립시키는 히키코모리 현상을 살펴봅니다.",
+      "일본에서 처음 발견된 히키코모리는 이제 인터넷과 코로나19 팬데믹으로 인해 더욱 심각해진 글로벌 이슈로, 홍콩과 일본의 개인 사례가 그 어려움과 회복 과정을 잘 보여줍니다.",
+      "인구 고령화와 출산율 감소로 인해 히키코모리들의 사회 복귀를 위한 노력이 시급한 가운데, 한국에서는 공동 생활 프로그램과 사회적 위축을 해결하기 위한 전문 치료가 요구되고 있습니다."
+    ],
+    "commentSummary": [
+      "이 기사에서는 일자리 부족과 높은 생활비로 인한 중국의 '누워 지내기' 운동과 함께 재정 및 건강 문제로 인한 극단적인 사회적 위축 상태인 히키코모리와 그 악화에 대해 살펴봅니다.",
+      "사회적 고립, 현대 기술의 영향, 사회적 압력, 개인주의 등의 주제를 탐구하며 핵전쟁과 기후 변화와 같은 역사적, 현대적 실존적 위협을 대조적으로 다룹니다.",
+      "이 내러티브는 약화된 안전망, 고립을 조장하는 사회적 규범, 경제적 격차, 일자리 안정성에 대한 AI의 잠재적 위협을 비판하는 동시에 젊은이들의 이탈에 대한 해결책을 제시합니다."
+    ],
+    "points": 119,
+    "commentCount": 158,
+    "retryCount": 0,
+    "time": 1716646236
+  },
+  {
+    "id": 40470134,
+    "title": "ACATS 이해하기: 브로커리지 계좌 이체의 복잡성 이해하기",
+    "originLink": "https://www.bitsaboutmoney.com/archive/how-acats-transfers-work/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40470134",
+    "commentBody": "",
+    "originSummary": [
+      "패트릭 맥켄지가 자동 고객 자산 이전 시스템(ACATS)을 이용한 브로커리지 계좌 이전 과정의 복잡성과 이러한 과정을 감독하는 FINRA와 같은 자율 규제 기관의 역할에 대해 설명합니다.",
+      "FINRA 규정 11870은 브로커 간 신속한 자산 이전을 의무화하며, 프로세스를 표준화하고 스프레드시트 및 예탁결제원(DTC)과 같은 복잡한 이면을 지원하는 ACATS가 이를 지원합니다.",
+      "이 글에서는 사기 위험, 송금을 지원하는 중개업체 직원의 역할, 신뢰할 수 없는 출처로부터 금융 조언을 구하는 고객에게 부실한 고객 서비스가 미치는 영향 등의 문제를 강조합니다."
+    ],
+    "commentSummary": [
+      "메달리온 서명 보증은 미국 금융 거래에서 신원을 확인하고 거액의 자금 이체를 승인하기 위한 보안 조치로, 보안을 한층 더 강화합니다.",
+      "사용자들은 기존 금융과 암호화폐 시스템의 복잡성에 대해 논의하며 사기 청구와 같은 위험을 완화하기 위해 다양한 결제 수단의 필요성을 강조합니다.",
+      "이 대화에서는 개인 금융 관리의 관료적 어려움과 보안 거래에서 제3자 인증의 중요성도 강조합니다."
+    ],
+    "points": 110,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1716581903
+  },
+  {
+    "id": 40476410,
+    "title": "'더 나쁠수록 더 좋다'는 철학이 tmux를 개발자에게 신뢰할 수 있는 선택으로 만드는 이유",
+    "originLink": "https://hiandrewquinn.github.io/til-site/posts/tmux-is-worse-is-better/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40476410",
+    "commentBody": "",
+    "originSummary": [
+      "이 글에서는 그래픽 환경 없이 여러 셸을 관리할 수 있는 터미널 멀티플렉서인 tmux의 유용성을 살펴보고, 특히 SSH를 사용하는 프로그래머에게 유용합니다.",
+      "키티 터미널 에뮬레이터의 개발자인 코비드 고얄은 복잡하고 비효율적이라고 비판하지만, 저자는 다양한 시스템에서 안정성과 단순성을 갖춘 tmux를 선호합니다.",
+      "이 글은 \"나쁠수록 좋다\"는 철학으로 마무리하며, 일부 차선책을 받아들이더라도 일반적인 사용 사례에 맞게 소프트웨어를 최적화하는 것이 중요하다는 점을 강조합니다."
+    ],
+    "commentSummary": [
+      "이 논의에서는 SSH 세션을 관리하고 지속적인 터미널 상태를 유지하기 위한 `tmux` 및 `screen`과 같은 터미널 멀티플렉서의 유용성과 효율성에 대해 중점적으로 다룹니다.",
+      "사용자들은 'tmux'의 복잡성, 주요 바인딩, Zellij, Byobu, tmux가 통합된 터미널 에뮬레이터(예: iTerm2)와 같은 대안에 대해 토론합니다.",
+      "이 대화에서는 다양한 설정에서 구성을 유지하고 터미널 멀티플렉서의 사용 편의성과 기능의 균형을 맞추는 데 따르는 어려움을 강조합니다."
+    ],
+    "points": 97,
+    "commentCount": 105,
+    "retryCount": 0,
+    "time": 1716657630
+  },
+  {
+    "id": 40472161,
+    "title": "core.async를 사용하여 Clojure에서 간단하고 안정적인 작업 시스템 구축하기",
+    "originLink": "https://blog.janetacarr.com/creating-a-dead-simple-asynchronous-job-system-in-clojure/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40472161",
+    "commentBody": "",
+    "originSummary": [
+      "저자는 간단한 REST API를 통해 매직 로그인 링크를 전송하는 Clojure 기반 시스템인 Scinamalink를 개발했습니다.",
+      "RabbitMQ와 같은 복잡한 메시지 브로커를 사용하는 대신, 작업 상태 추적에는 PostgreSQL을, 작업 처리에는 유한 상태 머신을 활용하는 core.async 기반 작업 시스템을 구현했습니다.",
+      "이 시스템은 단순성과 안정성을 강조하며, 동시성을 위한 core.async와 유연한 작업 컨텍스트 저장을 위한 JSON 블롭을 활용하여 구현의 용이성과 실질적인 안정성의 균형을 맞추는 것을 목표로 합니다."
+    ],
+    "commentSummary": [
+      "Janet Carr의 블로그 게시물은 기술 스택의 미니멀리즘을 강조하면서 Clojure의 간단한 core.async 잡 시스템을 옹호합니다.",
+      "댓글 작성자들은 특히 스타트업에서 여러 기술을 채택할 때 발생하는 복잡성과 위험에 대해 경고하며 '조기 다언어 프로그래밍' 및 단일 실패 지점 등의 문제를 언급합니다.",
+      "이 토론에서는 종속성과 복잡성을 최소화하는 데 공감대를 형성하면서 소규모 프로젝트에서 RabbitMQ와 같은 도구에 대한 유리한 대안으로 core.async를 제안하면서 Clojure의 동시성에 대한 이점을 강조합니다."
+    ],
+    "points": 92,
+    "commentCount": 15,
+    "retryCount": 0,
+    "time": 1716603563
+  }
+]
