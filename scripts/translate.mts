@@ -55,8 +55,12 @@ export const translateOne = async ({
 
   let { content } = completion.choices[0].message
 
-  if (content.includes('TEXT:')) {
+  if (content.includes('RESULT:')) {
     content = content.split('RESULT:')[1].trim()
+  }
+
+  if (content.includes('RESULTAAT:')) {
+    content = content.split('RESULTAAT:')[1].trim()
   }
 
   content = sanitize(content)
