@@ -88,9 +88,9 @@ const config = {
       'ta',
       'th',
       'tr',
+      'vi',
       'zh-Hans',
       'zh-Hant',
-      'vi',
     ],
   },
 
