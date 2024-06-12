@@ -433,6 +433,20 @@ export const Subscribe = () => {
             </div>
           </label>
           <input
+            id="e41a3"
+            type="checkbox"
+            defaultChecked={locale === 'vi'}
+            name="l"
+            value="e41a3144-e728-40ae-a357-f0cf3baf0912"
+            className={clsx(styles.localeCheckbox)}
+          />
+          <label htmlFor="e41a3" className={clsx(styles.locale)}>
+            <div className={clsx(styles.lang)}>
+              <span className={clsx(styles.localeCode)}>vi</span>
+              Tiếng Việt
+            </div>
+          </label>
+          <input
             id="61502"
             type="checkbox"
             defaultChecked={locale === 'zh'}
