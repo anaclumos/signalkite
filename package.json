@@ -18,8 +18,6 @@
     "@docusaurus/theme-classic": "^3.1.1",
     "@docusaurus/types": "^3.1.1",
     "@google-cloud/translate": "^8.0.3",
-    "@langchain/core": "^0.1.18",
-    "@langchain/openai": "^0.0.12",
     "@mdx-js/react": "^3.0.0",
     "@react-email/button": "^0.0.13",
     "@react-email/components": "^0.0.14",
@@ -29,8 +27,8 @@
     "cobe": "^0.6.3",
     "deepl-node": "^1.11.1",
     "dotenv": "^16.4.1",
-    "langchain": "^0.1.7",
     "marked": "^11.1.1",
+    "openai": "^4.50.0",
     "pdf-parse": "^1.1.1",
     "playwright": "^1.41.1",
     "prism-react-renderer": "^2.2.0",
@@ -58,7 +56,6 @@
   "private": true,
   "scripts": {
     "build": "export NODE_OPTIONS=--max-old-space-size=16384 && docusaurus build",
-    "build-one-by-one": "$npm_execpath run build --locale ar && $npm_execpath run build --locale bn && $npm_execpath run build --locale cs && $npm_execpath run build --locale da && $npm_execpath run build --locale de && $npm_execpath run build --locale el && $npm_execpath run build --locale en && $npm_execpath run build --locale es && $npm_execpath run build --locale fi && $npm_execpath run build --locale fr && $npm_execpath run build --locale he && $npm_execpath run build --locale hi && $npm_execpath run build --locale hu && $npm_execpath run build --locale id && $npm_execpath run build --locale it && $npm_execpath run build --locale ja && $npm_execpath run build --locale ko && $npm_execpath run build --locale nl && $npm_execpath run build --locale nb && $npm_execpath run build --locale pl && $npm_execpath run build --locale pt && $npm_execpath run build --locale ro && $npm_execpath run build --locale ru && $npm_execpath run build --locale sk && $npm_execpath run build --locale sv && $npm_execpath run build --locale ta && $npm_execpath run build --locale th && $npm_execpath run build --locale tr && $npm_execpath run build --locale zh-Hans && $npm_execpath run build --locale zh-Hant && $npm_execpath run build",
     "clear": "docusaurus clear",
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
@@ -79,7 +76,7 @@
     "worker:pro": "pnpm exec playwright install && tsc --project scripts --outDir scripts/dist && node -r dotenv/config --experimental-modules scripts/dist/pro.mjs",
     "write-heading-ids": "docusaurus write-heading-ids",
     "write-translations": "docusaurus write-translations",
-    "write-translations:all": "$npm_execpath run write-translations --locale ar && $npm_execpath run write-translations --locale bn && $npm_execpath run write-translations --locale cs && $npm_execpath run write-translations --locale da && $npm_execpath run write-translations --locale de && $npm_execpath run write-translations --locale el && $npm_execpath run write-translations --locale en && $npm_execpath run write-translations --locale es && $npm_execpath run write-translations --locale fi && $npm_execpath run write-translations --locale fr && $npm_execpath run write-translations --locale he && $npm_execpath run write-translations --locale hi && $npm_execpath run write-translations --locale hu && $npm_execpath run write-translations --locale id && $npm_execpath run write-translations --locale it && $npm_execpath run write-translations --locale ja && $npm_execpath run write-translations --locale ko && $npm_execpath run write-translations --locale nl && $npm_execpath run write-translations --locale nb && $npm_execpath run write-translations --locale pl && $npm_execpath run write-translations --locale pt && $npm_execpath run write-translations --locale ro && $npm_execpath run write-translations --locale ru && $npm_execpath run write-translations --locale sk && $npm_execpath run write-translations --locale sv && $npm_execpath run write-translations --locale ta && $npm_execpath run write-translations --locale th && $npm_execpath run write-translations --locale tr && $npm_execpath run write-translations --locale zh-Hans && $npm_execpath run write-translations --locale zh-Hant"
+    "write-translations:all": "$npm_execpath run write-translations --locale ar && $npm_execpath run write-translations --locale bn && $npm_execpath run write-translations --locale cs && $npm_execpath run write-translations --locale da && $npm_execpath run write-translations --locale de && $npm_execpath run write-translations --locale el && $npm_execpath run write-translations --locale en && $npm_execpath run write-translations --locale es && $npm_execpath run write-translations --locale fi && $npm_execpath run write-translations --locale fr && $npm_execpath run write-translations --locale he && $npm_execpath run write-translations --locale hi && $npm_execpath run write-translations --locale hu && $npm_execpath run write-translations --locale id && $npm_execpath run write-translations --locale it && $npm_execpath run write-translations --locale ja && $npm_execpath run write-translations --locale ko && $npm_execpath run write-translations --locale nl && $npm_execpath run write-translations --locale nb && $npm_execpath run write-translations --locale pl && $npm_execpath run write-translations --locale pt && $npm_execpath run write-translations --locale ro && $npm_execpath run write-translations --locale ru && $npm_execpath run write-translations --locale sk && $npm_execpath run write-translations --locale sv && $npm_execpath run write-translations --locale ta && $npm_execpath run write-translations --locale th && $npm_execpath run write-translations --locale tr && $npm_execpath run write-translations --locale zh-Hans && $npm_execpath run write-translations --locale zh-Hant && $npm_execpath run write-translations --locale vi"
   },
   "version": "1.0.0"
 }

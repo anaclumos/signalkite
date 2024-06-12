@@ -1,6 +1,5 @@
-import { LOCAL_LOCALE } from './default.mjs'
-import { LinguineCore } from './linguine.mjs'
-import { translate } from './translate.mjs'
+import { LinguineList } from './linguine.mjs'
+import { translateOne } from './translate.mjs'
 import { createInterface } from 'readline'
 
 const main = async () => {
@@ -18,16 +17,14 @@ const main = async () => {
   readline.close()
   const translatedMap = {}
 
-  await Promise.all(
-    Object.keys(LinguineCore).map(async (locale) => {
-      const translation = await translate({
-        text: [String(word).replaceAll('${locale}', LOCAL_LOCALE[locale])],
-        source: 'en',
-        target: locale,
-      })
-      translatedMap[locale] = translation[0]
+  for (const language of LinguineList) {
+    const translation = await translateOne({
+      text: String(word),
+      source: 'en',
+      target: language,
     })
-  )
+    translatedMap[language] = translation
+  }
 
   console.log(translatedMap)
 }
