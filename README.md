@@ -43,5 +43,6 @@ summarizes HN in 30 Languages 💬
 - [தமிழ்](https://hn.cho.sh/ta)
 - [ไทย](https://hn.cho.sh/th)
 - [Türkçe](https://hn.cho.sh/tr)
+- [Tiếng Việt](https://hn.cho.sh/vi)
 - [简体中文](https://hn.cho.sh/zh-Hans)
 - [繁體中文](https://hn.cho.sh/zh-Hant)
