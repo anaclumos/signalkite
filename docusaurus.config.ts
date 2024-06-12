@@ -90,6 +90,7 @@ const config = {
       'tr',
       'zh-Hans',
       'zh-Hant',
+      'vi',
     ],
   },
 

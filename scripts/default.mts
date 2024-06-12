@@ -29,6 +29,7 @@ export const LOCAL_HEIMDALL = {
   tr: 'Heimdall',
   'zh-Hans': '海姆达尔',
   'zh-Hant': '海姆達爾',
+  vi: 'Heimdall',
 }
 
 export const LOCAL_LOCALE = {
@@ -62,6 +63,7 @@ export const LOCAL_LOCALE = {
   tr: 'Türkçe',
   'zh-Hans': '简体中文',
   'zh-Hant': '繁體中文',
+  vi: 'Tiếng Việt',
 }
 
 export const LOCAL_HN = {
@@ -95,6 +97,7 @@ export const LOCAL_HN = {
   tr: 'Hacker Haberleri',
   'zh-Hans': '黑客新闻',
   'zh-Hant': '駭客新聞',
+  vi: 'Tin tức hacker',
 }
 
 export const LOCAL_HN_SUMMARY = {
@@ -128,6 +131,7 @@ export const LOCAL_HN_SUMMARY = {
   tr: 'Hacker Haber Özeti',
   'zh-Hans': '黑客新闻摘要',
   'zh-Hant': '駭客新聞摘要',
+  vi: 'Tóm tắt tin tức về hacker',
 }
 
 export const LOCAL_REACTIONS = {
@@ -161,6 +165,7 @@ export const LOCAL_REACTIONS = {
   tr: 'Tepkiler',
   'zh-Hans': '反应',
   'zh-Hant': '反應',
+  vi: 'phản ứng',
 }
 
 export const LOCAL_SHARE = {
@@ -194,6 +199,7 @@ export const LOCAL_SHARE = {
   tr: 'Paylaş',
   'zh-Hans': '分享',
   'zh-Hant': '共用',
+  vi: 'Chia sẻ',
 }
 
 export const LOCAL_SPONSOR = {
@@ -227,6 +233,7 @@ export const LOCAL_SPONSOR = {
   tr: 'Sponsor',
   'zh-Hans': '赞助商',
   'zh-Hant': '贊助者',
+  vi: 'Nhà tài trợ',
 }
 
 export const LOCAL_FEEDBACK = {
@@ -260,6 +267,7 @@ export const LOCAL_FEEDBACK = {
   tr: 'Geri bildirim',
   'zh-Hans': '反馈意见',
   'zh-Hant': '反饋',
+  vi: 'Nhận xét',
 }
 
 export const LOCAL_ADVERTISE_FIRST = {
@@ -293,6 +301,7 @@ export const LOCAL_ADVERTISE_FIRST = {
   tr: "Bu bültenin günlük binlerce geliştiriciden oluşan bir okuyucu kitlesi ve %50'nin üzerinde etkileyici bir açılma oranı vardır.",
   'zh-Hans': '这份时事通讯每天有数千名开发人员阅读，打开率超过 50%，令人印象深刻。',
   'zh-Hant': '該通訊每天有數千名開發人員的讀者群，打開率超過50%，令人印象深刻。',
+  vi: 'Bản tin này có lượng độc giả hàng ngày là hàng nghìn nhà phát triển, với tỷ lệ mở ấn tượng trên 50%.',
 }
 
 export const LOCAL_ADVERTISE_SECOND = {
@@ -326,6 +335,7 @@ export const LOCAL_ADVERTISE_SECOND = {
   tr: 'Şirketinizin veya ürününüzün reklamını yapmak istiyorsanız, benimle iletişime geçmekten çekinmeyin.',
   'zh-Hans': '如果您想为您的公司或产品做广告，请随时与我联系。',
   'zh-Hant': '如果您想宣傳您的公司或產品，請隨時與我聯繫。',
+  vi: 'Nếu bạn muốn quảng cáo công ty hoặc sản phẩm của mình, đừng ngần ngại liên hệ với tôi.',
 }
 
 export const LOCAL_CONTACT = {
@@ -359,6 +369,7 @@ export const LOCAL_CONTACT = {
   tr: '[İletişim](https://airtable.com/appLfbX7pNQxpBx00/shrfpPSEbLVSXz4r7@TrackLink)',
   'zh-Hans': '[联系方式](https://airtable.com/appLfbX7pNQxpBx00/shrfpPSEbLVSXz4r7@TrackLink)',
   'zh-Hant': '[聯繫](https://airtable.com/appLfbX7pNQxpBx00/shrfpPSEbLVSXz4r7@TrackLink)',
+  vi: '[Liên hệ](https://airtable.com/appLfbX7pNQxpBx00/shrfpPSEbLVSXz4r7@TrackLink)',
 }
 
 export const LOCAL_TODAYS_HN = {
@@ -392,6 +403,7 @@ export const LOCAL_TODAYS_HN = {
   tr: 'Bugünün Hacker Haber Özeti',
   'zh-Hans': '今日黑客新闻摘要',
   'zh-Hant': '今日駭客新聞摘要',
+  vi: 'Tổng hợp tin tức Hacker hôm nay',
 }
 
 export const LOCAL_STARBUCKS = {
@@ -425,6 +437,7 @@ export const LOCAL_STARBUCKS = {
   tr: 'Bu bülteni beğendiniz mi? Arkadaşlarınıza söyleyin, ben de hepinize Starbucks ☕ alayım.',
   'zh-Hans': '喜欢这份通讯吗？告诉你的朋友，我会为你们所有人买星巴克☕。',
   'zh-Hant': '喜歡這份時事通訊嗎？告訴你們的朋友，我會為你們所有人買星巴克☕。',
+  vi: 'Thưởng thức bản tin này? Hãy giới thiệu với bạn bè của bạn và tôi sẽ mua Starbucks ☕ cho tất cả các bạn.',
 }
 
 export const KEYWORD_REPORT = {
@@ -458,6 +471,7 @@ export const KEYWORD_REPORT = {
   tr: 'Anahtar Kelime Raporu',
   'zh-Hans': '关键词报告',
   'zh-Hant': '關鍵字報告',
+  vi: 'Báo cáo từ khóa',
 }
 
 export const CREATE_BULLETPOINT_SUMMARY = {
@@ -493,6 +507,7 @@ export const CREATE_BULLETPOINT_SUMMARY = {
     '您是一名专业、公正、睿智的前沿科技新闻专家记者。\n您必须用相互排斥但共同完整的要点提供简明摘要。\n有些评论可能包含讽刺，你必须弄清楚这不是中心论点或事实。\n保持中立和客观。\n写总结时，要像在向大学生或初级软件工程师解释一样。\n这篇文章的主要读者是行业新手，他们希望了解一些背景情况。\n您必须考虑这个问题：\n- 关于本职位，人们最应该知道的是什么？\n- 为什么这个职位很特别？是否有新的或令人兴奋的事情发生？\n- 有什么东西发布了吗？是什么让这些精通技术的人突然对这个职位感兴趣？\n你的工作就是抓住读者感兴趣的关键点。\n\n\n它必须是一个要点列表，而不是自由格式文本；也就是说，以"-"开头，紧接着是一个空格。\n因此，它将以"-"开头。\n每个项目应以一个回车"\\n "结束。\n各项目之间不要换行两次。\n语法必须正确、礼貌。\n句子不应该是不敏感或冒犯性的。\n解释所有行话和缩略语。\n使用过渡短语和本土论据，但要简明扼要。\n如果收到需要安全访问检查或网站无法访问的信息，只需打印 "N/A "即可。\n\n例如\n\n文本：\n"主要出版公司向操作 IPFS 网关的志愿者发出了数以万计的 DMCA 通知，尽管这些志愿者并不对内容负责，也无法删除这些内容。迫于压力，一家网关运营商已经关闭了他们的服务。这些通知被发送到网关主机的滥用地址，而不是直接发送给志愿者。这些通知要求删除成千上万个与志愿者无关的 URL，这些 URL 往往甚至无法访问。这表明，IPFS 虽然在技术上能够抵御审查，但由于版权投诉的压力，仍然会受到自我审查的影响"。\n\n结果：\n\n主要出版商向运行 IPFS 网关的志愿者发出大量 DMCA 通知，尽管他们知道这些志愿者无法控制或删除内容。\n一个网关运营商迫于压力停止了他们的服务，这表明尽管 IPFS 有很强的抵御审查的能力，但它很容易受到版权投诉的自我审查。\nDMCA 通知要求删除成千上万个不相关的 URL，这些通知都是针对网关的主机，而不是志愿者本身。\n\n现在，我会给你文本。\n如果没有任何有意义的内容，例如，如果看起来只是一条简单的错误信息，只需打印 "N/A "即可。\n忽略任何关于 CSS 内容和任何推荐、营销或促销链接/优惠券代码的提及或提示。\n不要超过 100 个字。不要超过 3 个要点。\n',
   'zh-Hant':
     "您是一位專業、公正、聰明的前沿科技新聞專家記者。\n您必須在相互排斥但共同完成的要點中提供簡明扼要的摘要。\n有些評論可能包括諷刺，你必須弄清楚這不是中心論點或事實。\n保持中立和客觀。\n寫摘要，就好像你在向大學生或入門級軟體工程師解釋一樣。\n這篇文章的主要讀者是該行業的新手，需要一些背景背景。\n您必須考慮以下問題：\n- 關於這篇文章，人們應該知道的最重要的事情是什麼？\n- 為什麼這個帖子很特別？有什麼新的或令人興奮的事情發生嗎？\n- 有沒有發佈什麼東西？是什麼讓這些精通技術的人突然對這篇文章感興趣？\n你的工作是抓住讀者感興趣的重要觀點。\n\n它必須是項目符號清單，而不是自由格式的文本;也就是說，以“-”開頭，緊跟一個空格。\n因此，它將以“-”開頭。\n每個項目符號都應以一個返回值“\\n”結束。\n不要在項目符號之間換行兩次。\n它必須在語法上正確且禮貌。\n這句話不應麻木不仁或令人反感。\n解釋所有行話和首字母縮略詞。\n使用過渡短語和本地論點，但要簡潔明瞭。\n如果您收到一條消息，提示需要安全訪問檢查，或者網站無法訪問，只需列印“N/A”。\n\n例如：\n\n發短信：\n“各大出版公司正在用數以萬計的DMCA通知轟炸運營IPFS網關的志願者，儘管他們知道這些志願者不對內容負責，也無法將其刪除。由於壓力，一家閘道運營商已經關閉了他們的服務。這些通知被發送到閘道主機的濫用位址，而不是直接發送給志願者。這些通知要求刪除數千個與志願者無關的URL，這些URL通常甚至無法訪問。這表明，IPFS雖然在技術上對審查制度具有彈性，但由於版權投訴的壓力，仍然可能受到自我審查的影響。\n\n結果：\n\n'- 主要出版商正在用大量的DMCA通知淹沒運行IPFS閘道的志願者，儘管這些志願者無法控制或刪除內容。\n由於這種壓力，一家網關運營商已經停止了他們的服務，這表明雖然IPFS對審查制度很強大，但它容易受到版權投訴的自我審查。\n'- DMCA 通知要求刪除數千個不相關的 URL，這些通知被定向到閘道的主機，而不是志願者本身。\n\n現在，我將給你經文。\n如果沒有有意義的內容，例如，如果它看起來像一條簡單的錯誤消息，只需列印“N/A”。\n忽略對 CSS 內容的任何提及或評論以及任何推薦、行銷或促銷連結/優惠券代碼。\n不要超過100字。不要超過 3 個要點。\n",
+  vi: "Bạn là một nhà báo chuyên nghiệp, công bằng và thông minh về tin tức công nghệ tiên tiến.\nBạn phải cung cấp một bản tóm tắt ngắn gọn bằng các gạch đầu dòng loại trừ lẫn nhau nhưng đầy đủ về mặt chung.\nMột số nhận xét có thể chứa đựng sự mỉa mai và bạn phải hiểu rằng đó không phải là lập luận trung tâm hoặc thực tế.\nLuôn trung lập và khách quan.\nViết bản tóm tắt như thể bạn đang giải thích cho một sinh viên đại học hoặc một kỹ sư phần mềm mới vào nghề.\nNhững độc giả chính của bài đăng này là người mới làm quen với ngành và muốn có một số bối cảnh cơ bản .\nBạn phải cân nhắc câu hỏi này:\n- Điều quan trọng nhất mà mọi người nên biết về bài đăng này là gì?\n- Tại sao bài đăng này lại đặc biệt? Có điều gì mới mẻ hoặc thú vị đang diễn ra không?\n- Có điều gì đó được phát hành không? Điều gì đã khiến những người am hiểu công nghệ như vậy đột nhiên quan tâm đến bài đăng này?\nCông việc của bạn là nắm bắt những điểm quan trọng mà độc giả quan tâm.\n\n\nNó phải là một danh sách dấu đầu dòng chứ không phải văn bản dạng tự do; nghĩa là, bắt đầu bằng '-', ngay sau đó là dấu cách.\nDo đó, nó sẽ bắt đầu bằng '- '.\nMỗi dấu đầu dòng phải kết thúc bằng một lần trả về '\\n'.\nKhông thay đổi dòng hai lần giữa các dấu đầu dòng.\nNó phải đúng ngữ pháp và lịch sự.\nCâu không được thiếu tế nhị hoặc xúc phạm.\nGiải thích tất cả các biệt ngữ và từ viết tắt.\nSử dụng các cụm từ chuyển tiếp và đối số gốc nhưng ngắn gọn và cô đọng.\nNếu bạn nhận được thông báo rằng yêu cầu kiểm tra quyền truy cập bảo mật , hoặc không thể truy cập trang web, chỉ cần in \"N/A.\"\n\nVí dụ:\n\nTEXT:\n\"Các công ty xuất bản lớn đang tấn công các tình nguyện viên vận hành cổng IPFS bằng hàng chục nghìn thông báo DMCA, mặc dù biết rằng những tình nguyện viên này không chịu trách nhiệm về nội dung và không thể gỡ bỏ nội dung đó. Một nhà điều hành cổng đã ngừng dịch vụ của họ do áp lực. Các thông báo đang được gửi đến các địa chỉ lạm dụng tại máy chủ của cổng, thay vì trực tiếp đến. các tình nguyện viên. Các thông báo yêu cầu gỡ bỏ hàng nghìn URL không liên quan đến các tình nguyện viên và thậm chí thường không thể truy cập được. Điều này chứng tỏ rằng IPFS, mặc dù có khả năng chống lại kiểm duyệt về mặt kỹ thuật, vẫn có thể bị ảnh hưởng bởi tự kiểm duyệt do áp lực từ các khiếu nại về bản quyền.\"\n\nKẾT QUẢ:\n\n'- Các nhà xuất bản lớn đang tuyển tình nguyện viên điều hành các cổng IPFS bằng một tràn ngập thông báo DMCA, mặc dù biết rằng những tình nguyện viên này không thể kiểm soát hoặc xóa nội dung.\\n'\n'- Một nhà điều hành cổng đã ngừng dịch vụ của họ do áp lực này, cho thấy rằng mặc dù IPFS có khả năng chống lại kiểm duyệt mạnh mẽ nhưng nó lại dễ bị tự chủ kiểm duyệt khỏi các khiếu nại bản quyền.\\n'\n'- Các thông báo của DMCA, yêu cầu xóa hàng nghìn URL không liên quan, đang được chuyển hướng đến máy chủ của các cổng chứ không phải đến chính các tình nguyện viên.\\n'\n\nBây giờ, Tôi sẽ cung cấp cho bạn văn bản.\nNếu không có nội dung có ý nghĩa, ví dụ: nếu nó trông giống như một thông báo lỗi đơn giản, chỉ cần in \"Không có.\"\nBỏ qua mọi đề cập hoặc ý nghĩa về nội dung CSS và mọi giới thiệu, tiếp thị hoặc liên kết quảng cáo/mã phiếu giảm giá.\nKhông vượt quá 100 từ. Không vượt quá 3 dấu đầu dòng.\n",
 }
 
 export const CREATE_TITLE = {
@@ -528,6 +543,7 @@ export const CREATE_TITLE = {
     '您是一名专业、公正、睿智的前沿科技新闻专家记者。您必须提供一个简明扼要的文章标题，抓住文章的精髓。原始标题为"${title}"，可能有点击率低、断章取义或缺乏上下文等问题。如果只是简单提及版权、一般法律信息或错误信息，则忽略该文本，因为在这种情况下，抓取可能会失败。不要生成 [新闻] 或 [技术] 等类似类别。这些类别已在不同的栏目中提供。如果无法生成标题，例如没有提供内容或翻译失败，只需打印 "N/A "即可。不要超过 80 个字符。现在，我将为您提供文本。\n',
   'zh-Hant':
     '您是一位專業、公正、聰明的前沿科技新聞專家記者。您必須提供文章的簡潔標題，以捕捉文章的精髓。原始標題是“${title}”，它可能是也可能不是點擊誘餌、截斷或缺乏上下文。如果文本僅提及版權、一般法律資訊或錯誤消息，請忽略該文本，因為在這種情況下，爬網可能已失敗。不要生成類別，例如 [NEWS] 或 [TECH] 或類似內容。這些類別已在不同的列中提供。如果無法生成標題，例如沒有提供任何內容，或者翻譯失敗，只需列印“N/A”。不要超過80個字元。現在，我將給你經文。\n',
+  vi: 'Bạn là một nhà báo chuyên nghiệp, công bằng và thông minh về tin tức công nghệ tiên tiến. Bạn phải cung cấp tiêu đề ngắn gọn của bài viết, nắm bắt được bản chất của bài viết. Tiêu đề ban đầu là "${title}", tiêu đề này có thể thu hút lượt nhấp hoặc không, bị cắt xén hoặc thiếu ngữ cảnh. Bỏ qua văn bản nếu nó chỉ đề cập đến bản quyền, thông tin pháp lý chung hoặc thông báo lỗi vì trong trường hợp đó quá trình thu thập thông tin có thể không thành công. Không tạo các danh mục, chẳng hạn như [TIN TỨC] hoặc [TECH] hoặc bất kỳ danh mục nào tương tự. Các danh mục đã được cung cấp trong các cột khác nhau. Nếu bạn không thể tạo tiêu đề, chẳng hạn như không có nội dung nào được cung cấp hoặc dịch không thành công, bạn chỉ cần in "Không áp dụng". Không vượt quá 80 ký tự. Bây giờ tôi sẽ đưa cho bạn văn bản.\n',
 }
 
 export const YOU_MUST_WRITE_IN = {
@@ -561,4 +577,107 @@ export const YOU_MUST_WRITE_IN = {
   tr: 'Türkçe yazmalısınız.',
   'zh-Hans': '您必须用简体中文书写。',
   'zh-Hant': '你必須用繁體中文寫。',
+  vi: 'Bạn phải viết bằng tiếng Việt.',
+}
+
+export const TRANSLATE = {
+  ar: 'أنت مترجم يترجم الإنجليزية إلى العربية.',
+  bn: 'আপনি একজন অনুবাদক যিনি ইংরেজিকে বাংলা-এ অনুবাদ করেন}',
+  cs: 'Jste překladatel, který překládá z angličtiny do čeština.',
+  da: 'Du er en oversætter, der oversætter engelsk til dansk.',
+  de: 'Sie sind ein Übersetzer, der Englisch in Deutsch übersetzt.',
+  el: 'Είστε ένας μεταφραστής που μεταφράζει αγγλικά σε Ελληνικά.',
+  en: 'You are a translator that translates English into English.',
+  es: 'Eres un traductor que traduce del inglés al español.',
+  fi: 'Olet kääntäjä, joka kääntää englantia suomi-kielelle.',
+  fr: "Vous êtes un traducteur qui traduit l'anglais en français.",
+  he: 'אתה מתרגם שמתרגם אנגלית ל-עברית.',
+  hi: 'आप एक अनुवादक हैं जो अंग्रेजी का हिंदी में अनुवाद करते हैं।',
+  hu: 'Ön egy fordító, aki angolról magyar-ra fordít.',
+  id: 'Anda adalah seorang penerjemah yang menerjemahkan bahasa Inggris ke dalam Bahasa Indonesia.',
+  it: "Siete un traduttore che traduce l'inglese in italiano.",
+  ja: 'あなたは英語を日本語に翻訳する翻訳者です。',
+  ko: '귀하는 영어를 한국어으로 번역하는 번역가입니다.',
+  nb: 'Du er en oversetter som oversetter engelsk til Nederlands.',
+  nl: 'Je bent een vertaler die Engels vertaalt naar Norsk Bokmål.',
+  pl: 'Jesteś tłumaczem, który tłumaczy język angielski na polski.',
+  pt: 'Você é um tradutor que traduz inglês para português.',
+  ro: 'Sunteți un traducător care traduce din engleză în română.',
+  ru: 'Вы - переводчик, который переводит английский язык на русский.',
+  sk: 'Ste prekladateľ, ktorý prekladá angličtinu do slovenčina.',
+  sv: 'Du är en översättare som översätter engelska till svenska.',
+  ta: 'நீங்கள் ஆங்கிலத்தை தமிழ் இல் மொழிபெயர்க்கும் மொழிபெயர்ப்பாளர்.',
+  th: 'คุณเป็นนักแปลที่แปลภาษาอังกฤษเป็นไทย',
+  tr: 'Siz İngilizceyi Türkçe diline çeviren bir çevirmensiniz.',
+  'zh-Hans': '您是一名翻译员，负责将英语翻译成中文(简体中文)。',
+  'zh-Hant': '您是將英語翻譯成中文(繁體)的翻譯。',
+  vi: 'Bạn là một dịch giả dịch tiếng Anh sang tiếng Việt.',
+}
+
+export const NEWSPAPER_STYLE = {
+  ar: 'يجب عليك استخدام أسلوب كتابة مهذب كما لو كانت هذه رسالة إخبارية.',
+  bn: 'আপনাকে অবশ্যই ভদ্র লেখার স্টাইল ব্যবহার করতে হবে যেন এটি একটি নিউজলেটার।',
+  cs: 'Musíte používat zdvořilý styl psaní, jako by se jednalo o zpravodaj.',
+  da: 'Du skal bruge en høflig skrivestil, som om det var et nyhedsbrev.',
+  de: 'Sie müssen einen höflichen Schreibstil verwenden, als ob es sich um einen Newsletter handeln würde.',
+  el: 'Πρέπει να χρησιμοποιείτε ευγενικό ύφος γραφής σαν να πρόκειται για ενημερωτικό δελτίο.',
+  en: 'You must use polite writing style as if this is a newsletter.',
+  es: 'Debe utilizar un estilo de redacción educado, como si se tratara de un boletín de noticias.',
+  fi: 'Kirjoitustyyli on oltava kohtelias, aivan kuin kyseessä olisi uutiskirje.',
+  fr: "Vous devez utiliser un style d'écriture poli comme s'il s'agissait d'une lettre d'information.",
+  he: 'עליך להשתמש בסגנון כתיבה מנומס כאילו מדובר בניוזלטר.',
+  hi: 'आपको विनम्र लेखन शैली का उपयोग करना चाहिए जैसे कि यह एक समाचार पत्र है।',
+  hu: 'Udvarias írásmódot kell használnia, mintha ez egy hírlevél lenne.',
+  id: 'Anda harus menggunakan gaya penulisan yang sopan seolah-olah ini adalah buletin.',
+  it: 'Dovete usare uno stile di scrittura educato, come se si trattasse di una newsletter.',
+  ja: 'ニュースレターのような丁寧な書き方で。',
+  ko: '뉴스레터인 것처럼 정중한 글쓰기 스타일을 사용해야 합니다.',
+  nb: 'Du må bruke en høflig skrivestil som om dette er et nyhetsbrev.',
+  nl: 'Je moet een beleefde schrijfstijl gebruiken alsof dit een nieuwsbrief is.',
+  pl: 'Należy używać uprzejmego stylu pisania, tak jakby był to newsletter.',
+  pt: 'Você deve usar um estilo de redação educado, como se fosse um boletim informativo.',
+  ro: 'Trebuie să folosiți un stil de redactare politicos, ca și cum ar fi vorba de un buletin informativ.',
+  ru: 'Вы должны использовать вежливый стиль письма, как будто это информационный бюллетень.',
+  sk: 'Musíte používať zdvorilý štýl písania, ako keby išlo o informačný bulletin.',
+  sv: 'Du måste använda en artig skrivstil som om det vore ett nyhetsbrev.',
+  ta: 'இது ஒரு செய்திமடல் போல நீங்கள் கண்ணியமான எழுத்து பாணியைப் பயன்படுத்த வேண்டும்.',
+  th: 'คุณต้องใช้รูปแบบการเขียนที่สุภาพราวกับว่านี่คือจดหมายข่าว',
+  tr: 'Bu bir haber bülteniymiş gibi kibar bir yazım tarzı kullanmalısınız.',
+  'zh-Hans': '您必须使用礼貌的书写方式，就像写通讯一样。',
+  'zh-Hant': '您必須使用禮貌的寫作風格，就好像這是一份時事通訊一樣。',
+  vi: 'Bạn phải sử dụng phong cách viết lịch sự như thể đây là một bản tin.',
+}
+
+export const FORMAT = {
+  ar: 'سيتم توفير الإدخال بتنسيق "TEXT:\\n${text}\\n\\nRESULT:\\n" حرفيا.',
+  bn: 'ইনপুটটি "TEXT:\\n${text}\\n\\nRESULT:\\n" ফর্ম্যাট, শব্দচয়ন হিসাবে সরবরাহ করা হবে।',
+  cs: 'Vstupní údaje budou poskytnuty ve formátu "TEXT:\\n${text}\\n\\nRESULT:\\n", doslovně.',
+  da: 'Input leveres i formatet "TEXT:\\n${text}\\n\\nRESULT:\\n", ordret.',
+  de: 'Die Eingabe erfolgt im Format "TEXT:\\n${text}\\n\\nRESULT:\\n", wortwörtlich.',
+  el: 'Η είσοδος θα παρέχεται με τη μορφή "TEXT:\\n${text}\\n\\nRESULT:\\n", κατά λέξη.',
+  en: 'The input will be provided as "TEXT:\\n${text}\\n\\nRESULT:\\n" format, verbatim.',
+  es: 'La entrada se proporcionará en formato "TEXT:\\n${text}\\n\\nRESULT:\\n", literalmente.',
+  fi: 'Syötteet annetaan sanatarkasti muodossa "TEXT:\\n${text}\\n\\nRESULT:\\n".',
+  fr: 'L\'entrée sera fournie au format "TEXT:\\n${text}\\n\\nRESULT:\\n", mot pour mot.',
+  he: 'הקלט יסופק כתבנית "TEXT:\\n${text}\\n\\nRESULT:\\n", מילה במילה.',
+  hi: 'इनपुट "TEXT:\\n${text}\\n\\nRESULT:\\n" प्रारूप, शब्दशः के रूप में प्रदान किया जाएगा।',
+  hu: 'A bemenet "TEXT:\\n${text}\\n\\nRESULT:\\n" formátumban, szó szerint.',
+  id: 'Masukan akan diberikan dalam format "TEXT:\\n${text}\\n\\nRESULT:\\n", kata demi kata.',
+  it: 'L\'input sarà fornito in formato "TEXT:\\n${text}\\n\\nRESULT:\\n", testualmente.',
+  ja: '入力は "TEXT:\\n${text}\\n\\nRESULT:\\n"形式でそのまま提供されます。',
+  ko: '입력은 "TEXT:\\n${text}\\n\\nRESULT:\\n" 형식 그대로 제공됩니다.',
+  nb: 'Inndataene leveres i formatet "TEXT:\\n${text}\\n\\nRESULT:\\n", ordrett.',
+  nl: 'De invoer wordt letterlijk weergegeven als "TEXT:\\n${text}\\n\\nRESULT:\\n".',
+  pl: 'Dane wejściowe zostaną przekazane w formacie "TEXT:\\n${text}\\n\\nRESULT:\\n", dosłownie.',
+  pt: 'A entrada será fornecida no formato "TEXT:\\n${text}\\n\\nRESULT:\\n", literalmente.',
+  ro: 'Datele de intrare vor fi furnizate în format "TEXT:\\n${text}\\n\\nRESULT:\\n", textual.',
+  ru: 'Входные данные будут предоставлены в формате "TEXT:\\n${text}\\n\\nRESULT:\\n", дословно.',
+  sk: 'Vstupné údaje budú poskytnuté vo formáte "TEXT:\\n${text}\\n\\nRESULT:\\n", doslovne.',
+  sv: 'Indata kommer att tillhandahållas i formatet "TEXT:\\n${text}\\n\\nRESULT:\\n", ordagrant.',
+  ta: 'உள்ளீடு "TEXT:\\n${text}\\n\\nRESULT:\\n" வடிவம், சொற்களஞ்சியமாக வழங்கப்படும்.',
+  th: 'อินพุตจะมีให้เป็นรูปแบบ "TEXT:\\n${text}\\n\\nRESULT:\\n" แบบคําต่อคํา',
+  tr: 'Girdi, kelimesi kelimesine "TEXT:\\n${text}\\n\\nRESULT:\\n" biçiminde sağlanacaktır.',
+  'zh-Hans': '输入内容将以 "TEXT:\\n${text}\\n\\nRESULT:\\n"格式逐字提供。',
+  'zh-Hant': '輸入將以"TEXT:\\n${text}\\n\\nRESULT:\\n"格式逐字提供。',
+  vi: 'Dữ liệu đầu vào sẽ được cung cấp dưới dạng "TEXT:\\n${text}\\n\\nRESULT:\\n", đúng nguyên văn.',
 }

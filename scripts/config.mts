@@ -35,6 +35,7 @@ export const newsletterId = {
   tr: 32,
   'zh-Hans': 34,
   'zh-Hant': 38,
+  vi: 43,
 }
 
 export const newsletterDelay = {
