@@ -69,4 +69,5 @@ export const newsletterDelay = {
   tr: 28,
   'zh-Hans': 29,
   'zh-Hant': 30,
+  vi: 43
 }
