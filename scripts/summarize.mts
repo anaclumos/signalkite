@@ -8,8 +8,6 @@ const openai = new OpenAI({
   project: process.env.OPENAI_PROJECT_ID,
 })
 
-
-
 export const sleep = async (ms = 10000) => {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
@@ -141,7 +139,7 @@ export const summarize = async (story: Story, lang = 'en'): Promise<Story> => {
 
   let originSummary = []
   let commentSummary = []
-  let title = ''
+  let title = story.title
 
   const originContext = await generateContext(story.originBody, story.title, lang)
   const commentContext = await generateContext(story.commentBody, story.title, lang)
@@ -159,11 +157,11 @@ export const summarize = async (story: Story, lang = 'en'): Promise<Story> => {
   } catch (e) {
     log(e, 'error')
   }
-  try {
-    title = await createTitle(story.title, originContext, lang)
-  } catch (e) {
-    log(e, 'error')
-  }
+  // try {
+  //   title = await createTitle(story.title, originContext, lang)
+  // } catch (e) {
+  //   log(e, 'error')
+  // }
 
   return {
     ...story,
