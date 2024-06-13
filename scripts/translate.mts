@@ -1,8 +1,11 @@
-import { FORMAT, NEWSPAPER_STYLE, TRANSLATE, YOU_MUST_WRITE_IN } from './default.mjs'
+import {  TRANSLATE, YOU_MUST_WRITE_IN } from './default.mjs'
 import { log, sanitize } from './util.mjs'
 import OpenAI from 'openai'
 
-const openai = new OpenAI()
+const openai = new OpenAI({
+  organization: process.env.OPENAI_ORG_ID,
+  project: process.env.OPENAI_PROJECT_ID,
+})
 
 const RETRY_DELAY = 60_000 // 1 minute
 
@@ -40,10 +43,6 @@ export const translateOne = async ({
         role: 'system',
         content:
           TRANSLATE[target] +
-          '\n\n' +
-          NEWSPAPER_STYLE[target] +
-          '\n\n' +
-          FORMAT[target] +
           '\n\n' +
           YOU_MUST_WRITE_IN[target],
       },

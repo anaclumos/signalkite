@@ -3,7 +3,12 @@ import { Story } from './type.mjs'
 import { CREATE_BULLETPOINT_SUMMARY, CREATE_TITLE, YOU_MUST_WRITE_IN } from './default.mjs'
 import OpenAI from 'openai'
 
-const openai = new OpenAI()
+const openai = new OpenAI({
+  organization: process.env.OPENAI_ORG_ID,
+  project: process.env.OPENAI_PROJECT_ID,
+})
+
+
 
 export const sleep = async (ms = 10000) => {
   return new Promise((resolve) => setTimeout(resolve, ms))
