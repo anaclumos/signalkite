@@ -1,4 +1,4 @@
-import {  TRANSLATE, YOU_MUST_WRITE_IN } from './default.mjs'
+import {  TRANSLATE, YOU_MUST_WRITE_IN,ONLY_TRANSLATE_WHAT_IS_GIVEN } from './default.mjs'
 import { log, sanitize } from './util.mjs'
 import OpenAI from 'openai'
 
@@ -43,6 +43,8 @@ export const translateOne = async ({
         role: 'system',
         content:
           TRANSLATE[target] +
+          '\n\n' +
+          ONLY_TRANSLATE_WHAT_IS_GIVEN[source] +
           '\n\n' +
           YOU_MUST_WRITE_IN[target],
       },
