@@ -86,9 +86,7 @@ export const generateContext = async (rawText, title, lang = 'en') => {
 
   try {
     log(`⏳ Shortening\t${title}`, 'info')
-
-    // Split the rawText into smaller chunks
-    const chunkSize = 2000
+    const chunkSize = 128000
     const chunks = splitText(rawText, chunkSize)
 
     // Process each chunk using map-reduce
@@ -99,7 +97,7 @@ export const generateContext = async (rawText, title, lang = 'en') => {
             { role: 'system', content: 'Shorten the following text.' + '\n\n' + YOU_MUST_WRITE_IN[lang] },
             { role: 'user', content: chunk },
           ],
-          model: 'gpt-4',
+          model: 'gpt-4o',
           temperature: 0,
         })
 
