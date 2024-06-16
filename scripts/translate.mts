@@ -51,7 +51,7 @@ export const translateOne = async ({
           BEGIN_IMMEDIATELY[target] +
           '\n\n',
       },
-      { role: 'user', content: `TEXT:\n${text}\n\nRESULT:\n` },
+      { role: 'user', content: `TEXT:\n${text}` },
     ],
     model: 'gpt-4o',
     temperature: 0,
