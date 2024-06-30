@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 29 Jun 2024 19:12:24 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 30 Jun 2024 19:09:09 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/zh-Hant.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 29 Jun 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sun, 30 Jun 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[zh-Hant]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-06-30]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/06/30&#39;</h2>
+<h1>2024-06-30</h1>
+<h2><a href="https://10maurycy10.github.io/projects/motion_sensor_hacking/">內部構造：一美元雷達動作感測器</a></h2>
+<ul>
+<li>RCWL-0516 微波動作感測器是一款低成本的雷達模組，價格不到一美元，設計用於偵測約 5 公尺內的動作。</li>
+<li>它使用 BISS0001 晶片，通常用於紅外線動作感測，並通過混合發射和接收的信號來檢測毫伏級變化的動作。</li>
+<li>該感測器的性能變化不定，在室內運作良好，但在室外表現不穩定。可以通過使用第二個模組作為接收器來改進其範圍和一致性。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40834349">反應</a></h3>
+<ul>
+<li>A $1 雷達動作感測器可以使用 ESP32 開發板檢測到微妙的動作，例如呼吸，並且可以穿透牆壁工作。</li>
+<li>到2024年，配備Wi-Fi 7的AI/NPU筆記型電腦將整合射頻雷達和設備端推理來識別人類活動。</li>
+<li>對於 DIY 專案來說，3 美元的 ESP 晶片可以與這些感測器結合使用，提供具成本效益的解決方案，且由於使用非電離輻射波，安全性問題極小。</li>
+</ul>
+<h2><a href="https://github.com/overleaf/overleaf">Overleaf：一個開源的線上即時協作 LaTeX 編輯器</a></h2>
+<ul>
+<li>“Overleaf 是一個開源的、即時協作的 LaTeX 編輯器，既可以作為託管服務使用，也可以進行本地部署。”</li>
+<li>Overleaf Server Pro 提供了增強的功能，適用於實驗室和工作場所，包括安全性(使用 LDAP 或 SAML 的單一登入)和先進的協作工具。</li>
+<li>該專案使用 Docker 進行部署，並依照 GNU Affero 通用公共授權條款第 3 版提供詳細的建置說明和貢獻指南。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40832930">反應</a></h3>
+<ul>
+<li>“Overleaf 是一個開源的、即時協作的 LaTeX 編輯器，廣泛用於學術界進行遠端合作撰寫論文。”</li>
+<li>用戶欣賞其易用性、評論功能和 PDF 同步等特點，以及 Git 整合，儘管有些人發現 Git 在同步工作方面具有挑戰性。</li>
+<li>有些人要求增加一些功能，例如支援 Pandoc 轉換 Markdown，並強調了潛在改進的區域。</li>
+</ul>
+<h2><a href="https://twitter.com/rauchg/status/1806385778064564622">Chrome 正在新增 <code>window.ai</code>——一個直接內建於瀏覽器內的 Gemini Nano AI 模型</a></h2>
+<ul>
+<li>Chrome 正在將 <code>window.ai</code>，一個 Gemini Nano AI 模型，直接整合到瀏覽器中，以提升其 AI 能力。</li>
+<li>此整合相容於 AI 軟體開發工具包 (SDK)，使 AI 功能的開發和實施更加容易。</li>
+<li>「此更新標誌著在網頁瀏覽器中原生支援更先進的人工智慧功能邁出了重要的一步。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40834600">反應</a></h3>
+<ul>
+<li>Chrome 正在將 <code>window.ai</code>，一個 Gemini Nano AI 模型，直接整合到瀏覽器中，強調本地設備處理以增強隱私和安全性。</li>
+<li>該 API 目前處於實驗階段，並且隱藏在標誌後面，引發了關於其對隱私、安全性和未來網頁標準影響的討論。</li>
+<li>雖然有些人看到了增強網頁應用程式的潛力，但也有人擔心瀏覽器相容性和潛在的濫用問題，有些使用者則偏好較簡單的瀏覽器。</li>
+</ul>
+<h2><a href="https://github.com/poundifdef/SmoothMQ">基於 SQLite 的即插即用 SQS 替代方案</a></h2>
+<ul>
+<li>一個開源的、與 Amazon SQS(簡單佇列服務)API 兼容的替代品已經被創建，使用 Go 語言編寫，並作為單一二進位檔案分發，使用 SQLite 作為儲存。</li>
+<li>該解決方案提供了進階功能，如搜尋、排程、可觀察性和速率限制，並且只需更改端點即可與現有的 SQS 應用程式相容。</li>
+<li>它支援多種協議(AMQP、PubSub)，並且可以適應不同的儲存後端(RocksDB、Postgres)，未來計劃實現分散式和自動擴展功能，目標是提供一個具成本效益的託管佇列系統。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40837610">反應</a></h3>
+<ul>
+<li>使用 Go 和 SQLite 開發了一個開源的、與 Amazon SQS 相容的替代方案，提供搜尋、排程、可觀察性和速率限制等功能，且不需要重寫應用程式。</li>
+<li>該解決方案支援 Celery，提供比 SQS 更好的訊息可見性，並且可以與 RocksDB 或 Postgres 等潛在後端進行插接，能夠實現多種協議。</li>
+<li>它很容易以單一的 Go 二進位檔部署，未來計劃實現分散式和自動擴展功能，並鼓勵提供反饋意見。</li>
+</ul>
+<h2><a href="https://lcamtuf.substack.com/p/weekend-projects-getting-silly-with">週末專案：用 C 語言搞笑</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40835274">反應</a></h3>
+<ul>
+<li>討論圍繞著 C 程式語言中的未定義行為(UB)，特別是關於 UB 可以「時間旅行」或影響程式碼執行的誤解。</li>
+<li>C23 標準包含一個註腳，澄清 UB 無法進行時間旅行，解決了先前部落格文章和編譯器行為引起的混淆。</li>
+<li>對話還涉及各種古怪且先進的 C 語言編程技術，例如 switch 語句的非常規用法和 volatile 關鍵字語義的影響。</li>
+</ul>
+<h2><a href="https://www.bristol.ac.uk/news/2024/june/prehistoric-pompeii.html">三葉蟲被火山灰殺死</a></h2>
+<ul>
+<li>在摩洛哥發現了保存極為完好的寒武紀三葉蟲化石，揭示了先前未知的解剖細節。</li>
+<li>“這些由火山灰保存了超過五億年的化石顯示出四對頭部附肢，而不是先前認為的三對，為三葉蟲的進食機制提供了新的見解。”</li>
+<li>高解析度X射線微斷層掃描(XRµCT)被用來創建詳細的3D模型，突顯出火山灰沉積物在發現保存良好的化石方面的潛力。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40833645">反應</a></h3>
+<ul>
+<li>“古生物學家已經鑑定出超過20,000種三葉蟲，其大小範圍從不到兩毫米到超過90公分。”</li>
+<li>網站 trilobites.info 因其簡單且資訊豐富的設計而受到讚譽，這種設計風格讓人聯想到早期的網際網路網站，重點放在內容而非現代網頁設計趨勢。</li>
+<li>發現保存完好的『龐貝』三葉蟲，這些三葉蟲沒有被壓扁或變形，為古代歷史提供了重要的見解，展示了每條腿在生前的排列方式。</li>
+</ul>
+<h2><a href="https://torrentfreak.com/opendns-suspends-service-in-france-due-to-canal-piracy-blocking-order-240629/">「OpenDNS 因 Canal+ 盜版封鎖令暫停在法國的服務」</a></h2>
+<ul>
+<li>應Canal+的要求，法國法院已命令Google、Cloudflare和Cisco封鎖繞過現有盜版網站封鎖的DNS記錄。</li>
+<li>「作為回應，思科已經從法國撤回其 OpenDNS 服務，這突顯了法律行動對網際網路服務的影響。」</li>
+<li>「這項法院命令是 Canal+ 更大規模反盜版行動的一部分，該行動此前要求網際網路服務提供商封鎖超過 100 個盜版體育串流網站，迫使用戶轉向第三方 DNS 伺服器。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40835117">反應</a></h3>
+<ul>
+<li>OpenDNS 因法院命令要求封鎖盜版網站而暫停在法國的服務，這引發了關於 DNS 中立性和法律合規性的辯論。</li>
+<li>像 Google 這樣的大公司遵守此類命令，引發了對設置 DNS 操作先例和潛在政府過度干預的擔憂。</li>
+<li>用戶可能會尋求替代的 DNS 供應商或 VPN 來繞過這些限制，這突顯了執行 DNS 封鎖的技術挑戰和影響。</li>
+</ul>
+<h2><a href="https://nodicenoglory.com/2021/06/23/the-operational-wargame-series-the-best-game-not-in-stores-now/">作戰戰爭遊戲系列：2021年最佳未上市遊戲</a></h2>
+<ul>
+<li>作戰戰爭遊戲系列(OWS)是一款模擬2025年至2050年戰鬥的桌上遊戲，由退役上校提姆·巴里克和美國海軍陸戰隊戰鬥實驗室(USMCWL)共同開發。</li>
+<li>OWS 具有兩個模組：殺手鐧(印太戰區)和扎帕德(歐洲戰區)，使用愛好者熟悉的六角格和棋子系統。</li>
+<li>目前，OWS 僅透過美國海軍陸戰隊協會提供給國防部辦公室，儘管它對於業餘遊戲玩家可能具有吸引力，但尚無商業發行計劃。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40833327">反應</a></h3>
+<ul>
+<li>“《作戰戰爭遊戲系列》以其詳細且耗時的特性聞名，通常需要數天或數週才能完成一回合。”</li>
+<li>儘管數位技術不斷進步，傳統的桌上戰棋遊戲仍因其觸覺和實際操作的特性而受歡迎，像是《Command: Modern Operations》和《Rule the Waves》這類遊戲被推薦給愛好者。</li>
+<li>軍事組織持續使用手動兵棋推演進行訓練，強調在戰略規劃中理解所有變數的重要性。</li>
+</ul>
+<h2><a href="https://help.figma.com/hc/en-us/articles/17725942479127-Control-AI-features-and-content-training-settings">「Figma 預設使用個人資料來訓練 AI 模型」</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40835793">反應</a></h3>
+<ul>
+<li>Figma 預設使用個人資料來訓練 AI 模型，引發用戶對隱私的擔憂。</li>
+<li>微軟執行長的評論暗示，強大的組織可以訪問網際網路數據以進行人工智慧訓練，這引發了倫理和法律問題，特別是在《通用數據保護條例》(GDPR)下。</li>
+<li>建議使用者在2024年8月15日前停用內容訓練切換，以防止其數據被使用。</li>
+</ul>
+<h2><a href="https://www.smithsonianmag.com/history/how-coffee-helped-the-union-caffeinate-their-way-victory-civil-war-180984502/">“咖啡在南北戰爭中幫助了聯邦軍”</a></h2>
+<ul>
+<li>在南北戰爭期間，聯邦軍面臨嚴重的咖啡短缺，這對士兵的士氣和精力至關重要，到1862年進口量下降了40%。</li>
+<li>「在史蒂芬·艾倫·班森總統的領導下，賴比瑞亞於1862年8月開始向聯邦出口咖啡，首批出口量達6,000磅，這有助於填補聯邦因封鎖南方港口而產生的供應缺口。」</li>
+<li>“利比里亞咖啡農與北方廢奴主義者之間的合作，加上費城商人愛德華·莫里斯的建議，促進了咖啡生產，使利比里亞咖啡對聯邦的戰爭努力至關重要，並為他們的成功做出了貢獻。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40834345">反應</a></h3>
+<ul>
+<li>“咖啡在南北戰爭期間對聯邦士兵來說是一種重要的興奮劑，對他們的努力產生了顯著的影響。”</li>
+<li>南方使用了其他刺激物，如茶、菸草和美洲冬青，但咖啡對聯邦的影響尤為顯著。</li>
+<li>這場討論強調了人們與咖啡因之間複雜的關係，既要平衡其對生產力的好處，又要考慮可能的依賴性和健康問題。</li>
+</ul>
+<h2><a href="https://techcrunch.com/2024/06/29/mit-robotics-pioneer-rodney-brooks-thinks-people-are-vastly-overestimating-generative-ai/">Rodney Brooks 談生成式人工智慧的限制</a></h2>
+<ul>
+<li>“麻省理工學院著名的機器人學先驅羅德尼·布魯克斯認為，生成式人工智慧經常被過度炒作，無法與人類能力相匹敵。”</li>
+<li>布魯克斯主張，人工智慧應該專注於具體且可解決的問題，而不是試圖複製人類的能力，並舉例說明在倉庫機器人等任務中使用生成式人工智慧的低效率。</li>
+<li>他還指出，科技成長並非總是呈指數型增長，以 iPod 的儲存容量為例，並建議雖然大型語言模型(LLMs)可以協助完成如老人照護等任務，但它們並不是解決所有 AI 挑戰的萬能方案。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40835588">反應</a></h3>
+<ul>
+<li>「Rodney Brooks 討論了生成式人工智慧的局限性，強調儘管它能執行特定任務，但無法匹敵人類的全部能力範圍。」</li>
+<li>“Brooks 建議限制 AI 應用的範圍，並在遇到意外情況時加入人工覆蓋，預測大規模擴展大型語言模型(LLMs)的商業案例不強。”</li>
+<li>“討論中包括將大型語言模型(LLMs)比作 iPod 的類比，暗示未來的 AI 進步可能會像 iPod 演變成 iPhone 一樣，整合更多複雜的功能，而不僅僅是擴展現有的能力。”</li>
+</ul>
+<h2><a href="https://www.bleepingcomputer.com/news/security/dev-rejects-cve-severity-makes-his-github-repo-read-only/">開發者拒絕 CVE 嚴重性評級，將他的 GitHub 儲存庫設為唯讀</a></h2>
+<ul>
+<li>「Fedor Indutny 因為一份有爭議的 CVE(常見漏洞與暴露)報告，已將他受歡迎的開源專案 &#39;node-ip&#39; 在 GitHub 上設為唯讀。」</li>
+<li>這起事件突顯了一個日益嚴重的問題，即開源開發者不斷受到可疑或虛假的CVE報告的轟炸，導致不必要的恐慌和挫折。</li>
+<li>“濫用原本用於道德漏洞報告的CVE系統，正在使開發者的生活變得複雜，並導致他們的倦怠。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40837791">反應</a></h3>
+<ul>
+<li>一位開發者在對一份常見漏洞與暴露(CVE)報告的嚴重性提出異議後，將他的 GitHub 儲存庫設為唯讀。</li>
+<li>該事件強調，安全性應被視為整個軟體系統的緊急特性，而不僅僅是個別元件的問題。</li>
+<li>這種情況也突顯了開源維護者所面臨的挑戰和倦怠，他們的努力往往得不到多少物質上的回報。</li>
+</ul>
+<h2><a href="https://www.businessinsider.com/patagonia-cx-staff-told-to-relocate-or-leave-california-2024-6">Patagonia 給員工 3 天時間決定搬遷或辭職</a></h2>
+<ul>
+<li>「Patagonia 給予 90 名客服員工三天時間決定是否搬遷到美國七個地點之一，或是離開公司，旨在改善團隊文化並支持業務需求。」</li>
+<li>“受影響的員工在市政廳會議中被告知，並提供了4,000美元的搬遷費用和額外的帶薪休假，對於不願意搬遷的員工，截止日期為9月30日。”</li>
+<li>這項決定影響了美國255名客戶體驗(CX)員工中的90名，一些員工對公司似乎偏離以員工為中心的價值觀表示失望。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40834305">反應</a></h3>
+<ul>
+<li>「巴塔哥尼亞公司給予員工三天時間決定是否搬遷或辭職，原因是人員過多，這引發了關於企業倫理和員工待遇的討論。」</li>
+<li>批評者認為這是一種變相裁員，指出雖然有豐厚的遣散費，但僅有4千美元的搬遷補助不足，且決策時間過短。</li>
+<li>“此舉被視為對H1B簽證持有者可能有利，但員工和觀察者的反應不一。”</li>
+</ul>
+<h2><a href="https://luggagelosers.com/">“航空公司行李遺失量即時排名”</a></h2>
+<ul>
+<li>LuggageLosers.com 提供航空公司行李遺失的即時排名，根據社群媒體提及和歷史數據每小時更新一次。</li>
+<li>該網站追蹤所有主要航空公司，調整規模差異，旨在幫助旅客選擇行李處理較佳的航空公司。</li>
+<li>目前行李遺失率最高的航空公司包括愛爾蘭航空、印度航空和西捷航空，並且也有區域和國家特定的數據可供參考。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40838290">反應</a></h3>
+<ul>
+<li>行李遺失即時排名顯示，愛爾蘭航空有1/57的機率遺失行李，達美航空為1/497，法國航空則是1/1,256。</li>
+<li>在全國範圍內，印度的機率是1/97，美國是1/497，日本是1/7,734，這些變化受登機機場、航空公司政策和國家法規的影響。</li>
+<li>這些數據來源於社群媒體貼文，這引發了準確性的擔憂，而美國交通部(DOT)則提供了更可靠的行李處理不當數據。</li>
+</ul>
+<h2><a href="https://www.hackster.io/news/an-analog-network-of-resistors-promises-machine-learning-without-a-processor-researchers-say-d9cb0655b7a0">一個類比電阻網路承諾無需處理器的機器學習</a></h2>
+<ul>
+<li>賓夕法尼亞大學的研究人員使用電阻器創建了一個類比機器學習網路，目標是實現更節能的人工智慧。</li>
+<li>這種新方法消除了對傳統處理器的需求，利用基於電晶體的非線性學習超材料進行複雜計算。</li>
+<li>雖然目前的原型機比現代數位加速器消耗更多的電力，但在圖像分類和 XOR 運算等任務中顯示出潛力，隨著規模擴大，其效率有望提高。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40836183">反應</a></h3>
+<ul>
+<li>研究人員正在探索一種受限於歐姆區域的類比電晶體網路，以在沒有傳統處理器的情況下執行機器學習任務。</li>
+<li>這種方法可能比數位系統提供更高效的平行運算，儘管在實際應用中仍面臨如維持閘極電容上的電荷等挑戰。</li>
+<li>這個概念因其有可能通過利用類比元件來革新神經網路計算而引起了關注，這可能會在能源效率和處理速度方面帶來顯著的進步。</li>
+</ul>
+<head>
+  <meta property="og:title" content="內部構造：一美元雷達動作感測器" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E5%85%A7%E9%83%A8%E6%A7%8B%E9%80%A0%EF%BC%9A%E4%B8%80%E7%BE%8E%E5%85%83%E9%9B%B7%E9%81%94%E5%8B%95%E4%BD%9C%E6%84%9F%E6%B8%AC%E5%99%A8&subheading=2024%E5%B9%B46%E6%9C%8830%E6%97%A5%20%E6%98%9F%E6%9C%9F%E6%97%A5%3A%20%E9%A7%AD%E5%AE%A2%E6%96%B0%E8%81%9E%E6%91%98%E8%A6%81" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/zh/Hant/2024/06/30</link>
+            <guid isPermaLink="false">2024-06-30T00:00:00.000Z</guid>
+            <pubDate>Sun, 30 Jun 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-06-29]]></title>
             <description
@@ -1649,197 +1835,6 @@
             <link>https://hn.cho.sh/zh/Hant/2024/06/21</link>
             <guid isPermaLink="false">2024-06-21T00:00:00.000Z</guid>
             <pubDate>Fri, 21 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-20]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/20&#39;</h2>
-<h1>2024-06-20</h1>
-<h2><a href="https://stackdiary.com/eu-council-has-withdrawn-the-vote-on-chat-control/">歐盟理事會已撤回對聊天控制的投票</a></h2>
-<ul>
-<li>這篇文章討論了以用戶隱私和安全為優先的主要網絡瀏覽器，並強調了它們的功能和優點。</li>
-<li>它提供了對像 Brave、Firefox 和 Tor 這些以強大的隱私保護和安全措施而聞名的瀏覽器的比較。</li>
-<li>重點在於這些瀏覽器如何處理用戶數據、阻止追蹤器，並提供增強的安全功能以防範網絡威脅。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40736771">反應</a></h3>
-<ul>
-<li>歐盟理事會已撤回對聊天控制提案的投票，該提案面臨重大反對，特別是來自德國官員的反對。</li>
-<li>該提案因缺乏技術專業知識和潛在危險而受到批評，可能會在匈牙利擔任歐盟輪值主席國時重新出現。</li>
-<li>儘管撤回，問題仍未解決，未來可能會再次被提及。</li>
-</ul>
-<h2><a href="https://erikdemaine.org/fonts/tetris/">「俄羅斯方塊作為字體」</a></h2>
-<ul>
-<li>Erik 和 Martin Demaine 設計了一種受俄羅斯方塊啟發的字體，其中每個字母和數字都是由俄羅斯方塊的方塊(I, J, L, O, S, T, Z)構成的。</li>
-<li>字體設計使用了BurrTools軟體，並遵循俄羅斯方塊的規則，包括初始方塊旋轉的超級旋轉系統。</li>
-<li>這種字體是對俄羅斯方塊進行數學分析的一部分，突顯了其NP完全性，並受到2017年BRIDGES會議期間合作的啟發。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40737294">反應</a></h3>
-<ul>
-<li>Erik Demaine 創建了一種字體，其中每個字母和數字都是由俄羅斯方塊組成的，這些字體是使用 BurrTools 軟體手動設計的。</li>
-<li>展示了一個使用Harfbuzz排版器和WebAssembly的字體玩俄羅斯方塊的演示，展示了網頁技術的創新應用。</li>
-<li>該項目引起了科技社群的極大興趣和積極反饋，突顯了其新穎性以及字體設計與遊戲的創意交集。</li>
-</ul>
-<h2><a href="https://www.anthropic.com/news/claude-3-5-sonnet">克勞德3.5十四行詩</a></h2>
-<ul>
-<li>“Claude 3.5 Sonnet，作為Claude 3.5型號家族中的首款產品，已經推出，提供了比競爭對手型號和Claude 3 Opus更優越的性能，並可在Claude.ai、Claude iOS應用程式以及通過各種API獲得。”</li>
-<li>該模型在研究生級別的推理、編碼能力和視覺推理任務方面表現出色，使其適合處理諸如客戶支持和多步工作流程等複雜任務，並引入了如Artifacts這樣的新功能，用於動態內容生成和編輯。</li>
-<li>安全和隱私被優先考慮，並進行了嚴格的測試和外部評估，未來計劃包括發布Claude 3.5 Haiku和Claude 3.5 Opus，以及像Memory這樣的新功能，以提供個性化體驗。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40738916">反應</a></h3>
-<ul>
-<li>Claude 3.5 Sonnet 已經發布，因其表現特別是在編碼任務中的表現而受到讚譽，一些用戶更喜歡它而不是 GPT-4o，因為它提供了更好的結果和更快的回應。</li>
-<li>用戶指出缺乏對話分享功能和Android應用程式是缺點，但該模型仍因其速度、質量和比GPT模型更類似人類的回應而受到讚譽。</li>
-<li>儘管存在一些小問題，整體反應是積極的，許多用戶對Anthropic新模型引入的改進和新功能感到興奮。</li>
-</ul>
-<h2><a href="https://www.talisman.org/x-debut.shtml">X 首次亮相於40年前(1984年)</a></h2>
-<ul>
-<li>X Window 系統由 Robert W. Scheifler 開發，於 1984 年 6 月 19 日首次亮相，專為 VS100 設計，其速度是前代 W 的兩倍。</li>
-<li>計算機科學實驗室(LCS)已經採用了X，並在其上構建應用程序，並鼓勵使用W的其他人轉換到X以獲得更好的性能和實驗效果。</li>
-<li>目前的介面包括 CLU 和 Argus，C 介面正在開發中；現有的應用程式有文字編輯器 (TED)、Argus I/O 介面和基本的視窗管理器，但仍需要文件說明。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40731922">反應</a></h3>
-<ul>
-<li>X11，一個用於位圖顯示的視窗系統，慶祝其40週年紀念，自1984年首次亮相以來。</li>
-<li>用戶分享了懷舊的經歷，從配置模式行和管理 Unix 系統，到計算機實驗室的演變和向 Linux 的過渡。</li>
-<li>討論強調了由於經濟實惠的筆記型電腦的興起，傳統電腦實驗室的衰退，以及X11對許多職業的重大影響。</li>
-</ul>
-<h2><a href="https://hypermedia.systems/">超媒體系統</a></h2>
-<ul>
-<li>htmx 和 Hyperview 提供了革命性的方法來簡化網頁應用程式的開發，消除了對單頁應用程式 (SPA) 框架的需求。</li>
-<li>「這些工具非常適合那些想要專注於簡單性、加強對網頁基礎知識的理解或探索超媒體和REST(表現層狀態轉換)的網頁開發人員。」</li>
-<li>“資源可在線免費獲取，也可以選擇在亞馬遜購買紙質書或電子書。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40733160">反應</a></h3>
-<ul>
-<li>HTMX 的文檔作為參考資料很有用，但缺乏全面的教程，而本書旨在提供這樣的教程。</li>
-<li>HTMX 建議用於內部工具和輕度動態網站，但由於瀏覽器優化，可能不適合長時間的移動會話。</li>
-<li>結合使用原生 JavaScript (JS) 或 Alpine.js 可以增強 HTMX 網站，有時對於高度動態的部分則需要使用像 Vue 或 React 這樣的完整框架。</li>
-</ul>
-<h2><a href="https://lwn.net/SubscriberLink/978463/608c876c1153fd31/">免費軟體劫持了菲利普·海澤爾的生活</a></h2>
-<ul>
-<li>Philip Hazel，Exim MTA 和 PCRE 的創建者，已經維護 PCRE 及其繼任者 PCRE2 超過 27 年，現在正在尋找 PCRE2 的繼任者。</li>
-<li>“Hazel 的職業亮點包括對 Unix 系統的重大貢獻以及開發廣泛採用的軟體如 Exim 和 PCRE，這些軟體被用於 Apache HTTPD 和 Postfix 等重大項目中。”</li>
-<li>社群對這篇文章表示讚賞，並呼籲更多關於開源開發者的特寫，強調維護此類專案的實際影響和挑戰。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40736577">反應</a></h3>
-<ul>
-<li>Philip Hazel 的經驗突顯了在為自由軟體項目尋找新維護者時所面臨的挑戰，特別是像 PCRE2 這樣維護良好的項目。</li>
-<li>擔憂包括新的維護者可能會添加不必要的功能，以及缺乏對維護「已完成」軟體的激勵，導致志願者倦怠和壓力。</li>
-<li>討論還提到了情報機構可能針對開源項目以及審查新維護者的困難。</li>
-</ul>
-<h2><a href="https://www.raptitude.com/2024/06/nobody-knows-whats-going-on/">沒有人知道發生了什麼事</a></h2>
-<ul>
-<li>一位記者關於作者在33歲退休的錯誤報導，說明了錯誤信息特別是在網上多麼容易傳播。</li>
-<li>蓋爾曼失憶效應解釋了為什麼人們在不熟悉的話題上信任媒體，儘管在熟悉的領域中認識到不準確之處。</li>
-<li>可靠的知識往往稀少，並來自於那些深耕特定領域的人，但人類通常受到社會和情感激勵的驅動，而非準確性。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40733615">反應</a></h3>
-<ul>
-<li>“討論強調了一種現象，即人們在熟悉的主題上發現文章的不準確性，從而對自己不熟悉的主題上的文章產生懷疑。”</li>
-<li>“這通常被稱為蓋爾曼失憶效應，人們在閱讀同一出版物中的其他文章時，會忘記一篇文章中的不準確之處。”</li>
-<li>這段對話還涉及到錯誤信息的更廣泛影響以及在媒體和網上討論中辨別準確信息的挑戰。</li>
-</ul>
-<h2><a href="https://www.rahulilango.com/coloring/">我做了一個拼圖遊戲，輕鬆地介紹了我最喜愛的數學謎題</a></h2>
-<ul>
-<li>“這款遊戲旨在通過互動式問題和想法激發對數學的好奇心，而不是提供詳細的解釋。”</li>
-<li>技術特點包括整數交點、使用 topojson 的半精確地圖繪製、用於圖著色的回溯算法以及使用 turf.js 的多邊形檢測。</li>
-<li>權衡包括延遲教育連結以維持遊戲流程，以及使用更簡單的地圖以確保移動裝置的友好性。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40740021">反應</a></h3>
-<ul>
-<li>一款益智遊戲被創造出來，以互動的方式介紹數學謎題，旨在激發好奇心，而不是提供詳細的解釋。</li>
-<li>“技術方面包括使用TopoJSON來製作精確的地圖、使用回溯算法進行圖著色，以及使用turf.js來將線段多邊形化。”</li>
-<li>這款遊戲受到了廣泛好評，用戶喜歡這種互動學習體驗，並提供了改進建議，例如更好的移動設備相容性和更清晰的解釋。</li>
-</ul>
-<h2><a href="https://doi.org/10.1016/j.jasrep.2024.104636">在西班牙一座一世紀的墳墓中發現了世界上最古老的白葡萄酒</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40735743">反應</a></h3>
-<ul>
-<li>“世界上最古老的白葡萄酒是在西班牙南部卡爾莫納的一座一世紀羅馬墓中發現的。”</li>
-<li>這種在灰燼甕中發現的紅色液體形式的葡萄酒，被認為是以液體形式保存的最古老的古代葡萄酒。</li>
-<li>“儘管這座墓經歷了許多歷史事件，葡萄酒的保存仍歸功於完美的密封和穩定的地下溫度。”</li>
-</ul>
-<h2><a href="https://osrd.fr/en/">OSRD: 開源鐵路設計師</a></h2>
-<ul>
-<li>一個用於鐵路設計、容量分析和時間表編制的開源網頁應用程式現在已在GitHub上提供。</li>
-<li>主要特點包括鐵路基礎設施和時刻表設計、容量分析、衝突檢測以及自動列車添加的短期計劃。</li>
-<li>該項目可免費使用、開發和分發，重點在於集體決策以及支持自定義基礎設施格式和信號系統。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40733705">反應</a></h3>
-<ul>
-<li>OSRD(開源鐵路設計師)是一款專業的鐵路設計工具，由歐盟和法國支持，並在FOSDEM演講中亮相。</li>
-<li>該工具旨在實現多個實體之間的實時合作，使用基於網絡的方法來促進易於訪問和可擴展性。</li>
-<li>該軟體設計直觀，但可能需要對鐵路規劃有一定的熟悉度；它包括自動時間表穩健性評估等功能，使用隨機模擬進行。</li>
-</ul>
-<h2><a href="https://www.propublica.org/article/delusion-advanced-chemical-plastic-recycling-pyrolysis">先進塑料回收的錯覺</a></h2>
-<ul>
-<li>塑膠工業正在倡導熱解法，這是一種利用熱量將塑膠分解成分子組成部分的方法，作為解決塑膠廢料的方案。</li>
-<li>儘管有聲稱，熱解法效率低下，產生的回收塑料極少，主要是不可回收的化學品和燃料。</li>
-<li>該行業使用複雜的會計手法來誇大產品的回收成分，這可能會誤導消費者對化學回收效果的認識。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40737308">反應</a></h3>
-<ul>
-<li>ProPublica 的文章《先進塑膠回收的錯覺》引發了關於塑膠回收效能的辯論，有些人認為這會導致更多的污染，而且大多數情況下是無效的。</li>
-<li>建議的替代方案包括更好地管理垃圾掩埋場、減少塑料使用和改進包裝技術，以及系統性變革，如對生產者徵稅以激勵減少塑料使用。</li>
-<li>討論強調了集體行動和改進廢物管理實踐的必要性，以應對環境問題。</li>
-</ul>
-<h2><a href="https://borischerny.com/javascript,/typescript/2024/06/19/ES-Modules-Are-A-Mess.html">NPM 和 NodeJS 應該做更多工作來使 ES 模組更易於使用</a></h2>
-<ul>
-<li>“Boris Cherny 的博客強調了在 NodeJS 和 NPM 中使用 ES 模組的困難，特別是對於那些從其他語言(如 Python 和 Hack)回來的人來說。”</li>
-<li>儘管引入了 ES 模組以改善代碼加載時間，但其採用率很低，只有 9-27% 的項目使用它們，且不到 6% 的文件通過特定擴展名聲明它們。</li>
-<li>切爾尼提議通過消除 .mjs 和 .cjs 擴展名來簡化生態系統，將 package.json 中的 type=module 設為默認值，將庫升級為 ES 模塊，並最終在 NodeJS 中逐步淘汰 require 和 module.exports。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40737508">反應</a></h3>
-<ul>
-<li>NPM 和 NodeJS 被鼓勵簡化 ES 模組的使用，以便在不需要大量重構的情況下促進採用。</li>
-<li>Node.js 22 支援使用 <code>--experimental-require-module</code> 標誌的 ES 模組，但對於許多項目來說，過渡仍然具有挑戰性。</li>
-<li>用戶提出了像 <code>importSync()</code> 這樣的解決方案，以彌合 CommonJS 和 ES 模塊之間的差距，這引發了關於現代化生態系統最佳方法的持續辯論。</li>
-</ul>
-<h2><a href="https://daniel.haxx.se/blog/2024/06/20/inside-22734-steam-games/">「Curl 在 22,734 款 Steam 遊戲中」</a></h2>
-<ul>
-<li>“根據SteamDB的數據，cURL和libcurl被用於91,559款Steam遊戲中的22,734款，占所有遊戲的24.8%。”</li>
-<li>“這些數據證實了 cURL 在遊戲行業中的顯著採用，這在之前只是猜測但未經證實。”</li>
-<li>cURL在遊戲中的廣泛使用突顯了它作為開發者工具的重要性和可靠性。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40737349">反應</a></h3>
-<ul>
-<li>“Curl 被整合到 22,734 款 Steam 遊戲中，並且是 Unreal Engine 桌面平台的 HTTP 庫，展示了它在遊戲產業中的廣泛使用。”</li>
-<li>這篇博客文章討論了curl API的設計，一些用戶對其提出質疑，而另一些用戶則為其功能性和可靠性辯護。</li>
-<li>“儘管cURL專案具有寬鬆的許可證，但來自盈利工作室的財務支持明顯不足，這突顯了開源專案在獲得貢獻方面的挑戰。”</li>
-</ul>
-<h2><a href="https://github.com/AiuniAI/Unique3D">Unique3D：從單張圖片生成3D圖像</a></h2>
-<ul>
-<li>Unique3D 引入了一種方法，可以在僅僅 30 秒內從單視圖圖像生成高保真度的 3D 網格，這在 3D 建模方面是一項重大進展。</li>
-<li>該項目仍在開發中，計劃發布權重、本地 Gradio 演示、詳細教程，並支持包括 Windows 和 Docker 在內的各種平台。</li>
-<li>安裝說明提供了適用於 Linux 和 Windows 的指南，並且該項目承認了來自其他著名項目如 Stable Diffusion 和 Wonder3d 的貢獻。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40732490">反應</a></h3>
-<ul>
-<li>Unique3D 是一款新工具，能夠從單張圖片生成 3D 模型，激起了科技愛好者和 3D 藝術家的興趣。</li>
-<li>批評者認為，儘管該工具聲稱具有「高品質」，但它缺乏可用的拓撲、重拓撲(retopo)和UV展開等對於生產質量模型至關重要的功能。</li>
-<li>討論強調了AI工具需要解決3D專業人士的實際問題，而不僅僅是達到研究論文中的高基準。</li>
-</ul>
-<h2><a href="https://beyondloom.com/blog/dither.html">阿特金森抖動</a></h2>
-<ul>
-<li>原始的Macintosh於1984年發布，配備了一個72 dpi的黑白顯示器，解析度為512x342，能夠呈現帶有滾動條的80列終端。</li>
-<li>在這個顯示器上用來模擬灰階的兩種流行抖動技術是Floyd-Steinberg抖動和Atkinson抖動，這兩種技術都有現代使用的JavaScript實現。</li>
-<li>“Floyd-Steinberg抖動將量化誤差分配給鄰近的像素，而由Bill Atkinson開發的Atkinson抖動則以更廣泛的模式分散誤差，保留3/4的誤差以獲得更豐富的對比度。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40739710">反應</a></h3>
-<ul>
-<li>“阿特金森抖動，一種用於創建減少色彩調色板圖像的技術，正在討論其歷史和現代應用。”</li>
-<li>這項技術最初是為 Macintosh 開發的，因其在低色彩環境中(如早期的電腦顯示器和現代的電子墨水屏幕)能夠保持圖像質量而受到讚譽。</li>
-<li>“討論強調了抖動在各個領域中的持續相關性，包括數位視頻播放、印刷媒體和復古遊戲，強調其在防止色帶和色調分離等問題中的作用。”</li>
-</ul>
-<head>
-  <meta property="og:title" content="歐盟理事會已撤回對聊天控制的投票" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E6%AD%90%E7%9B%9F%E7%90%86%E4%BA%8B%E6%9C%83%E5%B7%B2%E6%92%A4%E5%9B%9E%E5%B0%8D%E8%81%8A%E5%A4%A9%E6%8E%A7%E5%88%B6%E7%9A%84%E6%8A%95%E7%A5%A8&subheading=2024%E5%B9%B46%E6%9C%8820%E6%97%A5%20%E6%98%9F%E6%9C%9F%E5%9B%9B%3A%20%E9%A7%AD%E5%AE%A2%E6%96%B0%E8%81%9E%E6%91%98%E8%A6%81" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/zh/Hant/2024/06/20</link>
-            <guid isPermaLink="false">2024-06-20T00:00:00.000Z</guid>
-            <pubDate>Thu, 20 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
