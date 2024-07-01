@@ -15,12 +15,203 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 30 Jun 2024 19:09:09 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Jul 2024 19:23:18 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/nb.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 30 Jun 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[nb]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-01]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/01&#39;</h2>
+<h1>2024-07-01</h1>
+<h2><a href="https://pikimov.com/">Ik heb een alternatief voor After Effects gemaakt</a></h2>
+<ul>
+<li>Pikimov is een nieuw gelanceerde webgebaseerde motion design- en video-editor, geïnspireerd door Photopea, en dient als een gratis alternatief voor After Effects.</li>
+<li>Het vereist geen aanmelding, houdt bestanden op de machine van de gebruiker en zorgt ervoor dat projecten niet worden gebruikt voor AI-training.</li>
+<li>De maker heeft een geschiedenis van het ontwikkelen van VJ-software voor platforms zoals de Game Boy Advance, Playstation 2 en Raspberry Pi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843867">Reaksjoner</a></h3>
+<ul>
+<li>Pikimov is een nieuwe, gratis, webgebaseerde motion design- en video-editor die is gemaakt als een alternatief voor Adobe After Effects, waarvoor geen aanmelding of clouduploads nodig zijn.</li>
+<li>Het hulpmiddel heeft positieve feedback ontvangen vanwege het potentieel om Adobe&#39;s dominantie uit te dagen, waarbij gebruikers verbeteringen suggereren in frameratelimieten, bugrapportage en keyframeverwerking.</li>
+<li>Momenteel ondersteunt Pikimov alleen Chrome en Edge vanwege specifieke web-API&#39;s, met toekomstige plannen om gemeenschapsfuncties toe te voegen en mogelijk de app te gelde te maken.</li>
+</ul>
+<h2><a href="https://www.qualys.com/2024/07/01/cve-2024-6387/regresshion.txt">RegreSSHion: RCE in OpenSSH&#39;s server, op glibc-gebaseerde Linux-systemen</a></h2>
+<ul>
+<li>Een kritieke kwetsbaarheid (CVE-2024-6387) in de OpenSSH-server op glibc-gebaseerde Linux-systemen maakt remote code execution (RCE) mogelijk vanwege een raceconditie in de signaalhandler.</li>
+<li>Het probleem, een regressie van CVE-2006-5051, treft OpenSSH-versies 3.4p1, 4.2p1 en 9.2p1, en houdt in dat de SIGALRM-handler wordt misbruikt om heap-corruptie te veroorzaken en willekeurige code uit te voeren.</li>
+<li>Mitigatie omvat het toepassen van patches die asynchroon-signaal-onveilige code uit de SIGALRM-handler verplaatsen of het instellen van <code>LoginGraceTime</code> op 0, hoewel dit laatste een denial of service kan veroorzaken.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843778">Reaksjoner</a></h3>
+<ul>
+<li>Er is een kwetsbaarheid voor Remote Code Execution (RCE) ontdekt in de server van OpenSSH op glibc-gebaseerde Linux-systemen, wat aanvallers mogelijk in staat stelt om op afstand root-toegang te verkrijgen.</li>
+<li>De oplossing voor deze kwetsbaarheid werd geïmplementeerd door onveilige code van de signaalhandler naar het luisterproces te verplaatsen, waardoor het moeilijk is om terug te porten.</li>
+<li>Het probleem treft voornamelijk 32-bitsystemen, waarbij exploitatie op 64-bitsystemen als mogelijk wordt beschouwd, maar nog niet is aangetoond; verschillende distributies hebben al patches uitgebracht.</li>
+</ul>
+<h2><a href="https://www.pipes.digital/docs">Pipes: Een spirituele opvolger van Yahoo Pipes</a></h2>
+<ul>
+<li>Pipes is een visuele programmeereditor voor feeds, waarmee gebruikers feeds kunnen ophalen, maken en manipuleren met behulp van blokken, vergelijkbaar met Yahoo! Pipes.</li>
+<li>Het ondersteunt verschillende invoerformaten, waaronder RSS, Atom, JSON, HTML en tekstbestanden, en biedt een reeks blokken voor verschillende feedbewerkingen zoals filteren, samenvoegen en inhoud extraheren.</li>
+<li>Pipes CE is een gratis en open-source software (FOSS) onder de AGPL-licentie, beschikbaar op Github, en ondersteunt integraties met populaire sites zoals Twitter, YouTube en Vimeo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40841980">Reaksjoner</a></h3>
+<ul>
+<li>Buizen, een project geïnspireerd door Yahoo Pipes, heeft onlangs updates ondergaan om de stabiliteit te verbeteren, waaronder een verschuiving van tekst naar RSS-objecten voor gegevensoverdracht tussen blokken.</li>
+<li>Serverupgrades en herconfiguratie van threads en puma-werkers werden geïmplementeerd om problemen en knelpunten aan te pakken.</li>
+<li>Een gebruikerssuggestie om een blok toe te voegen voor door AI gegenereerde samenvattingen of afbeeldingen via POST-verzoeken wordt overwogen, met enkele fundamentele blokken die al aanwezig zijn.</li>
+</ul>
+<h2><a href="https://mlops.systems/posts/2024-07-01-full-finetuned-model-evaluation.html">Mijn fijn afgestemde modellen verslaan OpenAI&#39;s GPT-4</a></h2>
+<ul>
+<li>De post bespreekt de evaluatiemetrics voor het beoordelen van de prestaties van fijn afgestelde taalmodellen (LLM&#39;s) bij het extraheren van gestructureerde gegevens uit persberichten, met een focus op nauwkeurigheid.</li>
+<li>Fijn afgestelde modellen, waaronder TinyLlama, Mistral en Solar LLM, presteerden over het algemeen beter dan OpenAI&#39;s GPT-4 en GPT-4 Turbo in nauwkeurigheid, ondanks de complexiteit en het trage tempo van de evaluaties.</li>
+<li>De evaluaties benadrukten behovet for et bedre system for å håndtere kompleksiteten og vedlikeholdet, med fremtidige trinn som inkluderer tester som ikke er relatert til nøyaktighet og utforsking av modellservering.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843848">Reaksjoner</a></h3>
+<ul>
+<li>Fijn afgestemde modellen kunnen algemene modellen zoals OpenAI&#39;s GPT-4 overtreffen in specifieke taken, zoals gegevensextractie, creatieve samenvattingen, vraagbeantwoording en classificatie.</li>
+<li>Het succes van fijn afgestemde modellen hangt af van hoogwaardige trainingsgegevens, waardoor ze effectief zijn voor niche-informatie-extractie en toegankelijk voor tech-enthousiastelingen.</li>
+<li>Het verfijnen van kleinere modellen, zoals Llama 3 8B, kan efficiënter en kosteneffectiever zijn, maar het gebruik van modelreacties om nieuwe modellen te trainen kan de servicevoorwaarden van grote LLM-aanbieders schenden.</li>
+</ul>
+<h2><a href="https://herman.bearblog.dev/cities-need-more-trees/">Steden hebben meer bomen nodig</a></h2>
+<ul>
+<li>Johannesburg, ooit dor, veranderde in de &#39;groenste stad ter wereld&#39; na het planten van miljoenen bomen om stof van goudwinning te bestrijden.</li>
+<li>Boomaanplanting in Johannesburg was ongelijk verdeeld door Apartheid, wat sociaaleconomische ongelijkheden benadrukte.</li>
+<li>Stedstrær gir betydelige fordeler, inkludert å redusere &quot;varmeøy&quot;-effekten, fungere som lydbarrierer, forbedre estetikk, øke biologisk mangfold og oppmuntre til utendørsaktiviteter.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843720">Reaksjoner</a></h3>
+<ul>
+<li>Steden planten steeds vaker bomen en promoten groene daken om hittestress tegen te gaan en de leefbaarheid in steden te verbeteren.</li>
+<li>Utrecht, Nederland, en Zürich, Zwitserland, zijn toonaangevende voorbeelden, terwijl Amerikaanse steden zoals Portland, OR, groene mandaten hebben, en Salt Lake City xeriscaping onderzoekt.</li>
+<li>Hoewel bomen aanzienlijke voordelen bieden, zoals het koelen van stedelijke gebieden, het verbeteren van de luchtkwaliteit en het verhogen van de algemene leefbaarheid, zijn er uitdagingen zoals particuliere vastgoedontwikkeling die leiden tot het verwijderen van bomen.</li>
+</ul>
+<h2><a href="https://ladybird.org/">Welkom bij Ladybird</a></h2>
+<ul>
+<li>Damebug is een onafhankelijke webbrowser ontwikkeld door een non-profitorganisatie, met de focus op prestaties, stabiliteit en veiligheid, met een Alpha-release gepland voor 2026.</li>
+<li>Het was aanvankelijk een HTML-viewer voor SerenityOS, maar het ondersteunt nu Linux, macOS en andere Unix-achtige systemen, en is volledig vanaf nul opgebouwd zonder gebruik te maken van code van andere browsers.</li>
+<li>Het project wordt gefinancierd door sponsoring en donaties, zonder advertenties of gebruikersmonetisatie, en wordt momenteel ontwikkeld door een team van vier fulltime ingenieurs.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40845951">Reaksjoner</a></h3>
+<ul>
+<li>Ladybird, aanvankelijk een HTML-renderer voor SerenityOS, evolueert nu naar een cross-platform browserproject.</li>
+<li>Het project heeft een aanzienlijke donatie van $1.000.000 ontvangen van GitHub mede-oprichter Chris Wanstrath, wat wijst op sterke financiële steun.</li>
+<li>Het team is van plan om tegen 2026 een alfaversie uit te brengen, met de nadruk op modulariteit en naleving van moderne webstandaarden.</li>
+</ul>
+<h2><a href="https://en.wikipedia.org/wiki/Postzegelcode">Postzegelcode</a></h2>
+<ul>
+<li>Een postzegelcode is een negenkarakterige code die in Nederland wordt gebruikt als een handgeschreven alternatief voor postzegels, online gekocht bij PostNL.</li>
+<li>Geïntroduceerd in 2013, moet de code binnen vijf dagen op de post worden geschreven en heeft 78,8 biljoen mogelijke combinaties, waardoor het veilig is tegen gokken.</li>
+<li>Vanaf december 2020 gebruikten 590.000 mensen postzegelcodes, die nu evenveel kosten als traditionele postzegels.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40839418">Reaksjoner</a></h3>
+<ul>
+<li>De discussie draait om het gebruik van digitale postzegelcodes, bekend als &#39;postzegelcode,&#39; die op enveloppen kunnen worden geschreven in plaats van traditionele postzegels te gebruiken.</li>
+<li>Verschillende landen, waaronder Duitsland, Denemarken, Noorwegen en Zweden, hebben soortgelijke systemen ingevoerd, waardoor gebruikers online postzegels kunnen kopen en een code op hun post kunnen schrijven.</li>
+<li>Het systeem wordt geprezen om zijn gemak, vooral voor degenen die niet vaak fysieke post versturen, omdat het de noodzaak van fysieke postzegels elimineert en zich aanpast aan veranderende posttarieven.</li>
+</ul>
+<h2><a href="https://apnews.com/article/supreme-court-trump-capitol-riot-immunity-2dc0d1c2368d404adc0054151490f542">Het Hooggerechtshof oordeelt dat ex-presidenten immuniteit hebben voor officiële handelingen</a></h2>
+<ul>
+<li>Het Hooggerechtshof verlengde de vertraging in de strafzaak tegen Donald Trump met betrekking tot de verkiezingen van 2020, waardoor de kans op een proces voor de verkiezingen in november kleiner werd.</li>
+<li>In een uitspraak van 6-3 verleende de conservatieve meerderheid van het hof voormalige presidenten brede immuniteit tegen vervolging voor officiële handelingen, wat de zaak van de aanklager bemoeilijkt en verdere analyse op het niveau van de rechtbank vereist.</li>
+<li>De beslissing onderstreept de aanzienlijke invloed van het hof op de komende verkiezingen, waarbij opperrechter John Roberts immuniteit voor officiële handelingen benadrukt en rechter Sonia Sotomayor van mening verschilt, met het argument dat het het principe ondermijnt dat niemand boven de wet staat.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40847963">Reaksjoner</a></h3>
+<ul>
+<li>Het Hooggerechtshof heeft geoordeeld dat ex-presidenten immuniteit hebben voor officiële handelingen, wat een debat heeft aangewakkerd over mogelijke machtsmisbruiken versus de noodzaak van presidentiële bescherming.</li>
+<li>De uitspraak specificeert dat immuniteit van toepassing is op handelingen binnen de grondwettelijke bevoegdheid, maar niet op niet-officiële handelingen, wat zorgen oproept over verantwoording voor ernstige misdaden.</li>
+<li>Critici, waaronder rechter Sotomayor, maken zich zorgen dat deze beslissing lopende en toekomstige rechtszaken met voormalige presidenten kan beïnvloeden.</li>
+</ul>
+<h2><a href="https://www.alvarorevuelta.com/posts/fft-polynomials">Convoluties, snelle Fourier-transformatie en polynomen (2022)</a></h2>
+<ul>
+<li>Traditionele polynoomvermenigvuldiging heeft een (O(n^2)) complexiteit, waardoor het inefficiënt is voor grote polynomen.</li>
+<li>De Fast Fourier Transform (FFT) reduceert de complexiteit van polynoomvermenigvuldiging tot (O(n \log n)) door het probleem om te zetten naar het frequentiedomein.</li>
+<li>De op FFT gebaseerde methode houdt in dat polynomen worden omgezet naar het frequentiedomein, vermenigvuldigd en het resultaat wordt teruggezet, wat de efficiëntie voor polynomen van hoge graad aanzienlijk verbetert.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40840396">Reaksjoner</a></h3>
+<ul>
+<li>De discussie draait om het gebruik van Fast Fourier Transform (FFT) voor polynoomvermenigvuldiging, waarbij de efficiëntie ervan in vergelijking met naïeve methoden wordt benadrukt.</li>
+<li>Belangrijke inzichten omvatten het belang van numerieke precisie in FFT-berekeningen en de historische context van de ontwikkeling van FFT voor polynoomvermenigvuldiging.</li>
+<li>Het gesprek gaat ook over praktische toepassingen, zoals foutcorrectie, signaalverwerking en zero-knowledge cryptografie, waar FFT-gebaseerde methoden bijzonder nuttig zijn.</li>
+</ul>
+<h2><a href="https://blog.gabornyeki.com/2024-07-my-python-code-is-a-neural-network/">Mijn Python-code is een neuraal netwerk</a></h2>
+<ul>
+<li>Het bericht bespreekt het inbedden van programma&#39;s in recurrente neurale netwerken (RNN&#39;s) en hoe getrainde RNN&#39;s handgeschreven algoritmen kunnen overtreffen.</li>
+<li>Het biedt een gedetailleerd voorbeeld van het detecteren van programmacode in berichten, waarbij eenvoudige beslissingsregels, een handgeschreven algoritme en een op RNN gebaseerde benadering worden vergeleken.</li>
+<li>De post benadrukt de voordelen van RNN&#39;s, zoals het coderen van toestandsmachines, het gebruik van trainbare activatiefuncties en het omgaan met complexe taken met een data-gedreven discipline.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40845304">Reaksjoner</a></h3>
+<ul>
+<li>Het artikel bespreekt de constructie van een neuraal netwerk met behulp van Python, maar mist details over het testen en verkrijgen van trainingsgegevens, die cruciaal zijn voor het waarborgen van de generalisatie van het model naar ongeziene invoer.</li>
+<li>De discussie benadrukt de Universele Benaderingstelling, die stelt dat neurale netwerken elke functie kunnen representeren tot een gewenst nauwkeurigheidsniveau, maar benadrukt dat het leren van deze benaderingen niet gegarandeerd is.</li>
+<li>Er is een debat over de vraag of Recurrent Neural Networks (RNN&#39;s) worden vervangen door transformers, waarbij sommigen beweren dat RNN&#39;s nog steeds unieke voordelen hebben, zoals constant geheugenverbruik, wat transformers missen.</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40846428">Wie is er aan het werven? (juli 2024)</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40846428">Reaksjoner</a></h3>
+<ul>
+<li>Verschillende bedrijven zijn op zoek naar meerdere rollen, waaronder op afstand, op locatie en hybride posities, op verschillende locaties en in verschillende sectoren.</li>
+<li>Opmerkelijke bedrijven zijn onder andere Apple, Figma, Charge Robotics en SmileID, die functies aanbieden zoals Senior Software Engineer, Senior/Staff Security Engineer en Senior Frontend Engineer.</li>
+<li>Overal ter wereld zijn er kansen, waarbij sommige bedrijven visumsponsoring en functies in opkomende technologieën zoals AI, machine learning en full-stack ontwikkeling aanbieden.</li>
+</ul>
+<h2><a href="https://carbon-steel.github.io/jekyll/update/2024/06/19/abstractions.html">Programmeurs zouden nooit iemand moeten vertrouwen, zelfs zichzelf niet</a></h2>
+<ul>
+<li>Programmeurs moeten een gezond niveau van scepsis behouden, aangezien het schrijven en verifiëren van codecorrectheid inherent uitdagend en vaak onmogelijk is.</li>
+<li>Abstracties, hoewel ze complexe systemen vereenvoudigen, kunnen falen en leiden tot problemen zoals prestatievermindering of ongedefinieerd gedrag, zoals benadrukt door Joel Spolsky&#39;s Wet van Lekke Abstracties.</li>
+<li>Om å redusere ukjente problemer, bør programmerere verifisere informasjon, teste antakelser og måle virkningen av kodeendringer, samtidig som de kontinuerlig lærer om nye plattformer, språk, verktøy og teknologier.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40842867">Reaksjoner</a></h3>
+<ul>
+<li>De discussie draait om het belang van formele verificatie in programmeren, waarbij wordt benadrukt dat programmeurs niemand, inclusief zichzelf, zonder bewijs moeten vertrouwen.</li>
+<li>Formele verificatie, hoewel complex en kostbaar, biedt sterkere garanties van correctheid in vergelijking met unittests, die alleen specifieke voorbeelden dekken.</li>
+<li>Het debat benadrukt de afwegingen tussen de strengheid van formele verificatie en de praktische bruikbaarheid van unittests, en suggereert dat de keuze afhangt van de vereisten en middelen van het project.</li>
+</ul>
+<h2><a href="https://www.ericpfahl.com/from-pattern-matching-to-unification/">Unificatie in Elixir</a></h2>
+<ul>
+<li>Unificatie in Elixir breidt patroonmatching uit door variabelen aan beide zijden van een vergelijking toe te staan, symbolische vergelijkingen op te lossen en substitutiemappingen te produceren.</li>
+<li>Unificatie kan, in tegenstelling tot patroonherkenning, omgaan met gedeeltelijk bekende waarden, waardoor het een krachtig hulpmiddel is voor logische programmering in Elixir.</li>
+<li>Het unificatie-algoritme omvat het doorlopen van termen, het testen van equivalentie, het omgaan met variabelen en het recursief verenigen van lijst elementen, waarbij variabele toewijzingen worden vereenvoudigd door substitutie.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40840315">Reaksjoner</a></h3>
+<ul>
+<li>Het artikel vergelijkt de efficiëntie van unificatie-algoritmen in type-inferentie, met de nadruk op algoritme W en algoritme J.</li>
+<li>Algoritme W, gebruikt in Hindley-Milner type inferentie, is minder efficiënt en meer foutgevoelig vanwege de noodzaak om substituties samen te stellen.</li>
+<li>Algoritme J, dat een union-find datastructuur gebruikt voor destructieve unificatie, is eenvoudiger en efficiënter, met aanvullende inzichten over unificatie in patroonherkenning en gecompileerde patroonherkenning met behulp van beslissingsbomen.</li>
+</ul>
+<h2><a href="https://artsandculture.google.com/">Google Arts and Culture-site som jeg ikke visste eksisterte</a></h2>
+<ul>
+<li>Google Arts &amp; Culture biedt een breed scala aan virtuele rondleidingen en interactieve ervaringen, waardoor gebruikers kunst, geschiedenis en cultuur van over de hele wereld kunnen verkennen.</li>
+<li>Hoogtepunten zijn onder andere virtuele rondleidingen door beroemde musea, augmented reality (AR) ervaringen en interactieve spellen die het leren over kunst en cultuur boeiend en toegankelijk maken.</li>
+<li>Speciale functies omvatten de mogelijkheid om Van Gogh&#39;s bibliotheek te verkennen, een 3D-tour van Vermeer&#39;s schilderijen te maken en deel te nemen aan een K-Pop dansuitdaging in samenwerking met het V&amp;A Museum.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40840699">Reaksjoner</a></h3>
+<ul>
+<li>Google Arts and Culture is een minder bekend maar belangrijk project van Google, dat gecureerde culturele inhoud van over de hele wereld aanbiedt.</li>
+<li>Gebruikers waarderen de hoge resolutie afbeeldingen en unieke functies, zoals de mogelijkheid om in te zoomen op kunstwerken en verschillende culturele projecten te verkennen.</li>
+<li>Het platform is actief sinds 2011 en blijft een waardevolle bron voor kunst- en cultuurliefhebbers, ondanks zorgen over de levensduur van Google-projecten.</li>
+</ul>
+<h2><a href="https://arxiv.org/abs/2406.09490">Newswire: Een grootschalige gestructureerde database van een eeuw aan historische nieuwsberichten</a></h2>
+<ul>
+<li>Onderzoekers hebben een uitgebreide archief van Amerikaanse nieuwsberichten van 1878 tot 1977 gecreëerd met behulp van een deep learning-pijplijn op beeldscans van lokale kranten.</li>
+<li>De dataset bevat 2,7 miljoen unieke artikelen uit het publieke domein, gegeorefereerd, getagd op onderwerp en gekoppeld aan Wikipedia, wat waardevolle informatie biedt voor onderzoek in computationele taalkunde, sociale wetenschappen en digitale geesteswetenschappen.</li>
+<li>Het project omvatte het transcriberen van 138 miljoen gestructureerde artikelteksten en het gebruik van een neurale bi-encoder model om artikelen te dedupliceren, waarbij ervoor werd gezorgd dat alleen inhoud in het publieke domein werd opgenomen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40839830">Reaksjoner</a></h3>
+<ul>
+<li>Er is een uitgebreide database van historische nieuwsberichten tot 1978 gemaakt, die veranderingen in auteursrechtwetten weerspiegelt, en is beschikbaar op GitHub, hoewel momenteel leeg.</li>
+<li>Gebruikers hebben OCR (Optical Character Recognition) fouten in de gegevens geïdentificeerd, wat wijst op aanhoudende uitdagingen bij het digitaliseren van historische teksten.</li>
+<li>Het project, ondanks zijn problemen, wordt geprezen om zijn wetenschappelijke waarde, met ruwe scans toegankelijk via de digitale collectie van de Library of Congress.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Ik heb een alternatief voor After Effects gemaakt" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Ik%20heb%20een%20alternatief%20voor%20After%20Effects%20gemaakt&subheading=mandag%201.%20juli%202024%3A%20Sammendrag%20av%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/nb/2024/07/01</link>
+            <guid isPermaLink="false">2024-07-01T00:00:00.000Z</guid>
+            <pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-06-30]]></title>
             <description
@@ -1654,187 +1845,6 @@
             <link>https://hn.cho.sh/nb/2024/06/22</link>
             <guid isPermaLink="false">2024-06-22T00:00:00.000Z</guid>
             <pubDate>Sat, 22 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-21]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/21&#39;</h2>
-<h1>2024-06-21</h1>
-<h2><a href="https://www.bloomberg.com/news/articles/2024-06-20/gilead-shot-prevents-100-of-hiv-cases-in-trial-of-african-women">Het Gilead-vaccin voorkomt alle HIV-gevallen in de proef</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40742163">Reaksjoner</a></h3>
-<ul>
-<li>Gileads nieuwe HIV-injectie, cabotegravir, heeft in een proef aangetoond alle gevallen te voorkomen, wat een veelbelovend alternatief voor dagelijkse pillen biedt.</li>
-<li>De injectie wordt elke twee maanden toegediend, met een mogelijke verlenging tot elke drie maanden, wat de naleving zou kunnen vereenvoudigen en de therapietrouw zou kunnen verhogen.</li>
-<li>Er zijn zorgen over mogelijke bijwerkingen door de lange aanwezigheid van het medicijn in het systeem, maar het kan eerst in pilvorm worden getest.</li>
-</ul>
-<h2><a href="https://www.npr.org/2021/03/07/974534021/remembering-allan-mcdonald-he-refused-to-approve-challenger-launch-exposed-cover">Allan McDonald weigerde goedkeuring voor de lancering van de Challenger, onthulde doofpotaffaire (2021)</a></h2>
-<ul>
-<li>Allan McDonald, die op 83-jarige leeftijd overleed, was een centrale figuur in de ramp met de Challenger-ruimteshuttle, bekend om zijn weigering om de lancering goed te keuren vanwege veiligheidszorgen.</li>
-<li>Na de ramp onthulde McDonald NASA&#39;s doofpotaffaire, waarbij hij onthulde dat ingenieurs zich tegen de lancering hadden verzet vanwege de vrieskou die de O-ringen beïnvloedde, wat leidde tot zijn tijdelijke degradatie.</li>
-<li>McDonald leidde later omontwerpen van de boosterraketten, was mede-auteur van een definitief verslag van de ramp en werd een pleitbezorger voor ethisch beslissen in de techniek.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40748371">Reaksjoner</a></h3>
-<ul>
-<li>Allan McDonald weigerde goedkeuring te geven voor de lancering van de Challenger vanwege veiligheidszorgen, en onthulde een doofpotaffaire door NASA en leidinggevenden van Morton Thiokol.</li>
-<li>Ondanks intense druk werden McDonald en andere ingenieurs overruled door hogere leidinggevenden, wat leidde tot de Challenger-ramp.</li>
-<li>McDonald pleitte later voor ethische besluitvorming en benadrukte de spanning tussen technische nauwkeurigheid en managementdruk in projecten met hoge inzet.</li>
-</ul>
-<h2><a href="https://lwn.net/Articles/976822/">Ladybird-browser spreidt zijn vleugels</a></h2>
-<ul>
-<li>Ladybird is een open-source webbrowserproject, geforkt van SerenityOS door Andreas Kling, met als doel onafhankelijk te zijn van Chrome en geschreven in C++ onder een BSD-licentie.</li>
-<li>Hoewel nog in een vroeg ontwikkelingsstadium en met een gebrek aan veel functies, toont Ladybird belofte met basisfunctionaliteiten en aanzienlijke bijdragen van de gemeenschap, gericht op Linux, macOS en UNIX-achtige systemen, met Windows-ondersteuning via WSL.</li>
-<li>De reacties van de gemeenschap zijn gemengd, waarbij sommigen potentieel zien en anderen suggereren zich te concentreren op bestaande browsers, maar voorstanders beweren dat nieuwe projecten zoals Ladybird essentieel zijn voor een gezond browser-ecosysteem.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40746804">Reaksjoner</a></h3>
-<ul>
-<li>Ladybird-browser, een nieuwe door de gemeenschap gebouwde webbrowser, trekt de aandacht als een potentiële dagelijkse bestuurder, afwijkend van mainstream opties zoals Chrome en Firefox.</li>
-<li>Discussies benadrukken de uitdagingen van het creëren van een eenvoudigere, veiligere browser die slechts een subset van webtechnologieën ondersteunt, waarbij functionaliteit en gebruikersacceptatie in balans worden gebracht.</li>
-<li>Het project wordt gezien als een waardevolle leermogelijkheid voor nieuwe ontwikkelaars, met goed gedocumenteerde bouwprocessen en brede gebieden voor bijdrage.</li>
-</ul>
-<h2><a href="https://buaacyw.github.io/mesh-anything/">MeshAnything – Zet 3D-representaties om in efficiënte 3D-meshes</a></h2>
-<ul>
-<li>MeshAnything introduceert een nieuwe methode voor het genereren van door kunstenaars gemaakte meshes (AM&#39;s) uit 3D-representaties met behulp van autoregressieve transformers, wat de efficiëntie en precisie van de productie van 3D-assets verbetert.</li>
-<li>De aanpak vermindert het aantal mesh-vlakken aanzienlijk, wat de opslag-, render- en simulatie-efficiëntie verbetert, terwijl de hoogwaardige geometrische kenmerken behouden blijven.</li>
-<li>De architectuur maakt gebruik van een VQ-VAE en een vorm-geconditioneerde decoder-only transformer, wat superieure topologie en minder vlakken oplevert in vergelijking met traditionele methoden, waardoor het een belangrijke vooruitgang is in de 3D-industrie.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40746310">Reaksjoner</a></h3>
-<ul>
-<li>MeshAnything zet 3D-representaties om in efficiënte 3D-meshes, waardoor het aantal vlakken wordt verminderd voor betere opslag- en renderprestaties.</li>
-<li>De tool vereist 7GB geheugen en 30 seconden op een A6000 GPU, maar is beperkt tot het genereren van meshes met minder dan 800 vlakken.</li>
-<li>Hoewel sommige gebruikers kritiek hebben op de aangepaste niet-commerciële licentie en de kwaliteit van de gegenereerde meshes, wordt het beschouwd als een veelbelovend hulpmiddel voor game-ontwikkeling en 3D-modelgeneratie.</li>
-</ul>
-<h2><a href="https://lithub.com/how-babies-and-young-children-learn-to-understand-language/">Hoe baby&#39;s en jonge kinderen leren taal te begrijpen</a></h2>
-<ul>
-<li>Steven Mithen onderzoekt of taalverwerving bij baby&#39;s en jonge kinderen te wijten is aan gespecialiseerde mentale processen of algemene leermechanismen.</li>
-<li>Hij benadrukt het gebruik van &#39;overgangswaarschijnlijkheden&#39; door zuigelingen om woorden binnen continue spraak te identificeren, waarmee hun statistische leervermogens worden getoond.</li>
-<li>Mithens inzichten dagen traditionele opvattingen over taalontwikkeling uit en benadrukken de complexiteit van vroeg taal leren.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744558">Reaksjoner</a></h3>
-<ul>
-<li>Baby&#39;s en jonge kinderen leren taal door een mix van ouderlijke begeleiding en statistisch leren, waarbij ouders eenvoudige woorden herhalen met pauzes om te helpen woordgrenzen te herkennen.</li>
-<li>Tweetalige kinderen kunnen talen mengen en nieuwe woorden creëren die statistisch gezien logisch zijn, wat de invloed van meertalige omgevingen op uitspraak en grammatica aantoont.</li>
-<li>Consistente blootstelling aan taal is cruciaal, aangezien kinderen zich aanpassen op basis van hun omgeving en interacties, waarbij ze natuurlijke onderdompeling combineren met gestructureerd leren om patronen en regels te begrijpen.</li>
-</ul>
-<h2><a href="https://steveblank.substack.com/p/why-innovation-heroes-are-a-sign">Innovatiehelden zijn een teken van een disfunctionele organisatie</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40749754">Reaksjoner</a></h3>
-<ul>
-<li>Een financieel team verdubbelde hun verwachte werk maar kreeg kritiek voor het verstoren van burn-down grafieken, wat leidde tot de creatie van placeholder tickets om het systeem te manipuleren.</li>
-<li>Dit scenario benadrukt veelvoorkomende problemen in grote instellingen waar statistieken en bureaucratie de daadwerkelijke productiviteit kunnen overschaduwen.</li>
-<li>Effectieve innovatie vereist vertrouwen, communicatie en een ondersteunende cultuur, in plaats van uitsluitend te vertrouwen op individuele heldendaden.</li>
-</ul>
-<h2><a href="https://openai.com/index/openai-acquires-rockset/">OpenAI neemt Rockset over</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40750391">Reaksjoner</a></h3>
-<ul>
-<li>OpenAI heeft Rockset overgenomen, wat leidt tot speculatie over de strategische redenen achter de stap, zoals het verbeteren van de datainfrastructuur of het aantrekken van talent uit het leiderschap van Rockset met Meta-achtergronden.</li>
-<li>Er zijn zorgen geuit over Rocksets geschiktheid voor OpenAI&#39;s behoeften en de impact op bestaande Rockset-klanten, die tegen september 2024 moeten overstappen.</li>
-<li>De overname heeft debatten aangewakkerd over de betrouwbaarheid van leveranciers en de bredere implicaties voor de AI- en database-industrieën.</li>
-</ul>
-<h2><a href="https://github.com/mezbaul-h/june">Lokale stemassistent ved bruk av Ollama, transformers og Coqui TTS-verktøysett</a></h2>
-<ul>
-<li>june-va is een lokale spraakchatbot die Ollama, Hugging Face Transformers en Coqui TTS Toolkit integreert, en zorgt voor privacy door gegevens lokaal te verwerken.</li>
-<li>Het ondersteunt meerdere interactiemodi, waaronder tekst- en spraakinvoer/-uitvoer, met een standaardmodus van spraakinput en audio-/tekstoutput.</li>
-<li>Installatie vereist Python 3.10+ en specifieke afhankelijkheden, met aanpassingsmogelijkheden via een JSON-configuratiebestand.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744293">Reaksjoner</a></h3>
-<ul>
-<li>Een lokale stemassistent die gebruik maakt van Ollama, transformers en Coqui TTS toolkit wordt besproken, waarbij Coqui&#39;s XTTSv2 wordt geprezen voor zijn ~500ms reactietijd in streamingmodus.</li>
-<li>Audio-naar-audio-modellen zoals GPT-4o worden beschouwd als de toekomst van conversatie-AI, met veelbelovende benaderingen van ultravox.ai en tincans.ai.</li>
-<li>Open source orkestrering for TTS (Text-til-tale), ASR (Automatisk talegjenkjenning) og LLM (Store språkmodeller) er tilgjengelig på bolna-ai/bolna, med Wyoming-protokollen bemerket for integrasjon med hjemmeassistenter.</li>
-</ul>
-<h2><a href="https://blog.jitx.com/jitx-corporate-blog/testing-generative-ai-for-circuit-board-design">Testen van generatieve AI voor printplaatontwerp</a></h2>
-<ul>
-<li>Generatieve AI-modellen (GPT-4o, Claude 3 Opus, Gemini 1.5) werden getest op hun bruikbaarheid bij het ontwerpen van printplaten, waarbij ze sterke punten vertoonden in data-extractie en het schrijven van code, maar zwakke punten in genuanceerde ontwerptaken.</li>
-<li>Claude 3 Opus blonk uit in het uitleggen van basisconcepten, terwijl Gemini 1.5 het meest effectief was in het ontleden van datasheets en het maken van nauwkeurige pin-tabellen en footprints.</li>
-<li>Alle modeller slet med spesifikke anbefalinger for deler og detaljerte kretsdesigntasks, noe som indikerer at LLM-er er bedre egnet til å bistå menneskelige eksperter i stedet for å fungere som frittstående designere.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40751020">Reaksjoner</a></h3>
-<ul>
-<li>Generatieve AI, specifiek zero-shot Large Language Models (LLMs), hebben moeite met complexe taken zoals het ontwerpen van printplaten, wat hun beperkingen in gespecialiseerde domeinen benadrukt.</li>
-<li>Het verfijnen van LLM&#39;s voor specifieke taken, zoals het maken van netlijsten, kan hun prestaties verbeteren, maar een fundamentele verschuiving in de AI-structuur kan nodig zijn voor complexere taken.</li>
-<li>Diffusjonsbaserte generative strukturer og andre AI-modeller som evolusjonær eller forsterkende læring kan være bedre egnet for intrikate oppgaver innen elektroteknikk (EE).</li>
-</ul>
-<h2><a href="https://deepmind.google/discover/blog/generating-audio-for-video/">Audio genereren voor video</a></h2>
-<ul>
-<li>Video-naar-audio (V2A) technologie genereert gesynchroniseerde soundtracks van videopixels en tekstprompts, waardoor het mogelijk is om dramatische scores, realistische geluidseffecten of dialogen te creëren voor verschillende soorten video&#39;s.</li>
-<li>V2A maakt gebruik van een diffusie-gebaseerde benadering, waarbij video-invoer wordt gecodeerd en audio wordt verfijnd van willekeurige ruis om realistische audiogolfvormen te produceren, met lopend onderzoek dat zich richt op het verbeteren van videokwaliteitsartefacten en lip-synchronisatie.</li>
-<li>Het ontwikkelingsteam benadrukt verantwoordelijke AI-praktijken, waarbij ze de SynthID-toolkit gebruiken voor het watermerken van door AI gegenereerde inhoud en rigoureuze veiligheidsbeoordelingen uitvoeren voordat ze openbaar worden vrijgegeven.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744098">Reaksjoner</a></h3>
-<ul>
-<li>DeepMind heeft een nieuwe AI-tool geïntroduceerd voor het genereren van audio voor video&#39;s, wat bijdraagt aan de groeiende lijst van AI-generatieve tools.</li>
-<li>De gemeenschap uit gemengde gevoelens, waarbij sommigen het moeilijk vinden om de snelle vooruitgang bij te houden en anderen de mogelijke gevolgen voor de inhoudcreatie en opslagcapaciteiten bespreken.</li>
-<li>Er is een opmerkelijke interesse in hoe door AI gegenereerde inhoud reclame, politiek en de toekomst van contentcreatie zou kunnen beïnvloeden, met suggesties voor AI-specifieke platforms en tools.</li>
-</ul>
-<h2><a href="https://lemmy.world/post/16763534">Drie maanden besteden aan het onderzoeken van een 7 jaar oude bug en deze oplossen met 1 regel code</a></h2>
-<ul>
-<li>Een ontwikkelaar besteedde drie maanden aan het onderzoeken van een bug die al zeven jaar onopgelost was.</li>
-<li>De bug werd uiteindelijk opgelost met slechts één regel code, wat de soms ongrijpbare aard van softwareproblemen benadrukt.</li>
-<li>Deze post benadrukt het doorzettingsvermogen dat nodig is in softwareontwikkeling en de mogelijke eenvoud van oplossingen voor langdurige problemen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40749624">Reaksjoner</a></h3>
-<ul>
-<li>Een 7 jaar oude bug werd opgelost met een enkele regel code na een onderzoek van 3 maanden, wat de complexiteit en onvoorspelbaarheid van het debuggen benadrukt.</li>
-<li>De ontdekking werd gedaan door een 16-bits modulo-operatie in de audioprocessingcode te identificeren, waarbij gebruik werd gemaakt van eerdere ervaring met 8-bits processors.</li>
-<li>De post benadrukt de emotionele reis en voldoening van het oplossen van langdurige technische problemen, wat resoneert met zowel junior als senior ingenieurs.</li>
-</ul>
-<h2><a href="https://blog.frankmtaylor.com/2024/06/20/a-rant-about-front-end-development/">Een tirade over front-end ontwikkeling</a></h2>
-<ul>
-<li>De auteur, een ervaren front-end ontwikkelaar, uit zijn frustratie over de complexiteit die door bepaalde keuzes in front-end ontwikkeling wordt geïntroduceerd.</li>
-<li>Benadrukt het belang van inhoud boven frameworks zoals React, en pleit voor semantische, SEO-klaar en toegankelijke HTML.</li>
-<li>Bekritiseert overforbruket av JavaScript og komplekse verktøy, og foreslår et fokus på enkelhet og riktig bruk av CSS og server-side rendering-teknologier.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40746173">Reaksjoner</a></h3>
-<ul>
-<li>Een blogpost bekritiseerde moderne front-end ontwikkelingspraktijken en vergeleek ze met fastfood—functioneel maar zonder diepgang.</li>
-<li>De auteur pleitte voor server-side rendering (SSR) en minimaal gebruik van JavaScript (JS), waarbij hij tools zoals HTMX en Alpine JS benadrukte.</li>
-<li>De discussie onthulde een kloof tussen voorstanders van traditionele webontwikkeling (eenvoudigere HTML en CSS) en degenen die de voorkeur geven aan moderne JS-frameworks zoals React voor dynamische sites.</li>
-</ul>
-<h2><a href="https://github.com/martinpiper/BombJack/blob/master/README.md">Bomb Jack display hardware</a></h2>
-<ul>
-<li>Het Bomb Jack Display Hardware-project, nu in versie 2.0, begon als een schema voor Bomb Jack arcade-hardware en omvat functies zoals adresseerbaar RAM, extra display-blanking en full-screen hoogte sprites.</li>
-<li>Het project maakt gebruik van TTL (Transistor-Transistor Logic) om grafische verbeteringen voor 8-bit computers te onderzoeken, met de nadruk op het onderwijzen van laag-niveau discrete logica in plaats van het gebruik van CPLD (Complex Programmable Logic Device) of FPGA (Field-Programmable Gate Array).</li>
-<li>Het hardwareontwerp omvat zes PCB (Printed Circuit Board) lay-outs voor verschillende functies en maakt gebruik van Proteus voor simulatie en PCBWay voor productie, met als doel kostenefficiëntie en maatwerk.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40745830">Reaksjoner</a></h3>
-<ul>
-<li>Een nieuw project heeft als doel de Bomb Jack arcade-hardware te vervangen door een moderne equivalent, en breidt zich uit voorbij de oorspronkelijke reikwijdte.</li>
-<li>Het project, dat verschilt van MAME (Multiple Arcade Machine Emulator), is een hardware-oplossing die zelfs heeft geholpen een bug in MAME te identificeren.</li>
-<li>De hardware heeft geavanceerde mogelijkheden zoals meerdere lagen, laagprioriteit, meerdere paletten, geschaalde sprites en meer, waardoor de grenzen van tijdsgebonden componenten worden verlegd.</li>
-</ul>
-<h2><a href="https://driving.ca/auto-news/industry/tesla-class-action-lawsuite-parts-repairs-monopoly">Tesla-eiere anlegger gruppesøksmål som påstår monopol på reparasjoner og deler</a></h2>
-<ul>
-<li>Tesla-eiere har anlagt et gruppesøksmål som anklager selskapet for å monopolisere reparasjons- og delemarkedet.</li>
-<li>De rechtszaak beweert dat Tesla&#39;s praktijken eigenaren dwingen om Tesla&#39;s eigen diensten en onderdelen te gebruiken, wat mogelijk leidt tot hogere kosten en beperkte opties.</li>
-<li>Deze juridische actie benadrukt de voortdurende zorgen over het recht op reparatie en de beschikbaarheid van diensten van derden in de elektrische voertuigindustrie.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744847">Reaksjoner</a></h3>
-<ul>
-<li>Tesla-eiere har innledet et gruppesøksmål, og anklager selskapet for å monopolisere reparasjoner og deler, noe som fører til lange ventetider for nødvendige komponenter.</li>
-<li>De rechtszaak stelt dat Tesla de productie van nieuwe auto&#39;s voorrang geeft boven het handhaven van een adequate voorraad onderdelen voor reparaties, wat aanzienlijke vertragingen voor sommige eigenaren veroorzaakt.</li>
-<li>Arbitrageclausules in Tesla&#39;s contracten kunnen de rechtszaak bemoeilijken en mogelijk de voortgang ervan door het rechtssysteem belemmeren.</li>
-</ul>
-<h2><a href="https://arstechnica.com/gaming/2024/06/from-infocom-to-80-days-an-oral-history-of-text-games-and-interactive-fiction/">Van Infocom tot 80 Days: Een mondelinge geschiedenis van tekstspellen en interactieve fictie</a></h2>
-<ul>
-<li>&quot;Ga naar het noorden — Van Infocom tot 80 Days&quot; is een mondelinge geschiedenis die 50 jaar interactieve fictie (IF) verkent, van vroege tekstavonturen tot moderne werken.</li>
-<li>De IF-gemeenschap staat bekend om zijn open-source ethos en individualiteit, inclusief zowel spelers als makers.</li>
-<li>Het genre begon in de jaren 70 met spellen zoals Adventure van Will Crowther en evolueerde naarmate thuiscomputers toegankelijker werden, waardoor een breder publiek werd bereikt.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40749426">Reaksjoner</a></h3>
-<ul>
-<li>Van Infocom tot 80 Days: Een mondelinge geschiedenis van tekstspellen en interactieve fictie&quot; verkent de evolutie van tekstgebaseerde spellen, waarbij klassiekers en moderne titels zoals &quot;80 Days&quot; worden belicht vanwege hun verhaallijnen en herspeelbaarheid.</li>
-<li>De discussie omvat bronnen zoals de Interactive Fiction Database (IFDB) en het boek &#39;50 Years of Text Games,&#39; en merkt de ink-taal van Inkle Studios op vanwege het gemak waarmee vertakkende verhalen kunnen worden gecreëerd.</li>
-<li>Uitdagingen van vroege tekstparsers worden genoemd, samen met het potentieel van moderne vooruitgangen zoals Large Language Models (LLM&#39;s) om interactieve fictie te verbeteren.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Het Gilead-vaccin voorkomt alle HIV-gevallen in de proef" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Het%20Gilead-vaccin%20voorkomt%20alle%20HIV-gevallen%20in%20de%20proef&subheading=fredag%2021.%20juni%202024%3A%20Sammendrag%20av%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/nb/2024/06/21</link>
-            <guid isPermaLink="false">2024-06-21T00:00:00.000Z</guid>
-            <pubDate>Fri, 21 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

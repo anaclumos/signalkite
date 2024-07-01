@@ -15,12 +15,203 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 30 Jun 2024 19:09:08 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Jul 2024 19:23:18 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/fi.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 30 Jun 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[fi]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-01]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/01&#39;</h2>
+<h1>2024-07-01</h1>
+<h2><a href="https://pikimov.com/">Loin After Effects -vaihtoehdon</a></h2>
+<ul>
+<li>Pikimov on äskettäin lanseerattu verkkopohjainen liikegrafiikan ja videoeditoinnin työkalu, joka on saanut inspiraationsa Photopeasta ja toimii ilmaisena vaihtoehtona After Effectsille.</li>
+<li>Se ei vaadi rekisteröitymistä, säilyttää tiedostot käyttäjän koneella ja varmistaa, että projekteja ei käytetä tekoälykoulutukseen.</li>
+<li>Luoja on kehittänyt VJ-ohjelmistoja alustoille, kuten Game Boy Advance, Playstation 2 ja Raspberry Pi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843867">Reaktiot</a></h3>
+<ul>
+<li>Pikimov on uusi, ilmainen, verkkopohjainen liikegrafiikka- ja videoeditori, joka on luotu vaihtoehdoksi Adobe After Effectsille, eikä vaadi rekisteröitymistä tai pilvipalveluun lataamista.</li>
+<li>Työkalu on saanut positiivista palautetta sen potentiaalista haastaa Adoben hallitseva asema, ja käyttäjät ovat ehdottaneet parannuksia kuvataajuuden rajoihin, virheraportointiin ja avainkuvien käsittelyyn.</li>
+<li>Tällä hetkellä Pikimov tukee vain Chromea ja Edgeä tiettyjen web-API:en vuoksi, ja tulevaisuudessa on suunnitelmissa lisätä yhteisöominaisuuksia ja mahdollisesti kaupallistaa sovellus.</li>
+</ul>
+<h2><a href="https://www.qualys.com/2024/07/01/cve-2024-6387/regresshion.txt">RegreSSHion: RCE OpenSSH:n palvelimessa, glibc-pohjaisissa Linux-järjestelmissä</a></h2>
+<ul>
+<li>Kriittinen haavoittuvuus (CVE-2024-6387) OpenSSH:n palvelimessa glibc-pohjaisissa Linux-järjestelmissä mahdollistaa etäkoodin suorittamisen (RCE) signaalinkäsittelijän kilpajuoksutilanteen vuoksi.</li>
+<li>Ongelma, joka on CVE-2006-5051:n regressio, vaikuttaa OpenSSH-versioihin 3.4p1, 4.2p1 ja 9.2p1, ja siihen liittyy SIGALRM-käsittelijän hyödyntäminen aiheuttaen keon korruptiota ja mielivaltaisen koodin suorittamista.</li>
+<li>Lieventäminen sisältää korjausten soveltamisen, jotka siirtävät asynkronisesti signaaliturvattoman koodin pois SIGALRM-käsittelijästä tai asettamalla <code>LoginGraceTime</code> arvoon 0, vaikka jälkimmäinen saattaa aiheuttaa palvelunestohyökkäyksen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843778">Reaktiot</a></h3>
+<ul>
+<li>Etäkäytön koodin suorittamisen (RCE) haavoittuvuus löydettiin OpenSSH:n palvelimesta glibc-pohjaisissa Linux-järjestelmissä, mikä saattaa mahdollistaa hyökkääjien etäkäytön pääkäyttäjän oikeuksilla.</li>
+<li>Korjaus tähän haavoittuvuuteen toteutettiin siirtämällä turvaton koodi signaalinkäsittelijästä kuunteluprosessiin, mikä tekee sen takaisinporttaamisesta vaikeaa.</li>
+<li>Ongelma vaikuttaa ensisijaisesti 32-bittisiin järjestelmiin, ja sen hyväksikäyttö 64-bittisissä järjestelmissä on mahdollinen, mutta sitä ei ole vielä osoitettu; useat jakelut ovat jo julkaisseet korjauksia.</li>
+</ul>
+<h2><a href="https://www.pipes.digital/docs">Putket: Yahoo Pipesin henkinen seuraaja</a></h2>
+<ul>
+<li>Pipe on visuaalinen ohjelmointieditori syötteille, jonka avulla käyttäjät voivat hakea, luoda ja käsitellä syötteitä käyttämällä lohkoja, samankaltainen kuin Yahoo! Pipes.</li>
+<li>Se tukee erilaisia syöttöformaatteja, mukaan lukien RSS, Atom, JSON, HTML ja tekstitiedostot, ja tarjoaa joukon lohkoja erilaisiin syötetoimintoihin, kuten suodattamiseen, yhdistämiseen ja sisällön poimimiseen.</li>
+<li>Putket CE on ilmainen ja avoimen lähdekoodin ohjelmisto (FOSS) AGPL-lisenssillä, saatavilla Githubissa, ja tukee integraatioita suosittujen sivustojen, kuten Twitterin, YouTuben ja Vimeon, kanssa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40841980">Reaktiot</a></h3>
+<ul>
+<li>Putket, projekti, joka on saanut inspiraationsa Yahoo Pipesista, on äskettäin päivitetty parantamaan vakautta, mukaan lukien siirtyminen tekstistä RSS-objekteihin tietojen siirtämiseksi lohkojen välillä.</li>
+<li>Palvelimen päivitykset ja säikeiden sekä puma-työntekijöiden uudelleenkonfigurointi toteutettiin ongelmien ja pullonkaulojen ratkaisemiseksi.</li>
+<li>Yhden käyttäjän ehdotus lisätä lohkoja tekoälyn luomille yhteenvedoille tai kuville POST-pyyntöjen kautta on harkinnassa, ja joitakin perustavanlaatuisia lohkoja on jo olemassa.</li>
+</ul>
+<h2><a href="https://mlops.systems/posts/2024-07-01-full-finetuned-model-evaluation.html">Minun hienosäädetyt mallini päihittävät OpenAI:n GPT-4:n</a></h2>
+<ul>
+<li>Julkaisu käsittelee arviointimittareita hienosäädettyjen kielimallien (LLM) suorituskyvyn arvioimiseksi lehdistötiedotteista rakenteellisen datan poimimisessa, keskittyen erityisesti tarkkuuteen.</li>
+<li>Hiotut mallit, mukaan lukien TinyLlama, Mistral ja Solar LLM, suoriutuivat yleensä paremmin kuin OpenAI:n GPT-4 ja GPT-4 Turbo tarkkuudessa, huolimatta arviointien monimutkaisuudesta ja hitaasta tahdista.</li>
+<li>Arvioinnit toivat esiin tarpeen paremmalle järjestelmälle monimutkaisuuden ja ylläpidon hallintaan, ja tuleviin toimenpiteisiin sisältyy tarkkuuteen liittymättömiä testejä ja mallin tarjoamisen tutkimista.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843848">Reaktiot</a></h3>
+<ul>
+<li>Erikoissäädetyt mallit voivat suoriutua paremmin kuin yleismallit, kuten OpenAI:n GPT-4, tietyissä tehtävissä, kuten tiedon poiminnassa, luovassa tiivistämisessä, kysymyksiin vastaamisessa ja luokittelussa.</li>
+<li>Fine-tunattujen mallien menestys riippuu korkealaatuisesta koulutusdatasta, mikä tekee niistä tehokkaita erikoistiedon poiminnassa ja helposti lähestyttäviä teknologiaharrastajille.</li>
+<li>Viimeistely pienemmillä malleilla, kuten Llama 3 8B, voi olla tehokkaampaa ja kustannustehokkaampaa, mutta mallivastausten käyttäminen uusien mallien kouluttamiseen saattaa rikkoa suurten LLM-palveluntarjoajien käyttöehtoja.</li>
+</ul>
+<h2><a href="https://herman.bearblog.dev/cities-need-more-trees/">Kaupungit tarvitsevat enemmän puita</a></h2>
+<ul>
+<li>Johannesburg, joka oli kerran karu, muuttui &quot;maailman vihreimmäksi kaupungiksi&quot; istutettuaan miljoonia puita torjuakseen kultakaivostoiminnasta aiheutuvaa pölyä.</li>
+<li>Puiden istutus Johannesburgissa oli epätasaisesti jakautunut apartheidin vuoksi, mikä korostaa sosioekonomisia eroja.</li>
+<li>Kaupunkipuut tarjoavat merkittäviä etuja, kuten vähentävät &quot;lämpösaareke&quot; -ilmiötä, toimivat meluesteinä, parantavat esteettisyyttä, lisäävät biodiversiteettiä ja kannustavat ulkoiluun.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843720">Reaktiot</a></h3>
+<ul>
+<li>Kaupungit istuttavat yhä enemmän puita ja edistävät viherkattojen rakentamista torjuakseen lämpöstressiä ja parantaakseen kaupunkien viihtyisyyttä.</li>
+<li>Utrecht, Alankomaat, ja Zürich, Sveitsi, ovat johtavia esimerkkejä, kun taas Yhdysvaltojen kaupungit, kuten Portland, OR, ovat ottaneet käyttöön vihreitä määräyksiä, ja Salt Lake City tutkii xeriscapingia.</li>
+<li>Puut tarjoavat merkittäviä etuja, kuten kaupunkialueiden viilentämistä, ilmanlaadun parantamista ja yleisen viihtyisyyden lisäämistä, huolimatta haasteista, kuten yksityisomistuksen kehittämisestä, joka johtaa puiden poistamiseen.</li>
+</ul>
+<h2><a href="https://ladybird.org/">Tervetuloa Ladybirdiin</a></h2>
+<ul>
+<li>Ladybird on voittoa tavoittelemattoman organisaation kehittämä itsenäinen verkkoselain, joka keskittyy suorituskykyyn, vakauteen ja turvallisuuteen. Alpha-julkaisua suunnitellaan vuodelle 2026.</li>
+<li>Alun perin SerenityOS:lle tarkoitettu HTML-katseluohjelma tukee nyt Linuxia, macOS:ää ja muita Unix-tyyppisiä järjestelmiä, ja se on rakennettu täysin alusta alkaen ilman muiden selainten koodia.</li>
+<li>Projekti rahoitetaan sponsoroinneilla ja lahjoituksilla, ilman mainoksia tai käyttäjien rahallistamista, ja sitä kehittää tällä hetkellä neljän kokopäiväisen insinöörin tiimi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40845951">Reaktiot</a></h3>
+<ul>
+<li>Ladybird, alun perin SerenityOS:n HTML-renderöijä, on nyt kehittymässä monialustaiseksi selainprojektiksi.</li>
+<li>Projekti on saanut merkittävän 1 000 000 dollarin lahjoituksen GitHubin perustajajäseneltä Chris Wanstrathilta, mikä osoittaa vahvaa taloudellista tukea.</li>
+<li>Tiimi aikoo julkaista alfa-version vuoteen 2026 mennessä, painottaen modulaarisuutta ja nykyaikaisten verkkostandardien noudattamista.</li>
+</ul>
+<h2><a href="https://en.wikipedia.org/wiki/Postzegelcode">Postimerkkikoodi</a></h2>
+<ul>
+<li>Postzegelcode on yhdeksänmerkkinen koodi, jota käytetään Alankomaissa käsinkirjoitettuna vaihtoehtona postimerkeille ja joka ostetaan verkosta PostNL:ltä.</li>
+<li>Vuonna 2013 käyttöön otettu koodi on kirjoitettava postiin viiden päivän kuluessa, ja sillä on 78,8 biljoonaa mahdollista yhdistelmää, mikä tekee siitä turvallisen arvailua vastaan.</li>
+<li>Joulukuuhun 2020 mennessä 590 000 ihmistä käytti postimerkkikoodeja, jotka maksavat nyt saman verran kuin perinteiset postimerkit.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40839418">Reaktiot</a></h3>
+<ul>
+<li>Keskustelu pyörii digitaalisten postimerkkikoodien, tunnetaan nimellä &quot;postzegelcode&quot;, käytön ympärillä, joita voidaan kirjoittaa kirjekuoriin perinteisten postimerkkien sijaan.</li>
+<li>Useat maat, mukaan lukien Saksa, Tanska, Norja ja Ruotsi, ovat ottaneet käyttöön samanlaisia järjestelmiä, joiden avulla käyttäjät voivat ostaa postimaksun verkossa ja kirjoittaa koodin postilähetykseensä.</li>
+<li>Järjestelmää kiitetään sen kätevyydestä, erityisesti niiden keskuudessa, jotka eivät usein lähetä fyysistä postia, sillä se poistaa fyysisten postimerkkien tarpeen ja mukautuu muuttuviin postimaksuihin.</li>
+</ul>
+<h2><a href="https://apnews.com/article/supreme-court-trump-capitol-riot-immunity-2dc0d1c2368d404adc0054151490f542">Korkein oikeus päättää, että entisillä presidenteillä on koskemattomuus virallisista toimista</a></h2>
+<ul>
+<li>Korkein oikeus pidensi viivettä Donald Trumpin rikosoikeudellisessa tapauksessa koskien vuoden 2020 vaaleja, mikä vähentää todennäköisyyttä oikeudenkäynnistä ennen marraskuun vaaleja.</li>
+<li>6-3 päätöksellä tuomioistuimen konservatiivinen enemmistö myönsi entisille presidenteille laajan syytesuojan virallisista toimista, mikä vaikeuttaa syyttäjän tapausta ja vaatii lisäanalyysiä alioikeudessa.</li>
+<li>Päätös korostaa tuomioistuimen merkittävää vaikutusta tulevissa vaaleissa, kun päällikkötuomari John Roberts painotti virallisten toimien koskemattomuutta ja tuomari Sonia Sotomayor oli eri mieltä, väittäen sen heikentävän periaatetta, jonka mukaan kukaan ei ole lain yläpuolella.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40847963">Reaktiot</a></h3>
+<ul>
+<li>Korkein oikeus on päättänyt, että entisillä presidenteillä on koskemattomuus virallisista toimista, mikä on herättänyt keskustelua vallan väärinkäytön mahdollisuuksista ja presidentin suojelun tarpeesta.</li>
+<li>Tuomio täsmentää, että koskemattomuus koskee perustuslaillisen toimivallan puitteissa tehtyjä toimia, mutta ei epävirallisia tekoja, mikä herättää huolta vakavista rikoksista vastuuseen joutumisesta.</li>
+<li>Kriitikot, mukaan lukien oikeusneuvos Sotomayor, ovat huolissaan siitä, että tämä päätös voisi vaikuttaa meneillään oleviin ja tuleviin oikeustapauksiin, jotka koskevat entisiä presidentejä.</li>
+</ul>
+<h2><a href="https://www.alvarorevuelta.com/posts/fft-polynomials">Konvoluutiot, nopea Fourier-muunnos ja polynomit (2022)</a></h2>
+<ul>
+<li>Perinteisellä polynomien kertolaskulla on (O(n^2)) monimutkaisuus, mikä tekee siitä tehottoman suurille polynomeille.</li>
+<li>Fast Fourier -muunnos (FFT) vähentää polynomikertolaskun monimutkaisuuden (O(n \log n)) muuntamalla ongelman taajuusalueelle.</li>
+<li>FFT-pohjainen menetelmä sisältää polynomien muuntamisen taajuusalueelle, niiden kertomisen ja tuloksen muuntamisen takaisin, mikä parantaa merkittävästi tehokkuutta korkea-asteisille polynomeille.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40840396">Reaktiot</a></h3>
+<ul>
+<li>Keskustelu keskittyy Fast Fourier Transform (FFT) -algoritmin käyttöön polynomien kertolaskussa, korostaen sen tehokkuutta verrattuna naiiveihin menetelmiin.</li>
+<li>Keskeisiä oivalluksia ovat numeerisen tarkkuuden merkitys FFT-laskelmissa ja FFT:n kehityksen historiallinen konteksti polynomikertolaskua varten.</li>
+<li>Keskustelu koskettaa myös käytännön sovelluksia, kuten virheenkorjausta, signaalinkäsittelyä ja nollatiedon kryptografiaa, joissa FFT-pohjaiset menetelmät ovat erityisen hyödyllisiä.</li>
+</ul>
+<h2><a href="https://blog.gabornyeki.com/2024-07-my-python-code-is-a-neural-network/">Koodini Pythonilla on neuroverkko</a></h2>
+<ul>
+<li>Kirjoitus käsittelee ohjelmien upottamista toistuvaisiin neuroverkkoihin (RNN) ja kuinka koulutetut RNN:t voivat suoriutua paremmin kuin käsin kirjoitetut algoritmit.</li>
+<li>Se tarjoaa yksityiskohtaisen esimerkin ohjelmakoodin havaitsemisesta viesteissä, vertaillen yksinkertaisia päätössääntöjä, käsin kirjoitettua algoritmia ja RNN-pohjaista lähestymistapaa.</li>
+<li>Postaus korostaa RNN:ien etuja, kuten tilakoneiden koodaamista, opetettavien aktivointifunktioiden käyttöä ja monimutkaisten tehtävien käsittelyä dataohjatulla kurinalaisuudella.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40845304">Reaktiot</a></h3>
+<ul>
+<li>Artikkeli käsittelee neuroverkon rakentamista Pythonilla, mutta siitä puuttuvat yksityiskohdat testauksesta ja harjoitusdatan hankkimisesta, jotka ovat ratkaisevan tärkeitä mallin yleistymisen varmistamiseksi tuntemattomiin syötteisiin.</li>
+<li>Keskustelussa korostetaan universaalia approksimaatioteoreemaa, joka toteaa, että neuroverkot voivat edustaa mitä tahansa funktiota halutulla tarkkuudella, mutta painotetaan, että näiden approksimaatioiden oppiminen ei ole taattua.</li>
+<li>On käynnissä keskustelu siitä, korvataanko toistuvat hermoverkot (RNN) transformereilla, ja jotkut väittävät, että RNN:illä on yhä ainutlaatuisia etuja, kuten vakio muistin käyttö, jota transformereilta puuttuu.</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40846428">Kuka palkkaa? (heinäkuu 2024)</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40846428">Reaktiot</a></h3>
+<ul>
+<li>Useat yritykset palkkaavat useisiin tehtäviin, mukaan lukien etä-, paikan päällä ja hybridityöpaikat, eri sijainneissa ja toimialoilla.</li>
+<li>Merkittäviä yrityksiä ovat muun muassa Apple, Figma, Charge Robotics ja SmileID, jotka tarjoavat tehtäviä kuten vanhempi ohjelmistoinsinööri, vanhempi/pääasiallinen tietoturva-insinööri ja vanhempi frontend-insinööri.</li>
+<li>Mahdollisuuksia on ympäri maailmaa, ja jotkut yritykset tarjoavat viisumisponsoreita sekä rooleja kehittyvissä teknologioissa, kuten tekoälyssä, koneoppimisessa ja full-stack-kehityksessä.</li>
+</ul>
+<h2><a href="https://carbon-steel.github.io/jekyll/update/2024/06/19/abstractions.html">Ohjelmoijien ei pitäisi koskaan luottaa kehenkään, ei edes itseensä</a></h2>
+<ul>
+<li>Ohjelmoijien tulisi säilyttää terve skeptisyys, sillä koodin kirjoittaminen ja oikeellisuuden varmistaminen on luonteeltaan haastavaa ja usein mahdotonta.</li>
+<li>Abstraktiot, vaikka ne yksinkertaistavat monimutkaisia järjestelmiä, voivat epäonnistua ja johtaa ongelmiin, kuten suorituskyvyn heikkenemiseen tai määrittelemättömään käyttäytymiseen, kuten Joel Spolskyn vuotavien abstraktioiden laki korostaa.</li>
+<li>Vähentääkseen tuntemattomia ongelmia ohjelmoijien tulisi varmistaa tiedot, testata uskomuksia ja mitata koodimuutosten vaikutuksia samalla, kun he jatkuvasti oppivat uusista alustoista, kielistä, työkaluista ja teknologioista.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40842867">Reaktiot</a></h3>
+<ul>
+<li>Keskustelu keskittyy muodollisen verifioinnin tärkeyteen ohjelmoinnissa, korostaen, että ohjelmoijien ei tulisi luottaa kehenkään, mukaan lukien itseensä, ilman todisteita.</li>
+<li>Muodollinen verifiointi, vaikka se onkin monimutkaista ja kallista, tarjoaa vahvempia takeita oikeellisuudesta verrattuna yksikkötesteihin, jotka kattavat vain tiettyjä esimerkkejä.</li>
+<li>Väittelyssä korostetaan muodollisen verifioinnin tiukkuuden ja yksikkötestien käytännöllisyyden välisiä kompromisseja, mikä viittaa siihen, että valinta riippuu projektin vaatimuksista ja resursseista.</li>
+</ul>
+<h2><a href="https://www.ericpfahl.com/from-pattern-matching-to-unification/">Yhdistäminen Elixirissä</a></h2>
+<ul>
+<li>Yhdistäminen Elixirissä laajentaa mallintamista sallimalla muuttujia yhtälön molemmilla puolilla, ratkaisemalla symbolisia yhtälöitä ja tuottamalla korvausmäärittelyjä.</li>
+<li>Toisin kuin mallin täsmäytys, yhtenäistäminen voi käsitellä osittain tunnettuja arvoja, mikä tekee siitä tehokkaan työkalun logiikkaohjelmoinnissa Elixirissä.</li>
+<li>Yhdistämisalgoritmi sisältää termien läpikäynnin, ekvivalenssin testaamisen, muuttujien käsittelyn ja listaelementtien rekursiivisen yhdistämisen, yksinkertaistaen muuttujien määrityksiä korvaamisen kautta.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40840315">Reaktiot</a></h3>
+<ul>
+<li>Artikkeli vertailee yhtenäistämisalgoritmien tehokkuutta tyyppipäättelyssä, keskittyen algoritmiin W ja algoritmiin J.</li>
+<li>Algoritmi W, jota käytetään Hindley-Milner-tyyppisessä päättelyssä, on vähemmän tehokas ja alttiimpi virheille johtuen tarvetta yhdistää substituutioita.</li>
+<li>Algoritmi J, joka käyttää union-find-tietorakennetta tuhoavaan yhtenäistämiseen, on yksinkertaisempi ja tehokkaampi, ja se tarjoaa lisäymmärrystä yhtenäistämisestä mallintunnistuksessa ja käännetyssä mallintunnistuksessa päätöspuiden avulla.</li>
+</ul>
+<h2><a href="https://artsandculture.google.com/">Google Arts and Culture -sivusto, jonka olemassaolosta en tiennyt</a></h2>
+<ul>
+<li>Google Arts &amp; Culture tarjoaa laajan valikoiman virtuaalikierroksia ja interaktiivisia kokemuksia, joiden avulla käyttäjät voivat tutustua taiteeseen, historiaan ja kulttuuriin ympäri maailmaa.</li>
+<li>Huippukohtia ovat virtuaalikierrokset kuuluisissa museoissa, lisätyn todellisuuden (AR) kokemukset ja interaktiiviset pelit, jotka tekevät taiteen ja kulttuurin oppimisesta mukaansatempaavaa ja saavutettavaa.</li>
+<li>Erikoisominaisuuksiin kuuluu mahdollisuus tutkia Van Goghin kirjastoa, tehdä 3D-kierros Vermeerin maalauksista ja osallistua K-Pop-tanssihaasteeseen yhteistyössä V&amp;A-museon kanssa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40840699">Reaktiot</a></h3>
+<ul>
+<li>Google Arts and Culture on vähemmän tunnettu mutta merkittävä Googlen projekti, joka tarjoaa kuratoitua kulttuurisisältöä ympäri maailmaa.</li>
+<li>Kayttäjät arvostavat sen korkearesoluutioisia kuvia ja ainutlaatuisia ominaisuuksia, kuten mahdollisuutta zoomata lähelle taideteoksia ja tutkia erilaisia kulttuuriprojekteja.</li>
+<li>Alusta on ollut aktiivinen vuodesta 2011 ja on edelleen arvokas resurssi taiteen ja kulttuurin harrastajille, huolimatta huolista Googlen projektien pitkäikäisyydestä.</li>
+</ul>
+<h2><a href="https://arxiv.org/abs/2406.09490">Newswire: Suuri rakenteellinen tietokanta vuosisadan historiallisista uutisista</a></h2>
+<ul>
+<li>Tutkijat ovat luoneet kattavan arkiston Yhdysvaltain uutistoimistojen sisällöstä vuosilta 1878–1977 käyttämällä syväoppimisputkea paikallislehtien kuvaskannauksista.</li>
+<li>Datasetti sisältää 2,7 miljoonaa ainutlaatuista julkisen sektorin artikkelia, jotka on georeferoitu, aiheen mukaan merkitty ja linkitetty Wikipediaan, tarjoten arvokasta tietoa laskennallisen kielitieteen, yhteiskuntatieteiden ja digitaalisten humanististen tieteiden tutkimukseen.</li>
+<li>Projektiin kuului 138 miljoonan jäsennellyn artikkelitekstin transkribointi ja neurobi-enkooderimallin käyttäminen artikkelien kaksoiskappaleiden poistamiseen, jotta varmistettiin, että mukana oli vain julkisen sektorin sisältöä.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40839830">Reaktiot</a></h3>
+<ul>
+<li>Historiallisten uutisten kattava tietokanta vuoteen 1978 asti on luotu, mikä heijastaa tekijänoikeuslakien muutoksia, ja se on saatavilla GitHubissa, vaikka se on tällä hetkellä tyhjä.</li>
+<li>Kayttäjät ovat tunnistaneet OCR-virheitä (Optinen Merkkien Tunnistus) tiedoissa, mikä korostaa jatkuvia haasteita historiallisten tekstien digitalisoinnissa.</li>
+<li>Projektia, huolimatta sen ongelmista, kiitetään sen tieteellisestä arvosta, ja raakatallenteet ovat saatavilla Kongressin kirjaston digitaalikokoelman kautta.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Loin After Effects -vaihtoehdon" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Loin%20After%20Effects%20-vaihtoehdon&subheading=maanantaina%201.%20hein%C3%A4kuuta%202024%3A%20Hacker%20News%20yhteenveto" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/fi/2024/07/01</link>
+            <guid isPermaLink="false">2024-07-01T00:00:00.000Z</guid>
+            <pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-06-30]]></title>
             <description
@@ -1657,187 +1848,6 @@
             <link>https://hn.cho.sh/fi/2024/06/22</link>
             <guid isPermaLink="false">2024-06-22T00:00:00.000Z</guid>
             <pubDate>Sat, 22 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-21]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/21&#39;</h2>
-<h1>2024-06-21</h1>
-<h2><a href="https://www.bloomberg.com/news/articles/2024-06-20/gilead-shot-prevents-100-of-hiv-cases-in-trial-of-african-women">Gileadin rokote estää kaikki HIV-tapaukset kokeessa</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40742163">Reaktiot</a></h3>
-<ul>
-<li>Gileadin uusi HIV-rokote, kabotegraviiri, on osoittautunut estävän kaikki tapaukset kokeessa, tarjoten lupaavan vaihtoehdon päivittäisille pillereille.</li>
-<li>Rokote annetaan kahden kuukauden välein, ja sitä voidaan mahdollisesti pidentää kolmen kuukauden välein annettavaksi, mikä voisi yksinkertaistaa noudattamista ja lisätä sitoutumista.</li>
-<li>Huolenaiheita on mahdollisista haittavaikutuksista lääkkeen pitkän elimistössä olon vuoksi, mutta sitä voidaan testata ensin pillerimuodossa.</li>
-</ul>
-<h2><a href="https://www.npr.org/2021/03/07/974534021/remembering-allan-mcdonald-he-refused-to-approve-challenger-launch-exposed-cover">Allan McDonald kieltäytyi hyväksymästä Challengerin laukaisua, paljasti peittelyn (2021)</a></h2>
-<ul>
-<li>Allan McDonald, joka kuoli 83-vuotiaana, oli keskeinen hahmo Challenger-avaruussukkulan onnettomuudessa, tunnettu siitä, että hän kieltäytyi hyväksymästä laukaisua turvallisuushuolien vuoksi.</li>
-<li>Onnettomuuden jälkeen McDonald paljasti NASAn peittelyn, kertoen, että insinöörit olivat vastustaneet laukaisua pakkaslämpötilojen vaikutuksen vuoksi O-renkaisiin, mikä johti hänen väliaikaiseen alennukseensa.</li>
-<li>McDonald johti myöhemmin kantorakettien uudelleensuunnittelua, oli mukana kirjoittamassa kattavaa selontekoa onnettomuudesta ja ryhtyi eettisen päätöksenteon puolestapuhujaksi insinöörialalla.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40748371">Reaktiot</a></h3>
-<ul>
-<li>Allan McDonald kieltäytyi hyväksymästä Challengerin laukaisua turvallisuushuolien vuoksi, paljastaen NASA:n ja Morton Thiokol -johtajien peittelyn.</li>
-<li>Huolimatta kovasta paineesta, McDonald ja muut insinöörit ohitettiin ylempien toimesta, mikä johti Challenger-onnettomuuteen.</li>
-<li>McDonald kannatti myöhemmin eettistä päätöksentekoa, korostaen jännitteitä teknisen tarkkuuden ja johtamispainostuksen välillä korkean panoksen projekteissa.</li>
-</ul>
-<h2><a href="https://lwn.net/Articles/976822/">Ladybird-selain levittää siipensä</a></h2>
-<ul>
-<li>Ladybird on avoimen lähdekoodin verkkoselainprojekti, joka on haarautettu SerenityOS:stä Andreas Klingin toimesta. Sen tavoitteena on olla riippumaton Chromesta ja se on kirjoitettu C++-kielellä BSD-lisenssin alaisuudessa.</li>
-<li>Vaikka Ladybird on vielä varhaisessa kehitysvaiheessa ja siitä puuttuu monia ominaisuuksia, se osoittaa lupausta perustoimintojen ja merkittävien yhteisön panosten myötä, kohdistuen Linux-, macOS- ja UNIX-tyyppisiin järjestelmiin, ja Windows-tukea tarjotaan WSL:n kautta.</li>
-<li>Yhteisön reaktiot ovat vaihtelevia: jotkut näkevät potentiaalia, kun taas toiset ehdottavat keskittymistä olemassa oleviin selaimiin. Kannattajat kuitenkin väittävät, että uudet projektit, kuten Ladybird, ovat välttämättömiä terveelle selain-ekosysteemille.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40746804">Reaktiot</a></h3>
-<ul>
-<li>Ladybird-selain, uusi yhteisön rakentama verkkoselain, saa huomiota potentiaalisena päivittäisenä käyttöselainvaihtoehtona, eroten valtavirran vaihtoehdoista kuten Chrome ja Firefox.</li>
-<li>Keskustelut korostavat haasteita luoda yksinkertaisempi ja turvallisempi selain, joka tukee vain osaa verkkoteknologioista, tasapainottaen toiminnallisuuden ja käyttäjien omaksumisen välillä.</li>
-<li>Projektia pidetään arvokkaana oppimismahdollisuutena uusille kehittäjille, sillä siinä on hyvin dokumentoidut rakennusprosessit ja laajat osallistumismahdollisuudet.</li>
-</ul>
-<h2><a href="https://buaacyw.github.io/mesh-anything/">MeshAnything – Muuntaa 3D-esitykset tehokkaiksi 3D-verkoiksi</a></h2>
-<ul>
-<li>MeshAnything esittelee uuden menetelmän taiteilijoiden luomien verkkojen (AM) tuottamiseksi 3D-esityksistä autoregressiivisten transformereiden avulla, parantaen 3D-omaisuuden tuotannon tehokkuutta ja tarkkuutta.</li>
-<li>Lähestymistapa vähentää merkittävästi verkkopintojen määrää, parantaen tallennus-, renderöinti- ja simulointitehokkuutta samalla säilyttäen korkealaatuiset geometriset ominaisuudet.</li>
-<li>Arkkitehtuuri käyttää VQ-VAE:ta ja muotoehtoisesti dekooderia käyttävää transformer-mallia, mikä osoittaa parempaa topologiaa ja vähemmän pintoja verrattuna perinteisiin menetelmiin, tehden siitä merkittävän edistysaskeleen 3D-teollisuudessa.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40746310">Reaktiot</a></h3>
-<ul>
-<li>MeshAnything muuntaa 3D-esitykset tehokkaiksi 3D-verkoiksi, vähentäen pintojen määrää paremman tallennus- ja renderointisuorituskyvyn saavuttamiseksi.</li>
-<li>Työkalu vaatii 7GB muistia ja 30 sekuntia A6000 GPU:lla, mutta se on rajoitettu tuottamaan verkkoja, joissa on alle 800 pintaa.</li>
-<li>Vaikka jotkut käyttäjät kritisoivat sen mukautettua ei-kaupallista lisenssiä ja luotujen verkkojen laatua, sitä pidetään lupaavana työkaluna pelikehitykseen ja 3D-mallien luomiseen.</li>
-</ul>
-<h2><a href="https://lithub.com/how-babies-and-young-children-learn-to-understand-language/">Kuinka vauvat ja pienet lapset oppivat ymmärtämään kieltä</a></h2>
-<ul>
-<li>Steven Mithen tutkii, johtuuko vauvojen ja pienten lasten kielen omaksuminen erikoistuneista henkisistä prosesseista vai yleisistä oppimismekanismeista.</li>
-<li>Hän korostaa, että vauvat käyttävät &#39;siirtymäprobabiliteetteja&#39; tunnistaakseen sanoja jatkuvasta puheesta, mikä osoittaa heidän tilastolliset oppimiskykynsä.</li>
-<li>Mithenin näkemykset haastavat perinteiset käsitykset kielen evoluutiosta ja korostavat varhaisen kielen oppimisen monimutkaisuutta.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744558">Reaktiot</a></h3>
-<ul>
-<li>Vauvat ja pienet lapset oppivat kieltä yhdistämällä vanhempien ohjausta ja tilastollista oppimista, jossa vanhemmat toistavat yksinkertaisia sanoja taukojen kanssa auttaakseen tunnistamaan sanan rajat.</li>
-<li>Kaksikieliset lapset saattavat sekoittaa kieliä, luoden uusia sanoja, jotka ovat tilastollisesti järkeviä, mikä osoittaa monikielisten ympäristöjen vaikutuksen ääntämiseen ja kielioppiin.</li>
-<li>Johdonmukainen kielen altistus on ratkaisevan tärkeää, sillä lapset mukautuvat ympäristönsä ja vuorovaikutustensa perusteella, yhdistäen luonnollisen uppoutumisen ja rakenteellisen oppimisen ymmärtääkseen kaavoja ja sääntöjä.</li>
-</ul>
-<h2><a href="https://steveblank.substack.com/p/why-innovation-heroes-are-a-sign">Innovaation sankarit ovat merkki toimimattomasta organisaatiosta</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40749754">Reaktiot</a></h3>
-<ul>
-<li>Rahoitustiimi kaksinkertaisti odotetun työnsä, mutta sai kritiikkiä polttokaavioiden häiritsemisestä, mikä johti paikkalippujen luomiseen järjestelmän huijaamiseksi.</li>
-<li>Tämä skenaario tuo esiin yleisiä ongelmia suurissa instituutioissa, joissa mittarit ja byrokratia voivat peittää alleen todellisen tuottavuuden.</li>
-<li>Tehokas innovaatio vaatii luottamusta, viestintää ja tukevan kulttuurin, sen sijaan että luotettaisiin pelkästään yksilön sankaritekoihin.</li>
-</ul>
-<h2><a href="https://openai.com/index/openai-acquires-rockset/">OpenAI ostaa Rocksetin</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40750391">Reaktiot</a></h3>
-<ul>
-<li>OpenAI on hankkinut Rocksetin, mikä on johtanut spekulaatioihin liikkeen strategisista syistä, kuten datainfrastruktuurin parantamisesta tai Rocksetin Meta-taustaisen johdon osaamisen hankkimisesta.</li>
-<li>Huolenaiheita on herännyt Rocksetin soveltuvuudesta OpenAI:n tarpeisiin ja vaikutuksesta nykyisiin Rocksetin asiakkaisiin, joiden on siirryttävä syyskuuhun 2024 mennessä.</li>
-<li>Yrityskauppa on herättänyt keskustelua toimittajien luotettavuudesta ja sen laajemmista vaikutuksista tekoäly- ja tietokanta-aloille.</li>
-</ul>
-<h2><a href="https://github.com/mezbaul-h/june">Paikallinen ääniohjattu avustaja käyttäen Ollamaa, transformereita ja Coqui TTS -työkalupakettia</a></h2>
-<ul>
-<li><strong>june-va</strong> on paikallinen äänichatbot, joka integroi Ollaman, Hugging Face Transformersin ja Coqui TTS Toolkitin, varmistaen yksityisyyden käsittelemällä tiedot paikallisesti.</li>
-<li>Tämä tukee useita vuorovaikutustiloja, mukaan lukien teksti- ja äänisyötteet/-tulosteet, oletustilana äänisyöte ja ääni-/tekstituloste.</li>
-<li>Asennus vaatii Python 3.10+ ja tietyt riippuvuudet, ja mukauttaminen on mahdollista JSON-määritystiedoston kautta.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744293">Reaktiot</a></h3>
-<ul>
-<li>Paikallisesta ääniohjausavustajasta, joka käyttää Ollamaa, transformereita ja Coqui TTS -työkalupakettia, keskustellaan, ja Coquin XTTSv2:ta kehutaan sen noin 500 ms:n vasteviiveestä suoratoistotilassa.</li>
-<li>Äänestä ääneen -mallit, kuten GPT-4o, pidetään keskustelevaan tekoälyyn tulevaisuutena, ja lupaavia lähestymistapoja tarjoavat ultravox.ai ja tincans.ai.</li>
-<li>Avoimen lähdekoodin orkestrointi TTS:lle (tekstistä puheeksi), ASR:lle (automaattinen puheentunnistus) ja LLM:lle (suuret kielimallit) on saatavilla osoitteessa bolna-ai/bolna, ja Wyoming-protokolla on mainittu kotiauttajan integrointia varten.</li>
-</ul>
-<h2><a href="https://blog.jitx.com/jitx-corporate-blog/testing-generative-ai-for-circuit-board-design">Generatiivisen tekoälyn testaaminen piirilevysuunnittelussa</a></h2>
-<ul>
-<li>Generatiivisia tekoälymalleja (GPT-4o, Claude 3 Opus, Gemini 1.5) testattiin niiden hyödyllisyyden osalta piirilevysuunnittelussa, ja ne osoittivat vahvuuksia tiedon poiminnassa ja koodin kirjoittamisessa, mutta heikkouksia hienovaraisissa suunnittelutehtävissä.</li>
-<li>Claude 3 Opus loisti peruskäsitteiden selittämisessä, kun taas Gemini 1.5 oli tehokkain tietolomakkeiden jäsentämisessä ja tarkkojen pin-taulukoiden ja jalkakaavioiden luomisessa.</li>
-<li>Kaikki mallit kamppailivat tiettyjen osien suositusten ja yksityiskohtaisten piirikaaviotehtävien kanssa, mikä osoittaa, että LLM:t soveltuvat paremmin avustamaan ihmisiä asiantuntijoina kuin toimimaan itsenäisinä suunnittelijoina.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40751020">Reaktiot</a></h3>
-<ul>
-<li>Generatiivinen tekoäly, erityisesti zero-shot -suuret kielimallit (LLM:t), kamppailevat monimutkaisten tehtävien, kuten piirilevysuunnittelun, kanssa, mikä korostaa niiden rajoituksia erikoistuneilla aloilla.</li>
-<li>LLM:ien hienosäätö tietyille tehtäville, kuten nettilistan luomiseen, voisi parantaa niiden suorituskykyä, mutta monimutkaisempien tehtävien osalta saattaa olla tarpeen tehdä perustavanlaatuinen muutos tekoälyn rakenteessa.</li>
-<li>Diffuusioon perustuvat generatiiviset rakenteet ja muut tekoälymallit, kuten evoluutio- tai vahvistusoppiminen, saattavat soveltua paremmin monimutkaisiin tehtäviin sähkötekniikassa.</li>
-</ul>
-<h2><a href="https://deepmind.google/discover/blog/generating-audio-for-video/">Äänen tuottaminen videolle</a></h2>
-<ul>
-<li>Video-to-audio (V2A) -teknologia tuottaa synkronoituja ääniraitoja videopikseleistä ja tekstikehotteista, mahdollistaen dramaattisten sävellysten, realististen äänitehosteiden tai dialogin luomisen erilaisille videotyyppien.</li>
-<li>V2A käyttää diffuusioon perustuvaa lähestymistapaa, jossa video syötetään ja ääni parannetaan satunnaisesta kohinasta tuottamaan realistisia ääniaaltoja. Käynnissä oleva tutkimus keskittyy videon laatuvirheiden ja huulisynkronoinnin parantamiseen.</li>
-<li>Tuotantotiimi korostaa vastuullisia tekoälykäytäntöjä, käyttämällä SynthID-työkalupakettia tekoälyn tuottaman sisällön vesileimaamiseen ja suorittamalla perusteellisia turvallisuusarviointeja ennen julkista julkaisua.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744098">Reaktiot</a></h3>
-<ul>
-<li>DeepMind on esitellyt uuden tekoälytyökalun, joka tuottaa ääntä videoille, lisäten kasvavaan tekoälyn generatiivisten työkalujen listaan.</li>
-<li>Yhteisö ilmaisee ristiriitaisia tunteita, sillä jotkut kokevat vaikeaksi pysyä nopean kehityksen perässä, kun taas toiset keskustelevat mahdollisista vaikutuksista sisällön luomiseen ja tallennuskapasiteetteihin.</li>
-<li>On huomattavaa kiinnostusta siihen, miten tekoälyn tuottama sisältö voisi vaikuttaa mainontaan, politiikkaan ja sisällöntuotannon tulevaisuuteen, ja ehdotuksia tekoälylle omistetuista alustoista ja työkaluista on esitetty.</li>
-</ul>
-<h2><a href="https://lemmy.world/post/16763534">Vietin 3 kuukautta tutkien 7 vuotta vanhaa bugia ja korjasin sen yhdellä koodirivillä</a></h2>
-<ul>
-<li>Eräs kehittäjä käytti kolme kuukautta tutkiakseen virhettä, joka oli ollut ratkaisematta seitsemän vuoden ajan.</li>
-<li>Virhe korjattiin lopulta vain yhdellä koodirivillä, mikä korostaa ohjelmisto-ongelmien toisinaan vaikeasti havaittavaa luonnetta.</li>
-<li>Tämä viesti korostaa ohjelmistokehityksessä vaadittavaa sinnikkyyttä ja mahdollisten ratkaisujen yksinkertaisuutta pitkäaikaisiin ongelmiin.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40749624">Reaktiot</a></h3>
-<ul>
-<li>7 vuotta vanha bugi korjattiin yhdellä koodirivillä 3 kuukautta kestäneen tutkimuksen jälkeen, mikä korostaa debuggaamisen monimutkaisuutta ja arvaamattomuutta.</li>
-<li>Löytö tehtiin tunnistamalla 16-bittinen modulo-operaatio ääniprosessointikoodissa, hyödyntäen aiempaa kokemusta 8-bittisistä prosessoreista.</li>
-<li>Kirjoitus korostaa tunteikasta matkaa ja tyytyväisyyttä pitkään jatkuneiden teknisten ongelmien ratkaisemisessa, mikä resonoi sekä nuorempien että kokeneempien insinöörien kanssa.</li>
-</ul>
-<h2><a href="https://blog.frankmtaylor.com/2024/06/20/a-rant-about-front-end-development/">Vuodatusta front-end-kehityksestä</a></h2>
-<ul>
-<li>Kirjoittaja, kokenut front-end-kehittäjä, ilmaisee turhautumisensa tiettyjen valintojen tuomasta monimutkaisuudesta front-end-kehityksessä.</li>
-<li>Korostaa sisällön tärkeyttä Reactin kaltaisten kehysten sijaan, puolustaa semanttista, SEO-valmista ja saavutettavaa HTML:ää.</li>
-<li>Kritisoi JavaScriptin ja monimutkaisten työkalujen liiallista käyttöä, ehdottaen keskittymistä yksinkertaisuuteen ja CSS:n sekä palvelinpuolen renderöintiteknologioiden asianmukaiseen käyttöön.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40746173">Reaktiot</a></h3>
-<ul>
-<li>Blogikirjoitus kritisoi nykyaikaisia front-end-kehityskäytäntöjä vertaamalla niitä pikaruokaan—toimivia, mutta vailla syvyyttä.</li>
-<li>Kirjoittaja puolsi palvelinpuolen renderöintiä (SSR) ja minimaalista JavaScriptin (JS) käyttöä, korostaen työkaluja kuten HTMX ja Alpine JS.</li>
-<li>Keskustelu paljasti jakautumisen perinteisen web-kehityksen (yksinkertaisempi HTML ja CSS) kannattajien ja modernien JS-kehysten, kuten Reactin, suosijoiden välillä dynaamisille sivustoille.</li>
-</ul>
-<h2><a href="https://github.com/martinpiper/BombJack/blob/master/README.md">Bomb Jack -näyttölaitteisto</a></h2>
-<ul>
-<li>Bomb Jack Display Hardware -projekti, nyt versiossa 2.0, alkoi Bomb Jack -kolikkopelilaitteiston kaaviona ja sisältää ominaisuuksia, kuten osoitettavan RAM-muistin, ylimääräisen näytön tyhjennyksen ja koko näytön korkuiset sprite-hahmot.</li>
-<li>Projekti käyttää TTL:ää (Transistor-Transistor Logic) tutkiakseen graafisia parannuksia 8-bittisille tietokoneille, keskittyen opettamaan matalan tason diskreettiä logiikkaa sen sijaan, että käytettäisiin CPLD:tä (Complex Programmable Logic Device) tai FPGA:ta (Field-Programmable Gate Array).</li>
-<li>Laitesuunnittelu sisältää kuusi piirilevysuunnitelmaa eri toiminnoille ja käyttää Proteusta simulointiin ja PCBWayta valmistukseen, tavoitteenaan kustannustehokkuus ja räätälöinti.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40745830">Reaktiot</a></h3>
-<ul>
-<li>Uusi projekti pyrkii korvaamaan Bomb Jack -pelihallilaitteiston modernilla vastineella, laajentuen alkuperäistä laajuuttaan pidemmälle.</li>
-<li>Projekti, joka eroaa MAME:sta (Multiple Arcade Machine Emulator), on laitteistoratkaisu, joka on jopa auttanut tunnistamaan virheen MAME:ssa.</li>
-<li>Laitteisto sisältää edistyneitä ominaisuuksia, kuten useita kerroksia, kerrosten priorisoinnin, useita paletteja, skaalattuja spritejä ja paljon muuta, mikä venyttää aikakauden komponenttien rajoja.</li>
-</ul>
-<h2><a href="https://driving.ca/auto-news/industry/tesla-class-action-lawsuite-parts-repairs-monopoly">Tesla-omistajat nostavat joukkokanteen väittäen korjaus- ja varaosamonopolia</a></h2>
-<ul>
-<li>Tesla-omistajat ovat nostaneet joukkokanteen syyttäen yhtiötä korjaus- ja varaosamarkkinoiden monopolisoimisesta.</li>
-<li>Kanne väittää, että Teslan käytännöt pakottavat omistajat käyttämään Teslan omia palveluita ja osia, mikä voi johtaa korkeampiin kustannuksiin ja rajoitettuihin vaihtoehtoihin.</li>
-<li>Tämä oikeustoimi korostaa jatkuvia huolenaiheita korjausoikeudesta ja kolmannen osapuolen palveluiden saatavuudesta sähköajoneuvoteollisuudessa.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744847">Reaktiot</a></h3>
-<ul>
-<li>Tesla-omistajat ovat käynnistäneet joukkokanteen, syyttäen yhtiötä korjausten ja osien monopolisoimisesta, mikä johtaa pitkiin odotusaikoihin tarvittaville komponenteille.</li>
-<li>Oikeusjuttu väittää, että Tesla asettaa uusien autojen tuotannon etusijalle sen sijaan, että ylläpitäisi riittävää varaosavarastoa korjauksia varten, mikä aiheuttaa merkittäviä viivästyksiä joillekin omistajille.</li>
-<li>Välimieslausekkeet Teslan sopimuksissa voivat monimutkaistaa oikeusjuttua, mahdollisesti estäen sen etenemisen oikeusjärjestelmässä.</li>
-</ul>
-<h2><a href="https://arstechnica.com/gaming/2024/06/from-infocom-to-80-days-an-oral-history-of-text-games-and-interactive-fiction/">Infocomista 80 Daysiin: Tekstipelien ja interaktiivisen fiktion suullinen historia</a></h2>
-<ul>
-<li>&quot;Go North — From Infocom to 80 Days&quot; on suullinen historia, joka tutkii 50 vuoden interaktiivisen fiktion (IF) kehitystä varhaisista tekstiseikkailuista nykyaikaisiin teoksiin.</li>
-<li>IF-yhteisö tunnetaan avoimen lähdekoodin eetoksestaan ja yksilöllisyydestään, johon kuuluvat sekä pelaajat että luojat.</li>
-<li>Genre alkoi 1970-luvulla Will Crowtherin Adventure-pelin myötä ja kehittyi kotitietokoneiden yleistyessä, tavoittaen laajemman yleisön.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40749426">Reaktiot</a></h3>
-<ul>
-<li>Infocomista 80 Daysiin: Tekstipohjaisten pelien ja interaktiivisen fiktion suullinen historia&quot; tutkii tekstipohjaisten pelien kehitystä, korostaen klassikoita ja moderneja nimikkeitä, kuten &quot;80 Days&quot;, niiden tarinankerronnan ja uudelleenpelattavuuden vuoksi.</li>
-<li>Keskustelussa mainitaan resursseja, kuten Interactive Fiction Database (IFDB) ja kirja &quot;50 Years of Text Games&quot;, ja huomautetaan Inkle Studiosin ink-kieli sen helppoudesta luoda haarautuvia kertomuksia.</li>
-<li>Varhaisten tekstin jäsentimien haasteet mainitaan, samoin kuin modernien edistysaskeleiden, kuten suurten kielimallien (LLM), potentiaali parantaa interaktiivista fiktiota.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Gileadin rokote estää kaikki HIV-tapaukset kokeessa" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Gileadin%20rokote%20est%C3%A4%C3%A4%20kaikki%20HIV-tapaukset%20kokeessa&subheading=perjantaina%2021.%20kes%C3%A4kuuta%202024%3A%20Hacker%20News%20yhteenveto" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/fi/2024/06/21</link>
-            <guid isPermaLink="false">2024-06-21T00:00:00.000Z</guid>
-            <pubDate>Fri, 21 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

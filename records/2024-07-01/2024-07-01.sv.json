@@ -1,0 +1,328 @@
+[
+  {
+    "id": 40843867,
+    "title": "Jag skapade ett alternativ till After Effects",
+    "originLink": "https://pikimov.com/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40843867",
+    "commentBody": "",
+    "originSummary": [
+      "Pikimov är en nyligen lanserad webbaserad rörelsedesign- och videoredigerare, inspirerad av Photopea, och fungerar som ett gratis alternativ till After Effects.",
+      "Det kräver ingen registrering, behåller filer på användarens maskin och säkerställer att projekt inte används för AI-träning.",
+      "Skaparen har en historia av att utveckla VJ-programvara för plattformar som Game Boy Advance, Playstation 2 och Raspberry Pi."
+    ],
+    "commentSummary": [
+      "Pikimov är en ny, gratis, webbaserad rörelsedesign- och videoredigerare skapad som ett alternativ till Adobe After Effects, som inte kräver någon registrering eller molnuppladdningar.",
+      "Verktyget har fått positiv feedback för sin potential att utmana Adobes dominans, med användare som föreslår förbättringar i bildfrekvensgränser, felrapportering och hantering av nyckelbilder.",
+      "För närvarande stöder Pikimov endast Chrome och Edge på grund av specifika webb-API:er, med framtida planer på att lägga till community-funktioner och eventuellt tjäna pengar på appen."
+    ],
+    "points": 597,
+    "commentCount": 166,
+    "retryCount": 0,
+    "time": 1719824246
+  },
+  {
+    "id": 40843778,
+    "title": "RegreSSHion: RCE i OpenSSH:s server, på glibc-baserade Linux-system",
+    "originLink": "https://www.qualys.com/2024/07/01/cve-2024-6387/regresshion.txt",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40843778",
+    "commentBody": "",
+    "originSummary": [
+      "En kritisk sårbarhet (CVE-2024-6387) i OpenSSH:s server på glibc-baserade Linux-system tillåter fjärrkörning av kod (RCE) på grund av en tävlingssituation i signalhanteraren.",
+      "Problemet, en regression av CVE-2006-5051, påverkar OpenSSH-versionerna 3.4p1, 4.2p1 och 9.2p1, och innebär att utnyttja SIGALRM-hanteraren för att orsaka heap-korruption och köra godtycklig kod.",
+      "Åtgärder inkluderar att tillämpa patchar som flyttar asynkron-signal-osäker kod ur SIGALRM-hanteraren eller att ställa in `LoginGraceTime` till 0, även om det senare kan orsaka tjänsteavbrott."
+    ],
+    "commentSummary": [
+      "En sårbarhet för fjärrkodskörning (RCE) upptäcktes i OpenSSH:s server på glibc-baserade Linux-system, vilket potentiellt kan tillåta angripare att få fjärråtkomst med root-behörighet.",
+      "Åtgärden för denna sårbarhet implementerades genom att flytta osäker kod från signalhanteraren till lyssnarprocessen, vilket gör det svårt att backporta.",
+      "Problemet påverkar främst 32-bitars system, med utnyttjande på 64-bitars system som tros vara möjligt men ännu inte visat; olika distributioner har redan släppt patchar."
+    ],
+    "points": 542,
+    "commentCount": 211,
+    "retryCount": 0,
+    "time": 1719823254
+  },
+  {
+    "id": 40841980,
+    "title": "Pipes: En andlig efterträdare till Yahoo Pipes",
+    "originLink": "https://www.pipes.digital/docs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40841980",
+    "commentBody": "",
+    "originSummary": [
+      "Pipes är en visuell programmeringsredigerare för flöden, som låter användare hämta, skapa och manipulera flöden med hjälp av block, liknande Yahoo! Pipes.",
+      "Den stöder olika indataformat, inklusive RSS, Atom, JSON, HTML och textfiler, och erbjuder en rad block för olika flödesoperationer som filtrering, sammanslagning och extrahering av innehåll.",
+      "Pipes CE är en fri och öppen källkodsmjukvara (FOSS) under AGPL-licensen, tillgänglig på Github, och stöder integrationer med populära sajter som Twitter, YouTube och Vimeo."
+    ],
+    "commentSummary": [
+      "Pipes, ett projekt inspirerat av Yahoo Pipes, genomgick nyligen uppdateringar för att förbättra stabiliteten, inklusive en övergång från text till RSS-objekt för datatransport mellan block.",
+      "Serveruppgraderingar och omkonfigurering av trådar och puma-arbetare genomfördes för att åtgärda problem och flaskhalsar.",
+      "En användarförslag om att lägga till ett block för AI-genererade sammanfattningar eller bilder via POST-förfrågningar övervägs, med några grundläggande block redan på plats."
+    ],
+    "points": 382,
+    "commentCount": 109,
+    "retryCount": 0,
+    "time": 1719799417
+  },
+  {
+    "id": 40843848,
+    "title": "Min finjusterade modeller slår OpenAI:s GPT-4",
+    "originLink": "https://mlops.systems/posts/2024-07-01-full-finetuned-model-evaluation.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40843848",
+    "commentBody": "",
+    "originSummary": [
+      "Artikeln diskuterar utvärderingsmått för att bedöma prestandan hos finjusterade språkmodeller (LLMs) vid extrahering av strukturerad data från pressmeddelanden, med fokus på noggrannhet.",
+      "Finetunade modeller, inklusive TinyLlama, Mistral och Solar LLM, presterade generellt bättre än OpenAI:s GPT-4 och GPT-4 Turbo i noggrannhet, trots komplexiteten och den långsamma takten i utvärderingarna.",
+      "Utvärderingarna betonade behovet av ett bättre system för att hantera komplexiteten och underhållet, med framtida steg som inkluderar tester som inte är relaterade till noggrannhet och att utforska modellservering."
+    ],
+    "commentSummary": [
+      "Finjusterade modeller kan överträffa generella modeller som OpenAI:s GPT-4 i specifika uppgifter, såsom datautvinning, kreativ sammanfattning, frågesvar och klassificering.",
+      "Framgången för finjusterade modeller beror på högkvalitativ träningsdata, vilket gör dem effektiva för nischad informationsutvinning och tillgängliga för teknikentusiaster.",
+      "Finjustering av mindre modeller, såsom Llama 3 8B, kan vara mer effektivt och kostnadseffektivt, men att använda modellens svar för att träna nya modeller kan bryta mot användarvillkoren för stora LLM-leverantörer."
+    ],
+    "points": 300,
+    "commentCount": 77,
+    "retryCount": 0,
+    "time": 1719823984
+  },
+  {
+    "id": 40843720,
+    "title": "Cities need more trees",
+    "originLink": "https://herman.bearblog.dev/cities-need-more-trees/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40843720",
+    "commentBody": "",
+    "originSummary": [
+      "Johannesburg, en gång karg, förvandlades till \"världens grönaste stad\" efter att ha planterat miljontals träd för att bekämpa damm från guldutvinning.",
+      "Trädplantering i Johannesburg var ojämnt fördelad på grund av Apartheid, vilket belyser socioekonomiska skillnader.",
+      "Stadsträd ger betydande fördelar, inklusive att minska \"värmeöeffekten\", fungera som ljudbarriärer, förbättra estetiken, öka biodiversiteten och uppmuntra utomhusaktiviteter."
+    ],
+    "commentSummary": [
+      "Cities blir alltmer engagerade i att plantera träd och främja gröna tak för att bekämpa värmestress och förbättra stadens livskvalitet.",
+      "Utrecht, Nederländerna, och Zürich, Schweiz, är ledande exempel, medan amerikanska städer som Portland, OR, har gröna mandat, och Salt Lake City utforskar xeriscaping.",
+      "Träd erbjuder betydande fördelar, såsom att kyla ner stadsområden, förbättra luftkvaliteten och öka den allmänna livskvaliteten, trots utmaningar som privat fastighetsutveckling som leder till trädfällning."
+    ],
+    "points": 273,
+    "commentCount": 139,
+    "retryCount": 0,
+    "time": 1719822718
+  },
+  {
+    "id": 40845951,
+    "title": "Välkommen till Ladybird",
+    "originLink": "https://ladybird.org/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40845951",
+    "commentBody": "",
+    "originSummary": [
+      "Ladybird är en oberoende webbläsare utvecklad av en ideell organisation, med fokus på prestanda, stabilitet och säkerhet, med en Alpha-version planerad till 2026.",
+      "Ursprungligen en HTML-visare för SerenityOS, stöder den nu Linux, macOS och andra Unix-liknande system, och är helt byggd från grunden utan att använda kod från andra webbläsare.",
+      "Projektet finansieras genom sponsring och donationer, utan annonser eller användarmonetisering, och utvecklas för närvarande av ett team på fyra heltidsanställda ingenjörer."
+    ],
+    "commentSummary": [
+      "Ladybird, som ursprungligen var en HTML-renderare för SerenityOS, utvecklas nu till ett plattformsoberoende webbläsarprojekt.",
+      "Projektet har fått en anmärkningsvärd donation på 1 000 000 dollar från GitHubs medgrundare Chris Wanstrath, vilket indikerar starkt finansiellt stöd.",
+      "Teamet planerar att släppa en alfaversion till 2026, med betoning på modularitet och efterlevnad av moderna webbstandarder."
+    ],
+    "points": 246,
+    "commentCount": 62,
+    "retryCount": 0,
+    "time": 1719842693
+  },
+  {
+    "id": 40839418,
+    "title": "Frimärkeskod",
+    "originLink": "https://en.wikipedia.org/wiki/Postzegelcode",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40839418",
+    "commentBody": "",
+    "originSummary": [
+      "En postzegelcode är en nio tecken lång kod som används i Nederländerna som ett handskrivet alternativ till frimärken, köpt online från PostNL.",
+      "Introducerad 2013 måste koden skrivas på posten inom fem dagar och har 78,8 biljoner möjliga kombinationer, vilket gör den säker mot gissningar.",
+      "Från och med december 2020 använde 590 000 personer postzegelcodes, som nu kostar lika mycket som traditionella frimärken."
+    ],
+    "commentSummary": [
+      "Diskussionen kretsar kring användningen av digitala portokoder, kända som \"postzegelcode,\" som kan skrivas på kuvert istället för att använda traditionella frimärken.",
+      "Flera länder, inklusive Tyskland, Danmark, Norge och Sverige, har infört liknande system som gör det möjligt för användare att köpa porto online och skriva en kod på sin post.",
+      "Systemet beröms för sin bekvämlighet, särskilt för dem som inte ofta skickar fysisk post, eftersom det eliminerar behovet av fysiska frimärken och anpassar sig till förändrade posttaxor."
+    ],
+    "points": 228,
+    "commentCount": 95,
+    "retryCount": 0,
+    "time": 1719775062
+  },
+  {
+    "id": 40847963,
+    "title": "HD fastslår att före detta presidenter har immunitet för officiella handlingar",
+    "originLink": "https://apnews.com/article/supreme-court-trump-capitol-riot-immunity-2dc0d1c2368d404adc0054151490f542",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40847963",
+    "commentBody": "",
+    "originSummary": [
+      "USA:s högsta domstol förlängde fördröjningen i Donald Trumps brottmål angående valet 2020, vilket minskar sannolikheten för en rättegång före valet i november.",
+      "I en dom med 6-3 röstetal beviljade domstolens konservativa majoritet tidigare presidenter bred immunitet från åtal för officiella handlingar, vilket komplicerar åklagarens fall och kräver ytterligare analys på rättegångsnivå.",
+      "Beslutet understryker domstolens betydande inflytande på det kommande valet, med chefsdomare John Roberts som betonar immunitet för officiella handlingar och domare Sonia Sotomayor som avviker och argumenterar att det undergräver principen att ingen står över lagen."
+    ],
+    "commentSummary": [
+      "USA:s högsta domstol har beslutat att före detta presidenter har immunitet för officiella handlingar, vilket har utlöst en debatt om potentiella maktmissbruk kontra behovet av presidentiellt skydd.",
+      "Utslaget specificerar att immunitet gäller för handlingar inom konstitutionell auktoritet men inte för inofficiella handlingar, vilket väcker oro för ansvarsskyldighet vid allvarliga brott.",
+      "Kritiker, inklusive domare Sotomayor, oroar sig för att detta beslut kan påverka pågående och framtida rättsfall som involverar tidigare presidenter."
+    ],
+    "points": 226,
+    "commentCount": 325,
+    "retryCount": 0,
+    "time": 1719854392
+  },
+  {
+    "id": 40840396,
+    "title": "Konvolutioner, Snabb Fouriertransform och polynom (2022)",
+    "originLink": "https://www.alvarorevuelta.com/posts/fft-polynomials",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40840396",
+    "commentBody": "",
+    "originSummary": [
+      "Traditionell polynommultiplikation har \\(O(n^2)\\) komplexitet, vilket gör den ineffektiv för stora polynom.",
+      "Den snabba Fouriertransformen (FFT) minskar komplexiteten vid polynommultiplikation till \\(O(n \\log n)\\) genom att omvandla problemet till frekvensdomänen.",
+      "Den FFT-baserade metoden innebär att man omvandlar polynom till frekvensdomänen, multiplicerar dem och omvandlar resultatet tillbaka, vilket avsevärt förbättrar effektiviteten för polynom av hög grad."
+    ],
+    "commentSummary": [
+      "Diskussionen kretsar kring användningen av Fast Fourier Transform (FFT) för polynommultiplikation, och betonar dess effektivitet jämfört med naiva metoder.",
+      "Viktiga insikter inkluderar vikten av numerisk precision i FFT-beräkningar och den historiska kontexten av FFT:s utveckling för polynom-multiplikation.",
+      "Konversationen berör också praktiska tillämpningar, såsom felkorrigering, signalbehandling och nollkunskapskryptografi, där FFT-baserade metoder är särskilt fördelaktiga."
+    ],
+    "points": 211,
+    "commentCount": 53,
+    "retryCount": 0,
+    "time": 1719781723
+  },
+  {
+    "id": 40845304,
+    "title": "Min Python-kod är ett neuralt nätverk",
+    "originLink": "https://blog.gabornyeki.com/2024-07-my-python-code-is-a-neural-network/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40845304",
+    "commentBody": "",
+    "originSummary": [
+      "Artikeln diskuterar inbäddning av program i rekurrenta neurala nätverk (RNN) och hur tränade RNN kan överträffa handskrivna algoritmer.",
+      "Det ger ett detaljerat exempel på att upptäcka programkod i meddelanden, jämföra enkla beslutsregler, en handskriven algoritm och en RNN-baserad metod.",
+      "Posten lyfter fram fördelarna med RNN:er, såsom att koda tillståndsmaskiner, använda träningsbara aktiveringsfunktioner och hantera komplexa uppgifter med datadriven disciplin."
+    ],
+    "commentSummary": [
+      "Artikeln diskuterar konstruktionen av ett neuralt nätverk med Python men saknar detaljer om testning och erhållande av träningsdata, vilket är avgörande för att säkerställa modellens generalisering till osedda indata.",
+      "Diskussionen belyser den universella approximationssatsen, som säger att neurala nätverk kan representera vilken funktion som helst till en önskad noggrannhetsnivå, men betonar att inlärningen av dessa approximationer inte är garanterad.",
+      "Det pågår en debatt om huruvida Recurrent Neural Networks (RNNs) håller på att ersättas av transformatorer, där vissa hävdar att RNNs fortfarande har unika fördelar, såsom konstant minnesanvändning, vilket transformatorer saknar."
+    ],
+    "points": 193,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1719838058
+  },
+  {
+    "id": 40846428,
+    "title": "Vem anställer? (juli 2024)",
+    "originLink": "https://news.ycombinator.com/item?id=40846428",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40846428",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Olika företag anställer för flera roller, inklusive distans-, på plats- och hybridpositioner, på olika platser och inom olika branscher.",
+      "Anmärkningsvärda företag inkluderar Apple, Figma, Charge Robotics och SmileID, som erbjuder positioner som Senior Software Engineer, Senior/Staff Security Engineer och Senior Frontend Engineer.",
+      "Det finns möjligheter över hela världen, med vissa företag som erbjuder visumsponsring och roller inom framväxande teknologier som AI, maskininlärning och fullstackutveckling."
+    ],
+    "points": 191,
+    "commentCount": 171,
+    "retryCount": 0,
+    "time": 1719846109
+  },
+  {
+    "id": 40842867,
+    "title": "Programmerare bör aldrig lita på någon, inte ens på sig själva",
+    "originLink": "https://carbon-steel.github.io/jekyll/update/2024/06/19/abstractions.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40842867",
+    "commentBody": "",
+    "originSummary": [
+      "Programmerare bör upprätthålla en hälsosam nivå av skepticism, eftersom att skriva och verifiera kodens korrekthet är i grunden utmanande och ofta omöjligt.",
+      "Abstraktioner, samtidigt som de förenklar komplexa system, kan misslyckas och leda till problem som prestandaförsämring eller odefinierat beteende, vilket framhävs av Joel Spolskys lag om läckande abstraktioner.",
+      "För att mildra okända problem bör programmerare verifiera information, testa övertygelser och mäta effekten av kodändringar, samtidigt som de kontinuerligt lär sig om nya plattformar, språk, verktyg och teknologier."
+    ],
+    "commentSummary": [
+      "Diskussionen kretsar kring vikten av formell verifiering inom programmering och betonar att programmerare inte bör lita på någon, inklusive sig själva, utan bevis.",
+      "Formell verifiering, även om den är komplex och kostsam, ger starkare garantier för korrekthet jämfört med enhetstester, som endast täcker specifika exempel.",
+      "Debatten belyser avvägningarna mellan noggrannheten i formell verifiering och praktikaliteten i enhetstester, och antyder att valet beror på projektets krav och resurser."
+    ],
+    "points": 172,
+    "commentCount": 139,
+    "retryCount": 0,
+    "time": 1719812397
+  },
+  {
+    "id": 40840315,
+    "title": "Förening i Elixir",
+    "originLink": "https://www.ericpfahl.com/from-pattern-matching-to-unification/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40840315",
+    "commentBody": "",
+    "originSummary": [
+      "Förening i Elixir utökar mönstermatchning genom att tillåta variabler på båda sidor av en ekvation, lösa symboliska ekvationer och producera substitutionsmappningar.",
+      "Cirka mönstermatchning kan unifiering hantera delvis kända värden, vilket gör det till ett kraftfullt verktyg för logikprogrammering i Elixir.",
+      "Föreningsalgoritmen innebär att gå igenom termer, testa ekvivalens, hantera variabler och rekursivt förena listelement, samt förenkla variabeltilldelningar genom substitution."
+    ],
+    "commentSummary": [
+      "Artikeln jämför effektiviteten hos unifikationsalgoritmer i typinferens, med fokus på algoritm W och algoritm J.",
+      "Algoritm W, som används i Hindley-Milner typinferens, är mindre effektiv och mer felbenägen på grund av behovet av att komponera substitutioner.",
+      "Algoritm J, som använder en union-find-datastruktur för destruktiv enhetlighet, är enklare och mer effektiv, med ytterligare insikter om enhetlighet i mönstermatchning och kompilerad mönstermatchning med hjälp av beslutsdiagram."
+    ],
+    "points": 155,
+    "commentCount": 26,
+    "retryCount": 0,
+    "time": 1719781112
+  },
+  {
+    "id": 40840699,
+    "title": "Google Arts and Culture-sidan visste jag inte fanns",
+    "originLink": "https://artsandculture.google.com/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40840699",
+    "commentBody": "",
+    "originSummary": [
+      "Google Arts & Culture erbjuder ett brett utbud av virtuella rundturer och interaktiva upplevelser, vilket gör det möjligt för användare att utforska konst, historia och kultur från hela världen.",
+      "Framstående inslag inkluderar virtuella rundturer i berömda museer, upplevelser med förstärkt verklighet (AR) och interaktiva spel som gör lärandet om konst och kultur engagerande och tillgängligt.",
+      "Speciella funktioner inkluderar möjligheten att utforska Van Goghs bibliotek, ta en 3D-tur av Vermeers målningar och delta i en K-Pop-dansutmaning i samarbete med V&A Museum."
+    ],
+    "commentSummary": [
+      "Google Arts and Culture är ett mindre känt men betydelsefullt projekt av Google, som erbjuder kurerat kulturellt innehåll från hela världen.",
+      "Användare uppskattar dess högupplösta bilder och unika funktioner, såsom möjligheten att zooma in nära på konstverk och utforska olika kulturprojekt.",
+      "Plattformen har varit aktiv sedan 2011 och fortsätter att vara en värdefull resurs för konst- och kulturentusiaster, trots oro över livslängden på Googles projekt."
+    ],
+    "points": 154,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1719784504
+  },
+  {
+    "id": 40839830,
+    "title": "Newswire: En storskalig strukturerad databas över ett sekel av historiska nyheter",
+    "originLink": "https://arxiv.org/abs/2406.09490",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40839830",
+    "commentBody": "",
+    "originSummary": [
+      "Forskare har skapat ett omfattande arkiv av amerikanskt nyhetsmaterial från 1878 till 1977 genom att använda en djupinlärningspipeline på bildskanningar från lokala tidningar.",
+      "Datasettet inkluderar 2,7 miljoner unika artiklar i public domain, georefererade, taggade efter ämne och länkade till Wikipedia, vilket ger värdefull information för forskning inom datorlingvistik, samhällsvetenskap och digital humaniora.",
+      "Projektet innebar att transkribera 138 miljoner strukturerade artikeltexter och använda en neural bi-encoder-modell för att avdubblera artiklar, vilket säkerställde att endast innehåll i public domain inkluderades."
+    ],
+    "commentSummary": [
+      "En omfattande databas med historiska nyheter fram till 1978 har skapats, vilket återspeglar förändringar i upphovsrättslagarna, och finns tillgänglig på GitHub, även om den för närvarande är tom.",
+      "Användare har identifierat OCR (Optical Character Recognition) fel i data, vilket understryker de ihållande utmaningarna med att digitalisera historiska texter.",
+      "Trots sina problem hyllas projektet för sitt vetenskapliga värde, med råa skanningar tillgängliga genom Library of Congress digitala samling."
+    ],
+    "points": 150,
+    "commentCount": 32,
+    "retryCount": 0,
+    "time": 1719777526
+  }
+]

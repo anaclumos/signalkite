@@ -1,0 +1,328 @@
+[
+  {
+    "id": 40843867,
+    "title": "Ho creato un'alternativa ad After Effects",
+    "originLink": "https://pikimov.com/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40843867",
+    "commentBody": "",
+    "originSummary": [
+      "Pikimov è un nuovo editor di motion design e video basato sul web, ispirato a Photopea, e serve come alternativa gratuita ad After Effects.",
+      "Non richiede registrazione, mantiene i file sul computer dell'utente e garantisce che i progetti non vengano utilizzati per l'addestramento dell'IA.",
+      "Il creatore ha una storia di sviluppo di software VJ per piattaforme come il Game Boy Advance, Playstation 2 e Raspberry Pi."
+    ],
+    "commentSummary": [
+      "Pikimov è un nuovo editor di motion design e video basato sul web, gratuito, creato come alternativa ad Adobe After Effects, che non richiede registrazione o caricamenti su cloud.",
+      "Lo strumento ha ricevuto feedback positivi per il suo potenziale di sfidare il dominio di Adobe, con gli utenti che suggeriscono miglioramenti nei limiti del frame rate, nella segnalazione dei bug e nella gestione dei keyframe.",
+      "Attualmente, Pikimov supporta solo Chrome ed Edge a causa di specifiche API web, con piani futuri per aggiungere funzionalità comunitarie e possibilmente monetizzare l'app."
+    ],
+    "points": 597,
+    "commentCount": 166,
+    "retryCount": 0,
+    "time": 1719824246
+  },
+  {
+    "id": 40843778,
+    "title": "RegreSSHion: Esecuzione di codice remoto nel server OpenSSH, su sistemi Linux basati su glibc",
+    "originLink": "https://www.qualys.com/2024/07/01/cve-2024-6387/regresshion.txt",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40843778",
+    "commentBody": "",
+    "originSummary": [
+      "Una vulnerabilità critica (CVE-2024-6387) nel server OpenSSH su sistemi Linux basati su glibc consente l'esecuzione di codice remoto (RCE) a causa di una condizione di gara nel gestore dei segnali.",
+      "Il problema, una regressione di CVE-2006-5051, riguarda le versioni di OpenSSH 3.4p1, 4.2p1 e 9.2p1, e comporta lo sfruttamento del gestore SIGALRM per causare la corruzione dell'heap ed eseguire codice arbitrario.",
+      "Le misure di mitigazione includono l'applicazione di patch che spostano il codice non sicuro per i segnali asincroni fuori dal gestore SIGALRM o l'impostazione di `LoginGraceTime` a 0, anche se quest'ultima potrebbe causare un'interruzione del servizio."
+    ],
+    "commentSummary": [
+      "È stata scoperta una vulnerabilità di esecuzione di codice remoto (RCE) nel server OpenSSH su sistemi Linux basati su glibc, che potrebbe consentire agli aggressori di ottenere l'accesso root remoto.",
+      "Il rimedio per questa vulnerabilità è stato implementato spostando il codice non sicuro dal gestore dei segnali al processo di ascolto, rendendo difficile il backport.",
+      "Il problema riguarda principalmente i sistemi a 32 bit, con lo sfruttamento sui sistemi a 64 bit ritenuto possibile ma non ancora dimostrato; varie distribuzioni hanno già rilasciato patch."
+    ],
+    "points": 542,
+    "commentCount": 211,
+    "retryCount": 0,
+    "time": 1719823254
+  },
+  {
+    "id": 40841980,
+    "title": "Pipes: Un successore spirituale di Yahoo Pipes",
+    "originLink": "https://www.pipes.digital/docs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40841980",
+    "commentBody": "",
+    "originSummary": [
+      "Pipes è un editor di programmazione visiva per feed, che consente agli utenti di recuperare, creare e manipolare feed utilizzando blocchi, simile a Yahoo! Pipes.",
+      "Supporta vari formati di input, inclusi RSS, Atom, JSON, HTML e file di testo, e offre una gamma di blocchi per diverse operazioni sui feed come il filtraggio, la fusione e l'estrazione di contenuti.",
+      "Pipes CE è un software libero e open-source (FOSS) sotto licenza AGPL, disponibile su Github, e supporta integrazioni con siti popolari come Twitter, YouTube e Vimeo."
+    ],
+    "commentSummary": [
+      "Pipes, un progetto ispirato a Yahoo Pipes, ha recentemente subito aggiornamenti per migliorare la stabilità, inclusa una transizione dal testo agli oggetti RSS per il trasporto dei dati tra i blocchi.",
+      "È stato implementato l'aggiornamento dei server e la riconfigurazione dei thread e dei lavoratori puma per affrontare problemi e colli di bottiglia.",
+      "Si sta considerando un suggerimento di un utente per aggiungere un blocco per riassunti o immagini generati dall'IA tramite richieste POST, con alcuni blocchi fondamentali già in atto."
+    ],
+    "points": 382,
+    "commentCount": 109,
+    "retryCount": 0,
+    "time": 1719799417
+  },
+  {
+    "id": 40843848,
+    "title": "Miei modelli finemente sintonizzati battono il GPT-4 di OpenAI",
+    "originLink": "https://mlops.systems/posts/2024-07-01-full-finetuned-model-evaluation.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40843848",
+    "commentBody": "",
+    "originSummary": [
+      "Il post discute le metriche di valutazione per valutare le prestazioni dei modelli linguistici finemente sintonizzati (LLM) nell'estrazione di dati strutturati dai comunicati stampa, con un'attenzione particolare all'accuratezza.",
+      "Modelli finemente ottimizzati, tra cui TinyLlama, Mistral e Solar LLM, hanno generalmente superato in accuratezza il GPT-4 e il GPT-4 Turbo di OpenAI, nonostante la complessità e la lentezza delle valutazioni.",
+      "Le valutazioni hanno evidenziato la necessità di un sistema migliore per gestire la complessità e la manutenzione, con i prossimi passi che includono test non legati all'accuratezza ed esplorazione del servizio del modello."
+    ],
+    "commentSummary": [
+      "Modelli ottimizzati possono superare modelli generali come GPT-4 di OpenAI in compiti specifici, come l'estrazione di dati, la sintesi creativa, la risposta a domande e la classificazione.",
+      "Il successo dei modelli perfezionati dipende da dati di addestramento di alta qualità, rendendoli efficaci per l'estrazione di informazioni di nicchia e accessibili agli appassionati di tecnologia.",
+      "Affinare modelli più piccoli, come Llama 3 8B, può essere più efficiente ed economico, ma utilizzare le risposte del modello per addestrare nuovi modelli potrebbe violare i termini di servizio dei principali fornitori di LLM."
+    ],
+    "points": 300,
+    "commentCount": 77,
+    "retryCount": 0,
+    "time": 1719823984
+  },
+  {
+    "id": 40843720,
+    "title": "Città hanno bisogno di più alberi",
+    "originLink": "https://herman.bearblog.dev/cities-need-more-trees/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40843720",
+    "commentBody": "",
+    "originSummary": [
+      "Johannesburg, un tempo arida, si è trasformata nella \"città più verde del mondo\" dopo aver piantato milioni di alberi per combattere la polvere derivante dall'estrazione dell'oro.",
+      "Il piantamento di alberi a Johannesburg era distribuito in modo disomogeneo a causa dell'Apartheid, mettendo in evidenza le disparità socioeconomiche.",
+      "Gli alberi urbani offrono benefici significativi, tra cui la riduzione dell'effetto \"isola di calore\", fungendo da barriere acustiche, migliorando l'estetica, aumentando la biodiversità e incoraggiando le attività all'aperto."
+    ],
+    "commentSummary": [
+      "Città stanno piantando sempre più alberi e promuovendo tetti verdi per combattere lo stress da calore e migliorare la vivibilità urbana.",
+      "Utrecht, Paesi Bassi, e Zurigo, Svizzera, sono esempi di spicco, mentre città statunitensi come Portland, OR, hanno mandati verdi, e Salt Lake City sta esplorando lo xeriscaping.",
+      "Gli alberi offrono benefici significativi, come il raffreddamento delle aree urbane, il miglioramento della qualità dell'aria e l'aumento della vivibilità complessiva, nonostante le sfide come lo sviluppo di proprietà private che portano alla rimozione degli alberi."
+    ],
+    "points": 273,
+    "commentCount": 139,
+    "retryCount": 0,
+    "time": 1719822718
+  },
+  {
+    "id": 40845951,
+    "title": "Benvenuti a Ladybird",
+    "originLink": "https://ladybird.org/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40845951",
+    "commentBody": "",
+    "originSummary": [
+      "Ladybird è un browser web indipendente sviluppato da un'organizzazione non-profit, che si concentra su prestazioni, stabilità e sicurezza, con un rilascio Alpha previsto per il 2026.",
+      "Inizialmente un visualizzatore HTML per SerenityOS, ora supporta Linux, macOS e altri sistemi simili a Unix, ed è costruito interamente da zero senza utilizzare codice di altri browser.",
+      "Il progetto è finanziato da sponsorizzazioni e donazioni, senza pubblicità o monetizzazione degli utenti, ed è attualmente sviluppato da un team di quattro ingegneri a tempo pieno."
+    ],
+    "commentSummary": [
+      "Ladybird, inizialmente un renderer HTML per SerenityOS, si sta ora evolvendo in un progetto di browser multipiattaforma.",
+      "Il progetto ha ricevuto una notevole donazione di $1.000.000 dal co-fondatore di GitHub Chris Wanstrath, indicando un forte sostegno finanziario.",
+      "Il team prevede di rilasciare una versione alpha entro il 2026, enfatizzando la modularità e l'aderenza agli standard web moderni."
+    ],
+    "points": 246,
+    "commentCount": 62,
+    "retryCount": 0,
+    "time": 1719842693
+  },
+  {
+    "id": 40839418,
+    "title": "Codice del francobollo",
+    "originLink": "https://en.wikipedia.org/wiki/Postzegelcode",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40839418",
+    "commentBody": "",
+    "originSummary": [
+      "Un postzegelcode è un codice di nove caratteri utilizzato nei Paesi Bassi come alternativa scritta a mano ai francobolli, acquistato online da PostNL.",
+      "Introdotto nel 2013, il codice deve essere scritto sulla posta entro cinque giorni e ha 78,8 trilioni di combinazioni possibili, rendendolo sicuro contro i tentativi di indovinare.",
+      "Da dicembre 2020, 590.000 persone hanno utilizzato i postzegelcodes, che ora costano quanto i francobolli tradizionali."
+    ],
+    "commentSummary": [
+      "Il dibattito ruota attorno all'uso dei codici postali digitali, noti come \"postzegelcode\", che possono essere scritti sulle buste invece di utilizzare i francobolli tradizionali.",
+      "Vari paesi, tra cui Germania, Danimarca, Norvegia e Svezia, hanno implementato sistemi simili, permettendo agli utenti di acquistare l'affrancatura online e scrivere un codice sulla loro posta.",
+      "Il sistema è apprezzato per la sua comodità, soprattutto per coloro che non inviano frequentemente posta fisica, poiché elimina la necessità di francobolli fisici e si adatta ai cambiamenti delle tariffe postali."
+    ],
+    "points": 228,
+    "commentCount": 95,
+    "retryCount": 0,
+    "time": 1719775062
+  },
+  {
+    "id": 40847963,
+    "title": "Il Supremo Tribunale stabilisce che gli ex presidenti hanno l'immunità per atti ufficiali",
+    "originLink": "https://apnews.com/article/supreme-court-trump-capitol-riot-immunity-2dc0d1c2368d404adc0054151490f542",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40847963",
+    "commentBody": "",
+    "originSummary": [
+      "La Corte Suprema ha esteso il ritardo nel caso penale di Donald Trump riguardante le elezioni del 2020, riducendo la probabilità di un processo prima delle elezioni di novembre.",
+      "In una sentenza di 6-3, la maggioranza conservatrice della corte ha concesso agli ex presidenti un'ampia immunità dalla persecuzione per atti ufficiali, complicando il caso dell'accusa e richiedendo ulteriori analisi a livello di tribunale di primo grado.",
+      "La decisione sottolinea l'influenza significativa della corte sulle prossime elezioni, con il Presidente della Corte Suprema John Roberts che enfatizza l'immunità per gli atti ufficiali e la Giudice Sonia Sotomayor in dissenso, sostenendo che mina il principio secondo cui nessuno è al di sopra della legge."
+    ],
+    "commentSummary": [
+      "Il Supremo Tribunale ha stabilito che gli ex presidenti hanno l'immunità per gli atti ufficiali, suscitando un dibattito sugli eventuali abusi di potere rispetto alla necessità di protezione presidenziale.",
+      "Il verdetto specifica che l'immunità si applica alle azioni all'interno dell'autorità costituzionale ma non agli atti non ufficiali, sollevando preoccupazioni riguardo alla responsabilità per crimini gravi.",
+      "Critici, tra cui il giudice Sotomayor, temono che questa decisione possa influenzare i casi legali in corso e futuri che coinvolgono ex presidenti."
+    ],
+    "points": 226,
+    "commentCount": 325,
+    "retryCount": 0,
+    "time": 1719854392
+  },
+  {
+    "id": 40840396,
+    "title": "Convoluzioni, Trasformata di Fourier Veloce e polinomi (2022)",
+    "originLink": "https://www.alvarorevuelta.com/posts/fft-polynomials",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40840396",
+    "commentBody": "",
+    "originSummary": [
+      "Il metodo tradizionale di moltiplicazione dei polinomi ha una complessità di \\(O(n^2)\\), rendendolo inefficiente per polinomi di grandi dimensioni.",
+      "Il Fast Fourier Transform (FFT) riduce la complessità della moltiplicazione polinomiale a \\(O(n \\log n)\\) convertendo il problema nel dominio delle frequenze.",
+      "Il metodo basato sulla FFT comporta la conversione dei polinomi nel dominio delle frequenze, la loro moltiplicazione e la conversione del risultato indietro, migliorando significativamente l'efficienza per polinomi di alto grado."
+    ],
+    "commentSummary": [
+      "Il dibattito si concentra sull'uso della Trasformata di Fourier Veloce (FFT) per la moltiplicazione dei polinomi, evidenziando la sua efficienza rispetto ai metodi ingenui.",
+      "Le intuizioni chiave includono l'importanza della precisione numerica nei calcoli FFT e il contesto storico dello sviluppo dell'FFT per la moltiplicazione dei polinomi.",
+      "Il discorso tocca anche applicazioni pratiche, come la correzione degli errori, l'elaborazione dei segnali e la crittografia a conoscenza zero, dove i metodi basati sulla FFT sono particolarmente vantaggiosi."
+    ],
+    "points": 211,
+    "commentCount": 53,
+    "retryCount": 0,
+    "time": 1719781723
+  },
+  {
+    "id": 40845304,
+    "title": "Mio codice Python è una rete neurale",
+    "originLink": "https://blog.gabornyeki.com/2024-07-my-python-code-is-a-neural-network/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40845304",
+    "commentBody": "",
+    "originSummary": [
+      "Il post discute l'integrazione di programmi nelle reti neurali ricorrenti (RNN) e come le RNN addestrate possano superare gli algoritmi scritti a mano.",
+      "Fornisce un esempio dettagliato di rilevamento del codice del programma nei messaggi, confrontando semplici regole decisionali, un algoritmo scritto a mano e un approccio basato su RNN.",
+      "Il post evidenzia i vantaggi delle RNN, come la codifica delle macchine a stati, l'uso di funzioni di attivazione addestrabili e la gestione di compiti complessi con una disciplina basata sui dati."
+    ],
+    "commentSummary": [
+      "Il articolo discute la costruzione di una rete neurale utilizzando Python, ma manca di dettagli sul test e sull'ottenimento dei dati di addestramento, che sono cruciali per garantire la generalizzazione del modello a input non visti.",
+      "La discussione mette in evidenza il Teorema di Approssimazione Universale, che afferma che le reti neurali possono rappresentare qualsiasi funzione con il livello di accuratezza desiderato, ma sottolinea che l'apprendimento di queste approssimazioni non è garantito.",
+      "Esiste un dibattito sul fatto che le Reti Neurali Ricorrenti (RNN) stiano venendo sostituite dai transformer, con alcuni che sostengono che le RNN abbiano ancora vantaggi unici, come l'uso costante della memoria, che i transformer non hanno."
+    ],
+    "points": 193,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1719838058
+  },
+  {
+    "id": 40846428,
+    "title": "Chi sta assumendo? (luglio 2024)",
+    "originLink": "https://news.ycombinator.com/item?id=40846428",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40846428",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Varie aziende stanno assumendo per diversi ruoli, inclusi posizioni remote, in sede e ibride, in diverse località e settori.",
+      "Le aziende di rilievo includono Apple, Figma, Charge Robotics e SmileID, che offrono posizioni come Senior Software Engineer, Senior/Staff Security Engineer e Senior Frontend Engineer.",
+      "Le opportunità si estendono in tutto il mondo, con alcune aziende che offrono il patrocinio del visto e ruoli in tecnologie emergenti come l'IA, il machine learning e lo sviluppo full-stack."
+    ],
+    "points": 191,
+    "commentCount": 171,
+    "retryCount": 0,
+    "time": 1719846109
+  },
+  {
+    "id": 40842867,
+    "title": "Programmers Should Never Trust Anyone, Not Even Themselves",
+    "originLink": "https://carbon-steel.github.io/jekyll/update/2024/06/19/abstractions.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40842867",
+    "commentBody": "",
+    "originSummary": [
+      "È importante che i programmatori mantengano un sano livello di scetticismo, poiché scrivere e verificare la correttezza del codice è intrinsecamente difficile e spesso impossibile.",
+      "Le astrazioni, pur semplificando i sistemi complessi, possono fallire e portare a problemi come il degrado delle prestazioni o comportamenti indefiniti, come evidenziato dalla Legge delle Astrazioni Permeabili di Joel Spolsky.",
+      "Per mitigare problemi sconosciuti, i programmatori dovrebbero verificare le informazioni, testare le convinzioni e misurare l'impatto delle modifiche al codice, continuando a imparare su nuove piattaforme, linguaggi, strumenti e tecnologie."
+    ],
+    "commentSummary": [
+      "Il dibattito si concentra sull'importanza della verifica formale nella programmazione, sottolineando che i programmatori non dovrebbero fidarsi di nessuno, nemmeno di se stessi, senza prove.",
+      "Le verifiche formali, sebbene complesse e costose, offrono garanzie di correttezza più solide rispetto ai test unitari, che coprono solo esempi specifici.",
+      "Il dibattito mette in evidenza i compromessi tra il rigore della verifica formale e la praticità dei test unitari, suggerendo che la scelta dipende dai requisiti e dalle risorse del progetto."
+    ],
+    "points": 172,
+    "commentCount": 139,
+    "retryCount": 0,
+    "time": 1719812397
+  },
+  {
+    "id": 40840315,
+    "title": "Unificazione in Elixir",
+    "originLink": "https://www.ericpfahl.com/from-pattern-matching-to-unification/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40840315",
+    "commentBody": "",
+    "originSummary": [
+      "Unificazione in Elixir estende il pattern matching consentendo variabili su entrambi i lati di un'equazione, risolvendo equazioni simboliche e producendo mappature di sostituzione.",
+      "Al contrario del pattern matching, l'unificazione può gestire valori parzialmente noti, rendendola uno strumento potente per la programmazione logica in Elixir.",
+      "Il algoritmo di unificazione comporta l'analisi dei termini, la verifica dell'equivalenza, la gestione delle variabili e l'unificazione ricorsiva degli elementi delle liste, semplificando le assegnazioni delle variabili tramite la sostituzione."
+    ],
+    "commentSummary": [
+      "Il articolo confronta l'efficienza degli algoritmi di unificazione nell'inferenza dei tipi, concentrandosi sull'algoritmo W e sull'algoritmo J.",
+      "Algoritmo W, utilizzato nell'inferenza di tipo Hindley-Milner, è meno efficiente e più soggetto a errori a causa della necessità di comporre sostituzioni.",
+      "Algoritmo J, che utilizza una struttura dati union-find per l'unificazione distruttiva, è più semplice e più efficiente, con ulteriori approfondimenti sull'unificazione nel pattern matching e nel pattern matching compilato utilizzando alberi decisionali."
+    ],
+    "points": 155,
+    "commentCount": 26,
+    "retryCount": 0,
+    "time": 1719781112
+  },
+  {
+    "id": 40840699,
+    "title": "Non sapevo che esistesse il sito Google Arts and Culture",
+    "originLink": "https://artsandculture.google.com/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40840699",
+    "commentBody": "",
+    "originSummary": [
+      "Google Arts & Culture offre una vasta gamma di tour virtuali ed esperienze interattive, permettendo agli utenti di esplorare arte, storia e cultura da tutto il mondo.",
+      "Le attrazioni principali includono tour virtuali di famosi musei, esperienze di realtà aumentata (AR) e giochi interattivi che rendono l'apprendimento dell'arte e della cultura coinvolgente e accessibile.",
+      "Le caratteristiche speciali includono la possibilità di esplorare la biblioteca di Van Gogh, fare un tour 3D dei dipinti di Vermeer e partecipare a una sfida di danza K-Pop in collaborazione con il Museo V&A."
+    ],
+    "commentSummary": [
+      "Google Arts and Culture è un progetto meno conosciuto ma significativo di Google, che offre contenuti culturali curati da tutto il mondo.",
+      "Gli utenti apprezzano le immagini ad alta risoluzione e le caratteristiche uniche, come la possibilità di ingrandire da vicino le opere d'arte ed esplorare vari progetti culturali.",
+      "La piattaforma è attiva dal 2011 e continua a essere una risorsa preziosa per gli appassionati di arte e cultura, nonostante le preoccupazioni sulla longevità dei progetti di Google."
+    ],
+    "points": 154,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1719784504
+  },
+  {
+    "id": 40839830,
+    "title": "Newswire: Un database strutturato su larga scala di un secolo di notizie storiche",
+    "originLink": "https://arxiv.org/abs/2406.09490",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40839830",
+    "commentBody": "",
+    "originSummary": [
+      "Ricercatori hanno creato un archivio completo dei contenuti delle agenzie di stampa statunitensi dal 1878 al 1977 utilizzando una pipeline di deep learning su scansioni di immagini da giornali locali.",
+      "Il dataset include 2,7 milioni di articoli unici di dominio pubblico, georeferenziati, etichettati per argomento e collegati a Wikipedia, fornendo informazioni preziose per la linguistica computazionale, le scienze sociali e la ricerca nelle discipline umanistiche digitali.",
+      "Il progetto ha comportato la trascrizione di 138 milioni di testi di articoli strutturati e l'utilizzo di un modello neurale bi-encoder per eliminare i duplicati degli articoli, garantendo che fosse incluso solo il contenuto di dominio pubblico."
+    ],
+    "commentSummary": [
+      "È stato creato un database completo di notizie storiche fino al 1978, che riflette i cambiamenti nelle leggi sul copyright, ed è disponibile su GitHub, sebbene attualmente vuoto.",
+      "Gli utenti hanno identificato errori di OCR (Riconoscimento Ottico dei Caratteri) nei dati, evidenziando le sfide persistenti nella digitalizzazione dei testi storici.",
+      "Il progetto, nonostante i suoi problemi, è lodato per il suo valore accademico, con scansioni grezze accessibili tramite la collezione digitale della Biblioteca del Congresso."
+    ],
+    "points": 150,
+    "commentCount": 32,
+    "retryCount": 0,
+    "time": 1719777526
+  }
+]

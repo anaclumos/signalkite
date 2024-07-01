@@ -15,12 +15,203 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 30 Jun 2024 19:09:08 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Jul 2024 19:23:18 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/es.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 30 Jun 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[es]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-01]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/01&#39;</h2>
+<h1>2024-07-01</h1>
+<h2><a href="https://pikimov.com/">He creado una alternativa a After Effects</a></h2>
+<ul>
+<li>Pikimov es un editor de video y diseño de movimiento basado en la web, recién lanzado, inspirado en Photopea, y sirve como una alternativa gratuita a After Effects.</li>
+<li>Requiere no registrarse, mantiene los archivos en la máquina del usuario y asegura que los proyectos no se utilicen para el entrenamiento de IA.</li>
+<li>El creador tiene una trayectoria en el desarrollo de software VJ para plataformas como Game Boy Advance, Playstation 2 y Raspberry Pi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843867">Reacciones</a></h3>
+<ul>
+<li>Pikimov es un nuevo editor de diseño de movimiento y video basado en la web, gratuito, creado como una alternativa a Adobe After Effects, que no requiere registro ni cargas en la nube.</li>
+<li>La herramienta ha recibido comentarios positivos por su potencial para desafiar el dominio de Adobe, con usuarios sugiriendo mejoras en los límites de la tasa de fotogramas, la notificación de errores y el manejo de fotogramas clave.</li>
+<li>Actualmente, Pikimov solo es compatible con Chrome y Edge debido a APIs web específicas, con planes futuros de agregar funciones comunitarias y posiblemente monetizar la aplicación.</li>
+</ul>
+<h2><a href="https://www.qualys.com/2024/07/01/cve-2024-6387/regresshion.txt">RegreSSHion: RCE en el servidor de OpenSSH, en sistemas Linux basados en glibc</a></h2>
+<ul>
+<li>Una vulnerabilidad crítica (CVE-2024-6387) en el servidor de OpenSSH en sistemas Linux basados en glibc permite la ejecución remota de código (RCE) debido a una condición de carrera en el manejador de señales.</li>
+<li>La cuestión, una regresión de CVE-2006-5051, afecta a las versiones 3.4p1, 4.2p1 y 9.2p1 de OpenSSH, e implica explotar el manejador SIGALRM para causar corrupción de la memoria heap y ejecutar código arbitrario.</li>
+<li>Las medidas de mitigación incluyen aplicar parches que muevan el código asíncrono no seguro fuera del manejador de SIGALRM o establecer <code>LoginGraceTime</code> en 0, aunque esto último puede causar una denegación de servicio.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843778">Reacciones</a></h3>
+<ul>
+<li>Se descubrió una vulnerabilidad de ejecución remota de código (RCE) en el servidor de OpenSSH en sistemas Linux basados en glibc, lo que podría permitir a los atacantes obtener acceso remoto como root.</li>
+<li>La solución para esta vulnerabilidad se implementó moviendo el código inseguro del manejador de señales al proceso del oyente, lo que dificulta su retroportación.</li>
+<li>La cuestión afecta principalmente a los sistemas de 32 bits, con la explotación en sistemas de 64 bits considerada posible pero aún no demostrada; varias distribuciones ya han lanzado parches.</li>
+</ul>
+<h2><a href="https://www.pipes.digital/docs">Pipes: Un sucesor espiritual de Yahoo Pipes</a></h2>
+<ul>
+<li>Pipes es un editor de programación visual para feeds, que permite a los usuarios obtener, crear y manipular feeds utilizando bloques, similar a Yahoo! Pipes.</li>
+<li>It supports various input formats, including RSS, Atom, JSON, HTML, and text files, and offers a range of blocks for different feed operations like filtering, merging, and extracting content.</li>
+<li>Pipes CE es un software libre y de código abierto (FOSS) bajo la licencia AGPL, disponible en Github, y admite integraciones con sitios populares como Twitter, YouTube y Vimeo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40841980">Reacciones</a></h3>
+<ul>
+<li>Pipes, un proyecto inspirado en Yahoo Pipes, recientemente se sometió a actualizaciones para mejorar la estabilidad, incluyendo un cambio de texto a objetos RSS para el transporte de datos entre bloques.</li>
+<li>Se implementaron actualizaciones del servidor y la reconfiguración de hilos y trabajadores puma para abordar problemas y cuellos de botella.</li>
+<li>Se está considerando una sugerencia de usuario para agregar un bloque para resúmenes o imágenes generados por IA a través de solicitudes POST, con algunos bloques fundamentales ya en su lugar.</li>
+</ul>
+<h2><a href="https://mlops.systems/posts/2024-07-01-full-finetuned-model-evaluation.html">Mis modelos ajustados superan al GPT-4 de OpenAI</a></h2>
+<ul>
+<li>La publicación discute las métricas de evaluación para evaluar el rendimiento de los modelos de lenguaje ajustados (LLMs) en la extracción de datos estructurados de comunicados de prensa, con un enfoque en la precisión.</li>
+<li>Los modelos ajustados, incluidos TinyLlama, Mistral y Solar LLM, generalmente superaron a GPT-4 y GPT-4 Turbo de OpenAI en precisión, a pesar de la complejidad y el ritmo lento de las evaluaciones.</li>
+<li>La evaluación destacó la necesidad de un mejor sistema para gestionar la complejidad y el mantenimiento, con pasos futuros que incluyen pruebas no relacionadas con la precisión y la exploración del servicio de modelos.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843848">Reacciones</a></h3>
+<ul>
+<li>Los modelos ajustados pueden superar a los modelos generales como GPT-4 de OpenAI en tareas específicas, como la extracción de datos, la resumación creativa, la respuesta a preguntas y la clasificación.</li>
+<li>La eficacia de los modelos ajustados depende de datos de entrenamiento de alta calidad, lo que los hace efectivos para la extracción de información específica y accesibles para los entusiastas de la tecnología.</li>
+<li>El ajuste fino de modelos más pequeños, como Llama 3 8B, puede ser más eficiente y rentable, pero usar las respuestas del modelo para entrenar nuevos modelos puede violar los términos de servicio de los principales proveedores de LLM.</li>
+</ul>
+<h2><a href="https://herman.bearblog.dev/cities-need-more-trees/">Las ciudades necesitan más árboles</a></h2>
+<ul>
+<li>Johannesburgo, antes árido, se transformó en la &quot;ciudad más verde del mundo&quot; después de plantar millones de árboles para combatir el polvo de la extracción de oro.</li>
+<li>El plantado de árboles en Johannesburgo se distribuyó de manera desigual debido al Apartheid, lo que resalta las disparidades socioeconómicas.</li>
+<li>Los árboles urbanos brindan beneficios significativos, incluyendo la reducción del efecto de &quot;isla de calor&quot;, actuando como barreras sonoras, mejorando la estética, aumentando la biodiversidad y fomentando las actividades al aire libre.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843720">Reacciones</a></h3>
+<ul>
+<li>Cada vez más, las ciudades están plantando árboles y promoviendo techos verdes para combatir el estrés térmico y mejorar la habitabilidad urbana.</li>
+<li>Utrecht, Países Bajos, y Zúrich, Suiza, son ejemplos destacados, mientras que ciudades estadounidenses como Portland, OR, tienen mandatos ecológicos, y Salt Lake City está explorando la xerojardinería.</li>
+<li>Los árboles ofrecen beneficios significativos, como enfriar las áreas urbanas, mejorar la calidad del aire y mejorar la habitabilidad en general, a pesar de desafíos como el desarrollo de propiedades privadas que conducen a la eliminación de árboles.</li>
+</ul>
+<h2><a href="https://ladybird.org/">Bienvenido a Ladybird</a></h2>
+<ul>
+<li>Ladybird es un navegador web independiente desarrollado por una organización sin fines de lucro, enfocado en el rendimiento, la estabilidad y la seguridad, con un lanzamiento Alpha planeado para 2026.</li>
+<li>Inicialmente un visor de HTML para SerenityOS, ahora es compatible con Linux, macOS y otros sistemas similares a Unix, y está construido completamente desde cero sin usar código de otros navegadores.</li>
+<li>El proyecto está financiado por patrocinios y donaciones, sin anuncios ni monetización de usuarios, y actualmente es desarrollado por un equipo de cuatro ingenieros a tiempo completo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40845951">Reacciones</a></h3>
+<ul>
+<li>Ladybird, inicialmente un renderizador de HTML para SerenityOS, ahora está evolucionando hacia un proyecto de navegador multiplataforma.</li>
+<li>La iniciativa ha recibido una notable donación de $1,000,000 del cofundador de GitHub, Chris Wanstrath, lo que indica un fuerte respaldo financiero.</li>
+<li>La equipo planea lanzar una versión alfa para 2026, enfatizando la modularidad y la adherencia a los estándares web modernos.</li>
+</ul>
+<h2><a href="https://en.wikipedia.org/wiki/Postzegelcode">Postzegelcode</a></h2>
+<ul>
+<li>Un postzegelcode es un código de nueve caracteres utilizado en los Países Bajos como una alternativa manuscrita a los sellos postales, comprado en línea de PostNL.</li>
+<li>Introducido en 2013, el código debe escribirse en el correo dentro de los cinco días y tiene 78.8 billones de combinaciones posibles, lo que lo hace seguro contra adivinanzas.</li>
+<li>En diciembre de 2020, 590,000 personas usaron postzegelcodes, que ahora cuestan lo mismo que los sellos tradicionales.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40839418">Reacciones</a></h3>
+<ul>
+<li>La discusión gira en torno al uso de códigos postales digitales, conocidos como &#39;postzegelcode,&#39; que se pueden escribir en los sobres en lugar de usar sellos tradicionales.</li>
+<li>Varios países, incluidos Alemania, Dinamarca, Noruega y Suecia, han implementado sistemas similares, permitiendo a los usuarios comprar franqueo en línea y escribir un código en su correo.</li>
+<li>La conveniencia del sistema es elogiada, especialmente para aquellos que no envían correo físico con frecuencia, ya que elimina la necesidad de sellos físicos y se adapta a las tarifas postales cambiantes.</li>
+</ul>
+<h2><a href="https://apnews.com/article/supreme-court-trump-capitol-riot-immunity-2dc0d1c2368d404adc0054151490f542">El Tribunal Supremo dictamina que los expresidentes tienen inmunidad por actos oficiales</a></h2>
+<ul>
+<li>La Corte Suprema extendió el retraso en el caso penal de Donald Trump relacionado con las elecciones de 2020, reduciendo la probabilidad de un juicio antes de las elecciones de noviembre.</li>
+<li>En una decisión de 6-3, la mayoría conservadora de la corte otorgó a los expresidentes una amplia inmunidad frente a enjuiciamientos por actos oficiales, complicando el caso de la fiscalía y requiriendo un análisis adicional en el nivel del tribunal de primera instancia.</li>
+<li>La decisión subraya la significativa influencia de la corte en las próximas elecciones, con el Presidente del Tribunal Supremo John Roberts enfatizando la inmunidad para actos oficiales y la Jueza Sonia Sotomayor disintiendo, argumentando que socava el principio de que nadie está por encima de la ley.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40847963">Reacciones</a></h3>
+<ul>
+<li>La Corte Suprema ha dictaminado que los expresidentes tienen inmunidad por actos oficiales, lo que ha generado un debate sobre los posibles abusos de poder frente a la necesidad de protección presidencial.</li>
+<li>La sentencia especifica que la inmunidad se aplica a acciones dentro de la autoridad constitucional, pero no a actos no oficiales, lo que genera preocupaciones sobre la rendición de cuentas por delitos graves.</li>
+<li>Los críticos, incluida la jueza Sotomayor, temen que esta decisión pueda afectar casos legales en curso y futuros que involucren a expresidentes.</li>
+</ul>
+<h2><a href="https://www.alvarorevuelta.com/posts/fft-polynomials">Convoluciones, Transformada Rápida de Fourier y polinomios (2022)</a></h2>
+<ul>
+<li>El método tradicional de multiplicación de polinomios tiene una complejidad de (O(n^2)), lo que lo hace ineficiente para polinomios grandes.</li>
+<li>La Transformada Rápida de Fourier (FFT) reduce la complejidad de la multiplicación de polinomios a (O(n \log n)) al convertir el problema al dominio de la frecuencia.</li>
+<li>La metodología basada en FFT implica convertir polinomios al dominio de la frecuencia, multiplicarlos y convertir el resultado de nuevo, mejorando significativamente la eficiencia para polinomios de alto grado.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40840396">Reacciones</a></h3>
+<ul>
+<li>La discusión se centra en el uso de la Transformada Rápida de Fourier (FFT) para la multiplicación de polinomios, destacando su eficiencia en comparación con métodos ingenuos.</li>
+<li>Las ideas clave incluyen la importancia de la precisión numérica en los cálculos de FFT y el contexto histórico del desarrollo de FFT para la multiplicación de polinomios.</li>
+<li>La conversación también aborda aplicaciones prácticas, como la corrección de errores, el procesamiento de señales y la criptografía de conocimiento cero, donde los métodos basados en FFT son particularmente beneficiosos.</li>
+</ul>
+<h2><a href="https://blog.gabornyeki.com/2024-07-my-python-code-is-a-neural-network/">Mi código en Python es una red neuronal</a></h2>
+<ul>
+<li>La publicación discute la incorporación de programas en redes neuronales recurrentes (RNN) y cómo las RNN entrenadas pueden superar a los algoritmos escritos a mano.</li>
+<li>Proporciona un ejemplo detallado de la detección de código de programa en mensajes, comparando reglas de decisión simples, un algoritmo escrito a mano y un enfoque basado en RNN.</li>
+<li>El artículo destaca las ventajas de las RNN, como la codificación de máquinas de estados, el uso de funciones de activación entrenables y el manejo de tareas complejas con una disciplina basada en datos.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40845304">Reacciones</a></h3>
+<ul>
+<li>La artículo discute la construcción de una red neuronal usando Python, pero carece de detalles sobre las pruebas y la obtención de datos de entrenamiento, que son cruciales para asegurar la generalización del modelo a entradas no vistas.</li>
+<li>La discusión destaca el Teorema de Aproximación Universal, que establece que las redes neuronales pueden representar cualquier función con el nivel de precisión deseado, pero enfatiza que aprender estas aproximaciones no está garantizado.</li>
+<li>Existe un debate sobre si las Redes Neuronales Recurrentes (RNN) están siendo reemplazadas por transformadores, con algunos argumentando que las RNN aún tienen ventajas únicas, como el uso constante de memoria, que los transformadores no tienen.</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40846428">¿Quién está contratando? (julio 2024)</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40846428">Reacciones</a></h3>
+<ul>
+<li>Varias empresas están contratando para múltiples roles, incluyendo posiciones remotas, presenciales e híbridas, en diferentes ubicaciones e industrias.</li>
+<li>Las empresas destacadas incluyen Apple, Figma, Charge Robotics y SmileID, que ofrecen puestos como Ingeniero de Software Senior, Ingeniero de Seguridad Senior/Staff y Ingeniero Frontend Senior.</li>
+<li>Las oportunidades se extienden por todo el mundo, con algunas empresas ofreciendo patrocinio de visas y roles en tecnologías emergentes como la IA, el aprendizaje automático y el desarrollo full-stack.</li>
+</ul>
+<h2><a href="https://carbon-steel.github.io/jekyll/update/2024/06/19/abstractions.html">Los programadores nunca deben confiar en nadie, ni siquiera en ellos mismos</a></h2>
+<ul>
+<li>Los programadores deben mantener un nivel saludable de escepticismo, ya que escribir y verificar la corrección del código es inherentemente desafiante y, a menudo, imposible.</li>
+<li>Las abstracciones, aunque simplifican sistemas complejos, pueden fallar y llevar a problemas como la degradación del rendimiento o el comportamiento indefinido, como lo destaca la Ley de Abstracciones Fugas de Joel Spolsky.</li>
+<li>Para mitigar problemas desconocidos, los programadores deben verificar la información, probar sus creencias y medir el impacto de los cambios en el código, mientras aprenden continuamente sobre nuevas plataformas, lenguajes, herramientas y tecnologías.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40842867">Reacciones</a></h3>
+<ul>
+<li>La discusión se centra en la importancia de la verificación formal en la programación, enfatizando que los programadores no deben confiar en nadie, incluidos ellos mismos, sin pruebas.</li>
+<li>Si bien la verificación formal es compleja y costosa, ofrece garantías más sólidas de corrección en comparación con las pruebas unitarias, que solo cubren ejemplos específicos.</li>
+<li>La discusión resalta los compromisos entre el rigor de la verificación formal y la practicidad de las pruebas unitarias, sugiriendo que la elección depende de los requisitos y recursos del proyecto.</li>
+</ul>
+<h2><a href="https://www.ericpfahl.com/from-pattern-matching-to-unification/">Unificación en Elixir</a></h2>
+<ul>
+<li>Unificación en Elixir extiende la coincidencia de patrones al permitir variables en ambos lados de una ecuación, resolviendo ecuaciones simbólicas y produciendo mapeos de sustitución.</li>
+<li>Al contrario del emparejamiento de patrones, la unificación puede manejar valores parcialmente conocidos, lo que la convierte en una herramienta poderosa para la programación lógica en Elixir.</li>
+<li>La unificación de algoritmos implica recorrer términos, probar equivalencias, manejar variables y unificar recursivamente elementos de listas, simplificando las asignaciones de variables mediante la sustitución.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40840315">Reacciones</a></h3>
+<ul>
+<li>La artículo compara la eficiencia de los algoritmos de unificación en la inferencia de tipos, centrándose en el algoritmo W y el algoritmo J.</li>
+<li>El algoritmo W, utilizado en la inferencia de tipos de Hindley-Milner, es menos eficiente y más propenso a errores debido a la necesidad de componer sustituciones.</li>
+<li>El Algoritmo J, que emplea una estructura de datos de unión y búsqueda para la unificación destructiva, es más simple y eficiente, con conocimientos adicionales sobre la unificación en la coincidencia de patrones y la coincidencia de patrones compilados utilizando árboles de decisión.</li>
+</ul>
+<h2><a href="https://artsandculture.google.com/">Sitio de Google Arts and Culture que no sabía que existía</a></h2>
+<ul>
+<li>Google Arts &amp; Culture ofrece una amplia gama de recorridos virtuales y experiencias interactivas, permitiendo a los usuarios explorar el arte, la historia y la cultura de todo el mundo.</li>
+<li>Los aspectos destacados incluyen recorridos virtuales por museos famosos, experiencias de realidad aumentada (AR) y juegos interactivos que hacen que aprender sobre arte y cultura sea atractivo y accesible.</li>
+<li>Las características especiales incluyen la capacidad de explorar la biblioteca de Van Gogh, realizar un recorrido en 3D por las pinturas de Vermeer y participar en un desafío de baile K-Pop en colaboración con el Museo V&amp;A.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40840699">Reacciones</a></h3>
+<ul>
+<li>Google Arts and Culture es un proyecto menos conocido pero significativo de Google, que ofrece contenido cultural curado de todo el mundo.</li>
+<li>Los usuarios aprecian sus imágenes de alta resolución y características únicas, como la capacidad de acercarse a las obras de arte y explorar diversos proyectos culturales.</li>
+<li>La plataforma ha estado activa desde 2011 y sigue siendo un recurso valioso para los entusiastas del arte y la cultura, a pesar de las preocupaciones sobre la longevidad de los proyectos de Google.</li>
+</ul>
+<h2><a href="https://arxiv.org/abs/2406.09490">Newswire: Una base de datos estructurada a gran escala de un siglo de noticias históricas</a></h2>
+<ul>
+<li>Los investigadores han creado un archivo completo del contenido de las agencias de noticias de EE. UU. desde 1878 hasta 1977 utilizando una cadena de aprendizaje profundo en escaneos de imágenes de periódicos locales.</li>
+<li>La base de datos incluye 2.7 millones de artículos únicos de dominio público, georreferenciados, etiquetados por tema y vinculados a Wikipedia, proporcionando información valiosa para la lingüística computacional, las ciencias sociales y la investigación en humanidades digitales.</li>
+<li>La tarea consistió en transcribir 138 millones de textos de artículos estructurados y utilizar un modelo de bi-codificador neuronal para eliminar duplicados de artículos, asegurando que solo se incluyera contenido de dominio público.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40839830">Reacciones</a></h3>
+<ul>
+<li>Se ha creado una base de datos completa de noticias históricas hasta 1978, que refleja los cambios en las leyes de derechos de autor, y está disponible en GitHub, aunque actualmente está vacía.</li>
+<li>Los usuarios han identificado errores de OCR (Reconocimiento Óptico de Caracteres) en los datos, subrayando los desafíos persistentes en la digitalización de textos históricos.</li>
+<li>El proyecto, a pesar de sus problemas, es elogiado por su valor académico, con escaneos en bruto accesibles a través de la colección digital de la Biblioteca del Congreso.</li>
+</ul>
+<head>
+  <meta property="og:title" content="He creado una alternativa a After Effects" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=He%20creado%20una%20alternativa%20a%20After%20Effects&subheading=lunes%2C%201%20de%20julio%20de%202024%3A%20Resumen%20de%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/es/2024/07/01</link>
+            <guid isPermaLink="false">2024-07-01T00:00:00.000Z</guid>
+            <pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-06-30]]></title>
             <description
@@ -1654,187 +1845,6 @@
             <link>https://hn.cho.sh/es/2024/06/22</link>
             <guid isPermaLink="false">2024-06-22T00:00:00.000Z</guid>
             <pubDate>Sat, 22 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-21]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/21&#39;</h2>
-<h1>2024-06-21</h1>
-<h2><a href="https://www.bloomberg.com/news/articles/2024-06-20/gilead-shot-prevents-100-of-hiv-cases-in-trial-of-african-women">Gilead previene todos los casos de VIH en ensayo</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40742163">Reacciones</a></h3>
-<ul>
-<li>Gilead&#39;s nueva inyección contra el VIH, cabotegravir, ha demostrado prevenir todos los casos en un ensayo, presentando una alternativa prometedora a las píldoras diarias.</li>
-<li>La inyección se administra cada dos meses, con una posible extensión a cada tres meses, lo que podría simplificar la adherencia y aumentar el cumplimiento.</li>
-<li>Existen preocupaciones sobre posibles reacciones adversas debido a la larga permanencia del fármaco en el sistema, pero se puede probar primero en forma de píldora.</li>
-</ul>
-<h2><a href="https://www.npr.org/2021/03/07/974534021/remembering-allan-mcdonald-he-refused-to-approve-challenger-launch-exposed-cover">Allan McDonald se negó a aprobar el lanzamiento del Challenger, expuso el encubrimiento (2021)</a></h2>
-<ul>
-<li>Allan McDonald, quien falleció a los 83 años, fue una figura clave en el desastre del transbordador espacial Challenger, conocido por negarse a aprobar el lanzamiento debido a preocupaciones de seguridad.</li>
-<li>Después del desastre, McDonald expuso el encubrimiento de la NASA, revelando que los ingenieros se habían opuesto al lanzamiento debido a las temperaturas bajo cero que afectaban las juntas tóricas, lo que llevó a su degradación temporal.</li>
-<li>McDonald luego dirigió el rediseño de los cohetes de refuerzo, coescribió un relato definitivo del desastre y se convirtió en un defensor de la toma de decisiones éticas en la ingeniería.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40748371">Reacciones</a></h3>
-<ul>
-<li>Allan McDonald se negó a aprobar el lanzamiento del Challenger debido a preocupaciones de seguridad, revelando un encubrimiento por parte de los ejecutivos de NASA y Morton Thiokol.</li>
-<li>A pesar de la intensa presión, McDonald y otros ingenieros fueron anulados por sus superiores, lo que llevó al desastre del Challenger.</li>
-<li>McDonald abogó más tarde por la toma de decisiones éticas, destacando la tensión entre la precisión técnica y la presión gerencial en proyectos de alta importancia.</li>
-</ul>
-<h2><a href="https://lwn.net/Articles/976822/">El navegador Ladybird despliega sus alas</a></h2>
-<ul>
-<li>Ladybird es un proyecto de navegador web de código abierto, derivado de SerenityOS por Andreas Kling, que busca ser independiente de Chrome y está escrito en C++ bajo una licencia BSD.</li>
-<li>Aunque aún se encuentra en una etapa temprana de desarrollo y carece de muchas funciones, Ladybird muestra promesa con funcionalidades básicas y contribuciones significativas de la comunidad, apuntando a sistemas Linux, macOS y similares a UNIX, con soporte para Windows a través de WSL.</li>
-<li>Las reacciones de la comunidad son mixtas, con algunos viendo potencial y otros sugiriendo centrarse en los navegadores existentes, pero los partidarios argumentan que proyectos nuevos como Ladybird son esenciales para un ecosistema de navegadores saludable.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40746804">Reacciones</a></h3>
-<ul>
-<li>Ladybird browser, un nuevo navegador web construido por la comunidad, está ganando atención como una posible opción para el uso diario, diferenciándose de las opciones principales como Chrome y Firefox.</li>
-<li>Las discusiones destacan los desafíos de crear un navegador más simple y seguro que solo admita un subconjunto de tecnologías web, equilibrando la funcionalidad y la adopción por parte de los usuarios.</li>
-<li>La iniciativa se considera una valiosa oportunidad de aprendizaje para los nuevos desarrolladores, con procesos de construcción bien documentados y amplias áreas para contribuir.</li>
-</ul>
-<h2><a href="https://buaacyw.github.io/mesh-anything/">MallaCualquierCosa – Convierte representaciones 3D en mallas 3D eficientes</a></h2>
-<ul>
-<li>MeshAnything introduce un método novedoso para generar Mallas Creadas por Artistas (AMs) a partir de representaciones 3D utilizando transformadores autorregresivos, mejorando la eficiencia y precisión en la producción de activos 3D.</li>
-<li>La metodología reduce significativamente el número de caras de malla, mejorando las eficiencias de almacenamiento, renderizado y simulación, al tiempo que mantiene características geométricas de alta calidad.</li>
-<li>La arquitectura emplea un VQ-VAE y un transformador solo de decodificación condicionado por la forma, demostrando una topología superior y menos caras en comparación con los métodos tradicionales, lo que lo convierte en un avance significativo en la industria 3D.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40746310">Reacciones</a></h3>
-<ul>
-<li>MeshAnything convierte representaciones 3D en mallas 3D eficientes, reduciendo el número de caras para un mejor almacenamiento y rendimiento de renderizado.</li>
-<li>La herramienta requiere 7GB de memoria y 30 segundos en una GPU A6000, pero está limitada a generar mallas con menos de 800 caras.</li>
-<li>Si bien algunos usuarios critican su licencia personalizada no comercial y la calidad de las mallas generadas, se considera una herramienta prometedora para el desarrollo de juegos y la generación de modelos 3D.</li>
-</ul>
-<h2><a href="https://lithub.com/how-babies-and-young-children-learn-to-understand-language/">Cómo los bebés y los niños pequeños aprenden a comprender el lenguaje</a></h2>
-<ul>
-<li>Steven Mithen examina si la adquisición del lenguaje en bebés y niños pequeños se debe a procesos mentales especializados o a mecanismos generales de aprendizaje.</li>
-<li>Destaca el uso de las &quot;probabilidades de transición&quot; por parte de los bebés para identificar palabras dentro del habla continua, demostrando sus habilidades de aprendizaje estadístico.</li>
-<li>Mithen ofrece perspectivas que desafían las visiones tradicionales sobre la evolución del lenguaje y subrayan la complejidad del aprendizaje temprano del lenguaje.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744558">Reacciones</a></h3>
-<ul>
-<li>Los bebés y los niños pequeños aprenden el lenguaje a través de una combinación de orientación parental y aprendizaje estadístico, donde los padres repiten palabras simples con pausas para ayudar a reconocer los límites de las palabras.</li>
-<li>Bilingües niños pueden mezclar idiomas, creando nuevas palabras que tienen sentido estadístico, demostrando la influencia de los entornos multilingües en la pronunciación y la gramática.</li>
-<li>Una exposición constante al idioma es crucial, ya que los niños se adaptan en función de su entorno e interacciones, combinando la inmersión natural con el aprendizaje estructurado para entender patrones y reglas.</li>
-</ul>
-<h2><a href="https://steveblank.substack.com/p/why-innovation-heroes-are-a-sign">Innovar héroes son una señal de una organización disfuncional</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40749754">Reacciones</a></h3>
-<ul>
-<li>Un equipo de finanzas duplicó su trabajo esperado pero enfrentó críticas por interrumpir los gráficos de quemado, lo que llevó a la creación de tickets de marcador de posición para manipular el sistema.</li>
-<li>Este escenario resalta problemas comunes en grandes instituciones donde las métricas y la burocracia pueden eclipsar la productividad real.</li>
-<li>Una innovación efectiva requiere confianza, comunicación y una cultura de apoyo, en lugar de depender únicamente de actos heroicos individuales.</li>
-</ul>
-<h2><a href="https://openai.com/index/openai-acquires-rockset/">OpenAI adquiere Rockset</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40750391">Reacciones</a></h3>
-<ul>
-<li>OpenAI ha adquirido Rockset, lo que ha llevado a especulaciones sobre las razones estratégicas detrás de la medida, como mejorar la infraestructura de datos o adquirir talento del liderazgo de Rockset con antecedentes en Meta.</li>
-<li>Se han planteado preocupaciones sobre la adecuación de Rockset para las necesidades de OpenAI y el impacto en los clientes actuales de Rockset, quienes deben hacer la transición antes de septiembre de 2024.</li>
-<li>La adquisición ha generado debates sobre la fiabilidad del proveedor y sus implicaciones más amplias para las industrias de IA y bases de datos.</li>
-</ul>
-<h2><a href="https://github.com/mezbaul-h/june">Asistente de voz local utilizando Ollama, transformers y el kit de herramientas Coqui TTS</a></h2>
-<ul>
-<li><strong>june-va</strong> es un chatbot de voz local que integra Ollama, Hugging Face Transformers y Coqui TTS Toolkit, garantizando la privacidad al procesar los datos localmente.</li>
-<li>Admite múltiples modos de interacción, incluidos los de entrada/salida de texto y voz, con un modo predeterminado de entrada de voz y salida de audio/texto.</li>
-<li>Se requiere Python 3.10+ y dependencias específicas para la instalación, con la posibilidad de personalización a través de un archivo de configuración JSON.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744293">Reacciones</a></h3>
-<ul>
-<li>Se discute un asistente de voz local que utiliza Ollama, transformers y el kit de herramientas Coqui TTS, elogiando el XTTSv2 de Coqui por su latencia de respuesta de ~500ms en modo de transmisión.</li>
-<li>Los modelos de audio a audio como GPT-4o se consideran el futuro de la IA conversacional, con enfoques prometedores de ultravox.ai y tincans.ai.</li>
-<li>Orquestación de código abierto para TTS (Texto a Voz), ASR (Reconocimiento Automático de Voz) y LLM (Modelos de Lenguaje Grande) está disponible en bolna-ai/bolna, con el Protocolo de Wyoming destacado para la integración de asistentes domésticos.</li>
-</ul>
-<h2><a href="https://blog.jitx.com/jitx-corporate-blog/testing-generative-ai-for-circuit-board-design">Pruebas de IA Generativa para el Diseño de Placas de Circuito</a></h2>
-<ul>
-<li>Se probaron modelos de IA generativa (GPT-4o, Claude 3 Opus, Gemini 1.5) para su utilidad en el diseño de placas de circuito, mostrando fortalezas en la extracción de datos y la escritura de código, pero debilidades en tareas de diseño matizadas.</li>
-<li>Claude 3 Opus se destacó en la explicación de conceptos básicos, mientras que Gemini 1.5 fue más efectivo en el análisis de hojas de datos y la creación de tablas de pines y huellas precisas.</li>
-<li>Todos los modelos tuvieron dificultades con las recomendaciones de partes específicas y las tareas detalladas de diseño de circuitos, lo que indica que los LLM son más adecuados para asistir a expertos humanos en lugar de actuar como diseñadores independientes.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40751020">Reacciones</a></h3>
-<ul>
-<li>Las IA generativas, específicamente los modelos de lenguaje de gran escala sin entrenamiento previo (LLMs), tienen dificultades con tareas complejas como el diseño de placas de circuito, lo que resalta sus limitaciones en dominios especializados.</li>
-<li>El ajuste fino de los LLM en tareas específicas, como la creación de netlists, podría mejorar su rendimiento, pero un cambio fundamental en la estructura de la IA podría ser necesario para tareas más complejas.</li>
-<li>Difusión basada en estructuras generativas y otros modelos de IA como el aprendizaje evolutivo o por refuerzo podrían ser más adecuados para tareas complejas en ingeniería eléctrica (EE).</li>
-</ul>
-<h2><a href="https://deepmind.google/discover/blog/generating-audio-for-video/">Generación de audio para video</a></h2>
-<ul>
-<li>La tecnología de video a audio (V2A) genera bandas sonoras sincronizadas a partir de píxeles de video y sugerencias de texto, lo que permite la creación de partituras dramáticas, efectos de sonido realistas o diálogos para varios tipos de videos.</li>
-<li>V2A emplea un enfoque basado en la difusión, codificando la entrada de video y refinando el audio a partir de ruido aleatorio para producir formas de onda de audio realistas, con investigaciones en curso centradas en mejorar los artefactos de calidad de video y la sincronización labial.</li>
-<li>La equipo de desarrollo enfatiza las prácticas responsables de IA, utilizando el kit de herramientas SynthID para marcar el contenido generado por IA y realizando rigurosas evaluaciones de seguridad antes de su lanzamiento público.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744098">Reacciones</a></h3>
-<ul>
-<li>DeepMind ha introducido una nueva herramienta de IA para generar audio para videos, sumándose a la creciente lista de herramientas generativas de IA.</li>
-<li>La comunidad está expresando sentimientos encontrados, con algunos encontrando difícil mantenerse al día con los rápidos avances y otros discutiendo los posibles impactos en la creación de contenido y las capacidades de almacenamiento.</li>
-<li>Existe un notable interés en cómo el contenido generado por IA podría influir en la publicidad, la política y el futuro de la creación de contenido, con sugerencias para plataformas y herramientas específicas de IA.</li>
-</ul>
-<h2><a href="https://lemmy.world/post/16763534">Pasar 3 meses investigando un error de 7 años y arreglarlo con 1 línea de código</a></h2>
-<ul>
-<li>Un desarrollador pasó tres meses investigando un error que había estado sin resolver durante siete años.</li>
-<li>La falla se solucionó finalmente con solo una línea de código, destacando la naturaleza a veces esquiva de los problemas de software.</li>
-<li>Esta publicación subraya la persistencia requerida en el desarrollo de software y la potencial simplicidad de las soluciones a problemas de larga data.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40749624">Reacciones</a></h3>
-<ul>
-<li>Se corrigió un error de 7 años con una sola línea de código después de una investigación de 3 meses, lo que resalta la complejidad e imprevisibilidad de la depuración.</li>
-<li>La descubrimiento se realizó al identificar una operación de módulo de 16 bits en el código de procesamiento de audio, aprovechando la experiencia previa con procesadores de 8 bits.</li>
-<li>La publicación enfatiza el viaje emocional y la satisfacción de resolver problemas técnicos de larga data, resonando tanto con ingenieros junior como senior.</li>
-</ul>
-<h2><a href="https://blog.frankmtaylor.com/2024/06/20/a-rant-about-front-end-development/">Una diatriba sobre el desarrollo front-end</a></h2>
-<ul>
-<li>La autora, una desarrolladora front-end experimentada, expresa su frustración con la complejidad introducida por ciertas elecciones en el desarrollo front-end.</li>
-<li>Enfatiza la importancia del contenido sobre frameworks como React, abogando por HTML semántico, listo para SEO y accesible.</li>
-<li>Critica el uso excesivo de JavaScript y herramientas complejas, sugiriendo un enfoque en la simplicidad y el uso adecuado de CSS y tecnologías de renderizado del lado del servidor.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40746173">Reacciones</a></h3>
-<ul>
-<li>Una publicación de blog criticó las prácticas modernas de desarrollo front-end, comparándolas con la comida rápida: funcionales pero carentes de profundidad.</li>
-<li>La autora abogó por la renderización del lado del servidor (SSR) y el uso mínimo de JavaScript (JS), destacando herramientas como HTMX y Alpine JS.</li>
-<li>La discusión reveló una división entre los defensores del desarrollo web tradicional (HTML y CSS más simples) y aquellos que favorecen los marcos modernos de JS como React para sitios dinámicos.</li>
-</ul>
-<h2><a href="https://github.com/martinpiper/BombJack/blob/master/README.md">Hardware de visualización de Bomb Jack</a></h2>
-<ul>
-<li>La versión 2.0 del proyecto de hardware de visualización de Bomb Jack, que comenzó como un esquema para el hardware de arcade de Bomb Jack, incluye características como RAM direccionable, apagado adicional de la pantalla y sprites de altura de pantalla completa.</li>
-<li>La proyecto utiliza TTL (Lógica Transistor-Transistor) para explorar mejoras gráficas en computadoras de 8 bits, enfocándose en enseñar lógica discreta de bajo nivel en lugar de usar CPLD (Dispositivo Lógico Programable Complejo) o FPGA (Matriz de Puerta Programable en Campo).</li>
-<li>La arquitectura de hardware incluye seis diseños de PCB (Placa de Circuito Impreso) para diversas funciones y utiliza Proteus para la simulación y PCBWay para la fabricación, con el objetivo de lograr eficiencia en costos y personalización.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40745830">Reacciones</a></h3>
-<ul>
-<li>Un nuevo proyecto tiene como objetivo reemplazar el hardware de arcade de Bomb Jack con un equivalente moderno, expandiéndose más allá de su alcance inicial.</li>
-<li>La solución del proyecto, distinta de MAME (Multiple Arcade Machine Emulator), es una solución de hardware que incluso ha ayudado a identificar un error en MAME.</li>
-<li>La hardware cuenta con capacidades avanzadas como múltiples capas, prioridad de capas, múltiples paletas, sprites escalados y más, llevando los límites de los componentes correctos para la época.</li>
-</ul>
-<h2><a href="https://driving.ca/auto-news/industry/tesla-class-action-lawsuite-parts-repairs-monopoly">Propietarios de Tesla presentan demanda colectiva alegando monopolio de reparaciones y piezas</a></h2>
-<ul>
-<li>Los propietarios de Tesla han presentado una demanda colectiva acusando a la empresa de monopolizar el mercado de reparaciones y repuestos.</li>
-<li>La demanda afirma que las prácticas de Tesla obligan a los propietarios a utilizar los servicios y piezas de Tesla, lo que podría llevar a costos más altos y opciones limitadas.</li>
-<li>Esta acción legal destaca las preocupaciones continuas sobre el derecho a reparar y la disponibilidad de servicios de terceros en la industria de los vehículos eléctricos.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744847">Reacciones</a></h3>
-<ul>
-<li>Los propietarios de Tesla han iniciado una demanda colectiva, acusando a la empresa de monopolizar las reparaciones y las piezas, lo que lleva a largos tiempos de espera para los componentes necesarios.</li>
-<li>La demanda argumenta que Tesla prioriza la producción de nuevos automóviles sobre el mantenimiento de un stock adecuado de piezas para reparaciones, lo que causa retrasos significativos para algunos propietarios.</li>
-<li>Las cláusulas de arbitraje en los contratos de Tesla podrían complicar la demanda, potencialmente obstaculizando su progreso a través del sistema legal.</li>
-</ul>
-<h2><a href="https://arstechnica.com/gaming/2024/06/from-infocom-to-80-days-an-oral-history-of-text-games-and-interactive-fiction/">De Infocom a 80 Days: Una historia oral de los juegos de texto y la ficción interactiva</a></h2>
-<ul>
-<li>&quot;Ve al norte: de Infocom a 80 Days&quot; es una historia oral que explora 50 años de ficción interactiva (IF), desde las primeras aventuras de texto hasta las obras modernas.</li>
-<li>La comunidad de IF es conocida por su ética de código abierto e individualidad, que incluye tanto a jugadores como a creadores.</li>
-<li>La categoría comenzó en la década de 1970 con juegos como Adventure de Will Crowther y evolucionó a medida que las computadoras domésticas se volvieron más accesibles, llegando a un público más amplio.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40749426">Reacciones</a></h3>
-<ul>
-<li>De Infocom a 80 Days: Una historia oral de los juegos de texto y la ficción interactiva&quot; explora la evolución de los juegos basados en texto, destacando clásicos y títulos modernos como &quot;80 Days&quot; por su narrativa y rejugabilidad.</li>
-<li>La discusión incluye recursos como la Base de Datos de Ficción Interactiva (IFDB) y el libro &#39;50 Years of Text Games&#39;, y menciona el lenguaje ink de Inkle Studios por su facilidad para crear narrativas ramificadas.</li>
-<li>Se mencionan los desafíos de los primeros analizadores de texto, junto con el potencial de los avances modernos como los Modelos de Lenguaje Grande (LLMs) para mejorar la ficción interactiva.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Gilead previene todos los casos de VIH en ensayo" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Gilead%20previene%20todos%20los%20casos%20de%20VIH%20en%20ensayo&subheading=viernes%2C%2021%20de%20junio%20de%202024%3A%20Resumen%20de%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/es/2024/06/21</link>
-            <guid isPermaLink="false">2024-06-21T00:00:00.000Z</guid>
-            <pubDate>Fri, 21 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

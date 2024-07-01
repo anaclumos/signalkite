@@ -15,12 +15,203 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 30 Jun 2024 19:09:09 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Jul 2024 19:23:18 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/nl.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 30 Jun 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[nl]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-01]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/01&#39;</h2>
+<h1>2024-07-01</h1>
+<h2><a href="https://pikimov.com/">Jeg har laget et alternativ til After Effects</a></h2>
+<ul>
+<li>Pikimov er en nylig lansert nettbasert bevegelsesdesign- og videoredigeringsprogram, inspirert av Photopea, og fungerer som et gratis alternativ til After Effects.</li>
+<li>Det krever ingen registrering, lagrer filer på brukerens maskin, og sikrer at prosjekter ikke brukes til AI-trening.</li>
+<li>Skaperen har en historie med å utvikle VJ-programvare for plattformer som Game Boy Advance, Playstation 2 og Raspberry Pi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843867">Reacties</a></h3>
+<ul>
+<li>Pikimov er en ny, gratis, nettbasert bevegelsesdesign- og videoredigerer laget som et alternativ til Adobe After Effects, som ikke krever registrering eller opplasting til skyen.</li>
+<li>Verktøyet har mottatt positive tilbakemeldinger for sitt potensial til å utfordre Adobes dominans, med brukere som foreslår forbedringer i bildefrekvensgrenser, feilrapportering og håndtering av nøkkelbilder.</li>
+<li>Foreløpig støtter Pikimov kun Chrome og Edge på grunn av spesifikke web-API-er, med fremtidige planer om å legge til fellesskapsfunksjoner og muligens tjene penger på appen.</li>
+</ul>
+<h2><a href="https://www.qualys.com/2024/07/01/cve-2024-6387/regresshion.txt">RegreSSHion: RCE i OpenSSHs server, på glibc-baserte Linux-systemer</a></h2>
+<ul>
+<li>En kritisk sårbarhet (CVE-2024-6387) i OpenSSHs server på glibc-baserte Linux-systemer tillater ekstern kodeutførelse (RCE) på grunn av en kappløpssituasjon i signalhåndtereren.</li>
+<li>Problemet, en regresjon av CVE-2006-5051, påvirker OpenSSH-versjonene 3.4p1, 4.2p1 og 9.2p1, og innebærer utnyttelse av SIGALRM-håndtereren for å forårsake heap-korrupsjon og kjøre vilkårlig kode.</li>
+<li>Avbøtning inkluderer å anvende oppdateringer som flytter asynkron-signal-usikker kode ut av SIGALRM-håndtereren eller sette <code>LoginGraceTime</code> til 0, selv om det siste kan forårsake tjenestenekt.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843778">Reacties</a></h3>
+<ul>
+<li>En sårbarhet for ekstern kodeutførelse (RCE) ble oppdaget i OpenSSHs server på glibc-baserte Linux-systemer, noe som potensielt kan tillate angripere å få ekstern root-tilgang.</li>
+<li>Fiksen for denne sårbarheten ble implementert ved å flytte usikker kode fra signalbehandleren til lytterprosessen, noe som gjør det vanskelig å tilbakerullere.</li>
+<li>Problemet påvirker primært 32-bits systemer, med utnyttelse på 64-bits systemer antatt mulig, men ennå ikke demonstrert; ulike distribusjoner har allerede gitt ut oppdateringer.</li>
+</ul>
+<h2><a href="https://www.pipes.digital/docs">Rør: En åndelig etterfølger til Yahoo Pipes</a></h2>
+<ul>
+<li>Rør er en visuell programmeringseditor for feeds, som lar brukere hente, opprette og manipulere feeds ved hjelp av blokker, lik Yahoo! Pipes.</li>
+<li>Den støtter ulike inngangsformater, inkludert RSS, Atom, JSON, HTML og tekstfiler, og tilbyr en rekke blokker for forskjellige feed-operasjoner som filtrering, sammenslåing og uthenting av innhold.</li>
+<li>Rør CE er en gratis og åpen kildekode-programvare (FOSS) under AGPL-lisensen, tilgjengelig på Github, og støtter integrasjoner med populære nettsteder som Twitter, YouTube og Vimeo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40841980">Reacties</a></h3>
+<ul>
+<li>Rør, et prosjekt inspirert av Yahoo Pipes, har nylig gjennomgått oppdateringer for å forbedre stabiliteten, inkludert en overgang fra tekst til RSS-objekter for datatransport mellom blokker.</li>
+<li>Serveroppgraderinger og omkonfigurering av tråder og puma-arbeidere ble implementert for å løse problemer og flaskehalser.</li>
+<li>En brukerforslag om å legge til en blokk for AI-genererte sammendrag eller bilder via POST-forespørsler vurderes, med noen grunnleggende blokker allerede på plass.</li>
+</ul>
+<h2><a href="https://mlops.systems/posts/2024-07-01-full-finetuned-model-evaluation.html">Mine finjusterte modeller slår OpenAIs GPT-4</a></h2>
+<ul>
+<li>Innlegget diskuterer evalueringsmetrikker for å vurdere ytelsen til finjusterte språkmodeller (LLMs) i å hente ut strukturerte data fra pressemeldinger, med fokus på nøyaktighet.</li>
+<li>Finetuned modeller, inkludert TinyLlama, Mistral og Solar LLM, overgikk generelt OpenAIs GPT-4 og GPT-4 Turbo i nøyaktighet, til tross for kompleksiteten og den langsomme evalueringstakten.</li>
+<li>Evalueringene fremhevet behovet for et bedre system for å håndtere kompleksiteten og vedlikeholdet, med fremtidige trinn som inkluderer ikke-nøyaktighetsrelaterte tester og utforsking av modellservering.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843848">Reacties</a></h3>
+<ul>
+<li>Finjusterte modeller kan overgå generelle modeller som OpenAIs GPT-4 i spesifikke oppgaver, som datauttrekking, kreativ oppsummering, spørsmålssvar og klassifisering.</li>
+<li>Vellykkede finjusterte modeller avhenger av høykvalitets treningsdata, noe som gjør dem effektive for nisjeinformasjonsekstraksjon og tilgjengelige for teknologientusiaster.</li>
+<li>Finjustering av mindre modeller, som Llama 3 8B, kan være mer effektivt og kostnadsbesparende, men bruk av modellresponser for å trene nye modeller kan bryte vilkårene for tjenesten til store LLM-leverandører.</li>
+</ul>
+<h2><a href="https://herman.bearblog.dev/cities-need-more-trees/">Byer trenger flere trær</a></h2>
+<ul>
+<li>Johannesburg, en gang øde, ble forvandlet til &quot;den grønneste byen i verden&quot; etter å ha plantet millioner av trær for å bekjempe støv fra gullutvinning.</li>
+<li>Treplanting i Johannesburg var ujevnt fordelt på grunn av apartheid, noe som fremhever sosioøkonomiske forskjeller.</li>
+<li>Bytrær gir betydelige fordeler, inkludert å redusere &quot;varmeøy&quot;-effekten, fungere som lydbarrierer, forbedre estetikk, øke biologisk mangfold og oppmuntre til utendørsaktiviteter.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843720">Reacties</a></h3>
+<ul>
+<li>Byer planter i økende grad trær og fremmer grønne tak for å bekjempe varmebelastning og forbedre byens levbarhet.</li>
+<li>Utrecht, Nederland, og Zürich, Sveits, er ledende eksempler, mens amerikanske byer som Portland, OR, har grønne mandater, og Salt Lake City utforsker xeriscaping.</li>
+<li>Trær gir betydelige fordeler, som å kjøle ned urbane områder, forbedre luftkvaliteten og øke den generelle boevnen, til tross for utfordringer som privat eiendomsutvikling som fører til fjerning av trær.</li>
+</ul>
+<h2><a href="https://ladybird.org/">Velkommen til Ladybird</a></h2>
+<ul>
+<li>Ladybird er en uavhengig nettleser utviklet av en ideell organisasjon, med fokus på ytelse, stabilitet og sikkerhet, med en Alpha-utgivelse planlagt for 2026.</li>
+<li>Opprinnelig en HTML-viser for SerenityOS, støtter den nå Linux, macOS og andre Unix-lignende systemer, og er bygget helt fra bunnen av uten å bruke kode fra andre nettlesere.</li>
+<li>Prosjektet er finansiert av sponsorer og donasjoner, uten annonser eller brukerinntekter, og utvikles for tiden av et team på fire heltidsingeniører.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40845951">Reacties</a></h3>
+<ul>
+<li>Ladybird, opprinnelig en HTML-gjengiver for SerenityOS, utvikler seg nå til et plattformuavhengig nettleserprosjekt.</li>
+<li>Prosjektet har mottatt en betydelig donasjon på $1,000,000 fra GitHub-medstifter Chris Wanstrath, noe som indikerer sterk økonomisk støtte.</li>
+<li>Teamet planlegger å lansere en alpha-versjon innen 2026, med vekt på modularitet og overholdelse av moderne webstandarder.</li>
+</ul>
+<h2><a href="https://en.wikipedia.org/wiki/Postzegelcode">Frimerke kode</a></h2>
+<ul>
+<li>En postzegelcode er en ni-tegns kode som brukes i Nederland som et håndskrevet alternativ til frimerker, kjøpt online fra PostNL.</li>
+<li>Introdusert i 2013, må koden skrives på post innen fem dager og har 78,8 billioner mulige kombinasjoner, noe som gjør den sikker mot gjetting.</li>
+<li>Fra desember 2020 brukte 590 000 mennesker postzegelcodes, som nå koster det samme som tradisjonelle frimerker.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40839418">Reacties</a></h3>
+<ul>
+<li>Diskusjonen dreier seg om bruken av digitale portokoder, kjent som &quot;postzegelcode,&quot; som kan skrives på konvolutter i stedet for å bruke tradisjonelle frimerker.</li>
+<li>Flere land, inkludert Tyskland, Danmark, Norge og Sverige, har implementert lignende systemer som lar brukere kjøpe porto på nettet og skrive en kode på posten sin.</li>
+<li>Systemet blir rost for sin bekvemmelighet, spesielt for de som ikke ofte sender fysisk post, da det eliminerer behovet for fysiske frimerker og tilpasser seg endrede portotakster.</li>
+</ul>
+<h2><a href="https://apnews.com/article/supreme-court-trump-capitol-riot-immunity-2dc0d1c2368d404adc0054151490f542">USAs høyesterett fastslår at tidligere presidenter har immunitet for offisielle handlinger</a></h2>
+<ul>
+<li>USAs høyesterett forlenget utsettelsen i straffesaken mot Donald Trump angående valget i 2020, noe som reduserer sannsynligheten for en rettssak før valget i november.</li>
+<li>Med en avgjørelse på 6-3 ga rettens konservative flertall tidligere presidenter bred immunitet mot straffeforfølgelse for offisielle handlinger, noe som kompliserer påtalemyndighetens sak og krever ytterligere analyse på rettsinstansnivå.</li>
+<li>Avgjørelsen understreker domstolens betydelige innflytelse på det kommende valget, med høyesterettsjustitiarius John Roberts som fremhever immunitet for offisielle handlinger og dommer Sonia Sotomayor som er uenig, og argumenterer for at det undergraver prinsippet om at ingen står over loven.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40847963">Reacties</a></h3>
+<ul>
+<li>USAs høyesterett har fastslått at ekspresidenter har immunitet for offisielle handlinger, noe som har utløst en debatt om potensielle maktmisbruk versus behovet for presidentbeskyttelse.</li>
+<li>Avgjørelsen spesifiserer at immunitet gjelder for handlinger innenfor konstitusjonell myndighet, men ikke for uoffisielle handlinger, noe som reiser bekymringer om ansvarlighet for alvorlige forbrytelser.</li>
+<li>Kritikere, inkludert dommer Sotomayor, er bekymret for at denne avgjørelsen kan påvirke pågående og fremtidige rettssaker som involverer tidligere presidenter.</li>
+</ul>
+<h2><a href="https://www.alvarorevuelta.com/posts/fft-polynomials">Konvolusjoner, rask Fourier-transformasjon og polynomer (2022)</a></h2>
+<ul>
+<li>Tradisjonell polynomsmultiplikasjon har (O(n^2)) kompleksitet, noe som gjør det ineffektivt for store polynomer.</li>
+<li>Den raske Fourier-transformasjonen (FFT) reduserer kompleksiteten ved polynom-multiplikasjon til (O(n \log n)) ved å konvertere problemet til frekvensdomenet.</li>
+<li>FFT-metoden innebærer å konvertere polynomer til frekvensdomenet, multiplisere dem, og konvertere resultatet tilbake, noe som betydelig forbedrer effektiviteten for polynomer med høy grad.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40840396">Reacties</a></h3>
+<ul>
+<li>Diskusjonen dreier seg om bruken av Fast Fourier Transform (FFT) for polynom-multiplikasjon, og fremhever dens effektivitet sammenlignet med naive metoder.</li>
+<li>Viktige innsikter inkluderer viktigheten av numerisk presisjon i FFT-beregninger og den historiske konteksten for utviklingen av FFT for polynom-multiplikasjon.</li>
+<li>Diskusjonen berører også praktiske anvendelser, som feilretting, signalbehandling og nullkunnskapskryptografi, hvor FFT-baserte metoder er spesielt fordelaktige.</li>
+</ul>
+<h2><a href="https://blog.gabornyeki.com/2024-07-my-python-code-is-a-neural-network/">Min Python-kode er et nevralt nettverk</a></h2>
+<ul>
+<li>Innlegget diskuterer innbygging av programmer i tilbakevendende nevrale nettverk (RNN-er) og hvordan trente RNN-er kan overgå håndskrevne algoritmer.</li>
+<li>Det gir et detaljert eksempel på å oppdage programkode i meldinger, sammenligne enkle beslutningsregler, en håndskrevet algoritme og en RNN-basert tilnærming.</li>
+<li>Innlegget fremhever fordelene med RNN-er, som å kode tilstandsmaskiner, bruke trenbare aktiveringsfunksjoner og håndtere komplekse oppgaver med datadrevet disiplin.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40845304">Reacties</a></h3>
+<ul>
+<li>Artikkelen diskuterer konstruksjonen av et nevralt nettverk ved bruk av Python, men mangler detaljer om testing og innhenting av treningsdata, som er avgjørende for å sikre modellens generalisering til usette input.</li>
+<li>Diskusjonen fremhever det universelle approksimasjonsteoremet, som sier at nevrale nettverk kan representere enhver funksjon til ønsket nøyaktighetsnivå, men understreker at læring av disse approksimasjonene ikke er garantert.</li>
+<li>Det er en debatt om hvorvidt Recurrent Neural Networks (RNNs) blir erstattet av transformatorer, med noen som argumenterer for at RNNs fortsatt har unike fordeler, som konstant minnebruk, som transformatorer mangler.</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40846428">Som ansetter? (juli 2024)</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40846428">Reacties</a></h3>
+<ul>
+<li>Ulike selskaper ansetter for flere roller, inkludert fjernarbeid, arbeid på stedet og hybride stillinger, på tvers av forskjellige steder og bransjer.</li>
+<li>Merkbare selskaper inkluderer Apple, Figma, Charge Robotics og SmileID, som tilbyr stillinger som Senior Software Engineer, Senior/Staff Security Engineer og Senior Frontend Engineer.</li>
+<li>Muligheter strekker seg over hele verden, med noen selskaper som tilbyr visumsponsing og roller innen fremvoksende teknologier som AI, maskinlæring og full-stack utvikling.</li>
+</ul>
+<h2><a href="https://carbon-steel.github.io/jekyll/update/2024/06/19/abstractions.html">Programmerere bør aldri stole på noen, ikke engang seg selv</a></h2>
+<ul>
+<li>Programmerere bør opprettholde et sunt nivå av skepsis, da det å skrive og verifisere korrektheten av kode er iboende utfordrende og ofte umulig.</li>
+<li>Abstraksjoner, mens de forenkler komplekse systemer, kan feile og føre til problemer som ytelsesforringelse eller udefinert oppførsel, slik det fremheves av Joel Spolskys lov om lekkende abstraksjoner.</li>
+<li>Å redusere ukjente problemer, bør programmerere verifisere informasjon, teste antakelser og måle virkningen av kodeendringer, samtidig som de kontinuerlig lærer om nye plattformer, språk, verktøy og teknologier.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40842867">Reacties</a></h3>
+<ul>
+<li>Diskusjonen dreier seg om viktigheten av formell verifikasjon i programmering, og understreker at programmerere ikke bør stole på noen, inkludert seg selv, uten bevis.</li>
+<li>Formell verifikasjon, selv om det er komplekst og kostbart, gir sterkere garantier for korrekthet sammenlignet med enhetstester, som bare dekker spesifikke eksempler.</li>
+<li>Debatten fremhever avveiningene mellom strengheten i formell verifikasjon og praktikaliteten i enhetstester, og antyder at valget avhenger av prosjektets krav og ressurser.</li>
+</ul>
+<h2><a href="https://www.ericpfahl.com/from-pattern-matching-to-unification/">Forening i Elixir</a></h2>
+<ul>
+<li>Enhet i Elixir utvider mønstergjenkjenning ved å tillate variabler på begge sider av en ligning, løse symbolske ligninger og produsere substitusjonskartlegginger.</li>
+<li>Til forskjell fra mønstergjenkjenning kan forening håndtere delvis kjente verdier, noe som gjør det til et kraftig verktøy for logisk programmering i Elixir.</li>
+<li>Foreningsalgoritmen innebærer å gå gjennom termer, teste ekvivalens, håndtere variabler og rekursivt forene listeelementer, forenkle variabeltilordninger gjennom substitusjon.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40840315">Reacties</a></h3>
+<ul>
+<li>Artikkelen sammenligner effektiviteten til foreningsalgoritmer i typeinferenz, med fokus på algoritme W og algoritme J.</li>
+<li>Algoritme W, brukt i Hindley-Milner typeinferens, er mindre effektiv og mer feilutsatt på grunn av behovet for å komponere substitusjoner.</li>
+<li>Algoritme J, som benytter en union-find datastruktur for destruktiv forening, er enklere og mer effektiv, med ytterligere innsikt i forening i mønstergjenkjenning og kompilert mønstergjenkjenning ved bruk av beslutningstrær.</li>
+</ul>
+<h2><a href="https://artsandculture.google.com/">Google Arts and Culture-nettstedet visste jeg ikke eksisterte</a></h2>
+<ul>
+<li>Google Arts &amp; Culture tilbyr et bredt spekter av virtuelle omvisninger og interaktive opplevelser, som lar brukere utforske kunst, historie og kultur fra hele verden.</li>
+<li>Høydepunkter inkluderer virtuelle omvisninger i kjente museer, opplevelser med utvidet virkelighet (AR) og interaktive spill som gjør læring om kunst og kultur engasjerende og tilgjengelig.</li>
+<li>Spesielle funksjoner inkluderer muligheten til å utforske Van Goghs bibliotek, ta en 3D-tur av Vermeers malerier, og delta i en K-Pop danseutfordring i samarbeid med V&amp;A Museum.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40840699">Reacties</a></h3>
+<ul>
+<li>Google Arts and Culture er et mindre kjent, men betydningsfullt prosjekt fra Google, som tilbyr kuratert kulturelt innhold fra hele verden.</li>
+<li>Brukere setter pris på høyoppløselige bilder og unike funksjoner, som muligheten til å zoome tett inn på kunstverk og utforske ulike kulturprosjekter.</li>
+<li>Plattformen har vært aktiv siden 2011 og fortsetter å være en verdifull ressurs for kunst- og kulturentusiaster, til tross for bekymringer om levetiden til Google-prosjekter.</li>
+</ul>
+<h2><a href="https://arxiv.org/abs/2406.09490">Newswire: En storskala strukturert database over et århundre med historiske nyheter</a></h2>
+<ul>
+<li>Forskere har opprettet et omfattende arkiv over amerikansk nyhetsinnhold fra 1878 til 1977 ved å bruke en dyp læringspipeline på bildeskanninger fra lokale aviser.</li>
+<li>Datasettet inkluderer 2,7 millioner unike artikler i det offentlige domene, georeferert, merket etter emne og koblet til Wikipedia, og gir verdifull informasjon for forskning innen datalingvistikk, samfunnsvitenskap og digitale humaniora.</li>
+<li>Prosjektet involverte transkribering av 138 millioner strukturerte artikkeltekster og bruk av en nevralt bi-encoder-modell for å fjerne duplikater av artikler, og sikre at kun innhold i det offentlige domene ble inkludert.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40839830">Reacties</a></h3>
+<ul>
+<li>En omfattende database med historiske nyheter frem til 1978 har blitt opprettet, som gjenspeiler endringer i opphavsrettslovene, og er tilgjengelig på GitHub, selv om den for øyeblikket er tom.</li>
+<li>Brukere har identifisert OCR (Optisk Tegngjenkjenning) feil i dataene, noe som understreker vedvarende utfordringer med digitalisering av historiske tekster.</li>
+<li>Prosjektet, til tross for sine problemer, blir hyllet for sin vitenskapelige verdi, med råskanninger tilgjengelig gjennom Library of Congress digitale samling.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Jeg har laget et alternativ til After Effects" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Jeg%20har%20laget%20et%20alternativ%20til%20After%20Effects&subheading=maandag%201%20juli%202024%3A%20Samenvatting%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/nl/2024/07/01</link>
+            <guid isPermaLink="false">2024-07-01T00:00:00.000Z</guid>
+            <pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-06-30]]></title>
             <description
@@ -1654,187 +1845,6 @@
             <link>https://hn.cho.sh/nl/2024/06/22</link>
             <guid isPermaLink="false">2024-06-22T00:00:00.000Z</guid>
             <pubDate>Sat, 22 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-21]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/21&#39;</h2>
-<h1>2024-06-21</h1>
-<h2><a href="https://www.bloomberg.com/news/articles/2024-06-20/gilead-shot-prevents-100-of-hiv-cases-in-trial-of-african-women">Studie viser at Gilead-vaksine forhindrer alle HIV-tilfeller</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40742163">Reacties</a></h3>
-<ul>
-<li>Gileads nye HIV-sprøyte, cabotegravir, har vist seg å forhindre alle tilfeller i en prøve, og presenterer et lovende alternativ til daglige piller.</li>
-<li>Skuddet gis hver annen måned, med potensiell forlengelse til hver tredje måned, noe som kan forenkle etterlevelse og øke overholdelse.</li>
-<li>Det er bekymringer for potensielle bivirkninger på grunn av stoffets lange tilstedeværelse i systemet, men det kan testes i pilleform først.</li>
-</ul>
-<h2><a href="https://www.npr.org/2021/03/07/974534021/remembering-allan-mcdonald-he-refused-to-approve-challenger-launch-exposed-cover">Allan McDonald nektet å godkjenne Challenger-oppskytingen, avslørte dekkoperasjon (2021)</a></h2>
-<ul>
-<li>Allan McDonald, som døde i en alder av 83 år, var en sentral skikkelse i Challenger-romfergekatastrofen, kjent for å nekte å godkjenne oppskytingen på grunn av sikkerhetsbekymringer.</li>
-<li>Etter katastrofen avslørte McDonald NASAs tildekking, og avdekket at ingeniører hadde motsatt seg oppskytingen på grunn av frysetemperaturer som påvirket O-ringene, noe som førte til hans midlertidige degradering.</li>
-<li>McDonald ledet senere omdesignen av bærerakettene, var medforfatter av en definitiv beretning om katastrofen, og ble en forkjemper for etisk beslutningstaking innen ingeniørfaget.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40748371">Reacties</a></h3>
-<ul>
-<li>Allan McDonald nektet å godkjenne Challenger-oppskytingen på grunn av sikkerhetsbekymringer, og avslørte en dekkoperasjon av NASA og Morton Thiokol-ledere.</li>
-<li>Til tross for intenst press ble McDonald og andre ingeniører overstyrt av overordnede, noe som førte til Challenger-katastrofen.</li>
-<li>McDonald fremmet senere etisk beslutningstaking, og fremhevet spenningen mellom teknisk nøyaktighet og ledelsespress i prosjekter med høye innsatser.</li>
-</ul>
-<h2><a href="https://lwn.net/Articles/976822/">Ladybird-nettleseren sprer sine vinger</a></h2>
-<ul>
-<li>Ladybird er et åpen kildekode-nettleserprosjekt, forgrenet fra SerenityOS av Andreas Kling, med mål om å være uavhengig av Chrome og skrevet i C++ under en BSD-lisens.</li>
-<li>Selv om det fortsatt er i tidlig utvikling og mangler mange funksjoner, viser Ladybird lovende takter med grunnleggende funksjonaliteter og betydelige bidrag fra fellesskapet, rettet mot Linux, macOS og UNIX-lignende systemer, med Windows-støtte via WSL.</li>
-<li>Reaksjonene fra samfunnet er blandede, med noen som ser potensial og andre som foreslår å fokusere på eksisterende nettlesere, men tilhengere hevder at nye prosjekter som Ladybird er essensielle for et sunt nettleserøkosystem.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40746804">Reacties</a></h3>
-<ul>
-<li>Ladybird-nettleseren, en ny nettleser bygget av fellesskapet, får oppmerksomhet som en potensiell daglig driver, og skiller seg fra mainstream-alternativer som Chrome og Firefox.</li>
-<li>Diskusjoner fremhever utfordringene med å lage en enklere, sikrere nettleser som bare støtter et delsett av webteknologier, og balanserer funksjonalitet og brukeradopsjon.</li>
-<li>Prosjektet blir sett på som en verdifull læringsmulighet for nye utviklere, med godt dokumenterte byggeprosesser og brede områder for bidrag.</li>
-</ul>
-<h2><a href="https://buaacyw.github.io/mesh-anything/">MeshAnything – Konverterer 3D-representasjoner til effektive 3D-nett</a></h2>
-<ul>
-<li>MeshAnything introduserer en ny metode for å generere kunstneropprettede masker (AM-er) fra 3D-representasjoner ved bruk av autoregressive transformatorer, noe som forbedrer effektiviteten og presisjonen i produksjonen av 3D-objekter.</li>
-<li>Tilnærmingen reduserer betydelig antall mesh-flater, noe som forbedrer lagring, rendering og simuleringseffektivitet samtidig som den opprettholder geometriske funksjoner av høy kvalitet.</li>
-<li>Arkitekturen bruker en VQ-VAE og en formkondisjonert dekoder-kun transformer, og demonstrerer overlegen topologi og færre flater sammenlignet med tradisjonelle metoder, noe som gjør det til et betydelig fremskritt i 3D-industrien.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40746310">Reacties</a></h3>
-<ul>
-<li>MeshAnything konverterer 3D-representasjoner til effektive 3D-nett, og reduserer antall flater for bedre lagrings- og gjengivelsesytelse.</li>
-<li>Verktøyet krever 7 GB minne og 30 sekunder på en A6000 GPU, men er begrenset til å generere mesh med færre enn 800 flater.</li>
-<li>Selv om noen brukere kritiserer den tilpassede ikke-kommersielle lisensen og kvaliteten på de genererte nettene, anses det som et lovende verktøy for spillutvikling og 3D-modellgenerering.</li>
-</ul>
-<h2><a href="https://lithub.com/how-babies-and-young-children-learn-to-understand-language/">Hvordan babyer og små barn lærer å forstå språk</a></h2>
-<ul>
-<li>Steven Mithen undersøker om språktilegnelse hos babyer og små barn skyldes spesialiserte mentale prosesser eller generelle læringsmekanismer.</li>
-<li>Han fremhever bruken av «overgangssannsynligheter» hos spedbarn for å identifisere ord i kontinuerlig tale, og viser deres evne til statistisk læring.</li>
-<li>Mithens innsikter utfordrer tradisjonelle syn på språkutvikling og understreker kompleksiteten i tidlig språklæring.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744558">Reacties</a></h3>
-<ul>
-<li>Babyer og små barn lærer språk gjennom en blanding av foreldrenes veiledning og statistisk læring, hvor foreldre gjentar enkle ord med pauser for å hjelpe med å gjenkjenne ordgrenser.</li>
-<li>Tospråklige barn kan blande språk, skape nye ord som gir statistisk mening, og demonstrere påvirkningen av flerspråklige miljøer på uttale og grammatikk.</li>
-<li>Konsekvent språkutsettelse er avgjørende, ettersom barn tilpasser seg basert på deres miljø og interaksjoner, og kombinerer naturlig nedsenking med strukturert læring for å forstå mønstre og regler.</li>
-</ul>
-<h2><a href="https://steveblank.substack.com/p/why-innovation-heroes-are-a-sign">Innovasjonshelter er et tegn på en dysfunksjonell organisasjon</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40749754">Reacties</a></h3>
-<ul>
-<li>Et finanslag doblet sitt forventede arbeid, men møtte kritikk for å forstyrre burn-down-diagrammer, noe som førte til opprettelsen av plassholderbilletter for å manipulere systemet.</li>
-<li>Dette scenariet fremhever vanlige problemer i store institusjoner hvor målinger og byråkrati kan overskygge faktisk produktivitet.</li>
-<li>Effektiv innovasjon krever tillit, kommunikasjon og en støttende kultur, i stedet for å stole utelukkende på individuelle heltedåder.</li>
-</ul>
-<h2><a href="https://openai.com/index/openai-acquires-rockset/">OpenAI kjøper Rockset</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40750391">Reacties</a></h3>
-<ul>
-<li>OpenAI har kjøpt opp Rockset, noe som har ført til spekulasjoner om de strategiske årsakene bak trekket, som å forbedre datainfrastrukturen eller å skaffe talent fra Rocksets ledelse med Meta-bakgrunn.</li>
-<li>Bekymringer har blitt reist angående Rocksets egnethet for OpenAIs behov og virkningen på eksisterende Rockset-kunder, som må overgå innen september 2024.</li>
-<li>Oppkjøpet har utløst debatter om leverandørens pålitelighet og dets bredere implikasjoner for AI- og databaseindustriene.</li>
-</ul>
-<h2><a href="https://github.com/mezbaul-h/june">Lokalt stemmeassistent ved bruk av Ollama, transformatorer og Coqui TTS-verktøysett</a></h2>
-<ul>
-<li><strong>june-va</strong> er en lokal stemmechatbot som integrerer Ollama, Hugging Face Transformers og Coqui TTS Toolkit, og sikrer personvern ved å behandle data lokalt.</li>
-<li>Den støtter flere interaksjonsmoduser, inkludert tekst- og stemmeinn- og utganger, med en standardmodus for stemmeinngang og lyd-/tekstutgang.</li>
-<li>Installasjon krever Python 3.10+ og spesifikke avhengigheter, med tilpasning tilgjengelig gjennom en JSON-konfigurasjonsfil.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744293">Reacties</a></h3>
-<ul>
-<li>En lokal stemmeassistent som bruker Ollama, transformers og Coqui TTS-verktøysettet blir diskutert, med Coquis XTTSv2 rost for sin ~500ms responstid i strømmemodus.</li>
-<li>Audio-til-audio-modeller som GPT-4o anses som fremtiden for samtale-AI, med lovende tilnærminger fra ultravox.ai og tincans.ai.</li>
-<li>Åpen kildekode orkestrering for TTS (Text-til-tale), ASR (Automatisk talegjenkjenning), og LLM (Store språkmodeller) er tilgjengelig på bolna-ai/bolna, med Wyoming-protokollen bemerket for integrasjon av hjemmeassistent.</li>
-</ul>
-<h2><a href="https://blog.jitx.com/jitx-corporate-blog/testing-generative-ai-for-circuit-board-design">Testing av generativ AI for kretskortdesign</a></h2>
-<ul>
-<li>Generative AI-modeller (GPT-4o, Claude 3 Opus, Gemini 1.5) ble testet for deres nytte i kretskortdesign, og viste styrker i datautvinning og kodeskriving, men svakheter i nyanserte designoppgaver.</li>
-<li>Claude 3 Opus utmerket seg i å forklare grunnleggende konsepter, mens Gemini 1.5 var mest effektiv i å analysere datablad og lage nøyaktige pinstabeller og fotavtrykk.</li>
-<li>Alle modeller slet med spesifikke anbefalinger for deler og detaljerte kretsdesigntasks, noe som indikerer at LLM-er er bedre egnet til å assistere menneskelige eksperter i stedet for å fungere som frittstående designere.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40751020">Reacties</a></h3>
-<ul>
-<li>Generativ AI, spesielt zero-shot Large Language Models (LLMs), sliter med komplekse oppgaver som kretskortdesign, noe som fremhever deres begrensninger i spesialiserte domener.</li>
-<li>Finjustering av LLM-er på spesifikke oppgaver, som opprettelse av nettlister, kan forbedre ytelsen deres, men et grunnleggende skifte i AI-strukturen kan være nødvendig for mer komplekse oppgaver.</li>
-<li>Diffusjonsbaserte generative strukturer og andre AI-modeller som evolusjonær eller forsterkende læring kan være bedre egnet for intrikate oppgaver innen elektroteknikk (EE).</li>
-</ul>
-<h2><a href="https://deepmind.google/discover/blog/generating-audio-for-video/">Genererer lyd for video</a></h2>
-<ul>
-<li>Video-til-lyd (V2A) teknologi genererer synkroniserte lydspor fra videopiksler og tekstmeldinger, og muliggjør skapelsen av dramatiske musikkstykker, realistiske lydeffekter eller dialog for ulike videotyper.</li>
-<li>V2A benytter en diffusjonsbasert tilnærming, koder videoinngang og forbedrer lyd fra tilfeldig støy for å produsere realistiske lydsignaler, med pågående forskning som fokuserer på å forbedre videokvalitetsartefakter og leppesynkronisering.</li>
-<li>Utviklingsteamet legger vekt på ansvarlige AI-praksiser, bruker SynthID-verktøysettet for vannmerking av AI-generert innhold og gjennomfører strenge sikkerhetsvurderinger før offentlig utgivelse.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744098">Reacties</a></h3>
-<ul>
-<li>DeepMind har introdusert et nytt AI-verktøy for å generere lyd til videoer, og legger til den voksende listen over AI-generative verktøy.</li>
-<li>Samfunnet uttrykker blandede følelser, med noen som synes det er vanskelig å holde tritt med de raske fremskrittene og andre som diskuterer de potensielle virkningene på innholdsskaping og lagringskapasitet.</li>
-<li>Det er en betydelig interesse for hvordan AI-generert innhold kan påvirke reklame, politikk og fremtiden for innholdsskaping, med forslag til AI-spesifikke plattformer og verktøy.</li>
-</ul>
-<h2><a href="https://lemmy.world/post/16763534">Å bruke 3 måneder på å undersøke en 7 år gammel feil og fikse den med 1 linje kode</a></h2>
-<ul>
-<li>En utvikler brukte tre måneder på å undersøke en feil som hadde vært uløst i syv år.</li>
-<li>Feilen ble til slutt fikset med bare én linje med kode, noe som fremhever den noen ganger unnvikende naturen til programvareproblemer.</li>
-<li>Dette innlegget understreker utholdenheten som kreves i programvareutvikling og den potensielle enkelheten i løsninger på langvarige problemer.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40749624">Reacties</a></h3>
-<ul>
-<li>En 7 år gammel feil ble fikset med en enkelt linje kode etter en 3-måneders undersøkelse, noe som fremhever kompleksiteten og uforutsigbarheten ved feilsøking.</li>
-<li>Oppdagelsen ble gjort ved å identifisere en 16-bits modulo-operasjon i lydbehandlingskoden, ved å utnytte tidligere erfaring med 8-bits prosessorer.</li>
-<li>Innlegget understreker den emosjonelle reisen og tilfredsstillelsen ved å løse langvarige tekniske problemer, noe som resonnerer med både junior- og senioringeniører.</li>
-</ul>
-<h2><a href="https://blog.frankmtaylor.com/2024/06/20/a-rant-about-front-end-development/">En tirade om front-end utvikling</a></h2>
-<ul>
-<li>Den erfarne front-end-utvikleren uttrykker frustrasjon over kompleksiteten som introduseres av visse valg i front-end-utvikling.</li>
-<li>Vektlegger viktigheten av innhold fremfor rammeverk som React, og fremmer semantisk, SEO-klar og tilgjengelig HTML.</li>
-<li>Er kritisk til overforbruk av JavaScript og komplekse verktøy, og foreslår å fokusere på enkelhet og riktig bruk av CSS og server-side rendering-teknologier.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40746173">Reacties</a></h3>
-<ul>
-<li>Et blogginnlegg kritiserte moderne front-end utviklingspraksis, og sammenlignet dem med fast food—funksjonelle, men uten dybde.</li>
-<li>Forfatteren talte for server-side rendering (SSR) og minimal bruk av JavaScript (JS), og fremhevet verktøy som HTMX og Alpine JS.</li>
-<li>Diskusjonen avdekket en splittelse mellom tilhengere av tradisjonell webutvikling (enklere HTML og CSS) og de som foretrekker moderne JS-rammeverk som React for dynamiske nettsteder.</li>
-</ul>
-<h2><a href="https://github.com/martinpiper/BombJack/blob/master/README.md">Bomb Jack display hardware</a></h2>
-<ul>
-<li>Bomb Jack Display Hardware-prosjektet, nå i versjon 2.0, startet som et skjema for Bomb Jack-arkadehardware og inkluderer funksjoner som adresserbar RAM, ekstra skjermblanking og helskjermhøye sprites.</li>
-<li>Prosjektet bruker TTL (Transistor-Transistor Logic) for å utforske grafiske forbedringer for 8-bits datamaskiner, med fokus på å lære bort lavnivå diskret logikk i stedet for å bruke CPLD (Complex Programmable Logic Device) eller FPGA (Field-Programmable Gate Array).</li>
-<li>Maskinvareutformingen inkluderer seks PCB (trykte kretskort) oppsett for ulike funksjoner og bruker Proteus for simulering og PCBWay for produksjon, med mål om kostnadseffektivitet og tilpasning.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40745830">Reacties</a></h3>
-<ul>
-<li>Et nytt prosjekt har som mål å erstatte Bomb Jack-arkadehardwaren med en moderne ekvivalent, og utvider seg utover sin opprinnelige omfang.</li>
-<li>Prosjektet, som er forskjellig fra MAME (Multiple Arcade Machine Emulator), er en maskinvareløsning som til og med har hjulpet med å identifisere en feil i MAME.</li>
-<li>Maskinvaren har avanserte funksjoner som flere lag, lagprioritet, flere paletter, skalerte sprites og mer, og presser grensene for tidsriktige komponenter.</li>
-</ul>
-<h2><a href="https://driving.ca/auto-news/industry/tesla-class-action-lawsuite-parts-repairs-monopoly">Tesla-eiere anlegger gruppesøksmål som påstår monopol på reparasjoner og deler</a></h2>
-<ul>
-<li>Tesla-eiere har levert et gruppesøksmål som anklager selskapet for å monopolisere reparasjons- og delemarkedet.</li>
-<li>Rettsaken hevder at Teslas praksis tvinger eiere til å bruke Teslas egne tjenester og deler, noe som potensielt kan føre til høyere kostnader og begrensede alternativer.</li>
-<li>Dette rettslige skrittet fremhever pågående bekymringer om retten til reparasjon og tilgjengeligheten av tredjepartstjenester i elbilindustrien.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744847">Reacties</a></h3>
-<ul>
-<li>Tesla-eiere har innledet et gruppesøksmål, og anklager selskapet for å monopolisere reparasjoner og deler, noe som fører til lange ventetider for nødvendige komponenter.</li>
-<li>Rettsaken hevder at Tesla prioriterer produksjon av nye biler fremfor å opprettholde et tilstrekkelig lager av deler til reparasjoner, noe som forårsaker betydelige forsinkelser for noen eiere.</li>
-<li>Voldgiftsklausuler i Teslas kontrakter kan komplisere søksmålet og potensielt hindre dets fremgang gjennom rettssystemet.</li>
-</ul>
-<h2><a href="https://arstechnica.com/gaming/2024/06/from-infocom-to-80-days-an-oral-history-of-text-games-and-interactive-fiction/">Fra Infocom til 80 Days: En muntlig historie om tekstspill og interaktiv fiksjon</a></h2>
-<ul>
-<li>Go North — Fra Infocom til 80 Days&quot; er en muntlig historie som utforsker 50 år med interaktiv fiksjon (IF), fra tidlige teksteventyr til moderne verk.</li>
-<li>IF-samfunnet er kjent for sin open-source-ånd og individualitet, inkludert både spillere og skapere.</li>
-<li>Genren begynte på 1970-tallet med spill som Adventure av Will Crowther og utviklet seg etter hvert som hjemmecomputere ble mer tilgjengelige, og nådde et bredere publikum.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40749426">Reacties</a></h3>
-<ul>
-<li>Fra Infocom til 80 Days: En muntlig historie om tekstspill og interaktiv fiksjon&quot; utforsker utviklingen av tekstbaserte spill, og fremhever klassikere og moderne titler som &quot;80 Days&quot; for deres historiefortelling og gjenspillbarhet.</li>
-<li>Diskusjonen inkluderer ressurser som Interactive Fiction Database (IFDB) og boken &quot;50 Years of Text Games,&quot; og bemerker ink-språket fra Inkle Studios for dets enkelhet i å lage forgrenede narrativer.</li>
-<li>Utfordringer med tidlige tekstparsers nevnes, sammen med potensialet til moderne fremskritt som store språkmodeller (LLMs) for å forbedre interaktiv fiksjon.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Studie viser at Gilead-vaksine forhindrer alle HIV-tilfeller" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Studie%20viser%20at%20Gilead-vaksine%20forhindrer%20alle%20HIV-tilfeller&subheading=vrijdag%2021%20juni%202024%3A%20Samenvatting%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/nl/2024/06/21</link>
-            <guid isPermaLink="false">2024-06-21T00:00:00.000Z</guid>
-            <pubDate>Fri, 21 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

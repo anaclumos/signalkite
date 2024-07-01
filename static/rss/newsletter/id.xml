@@ -15,12 +15,203 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 30 Jun 2024 19:09:09 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Jul 2024 19:23:18 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/id.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 30 Jun 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[id]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-01]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/01&#39;</h2>
+<h1>2024-07-01</h1>
+<h2><a href="https://pikimov.com/">Saya membuat alternatif After Effects</a></h2>
+<ul>
+<li>Pikimov adalah editor desain gerak dan video berbasis web yang baru diluncurkan, terinspirasi oleh Photopea, dan berfungsi sebagai alternatif gratis untuk After Effects.</li>
+<li>Itu tidak memerlukan pendaftaran, menyimpan file di mesin pengguna, dan memastikan bahwa proyek tidak digunakan untuk pelatihan AI.</li>
+<li>The creator has a history of developing VJ software for platforms like the Game Boy Advance, Playstation 2, and Raspberry Pi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843867">Reaksi</a></h3>
+<ul>
+<li>Pikimov adalah editor desain gerak dan video berbasis web yang baru dan gratis, dibuat sebagai alternatif untuk Adobe After Effects, tanpa memerlukan pendaftaran atau unggahan ke cloud.</li>
+<li>Alat ini telah menerima umpan balik positif karena potensinya untuk menantang dominasi Adobe, dengan pengguna yang menyarankan perbaikan dalam batas kecepatan bingkai, pelaporan bug, dan penanganan keyframe.</li>
+<li>Saat ini, Pikimov hanya mendukung Chrome dan Edge karena API web tertentu, dengan rencana di masa depan untuk menambahkan fitur komunitas dan mungkin memonetisasi aplikasi tersebut.</li>
+</ul>
+<h2><a href="https://www.qualys.com/2024/07/01/cve-2024-6387/regresshion.txt">RegreSSHion: RCE di server OpenSSH, pada sistem Linux berbasis glibc</a></h2>
+<ul>
+<li>Kelemahan kritis (CVE-2024-6387) pada server OpenSSH di sistem Linux berbasis glibc memungkinkan eksekusi kode jarak jauh (RCE) karena kondisi balapan penangan sinyal.</li>
+<li>Masalah ini, sebuah regresi dari CVE-2006-5051, mempengaruhi versi OpenSSH 3.4p1, 4.2p1, dan 9.2p1, dan melibatkan eksploitasi penangan SIGALRM untuk menyebabkan kerusakan heap dan mengeksekusi kode sembarang.</li>
+<li>Mitigasi mencakup penerapan patch yang memindahkan kode yang tidak aman sinyal asinkron keluar dari penangan SIGALRM atau mengatur <code>LoginGraceTime</code> ke 0, meskipun yang terakhir dapat menyebabkan penolakan layanan.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843778">Reaksi</a></h3>
+<ul>
+<li>Kerentanan Eksekusi Kode Jarak Jauh (RCE) ditemukan di server OpenSSH pada sistem Linux berbasis glibc, yang berpotensi memungkinkan penyerang untuk mendapatkan akses root jarak jauh.</li>
+<li>Koreksi untuk kerentanan ini dilakukan dengan memindahkan kode yang tidak aman dari penangan sinyal ke proses pendengar, sehingga membuatnya sulit untuk di-backport.</li>
+<li>Masalah ini terutama mempengaruhi sistem 32-bit, dengan eksploitasi pada sistem 64-bit diyakini mungkin tetapi belum terbukti; berbagai distribusi telah merilis tambalan.</li>
+</ul>
+<h2><a href="https://www.pipes.digital/docs">Pipes: Penerus spiritual dari Yahoo Pipes</a></h2>
+<ul>
+<li>Pipes adalah editor pemrograman visual untuk umpan, memungkinkan pengguna untuk mengambil, membuat, dan memanipulasi umpan menggunakan blok, mirip dengan Yahoo! Pipes.</li>
+<li>Ini mendukung berbagai format input, termasuk RSS, Atom, JSON, HTML, dan file teks, serta menawarkan berbagai blok untuk operasi umpan yang berbeda seperti penyaringan, penggabungan, dan ekstraksi konten.</li>
+<li>Pipes CE adalah perangkat lunak gratis dan sumber terbuka (FOSS) di bawah lisensi AGPL, tersedia di Github, dan mendukung integrasi dengan situs populer seperti Twitter, YouTube, dan Vimeo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40841980">Reaksi</a></h3>
+<ul>
+<li>Pipes, sebuah proyek yang terinspirasi oleh Yahoo Pipes, baru-baru ini mengalami pembaruan untuk meningkatkan stabilitas, termasuk peralihan dari teks ke objek RSS untuk transportasi data antar blok.</li>
+<li>Upgrade server dan rekonfigurasi thread serta pekerja puma telah diimplementasikan untuk mengatasi masalah dan hambatan.</li>
+<li>Kami sedang mempertimbangkan saran pengguna untuk menambahkan blok untuk ringkasan atau gambar yang dihasilkan AI melalui permintaan POST, dengan beberapa blok dasar sudah ada.</li>
+</ul>
+<h2><a href="https://mlops.systems/posts/2024-07-01-full-finetuned-model-evaluation.html">Model saya yang telah disesuaikan mengalahkan GPT-4 dari OpenAI</a></h2>
+<ul>
+<li>Kirimannya membahas metrik evaluasi untuk menilai kinerja model bahasa yang telah disesuaikan (LLM) dalam mengekstraksi data terstruktur dari siaran pers, dengan fokus pada akurasi.</li>
+<li>Model yang disesuaikan, termasuk TinyLlama, Mistral, dan Solar LLM, umumnya mengungguli GPT-4 dan GPT-4 Turbo dari OpenAI dalam hal akurasi, meskipun evaluasinya kompleks dan lambat.</li>
+<li>Kajian tersebut menyoroti perlunya sistem yang lebih baik untuk mengelola kompleksitas dan pemeliharaan, dengan langkah-langkah selanjutnya termasuk pengujian yang tidak terkait dengan akurasi dan mengeksplorasi penyajian model.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843848">Reaksi</a></h3>
+<ul>
+<li>Model yang disesuaikan secara khusus dapat mengungguli model umum seperti GPT-4 dari OpenAI dalam tugas-tugas tertentu, seperti ekstraksi data, ringkasan kreatif, menjawab pertanyaan, dan klasifikasi.</li>
+<li>Kejayaan model yang disesuaikan bergantung pada data pelatihan berkualitas tinggi, membuatnya efektif untuk ekstraksi informasi khusus dan dapat diakses oleh penggemar teknologi.</li>
+<li>Menyesuaikan model yang lebih kecil, seperti Llama 3 8B, bisa lebih efisien dan hemat biaya, tetapi menggunakan respons model untuk melatih model baru mungkin melanggar ketentuan layanan penyedia LLM utama.</li>
+</ul>
+<h2><a href="https://herman.bearblog.dev/cities-need-more-trees/">Kota-kota membutuhkan lebih banyak pohon</a></h2>
+<ul>
+<li>Johannesburg, yang dulunya tandus, berubah menjadi &#39;kota terhijau di dunia&#39; setelah menanam jutaan pohon untuk melawan debu dari ekstraksi emas.</li>
+<li>Penanaman pohon di Johannesburg didistribusikan secara tidak merata akibat Apartheid, yang menyoroti ketimpangan sosial ekonomi.</li>
+<li>Pepohonan di perkotaan memberikan manfaat yang signifikan, termasuk mengurangi efek &quot;pulau panas&quot;, berfungsi sebagai penghalang suara, meningkatkan estetika, meningkatkan keanekaragaman hayati, dan mendorong aktivitas di luar ruangan.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40843720">Reaksi</a></h3>
+<ul>
+<li>Kota-kota semakin banyak menanam pohon dan mempromosikan atap hijau untuk mengatasi stres panas dan meningkatkan kelayakan hidup di perkotaan.</li>
+<li>Utrecht, Belanda, dan Zurich, Swiss, adalah contoh terdepan, sementara kota-kota di AS seperti Portland, OR, memiliki mandat hijau, dan Salt Lake City sedang mengeksplorasi xeriscaping.</li>
+<li>Pepohonan menawarkan manfaat signifikan, seperti mendinginkan area perkotaan, meningkatkan kualitas udara, dan meningkatkan kenyamanan hidup secara keseluruhan, meskipun ada tantangan seperti pengembangan properti pribadi yang menyebabkan penebangan pohon.</li>
+</ul>
+<h2><a href="https://ladybird.org/">Selamat datang di Ladybird</a></h2>
+<ul>
+<li>Ladybird adalah peramban web independen yang dikembangkan oleh organisasi nirlaba, dengan fokus pada kinerja, stabilitas, dan keamanan, dengan rilis Alpha yang direncanakan untuk tahun 2026.</li>
+<li>Awalnya merupakan penampil HTML untuk SerenityOS, sekarang mendukung Linux, macOS, dan sistem mirip Unix lainnya, dan dibangun sepenuhnya dari awal tanpa menggunakan kode dari peramban lain.</li>
+<li>The project didanai oleh sponsor dan donasi, tanpa iklan atau monetisasi pengguna, dan saat ini dikembangkan oleh tim yang terdiri dari empat insinyur penuh waktu.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40845951">Reaksi</a></h3>
+<ul>
+<li>Ladybird, awalnya merupakan perender HTML untuk SerenityOS, kini berkembang menjadi proyek peramban lintas platform.</li>
+<li>Proyek ini telah menerima donasi sebesar $1.000.000 dari salah satu pendiri GitHub, Chris Wanstrath, yang menunjukkan dukungan finansial yang kuat.</li>
+<li>Kami berencana untuk merilis versi alpha pada tahun 2026, dengan menekankan modularitas dan kepatuhan terhadap standar web modern.</li>
+</ul>
+<h2><a href="https://en.wikipedia.org/wiki/Postzegelcode">Kode perangko</a></h2>
+<ul>
+<li>Kode postzegel adalah kode sembilan karakter yang digunakan di Belanda sebagai alternatif tulisan tangan untuk perangko, yang dibeli secara online dari PostNL.</li>
+<li>Diperkenalkan pada tahun 2013, kode tersebut harus ditulis pada surat dalam waktu lima hari dan memiliki 78,8 triliun kemungkinan kombinasi, membuatnya aman dari tebakan.</li>
+<li>Per Desember 2020, 590.000 orang menggunakan postzegelcodes, yang sekarang harganya sama dengan perangko tradisional.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40839418">Reaksi</a></h3>
+<ul>
+<li>Diskusi berpusat pada penggunaan kode pos digital, yang dikenal sebagai &#39;postzegelcode,&#39; yang dapat ditulis pada amplop sebagai pengganti perangko tradisional.</li>
+<li>Berbagai negara, termasuk Jerman, Denmark, Norwegia, dan Swedia, telah menerapkan sistem serupa, memungkinkan pengguna untuk membeli perangko secara online dan menulis kode pada surat mereka.</li>
+<li>Kelebihan sistem ini adalah kemudahannya, terutama bagi mereka yang tidak sering mengirim surat fisik, karena menghilangkan kebutuhan akan perangko fisik dan menyesuaikan dengan perubahan tarif pos.</li>
+</ul>
+<h2><a href="https://apnews.com/article/supreme-court-trump-capitol-riot-immunity-2dc0d1c2368d404adc0054151490f542">Mahkamah Agung memutuskan mantan presiden memiliki kekebalan untuk tindakan resmi</a></h2>
+<ul>
+<li>Kejaksaan Agung memperpanjang penundaan dalam kasus pidana Donald Trump terkait pemilihan 2020, mengurangi kemungkinan adanya persidangan sebelum pemilihan November.</li>
+<li>Dalam keputusan 6-3, mayoritas konservatif di pengadilan memberikan kekebalan luas kepada mantan presiden dari penuntutan atas tindakan resmi, yang mempersulit kasus penuntutan dan memerlukan analisis lebih lanjut di tingkat pengadilan.</li>
+<li>Kejadian ini menegaskan pengaruh signifikan pengadilan terhadap pemilihan yang akan datang, dengan Ketua Mahkamah Agung John Roberts menekankan kekebalan untuk tindakan resmi dan Hakim Sonia Sotomayor tidak setuju, berargumen bahwa hal ini merusak prinsip bahwa tidak ada yang berada di atas hukum.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40847963">Reaksi</a></h3>
+<ul>
+<li>Mahkamah Agung telah memutuskan bahwa mantan presiden memiliki kekebalan untuk tindakan resmi, memicu perdebatan tentang potensi penyalahgunaan kekuasaan versus kebutuhan akan perlindungan presiden.</li>
+<li>Putusan tersebut menetapkan bahwa kekebalan berlaku untuk tindakan dalam kewenangan konstitusional tetapi tidak untuk tindakan tidak resmi, menimbulkan kekhawatiran tentang akuntabilitas untuk kejahatan serius.</li>
+<li>Kritikus, termasuk Hakim Sotomayor, khawatir keputusan ini dapat mempengaruhi kasus hukum yang sedang berlangsung dan di masa depan yang melibatkan mantan presiden.</li>
+</ul>
+<h2><a href="https://www.alvarorevuelta.com/posts/fft-polynomials">Konvolusi, Transformasi Fourier Cepat dan polinomial (2022)</a></h2>
+<ul>
+<li>Perkalian polinomial tradisional memiliki kompleksitas (O(n^2)), sehingga tidak efisien untuk polinomial besar.</li>
+<li>Transformasi Fourier Cepat (FFT) mengurangi kompleksitas perkalian polinomial menjadi (O(n \log n)) dengan mengubah masalah ke domain frekuensi.</li>
+<li>Metode berbasis FFT melibatkan konversi polinomial ke domain frekuensi, mengalikannya, dan mengonversi hasilnya kembali, secara signifikan meningkatkan efisiensi untuk polinomial derajat tinggi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40840396">Reaksi</a></h3>
+<ul>
+<li>Diskusi berpusat pada penggunaan Fast Fourier Transform (FFT) untuk perkalian polinomial, menyoroti efisiensinya dibandingkan dengan metode naif.</li>
+<li>Pandangan utama mencakup pentingnya ketepatan numerik dalam perhitungan FFT dan konteks historis perkembangan FFT untuk perkalian polinomial.</li>
+<li>Kami juga membahas aplikasi praktis, seperti koreksi kesalahan, pemrosesan sinyal, dan kriptografi tanpa pengetahuan, di mana metode berbasis FFT sangat bermanfaat.</li>
+</ul>
+<h2><a href="https://blog.gabornyeki.com/2024-07-my-python-code-is-a-neural-network/">Kode Python saya adalah jaringan saraf</a></h2>
+<ul>
+<li>Postingan tersebut membahas tentang menyematkan program dalam jaringan saraf berulang (RNN) dan bagaimana RNN yang telah dilatih dapat mengungguli algoritma yang ditulis secara manual.</li>
+<li>Ini memberikan contoh rinci tentang mendeteksi kode program dalam pesan, membandingkan aturan keputusan sederhana, algoritma yang ditulis tangan, dan pendekatan berbasis RNN.</li>
+<li>Postingan tersebut menyoroti keunggulan RNN, seperti pengkodean mesin status, penggunaan fungsi aktivasi yang dapat dilatih, dan menangani tugas-tugas kompleks dengan disiplin berbasis data.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40845304">Reaksi</a></h3>
+<ul>
+<li>Artikel tersebut membahas tentang pembuatan jaringan saraf menggunakan Python tetapi kurang detail mengenai pengujian dan memperoleh data pelatihan, yang sangat penting untuk memastikan generalisasi model terhadap input yang belum pernah dilihat.</li>
+<li>Diskusi tersebut menyoroti Teorema Aproksimasi Universal, yang menyatakan bahwa jaringan saraf dapat merepresentasikan fungsi apa pun hingga tingkat akurasi yang diinginkan, tetapi menekankan bahwa mempelajari aproksimasi ini tidak dijamin.</li>
+<li>Terjadi perdebatan tentang apakah Recurrent Neural Networks (RNN) sedang digantikan oleh transformer, dengan beberapa pihak berargumen bahwa RNN masih memiliki keunggulan unik, seperti penggunaan memori yang konstan, yang tidak dimiliki oleh transformer.</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40846428">Siapa yang sedang merekrut? (Juli 2024)</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40846428">Reaksi</a></h3>
+<ul>
+<li>Berbagai perusahaan sedang merekrut untuk berbagai peran, termasuk posisi jarak jauh, di lokasi, dan hibrida, di berbagai lokasi dan industri.</li>
+<li>Perusahaan-perusahaan terkemuka termasuk Apple, Figma, Charge Robotics, dan SmileID, menawarkan posisi seperti Senior Software Engineer, Senior/Staff Security Engineer, dan Senior Frontend Engineer.</li>
+<li>Kesempatan tersebar di seluruh dunia, dengan beberapa perusahaan menawarkan sponsor visa dan peran dalam teknologi yang sedang berkembang seperti AI, pembelajaran mesin, dan pengembangan full-stack.</li>
+</ul>
+<h2><a href="https://carbon-steel.github.io/jekyll/update/2024/06/19/abstractions.html">Programmer Tidak Boleh Percaya pada Siapa Pun, Bahkan Diri Mereka Sendiri</a></h2>
+<ul>
+<li>Programmer harus mempertahankan tingkat skeptisisme yang sehat, karena menulis dan memverifikasi kebenaran kode secara inheren menantang dan sering kali tidak mungkin.</li>
+<li>Abstraksi, meskipun menyederhanakan sistem yang kompleks, dapat gagal dan menyebabkan masalah seperti penurunan kinerja atau perilaku yang tidak terdefinisi, seperti yang disoroti oleh Hukum Abstraksi Bocor dari Joel Spolsky.</li>
+<li>Untuk mengurangi masalah yang tidak diketahui, para pemrogram harus memverifikasi informasi, menguji keyakinan, dan mengukur dampak perubahan kode, sambil terus belajar tentang platform, bahasa, alat, dan teknologi baru.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40842867">Reaksi</a></h3>
+<ul>
+<li>Diskusi berpusat pada pentingnya verifikasi formal dalam pemrograman, menekankan bahwa para pemrogram tidak boleh mempercayai siapa pun, termasuk diri mereka sendiri, tanpa bukti.</li>
+<li>Verifikasi formal, meskipun kompleks dan mahal, memberikan jaminan kebenaran yang lebih kuat dibandingkan dengan uji unit, yang hanya mencakup contoh-contoh spesifik.</li>
+<li>Perdebatan ini menyoroti pertukaran antara ketelitian verifikasi formal dan kepraktisan uji unit, menunjukkan bahwa pilihan tersebut bergantung pada persyaratan dan sumber daya proyek.</li>
+</ul>
+<h2><a href="https://www.ericpfahl.com/from-pattern-matching-to-unification/">Unifikasi dalam Elixir</a></h2>
+<ul>
+<li>Unifikasi dalam Elixir memperluas pencocokan pola dengan memungkinkan variabel di kedua sisi persamaan, menyelesaikan persamaan simbolik, dan menghasilkan pemetaan substitusi.</li>
+<li>Berbeda dengan pencocokan pola, unifikasi dapat menangani nilai yang sebagian diketahui, menjadikannya alat yang kuat untuk pemrograman logika di Elixir.</li>
+<li>Kombinasi algoritma melibatkan penelusuran istilah, pengujian kesetaraan, penanganan variabel, dan penyatuan elemen daftar secara rekursif, menyederhanakan penugasan variabel melalui substitusi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40840315">Reaksi</a></h3>
+<ul>
+<li>Artikel tersebut membandingkan efisiensi algoritma unifikasi dalam inferensi tipe, dengan fokus pada algoritma W dan algoritma J.</li>
+<li>Algoritma W, yang digunakan dalam inferensi tipe Hindley-Milner, kurang efisien dan lebih rentan terhadap kesalahan karena kebutuhan untuk menyusun substitusi.</li>
+<li>Algoritma J, yang menggunakan struktur data union-find untuk penyatuan destruktif, lebih sederhana dan lebih efisien, dengan wawasan tambahan tentang penyatuan dalam pencocokan pola dan pencocokan pola terkompilasi menggunakan pohon keputusan.</li>
+</ul>
+<h2><a href="https://artsandculture.google.com/">Google Arts and Culture situs yang saya tidak tahu ada</a></h2>
+<ul>
+<li>Google Arts &amp; Culture menawarkan berbagai tur virtual dan pengalaman interaktif, memungkinkan pengguna untuk menjelajahi seni, sejarah, dan budaya dari seluruh dunia.</li>
+<li>Highlight termasuk tur virtual museum terkenal, pengalaman augmented reality (AR), dan permainan interaktif yang membuat pembelajaran tentang seni dan budaya menjadi menarik dan mudah diakses.</li>
+<li>Kemampuan khusus termasuk menjelajahi perpustakaan Van Gogh, mengikuti tur 3D lukisan Vermeer, dan berpartisipasi dalam tantangan tari K-Pop bekerja sama dengan Museum V&amp;A.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40840699">Reaksi</a></h3>
+<ul>
+<li>Google Arts and Culture adalah proyek yang kurang dikenal tetapi signifikan dari Google, yang menawarkan konten budaya yang dikurasi dari seluruh dunia.</li>
+<li>Pengguna menghargai gambar beresolusi tinggi dan fitur uniknya, seperti kemampuan untuk memperbesar karya seni dan menjelajahi berbagai proyek budaya.</li>
+<li>Platform ini telah aktif sejak tahun 2011 dan terus menjadi sumber daya berharga bagi para penggemar seni dan budaya, meskipun ada kekhawatiran tentang umur panjang proyek-proyek Google.</li>
+</ul>
+<h2><a href="https://arxiv.org/abs/2406.09490">Newswire: Basis data terstruktur skala besar dari seabad berita sejarah</a></h2>
+<ul>
+<li>Para peneliti telah membuat arsip komprehensif dari konten berita kawat AS dari tahun 1878 hingga 1977 menggunakan jalur pembelajaran mendalam pada pemindaian gambar dari surat kabar lokal.</li>
+<li>Dataset ini mencakup 2,7 juta artikel domain publik yang unik, direferensi geografis, ditandai berdasarkan topik, dan terhubung ke Wikipedia, menyediakan informasi berharga untuk penelitian linguistik komputasional, ilmu sosial, dan humaniora digital.</li>
+<li>The project involved transcribing 138 million structured article texts and using a neural bi-encoder model to de-duplicate articles, ensuring only public domain content was included.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40839830">Reaksi</a></h3>
+<ul>
+<li>Kumpulan data komprehensif dari berita sejarah hingga tahun 1978 telah dibuat, mencerminkan perubahan dalam undang-undang hak cipta, dan tersedia di GitHub, meskipun saat ini masih kosong.</li>
+<li>Pengguna telah mengidentifikasi kesalahan OCR (Pengenalan Karakter Optik) dalam data, menyoroti tantangan yang terus-menerus dalam mendigitalkan teks-teks sejarah.</li>
+<li>Proyek ini, meskipun memiliki beberapa masalah, dipuji karena nilai ilmiahnya, dengan pemindaian mentah yang dapat diakses melalui koleksi digital Perpustakaan Kongres.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Saya membuat alternatif After Effects" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Saya%20membuat%20alternatif%20After%20Effects&subheading=Senin%2C%201%20Juli%202024%3A%20Ringkasan%20Berita%20Peretas" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/id/2024/07/01</link>
+            <guid isPermaLink="false">2024-07-01T00:00:00.000Z</guid>
+            <pubDate>Mon, 01 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-06-30]]></title>
             <description
@@ -1654,187 +1845,6 @@
             <link>https://hn.cho.sh/id/2024/06/22</link>
             <guid isPermaLink="false">2024-06-22T00:00:00.000Z</guid>
             <pubDate>Sat, 22 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-21]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/21&#39;</h2>
-<h1>2024-06-21</h1>
-<h2><a href="https://www.bloomberg.com/news/articles/2024-06-20/gilead-shot-prevents-100-of-hiv-cases-in-trial-of-african-women">Gilead suntikan mencegah semua kasus HIV dalam uji coba</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40742163">Reaksi</a></h3>
-<ul>
-<li>Gilead&#39;s suntikan HIV baru, cabotegravir, telah terbukti mencegah semua kasus dalam uji coba, menghadirkan alternatif yang menjanjikan untuk pil harian.</li>
-<li>Vaksin ini diberikan setiap dua bulan, dengan kemungkinan perpanjangan menjadi setiap tiga bulan, yang dapat menyederhanakan kepatuhan dan meningkatkan ketaatan.</li>
-<li>Kekhawatiran ada tentang potensi reaksi merugikan karena keberadaan obat yang lama dalam sistem, tetapi obat tersebut dapat diuji dalam bentuk pil terlebih dahulu.</li>
-</ul>
-<h2><a href="https://www.npr.org/2021/03/07/974534021/remembering-allan-mcdonald-he-refused-to-approve-challenger-launch-exposed-cover">Allan McDonald menolak menyetujui peluncuran Challenger, mengungkap penutupan (2021)</a></h2>
-<ul>
-<li>Allan McDonald, yang meninggal pada usia 83 tahun, adalah sosok penting dalam bencana pesawat ulang-alik Challenger, dikenal karena menolak menyetujui peluncuran karena masalah keamanan.</li>
-<li>Setelah bencana tersebut, McDonald mengungkapkan penutupan NASA, mengungkapkan bahwa para insinyur menentang peluncuran karena suhu beku yang mempengaruhi O-ring, yang menyebabkan dia sementara diturunkan jabatannya.</li>
-<li>McDonald kemudian memimpin perancangan ulang roket pendorong, ikut menulis catatan definitif tentang bencana tersebut, dan menjadi advokat untuk pengambilan keputusan etis dalam bidang teknik.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40748371">Reaksi</a></h3>
-<ul>
-<li>Allan McDonald menolak untuk menyetujui peluncuran Challenger karena masalah keamanan, mengungkapkan adanya penutupan oleh eksekutif NASA dan Morton Thiokol.</li>
-<li>Meskipun mendapat tekanan yang intens, McDonald dan insinyur lainnya ditolak oleh atasan mereka, yang mengakibatkan bencana Challenger.</li>
-<li>McDonald kemudian menganjurkan pengambilan keputusan yang etis, menyoroti ketegangan antara ketepatan teknis dan tekanan manajerial dalam proyek-proyek berisiko tinggi.</li>
-</ul>
-<h2><a href="https://lwn.net/Articles/976822/">Peramban Ladybird mengembangkan sayapnya</a></h2>
-<ul>
-<li>Ladybird adalah proyek peramban web sumber terbuka, yang bercabang dari SerenityOS oleh Andreas Kling, dengan tujuan untuk menjadi independen dari Chrome dan ditulis dalam C++ di bawah lisensi BSD.</li>
-<li>Meskipun masih dalam tahap pengembangan awal dan kekurangan banyak fitur, Ladybird menunjukkan potensi dengan fungsionalitas dasar dan kontribusi komunitas yang signifikan, menargetkan sistem Linux, macOS, dan mirip UNIX, dengan dukungan Windows melalui WSL.</li>
-<li>Reaksi komunitas beragam, dengan beberapa melihat potensi dan yang lain menyarankan fokus pada peramban yang sudah ada, tetapi para pendukung berargumen bahwa proyek baru seperti Ladybird sangat penting untuk ekosistem peramban yang sehat.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40746804">Reaksi</a></h3>
-<ul>
-<li>Peramban Ladybird, sebuah peramban web baru yang dibangun oleh komunitas, sedang mendapatkan perhatian sebagai calon peramban harian, berbeda dari opsi utama seperti Chrome dan Firefox.</li>
-<li>Diskusi menyoroti tantangan dalam menciptakan peramban yang lebih sederhana dan lebih aman yang hanya mendukung sebagian dari teknologi web, dengan menyeimbangkan fungsionalitas dan adopsi pengguna.</li>
-<li>Proyek ini dipandang sebagai kesempatan belajar yang berharga bagi pengembang baru, dengan proses pembangunan yang terdokumentasi dengan baik dan area kontribusi yang luas.</li>
-</ul>
-<h2><a href="https://buaacyw.github.io/mesh-anything/">MeshAnything – Mengubah representasi 3D menjadi mesh 3D yang efisien</a></h2>
-<ul>
-<li>MeshAnything memperkenalkan metode baru untuk menghasilkan Meshes Buatan Artis (AM) dari representasi 3D menggunakan transformer autoregresif, meningkatkan efisiensi dan presisi produksi aset 3D.</li>
-<li>Pendekatan ini secara signifikan mengurangi jumlah wajah mesh, meningkatkan efisiensi penyimpanan, rendering, dan simulasi sambil mempertahankan fitur geometris berkualitas tinggi.</li>
-<li>Arsitektur ini menggunakan VQ-VAE dan transformer decoder-only yang dikondisikan oleh bentuk, menunjukkan topologi yang lebih unggul dan lebih sedikit wajah dibandingkan dengan metode tradisional, menjadikannya kemajuan signifikan dalam industri 3D.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40746310">Reaksi</a></h3>
-<ul>
-<li>MeshAnything mengubah representasi 3D menjadi mesh 3D yang efisien, mengurangi jumlah wajah untuk kinerja penyimpanan dan rendering yang lebih baik.</li>
-<li>Alat ini membutuhkan memori sebesar 7GB dan waktu 30 detik pada GPU A6000, tetapi terbatas untuk menghasilkan mesh dengan kurang dari 800 wajah.</li>
-<li>Walaupun beberapa pengguna mengkritik lisensi non-komersial khususnya dan kualitas mesh yang dihasilkan, alat ini dianggap menjanjikan untuk pengembangan game dan pembuatan model 3D.</li>
-</ul>
-<h2><a href="https://lithub.com/how-babies-and-young-children-learn-to-understand-language/">Bagaimana bayi dan anak kecil belajar memahami bahasa</a></h2>
-<ul>
-<li>Steven Mithen meneliti apakah pemerolehan bahasa pada bayi dan anak-anak disebabkan oleh proses mental khusus atau mekanisme pembelajaran umum.</li>
-<li>Dia menyoroti penggunaan &#39;probabilitas transisi&#39; oleh bayi untuk mengidentifikasi kata-kata dalam ucapan yang berkelanjutan, menunjukkan kemampuan mereka dalam pembelajaran statistik.</li>
-<li>Mithen&#39;s insights menantang pandangan tradisional tentang evolusi bahasa dan menekankan kompleksitas pembelajaran bahasa pada masa awal.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744558">Reaksi</a></h3>
-<ul>
-<li>Bayi dan anak-anak kecil belajar bahasa melalui kombinasi bimbingan orang tua dan pembelajaran statistik, di mana orang tua mengulangi kata-kata sederhana dengan jeda untuk membantu mengenali batas kata.</li>
-<li>Kemungkinan anak-anak bilingual mencampur bahasa, menciptakan kata-kata baru yang masuk akal secara statistik, menunjukkan pengaruh lingkungan multibahasa terhadap pengucapan dan tata bahasa.</li>
-<li>Keterpaparan bahasa yang konsisten sangat penting, karena anak-anak beradaptasi berdasarkan lingkungan dan interaksi mereka, menggabungkan pencelupan alami dengan pembelajaran terstruktur untuk memahami pola dan aturan.</li>
-</ul>
-<h2><a href="https://steveblank.substack.com/p/why-innovation-heroes-are-a-sign">Inovator pahlawan adalah tanda dari organisasi yang tidak berfungsi</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40749754">Reaksi</a></h3>
-<ul>
-<li>Tim keuangan menggandakan pekerjaan yang diharapkan tetapi menghadapi kritik karena mengganggu grafik burn-down, yang mengarah pada pembuatan tiket placeholder untuk memanipulasi sistem.</li>
-<li>Skenario ini menyoroti masalah umum di lembaga besar di mana metrik dan birokrasi dapat mengesampingkan produktivitas yang sebenarnya.</li>
-<li>Efektivitas inovasi memerlukan kepercayaan, komunikasi, dan budaya yang mendukung, daripada hanya mengandalkan kepahlawanan individu.</li>
-</ul>
-<h2><a href="https://openai.com/index/openai-acquires-rockset/">OpenAI Mengakuisisi Rockset</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40750391">Reaksi</a></h3>
-<ul>
-<li>OpenAI telah mengakuisisi Rockset, yang memicu spekulasi tentang alasan strategis di balik langkah tersebut, seperti meningkatkan infrastruktur data atau mengakuisisi talenta dari kepemimpinan Rockset yang memiliki latar belakang di Meta.</li>
-<li>Kekhawatiran telah muncul mengenai kesesuaian Rockset untuk kebutuhan OpenAI dan dampaknya terhadap pelanggan Rockset yang ada, yang harus bertransisi sebelum September 2024.</li>
-<li>Kepemilikan tersebut telah memicu perdebatan tentang keandalan vendor dan implikasi yang lebih luas bagi industri AI dan basis data.</li>
-</ul>
-<h2><a href="https://github.com/mezbaul-h/june">Asisten suara lokal menggunakan Ollama, transformers, dan toolkit Coqui TTS</a></h2>
-<ul>
-<li><strong>june-va</strong> adalah chatbot suara lokal yang mengintegrasikan Ollama, Hugging Face Transformers, dan Coqui TTS Toolkit, memastikan privasi dengan memproses data secara lokal.</li>
-<li>Itu mendukung berbagai mode interaksi, termasuk input/output teks dan suara, dengan mode default input suara dan output audio/teks.</li>
-<li>Instalasi memerlukan Python 3.10+ dan dependensi spesifik, dengan kustomisasi yang tersedia melalui file konfigurasi JSON.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744293">Reaksi</a></h3>
-<ul>
-<li>Kemampuan asisten suara lokal yang menggunakan Ollama, transformers, dan toolkit Coqui TTS dibahas, dengan XTTSv2 dari Coqui dipuji karena latensi respons ~500ms dalam mode streaming.</li>
-<li>Model audio-ke-audio seperti GPT-4o dianggap sebagai masa depan AI percakapan, dengan pendekatan menjanjikan dari ultravox.ai dan tincans.ai.</li>
-<li>Orkestrasi sumber terbuka untuk TTS (Text-to-Speech), ASR (Automatic Speech Recognition), dan LLM (Large Language Models) tersedia di bolna-ai/bolna, dengan Protokol Wyoming dicatat untuk integrasi asisten rumah.</li>
-</ul>
-<h2><a href="https://blog.jitx.com/jitx-corporate-blog/testing-generative-ai-for-circuit-board-design">Pengujian AI Generatif untuk Desain Papan Sirkuit</a></h2>
-<ul>
-<li>Model AI generatif (GPT-4o, Claude 3 Opus, Gemini 1.5) diuji untuk kegunaannya dalam desain papan sirkuit, menunjukkan kekuatan dalam ekstraksi data dan penulisan kode tetapi kelemahan dalam tugas desain yang lebih mendetail.</li>
-<li>Claude 3 Opus unggul dalam menjelaskan konsep dasar, sementara Gemini 1.5 paling efektif dalam menguraikan lembar data dan membuat tabel pin serta jejak yang akurat.</li>
-<li>Semua model mengalami kesulitan dengan rekomendasi bagian spesifik dan tugas desain sirkuit yang mendetail, menunjukkan bahwa LLM lebih cocok untuk membantu para ahli manusia daripada bertindak sebagai desainer mandiri.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40751020">Reaksi</a></h3>
-<ul>
-<li>AI generatif, khususnya Model Bahasa Besar (LLM) zero-shot, kesulitan dengan tugas-tugas kompleks seperti desain papan sirkuit, yang menyoroti keterbatasan mereka dalam domain khusus.</li>
-<li>Menyesuaikan LLM pada tugas-tugas spesifik, seperti pembuatan netlist, dapat meningkatkan kinerjanya, tetapi perubahan mendasar dalam struktur AI mungkin diperlukan untuk tugas-tugas yang lebih kompleks.</li>
-<li>Konstruk generatif berbasis difusi dan model AI lainnya seperti pembelajaran evolusioner atau penguatan mungkin lebih cocok untuk tugas-tugas rumit dalam teknik elektro (EE).</li>
-</ul>
-<h2><a href="https://deepmind.google/discover/blog/generating-audio-for-video/">Menghasilkan audio untuk video</a></h2>
-<ul>
-<li>Teknologi video-ke-audio (V2A) menghasilkan soundtrack yang disinkronkan dari piksel video dan petunjuk teks, memungkinkan pembuatan skor dramatis, efek suara realistis, atau dialog untuk berbagai jenis video.</li>
-<li>V2A menggunakan pendekatan berbasis difusi, mengkodekan input video dan memperbaiki audio dari kebisingan acak untuk menghasilkan gelombang audio yang realistis, dengan penelitian yang sedang berlangsung berfokus pada peningkatan artefak kualitas video dan sinkronisasi bibir.</li>
-<li>Tim pengembangan menekankan praktik AI yang bertanggung jawab, menggunakan toolkit SynthID untuk memberi watermark pada konten yang dihasilkan oleh AI dan melakukan penilaian keamanan yang ketat sebelum dirilis ke publik.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744098">Reaksi</a></h3>
-<ul>
-<li>DeepMind telah memperkenalkan alat AI baru untuk menghasilkan audio untuk video, menambah daftar alat generatif AI yang terus berkembang.</li>
-<li>Komentar masyarakat beragam, dengan beberapa orang merasa kesulitan mengikuti perkembangan pesat dan yang lain membahas dampak potensial pada pembuatan konten dan kapasitas penyimpanan.</li>
-<li>Ada minat yang signifikan tentang bagaimana konten yang dihasilkan oleh AI dapat mempengaruhi periklanan, politik, dan masa depan pembuatan konten, dengan saran untuk platform dan alat khusus AI.</li>
-</ul>
-<h2><a href="https://lemmy.world/post/16763534">Menghabiskan 3 bulan untuk menyelidiki bug yang sudah berusia 7 tahun dan memperbaikinya dengan 1 baris kode</a></h2>
-<ul>
-<li>Seorang pengembang menghabiskan tiga bulan untuk menyelidiki sebuah bug yang belum terselesaikan selama tujuh tahun.</li>
-<li>Bug tersebut akhirnya diperbaiki hanya dengan satu baris kode, menyoroti sifat masalah perangkat lunak yang kadang-kadang sulit dipahami.</li>
-<li>Postingan ini menekankan ketekunan yang diperlukan dalam pengembangan perangkat lunak dan potensi kesederhanaan solusi untuk masalah yang telah lama ada.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40749624">Reaksi</a></h3>
-<ul>
-<li>Bug berusia 7 tahun diperbaiki dengan satu baris kode setelah penyelidikan selama 3 bulan, menyoroti kompleksitas dan ketidakpastian dalam debugging.</li>
-<li>Penemuan tersebut dilakukan dengan mengidentifikasi operasi modulo 16-bit dalam kode pemrosesan audio, memanfaatkan pengalaman sebelumnya dengan prosesor 8-bit.</li>
-<li>Postingan tersebut menekankan perjalanan emosional dan kepuasan dalam menyelesaikan masalah teknis yang sudah lama ada, yang beresonansi dengan baik bagi para insinyur junior maupun senior.</li>
-</ul>
-<h2><a href="https://blog.frankmtaylor.com/2024/06/20/a-rant-about-front-end-development/">Aduan tentang Pengembangan Front-end</a></h2>
-<ul>
-<li>Penulis, seorang pengembang front-end berpengalaman, mengungkapkan rasa frustrasi dengan kompleksitas yang diperkenalkan oleh pilihan tertentu dalam pengembangan front-end.</li>
-<li>Menekankan pentingnya konten dibandingkan dengan kerangka kerja seperti React, dengan menganjurkan HTML yang semantik, siap SEO, dan mudah diakses.</li>
-<li>Kritik terhadap penggunaan berlebihan JavaScript dan alat-alat kompleks, menyarankan fokus pada kesederhanaan dan penggunaan yang tepat dari CSS serta teknologi rendering sisi server.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40746173">Reaksi</a></h3>
-<ul>
-<li>Kritik dalam sebuah posting blog terhadap praktik pengembangan front-end modern, menyamakannya dengan makanan cepat saji—fungsional tetapi kurang mendalam.</li>
-<li>Penulis menganjurkan penggunaan server-side rendering (SSR) dan penggunaan JavaScript (JS) yang minimal, dengan menyoroti alat-alat seperti HTMX dan Alpine JS.</li>
-<li>Diskusi tersebut mengungkapkan perbedaan antara pendukung pengembangan web tradisional (HTML dan CSS yang lebih sederhana) dan mereka yang mendukung kerangka kerja JS modern seperti React untuk situs dinamis.</li>
-</ul>
-<h2><a href="https://github.com/martinpiper/BombJack/blob/master/README.md">Perangkat tampilan Bomb Jack</a></h2>
-<ul>
-<li>Proyek Perangkat Keras Tampilan Bomb Jack, yang sekarang dalam versi 2.0, dimulai sebagai skema untuk perangkat keras arcade Bomb Jack dan mencakup fitur-fitur seperti RAM yang dapat dialamatkan, pengosongan tampilan tambahan, dan sprite dengan tinggi layar penuh.</li>
-<li>Proyek ini menggunakan TTL (Transistor-Transistor Logic) untuk mengeksplorasi peningkatan grafis pada komputer 8-bit, dengan fokus pada pengajaran logika diskrit tingkat rendah daripada menggunakan CPLD (Complex Programmable Logic Device) atau FPGA (Field-Programmable Gate Array).</li>
-<li>Desain perangkat keras mencakup enam tata letak PCB (Printed Circuit Board) untuk berbagai fungsi dan menggunakan Proteus untuk simulasi serta PCBWay untuk manufaktur, dengan tujuan efisiensi biaya dan kustomisasi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40745830">Reaksi</a></h3>
-<ul>
-<li>Kami memiliki proyek baru yang bertujuan untuk menggantikan perangkat keras arcade Bomb Jack dengan yang setara modern, memperluas cakupannya di luar lingkup awal.</li>
-<li>The project, berbeda dari MAME (Multiple Arcade Machine Emulator), adalah solusi perangkat keras yang bahkan telah membantu mengidentifikasi bug di MAME.</li>
-<li>Perangkat keras ini memiliki kemampuan canggih seperti beberapa lapisan, prioritas lapisan, beberapa palet, sprite yang diskalakan, dan lainnya, mendorong batasan komponen yang sesuai dengan periode.</li>
-</ul>
-<h2><a href="https://driving.ca/auto-news/industry/tesla-class-action-lawsuite-parts-repairs-monopoly">Tesla pemilik mengajukan gugatan class-action yang menuduh monopoli perbaikan dan suku cadang</a></h2>
-<ul>
-<li>Tuan-tuan pemilik Tesla telah mengajukan gugatan class-action yang menuduh perusahaan memonopoli pasar perbaikan dan suku cadang.</li>
-<li>Klaim gugatan tersebut menyatakan bahwa praktik Tesla memaksa pemilik untuk menggunakan layanan dan suku cadang milik Tesla sendiri, yang berpotensi menyebabkan biaya lebih tinggi dan pilihan yang terbatas.</li>
-<li>Langkah hukum ini menyoroti kekhawatiran yang terus berlanjut tentang hak untuk memperbaiki dan ketersediaan layanan pihak ketiga dalam industri kendaraan listrik.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40744847">Reaksi</a></h3>
-<ul>
-<li>Tuan-tuan pemilik Tesla telah memulai gugatan class-action, menuduh perusahaan memonopoli perbaikan dan suku cadang, yang mengakibatkan waktu tunggu yang lama untuk komponen yang diperlukan.</li>
-<li>Tuntutan hukum tersebut berargumen bahwa Tesla memprioritaskan produksi mobil baru daripada menjaga stok suku cadang yang memadai untuk perbaikan, yang menyebabkan penundaan signifikan bagi beberapa pemilik.</li>
-<li>Ketentuan arbitrase dalam kontrak Tesla dapat mempersulit gugatan, yang berpotensi menghambat kemajuannya melalui sistem hukum.</li>
-</ul>
-<h2><a href="https://arstechnica.com/gaming/2024/06/from-infocom-to-80-days-an-oral-history-of-text-games-and-interactive-fiction/">Dari Infocom ke 80 Days: Sejarah lisan permainan teks dan fiksi interaktif</a></h2>
-<ul>
-<li>&quot;Go North — From Infocom to 80 Days&quot; adalah sebuah sejarah lisan yang mengeksplorasi 50 tahun fiksi interaktif (IF), dari petualangan teks awal hingga karya-karya modern.</li>
-<li>The IF community dikenal karena etos sumber terbuka dan individualitasnya, termasuk baik pemain maupun pencipta.</li>
-<li>Genre ini dimulai pada tahun 1970-an dengan permainan seperti Adventure oleh Will Crowther dan berkembang seiring dengan semakin terjangkaunya komputer rumahan, menjangkau audiens yang lebih luas.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40749426">Reaksi</a></h3>
-<ul>
-<li>‘From Infocom to 80 Days: An oral history of text games and interactive fiction’ mengeksplorasi evolusi permainan berbasis teks, menyoroti klasik dan judul modern seperti ‘80 Days’ karena penceritaannya dan kemampuan untuk dimainkan kembali.</li>
-<li>Diskusi tersebut mencakup sumber daya seperti Interactive Fiction Database (IFDB) dan buku &quot;50 Years of Text Games,&quot; serta mencatat bahasa ink oleh Inkle Studios karena kemudahannya dalam menciptakan narasi bercabang.</li>
-<li>tantangan parser teks awal disebutkan, bersama dengan potensi kemajuan modern seperti Model Bahasa Besar (LLM) untuk meningkatkan fiksi interaktif.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Gilead suntikan mencegah semua kasus HIV dalam uji coba" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Gilead%20suntikan%20mencegah%20semua%20kasus%20HIV%20dalam%20uji%20coba&subheading=Jumat%2C%2021%20Juni%202024%3A%20Ringkasan%20Berita%20Peretas" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/id/2024/06/21</link>
-            <guid isPermaLink="false">2024-06-21T00:00:00.000Z</guid>
-            <pubDate>Fri, 21 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

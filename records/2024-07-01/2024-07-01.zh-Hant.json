@@ -1,0 +1,328 @@
+[
+  {
+    "id": 40843867,
+    "title": "「我創建了一個 After Effects 的替代方案」",
+    "originLink": "https://pikimov.com/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40843867",
+    "commentBody": "",
+    "originSummary": [
+      "「Pikimov 是一款新推出的基於網頁的動態設計和影片編輯器，靈感來自 Photopea，並作為 After Effects 的免費替代方案。」",
+      "它不需要註冊，將檔案保存在使用者的機器上，並確保專案不會被用於人工智慧訓練。",
+      "這位創作者有開發 VJ 軟體的經歷，適用於 Game Boy Advance、Playstation 2 和 Raspberry Pi 等平台。"
+    ],
+    "commentSummary": [
+      "「Pikimov 是一款全新的免費網頁版動態設計和影片編輯器，作為 Adobe After Effects 的替代品，無需註冊或雲端上傳。」",
+      "該工具因其挑戰 Adobe 主導地位的潛力而獲得了正面回饋，使用者建議在幀率限制、錯誤回報和關鍵幀處理方面進行改進。",
+      "目前，由於特定的網頁 API，Pikimov 僅支援 Chrome 和 Edge，未來計劃新增社群功能並可能將應用程式商業化。"
+    ],
+    "points": 597,
+    "commentCount": 166,
+    "retryCount": 0,
+    "time": 1719824246
+  },
+  {
+    "id": 40843778,
+    "title": "RegreSSHion：在基於 glibc 的 Linux 系統上的 OpenSSH 伺服器中的遠端代碼執行(RCE)",
+    "originLink": "https://www.qualys.com/2024/07/01/cve-2024-6387/regresshion.txt",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40843778",
+    "commentBody": "",
+    "originSummary": [
+      "「OpenSSH 伺服器在基於 glibc 的 Linux 系統中存在一個嚴重的漏洞(CVE-2024-6387)，由於信號處理程序競態條件，這個漏洞允許遠端代碼執行(RCE)。」",
+      "此問題是 CVE-2006-5051 的回歸，影響 OpenSSH 版本 3.4p1、4.2p1 和 9.2p1，涉及利用 SIGALRM 處理程序來導致堆積損壞並執行任意代碼。",
+      "緩解措施包括應用補丁將非同步信號不安全的代碼移出 SIGALRM 處理程序，或將 `LoginGraceTime` 設置為 0，儘管後者可能會導致服務拒絕。"
+    ],
+    "commentSummary": [
+      "「在基於 glibc 的 Linux 系統上的 OpenSSH 伺服器中發現了一個遠端代碼執行(RCE)漏洞，可能允許攻擊者獲得遠端 root 訪問權限。」",
+      "此漏洞的修復是通過將不安全的代碼從信號處理程序移至監聽程序來實現的，這使得回溯變得困難。",
+      "該問題主要影響 32 位元系統，雖然在 64 位元系統上被認為有可能被利用，但尚未被證實；各種發行版已經發布了修補程式。"
+    ],
+    "points": 542,
+    "commentCount": 211,
+    "retryCount": 0,
+    "time": 1719823254
+  },
+  {
+    "id": 40841980,
+    "title": "Pipes：Yahoo Pipes 的精神繼承者",
+    "originLink": "https://www.pipes.digital/docs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40841980",
+    "commentBody": "",
+    "originSummary": [
+      "“Pipes 是一個用於處理資訊流的視覺化程式編輯器，允許使用者使用區塊來擷取、創建和操作資訊流，類似於 Yahoo! Pipes。”",
+      "它支援各種輸入格式，包括 RSS、Atom、JSON、HTML 和文字檔案，並提供一系列不同的區塊來進行篩選、合併和提取內容等操作。",
+      "“Pipes CE 是一款免費且開源的軟體(FOSS)，採用 AGPL 授權，並可在 Github 上取得，支援與 Twitter、YouTube 和 Vimeo 等熱門網站的整合。”"
+    ],
+    "commentSummary": [
+      "受 Yahoo Pipes 啟發的專案 Pipes 最近進行了更新以提升穩定性，包括將數據在區塊之間傳輸的方式從文字轉換為 RSS 物件。",
+      "「為了解決問題和瓶頸，我們進行了伺服器升級以及執行緒和 Puma 工作者的重新配置。」",
+      "正在考慮用戶建議，通過 POST 請求新增一個區塊，用於 AI 生成的摘要或圖片，目前已有一些基礎區塊到位。"
+    ],
+    "points": 382,
+    "commentCount": 109,
+    "retryCount": 0,
+    "time": 1719799417
+  },
+  {
+    "id": 40843848,
+    "title": "我微調過的模型擊敗了 OpenAI 的 GPT-4",
+    "originLink": "https://mlops.systems/posts/2024-07-01-full-finetuned-model-evaluation.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40843848",
+    "commentBody": "",
+    "originSummary": [
+      "這篇文章討論了評估微調語言模型(LLMs)在從新聞稿中提取結構化數據時的表現的評估指標，重點在於準確性。",
+      "微調模型，包括 TinyLlama、Mistral 和 Solar LLM，儘管評估過程複雜且緩慢，但在準確性方面普遍優於 OpenAI 的 GPT-4 和 GPT-4 Turbo。",
+      "“評估強調了需要一個更好的系統來管理複雜性和維護，未來的步驟包括非準確性相關的測試和探索模型服務。”"
+    ],
+    "commentSummary": [
+      "「經過微調的模型在特定任務中可以超越像 OpenAI 的 GPT-4 這樣的通用模型，例如資料提取、創意摘要、問答和分類。」",
+      "微調模型的成功取決於高品質的訓練數據，使其在特定領域的信息提取中有效，並且對科技愛好者來說易於使用。",
+      "「微調較小的模型，例如 Llama 3 8B，可能更有效率且具成本效益，但使用模型回應來訓練新模型可能會違反主要大型語言模型提供者的服務條款。」"
+    ],
+    "points": 300,
+    "commentCount": 77,
+    "retryCount": 0,
+    "time": 1719823984
+  },
+  {
+    "id": 40843720,
+    "title": "城市需要更多樹木",
+    "originLink": "https://herman.bearblog.dev/cities-need-more-trees/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40843720",
+    "commentBody": "",
+    "originSummary": [
+      "「約翰尼斯堡，曾經荒蕪，經過種植數百萬棵樹來對抗黃金開採所產生的塵土後，轉變成為『世界上最綠的城市』。」",
+      "「由於種族隔離政策，約翰尼斯堡的植樹活動分佈不均，突顯了社會經濟差異。」",
+      "「都市樹木提供了顯著的益處，包括減少“熱島”效應、充當隔音屏障、美化環境、增加生物多樣性以及促進戶外活動。」"
+    ],
+    "commentSummary": [
+      "城市越來越多地種植樹木並推廣綠色屋頂，以應對熱壓力並改善城市宜居性。",
+      "「荷蘭的烏特勒支和瑞士的蘇黎世是領先的範例，而美國的城市如俄勒岡州的波特蘭則有綠色法令，鹽湖城正在探索乾旱景觀設計。」",
+      "儘管面臨如私人土地開發導致樹木移除等挑戰，樹木仍提供顯著的益處，例如降低都市區域的溫度、改善空氣品質以及提升整體宜居性。"
+    ],
+    "points": 273,
+    "commentCount": 139,
+    "retryCount": 0,
+    "time": 1719822718
+  },
+  {
+    "id": 40845951,
+    "title": "歡迎來到Ladybird",
+    "originLink": "https://ladybird.org/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40845951",
+    "commentBody": "",
+    "originSummary": [
+      "「Ladybird 是一款由非營利組織開發的獨立網頁瀏覽器，專注於性能、穩定性和安全性，計劃於 2026 年發布 Alpha 版本。」",
+      "最初是為 SerenityOS 開發的 HTML 檢視器，現在支援 Linux、macOS 和其他類 Unix 系統，並且完全從零開始構建，未使用其他瀏覽器的程式碼。",
+      "該專案由贊助和捐款資助，沒有廣告或用戶變現，目前由四名全職工程師團隊開發。"
+    ],
+    "commentSummary": [
+      "「Ladybird，最初是 SerenityOS 的 HTML 渲染器，現在正在發展成為一個跨平台的瀏覽器專案。」",
+      "該專案已收到 GitHub 共同創辦人 Chris Wanstrath 捐贈的顯著 1,000,000 美元，顯示出強大的財務支持。",
+      "團隊計劃在2026年前發布一個alpha版本，強調模組化和遵循現代網頁標準。"
+    ],
+    "points": 246,
+    "commentCount": 62,
+    "retryCount": 0,
+    "time": 1719842693
+  },
+  {
+    "id": 40839418,
+    "title": "郵票代碼",
+    "originLink": "https://en.wikipedia.org/wiki/Postzegelcode",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40839418",
+    "commentBody": "",
+    "originSummary": [
+      "「郵票代碼是一種九字符代碼，在荷蘭作為手寫郵票的替代品使用，並可從 PostNL 線上購買。」",
+      "於2013年推出，該代碼必須在五天內寫在郵件上，並且有78.8兆種可能的組合，使其在防止猜測方面非常安全。",
+      "截至2020年12月，有59萬人使用郵票代碼，現在其價格與傳統郵票相同。"
+    ],
+    "commentSummary": [
+      "討論圍繞著數位郵資代碼的使用，這種代碼被稱為「postzegelcode」，可以寫在信封上代替傳統郵票。",
+      "「包括德國、丹麥、挪威和瑞典在內的多個國家已經實施了類似的系統，允許用戶在線購買郵資並在郵件上寫上一個代碼。」",
+      "該系統因其便利性而受到讚譽，特別是對於那些不常寄送實體郵件的人來說，因為它消除了實體郵票的需求，並能適應變動的郵資。"
+    ],
+    "points": 228,
+    "commentCount": 95,
+    "retryCount": 0,
+    "time": 1719775062
+  },
+  {
+    "id": 40847963,
+    "title": "「最高法院裁定前總統對於職務行為享有豁免權」",
+    "originLink": "https://apnews.com/article/supreme-court-trump-capitol-riot-immunity-2dc0d1c2368d404adc0054151490f542",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40847963",
+    "commentBody": "",
+    "originSummary": [
+      "最高法院延長了唐納·川普在2020年選舉相關刑事案件的延遲，降低了在11月選舉前進行審判的可能性。",
+      "在6比3的裁決中，法院的保守派多數決定賦予前總統對於官方行為的廣泛豁免權，這使得檢方的案件變得更加複雜，並需要在初審法院層級進行進一步分析。",
+      "這項決定強調了法院對即將到來的選舉具有重大影響，首席大法官約翰·羅伯茨強調官方行為的豁免權，而大法官索尼亞·索托馬約爾則持反對意見，認為這破壞了無人能凌駕於法律之上的原則。"
+    ],
+    "commentSummary": [
+      "「最高法院裁定前總統對於其在任內的官方行為享有豁免權，此舉引發了關於權力濫用潛在風險與總統保護必要性之間的辯論。」",
+      "該裁定明確指出，豁免權適用於憲法授權範圍內的行為，但不適用於非官方行為，這引發了對嚴重犯罪責任問題的擔憂。",
+      "「包括索托馬約爾大法官在內的批評者擔心，這項決定可能會影響涉及前總統的現有和未來法律案件。」"
+    ],
+    "points": 226,
+    "commentCount": 325,
+    "retryCount": 0,
+    "time": 1719854392
+  },
+  {
+    "id": 40840396,
+    "title": "“卷積、快速傅立葉變換與多項式(2022)”",
+    "originLink": "https://www.alvarorevuelta.com/posts/fft-polynomials",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40840396",
+    "commentBody": "",
+    "originSummary": [
+      "傳統的多項式乘法具有 \\(O(n^2)\\) 的複雜度，這使得它在處理大型多項式時效率低下。",
+      "快速傅立葉變換(FFT)通過將問題轉換到頻域，將多項式乘法的複雜度降低到 \\(O(n \\log n)\\)。",
+      "基於 FFT 的方法涉及將多項式轉換到頻域，進行相乘，然後再將結果轉換回來，顯著提高高次多項式的運算效率。"
+    ],
+    "commentSummary": [
+      "討論的重點在於使用快速傅立葉變換(FFT)進行多項式乘法，強調其相較於簡單方法的效率。",
+      "關鍵見解包括在 FFT 計算中數值精度的重要性以及 FFT 在多項式乘法發展中的歷史背景。",
+      "對話還涉及實際應用，例如錯誤更正、訊號處理和零知識密碼學，其中基於 FFT 的方法特別有利。"
+    ],
+    "points": 211,
+    "commentCount": 53,
+    "retryCount": 0,
+    "time": 1719781723
+  },
+  {
+    "id": 40845304,
+    "title": "我的 Python 程式碼是一個神經網路",
+    "originLink": "https://blog.gabornyeki.com/2024-07-my-python-code-is-a-neural-network/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40845304",
+    "commentBody": "",
+    "originSummary": [
+      "「這篇文章討論了在循環神經網路(RNNs)中嵌入程式，以及訓練過的RNNs如何能夠超越手寫演算法。」",
+      "它提供了一個詳細的範例，說明如何在訊息中檢測程式碼，並比較簡單的決策規則、手寫演算法和基於 RNN 的方法。",
+      "這篇文章強調了 RNN 的優點，例如編碼狀態機、使用可訓練的激活函數，以及以數據驅動的方式處理複雜任務。"
+    ],
+    "commentSummary": [
+      "「文章討論了使用 Python 建構神經網路，但缺乏關於測試和獲取訓練數據的詳細資訊，而這些對於確保模型能夠泛化到未見的輸入是至關重要的。」",
+      "討論強調了通用近似定理，該定理指出神經網路可以以所需的精確度表示任何函數，但也強調學習這些近似並非保證能夠實現。",
+      "「目前有關於循環神經網路(RNNs)是否被轉換器取代的爭論，有些人認為RNNs仍然具有獨特的優勢，例如恆定的記憶體使用量，而這是轉換器所缺乏的。」"
+    ],
+    "points": 193,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1719838058
+  },
+  {
+    "id": 40846428,
+    "title": "誰在招聘？(2024年7月)",
+    "originLink": "https://news.ycombinator.com/item?id=40846428",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40846428",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "「各家公司正在招聘多個職位，包括遠端、現場和混合工作模式，涵蓋不同地點和行業。」",
+      "知名公司包括 Apple、Figma、Charge Robotics 和 SmileID，提供的職位有資深軟體工程師、資深/資深員工安全工程師和資深前端工程師。",
+      "機會遍佈全球，有些公司提供簽證贊助以及在人工智慧、機器學習和全端開發等新興技術領域的職位。"
+    ],
+    "points": 191,
+    "commentCount": 171,
+    "retryCount": 0,
+    "time": 1719846109
+  },
+  {
+    "id": 40842867,
+    "title": "「程式設計師不應該信任任何人，甚至包括自己」",
+    "originLink": "https://carbon-steel.github.io/jekyll/update/2024/06/19/abstractions.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40842867",
+    "commentBody": "",
+    "originSummary": [
+      "「程式設計師應保持適度的懷疑態度，因為撰寫和驗證程式碼的正確性本質上是具有挑戰性且常常難以達成的。」",
+      "“抽象化在簡化複雜系統的同時，可能會失敗並導致性能下降或未定義行為等問題，正如 Joel Spolsky 的漏出抽象法則所強調的那樣。”",
+      "為了減少未知問題，程式設計師應該驗證資訊、測試假設並衡量程式碼變更的影響，同時不斷學習新的平台、語言、工具和技術。"
+    ],
+    "commentSummary": [
+      "「討論的重點在於程式設計中形式驗證的重要性，強調程式設計師在沒有證據的情況下，不應該信任任何人，包括他們自己。」",
+      "「形式驗證雖然複雜且昂貴，但相比僅涵蓋特定範例的單元測試，能提供更強的正確性保證。」",
+      "這場辯論突顯了形式驗證的嚴謹性與單元測試的實用性之間的取捨，並建議選擇取決於專案的需求和資源。"
+    ],
+    "points": 172,
+    "commentCount": 139,
+    "retryCount": 0,
+    "time": 1719812397
+  },
+  {
+    "id": 40840315,
+    "title": "Elixir 中的統一",
+    "originLink": "https://www.ericpfahl.com/from-pattern-matching-to-unification/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40840315",
+    "commentBody": "",
+    "originSummary": [
+      "Elixir 中的統一擴展了模式匹配，允許在方程式的兩邊使用變數，解決符號方程並生成替換映射。",
+      "「與模式匹配不同，統一可以處理部分已知的值，使其成為 Elixir 中邏輯程式設計的強大工具。」",
+      "統一演算法涉及遍歷項目、測試等價性、處理變數以及遞迴統一列表元素，通過替換簡化變數賦值。"
+    ],
+    "commentSummary": [
+      "本文比較了在型別推論中統一演算法的效率，重點討論了演算法 W 和演算法 J。",
+      "「在 Hindley-Milner 型別推論中使用的演算法 W，由於需要進行替換組合，因此效率較低且更容易出錯。」",
+      "「演算法 J 採用了聯合-查找資料結構進行破壞性合併，這使得它更簡單且更高效，並且在模式匹配和使用決策樹的編譯模式匹配方面提供了更多見解。」"
+    ],
+    "points": 155,
+    "commentCount": 26,
+    "retryCount": 0,
+    "time": 1719781112
+  },
+  {
+    "id": 40840699,
+    "title": "「我不知道有一個叫做 Google Arts and Culture 的網站」",
+    "originLink": "https://artsandculture.google.com/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40840699",
+    "commentBody": "",
+    "originSummary": [
+      "Google Arts & Culture 提供多種虛擬導覽和互動體驗，讓使用者能夠探索來自世界各地的藝術、歷史和文化。",
+      "亮點包括著名博物館的虛擬導覽、擴增實境(AR)體驗，以及讓學習藝術和文化變得有趣且易於接觸的互動遊戲。",
+      "特別功能包括探索梵谷的圖書館、進行維梅爾畫作的3D導覽，以及與V&A博物館合作參加K-Pop舞蹈挑戰。"
+    ],
+    "commentSummary": [
+      "「Google 藝術與文化是 Google 一個較不為人知但重要的專案，提供來自世界各地的精選文化內容。」",
+      "用戶讚賞其高解析度的影像和獨特功能，例如能夠近距離放大藝術作品並探索各種文化專案。",
+      "「該平台自2011年以來一直活躍，儘管對Google專案的持久性有所擔憂，但它仍然是藝術和文化愛好者的寶貴資源。」"
+    ],
+    "points": 154,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1719784504
+  },
+  {
+    "id": 40839830,
+    "title": "新聞線：一個涵蓋百年歷史新聞的大規模結構化資料庫",
+    "originLink": "https://arxiv.org/abs/2406.09490",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40839830",
+    "commentBody": "",
+    "originSummary": [
+      "研究人員使用深度學習管道，從當地報紙的影像掃描中創建了一個涵蓋1878年至1977年美國新聞通訊內容的綜合檔案。",
+      "該資料集包含270萬篇獨特的公共領域文章，經過地理參考、主題標籤並鏈接至維基百科，為計算語言學、社會科學和數位人文研究提供了寶貴的資訊。",
+      "該專案涉及轉錄 1.38 億篇結構化文章文本，並使用神經雙編碼器模型去重文章，確保僅包含公共領域內容。"
+    ],
+    "commentSummary": [
+      "一個涵蓋至1978年的歷史新聞綜合資料庫已經建立，反映了版權法的變遷，並已在 GitHub 上提供，儘管目前是空的。",
+      "用戶已經發現數據中的 OCR(光學字符識別)錯誤，這突顯了在數位化歷史文本過程中持續存在的挑戰。",
+      "儘管該專案存在一些問題，但其學術價值仍受到讚譽，原始掃描檔可透過美國國會圖書館的數位收藏獲取。"
+    ],
+    "points": 150,
+    "commentCount": 32,
+    "retryCount": 0,
+    "time": 1719777526
+  }
+]
