@@ -15,12 +15,197 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 03 Jul 2024 19:10:36 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 04 Jul 2024 19:13:29 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/sv.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Wed, 03 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[sv]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-04]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/04&#39;</h2>
+<h1>2024-07-04</h1>
+<h2><a href="https://www.arno.org/on-the-origins-of-ds-store">Ursprunget till DS_store (2006)</a></h2>
+<ul>
+<li>DS_Store-filer, som ofta ses vid överföring av filer från Mac till Windows, står för &quot;Desktop Services Store&quot; och härstammar från en omskrivning av Mac OS X Finder 1999.</li>
+<li>Finder delades upp i ett användargränssnitt (Finder_FE) och kärnfunktionalitet (Finder_BE), med planer på att göra backend till ett offentligt API kallat Desktop Services, även om det aldrig släpptes fullt ut.</li>
+<li>En bugg orsakar överdriven skapelse av .DS_Store-filer, även utan användarjusteringar, vilket gör dem till ett ihållande problem för Mac-användare.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870357">Reaktioner</a></h3>
+<ul>
+<li>Diskussionen kretsar kring den historiska kontexten och tekniska detaljer om DS_store-filen och konceptet &quot;fork&quot; i Mac-filsystem, vilket inkluderar både resurs- och datakomponenter.</li>
+<li>Resursgrenen i tidiga MacOS lagrade olika applikationsdata som ikoner, menyer och körbar kod, vilket innebar utmaningar vid överföring av filer till icke-Mac-system.</li>
+<li>Övergången från MacOS till MacOS X innebar betydande förändringar, inklusive borttagandet av resursgrenar, vilket möttes med blandade reaktioner från användargruppen.</li>
+</ul>
+<h2><a href="https://0x.tools/">Xcapture-BPF – som Linux top, men med röntgensyn</a></h2>
+<ul>
+<li>0x.tools är en uppsättning öppen källkodsverktyg utformade för att analysera applikationsprestanda på Linux, med betoning på enkelhet och minimala beroenden.</li>
+<li>Viktiga funktioner inkluderar mätning av individuell trådaktivitet och tillhandahållande av eBPF-baserade verktyg för systemnivå och detaljerad trådaktivitetsanalys.</li>
+<li>Den är utformad för säker användning i produktionsmiljöer med mycket låg overhead och kräver inga OS-uppgraderingar eller tunga övervakningsramverk.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869877">Reaktioner</a></h3>
+<ul>
+<li>Xcapture-BPF är ett nytt verktyg som liknas vid Linux-kommandot top men med förbättrade funktioner, ofta kallat för att ha &quot;röntgensyn&quot; för systemdiagnostik.</li>
+<li>Användare har delat med sig av erfarenheter av att använda eBPF (extended Berkeley Packet Filter) och BCC (BPF Compiler Collection) verktyg för att felsöka komplexa produktionsproblem, och framhäver deras effektivitet i att lösa prestandaflaskhalsar och minnesläckor.</li>
+<li>Diskussionen inkluderar praktiska exempel på felsökning, såsom att lösa problem med hög iowait och sidcache i containeriserade miljöer genom att aktivera direkt IO och matcha sektorstorlekar på loopback-enheter.</li>
+</ul>
+<h2><a href="https://www.sequoiacap.com/article/ais-600b-question/">AI:s fråga på 600 miljarder dollar</a></h2>
+<ul>
+<li>AI-intäktsgapet har ökat från 200 miljarder dollar till 600 miljarder dollar, vilket väcker frågor om branschens tillväxtförväntningar.</li>
+<li>Viktiga utvecklingar inkluderar lättnaden av GPU-bristen, Nvidias ökade intäkter från datacenter och OpenAIs betydande intäktstillväxt till 3,4 miljarder dollar.</li>
+<li>Utmaningar som brist på prissättningsmakt, investeringsrisker och snabb värdeminskning av äldre chip kvarstår, men lägre GPU-kostnader kan gynna startups och innovation.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869461">Reaktioner</a></h3>
+<ul>
+<li>Att träna stora AI-modeller som GPT-4 kräver betydande beräkningsresurser, med uppskattningar som tyder på att 8 000 H100 GPU:er behöver köras i 90 dagar.</li>
+<li>Metas betydande investeringar i GPU:er kan göra det möjligt för dem att träna flera GPT-4-skalmodeller årligen, vilket potentiellt kan leda till att kärn-AI-modeller blir en handelsvara och påverka vinstmarginalerna för AI-företag.</li>
+<li>Det verkliga värdet i AI kan skifta mot proprietär data för träning, vilket kan ge upphov till potentiella juridiska frågor och betona vikten av dataägande.</li>
+</ul>
+<h2><a href="https://salykova.github.io/matmul-cpu">Slå NumPy matris-multiplikation på 150 rader C</a></h2>
+<ul>
+<li>En högpresterande implementation av matris-multiplikation i C, som följer BLIS-designen, överträffar NumPy (OpenBLAS) på en AMD Ryzen 7700 och uppnår över 1 TFLOPS.</li>
+<li>Den koden är enkel, portabel och skalbar, och använder endast 3 rader OpenMP-direktiv för parallellisering. Den riktar sig mot Intel Core och AMD Zen CPU:er med FMA3- och AVX-instruktioner.</li>
+<li>Implementeringen visar att effektiv matris-multiplikation kan uppnås i C utan djupgående assembly- eller Fortran-kod, med prestanda jämförbar med etablerade BLAS-bibliotek när den finjusteras för specifik hårdvara.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870345">Reaktioner</a></h3>
+<ul>
+<li>En bloggpost visar hur man överträffar NumPys matris-multiplikation med hjälp av 150 rader C-kod, med fokus på prestandaförbättringar.</li>
+<li>Viktiga förbättringar inkluderar algoritmval, minimering av kärnresor, vektorisering, cacheeffektivitet och hårdvaruspecifika optimeringar.</li>
+<li>Diskussioner i kommentarerna tar upp rättvisan i att jämföra C-kod med NumPy, och föreslår jämförelser med andra BLAS (Basic Linear Algebra Subprograms) bibliotek samt betonar behovet av noggrann benchmarking och hyperparameterjustering för specifika CPU:er.</li>
+</ul>
+<h2><a href="https://reactormag.com/the-joy-of-reading-books-you-dont-entirely-understand/">Glädjen i att läsa böcker du inte förstår</a></h2>
+<ul>
+<li>Artikeln betonar glädjen och värdet i att läsa böcker som inte är helt förstådda, och föreslår att det är okej att uppskatta en bok utan att fullt ut förstå den.</li>
+<li>Författaren, Molly Templeton, delar med sig av personliga erfarenheter med komplexa böcker som Neal Stephensons <em>Baroque Cycle</em> och nyligen utgivna titlar som Alaya Dawn Johnsons <em>The Library of Broken Worlds</em> och Molly McGhees <em>Jonathan Abernathy You Are Kind</em>.</li>
+<li>Templeton hävdar att omfamna osäkerhet i läsning kan vara befriande och berika läsupplevelsen, vilket uppmuntrar läsare att utforska utmanande berättelser.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870280">Reaktioner</a></h3>
+<ul>
+<li>Texten diskuterar värdet av att läsa böcker som utmanar och provocerar till djupa tankar, med hänvisning till Kafkas tro att påverkningsfulla böcker bör &#39;bita och sticka&#39; snarare än att bara underhålla.</li>
+<li>Det belyser olika perspektiv på att läsa svåra eller komplexa böcker, där vissa läsare förespråkar fördjupning utan att ta anteckningar för att förbättra förståelsen och njutningen.</li>
+<li>Konversationen inkluderar personliga anekdoter och rekommendationer för böcker som har lämnat ett bestående intryck, med betoning på glädjen i att upptäcka nya insikter genom att läsa om och engagera sig i utmanande material.</li>
+</ul>
+<h2><a href="https://www.securityweek.com/twilio-confirms-data-breach-after-hackers-leak-33m-authy-user-phone-numbers/">Twilio bekräftar dataintrång efter att hackare läckt 33 miljoner Authy-användares telefonnummer</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40874341">Reaktioner</a></h3>
+<ul>
+<li>Twilio har bekräftat ett dataintrång som exponerade telefonnumren till 33 miljoner Authy-användare, vilket har lett till ökade spam-samtal och oro över tillförlitligheten hos traditionella telefonnätverk.</li>
+<li>Användare överväger alternativa kommunikationsmetoder som FaceTime och Zoom, samtidigt som de betonar den kritiska rollen som telefonsamtal har i viktiga tjänster som sjukvård och sociala tjänster.</li>
+<li>Intrånget belyser behovet av starkare dataskydd, bättre efterlevnad av anti-spam-åtgärder och rekommendationer för alternativa tvåfaktorsautentiseringsappar (2FA) som Aegis, Bitwarden och Yubikey.</li>
+</ul>
+<h2><a href="https://www.kitze.io/posts/saddest-just-ship-it-story-ever">Den sorgligaste &quot;Bara skicka det&quot; historien någonsin (2020)</a></h2>
+<ul>
+<li>Författaren delar med sig av en personlig resa med att utveckla en app, som började 2018, men försenade dess lansering på grund av kontinuerliga tillägg av funktioner och inlärning av nya teknologier som React Native.</li>
+<li>Trots att ha övergett projektet efter två år, upptäckte författaren senare en liknande app som lyckades trots att den var ofullkomlig, vilket ledde till blandade känslor.</li>
+<li>I 2022 släppte författaren äntligen en produktivitetsapp som kombinerar olika funktioner som Att göra-listor, Vanor, Planerare och Mål, och bjuder in läsarna att gå med i communityn på Benji - The Life OS.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872182">Reaktioner</a></h3>
+<ul>
+<li>Diskussionen kretsar kring mentaliteten &quot;bara skicka det&quot; inom mjukvaruutveckling, och betonar att att skynda för att möta deadlines kan kompromissa mjukvarans kvalitet och leda till utbrändhet hos utvecklare.</li>
+<li>Det pågår en debatt om huruvida utvecklare bör prioritera företagets lönsamhet eller fokusera på att skapa högkvalitativ programvara, där vissa hävdar att utvecklare inte kompenseras tillräckligt för extraordinära insatser om de inte har en betydande andel i företaget.</li>
+<li>Konversationen belyser olika perspektiv på arbetstillfredsställelse, ersättning och balansen mellan professionell integritet och företagskrav, vilket speglar bredare branschfrågor om balans mellan arbete och privatliv samt erkännande.</li>
+</ul>
+<h2><a href="https://corecursive.com/building-powershell-with-jeffrey-snover/">Jeffrey Snover och skapandet av PowerShell</a></h2>
+<ul>
+<li>Jeffrey Snover, arkitekten bakom PowerShell, delar med sig av sin resa att skapa ett kommandoverktyg som revolutionerade Windows systemadministration, och som initialt mötte motstånd från ett företag som föredrog grafiska gränssnitt.</li>
+<li>Viktiga utmaningar inkluderade att navigera genom företagsomstruktureringar, kulturellt motstånd och att bygga ett dedikerat team, med betydande påverkan från Bill Gates&#39; satsning på .NET.</li>
+<li>PowerShells utveckling, ledd av Monad-manifestet, omvandlade administrationen av Windows Server och möjliggjorde Microsofts övergång till molnet, vilket visar på uthållighetens och visionens betydelse för att driva teknologisk förändring.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40874013">Reaktioner</a></h3>
+<ul>
+<li>Jeffrey Snover, skaparen av PowerShell, mötte betydande motstånd och blev degraderad på Microsoft för att ha drivit dess utveckling.</li>
+<li>PowerShell utformades för att underlätta serveradministration på Windows genom att anropa olika API:er, men det stötte på interna konflikter och vissa funktioner förlorades i nyare versioner.</li>
+<li>Trots sitt objektorienterade tillvägagångssätt och .NET-integration ses PowerShell som ordrikt och utmanande jämfört med andra skriptspråk som Python, vilket begränsar dess användning utanför Windows-ekosystemet.</li>
+</ul>
+<h2><a href="https://www.firezone.dev/blog/sans-io">Sans-IO: Hemligheten till effektiv Rust för nätverkstjänster</a></h2>
+<ul>
+<li>Firezone använder Rust och en sans-IO-design för sitt kärnbibliotek för anslutningar, connlib, för att hantera nätverksanslutningar och WireGuard-tunnlar, vilket erbjuder snabba tester, djup anpassning och hög tillförlitlighet.</li>
+<li>Sans-IO-designen separerar policy från implementering genom att använda abstraktioner som <code>Transmit</code>, vilket gör det möjligt för rena tillståndsmaskiner att hantera nätverksprotokoll utan direkt IO, vilket gör koden mer flexibel och lättare att testa.</li>
+<li>Även om sans-IO kräver anpassade händelseloopar och tillståndsmaskiner, erbjuder det betydande fördelar som enkel sammansättning, flexibla API:er och förbättrad felhantering, trots att det ännu inte är allmänt antaget i Rust-gemenskapen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872020">Reaktioner</a></h3>
+<ul>
+<li>Artikeln diskuterar konceptet Sans-IO i Rust, vilket separerar in-/utmatningsoperationer (IO) från huvudlogiken, vilket gör koden mer testbar och komponerbar.</li>
+<li>Denna metod är särskilt fördelaktig för paketorienterade användningsfall som QUIC, WebRTC och IP, där hantering av tillstånd kan bli komplex.</li>
+<li>Diskussionen belyser att även om denna metod inte är ny, erbjuder den betydande fördelar i Rust genom att förenkla testning och undvika fallgroparna med traditionella async/await-mönster.</li>
+</ul>
+<h2><a href="https://lazamar.github.io/haskell-data-compression-with-huffman-codes/">Bygga ett datakomprimeringsverktyg i Haskell med hjälp av Huffman-koder</a></h2>
+<ul>
+<li>Blogginlägget beskriver skapandet av ett datakomprimeringsprogram i Haskell med hjälp av Huffman-kodning, som hanterar godtyckliga binära filer med konstant minnesanvändning för kodning och avkodning.</li>
+<li>Den förklarar Huffman-koder, prefixfria koder och processen att konstruera ett binärt träd för effektiv kodning, följt av implementeringen av kodnings- och avkodningsfunktioner.</li>
+<li>Blogginlägget täcker även hantering av binära filer, serialisering/deserialisering av data och potentiella förbättringar som multitrådning och snabbare kodskapande, vilket visar på ett praktiskt och effektivt datakomprimeringsverktyg i Haskell.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872332">Reaktioner</a></h3>
+<ul>
+<li>En diskussion om att bygga ett datakomprimeringsverktyg i Haskell med hjälp av Huffman-koder, som belyser effektiviteten hos array-baserade, in-place algoritmer för stora datamängder.</li>
+<li>Referenser till betydande verk, inklusive Moffat och Katajainens artikel från 1995 och JPEG-standarden ITU T.81 (1992), som beskriver array-baserad Huffman-kodning.</li>
+<li>Insikter i Haskells prestanda, med jämförelser med andra språk som C, C++ och Rust, samt avvägningarna mellan enkelhet i implementering och kodens tydlighet kontra ren prestanda.</li>
+</ul>
+<h2><a href="https://elevenlabs.io/voice-isolator">Röstisolator: Ta bort bakgrundsljud för film-, podcast- och intervjuproduktion</a></h2>
+<ul>
+<li>AI-röstgeneratorn stöder nu 29 språk, vilket ökar dess tillgänglighet och användbarhet för en global publik.</li>
+<li>Det erbjuder tusentals röstalternativ, vilket ger användarna ett brett utbud av valmöjligheter för olika applikationer och preferenser.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869421">Reaktioner</a></h3>
+<ul>
+<li>Elevenlabs&#39; Voice Isolator-verktyg syftar till att ta bort bakgrundsljud för film-, podcast- och intervjuproduktion, men dess prismodell baserad på &quot;tecken&quot; förvirrar många användare.</li>
+<li>Användare diskuterar olika alternativ för tal-till-text (STT) och text-till-tal (TTS) lösningar, inklusive öppen källkods-alternativ som Whisper och kommersiella tjänster som Deepgram Nova 2.</li>
+<li>Det finns ett märkbart intresse för lokala och öppen källkods-lösningar för ljudrensning och transkription, eftersom många anser att de nuvarande kommersiella alternativen antingen är för dyra eller inte tillräckligt effektiva.</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40872102">Vision Pro-ägare, använder ni den fortfarande?</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40872102">Reaktioner</a></h3>
+<ul>
+<li>Vision Pro-användare har blandade upplevelser, där vissa berömmer dess medie- och arbetsmöjligheter, medan andra kritiserar dess höga kostnad och begränsade funktionalitet.</li>
+<li>Viktiga funktioner som uppskattas inkluderar skärmstorlek, passthrough, synfunktioner och förbättrat stöd för Bluetooth-tillbehör, men problem som synobehag och begränsad programvaruintegration noteras.</li>
+<li>Enhetens höga pris ($3500) och begränsade utgåva (450 000 enheter) har lett till en liten marknad, där många användare väntar på framtida revisioner eller väljer billigare alternativ som Quest 3.</li>
+</ul>
+<h2><a href="https://boyuan.space/diffusion-forcing/">Diffusionspåverkan: Nästa-tokensprediktion möter fullsekvensdiffusion</a></h2>
+<ul>
+<li>Diffusion Forcing är ett nytt träningsparadigm som kombinerar nästa-tokensprediktion och fullsekvensdiffusionsmodeller, vilket erbjuder flexibel generering och sekvensnivåstyrning.</li>
+<li>Det uppnår betydande prestandaförbättringar i applikationer som videoförutsägelse, stabilisering av oändliga utfall, diffusionsplanering och imitation learning över långa tidsperioder.</li>
+<li>Denna metod möjliggör stabila och konsekventa videoprognoser, längre utfall utan glidande fönster och robust hantering av icke-Markovska uppgifter med långsiktiga minneskrav.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40871783">Reaktioner</a></h3>
+<ul>
+<li>Artikeln kombinerar sekvensmaskering, som är väsentlig för stora språkmodeller (LLMs), med diffusionsmodeller genom att spåra en &#39;osäkerhetsnivå&#39; per pixel, behandlad som &#39;brus&#39; för diffusionsmodellen.</li>
+<li>Denna metod är fördelaktig för uppgifter som att lösa labyrinter och styra en robotarm, eftersom den möjliggör att delar av en bild kan förstärkas tidigare.</li>
+<li>Tillvägagångssättet modellerar osäkerhet i planering och sökning, vilket förbättrar agenters förmåga att reagera och generalisera, men artikeln saknar implementeringsdetaljer och tillgång till kodbasen.</li>
+</ul>
+<h2><a href="https://blog.nelhage.com/post/fuzzy-dedup/">Att hitta nästan-duplicat med Jaccard-similaritet och MinHash</a></h2>
+<ul>
+<li>Jaccard-similaritet och MinHash används för att identifiera ungefärligt liknande dokument i stora textsamlingar, såsom de som används vid förberedelse av GPT-3-dataset.</li>
+<li>MinHash approximerar Jaccard-similaritet genom att hasha dokumentfunktioner och använda det minsta hashvärdet som en signatur, vilket möjliggör effektiv jämförelse av stora textkorpusar.</li>
+<li>Denna metod är skalbar och kan kombineras med andra tekniker som HyperLogLog, vilket gör den lämplig för storskaliga textbearbetningsapplikationer.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872438">Reaktioner</a></h3>
+<ul>
+<li>Artikeln diskuterar användningen av Jaccard-similaritet och MinHash för att hitta nästan duplicerade data, och lyfter fram deras tillämpning inom olika områden som medicinsk bildsegmentering och databasdeduplicering.</li>
+<li>Flera verktyg och bibliotek nämns för dedupliceringsuppgifter, inklusive datasketch, rensa, Splink och gaoya, med insikter i deras prestanda och användningsområden.</li>
+<li>Fellegi Sunter-modellen är känd för sin effektivitet i att deduplicera personer genom att tilldela vikter till oskarpa träffar och felträffar, vilket förbättrar noggrannheten i stora datamängder.</li>
+</ul>
+<h2><a href="https://community.fly.io/t/fresh-produce-region-specific-machines-pricing/20690">Prissättning för regionsspecifika maskiner</a></h2>
+<ul>
+<li>Från och med den 1 juli kommer regionsspecifik prissättning för Maskiner, inklusive extra RAM, att införas på grund av varierande infrastrukturkostnader per region.</li>
+<li>Prisjusteringen kommer att fasas in över fyra månader, med slutliga priser fastställda i november; de första fakturorna kommer att visa regionsspecifika poster utan prisändringar.</li>
+<li>En buggfix för användning av Machines Shared CPU 1x som inte täcks av Free Machines Allowance-krediten har implementerats, och krediter återutfärdas.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40873001">Reaktioner</a></h3>
+<ul>
+<li>Fly.io:s regionsspecifika prissättning har väckt diskussioner, där vissa användare anser att det är dyrt jämfört med alternativ som Hetzner, särskilt för hög tillgänglighet.</li>
+<li>Fly.io försvarar sin prissättning genom att lyfta fram ohållbarheten i platta globala priser på grund av höga driftskostnader i vissa regioner, såsom Brasilien.</li>
+<li>Trots borttagandet av hobbyplanen och vissa tillförlitlighetsproblem uppskattar många användare Fly.io:s funktioner som dynamisk begäranruttning och &quot;ops-lösa&quot; distributioner, vilket de anser motiverar de högre kostnaderna.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Ursprunget till DS_store (2006)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Ursprunget%20till%20DS_store%20(2006)&subheading=torsdag%204%20juli%202024%3A%20Sammanfattning%20av%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/sv/2024/07/04</link>
+            <guid isPermaLink="false">2024-07-04T00:00:00.000Z</guid>
+            <pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-03]]></title>
             <description
@@ -1692,182 +1877,6 @@
             <link>https://hn.cho.sh/sv/2024/06/25</link>
             <guid isPermaLink="false">2024-06-25T00:00:00.000Z</guid>
             <pubDate>Tue, 25 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-24]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/24&#39;</h2>
-<h1>2024-06-24</h1>
-<h2><a href="https://danilafe.com/blog/blog_microfeatures/">Microfeatures jag älskar i bloggar och personliga webbplatser</a></h2>
-<ul>
-<li>Blogginlägget lyfter fram olika mikroegenskaper som kan förbättra användarupplevelsen på bloggar och personliga webbplatser, inspirerat av Hillel Waynes artikel om programmeringsspråk.</li>
-<li>Viktiga funktioner inkluderar sidnoter, innehållsförteckningar, länkbara rubriker, seriergruppering, dialoger, kodblock med ursprung och klickbara länkar, markörer för externa länkar, länkförhandsvisningar och RSS-flöden.</li>
-<li>Även om dessa funktioner inte är nödvändiga, förbättrar de navigering, engagemang och tillgänglighet, vilket gör läsupplevelsen mer njutbar och effektiv.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40774277">Reaktioner</a></h3>
-<ul>
-<li>Diskussionen kretsar kring mikroegenskaper i bloggar och personliga webbplatser, och belyser både positiva och negativa aspekter.</li>
-<li>Viktiga tvistepunkter inkluderar användningen av progressionsstaplar, länkdekorationer och förhandsgranskningspopups, där vissa användare finner dem distraherande och onödiga.</li>
-<li>Konversationen berör också krympningen av inhemska rullningslister och de potentiella fördelarna med alternativa navigationshjälpmedel som innehållsförteckningar och alltid synliga index.</li>
-</ul>
-<h2><a href="https://www.theguardian.com/technology/article/2024/jun/24/apple-breach-eu-competition-rules-digital-markets-act">Apple funnet i strid med EU:s konkurrensregler</a></h2>
-<ul>
-<li>Europeiska kommissionen har funnit att Apple bryter mot nya EU-lagar som syftar till att skydda mindre konkurrenter och möjliggöra för konsumenter att hitta billigare appar.</li>
-<li>Apple har 12 månader på sig att följa reglerna eller riskerar böter på upp till 10% av sina globala intäkter, efter en utredning som inleddes i mars.</li>
-<li>Detta markerar den tredje utredningen om bristande efterlevnad mot Apple sedan lagen om digitala marknader (DMA) trädde i kraft, med fokus på Apples avgifter och praxis som begränsar utvecklare från att leda konsumenter till alternativa köpalternativ.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773883">Reaktioner</a></h3>
-<ul>
-<li>Apple har befunnits bryta mot EU:s konkurrensregler, vilket har lett till krav på liknande åtgärder i USA.</li>
-<li>Kritiker hävdar att Apples kontroll över apppublicering och utvecklaravgifter hämmar konkurrensen, med särskild oro över anti-styrningsregler som förhindrar utvecklare från att informera användare om billigare betalningsalternativ utanför App Store.</li>
-<li>Apple inväntar ett beslut från EU-domstolen om konstitutionaliteten av bestämmelser som kräver gratis iOS API:er för utvecklare, mitt i påståenden om att dess efterlevnad av EU-lagar är ytlig.</li>
-</ul>
-<h2><a href="https://www.voanews.com/a/us-prosecutors-recommend-justice-department-criminally-charge-boeing-as-deadline-looms/7667194.html">Amerikanska åklagare rekommenderar att justitiedepartementet väcker åtal mot Boeing</a></h2>
-<ul>
-<li>Amerikanska åklagare föreslår åtal mot Boeing för påstått brott mot en uppgörelse från 2021 angående två dödliga krascher med 737 MAX.</li>
-<li>Justitiedepartementet har fram till den 7 juli på sig att besluta om åtal, med Boeing som bestrider överträdelseanklagelserna och pågående diskussioner.</li>
-<li>Civilrättsliga åtal kan förvärra Boeings kris och påverka dess kontrakt med den amerikanska regeringen, medan offrens familjer förespråkar en böter på 25 miljarder dollar och åtal.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773151">Reaktioner</a></h3>
-<ul>
-<li>Amerikanska åklagare rekommenderar åtal mot Boeing, och vissa föreslår drastiska åtgärder som att expropriera 51% av företaget, avskeda toppchefer och införa böter.</li>
-<li>Critics argue that shareholders lack the power to enforce proper oversight, and institutional investors often fail to monitor corporate behavior effectively.</li>
-<li>Fallet med Boeing understryker bredare systemiska problem inom bolagsstyrning och tillsynsreglering.</li>
-</ul>
-<h2><a href="https://github.com/jart/cosmopolitan/releases/tag/3.5.0">Cosmopolitan v3.5.0</a></h2>
-<ul>
-<li>Cosmopolitan Libc v3.5.0 har släppts, vilket gör C till ett bygg-en-gång-kör-var-som-helst-språk utan att behöva en tolk eller virtuell maskin.</li>
-<li>Viktiga förbättringar inkluderar en högre kvalitet på minneskartsimplementeringen, en omskrivning av minneshanteraren och uppdaterad Lua till 5.4.6.</li>
-<li>Ny C++ STL-funktionalitet introducerad, såsom ctl::string small-string optimering, ctl::set, ctl::map och ctl::unique_ptr, tillsammans med olika buggfixar och optimeringar.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773139">Reaktioner</a></h3>
-<ul>
-<li>Cosmopolitan v3.5.0 har släppts och väcker stort intresse tack vare sin förmåga att skapa mycket portabla körbara filer som fungerar på flera operativsystem och arkitekturer utan modifiering.</li>
-<li>Den nya versionen har förbättrad prestanda, med påståenden om att Cosmopolitan Libc är dubbelt så snabb som Musl Libc för många kommandoradsgränssnitt (CLI) program och erbjuder robust trådstöd, vilket gör den lämplig för högpresterande AI-programvara.</li>
-<li>Utgåvan inkluderar stöd för WebAssembly (WASM) och funktioner som &quot;Actually Portable Executable&quot; (APE) header, vilket förbättrar plattformsoberoende kompatibilitet, inklusive stöd för Android.</li>
-</ul>
-<h2><a href="https://www.ashleygjovik.com/3250scott.html">Apples hemliga kiselanläggning bredvid tusentals hem</a></h2>
-<ul>
-<li>I 2015 började Apple hemlig halvledartillverkning vid en anläggning i Santa Clara, Kalifornien, vilket släppte ut giftiga gaser som påverkade närboende.</li>
-<li>Ashley M. Gjovik, en boende år 2020, drabbades av allvarliga hälsoproblem och upptäckte fabrikens utsläpp i sitt hem och sin kropp, vilket ledde till flera klagomål och utredningar.</li>
-<li>Apple ställdes inför överträdelser för farligt avfall och säkerhetsproblem, med pågående inspektioner och utredningar av den offentliga olägenheten och ultrafarliga aktiviteter som orsakar betydande skada på Gjovik och miljön.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773136">Reaktioner</a></h3>
-<h2><a href="https://www.linqpad.net/">LINQPad – .NET-programmerarens lekplats</a></h2>
-<ul>
-<li>LINQPad är ett mångsidigt verktyg för .NET-programmerare att omedelbart testa C#/F#/VB-kodsnuttar, fråga databaser och automatisera skript med REPL (Read-Eval-Print Loop) fördelar.</li>
-<li>Det stöder C# 12 och .NET 8, vilket möjliggör interaktiva databasfrågor i LINQ eller SQL, och inkluderar drivrutiner för flera databaser som SQL Server, Oracle och MySQL.</li>
-<li>LINQPad erbjuder avancerade funktioner såsom AI-autokomplettering, integrerad felsökning och rik utdataformatering, vilket gör det till ett kraftfullt verktyg för snabb kodning och dynamisk utveckling.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40770171">Reaktioner</a></h3>
-<ul>
-<li>LINQPad är högt ansedd för sin användarvänlighet, särskilt bland .NET-utvecklare, för skriptning, felsökning och körning av LINQ-frågor.</li>
-<li>Användare uppskattar dess funktioner som SQL Server-databaskopplingar men uttrycker frustration över dess exklusivitet för Windows och kostnad.</li>
-<li>Alternativ som nämns inkluderar winmerge, NetPad, dotnetfiddle.net och RoslynPad, med vissa användare som önskar plattformsoberoende stöd och integration i Visual Studio.</li>
-</ul>
-<h2><a href="https://apnews.com/article/car-dealerships-cyberattack-cdk-outage-3f7c81f6be0e212172b33cdc9f49feba">Bilhandlare återgår till penna och papper efter cyberattacker mot mjukvaruleverantör</a></h2>
-<ul>
-<li>Bilhandlare i Nordamerika upplevde betydande störningar på grund av cyberattacker mot CDK Global, en viktig programvaruleverantör för bilhandlare.</li>
-<li>Attackerna den 19 juni 2024 orsakade pågående avbrott, vilket ledde till förseningar och manuell hantering hos de drabbade återförsäljarna.</li>
-<li>Stora biltillverkare som Stellantis, Ford och BMW bekräftade påverkan men fortsätter verksamheten med alternativa metoder, medan CDK Global arbetar med att återställa sina system.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40776951">Reaktioner</a></h3>
-<ul>
-<li>Bilhandlare återgår till att använda pennor och papper efter cyberattacker mot deras mjukvaruleverantör, CDK Global, vilket stör deras digitala verksamhet.</li>
-<li>Cyberattackerna har allvarligt påverkat delar och serviceavdelningar mer än försäljningen av nya fordon, eftersom deras lagerinformation lagras i det komprometterade CDK-systemet.</li>
-<li>Incidenten belyser sårbarheten hos industrier som är starkt beroende av en enda mjukvaruleverantör, vilket understryker behovet av bättre cybersäkerhetsåtgärder och eventuellt mer diversifierade mjukvarulösningar.</li>
-</ul>
-<h2><a href="https://www.dropbox.com/scl/fo/312oqvretg7yyhfx0ohx4/AGZduVXs0_1geqIyi0NA9nE?e=1&preview=2024_04_30_RCRA_Insp_Report_REPORT_Apple_3250_Scott_Redacted.pdf&rlkey=3aa2tw15ek3trqlbdh7pw9erh&st=4b364mkx&dl=0">US EPA:s tillsyn och efterlevnad vid Apple Fabrication</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40772224">Reaktioner</a></h3>
-<ul>
-<li>Den amerikanska miljöskyddsmyndigheten (EPA) utreder Apple för potentiella miljöbrott vid en anläggning i Santa Clara, med fokus på felaktig hantering och utsläpp av farligt avfall.</li>
-<li>Den tidigare Apple-anställda Ashley Gjovik har uttryckt oro över personliga hälsoeffekter från anläggningens utsläpp, även om hennes påståenden möts med skepsis.</li>
-<li>Fallet understryker komplexiteten i industriell reglering och företagsansvar, och drar paralleller till andra industriella incidenter och oro över tillsynsmyndigheternas genomförande.</li>
-</ul>
-<h2><a href="https://www.bbc.com/future/article/20240621-how-traffic-noise-pollution-harms-childrens-health-and-development">Vägtrafikbuller skadar barns hjärnor</a></h2>
-<ul>
-<li>Barn är mycket sårbara för trafikbullerpåverkan, vilket negativt påverkar deras hälsa och inlärningsförmåga.</li>
-<li>Studier, inklusive en studie från 1975 av Arline Bronzaft och en studie från 2022 i Barcelona, visar att bullerföroreningar kan försämra läsförmåga, arbetsminne och koncentrationsförmåga hos barn.</li>
-<li>Cities like Buenos Aires and Barcelona are implementing measures such as improving green spaces and reducing speed limits to combat noise pollution, with initiatives like Barcelona&#39;s &#39;superblocks&#39; prioritizing pedestrians and green spaces over cars.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40769880">Reaktioner</a></h3>
-<ul>
-<li>En studie visar att vägtrafikbuller vid skolor är kopplat till långsammare utveckling av barns arbetsminne och uppmärksamhet.</li>
-<li>Potentiella lösningar inkluderar att minska trafiken runt skolor och ljudisolera klassrum för att mildra påverkan av miljöbuller.</li>
-<li>Diskussionen tar också upp bredare frågor som bilberoende, bullerföroreningar och fördelarna med tystare, gångvänliga stadsmiljöer.</li>
-</ul>
-<h2><a href="https://www.tomshardware.com/software/windows/microsoft-account-to-local-account-conversion-guide-erased-from-official-windows-11-guide-instructions-redacted-earlier-this-week">Microsoft-konto till lokalt konto konverteringsguide raderad från Windows 11-guide</a></h2>
-<ul>
-<li>Microsoft har tagit bort guiden för att konvertera ett Microsoft-konto till ett lokalt konto från sin Windows 11-supportsida, med verkan från den 17 juni 2024.</li>
-<li>Användare kan fortfarande byta till ett lokalt konto manuellt via Inställningar &gt; Konton &gt; Din information och välja &quot;Logga in med ett lokalt konto istället.&quot;</li>
-<li>Denna åtgärd belyser Microsofts strävan att få användare att anta Microsoft-konton, med betoning på fördelar som tjänsteintegration och förbättrad säkerhet, i linje med strategier från Google och Apple.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40775301">Reaktioner</a></h3>
-<ul>
-<li>Microsoft har tagit bort guiden för att konvertera ett Microsoft-konto till ett lokalt konto från Windows 11-dokumentationen.</li>
-<li>Användare diskuterar alternativ som att använda LTSC (Long-Term Servicing Channel) versionen av Windows 11, vilket vanligtvis är en företagsprodukt men kan aktiveras genom GitHub-skript.</li>
-<li>Konversationen belyser den pågående debatten om etiken och lagligheten i att använda aktiveringsskript samt kompromisserna mellan Windows och Linux för spel och allmän datoranvändning.</li>
-</ul>
-<h2><a href="https://www.redhat.com/en/topics/linux/centos-linux-eol">CentOS Linux 7 kommer att nå EOL på söndag</a></h2>
-<ul>
-<li>CentOS Linux 7 kommer att nå End of Life (EOL) den 30 juni 2024, vilket innebär att det inte längre kommer att få uppdateringar eller säkerhetskorrigeringar efter detta datum.</li>
-<li>Red Hat erbjuder flera migreringsverktyg och tjänster, såsom Convert2RHEL, Red Hat Insights och Red Hat Consulting, för att hjälpa användare att övergå till Red Hat Enterprise Linux (RHEL).</li>
-<li>RHEL erbjuder en liknande användarupplevelse som CentOS, med ytterligare funktioner, support och säkerhet, och är kompatibel med stora molnleverantörer och hybridmolnimplementeringar.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773749">Reaktioner</a></h3>
-<ul>
-<li>CentOS Linux 7 kommer att nå End of Life (EOL) på söndag, vilket uppmanar användare att söka alternativ.</li>
-<li>SUSE erbjuder en lösning genom att byta CentOS 7 uppdateringsarkiv till SUSE:s, vilket undviker störande migrationer, medan Oracle Linux är ett annat alternativ, även om vissa användare är försiktiga med det.</li>
-<li>Många användare övergår till alternativ som Rocky Linux, AlmaLinux eller Debian, där vissa stöter på utmaningar vid uppgradering och överväger containers för att mildra OS-förändringar.</li>
-</ul>
-<h2><a href="https://arxiv.org/abs/2403.06707">Härleda beroendetypad OOP från första principer</a></h2>
-<ul>
-<li>Artikeln behandlar uttrycksproblemet, som innebär utmaningen att utöka typer med nya producenter och konsumenter inom programmering.</li>
-<li>Den utforskar beroendetypad objektorienterad programmering genom att härleda den från första principer med hjälp av dualitet, och tillhandahåller en beroendetypad kalkyl med duala språkfragment.</li>
-<li>Denna utökade version inkluderar ytterligare bilagor och kommer att vara en del av PACMPL-numret för OOPSLA 2024, vilket demonstrerar betydelsen och den pågående forskningen inom detta område.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40769867">Reaktioner</a></h3>
-<ul>
-<li>Artikeln &quot;Deriving Dependently-Typed OOP from First Principles&quot; har väckt stor diskussion och fått 141 poäng på arxiv.org.</li>
-<li>Viktiga diskussioner inkluderar kärnan i objektorienterad programmering (OOP) kontra funktionell programmering (FP), där vissa användare noterar att papperets exempel verkar mer funktionella än objektorienterade.</li>
-<li>Olika resurser och referenser delades, inklusive William Cooks artikel om dataabstraktion, Noel Welshs föredrag om FP och OO, samt boken &quot;A Little Java, A Few Patterns&quot; för att förstå sambanden mellan funktionell och objektorienterad programmering.</li>
-</ul>
-<h2><a href="https://frenck.dev/diy-smart-doorbell-for-just-2-dollar/">Konvertera en befintlig trådbunden dörrklocka till en smart dörrklocka med ESPHome</a></h2>
-<ul>
-<li>Artikeln förklarar hur man kan omvandla en traditionell dörrklocka till en smart, WiFi-aktiverad dörrklocka för cirka 2 dollar, utan att behöva löda eller ha elektronikexpertis.</li>
-<li>Projektet använder ett ESP-01S-chip och en relämodul, drivs av en gammal telefonladdare, och integreras med Home Assistant och ESPHome för olika automationer.</li>
-<li>Detaljerade steg tillhandahålls för att modifiera ESP-01S-chippet, flasha firmware, koppla och integrera med Home Assistant, vilket visar hur enkelt och prisvärt det är med DIY smarta hem-projekt.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40774270">Reaktioner</a></h3>
-<ul>
-<li>Artikeln diskuterar hur man omvandlar en trådbunden dörrklocka till en smart dörrklocka med hjälp av ESPHome, och belyser både potentiella felpunkter och fördelar som fjärraviseringar och integration med hemautomation.</li>
-<li>Exempel inkluderar att använda en Amcrest AD110 dörrklocka för lokal videoströmning och anpassade aviseringar, samt förslag på att använda Zigbee- eller Z-Wave-knappar för enkelhet.</li>
-<li>Det huvudsakliga målet är att demonstrera hur enkelt och roligt det är med gör-det-själv-projekt för smarta hem med ESPHome och Home Assistant.</li>
-</ul>
-<h2><a href="https://mastodon.social/@ashleygjovik/112668309100333232/?">EPA släpper rapport om Apples överträdelser av farligt avfall i urban kiselanläggning</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40773957">Reaktioner</a></h3>
-<ul>
-<li>EPA-rapporten belyser Apples överträdelser av farligt avfall, särskilt den olagliga utsläppningen av farliga kemikalier vid en urban kiselanläggning.</li>
-<li>Apple misslyckades med att redovisa allt avfall som passerade genom kolfilter, vilket gjorde det omöjligt att bedöma filtrens &quot;genombrottstid&quot;, vilket potentiellt kan ha lett till miljöutsläpp sedan december 2020.</li>
-<li>Diskussionen om detta ämne har flyttats till en ny tråd på Hacker News, vilket indikerar ett betydande intresse från communityn.</li>
-</ul>
-<h2><a href="https://www.wsj.com/style/fashion/hermes-birkin-bag-investment-031c215c">Ekonomin kring Birkin-väskan</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40770358">Reaktioner</a></h3>
-<ul>
-<li>Marknaden för Birkin-handväskor frodas på exklusivitet och hög efterfrågan, där köpare får 24 timmar på sig att köpa, vilket skapar en lotteriliknande spänning.</li>
-<li>Försäljningen är begränsad till lojala kunder som spenderar betydande summor på andra varor, vilket bibehåller väskans status som en symbol och investering.</li>
-<li>Liknande sneaker-marknaden säkerställer denna modell av begränsad tillgänglighet och personlig service lyxmarknadens framgång genom knapphet och prestige, vilket lockar rika konsumenter.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Microfeatures jag älskar i bloggar och personliga webbplatser" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Microfeatures%20jag%20%C3%A4lskar%20i%20bloggar%20och%20personliga%20webbplatser&subheading=m%C3%A5ndag%2024%20juni%202024%3A%20Sammanfattning%20av%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/sv/2024/06/24</link>
-            <guid isPermaLink="false">2024-06-24T00:00:00.000Z</guid>
-            <pubDate>Mon, 24 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

@@ -15,12 +15,197 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 03 Jul 2024 19:10:36 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 04 Jul 2024 19:13:29 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/en.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Wed, 03 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[en]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-04]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/04&#39;</h2>
+<h1>2024-07-04</h1>
+<h2><a href="https://www.arno.org/on-the-origins-of-ds-store">The Origins of DS_store (2006)</a></h2>
+<ul>
+<li>.DS_Store files, commonly seen when transferring files from Mac to Windows, stand for &quot;Desktop Services Store,&quot; originating from a 1999 rewrite of the Mac OS X Finder.</li>
+<li>The Finder was split into a user interface (Finder_FE) and core functionality (Finder_BE), with plans to make the backend a public API called Desktop Services, though it was never fully released.</li>
+<li>A bug causes excessive creation of .DS_Store files, even without user adjustments, making them a persistent issue for Mac users.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870357">Reactions</a></h3>
+<ul>
+<li>The discussion revolves around the historical context and technical details of the DS_store file and the &quot;fork&quot; concept in Mac file systems, which includes both resource and data components.</li>
+<li>The resource fork in early MacOS stored various application data like icons, menus, and executable code, which posed challenges when transferring files to non-Mac systems.</li>
+<li>The transition from MacOS to MacOS X involved significant changes, including the removal of resource forks, which was met with mixed reactions from the user community.</li>
+</ul>
+<h2><a href="https://0x.tools/">Xcapture-BPF – like Linux top, but with Xray vision</a></h2>
+<ul>
+<li>0x.tools is a set of open-source utilities designed for analyzing application performance on Linux, emphasizing simplicity and minimal dependencies.</li>
+<li>Key features include measuring individual thread-level activity and providing eBPF-based tools for system-level and detailed thread activity analysis.</li>
+<li>It is designed for safe use in production environments with very low overhead and does not require OS upgrades or heavy monitoring frameworks.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869877">Reactions</a></h3>
+<ul>
+<li>Xcapture-BPF is a new tool likened to Linux&#39;s top command but with enhanced capabilities, often referred to as having &quot;Xray vision&quot; for system diagnostics.</li>
+<li>Users have shared experiences of using eBPF (extended Berkeley Packet Filter) and BCC (BPF Compiler Collection) tools to debug complex production issues, highlighting their effectiveness in resolving performance bottlenecks and memory leaks.</li>
+<li>The discussion includes practical examples of troubleshooting, such as resolving high iowait and page cache issues in containerized environments by enabling direct IO and matching sector sizes on loopback devices.</li>
+</ul>
+<h2><a href="https://www.sequoiacap.com/article/ais-600b-question/">AI&#39;s $600B Question</a></h2>
+<ul>
+<li>The AI revenue gap has widened from $200B to $600B, raising questions about the industry&#39;s growth expectations.</li>
+<li>Key developments include the easing of the GPU supply shortage, Nvidia&#39;s increased data center revenue, and OpenAI&#39;s significant revenue growth to $3.4B.</li>
+<li>Challenges such as lack of pricing power, investment risks, and rapid depreciation of older chips persist, but lower GPU costs could benefit startups and innovation.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869461">Reactions</a></h3>
+<ul>
+<li>Training large AI models like GPT-4 requires significant computational resources, with estimates suggesting 8,000 H100 GPUs running for 90 days.</li>
+<li>Meta&#39;s substantial GPU investments could allow them to train multiple GPT-4 scale models annually, potentially commoditizing core AI models and impacting profit margins for AI companies.</li>
+<li>The real value in AI may shift towards proprietary data for training, raising potential legal issues and emphasizing the importance of data ownership.</li>
+</ul>
+<h2><a href="https://salykova.github.io/matmul-cpu">Beating NumPy matrix multiplication in 150 lines of C</a></h2>
+<ul>
+<li>A high-performance matrix multiplication implementation in C, following the BLIS design, outperforms NumPy (OpenBLAS) on an AMD Ryzen 7700, achieving over 1 TFLOPS.</li>
+<li>The code is simple, portable, and scalable, using only 3 lines of OpenMP directives for parallelization, and targets Intel Core and AMD Zen CPUs with FMA3 and AVX instructions.</li>
+<li>The implementation demonstrates that efficient matrix multiplication can be achieved in C without deep assembly or Fortran code, with performance comparable to established BLAS libraries when fine-tuned for specific hardware.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870345">Reactions</a></h3>
+<ul>
+<li>A blog post demonstrates outperforming NumPy matrix multiplication using 150 lines of C code, focusing on performance enhancements.</li>
+<li>Key improvements include algorithm selection, minimizing kernel round trips, vectorization, cache efficiency, and hardware-specific optimizations.</li>
+<li>Discussions in the comments address the fairness of comparing C code to NumPy, suggesting comparisons with other BLAS (Basic Linear Algebra Subprograms) libraries and emphasizing the need for thorough benchmarking and hyperparameter tuning for specific CPUs.</li>
+</ul>
+<h2><a href="https://reactormag.com/the-joy-of-reading-books-you-dont-entirely-understand/">The joy of reading books you don&#39;t understand</a></h2>
+<ul>
+<li>The article emphasizes the joy and value of reading books that are not entirely understood, suggesting that it&#39;s okay to appreciate a book without fully grasping it.</li>
+<li>The author, Molly Templeton, shares personal experiences with complex books like Neal Stephenson’s <em>Baroque Cycle</em> and recent titles such as Alaya Dawn Johnson’s <em>The Library of Broken Worlds</em> and Molly McGhee’s <em>Jonathan Abernathy You Are Kind</em>.</li>
+<li>Templeton argues that embracing uncertainty in reading can be liberating and enrich the reading experience, encouraging readers to explore challenging narratives.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870280">Reactions</a></h3>
+<ul>
+<li>The post discusses the value of reading books that challenge and provoke deep thought, referencing Kafka&#39;s belief that impactful books should &quot;bite and sting&quot; rather than simply entertain.</li>
+<li>It highlights different perspectives on reading difficult or complex books, with some readers advocating for immersion without note-taking to enhance understanding and enjoyment.</li>
+<li>The conversation includes personal anecdotes and recommendations for books that have left a lasting impression, emphasizing the joy of discovering new insights through re-reading and engaging with challenging material.</li>
+</ul>
+<h2><a href="https://www.securityweek.com/twilio-confirms-data-breach-after-hackers-leak-33m-authy-user-phone-numbers/">Twilio confirms data breach after hackers leak 33M Authy user phone numbers</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40874341">Reactions</a></h3>
+<ul>
+<li>Twilio has confirmed a data breach that exposed the phone numbers of 33 million Authy users, leading to increased spam calls and concerns over the reliability of traditional phone networks.</li>
+<li>Users are considering alternative communication methods such as FaceTime and Zoom, while also emphasizing the critical role of phone calls in essential services like healthcare and social services.</li>
+<li>The breach highlights the need for stronger data protection, better enforcement of anti-spam measures, and recommendations for alternative two-factor authentication (2FA) apps like Aegis, Bitwarden, and Yubikey.</li>
+</ul>
+<h2><a href="https://www.kitze.io/posts/saddest-just-ship-it-story-ever">The saddest &quot;Just Ship It&quot; story ever (2020)</a></h2>
+<ul>
+<li>The author shares a personal journey of developing an app, starting in 2018, but delaying its release due to continuous feature additions and learning new technologies like React Native.</li>
+<li>Despite abandoning the project after two years, the author later discovered a similar app that succeeded despite being imperfect, leading to mixed emotions.</li>
+<li>In 2022, the author finally released a productivity app combining various features like Todos, Habits, Planner, and Goals, and invites readers to join the community on Benji - The Life OS.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872182">Reactions</a></h3>
+<ul>
+<li>The discussion revolves around the &quot;just ship it&quot; mentality in software development, emphasizing that rushing to meet deadlines can compromise the quality of the software and lead to developer burnout.</li>
+<li>There is a debate on whether developers should prioritize company profitability or focus on creating high-quality software, with some arguing that developers are not adequately compensated for extraordinary efforts unless they have a significant stake in the company.</li>
+<li>The conversation highlights differing perspectives on job satisfaction, compensation, and the balance between professional integrity and company demands, reflecting broader industry concerns about work-life balance and recognition.</li>
+</ul>
+<h2><a href="https://corecursive.com/building-powershell-with-jeffrey-snover/">Jeffrey Snover and the Making of PowerShell</a></h2>
+<ul>
+<li>Jeffrey Snover, the architect behind PowerShell, shares his journey of creating a command tool that revolutionized Windows system administration, initially facing resistance from a company favoring graphical interfaces.</li>
+<li>Key challenges included navigating company restructures, cultural pushback, and building a dedicated team, with significant influence from Bill Gates&#39; push for .NET.</li>
+<li>PowerShell&#39;s development, guided by the Monad Manifesto, transformed Windows Server administration and enabled Microsoft&#39;s move to the cloud, showcasing the impact of persistence and vision in driving technological change.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40874013">Reactions</a></h3>
+<ul>
+<li>Jeffrey Snover, the creator of PowerShell, faced significant opposition and was demoted at Microsoft for pursuing its development.</li>
+<li>PowerShell was designed to aid server administration on Windows by calling various APIs, but it faced internal conflicts and some features were lost in newer versions.</li>
+<li>Despite its object-oriented approach and .NET integration, PowerShell is seen as verbose and challenging compared to other scripting languages like Python, limiting its adoption outside the Windows ecosystem.</li>
+</ul>
+<h2><a href="https://www.firezone.dev/blog/sans-io">Sans-IO: The secret to effective Rust for network services</a></h2>
+<ul>
+<li>Firezone uses Rust and a sans-IO design for its core connectivity library, connlib, to manage network connections and WireGuard tunnels, offering fast tests, deep customization, and high assurance.</li>
+<li>The sans-IO design separates policy from implementation using abstractions like <code>Transmit</code>, allowing pure state machines to handle network protocols without direct IO, making the code more flexible and easier to test.</li>
+<li>While sans-IO requires custom event loops and state machines, it provides significant benefits such as easy composition, flexible APIs, and improved error handling, despite not being widely adopted in the Rust community yet.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872020">Reactions</a></h3>
+<ul>
+<li>The post discusses the concept of Sans-IO in Rust, which separates input/output (IO) operations from the main logic, making code more testable and composable.</li>
+<li>This approach is particularly beneficial for packet-oriented use cases like QUIC, WebRTC, and IP, where state management can become complex.</li>
+<li>The discussion highlights that while this method isn&#39;t new, it offers significant advantages in Rust by simplifying testing and avoiding the pitfalls of traditional async/await patterns.</li>
+</ul>
+<h2><a href="https://lazamar.github.io/haskell-data-compression-with-huffman-codes/">Building a data compression utility in Haskell using Huffman codes</a></h2>
+<ul>
+<li>The post outlines the creation of a data compression program in Haskell using Huffman coding, which handles arbitrary binary files with constant memory for encoding and decoding.</li>
+<li>It explains Huffman codes, prefix-free codes, and the process of constructing a binary tree for efficient encoding, followed by the implementation of encoding and decoding functions.</li>
+<li>The post also covers handling binary files, serializing/deserializing data, and potential improvements like multithreading and faster code creation, showcasing a practical and efficient data compression utility in Haskell.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872332">Reactions</a></h3>
+<ul>
+<li>A discussion on building a data compression utility in Haskell using Huffman codes, highlighting the efficiency of array-based, in-place algorithms for large data sets.</li>
+<li>References to significant works, including Moffat and Katajainen&#39;s 1995 paper and the JPEG standard ITU T.81 (1992), which describe array-based Huffman coding.</li>
+<li>Insights into Haskell&#39;s performance, with comparisons to other languages like C, C++, and Rust, and the trade-offs between simplicity of implementation and code clarity versus raw performance.</li>
+</ul>
+<h2><a href="https://elevenlabs.io/voice-isolator">Voice Isolator: Strip background noise for film, podcast, interview production</a></h2>
+<ul>
+<li>The AI voice generator now supports 29 languages, expanding its accessibility and usability for a global audience.</li>
+<li>It offers thousands of voice options, providing users with a wide range of choices for different applications and preferences.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869421">Reactions</a></h3>
+<ul>
+<li>Elevenlabs&#39; Voice Isolator tool aims to strip background noise for film, podcast, and interview production, but its pricing model based on &quot;characters&quot; is confusing many users.</li>
+<li>Users are discussing various alternatives for speech-to-text (STT) and text-to-speech (TTS) solutions, including open-source options like Whisper and commercial services like Deepgram Nova 2.</li>
+<li>There is a notable interest in local and open-source solutions for audio cleanup and transcription, as many find current commercial offerings either too expensive or not effective enough.</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40872102">Vision Pro owners, are you still using it?</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40872102">Reactions</a></h3>
+<ul>
+<li>Vision Pro users have mixed experiences, with some praising its media and work capabilities, while others criticize its high cost and limited functionality.</li>
+<li>Key features appreciated include screen size, passthrough, eyesight features, and improved Bluetooth peripheral support, but issues like vision discomfort and limited software integration are noted.</li>
+<li>The device&#39;s high price point ($3500) and limited release (450k units) have led to a small market, with many users waiting for future revisions or opting for cheaper alternatives like the Quest 3.</li>
+</ul>
+<h2><a href="https://boyuan.space/diffusion-forcing/">Diffusion Forcing: Next-Token Prediction Meets Full-Sequence Diffusion</a></h2>
+<ul>
+<li>Diffusion Forcing is a new training paradigm that combines next-token prediction and full-sequence diffusion models, offering flexible generation and sequence-level guidance.</li>
+<li>It achieves significant performance improvements in applications like video prediction, stabilizing infinite rollouts, diffusion planning, and long-horizon imitation learning.</li>
+<li>This method allows for stable and consistent video predictions, longer rollouts without sliding windows, and robust handling of non-Markovian tasks with long-term memory requirements.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40871783">Reactions</a></h3>
+<ul>
+<li>The paper combines sequence masking, essential for Large Language Models (LLMs), with diffusion models by tracking an &#39;uncertainty&#39; level per pixel, treated as &#39;noise&#39; for the diffusion model.</li>
+<li>This method is beneficial for tasks like maze solving and controlling a robot arm, as it allows for firming up parts of an image earlier.</li>
+<li>The approach models uncertainty in planning and search, enhancing agents&#39; ability to react and generalize, but the paper lacks implementation details and codebase access.</li>
+</ul>
+<h2><a href="https://blog.nelhage.com/post/fuzzy-dedup/">Finding near-duplicates with Jaccard similarity and MinHash</a></h2>
+<ul>
+<li>Jaccard similarity and MinHash are used to identify approximately similar documents in large text collections, such as those used in GPT-3 dataset preparation.</li>
+<li>MinHash approximates Jaccard similarity by hashing document features and using the minimum hash value as a signature, allowing efficient comparison of large corpora.</li>
+<li>This method is scalable and can be combined with other techniques like HyperLogLog, making it suitable for large-scale text processing applications.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872438">Reactions</a></h3>
+<ul>
+<li>The post discusses using Jaccard similarity and MinHash for finding near-duplicate data, highlighting their application in various fields such as medical image segmentation and database deduplication.</li>
+<li>Several tools and libraries are mentioned for deduplication tasks, including datasketch, rensa, Splink, and gaoya, with insights into their performance and use cases.</li>
+<li>The Fellegi Sunter model is noted for its effectiveness in deduplicating people by assigning weights to fuzzy matches and mismatches, improving accuracy in large datasets.</li>
+</ul>
+<h2><a href="https://community.fly.io/t/fresh-produce-region-specific-machines-pricing/20690">Region-specific Machines pricing</a></h2>
+<ul>
+<li>Starting July 1st, region-specific pricing for Machines, including additional RAM, will be introduced due to varying infrastructure costs by region.</li>
+<li>The price adjustment will be phased in over four months, with final prices set by November; initial invoices will show region-specific line items without price changes.</li>
+<li>A bug fix for Machines Shared CPU 1x usage not covered by Free Machines Allowance credit has been implemented, and credits are being reissued.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40873001">Reactions</a></h3>
+<ul>
+<li>Fly.io&#39;s region-specific pricing has ignited discussions, with some users finding it expensive compared to alternatives like Hetzner, especially for high availability.</li>
+<li>Fly.io defends its pricing by highlighting the unsustainability of flat global rates due to high operational costs in certain regions, such as Brazil.</li>
+<li>Despite the removal of the hobby plan and some reliability concerns, many users appreciate Fly.io&#39;s features like dynamic request routing and &quot;ops-less&quot; deployments, which they believe justify the higher costs.</li>
+</ul>
+<head>
+  <meta property="og:title" content="The Origins of DS_store (2006)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=The%20Origins%20of%20DS_store%20(2006)&subheading=Thursday%2C%20July%204%2C%202024%3A%20Hacker%20News%20Summary" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/2024/07/04</link>
+            <guid isPermaLink="false">2024-07-04T00:00:00.000Z</guid>
+            <pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-03]]></title>
             <description
@@ -1692,182 +1877,6 @@
             <link>https://hn.cho.sh/2024/06/25</link>
             <guid isPermaLink="false">2024-06-25T00:00:00.000Z</guid>
             <pubDate>Tue, 25 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-24]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/24&#39;</h2>
-<h1>2024-06-24</h1>
-<h2><a href="https://danilafe.com/blog/blog_microfeatures/">Microfeatures I love in blogs and personal websites</a></h2>
-<ul>
-<li>The post highlights various microfeatures that can enhance user experience on blogs and personal websites, inspired by Hillel Wayne&#39;s article on programming languages.</li>
-<li>Key features include sidenotes, tables of contents, linkable headings, series grouping, dialogues, code blocks with origin and clickable links, markers for external links, link previews, and RSS feeds.</li>
-<li>These features, while not essential, improve navigation, engagement, and accessibility, making the reading experience more enjoyable and efficient.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40774277">Reactions</a></h3>
-<ul>
-<li>The discussion revolves around microfeatures in blogs and personal websites, highlighting both positive and negative aspects.</li>
-<li>Key points of contention include the use of progress bars, link decorations, and preview popups, with some users finding them distracting and unnecessary.</li>
-<li>The conversation also touches on the shrinking of native scrollbars and the potential benefits of alternative navigation aids like tables of contents and always-visible indices.</li>
-</ul>
-<h2><a href="https://www.theguardian.com/technology/article/2024/jun/24/apple-breach-eu-competition-rules-digital-markets-act">Apple found in breach of EU competition rules</a></h2>
-<ul>
-<li>The European Commission has found Apple in violation of new EU laws aimed at protecting smaller competitors and enabling consumers to find cheaper apps.</li>
-<li>Apple has 12 months to comply with the regulations or face fines up to 10% of its global revenues, following an investigation initiated in March.</li>
-<li>This marks the third non-compliance investigation into Apple since the Digital Markets Act (DMA) was enacted, focusing on Apple&#39;s fees and practices that restrict developers from directing consumers to alternative purchasing options.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773883">Reactions</a></h3>
-<ul>
-<li>Apple has been found in violation of EU competition rules, sparking calls for similar actions in the US.</li>
-<li>Critics argue that Apple&#39;s control over app publishing and developer fees stifles competition, with particular concern over anti-steering rules that prevent developers from informing users about cheaper payment options outside the App Store.</li>
-<li>Apple awaits an EU Court ruling on the constitutionality of provisions requiring free iOS APIs for developers, amid claims that its compliance with EU laws is superficial.</li>
-</ul>
-<h2><a href="https://www.voanews.com/a/us-prosecutors-recommend-justice-department-criminally-charge-boeing-as-deadline-looms/7667194.html">US prosecutors recommend Justice Department criminally charge Boeing</a></h2>
-<ul>
-<li>U.S. prosecutors suggest criminal charges against Boeing for allegedly breaching a 2021 settlement concerning two fatal 737 MAX crashes.</li>
-<li>The Justice Department has until July 7 to decide on prosecution, with Boeing disputing the violation claims and ongoing discussions.</li>
-<li>Criminal charges could exacerbate Boeing&#39;s crisis, impacting its U.S. government contracts, while victims&#39; families advocate for a $25 billion fine and prosecution.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773151">Reactions</a></h3>
-<ul>
-<li>US prosecutors are recommending criminal charges against Boeing, with some suggesting drastic measures like expropriating 51% of the company, firing top executives, and imposing fines.</li>
-<li>Critics argue that shareholders lack the power to enforce proper oversight, and institutional investors often fail to monitor corporate behavior effectively.</li>
-<li>The Boeing case underscores broader systemic issues in corporate governance and regulatory oversight.</li>
-</ul>
-<h2><a href="https://github.com/jart/cosmopolitan/releases/tag/3.5.0">Cosmopolitan v3.5.0</a></h2>
-<ul>
-<li>Cosmopolitan Libc v3.5.0 has been released, making C a build-once run-anywhere language without needing an interpreter or virtual machine.</li>
-<li>Key improvements include a higher quality memory map implementation, a memory manager rewrite, and updated Lua to 5.4.6.</li>
-<li>New C++ STL features introduced, such as ctl::string small-string optimization, ctl::set, ctl::map, and ctl::unique_ptr, along with various bug fixes and optimizations.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773139">Reactions</a></h3>
-<ul>
-<li>Cosmopolitan v3.5.0 has been released, generating significant interest due to its ability to create highly portable executables that run across multiple operating systems and architectures without modification.</li>
-<li>The new version boasts improved performance, with claims that Cosmopolitan Libc is twice as fast as Musl Libc for many command-line interface (CLI) programs and offers robust thread support, making it suitable for high-performance AI software.</li>
-<li>The release includes support for WebAssembly (WASM) and features like the &quot;Actually Portable Executable&quot; (APE) header, which enhances cross-platform compatibility, including support for Android.</li>
-</ul>
-<h2><a href="https://www.ashleygjovik.com/3250scott.html">Apple&#39;s secret silicon fab next to thousands of homes</a></h2>
-<ul>
-<li>In 2015, Apple began secret semiconductor fabrication at a facility in Santa Clara, California, which vented toxic gases affecting nearby residents.</li>
-<li>Ashley M. Gjovik, a resident in 2020, suffered severe health issues and discovered the factory&#39;s exhaust in her home and body, leading to multiple complaints and investigations.</li>
-<li>Apple faced violations for hazardous waste and safety issues, with ongoing inspections and investigations into the public nuisance and ultrahazardous activities causing significant harm to Gjovik and the environment.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773136">Reactions</a></h3>
-<h2><a href="https://www.linqpad.net/">LINQPad – The .NET Programmer&#39;s Playground</a></h2>
-<ul>
-<li>LINQPad is a versatile tool for .NET programmers to instantly test C#/F#/VB snippets, query databases, and automate scripts with REPL (Read-Eval-Print Loop) benefits.</li>
-<li>It supports C# 12 and .NET 8, allowing interactive database queries in LINQ or SQL, and includes drivers for multiple databases like SQL Server, Oracle, and MySQL.</li>
-<li>LINQPad offers advanced features such as AI autocompletion, integrated debugging, and rich output formatting, making it a powerful tool for rapid coding and dynamic development.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40770171">Reactions</a></h3>
-<ul>
-<li>LINQPad is highly regarded for its ease of use, particularly among .NET developers, for scripting, debugging, and running LINQ queries.</li>
-<li>Users appreciate its features like SQL Server database connections but express frustration over its Windows exclusivity and cost.</li>
-<li>Alternatives mentioned include winmerge, NetPad, dotnetfiddle.net, and RoslynPad, with some users desiring cross-platform support and integration into Visual Studio.</li>
-</ul>
-<h2><a href="https://apnews.com/article/car-dealerships-cyberattack-cdk-outage-3f7c81f6be0e212172b33cdc9f49feba">Car dealerships revert to pens and paper after cyberattacks on software provider</a></h2>
-<ul>
-<li>Car dealerships in North America experienced significant disruptions due to cyberattacks on CDK Global, a key software provider for auto dealers.</li>
-<li>The attacks on June 19, 2024, caused ongoing outages, leading to delays and manual processing at affected dealerships.</li>
-<li>Major auto companies like Stellantis, Ford, and BMW confirmed the impact but are continuing operations using alternative methods, while CDK Global works on restoring its systems.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40776951">Reactions</a></h3>
-<ul>
-<li>Car dealerships are reverting to using pens and paper after cyberattacks on their software provider, CDK Global, disrupting their digital operations.</li>
-<li>The cyberattacks have severely impacted parts and service departments more than new vehicle sales, as their inventory information is stored in the compromised CDK system.</li>
-<li>The incident highlights the vulnerability of industries heavily reliant on a single software provider, emphasizing the need for better cybersecurity measures and possibly more diversified software solutions.</li>
-</ul>
-<h2><a href="https://www.dropbox.com/scl/fo/312oqvretg7yyhfx0ohx4/AGZduVXs0_1geqIyi0NA9nE?e=1&preview=2024_04_30_RCRA_Insp_Report_REPORT_Apple_3250_Scott_Redacted.pdf&rlkey=3aa2tw15ek3trqlbdh7pw9erh&st=4b364mkx&dl=0">US EPA Enforcement and Compliance on Apple Fabrication</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40772224">Reactions</a></h3>
-<ul>
-<li>The US EPA is investigating Apple for potential environmental violations at a Santa Clara facility, focusing on improper handling and release of hazardous waste.</li>
-<li>Former Apple employee Ashley Gjovik has raised concerns about personal health impacts from the facility&#39;s emissions, though her claims are met with skepticism.</li>
-<li>The case underscores the complexities of industrial regulation and corporate responsibility, drawing comparisons to other industrial incidents and concerns about regulatory enforcement.</li>
-</ul>
-<h2><a href="https://www.bbc.com/future/article/20240621-how-traffic-noise-pollution-harms-childrens-health-and-development">Traffic noise hurts children&#39;s brains</a></h2>
-<ul>
-<li>Children are highly vulnerable to traffic noise pollution, which negatively impacts their health and learning abilities.</li>
-<li>Studies, including a 1975 study by Arline Bronzaft and a 2022 study in Barcelona, show that noise pollution can impair reading performance, working memory, and attention span in children.</li>
-<li>Cities like Buenos Aires and Barcelona are implementing measures such as improving green spaces and reducing speed limits to combat noise pollution, with initiatives like Barcelona&#39;s &quot;superblocks&quot; prioritizing pedestrians and green spaces over cars.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40769880">Reactions</a></h3>
-<ul>
-<li>A study reveals that road traffic noise at schools is linked to slower development of children&#39;s working memory and attention.</li>
-<li>Potential solutions include reducing traffic around schools and soundproofing classrooms to mitigate the impact of environmental noise.</li>
-<li>The discussion also addresses broader issues such as car dependency, noise pollution, and the advantages of quieter, walkable urban environments.</li>
-</ul>
-<h2><a href="https://www.tomshardware.com/software/windows/microsoft-account-to-local-account-conversion-guide-erased-from-official-windows-11-guide-instructions-redacted-earlier-this-week">Microsoft Account to local account conversion guide erased from Windows 11 guide</a></h2>
-<ul>
-<li>Microsoft has removed the guide for converting a Microsoft Account to a local account from its Windows 11 support page, effective June 17, 2024.</li>
-<li>Users can still switch to a local account manually via Settings &gt; Accounts &gt; Your info and selecting &quot;Sign in with a local account instead.&quot;</li>
-<li>This action highlights Microsoft&#39;s push for users to adopt Microsoft Accounts, emphasizing benefits like service integration and enhanced security, aligning with strategies from Google and Apple.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40775301">Reactions</a></h3>
-<ul>
-<li>Microsoft has removed the guide for converting a Microsoft Account to a local account from the Windows 11 documentation.</li>
-<li>Users are discussing alternatives like using the LTSC (Long-Term Servicing Channel) version of Windows 11, which is typically an enterprise product but can be activated through GitHub scripts.</li>
-<li>The conversation highlights the ongoing debate about the ethics and legality of using activation scripts and the trade-offs between Windows and Linux for gaming and general computing.</li>
-</ul>
-<h2><a href="https://www.redhat.com/en/topics/linux/centos-linux-eol">CentOS Linux 7 will reach EOL on Sunday</a></h2>
-<ul>
-<li>CentOS Linux 7 will reach End of Life (EOL) on June 30, 2024, meaning it will no longer receive updates or security patches after this date.</li>
-<li>Red Hat offers several migration tools and services, such as Convert2RHEL, Red Hat Insights, and Red Hat Consulting, to assist users in transitioning to Red Hat Enterprise Linux (RHEL).</li>
-<li>RHEL provides a similar user experience to CentOS, with additional features, support, and security, and is compatible with major cloud providers and hybrid cloud deployments.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773749">Reactions</a></h3>
-<ul>
-<li>CentOS Linux 7 will reach End of Life (EOL) on Sunday, prompting users to seek alternatives.</li>
-<li>SUSE offers a solution by switching CentOS 7 update repositories to SUSE’s, avoiding disruptive migrations, while Oracle Linux is another option, though some users are cautious about it.</li>
-<li>Many users are transitioning to alternatives like Rocky Linux, AlmaLinux, or Debian, with some facing challenges in upgrading and considering containers to mitigate OS changes.</li>
-</ul>
-<h2><a href="https://arxiv.org/abs/2403.06707">Deriving Dependently-Typed OOP from First Principles</a></h2>
-<ul>
-<li>The paper addresses the expression problem, which involves the challenge of extending types with new producers and consumers in programming.</li>
-<li>It explores dependently-typed object-oriented programming by deriving it from first principles using duality, providing a dependently typed calculus with dual language fragments.</li>
-<li>This extended version includes additional appendices and will be part of the PACMPL issue for OOPSLA 2024, demonstrating the significance and ongoing research in this area.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40769867">Reactions</a></h3>
-<ul>
-<li>The paper &quot;Deriving Dependently-Typed OOP from First Principles&quot; has sparked significant discussion, receiving 141 points on arxiv.org.</li>
-<li>Key discussions include the essence of Object-Oriented Programming (OOP) versus Functional Programming (FP), with some users noting the paper&#39;s examples seem more functional than object-oriented.</li>
-<li>Various resources and references were shared, including William Cook’s paper on data abstraction, Noel Welsh&#39;s talk on FP and OO, and the book &quot;A Little Java, A Few Patterns&quot; for understanding the connections between functional and OO programming.</li>
-</ul>
-<h2><a href="https://frenck.dev/diy-smart-doorbell-for-just-2-dollar/">Convert an existing wired doorbell into a smart doorbell using ESPHome</a></h2>
-<ul>
-<li>The article explains how to convert a traditional doorbell into a smart, WiFi-enabled doorbell for approximately $2, without requiring soldering or electronics expertise.</li>
-<li>The project uses an ESP-01S chip and a relay module, powered by an old phone charger, and integrates with Home Assistant and ESPHome for various automations.</li>
-<li>Detailed steps are provided for modifying the ESP-01S chip, flashing firmware, wiring, and integrating with Home Assistant, showcasing the ease and affordability of DIY smart home projects.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40774270">Reactions</a></h3>
-<ul>
-<li>The article discusses converting a wired doorbell into a smart doorbell using ESPHome, highlighting both potential failure points and benefits like remote notifications and home automation integration.</li>
-<li>Examples include using an Amcrest AD110 doorbell for local-only video streaming and custom notifications, and suggestions for using Zigbee or Z-Wave buttons for simplicity.</li>
-<li>The main aim is to demonstrate the ease and enjoyment of DIY smart home projects with ESPHome and Home Assistant.</li>
-</ul>
-<h2><a href="https://mastodon.social/@ashleygjovik/112668309100333232/?">EPA releases report on Apple&#39;s hazardous waste violations in urban silicon fab</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40773957">Reactions</a></h3>
-<ul>
-<li>The EPA report highlights Apple&#39;s hazardous waste violations, particularly the illegal venting of hazardous chemicals at an urban silicon fab.</li>
-<li>Apple failed to account for all waste passing through carbon filters, making it impossible to assess the filters&#39; &quot;breakthrough time,&quot; potentially leading to environmental leaks since December 2020.</li>
-<li>The discussion on this topic has been moved to a new thread on Hacker News, indicating significant community interest.</li>
-</ul>
-<h2><a href="https://www.wsj.com/style/fashion/hermes-birkin-bag-investment-031c215c">The economics of the Birkin handbag</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40770358">Reactions</a></h3>
-<ul>
-<li>The Birkin handbag market thrives on exclusivity and high demand, with buyers given 24 hours to purchase, creating a lottery-like excitement.</li>
-<li>Sales are restricted to loyal customers who spend significantly on other items, maintaining the bag&#39;s status as a symbol and investment.</li>
-<li>Similar to the sneaker market, this model of limited availability and personalized service ensures the luxury market&#39;s success through scarcity and prestige, attracting wealthy consumers.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Microfeatures I love in blogs and personal websites" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Microfeatures%20I%20love%20in%20blogs%20and%20personal%20websites&subheading=Monday%2C%20June%2024%2C%202024%3A%20Hacker%20News%20Summary" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/2024/06/24</link>
-            <guid isPermaLink="false">2024-06-24T00:00:00.000Z</guid>
-            <pubDate>Mon, 24 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

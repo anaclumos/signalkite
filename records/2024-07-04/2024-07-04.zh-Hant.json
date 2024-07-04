@@ -1,0 +1,323 @@
+[
+  {
+    "id": 40870357,
+    "title": "DS_store 的起源(2006)",
+    "originLink": "https://www.arno.org/on-the-origins-of-ds-store",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40870357",
+    "commentBody": "",
+    "originSummary": [
+      ".DS_Store 檔案，常見於從 Mac 傳輸檔案到 Windows 時，代表「Desktop Services Store」，源自 1999 年重寫的 Mac OS X Finder。",
+      "「Finder 被分為使用者介面(Finder_FE)和核心功能(Finder_BE)，並計劃將後端做成名為 Desktop Services 的公共 API，儘管它從未完全發布。」",
+      "「一個錯誤導致過度生成 .DS_Store 檔案，即使沒有用戶調整，這也使得它們成為 Mac 用戶的持續問題。」"
+    ],
+    "commentSummary": [
+      "“討論圍繞著 DS_store 檔案的歷史背景和技術細節，以及 Mac 檔案系統中的「分叉」概念，這包括資源和數據兩個部分。”",
+      "「早期 MacOS 中的資源分支儲存了各種應用程式數據，如圖示、選單和可執行程式碼，這在將檔案傳輸到非 Mac 系統時帶來了挑戰。」",
+      "從 MacOS 過渡到 MacOS X 涉及了重大變革，包括移除資源分支，這在使用者社群中引起了褒貶不一的反應。"
+    ],
+    "points": 375,
+    "commentCount": 200,
+    "retryCount": 0,
+    "time": 1720043713
+  },
+  {
+    "id": 40869877,
+    "title": "「Xcapture-BPF – 就像 Linux top，但具有 Xray 視覺」",
+    "originLink": "https://0x.tools/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40869877",
+    "commentBody": "",
+    "originSummary": [
+      "0x.tools 是一套開源工具，專為分析 Linux 上的應用程式效能而設計，強調簡單性和最少的依賴性。",
+      "主要功能包括測量個別執行緒層級的活動，並提供基於 eBPF 的工具，用於系統層級和詳細的執行緒活動分析。",
+      "它被設計用於生產環境中的安全使用，具有非常低的開銷，且不需要操作系統升級或繁重的監控框架。"
+    ],
+    "commentSummary": [
+      "「Xcapture-BPF 是一個新工具，類似於 Linux 的 top 指令，但具有增強的功能，常被形容為具有系統診斷的『X光視野』。」",
+      "用戶分享了使用 eBPF(擴展伯克利封包過濾器)和 BCC(BPF 編譯器集合)工具來調試複雜生產問題的經驗，強調了它們在解決性能瓶頸和記憶體洩漏方面的有效性。",
+      "討論中包括了一些實際的故障排除範例，例如在容器化環境中通過啟用直接 IO 和匹配回環設備的扇區大小來解決高 iowait 和頁面快取問題。"
+    ],
+    "points": 353,
+    "commentCount": 35,
+    "retryCount": 0,
+    "time": 1720039957
+  },
+  {
+    "id": 40869461,
+    "title": "AI 的 6000 億美元問題",
+    "originLink": "https://www.sequoiacap.com/article/ais-600b-question/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40869461",
+    "commentBody": "",
+    "originSummary": [
+      "人工智慧的收入差距已從2000億美元擴大到6000億美元，這引發了對該產業成長預期的疑問。",
+      "主要發展包括 GPU 供應短缺的緩解、Nvidia 資料中心收入的增加，以及 OpenAI 營收顯著增長至 34 億美元。",
+      "挑戰如缺乏定價權、投資風險以及舊款晶片的快速貶值依然存在，但較低的 GPU 成本可能有利於新創公司和創新。"
+    ],
+    "commentSummary": [
+      "訓練大型 AI 模型如 GPT-4 需要大量的計算資源，估計需要 8,000 顆 H100 GPU 運行 90 天。",
+      "Meta 大量投資 GPU 可能使他們每年訓練多個 GPT-4 規模的模型，這可能會使核心 AI 模型商品化，並影響 AI 公司的利潤率。",
+      "AI 的真正價值可能會轉向用於訓練的專有數據，這將引發潛在的法律問題並強調數據所有權的重要性。"
+    ],
+    "points": 331,
+    "commentCount": 496,
+    "retryCount": 0,
+    "time": 1720036541
+  },
+  {
+    "id": 40870345,
+    "title": "用 150 行 C 語言程式碼擊敗 NumPy 矩陣乘法",
+    "originLink": "https://salykova.github.io/matmul-cpu",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40870345",
+    "commentBody": "",
+    "originSummary": [
+      "「在 C 語言中實現的高效能矩陣乘法，遵循 BLIS 設計，在 AMD Ryzen 7700 上的表現超越了 NumPy(OpenBLAS)，達到了超過 1 TFLOPS 的運算速度。」",
+      "這段程式碼簡單、可移植且具擴展性，僅使用 3 行 OpenMP 指令進行平行化，並針對具備 FMA3 和 AVX 指令的 Intel Core 和 AMD Zen CPU 進行優化。",
+      "實作證明了在不使用深層組合語言或 Fortran 代碼的情況下，可以在 C 語言中實現高效的矩陣乘法，並且在針對特定硬體進行微調後，其性能可與既有的 BLAS 函式庫相媲美。"
+    ],
+    "commentSummary": [
+      "一篇部落格文章展示了使用 150 行 C 語言程式碼超越 NumPy 矩陣乘法的性能，重點在於性能提升。",
+      "主要改進包括演算法選擇、最小化核心往返次數、向量化、快取效率以及針對硬體的特定優化。",
+      "“評論中的討論涉及將 C 語言代碼與 NumPy 比較的公平性，建議與其他 BLAS(基本線性代數子程序)庫進行比較，並強調需要針對特定 CPU 進行全面的基準測試和超參數調整。”"
+    ],
+    "points": 298,
+    "commentCount": 51,
+    "retryCount": 0,
+    "time": 1720043575
+  },
+  {
+    "id": 40870280,
+    "title": "閱讀你不理解的書籍的樂趣",
+    "originLink": "https://reactormag.com/the-joy-of-reading-books-you-dont-entirely-understand/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40870280",
+    "commentBody": "",
+    "originSummary": [
+      "「這篇文章強調閱讀不完全理解的書籍的樂趣和價值，並建議即使無法完全掌握一本書，也可以欣賞它。」",
+      "作者 Molly Templeton 分享了她閱讀複雜書籍的個人經驗，例如 Neal Stephenson 的《巴洛克三部曲》，以及最近的作品如 Alaya Dawn Johnson 的《破碎世界圖書館》和 Molly McGhee 的《Jonathan Abernathy You Are Kind》。",
+      "Templeton 主張，擁抱閱讀中的不確定性可以帶來解放感並豐富閱讀體驗，鼓勵讀者探索具有挑戰性的敘事。"
+    ],
+    "commentSummary": [
+      "這篇文章討論了閱讀那些具有挑戰性並引發深思的書籍的價值，並引用卡夫卡的觀點，認為有影響力的書籍應該『咬人並刺痛』，而不僅僅是娛樂。",
+      "它強調了對於閱讀困難或複雜書籍的不同觀點，有些讀者主張不做筆記的沉浸式閱讀，以增進理解和享受。",
+      "“這段對話包含了個人軼事和對留下深刻印象的書籍的推薦，強調了通過重讀和接觸具有挑戰性的材料來發現新見解的樂趣。”"
+    ],
+    "points": 298,
+    "commentCount": 185,
+    "retryCount": 0,
+    "time": 1720043087
+  },
+  {
+    "id": 40874341,
+    "title": "「Twilio 確認資料外洩，駭客洩露 3300 萬 Authy 用戶電話號碼」",
+    "originLink": "https://www.securityweek.com/twilio-confirms-data-breach-after-hackers-leak-33m-authy-user-phone-numbers/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40874341",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "「Twilio 已確認發生資料外洩事件，導致 3300 萬 Authy 用戶的電話號碼被曝光，進而引發垃圾電話增加及對傳統電話網路可靠性的擔憂。」",
+      "用戶正在考慮使用 FaceTime 和 Zoom 等替代通訊方式，同時也強調電話在醫療保健和社會服務等基本服務中的關鍵作用。",
+      "這次資料外洩事件突顯了加強資料保護、更好地執行反垃圾郵件措施的必要性，以及對替代雙重驗證(2FA)應用程式如 Aegis、Bitwarden 和 Yubikey 的建議。"
+    ],
+    "points": 260,
+    "commentCount": 148,
+    "retryCount": 0,
+    "time": 1720095999
+  },
+  {
+    "id": 40872182,
+    "title": "最悲傷的「Just Ship It」故事(2020)",
+    "originLink": "https://www.kitze.io/posts/saddest-just-ship-it-story-ever",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872182",
+    "commentBody": "",
+    "originSummary": [
+      "作者分享了從2018年開始開發一款應用程式的個人旅程，但由於不斷添加新功能和學習像 React Native 這樣的新技術，導致發布時間一再延遲。",
+      "儘管在兩年後放棄了這個專案，作者後來發現了一個類似的應用程式，儘管不完美卻成功了，這讓他心情複雜。",
+      "在 2022 年，作者終於推出了一款結合待辦事項、習慣、計劃和目標等多種功能的生產力應用程式，並邀請讀者加入 Benji - The Life OS 社群。"
+    ],
+    "commentSummary": [
+      "“討論圍繞著軟體開發中的『趕快出貨』心態，強調趕工以達成截止日期可能會損害軟體品質並導致開發人員過勞。”",
+      "「目前有一場辯論，討論開發人員應該優先考慮公司盈利還是專注於創建高品質的軟體。有些人認為，除非開發人員在公司中擁有顯著的股份，否則他們不會因為額外的努力而獲得足夠的報酬。」",
+      "“這段對話突顯了對工作滿意度、薪酬以及在專業誠信與公司需求之間取得平衡的不同觀點，反映了更廣泛的行業對工作與生活平衡及認可的關注。”"
+    ],
+    "points": 217,
+    "commentCount": 263,
+    "retryCount": 0,
+    "time": 1720065035
+  },
+  {
+    "id": 40874013,
+    "title": "Jeffrey Snover 與 PowerShell 的誕生",
+    "originLink": "https://corecursive.com/building-powershell-with-jeffrey-snover/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40874013",
+    "commentBody": "",
+    "originSummary": [
+      "PowerShell 的設計師 Jeffrey Snover 分享了他創建這個革命性 Windows 系統管理命令工具的旅程，最初面臨來自偏好圖形介面的公司的阻力。",
+      "主要挑戰包括應對公司重組、文化反彈以及建立專業團隊，並受到比爾·蓋茲推動 .NET 的重大影響。",
+      "PowerShell 的發展，在 Monad 宣言的指導下，改變了 Windows Server 的管理方式，並促使微軟向雲端轉型，展現了堅持與遠見在推動技術變革中的影響力。"
+    ],
+    "commentSummary": [
+      "PowerShell 的創始人 Jeffrey Snover 在微軟推動其開發時面臨了巨大的反對聲浪，並因此被降職。",
+      "PowerShell 是為了協助在 Windows 上進行伺服器管理而設計的，透過調用各種 API，但它面臨內部衝突，並且在較新版本中有些功能被移除。",
+      "儘管其物件導向方法和 .NET 整合，PowerShell 被認為比其他腳本語言如 Python 更冗長且具挑戰性，限制了其在 Windows 生態系統之外的採用。"
+    ],
+    "points": 200,
+    "commentCount": 182,
+    "retryCount": 0,
+    "time": 1720092392
+  },
+  {
+    "id": 40872020,
+    "title": "Sans-IO：打造高效 Rust 網路服務的祕密",
+    "originLink": "https://www.firezone.dev/blog/sans-io",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872020",
+    "commentBody": "",
+    "originSummary": [
+      "Firezone 使用 Rust 和 sans-IO 設計來構建其核心連接庫 connlib，以管理網路連接和 WireGuard 隧道，提供快速測試、深度自訂和高保證。",
+      "無 IO 設計透過像 `Transmit` 這樣的抽象概念將策略與實作分離，允許純狀態機處理網路協議而不需直接進行 IO 操作，使程式碼更具彈性且更易於測試。",
+      "雖然 sans-IO 需要自訂事件迴圈和狀態機，但它提供了顯著的優點，例如容易組合、靈活的 API 和改進的錯誤處理，儘管它在 Rust 社群中尚未被廣泛採用。"
+    ],
+    "commentSummary": [
+      "「這篇文章討論了 Rust 中的 Sans-IO 概念，這個概念將輸入/輸出(IO)操作與主要邏輯分離，使程式碼更易於測試和組合。」",
+      "「這種方法對於像 QUIC、WebRTC 和 IP 這樣的封包導向使用案例特別有利，因為這些情況下的狀態管理可能會變得複雜。」",
+      "“討論強調了雖然這種方法並不新穎，但在 Rust 中提供了顯著的優勢，透過簡化測試並避免傳統 async/await 模式的陷阱。”"
+    ],
+    "points": 179,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1720062336
+  },
+  {
+    "id": 40872332,
+    "title": "使用哈夫曼編碼在 Haskell 中構建數據壓縮工具",
+    "originLink": "https://lazamar.github.io/haskell-data-compression-with-huffman-codes/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872332",
+    "commentBody": "",
+    "originSummary": [
+      "「這篇文章概述了使用哈夫曼編碼在 Haskell 中創建一個數據壓縮程式，該程式使用恆定記憶體來處理任意的二進位檔案進行編碼和解碼。」",
+      "它解釋了霍夫曼編碼、前綴碼以及構建二元樹以進行高效編碼的過程，接著是編碼和解碼函數的實現。",
+      "這篇文章還涵蓋了處理二進位檔案、序列化/反序列化資料，以及潛在的改進，如多執行緒和更快速的程式碼創建，展示了一個實用且高效的 Haskell 資料壓縮工具。"
+    ],
+    "commentSummary": [
+      "討論使用哈夫曼編碼在 Haskell 中構建數據壓縮工具，強調基於陣列的就地算法在處理大型數據集時的效率。",
+      "「參考了重要的作品，包括 Moffat 和 Katajainen 在 1995 年的論文以及 JPEG 標準 ITU T.81 (1992)，這些作品描述了基於陣列的霍夫曼編碼。」",
+      "深入了解 Haskell 的性能，並與其他語言如 C、C++ 和 Rust 進行比較，以及在實現簡單性和代碼清晰度與原始性能之間的取捨。"
+    ],
+    "points": 164,
+    "commentCount": 69,
+    "retryCount": 0,
+    "time": 1720067352
+  },
+  {
+    "id": 40869421,
+    "title": "語音隔離器：去除背景噪音以用於電影、播客、訪談製作",
+    "originLink": "https://elevenlabs.io/voice-isolator",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40869421",
+    "commentBody": "",
+    "originSummary": [
+      "「AI 語音生成器現在支援 29 種語言，擴展了其對全球用戶的可及性和實用性。」",
+      "它提供了數千種語音選項，為使用者在不同應用和偏好上提供了廣泛的選擇。"
+    ],
+    "commentSummary": [
+      "Elevenlabs 的 Voice Isolator 工具旨在去除電影、播客和訪談製作中的背景噪音，但其基於「字元」的定價模式讓許多用戶感到困惑。",
+      "「使用者正在討論各種語音轉文字(STT)和文字轉語音(TTS)解決方案，包括像 Whisper 這樣的開源選項和像 Deepgram Nova 2 這樣的商業服務。」",
+      "「許多人對於本地和開源的音訊清理和轉錄解決方案表現出顯著的興趣，因為他們發現目前的商業產品要麼太昂貴，要麼效果不夠理想。」"
+    ],
+    "points": 158,
+    "commentCount": 126,
+    "retryCount": 0,
+    "time": 1720036303
+  },
+  {
+    "id": 40872102,
+    "title": "「Vision Pro 的擁有者們，你們還在使用它嗎？」",
+    "originLink": "https://news.ycombinator.com/item?id=40872102",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872102",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Vision Pro 使用者的體驗各異，有些人讚揚其媒體和工作功能，而另一些人則批評其高昂的價格和有限的功能性。",
+      "「受讚賞的主要特點包括螢幕尺寸、透視功能、視力功能和改進的藍牙外圍設備支援，但也有視覺不適和軟體整合有限等問題。」",
+      "該裝置的高價位($3500)和有限的發行量(45萬台)導致市場規模較小，許多用戶選擇等待未來的修訂版本或選擇較便宜的替代品，如 Quest 3。"
+    ],
+    "points": 141,
+    "commentCount": 77,
+    "retryCount": 0,
+    "time": 1720063824
+  },
+  {
+    "id": 40871783,
+    "title": "“擴散強制：下一個標記預測遇上全序列擴散”",
+    "originLink": "https://boyuan.space/diffusion-forcing/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40871783",
+    "commentBody": "",
+    "originSummary": [
+      "“擴散強制是一種新的訓練範式，結合了下一個標記預測和全序列擴散模型，提供靈活的生成和序列級指導。”",
+      "它在視頻預測、穩定無限展開、擴散規劃和長期模仿學習等應用中實現了顯著的性能提升。",
+      "“此方法允許穩定且一致的影片預測、更長的展開而不需要滑動視窗，以及能夠穩健地處理具有長期記憶需求的非馬可夫任務。”"
+    ],
+    "commentSummary": [
+      "該論文結合了對大型語言模型(LLMs)至關重要的序列遮罩技術，並通過追蹤每個像素的「不確定性」水平，將其視為擴散模型的「噪音」來應用擴散模型。",
+      "這種方法對於解迷和控制機械臂等任務非常有利，因為它允許更早地鞏固圖像的部分。",
+      "該方法在規劃和搜尋中建模不確定性，增強了代理的反應和泛化能力，但論文缺乏實作細節和程式碼庫的存取。"
+    ],
+    "points": 133,
+    "commentCount": 6,
+    "retryCount": 0,
+    "time": 1720058960
+  },
+  {
+    "id": 40872438,
+    "title": "使用 Jaccard 相似度和 MinHash 找出近似重複項",
+    "originLink": "https://blog.nelhage.com/post/fuzzy-dedup/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872438",
+    "commentBody": "",
+    "originSummary": [
+      "Jaccard 相似度和 MinHash 被用來在大型文本集合中識別大致相似的文件，例如在 GPT-3 數據集準備中使用的那些。",
+      "MinHash 透過對文件特徵進行雜湊並使用最小雜湊值作為簽名來近似 Jaccard 相似度，從而允許高效地比較大型語料庫。",
+      "「此方法具有可擴展性，並且可以與其他技術如 HyperLogLog 結合使用，使其適用於大規模文本處理應用。」"
+    ],
+    "commentSummary": [
+      "這篇文章討論了使用 Jaccard 相似度和 MinHash 來尋找近似重複的數據，並強調了它們在醫學影像分割和資料庫去重等各個領域的應用。",
+      "提到幾個用於去重任務的工具和函式庫，包括 datasketch、rensa、Splink 和 gaoya，並提供了它們的性能和使用案例的見解。",
+      "Fellegi Sunter 模型以其在去重過程中的有效性而著稱，透過對模糊匹配和不匹配分配權重，提升了大型數據集的準確性。"
+    ],
+    "points": 127,
+    "commentCount": 16,
+    "retryCount": 0,
+    "time": 1720069449
+  },
+  {
+    "id": 40873001,
+    "title": "區域特定機器定價",
+    "originLink": "https://community.fly.io/t/fresh-produce-region-specific-machines-pricing/20690",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40873001",
+    "commentBody": "",
+    "originSummary": [
+      "“自7月1日起，將針對機器(包括額外的記憶體)引入區域特定定價，這是由於各地區基礎設施成本的差異所致。”",
+      "價格調整將在四個月內逐步實施，最終價格將於十一月確定；初始發票將顯示地區特定的項目，但不會有價格變動。",
+      "「已經實施了一個針對未被免費機器配額信用涵蓋的 Machines Shared CPU 1x 使用量的錯誤修正，並且正在重新發放信用。」"
+    ],
+    "commentSummary": [
+      "「Fly.io 的區域特定定價引發了討論，有些使用者認為相比於 Hetzner 等替代方案，特別是在高可用性方面，Fly.io 的價格較高。」",
+      "“Fly.io 為其定價辯護，強調由於某些地區(如巴西)的高運營成本，全球統一費率是不可持續的。”",
+      "「儘管取消了愛好者計劃並存在一些可靠性問題，許多用戶仍然欣賞 Fly.io 的功能，例如動態請求路由和無運維部署，他們認為這些功能足以證明較高的成本是合理的。」"
+    ],
+    "points": 94,
+    "commentCount": 109,
+    "retryCount": 0,
+    "time": 1720077454
+  }
+]

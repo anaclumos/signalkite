@@ -15,12 +15,197 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 03 Jul 2024 19:10:36 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 04 Jul 2024 19:13:29 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/nb.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Wed, 03 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[nb]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-04]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/04&#39;</h2>
+<h1>2024-07-04</h1>
+<h2><a href="https://www.arno.org/on-the-origins-of-ds-store">De oorsprong van DS_store (2006)</a></h2>
+<ul>
+<li>DS_Store-bestanden, die vaak worden gezien bij het overzetten van bestanden van Mac naar Windows, staan voor &#39;Desktop Services Store&#39; en zijn ontstaan uit een herschrijving van de Mac OS X Finder in 1999.</li>
+<li>De Finder was opgesplitst in een gebruikersinterface (Finder_FE) en kernfunctionaliteit (Finder_BE), met plannen om de backend een openbare API te maken genaamd Desktop Services, hoewel deze nooit volledig werd uitgebracht.</li>
+<li>Een bug veroorzaakt overmatige aanmaak van .DS_Store-bestanden, zelfs zonder aanpassingen door de gebruiker, waardoor ze een aanhoudend probleem vormen voor Mac-gebruikers.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870357">Reaksjoner</a></h3>
+<ul>
+<li>De discussie draait om de historische context en technische details van het DS_store-bestand en het &quot;fork&quot;-concept in Mac-bestandssystemen, dat zowel resource- als datacomponenten omvat.</li>
+<li>De resource fork in vroege MacOS sloeg verschillende applicatiegegevens op zoals pictogrammen, menu&#39;s en uitvoerbare code, wat uitdagingen met zich meebracht bij het overzetten van bestanden naar niet-Mac-systemen.</li>
+<li>De overgang van MacOS naar MacOS X omvatte betydelige endringer, inkludert fjerning av ressursgafler, noe som ble møtt med blandede reaksjoner fra brukersamfunnet.</li>
+</ul>
+<h2><a href="https://0x.tools/">Xcapture-BPF – zoals Linux top, maar met röntgenzicht</a></h2>
+<ul>
+<li>0x.tools is een set van open-source hulpmiddelen ontworpen voor het analyseren van applicatieprestaties op Linux, met de nadruk op eenvoud en minimale afhankelijkheden.</li>
+<li>Belangrijke kenmerken zijn onder meer het meten van individuele thread-activiteit en het bieden van eBPF-gebaseerde tools voor systeemniveau en gedetailleerde thread-activiteitsanalyse.</li>
+<li>Het is ontworpen voor veilig gebruik in productieomgevingen met zeer lage overhead en vereist geen OS-upgrades of zware monitoringframeworks.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869877">Reaksjoner</a></h3>
+<ul>
+<li>Xcapture-BPF is een nieuw hulpmiddel dat wordt vergeleken met het top-commando van Linux, maar met verbeterde mogelijkheden, vaak aangeduid als het hebben van &#39;röntgenzicht&#39; voor systeemdiagnostiek.</li>
+<li>Gebruikers hebben ervaringen gedeeld met het gebruik van eBPF (extended Berkeley Packet Filter) en BCC (BPF Compiler Collection) tools om complexe productieproblemen op te lossen, waarbij ze de effectiviteit benadrukken bij het oplossen van prestatieknelpunten en geheugenlekken.</li>
+<li>De discussie omvat praktische voorbeelden van probleemoplossing, zoals het oplossen van hoge iowait- en paginacacheproblemen in gecontaineriseerde omgevingen door directe IO in te schakelen en sectorformaten op loopback-apparaten af te stemmen.</li>
+</ul>
+<h2><a href="https://www.sequoiacap.com/article/ais-600b-question/">De $600 miljard vraag van AI</a></h2>
+<ul>
+<li>De AI-omzetkloof is vergroot van $200 miljard naar $600 miljard, wat vragen oproept over de groeiverwachtingen van de industrie.</li>
+<li>Belangrijke ontwikkelingen zijn onder meer de verlichting van het tekort aan GPU&#39;s, de toename van Nvidia&#39;s datacenterinkomsten en de aanzienlijke omzetgroei van OpenAI tot $3,4 miljard.</li>
+<li>Uitdagingen zoals gebrek aan prijszettingsmacht, investeringsrisico&#39;s en snelle waardevermindering van oudere chips blijven bestaan, maar lagere GPU-kosten kunnen startups en innovatie ten goede komen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869461">Reaksjoner</a></h3>
+<ul>
+<li>Het trainen van grote AI-modellen zoals GPT-4 vereist aanzienlijke computationele middelen, met schattingen die suggereren dat 8.000 H100 GPU&#39;s 90 dagen lang moeten draaien.</li>
+<li>Meta&#39;s aanzienlijke investeringen in GPU&#39;s zouden hen in staat kunnen stellen om jaarlijks meerdere GPT-4 schaalmodellen te trainen, wat mogelijk zou kunnen leiden tot commoditisering van kern-AI-modellen en invloed zou kunnen hebben op de winstmarges van AI-bedrijven.</li>
+<li>De werkelijke waarde van AI kan verschuiven naar eigendomsgegevens voor training, wat mogelijke juridische problemen kan veroorzaken en het belang van eigendomsrechten op gegevens benadrukt.</li>
+</ul>
+<h2><a href="https://salykova.github.io/matmul-cpu">Matrixvermenigvuldiging van NumPy verslaan in 150 regels C</a></h2>
+<ul>
+<li>Een hoogpresterende matrixvermenigvuldiging-implementatie in C, volgens het BLIS-ontwerp, presteert beter dan NumPy (OpenBLAS) op een AMD Ryzen 7700 en behaalt meer dan 1 TFLOPS.</li>
+<li>De code is eenvoudig, draagbaar en schaalbaar, met slechts 3 regels OpenMP-richtlijnen voor parallelisatie, en richt zich op Intel Core- en AMD Zen-CPU&#39;s met FMA3- en AVX-instructies.</li>
+<li>De implementatie toont aan dat efficiënte matrixvermenigvuldiging kan worden bereikt in C zonder diepgaande assembly- of Fortran-code, met prestaties die vergelijkbaar zijn met gevestigde BLAS-bibliotheken wanneer deze zijn geoptimaliseerd voor specifieke hardware.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870345">Reaksjoner</a></h3>
+<ul>
+<li>Een blogpost toont aan hoe je NumPy matrixvermenigvuldiging kunt overtreffen met behulp van 150 regels C-code, met de nadruk op prestatieverbeteringen.</li>
+<li>Belangrijke verbeteringen omvatten algoritmeselectie, minimalisering van kernelrondreizen, vectorisatie, cache-efficiëntie en hardware-specifieke optimalisaties.</li>
+<li>Discussies in de reacties gaan over de eerlijkheid van het vergelijken van C-code met NumPy, waarbij wordt gesuggereerd om vergelijkingen te maken met andere BLAS (Basic Linear Algebra Subprograms) bibliotheken en de nadruk wordt gelegd op de noodzaak van grondige benchmarking en hyperparameterafstemming voor specifieke CPU&#39;s.</li>
+</ul>
+<h2><a href="https://reactormag.com/the-joy-of-reading-books-you-dont-entirely-understand/">De vreugde van het lezen van boeken die je niet begrijpt</a></h2>
+<ul>
+<li>Het artikel benadrukt de vreugde en waarde van het lezen van boeken die niet volledig begrepen worden, en suggereert dat het oké is om een boek te waarderen zonder het volledig te begrijpen.</li>
+<li>De auteur, Molly Templeton, deelt persoonlijke ervaringen met complexe boeken zoals Neal Stephensons <em>Baroque Cycle</em> en recente titels zoals Alaya Dawn Johnsons <em>The Library of Broken Worlds</em> en Molly McGhees <em>Jonathan Abernathy You Are Kind</em>.</li>
+<li>Templeton stelt dat het omarmen van onzekerheid bij het lezen bevrijdend kan zijn en de leeservaring kan verrijken, waardoor lezers worden aangemoedigd om uitdagende verhalen te verkennen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870280">Reaksjoner</a></h3>
+<ul>
+<li>De post bespreekt de waarde van het lezen van boeken die uitdagen en diep nadenken uitlokken, met een verwijzing naar Kafka&#39;s overtuiging dat invloedrijke boeken zouden moeten &#39;bijten en steken&#39; in plaats van simpelweg te vermaken.</li>
+<li>Het benadrukt verschillende perspectieven op het lezen van moeilijke of complexe boeken, waarbij sommige lezers pleiten voor onderdompeling zonder aantekeningen te maken om het begrip en het plezier te vergroten.</li>
+<li>Het gesprek bevat persoonlijke anekdotes en aanbevelingen voor boeken die een blijvende indruk hebben achtergelaten, waarbij de vreugde van het ontdekken van nieuwe inzichten door herlezen en het omgaan met uitdagend materiaal wordt benadrukt.</li>
+</ul>
+<h2><a href="https://www.securityweek.com/twilio-confirms-data-breach-after-hackers-leak-33m-authy-user-phone-numbers/">Twilio bevestigt datalek nadat hackers 33 miljoen Authy-gebruikers telefoonnummers hebben gelekt</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40874341">Reaksjoner</a></h3>
+<ul>
+<li>Twilio heeft een datalek bevestigd waarbij de telefoonnummers van 33 miljoen Authy-gebruikers zijn blootgesteld, wat heeft geleid tot een toename van spamoproepen en zorgen over de betrouwbaarheid van traditionele telefoonnetwerken.</li>
+<li>Gebruikers overwegen alternatieve communicatiemethoden zoals FaceTime en Zoom, terwijl ze ook de cruciale rol van telefoongesprekken in essentiële diensten zoals gezondheidszorg en sociale diensten benadrukken.</li>
+<li>De inbreuk benadrukt de noodzaak van sterkere gegevensbescherming, betere handhaving van anti-spam maatregelen, en aanbevelingen voor alternatieve twee-factor authenticatie (2FA) apps zoals Aegis, Bitwarden, en Yubikey.</li>
+</ul>
+<h2><a href="https://www.kitze.io/posts/saddest-just-ship-it-story-ever">Het verdrietigste &#39;Just Ship It&#39;-verhaal ooit (2020)</a></h2>
+<ul>
+<li>De auteur deelt een persoonlijke reis van het ontwikkelen van een app, die begon in 2018, maar de release werd uitgesteld door voortdurende toevoegingen van functies en het leren van nieuwe technologieën zoals React Native.</li>
+<li>Ondanks dat hij het project na twee jaar had opgegeven, ontdekte de auteur later een soortgelijke app die succesvol was ondanks dat deze niet perfect was, wat leidde tot gemengde gevoelens.</li>
+<li>In 2022 bracht de auteur eindelijk een productiviteitsapp uit die verschillende functies combineert, zoals Todos, Gewoontes, Planner en Doelen, en nodigt lezers uit om zich aan te sluiten bij de gemeenschap op Benji - The Life OS.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872182">Reaksjoner</a></h3>
+<ul>
+<li>De discussie draait om de &#39;gewoon verzenden&#39; mentaliteit in softwareontwikkeling, waarbij wordt benadrukt dat het haasten om deadlines te halen de kwaliteit van de software kan compromitteren en kan leiden tot burn-out bij ontwikkelaars.</li>
+<li>Er is een debat over de vraag of ontwikkelaars de winstgevendheid van het bedrijf moeten prioriteren of zich moeten richten op het creëren van hoogwaardige software, waarbij sommigen beweren dat ontwikkelaars niet adequaat worden gecompenseerd voor buitengewone inspanningen, tenzij ze een aanzienlijk belang in het bedrijf hebben.</li>
+<li>Het gesprek benadrukt verschillende perspectieven op werktevredenheid, compensatie en de balans tussen professionele integriteit en de eisen van het bedrijf, wat bredere zorgen in de industrie weerspiegelt over werk-privébalans en erkenning.</li>
+</ul>
+<h2><a href="https://corecursive.com/building-powershell-with-jeffrey-snover/">Jeffrey Snover en de totstandkoming van PowerShell</a></h2>
+<ul>
+<li>Jeffrey Snover, de architect achter PowerShell, deelt zijn reis van het creëren van een opdrachttool die het beheer van Windows-systemen revolutioneerde, aanvankelijk geconfronteerd met weerstand van een bedrijf dat grafische interfaces verkoos.</li>
+<li>Belangrijke uitdagingen waren onder andere het navigeren door bedrijfsherstructureringen, culturele tegenstand en het opbouwen van een toegewijd team, met aanzienlijke invloed van Bill Gates&#39; inzet voor .NET.</li>
+<li>De ontwikkeling van PowerShell, geleid door het Monad Manifesto, transformeerde het beheer van Windows Server en maakte de overgang van Microsoft naar de cloud mogelijk, wat de impact van volharding en visie in het stimuleren van technologische verandering aantoont.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40874013">Reaksjoner</a></h3>
+<ul>
+<li>Jeffrey Snover, de maker van PowerShell, kreeg te maken met aanzienlijke tegenstand en werd gedegradeerd bij Microsoft voor het nastreven van de ontwikkeling ervan.</li>
+<li>PowerShell werd ontworpen om serverbeheer op Windows te ondersteunen door verschillende API&#39;s aan te roepen, maar het kreeg te maken met interne conflicten en sommige functies gingen verloren in nieuwere versies.</li>
+<li>Ondanks zijn objectgeoriënteerde aanpak en .NET-integratie, wordt PowerShell gezien als omslachtig en uitdagend in vergelijking met andere scripttalen zoals Python, wat de adoptie buiten het Windows-ecosysteem beperkt.</li>
+</ul>
+<h2><a href="https://www.firezone.dev/blog/sans-io">Sans-IO: Het geheim van effectieve Rust voor netwerkdiensten</a></h2>
+<ul>
+<li>Firezone gebruikt Rust en een sans-IO ontwerp voor zijn kernconnectiviteitsbibliotheek, connlib, om netwerkverbindingen en WireGuard-tunnels te beheren, wat snelle tests, diepe aanpassing en hoge zekerheid biedt.</li>
+<li>Het sans-IO-ontwerp scheidt beleid van implementatie met behulp van abstracties zoals <code>Transmit</code>, waardoor pure toestandsmachines netwerkprotocollen kunnen afhandelen zonder directe IO, waardoor de code flexibeler en gemakkelijker te testen is.</li>
+<li>Hoewel sans-IO aangepaste evenementlussen en toestandsmachines vereist, biedt het aanzienlijke voordelen zoals eenvoudige compositie, flexibele API&#39;s en verbeterde foutafhandeling, ondanks dat het nog niet breed is geadopteerd in de Rust-gemeenschap.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872020">Reaksjoner</a></h3>
+<ul>
+<li>De post bespreekt het concept van Sans-IO in Rust, dat input/output (IO) operaties scheidt van de hoofdlogica, waardoor code beter testbaar en samenstelbaar wordt.</li>
+<li>Deze aanpak is bijzonder voordelig voor pakketgerichte gebruiksscenario&#39;s zoals QUIC, WebRTC en IP, waar het beheer van de status complex kan worden.</li>
+<li>De discussie benadrukt dat hoewel deze methode niet nieuw is, het aanzienlijke voordelen biedt in Rust door het testen te vereenvoudigen en de valkuilen van traditionele async/await-patronen te vermijden.</li>
+</ul>
+<h2><a href="https://lazamar.github.io/haskell-data-compression-with-huffman-codes/">Een hulpprogramma voor gegevenscompressie bouwen in Haskell met behulp van Huffman-codes</a></h2>
+<ul>
+<li>Het bericht schetst de creatie van een gegevenscompressieprogramma in Haskell met behulp van Huffman-codering, dat willekeurige binaire bestanden verwerkt met constant geheugen voor codering en decodering.</li>
+<li>Het legt Huffman-codes, prefix-vrije codes en het proces van het construeren van een binaire boom voor efficiënte codering uit, gevolgd door de implementatie van coderings- en decoderingsfuncties.</li>
+<li>De post dekker også håndtering av binære filer, serialisering/deserialisering av data, og potensielle forbedringer som multithreading og raskere kodeopprettelse, og viser et praktisk og effektivt datakomprimeringsverktøy i Haskell.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872332">Reaksjoner</a></h3>
+<ul>
+<li>Een discussie over het bouwen van een gegevenscompressieprogramma in Haskell met behulp van Huffman-codes, waarbij de efficiëntie van array-gebaseerde, in-place algoritmen voor grote datasets wordt benadrukt.</li>
+<li>Verwijzingen naar belangrijke werken, waaronder Moffat en Katajainen&#39;s paper uit 1995 en de JPEG-standaard ITU T.81 (1992), die array-gebaseerde Huffman-codering beschrijven.</li>
+<li>Inzichten in de prestaties van Haskell, met vergelijkingen met andere talen zoals C, C++ en Rust, en de afwegingen tussen eenvoud van implementatie en codehelderheid versus ruwe prestaties.</li>
+</ul>
+<h2><a href="https://elevenlabs.io/voice-isolator">Voice Isolator: Verwijder achtergrondgeluid voor film-, podcast- en interviewproductie</a></h2>
+<ul>
+<li>De AI-stemgenerator ondersteunt nu 29 talen, wat de toegankelijkheid en bruikbaarheid voor een wereldwijd publiek vergroot.</li>
+<li>Het biedt duizenden stemopties, waardoor gebruikers een breed scala aan keuzes hebben voor verschillende toepassingen en voorkeuren.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869421">Reaksjoner</a></h3>
+<ul>
+<li>De Voice Isolator-tool van Elevenlabs is bedoeld om achtergrondgeluid te verwijderen voor film-, podcast- en interviewproductie, maar het prijsmodel gebaseerd op &#39;tekens&#39; verwart veel gebruikers.</li>
+<li>Gebruikers bespreken verschillende alternatieven voor spraak-naar-tekst (STT) en tekst-naar-spraak (TTS) oplossingen, waaronder open-source opties zoals Whisper en commerciële diensten zoals Deepgram Nova 2.</li>
+<li>Er is een opmerkelijke interesse in lokale en open-source oplossingen voor audioreiniging en transcriptie, aangezien velen de huidige commerciële aanbiedingen ofwel te duur of niet effectief genoeg vinden.</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40872102">Vision Pro-eigenaren, gebruiken jullie het nog steeds?</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40872102">Reaksjoner</a></h3>
+<ul>
+<li>Vision Pro-gebruikers hebben gemengde ervaringen, waarbij sommigen de media- en werkcapaciteiten prijzen, terwijl anderen de hoge kosten en beperkte functionaliteit bekritiseren.</li>
+<li>Belangrijke kenmerken die worden gewaardeerd, zijn onder andere de schermgrootte, passthrough, gezichtsfuncties en verbeterde ondersteuning voor Bluetooth-randapparatuur, maar problemen zoals visueel ongemak en beperkte software-integratie worden opgemerkt.</li>
+<li>De hoge prijs van het apparaat ($3500) en de beperkte release (450k eenheden) hebben geleid tot een kleine markt, waarbij veel gebruikers wachten op toekomstige revisies of kiezen voor goedkopere alternatieven zoals de Quest 3.</li>
+</ul>
+<h2><a href="https://boyuan.space/diffusion-forcing/">Diffusie Dwang: Volgende-Teken Voorspelling Ontmoet Volledige-Volgorde Diffusie</a></h2>
+<ul>
+<li>Diffusion Forcing is een nieuw trainingsparadigma dat de voorspelling van de volgende token en volledige sequentie-diffusiemodellen combineert, en biedt flexibele generatie en sequentieniveau-geleiding.</li>
+<li>Het bereikt aanzienlijke prestatieverbeteringen in toepassingen zoals videovoorspelling, het stabiliseren van oneindige uitrol, diffusieplanning en imitatie leren op lange termijn.</li>
+<li>Deze methode maakt stabiele en consistente video-voorspellingen mogelijk, langere uitrols zonder schuifvensters, en robuuste verwerking van niet-Markoviaanse taken met langetermijngeheugenvereisten.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40871783">Reaksjoner</a></h3>
+<ul>
+<li>Het artikel combineert sequentiemaskering, essentieel voor grote taalmodellen (LLM&#39;s), met diffusiemodellen door een &#39;onzekerheidsniveau&#39; per pixel bij te houden, behandeld als &#39;ruis&#39; voor het diffusiemodel.</li>
+<li>Deze methode is nuttig voor taken zoals het oplossen van doolhoven en het besturen van een robotarm, omdat het mogelijk maakt om delen van een afbeelding eerder te verstevigen.</li>
+<li>De aanpak modelleert onzekerheid in planning en zoeken, waardoor de mogelijkheid van agenten om te reageren en te generaliseren wordt verbeterd, maar het artikel mist implementatiedetails en toegang tot de codebase.</li>
+</ul>
+<h2><a href="https://blog.nelhage.com/post/fuzzy-dedup/">Het vinden van bijna-duplicaten met Jaccard-gelijkenis en MinHash</a></h2>
+<ul>
+<li>Jaccard-gelijkenis en MinHash worden gebruikt om ongeveer vergelijkbare documenten te identificeren in grote tekstcollecties, zoals die gebruikt worden bij de voorbereiding van het GPT-3-dataset.</li>
+<li>MinHash benadert Jaccard-gelijkenis door documentkenmerken te hashen en de minimale hashwaarde als handtekening te gebruiken, waardoor efficiënte vergelijking van grote corpora mogelijk is.</li>
+<li>Deze methode is schaalbaar en kan worden gecombineerd met andere technieken zoals HyperLogLog, waardoor het geschikt is voor grootschalige tekstverwerkingsapplicaties.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872438">Reaksjoner</a></h3>
+<ul>
+<li>Het bericht bespreekt het gebruik van Jaccard-gelijkenis en MinHash voor het vinden van bijna-duplicaat gegevens, waarbij hun toepassing in verschillende gebieden zoals medische beeldsegmentatie en database-deduplicatie wordt benadrukt.</li>
+<li>Er worden verschillende tools en bibliotheken genoemd voor deduplicatietaken, waaronder datasketch, rensa, Splink en gaoya, met inzichten in hun prestaties en gebruiksscenario&#39;s.</li>
+<li>Het Fellegi Sunter-model staat bekend om zijn effectiviteit bij het dedupliceren van mensen door gewichten toe te kennen aan vage overeenkomsten en verschillen, waardoor de nauwkeurigheid in grote datasets wordt verbeterd.</li>
+</ul>
+<h2><a href="https://community.fly.io/t/fresh-produce-region-specific-machines-pricing/20690">Regiospecifieke machineprijzen</a></h2>
+<ul>
+<li>Vanaf 1 juli wordt regio-specifieke prijsstelling voor Machines, inclusief extra RAM, ingevoerd vanwege de variërende infrastructuurkosten per regio.</li>
+<li>De prijsjustering zal in fasen worden ingevoerd over vier maanden, met definitieve prijzen vastgesteld in november; de eerste facturen zullen regio-specifieke posten tonen zonder prijswijzigingen.</li>
+<li>Er is een bugfix geïmplementeerd voor het gebruik van Machines Shared CPU 1x dat niet gedekt wordt door de Free Machines Allowance-krediet, en kredieten worden opnieuw uitgegeven.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40873001">Reaksjoner</a></h3>
+<ul>
+<li>De regiogebonden prijsfastsettelsen til Fly.io har utløst diskusjoner, med noen brukere som finner det dyrt sammenlignet med alternativer som Hetzner, spesielt for høy tilgjengelighet.</li>
+<li>Fly.io verdedigt zijn prijsstelling door te wijzen op de onhoudbaarheid van vlakke wereldwijde tarieven vanwege de hoge operationele kosten in bepaalde regio&#39;s, zoals Brazilië.</li>
+<li>Ondanks fjerningen av hobbyplanen og noen pålitelighetsbekymringer, setter mange brukere pris på Fly.io&#39;s funksjoner som dynamisk forespørselsruting og &quot;ops-less&quot; distribusjoner, som de mener rettferdiggjør de høyere kostnadene.</li>
+</ul>
+<head>
+  <meta property="og:title" content="De oorsprong van DS_store (2006)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=De%20oorsprong%20van%20DS_store%20(2006)&subheading=torsdag%204.%20juli%202024%3A%20Sammendrag%20av%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/nb/2024/07/04</link>
+            <guid isPermaLink="false">2024-07-04T00:00:00.000Z</guid>
+            <pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-03]]></title>
             <description
@@ -1692,182 +1877,6 @@
             <link>https://hn.cho.sh/nb/2024/06/25</link>
             <guid isPermaLink="false">2024-06-25T00:00:00.000Z</guid>
             <pubDate>Tue, 25 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-24]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/24&#39;</h2>
-<h1>2024-06-24</h1>
-<h2><a href="https://danilafe.com/blog/blog_microfeatures/">Microfeatures waar ik van hou in blogs en persoonlijke websites</a></h2>
-<ul>
-<li>De post belicht verschillende microfuncties die de gebruikerservaring op blogs en persoonlijke websites kunnen verbeteren, geïnspireerd door Hillel Wayne&#39;s artikel over programmeertalen.</li>
-<li>Belangrijke kenmerken zijn onder andere kanttekeningen, inhoudsopgaven, koppelbare koppen, seriegroepering, dialogen, codeblokken met oorsprong en klikbare links, markeringen voor externe links, linkvoorbeelden en RSS-feeds.</li>
-<li>Deze functies, hoewel niet essentieel, verbeteren de navigatie, betrokkenheid en toegankelijkheid, waardoor de leeservaring aangenamer en efficiënter wordt.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40774277">Reaksjoner</a></h3>
-<ul>
-<li>De discussie draait om microfeatures in blogs en persoonlijke websites, waarbij zowel positieve als negatieve aspecten worden belicht.</li>
-<li>Belangrijke punten van geschil zijn onder andere het gebruik van voortgangsbalken, linkdecoraties en voorbeeldpop-ups, waarbij sommige gebruikers deze als storend en onnodig beschouwen.</li>
-<li>Het gesprek gaat ook over het krimpen van native scrollbars en de mogelijke voordelen van alternatieve navigatiehulpmiddelen zoals inhoudsopgaven en altijd zichtbare indexen.</li>
-</ul>
-<h2><a href="https://www.theguardian.com/technology/article/2024/jun/24/apple-breach-eu-competition-rules-digital-markets-act">Apple schendt EU-mededingingsregels</a></h2>
-<ul>
-<li>De Europese Commissie heeft vastgesteld dat Apple de nieuwe EU-wetten heeft overtreden die gericht zijn op het beschermen van kleinere concurrenten en het mogelijk maken voor consumenten om goedkopere apps te vinden.</li>
-<li>Apple heeft 12 maanden om aan de regelgeving te voldoen of riskeert boetes tot 10% van zijn wereldwijde inkomsten, na een onderzoek dat in maart is gestart.</li>
-<li>Dit markeert het derde onderzoek naar niet-naleving van Apple sinds de Digital Markets Act (DMA) werd ingevoerd, met de nadruk op Apple&#39;s vergoedingen en praktijken die ontwikkelaars beperken om consumenten naar alternatieve aankoopopties te leiden.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773883">Reaksjoner</a></h3>
-<ul>
-<li>Apple is in overtreding bevonden van de EU-mededingingsregels, wat oproepen heeft veroorzaakt voor soortgelijke acties in de VS.</li>
-<li>Critici beweren dat Apples controle over app-publicatie en ontwikkelaarskosten de concurrentie verstikt, met bijzondere bezorgdheid over anti-stuurregels die ontwikkelaars ervan weerhouden gebruikers te informeren over goedkopere betalingsopties buiten de App Store.</li>
-<li>Apple wacht op een uitspraak van het EU-Hof over de grondwettelijkheid van bepalingen die gratis iOS-API&#39;s voor ontwikkelaars vereisen, te midden van beweringen dat de naleving van de EU-wetten oppervlakkig is.</li>
-</ul>
-<h2><a href="https://www.voanews.com/a/us-prosecutors-recommend-justice-department-criminally-charge-boeing-as-deadline-looms/7667194.html">Amerikaanse aanklagers adviseren het Ministerie van Justitie om Boeing strafrechtelijk te vervolgen</a></h2>
-<ul>
-<li>Amerikaanse påtalemyndigheter foreslår strafferettslige anklager mot Boeing for angivelig å ha brutt en avtale fra 2021 angående to dødelige 737 MAX-ulykker.</li>
-<li>Het ministerie van Justitie heeft tot 7 juli de tijd om te beslissen over vervolging, waarbij Boeing de schendingen betwist en de besprekingen voortduren.</li>
-<li>Strafrechtelijke aanklachten kunnen de crisis van Boeing verergeren, wat invloed kan hebben op de contracten met de Amerikaanse overheid, terwijl de families van de slachtoffers pleiten voor een boete van $25 miljard en vervolging.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773151">Reaksjoner</a></h3>
-<ul>
-<li>Amerikaanse aanklagers bevelen strafrechtelijke aanklachten tegen Boeing aan, waarbij sommigen drastische maatregelen voorstellen zoals het onteigenen van 51% van het bedrijf, het ontslaan van topmanagers en het opleggen van boetes.</li>
-<li>Critici beweren dat aandeelhouders de macht missen om goed toezicht af te dwingen, en institutionele beleggers falen vaak in het effectief monitoren van het gedrag van bedrijven.</li>
-<li>De Boeing-zaak benadrukt bredere systemiske problemen in corporate governance en regulerende toezicht.</li>
-</ul>
-<h2><a href="https://github.com/jart/cosmopolitan/releases/tag/3.5.0">Cosmopolitan v3.5.0</a></h2>
-<ul>
-<li>Cosmopolitan Libc v3.5.0 is uitgebracht, waardoor C een build-once run-anywhere taal wordt zonder dat een interpreter of virtuele machine nodig is.</li>
-<li>Belangrijke verbeteringen omvatten een implementatie van een geheugenkaart van hogere kwaliteit, een herschrijving van de geheugenbeheerder en een bijgewerkte Lua naar 5.4.6.</li>
-<li>Nieuwe C++ STL-functies geïntroduceerd, zoals ctl::string small-string optimalisatie, ctl::set, ctl::map en ctl::unique_ptr, samen met verschillende bugfixes en optimalisaties.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773139">Reaksjoner</a></h3>
-<ul>
-<li>Cosmopolitan v3.5.0 is uitgebracht, wat aanzienlijke interesse wekt vanwege zijn vermogen om zeer draagbare uitvoerbare bestanden te maken die zonder aanpassing op meerdere besturingssystemen en architecturen draaien.</li>
-<li>De nieuwe versie kan skryte av forbedret ytelse, med påstander om at Cosmopolitan Libc er dobbelt så rask som Musl Libc for mange kommandolinjegrensesnitt (CLI) programmer og tilbyr robust trådstøtte, noe som gjør den egnet for høyytelses AI-programvare.</li>
-<li>De release omvat ondersteuning voor WebAssembly (WASM) en functies zoals de &quot;Actually Portable Executable&quot; (APE) header, die de compatibiliteit tussen verschillende platforms verbetert, inclusief ondersteuning voor Android.</li>
-</ul>
-<h2><a href="https://www.ashleygjovik.com/3250scott.html">Apples geheime siliciumfabrikk ved siden av tusenvis av hjem</a></h2>
-<ul>
-<li>In 2015 begon Apple met geheime halfgeleiderfabricage in een faciliteit in Santa Clara, Californië, waarbij giftige gassen werden uitgestoten die de nabijgelegen bewoners beïnvloedden.</li>
-<li>Ashley M. Gjovik, een inwoner in 2020, leed aan ernstige gezondheidsproblemen en ontdekte de uitlaat van de fabriek in haar huis en lichaam, wat leidde tot meerdere klachten en onderzoeken.</li>
-<li>Apple kreeg te maken met overtredingen vanwege gevaarlijk afval en veiligheidsproblemen, met lopende inspecties en onderzoeken naar de openbare overlast en ultragevaarlijke activiteiten die aanzienlijke schade toebrengen aan Gjovik en het milieu.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773136">Reaksjoner</a></h3>
-<h2><a href="https://www.linqpad.net/">LINQPad – De speeltuin voor .NET-programmeurs</a></h2>
-<ul>
-<li>LINQPad is een veelzijdig hulpmiddel voor .NET-programmeurs om direct C#/F#/VB-fragmenten te testen, databases te raadplegen en scripts te automatiseren met de voordelen van REPL (Read-Eval-Print Loop).</li>
-<li>Het ondersteunt C# 12 en .NET 8, waardoor interactieve databasequery&#39;s in LINQ of SQL mogelijk zijn, en bevat drivers voor meerdere databases zoals SQL Server, Oracle en MySQL.</li>
-<li>LINQPad biedt geavanceerde functies zoals AI-autocompletion, geïntegreerde debugging en rijke outputformattering, waardoor het een krachtig hulpmiddel is voor snel coderen en dynamische ontwikkeling.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40770171">Reaksjoner</a></h3>
-<ul>
-<li>LINQPad wordt zeer gewaardeerd om zijn gebruiksvriendelijkheid, vooral onder .NET-ontwikkelaars, voor het scripten, debuggen en uitvoeren van LINQ-query&#39;s.</li>
-<li>Gebruikers waarderen de functies zoals SQL Server-databaseverbindingen, maar uiten frustratie over de exclusiviteit voor Windows en de kosten.</li>
-<li>Alternatieven som nevnes inkluderer winmerge, NetPad, dotnetfiddle.net og RoslynPad, med noen brukere som ønsker plattformuavhengig støtte og integrasjon i Visual Studio.</li>
-</ul>
-<h2><a href="https://apnews.com/article/car-dealerships-cyberattack-cdk-outage-3f7c81f6be0e212172b33cdc9f49feba">Autodealere går tilbake til penn og papir etter cyberangrep på programvareleverandør</a></h2>
-<ul>
-<li>Autodealere i Nord-Amerika opplevde betydelige forstyrrelser på grunn av cyberangrep på CDK Global, en viktig programvareleverandør for bilforhandlere.</li>
-<li>De aanvallen op 19 juni 2024 veroorzaakten aanhoudende storingen, wat leidde tot vertragingen en handmatige verwerking bij getroffen dealers.</li>
-<li>Belangrijke autobedrijven zoals Stellantis, Ford en BMW bevestigden de impact, maar blijven opereren met alternatieve methoden, terwijl CDK Global werkt aan het herstellen van zijn systemen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40776951">Reaksjoner</a></h3>
-<ul>
-<li>Autodealers gaan terug naar het gebruik van pennen en papier na cyberaanvallen op hun softwareleverancier, CDK Global, die hun digitale operaties verstoren.</li>
-<li>De cyberaanvallen hebben de onderdelen- en servicedepartementen ernstiger getroffen dan de verkoop van nieuwe voertuigen, aangezien hun inventarisinformatie is opgeslagen in het gecompromitteerde CDK-systeem.</li>
-<li>Het incident benadrukt de kwetsbaarheid van industrieën die sterk afhankelijk zijn van een enkele softwareleverancier, en onderstreept de noodzaak van betere cyberbeveiligingsmaatregelen en mogelijk meer gediversifieerde softwareoplossingen.</li>
-</ul>
-<h2><a href="https://www.dropbox.com/scl/fo/312oqvretg7yyhfx0ohx4/AGZduVXs0_1geqIyi0NA9nE?e=1&preview=2024_04_30_RCRA_Insp_Report_REPORT_Apple_3250_Scott_Redacted.pdf&rlkey=3aa2tw15ek3trqlbdh7pw9erh&st=4b364mkx&dl=0">Handhaving en naleving van de Amerikaanse EPA bij Apple Fabrication</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40772224">Reaksjoner</a></h3>
-<ul>
-<li>De Amerikaanse EPA onderzoekt Apple voor mogelijke milieuovertredingen bij een faciliteit in Santa Clara, met de nadruk op onjuiste omgang en vrijgave van gevaarlijk afval.</li>
-<li>Voormalig Apple-medewerker Ashley Gjovik heeft zorgen geuit over de persoonlijke gezondheidsimpact van de uitstoot van de faciliteit, hoewel haar beweringen met scepsis worden ontvangen.</li>
-<li>De zaak benadrukt de complexiteit van industriële regelgeving en bedrijfsverantwoordelijkheid, en trekt vergelijkingen met andere industriële incidenten en zorgen over de handhaving van regelgeving.</li>
-</ul>
-<h2><a href="https://www.bbc.com/future/article/20240621-how-traffic-noise-pollution-harms-childrens-health-and-development">Verkeerslawaai schaadt de hersenen van kinderen</a></h2>
-<ul>
-<li>Kinderen zijn zeer kwetsbaar voor verkeerslawaai, wat hun gezondheid en leervermogen negatief beïnvloedt.</li>
-<li>Studies, including a 1975 study by Arline Bronzaft and a 2022 study in Barcelona, show that noise pollution can impair reading performance, working memory, and attention span in children.</li>
-<li>Steden zoals Buenos Aires en Barcelona nemen maatregelen zoals het verbeteren van groene ruimtes en het verlagen van snelheidslimieten om geluidsoverlast tegen te gaan, met initiatieven zoals de &quot;superblocks&quot; van Barcelona die voetgangers en groene ruimtes boven auto&#39;s stellen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40769880">Reaksjoner</a></h3>
-<ul>
-<li>Een studie onthult dat verkeerslawaai bij scholen verband houdt met langzamere ontwikkeling van het werkgeheugen en de aandacht van kinderen.</li>
-<li>Potentiële oplossingen omvatten het verminderen van het verkeer rond scholen en het geluidsdicht maken van klaslokalen om de impact van omgevingsgeluid te verminderen.</li>
-<li>De discussie behandelt ook bredere kwesties zoals autodependentie, geluidsoverlast en de voordelen van stillere, wandelbare stedelijke omgevingen.</li>
-</ul>
-<h2><a href="https://www.tomshardware.com/software/windows/microsoft-account-to-local-account-conversion-guide-erased-from-official-windows-11-guide-instructions-redacted-earlier-this-week">Microsoft-account naar lokale account-conversiegids verwijderd uit Windows 11-gids</a></h2>
-<ul>
-<li>Microsoft heeft de handleiding voor het omzetten van een Microsoft-account naar een lokaal account van de Windows 11-ondersteuningspagina verwijderd, met ingang van 17 juni 2024.</li>
-<li>Gebruikers kunnen nog steeds handmatig overschakelen naar een lokaal account via Instellingen &gt; Accounts &gt; Uw info en de optie &quot;Inloggen met een lokaal account in plaats daarvan&quot; selecteren.</li>
-<li>Deze actie benadrukt Microsofts poging om gebruikers Microsoft-accounts te laten adopteren, waarbij voordelen zoals service-integratie en verbeterde beveiliging worden benadrukt, in lijn met strategieën van Google en Apple.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40775301">Reaksjoner</a></h3>
-<ul>
-<li>Microsoft heeft de handleiding voor het omzetten van een Microsoft-account naar een lokaal account uit de Windows 11-documentatie verwijderd.</li>
-<li>Gebruikers bespreken alternatieven zoals het gebruik van de LTSC (Long-Term Servicing Channel) versie van Windows 11, wat typisch een bedrijfsproduct is maar kan worden geactiveerd via GitHub-scripts.</li>
-<li>Het gesprek benadrukt het voortdurende debat over de ethiek en legaliteit van het gebruik van activatiescripts en de afwegingen tussen Windows en Linux voor gamen en algemeen computergebruik.</li>
-</ul>
-<h2><a href="https://www.redhat.com/en/topics/linux/centos-linux-eol">CentOS Linux 7 zal zondag het einde van zijn levensduur bereiken</a></h2>
-<ul>
-<li>CentOS Linux 7 bereikt End of Life (EOL) op 30 juni 2024, wat betekent dat het na deze datum geen updates of beveiligingspatches meer zal ontvangen.</li>
-<li>Red Hat biedt verschillende migratietools en -diensten, zoals Convert2RHEL, Red Hat Insights en Red Hat Consulting, om gebruikers te helpen bij de overgang naar Red Hat Enterprise Linux (RHEL).</li>
-<li>RHEL biedt een vergelijkbare gebruikerservaring als CentOS, met extra functies, ondersteuning en beveiliging, en is compatibel met grote cloudproviders en hybride cloudimplementaties.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773749">Reaksjoner</a></h3>
-<ul>
-<li>CentOS Linux 7 zal zondag End of Life (EOL) bereiken, wat gebruikers ertoe aanzet om naar alternatieven te zoeken.</li>
-<li>SUSE biedt een oplossing door de update-repositories van CentOS 7 om te schakelen naar die van SUSE, waardoor verstorende migraties worden vermeden, terwijl Oracle Linux een andere optie is, hoewel sommige gebruikers er voorzichtig mee zijn.</li>
-<li>Veel gebruikers stappen over op alternatieven zoals Rocky Linux, AlmaLinux of Debian, waarbij sommigen uitdagingen ondervinden bij het upgraden en overwegen containers te gebruiken om OS-wijzigingen te beperken.</li>
-</ul>
-<h2><a href="https://arxiv.org/abs/2403.06707">Afleiden van afhankelijk getypte OOP vanuit eerste principes</a></h2>
-<ul>
-<li>Het artikel behandelt het expressieprobleem, dat de uitdaging omvat om typen uit te breiden met nieuwe producenten en consumenten in programmeren.</li>
-<li>Het onderzoekt afhankelijk getypte objectgeoriënteerde programmering door het af te leiden van eerste principes met behulp van dualiteit, en biedt een afhankelijk getypte calculus met duale taalfragmenten.</li>
-<li>Deze uitgebreide versie bevat extra bijlagen en zal deel uitmaken van het PACMPL-nummer voor OOPSLA 2024, wat het belang en het voortdurende onderzoek in dit gebied aantoont.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40769867">Reaksjoner</a></h3>
-<ul>
-<li>Het artikel &quot;Deriving Dependently-Typed OOP from First Principles&quot; heeft aanzienlijke discussie op gang gebracht en heeft 141 punten ontvangen op arxiv.org.</li>
-<li>Belangrijke discussies omvatten de essentie van Objectgeoriënteerd Programmeren (OOP) versus Functioneel Programmeren (FP), waarbij sommige gebruikers opmerken dat de voorbeelden in het artikel meer functioneel dan objectgeoriënteerd lijken te zijn.</li>
-<li>Verschillende bronnen en referenties werden gedeeld, waaronder William Cook&#39;s paper over data-abstractie, Noel Welsh&#39;s lezing over FP en OO, en het boek &quot;A Little Java, A Few Patterns&quot; voor het begrijpen van de verbindingen tussen functioneel en OO-programmeren.</li>
-</ul>
-<h2><a href="https://frenck.dev/diy-smart-doorbell-for-just-2-dollar/">Converteer een bestaande bedrade deurbel naar een slimme deurbel met ESPHome</a></h2>
-<ul>
-<li>Het artikel legt uit hoe je een traditionele deurbel kunt ombouwen tot een slimme, WiFi-geschikte deurbel voor ongeveer $2, zonder dat je hoeft te solderen of elektronica-expertise nodig hebt.</li>
-<li>Het project maakt gebruik van een ESP-01S-chip en een relaismodule, aangedreven door een oude telefoonoplader, en integreert met Home Assistant en ESPHome voor verschillende automatiseringen.</li>
-<li>Er worden gedetailleerde stappen gegeven voor het aanpassen van de ESP-01S-chip, het flashen van firmware, bedrading en integratie met Home Assistant, wat de eenvoud en betaalbaarheid van doe-het-zelf slimme thuisprojecten aantoont.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40774270">Reaksjoner</a></h3>
-<ul>
-<li>Het artikel bespreekt het omzetten van een bedrade deurbel naar een slimme deurbel met behulp van ESPHome, waarbij zowel mogelijke faalpunten als voordelen zoals meldingen op afstand en integratie van huisautomatisering worden belicht.</li>
-<li>Voorbeelden zijn het gebruik van een Amcrest AD110-deurbel voor alleen lokale videostreaming en aangepaste meldingen, en suggesties voor het gebruik van Zigbee- of Z-Wave-knoppen voor eenvoud.</li>
-<li>Het hoofddoel is om het gemak en het plezier van doe-het-zelf slimme thuisprojecten met ESPHome en Home Assistant te demonstreren.</li>
-</ul>
-<h2><a href="https://mastodon.social/@ashleygjovik/112668309100333232/?">EPA publiceert rapport over Apple&#39;s schendingen van gevaarlijk afval in stedelijke siliciumfabriek</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40773957">Reaksjoner</a></h3>
-<ul>
-<li>Het EPA-rapport benadrukt de overtredingen van Apple met betrekking tot gevaarlijk afval, met name het illegaal lozen van gevaarlijke chemicaliën bij een stedelijke siliciumfabriek.</li>
-<li>Apple slaagde er niet in om alle afval dat door koolstoffilters ging te registreren, waardoor het onmogelijk was om de &#39;doorbraaktijd&#39; van de filters te beoordelen, wat mogelijk heeft geleid tot milieulekken sinds december 2020.</li>
-<li>De discussie over dit onderwerp is verplaatst naar een nieuwe thread op Hacker News, wat wijst op aanzienlijke interesse van de gemeenschap.</li>
-</ul>
-<h2><a href="https://www.wsj.com/style/fashion/hermes-birkin-bag-investment-031c215c">De economie van Birkin-håndvesken</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40770358">Reaksjoner</a></h3>
-<ul>
-<li>De Birkin-handtassenmarkt bloeit door exclusiviteit en hoge vraag, waarbij kopers 24 uur de tijd krijgen om te kopen, wat een loterijachtige opwinding creëert.</li>
-<li>Verkoop is beperkt tot loyale klanten die aanzienlijk besteden aan andere artikelen, waardoor de tas zijn status als symbool en investering behoudt.</li>
-<li>Net als de sneaker markt, zorgt dit model van beperkte beschikbaarheid en gepersonaliseerde service voor het succes van de luxemarkt door schaarste en prestige, waardoor rijke consumenten worden aangetrokken.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Microfeatures waar ik van hou in blogs en persoonlijke websites" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Microfeatures%20waar%20ik%20van%20hou%20in%20blogs%20en%20persoonlijke%20websites&subheading=mandag%2024.%20juni%202024%3A%20Sammendrag%20av%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/nb/2024/06/24</link>
-            <guid isPermaLink="false">2024-06-24T00:00:00.000Z</guid>
-            <pubDate>Mon, 24 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

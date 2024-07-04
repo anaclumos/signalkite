@@ -1,0 +1,323 @@
+[
+  {
+    "id": 40870357,
+    "title": "Los orígenes de DS_store (2006)",
+    "originLink": "https://www.arno.org/on-the-origins-of-ds-store",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40870357",
+    "commentBody": "",
+    "originSummary": [
+      ".DS_Store files, comúnmente vistos al transferir archivos de Mac a Windows, significan \"Desktop Services Store\", originados a partir de una reescritura del Finder de Mac OS X en 1999.",
+      "El Finder se dividió en una interfaz de usuario (Finder_FE) y una funcionalidad central (Finder_BE), con planes de convertir el backend en una API pública llamada Desktop Services, aunque nunca se lanzó por completo.",
+      "Un error causa la creación excesiva de archivos .DS_Store, incluso sin ajustes por parte del usuario, convirtiéndolos en un problema persistente para los usuarios de Mac."
+    ],
+    "commentSummary": [
+      "La discusión gira en torno al contexto histórico y los detalles técnicos del archivo DS_store y el concepto de \"fork\" en los sistemas de archivos de Mac, que incluye tanto componentes de recursos como de datos.",
+      "La bifurcación de recursos en las primeras versiones de MacOS almacenaba varios datos de la aplicación como íconos, menús y código ejecutable, lo que planteaba desafíos al transferir archivos a sistemas no Mac.",
+      "La transición de MacOS a MacOS X implicó cambios significativos, incluida la eliminación de los forks de recursos, lo que fue recibido con reacciones mixtas por parte de la comunidad de usuarios."
+    ],
+    "points": 375,
+    "commentCount": 200,
+    "retryCount": 0,
+    "time": 1720043713
+  },
+  {
+    "id": 40869877,
+    "title": "Xcapture-BPF – como Linux top, pero con visión de rayos X",
+    "originLink": "https://0x.tools/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40869877",
+    "commentBody": "",
+    "originSummary": [
+      "0x.tools es un conjunto de utilidades de código abierto diseñadas para analizar el rendimiento de aplicaciones en Linux, enfatizando la simplicidad y las dependencias mínimas.",
+      "Las características clave incluyen la medición de la actividad a nivel de hilo individual y la provisión de herramientas basadas en eBPF para el análisis de la actividad del sistema y de hilos detallada.",
+      "Está diseñado para un uso seguro en entornos de producción con una sobrecarga muy baja y no requiere actualizaciones del sistema operativo ni marcos de monitoreo pesados."
+    ],
+    "commentSummary": [
+      "Xcapture-BPF es una nueva herramienta comparada con el comando top de Linux pero con capacidades mejoradas, a menudo referida como tener \"visión de rayos X\" para diagnósticos del sistema.",
+      "Los usuarios han compartido experiencias de uso de herramientas eBPF (extended Berkeley Packet Filter) y BCC (BPF Compiler Collection) para depurar problemas complejos en producción, destacando su efectividad en la resolución de cuellos de botella de rendimiento y fugas de memoria.",
+      "La discusión incluye ejemplos prácticos de resolución de problemas, como resolver problemas de alta espera de E/S y de caché de páginas en entornos con contenedores habilitando E/S directa y haciendo coincidir los tamaños de sector en dispositivos de bucle invertido."
+    ],
+    "points": 353,
+    "commentCount": 35,
+    "retryCount": 0,
+    "time": 1720039957
+  },
+  {
+    "id": 40869461,
+    "title": "Pregunta de $600 mil millones sobre la IA",
+    "originLink": "https://www.sequoiacap.com/article/ais-600b-question/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40869461",
+    "commentBody": "",
+    "originSummary": [
+      "La brecha de ingresos de la IA se ha ampliado de $200 mil millones a $600 mil millones, lo que plantea preguntas sobre las expectativas de crecimiento de la industria.",
+      "Los desarrollos clave incluyen la disminución de la escasez de suministro de GPU, el aumento de los ingresos de los centros de datos de Nvidia y el significativo crecimiento de los ingresos de OpenAI a $3.4 mil millones.",
+      "Desafíos como la falta de poder de fijación de precios, los riesgos de inversión y la rápida depreciación de los chips más antiguos persisten, pero los costos más bajos de las GPU podrían beneficiar a las startups y la innovación."
+    ],
+    "commentSummary": [
+      "Entrenar grandes modelos de IA como GPT-4 requiere recursos computacionales significativos, con estimaciones que sugieren 8,000 GPUs H100 funcionando durante 90 días.",
+      "Las inversiones sustanciales de Meta en GPU podrían permitirles entrenar múltiples modelos a escala GPT-4 anualmente, lo que potencialmente podría convertir en una mercancía los modelos de IA centrales y afectar los márgenes de beneficio de las empresas de IA.",
+      "La verdadera importancia de la IA puede desplazarse hacia los datos propietarios para el entrenamiento, lo que plantea posibles problemas legales y subraya la importancia de la propiedad de los datos."
+    ],
+    "points": 331,
+    "commentCount": 496,
+    "retryCount": 0,
+    "time": 1720036541
+  },
+  {
+    "id": 40870345,
+    "title": "Superando la multiplicación de matrices de NumPy en 150 líneas de C",
+    "originLink": "https://salykova.github.io/matmul-cpu",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40870345",
+    "commentBody": "",
+    "originSummary": [
+      "Una implementación de multiplicación de matrices de alto rendimiento en C, siguiendo el diseño de BLIS, supera a NumPy (OpenBLAS) en un AMD Ryzen 7700, logrando más de 1 TFLOPS.",
+      "La codificación es simple, portátil y escalable, utilizando solo 3 líneas de directivas OpenMP para la paralelización, y está dirigida a CPUs Intel Core y AMD Zen con instrucciones FMA3 y AVX.",
+      "La implementación demuestra que la multiplicación de matrices eficiente se puede lograr en C sin necesidad de código ensamblador profundo o Fortran, con un rendimiento comparable a las bibliotecas BLAS establecidas cuando se ajusta para hardware específico."
+    ],
+    "commentSummary": [
+      "Una publicación de blog demuestra cómo superar la multiplicación de matrices de NumPy utilizando 150 líneas de código C, centrándose en mejoras de rendimiento.",
+      "Las mejoras clave incluyen la selección de algoritmos, la minimización de los viajes de ida y vuelta del kernel, la vectorización, la eficiencia de la caché y las optimizaciones específicas del hardware.",
+      "Las discusiones en los comentarios abordan la equidad de comparar el código C con NumPy, sugiriendo comparaciones con otras bibliotecas BLAS (Subprogramas Básicos de Álgebra Lineal) y enfatizando la necesidad de realizar pruebas exhaustivas y ajustes de hiperparámetros para CPUs específicas."
+    ],
+    "points": 298,
+    "commentCount": 51,
+    "retryCount": 0,
+    "time": 1720043575
+  },
+  {
+    "id": 40870280,
+    "title": "La alegría de leer libros que no entiendes",
+    "originLink": "https://reactormag.com/the-joy-of-reading-books-you-dont-entirely-understand/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40870280",
+    "commentBody": "",
+    "originSummary": [
+      "La artículo enfatiza la alegría y el valor de leer libros que no se entienden completamente, sugiriendo que está bien apreciar un libro sin comprenderlo del todo.",
+      "La autora, Molly Templeton, comparte experiencias personales con libros complejos como *Baroque Cycle* de Neal Stephenson y títulos recientes como *The Library of Broken Worlds* de Alaya Dawn Johnson y *Jonathan Abernathy You Are Kind* de Molly McGhee.",
+      "Templeton sostiene que aceptar la incertidumbre en la lectura puede ser liberador y enriquecer la experiencia de lectura, alentando a los lectores a explorar narrativas desafiantes."
+    ],
+    "commentSummary": [
+      "La publicación discute el valor de leer libros que desafían y provocan un pensamiento profundo, haciendo referencia a la creencia de Kafka de que los libros impactantes deben 'morder y picar' en lugar de simplemente entretener.",
+      "Destaca diferentes perspectivas sobre la lectura de libros difíciles o complejos, con algunos lectores abogando por la inmersión sin tomar notas para mejorar la comprensión y el disfrute.",
+      "La conversación incluye anécdotas personales y recomendaciones de libros que han dejado una impresión duradera, enfatizando la alegría de descubrir nuevas ideas a través de la relectura y de interactuar con material desafiante."
+    ],
+    "points": 298,
+    "commentCount": 185,
+    "retryCount": 0,
+    "time": 1720043087
+  },
+  {
+    "id": 40874341,
+    "title": "Twilio confirma una violación de datos después de que los hackers filtraran los números de teléfono de 33 millones de usuarios de Authy",
+    "originLink": "https://www.securityweek.com/twilio-confirms-data-breach-after-hackers-leak-33m-authy-user-phone-numbers/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40874341",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Twilio ha confirmado una violación de datos que expuso los números de teléfono de 33 millones de usuarios de Authy, lo que ha llevado a un aumento de llamadas de spam y preocupaciones sobre la fiabilidad de las redes telefónicas tradicionales.",
+      "Los usuarios están considerando métodos de comunicación alternativos como FaceTime y Zoom, mientras también enfatizan el papel crítico de las llamadas telefónicas en servicios esenciales como la atención médica y los servicios sociales.",
+      "La violación destaca la necesidad de una mayor protección de datos, una mejor aplicación de las medidas anti-spam y recomendaciones para aplicaciones alternativas de autenticación de dos factores (2FA) como Aegis, Bitwarden y Yubikey."
+    ],
+    "points": 260,
+    "commentCount": 148,
+    "retryCount": 0,
+    "time": 1720095999
+  },
+  {
+    "id": 40872182,
+    "title": "La historia más triste de 'Solo Envíalo' (2020)",
+    "originLink": "https://www.kitze.io/posts/saddest-just-ship-it-story-ever",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872182",
+    "commentBody": "",
+    "originSummary": [
+      "El autor comparte un viaje personal de desarrollo de una aplicación, comenzando en 2018, pero retrasando su lanzamiento debido a la adición continua de características y al aprendizaje de nuevas tecnologías como React Native.",
+      "A pesar de abandonar el proyecto después de dos años, el autor descubrió más tarde una aplicación similar que tuvo éxito a pesar de ser imperfecta, lo que le generó emociones encontradas.",
+      "En 2022, el autor finalmente lanzó una aplicación de productividad que combina varias funciones como Tareas, Hábitos, Planificador y Metas, e invita a los lectores a unirse a la comunidad en Benji - The Life OS."
+    ],
+    "commentSummary": [
+      "La discusión gira en torno a la mentalidad de 'simplemente envíalo' en el desarrollo de software, enfatizando que apresurarse para cumplir con los plazos puede comprometer la calidad del software y llevar al agotamiento de los desarrolladores.",
+      "Existe un debate sobre si los desarrolladores deben priorizar la rentabilidad de la empresa o centrarse en crear software de alta calidad, y algunos argumentan que los desarrolladores no son adecuadamente compensados por esfuerzos extraordinarios a menos que tengan una participación significativa en la empresa.",
+      "La conversación destaca diferentes perspectivas sobre la satisfacción laboral, la compensación y el equilibrio entre la integridad profesional y las demandas de la empresa, reflejando preocupaciones más amplias de la industria sobre el equilibrio entre la vida laboral y personal y el reconocimiento."
+    ],
+    "points": 217,
+    "commentCount": 263,
+    "retryCount": 0,
+    "time": 1720065035
+  },
+  {
+    "id": 40874013,
+    "title": "Jeffrey Snover y la creación de PowerShell",
+    "originLink": "https://corecursive.com/building-powershell-with-jeffrey-snover/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40874013",
+    "commentBody": "",
+    "originSummary": [
+      "Jeffrey Snover, el arquitecto detrás de PowerShell, comparte su viaje de creación de una herramienta de comandos que revolucionó la administración de sistemas Windows, enfrentando inicialmente resistencia de una empresa que favorecía las interfaces gráficas.",
+      "Los desafíos clave incluyeron navegar por las reestructuraciones de la empresa, la resistencia cultural y la construcción de un equipo dedicado, con una influencia significativa del impulso de Bill Gates por .NET.",
+      "El desarrollo de PowerShell, guiado por el Manifiesto Monad, transformó la administración de Windows Server y permitió la transición de Microsoft a la nube, demostrando el impacto de la persistencia y la visión en el impulso del cambio tecnológico."
+    ],
+    "commentSummary": [
+      "Jeffrey Snover, el creador de PowerShell, enfrentó una oposición significativa y fue degradado en Microsoft por perseguir su desarrollo.",
+      "PowerShell fue diseñado para ayudar en la administración de servidores en Windows llamando a varias API, pero enfrentó conflictos internos y algunas características se perdieron en versiones más nuevas.",
+      "A pesar de su enfoque orientado a objetos y la integración con .NET, PowerShell es visto como verboso y desafiante en comparación con otros lenguajes de scripting como Python, lo que limita su adopción fuera del ecosistema de Windows."
+    ],
+    "points": 200,
+    "commentCount": 182,
+    "retryCount": 0,
+    "time": 1720092392
+  },
+  {
+    "id": 40872020,
+    "title": "Sans-IO: El secreto para un Rust efectivo en servicios de red",
+    "originLink": "https://www.firezone.dev/blog/sans-io",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872020",
+    "commentBody": "",
+    "originSummary": [
+      "Firezone utiliza Rust y un diseño sans-IO para su biblioteca de conectividad central, connlib, para gestionar conexiones de red y túneles WireGuard, ofreciendo pruebas rápidas, una personalización profunda y alta seguridad.",
+      "La arquitectura sans-IO separa la política de la implementación utilizando abstracciones como `Transmit`, permitiendo que las máquinas de estado puras manejen protocolos de red sin IO directo, haciendo el código más flexible y fácil de probar.",
+      "Si bien sans-IO requiere bucles de eventos y máquinas de estado personalizados, ofrece beneficios significativos como una fácil composición, APIs flexibles y una mejor gestión de errores, a pesar de no ser ampliamente adoptado en la comunidad de Rust todavía."
+    ],
+    "commentSummary": [
+      "La publicación discute el concepto de Sans-IO en Rust, que separa las operaciones de entrada/salida (IO) de la lógica principal, haciendo el código más comprobable y componible.",
+      "Este enfoque es particularmente beneficioso para casos de uso orientados a paquetes como QUIC, WebRTC e IP, donde la gestión del estado puede volverse compleja.",
+      "La discusión destaca que, aunque este método no es nuevo, ofrece ventajas significativas en Rust al simplificar las pruebas y evitar las trampas de los patrones tradicionales de async/await."
+    ],
+    "points": 179,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1720062336
+  },
+  {
+    "id": 40872332,
+    "title": "Construyendo una utilidad de compresión de datos en Haskell usando códigos de Huffman",
+    "originLink": "https://lazamar.github.io/haskell-data-compression-with-huffman-codes/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872332",
+    "commentBody": "",
+    "originSummary": [
+      "La publicación describe la creación de un programa de compresión de datos en Haskell utilizando la codificación de Huffman, que maneja archivos binarios arbitrarios con memoria constante para la codificación y decodificación.",
+      "Explica los códigos de Huffman, los códigos sin prefijo y el proceso de construcción de un árbol binario para una codificación eficiente, seguido de la implementación de funciones de codificación y decodificación.",
+      "El artículo también aborda el manejo de archivos binarios, la serialización/deserialización de datos y posibles mejoras como el multithreading y la creación de código más rápido, mostrando una utilidad práctica y eficiente de compresión de datos en Haskell."
+    ],
+    "commentSummary": [
+      "Una discusión sobre la construcción de una utilidad de compresión de datos en Haskell utilizando códigos de Huffman, destacando la eficiencia de los algoritmos en el lugar basados en arreglos para grandes conjuntos de datos.",
+      "Referencias a trabajos significativos, incluyendo el artículo de Moffat y Katajainen de 1995 y el estándar JPEG ITU T.81 (1992), que describen la codificación Huffman basada en arreglos.",
+      "Perspectivas sobre el rendimiento de Haskell, con comparaciones con otros lenguajes como C, C++ y Rust, y las compensaciones entre la simplicidad de la implementación y la claridad del código frente al rendimiento bruto."
+    ],
+    "points": 164,
+    "commentCount": 69,
+    "retryCount": 0,
+    "time": 1720067352
+  },
+  {
+    "id": 40869421,
+    "title": "Isolador de Voz: Elimina el ruido de fondo para la producción de películas, podcasts y entrevistas",
+    "originLink": "https://elevenlabs.io/voice-isolator",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40869421",
+    "commentBody": "",
+    "originSummary": [
+      "La generación de voz por IA ahora admite 29 idiomas, ampliando su accesibilidad y usabilidad para una audiencia global.",
+      "Ofrece miles de opciones de voz, proporcionando a los usuarios una amplia gama de elecciones para diferentes aplicaciones y preferencias."
+    ],
+    "commentSummary": [
+      "El herramienta de aislamiento de voz de Elevenlabs tiene como objetivo eliminar el ruido de fondo para la producción de películas, podcasts y entrevistas, pero su modelo de precios basado en \"caracteres\" está confundiendo a muchos usuarios.",
+      "Los usuarios están discutiendo varias alternativas para soluciones de reconocimiento de voz a texto (STT) y de texto a voz (TTS), incluyendo opciones de código abierto como Whisper y servicios comerciales como Deepgram Nova 2.",
+      "Existe un notable interés en soluciones locales y de código abierto para la limpieza y transcripción de audio, ya que muchos consideran que las ofertas comerciales actuales son demasiado caras o no lo suficientemente efectivas."
+    ],
+    "points": 158,
+    "commentCount": 126,
+    "retryCount": 0,
+    "time": 1720036303
+  },
+  {
+    "id": 40872102,
+    "title": "Propietarios de Vision Pro, ¿todavía lo están usando?",
+    "originLink": "https://news.ycombinator.com/item?id=40872102",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872102",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Los usuarios de Vision Pro tienen experiencias mixtas, algunos elogian sus capacidades de medios y trabajo, mientras que otros critican su alto costo y funcionalidad limitada.",
+      "Las características clave apreciadas incluyen el tamaño de la pantalla, el passthrough, las funciones de visión y el soporte mejorado para periféricos Bluetooth, pero se señalan problemas como la incomodidad visual y la integración limitada del software.",
+      "La alta precio del dispositivo ($3500) y su lanzamiento limitado (450k unidades) han llevado a un mercado pequeño, con muchos usuarios esperando futuras revisiones u optando por alternativas más baratas como el Quest 3."
+    ],
+    "points": 141,
+    "commentCount": 77,
+    "retryCount": 0,
+    "time": 1720063824
+  },
+  {
+    "id": 40871783,
+    "title": "Difusión Forzada: Predicción del Siguiente Token se Encuentra con Difusión de Secuencia Completa",
+    "originLink": "https://boyuan.space/diffusion-forcing/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40871783",
+    "commentBody": "",
+    "originSummary": [
+      "Difusión Forzada es un nuevo paradigma de entrenamiento que combina la predicción del siguiente token y los modelos de difusión de secuencia completa, ofreciendo generación flexible y guía a nivel de secuencia.",
+      "Logra mejoras significativas en el rendimiento en aplicaciones como la predicción de video, la estabilización de despliegues infinitos, la planificación de difusión y el aprendizaje por imitación a largo plazo.",
+      "Este método permite predicciones de video estables y consistentes, despliegues más largos sin ventanas deslizantes y un manejo robusto de tareas no markovianas con requisitos de memoria a largo plazo."
+    ],
+    "commentSummary": [
+      "La investigación combina el enmascaramiento de secuencias, esencial para los Modelos de Lenguaje Grande (LLMs), con modelos de difusión al rastrear un nivel de 'incertidumbre' por píxel, tratado como 'ruido' para el modelo de difusión.",
+      "Este método es beneficioso para tareas como la resolución de laberintos y el control de un brazo robótico, ya que permite consolidar partes de una imagen más temprano.",
+      "La aproximación modela la incertidumbre en la planificación y búsqueda, mejorando la capacidad de los agentes para reaccionar y generalizar, pero el artículo carece de detalles de implementación y acceso al código fuente."
+    ],
+    "points": 133,
+    "commentCount": 6,
+    "retryCount": 0,
+    "time": 1720058960
+  },
+  {
+    "id": 40872438,
+    "title": "Encontrar casi duplicados con similitud de Jaccard y MinHash",
+    "originLink": "https://blog.nelhage.com/post/fuzzy-dedup/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872438",
+    "commentBody": "",
+    "originSummary": [
+      "Se utilizan la similitud de Jaccard y MinHash para identificar documentos aproximadamente similares en grandes colecciones de texto, como las utilizadas en la preparación del conjunto de datos de GPT-3.",
+      "MinHash aproxima la similitud de Jaccard mediante el hash de las características del documento y el uso del valor mínimo de hash como una firma, lo que permite una comparación eficiente de grandes corpus.",
+      "Este método es escalable y se puede combinar con otras técnicas como HyperLogLog, lo que lo hace adecuado para aplicaciones de procesamiento de texto a gran escala."
+    ],
+    "commentSummary": [
+      "La publicación discute el uso de la similitud de Jaccard y MinHash para encontrar datos casi duplicados, destacando su aplicación en varios campos como la segmentación de imágenes médicas y la deduplicación de bases de datos.",
+      "Se mencionan varias herramientas y bibliotecas para tareas de deduplicación, incluyendo datasketch, rensa, Splink y gaoya, con información sobre su rendimiento y casos de uso.",
+      "La efectividad del modelo Fellegi Sunter se destaca en la deduplicación de personas al asignar pesos a coincidencias y discrepancias difusas, mejorando la precisión en grandes conjuntos de datos."
+    ],
+    "points": 127,
+    "commentCount": 16,
+    "retryCount": 0,
+    "time": 1720069449
+  },
+  {
+    "id": 40873001,
+    "title": "Precios de máquinas específicos por región",
+    "originLink": "https://community.fly.io/t/fresh-produce-region-specific-machines-pricing/20690",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40873001",
+    "commentBody": "",
+    "originSummary": [
+      "Desde el 1 de julio, se introducirá una tarificación específica por región para las Máquinas, incluyendo RAM adicional, debido a los costos de infraestructura que varían según la región.",
+      "La adaptación de precios se implementará gradualmente durante cuatro meses, con los precios finales establecidos para noviembre; las facturas iniciales mostrarán partidas específicas de la región sin cambios de precio.",
+      "Se ha implementado una corrección de errores para el uso de CPU compartida de Máquinas 1x no cubierto por el crédito de la Asignación de Máquinas Gratuitas, y se están reemitiendo los créditos."
+    ],
+    "commentSummary": [
+      "El precio específico por región de Fly.io ha generado debates, ya que algunos usuarios lo consideran caro en comparación con alternativas como Hetzner, especialmente para alta disponibilidad.",
+      "Fly.io defiende su estructura de precios destacando la insostenibilidad de las tarifas globales planas debido a los altos costos operativos en ciertas regiones, como Brasil.",
+      "A pesar de la eliminación del plan de hobby y algunas preocupaciones sobre la fiabilidad, muchos usuarios aprecian las características de Fly.io, como el enrutamiento dinámico de solicitudes y los despliegues sin operaciones, que creen que justifican los costos más altos."
+    ],
+    "points": 94,
+    "commentCount": 109,
+    "retryCount": 0,
+    "time": 1720077454
+  }
+]

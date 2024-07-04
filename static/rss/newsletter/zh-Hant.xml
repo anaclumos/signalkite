@@ -15,12 +15,197 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 03 Jul 2024 19:10:36 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 04 Jul 2024 19:13:29 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/zh-Hant.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Wed, 03 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[zh-Hant]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-04]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/04&#39;</h2>
+<h1>2024-07-04</h1>
+<h2><a href="https://www.arno.org/on-the-origins-of-ds-store">DS_store 的起源(2006)</a></h2>
+<ul>
+<li>.DS_Store 檔案，常見於從 Mac 傳輸檔案到 Windows 時，代表「Desktop Services Store」，源自 1999 年重寫的 Mac OS X Finder。</li>
+<li>「Finder 被分為使用者介面(Finder_FE)和核心功能(Finder_BE)，並計劃將後端做成名為 Desktop Services 的公共 API，儘管它從未完全發布。」</li>
+<li>「一個錯誤導致過度生成 .DS_Store 檔案，即使沒有用戶調整，這也使得它們成為 Mac 用戶的持續問題。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870357">評論</a></h3>
+<ul>
+<li>“討論圍繞著 DS_store 檔案的歷史背景和技術細節，以及 Mac 檔案系統中的「分叉」概念，這包括資源和數據兩個部分。”</li>
+<li>「早期 MacOS 中的資源分支儲存了各種應用程式數據，如圖示、選單和可執行程式碼，這在將檔案傳輸到非 Mac 系統時帶來了挑戰。」</li>
+<li>從 MacOS 過渡到 MacOS X 涉及了重大變革，包括移除資源分支，這在使用者社群中引起了褒貶不一的反應。</li>
+</ul>
+<h2><a href="https://0x.tools/">「Xcapture-BPF – 就像 Linux top，但具有 Xray 視覺」</a></h2>
+<ul>
+<li>0x.tools 是一套開源工具，專為分析 Linux 上的應用程式效能而設計，強調簡單性和最少的依賴性。</li>
+<li>主要功能包括測量個別執行緒層級的活動，並提供基於 eBPF 的工具，用於系統層級和詳細的執行緒活動分析。</li>
+<li>它被設計用於生產環境中的安全使用，具有非常低的開銷，且不需要操作系統升級或繁重的監控框架。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869877">評論</a></h3>
+<ul>
+<li>「Xcapture-BPF 是一個新工具，類似於 Linux 的 top 指令，但具有增強的功能，常被形容為具有系統診斷的『X光視野』。」</li>
+<li>用戶分享了使用 eBPF(擴展伯克利封包過濾器)和 BCC(BPF 編譯器集合)工具來調試複雜生產問題的經驗，強調了它們在解決性能瓶頸和記憶體洩漏方面的有效性。</li>
+<li>討論中包括了一些實際的故障排除範例，例如在容器化環境中通過啟用直接 IO 和匹配回環設備的扇區大小來解決高 iowait 和頁面快取問題。</li>
+</ul>
+<h2><a href="https://www.sequoiacap.com/article/ais-600b-question/">AI 的 6000 億美元問題</a></h2>
+<ul>
+<li>人工智慧的收入差距已從2000億美元擴大到6000億美元，這引發了對該產業成長預期的疑問。</li>
+<li>主要發展包括 GPU 供應短缺的緩解、Nvidia 資料中心收入的增加，以及 OpenAI 營收顯著增長至 34 億美元。</li>
+<li>挑戰如缺乏定價權、投資風險以及舊款晶片的快速貶值依然存在，但較低的 GPU 成本可能有利於新創公司和創新。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869461">評論</a></h3>
+<ul>
+<li>訓練大型 AI 模型如 GPT-4 需要大量的計算資源，估計需要 8,000 顆 H100 GPU 運行 90 天。</li>
+<li>Meta 大量投資 GPU 可能使他們每年訓練多個 GPT-4 規模的模型，這可能會使核心 AI 模型商品化，並影響 AI 公司的利潤率。</li>
+<li>AI 的真正價值可能會轉向用於訓練的專有數據，這將引發潛在的法律問題並強調數據所有權的重要性。</li>
+</ul>
+<h2><a href="https://salykova.github.io/matmul-cpu">用 150 行 C 語言程式碼擊敗 NumPy 矩陣乘法</a></h2>
+<ul>
+<li>「在 C 語言中實現的高效能矩陣乘法，遵循 BLIS 設計，在 AMD Ryzen 7700 上的表現超越了 NumPy(OpenBLAS)，達到了超過 1 TFLOPS 的運算速度。」</li>
+<li>這段程式碼簡單、可移植且具擴展性，僅使用 3 行 OpenMP 指令進行平行化，並針對具備 FMA3 和 AVX 指令的 Intel Core 和 AMD Zen CPU 進行優化。</li>
+<li>實作證明了在不使用深層組合語言或 Fortran 代碼的情況下，可以在 C 語言中實現高效的矩陣乘法，並且在針對特定硬體進行微調後，其性能可與既有的 BLAS 函式庫相媲美。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870345">評論</a></h3>
+<ul>
+<li>一篇部落格文章展示了使用 150 行 C 語言程式碼超越 NumPy 矩陣乘法的性能，重點在於性能提升。</li>
+<li>主要改進包括演算法選擇、最小化核心往返次數、向量化、快取效率以及針對硬體的特定優化。</li>
+<li>“評論中的討論涉及將 C 語言代碼與 NumPy 比較的公平性，建議與其他 BLAS(基本線性代數子程序)庫進行比較，並強調需要針對特定 CPU 進行全面的基準測試和超參數調整。”</li>
+</ul>
+<h2><a href="https://reactormag.com/the-joy-of-reading-books-you-dont-entirely-understand/">閱讀你不理解的書籍的樂趣</a></h2>
+<ul>
+<li>「這篇文章強調閱讀不完全理解的書籍的樂趣和價值，並建議即使無法完全掌握一本書，也可以欣賞它。」</li>
+<li>作者 Molly Templeton 分享了她閱讀複雜書籍的個人經驗，例如 Neal Stephenson 的《巴洛克三部曲》，以及最近的作品如 Alaya Dawn Johnson 的《破碎世界圖書館》和 Molly McGhee 的《Jonathan Abernathy You Are Kind》。</li>
+<li>Templeton 主張，擁抱閱讀中的不確定性可以帶來解放感並豐富閱讀體驗，鼓勵讀者探索具有挑戰性的敘事。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870280">評論</a></h3>
+<ul>
+<li>這篇文章討論了閱讀那些具有挑戰性並引發深思的書籍的價值，並引用卡夫卡的觀點，認為有影響力的書籍應該『咬人並刺痛』，而不僅僅是娛樂。</li>
+<li>它強調了對於閱讀困難或複雜書籍的不同觀點，有些讀者主張不做筆記的沉浸式閱讀，以增進理解和享受。</li>
+<li>“這段對話包含了個人軼事和對留下深刻印象的書籍的推薦，強調了通過重讀和接觸具有挑戰性的材料來發現新見解的樂趣。”</li>
+</ul>
+<h2><a href="https://www.securityweek.com/twilio-confirms-data-breach-after-hackers-leak-33m-authy-user-phone-numbers/">「Twilio 確認資料外洩，駭客洩露 3300 萬 Authy 用戶電話號碼」</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40874341">評論</a></h3>
+<ul>
+<li>「Twilio 已確認發生資料外洩事件，導致 3300 萬 Authy 用戶的電話號碼被曝光，進而引發垃圾電話增加及對傳統電話網路可靠性的擔憂。」</li>
+<li>用戶正在考慮使用 FaceTime 和 Zoom 等替代通訊方式，同時也強調電話在醫療保健和社會服務等基本服務中的關鍵作用。</li>
+<li>這次資料外洩事件突顯了加強資料保護、更好地執行反垃圾郵件措施的必要性，以及對替代雙重驗證(2FA)應用程式如 Aegis、Bitwarden 和 Yubikey 的建議。</li>
+</ul>
+<h2><a href="https://www.kitze.io/posts/saddest-just-ship-it-story-ever">最悲傷的「Just Ship It」故事(2020)</a></h2>
+<ul>
+<li>作者分享了從2018年開始開發一款應用程式的個人旅程，但由於不斷添加新功能和學習像 React Native 這樣的新技術，導致發布時間一再延遲。</li>
+<li>儘管在兩年後放棄了這個專案，作者後來發現了一個類似的應用程式，儘管不完美卻成功了，這讓他心情複雜。</li>
+<li>在 2022 年，作者終於推出了一款結合待辦事項、習慣、計劃和目標等多種功能的生產力應用程式，並邀請讀者加入 Benji - The Life OS 社群。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872182">評論</a></h3>
+<ul>
+<li>“討論圍繞著軟體開發中的『趕快出貨』心態，強調趕工以達成截止日期可能會損害軟體品質並導致開發人員過勞。”</li>
+<li>「目前有一場辯論，討論開發人員應該優先考慮公司盈利還是專注於創建高品質的軟體。有些人認為，除非開發人員在公司中擁有顯著的股份，否則他們不會因為額外的努力而獲得足夠的報酬。」</li>
+<li>“這段對話突顯了對工作滿意度、薪酬以及在專業誠信與公司需求之間取得平衡的不同觀點，反映了更廣泛的行業對工作與生活平衡及認可的關注。”</li>
+</ul>
+<h2><a href="https://corecursive.com/building-powershell-with-jeffrey-snover/">Jeffrey Snover 與 PowerShell 的誕生</a></h2>
+<ul>
+<li>PowerShell 的設計師 Jeffrey Snover 分享了他創建這個革命性 Windows 系統管理命令工具的旅程，最初面臨來自偏好圖形介面的公司的阻力。</li>
+<li>主要挑戰包括應對公司重組、文化反彈以及建立專業團隊，並受到比爾·蓋茲推動 .NET 的重大影響。</li>
+<li>PowerShell 的發展，在 Monad 宣言的指導下，改變了 Windows Server 的管理方式，並促使微軟向雲端轉型，展現了堅持與遠見在推動技術變革中的影響力。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40874013">評論</a></h3>
+<ul>
+<li>PowerShell 的創始人 Jeffrey Snover 在微軟推動其開發時面臨了巨大的反對聲浪，並因此被降職。</li>
+<li>PowerShell 是為了協助在 Windows 上進行伺服器管理而設計的，透過調用各種 API，但它面臨內部衝突，並且在較新版本中有些功能被移除。</li>
+<li>儘管其物件導向方法和 .NET 整合，PowerShell 被認為比其他腳本語言如 Python 更冗長且具挑戰性，限制了其在 Windows 生態系統之外的採用。</li>
+</ul>
+<h2><a href="https://www.firezone.dev/blog/sans-io">Sans-IO：打造高效 Rust 網路服務的祕密</a></h2>
+<ul>
+<li>Firezone 使用 Rust 和 sans-IO 設計來構建其核心連接庫 connlib，以管理網路連接和 WireGuard 隧道，提供快速測試、深度自訂和高保證。</li>
+<li>無 IO 設計透過像 <code>Transmit</code> 這樣的抽象概念將策略與實作分離，允許純狀態機處理網路協議而不需直接進行 IO 操作，使程式碼更具彈性且更易於測試。</li>
+<li>雖然 sans-IO 需要自訂事件迴圈和狀態機，但它提供了顯著的優點，例如容易組合、靈活的 API 和改進的錯誤處理，儘管它在 Rust 社群中尚未被廣泛採用。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872020">評論</a></h3>
+<ul>
+<li>「這篇文章討論了 Rust 中的 Sans-IO 概念，這個概念將輸入/輸出(IO)操作與主要邏輯分離，使程式碼更易於測試和組合。」</li>
+<li>「這種方法對於像 QUIC、WebRTC 和 IP 這樣的封包導向使用案例特別有利，因為這些情況下的狀態管理可能會變得複雜。」</li>
+<li>“討論強調了雖然這種方法並不新穎，但在 Rust 中提供了顯著的優勢，透過簡化測試並避免傳統 async/await 模式的陷阱。”</li>
+</ul>
+<h2><a href="https://lazamar.github.io/haskell-data-compression-with-huffman-codes/">使用哈夫曼編碼在 Haskell 中構建數據壓縮工具</a></h2>
+<ul>
+<li>「這篇文章概述了使用哈夫曼編碼在 Haskell 中創建一個數據壓縮程式，該程式使用恆定記憶體來處理任意的二進位檔案進行編碼和解碼。」</li>
+<li>它解釋了霍夫曼編碼、前綴碼以及構建二元樹以進行高效編碼的過程，接著是編碼和解碼函數的實現。</li>
+<li>這篇文章還涵蓋了處理二進位檔案、序列化/反序列化資料，以及潛在的改進，如多執行緒和更快速的程式碼創建，展示了一個實用且高效的 Haskell 資料壓縮工具。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872332">評論</a></h3>
+<ul>
+<li>討論使用哈夫曼編碼在 Haskell 中構建數據壓縮工具，強調基於陣列的就地算法在處理大型數據集時的效率。</li>
+<li>「參考了重要的作品，包括 Moffat 和 Katajainen 在 1995 年的論文以及 JPEG 標準 ITU T.81 (1992)，這些作品描述了基於陣列的霍夫曼編碼。」</li>
+<li>深入了解 Haskell 的性能，並與其他語言如 C、C++ 和 Rust 進行比較，以及在實現簡單性和代碼清晰度與原始性能之間的取捨。</li>
+</ul>
+<h2><a href="https://elevenlabs.io/voice-isolator">語音隔離器：去除背景噪音以用於電影、播客、訪談製作</a></h2>
+<ul>
+<li>「AI 語音生成器現在支援 29 種語言，擴展了其對全球用戶的可及性和實用性。」</li>
+<li>它提供了數千種語音選項，為使用者在不同應用和偏好上提供了廣泛的選擇。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869421">評論</a></h3>
+<ul>
+<li>Elevenlabs 的 Voice Isolator 工具旨在去除電影、播客和訪談製作中的背景噪音，但其基於「字元」的定價模式讓許多用戶感到困惑。</li>
+<li>「使用者正在討論各種語音轉文字(STT)和文字轉語音(TTS)解決方案，包括像 Whisper 這樣的開源選項和像 Deepgram Nova 2 這樣的商業服務。」</li>
+<li>「許多人對於本地和開源的音訊清理和轉錄解決方案表現出顯著的興趣，因為他們發現目前的商業產品要麼太昂貴，要麼效果不夠理想。」</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40872102">「Vision Pro 的擁有者們，你們還在使用它嗎？」</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40872102">評論</a></h3>
+<ul>
+<li>Vision Pro 使用者的體驗各異，有些人讚揚其媒體和工作功能，而另一些人則批評其高昂的價格和有限的功能性。</li>
+<li>「受讚賞的主要特點包括螢幕尺寸、透視功能、視力功能和改進的藍牙外圍設備支援，但也有視覺不適和軟體整合有限等問題。」</li>
+<li>該裝置的高價位($3500)和有限的發行量(45萬台)導致市場規模較小，許多用戶選擇等待未來的修訂版本或選擇較便宜的替代品，如 Quest 3。</li>
+</ul>
+<h2><a href="https://boyuan.space/diffusion-forcing/">“擴散強制：下一個標記預測遇上全序列擴散”</a></h2>
+<ul>
+<li>“擴散強制是一種新的訓練範式，結合了下一個標記預測和全序列擴散模型，提供靈活的生成和序列級指導。”</li>
+<li>它在視頻預測、穩定無限展開、擴散規劃和長期模仿學習等應用中實現了顯著的性能提升。</li>
+<li>“此方法允許穩定且一致的影片預測、更長的展開而不需要滑動視窗，以及能夠穩健地處理具有長期記憶需求的非馬可夫任務。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40871783">評論</a></h3>
+<ul>
+<li>該論文結合了對大型語言模型(LLMs)至關重要的序列遮罩技術，並通過追蹤每個像素的「不確定性」水平，將其視為擴散模型的「噪音」來應用擴散模型。</li>
+<li>這種方法對於解迷和控制機械臂等任務非常有利，因為它允許更早地鞏固圖像的部分。</li>
+<li>該方法在規劃和搜尋中建模不確定性，增強了代理的反應和泛化能力，但論文缺乏實作細節和程式碼庫的存取。</li>
+</ul>
+<h2><a href="https://blog.nelhage.com/post/fuzzy-dedup/">使用 Jaccard 相似度和 MinHash 找出近似重複項</a></h2>
+<ul>
+<li>Jaccard 相似度和 MinHash 被用來在大型文本集合中識別大致相似的文件，例如在 GPT-3 數據集準備中使用的那些。</li>
+<li>MinHash 透過對文件特徵進行雜湊並使用最小雜湊值作為簽名來近似 Jaccard 相似度，從而允許高效地比較大型語料庫。</li>
+<li>「此方法具有可擴展性，並且可以與其他技術如 HyperLogLog 結合使用，使其適用於大規模文本處理應用。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872438">評論</a></h3>
+<ul>
+<li>這篇文章討論了使用 Jaccard 相似度和 MinHash 來尋找近似重複的數據，並強調了它們在醫學影像分割和資料庫去重等各個領域的應用。</li>
+<li>提到幾個用於去重任務的工具和函式庫，包括 datasketch、rensa、Splink 和 gaoya，並提供了它們的性能和使用案例的見解。</li>
+<li>Fellegi Sunter 模型以其在去重過程中的有效性而著稱，透過對模糊匹配和不匹配分配權重，提升了大型數據集的準確性。</li>
+</ul>
+<h2><a href="https://community.fly.io/t/fresh-produce-region-specific-machines-pricing/20690">區域特定機器定價</a></h2>
+<ul>
+<li>“自7月1日起，將針對機器(包括額外的記憶體)引入區域特定定價，這是由於各地區基礎設施成本的差異所致。”</li>
+<li>價格調整將在四個月內逐步實施，最終價格將於十一月確定；初始發票將顯示地區特定的項目，但不會有價格變動。</li>
+<li>「已經實施了一個針對未被免費機器配額信用涵蓋的 Machines Shared CPU 1x 使用量的錯誤修正，並且正在重新發放信用。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40873001">評論</a></h3>
+<ul>
+<li>「Fly.io 的區域特定定價引發了討論，有些使用者認為相比於 Hetzner 等替代方案，特別是在高可用性方面，Fly.io 的價格較高。」</li>
+<li>“Fly.io 為其定價辯護，強調由於某些地區(如巴西)的高運營成本，全球統一費率是不可持續的。”</li>
+<li>「儘管取消了愛好者計劃並存在一些可靠性問題，許多用戶仍然欣賞 Fly.io 的功能，例如動態請求路由和無運維部署，他們認為這些功能足以證明較高的成本是合理的。」</li>
+</ul>
+<head>
+  <meta property="og:title" content="DS_store 的起源(2006)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=DS_store%20%E7%9A%84%E8%B5%B7%E6%BA%90(2006)&subheading=2024%E5%B9%B47%E6%9C%884%E6%97%A5%20%E6%98%9F%E6%9C%9F%E5%9B%9B%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/zh/Hant/2024/07/04</link>
+            <guid isPermaLink="false">2024-07-04T00:00:00.000Z</guid>
+            <pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-03]]></title>
             <description
@@ -1692,182 +1877,6 @@
             <link>https://hn.cho.sh/zh/Hant/2024/06/25</link>
             <guid isPermaLink="false">2024-06-25T00:00:00.000Z</guid>
             <pubDate>Tue, 25 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-24]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/24&#39;</h2>
-<h1>2024-06-24</h1>
-<h2><a href="https://danilafe.com/blog/blog_microfeatures/">我喜愛的部落格和個人網站中的微小特點</a></h2>
-<ul>
-<li>“這篇文章突顯了各種可以提升使用者體驗的微特徵，適用於部落格和個人網站，靈感來自於Hillel Wayne關於程式語言的文章。”</li>
-<li>主要功能包括旁註、目錄、可連結的標題、系列分組、對話框、帶有來源和可點擊連結的程式碼區塊、外部連結標記、連結預覽和 RSS 訂閱。</li>
-<li>這些功能雖然不是必需的，但能改善導航、互動性和無障礙性，使閱讀體驗更加愉快和高效。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40774277">評論</a></h3>
-<ul>
-<li>討論圍繞在部落格和個人網站中的微特徵，強調了正面和負面的方面。</li>
-<li>爭議的重點包括進度條的使用、連結裝飾和預覽彈出視窗，有些使用者認為這些功能令人分心且不必要。</li>
-<li>對話還涉及到原生捲軸縮小的問題，以及像目錄和始終可見的索引這類替代導航工具的潛在好處。</li>
-</ul>
-<h2><a href="https://www.theguardian.com/technology/article/2024/jun/24/apple-breach-eu-competition-rules-digital-markets-act">蘋果被發現違反歐盟競爭規則</a></h2>
-<ul>
-<li>歐洲委員會發現蘋果違反了旨在保護較小競爭對手並使消費者能夠找到更便宜應用程式的新歐盟法律。</li>
-<li>蘋果公司有12個月的時間來遵守這些規定，否則將面臨最高達其全球收入10%的罰款，這是根據三月份啟動的調查結果所做出的決定。</li>
-<li>這標誌著自《數位市場法》(DMA)頒布以來，對蘋果進行的第三次不合規調查，重點關注蘋果的費用和限制開發者引導消費者選擇替代購買選項的做法。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773883">評論</a></h3>
-<ul>
-<li>蘋果被發現違反歐盟競爭規則，引發了在美國採取類似行動的呼聲。</li>
-<li>批評者認為，蘋果對應用程式發佈和開發者費用的控制抑制了競爭，特別是對於防止開發者告知用戶在 App Store 之外有更便宜支付選項的反引導規則感到擔憂。</li>
-<li>蘋果公司正在等待歐盟法院對要求為開發者提供免費 iOS API 的條款合憲性做出裁決，因為有聲稱其遵守歐盟法律只是表面功夫。</li>
-</ul>
-<h2><a href="https://www.voanews.com/a/us-prosecutors-recommend-justice-department-criminally-charge-boeing-as-deadline-looms/7667194.html">美國檢察官建議司法部對波音公司提出刑事指控</a></h2>
-<ul>
-<li>美國檢察官建議對波音公司提出刑事指控，指控其涉嫌違反2021年關於兩起致命737 MAX空難的和解協議。</li>
-<li>“司法部必須在7月7日之前決定是否起訴，波音公司則對違規指控提出異議，相關討論仍在進行中。”</li>
-<li>“刑事指控可能會加劇波音公司的危機，影響其與美國政府的合約，同時受害者家屬主張處以250億美元的罰款並進行起訴。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773151">評論</a></h3>
-<ul>
-<li>美國檢察官建議對波音公司提出刑事指控，有些人甚至建議採取激烈措施，如徵收公司51%的股份、解僱高層管理人員並處以罰款。</li>
-<li>批評者認為，股東缺乏執行適當監督的權力，而機構投資者往往未能有效監控企業行為。</li>
-<li>「波音案突顯了公司治理和監管監督方面更廣泛的系統性問題。」</li>
-</ul>
-<h2><a href="https://github.com/jart/cosmopolitan/releases/tag/3.5.0">Cosmopolitan v3.5.0</a></h2>
-<ul>
-<li>Cosmopolitan Libc v3.5.0 已經發布，使 C 語言成為一種無需解釋器或虛擬機器即可一次編譯、隨處運行的語言。</li>
-<li>主要改進包括更高品質的記憶體映射實作、重新編寫的記憶體管理器，以及更新至 5.4.6 版本的 Lua。</li>
-<li>引入了新的 C++ STL 功能，例如 ctl::string 小字串優化、ctl::set、ctl::map 和 ctl::unique_ptr，以及各種錯誤修正和優化。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773139">評論</a></h3>
-<ul>
-<li>Cosmopolitan v3.5.0 已經發布，因其能夠創建高度可移植的可執行檔，無需修改即可在多個作業系統和架構上運行，從而引起了廣泛關注。</li>
-<li>新版本擁有更佳的效能，據稱 Cosmopolitan Libc 在許多命令列介面(CLI)程式中速度是 Musl Libc 的兩倍，並提供強大的執行緒支援，使其適合高效能的 AI 軟體。</li>
-<li>“此版本包含對 WebAssembly (WASM) 的支援，並且具有如「實際可攜執行檔」(APE)標頭等功能，這增強了跨平台相容性，包括對 Android 的支援。”</li>
-</ul>
-<h2><a href="https://www.ashleygjovik.com/3250scott.html">蘋果的秘密矽晶圓廠緊鄰數千戶住宅</a></h2>
-<ul>
-<li>2015 年，蘋果公司在加利福尼亞州聖塔克拉拉的一個設施內開始秘密進行半導體製造，該設施排放的有毒氣體影響了附近的居民。</li>
-<li>Ashley M. Gjovik，2020 年的居民，遭受嚴重的健康問題，並發現工廠的排放物進入她的家中和體內，導致多次投訴和調查。</li>
-<li>蘋果因危險廢棄物和安全問題面臨違規，並且正在進行對公共滋擾和超危險活動的檢查和調查，這些活動對Gjovik和環境造成了重大損害。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773136">評論</a></h3>
-<h2><a href="https://www.linqpad.net/">LINQPad – .NET 程式設計師的遊樂場</a></h2>
-<ul>
-<li>LINQPad 是一個多功能工具，適用於 .NET 程式設計師，可以即時測試 C#/F#/VB 程式片段、查詢資料庫，並利用 REPL(讀取-求值-輸出循環)的優勢來自動化腳本。</li>
-<li>它支援 C# 12 和 .NET 8，允許在 LINQ 或 SQL 中進行互動式資料庫查詢，並包含多個資料庫的驅動程式，如 SQL Server、Oracle 和 MySQL。</li>
-<li>LINQPad 提供了進階功能，如 AI 自動完成、整合除錯和豐富的輸出格式，使其成為快速編碼和動態開發的強大工具。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40770171">評論</a></h3>
-<ul>
-<li>LINQPad 因其易用性而備受推崇，特別是在 .NET 開發者中，用於編寫腳本、除錯和執行 LINQ 查詢。</li>
-<li>用戶欣賞其如 SQL Server 資料庫連線等功能，但對其僅限於 Windows 平台及高昂成本感到不滿。</li>
-<li>提到的替代方案包括 WinMerge、NetPad、dotnetfiddle.net 和 RoslynPad，有些使用者希望能夠跨平台支援並整合到 Visual Studio 中。</li>
-</ul>
-<h2><a href="https://apnews.com/article/car-dealerships-cyberattack-cdk-outage-3f7c81f6be0e212172b33cdc9f49feba">汽車經銷商在軟體供應商遭受網路攻擊後恢復使用筆和紙</a></h2>
-<ul>
-<li>由於汽車經銷商關鍵軟體供應商 CDK Global 遭受網路攻擊，北美的汽車經銷商經歷了重大干擾。</li>
-<li>2024年6月19日的攻擊事件導致持續的停電，進而造成受影響的經銷商出現延誤並需進行人工處理。</li>
-<li>主要汽車公司如 Stellantis、福特和 BMW 確認了影響，但正在使用替代方法繼續運營，而 CDK Global 正在努力恢復其系統。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40776951">評論</a></h3>
-<ul>
-<li>在其軟體供應商 CDK Global 遭受網路攻擊後，汽車經銷商正在恢復使用筆和紙，因為這些攻擊中斷了他們的數位運營。</li>
-<li>“由於零件和服務部門的庫存資訊儲存在受損的CDK系統中，網路攻擊對這些部門的影響比新車銷售更為嚴重。”</li>
-<li>這起事件突顯了高度依賴單一軟體供應商的產業的脆弱性，強調了需要更好的網路安全措施以及可能更多元化的軟體解決方案。</li>
-</ul>
-<h2><a href="https://www.dropbox.com/scl/fo/312oqvretg7yyhfx0ohx4/AGZduVXs0_1geqIyi0NA9nE?e=1&preview=2024_04_30_RCRA_Insp_Report_REPORT_Apple_3250_Scott_Redacted.pdf&rlkey=3aa2tw15ek3trqlbdh7pw9erh&st=4b364mkx&dl=0">美國環保署對蘋果製造的執法與合規</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40772224">評論</a></h3>
-<ul>
-<li>美國環保署正在調查蘋果公司位於聖塔克拉拉的一處設施，重點關注不當處理和釋放有害廢棄物的潛在環境違規行為。</li>
-<li>“前蘋果員工艾希莉·喬維克對該設施的排放物對個人健康的影響提出了擔憂，儘管她的主張遭到質疑。”</li>
-<li>此案例強調了工業監管和企業責任的複雜性，並與其他工業事故及對監管執行的擔憂進行了比較。</li>
-</ul>
-<h2><a href="https://www.bbc.com/future/article/20240621-how-traffic-noise-pollution-harms-childrens-health-and-development">交通噪音傷害兒童的大腦</a></h2>
-<ul>
-<li>兒童對交通噪音污染極為脆弱，這會對他們的健康和學習能力產生負面影響。</li>
-<li>研究顯示，包括 Arline Bronzaft 在 1975 年的研究和 2022 年在巴塞隆納進行的研究，噪音污染會損害兒童的閱讀表現、工作記憶和注意力持續時間。</li>
-<li>“像布宜諾斯艾利斯和巴塞隆納這樣的城市正在實施改善綠地和降低車速限制等措施來對抗噪音污染，巴塞隆納的‘超級街區’等計畫優先考慮行人和綠地而非汽車。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40769880">評論</a></h3>
-<ul>
-<li>一項研究顯示，學校的道路交通噪音與兒童工作記憶和注意力的發展較慢有關。</li>
-<li>潛在的解決方案包括減少學校周圍的交通量以及對教室進行隔音處理，以減輕環境噪音的影響。</li>
-<li>討論還涉及更廣泛的議題，如汽車依賴、噪音污染，以及安靜、適合步行的城市環境的優勢。</li>
-</ul>
-<h2><a href="https://www.tomshardware.com/software/windows/microsoft-account-to-local-account-conversion-guide-erased-from-official-windows-11-guide-instructions-redacted-earlier-this-week">從 Windows 11 指南中刪除了 Microsoft 帳戶轉換為本機帳戶的指南</a></h2>
-<ul>
-<li>Microsoft 已於 2024 年 6 月 17 日起，從其 Windows 11 支援頁面移除將 Microsoft 帳戶轉換為本機帳戶的指南。</li>
-<li>使用者仍然可以透過設定 &gt; 帳戶 &gt; 您的資訊，手動切換到本機帳戶，並選擇「改用本機帳戶登入」。</li>
-<li>此舉突顯了微軟推動用戶採用 Microsoft 帳戶的努力，強調了服務整合和增強安全性等優點，這與 Google 和 Apple 的策略一致。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40775301">評論</a></h3>
-<ul>
-<li>Microsoft 已經從 Windows 11 文件中移除了將 Microsoft 帳戶轉換為本機帳戶的指南。</li>
-<li>用戶正在討論替代方案，例如使用 Windows 11 的 LTSC(長期服務通道)版本，這通常是企業產品，但可以通過 GitHub 腳本激活。</li>
-<li>這段對話突顯了關於使用啟動腳本的倫理和合法性以及在遊戲和一般計算中 Windows 和 Linux 之間的取捨的持續辯論。</li>
-</ul>
-<h2><a href="https://www.redhat.com/en/topics/linux/centos-linux-eol">CentOS Linux 7 將於星期日達到生命週期終止(EOL)</a></h2>
-<ul>
-<li>「CentOS Linux 7 將於 2024 年 6 月 30 日達到生命週期終止(EOL)，這意味著在此日期之後，它將不再接收更新或安全補丁。」</li>
-<li>「Red Hat 提供多種遷移工具和服務，例如 Convert2RHEL、Red Hat Insights 和 Red Hat Consulting，以協助用戶轉換到 Red Hat Enterprise Linux (RHEL)。」</li>
-<li>「RHEL 提供與 CentOS 類似的使用者體驗，並具備額外的功能、支援和安全性，且與主要的雲端服務提供商和混合雲部署相容。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773749">評論</a></h3>
-<ul>
-<li>CentOS Linux 7 將於星期日達到生命週期終止(EOL)，促使用戶尋找替代方案。</li>
-<li>SUSE 提供了一個解決方案，通過將 CentOS 7 的更新倉庫切換到 SUSE 的倉庫，避免了破壞性的遷移，而 Oracle Linux 是另一個選項，儘管一些使用者對此持謹慎態度。</li>
-<li>許多使用者正在轉向 Rocky Linux、AlmaLinux 或 Debian 等替代方案，有些人在升級過程中面臨挑戰，並考慮使用容器來減少作業系統變更的影響。</li>
-</ul>
-<h2><a href="https://arxiv.org/abs/2403.06707">從第一原理推導依賴型別的物件導向程式設計</a></h2>
-<ul>
-<li>本文探討了表達問題，這涉及在程式設計中擴展類型以包含新的生產者和消費者的挑戰。</li>
-<li>“它通過使用對偶性從第一原理推導，探討依賴型別的物件導向程式設計，並提供具有對偶語言片段的依賴型別演算。”</li>
-<li>「此擴展版本包含了額外的附錄，並將成為 OOPSLA 2024 的 PACMPL 期刊的一部分，展示了該領域的重要性和持續的研究。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40769867">評論</a></h3>
-<ul>
-<li>論文《從第一原理推導依賴型物件導向程式設計》引發了廣泛討論，在 arxiv.org 上獲得了 141 點評分。</li>
-<li>主要討論包括物件導向程式設計(OOP)與函數式程式設計(FP)的本質，一些使用者指出該論文的範例看起來更像是函數式而非物件導向。</li>
-<li>「各種資源和參考資料被分享，包括 William Cook 關於資料抽象的論文、Noel Welsh 關於函數式編程和物件導向編程的演講，以及《A Little Java, A Few Patterns》這本書，用於理解函數式編程和物件導向編程之間的聯繫。」</li>
-</ul>
-<h2><a href="https://frenck.dev/diy-smart-doorbell-for-just-2-dollar/">使用 ESPHome 將現有的有線門鈴轉換為智慧門鈴</a></h2>
-<ul>
-<li>這篇文章解釋了如何將傳統門鈴轉換成智慧、WiFi連接的門鈴，費用約為2美元，且不需要焊接或電子專業知識。</li>
-<li>該專案使用 ESP-01S 晶片和繼電器模組，由舊手機充電器供電，並整合 Home Assistant 和 ESPHome 進行各種自動化。</li>
-<li>提供了詳細步驟來修改 ESP-01S 晶片、燒錄韌體、接線以及與 Home Assistant 整合，展示了 DIY 智慧家庭專案的簡單性和經濟性。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40774270">評論</a></h3>
-<ul>
-<li>文章討論了如何使用 ESPHome 將有線門鈴轉換為智慧門鈴，並強調了潛在的故障點和遠端通知及家庭自動化整合等優點。</li>
-<li>例如使用 Amcrest AD110 門鈴進行本地視頻串流和自訂通知，並建議使用 Zigbee 或 Z-Wave 按鈕以簡化操作。</li>
-<li>主要目的是展示使用 ESPHome 和 Home Assistant 進行 DIY 智慧家庭專案的簡便性和樂趣。</li>
-</ul>
-<h2><a href="https://mastodon.social/@ashleygjovik/112668309100333232/?">環保署發布報告，指控蘋果在城市矽晶圓廠違反有害廢棄物處理規定</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40773957">評論</a></h3>
-<ul>
-<li>「環保署報告強調了蘋果公司在危險廢棄物處理方面的違規行為，特別是在城市矽晶圓廠非法排放危險化學物質的問題。」</li>
-<li>蘋果未能計算通過碳過濾器的所有廢物，這使得無法評估過濾器的「突破時間」，可能導致自2020年12月以來的環境洩漏。</li>
-<li>關於這個主題的討論已經移至 Hacker News 的新討論串，顯示出社群的高度關注。</li>
-</ul>
-<h2><a href="https://www.wsj.com/style/fashion/hermes-birkin-bag-investment-031c215c">柏金包的經濟學</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40770358">評論</a></h3>
-<ul>
-<li>柏金包市場因其獨特性和高需求而蓬勃發展，買家有24小時的購買時間，這種機制創造了類似抽獎的興奮感。</li>
-<li>銷售僅限於在其他商品上有顯著消費的忠實顧客，以維持該包包作為象徵和投資的地位。</li>
-<li>“類似於運動鞋市場，這種限量供應和個性化服務的模式通過稀缺性和聲望確保了奢侈品市場的成功，吸引了富有的消費者。”</li>
-</ul>
-<head>
-  <meta property="og:title" content="我喜愛的部落格和個人網站中的微小特點" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E6%88%91%E5%96%9C%E6%84%9B%E7%9A%84%E9%83%A8%E8%90%BD%E6%A0%BC%E5%92%8C%E5%80%8B%E4%BA%BA%E7%B6%B2%E7%AB%99%E4%B8%AD%E7%9A%84%E5%BE%AE%E5%B0%8F%E7%89%B9%E9%BB%9E&subheading=2024%E5%B9%B46%E6%9C%8824%E6%97%A5%20%E6%98%9F%E6%9C%9F%E4%B8%80%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/zh/Hant/2024/06/24</link>
-            <guid isPermaLink="false">2024-06-24T00:00:00.000Z</guid>
-            <pubDate>Mon, 24 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

@@ -1,0 +1,323 @@
+[
+  {
+    "id": 40870357,
+    "title": "DS_store's oprindelse (2006)",
+    "originLink": "https://www.arno.org/on-the-origins-of-ds-store",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40870357",
+    "commentBody": "",
+    "originSummary": [
+      "DS_Store-filer, som ofte ses ved overførsel af filer fra Mac til Windows, står for \"Desktop Services Store\" og stammer fra en omskrivning af Mac OS X Finder i 1999.",
+      "Finder blev opdelt i en brugergrænseflade (Finder_FE) og kernefunktionalitet (Finder_BE), med planer om at gøre backend til en offentlig API kaldet Desktop Services, selvom det aldrig blev fuldt udgivet.",
+      "En fejl forårsager overdreven oprettelse af .DS_Store-filer, selv uden brugerjusteringer, hvilket gør dem til et vedvarende problem for Mac-brugere."
+    ],
+    "commentSummary": [
+      "Diskussionen drejer sig om den historiske kontekst og tekniske detaljer vedrørende DS_store-filen og \"fork\"-konceptet i Mac-filsystemer, som inkluderer både ressource- og datakomponenter.",
+      "Ressourceforgreningen i tidlige MacOS lagrede forskellige applikationsdata som ikoner, menuer og eksekverbar kode, hvilket skabte udfordringer ved overførsel af filer til ikke-Mac-systemer.",
+      "Overgangen fra MacOS til MacOS X indebar betydelige ændringer, herunder fjernelsen af resource forks, hvilket blev mødt med blandede reaktioner fra brugerfællesskabet."
+    ],
+    "points": 375,
+    "commentCount": 200,
+    "retryCount": 0,
+    "time": 1720043713
+  },
+  {
+    "id": 40869877,
+    "title": "Xcapture-BPF – som Linux top, men med røntgensyn",
+    "originLink": "https://0x.tools/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40869877",
+    "commentBody": "",
+    "originSummary": [
+      "0x.tools er et sæt open-source værktøjer designet til at analysere applikationsydelse på Linux, med vægt på enkelhed og minimale afhængigheder.",
+      "Vigtige funktioner inkluderer måling af individuel trådaktivitet og levering af eBPF-baserede værktøjer til systemniveau og detaljeret trådaktivitetsanalyse.",
+      "Det er designet til sikker brug i produktionsmiljøer med meget lav overhead og kræver ikke OS-opgraderinger eller tunge overvågningsrammer."
+    ],
+    "commentSummary": [
+      "Xcapture-BPF er et nyt værktøj, der sammenlignes med Linux's top-kommando, men med forbedrede funktioner, ofte omtalt som at have \"røntgensyn\" til systemdiagnostik.",
+      "Brugere har delt erfaringer med at bruge eBPF (extended Berkeley Packet Filter) og BCC (BPF Compiler Collection) værktøjer til at fejlfinde komplekse produktionsproblemer, og fremhæver deres effektivitet i at løse præstationsflaskehalse og hukommelseslækager.",
+      "Diskussionen inkluderer praktiske eksempler på fejlfinding, såsom at løse høje iowait- og sidecache-problemer i containeriserede miljøer ved at aktivere direkte IO og matche sektorstørrelser på loopback-enheder."
+    ],
+    "points": 353,
+    "commentCount": 35,
+    "retryCount": 0,
+    "time": 1720039957
+  },
+  {
+    "id": 40869461,
+    "title": "AI's spørgsmål til 600 milliarder dollars",
+    "originLink": "https://www.sequoiacap.com/article/ais-600b-question/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40869461",
+    "commentBody": "",
+    "originSummary": [
+      "AI-indtægtskløften er udvidet fra $200 mia. til $600 mia., hvilket rejser spørgsmål om branchens vækstforventninger.",
+      "Vigtige udviklinger omfatter afhjælpningen af GPU-forsyningsmanglen, Nvidias øgede indtægter fra datacentre og OpenAIs betydelige indtægtsvækst til $3,4 mia.",
+      "Udfordringer som manglende prissætningskraft, investeringsrisici og hurtig værdiforringelse af ældre chips består, men lavere GPU-omkostninger kunne gavne startups og innovation."
+    ],
+    "commentSummary": [
+      "Træning af store AI-modeller som GPT-4 kræver betydelige computerressourcer, med estimater, der antyder 8.000 H100 GPU'er kørende i 90 dage.",
+      "Metas betydelige investeringer i GPU'er kunne gøre det muligt for dem at træne flere GPT-4 skala modeller årligt, hvilket potentielt kunne gøre kerne-AI-modeller til en handelsvare og påvirke profitmarginerne for AI-virksomheder.",
+      "Den reelle værdi i AI kan skifte mod proprietære data til træning, hvilket kan rejse potentielle juridiske spørgsmål og understrege vigtigheden af dataejerskab."
+    ],
+    "points": 331,
+    "commentCount": 496,
+    "retryCount": 0,
+    "time": 1720036541
+  },
+  {
+    "id": 40870345,
+    "title": "Slå NumPy matrixmultiplikation med 150 linjer C",
+    "originLink": "https://salykova.github.io/matmul-cpu",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40870345",
+    "commentBody": "",
+    "originSummary": [
+      "En højtydende matrixmultiplikationsimplementering i C, der følger BLIS-designet, overgår NumPy (OpenBLAS) på en AMD Ryzen 7700 og opnår over 1 TFLOPS.",
+      "Den kode er enkel, bærbar og skalerbar, idet den kun bruger 3 linjer OpenMP-direktiver til parallelisering, og den er målrettet Intel Core og AMD Zen CPU'er med FMA3 og AVX instruktioner.",
+      "Implementeringen viser, at effektiv matrixmultiplikation kan opnås i C uden dybdegående assembly- eller Fortran-kode, med ydeevne, der er sammenlignelig med etablerede BLAS-biblioteker, når den er finjusteret til specifik hardware."
+    ],
+    "commentSummary": [
+      "Et blogindlæg demonstrerer, hvordan man overgår NumPy matrixmultiplikation ved hjælp af 150 linjer C-kode med fokus på ydeevneforbedringer.",
+      "Væsentlige forbedringer omfatter algoritmevalg, minimering af kerne-rundture, vektorisering, cache-effektivitet og hardware-specifikke optimeringer.",
+      "Diskussioner i kommentarerne omhandler retfærdigheden i at sammenligne C-kode med NumPy, og foreslår sammenligninger med andre BLAS (Basic Linear Algebra Subprograms) biblioteker og understreger behovet for grundig benchmarking og hyperparameterjustering for specifikke CPU'er."
+    ],
+    "points": 298,
+    "commentCount": 51,
+    "retryCount": 0,
+    "time": 1720043575
+  },
+  {
+    "id": 40870280,
+    "title": "Glæden ved at læse bøger, du ikke forstår",
+    "originLink": "https://reactormag.com/the-joy-of-reading-books-you-dont-entirely-understand/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40870280",
+    "commentBody": "",
+    "originSummary": [
+      "Artiklen understreger glæden og værdien ved at læse bøger, som man ikke helt forstår, og antyder, at det er okay at værdsætte en bog uden fuldt ud at fatte den.",
+      "Forfatteren, Molly Templeton, deler personlige oplevelser med komplekse bøger som Neal Stephensons *Baroque Cycle* og nyere titler som Alaya Dawn Johnsons *The Library of Broken Worlds* og Molly McGhees *Jonathan Abernathy You Are Kind*.",
+      "Templeton hævder, at det kan være befriende at omfavne usikkerhed i læsning og berige læseoplevelsen, idet det opmuntrer læsere til at udforske udfordrende fortællinger."
+    ],
+    "commentSummary": [
+      "Indlægget diskuterer værdien af at læse bøger, der udfordrer og fremkalder dybe tanker, med henvisning til Kafkas tro på, at indflydelsesrige bøger bør 'bide og stikke' i stedet for blot at underholde.",
+      "Det fremhæver forskellige perspektiver på at læse svære eller komplekse bøger, hvor nogle læsere går ind for fordybelse uden at tage noter for at øge forståelsen og nydelsen.",
+      "Dialogen indeholder personlige anekdoter og anbefalinger af bøger, der har efterladt et varigt indtryk, og understreger glæden ved at opdage nye indsigter gennem genlæsning og engagement med udfordrende materiale."
+    ],
+    "points": 298,
+    "commentCount": 185,
+    "retryCount": 0,
+    "time": 1720043087
+  },
+  {
+    "id": 40874341,
+    "title": "Twilio bekræfter databrud efter hackere lækker 33M Authy-brugertelefonnumre",
+    "originLink": "https://www.securityweek.com/twilio-confirms-data-breach-after-hackers-leak-33m-authy-user-phone-numbers/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40874341",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Twilio har bekræftet et databrud, der afslørede telefonnumrene på 33 millioner Authy-brugere, hvilket har ført til øgede spamopkald og bekymringer over pålideligheden af traditionelle telefonnetværk.",
+      "Brugere overvejer alternative kommunikationsmetoder som FaceTime og Zoom, samtidig med at de understreger den kritiske rolle, som telefonopkald spiller i essentielle tjenester som sundhedspleje og sociale tjenester.",
+      "Bruddet understreger behovet for stærkere databeskyttelse, bedre håndhævelse af anti-spam foranstaltninger og anbefalinger til alternative to-faktor autentificeringsapps (2FA) som Aegis, Bitwarden og Yubikey."
+    ],
+    "points": 260,
+    "commentCount": 148,
+    "retryCount": 0,
+    "time": 1720095999
+  },
+  {
+    "id": 40872182,
+    "title": "Den sørgeligste \"Bare Send Det\" historie nogensinde (2020)",
+    "originLink": "https://www.kitze.io/posts/saddest-just-ship-it-story-ever",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872182",
+    "commentBody": "",
+    "originSummary": [
+      "Forfatteren deler en personlig rejse med at udvikle en app, der startede i 2018, men forsinkede dens udgivelse på grund af kontinuerlige tilføjelser af funktioner og læring af nye teknologier som React Native.",
+      "På trods af at have opgivet projektet efter to år, opdagede forfatteren senere en lignende app, der havde succes på trods af at være ufuldkommen, hvilket førte til blandede følelser.",
+      "I 2022 udgav forfatteren endelig en produktivitetsapp, der kombinerer forskellige funktioner som To-dos, Vaner, Planlægger og Mål, og inviterer læserne til at slutte sig til fællesskabet på Benji - The Life OS."
+    ],
+    "commentSummary": [
+      "Diskussionen drejer sig om \"bare send det\" mentaliteten i softwareudvikling, hvor der understreges, at hastværk for at overholde deadlines kan kompromittere kvaliteten af softwaren og føre til udbrændthed blandt udviklere.",
+      "Der er en debat om, hvorvidt udviklere bør prioritere virksomhedens rentabilitet eller fokusere på at skabe software af høj kvalitet, hvor nogle hævder, at udviklere ikke bliver tilstrækkeligt kompenseret for ekstraordinære indsatser, medmindre de har en betydelig andel i virksomheden.",
+      "Dialogen fremhæver forskellige perspektiver på arbejdsglæde, kompensation og balancen mellem professionel integritet og virksomhedens krav, hvilket afspejler bredere branchebekymringer om balance mellem arbejde og privatliv samt anerkendelse."
+    ],
+    "points": 217,
+    "commentCount": 263,
+    "retryCount": 0,
+    "time": 1720065035
+  },
+  {
+    "id": 40874013,
+    "title": "Jeffrey Snover og skabelsen af PowerShell",
+    "originLink": "https://corecursive.com/building-powershell-with-jeffrey-snover/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40874013",
+    "commentBody": "",
+    "originSummary": [
+      "Jeffrey Snover, arkitekten bag PowerShell, deler sin rejse med at skabe et kommandoværktøj, der revolutionerede Windows-systemadministration, og som i starten mødte modstand fra en virksomhed, der foretrak grafiske brugerflader.",
+      "Væsentlige udfordringer omfattede at navigere virksomhedsomstruktureringer, kulturel modstand og opbygning af et dedikeret team, med betydelig indflydelse fra Bill Gates' pres for .NET.",
+      "PowerShells udvikling, styret af Monad Manifestet, transformerede Windows Server-administration og muliggjorde Microsofts overgang til skyen, hvilket viser virkningen af vedholdenhed og vision i at drive teknologisk forandring."
+    ],
+    "commentSummary": [
+      "Jeffrey Snover, skaberen af PowerShell, mødte betydelig modstand og blev degraderet hos Microsoft for at forfølge dets udvikling.",
+      "PowerShell blev designet til at hjælpe med serveradministration på Windows ved at kalde forskellige API'er, men det stødte på interne konflikter, og nogle funktioner gik tabt i nyere versioner.",
+      "På trods af sin objektorienterede tilgang og .NET-integration anses PowerShell for at være omstændelig og udfordrende sammenlignet med andre scriptsprog som Python, hvilket begrænser dets udbredelse uden for Windows-økosystemet."
+    ],
+    "points": 200,
+    "commentCount": 182,
+    "retryCount": 0,
+    "time": 1720092392
+  },
+  {
+    "id": 40872020,
+    "title": "Sans-IO: Hemmeligheden bag effektiv Rust til netværkstjenester",
+    "originLink": "https://www.firezone.dev/blog/sans-io",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872020",
+    "commentBody": "",
+    "originSummary": [
+      "Firezone bruger Rust og et sans-IO design til sit kerneforbindelsesbibliotek, connlib, for at administrere netværksforbindelser og WireGuard-tunneler, hvilket tilbyder hurtige tests, dyb tilpasning og høj sikkerhed.",
+      "Sans-IO-design adskiller politik fra implementering ved hjælp af abstraktioner som `Transmit`, hvilket tillader rene tilstandsmaskiner at håndtere netværksprotokoller uden direkte IO, hvilket gør koden mere fleksibel og lettere at teste.",
+      "Selvom sans-IO kræver brugerdefinerede event loops og tilstandsmaskiner, giver det betydelige fordele såsom nem sammensætning, fleksible API'er og forbedret fejlhåndtering, på trods af at det endnu ikke er bredt adopteret i Rust-fællesskabet."
+    ],
+    "commentSummary": [
+      "Indlægget diskuterer konceptet Sans-IO i Rust, som adskiller input/output (IO) operationer fra hovedlogikken, hvilket gør koden mere testbar og sammensætbar.",
+      "Denne tilgang er særligt gavnlig for pakkebaserede anvendelsestilfælde som QUIC, WebRTC og IP, hvor tilstandshåndtering kan blive kompleks.",
+      "Diskussionen fremhæver, at selvom denne metode ikke er ny, tilbyder den betydelige fordele i Rust ved at forenkle testning og undgå faldgruberne ved traditionelle async/await-mønstre."
+    ],
+    "points": 179,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1720062336
+  },
+  {
+    "id": 40872332,
+    "title": "Bygge et datakomprimeringsværktøj i Haskell ved hjælp af Huffman-koder",
+    "originLink": "https://lazamar.github.io/haskell-data-compression-with-huffman-codes/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872332",
+    "commentBody": "",
+    "originSummary": [
+      "Indlægget skitserer oprettelsen af et datakomprimeringsprogram i Haskell ved hjælp af Huffman-kodning, som håndterer vilkårlige binære filer med konstant hukommelse til kodning og dekodning.",
+      "Den forklarer Huffman-koder, præfiksfrie koder og processen med at konstruere et binært træ for effektiv kodning, efterfulgt af implementeringen af kodnings- og afkodningsfunktioner.",
+      "Indlægget dækker også håndtering af binære filer, serialisering/deserialisering af data og potentielle forbedringer som multithreading og hurtigere kodeoprettelse, hvilket viser et praktisk og effektivt datakomprimeringsværktøj i Haskell."
+    ],
+    "commentSummary": [
+      "En diskussion om at bygge et datakomprimeringsværktøj i Haskell ved hjælp af Huffman-koder, der fremhæver effektiviteten af array-baserede, in-place algoritmer til store datasæt.",
+      "Referencer til betydelige værker, herunder Moffat og Katajainens artikel fra 1995 og JPEG-standarden ITU T.81 (1992), som beskriver array-baseret Huffman-kodning.",
+      "Indsigt i Haskells ydeevne, med sammenligninger med andre sprog som C, C++ og Rust, og afvejningerne mellem enkelhed i implementering og kodeklarhed versus rå ydeevne."
+    ],
+    "points": 164,
+    "commentCount": 69,
+    "retryCount": 0,
+    "time": 1720067352
+  },
+  {
+    "id": 40869421,
+    "title": "Voice Isolator: Fjern baggrundsstøj til film-, podcast- og interviewproduktion",
+    "originLink": "https://elevenlabs.io/voice-isolator",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40869421",
+    "commentBody": "",
+    "originSummary": [
+      "AI-stemmegeneratoren understøtter nu 29 sprog, hvilket udvider dens tilgængelighed og anvendelighed for et globalt publikum.",
+      "Det tilbyder tusindvis af stemmeindstillinger, hvilket giver brugerne et bredt udvalg af valgmuligheder til forskellige applikationer og præferencer."
+    ],
+    "commentSummary": [
+      "Elevenlabs' Voice Isolator-værktøj har til formål at fjerne baggrundsstøj til film-, podcast- og interviewproduktion, men dets prismodel baseret på 'tegn' forvirrer mange brugere.",
+      "Brugere diskuterer forskellige alternativer til tale-til-tekst (STT) og tekst-til-tale (TTS) løsninger, herunder open source-muligheder som Whisper og kommercielle tjenester som Deepgram Nova 2.",
+      "Der er en bemærkelsesværdig interesse for lokale og open-source løsninger til lydoprydning og transskription, da mange finder de nuværende kommercielle tilbud enten for dyre eller ikke effektive nok."
+    ],
+    "points": 158,
+    "commentCount": 126,
+    "retryCount": 0,
+    "time": 1720036303
+  },
+  {
+    "id": 40872102,
+    "title": "Vision Pro-ejere, bruger I det stadig?",
+    "originLink": "https://news.ycombinator.com/item?id=40872102",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872102",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Vision Pro-brugere har blandede oplevelser, hvor nogle roser dens medie- og arbejdskapaciteter, mens andre kritiserer dens høje pris og begrænsede funktionalitet.",
+      "Vigtige funktioner, der værdsættes, inkluderer skærmstørrelse, passthrough, synsfunktioner og forbedret Bluetooth-periferistøtte, men problemer som synsubehag og begrænset softwareintegration bemærkes.",
+      "Enhedens høje pris ($3500) og begrænsede udgivelse (450k enheder) har ført til et lille marked, hvor mange brugere venter på fremtidige revisioner eller vælger billigere alternativer som Quest 3."
+    ],
+    "points": 141,
+    "commentCount": 77,
+    "retryCount": 0,
+    "time": 1720063824
+  },
+  {
+    "id": 40871783,
+    "title": "Diffusion Forcing: Næste-token forudsigelse møder fuld-sekvens diffusion",
+    "originLink": "https://boyuan.space/diffusion-forcing/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40871783",
+    "commentBody": "",
+    "originSummary": [
+      "Diffusion Forcing er et nyt træningsparadigme, der kombinerer næste-token forudsigelse og fuld-sekvens diffusionsmodeller, hvilket tilbyder fleksibel generering og sekvensniveau vejledning.",
+      "Det opnår betydelige præstationsforbedringer i applikationer som videoforudsigelse, stabilisering af uendelige udrulninger, diffusionsplanlægning og langtidsefterligningslæring.",
+      "Metoden muliggør stabile og konsistente videoforudsigelser, længere udrulninger uden glidende vinduer og robust håndtering af ikke-Markovske opgaver med krav om langtidshukommelse."
+    ],
+    "commentSummary": [
+      "Papiret kombinerer sekvensmaskering, som er essentiel for store sprogmodeller (LLMs), med diffusionsmodeller ved at spore et 'usikkerhedsniveau' pr. pixel, behandlet som 'støj' for diffusionsmodellen.",
+      "Metoden er gavnlig for opgaver som labyrintløsning og styring af en robotarm, da den tillader at fastlægge dele af et billede tidligere.",
+      "Tilgangen modellerer usikkerhed i planlægning og søgning, hvilket forbedrer agenters evne til at reagere og generalisere, men artiklen mangler implementeringsdetaljer og adgang til kodebasen."
+    ],
+    "points": 133,
+    "commentCount": 6,
+    "retryCount": 0,
+    "time": 1720058960
+  },
+  {
+    "id": 40872438,
+    "title": "At finde næsten-duplicater med Jaccard-similaritet og MinHash",
+    "originLink": "https://blog.nelhage.com/post/fuzzy-dedup/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872438",
+    "commentBody": "",
+    "originSummary": [
+      "Jaccard-similaritet og MinHash bruges til at identificere omtrentligt lignende dokumenter i store tekstsamlinger, såsom dem, der anvendes i GPT-3 datasætsforberedelse.",
+      "MinHash tilnærmer Jaccard-lighed ved at hashe dokumentfunktioner og bruge den mindste hashværdi som en signatur, hvilket muliggør effektiv sammenligning af store korpusser.",
+      "Metoden er skalerbar og kan kombineres med andre teknikker som HyperLogLog, hvilket gør den velegnet til storskalatekstbehandlingsapplikationer."
+    ],
+    "commentSummary": [
+      "Indlægget diskuterer brugen af Jaccard-similaritet og MinHash til at finde næsten-duplikerede data og fremhæver deres anvendelse inden for forskellige områder som medicinsk billedsegmentering og database-deduplikering.",
+      "Flere værktøjer og biblioteker nævnes til deduplikationsopgaver, herunder datasketch, rensa, Splink og gaoya, med indsigt i deres ydeevne og anvendelsestilfælde.",
+      "Fellegi Sunter-modellen er kendt for sin effektivitet i at deduplikere personer ved at tildele vægte til uskarpe match og mismatch, hvilket forbedrer nøjagtigheden i store datasæt."
+    ],
+    "points": 127,
+    "commentCount": 16,
+    "retryCount": 0,
+    "time": 1720069449
+  },
+  {
+    "id": 40873001,
+    "title": "Region-specifik maskinprissætning",
+    "originLink": "https://community.fly.io/t/fresh-produce-region-specific-machines-pricing/20690",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40873001",
+    "commentBody": "",
+    "originSummary": [
+      "Fra den 1. juli vil regionsspecifikke priser for maskiner, inklusive ekstra RAM, blive indført på grund af varierende infrastrukturudgifter i de forskellige regioner.",
+      "Prisjusteringen vil blive indfaset over fire måneder, med de endelige priser fastsat i november; de første fakturaer vil vise regionsspecifikke linjeposter uden prisændringer.",
+      "En fejlrettelse for Machines Shared CPU 1x brug, der ikke var dækket af Free Machines Allowance-kredit, er blevet implementeret, og kreditter bliver genudstedt."
+    ],
+    "commentSummary": [
+      "Fly.io's regionsspecifikke prissætning har skabt diskussioner, hvor nogle brugere finder det dyrt sammenlignet med alternativer som Hetzner, især for høj tilgængelighed.",
+      "Fly.io forsvarer sin prissætning ved at fremhæve den manglende bæredygtighed af flade globale priser på grund af høje driftsomkostninger i visse regioner, såsom Brasilien.",
+      "På trods af fjernelsen af hobbyplanen og nogle pålidelighedsproblemer, værdsætter mange brugere Fly.io's funktioner som dynamisk anmodningsruting og \"ops-løse\" udrulninger, hvilket de mener retfærdiggør de højere omkostninger."
+    ],
+    "points": 94,
+    "commentCount": 109,
+    "retryCount": 0,
+    "time": 1720077454
+  }
+]

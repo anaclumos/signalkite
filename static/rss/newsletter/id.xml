@@ -15,12 +15,197 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 03 Jul 2024 19:10:36 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 04 Jul 2024 19:13:29 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/id.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Wed, 03 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[id]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-04]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/04&#39;</h2>
+<h1>2024-07-04</h1>
+<h2><a href="https://www.arno.org/on-the-origins-of-ds-store">Awal Mula DS_store (2006)</a></h2>
+<ul>
+<li>File .DS_Store, yang umum terlihat saat mentransfer file dari Mac ke Windows, merupakan singkatan dari &quot;Desktop Services Store,&quot; yang berasal dari penulisan ulang Finder Mac OS X pada tahun 1999.</li>
+<li>Kotak Pencari (Finder) dibagi menjadi antarmuka pengguna (Finder_FE) dan fungsi inti (Finder_BE), dengan rencana untuk menjadikan backend sebagai API publik yang disebut Layanan Desktop, meskipun tidak pernah sepenuhnya dirilis.</li>
+<li>Bug menyebabkan pembuatan berlebihan file .DS_Store, bahkan tanpa penyesuaian pengguna, menjadikannya masalah yang terus-menerus bagi pengguna Mac.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870357">Reaksi</a></h3>
+<ul>
+<li>Diskusi berpusat pada konteks historis dan detail teknis dari file DS_store dan konsep &quot;fork&quot; dalam sistem file Mac, yang mencakup komponen sumber daya dan data.</li>
+<li>Fork sumber daya dalam MacOS awal menyimpan berbagai data aplikasi seperti ikon, menu, dan kode yang dapat dieksekusi, yang menimbulkan tantangan saat mentransfer file ke sistem non-Mac.</li>
+<li>Transisi dari MacOS ke MacOS X melibatkan perubahan signifikan, termasuk penghapusan resource forks, yang disambut dengan reaksi beragam dari komunitas pengguna.</li>
+</ul>
+<h2><a href="https://0x.tools/">Xcapture-BPF – seperti Linux top, tetapi dengan penglihatan Xray</a></h2>
+<ul>
+<li>0x.tools adalah sekumpulan utilitas sumber terbuka yang dirancang untuk menganalisis kinerja aplikasi di Linux, dengan penekanan pada kesederhanaan dan ketergantungan minimal.</li>
+<li>Fitur utama termasuk mengukur aktivitas tingkat utas individu dan menyediakan alat berbasis eBPF untuk analisis aktivitas utas tingkat sistem dan terperinci.</li>
+<li>Itu dirancang untuk penggunaan yang aman di lingkungan produksi dengan overhead yang sangat rendah dan tidak memerlukan peningkatan OS atau kerangka pemantauan yang berat.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869877">Reaksi</a></h3>
+<ul>
+<li>Xcapture-BPF adalah alat baru yang disamakan dengan perintah top di Linux tetapi dengan kemampuan yang ditingkatkan, sering disebut memiliki &quot;penglihatan sinar-X&quot; untuk diagnostik sistem.</li>
+<li>Pengguna telah berbagi pengalaman menggunakan alat eBPF (extended Berkeley Packet Filter) dan BCC (BPF Compiler Collection) untuk men-debug masalah produksi yang kompleks, menyoroti efektivitasnya dalam mengatasi hambatan kinerja dan kebocoran memori.</li>
+<li>Diskusi tersebut mencakup contoh praktis pemecahan masalah, seperti mengatasi iowait tinggi dan masalah cache halaman di lingkungan terkontainer dengan mengaktifkan IO langsung dan mencocokkan ukuran sektor pada perangkat loopback.</li>
+</ul>
+<h2><a href="https://www.sequoiacap.com/article/ais-600b-question/">Pertanyaan $600 Miliar untuk AI</a></h2>
+<ul>
+<li>Kesenjangan pendapatan AI telah melebar dari $200 miliar menjadi $600 miliar, menimbulkan pertanyaan tentang ekspektasi pertumbuhan industri tersebut.</li>
+<li>Perkembangan utama termasuk meredanya kekurangan pasokan GPU, peningkatan pendapatan pusat data Nvidia, dan pertumbuhan pendapatan signifikan OpenAI menjadi $3,4 miliar.</li>
+<li>Kendala seperti kurangnya kekuatan penetapan harga, risiko investasi, dan depresiasi cepat chip lama tetap ada, tetapi biaya GPU yang lebih rendah dapat menguntungkan startup dan inovasi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869461">Reaksi</a></h3>
+<ul>
+<li>Melatih model AI besar seperti GPT-4 memerlukan sumber daya komputasi yang signifikan, dengan perkiraan menunjukkan 8.000 GPU H100 berjalan selama 90 hari.</li>
+<li>Investasi GPU yang substansial dari Meta dapat memungkinkan mereka untuk melatih beberapa model skala GPT-4 setiap tahun, yang berpotensi mengkomoditisasi model AI inti dan mempengaruhi margin keuntungan bagi perusahaan AI.</li>
+<li>Nilai sebenarnya dalam AI mungkin akan bergeser ke arah data kepemilikan untuk pelatihan, yang dapat menimbulkan masalah hukum dan menekankan pentingnya kepemilikan data.</li>
+</ul>
+<h2><a href="https://salykova.github.io/matmul-cpu">Melampaui perkalian matriks NumPy dalam 150 baris kode C</a></h2>
+<ul>
+<li>Implementasi perkalian matriks berkinerja tinggi dalam C, mengikuti desain BLIS, mengungguli NumPy (OpenBLAS) pada AMD Ryzen 7700, mencapai lebih dari 1 TFLOPS.</li>
+<li>Kode ini sederhana, portabel, dan skalabel, menggunakan hanya 3 baris direktif OpenMP untuk paralelisasi, dan ditargetkan untuk CPU Intel Core dan AMD Zen dengan instruksi FMA3 dan AVX.</li>
+<li>Implementasi tersebut menunjukkan bahwa perkalian matriks yang efisien dapat dicapai dalam C tanpa kode assembly atau Fortran yang mendalam, dengan kinerja yang sebanding dengan perpustakaan BLAS yang sudah mapan ketika disesuaikan dengan perangkat keras tertentu.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870345">Reaksi</a></h3>
+<ul>
+<li>Kutipan blog menunjukkan kinerja yang melampaui perkalian matriks NumPy menggunakan 150 baris kode C, dengan fokus pada peningkatan kinerja.</li>
+<li>Perbaikan utama meliputi pemilihan algoritma, meminimalkan perjalanan bolak-balik kernel, vektorisasi, efisiensi cache, dan optimasi khusus perangkat keras.</li>
+<li>Komentar dalam diskusi membahas keadilan dalam membandingkan kode C dengan NumPy, menyarankan perbandingan dengan perpustakaan BLAS (Basic Linear Algebra Subprograms) lainnya dan menekankan perlunya benchmarking yang menyeluruh dan penyetelan hyperparameter untuk CPU tertentu.</li>
+</ul>
+<h2><a href="https://reactormag.com/the-joy-of-reading-books-you-dont-entirely-understand/">Keseruan membaca buku yang tidak Anda mengerti</a></h2>
+<ul>
+<li>Artikel tersebut menekankan kegembiraan dan nilai membaca buku yang tidak sepenuhnya dipahami, menyarankan bahwa tidak apa-apa untuk menghargai sebuah buku tanpa sepenuhnya memahaminya.</li>
+<li>Karya penulis, Molly Templeton, berbagi pengalaman pribadi dengan buku-buku kompleks seperti <em>Baroque Cycle</em> karya Neal Stephenson dan judul-judul terbaru seperti <em>The Library of Broken Worlds</em> karya Alaya Dawn Johnson dan <em>Jonathan Abernathy You Are Kind</em> karya Molly McGhee.</li>
+<li>Templeton berpendapat bahwa menerima ketidakpastian dalam membaca dapat membebaskan dan memperkaya pengalaman membaca, mendorong pembaca untuk menjelajahi narasi yang menantang.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870280">Reaksi</a></h3>
+<ul>
+<li>Kutipan tersebut membahas nilai membaca buku yang menantang dan memprovokasi pemikiran mendalam, merujuk pada keyakinan Kafka bahwa buku yang berdampak harus &#39;menggigit dan menyengat&#39; daripada sekadar menghibur.</li>
+<li>Ini menyoroti berbagai perspektif tentang membaca buku yang sulit atau kompleks, dengan beberapa pembaca menganjurkan untuk terjun langsung tanpa mencatat guna meningkatkan pemahaman dan kenikmatan.</li>
+<li>Percakapan tersebut mencakup anekdot pribadi dan rekomendasi buku yang telah meninggalkan kesan mendalam, menekankan kegembiraan menemukan wawasan baru melalui membaca ulang dan berinteraksi dengan materi yang menantang.</li>
+</ul>
+<h2><a href="https://www.securityweek.com/twilio-confirms-data-breach-after-hackers-leak-33m-authy-user-phone-numbers/">Twilio mengonfirmasi pelanggaran data setelah peretas membocorkan 33 juta nomor telepon pengguna Authy</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40874341">Reaksi</a></h3>
+<ul>
+<li>Twilio telah mengonfirmasi adanya pelanggaran data yang mengungkapkan nomor telepon dari 33 juta pengguna Authy, yang menyebabkan peningkatan panggilan spam dan kekhawatiran atas keandalan jaringan telepon tradisional.</li>
+<li>Pengguna sedang mempertimbangkan metode komunikasi alternatif seperti FaceTime dan Zoom, sambil juga menekankan peran penting panggilan telepon dalam layanan penting seperti perawatan kesehatan dan layanan sosial.</li>
+<li>Pelanggaran tersebut menyoroti perlunya perlindungan data yang lebih kuat, penegakan yang lebih baik terhadap langkah-langkah anti-spam, dan rekomendasi untuk aplikasi otentikasi dua faktor (2FA) alternatif seperti Aegis, Bitwarden, dan Yubikey.</li>
+</ul>
+<h2><a href="https://www.kitze.io/posts/saddest-just-ship-it-story-ever">Kisah &#39;Just Ship It&#39; yang Paling Menyedihkan (2020)</a></h2>
+<ul>
+<li>Kisah penulis tentang perjalanan pribadi dalam mengembangkan sebuah aplikasi, dimulai pada tahun 2018, namun menunda peluncurannya karena penambahan fitur yang terus-menerus dan mempelajari teknologi baru seperti React Native.</li>
+<li>Meskipun meninggalkan proyek setelah dua tahun, penulis kemudian menemukan aplikasi serupa yang berhasil meskipun tidak sempurna, yang menyebabkan perasaan campur aduk.</li>
+<li>Dalam tahun 2022, penulis akhirnya merilis sebuah aplikasi produktivitas yang menggabungkan berbagai fitur seperti Todos, Kebiasaan, Perencana, dan Tujuan, serta mengundang pembaca untuk bergabung dengan komunitas di Benji - The Life OS.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872182">Reaksi</a></h3>
+<ul>
+<li>Diskusi berpusat pada mentalitas &#39;just ship it&#39; dalam pengembangan perangkat lunak, menekankan bahwa terburu-buru untuk memenuhi tenggat waktu dapat mengorbankan kualitas perangkat lunak dan menyebabkan kelelahan pada pengembang.</li>
+<li>Ada perdebatan tentang apakah pengembang harus memprioritaskan keuntungan perusahaan atau fokus pada pembuatan perangkat lunak berkualitas tinggi, dengan beberapa pihak berargumen bahwa pengembang tidak diberi kompensasi yang memadai untuk upaya luar biasa kecuali mereka memiliki saham yang signifikan di perusahaan.</li>
+<li>Percakapan tersebut menyoroti perbedaan perspektif tentang kepuasan kerja, kompensasi, dan keseimbangan antara integritas profesional dan tuntutan perusahaan, yang mencerminkan kekhawatiran industri yang lebih luas tentang keseimbangan kerja-hidup dan pengakuan.</li>
+</ul>
+<h2><a href="https://corecursive.com/building-powershell-with-jeffrey-snover/">Jeffrey Snover dan Pembuatan PowerShell</a></h2>
+<ul>
+<li>Jeffrey Snover, arsitek di balik PowerShell, berbagi perjalanannya dalam menciptakan alat perintah yang merevolusi administrasi sistem Windows, awalnya menghadapi perlawanan dari perusahaan yang lebih menyukai antarmuka grafis.</li>
+<li>tantangan utama termasuk menavigasi restrukturisasi perusahaan, penolakan budaya, dan membangun tim yang berdedikasi, dengan pengaruh signifikan dari dorongan Bill Gates untuk .NET.</li>
+<li>Pengembangan PowerShell, yang dipandu oleh Monad Manifesto, mengubah administrasi Windows Server dan memungkinkan perpindahan Microsoft ke cloud, menunjukkan dampak dari ketekunan dan visi dalam mendorong perubahan teknologi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40874013">Reaksi</a></h3>
+<ul>
+<li>Jeffrey Snover, pencipta PowerShell, menghadapi penentangan yang signifikan dan diturunkan jabatannya di Microsoft karena mengejar pengembangannya.</li>
+<li>PowerShell dirancang untuk membantu administrasi server di Windows dengan memanggil berbagai API, tetapi menghadapi konflik internal dan beberapa fitur hilang di versi yang lebih baru.</li>
+<li>Meskipun pendekatan berorientasi objek dan integrasi .NET, PowerShell dianggap verbose dan menantang dibandingkan dengan bahasa skrip lain seperti Python, membatasi adopsinya di luar ekosistem Windows.</li>
+</ul>
+<h2><a href="https://www.firezone.dev/blog/sans-io">Sans-IO: Rahasia Efektif Rust untuk Layanan Jaringan</a></h2>
+<ul>
+<li>Firezone menggunakan Rust dan desain sans-IO untuk perpustakaan konektivitas intinya, connlib, untuk mengelola koneksi jaringan dan terowongan WireGuard, menawarkan pengujian cepat, kustomisasi mendalam, dan jaminan tinggi.</li>
+<li>Desain sans-IO memisahkan kebijakan dari implementasi menggunakan abstraksi seperti <code>Transmit</code>, memungkinkan mesin status murni untuk menangani protokol jaringan tanpa IO langsung, membuat kode lebih fleksibel dan lebih mudah diuji.</li>
+<li>Walaupun sans-IO memerlukan loop acara dan mesin status khusus, ini memberikan manfaat signifikan seperti komposisi yang mudah, API yang fleksibel, dan penanganan kesalahan yang lebih baik, meskipun belum banyak diadopsi dalam komunitas Rust.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872020">Reaksi</a></h3>
+<ul>
+<li>Kirimannya membahas konsep Sans-IO dalam Rust, yang memisahkan operasi input/output (IO) dari logika utama, membuat kode lebih mudah diuji dan disusun.</li>
+<li>Pendekatan ini sangat bermanfaat untuk kasus penggunaan yang berorientasi pada paket seperti QUIC, WebRTC, dan IP, di mana manajemen status dapat menjadi kompleks.</li>
+<li>Diskusi ini menyoroti bahwa meskipun metode ini bukanlah hal baru, metode ini menawarkan keuntungan signifikan dalam Rust dengan menyederhanakan pengujian dan menghindari jebakan pola async/await tradisional.</li>
+</ul>
+<h2><a href="https://lazamar.github.io/haskell-data-compression-with-huffman-codes/">Bangun utilitas kompresi data di Haskell menggunakan kode Huffman</a></h2>
+<ul>
+<li>Kirimannya menguraikan pembuatan program kompresi data dalam Haskell menggunakan pengkodean Huffman, yang menangani file biner sembarang dengan memori konstan untuk pengkodean dan dekode.</li>
+<li>Kode ini menjelaskan kode Huffman, kode bebas awalan, dan proses membangun pohon biner untuk pengkodean yang efisien, diikuti dengan implementasi fungsi pengkodean dan dekode.</li>
+<li>Postingan tersebut juga mencakup penanganan file biner, serialisasi/deserialisasi data, dan potensi perbaikan seperti multithreading dan pembuatan kode yang lebih cepat, menampilkan utilitas kompresi data yang praktis dan efisien dalam Haskell.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872332">Reaksi</a></h3>
+<ul>
+<li>Kajian tentang membangun utilitas kompresi data di Haskell menggunakan kode Huffman, menyoroti efisiensi algoritma berbasis array yang dilakukan di tempat untuk set data besar.</li>
+<li>Kutipan dari karya-karya penting, termasuk makalah Moffat dan Katajainen tahun 1995 dan standar JPEG ITU T.81 (1992), yang menjelaskan pengkodean Huffman berbasis array.</li>
+<li>Pandangan tentang kinerja Haskell, dengan perbandingan dengan bahasa lain seperti C, C++, dan Rust, serta pertukaran antara kesederhanaan implementasi dan kejelasan kode versus kinerja mentah.</li>
+</ul>
+<h2><a href="https://elevenlabs.io/voice-isolator">Voice Isolator: Menghilangkan kebisingan latar belakang untuk produksi film, podcast, wawancara</a></h2>
+<ul>
+<li>Generator suara AI sekarang mendukung 29 bahasa, memperluas aksesibilitas dan kegunaannya untuk audiens global.</li>
+<li>Itu menawarkan ribuan opsi suara, memberikan pengguna berbagai pilihan untuk aplikasi dan preferensi yang berbeda.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869421">Reaksi</a></h3>
+<ul>
+<li>Alat Voice Isolator dari Elevenlabs bertujuan untuk menghilangkan kebisingan latar belakang untuk produksi film, podcast, dan wawancara, tetapi model harga yang didasarkan pada &#39;karakter&#39; membingungkan banyak pengguna.</li>
+<li>Pengguna sedang mendiskusikan berbagai alternatif untuk solusi pengenalan suara ke teks (STT) dan teks ke suara (TTS), termasuk opsi sumber terbuka seperti Whisper dan layanan komersial seperti Deepgram Nova 2.</li>
+<li>Ada minat yang signifikan terhadap solusi lokal dan sumber terbuka untuk pembersihan audio dan transkripsi, karena banyak yang menganggap penawaran komersial saat ini terlalu mahal atau tidak cukup efektif.</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40872102">Pemilik Vision Pro, apakah Anda masih menggunakannya?</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40872102">Reaksi</a></h3>
+<ul>
+<li>Pengguna Vision Pro memiliki pengalaman yang beragam, dengan beberapa memuji kemampuan media dan kerjanya, sementara yang lain mengkritik biaya tinggi dan fungsionalitas yang terbatas.</li>
+<li>Fitur utama yang dihargai meliputi ukuran layar, passthrough, fitur penglihatan, dan dukungan periferal Bluetooth yang ditingkatkan, tetapi masalah seperti ketidaknyamanan penglihatan dan integrasi perangkat lunak yang terbatas dicatat.</li>
+<li>Harga tinggi perangkat ($3500) dan rilis terbatas (450 ribu unit) telah menyebabkan pasar yang kecil, dengan banyak pengguna menunggu revisi di masa depan atau memilih alternatif yang lebih murah seperti Quest 3.</li>
+</ul>
+<h2><a href="https://boyuan.space/diffusion-forcing/">Pemaksaan Difusi: Prediksi Token Berikutnya Bertemu dengan Difusi Urutan Penuh</a></h2>
+<ul>
+<li>Diffusion Forcing adalah paradigma pelatihan baru yang menggabungkan prediksi token berikutnya dan model difusi urutan penuh, menawarkan generasi yang fleksibel dan panduan tingkat urutan.</li>
+<li>Ini mencapai peningkatan kinerja yang signifikan dalam aplikasi seperti prediksi video, stabilisasi rollout tak terbatas, perencanaan difusi, dan pembelajaran imitasi jangka panjang.</li>
+<li>Metode ini memungkinkan prediksi video yang stabil dan konsisten, peluncuran yang lebih lama tanpa jendela geser, dan penanganan yang kuat terhadap tugas non-Markovian dengan kebutuhan memori jangka panjang.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40871783">Reaksi</a></h3>
+<ul>
+<li>Makalah ini menggabungkan sequence masking, yang penting untuk Model Bahasa Besar (LLM), dengan model difusi dengan melacak tingkat &#39;ketidakpastian&#39; per piksel, yang diperlakukan sebagai &#39;noise&#39; untuk model difusi.</li>
+<li>Metode ini bermanfaat untuk tugas-tugas seperti pemecahan labirin dan mengendalikan lengan robot, karena memungkinkan untuk memperkuat bagian-bagian gambar lebih awal.</li>
+<li>Pendekatan ini memodelkan ketidakpastian dalam perencanaan dan pencarian, meningkatkan kemampuan agen untuk bereaksi dan menggeneralisasi, tetapi makalah ini kurang dalam rincian implementasi dan akses ke basis kode.</li>
+</ul>
+<h2><a href="https://blog.nelhage.com/post/fuzzy-dedup/">Menemukan duplikat dekat dengan kesamaan Jaccard dan MinHash</a></h2>
+<ul>
+<li>Kesamaan Jaccard dan MinHash digunakan untuk mengidentifikasi dokumen yang kira-kira serupa dalam koleksi teks besar, seperti yang digunakan dalam persiapan dataset GPT-3.</li>
+<li>MinHash mendekati kesamaan Jaccard dengan melakukan hashing pada fitur dokumen dan menggunakan nilai hash minimum sebagai tanda tangan, memungkinkan perbandingan yang efisien dari korpus besar.</li>
+<li>Metode ini dapat diskalakan dan dapat digabungkan dengan teknik lain seperti HyperLogLog, sehingga cocok untuk aplikasi pemrosesan teks skala besar.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872438">Reaksi</a></h3>
+<ul>
+<li>Postingan tersebut membahas penggunaan kesamaan Jaccard dan MinHash untuk menemukan data yang hampir duplikat, menyoroti penerapannya di berbagai bidang seperti segmentasi gambar medis dan deduplikasi basis data.</li>
+<li>Beberapa alat dan pustaka disebutkan untuk tugas deduplikasi, termasuk datasketch, rensa, Splink, dan gaoya, dengan wawasan tentang kinerja dan kasus penggunaannya.</li>
+<li>Model Fellegi Sunter dikenal karena efektivitasnya dalam mendeduplikasi orang dengan memberikan bobot pada kecocokan dan ketidakcocokan yang samar, sehingga meningkatkan akurasi dalam kumpulan data yang besar.</li>
+</ul>
+<h2><a href="https://community.fly.io/t/fresh-produce-region-specific-machines-pricing/20690">Penetapan harga mesin khusus wilayah</a></h2>
+<ul>
+<li>Mulai 1 Juli, harga khusus wilayah untuk Mesin, termasuk RAM tambahan, akan diperkenalkan karena biaya infrastruktur yang bervariasi di setiap wilayah.</li>
+<li>Kenaikan harga akan dilakukan secara bertahap selama empat bulan, dengan harga akhir ditetapkan pada bulan November; faktur awal akan menunjukkan item baris khusus wilayah tanpa perubahan harga.</li>
+<li>Koreksi bug untuk penggunaan CPU Bersama Mesin 1x yang tidak tercakup oleh kredit Tunjangan Mesin Gratis telah diterapkan, dan kredit sedang diterbitkan kembali.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40873001">Reaksi</a></h3>
+<ul>
+<li>Penetapan harga berdasarkan wilayah oleh Fly.io telah memicu diskusi, dengan beberapa pengguna merasa harganya mahal dibandingkan dengan alternatif seperti Hetzner, terutama untuk ketersediaan tinggi.</li>
+<li>Fly.io membela harga mereka dengan menyoroti ketidakberlanjutan tarif global tetap karena biaya operasional yang tinggi di beberapa wilayah, seperti Brasil.</li>
+<li>Meskipun rencana hobi dihapus dan ada beberapa kekhawatiran tentang keandalan, banyak pengguna menghargai fitur Fly.io seperti perutean permintaan dinamis dan penyebaran tanpa operasi, yang mereka yakini membenarkan biaya yang lebih tinggi.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Awal Mula DS_store (2006)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Awal%20Mula%20DS_store%20(2006)&subheading=Kamis%2C%204%20Juli%202024%3A%20Ringkasan%20Berita%20Peretas" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/id/2024/07/04</link>
+            <guid isPermaLink="false">2024-07-04T00:00:00.000Z</guid>
+            <pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-03]]></title>
             <description
@@ -1692,182 +1877,6 @@
             <link>https://hn.cho.sh/id/2024/06/25</link>
             <guid isPermaLink="false">2024-06-25T00:00:00.000Z</guid>
             <pubDate>Tue, 25 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-24]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/24&#39;</h2>
-<h1>2024-06-24</h1>
-<h2><a href="https://danilafe.com/blog/blog_microfeatures/">Fitur mikro yang saya sukai di blog dan situs web pribadi</a></h2>
-<ul>
-<li>Postingan tersebut menyoroti berbagai fitur mikro yang dapat meningkatkan pengalaman pengguna di blog dan situs web pribadi, terinspirasi oleh artikel Hillel Wayne tentang bahasa pemrograman.</li>
-<li>Fitur utama termasuk catatan samping, daftar isi, judul yang dapat ditautkan, pengelompokan seri, dialog, blok kode dengan asal dan tautan yang dapat diklik, penanda untuk tautan eksternal, pratinjau tautan, dan umpan RSS.</li>
-<li>Fitur-fitur ini, meskipun tidak esensial, meningkatkan navigasi, keterlibatan, dan aksesibilitas, sehingga membuat pengalaman membaca lebih menyenangkan dan efisien.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40774277">Reaksi</a></h3>
-<ul>
-<li>Diskusi berpusat pada mikrofitur dalam blog dan situs web pribadi, menyoroti baik aspek positif maupun negatif.</li>
-<li>Hal-hal yang menjadi poin perdebatan meliputi penggunaan bilah kemajuan, dekorasi tautan, dan popup pratinjau, dengan beberapa pengguna merasa bahwa hal-hal tersebut mengganggu dan tidak perlu.</li>
-<li>Percakapan tersebut juga menyentuh tentang penyusutan scrollbar asli dan potensi manfaat dari alat navigasi alternatif seperti daftar isi dan indeks yang selalu terlihat.</li>
-</ul>
-<h2><a href="https://www.theguardian.com/technology/article/2024/jun/24/apple-breach-eu-competition-rules-digital-markets-act">Apple ditemukan melanggar aturan persaingan UE</a></h2>
-<ul>
-<li>Komisi Eropa menemukan bahwa Apple melanggar undang-undang baru Uni Eropa yang bertujuan melindungi pesaing yang lebih kecil dan memungkinkan konsumen menemukan aplikasi yang lebih murah.</li>
-<li>Apple memiliki waktu 12 bulan untuk mematuhi peraturan atau menghadapi denda hingga 10% dari pendapatan globalnya, setelah penyelidikan yang dimulai pada bulan Maret.</li>
-<li>Ini menandai investigasi ketidakpatuhan ketiga terhadap Apple sejak Undang-Undang Pasar Digital (DMA) diberlakukan, yang berfokus pada biaya dan praktik Apple yang membatasi pengembang untuk mengarahkan konsumen ke opsi pembelian alternatif.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773883">Reaksi</a></h3>
-<ul>
-<li>Apple telah ditemukan melanggar aturan persaingan UE, memicu seruan untuk tindakan serupa di AS.</li>
-<li>Kritikus berpendapat bahwa kontrol Apple atas penerbitan aplikasi dan biaya pengembang menghambat persaingan, dengan kekhawatiran khusus terhadap aturan anti-steering yang mencegah pengembang memberi tahu pengguna tentang opsi pembayaran yang lebih murah di luar App Store.</li>
-<li>Apple menunggu putusan Pengadilan Uni Eropa mengenai konstitusionalitas ketentuan yang mewajibkan API iOS gratis untuk pengembang, di tengah klaim bahwa kepatuhannya terhadap hukum Uni Eropa bersifat dangkal.</li>
-</ul>
-<h2><a href="https://www.voanews.com/a/us-prosecutors-recommend-justice-department-criminally-charge-boeing-as-deadline-looms/7667194.html">Jaksa AS merekomendasikan Departemen Kehakiman untuk menuntut Boeing secara pidana</a></h2>
-<ul>
-<li>Jaksa AS menyarankan dakwaan pidana terhadap Boeing karena diduga melanggar penyelesaian tahun 2021 terkait dua kecelakaan fatal 737 MAX.</li>
-<li>Kementerian Kehakiman memiliki waktu hingga 7 Juli untuk memutuskan penuntutan, dengan Boeing membantah klaim pelanggaran dan diskusi yang sedang berlangsung.</li>
-<li>Kasus pidana dapat memperburuk krisis Boeing, mempengaruhi kontrak mereka dengan pemerintah AS, sementara keluarga korban mengadvokasi denda sebesar $25 miliar dan penuntutan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773151">Reaksi</a></h3>
-<ul>
-<li>Kejaksaan AS merekomendasikan dakwaan pidana terhadap Boeing, dengan beberapa pihak menyarankan langkah-langkah drastis seperti mengambil alih 51% saham perusahaan, memecat eksekutif puncak, dan mengenakan denda.</li>
-<li>Kritikus berpendapat bahwa pemegang saham tidak memiliki kekuatan untuk menegakkan pengawasan yang tepat, dan investor institusional sering kali gagal memantau perilaku perusahaan secara efektif.</li>
-<li>Terkait kasus Boeing, hal ini menyoroti masalah sistemik yang lebih luas dalam tata kelola perusahaan dan pengawasan regulasi.</li>
-</ul>
-<h2><a href="https://github.com/jart/cosmopolitan/releases/tag/3.5.0">Kosmopolitan v3.5.0</a></h2>
-<ul>
-<li>Cosmopolitan Libc v3.5.0 telah dirilis, menjadikan C sebagai bahasa yang dapat dibangun sekali dan dijalankan di mana saja tanpa memerlukan interpreter atau mesin virtual.</li>
-<li>Kemajuan utama mencakup implementasi peta memori berkualitas lebih tinggi, penulisan ulang manajer memori, dan pembaruan Lua ke 5.4.6.</li>
-<li>Fitur-fitur baru C++ STL diperkenalkan, seperti optimasi string kecil ctl::string, ctl::set, ctl::map, dan ctl::unique_ptr, bersama dengan berbagai perbaikan bug dan optimasi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773139">Reaksi</a></h3>
-<ul>
-<li>Cosmopolitan v3.5.0 telah dirilis, menarik minat yang signifikan karena kemampuannya untuk membuat executable yang sangat portabel yang dapat berjalan di berbagai sistem operasi dan arsitektur tanpa modifikasi.</li>
-<li>Versi baru ini menawarkan kinerja yang ditingkatkan, dengan klaim bahwa Cosmopolitan Libc dua kali lebih cepat daripada Musl Libc untuk banyak program antarmuka baris perintah (CLI) dan menawarkan dukungan thread yang kuat, menjadikannya cocok untuk perangkat lunak AI berkinerja tinggi.</li>
-<li>Rilis ini mencakup dukungan untuk WebAssembly (WASM) dan fitur-fitur seperti header &quot;Actually Portable Executable&quot; (APE), yang meningkatkan kompatibilitas lintas platform, termasuk dukungan untuk Android.</li>
-</ul>
-<h2><a href="https://www.ashleygjovik.com/3250scott.html">Fasilitas fabrikasi silikon rahasia Apple di sebelah ribuan rumah</a></h2>
-<ul>
-<li>Pada tahun 2015, Apple memulai pembuatan semikonduktor secara rahasia di sebuah fasilitas di Santa Clara, California, yang mengeluarkan gas beracun yang mempengaruhi penduduk sekitar.</li>
-<li>Ashley M. Gjovik, seorang penduduk pada tahun 2020, mengalami masalah kesehatan yang parah dan menemukan asap pabrik di rumah dan tubuhnya, yang mengarah pada berbagai keluhan dan penyelidikan.</li>
-<li>Apple menghadapi pelanggaran terkait limbah berbahaya dan masalah keselamatan, dengan inspeksi dan investigasi yang sedang berlangsung terkait gangguan publik dan aktivitas ultraberbahaya yang menyebabkan kerugian signifikan bagi Gjovik dan lingkungan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773136">Reaksi</a></h3>
-<h2><a href="https://www.linqpad.net/">LINQPad – Tempat Bermain Programmer .NET</a></h2>
-<ul>
-<li>LINQPad adalah alat serbaguna untuk pemrogram .NET untuk menguji cuplikan C#/F#/VB secara instan, melakukan query pada basis data, dan mengotomatisasi skrip dengan manfaat REPL (Read-Eval-Print Loop).</li>
-<li>Itu mendukung C# 12 dan .NET 8, memungkinkan kueri basis data interaktif dalam LINQ atau SQL, dan menyertakan driver untuk berbagai basis data seperti SQL Server, Oracle, dan MySQL.</li>
-<li>LINQPad menawarkan fitur-fitur canggih seperti penyelesaian otomatis AI, debugging terintegrasi, dan pemformatan output yang kaya, menjadikannya alat yang kuat untuk pengkodean cepat dan pengembangan dinamis.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40770171">Reaksi</a></h3>
-<ul>
-<li>LINQPad sangat dihargai karena kemudahan penggunaannya, terutama di kalangan pengembang .NET, untuk scripting, debugging, dan menjalankan kueri LINQ.</li>
-<li>Pengguna menghargai fitur-fiturnya seperti koneksi database SQL Server tetapi mengungkapkan frustrasi atas eksklusivitas Windows dan biayanya.</li>
-<li>Alternatif yang disebutkan termasuk winmerge, NetPad, dotnetfiddle.net, dan RoslynPad, dengan beberapa pengguna menginginkan dukungan lintas platform dan integrasi ke dalam Visual Studio.</li>
-</ul>
-<h2><a href="https://apnews.com/article/car-dealerships-cyberattack-cdk-outage-3f7c81f6be0e212172b33cdc9f49feba">Kantor penjualan mobil kembali menggunakan pena dan kertas setelah serangan siber pada penyedia perangkat lunak</a></h2>
-<ul>
-<li>Kantor penjualan mobil di Amerika Utara mengalami gangguan signifikan akibat serangan siber terhadap CDK Global, penyedia perangkat lunak utama untuk dealer mobil.</li>
-<li>Serangan pada 19 Juni 2024 menyebabkan pemadaman yang berkelanjutan, yang mengakibatkan penundaan dan pemrosesan manual di dealer yang terkena dampak.</li>
-<li>Perusahaan otomotif besar seperti Stellantis, Ford, dan BMW mengonfirmasi dampaknya tetapi tetap melanjutkan operasi menggunakan metode alternatif, sementara CDK Global bekerja untuk memulihkan sistemnya.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40776951">Reaksi</a></h3>
-<ul>
-<li>Dealer mobil kembali menggunakan pena dan kertas setelah serangan siber pada penyedia perangkat lunak mereka, CDK Global, mengganggu operasi digital mereka.</li>
-<li>Serangan siber telah sangat mempengaruhi bagian suku cadang dan layanan lebih dari penjualan kendaraan baru, karena informasi inventaris mereka disimpan dalam sistem CDK yang telah dikompromikan.</li>
-<li>Insiden tersebut menyoroti kerentanan industri yang sangat bergantung pada satu penyedia perangkat lunak, menekankan perlunya langkah-langkah keamanan siber yang lebih baik dan mungkin solusi perangkat lunak yang lebih beragam.</li>
-</ul>
-<h2><a href="https://www.dropbox.com/scl/fo/312oqvretg7yyhfx0ohx4/AGZduVXs0_1geqIyi0NA9nE?e=1&preview=2024_04_30_RCRA_Insp_Report_REPORT_Apple_3250_Scott_Redacted.pdf&rlkey=3aa2tw15ek3trqlbdh7pw9erh&st=4b364mkx&dl=0">Penegakan dan Kepatuhan EPA AS pada Pembuatan Apple</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40772224">Reaksi</a></h3>
-<ul>
-<li>The US EPA sedang menyelidiki Apple atas potensi pelanggaran lingkungan di fasilitas Santa Clara, dengan fokus pada penanganan dan pelepasan limbah berbahaya yang tidak semestinya.</li>
-<li>Bekas karyawan Apple, Ashley Gjovik, telah mengemukakan kekhawatiran tentang dampak kesehatan pribadi dari emisi fasilitas tersebut, meskipun klaimnya disambut dengan skeptisisme.</li>
-<li>Kasus ini menyoroti kompleksitas regulasi industri dan tanggung jawab korporasi, dengan membandingkannya dengan insiden industri lainnya dan kekhawatiran tentang penegakan regulasi.</li>
-</ul>
-<h2><a href="https://www.bbc.com/future/article/20240621-how-traffic-noise-pollution-harms-childrens-health-and-development">Suara lalu lintas merusak otak anak-anak</a></h2>
-<ul>
-<li>Anak-anak sangat rentan terhadap polusi kebisingan lalu lintas, yang berdampak negatif pada kesehatan dan kemampuan belajar mereka.</li>
-<li>Studi-studi, termasuk studi tahun 1975 oleh Arline Bronzaft dan studi tahun 2022 di Barcelona, menunjukkan bahwa polusi suara dapat mengganggu kinerja membaca, memori kerja, dan rentang perhatian pada anak-anak.</li>
-<li>Kota-kota seperti Buenos Aires dan Barcelona sedang menerapkan langkah-langkah seperti meningkatkan ruang hijau dan mengurangi batas kecepatan untuk memerangi polusi suara, dengan inisiatif seperti &#39;superblocks&#39; di Barcelona yang memprioritaskan pejalan kaki dan ruang hijau daripada mobil.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40769880">Reaksi</a></h3>
-<ul>
-<li>Studi mengungkapkan bahwa kebisingan lalu lintas jalan di sekolah terkait dengan perkembangan yang lebih lambat dari memori kerja dan perhatian anak-anak.</li>
-<li>Solusi potensial termasuk mengurangi lalu lintas di sekitar sekolah dan meredam suara di ruang kelas untuk mengurangi dampak kebisingan lingkungan.</li>
-<li>Diskusi tersebut juga membahas isu-isu yang lebih luas seperti ketergantungan pada mobil, polusi suara, dan keuntungan dari lingkungan perkotaan yang lebih tenang dan dapat dijelajahi dengan berjalan kaki.</li>
-</ul>
-<h2><a href="https://www.tomshardware.com/software/windows/microsoft-account-to-local-account-conversion-guide-erased-from-official-windows-11-guide-instructions-redacted-earlier-this-week">Panduan konversi Akun Microsoft ke akun lokal dihapus dari panduan Windows 11</a></h2>
-<ul>
-<li>Microsoft telah menghapus panduan untuk mengonversi Akun Microsoft ke akun lokal dari halaman dukungan Windows 11, efektif mulai 17 Juni 2024.</li>
-<li>Pengguna masih dapat beralih ke akun lokal secara manual melalui Pengaturan &gt; Akun &gt; Info Anda dan memilih &quot;Masuk dengan akun lokal sebagai gantinya.&quot;</li>
-<li>Langkah ini menyoroti dorongan Microsoft bagi pengguna untuk mengadopsi Akun Microsoft, dengan menekankan manfaat seperti integrasi layanan dan peningkatan keamanan, sejalan dengan strategi dari Google dan Apple.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40775301">Reaksi</a></h3>
-<ul>
-<li>Microsoft telah menghapus panduan untuk mengonversi Akun Microsoft ke akun lokal dari dokumentasi Windows 11.</li>
-<li>Pengguna sedang mendiskusikan alternatif seperti menggunakan versi LTSC (Long-Term Servicing Channel) dari Windows 11, yang biasanya merupakan produk perusahaan tetapi dapat diaktifkan melalui skrip GitHub.</li>
-<li>Percakapan tersebut menyoroti perdebatan yang sedang berlangsung tentang etika dan legalitas penggunaan skrip aktivasi serta pertimbangan antara Windows dan Linux untuk gaming dan komputasi umum.</li>
-</ul>
-<h2><a href="https://www.redhat.com/en/topics/linux/centos-linux-eol">CentOS Linux 7 akan mencapai EOL pada hari Minggu</a></h2>
-<ul>
-<li>CentOS Linux 7 akan mencapai Akhir Masa Pakai (EOL) pada 30 Juni 2024, yang berarti tidak akan lagi menerima pembaruan atau tambalan keamanan setelah tanggal ini.</li>
-<li>Red Hat menawarkan beberapa alat dan layanan migrasi, seperti Convert2RHEL, Red Hat Insights, dan Red Hat Consulting, untuk membantu pengguna dalam beralih ke Red Hat Enterprise Linux (RHEL).</li>
-<li>RHEL menyediakan pengalaman pengguna yang mirip dengan CentOS, dengan fitur tambahan, dukungan, dan keamanan, serta kompatibel dengan penyedia cloud utama dan penerapan cloud hybrid.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773749">Reaksi</a></h3>
-<ul>
-<li>CentOS Linux 7 akan mencapai Akhir Masa Pakai (EOL) pada hari Minggu, mendorong pengguna untuk mencari alternatif.</li>
-<li>SUSE menawarkan solusi dengan mengalihkan repositori pembaruan CentOS 7 ke milik SUSE, menghindari migrasi yang mengganggu, sementara Oracle Linux adalah opsi lain, meskipun beberapa pengguna berhati-hati terhadapnya.</li>
-<li>Banyak pengguna beralih ke alternatif seperti Rocky Linux, AlmaLinux, atau Debian, dengan beberapa menghadapi tantangan dalam peningkatan dan mempertimbangkan kontainer untuk mengurangi perubahan OS.</li>
-</ul>
-<h2><a href="https://arxiv.org/abs/2403.06707">Keturunan OOP Berjenis Tergantung dari Prinsip-Prinsip Pertama</a></h2>
-<ul>
-<li>The paper addresses the expression problem, which involves the challenge of extending types with new producers and consumers in programming.</li>
-<li>Teks ini mengeksplorasi pemrograman berorientasi objek dengan tipe tergantung dengan menurunkannya dari prinsip-prinsip pertama menggunakan dualitas, menyediakan kalkulus bertipe tergantung dengan fragmen bahasa ganda.</li>
-<li>Versi yang diperpanjang ini mencakup lampiran tambahan dan akan menjadi bagian dari edisi PACMPL untuk OOPSLA 2024, menunjukkan pentingnya dan penelitian yang sedang berlangsung di bidang ini.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40769867">Reaksi</a></h3>
-<ul>
-<li>Kertas kerja &#39;Deriving Dependently-Typed OOP from First Principles&#39; telah memicu diskusi yang signifikan, menerima 141 poin di arxiv.org.</li>
-<li>Diskusi utama mencakup esensi dari Pemrograman Berorientasi Objek (OOP) versus Pemrograman Fungsional (FP), dengan beberapa pengguna mencatat bahwa contoh-contoh dalam makalah tersebut tampak lebih fungsional daripada berorientasi objek.</li>
-<li>Berbagai sumber dan referensi dibagikan, termasuk makalah William Cook tentang abstraksi data, ceramah Noel Welsh tentang FP dan OO, serta buku &quot;A Little Java, A Few Patterns&quot; untuk memahami hubungan antara pemrograman fungsional dan OO.</li>
-</ul>
-<h2><a href="https://frenck.dev/diy-smart-doorbell-for-just-2-dollar/">Ubah bel pintu berkabel yang ada menjadi bel pintu pintar menggunakan ESPHome</a></h2>
-<ul>
-<li>Artikel tersebut menjelaskan cara mengubah bel pintu tradisional menjadi bel pintu pintar yang terhubung dengan WiFi dengan biaya sekitar $2, tanpa memerlukan penyolderan atau keahlian elektronik.</li>
-<li>Kami menggunakan chip ESP-01S dan modul relay dalam proyek ini, yang ditenagai oleh charger ponsel lama, serta terintegrasi dengan Home Assistant dan ESPHome untuk berbagai otomatisasi.</li>
-<li>Langkah-langkah terperinci disediakan untuk memodifikasi chip ESP-01S, mem-flash firmware, menghubungkan kabel, dan mengintegrasikan dengan Home Assistant, menunjukkan kemudahan dan keterjangkauan proyek rumah pintar DIY.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40774270">Reaksi</a></h3>
-<ul>
-<li>Artikel tersebut membahas tentang mengubah bel pintu berkabel menjadi bel pintu pintar menggunakan ESPHome, dengan menyoroti baik titik-titik kegagalan potensial maupun manfaat seperti notifikasi jarak jauh dan integrasi otomatisasi rumah.</li>
-<li>Contohnya termasuk menggunakan bel pintu Amcrest AD110 untuk streaming video lokal saja dan notifikasi khusus, serta saran untuk menggunakan tombol Zigbee atau Z-Wave untuk kesederhanaan.</li>
-<li>Tujuan utamanya adalah untuk menunjukkan kemudahan dan kesenangan dari proyek rumah pintar DIY dengan ESPHome dan Home Assistant.</li>
-</ul>
-<h2><a href="https://mastodon.social/@ashleygjovik/112668309100333232/?">EPA merilis laporan tentang pelanggaran limbah berbahaya Apple di pabrik silikon perkotaan</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40773957">Reaksi</a></h3>
-<ul>
-<li>Keterangan EPA menyoroti pelanggaran limbah berbahaya oleh Apple, terutama pembuangan ilegal bahan kimia berbahaya di pabrik silikon perkotaan.</li>
-<li>Apple gagal memperhitungkan semua limbah yang melewati filter karbon, sehingga tidak mungkin untuk menilai &quot;waktu terobosan&quot; filter tersebut, yang berpotensi menyebabkan kebocoran lingkungan sejak Desember 2020.</li>
-<li>Kajian mengenai topik ini telah dipindahkan ke thread baru di Hacker News, menunjukkan minat yang signifikan dari komunitas.</li>
-</ul>
-<h2><a href="https://www.wsj.com/style/fashion/hermes-birkin-bag-investment-031c215c">Ekonomi tas Birkin</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40770358">Reaksi</a></h3>
-<ul>
-<li>Pasar tas Birkin berkembang berkat eksklusivitas dan permintaan tinggi, dengan pembeli diberi waktu 24 jam untuk membeli, menciptakan kegembiraan seperti lotere.</li>
-<li>Penjualan dibatasi untuk pelanggan setia yang menghabiskan banyak uang untuk barang-barang lain, menjaga status tas sebagai simbol dan investasi.</li>
-<li>Mirip dengan pasar sepatu kets, model ketersediaan terbatas dan layanan yang dipersonalisasi ini memastikan kesuksesan pasar barang mewah melalui kelangkaan dan prestise, menarik konsumen kaya.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Fitur mikro yang saya sukai di blog dan situs web pribadi" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Fitur%20mikro%20yang%20saya%20sukai%20di%20blog%20dan%20situs%20web%20pribadi&subheading=Senin%2C%2024%20Juni%202024%3A%20Ringkasan%20Berita%20Peretas" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/id/2024/06/24</link>
-            <guid isPermaLink="false">2024-06-24T00:00:00.000Z</guid>
-            <pubDate>Mon, 24 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

@@ -1,0 +1,323 @@
+[
+  {
+    "id": 40870357,
+    "title": "Awal Mula DS_store (2006)",
+    "originLink": "https://www.arno.org/on-the-origins-of-ds-store",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40870357",
+    "commentBody": "",
+    "originSummary": [
+      "File .DS_Store, yang umum terlihat saat mentransfer file dari Mac ke Windows, merupakan singkatan dari \"Desktop Services Store,\" yang berasal dari penulisan ulang Finder Mac OS X pada tahun 1999.",
+      "Kotak Pencari (Finder) dibagi menjadi antarmuka pengguna (Finder_FE) dan fungsi inti (Finder_BE), dengan rencana untuk menjadikan backend sebagai API publik yang disebut Layanan Desktop, meskipun tidak pernah sepenuhnya dirilis.",
+      "Bug menyebabkan pembuatan berlebihan file .DS_Store, bahkan tanpa penyesuaian pengguna, menjadikannya masalah yang terus-menerus bagi pengguna Mac."
+    ],
+    "commentSummary": [
+      "Diskusi berpusat pada konteks historis dan detail teknis dari file DS_store dan konsep \"fork\" dalam sistem file Mac, yang mencakup komponen sumber daya dan data.",
+      "Fork sumber daya dalam MacOS awal menyimpan berbagai data aplikasi seperti ikon, menu, dan kode yang dapat dieksekusi, yang menimbulkan tantangan saat mentransfer file ke sistem non-Mac.",
+      "Transisi dari MacOS ke MacOS X melibatkan perubahan signifikan, termasuk penghapusan resource forks, yang disambut dengan reaksi beragam dari komunitas pengguna."
+    ],
+    "points": 375,
+    "commentCount": 200,
+    "retryCount": 0,
+    "time": 1720043713
+  },
+  {
+    "id": 40869877,
+    "title": "Xcapture-BPF – seperti Linux top, tetapi dengan penglihatan Xray",
+    "originLink": "https://0x.tools/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40869877",
+    "commentBody": "",
+    "originSummary": [
+      "0x.tools adalah sekumpulan utilitas sumber terbuka yang dirancang untuk menganalisis kinerja aplikasi di Linux, dengan penekanan pada kesederhanaan dan ketergantungan minimal.",
+      "Fitur utama termasuk mengukur aktivitas tingkat utas individu dan menyediakan alat berbasis eBPF untuk analisis aktivitas utas tingkat sistem dan terperinci.",
+      "Itu dirancang untuk penggunaan yang aman di lingkungan produksi dengan overhead yang sangat rendah dan tidak memerlukan peningkatan OS atau kerangka pemantauan yang berat."
+    ],
+    "commentSummary": [
+      "Xcapture-BPF adalah alat baru yang disamakan dengan perintah top di Linux tetapi dengan kemampuan yang ditingkatkan, sering disebut memiliki \"penglihatan sinar-X\" untuk diagnostik sistem.",
+      "Pengguna telah berbagi pengalaman menggunakan alat eBPF (extended Berkeley Packet Filter) dan BCC (BPF Compiler Collection) untuk men-debug masalah produksi yang kompleks, menyoroti efektivitasnya dalam mengatasi hambatan kinerja dan kebocoran memori.",
+      "Diskusi tersebut mencakup contoh praktis pemecahan masalah, seperti mengatasi iowait tinggi dan masalah cache halaman di lingkungan terkontainer dengan mengaktifkan IO langsung dan mencocokkan ukuran sektor pada perangkat loopback."
+    ],
+    "points": 353,
+    "commentCount": 35,
+    "retryCount": 0,
+    "time": 1720039957
+  },
+  {
+    "id": 40869461,
+    "title": "Pertanyaan $600 Miliar untuk AI",
+    "originLink": "https://www.sequoiacap.com/article/ais-600b-question/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40869461",
+    "commentBody": "",
+    "originSummary": [
+      "Kesenjangan pendapatan AI telah melebar dari $200 miliar menjadi $600 miliar, menimbulkan pertanyaan tentang ekspektasi pertumbuhan industri tersebut.",
+      "Perkembangan utama termasuk meredanya kekurangan pasokan GPU, peningkatan pendapatan pusat data Nvidia, dan pertumbuhan pendapatan signifikan OpenAI menjadi $3,4 miliar.",
+      "Kendala seperti kurangnya kekuatan penetapan harga, risiko investasi, dan depresiasi cepat chip lama tetap ada, tetapi biaya GPU yang lebih rendah dapat menguntungkan startup dan inovasi."
+    ],
+    "commentSummary": [
+      "Melatih model AI besar seperti GPT-4 memerlukan sumber daya komputasi yang signifikan, dengan perkiraan menunjukkan 8.000 GPU H100 berjalan selama 90 hari.",
+      "Investasi GPU yang substansial dari Meta dapat memungkinkan mereka untuk melatih beberapa model skala GPT-4 setiap tahun, yang berpotensi mengkomoditisasi model AI inti dan mempengaruhi margin keuntungan bagi perusahaan AI.",
+      "Nilai sebenarnya dalam AI mungkin akan bergeser ke arah data kepemilikan untuk pelatihan, yang dapat menimbulkan masalah hukum dan menekankan pentingnya kepemilikan data."
+    ],
+    "points": 331,
+    "commentCount": 496,
+    "retryCount": 0,
+    "time": 1720036541
+  },
+  {
+    "id": 40870345,
+    "title": "Melampaui perkalian matriks NumPy dalam 150 baris kode C",
+    "originLink": "https://salykova.github.io/matmul-cpu",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40870345",
+    "commentBody": "",
+    "originSummary": [
+      "Implementasi perkalian matriks berkinerja tinggi dalam C, mengikuti desain BLIS, mengungguli NumPy (OpenBLAS) pada AMD Ryzen 7700, mencapai lebih dari 1 TFLOPS.",
+      "Kode ini sederhana, portabel, dan skalabel, menggunakan hanya 3 baris direktif OpenMP untuk paralelisasi, dan ditargetkan untuk CPU Intel Core dan AMD Zen dengan instruksi FMA3 dan AVX.",
+      "Implementasi tersebut menunjukkan bahwa perkalian matriks yang efisien dapat dicapai dalam C tanpa kode assembly atau Fortran yang mendalam, dengan kinerja yang sebanding dengan perpustakaan BLAS yang sudah mapan ketika disesuaikan dengan perangkat keras tertentu."
+    ],
+    "commentSummary": [
+      "Kutipan blog menunjukkan kinerja yang melampaui perkalian matriks NumPy menggunakan 150 baris kode C, dengan fokus pada peningkatan kinerja.",
+      "Perbaikan utama meliputi pemilihan algoritma, meminimalkan perjalanan bolak-balik kernel, vektorisasi, efisiensi cache, dan optimasi khusus perangkat keras.",
+      "Komentar dalam diskusi membahas keadilan dalam membandingkan kode C dengan NumPy, menyarankan perbandingan dengan perpustakaan BLAS (Basic Linear Algebra Subprograms) lainnya dan menekankan perlunya benchmarking yang menyeluruh dan penyetelan hyperparameter untuk CPU tertentu."
+    ],
+    "points": 298,
+    "commentCount": 51,
+    "retryCount": 0,
+    "time": 1720043575
+  },
+  {
+    "id": 40870280,
+    "title": "Keseruan membaca buku yang tidak Anda mengerti",
+    "originLink": "https://reactormag.com/the-joy-of-reading-books-you-dont-entirely-understand/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40870280",
+    "commentBody": "",
+    "originSummary": [
+      "Artikel tersebut menekankan kegembiraan dan nilai membaca buku yang tidak sepenuhnya dipahami, menyarankan bahwa tidak apa-apa untuk menghargai sebuah buku tanpa sepenuhnya memahaminya.",
+      "Karya penulis, Molly Templeton, berbagi pengalaman pribadi dengan buku-buku kompleks seperti *Baroque Cycle* karya Neal Stephenson dan judul-judul terbaru seperti *The Library of Broken Worlds* karya Alaya Dawn Johnson dan *Jonathan Abernathy You Are Kind* karya Molly McGhee.",
+      "Templeton berpendapat bahwa menerima ketidakpastian dalam membaca dapat membebaskan dan memperkaya pengalaman membaca, mendorong pembaca untuk menjelajahi narasi yang menantang."
+    ],
+    "commentSummary": [
+      "Kutipan tersebut membahas nilai membaca buku yang menantang dan memprovokasi pemikiran mendalam, merujuk pada keyakinan Kafka bahwa buku yang berdampak harus 'menggigit dan menyengat' daripada sekadar menghibur.",
+      "Ini menyoroti berbagai perspektif tentang membaca buku yang sulit atau kompleks, dengan beberapa pembaca menganjurkan untuk terjun langsung tanpa mencatat guna meningkatkan pemahaman dan kenikmatan.",
+      "Percakapan tersebut mencakup anekdot pribadi dan rekomendasi buku yang telah meninggalkan kesan mendalam, menekankan kegembiraan menemukan wawasan baru melalui membaca ulang dan berinteraksi dengan materi yang menantang."
+    ],
+    "points": 298,
+    "commentCount": 185,
+    "retryCount": 0,
+    "time": 1720043087
+  },
+  {
+    "id": 40874341,
+    "title": "Twilio mengonfirmasi pelanggaran data setelah peretas membocorkan 33 juta nomor telepon pengguna Authy",
+    "originLink": "https://www.securityweek.com/twilio-confirms-data-breach-after-hackers-leak-33m-authy-user-phone-numbers/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40874341",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Twilio telah mengonfirmasi adanya pelanggaran data yang mengungkapkan nomor telepon dari 33 juta pengguna Authy, yang menyebabkan peningkatan panggilan spam dan kekhawatiran atas keandalan jaringan telepon tradisional.",
+      "Pengguna sedang mempertimbangkan metode komunikasi alternatif seperti FaceTime dan Zoom, sambil juga menekankan peran penting panggilan telepon dalam layanan penting seperti perawatan kesehatan dan layanan sosial.",
+      "Pelanggaran tersebut menyoroti perlunya perlindungan data yang lebih kuat, penegakan yang lebih baik terhadap langkah-langkah anti-spam, dan rekomendasi untuk aplikasi otentikasi dua faktor (2FA) alternatif seperti Aegis, Bitwarden, dan Yubikey."
+    ],
+    "points": 260,
+    "commentCount": 148,
+    "retryCount": 0,
+    "time": 1720095999
+  },
+  {
+    "id": 40872182,
+    "title": "Kisah 'Just Ship It' yang Paling Menyedihkan (2020)",
+    "originLink": "https://www.kitze.io/posts/saddest-just-ship-it-story-ever",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872182",
+    "commentBody": "",
+    "originSummary": [
+      "Kisah penulis tentang perjalanan pribadi dalam mengembangkan sebuah aplikasi, dimulai pada tahun 2018, namun menunda peluncurannya karena penambahan fitur yang terus-menerus dan mempelajari teknologi baru seperti React Native.",
+      "Meskipun meninggalkan proyek setelah dua tahun, penulis kemudian menemukan aplikasi serupa yang berhasil meskipun tidak sempurna, yang menyebabkan perasaan campur aduk.",
+      "Dalam tahun 2022, penulis akhirnya merilis sebuah aplikasi produktivitas yang menggabungkan berbagai fitur seperti Todos, Kebiasaan, Perencana, dan Tujuan, serta mengundang pembaca untuk bergabung dengan komunitas di Benji - The Life OS."
+    ],
+    "commentSummary": [
+      "Diskusi berpusat pada mentalitas 'just ship it' dalam pengembangan perangkat lunak, menekankan bahwa terburu-buru untuk memenuhi tenggat waktu dapat mengorbankan kualitas perangkat lunak dan menyebabkan kelelahan pada pengembang.",
+      "Ada perdebatan tentang apakah pengembang harus memprioritaskan keuntungan perusahaan atau fokus pada pembuatan perangkat lunak berkualitas tinggi, dengan beberapa pihak berargumen bahwa pengembang tidak diberi kompensasi yang memadai untuk upaya luar biasa kecuali mereka memiliki saham yang signifikan di perusahaan.",
+      "Percakapan tersebut menyoroti perbedaan perspektif tentang kepuasan kerja, kompensasi, dan keseimbangan antara integritas profesional dan tuntutan perusahaan, yang mencerminkan kekhawatiran industri yang lebih luas tentang keseimbangan kerja-hidup dan pengakuan."
+    ],
+    "points": 217,
+    "commentCount": 263,
+    "retryCount": 0,
+    "time": 1720065035
+  },
+  {
+    "id": 40874013,
+    "title": "Jeffrey Snover dan Pembuatan PowerShell",
+    "originLink": "https://corecursive.com/building-powershell-with-jeffrey-snover/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40874013",
+    "commentBody": "",
+    "originSummary": [
+      "Jeffrey Snover, arsitek di balik PowerShell, berbagi perjalanannya dalam menciptakan alat perintah yang merevolusi administrasi sistem Windows, awalnya menghadapi perlawanan dari perusahaan yang lebih menyukai antarmuka grafis.",
+      "tantangan utama termasuk menavigasi restrukturisasi perusahaan, penolakan budaya, dan membangun tim yang berdedikasi, dengan pengaruh signifikan dari dorongan Bill Gates untuk .NET.",
+      "Pengembangan PowerShell, yang dipandu oleh Monad Manifesto, mengubah administrasi Windows Server dan memungkinkan perpindahan Microsoft ke cloud, menunjukkan dampak dari ketekunan dan visi dalam mendorong perubahan teknologi."
+    ],
+    "commentSummary": [
+      "Jeffrey Snover, pencipta PowerShell, menghadapi penentangan yang signifikan dan diturunkan jabatannya di Microsoft karena mengejar pengembangannya.",
+      "PowerShell dirancang untuk membantu administrasi server di Windows dengan memanggil berbagai API, tetapi menghadapi konflik internal dan beberapa fitur hilang di versi yang lebih baru.",
+      "Meskipun pendekatan berorientasi objek dan integrasi .NET, PowerShell dianggap verbose dan menantang dibandingkan dengan bahasa skrip lain seperti Python, membatasi adopsinya di luar ekosistem Windows."
+    ],
+    "points": 200,
+    "commentCount": 182,
+    "retryCount": 0,
+    "time": 1720092392
+  },
+  {
+    "id": 40872020,
+    "title": "Sans-IO: Rahasia Efektif Rust untuk Layanan Jaringan",
+    "originLink": "https://www.firezone.dev/blog/sans-io",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872020",
+    "commentBody": "",
+    "originSummary": [
+      "Firezone menggunakan Rust dan desain sans-IO untuk perpustakaan konektivitas intinya, connlib, untuk mengelola koneksi jaringan dan terowongan WireGuard, menawarkan pengujian cepat, kustomisasi mendalam, dan jaminan tinggi.",
+      "Desain sans-IO memisahkan kebijakan dari implementasi menggunakan abstraksi seperti `Transmit`, memungkinkan mesin status murni untuk menangani protokol jaringan tanpa IO langsung, membuat kode lebih fleksibel dan lebih mudah diuji.",
+      "Walaupun sans-IO memerlukan loop acara dan mesin status khusus, ini memberikan manfaat signifikan seperti komposisi yang mudah, API yang fleksibel, dan penanganan kesalahan yang lebih baik, meskipun belum banyak diadopsi dalam komunitas Rust."
+    ],
+    "commentSummary": [
+      "Kirimannya membahas konsep Sans-IO dalam Rust, yang memisahkan operasi input/output (IO) dari logika utama, membuat kode lebih mudah diuji dan disusun.",
+      "Pendekatan ini sangat bermanfaat untuk kasus penggunaan yang berorientasi pada paket seperti QUIC, WebRTC, dan IP, di mana manajemen status dapat menjadi kompleks.",
+      "Diskusi ini menyoroti bahwa meskipun metode ini bukanlah hal baru, metode ini menawarkan keuntungan signifikan dalam Rust dengan menyederhanakan pengujian dan menghindari jebakan pola async/await tradisional."
+    ],
+    "points": 179,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1720062336
+  },
+  {
+    "id": 40872332,
+    "title": "Bangun utilitas kompresi data di Haskell menggunakan kode Huffman",
+    "originLink": "https://lazamar.github.io/haskell-data-compression-with-huffman-codes/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872332",
+    "commentBody": "",
+    "originSummary": [
+      "Kirimannya menguraikan pembuatan program kompresi data dalam Haskell menggunakan pengkodean Huffman, yang menangani file biner sembarang dengan memori konstan untuk pengkodean dan dekode.",
+      "Kode ini menjelaskan kode Huffman, kode bebas awalan, dan proses membangun pohon biner untuk pengkodean yang efisien, diikuti dengan implementasi fungsi pengkodean dan dekode.",
+      "Postingan tersebut juga mencakup penanganan file biner, serialisasi/deserialisasi data, dan potensi perbaikan seperti multithreading dan pembuatan kode yang lebih cepat, menampilkan utilitas kompresi data yang praktis dan efisien dalam Haskell."
+    ],
+    "commentSummary": [
+      "Kajian tentang membangun utilitas kompresi data di Haskell menggunakan kode Huffman, menyoroti efisiensi algoritma berbasis array yang dilakukan di tempat untuk set data besar.",
+      "Kutipan dari karya-karya penting, termasuk makalah Moffat dan Katajainen tahun 1995 dan standar JPEG ITU T.81 (1992), yang menjelaskan pengkodean Huffman berbasis array.",
+      "Pandangan tentang kinerja Haskell, dengan perbandingan dengan bahasa lain seperti C, C++, dan Rust, serta pertukaran antara kesederhanaan implementasi dan kejelasan kode versus kinerja mentah."
+    ],
+    "points": 164,
+    "commentCount": 69,
+    "retryCount": 0,
+    "time": 1720067352
+  },
+  {
+    "id": 40869421,
+    "title": "Voice Isolator: Menghilangkan kebisingan latar belakang untuk produksi film, podcast, wawancara",
+    "originLink": "https://elevenlabs.io/voice-isolator",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40869421",
+    "commentBody": "",
+    "originSummary": [
+      "Generator suara AI sekarang mendukung 29 bahasa, memperluas aksesibilitas dan kegunaannya untuk audiens global.",
+      "Itu menawarkan ribuan opsi suara, memberikan pengguna berbagai pilihan untuk aplikasi dan preferensi yang berbeda."
+    ],
+    "commentSummary": [
+      "Alat Voice Isolator dari Elevenlabs bertujuan untuk menghilangkan kebisingan latar belakang untuk produksi film, podcast, dan wawancara, tetapi model harga yang didasarkan pada 'karakter' membingungkan banyak pengguna.",
+      "Pengguna sedang mendiskusikan berbagai alternatif untuk solusi pengenalan suara ke teks (STT) dan teks ke suara (TTS), termasuk opsi sumber terbuka seperti Whisper dan layanan komersial seperti Deepgram Nova 2.",
+      "Ada minat yang signifikan terhadap solusi lokal dan sumber terbuka untuk pembersihan audio dan transkripsi, karena banyak yang menganggap penawaran komersial saat ini terlalu mahal atau tidak cukup efektif."
+    ],
+    "points": 158,
+    "commentCount": 126,
+    "retryCount": 0,
+    "time": 1720036303
+  },
+  {
+    "id": 40872102,
+    "title": "Pemilik Vision Pro, apakah Anda masih menggunakannya?",
+    "originLink": "https://news.ycombinator.com/item?id=40872102",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872102",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Pengguna Vision Pro memiliki pengalaman yang beragam, dengan beberapa memuji kemampuan media dan kerjanya, sementara yang lain mengkritik biaya tinggi dan fungsionalitas yang terbatas.",
+      "Fitur utama yang dihargai meliputi ukuran layar, passthrough, fitur penglihatan, dan dukungan periferal Bluetooth yang ditingkatkan, tetapi masalah seperti ketidaknyamanan penglihatan dan integrasi perangkat lunak yang terbatas dicatat.",
+      "Harga tinggi perangkat ($3500) dan rilis terbatas (450 ribu unit) telah menyebabkan pasar yang kecil, dengan banyak pengguna menunggu revisi di masa depan atau memilih alternatif yang lebih murah seperti Quest 3."
+    ],
+    "points": 141,
+    "commentCount": 77,
+    "retryCount": 0,
+    "time": 1720063824
+  },
+  {
+    "id": 40871783,
+    "title": "Pemaksaan Difusi: Prediksi Token Berikutnya Bertemu dengan Difusi Urutan Penuh",
+    "originLink": "https://boyuan.space/diffusion-forcing/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40871783",
+    "commentBody": "",
+    "originSummary": [
+      "Diffusion Forcing adalah paradigma pelatihan baru yang menggabungkan prediksi token berikutnya dan model difusi urutan penuh, menawarkan generasi yang fleksibel dan panduan tingkat urutan.",
+      "Ini mencapai peningkatan kinerja yang signifikan dalam aplikasi seperti prediksi video, stabilisasi rollout tak terbatas, perencanaan difusi, dan pembelajaran imitasi jangka panjang.",
+      "Metode ini memungkinkan prediksi video yang stabil dan konsisten, peluncuran yang lebih lama tanpa jendela geser, dan penanganan yang kuat terhadap tugas non-Markovian dengan kebutuhan memori jangka panjang."
+    ],
+    "commentSummary": [
+      "Makalah ini menggabungkan sequence masking, yang penting untuk Model Bahasa Besar (LLM), dengan model difusi dengan melacak tingkat 'ketidakpastian' per piksel, yang diperlakukan sebagai 'noise' untuk model difusi.",
+      "Metode ini bermanfaat untuk tugas-tugas seperti pemecahan labirin dan mengendalikan lengan robot, karena memungkinkan untuk memperkuat bagian-bagian gambar lebih awal.",
+      "Pendekatan ini memodelkan ketidakpastian dalam perencanaan dan pencarian, meningkatkan kemampuan agen untuk bereaksi dan menggeneralisasi, tetapi makalah ini kurang dalam rincian implementasi dan akses ke basis kode."
+    ],
+    "points": 133,
+    "commentCount": 6,
+    "retryCount": 0,
+    "time": 1720058960
+  },
+  {
+    "id": 40872438,
+    "title": "Menemukan duplikat dekat dengan kesamaan Jaccard dan MinHash",
+    "originLink": "https://blog.nelhage.com/post/fuzzy-dedup/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40872438",
+    "commentBody": "",
+    "originSummary": [
+      "Kesamaan Jaccard dan MinHash digunakan untuk mengidentifikasi dokumen yang kira-kira serupa dalam koleksi teks besar, seperti yang digunakan dalam persiapan dataset GPT-3.",
+      "MinHash mendekati kesamaan Jaccard dengan melakukan hashing pada fitur dokumen dan menggunakan nilai hash minimum sebagai tanda tangan, memungkinkan perbandingan yang efisien dari korpus besar.",
+      "Metode ini dapat diskalakan dan dapat digabungkan dengan teknik lain seperti HyperLogLog, sehingga cocok untuk aplikasi pemrosesan teks skala besar."
+    ],
+    "commentSummary": [
+      "Postingan tersebut membahas penggunaan kesamaan Jaccard dan MinHash untuk menemukan data yang hampir duplikat, menyoroti penerapannya di berbagai bidang seperti segmentasi gambar medis dan deduplikasi basis data.",
+      "Beberapa alat dan pustaka disebutkan untuk tugas deduplikasi, termasuk datasketch, rensa, Splink, dan gaoya, dengan wawasan tentang kinerja dan kasus penggunaannya.",
+      "Model Fellegi Sunter dikenal karena efektivitasnya dalam mendeduplikasi orang dengan memberikan bobot pada kecocokan dan ketidakcocokan yang samar, sehingga meningkatkan akurasi dalam kumpulan data yang besar."
+    ],
+    "points": 127,
+    "commentCount": 16,
+    "retryCount": 0,
+    "time": 1720069449
+  },
+  {
+    "id": 40873001,
+    "title": "Penetapan harga mesin khusus wilayah",
+    "originLink": "https://community.fly.io/t/fresh-produce-region-specific-machines-pricing/20690",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40873001",
+    "commentBody": "",
+    "originSummary": [
+      "Mulai 1 Juli, harga khusus wilayah untuk Mesin, termasuk RAM tambahan, akan diperkenalkan karena biaya infrastruktur yang bervariasi di setiap wilayah.",
+      "Kenaikan harga akan dilakukan secara bertahap selama empat bulan, dengan harga akhir ditetapkan pada bulan November; faktur awal akan menunjukkan item baris khusus wilayah tanpa perubahan harga.",
+      "Koreksi bug untuk penggunaan CPU Bersama Mesin 1x yang tidak tercakup oleh kredit Tunjangan Mesin Gratis telah diterapkan, dan kredit sedang diterbitkan kembali."
+    ],
+    "commentSummary": [
+      "Penetapan harga berdasarkan wilayah oleh Fly.io telah memicu diskusi, dengan beberapa pengguna merasa harganya mahal dibandingkan dengan alternatif seperti Hetzner, terutama untuk ketersediaan tinggi.",
+      "Fly.io membela harga mereka dengan menyoroti ketidakberlanjutan tarif global tetap karena biaya operasional yang tinggi di beberapa wilayah, seperti Brasil.",
+      "Meskipun rencana hobi dihapus dan ada beberapa kekhawatiran tentang keandalan, banyak pengguna menghargai fitur Fly.io seperti perutean permintaan dinamis dan penyebaran tanpa operasi, yang mereka yakini membenarkan biaya yang lebih tinggi."
+    ],
+    "points": 94,
+    "commentCount": 109,
+    "retryCount": 0,
+    "time": 1720077454
+  }
+]

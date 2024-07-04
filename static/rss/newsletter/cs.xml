@@ -15,12 +15,197 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 03 Jul 2024 19:10:36 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 04 Jul 2024 19:13:29 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/cs.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Wed, 03 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[cs]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-04]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/04&#39;</h2>
+<h1>2024-07-04</h1>
+<h2><a href="https://www.arno.org/on-the-origins-of-ds-store">„Původ DS_store (2006)“</a></h2>
+<ul>
+<li>„Soubory .DS_Store, běžně viděné při přenosu souborů z Macu na Windows, znamenají &quot;Desktop Services Store&quot; a pocházejí z přepisu Finderu Mac OS X z roku 1999.“</li>
+<li>„Finder byl rozdělen na uživatelské rozhraní (Finder_FE) a základní funkce (Finder_BE), s plány vytvořit z backendu veřejné API nazvané Desktop Services, i když to nikdy nebylo plně vydáno.“</li>
+<li>„Chyba způsobuje nadměrné vytváření souborů .DS_Store, i bez zásahů uživatele, což z nich činí trvalý problém pro uživatele Mac.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870357">Reakce</a></h3>
+<ul>
+<li>„Diskuse se točí kolem historického kontextu a technických detailů souboru DS_store a konceptu &quot;fork&quot; v souborových systémech Mac, který zahrnuje jak zdrojové, tak datové komponenty.“</li>
+<li>„V raném MacOS ukládal resource fork různá aplikační data jako ikony, nabídky a spustitelný kód, což představovalo problémy při přenosu souborů na systémy, které nejsou Mac.“</li>
+<li>„Přechod z MacOS na MacOS X zahrnoval významné změny, včetně odstranění resource forks, což se setkalo s různými reakcemi uživatelské komunity.“</li>
+</ul>
+<h2><a href="https://0x.tools/">„Xcapture-BPF – jako Linux top, ale s rentgenovým viděním“</a></h2>
+<ul>
+<li>„0x.tools je sada open-source nástrojů určených k analýze výkonu aplikací na Linuxu, kladoucí důraz na jednoduchost a minimální závislosti.“</li>
+<li>„Klíčové funkce zahrnují měření aktivity jednotlivých vláken a poskytování nástrojů založených na eBPF pro analýzu aktivity na úrovni systému a podrobnou analýzu vláken.“</li>
+<li>„Je navržen pro bezpečné použití v produkčních prostředích s velmi nízkou režijní zátěží a nevyžaduje aktualizace OS ani těžké monitorovací rámce.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869877">Reakce</a></h3>
+<ul>
+<li>„Xcapture-BPF je nový nástroj přirovnávaný k příkazu top v Linuxu, ale s vylepšenými schopnostmi, často označovaný jako nástroj s „rentgenovým viděním“ pro diagnostiku systému.“</li>
+<li>„Uživatelé sdíleli zkušenosti s používáním nástrojů eBPF (extended Berkeley Packet Filter) a BCC (BPF Compiler Collection) k ladění složitých problémů v produkčním prostředí, přičemž zdůraznili jejich účinnost při řešení problémů s výkonem a úniky paměti.“</li>
+<li>„Diskuse zahrnuje praktické příklady řešení problémů, jako je řešení vysokého iowait a problémů s mezipamětí stránek v kontejnerizovaných prostředích povolením přímého IO a sladěním velikostí sektorů na loopback zařízeních.“</li>
+</ul>
+<h2><a href="https://www.sequoiacap.com/article/ais-600b-question/">„600 miliardová otázka AI“</a></h2>
+<ul>
+<li>„Rozdíl v příjmech z AI se rozšířil z 200 miliard dolarů na 600 miliard dolarů, což vyvolává otázky ohledně očekávání růstu v tomto odvětví.“</li>
+<li>„Klíčové události zahrnují zmírnění nedostatku GPU, zvýšení příjmů společnosti Nvidia z datových center a významný růst příjmů OpenAI na 3,4 miliardy dolarů.“</li>
+<li>„Výzvy, jako je nedostatek cenové síly, investiční rizika a rychlá amortizace starších čipů, přetrvávají, ale nižší náklady na GPU by mohly prospět startupům a inovacím.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869461">Reakce</a></h3>
+<ul>
+<li>„Trénování velkých AI modelů, jako je GPT-4, vyžaduje značné výpočetní zdroje, přičemž odhady naznačují, že je potřeba 8 000 GPU H100 běžících po dobu 90 dnů.“</li>
+<li>„Významné investice společnosti Meta do GPU by jim mohly umožnit každoročně trénovat několik modelů v měřítku GPT-4, což by mohlo vést ke komoditizaci základních AI modelů a ovlivnit ziskové marže AI společností.“</li>
+<li>„Skutečná hodnota umělé inteligence se může přesunout směrem k vlastním datům pro trénink, což může vyvolat potenciální právní problémy a zdůraznit důležitost vlastnictví dat.“</li>
+</ul>
+<h2><a href="https://salykova.github.io/matmul-cpu">„Překonání násobení matic v NumPy ve 150 řádcích C“</a></h2>
+<ul>
+<li>„Implementace násobení matic s vysokým výkonem v jazyce C, která následuje návrh BLIS, překonává NumPy (OpenBLAS) na AMD Ryzen 7700 a dosahuje výkonu přes 1 TFLOPS.“</li>
+<li>„Kód je jednoduchý, přenosný a škálovatelný, používá pouze 3 řádky direktiv OpenMP pro paralelizaci a cílí na procesory Intel Core a AMD Zen s instrukcemi FMA3 a AVX.“</li>
+<li>„Implementace ukazuje, že efektivní násobení matic lze dosáhnout v jazyce C bez hlubokého použití assembleru nebo Fortranu, s výkonem srovnatelným se zavedenými knihovnami BLAS, pokud je jemně vyladěno pro konkrétní hardware.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870345">Reakce</a></h3>
+<ul>
+<li>„Blogový příspěvek ukazuje, jak překonat násobení matic v NumPy pomocí 150 řádků kódu v jazyce C, se zaměřením na zlepšení výkonu.“</li>
+<li>„Klíčová vylepšení zahrnují výběr algoritmů, minimalizaci počtu přechodů mezi jádry, vektorizaci, efektivitu cache a optimalizace specifické pro hardware.“</li>
+<li>„Diskuse v komentářích se zabývají spravedlností srovnávání kódu v C s NumPy, navrhují srovnání s jinými knihovnami BLAS (Basic Linear Algebra Subprograms) a zdůrazňují potřebu důkladného benchmarkingu a ladění hyperparametrů pro konkrétní CPU.“</li>
+</ul>
+<h2><a href="https://reactormag.com/the-joy-of-reading-books-you-dont-entirely-understand/">„Radost z čtení knih, kterým nerozumíte“</a></h2>
+<ul>
+<li>„Článek zdůrazňuje radost a hodnotu čtení knih, kterým člověk zcela nerozumí, a naznačuje, že je v pořádku ocenit knihu, aniž by ji plně pochopil.“</li>
+<li>„Autorka Molly Templeton se dělí o osobní zkušenosti s komplexními knihami, jako je <em>Barokní cyklus</em> od Neala Stephensona, a nedávnými tituly, jako jsou <em>Knihovna rozbitých světů</em> od Alayi Dawn Johnsonové a <em>Jonathan Abernathy, jsi laskavý</em> od Molly McGheeové.“</li>
+<li>„Templeton tvrdí, že přijetí nejistoty při čtení může být osvobozující a obohatit čtenářský zážitek, což čtenáře povzbuzuje k prozkoumávání náročných příběhů.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40870280">Reakce</a></h3>
+<ul>
+<li>„Příspěvek pojednává o hodnotě čtení knih, které vyzývají a provokují k hlubokému zamyšlení, přičemž odkazuje na Kafkovu víru, že působivé knihy by měly &#39;kousat a bodat&#39; spíše než jen bavit.“</li>
+<li>„Zdůrazňuje různé pohledy na čtení obtížných nebo složitých knih, přičemž někteří čtenáři prosazují ponoření se do textu bez pořizování poznámek, aby se zvýšilo porozumění a potěšení.“</li>
+<li>„Konverzace zahrnuje osobní anekdoty a doporučení knih, které zanechaly trvalý dojem, zdůrazňující radost z objevování nových poznatků prostřednictvím opakovaného čtení a zapojení se do náročného materiálu.“</li>
+</ul>
+<h2><a href="https://www.securityweek.com/twilio-confirms-data-breach-after-hackers-leak-33m-authy-user-phone-numbers/">„Twilio potvrzuje únik dat poté, co hackeři zveřejnili telefonní čísla 33 milionů uživatelů Authy“</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40874341">Reakce</a></h3>
+<ul>
+<li>„Twilio potvrdilo únik dat, který odhalil telefonní čísla 33 milionů uživatelů Authy, což vedlo k nárůstu nevyžádaných hovorů a obavám o spolehlivost tradičních telefonních sítí.“</li>
+<li>„Uživatelé zvažují alternativní komunikační metody, jako jsou FaceTime a Zoom, a zároveň zdůrazňují klíčovou roli telefonních hovorů v nezbytných službách, jako je zdravotní péče a sociální služby.“</li>
+<li>„Porušení zdůrazňuje potřebu silnější ochrany dat, lepšího prosazování opatření proti spamu a doporučení alternativních aplikací pro dvoufaktorové ověřování (2FA), jako jsou Aegis, Bitwarden a Yubikey.“</li>
+</ul>
+<h2><a href="https://www.kitze.io/posts/saddest-just-ship-it-story-ever">„Nejsmutnější příběh &quot;Prostě to pošli&quot; vůbec (2020)“</a></h2>
+<ul>
+<li>„Autor sdílí osobní cestu vývoje aplikace, která začala v roce 2018, ale její vydání bylo odloženo kvůli neustálému přidávání funkcí a učení se novým technologiím, jako je React Native.“</li>
+<li>„Navzdory tomu, že po dvou letech projekt opustil, autor později objevil podobnou aplikaci, která uspěla i přes své nedokonalosti, což vedlo ke smíšeným pocitům.“</li>
+<li>„V roce 2022 autor konečně vydal produktivní aplikaci, která kombinuje různé funkce jako úkoly, návyky, plánovač a cíle, a zve čtenáře, aby se připojili ke komunitě na Benji - The Life OS.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872182">Reakce</a></h3>
+<ul>
+<li>„Diskuse se točí kolem mentality „prostě to pošli“ v softwarovém vývoji, zdůrazňující, že spěchání za účelem splnění termínů může ohrozit kvalitu softwaru a vést k vyhoření vývojářů.“</li>
+<li>„Existuje debata o tom, zda by vývojáři měli upřednostňovat ziskovost společnosti nebo se zaměřit na vytváření vysoce kvalitního softwaru, přičemž někteří tvrdí, že vývojáři nejsou za mimořádné úsilí dostatečně odměňováni, pokud nemají významný podíl ve společnosti.“</li>
+<li>„Konverzace zdůrazňuje rozdílné pohledy na pracovní spokojenost, odměňování a rovnováhu mezi profesionální integritou a požadavky společnosti, což odráží širší obavy v odvětví týkající se rovnováhy mezi pracovním a soukromým životem a uznáním.“</li>
+</ul>
+<h2><a href="https://corecursive.com/building-powershell-with-jeffrey-snover/">„Jeffrey Snover a vznik PowerShellu“</a></h2>
+<ul>
+<li>„Jeffrey Snover, architekt stojící za PowerShell, sdílí svou cestu při vytváření příkazového nástroje, který revolucionalizoval správu systémů Windows, přičemž zpočátku čelil odporu ze strany společnosti upřednostňující grafická rozhraní.“</li>
+<li>„Klíčové výzvy zahrnovaly navigaci firemní restrukturalizací, kulturní odpor a budování oddaného týmu, s významným vlivem tlaku Billa Gatese na .NET.“</li>
+<li>„Vývoj PowerShellu, vedený Monad Manifestem, transformoval správu Windows Serveru a umožnil Microsoftu přechod do cloudu, což ukazuje dopad vytrvalosti a vize na řízení technologických změn.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40874013">Reakce</a></h3>
+<ul>
+<li>„Jeffrey Snover, tvůrce PowerShellu, čelil značnému odporu a byl v Microsoftu degradován za to, že se věnoval jeho vývoji.“</li>
+<li>„PowerShell byl navržen, aby pomáhal s administrací serverů na Windows voláním různých API, ale čelil interním konfliktům a některé funkce byly v novějších verzích ztraceny.“</li>
+<li>„Navzdory svému objektově orientovanému přístupu a integraci s .NET je PowerShell považován za rozvláčný a náročný ve srovnání s jinými skriptovacími jazyky, jako je Python, což omezuje jeho přijetí mimo ekosystém Windows.“</li>
+</ul>
+<h2><a href="https://www.firezone.dev/blog/sans-io">„Sans-IO: Tajemství efektivního Rustu pro síťové služby“</a></h2>
+<ul>
+<li>„Firezone používá Rust a design sans-IO pro svou hlavní knihovnu pro připojení, connlib, k řízení síťových připojení a tunelů WireGuard, což nabízí rychlé testy, hlubokou přizpůsobitelnost a vysokou jistotu.“</li>
+<li>„Návrh sans-IO odděluje politiku od implementace pomocí abstrakcí, jako je <code>Transmit</code>, což umožňuje čistým stavovým automatům zpracovávat síťové protokoly bez přímého IO, čímž se kód stává flexibilnějším a snadněji testovatelným.“</li>
+<li>„Ačkoli sans-IO vyžaduje vlastní smyčky událostí a stavové automaty, poskytuje významné výhody, jako je snadná kompozice, flexibilní API a vylepšené zpracování chyb, přestože ještě není široce přijímán v komunitě Rust.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872020">Reakce</a></h3>
+<ul>
+<li>„Příspěvek pojednává o konceptu Sans-IO v jazyce Rust, který odděluje vstupně/výstupní (IO) operace od hlavní logiky, což činí kód lépe testovatelným a složitelným.“</li>
+<li>„Tento přístup je obzvláště výhodný pro případy použití orientované na pakety, jako jsou QUIC, WebRTC a IP, kde může být správa stavu složitá.“</li>
+<li>„Diskuse zdůrazňuje, že i když tato metoda není nová, nabízí v Rustu významné výhody tím, že zjednodušuje testování a vyhýbá se úskalím tradičních vzorů async/await.“</li>
+</ul>
+<h2><a href="https://lazamar.github.io/haskell-data-compression-with-huffman-codes/">„Vytvoření nástroje pro kompresi dat v Haskellu pomocí Huffmanových kódů“</a></h2>
+<ul>
+<li>„Příspěvek popisuje vytvoření programu pro kompresi dat v Haskellu pomocí Huffmanova kódování, který zpracovává libovolné binární soubory s konstantní pamětí pro kódování a dekódování.“</li>
+<li>„Vysvětluje Huffmanovy kódy, prefixové kódy a proces konstrukce binárního stromu pro efektivní kódování, následovaný implementací funkcí pro kódování a dekódování.“</li>
+<li>„Příspěvek se také zabývá zpracováním binárních souborů, serializací/deserializací dat a potenciálními vylepšeními, jako je multithreading a rychlejší tvorba kódu, což představuje praktický a efektivní nástroj pro kompresi dat v Haskellu.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872332">Reakce</a></h3>
+<ul>
+<li>„Diskuse o vytváření nástroje pro kompresi dat v Haskellu pomocí Huffmanových kódů, zdůrazňující efektivitu algoritmů založených na polích a prováděných na místě pro velké datové sady.“</li>
+<li>„Odkazy na významné práce, včetně článku Moffata a Katajainena z roku 1995 a standardu JPEG ITU T.81 (1992), které popisují Huffmanovo kódování založené na polích.“</li>
+<li>„Pohledy na výkon Haskellu, srovnání s jinými jazyky jako C, C++ a Rust, a kompromisy mezi jednoduchostí implementace a čitelností kódu versus surovým výkonem.“</li>
+</ul>
+<h2><a href="https://elevenlabs.io/voice-isolator">„Izolátor hlasu: Odstraňte šum na pozadí pro filmovou, podcastovou a rozhovorovou produkci“</a></h2>
+<ul>
+<li>„Generátor hlasu AI nyní podporuje 29 jazyků, čímž rozšiřuje svou dostupnost a použitelnost pro globální publikum.“</li>
+<li>„Nabízí tisíce hlasových možností, poskytuje uživatelům širokou škálu voleb pro různé aplikace a preference.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40869421">Reakce</a></h3>
+<ul>
+<li>„Nástroj Voice Isolator od Elevenlabs má za cíl odstranit šum na pozadí při produkci filmů, podcastů a rozhovorů, ale jeho cenový model založený na &quot;znacích&quot; mate mnoho uživatelů.“</li>
+<li>„Uživatelé diskutují o různých alternativách pro řešení převodu řeči na text (STT) a textu na řeč (TTS), včetně open-source možností jako Whisper a komerčních služeb jako Deepgram Nova 2.“</li>
+<li>„Existuje značný zájem o lokální a open-source řešení pro vyčištění zvuku a přepis, protože mnozí považují současné komerční nabídky buď za příliš drahé, nebo nedostatečně účinné.“</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40872102">„Majitelé Vision Pro, stále ho používáte?“</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40872102">Reakce</a></h3>
+<ul>
+<li>„Uživatelé Vision Pro mají smíšené zkušenosti, někteří chválí jeho mediální a pracovní schopnosti, zatímco jiní kritizují jeho vysokou cenu a omezenou funkčnost.“</li>
+<li>„Mezi klíčové oceňované vlastnosti patří velikost obrazovky, průhlednost, funkce pro zrak a vylepšená podpora periferií přes Bluetooth, ale jsou zaznamenány problémy jako nepohodlí při vidění a omezená integrace softwaru.“</li>
+<li>„Vysoká cena zařízení (3500 $) a omezené množství (450 tisíc kusů) vedly k malému trhu, přičemž mnoho uživatelů čeká na budoucí revize nebo volí levnější alternativy, jako je Quest 3.“</li>
+</ul>
+<h2><a href="https://boyuan.space/diffusion-forcing/">„Difuzní nucení: Predikce dalšího tokenu se setkává s difuzí celého sledu“</a></h2>
+<ul>
+<li>„Difuzní nucení je nový tréninkový paradigmat, který kombinuje predikci následujícího tokenu a modely difuze celých sekvencí, což nabízí flexibilní generování a vedení na úrovni sekvencí.“</li>
+<li>„Dosahuje významných zlepšení výkonu v aplikacích, jako je predikce videa, stabilizace nekonečných rolloutů, plánování difúze a dlouhodobé učení napodobováním.“</li>
+<li>„Tato metoda umožňuje stabilní a konzistentní predikce videa, delší výstupy bez posuvných oken a robustní zpracování ne-Markovských úloh s požadavky na dlouhodobou paměť.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40871783">Reakce</a></h3>
+<ul>
+<li>„Práce kombinuje sekvenční maskování, které je nezbytné pro velké jazykové modely (LLM), s difuzními modely tím, že sleduje úroveň &#39;nejistoty&#39; na pixel, která je považována za &#39;šum&#39; pro difuzní model.“</li>
+<li>„Tato metoda je užitečná pro úkoly, jako je řešení bludiště a ovládání robotického ramene, protože umožňuje dřívější zpřesnění částí obrazu.“</li>
+<li>„Přístup modeluje nejistotu v plánování a vyhledávání, čímž zvyšuje schopnost agentů reagovat a zobecňovat, ale článek postrádá podrobnosti o implementaci a přístup k základnímu kódu.“</li>
+</ul>
+<h2><a href="https://blog.nelhage.com/post/fuzzy-dedup/">„Hledání téměř duplicit s Jaccardovou podobností a MinHash“</a></h2>
+<ul>
+<li>„Jaccardova podobnost a MinHash se používají k identifikaci přibližně podobných dokumentů ve velkých textových kolekcích, jako jsou ty, které se používají při přípravě datasetů pro GPT-3.“</li>
+<li>„MinHash přibližuje Jaccardovu podobnost hashováním vlastností dokumentu a použitím minimální hodnoty hash jako podpisu, což umožňuje efektivní porovnávání velkých korpusů.“</li>
+<li>„Tato metoda je škálovatelná a lze ji kombinovat s jinými technikami, jako je HyperLogLog, což ji činí vhodnou pro aplikace zpracování textu ve velkém měřítku.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40872438">Reakce</a></h3>
+<ul>
+<li>„Příspěvek pojednává o použití Jaccardovy podobnosti a MinHash pro nalezení téměř duplicitních dat, přičemž zdůrazňuje jejich aplikaci v různých oblastech, jako je segmentace lékařských obrazů a deduplikace databází.“</li>
+<li>„Několik nástrojů a knihoven je zmíněno pro úkoly deduplikace, včetně datasketch, rensa, Splink a gaoya, s vhledy do jejich výkonu a případů použití.“</li>
+<li>„Model Fellegi-Sunter je známý svou účinností při deduplikaci osob tím, že přiřazuje váhy nejasným shodám a neshodám, čímž zlepšuje přesnost ve velkých datových souborech.“</li>
+</ul>
+<h2><a href="https://community.fly.io/t/fresh-produce-region-specific-machines-pricing/20690">„Ceny strojů specifických pro region“</a></h2>
+<ul>
+<li>„Od 1. července bude zavedeno regionálně specifické cenové nastavení pro stroje, včetně dodatečné RAM, kvůli rozdílným nákladům na infrastrukturu v jednotlivých regionech.“</li>
+<li>„Úprava cen bude zaváděna postupně během čtyř měsíců, přičemž konečné ceny budou stanoveny do listopadu; počáteční faktury budou obsahovat položky specifické pro daný region bez změn cen.“</li>
+<li>„Byla implementována oprava chyby pro využití sdíleného CPU 1x u strojů, které nejsou pokryty kreditem z bezplatného přídělu strojů, a kredity jsou znovu vydávány.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40873001">Reakce</a></h3>
+<ul>
+<li>„Regionálně specifické ceny Fly.io vyvolaly diskuse, přičemž někteří uživatelé je považují za drahé ve srovnání s alternativami, jako je Hetzner, zejména pro vysokou dostupnost.“</li>
+<li>„Fly.io obhajuje své ceny tím, že zdůrazňuje neudržitelnost jednotných globálních sazeb kvůli vysokým provozním nákladům v některých regionech, jako je Brazílie.“</li>
+<li>„Navzdory zrušení hobby plánu a některým obavám o spolehlivost mnoho uživatelů oceňuje funkce Fly.io, jako je dynamické směrování požadavků a nasazení bez nutnosti operací, což podle nich ospravedlňuje vyšší náklady.“</li>
+</ul>
+<head>
+  <meta property="og:title" content="„Původ DS_store (2006)“" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E2%80%9EP%C5%AFvod%20DS_store%20(2006)%E2%80%9C&subheading=%C4%8Dtvrtek%204.%20%C4%8Dervence%202024%3A%20Hacker%20News%20Shrnut%C3%AD" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/cs/2024/07/04</link>
+            <guid isPermaLink="false">2024-07-04T00:00:00.000Z</guid>
+            <pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-03]]></title>
             <description
@@ -1692,182 +1877,6 @@
             <link>https://hn.cho.sh/cs/2024/06/25</link>
             <guid isPermaLink="false">2024-06-25T00:00:00.000Z</guid>
             <pubDate>Tue, 25 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-24]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/24&#39;</h2>
-<h1>2024-06-24</h1>
-<h2><a href="https://danilafe.com/blog/blog_microfeatures/">„Mikroprvky, které miluji na blozích a osobních webových stránkách“</a></h2>
-<ul>
-<li>„Příspěvek zdůrazňuje různé mikrofunkce, které mohou zlepšit uživatelský zážitek na blozích a osobních webových stránkách, inspirované článkem Hillela Wayna o programovacích jazycích.“</li>
-<li>„Klíčové funkce zahrnují poznámky na okraji, obsah, odkazovatelné nadpisy, seskupování sérií, dialogy, bloky kódu s původem a klikacími odkazy, značky pro externí odkazy, náhledy odkazů a RSS kanály.“</li>
-<li>„Tyto funkce, i když nejsou nezbytné, zlepšují navigaci, zapojení a přístupnost, což činí čtenářský zážitek příjemnějším a efektivnějším.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40774277">Reakce</a></h3>
-<ul>
-<li>„Diskuse se točí kolem mikroprvků v blozích a osobních webových stránkách, přičemž zdůrazňuje jak pozitivní, tak negativní aspekty.“</li>
-<li>„Klíčové body sporu zahrnují použití ukazatelů postupu, dekorací odkazů a náhledových vyskakovacích oken, přičemž někteří uživatelé je považují za rušivé a zbytečné.“</li>
-<li>„Konverzace se také dotýká zmenšování nativních posuvníků a potenciálních výhod alternativních navigačních pomůcek, jako jsou obsahy a stále viditelné rejstříky.“</li>
-</ul>
-<h2><a href="https://www.theguardian.com/technology/article/2024/jun/24/apple-breach-eu-competition-rules-digital-markets-act">„Apple porušil pravidla hospodářské soutěže EU“</a></h2>
-<ul>
-<li>„Evropská komise zjistila, že Apple porušuje nové zákony EU zaměřené na ochranu menších konkurentů a umožnění spotřebitelům najít levnější aplikace.“</li>
-<li>„Apple má 12 měsíců na to, aby vyhověl předpisům, nebo čelil pokutám až do výše 10 % svých celosvětových příjmů, po vyšetřování zahájeném v březnu.“</li>
-<li>„Toto je již třetí vyšetřování nedodržování předpisů u společnosti Apple od doby, kdy byl přijat zákon o digitálních trzích (DMA), zaměřující se na poplatky a praktiky společnosti Apple, které omezují vývojáře v tom, aby mohli spotřebitele nasměrovat na alternativní možnosti nákupu.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773883">Reakce</a></h3>
-<ul>
-<li>„Apple byl shledán vinným z porušení pravidel hospodářské soutěže EU, což vyvolalo výzvy k podobným opatřením v USA.“</li>
-<li>„Kritici tvrdí, že kontrola společnosti Apple nad publikováním aplikací a poplatky pro vývojáře dusí konkurenci, přičemž zvláštní obavy vyvolávají pravidla proti přesměrování, která brání vývojářům informovat uživatele o levnějších platebních možnostech mimo App Store.“</li>
-<li>„Apple čeká na rozhodnutí Soudního dvora EU o ústavnosti ustanovení vyžadujících bezplatné iOS API pro vývojáře, uprostřed tvrzení, že jeho dodržování zákonů EU je povrchní.“</li>
-</ul>
-<h2><a href="https://www.voanews.com/a/us-prosecutors-recommend-justice-department-criminally-charge-boeing-as-deadline-looms/7667194.html">„Američtí prokurátoři doporučují, aby ministerstvo spravedlnosti trestně stíhalo společnost Boeing“</a></h2>
-<ul>
-<li>„Američtí prokurátoři navrhují trestní obvinění proti společnosti Boeing za údajné porušení dohody z roku 2021 týkající se dvou smrtelných havárií letounů 737 MAX.“</li>
-<li>„Ministerstvo spravedlnosti má čas do 7. července, aby rozhodlo o stíhání, přičemž Boeing zpochybňuje tvrzení o porušení a probíhají další jednání.“</li>
-<li>„Trestní obvinění by mohla zhoršit krizi Boeingu, ovlivnit jeho smlouvy s americkou vládou, zatímco rodiny obětí prosazují pokutu ve výši 25 miliard dolarů a stíhání.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773151">Reakce</a></h3>
-<ul>
-<li>„Američtí prokurátoři doporučují vznést trestní obvinění proti společnosti Boeing, přičemž někteří navrhují drastická opatření jako vyvlastnění 51 % společnosti, propuštění vrcholových manažerů a uložení pokut.“</li>
-<li>„Kritici tvrdí, že akcionáři postrádají moc k prosazení řádného dohledu a institucionální investoři často nedokážou účinně sledovat chování korporací.“</li>
-<li>„Případ Boeingu zdůrazňuje širší systémové problémy v oblasti správy a řízení společností a regulačního dohledu.“</li>
-</ul>
-<h2><a href="https://github.com/jart/cosmopolitan/releases/tag/3.5.0">„Cosmopolitan v3.5.0“</a></h2>
-<ul>
-<li>„Cosmopolitan Libc v3.5.0 byla vydána, což činí z jazyka C jazyk, který lze jednou zkompilovat a spustit kdekoli, aniž by bylo potřeba interpretu nebo virtuálního stroje.“</li>
-<li>„Klíčová vylepšení zahrnují implementaci paměťové mapy vyšší kvality, přepsání správce paměti a aktualizaci Lua na verzi 5.4.6.“</li>
-<li>„Byly představeny nové funkce C++ STL, jako je optimalizace malých řetězců ctl::string, ctl::set, ctl::map a ctl::unique_ptr, spolu s různými opravami chyb a optimalizacemi.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773139">Reakce</a></h3>
-<ul>
-<li>„Cosmopolitan v3.5.0 byl vydán a vzbudil značný zájem díky své schopnosti vytvářet vysoce přenositelné spustitelné soubory, které běží na různých operačních systémech a architekturách bez nutnosti úprav.“</li>
-<li>„Nová verze se pyšní vylepšeným výkonem, přičemž se tvrdí, že Cosmopolitan Libc je dvakrát rychlejší než Musl Libc pro mnoho programů s příkazovým řádkem (CLI) a nabízí robustní podporu vláken, což ji činí vhodnou pro vysoce výkonný AI software.“</li>
-<li>„Vydání zahrnuje podporu pro WebAssembly (WASM) a funkce jako je hlavička &quot;Actually Portable Executable&quot; (APE), která zvyšuje kompatibilitu mezi platformami, včetně podpory pro Android.“</li>
-</ul>
-<h2><a href="https://www.ashleygjovik.com/3250scott.html">„Tajná továrna na křemík společnosti Apple vedle tisíců domovů“</a></h2>
-<ul>
-<li>„V roce 2015 začala společnost Apple tajně vyrábět polovodiče v zařízení v Santa Claře v Kalifornii, které vypouštělo toxické plyny ovlivňující obyvatele v okolí.“</li>
-<li>„Ashley M. Gjovik, obyvatelka v roce 2020, trpěla vážnými zdravotními problémy a zjistila, že se výfukové plyny z továrny dostaly do jejího domova a těla, což vedlo k několika stížnostem a vyšetřováním.“</li>
-<li>„Apple čelil porušením týkajícím se nebezpečného odpadu a bezpečnostních problémů, přičemž probíhají inspekce a vyšetřování veřejné obtíže a ultranebezpečných aktivit, které způsobují značné škody Gjovikovi a životnímu prostředí.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773136">Reakce</a></h3>
-<h2><a href="https://www.linqpad.net/">„LINQPad – Hřiště pro .NET programátory“</a></h2>
-<ul>
-<li>„LINQPad je všestranný nástroj pro programátory .NET, který umožňuje okamžitě testovat úryvky kódu v jazycích C#/F#/VB, dotazovat se na databáze a automatizovat skripty s výhodami REPL (Read-Eval-Print Loop).“</li>
-<li>„Podporuje C# 12 a .NET 8, umožňuje interaktivní dotazy do databáze v LINQ nebo SQL a zahrnuje ovladače pro více databází, jako jsou SQL Server, Oracle a MySQL.“</li>
-<li>„LINQPad nabízí pokročilé funkce, jako je AI automatické doplňování, integrované ladění a bohaté formátování výstupu, což z něj činí výkonný nástroj pro rychlé kódování a dynamický vývoj.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40770171">Reakce</a></h3>
-<ul>
-<li>„LINQPad je vysoce ceněn pro svou snadnost použití, zejména mezi .NET vývojáři, pro skriptování, ladění a spouštění LINQ dotazů.“</li>
-<li>„Uživatelé oceňují jeho funkce, jako jsou připojení k databázi SQL Server, ale vyjadřují frustraci nad jeho exkluzivitou pro Windows a cenou.“</li>
-<li>„Mezi zmíněné alternativy patří winmerge, NetPad, dotnetfiddle.net a RoslynPad, přičemž někteří uživatelé si přejí podporu napříč platformami a integraci do Visual Studio.“</li>
-</ul>
-<h2><a href="https://apnews.com/article/car-dealerships-cyberattack-cdk-outage-3f7c81f6be0e212172b33cdc9f49feba">„Autosalony se po kybernetických útocích na poskytovatele softwaru vracejí k perům a papíru“</a></h2>
-<ul>
-<li>„Prodejci automobilů v Severní Americe zažili významné narušení kvůli kybernetickým útokům na CDK Global, klíčového poskytovatele softwaru pro prodejce automobilů.“</li>
-<li>„Útoky 19. června 2024 způsobily přetrvávající výpadky, což vedlo ke zpožděním a ručnímu zpracování v postižených prodejnách.“</li>
-<li>„Hlavní automobilové společnosti jako Stellantis, Ford a BMW potvrdily dopad, ale pokračují v provozu pomocí alternativních metod, zatímco CDK Global pracuje na obnovení svých systémů.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40776951">Reakce</a></h3>
-<ul>
-<li>„Autosalony se vracejí k používání per a papíru poté, co kybernetické útoky na jejich poskytovatele softwaru, CDK Global, narušily jejich digitální operace.“</li>
-<li>„Kybernetické útoky vážněji zasáhly oddělení náhradních dílů a služeb než prodej nových vozidel, protože jejich inventární informace jsou uloženy v kompromitovaném systému CDK.“</li>
-<li>„Incident zdůrazňuje zranitelnost odvětví silně závislých na jediném poskytovateli softwaru, což podtrhuje potřebu lepších opatření kybernetické bezpečnosti a možná i rozmanitějších softwarových řešení.“</li>
-</ul>
-<h2><a href="https://www.dropbox.com/scl/fo/312oqvretg7yyhfx0ohx4/AGZduVXs0_1geqIyi0NA9nE?e=1&preview=2024_04_30_RCRA_Insp_Report_REPORT_Apple_3250_Scott_Redacted.pdf&rlkey=3aa2tw15ek3trqlbdh7pw9erh&st=4b364mkx&dl=0">„Vymáhání a dodržování předpisů US EPA v oblasti výroby Apple“</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40772224">Reakce</a></h3>
-<ul>
-<li>„Americká agentura pro ochranu životního prostředí (EPA) vyšetřuje společnost Apple kvůli možným porušením environmentálních předpisů v zařízení v Santa Claře, přičemž se zaměřuje na nesprávné nakládání a uvolňování nebezpečného odpadu.“</li>
-<li>„Bývalá zaměstnankyně Applu Ashley Gjovik vyjádřila obavy ohledně dopadů emisí z zařízení na osobní zdraví, ačkoli její tvrzení jsou přijímána se skepsí.“</li>
-<li>„Případ zdůrazňuje složitosti průmyslové regulace a firemní odpovědnosti, přičemž vyvolává srovnání s jinými průmyslovými incidenty a obavy ohledně vymáhání regulací.“</li>
-</ul>
-<h2><a href="https://www.bbc.com/future/article/20240621-how-traffic-noise-pollution-harms-childrens-health-and-development">„Hluk z dopravy poškozuje dětské mozky“</a></h2>
-<ul>
-<li>„Děti jsou velmi citlivé na hluk z dopravy, který negativně ovlivňuje jejich zdraví a schopnosti učení.“</li>
-<li>„Studie, včetně studie Arline Bronzaft z roku 1975 a studie z Barcelony z roku 2022, ukazují, že hlukové znečištění může zhoršit čtenářský výkon, pracovní paměť a schopnost soustředění u dětí.“</li>
-<li>„Města jako Buenos Aires a Barcelona zavádějí opatření, jako je zlepšování zelených ploch a snižování rychlostních limitů, aby bojovala proti hlukovému znečištění, přičemž iniciativy jako barcelonské &quot;superbloky&quot; upřednostňují chodce a zelené plochy před automobily.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40769880">Reakce</a></h3>
-<ul>
-<li>„Studie odhaluje, že hluk z dopravy u škol je spojen s pomalejším rozvojem pracovní paměti a pozornosti dětí.“</li>
-<li>„Možná řešení zahrnují snížení dopravy v okolí škol a odhlučnění tříd, aby se zmírnil dopad hluku z okolního prostředí.“</li>
-<li>„Diskuse se také zabývá širšími otázkami, jako je závislost na automobilech, hlukové znečištění a výhody tišších, pěších městských prostředí.“</li>
-</ul>
-<h2><a href="https://www.tomshardware.com/software/windows/microsoft-account-to-local-account-conversion-guide-erased-from-official-windows-11-guide-instructions-redacted-earlier-this-week">„Průvodce převodem účtu Microsoft na místní účet byl vymazán z průvodce Windows 11“</a></h2>
-<ul>
-<li>„Microsoft odstranil návod na převod účtu Microsoft na místní účet ze své podpůrné stránky pro Windows 11, s účinností od 17. června 2024.“</li>
-<li>„Uživatelé mohou stále přepnout na místní účet ručně přes Nastavení &gt; Účty &gt; Vaše informace a výběrem možnosti &#39;Přihlásit se místo toho pomocí místního účtu.&#39;“</li>
-<li>„Tento krok zdůrazňuje snahu společnosti Microsoft přimět uživatele k přijetí účtů Microsoft, přičemž klade důraz na výhody, jako je integrace služeb a zvýšená bezpečnost, což je v souladu se strategiemi Googlu a Applu.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40775301">Reakce</a></h3>
-<ul>
-<li>„Microsoft odstranil návod na převod účtu Microsoft na místní účet z dokumentace k Windows 11.“</li>
-<li>„Uživatelé diskutují o alternativách, jako je použití verze Windows 11 LTSC (Long-Term Servicing Channel), která je typicky podnikový produkt, ale může být aktivována pomocí skriptů z GitHubu.“</li>
-<li>„Konverzace zdůrazňuje probíhající debatu o etice a legalitě používání aktivačních skriptů a o kompromisech mezi Windows a Linuxem pro hraní her a obecné počítačové využití.“</li>
-</ul>
-<h2><a href="https://www.redhat.com/en/topics/linux/centos-linux-eol">„CentOS Linux 7 dosáhne konce životnosti v neděli“</a></h2>
-<ul>
-<li>„CentOS Linux 7 dosáhne konce životnosti (EOL) dne 30. června 2024, což znamená, že po tomto datu již nebude dostávat aktualizace ani bezpečnostní záplaty.“</li>
-<li>„Red Hat nabízí několik migračních nástrojů a služeb, jako jsou Convert2RHEL, Red Hat Insights a Red Hat Consulting, aby uživatelům pomohl s přechodem na Red Hat Enterprise Linux (RHEL).“</li>
-<li>„RHEL poskytuje podobný uživatelský zážitek jako CentOS, s dalšími funkcemi, podporou a zabezpečením, a je kompatibilní s hlavními poskytovateli cloudových služeb a hybridními cloudovými nasazeními.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40773749">Reakce</a></h3>
-<ul>
-<li>„CentOS Linux 7 dosáhne konce životnosti (EOL) v neděli, což přiměje uživatele hledat alternativy.“</li>
-<li>„SUSE nabízí řešení přepnutím aktualizačních repozitářů CentOS 7 na repozitáře SUSE, čímž se vyhnou rušivým migracím, zatímco Oracle Linux je další možností, i když někteří uživatelé jsou vůči němu opatrní.“</li>
-<li>„Mnoho uživatelů přechází na alternativy jako Rocky Linux, AlmaLinux nebo Debian, přičemž někteří čelí výzvám při upgradu a zvažují kontejnery, aby zmírnili změny operačního systému.“</li>
-</ul>
-<h2><a href="https://arxiv.org/abs/2403.06707">„Odvození objektově orientovaného programování s závislými typy z prvních principů“</a></h2>
-<ul>
-<li>„Článek se zabývá problémem vyjádření, který zahrnuje výzvu rozšíření typů o nové producenty a konzumenty v programování.“</li>
-<li>„Zkoumá objektově orientované programování s závislými typy tím, že ho odvozuje z prvních principů pomocí duality, a poskytuje kalkul s závislými typy s dvojitými jazykovými fragmenty.“</li>
-<li>„Tato rozšířená verze zahrnuje další přílohy a bude součástí vydání PACMPL pro OOPSLA 2024, což demonstruje význam a pokračující výzkum v této oblasti.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40769867">Reakce</a></h3>
-<ul>
-<li>„Článek „Odvození závisle typovaného OOP z prvních principů“ vyvolal značnou diskusi a na arxiv.org získal 141 bodů.“</li>
-<li>„Klíčové diskuse zahrnují podstatu objektově orientovaného programování (OOP) versus funkcionálního programování (FP), přičemž někteří uživatelé poznamenávají, že příklady v článku se zdají být více funkcionální než objektově orientované.“</li>
-<li>„Byly sdíleny různé zdroje a reference, včetně článku Williama Cooka o datové abstrakci, přednášky Noela Welshe o funkcionálním a objektově orientovaném programování a knihy &quot;A Little Java, A Few Patterns&quot; pro pochopení souvislostí mezi funkcionálním a objektově orientovaným programováním.“</li>
-</ul>
-<h2><a href="https://frenck.dev/diy-smart-doorbell-for-just-2-dollar/">„Přeměňte stávající drátový zvonek na chytrý zvonek pomocí ESPHome“</a></h2>
-<ul>
-<li>„Článek vysvětluje, jak přeměnit tradiční zvonek na chytrý, WiFi-ovládaný zvonek za přibližně 2 dolary, aniž by bylo potřeba pájení nebo odborné znalosti elektroniky.“</li>
-<li>„Projekt využívá čip ESP-01S a reléový modul, napájený starou nabíječkou na telefon, a integruje se s Home Assistant a ESPHome pro různé automatizace.“</li>
-<li>„Podrobné kroky jsou poskytnuty pro úpravu čipu ESP-01S, nahrání firmwaru, zapojení a integraci s Home Assistant, což ukazuje na snadnost a cenovou dostupnost projektů chytré domácnosti pro kutily.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40774270">Reakce</a></h3>
-<ul>
-<li>„Článek pojednává o přeměně drátového zvonku na chytrý zvonek pomocí ESPHome, přičemž zdůrazňuje jak možné body selhání, tak výhody jako vzdálená oznámení a integrace do domácí automatizace.“</li>
-<li>„Příklady zahrnují použití zvonku Amcrest AD110 pro místní streamování videa a vlastní oznámení a návrhy na použití tlačítek Zigbee nebo Z-Wave pro jednoduchost.“</li>
-<li>„Hlavním cílem je ukázat, jak snadné a zábavné mohou být projekty chytré domácnosti typu „udělej si sám“ s ESPHome a Home Assistant.“</li>
-</ul>
-<h2><a href="https://mastodon.social/@ashleygjovik/112668309100333232/?">„EPA vydává zprávu o porušení předpisů společnosti Apple týkajících se nebezpečného odpadu v městské továrně na výrobu křemíku“</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40773957">Reakce</a></h3>
-<ul>
-<li>„Zpráva EPA zdůrazňuje porušení předpisů o nebezpečném odpadu ze strany společnosti Apple, zejména nelegální vypouštění nebezpečných chemikálií v městské továrně na výrobu křemíku.“</li>
-<li>„Apple nezohlednil veškerý odpad procházející uhlíkovými filtry, což znemožňuje posoudit jejich „průlomový čas“, což může vést k ekologickým únikům od prosince 2020.“</li>
-<li>„Diskuse na toto téma byla přesunuta do nového vlákna na Hacker News, což naznačuje značný zájem komunity.“</li>
-</ul>
-<h2><a href="https://www.wsj.com/style/fashion/hermes-birkin-bag-investment-031c215c">„Ekonomika kabelky Birkin“</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40770358">Reakce</a></h3>
-<ul>
-<li>„Trh s kabelkami Birkin vzkvétá díky exkluzivitě a vysoké poptávce, přičemž kupující mají na nákup 24 hodin, což vytváří vzrušení podobné loterii.“</li>
-<li>„Prodej je omezen na věrné zákazníky, kteří výrazně utrácejí za jiné položky, čímž se udržuje status tašky jako symbolu a investice.“</li>
-<li>„Podobně jako trh s teniskami, tento model omezené dostupnosti a personalizovaných služeb zajišťuje úspěch luxusního trhu prostřednictvím nedostatku a prestiže, což přitahuje bohaté spotřebitele.“</li>
-</ul>
-<head>
-  <meta property="og:title" content="„Mikroprvky, které miluji na blozích a osobních webových stránkách“" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E2%80%9EMikroprvky%2C%20kter%C3%A9%20miluji%20na%20bloz%C3%ADch%20a%20osobn%C3%ADch%20webov%C3%BDch%20str%C3%A1nk%C3%A1ch%E2%80%9C&subheading=pond%C4%9Bl%C3%AD%2024.%20%C4%8Dervna%202024%3A%20Hacker%20News%20Shrnut%C3%AD" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/cs/2024/06/24</link>
-            <guid isPermaLink="false">2024-06-24T00:00:00.000Z</guid>
-            <pubDate>Mon, 24 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
