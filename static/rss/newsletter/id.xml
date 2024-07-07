@@ -15,12 +15,208 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 06 Jul 2024 19:10:41 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 07 Jul 2024 19:09:26 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/id.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 06 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[id]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-07]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/07&#39;</h2>
+<h1>2024-07-07</h1>
+<h2><a href="https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/">Kode sematan YouTube sangat berat dan itu bisa diperbaiki</a></h2>
+<ul>
+<li>YouTube embed memerlukan banyak sumber daya, dengan setiap embed sekitar 1,3MB dan 32 permintaan, yang menyebabkan waktu muat lambat dan transfer data yang tinggi.</li>
+<li>Komponen Web seperti &quot;lite-youtube-embed&quot; oleh Paul Irish dapat mengurangi ukuran menjadi sekitar 100k, berbagi sumber daya, dan meningkatkan kinerja secara signifikan.</li>
+<li>Implementasi solusi ini melibatkan penghubungan JavaScript, menggunakan komponen dalam HTML, dan memuat skrip secara asinkron untuk kinerja yang lebih baik.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897205">Reaksi</a></h3>
+<ul>
+<li>Kami telah mengganti embed YouTube dengan thumbnail yang diproksi di platform forum komunitas, yang hanya dimuat saat diklik, mengurangi kebutuhan untuk mengunduh file JavaScript besar dan mencegah pelacakan oleh Google.</li>
+<li>Solusi serupa telah diterapkan untuk embed YouTube, SoundCloud, dan Reddit guna meningkatkan fungsionalitas dan meminimalkan bloat.</li>
+<li>Ada perdebatan tentang apakah penyematan yang lebih ringan mungkin mengurangi keterlibatan karena waktu mulai video yang lebih lambat, tetapi banyak yang percaya bahwa meningkatkan waktu muat halaman secara keseluruhan lebih penting untuk pengalaman pengguna dan kinerja situs.</li>
+</ul>
+<h2><a href="https://sin-ack.github.io/posts/jpg-loader-bork/">Malloc merusak JPGLoader Serenity, atau: cara memenangkan lotre (2021)</a></h2>
+<ul>
+<li>Bug dalam decoding gambar JPG di SerenityOS menyebabkan tampilan warna yang salah karena kebingungan antara RGB dan BGR.</li>
+<li>Masalah tersebut ditelusuri kembali ke sebuah commit yang mengimplementasikan <code>malloc_good_size()</code>, yang mengubah alokasi memori dan mempengaruhi struktur data seperti <code>HashTable</code> dan <code>Vector</code> yang digunakan dalam <code>JPGLoader</code>.</li>
+<li>Koreksi tersebut melibatkan memastikan iterasi deterministik atas komponen dalam <code>JPGLoader</code>, menyoroti bagaimana perubahan sederhana dapat mengungkap masalah mendasar yang signifikan.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896102">Reaksi</a></h3>
+<ul>
+<li>Beberapa implementasi tabel hash memperkenalkan keacakan untuk mencegah ketergantungan pada urutan elemen dan meningkatkan keamanan, sementara implementasi modern sering kali menjamin iterasi dalam urutan penyisipan.</li>
+<li>JavaScript dan Python telah menstandarkan urutan penyisipan dalam implementasi tabel hash mereka, dengan Python mengadopsi ini pada versi 3.7.</li>
+<li>Rust menawarkan berbagai pilihan tabel hash (<code>HashMap</code>, <code>BTreeMap</code>, <code>IndexMap</code>), dan Perl memperkenalkan benih acak untuk tabel hash setelah versi 5.18.</li>
+</ul>
+<h2><a href="https://beacondb.net/">BeaconDB – Alternatif untuk Layanan Lokasi Mozilla</a></h2>
+<ul>
+<li>beaconDB adalah basis data geolokasi nirkabel domain publik yang mencakup 177.176 jaringan, 4.126 beacon, 6.106 menara di 30 negara, dengan pengumpulan data yang bersumber secara etis dan berdasarkan persetujuan.</li>
+<li>Basis data ini ramah privasi, mengaburkan informasi untuk melindungi pengirim dan kontributor, serta memerlukan kedekatan fisik untuk memperbarui data, sehingga tahan terhadap penyalahgunaan.</li>
+<li>Pengembang dapat menggunakan endpoint <code>https://beacondb.net/v1/geolocate</code>, yang kompatibel dengan format permintaan Ichnaea, tetapi tidak cocok untuk aplikasi dengan lalu lintas tinggi; kode sumber tersedia di Codeberg.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895672">Reaksi</a></h3>
+<ul>
+<li>BeaconDB dipresentasikan sebagai alternatif untuk Mozilla Location Services (MLS), dengan fokus pada pengumpulan data yang bersumber secara etis dan berdasarkan persetujuan.</li>
+<li>Berbeda dengan Apple dan Google, BeaconDB tidak mempublikasikan alamat MAC dalam bentuk teks biasa, melainkan menggunakan data yang di-hash atau diagregasi untuk meningkatkan privasi.</li>
+<li>BeaconDB adalah satu-satunya basis data non-teknologi besar untuk layanan lokasi, yang bertujuan untuk menyediakan solusi sumber terbuka dan membahas potensi kolaborasi.</li>
+</ul>
+<h2><a href="https://notes.eatonphil.com/2024-07-07-systems-meetups.html">Bangkitnya kembali pertemuan sistem pemrograman</a></h2>
+<ul>
+<li>Telah terjadi kebangkitan kembali pertemuan pemrograman sistem berkualitas tinggi di kota-kota seperti Munich, Berlin, San Francisco, New York City, dan Bengaluru pada tahun 2024.</li>
+<li>Klub Kopi Sistem NYC, yang dimulai pada Desember 2023, berfokus pada tantangan rekayasa dan telah berkembang pesat, menginspirasi pertemuan serupa di seluruh dunia.</li>
+<li>Nasihat utama untuk mengorganisir pertemuan termasuk mengamankan tempat penyelenggaraan, fokus pada konten teknis, menemukan pembicara melalui koneksi industri, dan berkolaborasi dengan penyelenggara lainnya.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897506">Reaksi</a></h3>
+<ul>
+<li>Sistem pertemuan pemrograman mengalami kebangkitan, menyoroti minat baru komunitas terhadap pemrograman tingkat rendah dan arsitektur sistem.</li>
+<li>Menorganisir pertemuan semacam itu menghadapi tantangan, termasuk menemukan tempat yang stabil, yang sering kali memerlukan dukungan internal yang kuat atau dukungan dari pemerintah kota untuk mendapatkan lokasi yang konsisten.</li>
+<li>Kualitas dan fokus konten pertemuan sangat penting, dengan beberapa kelompok kesulitan untuk menyeimbangkan antara diskusi teknis yang murni dan presentasi promosi diri oleh pembicara.</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40892812">Di mana sumber daya yang baik untuk mempelajari pemrosesan audio?</a></h2>
+<ul>
+<li>Kami mencari sumber daya untuk memprogram sebuah harmonizer yang mirip dengan yang dibuat oleh Ben Bloomberg dari MIT untuk Jacob Collier.</li>
+<li>Mereka membutuhkan informasi yang mudah diakses tentang pitch shifting dan format shifting yang mempertahankan kualitas suara alami.</li>
+<li>Pengguna memiliki pengalaman pemrograman yang luas tetapi kurang pengetahuan dalam pemrosesan audio, menunjukkan kebutuhan akan sumber daya yang ramah pemula namun komprehensif.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40892812">Reaksi</a></h3>
+<ul>
+<li>Seorang pengguna sedang mencari sumber daya untuk memprogram sebuah harmonizer yang mirip dengan milik Jacob Collier, yang dibuat oleh Ben Bloomberg dari MIT, dengan fokus pada penggeseran nada dan format.</li>
+<li>Rekomendasi sumber daya termasuk materi kursus terbuka dari CCRMA di Stanford, perpustakaan standar industri seperti Elastique oleh Zplane, dan buku-buku seperti &quot;DAFX - Digital Audio Effects&quot; oleh Udo Zölzer.</li>
+<li>Rekomendasi tambahan termasuk tutorial, saluran YouTube, dan forum komunitas seperti Officehours.global untuk jaringan dan pembelajaran lebih lanjut.</li>
+</ul>
+<h2><a href="https://rdht.vercel.app/">Pelacak kebiasaan harian minimalis gratis</a></h2>
+<ul>
+<li>Kini telah dikembangkan sebuah aplikasi pelacak kebiasaan baru oleh seseorang yang tidak puas dengan opsi yang ada, yang menampilkan pelacakan beruntun, kegunaan offline, pembekuan beruntun, peta konsistensi visual, dan fungsi jeda.</li>
+<li>App ini dibangun menggunakan React untuk frontend, Dexie cloud untuk penyimpanan dan sinkronisasi, serta dihosting di Vercel.</li>
+<li>Pengembang telah membuat aplikasi ini tersedia untuk penggunaan publik, menampilkan proyek pribadi yang diubah menjadi sumber daya komunitas.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40893866">Reaksi</a></h3>
+<ul>
+<li>Kebiasaan harian minimalis baru yang gratis telah dibuat untuk mengatasi kekurangan dalam aplikasi yang ada, dengan fitur pelacakan beruntun, penggunaan offline, pembekuan beruntun, peta konsistensi visual, dan fungsi jeda.</li>
+<li>Dibangun dengan React dan Dexie cloud, serta di-hosting di Vercel, aplikasi ini telah menerima masukan untuk perbaikan, terutama dari pengguna iPhone, termasuk saran untuk kebiasaan buruk, penyesuaian desain, dan perbaikan bug.</li>
+<li>Pengguna menghargai desain yang bersih dan fungsionalitas offline, dengan saran untuk tampilan yang lebih ringkas dan kompatibilitas yang lebih baik dengan perangkat mobile; belum ada rencana monetisasi.</li>
+</ul>
+<h2><a href="https://www.atlasobscura.com/articles/what-are-italian-herbs">Mengapa Italia Kehilangan Cinta pada Ketumbar</a></h2>
+<ul>
+<li>Ketumbar, yang dulunya merupakan bahan pokok dalam masakan Romawi kuno, hampir menghilang dari masakan Italia modern, terutama daunnya.</li>
+<li>Kemunduran dimulai setelah Roma, dipengaruhi oleh suku-suku Jermanik dan preferensi terhadap rempah-rempah eksotis seperti kayu manis dan kapulaga.</li>
+<li>Meskipun memiliki keberadaan historis, ketumbar sekarang dianggap sebagai bahan asing di Italia, tidak seperti rempah-rempah lainnya seperti basil.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895441">Reaksi</a></h3>
+<ul>
+<li>Italia tidak menyukai ketumbar sejak tahun 1544 ketika ahli botani Pietro Andrea Mattioli menggambarkan daunnya berbau seperti kutu busuk.</li>
+<li>Keengganan tersebut mungkin dipengaruhi secara genetik, karena beberapa orang merasakan cilantro seperti sabun akibat gen tertentu.</li>
+<li>Kemunduran popularitas ketumbar di Italia juga terkait dengan tren kuliner yang berubah dan pola migrasi, menggambarkan interaksi kompleks antara genetika, budaya, dan preferensi pribadi dalam membentuk selera makanan.</li>
+</ul>
+<h2><a href="https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial">Manajemen jaringan &#39;Out of Band&#39; tidaklah sepele</a></h2>
+<ul>
+<li>Pemadaman Internet dan telepon Rogers tahun 2022, yang mempengaruhi lebih dari 12 juta warga Kanada, menyoroti pentingnya dan kompleksitas manajemen jaringan &quot;Out of Band&quot; (OOB).</li>
+<li>OOB management memerlukan perangkat keras dan infrastruktur khusus yang terpisah dari jaringan utama, memastikan redundansi dan keamanan tetapi menambah biaya dan kompleksitas yang signifikan.</li>
+<li>Jaringan yang lebih kecil mungkin akan lebih praktis untuk fokus pada manajemen in-band yang kuat dan redundan daripada mempertahankan jaringan OOB yang terpisah.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895167">Reaksi</a></h3>
+<ul>
+<li>Manajemen jaringan &#39;Out of Band&#39; (OOB) sangat penting untuk menjaga keandalan jaringan, terutama dalam sistem digital modern yang rentan terhadap kesalahan konfigurasi dan kegagalan.</li>
+<li>Pemadaman Rogers menekankan kebutuhan kritis akan manajemen OOB yang kuat, menyoroti pentingnya perencanaan yang lebih baik dan penilaian risiko untuk mencegah kegagalan jaringan inti.</li>
+<li>Manajemen OOB yang efektif melibatkan penggunaan sistem yang didedikasikan dan redundan, sering kali memanfaatkan penyedia atau teknologi yang berbeda seperti LTE atau satelit untuk memastikan keandalan.</li>
+</ul>
+<h2><a href="https://github.com/sebastianwessel/quickjs">Menjalankan JavaScript dalam sandbox WebAssembly QuickJS</a></h2>
+<ul>
+<li>Package TypeScript ini memungkinkan eksekusi aman kode JavaScript dalam sandbox WebAssembly menggunakan mesin QuickJS, ideal untuk menjalankan kode yang tidak dipercaya dengan aman.</li>
+<li>Fitur utama termasuk lingkungan terisolasi, sistem file virtual, modul node kustom, klien fetch HTTP(S), pelari uji berbasis chai, dan kinerja yang efisien.</li>
+<li>Package ini serbaguna dan mudah diintegrasikan dengan proyek TypeScript, menawarkan API yang ramah pengguna untuk eksekusi dan manajemen kode.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896873">Reaksi</a></h3>
+<ul>
+<li>Package TypeScript ini memungkinkan eksekusi aman kode JavaScript dalam sandbox WebAssembly menggunakan mesin QuickJS, memastikan isolasi kode yang tidak terpercaya.</li>
+<li>Fitur utama termasuk sistem file virtual, modul node kustom, klien fetch, pelari uji, dan API yang ramah pengguna, mendukung lingkungan seperti NodeJS, Deno, dan Cloudflare Workers.</li>
+<li>Catatan peringatan keamanan menyebutkan bahwa mengaktifkan <code>fetch</code> dapat mengekspos cookie host ke kode yang tidak tepercaya, yang berpotensi mengkompromikan keamanan sandbox.</li>
+</ul>
+<h2><a href="https://github.com/geohot/fromthetransistor">Dari Transistor ke Peramban Web, garis besar kasar untuk kursus 12 minggu</a></h2>
+<ul>
+<li>Kursus ini mencakup perjalanan komprehensif dari memahami transistor hingga mengembangkan peramban web, memberikan pendekatan praktis untuk mempelajari integrasi perangkat keras dan perangkat lunak.</li>
+<li>Proyek utama meliputi pembuatan CPU ARM7, kompilator C, sistem operasi mirip UNIX, dan peramban web berbasis teks, menggunakan bahasa seperti Verilog, Python, Haskell, dan C.</li>
+<li>Kurikulum menekankan keterampilan praktis seperti emulasi dengan Verilator, desain papan FPGA, dan mengimplementasikan komponen sistem penting seperti MMU, pengontrol Ethernet, dan tumpukan TCP.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895935">Reaksi</a></h3>
+<ul>
+<li>Sebuat kursus selama 12 minggu berjudul &#39;From the Transistor to the Web Browser&#39; oleh geohot di GitHub telah memicu diskusi karena cakupannya yang ambisius tetapi pembaruan minimal sejak 2016.</li>
+<li>Pengguna memperdebatkan kelayakannya, menyarankan alat pembelajaran alternatif seperti &quot;Turing Complete&quot; dan &quot;Shenzen I/O,&quot; dan berargumen bahwa mungkin terlalu rumit untuk pemula, lebih cocok untuk programmer berpengalaman.</li>
+<li>Kritikus mempertanyakan kepraktisan kursus tersebut dan niat penulisnya, melihatnya sebagai terlalu ambisius dan kurang substansi dibandingkan dengan gelar Teknik Elektro dan Komputer yang komprehensif.</li>
+</ul>
+<h2><a href="https://github.com/event-driven-io/Pongo">Mongo tetapi di Postgres dan dengan manfaat konsistensi yang kuat</a></h2>
+<ul>
+<li>Pongo Pongo adalah alat yang memungkinkan penggunaan operasi mirip MongoDB pada PostgreSQL, memanfaatkan manfaat konsistensi yang kuat.</li>
+<li>Ini menerjemahkan panggilan API MongoDB ke kueri PostgreSQL asli, memanfaatkan JSONB untuk operasi baca/tulis yang efisien dan kueri kompleks.</li>
+<li>Pongo bukanlah ORM (Object-Relational Mapping) tradisional tetapi berfokus pada penanganan data dokumen, menawarkan fleksibilitas dan kinerja, meskipun tidak sepenuhnya sesuai dengan MongoDB.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897518">Reaksi</a></h3>
+<ul>
+<li>Pongo adalah proyek baru yang menyediakan API mirip MongoDB di atas PostgreSQL, memanfaatkan kolom JSONB untuk manfaat konsistensi yang kuat.</li>
+<li>Proyek ini bertujuan untuk menggabungkan kemudahan penggunaan MongoDB dengan konsistensi dan keandalan PostgreSQL yang kuat, menerjemahkan sintaks MongoDB ke dalam kueri PostgreSQL asli.</li>
+<li>Perkembangan ini telah memicu minat karena potensinya untuk menawarkan pengalaman MongoDB yang familiar sambil memanfaatkan fitur-fitur canggih PostgreSQL, menarik bagi para pengembang yang mencari konsistensi yang kuat dalam operasi basis data mereka.</li>
+</ul>
+<h2><a href="https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838">Ilmuwan muncul kembali setelah setahun dalam proyek simulasi Mars</a></h2>
+<ul>
+<li>Empat ilmuwan menyelesaikan simulasi Mars selama satu tahun di habitat Mars Dune Alpha di Houston, sebuah struktur yang dicetak 3D dan dirancang untuk meniru kondisi di Mars.</li>
+<li>Bagian dari misi NASA&#39;s Crew Health and Performance Exploration Analog (CHAPEA) ini bertujuan untuk mengumpulkan wawasan bagi misi Mars di masa depan dan eksplorasi ruang angkasa jangka panjang, termasuk program Artemis.</li>
+<li>Tim melakukan &#39;Marswalks&#39; dan menghadapi stresor seperti isolasi dan keterlambatan komunikasi, dengan misi CHAPEA tambahan yang direncanakan untuk tahun 2025 dan 2027.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896110">Reaksi</a></h3>
+<ul>
+<li>Para ilmuwan telah menyelesaikan simulasi Mars selama satu tahun, yang berfokus pada ketahanan manusia di lingkungan yang terisolasi dan penuh tekanan.</li>
+<li>Proyek ini menekankan bahwa dinamika psikologis dan sosial lebih sulit untuk dikelola dibandingkan dengan kebutuhan nutrisi.</li>
+<li>Diskusi mencakup pertimbangan teknis dan etis, potensi tingkat kematian yang tinggi, serta kebutuhan akan persiapan yang luas dan misi awal yang lebih kecil untuk kolonisasi Mars.</li>
+</ul>
+<h2><a href="https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html">&quot;AI&quot;, siswa, dan krisis epistemik</a></h2>
+<ul>
+<li>Postingan blog dari 6 Juli 2024 membahas penggunaan ChatGPT oleh seorang siswa sebagai mesin pencari, yang mengakibatkan siswa tersebut mempercayai informasi yang salah.</li>
+<li>Penulis menyoroti kesulitan dalam melawan informasi yang salah yang dihasilkan oleh AI, karena setiap siswa mungkin menerima fakta yang salah yang unik, sehingga mempersulit proses koreksi.</li>
+<li>Postingan tersebut mencerminkan masalah yang lebih luas tentang dampak misinformasi terhadap pendidikan dan dihapus karena pelecehan.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896212">Reaksi</a></h3>
+<ul>
+<li>Mahasiswa saat ini sangat bergantung pada AI dan internet untuk mendapatkan informasi, berbeda dengan generasi sebelumnya yang melakukan penelitian manual di perpustakaan.</li>
+<li>Para pendidik khawatir bahwa ketergantungan ini dapat menghambat kemampuan siswa untuk menilai informasi secara kritis, yang mengakibatkan esai yang sering kali kurang mendalam.</li>
+<li>Walaupun alat AI berguna, mereka juga dapat menghasilkan informasi yang salah, memicu perdebatan tentang integrasi alat-alat ini ke dalam pendidikan sambil mengembangkan keterampilan berpikir kritis.</li>
+</ul>
+<h2><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public">OpenAI diretas, pelanggaran yang terjadi setahun lalu tidak dilaporkan kepada publik</a></h2>
+<ul>
+<li>Hacker membobol sistem pesan internal OpenAI awal tahun lalu, mengekspos informasi sensitif tetapi tidak mengakses sistem AI utama, menimbulkan kekhawatiran keamanan dan keamanan nasional.</li>
+<li>OpenAI mengungkapkan insiden tersebut secara internal pada April 2023, menyatakan bahwa tidak ada data pelanggan yang dicuri dan peretas kemungkinan tidak memiliki hubungan dengan pemerintah; namun, pelanggaran tersebut telah meningkatkan ketakutan tentang musuh asing, terutama China, yang memajukan teknologi AI mereka.</li>
+<li>OpenAI sejak itu telah meningkatkan langkah-langkah keamanannya, membentuk Komite Keselamatan dan Keamanan, dan insiden tersebut telah memicu diskusi tentang peraturan federal dan negara bagian untuk mengontrol rilis teknologi AI.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40894082">Reaksi</a></h3>
+<ul>
+<li>OpenAI mengalami peretasan yang tidak dilaporkan tahun lalu, yang menyebabkan kekhawatiran pengguna tentang transparansi dan praktik keamanan.</li>
+<li>Pelanggaran tersebut melibatkan akses ke sistem pesan internal tetapi tidak mengkompromikan teknologi AI utama.</li>
+<li>Pengguna membahas kesulitan dalam melaporkan bug dan frustrasi dengan praktik pelaporan keamanan standar OpenAI.</li>
+</ul>
+<h2><a href="https://www.nature.com/articles/d41586-024-02222-x">Apa yang menyebabkan migrain? Studi tentang &#39;pemadaman otak&#39; menawarkan petunjuk</a></h2>
+<ul>
+<li>Studi pada tikus, yang diterbitkan di Science pada 4 Juli 2024, mengungkap wawasan baru tentang penyebab migrain, menghubungkan &#39;pemadaman&#39; singkat di otak dengan perubahan cairan serebrospinal yang mengaktifkan reseptor nyeri di tengkorak.</li>
+<li>Kajian tersebut menunjukkan bahwa migrain mungkin berfungsi sebagai mekanisme perlindungan yang menandakan kebutuhan untuk istirahat dan mengidentifikasi celah yang sebelumnya tidak diketahui dalam lapisan pelindung di sekitar ganglion trigeminal.</li>
+<li>Penemuan ini dapat mengarah pada pengembangan pengobatan baru untuk migrain dengan menargetkan mekanisme yang baru diidentifikasi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40893749">Reaksi</a></h3>
+<ul>
+<li>Kajian menunjukkan bahwa depresi menyebar kortikal (CSD), sebuah &#39;pemadaman otak,&#39; mungkin terlibat dalam migrain.</li>
+<li>Orang-orang melaporkan berbagai pemicu dan perawatan, termasuk perubahan pola makan, obat-obatan seperti Rizatriptan, dan penyesuaian gaya hidup seperti peningkatan tidur dan hidrasi.</li>
+<li>Kajian tersebut menekankan kompleksitas migrain, dengan pemicu dan pengobatan yang berbeda efektif untuk individu yang berbeda.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Kode sematan YouTube sangat berat dan itu bisa diperbaiki" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Kode%20sematan%20YouTube%20sangat%20berat%20dan%20itu%20bisa%20diperbaiki&subheading=Minggu%2C%207%20Juli%202024%3A%20Ringkasan%20Berita%20Peretas" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/id/2024/07/07</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-06]]></title>
             <description
@@ -1681,192 +1877,6 @@
             <link>https://hn.cho.sh/id/2024/06/28</link>
             <guid isPermaLink="false">2024-06-28T00:00:00.000Z</guid>
             <pubDate>Fri, 28 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-27]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/27&#39;</h2>
-<h1>2024-06-27</h1>
-<h2><a href="https://www.tomshardware.com/tech-industry/cyber-security/south-korean-telecom-company-attacks-torrent-users-with-malware-over-600000-people-report-missing-files-strange-folders-and-disabled-pcs">Perusahaan telekomunikasi Korea Selatan menyerang pengguna torrent dengan malware</a></h2>
-<ul>
-<li>KT Corporation, sebuah perusahaan telekomunikasi besar Korea Selatan, dengan sengaja menginfeksi lebih dari 600.000 pengguna dengan malware untuk mengganggu Layanan Grid berbasis BitTorrent milik Webhard, mulai dari Mei 2020.</li>
-<li>Malware tersebut menyebabkan masalah seperti file yang hilang, folder aneh, dan PC yang tidak berfungsi, dan dilacak kembali ke pusat data KT.</li>
-<li>Kewenangan telah menuntut 13 individu, termasuk karyawan KT, dan KT membela tindakannya dengan mengutip tekanan jaringan dan biaya penggunaan yang belum dibayar, meskipun pemasangan malware yang tidak sah menyebabkan masalah signifikan bagi pelanggan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805099">Reaksi</a></h3>
-<ul>
-<li>Perusahaan telekomunikasi Korea Selatan diduga menargetkan pengguna torrent dengan malware, menimbulkan kekhawatiran signifikan terkait privasi dan etika.</li>
-<li>Insiden tersebut menyoroti masalah yang terus berlanjut dengan penyedia layanan internet (ISP) di Korea Selatan, termasuk biaya tinggi dan potensi penyalahgunaan kekuasaan.</li>
-<li>Situasi ini telah memicu diskusi tentang keadaan kebebasan internet dan infrastruktur di Korea Selatan, yang dulunya dikenal dengan kecepatan internetnya yang cepat tetapi sekarang menghadapi kritik karena praktik yang sudah ketinggalan zaman dan kontrol pemerintah.</li>
-</ul>
-<h2><a href="https://latenighter.com/news/paramount-axes-comedy-central-website-show-clips-library/">25 tahun klip video hilang karena Paramount menutup situs web Comedy Central</a></h2>
-<ul>
-<li>Paramount telah menutup ComedyCentral.com, menghapus lebih dari 25 tahun klip dari The Daily Show dan The Colbert Report, mengarahkan pengunjung ke penyedia TV atau Paramount+.</li>
-<li>Acara lain seperti The Opposition with Jordan Klepper dan Lights Out with David Spade juga terpengaruh, dengan episode lama yang tidak tersedia di Paramount+.</li>
-<li>Langkah ini merupakan bagian dari upaya penghematan biaya Paramount untuk mengelola utang lebih dari $14 miliar, mengikuti tindakan serupa dengan MTV.com dan CMT.com, yang bertujuan untuk merampingkan situs dan mengarahkan penonton ke Paramount+.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40807032">Reaksi</a></h3>
-<ul>
-<li>Paramount telah menghapus 25 tahun klip video dari situs web Comedy Central, memicu kritik atas penilaian rendah yang dianggap dilakukan oleh manajemen mereka terhadap konten tersebut.</li>
-<li>Kritikus berpendapat bahwa konten tersebut bisa saja dimonetisasi atau dilestarikan, menyoroti kompleksitas hak media dan tantangan regulasi dalam mendistribusikan konten lama.</li>
-<li>Kebijakan penghapusan ini dipandang sebagai langkah penghematan biaya oleh Paramount di tengah kesulitan keuangan, dengan beberapa pihak menyesalkan hilangnya sejarah budaya dan menyarankan pembajakan sebagai cara untuk pelestarian.</li>
-</ul>
-<h2><a href="https://web.dev/case-studies/google-sheets-wasmgc">Google Sheets memindahkan pekerja perhitungannya dari JavaScript ke WasmGC</a></h2>
-<ul>
-<li>Google Sheets telah beralih dari JavaScript ke WasmGC (WebAssembly Garbage Collection) untuk meningkatkan kinerja, terutama untuk spreadsheet berukuran besar.</li>
-<li>WasmGC mendukung bahasa-bahasa yang menggunakan pengumpulan sampah seperti Java, menawarkan kecepatan yang mendekati kecepatan asli di web, dan Google Sheets adalah salah satu yang pertama mengimplementasikannya.</li>
-<li>Performa awal WasmGC lebih lambat dibandingkan JavaScript, tetapi optimisasi selanjutnya telah secara signifikan meningkatkan kecepatannya, menunjukkan potensinya untuk merevolusi pengembangan aplikasi web.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40808820">Reaksi</a></h3>
-<ul>
-<li>Google Sheets mengalihkan mesin perhitungannya dari JavaScript ke WasmGC, awalnya mengalami kinerja yang lebih lambat tetapi kemudian mengoptimalkannya menjadi dua kali lebih cepat daripada versi JS.</li>
-<li>Kepindahan tersebut melibatkan upaya reimplementasi yang signifikan, termasuk devirtualisasi dan pemanfaatan API browser, dengan tujuan untuk meningkatkan kinerja dan memanfaatkan pengumpul sampah V8 asli.</li>
-<li>Meskipun ada perbaikan, beberapa pengguna masih menemukan Google Sheets lebih lambat dibandingkan dengan aplikasi asli seperti Excel, yang menyoroti evolusi dan optimalisasi teknologi web yang terus berlangsung.</li>
-</ul>
-<h2><a href="https://thezvi.substack.com/p/on-claude-35-sonnet">Claude 3.5 Sonnet</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40806698">Reaksi</a></h3>
-<ul>
-<li>Anthropic telah memperkenalkan fitur Projects untuk pengguna Pro dan Team, memungkinkan beberapa proyek dengan bahan referensi mereka sendiri, meningkatkan kenyamanan bagi pengguna.</li>
-<li>Claude 3.5 Sonnet menerima pujian atas kemampuannya dalam pemrograman, dengan pengguna mencatat bahwa ini membantu programmer ahli bekerja lebih cepat dan lebih unggul dibandingkan model lain seperti GPT-4.</li>
-<li>Pengguna sedang mendiskusikan aplikasi praktis dan keterbatasan Claude 3.5 Sonnet, termasuk kinerjanya dalam tugas-tugas ringkasan, rekomendasi, dan bantuan pemrograman, dengan beberapa di antaranya lebih menyukainya dibandingkan dengan penawaran dari OpenAI.</li>
-</ul>
-<h2><a href="http://mynor.org/my4th_forthdeck.htm">The Forth Deck mini: sebuah komputer Forth portabel dengan CPU diskrit</a></h2>
-<ul>
-<li>The Forth Deck mini adalah komputer Forth portabel dengan CPU diskret, dilengkapi dengan LCD karakter 40x4, keyboard QWERTY 56 tombol, dan baterai LiPo 6,6 Wh dengan waktu operasi 6 jam.</li>
-<li>Itu mencakup CPU logika CMOS 8-bit, 32 KB ROM, 32 KB RAM, hingga 256 KB EEPROM, dan RS-232 dengan 4800 baud, mengingatkan pada komputer rumah tahun 70-an dan 80-an dengan interpreter Basic bawaan.</li>
-<li>Perangkat ini dapat dirakit menggunakan kit dari Budgetronics, kecuali baterai dan sirkuit pengisian, dan dilisensikan di bawah Lisensi Creative Commons Attribution-ShareAlike 4.0 International.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40804122">Reaksi</a></h3>
-<ul>
-<li>Forth Deck mini adalah komputer Forth portabel yang dilengkapi dengan CPU diskret yang dibangun dengan beberapa chip logika dan EEPROM, beroperasi pada bus data dan alamat 8-bit.</li>
-<li>Para penggemar sedang mendiskusikan desainnya, potensi modifikasi, dan perbandingan dengan CPU lain seperti Novix NC4000, serta ide tentang dialek Factor berbasis Forth untuk skrip.</li>
-<li>Kami percakapan menyoroti tantangan dalam menciptakan komputer hobi modern dengan keyboard dan tampilan yang baik, merujuk pada perangkat seperti TRS-80 Model 100 dan AlphaSmart, serta menyebutkan alternatif seperti M5Stack Cardputer dan Zorzpad.</li>
-</ul>
-<h2><a href="https://www.npr.org/sections/shots-health-news/2024/06/26/g-s1-6177/brain-waste-removal-system-amyloid-alzheimer-toxins">Otak menghasilkan banyak limbah. Sekarang para ilmuwan berpikir mereka tahu ke mana perginya.</a></h2>
-<ul>
-<li>Para ilmuwan telah mengungkapkan rincian baru tentang sistem pembuangan limbah otak, yang penting untuk menjaga kesehatan otak dan mencegah gangguan.</li>
-<li>Penelitian yang diterbitkan di Nature mengungkapkan bahwa gelombang listrik lambat selama tidur membantu mendorong cairan yang penuh limbah dari dalam otak ke permukaannya, di mana cairan tersebut diserap ke dalam aliran darah dan dikeluarkan oleh hati dan ginjal.</li>
-<li>Kinerja sistem glimpatik ini sangat penting untuk membersihkan amiloid, suatu zat yang terkait dengan penyakit Alzheimer, dan gangguan dalam pembuangan limbah dapat berkontribusi pada berbagai gangguan otak seperti Alzheimer, Parkinson, sakit kepala, dan depresi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805251">Reaksi</a></h3>
-<ul>
-<li>Para ilmuwan telah mengidentifikasi bahwa tidur nyenyak memainkan peran penting dalam membersihkan limbah otak, termasuk protein amiloid, yang terkait dengan Alzheimer dan demensia.</li>
-<li>Penelitian menunjukkan bahwa merangsang gelombang listrik lambat di otak melalui stimulasi cahaya dan suara dapat meningkatkan pembersihan limbah ini, meskipun sebagian besar studi saat ini dilakukan pada tikus.</li>
-<li>Faktor-faktor seperti konsumsi kopi, olahraga, dan pola tidur juga sedang dibahas karena potensi dampaknya terhadap kesehatan otak.</li>
-</ul>
-<h2><a href="https://fastvoiceagent.cerebrium.ai/">Bot suara dengan waktu respons 500ms</a></h2>
-<ul>
-<li>Eksperimen dengan antarmuka suara dan model bahasa besar (LLM) dimulai setelah peluncuran GPT-4, menyoroti sifat yang menarik dan tantangan baru dari interaksi suara dengan AI generatif.</li>
-<li>Memperoleh waktu respons suara-ke-suara 500ms adalah tantangan tetapi mungkin dilakukan dengan menghosting transkripsi, inferensi LLM, dan generasi suara bersama-sama, mengoptimalkan pengaturan data, dan memastikan caching wifi dan VRAM yang baik.</li>
-<li>Kini tersedia demo bot suara yang mampu merespons dalam 500ms dan kontainer untuk penerapan pada GPU A10/A100/H100, dengan metrik saat ini menunjukkan total siklus respons sebesar 759ms, yang mengindikasikan evolusi AI yang cepat dan potensi penyederhanaan di masa depan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805010">Reaksi</a></h3>
-<ul>
-<li>Voice bot yang mencapai waktu respons 500ms dapat dicapai dengan mengoptimalkan proses transkripsi, inferensi LLM, dan generasi suara, serta routing data dan caching yang efisien.</li>
-<li>Metode untuk respons suara-ke-suara totalnya 759ms, tetapi LLM di masa depan dengan kemampuan audio asli mungkin dapat mengurangi waktu ini lebih lanjut.</li>
-<li>Pengguna menyoroti pentingnya latensi rendah dalam interaksi AI, terutama dalam layanan pelanggan, dan membahas potensi perbaikan teknis seperti dukungan peramban dan pemrosesan di perangkat.</li>
-</ul>
-<h2><a href="https://fabric8labs.com">Generasi berikutnya pencetakan logam 3D</a></h2>
-<ul>
-<li>Fabric8Labs, sebuah startup di San Diego, telah mendapatkan pendanaan Seri B sebesar $50 juta untuk mengembangkan teknologi manufaktur aditif elektrokimia.</li>
-<li>Kegiatan pendanaan ini akan mendukung pembangunan pabrik pencetakan 3D baru, yang secara signifikan akan meningkatkan jumlah tenaga kerja perusahaan.</li>
-<li>Investasi ini menyoroti minat yang semakin besar dan aliran modal ke dalam startup pencetakan 3D, yang didorong oleh teknologi manufaktur inovatif.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40803783">Reaksi</a></h3>
-<ul>
-<li>Teknologi pencetakan logam 3D generasi berikutnya oleh Fabric8Labs menggunakan metode elektrokimia untuk manufaktur yang presisi, cepat, dan serbaguna, mencapai resolusi tingkat mikron.</li>
-<li>Teknik ini menggabungkan proses aditif dan subtraktif, terutama dengan mendepositkan logam murni dan beberapa paduan, membuatnya lebih aman dan lebih hemat energi dengan menghindari suhu tinggi dan serbuk logam.</li>
-<li>Kemampuan teknologi Fabric8Labs menjanjikan untuk aplikasi seperti PCB (Printed Circuit Boards) dan struktur internal yang kompleks, dan perusahaan ini sedang menjajaki peluang komersial dengan pendekatan unik ini.</li>
-</ul>
-<h2><a href="https://lars.ingebrigtsen.no/2024/06/26/a-new-package-for-making-charts-in-emacs-eplot/">Eplot: Paket baru untuk membuat grafik di Emacs</a></h2>
-<ul>
-<li>Kemasan Emacs baru bernama eplot telah dirilis, dirancang untuk membuat plot sederhana langsung di dalam Emacs.</li>
-<li>eplot mengatasi keterbatasan yang ditemukan pada alat yang ada seperti chart.el dan Gnuplot, dengan menawarkan fitur-fitur seperti angka sumbu Y yang masuk akal dan gradien SVG.</li>
-<li>Package ini ramah pengguna, memungkinkan pengguna untuk menghasilkan plot dengan mengetik M-x eplot dalam buffer dengan angka, dan didokumentasikan di GitHub.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40807923">Reaksi</a></h3>
-<ul>
-<li>Telah dirilis sebuah paket baru bernama Eplot untuk membuat grafik di Emacs, sebuah editor teks yang populer di kalangan pengembang.</li>
-<li>Package ini telah menarik perhatian karena kesederhanaan dan fleksibilitasnya, dengan saran untuk meningkatkan pengalaman pengguna dengan memanfaatkan variabel lokal file dan direktori Emacs.</li>
-<li>Kajian membandingkan dengan alat charting lainnya seperti Gnuplot dan Matplotlib, mencatat kekuatan dan kelemahan masing-masing dalam konteks Emacs.</li>
-</ul>
-<h2><a href="https://www.joanwestenberg.com/6-months-ago,-i-left-the-bullshit-industrial-complex">6 bulan yang lalu, saya meninggalkan kompleks industri yang penuh omong kosong</a></h2>
-<ul>
-<li>Seorang mantan profesional PR teknologi mengungkapkan masa lalunya dalam mempromosikan startup yang dilebih-lebihkan, yang mendanai gaya hidup mewah tetapi menimbulkan keraguan etis.</li>
-<li>Mereka memutuskan untuk meninggalkan industri yang menguntungkan namun dipertanyakan secara moral untuk fokus pada penulisan jujur tentang dampak nyata teknologi dan modal ventura terhadap manusia.</li>
-<li>Meskipun ada risiko finansial dan karier, mereka menemukan integritas dan kepuasan pribadi dalam jalur baru mereka, menolak janji-janji kosong industri teknologi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40806930">Reaksi</a></h3>
-<ul>
-<li>Penulis mengungkapkan kekecewaan terhadap industri teknologi, mencatat pergeseran dari memecahkan masalah manusia menjadi mengekstraksi nilai selama 25 tahun terakhir.</li>
-<li>Kunci pengamatan termasuk sebuah postingan Reddit yang mengklaim bahwa tahun 90-an adalah puncak kemanusiaan dan sebuah kutipan viral tentang AI yang melakukan pekerjaan rumah tangga alih-alih pekerjaan kreatif, menyoroti pandangan nostalgia terhadap optimisme teknologi masa lalu.</li>
-<li>Meskipun ada kekhawatiran tentang eksploitasi data dan motif yang didorong oleh keuntungan, masih ada harapan dalam komunitas sumber terbuka dan inovasi hack, meskipun pengejaran keuntungan yang tak henti-hentinya telah menyebabkan kekecewaan yang meluas.</li>
-</ul>
-<h2><a href="https://www.govexec.com/pay-benefits/2024/06/federal-whistleblowers-are-entitled-damages-missed-future-pay-court-rules/397638/">Pelapor federal berhak atas ganti rugi berupa gaji masa depan yang terlewat, putusan pengadilan</a></h2>
-<ul>
-<li>Kejaksaan Banding Amerika Serikat untuk Sirkuit Federal memutuskan bahwa pelapor federal dapat menerima ganti rugi kompensasi untuk pendapatan yang hilang di masa depan jika pemecatan mereka merugikan potensi penghasilan mereka.</li>
-<li>Deborah Perlick, dipecat setelah melaporkan dana yang hilang, berhasil memperjuangkan kompensasi tambahan di luar gaji yang tertunda, yang mempengaruhi prospek pekerjaan di masa depan.</li>
-<li>Putusan ini menetapkan preseden bagi pelapor pelanggaran federal, memungkinkan klaim untuk pendapatan yang hilang di masa depan tanpa memerlukan jaminan pekerjaan di masa depan, dan kasus ini dikembalikan ke Dewan Perlindungan Sistem Merit untuk keputusan akhir.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40804489">Reaksi</a></h3>
-<ul>
-<li>Pengadilan telah memutuskan bahwa pelapor federal berhak atas ganti rugi untuk gaji masa depan yang terlewat, bahkan tanpa pekerjaan masa depan yang dijamin, asalkan ada bukti yang cukup tentang kemungkinan pekerjaan di masa depan.</li>
-<li>Keputusan ini dapat mendorong lebih banyak pelapor dengan mengurangi kekhawatiran tentang kehilangan pendapatan di masa depan dan menyelaraskan hak-hak karyawan federal dengan hak-hak karyawan sektor swasta.</li>
-<li>Tuntutan tersebut, yang melibatkan seorang karyawan VA (Veterans Affairs), menekankan bahwa kerugian reputasi yang mempengaruhi pendapatan di masa depan dapat diberi kompensasi.</li>
-</ul>
-<h2><a href="https://www.ams.org/notices/199701/comm-rota.pdf">Pelajaran yang Saya Harap Telah Diajarkan kepada Saya (1996) [pdf]</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40808933">Reaksi</a></h3>
-<ul>
-<li>Pelajaran yang Saya Harap Telah Diajarkan (1996)&quot; oleh Gian-Carlo Rota memicu diskusi di Hacker News, dengan pengguna berbagi satuan pengukuran unik seperti &quot;mikrosentury&quot; (50 menit) dan &quot;nanoacre&quot; (4 milimeter persegi).</li>
-<li>Percakapan juga mencakup durasi kuliah, rentang perhatian, dan pentingnya pengantar yang menarik dalam makalah akademis, mencerminkan pengajaran Rota yang berpengaruh.</li>
-<li>Kumpulan diskusi tersebut menyoroti minat yang berulang terhadap wawasan Rota, dengan pengguna mengenang pengalaman pribadi dan merujuk pada diskusi serta sumber daya terkait.</li>
-</ul>
-<h2><a href="https://www.lawgazette.co.uk/news/post-office-lawyers-held-secret-meeting-with-judge-to-stop-disclosure/5119593.article">Pengacara Kantor Pos mengadakan pertemuan rahasia dengan hakim untuk menghentikan pengungkapan</a></h2>
-<ul>
-<li>Pengacara untuk Kantor Pos mengadakan pertemuan rahasia dengan seorang hakim pada tahun 2013 untuk mencegah pengungkapan sebuah laporan yang mengungkapkan potensi masalah dengan sistem Horizon kepada pengacara pembela dalam sebuah persidangan pidana.</li>
-<li>Penyelidikan mendengar bahwa pengacara penuntut Martin Smith mengakui bahwa dia tidak mematuhi tugasnya dan kurang memiliki keahlian yang diperlukan, menimbulkan kekhawatiran tentang keyakinan masa lalu dan praktik pengungkapan.</li>
-<li>Kajian yang sedang berlangsung terus mengungkap beberapa masalah pengungkapan saat Kantor Pos mendekati mediasi dan meninjau kembali hukuman masa lalu.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40808808">Reaksi</a></h3>
-<ul>
-<li>Pengacara Kantor Pos diam-diam bertemu dengan seorang hakim untuk memblokir pengungkapan bukti, yang mengakibatkan hukuman yang salah.</li>
-<li>Pembela umum kewalahan, menangani hingga 700 kasus setiap tahun, yang menghambat pembelaan yang efektif.</li>
-<li>Keadilan sistem lebih menguntungkan mereka yang mampu menyewa pengacara pribadi, menekankan perlunya reformasi hukum dan pendanaan yang lebih baik untuk pembela umum guna memastikan persidangan yang adil.</li>
-</ul>
-<h2><a href="https://www.readmargins.com/p/doordash-and-pizza-arbitrage">DoorDash dan Arbitrase Pizza (2020)</a></h2>
-<ul>
-<li>Doordash mencantumkan sebuah pizzeria tanpa izin pemiliknya, yang menyebabkan masalah dengan pengiriman dingin dan harga yang salah.</li>
-<li>Kesempatan arbitrase muncul karena kesalahan harga Doordash, memungkinkan keuntungan dari memesan dengan harga lebih rendah dan menjual dengan harga restoran yang lebih tinggi.</li>
-<li>Artikel tersebut mengkritik model bisnis pengiriman makanan sebagai tidak efisien dan eksploitatif, menyarankan pendekatan yang lebih terintegrasi seperti Domino&#39;s mungkin lebih berkelanjutan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40806356">Reaksi</a></h3>
-<ul>
-<li>DoorDash dan layanan pengiriman makanan serupa menghadapi kritik karena model bisnis yang tidak berkelanjutan yang bergantung pada tenaga kerja yang dibayar rendah dan biaya akuisisi pelanggan yang tinggi.</li>
-<li>Kritikus berpendapat bahwa praktik-praktik ini memperburuk ketimpangan ekonomi dan menyarankan untuk mengenakan pajak pada modal yang terakumulasi guna mendistribusikan kembali kekayaan.</li>
-<li>Perdebatan ini mencakup kekhawatiran tentang dampak negatif terhadap kualitas restoran dan etika layanan pengiriman ini, mempertanyakan keberlanjutan jangka panjang dan manfaatnya.</li>
-</ul>
-<h2><a href="https://github.com/corcel/corcel">Corcel – Gunakan backend WordPress dengan Laravel atau aplikasi PHP lainnya</a></h2>
-<ul>
-<li>Corcel adalah sebuah pustaka PHP yang dibangun di atas Eloquent ORM dari Laravel, memungkinkan pengambilan data langsung dari basis data WordPress, yang dapat digunakan dengan Laravel atau proyek PHP lainnya melalui Composer.</li>
-<li>Fitur utama termasuk dukungan untuk jenis pos kustom, shortcode, taksonomi, halaman, lampiran, revisi, thumbnail, opsi, menu, pengguna, dan autentikasi.</li>
-<li>Instalasi dan konfigurasi sangat mudah, dengan pendaftaran otomatis untuk Laravel 5.5+ dan pengaturan manual untuk versi yang lebih lama atau proyek non-Laravel.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805351">Reaksi</a></h3>
-<ul>
-<li>Corcel memungkinkan penggunaan backend WordPress dengan Laravel atau aplikasi PHP lainnya, terbukti efektif dalam lingkungan produksi.</li>
-<li>Pengguna telah berhasil mengintegrasikan Corcel dengan Laravel, Filament, dan LunarPHP untuk meningkatkan kinerja, seperti menyelamatkan situs WooCommerce yang lambat.</li>
-<li>Corcel dipuji karena antarmukanya yang mulus dengan data WordPress, menawarkan solusi yang dapat dipelihara untuk proyek PHP yang perlu berinteraksi dengan basis data WordPress, dan dibandingkan secara positif dengan alat seperti Prismic, Strapi, dan Shopify.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Perusahaan telekomunikasi Korea Selatan menyerang pengguna torrent dengan malware" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Perusahaan%20telekomunikasi%20Korea%20Selatan%20menyerang%20pengguna%20torrent%20dengan%20malware&subheading=Kamis%2C%2027%20Juni%202024%3A%20Ringkasan%20Berita%20Peretas" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/id/2024/06/27</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

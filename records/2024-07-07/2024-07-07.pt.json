@@ -1,0 +1,332 @@
+[
+  {
+    "id": 40897205,
+    "title": "Os embeds do YouTube são extremamente pesados e isso é solucionável",
+    "originLink": "https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897205",
+    "commentBody": "",
+    "originSummary": [
+      "Os embeds do YouTube são pesados em termos de recursos, com cada embed em torno de 1,3MB e 32 solicitações, levando a tempos de carregamento lentos e alta transferência de dados.",
+      "A Web Component como \"lite-youtube-embed\" de Paul Irish pode reduzir o tamanho para cerca de 100k, compartilhando recursos e melhorando significativamente o desempenho.",
+      "Incorporar esta solução envolve vincular o JavaScript, usar o componente em HTML e carregar o script de forma assíncrona para um melhor desempenho."
+    ],
+    "commentSummary": [
+      "A plataforma de fórum comunitário substituiu os embeds do YouTube por miniaturas proxy, que carregam apenas quando clicadas, reduzindo a necessidade de baixar grandes arquivos JavaScript e impedindo o rastreamento pelo Google.",
+      "Soluções semelhantes foram implementadas para incorporações do YouTube, SoundCloud e Reddit para melhorar a funcionalidade e minimizar o inchaço.",
+      "Há um debate sobre se embeds mais leves podem reduzir o engajamento devido a tempos de início de vídeo mais lentos, mas muitos acreditam que melhorar o tempo de carregamento geral da página é mais importante para a experiência do usuário e o desempenho do site."
+    ],
+    "points": 236,
+    "commentCount": 135,
+    "retryCount": 0,
+    "time": 1720355875
+  },
+  {
+    "id": 40896102,
+    "title": "Malloc quebrou o JPGLoader do Serenity, ou: como ganhar na loteria (2021)",
+    "originLink": "https://sin-ack.github.io/posts/jpg-loader-bork/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896102",
+    "commentBody": "",
+    "originSummary": [
+      "Um bug na decodificação de imagens JPG do SerenityOS causou exibição incorreta de cores devido a uma confusão entre RGB e BGR.",
+      "A questão foi rastreada até um commit que implementou `malloc_good_size()`, o que alterou a alocação de memória e afetou estruturas de dados como `HashTable` e `Vector` usadas no `JPGLoader`.",
+      "As correções envolveram garantir a iteração determinística sobre os componentes no `JPGLoader`, destacando como mudanças simples podem revelar problemas subjacentes significativos."
+    ],
+    "commentSummary": [
+      "Algumas implementações de tabela hash introduzem aleatoriedade para evitar a dependência da ordem dos elementos e aumentar a segurança, enquanto implementações modernas frequentemente garantem a iteração na ordem de inserção.",
+      "JavaScript e Python padronizaram a ordem de inserção em suas implementações de tabela hash, com o Python adotando isso na versão 3.7.",
+      "Rust oferece diferentes opções de tabela hash (`HashMap`, `BTreeMap`, `IndexMap`), e o Perl introduziu sementes aleatórias para tabelas hash após a versão 5.18."
+    ],
+    "points": 177,
+    "commentCount": 143,
+    "retryCount": 0,
+    "time": 1720341723
+  },
+  {
+    "id": 40895672,
+    "title": "BeaconDB – Uma Alternativa aos Serviços de Localização da Mozilla",
+    "originLink": "https://beacondb.net/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895672",
+    "commentBody": "",
+    "originSummary": [
+      "beaconDB é um banco de dados de geolocalização sem fio de domínio público que cobre 177.176 redes, 4.126 beacons, 6.106 torres em 30 países, com coleta de dados ética e com consentimento.",
+      "A base de dados é amigável à privacidade, ofuscando informações para proteger transmissores e contribuintes, e requer proximidade física para atualizar dados, tornando-a resistente a abusos.",
+      "Os desenvolvedores podem usar o endpoint `https://beacondb.net/v1/geolocate`, compatível com o formato de solicitação do Ichnaea, mas não é adequado para aplicações de alto tráfego; o código-fonte está disponível no Codeberg."
+    ],
+    "commentSummary": [
+      "BeaconDB é apresentado como uma alternativa ao Mozilla Location Services (MLS), focando na coleta de dados eticamente obtidos e com consentimento.",
+      "Ao contrário da Apple e do Google, o BeaconDB não publica endereços MAC em texto claro, em vez disso, utiliza dados hash ou agregados para aumentar a privacidade.",
+      "BeaconDB é o único banco de dados fora das grandes empresas de tecnologia para serviços de localização, visando fornecer uma solução de código aberto e discutir possíveis colaborações."
+    ],
+    "points": 170,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1720333550
+  },
+  {
+    "id": 40897506,
+    "title": "A revitalização dos encontros de programação de sistemas",
+    "originLink": "https://notes.eatonphil.com/2024-07-07-systems-meetups.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897506",
+    "commentBody": "",
+    "originSummary": [
+      "Tem havido um ressurgimento de encontros de programação de sistemas de alta qualidade em cidades como Munique, Berlim, São Francisco, Nova York e Bengaluru em 2024.",
+      "Iniciado em dezembro de 2023, o NYC Systems Coffee Club foca em desafios de engenharia e cresceu rapidamente, inspirando encontros semelhantes globalmente.",
+      "Conselhos importantes para organizar encontros incluem garantir um local anfitrião, focar no conteúdo técnico, encontrar palestrantes por meio de conexões na indústria e colaborar com outros organizadores."
+    ],
+    "commentSummary": [
+      "Os encontros de programação de sistemas estão passando por um ressurgimento, destacando o renovado interesse da comunidade em programação de baixo nível e arquitetura de sistemas.",
+      "Organizar esses encontros enfrenta desafios, incluindo encontrar locais estáveis, que muitas vezes exigem forte apoio interno ou respaldo municipal para garantir locais consistentes.",
+      "A qualidade e o foco do conteúdo dos encontros são cruciais, com alguns grupos lutando para equilibrar entre discussões técnicas genuínas e apresentações autopromocionais por parte dos palestrantes."
+    ],
+    "points": 164,
+    "commentCount": 65,
+    "retryCount": 0,
+    "time": 1720358437
+  },
+  {
+    "id": 40892812,
+    "title": "Quais são os bons recursos para aprender processamento de áudio?",
+    "originLink": "https://news.ycombinator.com/item?id=40892812",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40892812",
+    "commentBody": "",
+    "originSummary": [
+      "Inspirado pelo harmonizador criado por Ben Bloomberg do MIT para Jacob Collier, o usuário está buscando recursos para programar um harmonizador semelhante.",
+      "Elas precisam de informações acessíveis sobre mudança de tom e mudança de formato que mantenham a qualidade sonora natural.",
+      "A pessoa tem ampla experiência em programação, mas carece de conhecimento em processamento de áudio, indicando a necessidade de recursos abrangentes e amigáveis para iniciantes."
+    ],
+    "commentSummary": [
+      "Um usuário está buscando recursos para programar um harmonizador semelhante ao de Jacob Collier, criado por Ben Bloomberg do MIT, com foco em mudança de tom e formato.",
+      "Recursos recomendados incluem materiais de cursos abertos do CCRMA em Stanford, bibliotecas padrão da indústria como Elastique da Zplane, e livros como 'DAFX - Digital Audio Effects' de Udo Zölzer.",
+      "Outras sugestões incluem tutoriais, canais do YouTube e fóruns comunitários como o Officehours.global para networking e aprendizado adicional."
+    ],
+    "points": 144,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1720295988
+  },
+  {
+    "id": 40893866,
+    "title": "Acompanhador de hábitos diários minimalista e gratuito",
+    "originLink": "https://rdht.vercel.app/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893866",
+    "commentBody": "",
+    "originSummary": [
+      "A nova aplicação de rastreamento de hábitos foi desenvolvida por um indivíduo insatisfeito com as opções existentes, apresentando rastreamento de sequência, usabilidade offline, congelamento de sequência, um mapa de consistência visual e funcionalidade de pausa.",
+      "A aplicação é construída usando React para o frontend, Dexie cloud para armazenamento e sincronização, e hospedada no Vercel.",
+      "Os desenvolvedores disponibilizaram o aplicativo para uso público, transformando um projeto pessoal em um recurso comunitário."
+    ],
+    "commentSummary": [
+      "A criação de um novo rastreador de hábitos diários minimalista e gratuito visa preencher lacunas nos aplicativos existentes, oferecendo rastreamento de sequências, uso offline, congelamento de sequências, um mapa visual de consistência e uma função de pausa.",
+      "Construído com React e Dexie cloud, e hospedado na Vercel, o aplicativo recebeu feedback para melhorias, especialmente de usuários de iPhone, incluindo sugestões para maus hábitos, ajustes de design e correções de bugs.",
+      "Os usuários apreciam o design limpo e a funcionalidade offline, com sugestões para uma visualização colapsada e melhor compatibilidade móvel; ainda não há planos de monetização."
+    ],
+    "points": 117,
+    "commentCount": 51,
+    "retryCount": 0,
+    "time": 1720305433
+  },
+  {
+    "id": 40895441,
+    "title": "Por que a Itália Deixou de Amar o Coentro",
+    "originLink": "https://www.atlasobscura.com/articles/what-are-italian-herbs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895441",
+    "commentBody": "",
+    "originSummary": [
+      "C coentro, outrora um alimento básico na culinária romana antiga, quase desapareceu da culinária italiana moderna, especialmente suas folhas.",
+      "A decadência começou após Roma, influenciada pelas tribos germânicas e pela preferência por especiarias exóticas como canela e cardamomo.",
+      "Apesar de sua presença histórica, o coentro agora é visto como um ingrediente estrangeiro na Itália, ao contrário de outras ervas como o manjericão."
+    ],
+    "commentSummary": [
+      "Itália não gosta de coentro desde 1544, quando o botânico Pietro Andrea Mattioli descreveu suas folhas como tendo cheiro de percevejos.",
+      "A aversão pode ser influenciada geneticamente, pois algumas pessoas percebem o coentro como tendo gosto de sabão devido a um gene específico.",
+      "A queda na popularidade do coentro na Itália também está ligada às mudanças nas tendências culinárias e nos padrões de migração, ilustrando a complexa interação entre genética, cultura e preferência pessoal na formação dos gostos alimentares."
+    ],
+    "points": 108,
+    "commentCount": 116,
+    "retryCount": 0,
+    "time": 1720329769
+  },
+  {
+    "id": 40895167,
+    "title": "Gerenciamento de rede 'Out of Band' não é trivial",
+    "originLink": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895167",
+    "commentBody": "",
+    "originSummary": [
+      "Em 2022, a interrupção dos serviços de Internet e telefone da Rogers, que afetou mais de 12 milhões de canadenses, destacou a importância e a complexidade da gestão de rede 'Out of Band' (OOB).",
+      "Gerenciamento OOB requer hardware e infraestrutura dedicados, separados da rede principal, garantindo redundância e segurança, mas adicionando custo e complexidade significativos.",
+      "Redes menores podem achar mais prático focar em uma gestão robusta e redundante dentro da banda, em vez de manter uma rede OOB separada."
+    ],
+    "commentSummary": [
+      "Gerenciamento de rede 'Out of Band' (OOB) é essencial para manter a confiabilidade da rede, especialmente em sistemas digitais modernos que são propensos a configurações incorretas e falhas.",
+      "As interrupções da Rogers destacaram a necessidade crítica de uma gestão OOB robusta, ressaltando a importância de um melhor planejamento e avaliação de riscos para prevenir falhas na rede central.",
+      "Uma gestão eficaz de OOB envolve o uso de sistemas dedicados e redundantes, frequentemente aproveitando diferentes provedores ou tecnologias como LTE ou satélite para garantir a confiabilidade."
+    ],
+    "points": 105,
+    "commentCount": 70,
+    "retryCount": 0,
+    "time": 1720324841
+  },
+  {
+    "id": 40896873,
+    "title": "Execute JavaScript em um sandbox WebAssembly QuickJS",
+    "originLink": "https://github.com/sebastianwessel/quickjs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896873",
+    "commentBody": "",
+    "originSummary": [
+      "Este pacote TypeScript permite a execução segura de código JavaScript dentro de um sandbox WebAssembly usando o motor QuickJS, ideal para executar código não confiável com segurança.",
+      "Os principais recursos incluem um ambiente isolado, sistema de arquivos virtual, módulos de nó personalizados, cliente de busca HTTP(S), executor de testes baseado em chai e desempenho eficiente.",
+      "A embalagem é versátil e fácil de integrar com projetos TypeScript, oferecendo uma API amigável para execução e gerenciamento de código."
+    ],
+    "commentSummary": [
+      "Este pacote TypeScript permite a execução segura de código JavaScript dentro de um sandbox WebAssembly usando o motor QuickJS, garantindo o isolamento de código não confiável.",
+      "Os principais recursos incluem um sistema de arquivos virtual, módulos de nó personalizados, um cliente fetch, um executor de testes e uma API amigável, suportando ambientes como NodeJS, Deno e Cloudflare Workers.",
+      "Aviso de segurança observa que habilitar `fetch` pode expor os cookies do host a código não confiável, potencialmente comprometendo a segurança do sandbox."
+    ],
+    "points": 104,
+    "commentCount": 32,
+    "retryCount": 0,
+    "time": 1720352245
+  },
+  {
+    "id": 40895935,
+    "title": "Do Transistor ao Navegador da Web, um esboço geral para um curso de 12 semanas",
+    "originLink": "https://github.com/geohot/fromthetransistor",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895935",
+    "commentBody": "",
+    "originSummary": [
+      "A disciplina abrange uma jornada abrangente desde a compreensão dos transistores até o desenvolvimento de um navegador web, proporcionando uma abordagem prática para aprender a integração de hardware e software.",
+      "Os principais projetos incluem a construção de uma CPU ARM7, um compilador C, um sistema operacional semelhante ao UNIX e um navegador web baseado em texto, utilizando linguagens como Verilog, Python, Haskell e C.",
+      "A grade curricular enfatiza habilidades práticas, como emulação com Verilator, design de placa FPGA e implementação de componentes essenciais do sistema, como uma MMU, controlador Ethernet e pilha TCP."
+    ],
+    "commentSummary": [
+      "Ao longo de 12 semanas, o curso intitulado 'Do Transistor ao Navegador Web' por geohot no GitHub gerou discussões devido ao seu escopo ambicioso, mas com atualizações mínimas desde 2016.",
+      "Os usuários debatem sua viabilidade, sugerindo ferramentas de aprendizado alternativas como 'Turing Complete' e 'Shenzen I/O', e argumentam que pode ser muito denso para iniciantes, sendo mais adequado para programadores experientes.",
+      "Críticos questionam a praticidade do curso e as intenções do autor, considerando-o excessivamente ambicioso e carente de substância em comparação com os cursos abrangentes de Engenharia Elétrica e de Computação."
+    ],
+    "points": 102,
+    "commentCount": 44,
+    "retryCount": 0,
+    "time": 1720338876
+  },
+  {
+    "id": 40897518,
+    "title": "Mongo, mas no Postgres e com benefícios de consistência forte",
+    "originLink": "https://github.com/event-driven-io/Pongo",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897518",
+    "commentBody": "",
+    "originSummary": [
+      "Pongo Pongo é uma ferramenta que permite usar operações semelhantes às do MongoDB no PostgreSQL, aproveitando os benefícios da consistência forte.",
+      "Ele traduz chamadas de API do MongoDB para consultas nativas do PostgreSQL, utilizando JSONB para operações de leitura/escrita eficientes e consultas complexas.",
+      "Pongo não é um ORM (Mapeamento Objeto-Relacional) tradicional, mas foca no manuseio de dados de documentos, oferecendo flexibilidade e desempenho, embora não seja totalmente compatível com MongoDB."
+    ],
+    "commentSummary": [
+      "Pongo é um novo projeto que oferece uma API semelhante ao MongoDB sobre o PostgreSQL, aproveitando colunas JSONB para benefícios de consistência forte.",
+      "A proposta do projeto é combinar a facilidade de uso do MongoDB com a consistência robusta e a confiabilidade do PostgreSQL, traduzindo a sintaxe do MongoDB para consultas nativas do PostgreSQL.",
+      "Esse desenvolvimento despertou interesse devido ao seu potencial de oferecer uma experiência familiar do MongoDB enquanto utiliza os recursos avançados do PostgreSQL, atraindo desenvolvedores que buscam forte consistência em suas operações de banco de dados."
+    ],
+    "points": 98,
+    "commentCount": 48,
+    "retryCount": 0,
+    "time": 1720358532
+  },
+  {
+    "id": 40896110,
+    "title": "Cientistas reaparecem após um ano em projeto de simulação de Marte",
+    "originLink": "https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896110",
+    "commentBody": "",
+    "originSummary": [
+      "Quatro cientistas completaram uma simulação de um ano em Marte no habitat Mars Dune Alpha em Houston, uma estrutura impressa em 3D projetada para replicar as condições marcianas.",
+      "A missão, parte do Análogo de Exploração da Saúde e Desempenho da Tripulação da NASA (CHAPEA), visa coletar insights para futuras missões a Marte e exploração espacial de longo prazo, incluindo o programa Artemis.",
+      "As equipes realizaram 'caminhadas em Marte' e lidaram com estressores como isolamento e atrasos na comunicação, com missões CHAPEA adicionais planejadas para 2025 e 2027."
+    ],
+    "commentSummary": [
+      "Cientistas concluíram uma simulação de Marte que durou um ano, focando na resistência humana em ambientes isolados e de alto estresse.",
+      "As dinâmicas psicológicas e sociais são mais desafiadoras de gerenciar do que as necessidades nutricionais.",
+      "Discussões incluem considerações técnicas e éticas, potenciais altas taxas de mortalidade e a necessidade de preparação extensiva e missões iniciais menores para a colonização de Marte."
+    ],
+    "points": 91,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1720341858
+  },
+  {
+    "id": 40896212,
+    "title": "\"IA\", estudantes e crise epistêmica",
+    "originLink": "https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896212",
+    "commentBody": "",
+    "originSummary": [
+      "A postagem de um blog de 6 de julho de 2024 discute o uso do ChatGPT por um estudante como motor de busca, resultando no estudante acreditando em informações falsas.",
+      "A autora destaca a dificuldade de combater a desinformação gerada por IA, pois cada aluno pode receber fatos incorretos únicos, complicando o processo de correção.",
+      "A postagem reflete sobre a questão mais ampla do impacto da desinformação na educação e foi removida devido a assédio."
+    ],
+    "commentSummary": [
+      "Os estudantes de hoje dependem significativamente da IA e da internet para obter informações, em contraste com as gerações anteriores que realizavam pesquisas manuais em bibliotecas.",
+      "Os educadores estão preocupados que essa dependência possa prejudicar a capacidade dos alunos de avaliar criticamente as informações, resultando em redações que frequentemente carecem de profundidade.",
+      "Embora as ferramentas de IA sejam úteis, elas também podem gerar informações falsas, provocando um debate sobre a integração dessas ferramentas na educação enquanto se promove habilidades de pensamento crítico."
+    ],
+    "points": 89,
+    "commentCount": 121,
+    "retryCount": 0,
+    "time": 1720343169
+  },
+  {
+    "id": 40894082,
+    "title": "OpenAI foi hackeada, violação de um ano não foi reportada ao público",
+    "originLink": "https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40894082",
+    "commentBody": "",
+    "originSummary": [
+      "Os hackers invadiram os sistemas de mensagens internos da OpenAI no início do ano passado, expondo informações sensíveis, mas sem acessar os principais sistemas de IA, levantando preocupações de segurança e segurança nacional.",
+      "OpenAI divulgou o incidente internamente em abril de 2023, afirmando que nenhum dado de cliente foi roubado e que o hacker provavelmente não tinha ligações com o governo; no entanto, a violação aumentou os temores sobre adversários estrangeiros, particularmente a China, avançando suas tecnologias de IA.",
+      "Desde então, a OpenAI melhorou suas medidas de segurança, estabeleceu um Comitê de Segurança e Proteção, e o incidente provocou discussões sobre regulamentações federais e estaduais para controlar a liberação da tecnologia de IA."
+    ],
+    "commentSummary": [
+      "OpenAI sofreu um ataque não relatado no ano passado, levando a preocupações dos usuários sobre transparência e práticas de segurança.",
+      "A violação envolveu o acesso a sistemas de mensagens internos, mas não comprometeu as principais tecnologias de IA.",
+      "Usuários discutiram dificuldades em relatar bugs e frustrações com as práticas padrão de relatórios de segurança da OpenAI."
+    ],
+    "points": 84,
+    "commentCount": 26,
+    "retryCount": 0,
+    "time": 1720308293
+  },
+  {
+    "id": 40893749,
+    "title": "Quais são as causas das enxaquecas? Estudo sobre 'apagão cerebral' oferece pistas",
+    "originLink": "https://www.nature.com/articles/d41586-024-02222-x",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893749",
+    "commentBody": "",
+    "originSummary": [
+      "A study in mice, published in Science on 4 July 2024, reveals new insights into migraine causes, linking brief brain 'blackouts' to changes in cerebrospinal fluid that activate pain receptors in the skull.",
+      "A pesquisa sugere que as enxaquecas podem servir como um mecanismo de proteção sinalizando a necessidade de descanso e identifica uma lacuna anteriormente desconhecida nas camadas protetoras ao redor do gânglio trigeminal.",
+      "Essa descoberta pode levar ao desenvolvimento de novos tratamentos para enxaquecas, ao direcionar os mecanismos recém-identificados."
+    ],
+    "commentSummary": [
+      "A study suggests that cortical spreading depression (CSD), a 'brain blackout,' might be involved in migraines.",
+      "Relataram vários gatilhos e tratamentos, incluindo mudanças na dieta, medicamentos como Rizatriptano e ajustes no estilo de vida, como melhora no sono e hidratação.",
+      "A discussão destaca a complexidade das enxaquecas, com diferentes gatilhos e tratamentos sendo eficazes para diferentes indivíduos."
+    ],
+    "points": 84,
+    "commentCount": 72,
+    "retryCount": 0,
+    "time": 1720303961
+  }
+]

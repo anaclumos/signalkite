@@ -15,12 +15,208 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 06 Jul 2024 19:10:41 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 07 Jul 2024 19:09:26 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/pt.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 06 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[pt]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-07]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/07&#39;</h2>
+<h1>2024-07-07</h1>
+<h2><a href="https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/">Os embeds do YouTube são extremamente pesados e isso é solucionável</a></h2>
+<ul>
+<li>Os embeds do YouTube são pesados em termos de recursos, com cada embed em torno de 1,3MB e 32 solicitações, levando a tempos de carregamento lentos e alta transferência de dados.</li>
+<li>A Web Component como &quot;lite-youtube-embed&quot; de Paul Irish pode reduzir o tamanho para cerca de 100k, compartilhando recursos e melhorando significativamente o desempenho.</li>
+<li>Incorporar esta solução envolve vincular o JavaScript, usar o componente em HTML e carregar o script de forma assíncrona para um melhor desempenho.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897205">Reações</a></h3>
+<ul>
+<li>A plataforma de fórum comunitário substituiu os embeds do YouTube por miniaturas proxy, que carregam apenas quando clicadas, reduzindo a necessidade de baixar grandes arquivos JavaScript e impedindo o rastreamento pelo Google.</li>
+<li>Soluções semelhantes foram implementadas para incorporações do YouTube, SoundCloud e Reddit para melhorar a funcionalidade e minimizar o inchaço.</li>
+<li>Há um debate sobre se embeds mais leves podem reduzir o engajamento devido a tempos de início de vídeo mais lentos, mas muitos acreditam que melhorar o tempo de carregamento geral da página é mais importante para a experiência do usuário e o desempenho do site.</li>
+</ul>
+<h2><a href="https://sin-ack.github.io/posts/jpg-loader-bork/">Malloc quebrou o JPGLoader do Serenity, ou: como ganhar na loteria (2021)</a></h2>
+<ul>
+<li>Um bug na decodificação de imagens JPG do SerenityOS causou exibição incorreta de cores devido a uma confusão entre RGB e BGR.</li>
+<li>A questão foi rastreada até um commit que implementou <code>malloc_good_size()</code>, o que alterou a alocação de memória e afetou estruturas de dados como <code>HashTable</code> e <code>Vector</code> usadas no <code>JPGLoader</code>.</li>
+<li>As correções envolveram garantir a iteração determinística sobre os componentes no <code>JPGLoader</code>, destacando como mudanças simples podem revelar problemas subjacentes significativos.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896102">Reações</a></h3>
+<ul>
+<li>Algumas implementações de tabela hash introduzem aleatoriedade para evitar a dependência da ordem dos elementos e aumentar a segurança, enquanto implementações modernas frequentemente garantem a iteração na ordem de inserção.</li>
+<li>JavaScript e Python padronizaram a ordem de inserção em suas implementações de tabela hash, com o Python adotando isso na versão 3.7.</li>
+<li>Rust oferece diferentes opções de tabela hash (<code>HashMap</code>, <code>BTreeMap</code>, <code>IndexMap</code>), e o Perl introduziu sementes aleatórias para tabelas hash após a versão 5.18.</li>
+</ul>
+<h2><a href="https://beacondb.net/">BeaconDB – Uma Alternativa aos Serviços de Localização da Mozilla</a></h2>
+<ul>
+<li>beaconDB é um banco de dados de geolocalização sem fio de domínio público que cobre 177.176 redes, 4.126 beacons, 6.106 torres em 30 países, com coleta de dados ética e com consentimento.</li>
+<li>A base de dados é amigável à privacidade, ofuscando informações para proteger transmissores e contribuintes, e requer proximidade física para atualizar dados, tornando-a resistente a abusos.</li>
+<li>Os desenvolvedores podem usar o endpoint <code>https://beacondb.net/v1/geolocate</code>, compatível com o formato de solicitação do Ichnaea, mas não é adequado para aplicações de alto tráfego; o código-fonte está disponível no Codeberg.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895672">Reações</a></h3>
+<ul>
+<li>BeaconDB é apresentado como uma alternativa ao Mozilla Location Services (MLS), focando na coleta de dados eticamente obtidos e com consentimento.</li>
+<li>Ao contrário da Apple e do Google, o BeaconDB não publica endereços MAC em texto claro, em vez disso, utiliza dados hash ou agregados para aumentar a privacidade.</li>
+<li>BeaconDB é o único banco de dados fora das grandes empresas de tecnologia para serviços de localização, visando fornecer uma solução de código aberto e discutir possíveis colaborações.</li>
+</ul>
+<h2><a href="https://notes.eatonphil.com/2024-07-07-systems-meetups.html">A revitalização dos encontros de programação de sistemas</a></h2>
+<ul>
+<li>Tem havido um ressurgimento de encontros de programação de sistemas de alta qualidade em cidades como Munique, Berlim, São Francisco, Nova York e Bengaluru em 2024.</li>
+<li>Iniciado em dezembro de 2023, o NYC Systems Coffee Club foca em desafios de engenharia e cresceu rapidamente, inspirando encontros semelhantes globalmente.</li>
+<li>Conselhos importantes para organizar encontros incluem garantir um local anfitrião, focar no conteúdo técnico, encontrar palestrantes por meio de conexões na indústria e colaborar com outros organizadores.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897506">Reações</a></h3>
+<ul>
+<li>Os encontros de programação de sistemas estão passando por um ressurgimento, destacando o renovado interesse da comunidade em programação de baixo nível e arquitetura de sistemas.</li>
+<li>Organizar esses encontros enfrenta desafios, incluindo encontrar locais estáveis, que muitas vezes exigem forte apoio interno ou respaldo municipal para garantir locais consistentes.</li>
+<li>A qualidade e o foco do conteúdo dos encontros são cruciais, com alguns grupos lutando para equilibrar entre discussões técnicas genuínas e apresentações autopromocionais por parte dos palestrantes.</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40892812">Quais são os bons recursos para aprender processamento de áudio?</a></h2>
+<ul>
+<li>Inspirado pelo harmonizador criado por Ben Bloomberg do MIT para Jacob Collier, o usuário está buscando recursos para programar um harmonizador semelhante.</li>
+<li>Elas precisam de informações acessíveis sobre mudança de tom e mudança de formato que mantenham a qualidade sonora natural.</li>
+<li>A pessoa tem ampla experiência em programação, mas carece de conhecimento em processamento de áudio, indicando a necessidade de recursos abrangentes e amigáveis para iniciantes.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40892812">Reações</a></h3>
+<ul>
+<li>Um usuário está buscando recursos para programar um harmonizador semelhante ao de Jacob Collier, criado por Ben Bloomberg do MIT, com foco em mudança de tom e formato.</li>
+<li>Recursos recomendados incluem materiais de cursos abertos do CCRMA em Stanford, bibliotecas padrão da indústria como Elastique da Zplane, e livros como &#39;DAFX - Digital Audio Effects&#39; de Udo Zölzer.</li>
+<li>Outras sugestões incluem tutoriais, canais do YouTube e fóruns comunitários como o Officehours.global para networking e aprendizado adicional.</li>
+</ul>
+<h2><a href="https://rdht.vercel.app/">Acompanhador de hábitos diários minimalista e gratuito</a></h2>
+<ul>
+<li>A nova aplicação de rastreamento de hábitos foi desenvolvida por um indivíduo insatisfeito com as opções existentes, apresentando rastreamento de sequência, usabilidade offline, congelamento de sequência, um mapa de consistência visual e funcionalidade de pausa.</li>
+<li>A aplicação é construída usando React para o frontend, Dexie cloud para armazenamento e sincronização, e hospedada no Vercel.</li>
+<li>Os desenvolvedores disponibilizaram o aplicativo para uso público, transformando um projeto pessoal em um recurso comunitário.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40893866">Reações</a></h3>
+<ul>
+<li>A criação de um novo rastreador de hábitos diários minimalista e gratuito visa preencher lacunas nos aplicativos existentes, oferecendo rastreamento de sequências, uso offline, congelamento de sequências, um mapa visual de consistência e uma função de pausa.</li>
+<li>Construído com React e Dexie cloud, e hospedado na Vercel, o aplicativo recebeu feedback para melhorias, especialmente de usuários de iPhone, incluindo sugestões para maus hábitos, ajustes de design e correções de bugs.</li>
+<li>Os usuários apreciam o design limpo e a funcionalidade offline, com sugestões para uma visualização colapsada e melhor compatibilidade móvel; ainda não há planos de monetização.</li>
+</ul>
+<h2><a href="https://www.atlasobscura.com/articles/what-are-italian-herbs">Por que a Itália Deixou de Amar o Coentro</a></h2>
+<ul>
+<li>C coentro, outrora um alimento básico na culinária romana antiga, quase desapareceu da culinária italiana moderna, especialmente suas folhas.</li>
+<li>A decadência começou após Roma, influenciada pelas tribos germânicas e pela preferência por especiarias exóticas como canela e cardamomo.</li>
+<li>Apesar de sua presença histórica, o coentro agora é visto como um ingrediente estrangeiro na Itália, ao contrário de outras ervas como o manjericão.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895441">Reações</a></h3>
+<ul>
+<li>Itália não gosta de coentro desde 1544, quando o botânico Pietro Andrea Mattioli descreveu suas folhas como tendo cheiro de percevejos.</li>
+<li>A aversão pode ser influenciada geneticamente, pois algumas pessoas percebem o coentro como tendo gosto de sabão devido a um gene específico.</li>
+<li>A queda na popularidade do coentro na Itália também está ligada às mudanças nas tendências culinárias e nos padrões de migração, ilustrando a complexa interação entre genética, cultura e preferência pessoal na formação dos gostos alimentares.</li>
+</ul>
+<h2><a href="https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial">Gerenciamento de rede &#39;Out of Band&#39; não é trivial</a></h2>
+<ul>
+<li>Em 2022, a interrupção dos serviços de Internet e telefone da Rogers, que afetou mais de 12 milhões de canadenses, destacou a importância e a complexidade da gestão de rede &#39;Out of Band&#39; (OOB).</li>
+<li>Gerenciamento OOB requer hardware e infraestrutura dedicados, separados da rede principal, garantindo redundância e segurança, mas adicionando custo e complexidade significativos.</li>
+<li>Redes menores podem achar mais prático focar em uma gestão robusta e redundante dentro da banda, em vez de manter uma rede OOB separada.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895167">Reações</a></h3>
+<ul>
+<li>Gerenciamento de rede &#39;Out of Band&#39; (OOB) é essencial para manter a confiabilidade da rede, especialmente em sistemas digitais modernos que são propensos a configurações incorretas e falhas.</li>
+<li>As interrupções da Rogers destacaram a necessidade crítica de uma gestão OOB robusta, ressaltando a importância de um melhor planejamento e avaliação de riscos para prevenir falhas na rede central.</li>
+<li>Uma gestão eficaz de OOB envolve o uso de sistemas dedicados e redundantes, frequentemente aproveitando diferentes provedores ou tecnologias como LTE ou satélite para garantir a confiabilidade.</li>
+</ul>
+<h2><a href="https://github.com/sebastianwessel/quickjs">Execute JavaScript em um sandbox WebAssembly QuickJS</a></h2>
+<ul>
+<li>Este pacote TypeScript permite a execução segura de código JavaScript dentro de um sandbox WebAssembly usando o motor QuickJS, ideal para executar código não confiável com segurança.</li>
+<li>Os principais recursos incluem um ambiente isolado, sistema de arquivos virtual, módulos de nó personalizados, cliente de busca HTTP(S), executor de testes baseado em chai e desempenho eficiente.</li>
+<li>A embalagem é versátil e fácil de integrar com projetos TypeScript, oferecendo uma API amigável para execução e gerenciamento de código.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896873">Reações</a></h3>
+<ul>
+<li>Este pacote TypeScript permite a execução segura de código JavaScript dentro de um sandbox WebAssembly usando o motor QuickJS, garantindo o isolamento de código não confiável.</li>
+<li>Os principais recursos incluem um sistema de arquivos virtual, módulos de nó personalizados, um cliente fetch, um executor de testes e uma API amigável, suportando ambientes como NodeJS, Deno e Cloudflare Workers.</li>
+<li>Aviso de segurança observa que habilitar <code>fetch</code> pode expor os cookies do host a código não confiável, potencialmente comprometendo a segurança do sandbox.</li>
+</ul>
+<h2><a href="https://github.com/geohot/fromthetransistor">Do Transistor ao Navegador da Web, um esboço geral para um curso de 12 semanas</a></h2>
+<ul>
+<li>A disciplina abrange uma jornada abrangente desde a compreensão dos transistores até o desenvolvimento de um navegador web, proporcionando uma abordagem prática para aprender a integração de hardware e software.</li>
+<li>Os principais projetos incluem a construção de uma CPU ARM7, um compilador C, um sistema operacional semelhante ao UNIX e um navegador web baseado em texto, utilizando linguagens como Verilog, Python, Haskell e C.</li>
+<li>A grade curricular enfatiza habilidades práticas, como emulação com Verilator, design de placa FPGA e implementação de componentes essenciais do sistema, como uma MMU, controlador Ethernet e pilha TCP.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895935">Reações</a></h3>
+<ul>
+<li>Ao longo de 12 semanas, o curso intitulado &#39;Do Transistor ao Navegador Web&#39; por geohot no GitHub gerou discussões devido ao seu escopo ambicioso, mas com atualizações mínimas desde 2016.</li>
+<li>Os usuários debatem sua viabilidade, sugerindo ferramentas de aprendizado alternativas como &#39;Turing Complete&#39; e &#39;Shenzen I/O&#39;, e argumentam que pode ser muito denso para iniciantes, sendo mais adequado para programadores experientes.</li>
+<li>Críticos questionam a praticidade do curso e as intenções do autor, considerando-o excessivamente ambicioso e carente de substância em comparação com os cursos abrangentes de Engenharia Elétrica e de Computação.</li>
+</ul>
+<h2><a href="https://github.com/event-driven-io/Pongo">Mongo, mas no Postgres e com benefícios de consistência forte</a></h2>
+<ul>
+<li>Pongo Pongo é uma ferramenta que permite usar operações semelhantes às do MongoDB no PostgreSQL, aproveitando os benefícios da consistência forte.</li>
+<li>Ele traduz chamadas de API do MongoDB para consultas nativas do PostgreSQL, utilizando JSONB para operações de leitura/escrita eficientes e consultas complexas.</li>
+<li>Pongo não é um ORM (Mapeamento Objeto-Relacional) tradicional, mas foca no manuseio de dados de documentos, oferecendo flexibilidade e desempenho, embora não seja totalmente compatível com MongoDB.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897518">Reações</a></h3>
+<ul>
+<li>Pongo é um novo projeto que oferece uma API semelhante ao MongoDB sobre o PostgreSQL, aproveitando colunas JSONB para benefícios de consistência forte.</li>
+<li>A proposta do projeto é combinar a facilidade de uso do MongoDB com a consistência robusta e a confiabilidade do PostgreSQL, traduzindo a sintaxe do MongoDB para consultas nativas do PostgreSQL.</li>
+<li>Esse desenvolvimento despertou interesse devido ao seu potencial de oferecer uma experiência familiar do MongoDB enquanto utiliza os recursos avançados do PostgreSQL, atraindo desenvolvedores que buscam forte consistência em suas operações de banco de dados.</li>
+</ul>
+<h2><a href="https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838">Cientistas reaparecem após um ano em projeto de simulação de Marte</a></h2>
+<ul>
+<li>Quatro cientistas completaram uma simulação de um ano em Marte no habitat Mars Dune Alpha em Houston, uma estrutura impressa em 3D projetada para replicar as condições marcianas.</li>
+<li>A missão, parte do Análogo de Exploração da Saúde e Desempenho da Tripulação da NASA (CHAPEA), visa coletar insights para futuras missões a Marte e exploração espacial de longo prazo, incluindo o programa Artemis.</li>
+<li>As equipes realizaram &#39;caminhadas em Marte&#39; e lidaram com estressores como isolamento e atrasos na comunicação, com missões CHAPEA adicionais planejadas para 2025 e 2027.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896110">Reações</a></h3>
+<ul>
+<li>Cientistas concluíram uma simulação de Marte que durou um ano, focando na resistência humana em ambientes isolados e de alto estresse.</li>
+<li>As dinâmicas psicológicas e sociais são mais desafiadoras de gerenciar do que as necessidades nutricionais.</li>
+<li>Discussões incluem considerações técnicas e éticas, potenciais altas taxas de mortalidade e a necessidade de preparação extensiva e missões iniciais menores para a colonização de Marte.</li>
+</ul>
+<h2><a href="https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html">&quot;IA&quot;, estudantes e crise epistêmica</a></h2>
+<ul>
+<li>A postagem de um blog de 6 de julho de 2024 discute o uso do ChatGPT por um estudante como motor de busca, resultando no estudante acreditando em informações falsas.</li>
+<li>A autora destaca a dificuldade de combater a desinformação gerada por IA, pois cada aluno pode receber fatos incorretos únicos, complicando o processo de correção.</li>
+<li>A postagem reflete sobre a questão mais ampla do impacto da desinformação na educação e foi removida devido a assédio.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896212">Reações</a></h3>
+<ul>
+<li>Os estudantes de hoje dependem significativamente da IA e da internet para obter informações, em contraste com as gerações anteriores que realizavam pesquisas manuais em bibliotecas.</li>
+<li>Os educadores estão preocupados que essa dependência possa prejudicar a capacidade dos alunos de avaliar criticamente as informações, resultando em redações que frequentemente carecem de profundidade.</li>
+<li>Embora as ferramentas de IA sejam úteis, elas também podem gerar informações falsas, provocando um debate sobre a integração dessas ferramentas na educação enquanto se promove habilidades de pensamento crítico.</li>
+</ul>
+<h2><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public">OpenAI foi hackeada, violação de um ano não foi reportada ao público</a></h2>
+<ul>
+<li>Os hackers invadiram os sistemas de mensagens internos da OpenAI no início do ano passado, expondo informações sensíveis, mas sem acessar os principais sistemas de IA, levantando preocupações de segurança e segurança nacional.</li>
+<li>OpenAI divulgou o incidente internamente em abril de 2023, afirmando que nenhum dado de cliente foi roubado e que o hacker provavelmente não tinha ligações com o governo; no entanto, a violação aumentou os temores sobre adversários estrangeiros, particularmente a China, avançando suas tecnologias de IA.</li>
+<li>Desde então, a OpenAI melhorou suas medidas de segurança, estabeleceu um Comitê de Segurança e Proteção, e o incidente provocou discussões sobre regulamentações federais e estaduais para controlar a liberação da tecnologia de IA.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40894082">Reações</a></h3>
+<ul>
+<li>OpenAI sofreu um ataque não relatado no ano passado, levando a preocupações dos usuários sobre transparência e práticas de segurança.</li>
+<li>A violação envolveu o acesso a sistemas de mensagens internos, mas não comprometeu as principais tecnologias de IA.</li>
+<li>Usuários discutiram dificuldades em relatar bugs e frustrações com as práticas padrão de relatórios de segurança da OpenAI.</li>
+</ul>
+<h2><a href="https://www.nature.com/articles/d41586-024-02222-x">Quais são as causas das enxaquecas? Estudo sobre &#39;apagão cerebral&#39; oferece pistas</a></h2>
+<ul>
+<li>A study in mice, published in Science on 4 July 2024, reveals new insights into migraine causes, linking brief brain &#39;blackouts&#39; to changes in cerebrospinal fluid that activate pain receptors in the skull.</li>
+<li>A pesquisa sugere que as enxaquecas podem servir como um mecanismo de proteção sinalizando a necessidade de descanso e identifica uma lacuna anteriormente desconhecida nas camadas protetoras ao redor do gânglio trigeminal.</li>
+<li>Essa descoberta pode levar ao desenvolvimento de novos tratamentos para enxaquecas, ao direcionar os mecanismos recém-identificados.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40893749">Reações</a></h3>
+<ul>
+<li>A study suggests that cortical spreading depression (CSD), a &#39;brain blackout,&#39; might be involved in migraines.</li>
+<li>Relataram vários gatilhos e tratamentos, incluindo mudanças na dieta, medicamentos como Rizatriptano e ajustes no estilo de vida, como melhora no sono e hidratação.</li>
+<li>A discussão destaca a complexidade das enxaquecas, com diferentes gatilhos e tratamentos sendo eficazes para diferentes indivíduos.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Os embeds do YouTube são extremamente pesados e isso é solucionável" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Os%20embeds%20do%20YouTube%20s%C3%A3o%20extremamente%20pesados%20e%20isso%20%C3%A9%20solucion%C3%A1vel&subheading=domingo%2C%207%20de%20julho%20de%202024%3A%20Resumo%20do%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/pt/2024/07/07</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-06]]></title>
             <description
@@ -1681,192 +1877,6 @@
             <link>https://hn.cho.sh/pt/2024/06/28</link>
             <guid isPermaLink="false">2024-06-28T00:00:00.000Z</guid>
             <pubDate>Fri, 28 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-27]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/27&#39;</h2>
-<h1>2024-06-27</h1>
-<h2><a href="https://www.tomshardware.com/tech-industry/cyber-security/south-korean-telecom-company-attacks-torrent-users-with-malware-over-600000-people-report-missing-files-strange-folders-and-disabled-pcs">Empresa de telecomunicações sul-coreana ataca usuários de torrent com malware</a></h2>
-<ul>
-<li>KT Corporation, uma grande empresa de telecomunicações sul-coreana, infectou intencionalmente mais de 600.000 usuários com malware para interromper o serviço de Grid baseado em BitTorrent da Webhard, começando em maio de 2020.</li>
-<li>Malware causou problemas como arquivos ausentes, pastas estranhas e PCs desativados, e foi rastreado até o centro de dados da KT.</li>
-<li>Autoridades acusaram 13 indivíduos, incluindo funcionários da KT, e a KT defendeu suas ações citando sobrecarga na rede e taxas de uso não pagas, embora a instalação não autorizada de malware tenha causado problemas significativos aos clientes.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805099">Reações</a></h3>
-<ul>
-<li>Empresa de telecomunicações sul-coreana supostamente mira usuários de torrent com malware, levantando preocupações significativas de privacidade e ética.</li>
-<li>O incidente destaca problemas contínuos com provedores de serviços de internet (ISPs) na Coreia do Sul, incluindo altas taxas e possível abuso de poder.</li>
-<li>Esta situação gerou discussões sobre o estado da liberdade e infraestrutura da internet na Coreia do Sul, que já foi conhecida por suas rápidas velocidades de internet, mas agora enfrenta críticas por práticas desatualizadas e controle governamental.</li>
-</ul>
-<h2><a href="https://latenighter.com/news/paramount-axes-comedy-central-website-show-clips-library/">25 anos de videoclipes perdidos enquanto a Paramount encerra o site da Comedy Central</a></h2>
-<ul>
-<li>Paramount fechou o site ComedyCentral.com, removendo mais de 25 anos de clipes do The Daily Show e do The Colbert Report, direcionando os visitantes para provedores de TV ou Paramount+.</li>
-<li>Outros programas como The Opposition with Jordan Klepper e Lights Out with David Spade também são afetados, com episódios mais antigos não disponíveis no Paramount+.</li>
-<li>Esta medida faz parte das ações de corte de custos da Paramount para gerenciar mais de 14 bilhões de dólares em dívidas, seguindo ações semelhantes com MTV.com e CMT.com, visando simplificar os sites e direcionar os espectadores para o Paramount+.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40807032">Reações</a></h3>
-<ul>
-<li>Paramount removeu 25 anos de clipes de vídeo do site da Comedy Central, gerando críticas sobre a percepção de subvalorização do conteúdo pela administração.</li>
-<li>Críticos argumentam que o conteúdo poderia ter sido monetizado ou preservado, destacando as complexidades dos direitos de mídia e os desafios regulatórios na distribuição de conteúdo mais antigo.</li>
-<li>A remoção é vista como uma medida de corte de custos pela Paramount em meio a dificuldades financeiras, com alguns lamentando a perda da história cultural e sugerindo a pirataria como um meio de preservação.</li>
-</ul>
-<h2><a href="https://web.dev/case-studies/google-sheets-wasmgc">Google Sheets migrou seu trabalhador de cálculo de JavaScript para WasmGC</a></h2>
-<ul>
-<li>Google Sheets fez a transição de JavaScript para WasmGC (Coleta de Lixo do WebAssembly) para melhorar o desempenho, especialmente para planilhas grandes.</li>
-<li>WasmGC suporta linguagens com coleta de lixo como Java, oferecendo uma velocidade quase nativa na web, e o Google Sheets está entre os primeiros a implementá-lo.</li>
-<li>Inicialmente, o desempenho do WasmGC era mais lento do que o do JavaScript, mas otimizações subsequentes melhoraram significativamente sua velocidade, demonstrando seu potencial para revolucionar o desenvolvimento de aplicações web.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40808820">Reações</a></h3>
-<ul>
-<li>Google Sheets mudou seu mecanismo de cálculo de JavaScript para WasmGC, inicialmente experimentando um desempenho mais lento, mas depois otimizando-o para ser duas vezes mais rápido que a versão em JS.</li>
-<li>Essa mudança envolveu esforços significativos de reimplementação, incluindo desvirtualização e aproveitamento das APIs do navegador, com o objetivo de melhorar o desempenho e utilizar o coletor de lixo nativo do V8.</li>
-<li>Apesar das melhorias, alguns usuários ainda acham o Google Sheets mais lento em comparação com aplicativos nativos como o Excel, destacando a evolução contínua e a otimização das tecnologias web.</li>
-</ul>
-<h2><a href="https://thezvi.substack.com/p/on-claude-35-sonnet">Soneto Claude 3.5</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40806698">Reações</a></h3>
-<ul>
-<li>Anthropic introduziu o recurso Projetos para usuários Pro e Team, permitindo múltiplos projetos com seus próprios materiais de referência, aumentando a conveniência para os usuários.</li>
-<li>Claude 3.5 Sonnet está recebendo elogios por suas habilidades de codificação, com usuários observando que ele ajuda programadores experientes a trabalharem mais rápido e é superior a outros modelos como o GPT-4.</li>
-<li>Os usuários estão discutindo as aplicações práticas e limitações do Claude 3.5 Sonnet, incluindo seu desempenho em tarefas de sumarização, recomendação e assistência em codificação, com alguns preferindo-o às ofertas da OpenAI.</li>
-</ul>
-<h2><a href="http://mynor.org/my4th_forthdeck.htm">A Forth Deck mini: um computador Forth portátil com uma CPU discreta</a></h2>
-<ul>
-<li>A Forth Deck mini é um computador portátil Forth com uma CPU discreta, apresentando um LCD de 40x4 caracteres, teclado QWERTY de 56 botões e bateria LiPo de 6,6 Wh com 6 horas de autonomia.</li>
-<li>Inclui uma CPU lógica CMOS de 8 bits, 32 KB de ROM, 32 KB de RAM, até 256 KB de EEPROM e RS-232 com 4800 baud, lembrando os computadores domésticos dos anos 70 e 80 com interpretadores Basic embutidos.</li>
-<li>Aparelho pode ser montado usando um kit da Budgetronics, excluindo a bateria e o circuito de carregamento, e está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40804122">Reações</a></h3>
-<ul>
-<li>A Forth Deck mini é um computador Forth portátil com uma CPU discreta construída com alguns chips lógicos e uma EEPROM, operando em um barramento de dados e endereços de 8 bits.</li>
-<li>Entusiastas estão discutindo seu design, possíveis modificações e comparações com outros CPUs como o Novix NC4000, assim como a ideia de um dialeto Forth baseado em Factor para scripting.</li>
-<li>As conversas destacam os desafios de criar computadores modernos para hobbyistas com bons teclados e displays, fazendo referência a dispositivos como o TRS-80 Model 100 e o AlphaSmart, e mencionando alternativas como o M5Stack Cardputer e o Zorzpad.</li>
-</ul>
-<h2><a href="https://www.npr.org/sections/shots-health-news/2024/06/26/g-s1-6177/brain-waste-removal-system-amyloid-alzheimer-toxins">Os cérebros produzem muito lixo. Agora os cientistas acham que sabem para onde ele vai</a></h2>
-<ul>
-<li>Cientistas descobriram novos detalhes sobre o sistema de remoção de resíduos do cérebro, que é essencial para manter a saúde cerebral e prevenir distúrbios.</li>
-<li>Pesquisas publicadas na Nature revelam que ondas elétricas lentas durante o sono ajudam a empurrar o fluido carregado de resíduos das profundezas do cérebro para sua superfície, onde é absorvido pela corrente sanguínea e removido pelo fígado e pelos rins.</li>
-<li>Este sistema glinfático é crucial para a eliminação de amiloide, uma substância ligada à doença de Alzheimer, e a remoção de resíduos prejudicada pode contribuir para vários distúrbios cerebrais como Alzheimer, Parkinson, dores de cabeça e depressão.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805251">Reações</a></h3>
-<ul>
-<li>Os cientistas identificaram que o sono profundo desempenha um papel crucial na eliminação de resíduos cerebrais, incluindo proteínas amiloides, que estão ligadas ao Alzheimer e à demência.</li>
-<li>Pesquisas sugerem que induzir ondas elétricas lentas no cérebro através da estimulação por luz e som poderia melhorar essa limpeza de resíduos, embora a maioria dos estudos atualmente seja em camundongos.</li>
-<li>Fatores como o consumo de café, exercícios e padrões de sono também estão sendo discutidos por seu potencial impacto na saúde do cérebro.</li>
-</ul>
-<h2><a href="https://fastvoiceagent.cerebrium.ai/">Bots de voz com tempos de resposta de 500ms</a></h2>
-<ul>
-<li>Experimentação com interfaces de voz e grandes modelos de linguagem (LLMs) começou após o lançamento do GPT-4, destacando a natureza envolvente e os novos desafios das interações de voz com IA generativa.</li>
-<li>Alcançar um tempo de resposta de voz para voz de 500ms é desafiador, mas possível ao hospedar transcrição, inferência de LLM e geração de voz juntos, otimizando o roteamento de dados e garantindo um bom cache de wifi e VRAM.</li>
-<li>A demonstração de um bot de voz capaz de 500ms e um contêiner para implantação em GPUs A10/A100/H100 está disponível, com métricas atuais mostrando um ciclo total de resposta de 759ms, indicando rápida evolução da IA e potenciais simplificações futuras.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805010">Reações</a></h3>
-<ul>
-<li>É possível que bots de voz alcancem tempos de resposta de 500ms otimizando os processos de transcrição, inferência de LLM e geração de voz, juntamente com roteamento de dados eficiente e caching.</li>
-<li>Os indicadores para resposta de voz a voz totalizam 759ms, mas futuros LLMs com capacidades nativas de áudio podem reduzir ainda mais esse tempo.</li>
-<li>Os usuários destacaram a importância da baixa latência nas interações de IA, especialmente no atendimento ao cliente, e discutiram possíveis melhorias técnicas, como suporte a navegadores e processamento no dispositivo.</li>
-</ul>
-<h2><a href="https://fabric8labs.com">Impressão 3D de metal de próxima geração</a></h2>
-<ul>
-<li>Fabric8Labs, uma startup de San Diego, garantiu US$ 50 milhões em financiamento da Série B para avançar sua tecnologia de manufatura aditiva eletroquímica.</li>
-<li>A verba apoiará a construção de uma nova fábrica de impressão 3D, aumentando significativamente a força de trabalho da empresa.</li>
-<li>Este investimento destaca o crescente interesse e a entrada de capital em startups de impressão 3D, impulsionados por tecnologias de manufatura inovadoras.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40803783">Reações</a></h3>
-<ul>
-<li>Impressão 3D de metal de próxima geração pela Fabric8Labs emprega métodos eletroquímicos para fabricação precisa, rápida e versátil, alcançando resolução em nível de micrômetros.</li>
-<li>Esta técnica combina processos aditivos e subtrativos, depositando principalmente metais puros e algumas ligas, tornando-a mais segura e eficiente em termos de energia ao evitar altas temperaturas e pós metálicos.</li>
-<li>A tecnologia da Fabric8Labs é promissora para aplicações como PCBs (Placas de Circuito Impresso) e estruturas internas complexas, e a empresa está explorando oportunidades comerciais com essa abordagem única.</li>
-</ul>
-<h2><a href="https://lars.ingebrigtsen.no/2024/06/26/a-new-package-for-making-charts-in-emacs-eplot/">Eplot: Um novo pacote para criar gráficos no Emacs</a></h2>
-<ul>
-<li>Um novo pacote do Emacs chamado eplot foi lançado, projetado para criar gráficos simples diretamente no Emacs.</li>
-<li>Eplot aborda limitações encontradas em ferramentas existentes como chart.el e Gnuplot, oferecendo recursos como números sensatos no eixo Y e gradientes SVG.</li>
-<li>A embalagem é fácil de usar, permitindo que os usuários gerem gráficos digitando M-x eplot em um buffer com números, e está documentada no GitHub.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40807923">Reações</a></h3>
-<ul>
-<li>Um novo pacote chamado Eplot foi lançado para criar gráficos no Emacs, um editor de texto popular entre os desenvolvedores.</li>
-<li>A embalagem atraiu atenção por sua simplicidade e flexibilidade, com sugestões para melhorar a experiência do usuário aproveitando as variáveis locais de arquivos e diretórios do Emacs.</li>
-<li>Discussões destacam comparações com outras ferramentas de criação de gráficos como Gnuplot e Matplotlib, observando os pontos fortes e fracos de cada uma no contexto do Emacs.</li>
-</ul>
-<h2><a href="https://www.joanwestenberg.com/6-months-ago,-i-left-the-bullshit-industrial-complex">Há 6 meses, eu deixei o complexo industrial de besteiras</a></h2>
-<ul>
-<li>Um ex-profissional de relações públicas de tecnologia revela seu passado promovendo startups exageradas, que financiaram um estilo de vida luxuoso, mas levaram a dúvidas éticas.</li>
-<li>Decidiram deixar a indústria lucrativa, mas moralmente questionável, para se concentrar em escrever honestamente sobre o impacto real da tecnologia e do capital de risco na vida humana.</li>
-<li>Apesar dos riscos financeiros e de carreira, eles encontram integridade e realização pessoal em seu novo caminho, rejeitando as promessas vazias da indústria de tecnologia.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40806930">Reações</a></h3>
-<ul>
-<li>A autora expressa desilusão com a indústria de tecnologia, observando uma mudança de resolver problemas humanos para extrair valor nos últimos 25 anos.</li>
-<li>Observações principais incluem uma postagem no Reddit afirmando que os anos 90 foram o auge da humanidade e uma citação viral sobre a IA fazer tarefas domésticas em vez de trabalho criativo, destacando uma visão nostálgica do otimismo tecnológico do passado.</li>
-<li>Apesar das preocupações com a exploração de dados e os motivos orientados pelo lucro, ainda há esperança nas comunidades de código aberto e em hacks inovadores, embora a busca incessante pelo lucro tenha levado a um desânimo generalizado.</li>
-</ul>
-<h2><a href="https://www.govexec.com/pay-benefits/2024/06/federal-whistleblowers-are-entitled-damages-missed-future-pay-court-rules/397638/">Denunciantes federais têm direito a indenizações por salários futuros perdidos, decide tribunal</a></h2>
-<ul>
-<li>A Corte de Apelações dos EUA para o Circuito Federal decidiu que denunciantes federais podem receber indenizações compensatórias por perdas futuras de ganhos se sua demissão prejudicou seu potencial de ganho.</li>
-<li>Deborah Perlick, demitida após relatar fundos desaparecidos, argumentou com sucesso por uma compensação adicional além do pagamento retroativo, impactando suas futuras perspectivas de emprego.</li>
-<li>Esta decisão estabelece um precedente para denunciantes federais, permitindo reivindicações por ganhos futuros perdidos sem a necessidade de emprego futuro garantido, e o caso foi remetido ao Conselho de Proteção dos Sistemas de Mérito para uma decisão final.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40804489">Reações</a></h3>
-<ul>
-<li>A justiça decidiu que os denunciantes federais têm direito a indenizações por salários futuros perdidos, mesmo sem um emprego futuro garantido, desde que haja evidências suficientes de provável emprego futuro.</li>
-<li>Esta decisão pode encorajar mais denunciantes ao aliviar preocupações sobre a perda de ganhos futuros e alinha os direitos dos funcionários federais com os dos funcionários do setor privado.</li>
-<li>A questão, envolvendo um funcionário do VA (Veterans Affairs), enfatizou que o dano reputacional que afeta ganhos futuros é indenizável.</li>
-</ul>
-<h2><a href="https://www.ams.org/notices/199701/comm-rota.pdf">Lições que Eu Gostaria de Ter Aprendido (1996) [pdf]</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40808933">Reações</a></h3>
-<ul>
-<li>‘Lessons I Wish I Had Been Taught (1996)’ de Gian-Carlo Rota gerou discussões no Hacker News, com usuários compartilhando unidades de medida únicas como ‘microcentury’ (50 minutos) e ‘nanoacre’ (4 milímetros quadrados).</li>
-<li>Conversas também abordaram a duração das palestras, a capacidade de atenção e a importância de introduções envolventes em trabalhos acadêmicos, refletindo sobre os ensinamentos impactantes de Rota.</li>
-<li>A discussão destacou um interesse recorrente nas percepções de Rota, com usuários relembrando experiências pessoais e fazendo referência a discussões e recursos relacionados.</li>
-</ul>
-<h2><a href="https://www.lawgazette.co.uk/news/post-office-lawyers-held-secret-meeting-with-judge-to-stop-disclosure/5119593.article">Advogados dos Correios realizaram reunião secreta com juiz para impedir divulgação</a></h2>
-<ul>
-<li>Os advogados dos Correios realizaram uma reunião secreta com um juiz em 2013 para impedir a divulgação de um relatório que revelava possíveis problemas com o sistema Horizon aos advogados de defesa em um julgamento criminal.</li>
-<li>A investigação ouviu que o advogado de acusação Martin Smith admitiu que não cumpriu com seus deveres e carecia da expertise necessária, levantando preocupações sobre condenações passadas e práticas de divulgação.</li>
-<li>A investigação em andamento continua a revelar vários problemas de divulgação à medida que os Correios se aproximam da mediação e das revisões de condenações passadas.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40808808">Reações</a></h3>
-<ul>
-<li>Advogados dos Correios se reuniram secretamente com um juiz para bloquear a divulgação de provas, resultando em condenações injustas.</li>
-<li>Os defensores públicos estão sobrecarregados, gerenciando até 700 casos anualmente, o que prejudica a defesa eficaz.</li>
-<li>A justiça favorece aqueles que podem pagar advogados particulares, ressaltando a necessidade de reformas legais e melhor financiamento para defensores públicos a fim de garantir julgamentos justos.</li>
-</ul>
-<h2><a href="https://www.readmargins.com/p/doordash-and-pizza-arbitrage">DoorDash e Arbitragem de Pizza (2020)</a></h2>
-<ul>
-<li>Doordash listou uma pizzaria sem a permissão do proprietário, levando a problemas com entregas frias e preços incorretos.</li>
-<li>Uma oportunidade de arbitragem surgiu devido a erros de precificação do Doordash, permitindo lucro ao fazer pedidos a preços mais baixos e vender a preços mais altos dos restaurantes.</li>
-<li>O artigo critica o modelo de negócios de entrega de alimentos como ineficiente e explorador, sugerindo que uma abordagem mais integrada, como a da Domino&#39;s, pode ser mais sustentável.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40806356">Reações</a></h3>
-<ul>
-<li>DoorDash e serviços de entrega de alimentos semelhantes enfrentam críticas por modelos de negócios insustentáveis que dependem de mão de obra mal remunerada e altos custos de aquisição de clientes.</li>
-<li>Críticos argumentam que essas práticas exacerbam a desigualdade econômica e sugerem taxar o capital acumulado para redistribuir a riqueza.</li>
-<li>A discussão inclui preocupações sobre o impacto negativo na qualidade dos restaurantes e a ética desses serviços de entrega, questionando sua sustentabilidade e benefícios a longo prazo.</li>
-</ul>
-<h2><a href="https://github.com/corcel/corcel">Corcel – Use o backend do WordPress com Laravel ou qualquer aplicação PHP</a></h2>
-<ul>
-<li>Corcel é uma biblioteca PHP construída sobre o Eloquent ORM do Laravel, permitindo a recuperação direta de dados de um banco de dados WordPress, utilizável com Laravel ou qualquer projeto PHP via Composer.</li>
-<li>Os principais recursos incluem suporte para tipos de post personalizados, shortcodes, taxonomias, páginas, anexos, revisões, miniaturas, opções, menus, usuários e autenticação.</li>
-<li>Instalação e configuração são simples, com registro automático para Laravel 5.5+ e configuração manual para versões mais antigas ou projetos não Laravel.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805351">Reações</a></h3>
-<ul>
-<li>Corcel permite o uso de um backend WordPress com Laravel ou qualquer aplicação PHP, provando ser eficaz em ambientes de produção.</li>
-<li>Os usuários integraram com sucesso o Corcel com Laravel, Filament e LunarPHP para melhorar o desempenho, como resgatar sites WooCommerce lentos.</li>
-<li>Corcel é elogiado por sua interface perfeita com dados do WordPress, oferecendo uma solução sustentável para projetos PHP que precisam interagir com bancos de dados do WordPress, e é comparado favoravelmente a ferramentas como Prismic, Strapi e Shopify.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Empresa de telecomunicações sul-coreana ataca usuários de torrent com malware" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Empresa%20de%20telecomunica%C3%A7%C3%B5es%20sul-coreana%20ataca%20usu%C3%A1rios%20de%20torrent%20com%20malware&subheading=quinta-feira%2C%2027%20de%20junho%20de%202024%3A%20Resumo%20do%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/pt/2024/06/27</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

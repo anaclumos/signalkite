@@ -1,0 +1,332 @@
+[
+  {
+    "id": 40897205,
+    "title": "“嵌入的YouTube视频非常占资源，但这是可以解决的”",
+    "originLink": "https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897205",
+    "commentBody": "",
+    "originSummary": [
+      "“嵌入的YouTube视频资源消耗大，每个嵌入大约占用1.3MB并产生32个请求，导致加载时间慢和数据传输量高。”",
+      "“像Paul Irish的“lite-youtube-embed”这样的Web组件可以将大小减少到大约100k，共享资源并显著提高性能。”",
+      "“实施此解决方案涉及链接JavaScript、在HTML中使用组件以及异步加载脚本以提高性能。”"
+    ],
+    "commentSummary": [
+      "“一个社区论坛平台已将 YouTube 嵌入替换为代理缩略图，这些缩略图仅在点击时加载，从而减少了下载大型 JavaScript 文件的需求，并防止了 Google 跟踪。”",
+      "“类似的解决方案已经在 YouTube、SoundCloud 和 Reddit 的嵌入中实施，以增强功能并减少臃肿。”",
+      "“关于较轻的嵌入是否会因视频启动时间较慢而减少用户参与度存在争议，但许多人认为，提高整体页面加载时间对用户体验和网站性能更为重要。”"
+    ],
+    "points": 236,
+    "commentCount": 135,
+    "retryCount": 0,
+    "time": 1720355875
+  },
+  {
+    "id": 40896102,
+    "title": "“Malloc破坏了Serenity的JPGLoader，或：如何赢得彩票(2021)”",
+    "originLink": "https://sin-ack.github.io/posts/jpg-loader-bork/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896102",
+    "commentBody": "",
+    "originSummary": [
+      "“SerenityOS 的 JPG 图像解码中存在一个错误，由于 RGB 和 BGR 的混淆导致颜色显示不正确。”",
+      "“问题追溯到一个实现 `malloc_good_size()` 的提交，该提交改变了内存分配，并影响了 `JPGLoader` 中使用的 `HashTable` 和 `Vector` 等数据结构。”",
+      "“修复涉及确保在 `JPGLoader` 中对组件进行确定性迭代，突显了简单的更改如何揭示重大的潜在问题。”"
+    ],
+    "commentSummary": [
+      "“有些哈希表实现引入了随机性，以防止依赖元素顺序并增强安全性，而现代实现通常保证按插入顺序迭代。”",
+      "“JavaScript 和 Python 在其哈希表实现中标准化了插入顺序，Python 在 3.7 版本中采用了这一点。”",
+      "“Rust 提供了不同的哈希表选项(`HashMap`、`BTreeMap`、`IndexMap`)，而 Perl 在 5.18 版本之后引入了哈希表的随机种子。”"
+    ],
+    "points": 177,
+    "commentCount": 143,
+    "retryCount": 0,
+    "time": 1720341723
+  },
+  {
+    "id": 40895672,
+    "title": "“BeaconDB – Mozilla位置服务的替代方案”",
+    "originLink": "https://beacondb.net/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895672",
+    "commentBody": "",
+    "originSummary": [
+      "“beaconDB 是一个公共领域的无线地理定位数据库，覆盖了30个国家的177,176个网络、4,126个信标和6,106个塔，数据收集是通过道德来源和用户选择加入的方式进行的。”",
+      "“该数据库注重隐私，通过混淆信息来保护传输者和贡献者，并且需要物理接近才能更新数据，从而使其具有抗滥用性。”",
+      "“开发人员可以使用与Ichnaea请求格式兼容的端点 `https://beacondb.net/v1/geolocate`，但它不适用于高流量应用；源代码可在Codeberg上获取。”"
+    ],
+    "commentSummary": [
+      "“BeaconDB 被作为 Mozilla 位置服务 (MLS) 的替代方案，专注于道德来源的、选择性加入的数据收集。”",
+      "“与苹果和谷歌不同，BeaconDB 不发布明文 MAC 地址，而是使用哈希或聚合数据来增强隐私。”",
+      "“BeaconDB 是唯一一个非大型科技公司的定位服务数据库，旨在提供开源解决方案并讨论潜在的合作机会。”"
+    ],
+    "points": 170,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1720333550
+  },
+  {
+    "id": 40897506,
+    "title": "“系统编程聚会的重新兴起”",
+    "originLink": "https://notes.eatonphil.com/2024-07-07-systems-meetups.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897506",
+    "commentBody": "",
+    "originSummary": [
+      "“2024年，慕尼黑、柏林、旧金山、纽约市和班加罗尔等城市的高质量系统编程聚会重新兴起。”",
+      "“纽约市系统咖啡俱乐部成立于2023年12月，专注于工程挑战，并迅速发展，激发了全球类似的聚会。”",
+      "“组织聚会的关键建议包括确定一个主办场地，专注于技术内容，通过行业关系寻找演讲者，并与其他组织者合作。”"
+    ],
+    "commentSummary": [
+      "“系统编程聚会正在经历复兴，突显了社区对低级编程和系统架构的兴趣重新燃起。”",
+      "“组织这样的聚会面临挑战，包括寻找稳定的场地，这通常需要强有力的内部支持或市政支持才能确保一致的地点。”",
+      "“聚会内容的质量和重点至关重要，一些团体在平衡真正的技术讨论和演讲者的自我推销演示之间挣扎。”"
+    ],
+    "points": 164,
+    "commentCount": 65,
+    "retryCount": 0,
+    "time": 1720358437
+  },
+  {
+    "id": 40892812,
+    "title": "“哪里有学习音频处理的好资源？”",
+    "originLink": "https://news.ycombinator.com/item?id=40892812",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40892812",
+    "commentBody": "",
+    "originSummary": [
+      "“用户正在寻找资源来编写一个类似于麻省理工学院的本·布隆伯格为雅各布·科利尔创建的和声器的程序。”",
+      "“他们需要关于音高转换和格式转换的易懂信息，这些信息能够保持自然的音质。”",
+      "“该用户有丰富的编程经验，但缺乏音频处理方面的知识，这表明需要初学者友好且全面的资源。”"
+    ],
+    "commentSummary": [
+      "“一个用户正在寻找资源来编写一个类似于Jacob Collier的和声器，该和声器由麻省理工学院的Ben Bloomberg创建，重点在于音高和格式转换。”",
+      "“推荐的资源包括斯坦福大学CCRMA的开放课程材料、Zplane的Elastique等行业标准库，以及Udo Zölzer的《DAFX - 数字音频效果》一书。”",
+      "“其他建议包括教程、YouTube频道以及像Officehours.global这样的社区论坛，用于网络交流和进一步学习。”"
+    ],
+    "points": 144,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1720295988
+  },
+  {
+    "id": 40893866,
+    "title": "“一个免费的极简主义日常习惯追踪器”",
+    "originLink": "https://rdht.vercel.app/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893866",
+    "commentBody": "",
+    "originSummary": [
+      "“一个新的习惯追踪应用程序已经由对现有选项不满意的个人开发，具有连胜追踪、离线可用性、连胜冻结、视觉一致性地图和暂停功能。”",
+      "“该应用程序使用React构建前端，使用Dexie cloud进行存储和同步，并托管在Vercel上。”",
+      "“开发者已将该应用程序公开使用，展示了一个个人项目如何转变为社区资源。”"
+    ],
+    "commentSummary": [
+      "“一个新的免费极简主义日常习惯追踪器已经被创建，以解决现有应用程序中的不足，具有连续追踪、离线使用、连续中断、视觉一致性地图和暂停功能。”",
+      "“该应用程序使用React和Dexie云构建，并托管在Vercel上，已经收到了改进反馈，特别是针对iPhone用户的反馈，包括对不良习惯的建议、设计调整和错误修复。”",
+      "“用户欣赏简洁的设计和离线功能，并建议增加折叠视图和更好的移动兼容性；目前还没有货币化计划。”"
+    ],
+    "points": 117,
+    "commentCount": 51,
+    "retryCount": 0,
+    "time": 1720305433
+  },
+  {
+    "id": 40895441,
+    "title": "“为什么意大利不再钟情于香菜”",
+    "originLink": "https://www.atlasobscura.com/articles/what-are-italian-herbs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895441",
+    "commentBody": "",
+    "originSummary": [
+      "“香菜，曾经是古罗马菜肴中的主食，如今在现代意大利烹饪中几乎消失了，尤其是它的叶子。”",
+      "“衰退始于罗马之后，受日耳曼部落的影响以及对肉桂和豆蔻等异国香料的偏好所致。”",
+      "“尽管有着历史渊源，香菜现在在意大利被视为一种外来食材，不像罗勒等其他香草。”"
+    ],
+    "commentSummary": [
+      "“意大利对香菜的厌恶可以追溯到1544年，当时植物学家皮埃特罗·安德烈亚·马蒂奥利形容其叶子闻起来像臭虫。”",
+      "“这种厌恶可能受到基因的影响，因为有些人由于特定基因的存在，会觉得香菜的味道像肥皂。”",
+      "“香菜在意大利受欢迎程度的下降也与烹饪趋势的变化和移民模式有关，这说明了基因、文化和个人喜好在塑造食物口味方面的复杂相互作用。”"
+    ],
+    "points": 108,
+    "commentCount": 116,
+    "retryCount": 0,
+    "time": 1720329769
+  },
+  {
+    "id": 40895167,
+    "title": "“带外网络管理并非易事”",
+    "originLink": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895167",
+    "commentBody": "",
+    "originSummary": [
+      "“2022年罗杰斯互联网和电话中断事件影响了超过1200万加拿大人，突显了“带外” (OOB) 网络管理的重要性和复杂性。”",
+      "“带外管理需要专用的硬件和基础设施，与主网络分开，确保冗余和安全性，但增加了显著的成本和复杂性。”",
+      "“较小的网络可能会发现，专注于强健的、冗余的带内管理比维护一个单独的带外网络更为实用。”"
+    ],
+    "commentSummary": [
+      "“带外(OOB)网络管理对于维护网络可靠性至关重要，特别是在容易出现配置错误和故障的现代数字系统中。”",
+      "“罗杰斯的停电突显了强大OOB管理的关键需求，强调了更好的规划和风险评估的重要性，以防止核心网络故障。”",
+      "“有效的OOB管理涉及使用专用的冗余系统，通常利用不同的提供商或技术，如LTE或卫星，以确保可靠性。”"
+    ],
+    "points": 105,
+    "commentCount": 70,
+    "retryCount": 0,
+    "time": 1720324841
+  },
+  {
+    "id": 40896873,
+    "title": "“在WebAssembly QuickJS沙箱中执行JavaScript”",
+    "originLink": "https://github.com/sebastianwessel/quickjs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896873",
+    "commentBody": "",
+    "originSummary": [
+      "“这个TypeScript包允许使用QuickJS引擎在WebAssembly沙箱中安全地执行JavaScript代码，非常适合安全地运行不受信任的代码。”",
+      "“主要特点包括隔离环境、虚拟文件系统、自定义节点模块、HTTP(S)获取客户端、基于Chai的测试运行器以及高效的性能。”",
+      "“该软件包功能多样且易于与TypeScript项目集成，提供了一个用户友好的API用于代码执行和管理。”"
+    ],
+    "commentSummary": [
+      "“这个TypeScript包使用QuickJS引擎在WebAssembly沙箱中安全执行JavaScript代码，确保不受信任代码的隔离。”",
+      "“主要功能包括虚拟文件系统、自定义节点模块、fetch客户端、测试运行器和用户友好的API，支持NodeJS、Deno和Cloudflare Workers等环境。”",
+      "“安全警告指出，启用 `fetch` 可能会将主机的 cookies 暴露给不受信任的代码，从而可能危及沙箱的安全性。”"
+    ],
+    "points": 104,
+    "commentCount": 32,
+    "retryCount": 0,
+    "time": 1720352245
+  },
+  {
+    "id": 40895935,
+    "title": "“从晶体管到网页浏览器，12周课程的大纲”",
+    "originLink": "https://github.com/geohot/fromthetransistor",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895935",
+    "commentBody": "",
+    "originSummary": [
+      "“课程涵盖了从了解晶体管到开发网页浏览器的全面旅程，提供了硬件和软件集成的实践学习方法。”",
+      "“主要项目包括构建一个ARM7 CPU、一个C编译器、一个类UNIX操作系统和一个基于文本的网页浏览器，使用的语言包括Verilog、Python、Haskell和C。”",
+      "“课程强调实用技能，例如使用Verilator进行仿真、FPGA板设计，以及实现关键系统组件如MMU、以太网控制器和TCP堆栈。”"
+    ],
+    "commentSummary": [
+      "“由geohot在GitHub上发布的为期12周的课程《从晶体管到网页浏览器》因其雄心勃勃的范围而引发讨论，但自2016年以来更新甚少。”",
+      "“用户们讨论了它的可行性，建议使用像《图灵完备》和《深圳 I/O》这样的替代学习工具，并认为它可能对初学者来说过于复杂，更适合有经验的程序员。”",
+      "“批评者质疑该课程的实用性和作者的意图，认为它过于雄心勃勃，与全面的电气和计算机工程学位相比缺乏实质内容。”"
+    ],
+    "points": 102,
+    "commentCount": 44,
+    "retryCount": 0,
+    "time": 1720338876
+  },
+  {
+    "id": 40897518,
+    "title": "“Mongo，但在Postgres上，并且具有强一致性优势”",
+    "originLink": "https://github.com/event-driven-io/Pongo",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897518",
+    "commentBody": "",
+    "originSummary": [
+      "“Pongo Pongo 是一个工具，允许在 PostgreSQL 上使用类似 MongoDB 的操作，同时利用强一致性的优势。”",
+      "“它将 MongoDB API 调用转换为原生 PostgreSQL 查询，利用 JSONB 进行高效的读写操作和复杂查询。”",
+      "“Pongo 不是传统的 ORM(对象关系映射)，而是专注于文档数据处理，提供灵活性和性能，尽管它并不完全兼容 MongoDB。”"
+    ],
+    "commentSummary": [
+      "“Pongo是一个新项目，它在PostgreSQL之上提供类似MongoDB的API，利用JSONB列来实现强一致性优势。”",
+      "“该项目旨在将MongoDB的易用性与PostgreSQL的强一致性和可靠性相结合，将MongoDB语法转换为原生PostgreSQL查询。”",
+      "“这一发展引起了人们的兴趣，因为它有可能在利用PostgreSQL高级功能的同时提供熟悉的MongoDB体验，吸引那些寻求数据库操作强一致性的开发人员。”"
+    ],
+    "points": 98,
+    "commentCount": 48,
+    "retryCount": 0,
+    "time": 1720358532
+  },
+  {
+    "id": 40896110,
+    "title": "“科学家在火星模拟项目中经过一年后重新出现”",
+    "originLink": "https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896110",
+    "commentBody": "",
+    "originSummary": [
+      "“四名科学家在休斯顿的火星沙丘阿尔法栖息地完成了一年的火星模拟，这是一座旨在复制火星条件的3D打印结构。”",
+      "“该任务是NASA的乘员健康与性能探索模拟(CHAPEA)的一部分，旨在为未来的火星任务和长期太空探索(包括阿尔忒弥斯计划)收集见解。”",
+      "“团队进行了‘火星漫步’并应对了诸如孤立和通信延迟等压力源，另外还计划在2025年和2027年进行更多的CHAPEA任务。”"
+    ],
+    "commentSummary": [
+      "“科学家们已经完成了一年的火星模拟，重点研究人类在孤立和高压环境中的耐力。”",
+      "“该项目强调，心理和社会动态比营养需求更难管理。”",
+      "“讨论包括技术和伦理方面的考虑、潜在的高死亡率以及火星殖民所需的广泛准备和较小规模的初期任务。”"
+    ],
+    "points": 91,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1720341858
+  },
+  {
+    "id": 40896212,
+    "title": "“‘AI’，学生和认识论危机”",
+    "originLink": "https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896212",
+    "commentBody": "",
+    "originSummary": [
+      "“2024年7月6日的一篇博客文章讨论了一名学生将ChatGPT用作搜索引擎，导致该学生相信了错误的信息。”",
+      "“作者强调了打击人工智能生成的虚假信息的难度，因为每个学生可能会收到独特的错误事实，这使得纠正过程变得复杂。”",
+      "“这篇文章反思了虚假信息对教育的广泛影响，并因骚扰而被删除。”"
+    ],
+    "commentSummary": [
+      "“如今的学生在很大程度上依赖人工智能和互联网获取信息，这与以前几代人在图书馆进行手动研究形成了鲜明对比。”",
+      "“教育工作者担心，这种依赖可能会妨碍学生批判性评估信息的能力，导致文章往往缺乏深度。”",
+      "“虽然人工智能工具很有用，但它们也可能生成虚假信息，这引发了关于在教育中整合这些工具同时培养批判性思维技能的辩论。”"
+    ],
+    "points": 89,
+    "commentCount": 121,
+    "retryCount": 0,
+    "time": 1720343169
+  },
+  {
+    "id": 40894082,
+    "title": "“OpenAI 被黑客攻击，一年前的漏洞未向公众报告”",
+    "originLink": "https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40894082",
+    "commentBody": "",
+    "originSummary": [
+      "“黑客在去年年初入侵了OpenAI的内部消息系统，暴露了敏感信息，但未能访问关键的人工智能系统，这引发了安全和国家安全方面的担忧。”",
+      "“OpenAI在2023年4月内部披露了这一事件，称没有客户数据被盗，黑客可能没有政府背景；然而，这次泄露事件加剧了人们对外国对手，特别是中国，在推进其人工智能技术方面的担忧。”",
+      "“自那以后，OpenAI 改进了其安全措施，成立了安全与保密委员会，这一事件引发了关于联邦和州法规控制 AI 技术发布的讨论。”"
+    ],
+    "commentSummary": [
+      "“OpenAI去年经历了一次未报告的黑客攻击，导致用户对透明度和安全措施的担忧。”",
+      "“此次泄露涉及访问内部消息系统，但并未危及关键的人工智能技术。”",
+      "“用户讨论了报告漏洞的困难以及对OpenAI标准安全报告做法的不满。”"
+    ],
+    "points": 84,
+    "commentCount": 26,
+    "retryCount": 0,
+    "time": 1720308293
+  },
+  {
+    "id": 40893749,
+    "title": "“是什么引起偏头痛？对‘大脑停电’的研究提供了线索”",
+    "originLink": "https://www.nature.com/articles/d41586-024-02222-x",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893749",
+    "commentBody": "",
+    "originSummary": [
+      "“2024年7月4日发表在《科学》杂志上的一项小鼠研究揭示了偏头痛成因的新见解，将短暂的脑‘断电’与脑脊液的变化联系起来，这些变化激活了头骨中的痛觉受体。”",
+      "“研究表明，偏头痛可能作为一种保护机制，提示需要休息，并且发现了三叉神经节周围保护层中一个先前未知的空隙。”",
+      "“这一发现可能通过针对新识别的机制，导致偏头痛新疗法的发展。”"
+    ],
+    "commentSummary": [
+      "“研究表明，皮层扩散性抑制(CSD)，一种‘大脑停电’现象，可能与偏头痛有关。”",
+      "“人们报告了各种诱因和治疗方法，包括饮食变化、像利扎曲普坦这样的药物，以及改善睡眠和补水等生活方式的调整。”",
+      "“讨论强调了偏头痛的复杂性，不同的诱因和治疗方法对不同的个体有效。”"
+    ],
+    "points": 84,
+    "commentCount": 72,
+    "retryCount": 0,
+    "time": 1720303961
+  }
+]

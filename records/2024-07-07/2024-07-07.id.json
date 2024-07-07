@@ -1,0 +1,332 @@
+[
+  {
+    "id": 40897205,
+    "title": "Kode sematan YouTube sangat berat dan itu bisa diperbaiki",
+    "originLink": "https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897205",
+    "commentBody": "",
+    "originSummary": [
+      "YouTube embed memerlukan banyak sumber daya, dengan setiap embed sekitar 1,3MB dan 32 permintaan, yang menyebabkan waktu muat lambat dan transfer data yang tinggi.",
+      "Komponen Web seperti \"lite-youtube-embed\" oleh Paul Irish dapat mengurangi ukuran menjadi sekitar 100k, berbagi sumber daya, dan meningkatkan kinerja secara signifikan.",
+      "Implementasi solusi ini melibatkan penghubungan JavaScript, menggunakan komponen dalam HTML, dan memuat skrip secara asinkron untuk kinerja yang lebih baik."
+    ],
+    "commentSummary": [
+      "Kami telah mengganti embed YouTube dengan thumbnail yang diproksi di platform forum komunitas, yang hanya dimuat saat diklik, mengurangi kebutuhan untuk mengunduh file JavaScript besar dan mencegah pelacakan oleh Google.",
+      "Solusi serupa telah diterapkan untuk embed YouTube, SoundCloud, dan Reddit guna meningkatkan fungsionalitas dan meminimalkan bloat.",
+      "Ada perdebatan tentang apakah penyematan yang lebih ringan mungkin mengurangi keterlibatan karena waktu mulai video yang lebih lambat, tetapi banyak yang percaya bahwa meningkatkan waktu muat halaman secara keseluruhan lebih penting untuk pengalaman pengguna dan kinerja situs."
+    ],
+    "points": 236,
+    "commentCount": 135,
+    "retryCount": 0,
+    "time": 1720355875
+  },
+  {
+    "id": 40896102,
+    "title": "Malloc merusak JPGLoader Serenity, atau: cara memenangkan lotre (2021)",
+    "originLink": "https://sin-ack.github.io/posts/jpg-loader-bork/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896102",
+    "commentBody": "",
+    "originSummary": [
+      "Bug dalam decoding gambar JPG di SerenityOS menyebabkan tampilan warna yang salah karena kebingungan antara RGB dan BGR.",
+      "Masalah tersebut ditelusuri kembali ke sebuah commit yang mengimplementasikan `malloc_good_size()`, yang mengubah alokasi memori dan mempengaruhi struktur data seperti `HashTable` dan `Vector` yang digunakan dalam `JPGLoader`.",
+      "Koreksi tersebut melibatkan memastikan iterasi deterministik atas komponen dalam `JPGLoader`, menyoroti bagaimana perubahan sederhana dapat mengungkap masalah mendasar yang signifikan."
+    ],
+    "commentSummary": [
+      "Beberapa implementasi tabel hash memperkenalkan keacakan untuk mencegah ketergantungan pada urutan elemen dan meningkatkan keamanan, sementara implementasi modern sering kali menjamin iterasi dalam urutan penyisipan.",
+      "JavaScript dan Python telah menstandarkan urutan penyisipan dalam implementasi tabel hash mereka, dengan Python mengadopsi ini pada versi 3.7.",
+      "Rust menawarkan berbagai pilihan tabel hash (`HashMap`, `BTreeMap`, `IndexMap`), dan Perl memperkenalkan benih acak untuk tabel hash setelah versi 5.18."
+    ],
+    "points": 177,
+    "commentCount": 143,
+    "retryCount": 0,
+    "time": 1720341723
+  },
+  {
+    "id": 40895672,
+    "title": "BeaconDB – Alternatif untuk Layanan Lokasi Mozilla",
+    "originLink": "https://beacondb.net/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895672",
+    "commentBody": "",
+    "originSummary": [
+      "beaconDB adalah basis data geolokasi nirkabel domain publik yang mencakup 177.176 jaringan, 4.126 beacon, 6.106 menara di 30 negara, dengan pengumpulan data yang bersumber secara etis dan berdasarkan persetujuan.",
+      "Basis data ini ramah privasi, mengaburkan informasi untuk melindungi pengirim dan kontributor, serta memerlukan kedekatan fisik untuk memperbarui data, sehingga tahan terhadap penyalahgunaan.",
+      "Pengembang dapat menggunakan endpoint `https://beacondb.net/v1/geolocate`, yang kompatibel dengan format permintaan Ichnaea, tetapi tidak cocok untuk aplikasi dengan lalu lintas tinggi; kode sumber tersedia di Codeberg."
+    ],
+    "commentSummary": [
+      "BeaconDB dipresentasikan sebagai alternatif untuk Mozilla Location Services (MLS), dengan fokus pada pengumpulan data yang bersumber secara etis dan berdasarkan persetujuan.",
+      "Berbeda dengan Apple dan Google, BeaconDB tidak mempublikasikan alamat MAC dalam bentuk teks biasa, melainkan menggunakan data yang di-hash atau diagregasi untuk meningkatkan privasi.",
+      "BeaconDB adalah satu-satunya basis data non-teknologi besar untuk layanan lokasi, yang bertujuan untuk menyediakan solusi sumber terbuka dan membahas potensi kolaborasi."
+    ],
+    "points": 170,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1720333550
+  },
+  {
+    "id": 40897506,
+    "title": "Bangkitnya kembali pertemuan sistem pemrograman",
+    "originLink": "https://notes.eatonphil.com/2024-07-07-systems-meetups.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897506",
+    "commentBody": "",
+    "originSummary": [
+      "Telah terjadi kebangkitan kembali pertemuan pemrograman sistem berkualitas tinggi di kota-kota seperti Munich, Berlin, San Francisco, New York City, dan Bengaluru pada tahun 2024.",
+      "Klub Kopi Sistem NYC, yang dimulai pada Desember 2023, berfokus pada tantangan rekayasa dan telah berkembang pesat, menginspirasi pertemuan serupa di seluruh dunia.",
+      "Nasihat utama untuk mengorganisir pertemuan termasuk mengamankan tempat penyelenggaraan, fokus pada konten teknis, menemukan pembicara melalui koneksi industri, dan berkolaborasi dengan penyelenggara lainnya."
+    ],
+    "commentSummary": [
+      "Sistem pertemuan pemrograman mengalami kebangkitan, menyoroti minat baru komunitas terhadap pemrograman tingkat rendah dan arsitektur sistem.",
+      "Menorganisir pertemuan semacam itu menghadapi tantangan, termasuk menemukan tempat yang stabil, yang sering kali memerlukan dukungan internal yang kuat atau dukungan dari pemerintah kota untuk mendapatkan lokasi yang konsisten.",
+      "Kualitas dan fokus konten pertemuan sangat penting, dengan beberapa kelompok kesulitan untuk menyeimbangkan antara diskusi teknis yang murni dan presentasi promosi diri oleh pembicara."
+    ],
+    "points": 164,
+    "commentCount": 65,
+    "retryCount": 0,
+    "time": 1720358437
+  },
+  {
+    "id": 40892812,
+    "title": "Di mana sumber daya yang baik untuk mempelajari pemrosesan audio?",
+    "originLink": "https://news.ycombinator.com/item?id=40892812",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40892812",
+    "commentBody": "",
+    "originSummary": [
+      "Kami mencari sumber daya untuk memprogram sebuah harmonizer yang mirip dengan yang dibuat oleh Ben Bloomberg dari MIT untuk Jacob Collier.",
+      "Mereka membutuhkan informasi yang mudah diakses tentang pitch shifting dan format shifting yang mempertahankan kualitas suara alami.",
+      "Pengguna memiliki pengalaman pemrograman yang luas tetapi kurang pengetahuan dalam pemrosesan audio, menunjukkan kebutuhan akan sumber daya yang ramah pemula namun komprehensif."
+    ],
+    "commentSummary": [
+      "Seorang pengguna sedang mencari sumber daya untuk memprogram sebuah harmonizer yang mirip dengan milik Jacob Collier, yang dibuat oleh Ben Bloomberg dari MIT, dengan fokus pada penggeseran nada dan format.",
+      "Rekomendasi sumber daya termasuk materi kursus terbuka dari CCRMA di Stanford, perpustakaan standar industri seperti Elastique oleh Zplane, dan buku-buku seperti \"DAFX - Digital Audio Effects\" oleh Udo Zölzer.",
+      "Rekomendasi tambahan termasuk tutorial, saluran YouTube, dan forum komunitas seperti Officehours.global untuk jaringan dan pembelajaran lebih lanjut."
+    ],
+    "points": 144,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1720295988
+  },
+  {
+    "id": 40893866,
+    "title": "Pelacak kebiasaan harian minimalis gratis",
+    "originLink": "https://rdht.vercel.app/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893866",
+    "commentBody": "",
+    "originSummary": [
+      "Kini telah dikembangkan sebuah aplikasi pelacak kebiasaan baru oleh seseorang yang tidak puas dengan opsi yang ada, yang menampilkan pelacakan beruntun, kegunaan offline, pembekuan beruntun, peta konsistensi visual, dan fungsi jeda.",
+      "App ini dibangun menggunakan React untuk frontend, Dexie cloud untuk penyimpanan dan sinkronisasi, serta dihosting di Vercel.",
+      "Pengembang telah membuat aplikasi ini tersedia untuk penggunaan publik, menampilkan proyek pribadi yang diubah menjadi sumber daya komunitas."
+    ],
+    "commentSummary": [
+      "Kebiasaan harian minimalis baru yang gratis telah dibuat untuk mengatasi kekurangan dalam aplikasi yang ada, dengan fitur pelacakan beruntun, penggunaan offline, pembekuan beruntun, peta konsistensi visual, dan fungsi jeda.",
+      "Dibangun dengan React dan Dexie cloud, serta di-hosting di Vercel, aplikasi ini telah menerima masukan untuk perbaikan, terutama dari pengguna iPhone, termasuk saran untuk kebiasaan buruk, penyesuaian desain, dan perbaikan bug.",
+      "Pengguna menghargai desain yang bersih dan fungsionalitas offline, dengan saran untuk tampilan yang lebih ringkas dan kompatibilitas yang lebih baik dengan perangkat mobile; belum ada rencana monetisasi."
+    ],
+    "points": 117,
+    "commentCount": 51,
+    "retryCount": 0,
+    "time": 1720305433
+  },
+  {
+    "id": 40895441,
+    "title": "Mengapa Italia Kehilangan Cinta pada Ketumbar",
+    "originLink": "https://www.atlasobscura.com/articles/what-are-italian-herbs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895441",
+    "commentBody": "",
+    "originSummary": [
+      "Ketumbar, yang dulunya merupakan bahan pokok dalam masakan Romawi kuno, hampir menghilang dari masakan Italia modern, terutama daunnya.",
+      "Kemunduran dimulai setelah Roma, dipengaruhi oleh suku-suku Jermanik dan preferensi terhadap rempah-rempah eksotis seperti kayu manis dan kapulaga.",
+      "Meskipun memiliki keberadaan historis, ketumbar sekarang dianggap sebagai bahan asing di Italia, tidak seperti rempah-rempah lainnya seperti basil."
+    ],
+    "commentSummary": [
+      "Italia tidak menyukai ketumbar sejak tahun 1544 ketika ahli botani Pietro Andrea Mattioli menggambarkan daunnya berbau seperti kutu busuk.",
+      "Keengganan tersebut mungkin dipengaruhi secara genetik, karena beberapa orang merasakan cilantro seperti sabun akibat gen tertentu.",
+      "Kemunduran popularitas ketumbar di Italia juga terkait dengan tren kuliner yang berubah dan pola migrasi, menggambarkan interaksi kompleks antara genetika, budaya, dan preferensi pribadi dalam membentuk selera makanan."
+    ],
+    "points": 108,
+    "commentCount": 116,
+    "retryCount": 0,
+    "time": 1720329769
+  },
+  {
+    "id": 40895167,
+    "title": "Manajemen jaringan 'Out of Band' tidaklah sepele",
+    "originLink": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895167",
+    "commentBody": "",
+    "originSummary": [
+      "Pemadaman Internet dan telepon Rogers tahun 2022, yang mempengaruhi lebih dari 12 juta warga Kanada, menyoroti pentingnya dan kompleksitas manajemen jaringan \"Out of Band\" (OOB).",
+      "OOB management memerlukan perangkat keras dan infrastruktur khusus yang terpisah dari jaringan utama, memastikan redundansi dan keamanan tetapi menambah biaya dan kompleksitas yang signifikan.",
+      "Jaringan yang lebih kecil mungkin akan lebih praktis untuk fokus pada manajemen in-band yang kuat dan redundan daripada mempertahankan jaringan OOB yang terpisah."
+    ],
+    "commentSummary": [
+      "Manajemen jaringan 'Out of Band' (OOB) sangat penting untuk menjaga keandalan jaringan, terutama dalam sistem digital modern yang rentan terhadap kesalahan konfigurasi dan kegagalan.",
+      "Pemadaman Rogers menekankan kebutuhan kritis akan manajemen OOB yang kuat, menyoroti pentingnya perencanaan yang lebih baik dan penilaian risiko untuk mencegah kegagalan jaringan inti.",
+      "Manajemen OOB yang efektif melibatkan penggunaan sistem yang didedikasikan dan redundan, sering kali memanfaatkan penyedia atau teknologi yang berbeda seperti LTE atau satelit untuk memastikan keandalan."
+    ],
+    "points": 105,
+    "commentCount": 70,
+    "retryCount": 0,
+    "time": 1720324841
+  },
+  {
+    "id": 40896873,
+    "title": "Menjalankan JavaScript dalam sandbox WebAssembly QuickJS",
+    "originLink": "https://github.com/sebastianwessel/quickjs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896873",
+    "commentBody": "",
+    "originSummary": [
+      "Package TypeScript ini memungkinkan eksekusi aman kode JavaScript dalam sandbox WebAssembly menggunakan mesin QuickJS, ideal untuk menjalankan kode yang tidak dipercaya dengan aman.",
+      "Fitur utama termasuk lingkungan terisolasi, sistem file virtual, modul node kustom, klien fetch HTTP(S), pelari uji berbasis chai, dan kinerja yang efisien.",
+      "Package ini serbaguna dan mudah diintegrasikan dengan proyek TypeScript, menawarkan API yang ramah pengguna untuk eksekusi dan manajemen kode."
+    ],
+    "commentSummary": [
+      "Package TypeScript ini memungkinkan eksekusi aman kode JavaScript dalam sandbox WebAssembly menggunakan mesin QuickJS, memastikan isolasi kode yang tidak terpercaya.",
+      "Fitur utama termasuk sistem file virtual, modul node kustom, klien fetch, pelari uji, dan API yang ramah pengguna, mendukung lingkungan seperti NodeJS, Deno, dan Cloudflare Workers.",
+      "Catatan peringatan keamanan menyebutkan bahwa mengaktifkan `fetch` dapat mengekspos cookie host ke kode yang tidak tepercaya, yang berpotensi mengkompromikan keamanan sandbox."
+    ],
+    "points": 104,
+    "commentCount": 32,
+    "retryCount": 0,
+    "time": 1720352245
+  },
+  {
+    "id": 40895935,
+    "title": "Dari Transistor ke Peramban Web, garis besar kasar untuk kursus 12 minggu",
+    "originLink": "https://github.com/geohot/fromthetransistor",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895935",
+    "commentBody": "",
+    "originSummary": [
+      "Kursus ini mencakup perjalanan komprehensif dari memahami transistor hingga mengembangkan peramban web, memberikan pendekatan praktis untuk mempelajari integrasi perangkat keras dan perangkat lunak.",
+      "Proyek utama meliputi pembuatan CPU ARM7, kompilator C, sistem operasi mirip UNIX, dan peramban web berbasis teks, menggunakan bahasa seperti Verilog, Python, Haskell, dan C.",
+      "Kurikulum menekankan keterampilan praktis seperti emulasi dengan Verilator, desain papan FPGA, dan mengimplementasikan komponen sistem penting seperti MMU, pengontrol Ethernet, dan tumpukan TCP."
+    ],
+    "commentSummary": [
+      "Sebuat kursus selama 12 minggu berjudul 'From the Transistor to the Web Browser' oleh geohot di GitHub telah memicu diskusi karena cakupannya yang ambisius tetapi pembaruan minimal sejak 2016.",
+      "Pengguna memperdebatkan kelayakannya, menyarankan alat pembelajaran alternatif seperti \"Turing Complete\" dan \"Shenzen I/O,\" dan berargumen bahwa mungkin terlalu rumit untuk pemula, lebih cocok untuk programmer berpengalaman.",
+      "Kritikus mempertanyakan kepraktisan kursus tersebut dan niat penulisnya, melihatnya sebagai terlalu ambisius dan kurang substansi dibandingkan dengan gelar Teknik Elektro dan Komputer yang komprehensif."
+    ],
+    "points": 102,
+    "commentCount": 44,
+    "retryCount": 0,
+    "time": 1720338876
+  },
+  {
+    "id": 40897518,
+    "title": "Mongo tetapi di Postgres dan dengan manfaat konsistensi yang kuat",
+    "originLink": "https://github.com/event-driven-io/Pongo",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897518",
+    "commentBody": "",
+    "originSummary": [
+      "Pongo Pongo adalah alat yang memungkinkan penggunaan operasi mirip MongoDB pada PostgreSQL, memanfaatkan manfaat konsistensi yang kuat.",
+      "Ini menerjemahkan panggilan API MongoDB ke kueri PostgreSQL asli, memanfaatkan JSONB untuk operasi baca/tulis yang efisien dan kueri kompleks.",
+      "Pongo bukanlah ORM (Object-Relational Mapping) tradisional tetapi berfokus pada penanganan data dokumen, menawarkan fleksibilitas dan kinerja, meskipun tidak sepenuhnya sesuai dengan MongoDB."
+    ],
+    "commentSummary": [
+      "Pongo adalah proyek baru yang menyediakan API mirip MongoDB di atas PostgreSQL, memanfaatkan kolom JSONB untuk manfaat konsistensi yang kuat.",
+      "Proyek ini bertujuan untuk menggabungkan kemudahan penggunaan MongoDB dengan konsistensi dan keandalan PostgreSQL yang kuat, menerjemahkan sintaks MongoDB ke dalam kueri PostgreSQL asli.",
+      "Perkembangan ini telah memicu minat karena potensinya untuk menawarkan pengalaman MongoDB yang familiar sambil memanfaatkan fitur-fitur canggih PostgreSQL, menarik bagi para pengembang yang mencari konsistensi yang kuat dalam operasi basis data mereka."
+    ],
+    "points": 98,
+    "commentCount": 48,
+    "retryCount": 0,
+    "time": 1720358532
+  },
+  {
+    "id": 40896110,
+    "title": "Ilmuwan muncul kembali setelah setahun dalam proyek simulasi Mars",
+    "originLink": "https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896110",
+    "commentBody": "",
+    "originSummary": [
+      "Empat ilmuwan menyelesaikan simulasi Mars selama satu tahun di habitat Mars Dune Alpha di Houston, sebuah struktur yang dicetak 3D dan dirancang untuk meniru kondisi di Mars.",
+      "Bagian dari misi NASA's Crew Health and Performance Exploration Analog (CHAPEA) ini bertujuan untuk mengumpulkan wawasan bagi misi Mars di masa depan dan eksplorasi ruang angkasa jangka panjang, termasuk program Artemis.",
+      "Tim melakukan 'Marswalks' dan menghadapi stresor seperti isolasi dan keterlambatan komunikasi, dengan misi CHAPEA tambahan yang direncanakan untuk tahun 2025 dan 2027."
+    ],
+    "commentSummary": [
+      "Para ilmuwan telah menyelesaikan simulasi Mars selama satu tahun, yang berfokus pada ketahanan manusia di lingkungan yang terisolasi dan penuh tekanan.",
+      "Proyek ini menekankan bahwa dinamika psikologis dan sosial lebih sulit untuk dikelola dibandingkan dengan kebutuhan nutrisi.",
+      "Diskusi mencakup pertimbangan teknis dan etis, potensi tingkat kematian yang tinggi, serta kebutuhan akan persiapan yang luas dan misi awal yang lebih kecil untuk kolonisasi Mars."
+    ],
+    "points": 91,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1720341858
+  },
+  {
+    "id": 40896212,
+    "title": "\"AI\", siswa, dan krisis epistemik",
+    "originLink": "https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896212",
+    "commentBody": "",
+    "originSummary": [
+      "Postingan blog dari 6 Juli 2024 membahas penggunaan ChatGPT oleh seorang siswa sebagai mesin pencari, yang mengakibatkan siswa tersebut mempercayai informasi yang salah.",
+      "Penulis menyoroti kesulitan dalam melawan informasi yang salah yang dihasilkan oleh AI, karena setiap siswa mungkin menerima fakta yang salah yang unik, sehingga mempersulit proses koreksi.",
+      "Postingan tersebut mencerminkan masalah yang lebih luas tentang dampak misinformasi terhadap pendidikan dan dihapus karena pelecehan."
+    ],
+    "commentSummary": [
+      "Mahasiswa saat ini sangat bergantung pada AI dan internet untuk mendapatkan informasi, berbeda dengan generasi sebelumnya yang melakukan penelitian manual di perpustakaan.",
+      "Para pendidik khawatir bahwa ketergantungan ini dapat menghambat kemampuan siswa untuk menilai informasi secara kritis, yang mengakibatkan esai yang sering kali kurang mendalam.",
+      "Walaupun alat AI berguna, mereka juga dapat menghasilkan informasi yang salah, memicu perdebatan tentang integrasi alat-alat ini ke dalam pendidikan sambil mengembangkan keterampilan berpikir kritis."
+    ],
+    "points": 89,
+    "commentCount": 121,
+    "retryCount": 0,
+    "time": 1720343169
+  },
+  {
+    "id": 40894082,
+    "title": "OpenAI diretas, pelanggaran yang terjadi setahun lalu tidak dilaporkan kepada publik",
+    "originLink": "https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40894082",
+    "commentBody": "",
+    "originSummary": [
+      "Hacker membobol sistem pesan internal OpenAI awal tahun lalu, mengekspos informasi sensitif tetapi tidak mengakses sistem AI utama, menimbulkan kekhawatiran keamanan dan keamanan nasional.",
+      "OpenAI mengungkapkan insiden tersebut secara internal pada April 2023, menyatakan bahwa tidak ada data pelanggan yang dicuri dan peretas kemungkinan tidak memiliki hubungan dengan pemerintah; namun, pelanggaran tersebut telah meningkatkan ketakutan tentang musuh asing, terutama China, yang memajukan teknologi AI mereka.",
+      "OpenAI sejak itu telah meningkatkan langkah-langkah keamanannya, membentuk Komite Keselamatan dan Keamanan, dan insiden tersebut telah memicu diskusi tentang peraturan federal dan negara bagian untuk mengontrol rilis teknologi AI."
+    ],
+    "commentSummary": [
+      "OpenAI mengalami peretasan yang tidak dilaporkan tahun lalu, yang menyebabkan kekhawatiran pengguna tentang transparansi dan praktik keamanan.",
+      "Pelanggaran tersebut melibatkan akses ke sistem pesan internal tetapi tidak mengkompromikan teknologi AI utama.",
+      "Pengguna membahas kesulitan dalam melaporkan bug dan frustrasi dengan praktik pelaporan keamanan standar OpenAI."
+    ],
+    "points": 84,
+    "commentCount": 26,
+    "retryCount": 0,
+    "time": 1720308293
+  },
+  {
+    "id": 40893749,
+    "title": "Apa yang menyebabkan migrain? Studi tentang 'pemadaman otak' menawarkan petunjuk",
+    "originLink": "https://www.nature.com/articles/d41586-024-02222-x",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893749",
+    "commentBody": "",
+    "originSummary": [
+      "Studi pada tikus, yang diterbitkan di Science pada 4 Juli 2024, mengungkap wawasan baru tentang penyebab migrain, menghubungkan 'pemadaman' singkat di otak dengan perubahan cairan serebrospinal yang mengaktifkan reseptor nyeri di tengkorak.",
+      "Kajian tersebut menunjukkan bahwa migrain mungkin berfungsi sebagai mekanisme perlindungan yang menandakan kebutuhan untuk istirahat dan mengidentifikasi celah yang sebelumnya tidak diketahui dalam lapisan pelindung di sekitar ganglion trigeminal.",
+      "Penemuan ini dapat mengarah pada pengembangan pengobatan baru untuk migrain dengan menargetkan mekanisme yang baru diidentifikasi."
+    ],
+    "commentSummary": [
+      "Kajian menunjukkan bahwa depresi menyebar kortikal (CSD), sebuah 'pemadaman otak,' mungkin terlibat dalam migrain.",
+      "Orang-orang melaporkan berbagai pemicu dan perawatan, termasuk perubahan pola makan, obat-obatan seperti Rizatriptan, dan penyesuaian gaya hidup seperti peningkatan tidur dan hidrasi.",
+      "Kajian tersebut menekankan kompleksitas migrain, dengan pemicu dan pengobatan yang berbeda efektif untuk individu yang berbeda."
+    ],
+    "points": 84,
+    "commentCount": 72,
+    "retryCount": 0,
+    "time": 1720303961
+  }
+]

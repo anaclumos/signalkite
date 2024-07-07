@@ -15,12 +15,208 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 06 Jul 2024 19:10:41 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 07 Jul 2024 19:09:26 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/en.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 06 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[en]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-07]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/07&#39;</h2>
+<h1>2024-07-07</h1>
+<h2><a href="https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/">YouTube embeds are bananas heavy and it’s fixable</a></h2>
+<ul>
+<li>YouTube embeds are resource-heavy, with each embed around 1.3MB and 32 requests, leading to slow load times and high data transfer.</li>
+<li>A Web Component like &quot;lite-youtube-embed&quot; by Paul Irish can reduce the size to about 100k, sharing resources and improving performance significantly.</li>
+<li>Implementing this solution involves linking the JavaScript, using the component in HTML, and loading the script asynchronously for better performance.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897205">Reactions</a></h3>
+<ul>
+<li>A community forum platform has replaced YouTube embeds with proxied thumbnails, which load only when clicked, reducing the need to download large JavaScript files and preventing Google tracking.</li>
+<li>Similar solutions have been implemented for YouTube, SoundCloud, and Reddit embeds to enhance functionality and minimize bloat.</li>
+<li>There is debate over whether lighter embeds might reduce engagement due to slower video start times, but many believe that improving overall page load time is more important for user experience and site performance.</li>
+</ul>
+<h2><a href="https://sin-ack.github.io/posts/jpg-loader-bork/">Malloc broke Serenity&#39;s JPGLoader, or: how to win the lottery (2021)</a></h2>
+<ul>
+<li>A bug in SerenityOS&#39;s JPG image decoding caused incorrect color display due to an RGB vs. BGR confusion.</li>
+<li>The issue was traced back to a commit implementing <code>malloc_good_size()</code>, which altered memory allocation and affected data structures like <code>HashTable</code> and <code>Vector</code> used in <code>JPGLoader</code>.</li>
+<li>The fix involved ensuring deterministic iteration over components in <code>JPGLoader</code>, highlighting how simple changes can uncover significant underlying issues.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896102">Reactions</a></h3>
+<ul>
+<li>Some hash table implementations introduce randomness to prevent reliance on element order and enhance security, while modern implementations often guarantee iteration in insertion order.</li>
+<li>JavaScript and Python have standardized insertion order in their hash table implementations, with Python adopting this in version 3.7.</li>
+<li>Rust offers different hash table options (<code>HashMap</code>, <code>BTreeMap</code>, <code>IndexMap</code>), and Perl introduced random seeds for hash tables post version 5.18.</li>
+</ul>
+<h2><a href="https://beacondb.net/">BeaconDB – An Alternative to Mozilla Location Services</a></h2>
+<ul>
+<li>beaconDB is a public domain wireless geolocation database covering 177,176 networks, 4,126 beacons, 6,106 towers across 30 countries, with ethically sourced, opt-in data collection.</li>
+<li>The database is privacy-friendly, obfuscating information to protect transmitters and contributors, and requires physical proximity to update data, making it abuse-resistant.</li>
+<li>Developers can use the endpoint <code>https://beacondb.net/v1/geolocate</code>, compatible with Ichnaea&#39;s request format, but it&#39;s not suitable for high-traffic applications; source code is available on Codeberg.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895672">Reactions</a></h3>
+<ul>
+<li>BeaconDB is presented as an alternative to Mozilla Location Services (MLS), focusing on ethically sourced, opt-in data collection.</li>
+<li>Unlike Apple and Google, BeaconDB does not publish cleartext MAC addresses, instead using hashed or aggregated data to enhance privacy.</li>
+<li>BeaconDB is the only non-big tech database for location services, aiming to provide an open-source solution and discussing potential collaborations.</li>
+</ul>
+<h2><a href="https://notes.eatonphil.com/2024-07-07-systems-meetups.html">A reawakening of systems programming meetups</a></h2>
+<ul>
+<li>There has been a resurgence in high-quality systems programming meetups in cities like Munich, Berlin, San Francisco, New York City, and Bengaluru in 2024.</li>
+<li>The NYC Systems Coffee Club, started in December 2023, focuses on engineering challenges and has grown rapidly, inspiring similar meetups globally.</li>
+<li>Key advice for organizing meetups includes securing a host venue, focusing on technical content, finding speakers through industry connections, and collaborating with other organizers.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897506">Reactions</a></h3>
+<ul>
+<li>Systems programming meetups are experiencing a resurgence, highlighting the community&#39;s renewed interest in low-level programming and system architecture.</li>
+<li>Organizing such meetups faces challenges, including finding stable venues, which often require strong internal support or municipal backing to secure consistent locations.</li>
+<li>The quality and focus of meetup content are crucial, with some groups struggling to balance between genuine technical discussions and self-promotional presentations by speakers.</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40892812">Where are the good resources for learning audio processing?</a></h2>
+<ul>
+<li>The user is seeking resources to program a harmonizer similar to the one created by MIT&#39;s Ben Bloomberg for Jacob Collier.</li>
+<li>They need accessible information on pitch shifting and format shifting that maintains natural sound quality.</li>
+<li>The user has extensive programming experience but lacks knowledge in audio processing, indicating a need for beginner-friendly yet comprehensive resources.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40892812">Reactions</a></h3>
+<ul>
+<li>A user is seeking resources to program a harmonizer similar to Jacob Collier&#39;s, created by MIT&#39;s Ben Bloomberg, focusing on pitch and format shifting.</li>
+<li>Recommended resources include open course materials from CCRMA at Stanford, industry-standard libraries like Elastique by Zplane, and books such as &quot;DAFX - Digital Audio Effects&quot; by Udo Zölzer.</li>
+<li>Additional suggestions include tutorials, YouTube channels, and community forums like Officehours.global for networking and further learning.</li>
+</ul>
+<h2><a href="https://rdht.vercel.app/">A free minimalist daily habit tracker</a></h2>
+<ul>
+<li>A new habit tracker app has been developed by an individual dissatisfied with existing options, featuring streak tracking, offline usability, streak freezes, a visual consistency map, and pause functionality.</li>
+<li>The app is built using React for the frontend, Dexie cloud for storage and syncing, and hosted on Vercel.</li>
+<li>The developer has made the app available for public use, showcasing a personal project turned into a community resource.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40893866">Reactions</a></h3>
+<ul>
+<li>A new free minimalist daily habit tracker has been created to address gaps in existing apps, featuring streak tracking, offline use, streak freezes, a visual consistency map, and a pause function.</li>
+<li>Built with React and Dexie cloud, and hosted on Vercel, the app has received feedback for improvements, particularly for iPhone users, including suggestions for bad habits, design tweaks, and bug fixes.</li>
+<li>Users appreciate the clean design and offline functionality, with suggestions for a collapsed view and better mobile compatibility; there are no monetization plans yet.</li>
+</ul>
+<h2><a href="https://www.atlasobscura.com/articles/what-are-italian-herbs">Why Italy Fell Out of Love with Cilantro</a></h2>
+<ul>
+<li>Coriander, once a staple in ancient Roman cuisine, has nearly disappeared from modern Italian cooking, especially its leaves.</li>
+<li>The decline began post-Rome, influenced by Germanic tribes and the preference for exotic spices like cinnamon and cardamom.</li>
+<li>Despite its historical presence, coriander is now viewed as a foreign ingredient in Italy, unlike other herbs such as basil.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895441">Reactions</a></h3>
+<ul>
+<li>Italy&#39;s dislike for cilantro dates back to 1544 when botanist Pietro Andrea Mattioli described its leaves as smelling like bed bugs.</li>
+<li>The aversion may be genetically influenced, as some people perceive cilantro as tasting like soap due to a specific gene.</li>
+<li>The decline in cilantro&#39;s popularity in Italy is also linked to changing culinary trends and migration patterns, illustrating the complex interplay between genetics, culture, and personal preference in shaping food tastes.</li>
+</ul>
+<h2><a href="https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial">&quot;Out of Band&quot; network management is not trivial</a></h2>
+<ul>
+<li>The 2022 Rogers Internet and phone outage, affecting over 12 million Canadians, highlighted the importance and complexity of &quot;Out of Band&quot; (OOB) network management.</li>
+<li>OOB management requires dedicated hardware and infrastructure separate from the main network, ensuring redundancy and security but adding significant cost and complexity.</li>
+<li>Smaller networks might find it more practical to focus on robust, redundant in-band management rather than maintaining a separate OOB network.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895167">Reactions</a></h3>
+<ul>
+<li>&quot;Out of Band&quot; (OOB) network management is essential for maintaining network reliability, especially in modern digital systems that are prone to misconfigurations and failures.</li>
+<li>The Rogers outage underscored the critical need for robust OOB management, highlighting the importance of better planning and risk assessment to prevent core network failures.</li>
+<li>Effective OOB management involves using dedicated, redundant systems, often leveraging different providers or technologies such as LTE or satellite to ensure reliability.</li>
+</ul>
+<h2><a href="https://github.com/sebastianwessel/quickjs">Execute JavaScript in a WebAssembly QuickJS sandbox</a></h2>
+<ul>
+<li>This TypeScript package allows secure execution of JavaScript code within a WebAssembly sandbox using the QuickJS engine, ideal for running untrusted code safely.</li>
+<li>Key features include an isolated environment, virtual file system, custom node modules, HTTP(S) fetch client, chai-based test runner, and efficient performance.</li>
+<li>The package is versatile and easy to integrate with TypeScript projects, offering a user-friendly API for code execution and management.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896873">Reactions</a></h3>
+<ul>
+<li>This TypeScript package enables secure execution of JavaScript code within a WebAssembly sandbox using the QuickJS engine, ensuring isolation of untrusted code.</li>
+<li>Key features include a virtual file system, custom node modules, a fetch client, a test runner, and a user-friendly API, supporting environments like NodeJS, Deno, and Cloudflare Workers.</li>
+<li>A security warning notes that enabling <code>fetch</code> can expose the host&#39;s cookies to untrusted code, potentially compromising the sandbox&#39;s safety.</li>
+</ul>
+<h2><a href="https://github.com/geohot/fromthetransistor">From the Transistor to the Web Browser, a rough outline for a 12 week course</a></h2>
+<ul>
+<li>The course covers a comprehensive journey from understanding transistors to developing a web browser, providing a hands-on approach to learning hardware and software integration.</li>
+<li>Key projects include building an ARM7 CPU, a C compiler, a UNIX-like OS, and a text-based web browser, using languages like Verilog, Python, Haskell, and C.</li>
+<li>The curriculum emphasizes practical skills such as emulation with Verilator, FPGA board design, and implementing essential system components like an MMU, Ethernet controller, and TCP stack.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895935">Reactions</a></h3>
+<ul>
+<li>A 12-week course titled &quot;From the Transistor to the Web Browser&quot; by geohot on GitHub has generated discussion due to its ambitious scope but minimal updates since 2016.</li>
+<li>Users debate its feasibility, suggesting alternative learning tools like &quot;Turing Complete&quot; and &quot;Shenzen I/O,&quot; and argue it may be too dense for beginners, better suited for experienced programmers.</li>
+<li>Critics question the course&#39;s practicality and the author&#39;s intentions, viewing it as overly ambitious and lacking substance compared to comprehensive Electrical and Computer Engineering degrees.</li>
+</ul>
+<h2><a href="https://github.com/event-driven-io/Pongo">Mongo but on Postgres and with strong consistency benefits</a></h2>
+<ul>
+<li>Pongo Pongo is a tool that allows using MongoDB-like operations on PostgreSQL, leveraging strong consistency benefits.</li>
+<li>It translates MongoDB API calls to native PostgreSQL queries, utilizing JSONB for efficient read/write operations and complex queries.</li>
+<li>Pongo is not a traditional ORM (Object-Relational Mapping) but focuses on document data handling, offering flexibility and performance, though it is not fully MongoDB compliant.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897518">Reactions</a></h3>
+<ul>
+<li>Pongo is a new project that provides a MongoDB-like API on top of PostgreSQL, leveraging JSONB columns for strong consistency benefits.</li>
+<li>The project aims to combine the ease of use of MongoDB with the robust consistency and reliability of PostgreSQL, translating MongoDB syntax to native PostgreSQL queries.</li>
+<li>This development has sparked interest due to its potential to offer a familiar MongoDB experience while utilizing PostgreSQL&#39;s advanced features, appealing to developers looking for strong consistency in their database operations.</li>
+</ul>
+<h2><a href="https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838">Scientists re-emerge after a year in Mars simulation project</a></h2>
+<ul>
+<li>Four scientists completed a year-long Mars simulation in Houston&#39;s Mars Dune Alpha habitat, a 3D-printed structure designed to replicate Martian conditions.</li>
+<li>The mission, part of NASA&#39;s Crew Health and Performance Exploration Analog (CHAPEA), aims to gather insights for future Mars missions and long-term space exploration, including the Artemis program.</li>
+<li>The team conducted &quot;Marswalks&quot; and dealt with stressors like isolation and communication delays, with additional CHAPEA missions planned for 2025 and 2027.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896110">Reactions</a></h3>
+<ul>
+<li>Scientists have concluded a year-long Mars simulation, focusing on human endurance in isolated, high-stress environments.</li>
+<li>The project underscores that psychological and social dynamics are more challenging to manage than nutritional needs.</li>
+<li>Discussions include technical and ethical considerations, potential high mortality rates, and the necessity for extensive preparation and smaller initial missions for Mars colonization.</li>
+</ul>
+<h2><a href="https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html">&quot;AI&quot;, students, and epistemic crisis</a></h2>
+<ul>
+<li>A blog post from July 6, 2024, discusses a student&#39;s use of ChatGPT as a search engine, resulting in the student believing false information.</li>
+<li>The author highlights the difficulty of combating AI-generated misinformation, as each student may receive unique incorrect facts, complicating the correction process.</li>
+<li>The post reflects on the broader issue of misinformation&#39;s impact on education and was removed due to harassment.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896212">Reactions</a></h3>
+<ul>
+<li>Students today depend significantly on AI and the internet for information, contrasting with previous generations who conducted manual research in libraries.</li>
+<li>Educators are concerned that this reliance may hinder students&#39; ability to critically assess information, resulting in essays that often lack depth.</li>
+<li>While AI tools are useful, they can also generate false information, sparking a debate on integrating these tools into education while fostering critical thinking skills.</li>
+</ul>
+<h2><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public">OpenAI was hacked year-old breach wasn&#39;t reported to the public</a></h2>
+<ul>
+<li>Hackers breached OpenAI&#39;s internal messaging systems early last year, exposing sensitive information but not accessing key AI systems, raising security and national security concerns.</li>
+<li>OpenAI disclosed the incident internally in April 2023, stating no customer data was stolen and the hacker likely had no government ties; however, the breach has led to heightened fears about foreign adversaries, particularly China, advancing their AI technologies.</li>
+<li>OpenAI has since improved its security measures, established a Safety and Security Committee, and the incident has prompted discussions on federal and state regulations to control AI technology release.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40894082">Reactions</a></h3>
+<ul>
+<li>OpenAI experienced an unreported hack last year, leading to user concerns about transparency and security practices.</li>
+<li>The breach involved access to internal messaging systems but did not compromise key AI technologies.</li>
+<li>Users discussed difficulties in reporting bugs and frustrations with OpenAI&#39;s standard security reporting practices.</li>
+</ul>
+<h2><a href="https://www.nature.com/articles/d41586-024-02222-x">What causes migraines? Study of &#39;brain blackout&#39; offers clues</a></h2>
+<ul>
+<li>A study in mice, published in Science on 4 July 2024, reveals new insights into migraine causes, linking brief brain &#39;blackouts&#39; to changes in cerebrospinal fluid that activate pain receptors in the skull.</li>
+<li>The research suggests migraines might serve as a protective mechanism signaling the need for rest and identifies a previously unknown gap in the protective layers around the trigeminal ganglion.</li>
+<li>This discovery could lead to the development of new treatments for migraines by targeting the newly identified mechanisms.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40893749">Reactions</a></h3>
+<ul>
+<li>A study suggests that cortical spreading depression (CSD), a &quot;brain blackout,&quot; might be involved in migraines.</li>
+<li>People reported various triggers and treatments, including dietary changes, medications like Rizatriptan, and lifestyle adjustments such as improved sleep and hydration.</li>
+<li>The discussion underscores the complexity of migraines, with different triggers and treatments being effective for different individuals.</li>
+</ul>
+<head>
+  <meta property="og:title" content="YouTube embeds are bananas heavy and it’s fixable" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=YouTube%20embeds%20are%20bananas%20heavy%20and%20it%E2%80%99s%20fixable&subheading=Sunday%2C%20July%207%2C%202024%3A%20Hacker%20News%20Summary" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/2024/07/07</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-06]]></title>
             <description
@@ -1681,192 +1877,6 @@
             <link>https://hn.cho.sh/2024/06/28</link>
             <guid isPermaLink="false">2024-06-28T00:00:00.000Z</guid>
             <pubDate>Fri, 28 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-27]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/27&#39;</h2>
-<h1>2024-06-27</h1>
-<h2><a href="https://www.tomshardware.com/tech-industry/cyber-security/south-korean-telecom-company-attacks-torrent-users-with-malware-over-600000-people-report-missing-files-strange-folders-and-disabled-pcs">South Korean telecom company attacks torrent users with malware</a></h2>
-<ul>
-<li>KT Corporation, a major South Korean telecom company, intentionally infected over 600,000 users with malware to disrupt Webhard&#39;s BitTorrent-based Grid Service, starting in May 2020.</li>
-<li>The malware caused issues such as missing files, strange folders, and disabled PCs, and was traced back to KT&#39;s data center.</li>
-<li>Authorities have charged 13 individuals, including KT employees, and KT defended its actions by citing network strain and unpaid usage fees, though the unauthorized malware installation led to significant customer problems.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805099">Reactions</a></h3>
-<ul>
-<li>South Korean telecom company allegedly targets torrent users with malware, raising significant privacy and ethical concerns.</li>
-<li>The incident highlights ongoing issues with internet service providers (ISPs) in South Korea, including high fees and potential misuse of power.</li>
-<li>This situation has sparked discussions about the state of internet freedom and infrastructure in South Korea, which was once known for its fast internet speeds but now faces criticism for outdated practices and government control.</li>
-</ul>
-<h2><a href="https://latenighter.com/news/paramount-axes-comedy-central-website-show-clips-library/">25 years of video clips gone as Paramount axes Comedy Central wesbite</a></h2>
-<ul>
-<li>Paramount has shut down ComedyCentral.com, removing over 25 years of clips from The Daily Show and The Colbert Report, directing visitors to TV providers or Paramount+.</li>
-<li>Other shows like The Opposition with Jordan Klepper and Lights Out with David Spade are also affected, with older episodes not available on Paramount+.</li>
-<li>This move is part of Paramount&#39;s cost-cutting measures to manage over $14 billion in debt, following similar actions with MTV.com and CMT.com, aiming to streamline sites and drive viewers to Paramount+.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40807032">Reactions</a></h3>
-<ul>
-<li>Paramount has removed 25 years of video clips from the Comedy Central website, sparking criticism over their management&#39;s perceived undervaluation of the content.</li>
-<li>Critics argue that the content could have been monetized or preserved, highlighting the complexities of media rights and regulatory challenges in distributing older content.</li>
-<li>The removal is viewed as a cost-cutting measure by Paramount amid financial difficulties, with some lamenting the loss of cultural history and suggesting piracy as a means of preservation.</li>
-</ul>
-<h2><a href="https://web.dev/case-studies/google-sheets-wasmgc">Google Sheets ported its calculation worker from JavaScript to WasmGC</a></h2>
-<ul>
-<li>Google Sheets has transitioned from JavaScript to WasmGC (WebAssembly Garbage Collection) to enhance performance, particularly for large spreadsheets.</li>
-<li>WasmGC supports garbage-collected languages like Java, offering near-native speed on the web, and Google Sheets is among the first to implement it.</li>
-<li>Initial performance of WasmGC was slower than JavaScript, but subsequent optimizations have significantly improved its speed, demonstrating its potential to revolutionize web application development.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40808820">Reactions</a></h3>
-<ul>
-<li>Google Sheets transitioned its calculation engine from JavaScript to WasmGC, initially experiencing slower performance but later optimizing it to be twice as fast as the JS version.</li>
-<li>The move involved significant reimplementation efforts, including devirtualization and leveraging browser APIs, aiming to improve performance and utilize the native V8 garbage collector.</li>
-<li>Despite improvements, some users still find Google Sheets slower compared to native applications like Excel, highlighting the ongoing evolution and optimization of web technologies.</li>
-</ul>
-<h2><a href="https://thezvi.substack.com/p/on-claude-35-sonnet">Claude 3.5 Sonnet</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40806698">Reactions</a></h3>
-<ul>
-<li>Anthropic has introduced the Projects feature for Pro and Team users, allowing multiple projects with their own reference materials, enhancing convenience for users.</li>
-<li>Claude 3.5 Sonnet is receiving praise for its coding abilities, with users noting it helps expert programmers move faster and is superior to other models like GPT-4.</li>
-<li>Users are discussing the practical applications and limitations of Claude 3.5 Sonnet, including its performance in summarization, recommendation tasks, and coding assistance, with some preferring it over OpenAI&#39;s offerings.</li>
-</ul>
-<h2><a href="http://mynor.org/my4th_forthdeck.htm">The Forth Deck mini: a portable Forth computer with a discrete CPU</a></h2>
-<ul>
-<li>The Forth Deck mini is a portable Forth computer with a discrete CPU, featuring a 40x4 character LCD, 56-button QWERTY keyboard, and 6.6 Wh LiPo battery with 6 hours runtime.</li>
-<li>It includes an 8-bit CMOS logic CPU, 32 KB ROM, 32 KB RAM, up to 256 KB EEPROM, and RS-232 with 4800 baud, reminiscent of 70s and 80s home computers with built-in Basic interpreters.</li>
-<li>The device can be assembled using a kit from Budgetronics, excluding the battery and charging circuitry, and is licensed under Creative Commons Attribution-ShareAlike 4.0 International License.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40804122">Reactions</a></h3>
-<ul>
-<li>The Forth Deck mini is a portable Forth computer featuring a discrete CPU built with a few logic chips and an EEPROM, operating on an 8-bit data and address bus.</li>
-<li>Enthusiasts are discussing its design, potential modifications, and comparisons to other CPUs like the Novix NC4000, as well as the idea of a Forth-based Factor dialect for scripting.</li>
-<li>The conversation highlights the challenges of creating modern hobbyist computers with good keyboards and displays, referencing devices like the TRS-80 Model 100 and the AlphaSmart, and mentioning alternatives like the M5Stack Cardputer and the Zorzpad.</li>
-</ul>
-<h2><a href="https://www.npr.org/sections/shots-health-news/2024/06/26/g-s1-6177/brain-waste-removal-system-amyloid-alzheimer-toxins">The brain makes a lot of waste. Now scientists think they know where it goes</a></h2>
-<ul>
-<li>Scientists have uncovered new details about the brain&#39;s waste-removal system, which is essential for maintaining brain health and preventing disorders.</li>
-<li>Research published in Nature reveals that slow electrical waves during sleep help push waste-laden fluid from deep within the brain to its surface, where it is absorbed into the bloodstream and removed by the liver and kidneys.</li>
-<li>This glymphatic system is crucial for clearing amyloid, a substance linked to Alzheimer&#39;s disease, and impaired waste removal may contribute to various brain disorders like Alzheimer&#39;s, Parkinson&#39;s, headaches, and depression.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805251">Reactions</a></h3>
-<ul>
-<li>Scientists have identified that deep sleep plays a crucial role in clearing brain waste, including amyloid proteins, which are linked to Alzheimer&#39;s and dementia.</li>
-<li>Research suggests that inducing slow electrical waves in the brain through light and sound stimulation could enhance this waste clearance, though most studies are currently on mice.</li>
-<li>Factors such as coffee consumption, exercise, and sleep patterns are also being discussed for their potential impact on brain health.</li>
-</ul>
-<h2><a href="https://fastvoiceagent.cerebrium.ai/">Voice bots with 500ms response times</a></h2>
-<ul>
-<li>Experimentation with voice interfaces and large language models (LLMs) began following the release of GPT-4, highlighting the engaging nature and new challenges of voice interactions with generative AI.</li>
-<li>Achieving a 500ms voice-to-voice response time is challenging but possible by hosting transcription, LLM inference, and voice generation together, optimizing data routing, and ensuring good wifi and VRAM caching.</li>
-<li>A demo of a 500ms-capable voice bot and a container for deployment on A10/A100/H100 GPUs is available, with current metrics showing a total response cycle of 759ms, indicating rapid AI evolution and potential future simplifications.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805010">Reactions</a></h3>
-<ul>
-<li>Voice bots achieving 500ms response times are possible by optimizing transcription, LLM inference, and voice generation processes, along with efficient data routing and caching.</li>
-<li>Metrics for voice-to-voice response total 759ms, but future LLMs with native audio capabilities may further reduce this time.</li>
-<li>Users highlighted the importance of low latency in AI interactions, especially in customer service, and discussed potential technical improvements like browser support and on-device processing.</li>
-</ul>
-<h2><a href="https://fabric8labs.com">Next gen 3D metal printing</a></h2>
-<ul>
-<li>Fabric8Labs, a San Diego startup, has secured $50 million in Series B financing to advance its electrochemical additive manufacturing technology.</li>
-<li>The funding will support the construction of a new 3D printing factory, significantly increasing the company&#39;s workforce.</li>
-<li>This investment highlights the growing interest and capital influx into 3D printing startups, driven by innovative manufacturing technologies.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40803783">Reactions</a></h3>
-<ul>
-<li>Next-gen 3D metal printing by Fabric8Labs employs electrochemical methods for precise, fast, and versatile manufacturing, achieving micron-level resolution.</li>
-<li>This technique combines additive and subtractive processes, primarily depositing pure metals and some alloys, making it safer and more energy-efficient by avoiding high temperatures and metal powders.</li>
-<li>Fabric8Labs&#39; technology is promising for applications such as PCBs (Printed Circuit Boards) and complex internal structures, and the company is exploring commercial opportunities with this unique approach.</li>
-</ul>
-<h2><a href="https://lars.ingebrigtsen.no/2024/06/26/a-new-package-for-making-charts-in-emacs-eplot/">Eplot: A new package for making charts in Emacs</a></h2>
-<ul>
-<li>A new Emacs package called eplot has been released, designed for creating simple plots directly within Emacs.</li>
-<li>eplot addresses limitations found in existing tools like chart.el and Gnuplot, offering features such as sensible Y-axis numbers and SVG gradients.</li>
-<li>The package is user-friendly, allowing users to generate plots by typing M-x eplot in a buffer with numbers, and it is documented on GitHub.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40807923">Reactions</a></h3>
-<ul>
-<li>A new package called Eplot has been released for creating charts in Emacs, a popular text editor among developers.</li>
-<li>The package has garnered attention for its simplicity and flexibility, with suggestions to enhance user experience by leveraging Emacs&#39; file- and directory-local variables.</li>
-<li>Discussions highlight comparisons with other charting tools like Gnuplot and Matplotlib, noting the strengths and weaknesses of each in the context of Emacs.</li>
-</ul>
-<h2><a href="https://www.joanwestenberg.com/6-months-ago,-i-left-the-bullshit-industrial-complex">6 months ago, I left the bullshit industrial complex</a></h2>
-<ul>
-<li>A former tech PR professional reveals their past in promoting overhyped startups, which funded a lavish lifestyle but led to ethical doubts.</li>
-<li>They decided to leave the profitable but morally questionable industry to focus on honest writing about the real human impact of technology and venture capital.</li>
-<li>Despite financial and career risks, they find integrity and personal fulfillment in their new path, rejecting the tech industry&#39;s empty promises.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40806930">Reactions</a></h3>
-<ul>
-<li>The author expresses disillusionment with the tech industry, noting a shift from solving human problems to extracting value over the past 25 years.</li>
-<li>Key observations include a Reddit post claiming the 90s were peak humanity and a viral quote about AI doing chores instead of creative work, highlighting a nostalgic view of past technological optimism.</li>
-<li>Despite concerns about data exploitation and profit-driven motives, there is still hope in open-source communities and innovative hacks, though the relentless pursuit of profit has led to widespread disillusionment.</li>
-</ul>
-<h2><a href="https://www.govexec.com/pay-benefits/2024/06/federal-whistleblowers-are-entitled-damages-missed-future-pay-court-rules/397638/">Federal whistleblowers are entitled to damages of missed future pay, court rules</a></h2>
-<ul>
-<li>The U.S. Court of Appeals for the Federal Circuit ruled that federal whistleblowers can receive compensatory damages for future lost earnings if their firing harmed their earning potential.</li>
-<li>Deborah Perlick, fired after reporting missing funds, successfully argued for additional compensation beyond back pay, impacting future job prospects.</li>
-<li>This ruling sets a precedent for federal whistleblowers, allowing claims for future lost earnings without needing guaranteed future employment, and the case was remanded to the Merit Systems Protection Board for a final decision.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40804489">Reactions</a></h3>
-<ul>
-<li>A court has ruled that federal whistleblowers are entitled to damages for missed future pay, even without a guaranteed future job, provided there is sufficient evidence of likely future employment.</li>
-<li>This decision may encourage more whistleblowers by alleviating concerns about losing future earnings and aligns federal employees&#39; rights with those of private-sector employees.</li>
-<li>The case, involving a VA (Veterans Affairs) employee, emphasized that reputational harm affecting future earnings is compensable.</li>
-</ul>
-<h2><a href="https://www.ams.org/notices/199701/comm-rota.pdf">Lessons I Wish I Had Been Taught (1996) [pdf]</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40808933">Reactions</a></h3>
-<ul>
-<li>&quot;Lessons I Wish I Had Been Taught (1996)&quot; by Gian-Carlo Rota sparked discussions on Hacker News, with users sharing unique units of measurement like &quot;microcentury&quot; (50 minutes) and &quot;nanoacre&quot; (4 square millimeters).</li>
-<li>Conversations also covered lecture durations, attention spans, and the significance of engaging introductions in academic papers, reflecting on Rota&#39;s impactful teachings.</li>
-<li>The thread highlighted a recurring interest in Rota&#39;s insights, with users reminiscing about personal experiences and referencing related discussions and resources.</li>
-</ul>
-<h2><a href="https://www.lawgazette.co.uk/news/post-office-lawyers-held-secret-meeting-with-judge-to-stop-disclosure/5119593.article">Post Office lawyers held secret meeting with judge to stop disclosure</a></h2>
-<ul>
-<li>Lawyers for the Post Office held a secret meeting with a judge in 2013 to prevent disclosure of a report revealing potential issues with the Horizon system to defence solicitors in a criminal trial.</li>
-<li>The inquiry heard that prosecuting solicitor Martin Smith admitted he did not comply with his duties and lacked the necessary expertise, raising concerns about past convictions and disclosure practices.</li>
-<li>The ongoing inquiry continues to uncover several disclosure issues as the Post Office approaches mediation and reviews of past convictions.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40808808">Reactions</a></h3>
-<ul>
-<li>Post Office lawyers secretly met with a judge to block evidence disclosure, resulting in wrongful convictions.</li>
-<li>Public defenders are overwhelmed, managing up to 700 cases annually, which hampers effective defense.</li>
-<li>The justice system favors those who can afford private attorneys, underscoring the need for legal reforms and better funding for public defenders to ensure fair trials.</li>
-</ul>
-<h2><a href="https://www.readmargins.com/p/doordash-and-pizza-arbitrage">DoorDash and Pizza Arbitrage (2020)</a></h2>
-<ul>
-<li>Doordash listed a pizzeria without the owner&#39;s permission, leading to issues with cold deliveries and incorrect pricing.</li>
-<li>An arbitrage opportunity emerged due to Doordash&#39;s pricing errors, allowing profit from ordering at lower prices and selling at higher restaurant prices.</li>
-<li>The article critiques the food delivery business model as inefficient and exploitative, suggesting a more integrated approach like Domino&#39;s might be more sustainable.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40806356">Reactions</a></h3>
-<ul>
-<li>DoorDash and similar food delivery services face criticism for unsustainable business models that depend on underpaid labor and high customer acquisition costs.</li>
-<li>Critics argue these practices exacerbate economic inequality and suggest taxing accumulated capital to redistribute wealth.</li>
-<li>The debate includes concerns about the negative impact on restaurant quality and the ethics of these delivery services, questioning their long-term sustainability and benefits.</li>
-</ul>
-<h2><a href="https://github.com/corcel/corcel">Corcel – Use WordPress backend with Laravel or any PHP application</a></h2>
-<ul>
-<li>Corcel is a PHP library built on Eloquent ORM from Laravel, enabling direct data retrieval from a WordPress database, usable with Laravel or any PHP project via Composer.</li>
-<li>Key features include support for custom post types, shortcodes, taxonomies, pages, attachments, revisions, thumbnails, options, menus, users, and authentication.</li>
-<li>Installation and configuration are straightforward, with auto-registration for Laravel 5.5+ and manual setup for older versions or non-Laravel projects.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805351">Reactions</a></h3>
-<ul>
-<li>Corcel enables the use of a WordPress backend with Laravel or any PHP application, proving effective in production environments.</li>
-<li>Users have successfully integrated Corcel with Laravel, Filament, and LunarPHP to improve performance, such as rescuing slow WooCommerce sites.</li>
-<li>Corcel is praised for its seamless interface with WordPress data, offering a maintainable solution for PHP projects needing to interact with WordPress databases, and is compared favorably to tools like Prismic, Strapi, and Shopify.</li>
-</ul>
-<head>
-  <meta property="og:title" content="South Korean telecom company attacks torrent users with malware" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=South%20Korean%20telecom%20company%20attacks%20torrent%20users%20with%20malware&subheading=Thursday%2C%20June%2027%2C%202024%3A%20Hacker%20News%20Summary" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/2024/06/27</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

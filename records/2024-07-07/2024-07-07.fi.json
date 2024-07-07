@@ -1,0 +1,332 @@
+[
+  {
+    "id": 40897205,
+    "title": "Upotetut YouTube-videot ovat todella raskaita ja sen voi korjata",
+    "originLink": "https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897205",
+    "commentBody": "",
+    "originSummary": [
+      "Upotetut YouTube-videot ovat raskaita resursseille, sillä jokainen upotus on noin 1,3 Mt ja vaatii 32 pyyntöä, mikä johtaa hitaisiin latausaikoihin ja suureen tiedonsiirtoon.",
+      "Web-komponentti, kuten Paul Irishin \"lite-youtube-embed\", voi pienentää kokoa noin 100 kilotavuun, jakaa resursseja ja parantaa suorituskykyä merkittävästi.",
+      "Tämän ratkaisun toteuttaminen edellyttää JavaScriptin linkittämistä, komponentin käyttämistä HTML:ssä ja skriptin lataamista asynkronisesti paremman suorituskyvyn saavuttamiseksi."
+    ],
+    "commentSummary": [
+      "Yhteisöfoorumi on korvannut YouTube-upotukset välitetyillä pikkukuvilla, jotka latautuvat vasta, kun niitä klikataan. Tämä vähentää tarvetta ladata suuria JavaScript-tiedostoja ja estää Googlen seurannan.",
+      "Samanlaisia ratkaisuja on toteutettu YouTube-, SoundCloud- ja Reddit-upotuksille toiminnallisuuden parantamiseksi ja turhan kuormituksen minimoimiseksi.",
+      "On kiistaa siitä, voivatko kevyemmät upotukset vähentää sitoutumista hitaampien videon käynnistysaikojen vuoksi, mutta monet uskovat, että sivun kokonaislatausajan parantaminen on tärkeämpää käyttäjäkokemuksen ja sivuston suorituskyvyn kannalta."
+    ],
+    "points": 236,
+    "commentCount": 135,
+    "retryCount": 0,
+    "time": 1720355875
+  },
+  {
+    "id": 40896102,
+    "title": "Malloc rikkoi Serenityn JPGLoaderin, tai: kuinka voittaa lotossa (2021)",
+    "originLink": "https://sin-ack.github.io/posts/jpg-loader-bork/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896102",
+    "commentBody": "",
+    "originSummary": [
+      "Virhe SerenityOS:n JPG-kuvien dekoodauksessa aiheutti väärän värinäytön RGB:n ja BGR:n sekaannuksen vuoksi.",
+      "Ongelma jäljitettiin `malloc_good_size()`-toiminnon toteutukseen, joka muutti muistinvarausta ja vaikutti `JPGLoader`-ohjelmassa käytettyihin tietorakenteisiin, kuten `HashTable` ja `Vector`.",
+      "Korjaus sisälsi deterministisen iteraation varmistamisen `JPGLoader`-komponenteissa, mikä korostaa, kuinka yksinkertaiset muutokset voivat paljastaa merkittäviä taustalla olevia ongelmia."
+    ],
+    "commentSummary": [
+      "Jotkin hajautustaulun toteutukset lisäävät satunnaisuutta estääkseen elementtien järjestykseen luottamisen ja parantaakseen turvallisuutta, kun taas nykyaikaiset toteutukset usein takaavat iteraation lisäysjärjestyksessä.",
+      "JavaScript ja Python ovat standardoineet lisäysjärjestyksen hajautustaulujensa toteutuksissa, ja Python otti tämän käyttöön versiossa 3.7.",
+      "Rust tarjoaa erilaisia hajautustaulu-vaihtoehtoja (`HashMap`, `BTreeMap`, `IndexMap`), ja Perl otti käyttöön satunnaissiementen käytön hajautustauluissa version 5.18 jälkeen."
+    ],
+    "points": 177,
+    "commentCount": 143,
+    "retryCount": 0,
+    "time": 1720341723
+  },
+  {
+    "id": 40895672,
+    "title": "BeaconDB – Vaihtoehto Mozilla Location Services -palvelulle",
+    "originLink": "https://beacondb.net/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895672",
+    "commentBody": "",
+    "originSummary": [
+      "beaconDB on julkisen sektorin langaton paikannustietokanta, joka kattaa 177 176 verkkoa, 4 126 majakkaa ja 6 106 tornia 30 maassa, ja sen tiedonkeruu perustuu eettisesti hankittuun, vapaaehtoiseen osallistumiseen.",
+      "Tietokanta on yksityisyyttä kunnioittava, hämärtäen tietoja lähettäjien ja avustajien suojaamiseksi, ja se vaatii fyysisen läheisyyden tietojen päivittämiseksi, mikä tekee siitä väärinkäytön kestävän.",
+      "Kehittäjät voivat käyttää päätepistettä `https://beacondb.net/v1/geolocate`, joka on yhteensopiva Ichnaean pyyntömuodon kanssa, mutta se ei sovellu suuriliikenteisiin sovelluksiin; lähdekoodi on saatavilla Codebergissä."
+    ],
+    "commentSummary": [
+      "BeaconDB esitetään vaihtoehtona Mozilla Location Servicesille (MLS), keskittyen eettisesti hankittuun, vapaaehtoiseen tiedonkeruuseen.",
+      "Toisin kuin Apple ja Google, BeaconDB ei julkaise selväkielisiä MAC-osoitteita, vaan käyttää hajautettua tai yhdistettyä dataa yksityisyyden parantamiseksi.",
+      "BeaconDB on ainoa ei-suurten teknologiayritysten tietokanta sijaintipalveluille, jonka tavoitteena on tarjota avoimen lähdekoodin ratkaisu ja keskustella mahdollisista yhteistyömahdollisuuksista."
+    ],
+    "points": 170,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1720333550
+  },
+  {
+    "id": 40897506,
+    "title": "Järjestelmäohjelmoinnin tapaamisten uudelleenherääminen",
+    "originLink": "https://notes.eatonphil.com/2024-07-07-systems-meetups.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897506",
+    "commentBody": "",
+    "originSummary": [
+      "Vuonna 2024 on ollut uudelleen nousua korkealaatuisissa järjestelmäsuunnittelun tapaamisissa kaupungeissa kuten München, Berliini, San Francisco, New York City ja Bengaluru.",
+      "NYC Systems Coffee Club, joka aloitettiin joulukuussa 2023, keskittyy insinöörihaasteisiin ja on kasvanut nopeasti, inspiroiden samanlaisia tapaamisia maailmanlaajuisesti.",
+      "Keskeisiä neuvoja tapaamisten järjestämiseen ovat isäntäpaikan varmistaminen, tekniseen sisältöön keskittyminen, puhujien löytäminen alan yhteyksien kautta ja yhteistyö muiden järjestäjien kanssa."
+    ],
+    "commentSummary": [
+      "Järjestelmien ohjelmointitapaamiset kokevat uudelleen nousua, mikä korostaa yhteisön uudistunutta kiinnostusta matalan tason ohjelmointiin ja järjestelmäarkkitehtuuriin.",
+      "Järjestää tällaisia tapaamisia kohtaa haasteita, kuten vakaan tapahtumapaikan löytäminen, mikä usein vaatii vahvaa sisäistä tukea tai kunnallista tukea, jotta voidaan varmistaa johdonmukaiset sijainnit.",
+      "Laadukkaat ja keskittyneet tapaamisten sisällöt ovat ratkaisevan tärkeitä, sillä jotkut ryhmät kamppailevat tasapainottaakseen aitojen teknisten keskustelujen ja puhujien itseään mainostavien esitysten välillä."
+    ],
+    "points": 164,
+    "commentCount": 65,
+    "retryCount": 0,
+    "time": 1720358437
+  },
+  {
+    "id": 40892812,
+    "title": "Missä ovat hyvät resurssit äänenkäsittelyn oppimiseen?",
+    "originLink": "https://news.ycombinator.com/item?id=40892812",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40892812",
+    "commentBody": "",
+    "originSummary": [
+      "Useri etsii resursseja ohjelmoidakseen harmonisaattorin, joka on samanlainen kuin MIT:n Ben Bloombergin Jacob Collierille luoma.",
+      "He tarvitsevat helposti saatavilla olevaa tietoa sävelkorkeuden ja formaatin muuttamisesta, joka säilyttää luonnollisen äänenlaadun.",
+      "Käyttäjällä on laaja ohjelmointikokemus, mutta häneltä puuttuu tietämys äänikäsittelystä, mikä osoittaa tarpeen aloittelijaystävällisille mutta kattaville resursseille."
+    ],
+    "commentSummary": [
+      "Eräs käyttäjä etsii resursseja ohjelmoidakseen harmonisaattorin, joka on samanlainen kuin Jacob Collierin käyttämä ja MIT:n Ben Bloombergin luoma, keskittyen sävelkorkeuden ja muodon siirtoon.",
+      "Suositeltuihin resursseihin kuuluvat CCRMA:n avoimet kurssimateriaalit Stanfordista, teollisuusstandardin mukaiset kirjastot kuten Zplanen Elastique sekä kirjat kuten \"DAFX - Digital Audio Effects\" Udo Zölzerin kirjoittamana.",
+      "Lisäsuosituksiin kuuluvat tutoriaalit, YouTube-kanavat ja yhteisöfoorumit, kuten Officehours.global, verkostoitumista ja lisäoppimista varten."
+    ],
+    "points": 144,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1720295988
+  },
+  {
+    "id": 40893866,
+    "title": "Ilmainen minimalistinen päivittäinen tapaseuranta",
+    "originLink": "https://rdht.vercel.app/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893866",
+    "commentBody": "",
+    "originSummary": [
+      "Uusi tapaseurantasovellus on kehitetty henkilön toimesta, joka oli tyytymätön olemassa oleviin vaihtoehtoihin. Sovelluksessa on ominaisuuksia, kuten putkien seuranta, offline-käyttömahdollisuus, putkien jäädytys, visuaalinen johdonmukaisuuskartta ja taukotoiminto.",
+      "Sovellus on rakennettu käyttämällä Reactia frontendissä, Dexie cloudia tallennukseen ja synkronointiin, ja se on isännöity Vercelissä.",
+      "Sovelluskehittäjä on tehnyt sovelluksen julkiseen käyttöön, esitellen henkilökohtaisen projektin, joka on muutettu yhteisön resurssiksi."
+    ],
+    "commentSummary": [
+      "Uusi ilmainen minimalistinen päivittäinen tapaseuranta on luotu täyttämään olemassa olevien sovellusten puutteet. Se sisältää putkiseurannan, offline-käytön, putkien jäädytyksen, visuaalisen johdonmukaisuuskartan ja taukotoiminnon.",
+      "Rakennettu Reactilla ja Dexie Cloudilla, ja isännöity Vercelissä, sovellus on saanut palautetta parannuksista, erityisesti iPhone-käyttäjiltä, mukaan lukien ehdotuksia huonoista tavoista, suunnittelun hienosäädöistä ja virheenkorjauksista.",
+      "Kayttäjät arvostavat siistiä suunnittelua ja offline-toiminnallisuutta, ja heillä on ehdotuksia tiivistetystä näkymästä ja paremmasta mobiiliyhteensopivuudesta; rahallistamissuunnitelmia ei vielä ole."
+    ],
+    "points": 117,
+    "commentCount": 51,
+    "retryCount": 0,
+    "time": 1720305433
+  },
+  {
+    "id": 40895441,
+    "title": "Miksi Italia menetti kiinnostuksensa korianteriin",
+    "originLink": "https://www.atlasobscura.com/articles/what-are-italian-herbs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895441",
+    "commentBody": "",
+    "originSummary": [
+      "Korianteri, joka oli aikoinaan peruselintarvike muinaisessa roomalaisessa keittiössä, on lähes kadonnut nykyaikaisesta italialaisesta ruoanlaitosta, erityisesti sen lehdet.",
+      "Lasku alkoi Rooman jälkeen, germaanisten heimojen vaikutuksesta ja eksoottisten mausteiden, kuten kanelin ja kardemumman, suosion myötä.",
+      "Huolimatta historiallisesta läsnäolostaan, korianteria pidetään nykyään Italiassa vieraana ainesosana, toisin kuin muita yrttejä, kuten basilikaa."
+    ],
+    "commentSummary": [
+      "Italian inho korianteria kohtaan juontaa juurensa vuoteen 1544, jolloin kasvitieteilijä Pietro Andrea Mattioli kuvaili sen lehtiä luteiden hajuisiksi.",
+      "Vastenmielisyys voi olla geneettisesti vaikuttunut, sillä jotkut ihmiset kokevat korianterin maistuvan saippualta tietyn geenin vuoksi.",
+      "Lasku korianterin suosiosta Italiassa liittyy myös muuttuviin kulinaarisiin trendeihin ja muuttoliikkeisiin, mikä havainnollistaa genetiikan, kulttuurin ja henkilökohtaisten mieltymysten monimutkaista vuorovaikutusta ruokamieltymysten muotoutumisessa."
+    ],
+    "points": 108,
+    "commentCount": 116,
+    "retryCount": 0,
+    "time": 1720329769
+  },
+  {
+    "id": 40895167,
+    "title": "\"Out of Band\" -verkonhallinta ei ole yksinkertaista",
+    "originLink": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895167",
+    "commentBody": "",
+    "originSummary": [
+      "Vuoden 2022 Rogersin internet- ja puhelinverkon katkos, joka vaikutti yli 12 miljoonaan kanadalaiseen, korosti \"Out of Band\" (OOB) -verkonhallinnan tärkeyttä ja monimutkaisuutta.",
+      "OOB-hallinta vaatii erillisen laitteiston ja infrastruktuurin pääverkosta, mikä varmistaa redundanssin ja turvallisuuden, mutta lisää merkittävästi kustannuksia ja monimutkaisuutta.",
+      "Pienemmät verkot saattavat pitää käytännöllisempänä keskittyä vankkaan, redundanttiin in-band-hallintaan sen sijaan, että ylläpitäisivät erillistä OOB-verkkoa."
+    ],
+    "commentSummary": [
+      "Verkon hallinta \"Out of Band\" (OOB) -menetelmällä on olennaista verkon luotettavuuden ylläpitämiseksi, erityisesti nykyaikaisissa digitaalisissa järjestelmissä, jotka ovat alttiita virheellisille määrityksille ja vioille.",
+      "Rogersin katkos korosti vahvan OOB-hallinnan kriittistä tarvetta, tuoden esiin paremman suunnittelun ja riskinarvioinnin merkityksen ydinverkon vikojen estämiseksi.",
+      "Tehokas OOB-hallinta edellyttää omistettujen, redundanttien järjestelmien käyttöä, usein hyödyntäen eri palveluntarjoajia tai teknologioita, kuten LTE:tä tai satelliittia, luotettavuuden varmistamiseksi."
+    ],
+    "points": 105,
+    "commentCount": 70,
+    "retryCount": 0,
+    "time": 1720324841
+  },
+  {
+    "id": 40896873,
+    "title": "Suorita JavaScript WebAssembly QuickJS-hiekkalaatikossa",
+    "originLink": "https://github.com/sebastianwessel/quickjs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896873",
+    "commentBody": "",
+    "originSummary": [
+      "Tämä TypeScript-paketti mahdollistaa JavaScript-koodin turvallisen suorittamisen WebAssembly-hiekkalaatikossa käyttäen QuickJS-moottoria, mikä on ihanteellista epäluotettavan koodin turvalliseen ajamiseen.",
+      "Keskeisiä ominaisuuksia ovat eristetty ympäristö, virtuaalinen tiedostojärjestelmä, mukautetut solmumoduulit, HTTP(S)-hakuklientti, chai-pohjainen testiajo ja tehokas suorituskyky.",
+      "Pakkaus on monipuolinen ja helppo integroida TypeScript-projekteihin, tarjoten käyttäjäystävällisen API:n koodin suorittamiseen ja hallintaan."
+    ],
+    "commentSummary": [
+      "Tämä TypeScript-paketti mahdollistaa JavaScript-koodin turvallisen suorittamisen WebAssembly-hiekkalaatikossa käyttäen QuickJS-moottoria, varmistaen epäluotettavan koodin eristämisen.",
+      "Keskeisiä ominaisuuksia ovat virtuaalinen tiedostojärjestelmä, mukautetut solmumoduulit, hakuklientti, testin suorittaja ja käyttäjäystävällinen API, jotka tukevat ympäristöjä kuten NodeJS, Deno ja Cloudflare Workers.",
+      "Turvavaroitus huomauttaa, että `fetch`-toiminnon ottaminen käyttöön voi altistaa isännän evästeet luottamattomalle koodille, mikä voi vaarantaa hiekkalaatikon turvallisuuden."
+    ],
+    "points": 104,
+    "commentCount": 32,
+    "retryCount": 0,
+    "time": 1720352245
+  },
+  {
+    "id": 40895935,
+    "title": "Transistorista verkkoselaimeen, karkea hahmotelma 12 viikon kurssille",
+    "originLink": "https://github.com/geohot/fromthetransistor",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895935",
+    "commentBody": "",
+    "originSummary": [
+      "Kurssi kattaa kattavan matkan transistoreiden ymmärtämisestä verkkoselaimen kehittämiseen, tarjoten käytännönläheisen lähestymistavan laitteiston ja ohjelmiston integroinnin oppimiseen.",
+      "Keskeisiä projekteja ovat ARM7-suorittimen rakentaminen, C-kääntäjän kehittäminen, UNIX-tyyppisen käyttöjärjestelmän luominen ja tekstipohjaisen verkkoselaimen tekeminen käyttäen kieliä kuten Verilog, Python, Haskell ja C.",
+      "Opetussuunnitelma painottaa käytännön taitoja, kuten Verilatorilla emulointia, FPGA-piirilevyn suunnittelua ja keskeisten järjestelmäkomponenttien, kuten MMU:n, Ethernet-ohjaimen ja TCP-pinojen toteuttamista."
+    ],
+    "commentSummary": [
+      "Geohotin GitHubissa tarjoama 12 viikon kurssi nimeltä \"From the Transistor to the Web Browser\" on herättänyt keskustelua kunnianhimoisen laajuutensa vuoksi, mutta päivityksiä on tullut vain vähän vuoden 2016 jälkeen.",
+      "Käyttäjät keskustelevat sen toteutettavuudesta, ehdottaen vaihtoehtoisia oppimistyökaluja kuten \"Turing Complete\" ja \"Shenzen I/O,\" ja väittävät sen olevan liian monimutkainen aloittelijoille, paremmin kokeneille ohjelmoijille sopiva.",
+      "Kriitikot kyseenalaistavat kurssin käytännöllisyyden ja tekijän aikomukset, pitäen sitä liian kunnianhimoisena ja sisällöltään puutteellisena verrattuna kattaviin sähkö- ja tietotekniikan tutkintoihin."
+    ],
+    "points": 102,
+    "commentCount": 44,
+    "retryCount": 0,
+    "time": 1720338876
+  },
+  {
+    "id": 40897518,
+    "title": "Mongo mutta Postgresilla ja vahvoilla johdonmukaisuushyödyillä",
+    "originLink": "https://github.com/event-driven-io/Pongo",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897518",
+    "commentBody": "",
+    "originSummary": [
+      "Pongo Pongo on työkalu, joka mahdollistaa MongoDB-tyyppisten operaatioiden käytön PostgreSQL:ssä, hyödyntäen vahvan konsistenssin etuja.",
+      "Se kääntää MongoDB API -kutsut natiiviksi PostgreSQL-kyselyiksi, hyödyntäen JSONB:tä tehokkaisiin luku-/kirjoitusoperaatioihin ja monimutkaisiin kyselyihin.",
+      "Pongo ei ole perinteinen ORM (Object-Relational Mapping), vaan keskittyy dokumenttitietojen käsittelyyn, tarjoten joustavuutta ja suorituskykyä, vaikka se ei olekaan täysin MongoDB-yhteensopiva."
+    ],
+    "commentSummary": [
+      "Pongo on uusi projekti, joka tarjoaa MongoDB-tyyppisen API:n PostgreSQL:n päälle, hyödyntäen JSONB-sarakkeita vahvan johdonmukaisuuden etujen saavuttamiseksi.",
+      "Projektin tavoitteena on yhdistää MongoDB:n helppokäyttöisyys PostgreSQL:n vankkaan johdonmukaisuuteen ja luotettavuuteen, kääntämällä MongoDB-syntaksi alkuperäisiksi PostgreSQL-kyselyiksi.",
+      "Tämä kehitys on herättänyt kiinnostusta, koska sillä on potentiaalia tarjota tuttu MongoDB-kokemus samalla kun hyödynnetään PostgreSQL:n edistyneitä ominaisuuksia, mikä houkuttelee kehittäjiä, jotka etsivät vahvaa johdonmukaisuutta tietokantaoperaatioissaan."
+    ],
+    "points": 98,
+    "commentCount": 48,
+    "retryCount": 0,
+    "time": 1720358532
+  },
+  {
+    "id": 40896110,
+    "title": "Tutkijat palaavat vuoden Mars-simulaatioprojektin jälkeen",
+    "originLink": "https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896110",
+    "commentBody": "",
+    "originSummary": [
+      "Neljä tiedemiestä suoritti vuoden mittaisen Mars-simulaation Houstonin Mars Dune Alpha -habitaatissa, joka on 3D-tulostettu rakenne, joka on suunniteltu jäljittelemään Marsin olosuhteita.",
+      "Tehtävä, joka on osa NASA:n Crew Health and Performance Exploration Analog (CHAPEA) -ohjelmaa, pyrkii keräämään tietoa tulevia Mars-matkoja ja pitkäaikaista avaruustutkimusta varten, mukaan lukien Artemis-ohjelma.",
+      "Tiimi suoritti \"Marskävelyjä\" ja käsitteli stressitekijöitä, kuten eristäytymistä ja viestinnän viiveitä, ja lisämissioita CHAPEA-suunniteltiin vuosille 2025 ja 2027."
+    ],
+    "commentSummary": [
+      "Tutkijat ovat päättäneet vuoden mittaisen Mars-simulaation, joka keskittyi ihmisen kestävyyteen eristetyissä, korkean stressin ympäristöissä.",
+      "Projekti korostaa, että psykologisten ja sosiaalisten dynamiikkojen hallinta on haastavampaa kuin ravitsemustarpeiden.",
+      "Keskusteluihin sisältyy teknisiä ja eettisiä näkökohtia, mahdollisesti korkeat kuolleisuusluvut sekä laajan valmistelun ja pienempien alkuvaiheen tehtävien tarve Marsin kolonisaatiota varten."
+    ],
+    "points": 91,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1720341858
+  },
+  {
+    "id": 40896212,
+    "title": "\"AI\", opiskelijat ja episteminen kriisi",
+    "originLink": "https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896212",
+    "commentBody": "",
+    "originSummary": [
+      "Blogikirjoitus 6. heinäkuuta 2024 käsittelee opiskelijan ChatGPT:n käyttöä hakukoneena, mikä johti siihen, että opiskelija uskoi virheellistä tietoa.",
+      "Kirjoittaja korostaa AI:n tuottaman väärän tiedon torjumisen vaikeutta, sillä jokainen opiskelija saattaa saada ainutlaatuisia virheellisiä tietoja, mikä monimutkaistaa korjausprosessia.",
+      "Kirjoitus pohtii laajemmin väärän tiedon vaikutusta koulutukseen ja poistettiin häirinnän vuoksi."
+    ],
+    "commentSummary": [
+      "Nykyään opiskelijat ovat merkittävästi riippuvaisia tekoälystä ja internetistä tiedonhankinnassa, mikä eroaa aiemmista sukupolvista, jotka tekivät manuaalista tutkimusta kirjastoissa.",
+      "Opettajat ovat huolissaan siitä, että tämä riippuvuus saattaa heikentää opiskelijoiden kykyä arvioida tietoa kriittisesti, mikä johtaa usein syvyyttä vailla oleviin esseisiin.",
+      "Vaikka tekoälytyökalut ovat hyödyllisiä, ne voivat myös tuottaa virheellistä tietoa, mikä herättää keskustelua näiden työkalujen integroimisesta koulutukseen samalla, kun edistetään kriittistä ajattelua."
+    ],
+    "points": 89,
+    "commentCount": 121,
+    "retryCount": 0,
+    "time": 1720343169
+  },
+  {
+    "id": 40894082,
+    "title": "OpenAI hakkeroitiin, vuoden vanhasta tietomurrosta ei ilmoitettu julkisuuteen",
+    "originLink": "https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40894082",
+    "commentBody": "",
+    "originSummary": [
+      "Hakkerit murtautuivat OpenAI:n sisäisiin viestintäjärjestelmiin viime vuoden alussa, paljastaen arkaluonteista tietoa, mutta eivät päässeet käsiksi keskeisiin tekoälyjärjestelmiin, mikä herätti turvallisuus- ja kansallisen turvallisuuden huolia.",
+      "OpenAI ilmoitti tapauksesta sisäisesti huhtikuussa 2023, todeten, että asiakastietoja ei varastettu ja että hakkerilla ei todennäköisesti ollut yhteyksiä hallitukseen; kuitenkin tietomurto on lisännyt pelkoja ulkomaisten vihollisten, erityisesti Kiinan, edistyksestä tekoälyteknologioissaan.",
+      "OpenAI on sittemmin parantanut turvallisuustoimiaan, perustanut turvallisuus- ja suojelukomitean, ja tapaus on herättänyt keskusteluja liittovaltion ja osavaltioiden sääntelytoimista AI-teknologian julkaisun hallitsemiseksi."
+    ],
+    "commentSummary": [
+      "OpenAI koki viime vuonna ilmoittamattoman hakkeroinnin, mikä johti käyttäjien huoliin läpinäkyvyydestä ja turvallisuuskäytännöistä.",
+      "Rikkomus koski pääsyä sisäisiin viestintäjärjestelmiin, mutta ei vaarantanut keskeisiä tekoälyteknologioita.",
+      "Käyttäjät keskustelivat vaikeuksista virheiden raportoinnissa ja turhautumisista OpenAI:n tavanomaisiin tietoturvaraportointikäytäntöihin liittyen."
+    ],
+    "points": 84,
+    "commentCount": 26,
+    "retryCount": 0,
+    "time": 1720308293
+  },
+  {
+    "id": 40893749,
+    "title": "Mikä aiheuttaa migreeniä? Tutkimus 'aivojen pimenemisestä' tarjoaa vihjeitä",
+    "originLink": "https://www.nature.com/articles/d41586-024-02222-x",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893749",
+    "commentBody": "",
+    "originSummary": [
+      "Tutkimus hiirillä, joka julkaistiin Science-lehdessä 4. heinäkuuta 2024, paljastaa uusia näkemyksiä migreenin syistä, yhdistäen lyhyet aivojen 'pimennykset' aivo-selkäydinnesteen muutoksiin, jotka aktivoivat kipureseptoreita kallossa.",
+      "Tutkimus viittaa siihen, että migreenit saattavat toimia suojamekanismina, joka viestii levon tarpeesta, ja tunnistaa aiemmin tuntemattoman aukon kolmoishermosolmun ympärillä olevissa suojakerroksissa.",
+      "Tämä löytö voisi johtaa uusien migreenin hoitomuotojen kehittämiseen kohdistamalla hoidot juuri tunnistettuihin mekanismeihin."
+    ],
+    "commentSummary": [
+      "Tutkimus viittaa siihen, että kortikaalinen leviävä depressio (CSD), \"aivojen pimeneminen\", saattaa olla osallisena migreeneissä.",
+      "Ihmiset raportoivat erilaisista laukaisevista tekijöistä ja hoidoista, mukaan lukien ruokavalion muutokset, lääkkeet kuten Rizatriptaani ja elämäntapamuutokset, kuten parempi uni ja nesteytys.",
+      "Keskustelu korostaa migreenien monimutkaisuutta, sillä eri laukaisijat ja hoidot ovat tehokkaita eri henkilöille."
+    ],
+    "points": 84,
+    "commentCount": 72,
+    "retryCount": 0,
+    "time": 1720303961
+  }
+]

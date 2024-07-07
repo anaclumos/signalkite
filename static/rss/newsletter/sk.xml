@@ -15,12 +15,208 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 06 Jul 2024 19:10:41 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 07 Jul 2024 19:09:26 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/sk.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 06 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[sk]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-07]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/07&#39;</h2>
+<h1>2024-07-07</h1>
+<h2><a href="https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/">„YouTube vloženia sú extrémne náročné a dá sa to opraviť“</a></h2>
+<ul>
+<li>„YouTube vloženia sú náročné na zdroje, pričom každé vloženie má približne 1,3 MB a 32 požiadaviek, čo vedie k pomalým časom načítania a vysokému prenosu dát.“</li>
+<li>„Webová komponenta ako &quot;lite-youtube-embed&quot; od Paula Irisha môže znížiť veľkosť na približne 100k, zdieľať zdroje a výrazne zlepšiť výkon.“</li>
+<li>„Implementácia tohto riešenia zahŕňa prepojenie JavaScriptu, použitie komponentu v HTML a načítanie skriptu asynchrónne pre lepší výkon.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897205">Reakcie</a></h3>
+<ul>
+<li>„Platforma komunitného fóra nahradila vložené videá z YouTube proxy náhľadmi, ktoré sa načítajú iba po kliknutí, čím sa znižuje potreba sťahovania veľkých súborov JavaScript a zabraňuje sledovaniu zo strany Google.“</li>
+<li>„Podobné riešenia boli implementované pre YouTube, SoundCloud a Reddit embedy na zlepšenie funkčnosti a minimalizáciu nadbytočnosti.“</li>
+<li>„Existuje diskusia o tom, či ľahšie vložené prvky môžu znížiť zapojenie kvôli pomalšiemu spusteniu videa, ale mnohí veria, že zlepšenie celkového času načítania stránky je dôležitejšie pre používateľskú skúsenosť a výkon stránky.“</li>
+</ul>
+<h2><a href="https://sin-ack.github.io/posts/jpg-loader-bork/">„Malloc zničil Serenityho JPGLoader, alebo: ako vyhrať lotériu (2021)“</a></h2>
+<ul>
+<li>„Chyba v dekódovaní JPG obrázkov v SerenityOS spôsobila nesprávne zobrazenie farieb kvôli zámene RGB a BGR.“</li>
+<li>„Problém bol vystopovaný späť k commitu implementujúcemu <code>malloc_good_size()</code>, ktorý zmenil alokáciu pamäte a ovplyvnil dátové štruktúry ako <code>HashTable</code> a <code>Vector</code> používané v <code>JPGLoader</code>.“</li>
+<li>„Oprava zahŕňala zabezpečenie deterministického iterovania nad komponentmi v <code>JPGLoader</code>, čím sa zdôraznilo, ako jednoduché zmeny môžu odhaliť významné základné problémy.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896102">Reakcie</a></h3>
+<ul>
+<li>„Niektoré implementácie hash tabuliek zavádzajú náhodnosť, aby zabránili spoliehaniu sa na poradie prvkov a zvýšili bezpečnosť, zatiaľ čo moderné implementácie často zaručujú iteráciu v poradí vkladania.“</li>
+<li>„JavaScript a Python majú štandardizované poradie vkladania vo svojich implementáciách hash tabuliek, pričom Python to prijal vo verzii 3.7.“</li>
+<li>„Rust ponúka rôzne možnosti hash tabuliek (<code>HashMap</code>, <code>BTreeMap</code>, <code>IndexMap</code>), a Perl zaviedol náhodné semená pre hash tabuľky po verzii 5.18.“</li>
+</ul>
+<h2><a href="https://beacondb.net/">„BeaconDB – Alternatíva k Mozilla Location Services“</a></h2>
+<ul>
+<li>„beaconDB je verejná bezdrôtová geolokačná databáza pokrývajúca 177 176 sietí, 4 126 majákov, 6 106 veží v 30 krajinách, s eticky získanými údajmi na základe súhlasu.“</li>
+<li>„Databáza je priateľská k súkromiu, zakrýva informácie na ochranu vysielačov a prispievateľov a na aktualizáciu údajov vyžaduje fyzickú blízkosť, čo ju robí odolnou voči zneužitiu.“</li>
+<li>„Vývojári môžu použiť koncový bod <code>https://beacondb.net/v1/geolocate</code>, kompatibilný s formátom požiadaviek Ichnaea, ale nie je vhodný pre aplikácie s vysokou návštevnosťou; zdrojový kód je dostupný na Codeberg.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895672">Reakcie</a></h3>
+<ul>
+<li>„BeaconDB je prezentovaná ako alternatíva k Mozilla Location Services (MLS), zameriavajúca sa na eticky získavané údaje so súhlasom používateľov.“</li>
+<li>„Na rozdiel od Apple a Google, BeaconDB nezverejňuje MAC adresy v čitateľnej podobe, ale namiesto toho používa hashované alebo agregované údaje na zvýšenie ochrany súkromia.“</li>
+<li>„BeaconDB je jediná databáza pre lokalizačné služby mimo veľkých technologických spoločností, ktorá sa snaží poskytnúť open-source riešenie a diskutovať o možných spoluprácach.“</li>
+</ul>
+<h2><a href="https://notes.eatonphil.com/2024-07-07-systems-meetups.html">„Obnovenie stretnutí o systémovom programovaní“</a></h2>
+<ul>
+<li>„V roku 2024 došlo k oživeniu stretnutí zameraných na programovanie systémov vysokej kvality v mestách ako Mníchov, Berlín, San Francisco, New York City a Bengaluru.“</li>
+<li>„NYC Systems Coffee Club, ktorý začal v decembri 2023, sa zameriava na inžinierske výzvy a rýchlo rástol, inšpirujúc podobné stretnutia po celom svete.“</li>
+<li>„Kľúčové rady pre organizovanie stretnutí zahŕňajú zabezpečenie hostiteľského miesta, zameranie sa na technický obsah, hľadanie rečníkov prostredníctvom priemyselných kontaktov a spoluprácu s ostatnými organizátormi.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897506">Reakcie</a></h3>
+<ul>
+<li>„Stretnutia zamerané na systémové programovanie zažívajú oživenie, čo poukazuje na obnovený záujem komunity o nízkoúrovňové programovanie a systémovú architektúru.“</li>
+<li>„Organizovanie takýchto stretnutí čelí výzvam, vrátane nájdenia stabilných miest, ktoré často vyžadujú silnú vnútornú podporu alebo mestskú podporu na zabezpečenie konzistentných lokalít.“</li>
+<li>„Kvalita a zameranie obsahu stretnutí sú kľúčové, pričom niektoré skupiny zápasia s vyvážením medzi skutočnými technickými diskusiami a sebapropagačnými prezentáciami rečníkov.“</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40892812">„Kde sú dobré zdroje na učenie sa spracovania zvuku?“</a></h2>
+<ul>
+<li>„Používateľ hľadá zdroje na naprogramovanie harmonizéra podobného tomu, ktorý vytvoril Ben Bloomberg z MIT pre Jacoba Colliera.“</li>
+<li>„Potrebujú prístupné informácie o posúvaní tónu a formátovaní, ktoré zachováva prirodzenú kvalitu zvuku.“</li>
+<li>„Používateľ má rozsiahle skúsenosti s programovaním, ale chýbajú mu vedomosti v oblasti spracovania zvuku, čo naznačuje potrebu zdrojov, ktoré sú priateľské pre začiatočníkov, no zároveň komplexné.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40892812">Reakcie</a></h3>
+<ul>
+<li>„Používateľ hľadá zdroje na naprogramovanie harmonizéra podobného tomu, ktorý vytvoril Ben Bloomberg z MIT pre Jacoba Colliera, so zameraním na posun výšky tónu a formátu.“</li>
+<li>„Odporúčané zdroje zahŕňajú otvorené kurzové materiály z CCRMA na Stanforde, priemyselné štandardné knižnice ako Elastique od Zplane a knihy ako &quot;DAFX - Digital Audio Effects&quot; od Uda Zölzera.“</li>
+<li>„Ďalšie návrhy zahŕňajú tutoriály, YouTube kanály a komunitné fóra ako Officehours.global na vytváranie sietí a ďalšie vzdelávanie.“</li>
+</ul>
+<h2><a href="https://rdht.vercel.app/">„Bezplatný minimalistický sledovač denných návykov“</a></h2>
+<ul>
+<li>„Nová aplikácia na sledovanie návykov bola vyvinutá jednotlivcom nespokojným s existujúcimi možnosťami, obsahuje sledovanie sérií, použiteľnosť offline, zmrazenie sérií, vizuálnu mapu konzistencie a funkciu pauzy.“</li>
+<li>„Aplikácia je postavená pomocou Reactu pre frontend, Dexie cloud pre úložisko a synchronizáciu a je hostovaná na Verceli.“</li>
+<li>„Vývojár sprístupnil aplikáciu na verejné použitie, čím predstavil osobný projekt premenený na komunitný zdroj.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40893866">Reakcie</a></h3>
+<ul>
+<li>„Bol vytvorený nový bezplatný minimalistický sledovač denných návykov, ktorý rieši nedostatky existujúcich aplikácií a ponúka sledovanie sérií, offline použitie, zmrazenie sérií, vizuálnu mapu konzistencie a funkciu pauzy.“</li>
+<li>„Postavená s React a Dexie cloud a hostovaná na Vercel, aplikácia dostala spätnú väzbu na vylepšenia, najmä od používateľov iPhone, vrátane návrhov na zlé návyky, úpravy dizajnu a opravy chýb.“</li>
+<li>„Používatelia oceňujú čistý dizajn a offline funkčnosť, s návrhmi na zbalený pohľad a lepšiu kompatibilitu s mobilnými zariadeniami; zatiaľ neexistujú žiadne plány na speňaženie.“</li>
+</ul>
+<h2><a href="https://www.atlasobscura.com/articles/what-are-italian-herbs">„Prečo sa Taliansko prestalo zamilovávať do koriandra“</a></h2>
+<ul>
+<li>„Koriander, kedysi základ starovekej rímskej kuchyne, takmer zmizol z modernej talianskej kuchyne, najmä jeho listy.“</li>
+<li>„Úpadok začal po Ríme, ovplyvnený germánskymi kmeňmi a preferenciou exotických korenín ako škorica a kardamón.“</li>
+<li>„Napriek svojej historickej prítomnosti je koriander v Taliansku teraz považovaný za cudziu prísadu, na rozdiel od iných bylín, ako je bazalka.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895441">Reakcie</a></h3>
+<ul>
+<li>„Neobľuba Talianov voči koriandru siaha až do roku 1544, keď botanik Pietro Andrea Mattioli opísal jeho listy ako zapáchajúce po plošticiach.“</li>
+<li>„Odpor môže byť geneticky ovplyvnený, pretože niektorí ľudia vnímajú koriander ako chutnajúci po mydle kvôli špecifickému génu.“</li>
+<li>„Pokles obľúbenosti koriandra v Taliansku je tiež spojený so zmenou kulinárskych trendov a migračných vzorcov, čo ilustruje zložitú súhru medzi genetikou, kultúrou a osobnými preferenciami pri formovaní chutí jedál.“</li>
+</ul>
+<h2><a href="https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial">„Mimopásmová správa siete nie je triviálna“</a></h2>
+<ul>
+<li>„Výpadok internetu a telefónnych služieb spoločnosti Rogers v roku 2022, ktorý postihol viac ako 12 miliónov Kanaďanov, poukázal na dôležitosť a zložitosť správy siete mimo pásma (OOB).“</li>
+<li>„Správa OOB vyžaduje špecializovaný hardvér a infraštruktúru oddelenú od hlavnej siete, čo zabezpečuje redundanciu a bezpečnosť, ale pridáva značné náklady a zložitosť.“</li>
+<li>„Menšie siete môžu považovať za praktickejšie zamerať sa na robustné, redundantné in-band riadenie namiesto udržiavania samostatnej OOB siete.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895167">Reakcie</a></h3>
+<ul>
+<li>„Mimopásmová (OOB) správa siete je nevyhnutná pre udržanie spoľahlivosti siete, najmä v moderných digitálnych systémoch, ktoré sú náchylné na nesprávne konfigurácie a zlyhania.“</li>
+<li>„Výpadok spoločnosti Rogers zdôraznil kritickú potrebu robustného OOB manažmentu, poukazujúc na dôležitosť lepšieho plánovania a hodnotenia rizík na predchádzanie zlyhaniam jadrovej siete.“</li>
+<li>„Efektívne OOB riadenie zahŕňa používanie dedikovaných, redundantných systémov, často využívajúcich rôznych poskytovateľov alebo technológie, ako sú LTE alebo satelit, na zabezpečenie spoľahlivosti.“</li>
+</ul>
+<h2><a href="https://github.com/sebastianwessel/quickjs">„Spustite JavaScript v pieskovisku WebAssembly QuickJS“</a></h2>
+<ul>
+<li>„Tento balík TypeScript umožňuje bezpečné vykonávanie JavaScriptového kódu v rámci WebAssembly sandboxu pomocou QuickJS enginu, čo je ideálne na bezpečné spúšťanie nedôveryhodného kódu.“</li>
+<li>„Kľúčové vlastnosti zahŕňajú izolované prostredie, virtuálny súborový systém, vlastné moduly uzlov, HTTP(S) klient na získavanie dát, testovací nástroj založený na chai a efektívny výkon.“</li>
+<li>„Balík je všestranný a ľahko integrovaný s projektmi TypeScript, ponúka používateľsky prívetivé API pre vykonávanie a správu kódu.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896873">Reakcie</a></h3>
+<ul>
+<li>„Tento balík TypeScript umožňuje bezpečné vykonávanie JavaScriptového kódu v rámci WebAssembly sandboxu pomocou QuickJS enginu, čím zabezpečuje izoláciu nedôveryhodného kódu.“</li>
+<li>„Kľúčové vlastnosti zahŕňajú virtuálny súborový systém, vlastné moduly uzlov, klienta na načítanie, testovací bežec a používateľsky prívetivé API, podporujúce prostredia ako NodeJS, Deno a Cloudflare Workers.“</li>
+<li>„Bezpečnostné varovanie upozorňuje, že povolenie <code>fetch</code> môže vystaviť cookies hostiteľa nedôveryhodnému kódu, čo môže potenciálne ohroziť bezpečnosť sandboxu.“</li>
+</ul>
+<h2><a href="https://github.com/geohot/fromthetransistor">„Od tranzistora po webový prehliadač, hrubý náčrt 12-týždňového kurzu“</a></h2>
+<ul>
+<li>„Kurz pokrýva komplexnú cestu od porozumenia tranzistorom až po vývoj webového prehliadača, pričom poskytuje praktický prístup k učeniu integrácie hardvéru a softvéru.“</li>
+<li>„Kľúčové projekty zahŕňajú vytvorenie ARM7 CPU, C kompilátora, UNIX-ového operačného systému a textového webového prehliadača, pričom sa používajú jazyky ako Verilog, Python, Haskell a C.“</li>
+<li>„Učebné osnovy kladú dôraz na praktické zručnosti, ako je emulácia s Verilatorom, návrh FPGA dosiek a implementácia základných systémových komponentov, ako sú MMU, Ethernetový kontrolér a TCP stack.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895935">Reakcie</a></h3>
+<ul>
+<li>„12-týždňový kurz s názvom &quot;Od tranzistora po webový prehliadač&quot; od geohota na GitHube vyvolal diskusiu kvôli svojmu ambicióznemu rozsahu, ale minimálnym aktualizáciám od roku 2016.“</li>
+<li>„Používatelia diskutujú o jeho realizovateľnosti, navrhujú alternatívne nástroje na učenie ako &quot;Turing Complete&quot; a &quot;Shenzen I/O&quot; a tvrdia, že môže byť príliš zložitý pre začiatočníkov, vhodnejší pre skúsených programátorov.“</li>
+<li>„Kritici spochybňujú praktickosť kurzu a úmysly autora, považujúc ho za príliš ambiciózny a nedostatočný v porovnaní s komplexnými titulmi v odbore elektrotechniky a počítačového inžinierstva.“</li>
+</ul>
+<h2><a href="https://github.com/event-driven-io/Pongo">„Mongo, ale na Postgres a s výhodami silnej konzistencie“</a></h2>
+<ul>
+<li>„Pongo Pongo je nástroj, ktorý umožňuje používať operácie podobné MongoDB na PostgreSQL, využívajúc výhody silnej konzistencie.“</li>
+<li>„Prekladá volania API MongoDB do natívnych dotazov PostgreSQL, využívajúc JSONB pre efektívne operácie čítania/zápisu a zložité dotazy.“</li>
+<li>„Pongo nie je tradičný ORM (Object-Relational Mapping), ale zameriava sa na spracovanie dokumentových dát, ponúka flexibilitu a výkon, hoci nie je úplne kompatibilný s MongoDB.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897518">Reakcie</a></h3>
+<ul>
+<li>„Pongo je nový projekt, ktorý poskytuje API podobné MongoDB na PostgreSQL, využívajúc JSONB stĺpce pre výhody silnej konzistencie.“</li>
+<li>„Projekt si kladie za cieľ skombinovať jednoduchosť používania MongoDB s robustnou konzistenciou a spoľahlivosťou PostgreSQL, prekladajúc syntax MongoDB do natívnych dotazov PostgreSQL.“</li>
+<li>„Tento vývoj vyvolal záujem vďaka svojmu potenciálu ponúknuť známy zážitok z MongoDB pri využívaní pokročilých funkcií PostgreSQL, čo oslovuje vývojárov hľadajúcich silnú konzistenciu vo svojich databázových operáciách.“</li>
+</ul>
+<h2><a href="https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838">„Vedci sa znovu objavujú po roku v projekte simulácie Marsu“</a></h2>
+<ul>
+<li>„Štyria vedci dokončili ročnú simuláciu Marsu v houstonskom habitate Mars Dune Alpha, 3D-tlačenej štruktúre navrhnutej na replikáciu marťanských podmienok.“</li>
+<li>„Misia, ktorá je súčasťou programu NASA Crew Health and Performance Exploration Analog (CHAPEA), má za cieľ získať poznatky pre budúce misie na Mars a dlhodobý prieskum vesmíru, vrátane programu Artemis.“</li>
+<li>„Tím vykonal „Marswalks“ a zaoberal sa stresormi ako izolácia a oneskorenie komunikácie, pričom ďalšie misie CHAPEA sú naplánované na roky 2025 a 2027.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896110">Reakcie</a></h3>
+<ul>
+<li>„Vedci ukončili ročnú simuláciu Marsu, zameranú na ľudskú výdrž v izolovaných, vysoko stresových prostrediach.“</li>
+<li>„Projekt zdôrazňuje, že psychologické a sociálne dynamiky sú náročnejšie na zvládnutie ako výživové potreby.“</li>
+<li>„Diskusie zahŕňajú technické a etické úvahy, potenciálne vysoké úmrtnosti a nevyhnutnosť rozsiahlej prípravy a menších počiatočných misií pre kolonizáciu Marsu.“</li>
+</ul>
+<h2><a href="https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html">„AI“, študenti a epistemická kríza“</a></h2>
+<ul>
+<li>„Blogový príspevok zo 6. júla 2024 diskutuje o tom, ako študent použil ChatGPT ako vyhľadávač, čo viedlo k tomu, že študent uveril nepravdivým informáciám.“</li>
+<li>„Autor poukazuje na ťažkosti v boji proti dezinformáciám generovaným umelou inteligenciou, pretože každý študent môže dostať jedinečné nesprávne fakty, čo komplikuje proces ich opravy.“</li>
+<li>„Príspevok sa zaoberá širším problémom vplyvu dezinformácií na vzdelávanie a bol odstránený kvôli obťažovaniu.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896212">Reakcie</a></h3>
+<ul>
+<li>„Študenti dnes výrazne závisia na AI a internete pre získavanie informácií, na rozdiel od predchádzajúcich generácií, ktoré vykonávali manuálny výskum v knižniciach.“</li>
+<li>„Učitelia sa obávajú, že táto závislosť môže brániť schopnosti študentov kriticky hodnotiť informácie, čo vedie k esejám, ktoré často postrádajú hĺbku.“</li>
+<li>„Hoci sú nástroje AI užitočné, môžu tiež generovať nepravdivé informácie, čo vyvoláva diskusiu o integrácii týchto nástrojov do vzdelávania pri súčasnom rozvíjaní kritického myslenia.“</li>
+</ul>
+<h2><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public">„OpenAI bolo hacknuté, ročný únik nebol nahlásený verejnosti“</a></h2>
+<ul>
+<li>„Hackeri prenikli do interných komunikačných systémov OpenAI začiatkom minulého roka, čím odhalili citlivé informácie, ale nezískali prístup k hlavným AI systémom, čo vyvolalo obavy o bezpečnosť a národnú bezpečnosť.“</li>
+<li>„OpenAI zverejnila incident interne v apríli 2023, pričom uviedla, že neboli odcudzené žiadne údaje zákazníkov a hacker pravdepodobne nemal žiadne väzby na vládu; avšak, tento prienik viedol k zvýšeným obavám o pokroky zahraničných protivníkov, najmä Číny, v oblasti ich AI technológií.“</li>
+<li>„OpenAI odvtedy zlepšila svoje bezpečnostné opatrenia, zriadila Výbor pre bezpečnosť a ochranu a incident vyvolal diskusie o federálnych a štátnych predpisoch na kontrolu uvoľňovania technológie AI.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40894082">Reakcie</a></h3>
+<ul>
+<li>„OpenAI zažilo minulý rok neohlásený hack, čo viedlo k obavám používateľov o transparentnosť a bezpečnostné praktiky.“</li>
+<li>„Porušenie zahŕňalo prístup k interným komunikačným systémom, ale neohrozilo kľúčové technológie AI.“</li>
+<li>„Používatelia diskutovali o ťažkostiach pri nahlasovaní chýb a frustráciách so štandardnými postupmi hlásenia bezpečnostných problémov spoločnosti OpenAI.“</li>
+</ul>
+<h2><a href="https://www.nature.com/articles/d41586-024-02222-x">„Čo spôsobuje migrény? Štúdia &#39;výpadku mozgu&#39; ponúka stopy“</a></h2>
+<ul>
+<li>„Štúdia na myšiach, publikovaná v časopise Science 4. júla 2024, odhaľuje nové poznatky o príčinách migrény, spájajúc krátke &#39;výpadky&#39; mozgu so zmenami v mozgovomiechovom moku, ktoré aktivujú receptory bolesti v lebke.“</li>
+<li>„Výskum naznačuje, že migrény môžu slúžiť ako ochranný mechanizmus signalizujúci potrebu odpočinku a identifikuje predtým neznámu medzeru v ochranných vrstvách okolo trojklanného ganglia.“</li>
+<li>„Tento objav by mohol viesť k vývoju nových liečebných postupov pre migrény zameraním sa na novo identifikované mechanizmy.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40893749">Reakcie</a></h3>
+<ul>
+<li>„Štúdia naznačuje, že kortikálna šíriaca sa depresia (CSD), „výpadok mozgu“, môže byť zapojená do migrén.“</li>
+<li>„Ľudia uvádzali rôzne spúšťače a liečby, vrátane zmien v stravovaní, liekov ako Rizatriptan a úprav životného štýlu, ako je zlepšený spánok a hydratácia.“</li>
+<li>„Diskusia zdôrazňuje zložitosť migrén, pričom rôzne spúšťače a liečby sú účinné pre rôznych jedincov.“</li>
+</ul>
+<head>
+  <meta property="og:title" content="„YouTube vloženia sú extrémne náročné a dá sa to opraviť“" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E2%80%9EYouTube%20vlo%C5%BEenia%20s%C3%BA%20extr%C3%A9mne%20n%C3%A1ro%C4%8Dn%C3%A9%20a%20d%C3%A1%20sa%20to%20opravi%C5%A5%E2%80%9C&subheading=nede%C4%BEa%207.%20j%C3%BAla%202024%3A%20Hacker%20News%20Zhrnutie" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/sk/2024/07/07</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-06]]></title>
             <description
@@ -1681,192 +1877,6 @@
             <link>https://hn.cho.sh/sk/2024/06/28</link>
             <guid isPermaLink="false">2024-06-28T00:00:00.000Z</guid>
             <pubDate>Fri, 28 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-27]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/27&#39;</h2>
-<h1>2024-06-27</h1>
-<h2><a href="https://www.tomshardware.com/tech-industry/cyber-security/south-korean-telecom-company-attacks-torrent-users-with-malware-over-600000-people-report-missing-files-strange-folders-and-disabled-pcs">„Juhokórejská telekomunikačná spoločnosť útočí na používateľov torrentov malvérom“</a></h2>
-<ul>
-<li>„KT Corporation, významná juhokórejská telekomunikačná spoločnosť, úmyselne infikovala viac ako 600 000 používateľov malvérom, aby narušila BitTorrentovú Grid službu Webhardu, počnúc májom 2020.“</li>
-<li>„Malvér spôsobil problémy ako chýbajúce súbory, zvláštne priečinky a nefunkčné počítače, a bol vystopovaný späť do dátového centra KT.“</li>
-<li>„Úrady obvinili 13 osôb, vrátane zamestnancov KT, a KT obhajovala svoje kroky tým, že poukázala na zaťaženie siete a nezaplatené poplatky za používanie, hoci neautorizovaná inštalácia malvéru viedla k významným problémom zákazníkov.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805099">Reakcie</a></h3>
-<ul>
-<li>„Juhokórejská telekomunikačná spoločnosť údajne cieli na používateľov torrentov pomocou malvéru, čo vyvoláva významné obavy o súkromie a etiku.“</li>
-<li>„Incident poukazuje na pretrvávajúce problémy s poskytovateľmi internetových služieb (ISP) v Južnej Kórei, vrátane vysokých poplatkov a možného zneužitia moci.“</li>
-<li>„Táto situácia vyvolala diskusie o stave internetovej slobody a infraštruktúry v Južnej Kórei, ktorá bola kedysi známa svojimi rýchlymi internetovými rýchlosťami, ale teraz čelí kritike za zastarané praktiky a vládnu kontrolu.“</li>
-</ul>
-<h2><a href="https://latenighter.com/news/paramount-axes-comedy-central-website-show-clips-library/">„25 rokov videoklipov zmizlo, keď Paramount zrušil webovú stránku Comedy Central“</a></h2>
-<ul>
-<li>„Paramount zrušil stránku ComedyCentral.com, čím odstránil viac ako 25 rokov klipov z The Daily Show a The Colbert Report, a nasmeroval návštevníkov na poskytovateľov TV alebo Paramount+.“</li>
-<li>„Ďalšie relácie ako The Opposition with Jordan Klepper a Lights Out with David Spade sú tiež ovplyvnené, pričom staršie epizódy nie sú dostupné na Paramount+.“</li>
-<li>„Tento krok je súčasťou úsporných opatrení spoločnosti Paramount na zvládnutie dlhu vo výške viac ako 14 miliárd dolárov, po podobných krokoch s MTV.com a CMT.com, s cieľom zjednodušiť stránky a prilákať divákov na Paramount+.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40807032">Reakcie</a></h3>
-<ul>
-<li>„Paramount odstránil 25 rokov videoklipov z webovej stránky Comedy Central, čo vyvolalo kritiku ohľadom vnímaného podceňovania obsahu zo strany ich manažmentu.“</li>
-<li>„Kritici tvrdia, že obsah mohol byť speňažený alebo zachovaný, čím poukazujú na zložitosť mediálnych práv a regulačné výzvy pri distribúcii staršieho obsahu.“</li>
-<li>„Odstránenie je vnímané ako opatrenie na zníženie nákladov zo strany Paramountu uprostred finančných ťažkostí, pričom niektorí ľutujú stratu kultúrnej histórie a navrhujú pirátstvo ako prostriedok na jej zachovanie.“</li>
-</ul>
-<h2><a href="https://web.dev/case-studies/google-sheets-wasmgc">„Google Sheets preniesol svoj výpočtový modul z JavaScriptu na WasmGC“</a></h2>
-<ul>
-<li>„Google Sheets prešiel z JavaScriptu na WasmGC (WebAssembly Garbage Collection) s cieľom zlepšiť výkon, najmä pre veľké tabuľky.“</li>
-<li>„WasmGC podporuje jazyky s automatickým zberom odpadu, ako je Java, a ponúka takmer natívnu rýchlosť na webe, pričom Google Sheets je jedným z prvých, ktorý ho implementuje.“</li>
-<li>„Počiatočný výkon WasmGC bol pomalší ako JavaScript, ale následné optimalizácie výrazne zlepšili jeho rýchlosť, čo dokazuje jeho potenciál revolučne zmeniť vývoj webových aplikácií.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40808820">Reakcie</a></h3>
-<ul>
-<li>„Google Sheets prešiel z výpočtového enginu JavaScript na WasmGC, spočiatku zaznamenal pomalší výkon, ale neskôr ho optimalizoval tak, aby bol dvakrát rýchlejší ako verzia JS.“</li>
-<li>„Tento krok zahŕňal významné úsilie o opätovnú implementáciu, vrátane devirtualizácie a využívania API prehliadača, s cieľom zlepšiť výkon a využiť natívny zberač odpadu V8.“</li>
-<li>„Napriek zlepšeniam niektorí používatelia stále považujú Google Sheets za pomalšie v porovnaní s natívnymi aplikáciami ako Excel, čo poukazuje na neustály vývoj a optimalizáciu webových technológií.“</li>
-</ul>
-<h2><a href="https://thezvi.substack.com/p/on-claude-35-sonnet">„Claude 3.5 Sonet“</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40806698">Reakcie</a></h3>
-<ul>
-<li>„Anthropic zaviedol funkciu Projekty pre používateľov Pro a Team, ktorá umožňuje viacero projektov s vlastnými referenčnými materiálmi, čím zvyšuje pohodlie pre používateľov.“</li>
-<li>„Claude 3.5 Sonnet získava pochvalu za svoje schopnosti v oblasti kódovania, pričom používatelia si všímajú, že pomáha odborným programátorom pracovať rýchlejšie a je lepší ako iné modely, ako napríklad GPT-4.“</li>
-<li>„Používatelia diskutujú o praktických aplikáciách a obmedzeniach Claude 3.5 Sonnet, vrátane jeho výkonu pri sumarizácii, odporúčacích úlohách a asistencii pri kódovaní, pričom niektorí ho uprednostňujú pred ponukami OpenAI.“</li>
-</ul>
-<h2><a href="http://mynor.org/my4th_forthdeck.htm">„Forth Deck mini: prenosný Forth počítač s diskrétnym CPU“</a></h2>
-<ul>
-<li>„Forth Deck mini je prenosný Forth počítač s diskrétnym CPU, ktorý obsahuje 40x4 znakový LCD displej, 56-tlačidlovú QWERTY klávesnicu a 6,6 Wh LiPo batériu s výdržou 6 hodín.“</li>
-<li>„Obsahuje 8-bitový CMOS logický CPU, 32 KB ROM, 32 KB RAM, až 256 KB EEPROM a RS-232 s rýchlosťou 4800 baudov, čo pripomína domáce počítače zo 70. a 80. rokov so zabudovanými Basic interpretmi.“</li>
-<li>„Zariadenie je možné zostaviť pomocou súpravy od Budgetronics, s výnimkou batérie a nabíjacieho obvodu, a je licencované pod licenciou Creative Commons Attribution-ShareAlike 4.0 International License.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40804122">Reakcie</a></h3>
-<ul>
-<li>„Forth Deck mini je prenosný Forth počítač s diskrétnym CPU postaveným z niekoľkých logických čipov a EEPROM, ktorý pracuje na 8-bitovej dátovej a adresovej zbernici.“</li>
-<li>„Nadšenci diskutujú o jeho dizajne, potenciálnych úpravách a porovnaniach s inými procesormi, ako je Novix NC4000, ako aj o myšlienke dialektu Factor založeného na jazyku Forth pre skriptovanie.“</li>
-<li>„Rozhovor poukazuje na výzvy pri vytváraní moderných počítačov pre hobbyistov s dobrými klávesnicami a displejmi, pričom odkazuje na zariadenia ako TRS-80 Model 100 a AlphaSmart, a spomína alternatívy ako M5Stack Cardputer a Zorzpad.“</li>
-</ul>
-<h2><a href="https://www.npr.org/sections/shots-health-news/2024/06/26/g-s1-6177/brain-waste-removal-system-amyloid-alzheimer-toxins">„Mozog vytvára veľa odpadu. Teraz si vedci myslia, že vedia, kam ide“</a></h2>
-<ul>
-<li>„Vedci odhalili nové podrobnosti o systéme odstraňovania odpadu v mozgu, ktorý je nevyhnutný pre udržanie zdravia mozgu a prevenciu porúch.“</li>
-<li>„Výskum publikovaný v časopise Nature odhaľuje, že pomalé elektrické vlny počas spánku pomáhajú vytláčať tekutinu plnú odpadu z hlbín mozgu na jeho povrch, kde je absorbovaná do krvného obehu a odstránená pečeňou a obličkami.“</li>
-<li>„Tento glymfatický systém je kľúčový pre odstraňovanie amyloidu, látky spojenej s Alzheimerovou chorobou, a narušené odstraňovanie odpadu môže prispievať k rôznym mozgovým poruchám, ako sú Alzheimerova choroba, Parkinsonova choroba, bolesti hlavy a depresia.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805251">Reakcie</a></h3>
-<ul>
-<li>„Vedci zistili, že hlboký spánok zohráva kľúčovú úlohu pri odstraňovaní odpadových látok z mozgu, vrátane amyloidových proteínov, ktoré sú spojené s Alzheimerovou chorobou a demenciou.“</li>
-<li>„Výskum naznačuje, že indukovanie pomalých elektrických vĺn v mozgu prostredníctvom svetelnej a zvukovej stimulácie by mohlo zlepšiť tento proces odstraňovania odpadu, hoci väčšina štúdií sa v súčasnosti vykonáva na myšiach.“</li>
-<li>„Faktory ako konzumácia kávy, cvičenie a spánkové vzorce sa tiež diskutujú pre ich potenciálny vplyv na zdravie mozgu.“</li>
-</ul>
-<h2><a href="https://fastvoiceagent.cerebrium.ai/">„Hlasoví roboti s reakčným časom 500 ms“</a></h2>
-<ul>
-<li>„Experimentovanie s hlasovými rozhraniami a veľkými jazykovými modelmi (LLM) sa začalo po vydaní GPT-4, čo poukázalo na pútavú povahu a nové výzvy hlasových interakcií s generatívnou AI.“</li>
-<li>„Dosiahnutie 500ms odozvy hlas-hlas je náročné, ale možné, ak sa hostuje transkripcia, inferencia LLM a generovanie hlasu spolu, optimalizuje sa smerovanie dát a zabezpečí sa dobré wifi a VRAM cacheovanie.“</li>
-<li>„Demo hlasového bota schopného reagovať do 500 ms a kontajner na nasadenie na GPU A10/A100/H100 sú k dispozícii, pričom aktuálne metriky ukazujú celkový čas odozvy 759 ms, čo naznačuje rýchly vývoj AI a potenciálne budúce zjednodušenia.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805010">Reakcie</a></h3>
-<ul>
-<li>„Hlasové boty dosahujúce časy odozvy 500 ms sú možné optimalizáciou procesov prepisu, inferencie LLM a generovania hlasu, spolu s efektívnym smerovaním a ukladaním dát do vyrovnávacej pamäte.“</li>
-<li>„Metriky pre hlasovú odozvu dosahujú celkovo 759 ms, ale budúce LLM s natívnymi zvukovými schopnosťami môžu tento čas ešte viac skrátiť.“</li>
-<li>„Používatelia zdôraznili dôležitosť nízkej latencie v interakciách s AI, najmä v zákazníckom servise, a diskutovali o možných technických vylepšeniach, ako je podpora prehliadača a spracovanie na zariadení.“</li>
-</ul>
-<h2><a href="https://fabric8labs.com">„3D tlač kovov novej generácie“</a></h2>
-<ul>
-<li>„Fabric8Labs, startup zo San Diega, získal 50 miliónov dolárov v rámci financovania Series B na rozvoj svojej elektrochemickej aditívnej výrobnej technológie.“</li>
-<li>„Financovanie podporí výstavbu novej továrne na 3D tlač, čo výrazne zvýši počet zamestnancov spoločnosti.“</li>
-<li>„Táto investícia zdôrazňuje rastúci záujem a prílev kapitálu do startupov zameraných na 3D tlač, poháňaný inovatívnymi výrobnými technológiami.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40803783">Reakcie</a></h3>
-<ul>
-<li>„Next-gen 3D tlač kovov od Fabric8Labs využíva elektrochemické metódy na presnú, rýchlu a všestrannú výrobu, dosahujúc rozlíšenie na úrovni mikrónov.“</li>
-<li>„Táto technika kombinuje aditívne a subtraktívne procesy, primárne nanášanie čistých kovov a niektorých zliatin, čím je bezpečnejšia a energeticky efektívnejšia, pretože sa vyhýba vysokým teplotám a kovovým práškom.“</li>
-<li>„Technológia Fabric8Labs je sľubná pre aplikácie, ako sú PCB (tlačené obvodové dosky) a zložité vnútorné štruktúry, a spoločnosť skúma komerčné príležitosti s týmto jedinečným prístupom.“</li>
-</ul>
-<h2><a href="https://lars.ingebrigtsen.no/2024/06/26/a-new-package-for-making-charts-in-emacs-eplot/">„Eplot: Nový balík na tvorbu grafov v Emacse“</a></h2>
-<ul>
-<li>„Bol vydaný nový balík pre Emacs s názvom eplot, ktorý je navrhnutý na vytváranie jednoduchých grafov priamo v Emacse.“</li>
-<li>„eplot rieši obmedzenia nájdené v existujúcich nástrojoch ako chart.el a Gnuplot, ponúkajúc funkcie ako rozumné čísla na osi Y a SVG gradienty.“</li>
-<li>„Balík je užívateľsky prívetivý, umožňuje používateľom generovať grafy zadaním M-x eplot v buffri s číslami a je zdokumentovaný na GitHube.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40807923">Reakcie</a></h3>
-<ul>
-<li>„Bol vydaný nový balík s názvom Eplot na vytváranie grafov v Emacse, obľúbenom textovom editore medzi vývojármi.“</li>
-<li>„Balík si získal pozornosť vďaka svojej jednoduchosti a flexibilite, s návrhmi na zlepšenie používateľského zážitku využitím súborových a adresárových lokálnych premenných v Emacse.“</li>
-<li>„Diskusie zdôrazňujú porovnania s inými nástrojmi na tvorbu grafov, ako sú Gnuplot a Matplotlib, pričom poukazujú na silné a slabé stránky každého z nich v kontexte Emacsu.“</li>
-</ul>
-<h2><a href="https://www.joanwestenberg.com/6-months-ago,-i-left-the-bullshit-industrial-complex">„Pred 6 mesiacmi som opustil ten nezmyselný priemyselný komplex“</a></h2>
-<ul>
-<li>„Bývalý PR profesionál v oblasti technológií odhaľuje svoju minulosť v propagovaní prehnane vychvaľovaných startupov, ktoré financovali luxusný životný štýl, ale viedli k etickým pochybnostiam.“</li>
-<li>„Rozhodli sa opustiť ziskový, ale morálne pochybný priemysel, aby sa zamerali na poctivé písanie o skutočnom ľudskom dopade technológií a rizikového kapitálu.“</li>
-<li>„Napriek finančným a kariérnym rizikám nachádzajú integritu a osobné naplnenie na svojej novej ceste, odmietajúc prázdne sľuby technologického priemyslu.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40806930">Reakcie</a></h3>
-<ul>
-<li>„Autor vyjadruje sklamanie z technologického priemyslu, pričom si všíma posun od riešenia ľudských problémov k extrahovaniu hodnoty za posledných 25 rokov.“</li>
-<li>„Kľúčové pozorovania zahŕňajú príspevok na Reddite, ktorý tvrdí, že 90. roky boli vrcholom ľudstva, a virálny citát o tom, že AI vykonáva domáce práce namiesto kreatívnej práce, čo poukazuje na nostalgický pohľad na minulé technologické optimizmy.“</li>
-<li>„Napriek obavám z využívania údajov a motívov zameraných na zisk, stále existuje nádej v open-source komunitách a inovatívnych hackoch, hoci neúnavné prenasledovanie zisku viedlo k rozšírenému sklamaniu.“</li>
-</ul>
-<h2><a href="https://www.govexec.com/pay-benefits/2024/06/federal-whistleblowers-are-entitled-damages-missed-future-pay-court-rules/397638/">„Federálni oznamovatelia majú nárok na náhradu škody za ušlú budúcu mzdu, rozhodol súd“</a></h2>
-<ul>
-<li>„Odvolací súd USA pre federálny okruh rozhodol, že federálni oznamovatelia môžu získať náhradu škody za budúce straty príjmov, ak ich prepustenie poškodilo ich potenciál zárobku.“</li>
-<li>„Deborah Perlick, ktorá bola prepustená po nahlásení chýbajúcich finančných prostriedkov, úspešne argumentovala za dodatočnú kompenzáciu nad rámec náhrady mzdy, čo ovplyvnilo jej budúce pracovné vyhliadky.“</li>
-<li>„Toto rozhodnutie vytvára precedens pre federálnych oznamovateľov, umožňujúc nároky na budúce stratené zárobky bez potreby zaručeného budúceho zamestnania, a prípad bol vrátený na Merit Systems Protection Board na konečné rozhodnutie.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40804489">Reakcie</a></h3>
-<ul>
-<li>„Súd rozhodol, že federálni oznamovatelia majú nárok na odškodnenie za ušlú budúcu mzdu, aj keď nemajú zaručené budúce zamestnanie, za predpokladu, že existujú dostatočné dôkazy o pravdepodobnom budúcom zamestnaní.“</li>
-<li>„Toto rozhodnutie môže povzbudiť viac oznamovateľov tým, že zmierni obavy zo straty budúcich príjmov a zosúladí práva federálnych zamestnancov s právami zamestnancov v súkromnom sektore.“</li>
-<li>„Prípad, ktorý zahŕňal zamestnanca VA (Veterans Affairs), zdôraznil, že poškodenie reputácie ovplyvňujúce budúce zárobky je odškodniteľné.“</li>
-</ul>
-<h2><a href="https://www.ams.org/notices/199701/comm-rota.pdf">„Lekcie, ktoré by som si prial, aby ma naučili (1996) [pdf]“</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40808933">Reakcie</a></h3>
-<ul>
-<li>„Lekcie, ktoré by som si prial, aby ma naučili (1996)&quot; od Gian-Carla Rotu vyvolali diskusie na Hacker News, kde používatelia zdieľali jedinečné jednotky merania ako &quot;mikrostoletie&quot; (50 minút) a &quot;nanoakre&quot; (4 štvorcové milimetre).“</li>
-<li>„Rozhovory sa tiež týkali dĺžky prednášok, rozsahu pozornosti a významu pútavých úvodov v akademických prácach, pričom sa odrážali na Rotaových vplyvných učeniach.“</li>
-<li>„Vlákno zdôraznilo opakujúci sa záujem o Rotove postrehy, pričom používatelia spomínali na osobné skúsenosti a odkazovali na súvisiace diskusie a zdroje.“</li>
-</ul>
-<h2><a href="https://www.lawgazette.co.uk/news/post-office-lawyers-held-secret-meeting-with-judge-to-stop-disclosure/5119593.article">„Právnici pošty sa tajne stretli so sudcom, aby zabránili zverejneniu“</a></h2>
-<ul>
-<li>„Právnici pošty sa v roku 2013 tajne stretli so sudcom, aby zabránili zverejneniu správy odhaľujúcej potenciálne problémy so systémom Horizon obhajcom v trestnom konaní.“</li>
-<li>„Vyšetrovanie zistilo, že prokurátor Martin Smith priznal, že neplnil svoje povinnosti a nemal potrebné odborné znalosti, čo vyvoláva obavy o minulé odsúdenia a postupy zverejňovania.“</li>
-<li>„Prebiehajúce vyšetrovanie naďalej odhaľuje niekoľko problémov s odhalením, keď sa Pošta blíži k mediácii a preskúmaniu minulých odsúdení.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40808808">Reakcie</a></h3>
-<ul>
-<li>„Právnici pošty sa tajne stretli so sudcom, aby zablokovali zverejnenie dôkazov, čo viedlo k nesprávnym odsúdeniam.“</li>
-<li>„Verejní obhajcovia sú preťažení, spravujú až 700 prípadov ročne, čo bráni efektívnej obhajobe.“</li>
-<li>„Systém spravodlivosti uprednostňuje tých, ktorí si môžu dovoliť súkromných právnikov, čo zdôrazňuje potrebu právnych reforiem a lepšieho financovania verejných obhajcov na zabezpečenie spravodlivých súdnych procesov.“</li>
-</ul>
-<h2><a href="https://www.readmargins.com/p/doordash-and-pizza-arbitrage">„DoorDash a pizza arbitráž (2020)“</a></h2>
-<ul>
-<li>„Doordash uviedol pizzeriu bez povolenia majiteľa, čo viedlo k problémom so studenými dodávkami a nesprávnym stanovením cien.“</li>
-<li>„Vyskytla sa arbitrážna príležitosť v dôsledku chýb v cenách Doordash, čo umožnilo zisk z objednávania za nižšie ceny a predaja za vyššie reštauračné ceny.“</li>
-<li>„Článok kritizuje obchodný model doručovania jedla ako neefektívny a vykorisťujúci, pričom navrhuje, že integrovaný prístup ako má Domino&#39;s by mohol byť udržateľnejší.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40806356">Reakcie</a></h3>
-<ul>
-<li>„DoorDash a podobné služby na doručovanie jedla čelia kritike za neudržateľné obchodné modely, ktoré závisia od nedostatočne platených pracovníkov a vysokých nákladov na získavanie zákazníkov.“</li>
-<li>„Kritici tvrdia, že tieto praktiky zhoršujú ekonomickú nerovnosť a navrhujú zdaňovanie nahromadeného kapitálu na prerozdelenie bohatstva.“</li>
-<li>„Debata zahŕňa obavy o negatívny vplyv na kvalitu reštaurácií a etiku týchto doručovacích služieb, pričom sa spochybňuje ich dlhodobá udržateľnosť a prínosy.“</li>
-</ul>
-<h2><a href="https://github.com/corcel/corcel">„Corcel – Použite WordPress backend s Laravelom alebo akoukoľvek PHP aplikáciou“</a></h2>
-<ul>
-<li>„Corcel je PHP knižnica postavená na Eloquent ORM z Laravelu, ktorá umožňuje priamy prístup k údajom z WordPress databázy, použiteľná s Laravelom alebo akýmkoľvek PHP projektom cez Composer.“</li>
-<li>„Kľúčové funkcie zahŕňajú podporu pre vlastné typy príspevkov, skratky, taxonómie, stránky, prílohy, revízie, miniatúry, možnosti, menu, používateľov a autentifikáciu.“</li>
-<li>„Inštalácia a konfigurácia sú jednoduché, s automatickou registráciou pre Laravel 5.5+ a manuálnym nastavením pre staršie verzie alebo projekty mimo Laravel.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805351">Reakcie</a></h3>
-<ul>
-<li>„Corcel umožňuje používať WordPress backend s Laravelom alebo akoukoľvek PHP aplikáciou, čo sa ukazuje ako efektívne v produkčných prostrediach.“</li>
-<li>„Používatelia úspešne integrovali Corcel s Laravelom, Filamentom a LunarPHP na zlepšenie výkonu, ako napríklad záchranu pomalých stránok WooCommerce.“</li>
-<li>„Corcel je chválený za svoj bezproblémový rozhranie s dátami WordPress, ponúka udržiavateľné riešenie pre PHP projekty, ktoré potrebujú interagovať s databázami WordPress, a je priaznivo porovnávaný s nástrojmi ako Prismic, Strapi a Shopify.“</li>
-</ul>
-<head>
-  <meta property="og:title" content="„Juhokórejská telekomunikačná spoločnosť útočí na používateľov torrentov malvérom“" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E2%80%9EJuhok%C3%B3rejsk%C3%A1%20telekomunika%C4%8Dn%C3%A1%20spolo%C4%8Dnos%C5%A5%20%C3%BAto%C4%8D%C3%AD%20na%20pou%C5%BE%C3%ADvate%C4%BEov%20torrentov%20malv%C3%A9rom%E2%80%9C&subheading=%C5%A1tvrtok%2027.%20j%C3%BAna%202024%3A%20Hacker%20News%20Zhrnutie" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/sk/2024/06/27</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

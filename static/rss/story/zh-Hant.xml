@@ -15,11 +15,213 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 06 Jul 2024 19:10:41 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 07 Jul 2024 19:09:26 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/story/zh-Hant.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 06 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
         <language><![CDATA[zh-Hant]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[「YouTube 嵌入功能非常耗資源，但這是可以解決的」]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>「YouTube 嵌入內容資源消耗大，每個嵌入約佔 1.3MB 並產生 32 個請求，導致載入時間變慢和高數據傳輸量。」</li>
+<li>「像 Paul Irish 的 &#39;lite-youtube-embed&#39; 這樣的 Web 元件可以將大小減少到約 100k，共享資源並顯著提升效能。」</li>
+<li>實施此解決方案涉及連結 JavaScript、在 HTML 中使用該元件，以及異步加載腳本以提高效能。</li>
+</ul>
+]]></description>
+            <link>https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z「YouTube 嵌入功能非常耗資源，但這是可以解決的」</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[“Malloc 損壞了 Serenity 的 JPGLoader，或：如何贏得彩票(2021)”]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>「SerenityOS 的 JPG 圖像解碼中出現了一個錯誤，導致顏色顯示不正確，原因是 RGB 與 BGR 混淆所致。」</li>
+<li>問題追溯到一個實現 <code>malloc_good_size()</code> 的提交，該提交改變了記憶體分配並影響了 <code>JPGLoader</code> 中使用的 <code>HashTable</code> 和 <code>Vector</code> 等資料結構。</li>
+<li>「修正涉及確保在 <code>JPGLoader</code> 中對元件進行確定性迭代，這突顯了簡單的變更如何揭示重大的潛在問題。」</li>
+</ul>
+]]></description>
+            <link>https://sin-ack.github.io/posts/jpg-loader-bork/</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-07T00:00:00.000Z“Malloc 損壞了 Serenity 的 JPGLoader，或：如何贏得彩票(2021)”</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[BeaconDB – 一個 Mozilla 位置服務的替代方案]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>beaconDB 是一個公共領域的無線地理定位資料庫，涵蓋了30個國家的177,176個網路、4,126個信標和6,106個塔台，並以道德來源和選擇性加入的方式進行資料收集。</li>
+<li>該資料庫注重隱私保護，通過模糊處理信息來保護傳輸者和貢獻者，並且需要物理接近才能更新數據，從而使其具有防濫用特性。</li>
+<li>開發者可以使用與 Ichnaea 的請求格式相容的端點 <code>https://beacondb.net/v1/geolocate</code>，但它不適合高流量的應用程式；原始碼可在 Codeberg 上取得。</li>
+</ul>
+]]></description>
+            <link>https://beacondb.net/</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000ZBeaconDB – 一個 Mozilla 位置服務的替代方案</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[系統程式設計聚會的重新興起]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>2024 年，慕尼黑、柏林、舊金山、紐約市和班加羅爾等城市的高品質系統程式設計聚會重新興起。</li>
+<li>紐約市系統咖啡俱樂部於 2023 年 12 月成立，專注於工程挑戰，並迅速成長，啟發了全球類似的聚會。</li>
+<li>組織聚會的關鍵建議包括確保一個主辦場地、專注於技術內容、通過業界聯繫找到講者，以及與其他組織者合作。</li>
+</ul>
+]]></description>
+            <link>https://notes.eatonphil.com/2024-07-07-systems-meetups.html</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z系統程式設計聚會的重新興起</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[有哪些學習音訊處理的好資源？]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>「使用者正在尋找資源來編寫一個類似於麻省理工學院的 Ben Bloomberg 為 Jacob Collier 創建的和聲器。」</li>
+<li>他們需要關於音高變換和格式變換的易懂資訊，並且能保持自然的音質。</li>
+<li>該用戶擁有豐富的程式設計經驗，但缺乏音訊處理方面的知識，這表明他需要適合初學者且全面的資源。</li>
+</ul>
+]]></description>
+            <link>https://news.ycombinator.com/item?id=40892812</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z有哪些學習音訊處理的好資源？</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[免費的極簡主義每日習慣追蹤器]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>一款新的習慣追蹤應用程式已由一位對現有選項不滿意的個人開發，該應用程式具有連續天數追蹤、離線可用性、連續天數凍結、視覺一致性地圖和暫停功能。</li>
+<li>這個應用程式使用 React 作為前端框架，Dexie cloud 作為儲存和同步工具，並託管在 Vercel 上。</li>
+<li>開發者已經將這個應用程式公開使用，展示了一個個人專案轉變為社群資源的過程。</li>
+</ul>
+]]></description>
+            <link>https://rdht.vercel.app/</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z免費的極簡主義每日習慣追蹤器</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[「為什麼義大利不再喜愛香菜」]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>「香菜，曾經是古羅馬料理中的主食，如今在現代義大利料理中幾乎消失，尤其是其葉子。」</li>
+<li>「羅馬帝國衰落後，受到日耳曼部落的影響，以及對肉桂和荳蔻等異國香料的偏好，開始了衰退。」</li>
+<li>「儘管有著歷史淵源，香菜在義大利現在被視為外來食材，不同於羅勒等其他香草。」</li>
+</ul>
+]]></description>
+            <link>https://www.atlasobscura.com/articles/what-are-italian-herbs</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z「為什麼義大利不再喜愛香菜」</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[「帶外」網路管理並非易事]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>「2022 年羅渣士網路和電話中斷事件，影響了超過 1200 萬加拿大人，突顯了『帶外管理』(OOB)網路管理的重要性和複雜性。」</li>
+<li>“OOB 管理需要專用的硬體和基礎設施，與主網路分開，確保冗餘和安全性，但也增加了顯著的成本和複雜性。”</li>
+<li>較小的網路可能會發現，專注於強健且冗餘的帶內管理，比維護一個獨立的帶外網路更為實際。</li>
+</ul>
+]]></description>
+            <link>https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z「帶外」網路管理並非易事</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[在 WebAssembly QuickJS 沙盒中執行 JavaScript]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>「此 TypeScript 套件允許在 WebAssembly 沙盒中使用 QuickJS 引擎安全地執行 JavaScript 程式碼，非常適合安全地運行不受信任的程式碼。」</li>
+<li>主要特點包括隔離的環境、虛擬檔案系統、自訂的 Node 模組、HTTP(S) 抓取客戶端、基於 Chai 的測試執行器以及高效能。</li>
+<li>這個套件功能多樣且易於整合到 TypeScript 專案中，提供了使用者友好的 API 來執行和管理程式碼。</li>
+</ul>
+]]></description>
+            <link>https://github.com/sebastianwessel/quickjs</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z在 WebAssembly QuickJS 沙盒中執行 JavaScript</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[從電晶體到網頁瀏覽器，12 週課程的大綱]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>本課程涵蓋從了解電晶體到開發網頁瀏覽器的全面旅程，提供實作方式來學習硬體和軟體的整合。</li>
+<li>主要專案包括建構一個 ARM7 CPU、一個 C 編譯器、一個類 UNIX 作業系統，以及一個基於文字的網頁瀏覽器，使用的語言包括 Verilog、Python、Haskell 和 C。</li>
+<li>「課程強調實用技能，例如使用 Verilator 進行模擬、FPGA 板設計，以及實現基本系統元件如 MMU、乙太網控制器和 TCP 協議棧。」</li>
+</ul>
+]]></description>
+            <link>https://github.com/geohot/fromthetransistor</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z從電晶體到網頁瀏覽器，12 週課程的大綱</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[「Mongo 但在 Postgres 上並具有強一致性優勢」]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Pongo Pongo 是一個工具，允許在 PostgreSQL 上使用類似 MongoDB 的操作，並利用其強一致性的優勢。</li>
+<li>它將 MongoDB API 呼叫轉換為原生 PostgreSQL 查詢，利用 JSONB 進行高效的讀寫操作和複雜查詢。</li>
+<li>Pongo 不是傳統的 ORM(物件關聯映射)，而是專注於文件數據處理，提供靈活性和性能，儘管它並不完全符合 MongoDB 的規範。</li>
+</ul>
+]]></description>
+            <link>https://github.com/event-driven-io/Pongo</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z「Mongo 但在 Postgres 上並具有強一致性優勢」</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[科學家在火星模擬計畫中經過一年後重新現身]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>“四位科學家在休士頓的火星沙丘阿爾法棲息地完成了一年的火星模擬任務，該棲息地是一個3D列印結構，旨在模擬火星環境。”</li>
+<li>這項任務是 NASA 的乘員健康與性能探索類比計畫(CHAPEA)的一部分，旨在為未來的火星任務和長期太空探索(包括阿提米絲計畫)收集見解。</li>
+<li>團隊進行了「火星漫步」並應對了如隔離和通訊延遲等壓力源，另外還計劃在2025年和2027年進行更多的CHAPEA任務。</li>
+</ul>
+]]></description>
+            <link>https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z科學家在火星模擬計畫中經過一年後重新現身</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[「AI」、學生與知識危機]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>“2024年7月6日的一篇部落格文章討論了一名學生將 ChatGPT 當作搜尋引擎使用，結果導致該學生相信了錯誤的資訊。”</li>
+<li>作者強調了對抗 AI 生成的錯誤資訊的困難，因為每個學生可能會收到獨特的錯誤事實，這使得更正過程變得複雜。</li>
+<li>該貼文反映了錯誤資訊對教育的廣泛影響，並因騷擾行為而被移除。</li>
+</ul>
+]]></description>
+            <link>https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z「AI」、學生與知識危機</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[「OpenAI 遭駭客入侵，一年前的資料外洩事件未向公眾報告」]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>駭客在去年年初入侵了 OpenAI 的內部訊息系統，洩露了敏感資訊，但未能存取關鍵的 AI 系統，這引發了安全和國家安全的擔憂。</li>
+<li>“OpenAI 於 2023 年 4 月在內部披露了此事件，表示沒有客戶數據被竊取，且駭客可能沒有政府背景；然而，此次資料外洩事件引發了對外國對手，特別是中國，在人工智慧技術上進步的高度擔憂。”</li>
+<li>“OpenAI 自那時起已改進其安全措施，成立了安全與保安委員會，該事件也引發了關於聯邦和州政府對 AI 技術發布進行管制的討論。”</li>
+</ul>
+]]></description>
+            <link
+      >https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-07T00:00:00.000Z「OpenAI 遭駭客入侵，一年前的資料外洩事件未向公眾報告」</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[「什麼原因引起偏頭痛？對‘大腦停電’的研究提供了線索」]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>“2024年7月4日發表於《科學》期刊的一項小鼠研究揭示了偏頭痛成因的新見解，將短暫的腦部‘黑障’與腦脊髓液的變化聯繫起來，這些變化會激活顱內的痛覺受器。”</li>
+<li>研究顯示，偏頭痛可能作為一種保護機制，提示需要休息，並且發現了三叉神經節周圍保護層中一個先前未知的缺口。</li>
+<li>這項發現可能透過針對新發現的機制，促使開發出新的偏頭痛治療方法。</li>
+</ul>
+]]></description>
+            <link>https://www.nature.com/articles/d41586-024-02222-x</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-07T00:00:00.000Z「什麼原因引起偏頭痛？對‘大腦停電’的研究提供了線索」</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[「道德經，烏蘇拉·勒瑰恩譯(1997)」]]></title>
             <description
@@ -1727,203 +1929,6 @@
       >https://www.wits.ac.za/news/latest-news/general-news/2024/2024-06/a-novel-way-to-save-rhinos-.html</link>
             <guid isPermaLink="false">2024-06-28T00:00:00.000Z「犀牛同位素計畫：將放射性同位素植入活體犀牛」</guid>
             <pubDate>Fri, 28 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[南韓電信公司攻擊使用 BT 下載的用戶並植入惡意軟體]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>KT Corporation，一家主要的南韓電信公司，從2020年5月開始，故意感染超過60萬名用戶的惡意軟體，以破壞Webhard的基於BitTorrent的網格服務。</li>
-<li>該惡意軟體導致了文件遺失、奇怪的資料夾以及電腦無法使用等問題，並被追溯到 KT 的數據中心。</li>
-<li>“當局已經起訴了包括 KT 員工在內的 13 人，KT 則以網路負擔和未支付的使用費用為由為其行為辯護，儘管未經授權的惡意軟體安裝導致了顧客的重大問題。”</li>
-</ul>
-]]></description>
-            <link
-      >https://www.tomshardware.com/tech-industry/cyber-security/south-korean-telecom-company-attacks-torrent-users-with-malware-over-600000-people-report-missing-files-strange-folders-and-disabled-pcs</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z南韓電信公司攻擊使用 BT 下載的用戶並植入惡意軟體</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[派拉蒙砍掉喜劇中心網站，25年的影片片段消失]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>「派拉蒙已關閉 ComedyCentral.com，移除了超過 25 年的《每日秀》和《科拜爾報告》的片段，並將訪客引導至電視供應商或 Paramount+。」</li>
-<li>“其他節目如《The Opposition with Jordan Klepper》和《Lights Out with David Spade》也受到影響，舊的集數在 Paramount+ 上無法觀看。”</li>
-<li>此舉是派拉蒙為了管理超過140億美元債務而採取的成本削減措施的一部分，繼對MTV.com和CMT.com採取類似行動之後，旨在精簡網站並引導觀眾前往Paramount+。</li>
-</ul>
-]]></description>
-            <link>https://latenighter.com/news/paramount-axes-comedy-central-website-show-clips-library/</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z派拉蒙砍掉喜劇中心網站，25年的影片片段消失</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Google Sheets 將其計算工作器從 JavaScript 移植到 WasmGC]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Google Sheets 已從 JavaScript 過渡到 WasmGC(WebAssembly 垃圾回收)以提升效能，特別是針對大型試算表。</li>
-<li>WasmGC 支援像 Java 這樣的垃圾回收語言，在網頁上提供接近原生的速度，而 Google Sheets 是首批實現此功能的應用之一。</li>
-<li>最初 WasmGC 的性能比 JavaScript 慢，但隨後的優化顯著提高了其速度，展示了其在網頁應用程式開發中帶來革命性變革的潛力。</li>
-</ul>
-]]></description>
-            <link>https://web.dev/case-studies/google-sheets-wasmgc</link>
-            <guid
-        isPermaLink="false"
-      >2024-06-27T00:00:00.000ZGoogle Sheets 將其計算工作器從 JavaScript 移植到 WasmGC</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[「Claude 3.5 十四行詩」]]></title>
-            <description><![CDATA[<p>- </p>
-]]></description>
-            <link>https://thezvi.substack.com/p/on-claude-35-sonnet</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z「Claude 3.5 十四行詩」</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Forth Deck mini：一款具有獨立 CPU 的便攜式 Forth 電腦]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Forth Deck mini 是一款具有獨立 CPU 的便攜式 Forth 電腦，配備 40x4 字元 LCD 顯示螢幕、56 鍵 QWERTY 鍵盤，以及 6.6 瓦時的鋰聚合物電池，續航時間達 6 小時。</li>
-<li>它包括一個8位元CMOS邏輯CPU、32 KB ROM、32 KB RAM、最多256 KB EEPROM，以及4800波特率的RS-232，讓人聯想到70年代和80年代內建Basic直譯器的家用電腦。</li>
-<li>該裝置可以使用 Budgetronics 的套件組裝，不包括電池和充電電路，並且依據創用 CC 姓名標示-相同方式分享 4.0 國際 授權條款授權。</li>
-</ul>
-]]></description>
-            <link>http://mynor.org/my4th_forthdeck.htm</link>
-            <guid
-        isPermaLink="false"
-      >2024-06-27T00:00:00.000ZForth Deck mini：一款具有獨立 CPU 的便攜式 Forth 電腦</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[大腦會產生大量的廢物。現在科學家認為他們知道這些廢物去了哪裡]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>科學家們發現了有關大腦廢物清除系統的新細節，這對於維持大腦健康和預防疾病至關重要。</li>
-<li>發表在《自然》期刊上的研究顯示，睡眠期間的緩慢電波有助於將含有廢物的液體從大腦深處推向表面，然後被吸收到血液中，並由肝臟和腎臟排除。</li>
-<li>這個類淋巴系統對於清除與阿茲海默症相關的澱粉樣蛋白至關重要，而廢物清除功能受損可能會導致各種腦部疾病，如阿茲海默症、帕金森氏症、頭痛和憂鬱症。</li>
-</ul>
-]]></description>
-            <link
-      >https://www.npr.org/sections/shots-health-news/2024/06/26/g-s1-6177/brain-waste-removal-system-amyloid-alzheimer-toxins</link>
-            <guid
-        isPermaLink="false"
-      >2024-06-27T00:00:00.000Z大腦會產生大量的廢物。現在科學家認為他們知道這些廢物去了哪裡</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[語音機器人具備500毫秒的回應時間]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>在 GPT-4 發佈後，對語音介面和大型語言模型(LLMs)的實驗開始了，這突顯了語音互動與生成式 AI 的吸引力和新挑戰。</li>
-<li>實現500毫秒的語音對語音回應時間是具有挑戰性的，但可以通過將轉錄、LLM推理和語音生成一起託管、優化數據路由以及確保良好的WiFi和VRAM快取來達成。</li>
-<li>目前有一個具備500毫秒響應能力的語音機器人展示，以及一個可在A10/A100/H100 GPU上部署的容器。當前的指標顯示總響應週期為759毫秒，這表明了人工智慧的快速發展和未來簡化的潛力。</li>
-</ul>
-]]></description>
-            <link>https://fastvoiceagent.cerebrium.ai/</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z語音機器人具備500毫秒的回應時間</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[次世代 3D 金屬列印]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>位於聖地牙哥的初創公司Fabric8Labs已獲得5000萬美元的B輪融資，以推進其電化學增材製造技術。</li>
-<li>“這筆資金將支持新3D列印工廠的建設，顯著增加公司的勞動力。”</li>
-<li>「這項投資突顯了對3D列印新創公司日益增長的興趣和資金湧入，這是由創新製造技術所驅動的。」</li>
-</ul>
-]]></description>
-            <link>https://fabric8labs.com</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z次世代 3D 金屬列印</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Eplot：一個用於在 Emacs 中製作圖表的新套件]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>一個名為 eplot 的新 Emacs 套件已經發布，專為在 Emacs 中直接創建簡單圖表而設計。</li>
-<li>eplot 解決了現有工具如 chart.el 和 Gnuplot 中的限制，提供了例如合理的 Y 軸數字和 SVG 漸變等功能。</li>
-<li>這個套件使用者友好，允許使用者在包含數字的緩衝區中輸入 M-x eplot 來生成圖表，並且在 GitHub 上有相關文件。</li>
-</ul>
-]]></description>
-            <link>https://lars.ingebrigtsen.no/2024/06/26/a-new-package-for-making-charts-in-emacs-eplot/</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000ZEplot：一個用於在 Emacs 中製作圖表的新套件</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[6 個月前，我離開了那個狗屁不通的工業複合體]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>“一位前科技公關專業人士揭露了他們過去在推廣過度炒作的新創公司中的經歷，這些公司資助了奢華的生活方式，但也引發了道德上的疑慮。”</li>
-<li>他們決定離開那個有利可圖但道德上有疑問的行業，轉而專注於誠實地撰寫有關科技和風險投資對人類真實影響的文章。</li>
-<li>儘管面臨財務和職業風險，他們在新的道路上找到了誠信和個人滿足，拒絕了科技產業的空洞承諾。</li>
-</ul>
-]]></description>
-            <link>https://www.joanwestenberg.com/6-months-ago,-i-left-the-bullshit-industrial-complex</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z6 個月前，我離開了那個狗屁不通的工業複合體</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[法院裁定，聯邦告密者有權獲得未來薪資損失的賠償]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>美國聯邦巡迴上訴法院裁定，若聯邦告密者因被解雇而損害其賺取潛力，他們可以獲得未來損失收入的賠償金。</li>
-<li>黛博拉·佩里克在報告資金短缺後被解僱，成功爭取到除了補發工資之外的額外賠償，這對她未來的工作前景產生了影響。</li>
-<li>此裁決為聯邦告密者樹立了先例，允許在不需要保證未來就業的情況下提出未來損失收入的索賠，並將案件發回功績制度保護委員會作出最終決定。</li>
-</ul>
-]]></description>
-            <link
-      >https://www.govexec.com/pay-benefits/2024/06/federal-whistleblowers-are-entitled-damages-missed-future-pay-court-rules/397638/</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z法院裁定，聯邦告密者有權獲得未來薪資損失的賠償</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[我希望有人教過我的課 (1996) [pdf]]]></title>
-            <description><![CDATA[<p>- </p>
-]]></description>
-            <link>https://www.ams.org/notices/199701/comm-rota.pdf</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z我希望有人教過我的課 (1996) [pdf]</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[郵局律師與法官舉行秘密會議以阻止披露]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>郵局的律師在2013年與一名法官舉行了一次秘密會議，以防止在刑事審判中向辯護律師披露一份揭示Horizon系統潛在問題的報告。</li>
-<li>“調查聽證會上得知，檢察律師馬丁·史密斯承認他未能履行職責，且缺乏必要的專業知識，這引發了對過去定罪和信息披露做法的擔憂。”</li>
-<li>“隨著郵局接近調解階段並審查過去的定罪案件，持續進行的調查不斷揭露出多個披露問題。”</li>
-</ul>
-]]></description>
-            <link
-      >https://www.lawgazette.co.uk/news/post-office-lawyers-held-secret-meeting-with-judge-to-stop-disclosure/5119593.article</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z郵局律師與法官舉行秘密會議以阻止披露</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[DoorDash 與披薩套利(2020)]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>“Doordash 未經店主許可將一家披薩店列入其平台，導致送餐冷掉和定價錯誤等問題。”</li>
-<li>由於Doordash的定價錯誤出現了一個套利機會，允許以較低價格訂購並以較高的餐廳價格出售來獲利。</li>
-<li>這篇文章批評了外送平台的商業模式，認為其效率低下且具有剝削性，並建議採用像達美樂這樣更為整合的方式可能會更具可持續性。</li>
-</ul>
-]]></description>
-            <link>https://www.readmargins.com/p/doordash-and-pizza-arbitrage</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000ZDoorDash 與披薩套利(2020)</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Corcel – 使用 WordPress 後端與 Laravel 或任何 PHP 應用程式]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Corcel 是一個基於 Laravel 的 Eloquent ORM 的 PHP 函式庫，能夠直接從 WordPress 資料庫中檢索數據，並可透過 Composer 與 Laravel 或任何 PHP 專案一起使用。</li>
-<li>主要功能包括支援自訂文章類型、短碼、分類法、頁面、附件、修訂、縮圖、選項、選單、使用者和身份驗證。</li>
-<li>安裝和配置非常簡單，對於 Laravel 5.5 以上版本提供自動註冊功能，而對於較舊版本或非 Laravel 專案則需要手動設置。</li>
-</ul>
-]]></description>
-            <link>https://github.com/corcel/corcel</link>
-            <guid
-        isPermaLink="false"
-      >2024-06-27T00:00:00.000ZCorcel – 使用 WordPress 後端與 Laravel 或任何 PHP 應用程式</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

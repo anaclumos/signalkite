@@ -1,0 +1,332 @@
+[
+  {
+    "id": 40897205,
+    "title": "Indlejrede YouTube-videoer er ekstremt tunge, og det kan løses",
+    "originLink": "https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897205",
+    "commentBody": "",
+    "originSummary": [
+      "Indlejrede YouTube-videoer er ressourcekrævende, med hver indlejring omkring 1,3 MB og 32 forespørgsler, hvilket fører til langsomme indlæsningstider og høj dataoverførsel.",
+      "En webkomponent som \"lite-youtube-embed\" af Paul Irish kan reducere størrelsen til omkring 100k, dele ressourcer og forbedre ydeevnen betydeligt.",
+      "Implementering af denne løsning indebærer at linke JavaScript, bruge komponenten i HTML og indlæse scriptet asynkront for bedre ydeevne."
+    ],
+    "commentSummary": [
+      "En community-forumplatform har erstattet YouTube-indlejringer med proxy-miniatyrbilleder, som kun indlæses, når de klikkes på, hvilket reducerer behovet for at downloade store JavaScript-filer og forhindrer Google i at spore.",
+      "Der er blevet implementeret lignende løsninger for YouTube-, SoundCloud- og Reddit-embeds for at forbedre funktionaliteten og minimere oppustethed.",
+      "Der er debat om, hvorvidt lettere indlejringer kan reducere engagementet på grund af langsommere videotider, men mange mener, at forbedring af den samlede indlæsningstid for siden er vigtigere for brugeroplevelsen og sidens ydeevne."
+    ],
+    "points": 236,
+    "commentCount": 135,
+    "retryCount": 0,
+    "time": 1720355875
+  },
+  {
+    "id": 40896102,
+    "title": "Malloc ødelagde Serenity's JPGLoader, eller: hvordan man vinder i lotteriet (2021)",
+    "originLink": "https://sin-ack.github.io/posts/jpg-loader-bork/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896102",
+    "commentBody": "",
+    "originSummary": [
+      "En fejl i SerenityOS's JPG-billeddekodning forårsagede forkert farvevisning på grund af en forveksling mellem RGB og BGR.",
+      "Problemet blev sporet tilbage til en commit, der implementerede `malloc_good_size()`, hvilket ændrede hukommelsesallokeringen og påvirkede datastrukturer som `HashTable` og `Vector`, der blev brugt i `JPGLoader`.",
+      "Rettelsen involverede at sikre deterministisk iteration over komponenter i `JPGLoader`, hvilket fremhæver, hvordan simple ændringer kan afsløre betydelige underliggende problemer."
+    ],
+    "commentSummary": [
+      "Visse implementeringer af hash-tabeller introducerer tilfældighed for at forhindre afhængighed af elementernes rækkefølge og øge sikkerheden, mens moderne implementeringer ofte garanterer iteration i indsættelsesrækkefølge.",
+      "JavaScript og Python har standardiseret indsættelsesrækkefølgen i deres hash-tabel-implementeringer, hvor Python adopterede dette i version 3.7.",
+      "Rust tilbyder forskellige hash table-muligheder (`HashMap`, `BTreeMap`, `IndexMap`), og Perl introducerede tilfældige frø til hash tabeller efter version 5.18."
+    ],
+    "points": 177,
+    "commentCount": 143,
+    "retryCount": 0,
+    "time": 1720341723
+  },
+  {
+    "id": 40895672,
+    "title": "BeaconDB – Et alternativ til Mozilla Location Services",
+    "originLink": "https://beacondb.net/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895672",
+    "commentBody": "",
+    "originSummary": [
+      "beaconDB er en trådløs geolokationsdatabase i det offentlige domæne, der dækker 177.176 netværk, 4.126 beacons, 6.106 tårne på tværs af 30 lande, med etisk indsamlede data, hvor brugerne har givet samtykke.",
+      "Databasen er privatlivsvenlig, idet den slører information for at beskytte afsendere og bidragydere, og den kræver fysisk nærhed for at opdatere data, hvilket gør den modstandsdygtig over for misbrug.",
+      "Udviklere kan bruge endpointet `https://beacondb.net/v1/geolocate`, som er kompatibelt med Ichnaea's forespørgselsformat, men det er ikke egnet til applikationer med høj trafik; kildekoden er tilgængelig på Codeberg."
+    ],
+    "commentSummary": [
+      "BeaconDB præsenteres som et alternativ til Mozilla Location Services (MLS), med fokus på etisk indsamling af data, hvor brugerne aktivt vælger at deltage.",
+      "Til forskel fra Apple og Google offentliggør BeaconDB ikke klartekst MAC-adresser, men bruger i stedet hashed eller aggregerede data for at forbedre privatlivets fred.",
+      "BeaconDB er den eneste ikke-big tech database til lokationstjenester, der sigter mod at levere en open source-løsning og drøfter potentielle samarbejder."
+    ],
+    "points": 170,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1720333550
+  },
+  {
+    "id": 40897506,
+    "title": "En genopvågning af systemprogrammeringsmøder",
+    "originLink": "https://notes.eatonphil.com/2024-07-07-systems-meetups.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897506",
+    "commentBody": "",
+    "originSummary": [
+      "Der har været en genopblomstring af high-quality systems programming meetups i byer som München, Berlin, San Francisco, New York City og Bengaluru i 2024.",
+      "NYC Systems Coffee Club, startet i december 2023, fokuserer på ingeniørmæssige udfordringer og er vokset hurtigt, hvilket har inspireret lignende møder globalt.",
+      "Vigtige råd til at organisere meetups inkluderer at sikre et værtssted, fokusere på teknisk indhold, finde talere gennem brancheforbindelser og samarbejde med andre arrangører."
+    ],
+    "commentSummary": [
+      "Systemprogrammeringsmøder oplever en genopblomstring, hvilket fremhæver fællesskabets fornyede interesse for lav-niveau programmering og systemarkitektur.",
+      "At organisere sådanne møder står over for udfordringer, herunder at finde stabile lokaler, som ofte kræver stærk intern støtte eller kommunal opbakning for at sikre konsistente lokationer.",
+      "Indholdets kvalitet og fokus ved meetups er afgørende, da nogle grupper kæmper med at finde balancen mellem ægte tekniske diskussioner og selvpromoverende præsentationer fra talere."
+    ],
+    "points": 164,
+    "commentCount": 65,
+    "retryCount": 0,
+    "time": 1720358437
+  },
+  {
+    "id": 40892812,
+    "title": "Hvor findes de gode ressourcer til at lære lydbehandling?",
+    "originLink": "https://news.ycombinator.com/item?id=40892812",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40892812",
+    "commentBody": "",
+    "originSummary": [
+      "Brugeren søger ressourcer til at programmere en harmonizer, der ligner den, som MIT's Ben Bloomberg skabte til Jacob Collier.",
+      "De har brug for tilgængelig information om pitch shifting og format shifting, der bevarer naturlig lydkvalitet.",
+      "Brugeren har omfattende programmeringserfaring, men mangler viden om lydbehandling, hvilket indikerer et behov for begyndervenlige, men alligevel omfattende ressourcer."
+    ],
+    "commentSummary": [
+      "En bruger søger ressourcer til at programmere en harmonizer, der ligner Jacob Colliers, skabt af MIT's Ben Bloomberg, med fokus på pitch- og format-skift.",
+      "Anbefalede ressourcer inkluderer åbne kursusmaterialer fra CCRMA ved Stanford, industristandardbiblioteker som Elastique af Zplane og bøger som \"DAFX - Digital Audio Effects\" af Udo Zölzer.",
+      "Yderligere forslag inkluderer tutorials, YouTube-kanaler og community-fora som Officehours.global til netværk og yderligere læring."
+    ],
+    "points": 144,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1720295988
+  },
+  {
+    "id": 40893866,
+    "title": "En gratis minimalistisk daglig vane-tracker",
+    "originLink": "https://rdht.vercel.app/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893866",
+    "commentBody": "",
+    "originSummary": [
+      "En ny vane-tracker app er blevet udviklet af en person, der var utilfreds med de eksisterende muligheder. Appen har funktioner som streak-tracking, offline brugbarhed, streak-frysning, et visuelt konsistenskort og pausefunktionalitet.",
+      "Appen er bygget ved hjælp af React til frontend, Dexie cloud til lagring og synkronisering, og er hostet på Vercel.",
+      "Udvikleren har gjort appen tilgængelig for offentlig brug og fremviser et personligt projekt, der er blevet til en ressource for fællesskabet."
+    ],
+    "commentSummary": [
+      "En ny gratis minimalistisk daglig vane-tracker er blevet skabt for at imødekomme mangler i eksisterende apps, med funktioner som streak-tracking, offline brug, streak-frysninger, et visuelt konsistenskort og en pausefunktion.",
+      "Bygget med React og Dexie cloud og hostet på Vercel, har appen modtaget feedback til forbedringer, især fra iPhone-brugere, herunder forslag til dårlige vaner, designjusteringer og fejlrettelser.",
+      "Brugerne sætter pris på det rene design og offline-funktionaliteten, med forslag til en sammenklappet visning og bedre mobilkompatibilitet; der er endnu ingen planer om indtægtsgenerering."
+    ],
+    "points": 117,
+    "commentCount": 51,
+    "retryCount": 0,
+    "time": 1720305433
+  },
+  {
+    "id": 40895441,
+    "title": "Hvorfor Italien mistede kærligheden til koriander",
+    "originLink": "https://www.atlasobscura.com/articles/what-are-italian-herbs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895441",
+    "commentBody": "",
+    "originSummary": [
+      "Koriander, som engang var en grundpille i det antikke romerske køkken, er næsten forsvundet fra moderne italiensk madlavning, især dens blade.",
+      "Tilbagegangen begyndte efter Rom, påvirket af germanske stammer og præferencen for eksotiske krydderier som kanel og kardemomme.",
+      "På trods af sin historiske tilstedeværelse betragtes koriander nu som en fremmed ingrediens i Italien, i modsætning til andre urter som basilikum."
+    ],
+    "commentSummary": [
+      "Italiens modvilje mod koriander går tilbage til 1544, da botanikeren Pietro Andrea Mattioli beskrev dens blade som lugtende af væggelus.",
+      "Aversionen kan være genetisk påvirket, da nogle mennesker opfatter koriander som smagende af sæbe på grund af et specifikt gen.",
+      "Faldet i korianderens popularitet i Italien er også forbundet med skiftende kulinariske tendenser og migrationsmønstre, hvilket illustrerer det komplekse samspil mellem genetik, kultur og personlig præference i formningen af madsmag."
+    ],
+    "points": 108,
+    "commentCount": 116,
+    "retryCount": 0,
+    "time": 1720329769
+  },
+  {
+    "id": 40895167,
+    "title": "\"Out of Band\" netværksadministration er ikke trivielt",
+    "originLink": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895167",
+    "commentBody": "",
+    "originSummary": [
+      "Rogers internet- og telefonnedbruddet i 2022, som påvirkede over 12 millioner canadiere, fremhævede vigtigheden og kompleksiteten af \"Out of Band\" (OOB) netværksstyring.",
+      "Out-of-band management kræver dedikeret hardware og infrastruktur adskilt fra hovednetværket, hvilket sikrer redundans og sikkerhed, men tilføjer betydelige omkostninger og kompleksitet.",
+      "Små netværk kan finde det mere praktisk at fokusere på robust, redundant in-band management frem for at opretholde et separat OOB-netværk."
+    ],
+    "commentSummary": [
+      "\"Out of Band\" (OOB) netværksadministration er afgørende for at opretholde netværkets pålidelighed, især i moderne digitale systemer, der er tilbøjelige til fejlkonstruktioner og nedbrud.",
+      "Rogers-nedbruddet understregede det kritiske behov for robust OOB-styring og fremhævede vigtigheden af bedre planlægning og risikovurdering for at forhindre kerne-netværksfejl.",
+      "Effektiv OOB-styring indebærer brug af dedikerede, redundante systemer, ofte ved at udnytte forskellige udbydere eller teknologier såsom LTE eller satellit for at sikre pålidelighed."
+    ],
+    "points": 105,
+    "commentCount": 70,
+    "retryCount": 0,
+    "time": 1720324841
+  },
+  {
+    "id": 40896873,
+    "title": "Udfør JavaScript i en WebAssembly QuickJS-sandkasse",
+    "originLink": "https://github.com/sebastianwessel/quickjs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896873",
+    "commentBody": "",
+    "originSummary": [
+      "Dette TypeScript-pakke muliggør sikker udførelse af JavaScript-kode inden for en WebAssembly-sandkasse ved hjælp af QuickJS-motoren, ideel til sikker kørsel af upålidelig kode.",
+      "Vigtige funktioner inkluderer et isoleret miljø, virtuelt filsystem, brugerdefinerede node-moduler, HTTP(S) fetch-klient, chai-baseret testløber og effektiv ydeevne.",
+      "Pakke er alsidig og nem at integrere med TypeScript-projekter, og tilbyder en brugervenlig API til kodeudførelse og -styring."
+    ],
+    "commentSummary": [
+      "Dette TypeScript-pakke muliggør sikker udførelse af JavaScript-kode inden for en WebAssembly-sandkasse ved hjælp af QuickJS-motoren, hvilket sikrer isolation af upålidelig kode.",
+      "Vigtige funktioner inkluderer et virtuelt filsystem, brugerdefinerede node-moduler, en fetch-klient, en test-runner og en brugervenlig API, der understøtter miljøer som NodeJS, Deno og Cloudflare Workers.",
+      "En sikkerhedsadvarsel bemærker, at aktivering af `fetch` kan udsætte værtens cookies for utroværdig kode, hvilket potentielt kan kompromittere sandkassens sikkerhed."
+    ],
+    "points": 104,
+    "commentCount": 32,
+    "retryCount": 0,
+    "time": 1720352245
+  },
+  {
+    "id": 40895935,
+    "title": "Fra transistoren til webbrowseren, en grov skitse til et 12-ugers kursus",
+    "originLink": "https://github.com/geohot/fromthetransistor",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895935",
+    "commentBody": "",
+    "originSummary": [
+      "Kurset dækker en omfattende rejse fra forståelse af transistorer til udvikling af en webbrowser, hvilket giver en praktisk tilgang til at lære integration af hardware og software.",
+      "Vigtige projekter omfatter opbygning af en ARM7 CPU, en C-kompilator, et UNIX-lignende OS og en tekstbaseret webbrowser ved hjælp af sprog som Verilog, Python, Haskell og C.",
+      "Pensum lægger vægt på praktiske færdigheder såsom emulering med Verilator, FPGA-kortdesign og implementering af essentielle systemkomponenter som en MMU, Ethernet-controller og TCP-stak."
+    ],
+    "commentSummary": [
+      "Et 12-ugers kursus med titlen \"From the Transistor to the Web Browser\" af geohot på GitHub har skabt diskussion på grund af dets ambitiøse omfang, men minimale opdateringer siden 2016.",
+      "Brugere debatterer dets gennemførlighed, foreslår alternative læringsværktøjer som \"Turing Complete\" og \"Shenzen I/O,\" og argumenterer for, at det måske er for komplekst for begyndere og bedre egnet til erfarne programmører.",
+      "Anmeldere stiller spørgsmålstegn ved kursets praktiske anvendelighed og forfatterens intentioner, idet de ser det som overambitiøst og uden substans sammenlignet med omfattende uddannelser i Elektrisk og Computerteknik."
+    ],
+    "points": 102,
+    "commentCount": 44,
+    "retryCount": 0,
+    "time": 1720338876
+  },
+  {
+    "id": 40897518,
+    "title": "Mongo, men på Postgres og med fordele ved stærk konsistens",
+    "originLink": "https://github.com/event-driven-io/Pongo",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897518",
+    "commentBody": "",
+    "originSummary": [
+      "Pongo Pongo er et værktøj, der gør det muligt at bruge MongoDB-lignende operationer på PostgreSQL og udnytte fordelene ved stærk konsistens.",
+      "Det oversætter MongoDB API-kald til native PostgreSQL-forespørgsler, ved at benytte JSONB til effektive læse/skrive-operationer og komplekse forespørgsler.",
+      "Pongo er ikke en traditionel ORM (Object-Relational Mapping), men fokuserer på håndtering af dokumentdata, hvilket tilbyder fleksibilitet og ydeevne, selvom det ikke er fuldt MongoDB-kompatibelt."
+    ],
+    "commentSummary": [
+      "Pongo er et nyt projekt, der tilbyder en MongoDB-lignende API oven på PostgreSQL, og udnytter JSONB-kolonner for at opnå fordele ved stærk konsistens.",
+      "Projektet sigter mod at kombinere brugervenligheden af MongoDB med den robuste konsistens og pålidelighed af PostgreSQL ved at oversætte MongoDB-syntaks til native PostgreSQL-forespørgsler.",
+      "Denne udvikling har vakt interesse på grund af dens potentiale til at tilbyde en velkendt MongoDB-oplevelse, mens den udnytter PostgreSQL's avancerede funktioner, hvilket appellerer til udviklere, der søger stærk konsistens i deres databaseoperationer."
+    ],
+    "points": 98,
+    "commentCount": 48,
+    "retryCount": 0,
+    "time": 1720358532
+  },
+  {
+    "id": 40896110,
+    "title": "Forskere dukker op igen efter et år i Mars-simulationsprojekt",
+    "originLink": "https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896110",
+    "commentBody": "",
+    "originSummary": [
+      "Fire videnskabsfolk afsluttede en etårig Mars-simulation i Houstons Mars Dune Alpha-habitat, en 3D-printet struktur designet til at efterligne martianske forhold.",
+      "Missionen, en del af NASA's Crew Health and Performance Exploration Analog (CHAPEA), har til formål at indsamle indsigt til fremtidige Mars-missioner og langvarig rumforskning, herunder Artemis-programmet.",
+      "Holdet gennemførte \"Marsvandringer\" og håndterede stressfaktorer som isolation og kommunikationsforsinkelser, med yderligere CHAPEA-missioner planlagt til 2025 og 2027."
+    ],
+    "commentSummary": [
+      "Forskere har afsluttet en etårig Mars-simulation med fokus på menneskelig udholdenhed i isolerede, stressfyldte miljøer.",
+      "Projektet understreger, at psykologiske og sociale dynamikker er mere udfordrende at håndtere end ernæringsmæssige behov.",
+      "Diskussioner omfatter tekniske og etiske overvejelser, potentielt høje dødelighedsrater og nødvendigheden af omfattende forberedelse og mindre indledende missioner for Mars-kolonisering."
+    ],
+    "points": 91,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1720341858
+  },
+  {
+    "id": 40896212,
+    "title": "\"AI\", studerende og epistemisk krise",
+    "originLink": "https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896212",
+    "commentBody": "",
+    "originSummary": [
+      "Et blogindlæg fra den 6. juli 2024 diskuterer en elevs brug af ChatGPT som en søgemaskine, hvilket resulterede i, at eleven troede på falsk information.",
+      "Forfatteren fremhæver vanskeligheden ved at bekæmpe AI-genereret misinformation, da hver elev kan modtage unikke forkerte fakta, hvilket komplicerer rettelsesprocessen.",
+      "Indlægget reflekterer over det bredere problem med misinformationens indvirkning på uddannelse og blev fjernet på grund af chikane."
+    ],
+    "commentSummary": [
+      "Nutidens studerende er i høj grad afhængige af AI og internettet for information, i modsætning til tidligere generationer, der udførte manuel forskning i biblioteker.",
+      "Uddannelsesfolk er bekymrede for, at denne afhængighed kan hæmme elevernes evne til kritisk at vurdere information, hvilket resulterer i opgaver, der ofte mangler dybde.",
+      "Selvom AI-værktøjer er nyttige, kan de også generere falsk information, hvilket skaber en debat om integrationen af disse værktøjer i uddannelsen, samtidig med at man fremmer kritiske tænkningsfærdigheder."
+    ],
+    "points": 89,
+    "commentCount": 121,
+    "retryCount": 0,
+    "time": 1720343169
+  },
+  {
+    "id": 40894082,
+    "title": "OpenAI blev hacket, årgammelt brud blev ikke rapporteret til offentligheden",
+    "originLink": "https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40894082",
+    "commentBody": "",
+    "originSummary": [
+      "Hackere brød ind i OpenAI's interne beskedsystemer tidligt sidste år, hvilket afslørede følsomme oplysninger, men de fik ikke adgang til centrale AI-systemer, hvilket rejser sikkerheds- og nationale sikkerhedsbekymringer.",
+      "OpenAI afslørede hændelsen internt i april 2023 og oplyste, at ingen kundedata blev stjålet, og at hackeren sandsynligvis ikke havde nogen forbindelser til regeringer; dog har bruddet ført til øgede frygt for udenlandske modstandere, især Kina, der fremmer deres AI-teknologier.",
+      "OpenAI har siden forbedret sine sikkerhedsforanstaltninger, etableret en Sikkerheds- og Sikringskomité, og hændelsen har foranlediget diskussioner om føderale og statslige reguleringer for at kontrollere frigivelsen af AI-teknologi."
+    ],
+    "commentSummary": [
+      "OpenAI oplevede et uanmeldt hack sidste år, hvilket førte til brugerbekymringer om gennemsigtighed og sikkerhedspraksis.",
+      "Bruddet involverede adgang til interne beskedsystemer, men kompromitterede ikke vigtige AI-teknologier.",
+      "Brugere diskuterede vanskeligheder ved at rapportere fejl og frustrationer med OpenAIs standardpraksis for sikkerhedsrapportering."
+    ],
+    "points": 84,
+    "commentCount": 26,
+    "retryCount": 0,
+    "time": 1720308293
+  },
+  {
+    "id": 40893749,
+    "title": "Årsagerne til migræne? Undersøgelse af 'hjerne-blackout' giver spor",
+    "originLink": "https://www.nature.com/articles/d41586-024-02222-x",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893749",
+    "commentBody": "",
+    "originSummary": [
+      "En undersøgelse på mus, offentliggjort i Science den 4. juli 2024, afslører nye indsigter i årsagerne til migræne, der forbinder korte 'blackouts' i hjernen med ændringer i cerebrospinalvæsken, som aktiverer smertereceptorer i kraniet.",
+      "Forskningen antyder, at migræne kan fungere som en beskyttelsesmekanisme, der signalerer behovet for hvile, og identificerer en tidligere ukendt åbning i de beskyttende lag omkring trigeminusgangliet.",
+      "Denne opdagelse kunne føre til udviklingen af nye behandlinger for migræne ved at målrette de nyidentificerede mekanismer."
+    ],
+    "commentSummary": [
+      "En undersøgelse antyder, at kortikal spredningsdepression (CSD), en \"hjernesortout,\" kan være involveret i migræne.",
+      "Folk rapporterede forskellige udløsere og behandlinger, herunder kostændringer, medicin som Rizatriptan og livsstilsjusteringer såsom forbedret søvn og hydrering.",
+      "Diskussionen understreger kompleksiteten af migræne, hvor forskellige udløsere og behandlinger er effektive for forskellige individer."
+    ],
+    "points": 84,
+    "commentCount": 72,
+    "retryCount": 0,
+    "time": 1720303961
+  }
+]

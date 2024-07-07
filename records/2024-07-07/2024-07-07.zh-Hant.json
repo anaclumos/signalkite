@@ -1,0 +1,332 @@
+[
+  {
+    "id": 40897205,
+    "title": "「YouTube 嵌入功能非常耗資源，但這是可以解決的」",
+    "originLink": "https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897205",
+    "commentBody": "",
+    "originSummary": [
+      "「YouTube 嵌入內容資源消耗大，每個嵌入約佔 1.3MB 並產生 32 個請求，導致載入時間變慢和高數據傳輸量。」",
+      "「像 Paul Irish 的 'lite-youtube-embed' 這樣的 Web 元件可以將大小減少到約 100k，共享資源並顯著提升效能。」",
+      "實施此解決方案涉及連結 JavaScript、在 HTML 中使用該元件，以及異步加載腳本以提高效能。"
+    ],
+    "commentSummary": [
+      "一個社群論壇平台已經將 YouTube 嵌入替換為代理縮圖，這些縮圖僅在點擊時加載，從而減少了下載大型 JavaScript 文件的需求並防止 Google 追蹤。",
+      "類似的解決方案已經在 YouTube、SoundCloud 和 Reddit 嵌入中實施，以增強功能並減少冗餘。",
+      "「有關較輕的嵌入可能因為影片啟動時間較慢而降低互動性的爭論不休，但許多人認為提升整體頁面載入時間對於使用者體驗和網站效能更為重要。」"
+    ],
+    "points": 236,
+    "commentCount": 135,
+    "retryCount": 0,
+    "time": 1720355875
+  },
+  {
+    "id": 40896102,
+    "title": "“Malloc 損壞了 Serenity 的 JPGLoader，或：如何贏得彩票(2021)”",
+    "originLink": "https://sin-ack.github.io/posts/jpg-loader-bork/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896102",
+    "commentBody": "",
+    "originSummary": [
+      "「SerenityOS 的 JPG 圖像解碼中出現了一個錯誤，導致顏色顯示不正確，原因是 RGB 與 BGR 混淆所致。」",
+      "問題追溯到一個實現 `malloc_good_size()` 的提交，該提交改變了記憶體分配並影響了 `JPGLoader` 中使用的 `HashTable` 和 `Vector` 等資料結構。",
+      "「修正涉及確保在 `JPGLoader` 中對元件進行確定性迭代，這突顯了簡單的變更如何揭示重大的潛在問題。」"
+    ],
+    "commentSummary": [
+      "「有些雜湊表的實作會引入隨機性，以防止依賴元素順序並增強安全性，而現代的實作則通常保證按照插入順序進行迭代。」",
+      "JavaScript 和 Python 已經在其雜湊表實作中標準化了插入順序，Python 在 3.7 版本中採用了這一點。",
+      "「Rust 提供不同的雜湊表選項(`HashMap`、`BTreeMap`、`IndexMap`)，而 Perl 在 5.18 版本之後引入了雜湊表的隨機種子。」"
+    ],
+    "points": 177,
+    "commentCount": 143,
+    "retryCount": 0,
+    "time": 1720341723
+  },
+  {
+    "id": 40895672,
+    "title": "BeaconDB – 一個 Mozilla 位置服務的替代方案",
+    "originLink": "https://beacondb.net/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895672",
+    "commentBody": "",
+    "originSummary": [
+      "beaconDB 是一個公共領域的無線地理定位資料庫，涵蓋了30個國家的177,176個網路、4,126個信標和6,106個塔台，並以道德來源和選擇性加入的方式進行資料收集。",
+      "該資料庫注重隱私保護，通過模糊處理信息來保護傳輸者和貢獻者，並且需要物理接近才能更新數據，從而使其具有防濫用特性。",
+      "開發者可以使用與 Ichnaea 的請求格式相容的端點 `https://beacondb.net/v1/geolocate`，但它不適合高流量的應用程式；原始碼可在 Codeberg 上取得。"
+    ],
+    "commentSummary": [
+      "BeaconDB 被提出作為 Mozilla Location Services (MLS) 的替代方案，專注於道德來源和選擇性加入的數據收集。",
+      "「與 Apple 和 Google 不同，BeaconDB 不會公開明文的 MAC 位址，而是使用雜湊或聚合數據來增強隱私保護。」",
+      "BeaconDB 是唯一一個非大型科技公司提供的定位服務資料庫，旨在提供開源解決方案並探討潛在的合作機會。"
+    ],
+    "points": 170,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1720333550
+  },
+  {
+    "id": 40897506,
+    "title": "系統程式設計聚會的重新興起",
+    "originLink": "https://notes.eatonphil.com/2024-07-07-systems-meetups.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897506",
+    "commentBody": "",
+    "originSummary": [
+      "2024 年，慕尼黑、柏林、舊金山、紐約市和班加羅爾等城市的高品質系統程式設計聚會重新興起。",
+      "紐約市系統咖啡俱樂部於 2023 年 12 月成立，專注於工程挑戰，並迅速成長，啟發了全球類似的聚會。",
+      "組織聚會的關鍵建議包括確保一個主辦場地、專注於技術內容、通過業界聯繫找到講者，以及與其他組織者合作。"
+    ],
+    "commentSummary": [
+      "「系統程式設計聚會正在經歷復甦，突顯出社群對低階程式設計和系統架構的重新興趣。」",
+      "“組織這類聚會面臨挑戰，包括尋找穩定的場地，這通常需要強大的內部支持或市政府的支持才能確保固定的地點。”",
+      "聚會內容的品質和焦點至關重要，有些團體在真實的技術討論和講者的自我推銷演講之間難以取得平衡。"
+    ],
+    "points": 164,
+    "commentCount": 65,
+    "retryCount": 0,
+    "time": 1720358437
+  },
+  {
+    "id": 40892812,
+    "title": "有哪些學習音訊處理的好資源？",
+    "originLink": "https://news.ycombinator.com/item?id=40892812",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40892812",
+    "commentBody": "",
+    "originSummary": [
+      "「使用者正在尋找資源來編寫一個類似於麻省理工學院的 Ben Bloomberg 為 Jacob Collier 創建的和聲器。」",
+      "他們需要關於音高變換和格式變換的易懂資訊，並且能保持自然的音質。",
+      "該用戶擁有豐富的程式設計經驗，但缺乏音訊處理方面的知識，這表明他需要適合初學者且全面的資源。"
+    ],
+    "commentSummary": [
+      "“A user 正在尋找資源來編寫一個類似於 Jacob Collier 的和聲器，這個和聲器是由 MIT 的 Ben Bloomberg 創建的，重點在於音高和格式轉換。”",
+      "“推薦的資源包括史丹佛大學 CCRMA 的開放課程材料、業界標準的庫如 Zplane 的 Elastique，以及 Udo Zölzer 所著的《DAFX - Digital Audio Effects》一書。”",
+      "其他建議包括教學課程、YouTube 頻道，以及像 Officehours.global 這樣的社群論壇，用於建立人脈和進一步學習。"
+    ],
+    "points": 144,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1720295988
+  },
+  {
+    "id": 40893866,
+    "title": "免費的極簡主義每日習慣追蹤器",
+    "originLink": "https://rdht.vercel.app/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893866",
+    "commentBody": "",
+    "originSummary": [
+      "一款新的習慣追蹤應用程式已由一位對現有選項不滿意的個人開發，該應用程式具有連續天數追蹤、離線可用性、連續天數凍結、視覺一致性地圖和暫停功能。",
+      "這個應用程式使用 React 作為前端框架，Dexie cloud 作為儲存和同步工具，並託管在 Vercel 上。",
+      "開發者已經將這個應用程式公開使用，展示了一個個人專案轉變為社群資源的過程。"
+    ],
+    "commentSummary": [
+      "「一款新的免費極簡主義每日習慣追蹤器已經誕生，旨在解決現有應用程式中的不足，具備連續天數追蹤、離線使用、連續天數凍結、視覺一致性地圖和暫停功能。」",
+      "這個應用程式是使用 React 和 Dexie cloud 建構，並託管在 Vercel 上，已經收到了改進的反饋，特別是來自 iPhone 使用者的建議，包括壞習慣、設計調整和錯誤修正的建議。",
+      "用戶欣賞乾淨的設計和離線功能，並建議增加摺疊視圖和更好的行動裝置相容性；目前尚無貨幣化計劃。"
+    ],
+    "points": 117,
+    "commentCount": 51,
+    "retryCount": 0,
+    "time": 1720305433
+  },
+  {
+    "id": 40895441,
+    "title": "「為什麼義大利不再喜愛香菜」",
+    "originLink": "https://www.atlasobscura.com/articles/what-are-italian-herbs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895441",
+    "commentBody": "",
+    "originSummary": [
+      "「香菜，曾經是古羅馬料理中的主食，如今在現代義大利料理中幾乎消失，尤其是其葉子。」",
+      "「羅馬帝國衰落後，受到日耳曼部落的影響，以及對肉桂和荳蔻等異國香料的偏好，開始了衰退。」",
+      "「儘管有著歷史淵源，香菜在義大利現在被視為外來食材，不同於羅勒等其他香草。」"
+    ],
+    "commentSummary": [
+      "“義大利對香菜的厭惡可以追溯到1544年，當時植物學家彼得羅·安德烈亞·馬蒂奧利形容其葉子聞起來像臭蟲。”",
+      "這種厭惡可能受到基因影響，因為有些人由於特定基因的關係，會覺得香菜的味道像肥皂。",
+      "「香菜在義大利受歡迎程度的下降也與烹飪趨勢的變化和移民模式有關，這說明了基因、文化和個人喜好在塑造食物口味方面的複雜互動。」"
+    ],
+    "points": 108,
+    "commentCount": 116,
+    "retryCount": 0,
+    "time": 1720329769
+  },
+  {
+    "id": 40895167,
+    "title": "「帶外」網路管理並非易事",
+    "originLink": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895167",
+    "commentBody": "",
+    "originSummary": [
+      "「2022 年羅渣士網路和電話中斷事件，影響了超過 1200 萬加拿大人，突顯了『帶外管理』(OOB)網路管理的重要性和複雜性。」",
+      "“OOB 管理需要專用的硬體和基礎設施，與主網路分開，確保冗餘和安全性，但也增加了顯著的成本和複雜性。”",
+      "較小的網路可能會發現，專注於強健且冗餘的帶內管理，比維護一個獨立的帶外網路更為實際。"
+    ],
+    "commentSummary": [
+      "「帶外」(OOB)網路管理對於維持網路可靠性至關重要，特別是在容易發生錯誤配置和故障的現代數位系統中。",
+      "Rogers 的斷線事件突顯了強健的 OOB 管理的關鍵需求，強調了更好的規劃和風險評估的重要性，以防止核心網路故障。",
+      "有效的 OOB 管理涉及使用專用的冗餘系統，通常利用不同的供應商或技術，如 LTE 或衛星，以確保可靠性。"
+    ],
+    "points": 105,
+    "commentCount": 70,
+    "retryCount": 0,
+    "time": 1720324841
+  },
+  {
+    "id": 40896873,
+    "title": "在 WebAssembly QuickJS 沙盒中執行 JavaScript",
+    "originLink": "https://github.com/sebastianwessel/quickjs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896873",
+    "commentBody": "",
+    "originSummary": [
+      "「此 TypeScript 套件允許在 WebAssembly 沙盒中使用 QuickJS 引擎安全地執行 JavaScript 程式碼，非常適合安全地運行不受信任的程式碼。」",
+      "主要特點包括隔離的環境、虛擬檔案系統、自訂的 Node 模組、HTTP(S) 抓取客戶端、基於 Chai 的測試執行器以及高效能。",
+      "這個套件功能多樣且易於整合到 TypeScript 專案中，提供了使用者友好的 API 來執行和管理程式碼。"
+    ],
+    "commentSummary": [
+      "「此 TypeScript 套件使用 QuickJS 引擎在 WebAssembly 沙盒中安全執行 JavaScript 代碼，確保不受信任的代碼隔離。」",
+      "主要功能包括虛擬檔案系統、自訂節點模組、抓取客戶端、測試執行器以及使用者友善的 API，支援 NodeJS、Deno 和 Cloudflare Workers 等環境。",
+      "「安全警告指出，啟用 `fetch` 可能會將主機的 Cookie 暴露給不受信任的程式碼，從而可能危及沙盒的安全性。」"
+    ],
+    "points": 104,
+    "commentCount": 32,
+    "retryCount": 0,
+    "time": 1720352245
+  },
+  {
+    "id": 40895935,
+    "title": "從電晶體到網頁瀏覽器，12 週課程的大綱",
+    "originLink": "https://github.com/geohot/fromthetransistor",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895935",
+    "commentBody": "",
+    "originSummary": [
+      "本課程涵蓋從了解電晶體到開發網頁瀏覽器的全面旅程，提供實作方式來學習硬體和軟體的整合。",
+      "主要專案包括建構一個 ARM7 CPU、一個 C 編譯器、一個類 UNIX 作業系統，以及一個基於文字的網頁瀏覽器，使用的語言包括 Verilog、Python、Haskell 和 C。",
+      "「課程強調實用技能，例如使用 Verilator 進行模擬、FPGA 板設計，以及實現基本系統元件如 MMU、乙太網控制器和 TCP 協議棧。」"
+    ],
+    "commentSummary": [
+      "由 geohot 在 GitHub 上發布的為期 12 週的課程《從電晶體到網頁瀏覽器》因其雄心勃勃的範疇而引發討論，但自 2016 年以來更新甚少。",
+      "“使用者討論其可行性，建議使用替代學習工具如「Turing Complete」和「Shenzen I/O」，並認為它對初學者來說可能過於艱深，更適合有經驗的程式設計師。”",
+      "批評者質疑這門課程的實用性和作者的意圖，認為它過於雄心勃勃且缺乏實質內容，與全面的電機與資訊工程學位相比顯得不足。"
+    ],
+    "points": 102,
+    "commentCount": 44,
+    "retryCount": 0,
+    "time": 1720338876
+  },
+  {
+    "id": 40897518,
+    "title": "「Mongo 但在 Postgres 上並具有強一致性優勢」",
+    "originLink": "https://github.com/event-driven-io/Pongo",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897518",
+    "commentBody": "",
+    "originSummary": [
+      "Pongo Pongo 是一個工具，允許在 PostgreSQL 上使用類似 MongoDB 的操作，並利用其強一致性的優勢。",
+      "它將 MongoDB API 呼叫轉換為原生 PostgreSQL 查詢，利用 JSONB 進行高效的讀寫操作和複雜查詢。",
+      "Pongo 不是傳統的 ORM(物件關聯映射)，而是專注於文件數據處理，提供靈活性和性能，儘管它並不完全符合 MongoDB 的規範。"
+    ],
+    "commentSummary": [
+      "Pongo 是一個新專案，提供類似 MongoDB 的 API，基於 PostgreSQL 並利用 JSONB 欄位來獲得強一致性的優勢。",
+      "該專案旨在結合 MongoDB 的易用性與 PostgreSQL 的強大一致性和可靠性，將 MongoDB 語法轉換為原生的 PostgreSQL 查詢。",
+      "“這項發展引起了關注，因為它有可能在提供熟悉的 MongoDB 體驗的同時，利用 PostgreSQL 的先進功能，吸引那些尋求數據庫操作強一致性的開發者。”"
+    ],
+    "points": 98,
+    "commentCount": 48,
+    "retryCount": 0,
+    "time": 1720358532
+  },
+  {
+    "id": 40896110,
+    "title": "科學家在火星模擬計畫中經過一年後重新現身",
+    "originLink": "https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896110",
+    "commentBody": "",
+    "originSummary": [
+      "“四位科學家在休士頓的火星沙丘阿爾法棲息地完成了一年的火星模擬任務，該棲息地是一個3D列印結構，旨在模擬火星環境。”",
+      "這項任務是 NASA 的乘員健康與性能探索類比計畫(CHAPEA)的一部分，旨在為未來的火星任務和長期太空探索(包括阿提米絲計畫)收集見解。",
+      "團隊進行了「火星漫步」並應對了如隔離和通訊延遲等壓力源，另外還計劃在2025年和2027年進行更多的CHAPEA任務。"
+    ],
+    "commentSummary": [
+      "科學家們已經完成了一年的火星模擬，重點研究人在孤立、高壓環境中的耐力。",
+      "該專案強調，心理和社會動態比營養需求更難管理。",
+      "討論包括技術和倫理考量、潛在的高死亡率，以及火星殖民所需的廣泛準備和較小規模的初期任務。"
+    ],
+    "points": 91,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1720341858
+  },
+  {
+    "id": 40896212,
+    "title": "「AI」、學生與知識危機",
+    "originLink": "https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896212",
+    "commentBody": "",
+    "originSummary": [
+      "“2024年7月6日的一篇部落格文章討論了一名學生將 ChatGPT 當作搜尋引擎使用，結果導致該學生相信了錯誤的資訊。”",
+      "作者強調了對抗 AI 生成的錯誤資訊的困難，因為每個學生可能會收到獨特的錯誤事實，這使得更正過程變得複雜。",
+      "該貼文反映了錯誤資訊對教育的廣泛影響，並因騷擾行為而被移除。"
+    ],
+    "commentSummary": [
+      "“現今的學生在獲取資訊時，顯著依賴人工智慧和網際網路，這與過去世代在圖書館進行手動研究的方式形成了鮮明對比。”",
+      "教育工作者擔心這種依賴可能會妨礙學生批判性評估資訊的能力，導致文章經常缺乏深度。",
+      "雖然 AI 工具很有用，但它們也可能生成錯誤資訊，這引發了在教育中整合這些工具同時培養批判性思維技能的討論。"
+    ],
+    "points": 89,
+    "commentCount": 121,
+    "retryCount": 0,
+    "time": 1720343169
+  },
+  {
+    "id": 40894082,
+    "title": "「OpenAI 遭駭客入侵，一年前的資料外洩事件未向公眾報告」",
+    "originLink": "https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40894082",
+    "commentBody": "",
+    "originSummary": [
+      "駭客在去年年初入侵了 OpenAI 的內部訊息系統，洩露了敏感資訊，但未能存取關鍵的 AI 系統，這引發了安全和國家安全的擔憂。",
+      "“OpenAI 於 2023 年 4 月在內部披露了此事件，表示沒有客戶數據被竊取，且駭客可能沒有政府背景；然而，此次資料外洩事件引發了對外國對手，特別是中國，在人工智慧技術上進步的高度擔憂。”",
+      "“OpenAI 自那時起已改進其安全措施，成立了安全與保安委員會，該事件也引發了關於聯邦和州政府對 AI 技術發布進行管制的討論。”"
+    ],
+    "commentSummary": [
+      "OpenAI 去年經歷了一次未報告的駭客攻擊，導致用戶對透明度和安全措施的擔憂。",
+      "此次資料外洩涉及內部訊息系統的存取，但並未危及關鍵的人工智慧技術。",
+      "用戶討論了回報錯誤的困難以及對 OpenAI 標準安全回報流程的挫折感。"
+    ],
+    "points": 84,
+    "commentCount": 26,
+    "retryCount": 0,
+    "time": 1720308293
+  },
+  {
+    "id": 40893749,
+    "title": "「什麼原因引起偏頭痛？對‘大腦停電’的研究提供了線索」",
+    "originLink": "https://www.nature.com/articles/d41586-024-02222-x",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893749",
+    "commentBody": "",
+    "originSummary": [
+      "“2024年7月4日發表於《科學》期刊的一項小鼠研究揭示了偏頭痛成因的新見解，將短暫的腦部‘黑障’與腦脊髓液的變化聯繫起來，這些變化會激活顱內的痛覺受器。”",
+      "研究顯示，偏頭痛可能作為一種保護機制，提示需要休息，並且發現了三叉神經節周圍保護層中一個先前未知的缺口。",
+      "這項發現可能透過針對新發現的機制，促使開發出新的偏頭痛治療方法。"
+    ],
+    "commentSummary": [
+      "「一項研究顯示，皮質擴散性抑制(CSD)，即所謂的『大腦黑障』，可能與偏頭痛有關。」",
+      "人們報告了各種誘因和治療方法，包括飲食改變、像是Rizatriptan這類藥物，以及改善睡眠和保持水分等生活方式調整。",
+      "討論強調了偏頭痛的複雜性，不同的誘因和治療方法對不同的人有效。"
+    ],
+    "points": 84,
+    "commentCount": 72,
+    "retryCount": 0,
+    "time": 1720303961
+  }
+]

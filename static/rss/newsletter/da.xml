@@ -15,12 +15,208 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 06 Jul 2024 19:10:41 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 07 Jul 2024 19:09:26 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/da.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 06 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[da]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-07]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/07&#39;</h2>
+<h1>2024-07-07</h1>
+<h2><a href="https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/">Indlejrede YouTube-videoer er ekstremt tunge, og det kan løses</a></h2>
+<ul>
+<li>Indlejrede YouTube-videoer er ressourcekrævende, med hver indlejring omkring 1,3 MB og 32 forespørgsler, hvilket fører til langsomme indlæsningstider og høj dataoverførsel.</li>
+<li>En webkomponent som &quot;lite-youtube-embed&quot; af Paul Irish kan reducere størrelsen til omkring 100k, dele ressourcer og forbedre ydeevnen betydeligt.</li>
+<li>Implementering af denne løsning indebærer at linke JavaScript, bruge komponenten i HTML og indlæse scriptet asynkront for bedre ydeevne.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897205">Reaktioner</a></h3>
+<ul>
+<li>En community-forumplatform har erstattet YouTube-indlejringer med proxy-miniatyrbilleder, som kun indlæses, når de klikkes på, hvilket reducerer behovet for at downloade store JavaScript-filer og forhindrer Google i at spore.</li>
+<li>Der er blevet implementeret lignende løsninger for YouTube-, SoundCloud- og Reddit-embeds for at forbedre funktionaliteten og minimere oppustethed.</li>
+<li>Der er debat om, hvorvidt lettere indlejringer kan reducere engagementet på grund af langsommere videotider, men mange mener, at forbedring af den samlede indlæsningstid for siden er vigtigere for brugeroplevelsen og sidens ydeevne.</li>
+</ul>
+<h2><a href="https://sin-ack.github.io/posts/jpg-loader-bork/">Malloc ødelagde Serenity&#39;s JPGLoader, eller: hvordan man vinder i lotteriet (2021)</a></h2>
+<ul>
+<li>En fejl i SerenityOS&#39;s JPG-billeddekodning forårsagede forkert farvevisning på grund af en forveksling mellem RGB og BGR.</li>
+<li>Problemet blev sporet tilbage til en commit, der implementerede <code>malloc_good_size()</code>, hvilket ændrede hukommelsesallokeringen og påvirkede datastrukturer som <code>HashTable</code> og <code>Vector</code>, der blev brugt i <code>JPGLoader</code>.</li>
+<li>Rettelsen involverede at sikre deterministisk iteration over komponenter i <code>JPGLoader</code>, hvilket fremhæver, hvordan simple ændringer kan afsløre betydelige underliggende problemer.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896102">Reaktioner</a></h3>
+<ul>
+<li>Visse implementeringer af hash-tabeller introducerer tilfældighed for at forhindre afhængighed af elementernes rækkefølge og øge sikkerheden, mens moderne implementeringer ofte garanterer iteration i indsættelsesrækkefølge.</li>
+<li>JavaScript og Python har standardiseret indsættelsesrækkefølgen i deres hash-tabel-implementeringer, hvor Python adopterede dette i version 3.7.</li>
+<li>Rust tilbyder forskellige hash table-muligheder (<code>HashMap</code>, <code>BTreeMap</code>, <code>IndexMap</code>), og Perl introducerede tilfældige frø til hash tabeller efter version 5.18.</li>
+</ul>
+<h2><a href="https://beacondb.net/">BeaconDB – Et alternativ til Mozilla Location Services</a></h2>
+<ul>
+<li>beaconDB er en trådløs geolokationsdatabase i det offentlige domæne, der dækker 177.176 netværk, 4.126 beacons, 6.106 tårne på tværs af 30 lande, med etisk indsamlede data, hvor brugerne har givet samtykke.</li>
+<li>Databasen er privatlivsvenlig, idet den slører information for at beskytte afsendere og bidragydere, og den kræver fysisk nærhed for at opdatere data, hvilket gør den modstandsdygtig over for misbrug.</li>
+<li>Udviklere kan bruge endpointet <code>https://beacondb.net/v1/geolocate</code>, som er kompatibelt med Ichnaea&#39;s forespørgselsformat, men det er ikke egnet til applikationer med høj trafik; kildekoden er tilgængelig på Codeberg.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895672">Reaktioner</a></h3>
+<ul>
+<li>BeaconDB præsenteres som et alternativ til Mozilla Location Services (MLS), med fokus på etisk indsamling af data, hvor brugerne aktivt vælger at deltage.</li>
+<li>Til forskel fra Apple og Google offentliggør BeaconDB ikke klartekst MAC-adresser, men bruger i stedet hashed eller aggregerede data for at forbedre privatlivets fred.</li>
+<li>BeaconDB er den eneste ikke-big tech database til lokationstjenester, der sigter mod at levere en open source-løsning og drøfter potentielle samarbejder.</li>
+</ul>
+<h2><a href="https://notes.eatonphil.com/2024-07-07-systems-meetups.html">En genopvågning af systemprogrammeringsmøder</a></h2>
+<ul>
+<li>Der har været en genopblomstring af high-quality systems programming meetups i byer som München, Berlin, San Francisco, New York City og Bengaluru i 2024.</li>
+<li>NYC Systems Coffee Club, startet i december 2023, fokuserer på ingeniørmæssige udfordringer og er vokset hurtigt, hvilket har inspireret lignende møder globalt.</li>
+<li>Vigtige råd til at organisere meetups inkluderer at sikre et værtssted, fokusere på teknisk indhold, finde talere gennem brancheforbindelser og samarbejde med andre arrangører.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897506">Reaktioner</a></h3>
+<ul>
+<li>Systemprogrammeringsmøder oplever en genopblomstring, hvilket fremhæver fællesskabets fornyede interesse for lav-niveau programmering og systemarkitektur.</li>
+<li>At organisere sådanne møder står over for udfordringer, herunder at finde stabile lokaler, som ofte kræver stærk intern støtte eller kommunal opbakning for at sikre konsistente lokationer.</li>
+<li>Indholdets kvalitet og fokus ved meetups er afgørende, da nogle grupper kæmper med at finde balancen mellem ægte tekniske diskussioner og selvpromoverende præsentationer fra talere.</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40892812">Hvor findes de gode ressourcer til at lære lydbehandling?</a></h2>
+<ul>
+<li>Brugeren søger ressourcer til at programmere en harmonizer, der ligner den, som MIT&#39;s Ben Bloomberg skabte til Jacob Collier.</li>
+<li>De har brug for tilgængelig information om pitch shifting og format shifting, der bevarer naturlig lydkvalitet.</li>
+<li>Brugeren har omfattende programmeringserfaring, men mangler viden om lydbehandling, hvilket indikerer et behov for begyndervenlige, men alligevel omfattende ressourcer.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40892812">Reaktioner</a></h3>
+<ul>
+<li>En bruger søger ressourcer til at programmere en harmonizer, der ligner Jacob Colliers, skabt af MIT&#39;s Ben Bloomberg, med fokus på pitch- og format-skift.</li>
+<li>Anbefalede ressourcer inkluderer åbne kursusmaterialer fra CCRMA ved Stanford, industristandardbiblioteker som Elastique af Zplane og bøger som &quot;DAFX - Digital Audio Effects&quot; af Udo Zölzer.</li>
+<li>Yderligere forslag inkluderer tutorials, YouTube-kanaler og community-fora som Officehours.global til netværk og yderligere læring.</li>
+</ul>
+<h2><a href="https://rdht.vercel.app/">En gratis minimalistisk daglig vane-tracker</a></h2>
+<ul>
+<li>En ny vane-tracker app er blevet udviklet af en person, der var utilfreds med de eksisterende muligheder. Appen har funktioner som streak-tracking, offline brugbarhed, streak-frysning, et visuelt konsistenskort og pausefunktionalitet.</li>
+<li>Appen er bygget ved hjælp af React til frontend, Dexie cloud til lagring og synkronisering, og er hostet på Vercel.</li>
+<li>Udvikleren har gjort appen tilgængelig for offentlig brug og fremviser et personligt projekt, der er blevet til en ressource for fællesskabet.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40893866">Reaktioner</a></h3>
+<ul>
+<li>En ny gratis minimalistisk daglig vane-tracker er blevet skabt for at imødekomme mangler i eksisterende apps, med funktioner som streak-tracking, offline brug, streak-frysninger, et visuelt konsistenskort og en pausefunktion.</li>
+<li>Bygget med React og Dexie cloud og hostet på Vercel, har appen modtaget feedback til forbedringer, især fra iPhone-brugere, herunder forslag til dårlige vaner, designjusteringer og fejlrettelser.</li>
+<li>Brugerne sætter pris på det rene design og offline-funktionaliteten, med forslag til en sammenklappet visning og bedre mobilkompatibilitet; der er endnu ingen planer om indtægtsgenerering.</li>
+</ul>
+<h2><a href="https://www.atlasobscura.com/articles/what-are-italian-herbs">Hvorfor Italien mistede kærligheden til koriander</a></h2>
+<ul>
+<li>Koriander, som engang var en grundpille i det antikke romerske køkken, er næsten forsvundet fra moderne italiensk madlavning, især dens blade.</li>
+<li>Tilbagegangen begyndte efter Rom, påvirket af germanske stammer og præferencen for eksotiske krydderier som kanel og kardemomme.</li>
+<li>På trods af sin historiske tilstedeværelse betragtes koriander nu som en fremmed ingrediens i Italien, i modsætning til andre urter som basilikum.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895441">Reaktioner</a></h3>
+<ul>
+<li>Italiens modvilje mod koriander går tilbage til 1544, da botanikeren Pietro Andrea Mattioli beskrev dens blade som lugtende af væggelus.</li>
+<li>Aversionen kan være genetisk påvirket, da nogle mennesker opfatter koriander som smagende af sæbe på grund af et specifikt gen.</li>
+<li>Faldet i korianderens popularitet i Italien er også forbundet med skiftende kulinariske tendenser og migrationsmønstre, hvilket illustrerer det komplekse samspil mellem genetik, kultur og personlig præference i formningen af madsmag.</li>
+</ul>
+<h2><a href="https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial">&quot;Out of Band&quot; netværksadministration er ikke trivielt</a></h2>
+<ul>
+<li>Rogers internet- og telefonnedbruddet i 2022, som påvirkede over 12 millioner canadiere, fremhævede vigtigheden og kompleksiteten af &quot;Out of Band&quot; (OOB) netværksstyring.</li>
+<li>Out-of-band management kræver dedikeret hardware og infrastruktur adskilt fra hovednetværket, hvilket sikrer redundans og sikkerhed, men tilføjer betydelige omkostninger og kompleksitet.</li>
+<li>Små netværk kan finde det mere praktisk at fokusere på robust, redundant in-band management frem for at opretholde et separat OOB-netværk.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895167">Reaktioner</a></h3>
+<ul>
+<li>&quot;Out of Band&quot; (OOB) netværksadministration er afgørende for at opretholde netværkets pålidelighed, især i moderne digitale systemer, der er tilbøjelige til fejlkonstruktioner og nedbrud.</li>
+<li>Rogers-nedbruddet understregede det kritiske behov for robust OOB-styring og fremhævede vigtigheden af bedre planlægning og risikovurdering for at forhindre kerne-netværksfejl.</li>
+<li>Effektiv OOB-styring indebærer brug af dedikerede, redundante systemer, ofte ved at udnytte forskellige udbydere eller teknologier såsom LTE eller satellit for at sikre pålidelighed.</li>
+</ul>
+<h2><a href="https://github.com/sebastianwessel/quickjs">Udfør JavaScript i en WebAssembly QuickJS-sandkasse</a></h2>
+<ul>
+<li>Dette TypeScript-pakke muliggør sikker udførelse af JavaScript-kode inden for en WebAssembly-sandkasse ved hjælp af QuickJS-motoren, ideel til sikker kørsel af upålidelig kode.</li>
+<li>Vigtige funktioner inkluderer et isoleret miljø, virtuelt filsystem, brugerdefinerede node-moduler, HTTP(S) fetch-klient, chai-baseret testløber og effektiv ydeevne.</li>
+<li>Pakke er alsidig og nem at integrere med TypeScript-projekter, og tilbyder en brugervenlig API til kodeudførelse og -styring.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896873">Reaktioner</a></h3>
+<ul>
+<li>Dette TypeScript-pakke muliggør sikker udførelse af JavaScript-kode inden for en WebAssembly-sandkasse ved hjælp af QuickJS-motoren, hvilket sikrer isolation af upålidelig kode.</li>
+<li>Vigtige funktioner inkluderer et virtuelt filsystem, brugerdefinerede node-moduler, en fetch-klient, en test-runner og en brugervenlig API, der understøtter miljøer som NodeJS, Deno og Cloudflare Workers.</li>
+<li>En sikkerhedsadvarsel bemærker, at aktivering af <code>fetch</code> kan udsætte værtens cookies for utroværdig kode, hvilket potentielt kan kompromittere sandkassens sikkerhed.</li>
+</ul>
+<h2><a href="https://github.com/geohot/fromthetransistor">Fra transistoren til webbrowseren, en grov skitse til et 12-ugers kursus</a></h2>
+<ul>
+<li>Kurset dækker en omfattende rejse fra forståelse af transistorer til udvikling af en webbrowser, hvilket giver en praktisk tilgang til at lære integration af hardware og software.</li>
+<li>Vigtige projekter omfatter opbygning af en ARM7 CPU, en C-kompilator, et UNIX-lignende OS og en tekstbaseret webbrowser ved hjælp af sprog som Verilog, Python, Haskell og C.</li>
+<li>Pensum lægger vægt på praktiske færdigheder såsom emulering med Verilator, FPGA-kortdesign og implementering af essentielle systemkomponenter som en MMU, Ethernet-controller og TCP-stak.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895935">Reaktioner</a></h3>
+<ul>
+<li>Et 12-ugers kursus med titlen &quot;From the Transistor to the Web Browser&quot; af geohot på GitHub har skabt diskussion på grund af dets ambitiøse omfang, men minimale opdateringer siden 2016.</li>
+<li>Brugere debatterer dets gennemførlighed, foreslår alternative læringsværktøjer som &quot;Turing Complete&quot; og &quot;Shenzen I/O,&quot; og argumenterer for, at det måske er for komplekst for begyndere og bedre egnet til erfarne programmører.</li>
+<li>Anmeldere stiller spørgsmålstegn ved kursets praktiske anvendelighed og forfatterens intentioner, idet de ser det som overambitiøst og uden substans sammenlignet med omfattende uddannelser i Elektrisk og Computerteknik.</li>
+</ul>
+<h2><a href="https://github.com/event-driven-io/Pongo">Mongo, men på Postgres og med fordele ved stærk konsistens</a></h2>
+<ul>
+<li>Pongo Pongo er et værktøj, der gør det muligt at bruge MongoDB-lignende operationer på PostgreSQL og udnytte fordelene ved stærk konsistens.</li>
+<li>Det oversætter MongoDB API-kald til native PostgreSQL-forespørgsler, ved at benytte JSONB til effektive læse/skrive-operationer og komplekse forespørgsler.</li>
+<li>Pongo er ikke en traditionel ORM (Object-Relational Mapping), men fokuserer på håndtering af dokumentdata, hvilket tilbyder fleksibilitet og ydeevne, selvom det ikke er fuldt MongoDB-kompatibelt.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897518">Reaktioner</a></h3>
+<ul>
+<li>Pongo er et nyt projekt, der tilbyder en MongoDB-lignende API oven på PostgreSQL, og udnytter JSONB-kolonner for at opnå fordele ved stærk konsistens.</li>
+<li>Projektet sigter mod at kombinere brugervenligheden af MongoDB med den robuste konsistens og pålidelighed af PostgreSQL ved at oversætte MongoDB-syntaks til native PostgreSQL-forespørgsler.</li>
+<li>Denne udvikling har vakt interesse på grund af dens potentiale til at tilbyde en velkendt MongoDB-oplevelse, mens den udnytter PostgreSQL&#39;s avancerede funktioner, hvilket appellerer til udviklere, der søger stærk konsistens i deres databaseoperationer.</li>
+</ul>
+<h2><a href="https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838">Forskere dukker op igen efter et år i Mars-simulationsprojekt</a></h2>
+<ul>
+<li>Fire videnskabsfolk afsluttede en etårig Mars-simulation i Houstons Mars Dune Alpha-habitat, en 3D-printet struktur designet til at efterligne martianske forhold.</li>
+<li>Missionen, en del af NASA&#39;s Crew Health and Performance Exploration Analog (CHAPEA), har til formål at indsamle indsigt til fremtidige Mars-missioner og langvarig rumforskning, herunder Artemis-programmet.</li>
+<li>Holdet gennemførte &quot;Marsvandringer&quot; og håndterede stressfaktorer som isolation og kommunikationsforsinkelser, med yderligere CHAPEA-missioner planlagt til 2025 og 2027.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896110">Reaktioner</a></h3>
+<ul>
+<li>Forskere har afsluttet en etårig Mars-simulation med fokus på menneskelig udholdenhed i isolerede, stressfyldte miljøer.</li>
+<li>Projektet understreger, at psykologiske og sociale dynamikker er mere udfordrende at håndtere end ernæringsmæssige behov.</li>
+<li>Diskussioner omfatter tekniske og etiske overvejelser, potentielt høje dødelighedsrater og nødvendigheden af omfattende forberedelse og mindre indledende missioner for Mars-kolonisering.</li>
+</ul>
+<h2><a href="https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html">&quot;AI&quot;, studerende og epistemisk krise</a></h2>
+<ul>
+<li>Et blogindlæg fra den 6. juli 2024 diskuterer en elevs brug af ChatGPT som en søgemaskine, hvilket resulterede i, at eleven troede på falsk information.</li>
+<li>Forfatteren fremhæver vanskeligheden ved at bekæmpe AI-genereret misinformation, da hver elev kan modtage unikke forkerte fakta, hvilket komplicerer rettelsesprocessen.</li>
+<li>Indlægget reflekterer over det bredere problem med misinformationens indvirkning på uddannelse og blev fjernet på grund af chikane.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896212">Reaktioner</a></h3>
+<ul>
+<li>Nutidens studerende er i høj grad afhængige af AI og internettet for information, i modsætning til tidligere generationer, der udførte manuel forskning i biblioteker.</li>
+<li>Uddannelsesfolk er bekymrede for, at denne afhængighed kan hæmme elevernes evne til kritisk at vurdere information, hvilket resulterer i opgaver, der ofte mangler dybde.</li>
+<li>Selvom AI-værktøjer er nyttige, kan de også generere falsk information, hvilket skaber en debat om integrationen af disse værktøjer i uddannelsen, samtidig med at man fremmer kritiske tænkningsfærdigheder.</li>
+</ul>
+<h2><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public">OpenAI blev hacket, årgammelt brud blev ikke rapporteret til offentligheden</a></h2>
+<ul>
+<li>Hackere brød ind i OpenAI&#39;s interne beskedsystemer tidligt sidste år, hvilket afslørede følsomme oplysninger, men de fik ikke adgang til centrale AI-systemer, hvilket rejser sikkerheds- og nationale sikkerhedsbekymringer.</li>
+<li>OpenAI afslørede hændelsen internt i april 2023 og oplyste, at ingen kundedata blev stjålet, og at hackeren sandsynligvis ikke havde nogen forbindelser til regeringer; dog har bruddet ført til øgede frygt for udenlandske modstandere, især Kina, der fremmer deres AI-teknologier.</li>
+<li>OpenAI har siden forbedret sine sikkerhedsforanstaltninger, etableret en Sikkerheds- og Sikringskomité, og hændelsen har foranlediget diskussioner om føderale og statslige reguleringer for at kontrollere frigivelsen af AI-teknologi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40894082">Reaktioner</a></h3>
+<ul>
+<li>OpenAI oplevede et uanmeldt hack sidste år, hvilket førte til brugerbekymringer om gennemsigtighed og sikkerhedspraksis.</li>
+<li>Bruddet involverede adgang til interne beskedsystemer, men kompromitterede ikke vigtige AI-teknologier.</li>
+<li>Brugere diskuterede vanskeligheder ved at rapportere fejl og frustrationer med OpenAIs standardpraksis for sikkerhedsrapportering.</li>
+</ul>
+<h2><a href="https://www.nature.com/articles/d41586-024-02222-x">Årsagerne til migræne? Undersøgelse af &#39;hjerne-blackout&#39; giver spor</a></h2>
+<ul>
+<li>En undersøgelse på mus, offentliggjort i Science den 4. juli 2024, afslører nye indsigter i årsagerne til migræne, der forbinder korte &#39;blackouts&#39; i hjernen med ændringer i cerebrospinalvæsken, som aktiverer smertereceptorer i kraniet.</li>
+<li>Forskningen antyder, at migræne kan fungere som en beskyttelsesmekanisme, der signalerer behovet for hvile, og identificerer en tidligere ukendt åbning i de beskyttende lag omkring trigeminusgangliet.</li>
+<li>Denne opdagelse kunne føre til udviklingen af nye behandlinger for migræne ved at målrette de nyidentificerede mekanismer.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40893749">Reaktioner</a></h3>
+<ul>
+<li>En undersøgelse antyder, at kortikal spredningsdepression (CSD), en &quot;hjernesortout,&quot; kan være involveret i migræne.</li>
+<li>Folk rapporterede forskellige udløsere og behandlinger, herunder kostændringer, medicin som Rizatriptan og livsstilsjusteringer såsom forbedret søvn og hydrering.</li>
+<li>Diskussionen understreger kompleksiteten af migræne, hvor forskellige udløsere og behandlinger er effektive for forskellige individer.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Indlejrede YouTube-videoer er ekstremt tunge, og det kan løses" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Indlejrede%20YouTube-videoer%20er%20ekstremt%20tunge%2C%20og%20det%20kan%20l%C3%B8ses&subheading=s%C3%B8ndag%20den%207.%20juli%202024%3A%20Resum%C3%A9%20af%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/da/2024/07/07</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-06]]></title>
             <description
@@ -1681,192 +1877,6 @@
             <link>https://hn.cho.sh/da/2024/06/28</link>
             <guid isPermaLink="false">2024-06-28T00:00:00.000Z</guid>
             <pubDate>Fri, 28 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-27]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/27&#39;</h2>
-<h1>2024-06-27</h1>
-<h2><a href="https://www.tomshardware.com/tech-industry/cyber-security/south-korean-telecom-company-attacks-torrent-users-with-malware-over-600000-people-report-missing-files-strange-folders-and-disabled-pcs">Det sydkoreanske teleselskab angriber torrent-brugere med malware</a></h2>
-<ul>
-<li>KT Corporation, et stort sydkoreansk teleselskab, inficerede med vilje over 600.000 brugere med malware for at forstyrre Webhards BitTorrent-baserede Grid Service, begyndende i maj 2020.</li>
-<li>Malwaren forårsagede problemer såsom manglende filer, mærkelige mapper og deaktiverede pc&#39;er, og blev sporet tilbage til KTs datacenter.</li>
-<li>Autoriteterne har anklaget 13 personer, herunder KT-medarbejdere, og KT forsvarede sine handlinger ved at henvise til netværksbelastning og ubetalte brugsgebyrer, selvom den uautoriserede installation af malware førte til betydelige kundeproblemer.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805099">Reaktioner</a></h3>
-<ul>
-<li>Det sydkoreanske teleselskab beskyldes for at målrette torrent-brugere med malware, hvilket rejser betydelige privatlivs- og etiske bekymringer.</li>
-<li>Den hændelse fremhæver igangværende problemer med internetudbydere (ISPer) i Sydkorea, herunder høje gebyrer og potentiel magtmisbrug.</li>
-<li>Denne situation har udløst diskussioner om tilstanden for internetfrihed og infrastruktur i Sydkorea, som engang var kendt for sine hurtige internethastigheder, men nu møder kritik for forældede praksisser og regeringskontrol.</li>
-</ul>
-<h2><a href="https://latenighter.com/news/paramount-axes-comedy-central-website-show-clips-library/">25 års videoklip forsvundet, da Paramount lukker Comedy Centrals hjemmeside</a></h2>
-<ul>
-<li>Paramount har lukket ComedyCentral.com, fjernet over 25 års klip fra The Daily Show og The Colbert Report, og dirigerer besøgende til tv-udbydere eller Paramount+.</li>
-<li>Andre shows som The Opposition with Jordan Klepper og Lights Out with David Spade er også berørt, hvor ældre episoder ikke er tilgængelige på Paramount+.</li>
-<li>Dette skridt er en del af Paramounts omkostningsbesparende foranstaltninger for at håndtere over 14 milliarder dollars i gæld, efter lignende handlinger med MTV.com og CMT.com, med det formål at strømline siderne og drive seere til Paramount+.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40807032">Reaktioner</a></h3>
-<ul>
-<li>Paramount har fjernet 25 års videoklip fra Comedy Centrals hjemmeside, hvilket har udløst kritik over ledelsens opfattede undervurdering af indholdet.</li>
-<li>Critikere hævder, at indholdet kunne være blevet monetariseret eller bevaret, hvilket fremhæver kompleksiteten af medierettigheder og reguleringsudfordringer ved distribution af ældre indhold.</li>
-<li>Fjernelsen betragtes som en omkostningsbesparende foranstaltning fra Paramounts side i lyset af økonomiske vanskeligheder, hvor nogle beklager tabet af kulturhistorie og foreslår piratkopiering som en måde at bevare den på.</li>
-</ul>
-<h2><a href="https://web.dev/case-studies/google-sheets-wasmgc">Google Sheets overførte sin beregningsarbejder fra JavaScript til WasmGC</a></h2>
-<ul>
-<li>Google Sheets er gået fra JavaScript til WasmGC (WebAssembly Garbage Collection) for at forbedre ydeevnen, især for store regneark.</li>
-<li>WasmGC understøtter sprog med affaldsindsamling som Java, og tilbyder næsten indbygget hastighed på nettet, og Google Sheets er blandt de første til at implementere det.</li>
-<li>Den oprindelige ydeevne af WasmGC var langsommere end JavaScript, men efterfølgende optimeringer har markant forbedret hastigheden, hvilket demonstrerer dets potentiale til at revolutionere udviklingen af webapplikationer.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40808820">Reaktioner</a></h3>
-<ul>
-<li>Google Sheets overgik sin beregningsmotor fra JavaScript til WasmGC, hvilket i starten medførte langsommere ydeevne, men senere optimerede den til at være dobbelt så hurtig som JS-versionen.</li>
-<li>Flytningen involverede betydelige genimplementeringsindsatser, herunder devirtualisering og udnyttelse af browser-API&#39;er, med det formål at forbedre ydeevnen og anvende den native V8-skraldesamler.</li>
-<li>På trods af forbedringer finder nogle brugere stadig Google Sheets langsommere sammenlignet med native applikationer som Excel, hvilket fremhæver den løbende udvikling og optimering af webteknologier.</li>
-</ul>
-<h2><a href="https://thezvi.substack.com/p/on-claude-35-sonnet">Claude 3.5 Sonet</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40806698">Reaktioner</a></h3>
-<ul>
-<li>Anthropic har introduceret Projects-funktionen for Pro- og Team-brugere, hvilket tillader flere projekter med deres egne referencematerialer og øger brugervenligheden.</li>
-<li>Claude 3.5 Sonnet modtager ros for sine kodningsevner, hvor brugere bemærker, at det hjælper ekspertprogrammører med at arbejde hurtigere og er overlegen i forhold til andre modeller som GPT-4.</li>
-<li>Brugere diskuterer de praktiske anvendelser og begrænsninger af Claude 3.5 Sonnet, herunder dets ydeevne inden for opsummering, anbefalinger og kodningsassistance, hvor nogle foretrækker det frem for OpenAI&#39;s tilbud.</li>
-</ul>
-<h2><a href="http://mynor.org/my4th_forthdeck.htm">Forth Deck mini: en bærbar Forth-computer med en diskret CPU</a></h2>
-<ul>
-<li>Forth Deck mini er en bærbar Forth-computer med en diskret CPU, der har en 40x4 tegn LCD, 56-knappers QWERTY-tastatur og et 6,6 Wh LiPo-batteri med 6 timers driftstid.</li>
-<li>Den indeholder en 8-bit CMOS logik CPU, 32 KB ROM, 32 KB RAM, op til 256 KB EEPROM og RS-232 med 4800 baud, hvilket minder om 70&#39;ernes og 80&#39;ernes hjemmecomputere med indbyggede Basic-fortolkere.</li>
-<li>Enheden kan samles ved hjælp af et sæt fra Budgetronics, eksklusive batteri og opladningskredsløb, og er licenseret under Creative Commons Attribution-ShareAlike 4.0 International License.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40804122">Reaktioner</a></h3>
-<ul>
-<li>Forth Deck mini er en bærbar Forth-computer med en diskret CPU bygget med nogle få logikchips og en EEPROM, der opererer på en 8-bit data- og adressebus.</li>
-<li>Entusiaster diskuterer dens design, potentielle modifikationer og sammenligninger med andre CPU&#39;er som Novix NC4000, samt ideen om en Forth-baseret Factor-dialekt til scripting.</li>
-<li>Diskussionen fremhæver udfordringerne ved at skabe moderne hobbycomputere med gode tastaturer og skærme, med henvisning til enheder som TRS-80 Model 100 og AlphaSmart, og nævner alternativer som M5Stack Cardputer og Zorzpad.</li>
-</ul>
-<h2><a href="https://www.npr.org/sections/shots-health-news/2024/06/26/g-s1-6177/brain-waste-removal-system-amyloid-alzheimer-toxins">Den menneskelige hjerne producerer en masse affald. Nu mener forskere, at de ved, hvor det ender</a></h2>
-<ul>
-<li>Forskere har afdækket nye detaljer om hjernens affaldsfjernelsessystem, som er essentielt for at opretholde hjernens sundhed og forebygge lidelser.</li>
-<li>Forskning offentliggjort i Nature afslører, at langsomme elektriske bølger under søvn hjælper med at skubbe affaldsfyldt væske fra dybt inde i hjernen til dens overflade, hvor den absorberes i blodbanen og fjernes af leveren og nyrerne.</li>
-<li>Dette glymfatiske system er afgørende for at fjerne amyloid, et stof forbundet med Alzheimers sygdom, og nedsat affaldsfjernelse kan bidrage til forskellige hjernelidelser som Alzheimers, Parkinsons, hovedpine og depression.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805251">Reaktioner</a></h3>
-<ul>
-<li>Forskere har identificeret, at dyb søvn spiller en afgørende rolle i at fjerne hjerneaffald, herunder amyloidproteiner, som er forbundet med Alzheimers og demens.</li>
-<li>Forskning tyder på, at induktion af langsomme elektriske bølger i hjernen gennem lys- og lydstimulering kan forbedre denne affaldsudrensning, selvom de fleste studier i øjeblikket er på mus.</li>
-<li>Faktorer som kaffeforbrug, motion og søvnmønstre bliver også diskuteret for deres potentielle indvirkning på hjernens sundhed.</li>
-</ul>
-<h2><a href="https://fastvoiceagent.cerebrium.ai/">Stemmebots med 500 ms svartider</a></h2>
-<ul>
-<li>Eksperimenter med stemmegrænseflader og store sprogmodeller (LLM&#39;er) begyndte efter udgivelsen af GPT-4, hvilket fremhævede den engagerende natur og de nye udfordringer ved stemmeinteraktioner med generativ AI.</li>
-<li>At opnå en 500ms stemme-til-stemme svartid er udfordrende, men muligt ved at hoste transskription, LLM-inferens og stemmegenerering sammen, optimere datarouting og sikre god wifi- og VRAM-caching.</li>
-<li>En demo af en stemmebot med en kapacitet på 500ms og en container til implementering på A10/A100/H100 GPU&#39;er er tilgængelig, med nuværende målinger, der viser en samlet responstid på 759ms, hvilket indikerer hurtig AI-udvikling og potentielle fremtidige forenklinger.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805010">Reaktioner</a></h3>
-<ul>
-<li>Voice bots, der opnår svartider på 500 ms, er mulige ved at optimere transskription, LLM-inferens og stemmegenereringsprocesser samt effektiv data-routing og caching.</li>
-<li>Metrics for stemme-til-stemme respons udgør i alt 759 ms, men fremtidige LLM&#39;er med indbyggede lydfunktioner kan muligvis reducere denne tid yderligere.</li>
-<li>Brugere fremhævede vigtigheden af lav latenstid i AI-interaktioner, især inden for kundeservice, og diskuterede potentielle tekniske forbedringer som browserunderstøttelse og behandling på enheden.</li>
-</ul>
-<h2><a href="https://fabric8labs.com">Næste generations 3D metalprint</a></h2>
-<ul>
-<li>Fabric8Labs, en startup fra San Diego, har sikret sig 50 millioner dollars i Serie B-finansiering til at fremme sin elektrokemiske additivfremstillingsteknologi.</li>
-<li>Finansieringen vil støtte opførelsen af en ny 3D-printfabrik, hvilket vil øge virksomhedens arbejdsstyrke betydeligt.</li>
-<li>Denne investering fremhæver den stigende interesse og kapitaltilstrømning til 3D-print startups, drevet af innovative fremstillingsteknologier.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40803783">Reaktioner</a></h3>
-<ul>
-<li>Next-gen 3D metalprintning fra Fabric8Labs anvender elektrokemiske metoder til præcis, hurtig og alsidig fremstilling, der opnår mikron-niveau opløsning.</li>
-<li>Teknikken kombinerer additive og subtraktive processer, primært ved at deponere rene metaller og nogle legeringer, hvilket gør den mere sikker og energieffektiv ved at undgå høje temperaturer og metalpulvere.</li>
-<li>Fabric8Labs&#39; teknologi er lovende til anvendelser som PCB&#39;er (Printede Kredsløb) og komplekse interne strukturer, og virksomheden undersøger kommercielle muligheder med denne unikke tilgang.</li>
-</ul>
-<h2><a href="https://lars.ingebrigtsen.no/2024/06/26/a-new-package-for-making-charts-in-emacs-eplot/">Eplot: En ny pakke til at lave diagrammer i Emacs</a></h2>
-<ul>
-<li>En ny Emacs-pakke kaldet eplot er blevet udgivet, designet til at skabe simple plots direkte i Emacs.</li>
-<li>eplot adresserer begrænsninger, der findes i eksisterende værktøjer som chart.el og Gnuplot, og tilbyder funktioner som fornuftige Y-akse tal og SVG-gradients.</li>
-<li>Pakke er brugervenlig, hvilket gør det muligt for brugere at generere grafer ved at skrive M-x eplot i en buffer med tal, og den er dokumenteret på GitHub.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40807923">Reaktioner</a></h3>
-<ul>
-<li>En ny pakke kaldet Eplot er blevet udgivet til at lave diagrammer i Emacs, en populær teksteditor blandt udviklere.</li>
-<li>Pakke har vakt opmærksomhed for sin enkelhed og fleksibilitet, med forslag til at forbedre brugeroplevelsen ved at udnytte Emacs&#39; fil- og mappe-lokale variabler.</li>
-<li>Diskussioner fremhæver sammenligninger med andre diagramværktøjer som Gnuplot og Matplotlib, idet de bemærker styrker og svagheder ved hver i konteksten af Emacs.</li>
-</ul>
-<h2><a href="https://www.joanwestenberg.com/6-months-ago,-i-left-the-bullshit-industrial-complex">Jeg forlod det bullshit industrielle kompleks for 6 måneder siden</a></h2>
-<ul>
-<li>En tidligere tech PR-professionel afslører deres fortid med at promovere overhypede startups, hvilket finansierede en overdådig livsstil, men førte til etiske tvivl.</li>
-<li>De besluttede at forlade den profitable, men moralsk tvivlsomme industri for at fokusere på ærlig skrivning om den reelle menneskelige påvirkning af teknologi og venturekapital.</li>
-<li>På trods af økonomiske og karrieremæssige risici finder de integritet og personlig opfyldelse i deres nye vej og afviser tech-industriens tomme løfter.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40806930">Reaktioner</a></h3>
-<ul>
-<li>Forfatteren udtrykker desillusion med tech-industrien og bemærker et skift fra at løse menneskelige problemer til at udvinde værdi over de sidste 25 år.</li>
-<li>Vigtige observationer inkluderer et Reddit-opslag, der hævder, at 90&#39;erne var menneskehedens højdepunkt, og et viralt citat om, at AI udfører husarbejde i stedet for kreativt arbejde, hvilket fremhæver en nostalgisk opfattelse af tidligere teknologisk optimisme.</li>
-<li>På trods af bekymringer om dataudnyttelse og profitdrevne motiver er der stadig håb i open-source-fællesskaber og innovative hacks, selvom den ubønhørlige jagt på profit har ført til udbredt desillusion.</li>
-</ul>
-<h2><a href="https://www.govexec.com/pay-benefits/2024/06/federal-whistleblowers-are-entitled-damages-missed-future-pay-court-rules/397638/">Føderale whistleblowere har ret til erstatning for mistet fremtidig løn, fastslår retten</a></h2>
-<ul>
-<li>Den amerikanske appeldomstol for den føderale kreds har afgjort, at føderale whistleblowere kan modtage erstatning for fremtidige tabte indtægter, hvis deres afskedigelse har skadet deres indtjeningsevne.</li>
-<li>Deborah Perlick, fyret efter at have rapporteret om manglende midler, argumenterede med succes for yderligere kompensation ud over tilbagebetaling, hvilket påvirkede fremtidige jobmuligheder.</li>
-<li>Denne afgørelse skaber en præcedens for føderale whistleblowere, idet den tillader krav om fremtidige tabte indtægter uden behov for garanteret fremtidig beskæftigelse, og sagen blev sendt tilbage til Merit Systems Protection Board for en endelig afgørelse.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40804489">Reaktioner</a></h3>
-<ul>
-<li>En domstol har afgjort, at føderale whistleblowere har ret til erstatning for mistet fremtidig løn, selv uden en garanteret fremtidig stilling, forudsat at der er tilstrækkelig bevis for sandsynlig fremtidig beskæftigelse.</li>
-<li>Denne beslutning kan opmuntre flere whistleblowere ved at lindre bekymringer om at miste fremtidige indtægter og tilpasse føderale medarbejderes rettigheder med dem i den private sektor.</li>
-<li>Den sag, der involverede en VA (Veterans Affairs) medarbejder, understregede, at skadelig indvirkning på omdømmet, som påvirker fremtidige indtægter, er erstatningsberettiget.</li>
-</ul>
-<h2><a href="https://www.ams.org/notices/199701/comm-rota.pdf">Undervisning jeg ville ønske, jeg havde fået (1996) [pdf]</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40808933">Reaktioner</a></h3>
-<ul>
-<li>“Lessons I Wish I Had Been Taught (1996)” af Gian-Carlo Rota udløste diskussioner på Hacker News, hvor brugere delte unikke måleenheder som &quot;mikrocentury&quot; (50 minutter) og &quot;nanoacre&quot; (4 kvadratmillimeter).</li>
-<li>Diskussionerne omfattede også forelæsningers varighed, opmærksomhedsspænd, og betydningen af engagerende introduktioner i akademiske artikler, hvilket afspejlede Rotas indflydelsesrige undervisning.</li>
-<li>Tråden fremhævede en tilbagevendende interesse i Rotas indsigter, hvor brugere mindedes personlige oplevelser og henviste til relaterede diskussioner og ressourcer.</li>
-</ul>
-<h2><a href="https://www.lawgazette.co.uk/news/post-office-lawyers-held-secret-meeting-with-judge-to-stop-disclosure/5119593.article">Posthusets advokater holdt hemmeligt møde med dommer for at forhindre offentliggørelse</a></h2>
-<ul>
-<li>Advokater for Postvæsenet holdt et hemmeligt møde med en dommer i 2013 for at forhindre offentliggørelse af en rapport, der afslørede potentielle problemer med Horizon-systemet, til forsvarsadvokater i en straffesag.</li>
-<li>Undersøgelsen hørte, at anklager Martin Smith indrømmede, at han ikke overholdt sine pligter og manglede den nødvendige ekspertise, hvilket rejste bekymringer om tidligere domme og oplysningspraksis.</li>
-<li>Den igangværende undersøgelse fortsætter med at afdække flere afsløringsproblemer, efterhånden som postvæsenet nærmer sig mægling og gennemgang af tidligere domme.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40808808">Reaktioner</a></h3>
-<ul>
-<li>Posthusets advokater mødtes hemmeligt med en dommer for at blokere for bevisfremlæggelse, hvilket resulterede i uretfærdige domme.</li>
-<li>Offentlige forsvarere er overvældede og håndterer op til 700 sager årligt, hvilket hæmmer en effektiv forsvar.</li>
-<li>Retssystemet favoriserer dem, der har råd til private advokater, hvilket understreger behovet for juridiske reformer og bedre finansiering af offentlige forsvarere for at sikre retfærdige retssager.</li>
-</ul>
-<h2><a href="https://www.readmargins.com/p/doordash-and-pizza-arbitrage">DoorDash og pizza-arbitrage (2020)</a></h2>
-<ul>
-<li>Doordash opførte en pizzeria uden ejerens tilladelse, hvilket førte til problemer med kolde leveringer og forkerte priser.</li>
-<li>En arbitragemulighed opstod på grund af Doordashs prisfejl, hvilket gjorde det muligt at opnå profit ved at bestille til lavere priser og sælge til højere restaurantpriser.</li>
-<li>Artiklen kritiserer forretningsmodellen for madudbringning som ineffektiv og udnyttende og foreslår, at en mere integreret tilgang som Domino&#39;s kunne være mere bæredygtig.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40806356">Reaktioner</a></h3>
-<ul>
-<li>DørDash og lignende madleveringstjenester møder kritik for deres uholdbare forretningsmodeller, der er afhængige af underbetalt arbejdskraft og høje omkostninger til kundetilegnelse.</li>
-<li>Critikere hævder, at disse praksisser forværrer økonomisk ulighed og foreslår at beskatte akkumuleret kapital for at omfordele velstanden.</li>
-<li>Debatten omfatter bekymringer om den negative indvirkning på restaurantkvaliteten og etikken ved disse leveringstjenester, hvilket rejser spørgsmål om deres langsigtede bæredygtighed og fordele.</li>
-</ul>
-<h2><a href="https://github.com/corcel/corcel">Corcel – Brug WordPress backend med Laravel eller enhver PHP-applikation</a></h2>
-<ul>
-<li>Corcel er et PHP-bibliotek bygget på Eloquent ORM fra Laravel, der muliggør direkte datahentning fra en WordPress-database, anvendelig med Laravel eller ethvert PHP-projekt via Composer.</li>
-<li>Vigtige funktioner inkluderer understøttelse af brugerdefinerede posttyper, shortcodes, taksonomier, sider, vedhæftninger, revisioner, miniaturebilleder, indstillinger, menuer, brugere og godkendelse.</li>
-<li>Installation og konfiguration er ligetil, med automatisk registrering for Laravel 5.5+ og manuel opsætning for ældre versioner eller ikke-Laravel projekter.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805351">Reaktioner</a></h3>
-<ul>
-<li>Corcel muliggør brugen af en WordPress-backend med Laravel eller enhver PHP-applikation, hvilket viser sig at være effektivt i produktionsmiljøer.</li>
-<li>Brugere har med succes integreret Corcel med Laravel, Filament og LunarPHP for at forbedre ydeevnen, såsom at redde langsomme WooCommerce-sider.</li>
-<li>Corcel bliver rost for sin problemfri grænseflade med WordPress-data, hvilket tilbyder en vedligeholdelsesvenlig løsning til PHP-projekter, der har brug for at interagere med WordPress-databaser, og sammenlignes positivt med værktøjer som Prismic, Strapi og Shopify.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Det sydkoreanske teleselskab angriber torrent-brugere med malware" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Det%20sydkoreanske%20teleselskab%20angriber%20torrent-brugere%20med%20malware&subheading=torsdag%20den%2027.%20juni%202024%3A%20Resum%C3%A9%20af%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/da/2024/06/27</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

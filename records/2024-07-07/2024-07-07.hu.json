@@ -1,0 +1,332 @@
+[
+  {
+    "id": 40897205,
+    "title": "„A YouTube beágyazások rendkívül nehezek, de javíthatók”",
+    "originLink": "https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897205",
+    "commentBody": "",
+    "originSummary": [
+      "„A YouTube beágyazások erőforrás-igényesek, minden egyes beágyazás körülbelül 1,3 MB és 32 kérést igényel, ami lassú betöltési időkhöz és magas adatátvitelhez vezet.”",
+      "„Egy olyan Web Component, mint a \"lite-youtube-embed\" Paul Irish-től, körülbelül 100k-ra csökkentheti a méretet, megosztva az erőforrásokat és jelentősen javítva a teljesítményt.”",
+      "„Ennek a megoldásnak a megvalósítása magában foglalja a JavaScript összekapcsolását, a komponens használatát a HTML-ben, valamint a szkript aszinkron betöltését a jobb teljesítmény érdekében.”"
+    ],
+    "commentSummary": [
+      "„Egy közösségi fórum platform lecserélte a YouTube beágyazásokat proxied bélyegképekre, amelyek csak akkor töltődnek be, ha rájuk kattintanak, csökkentve ezzel a nagy JavaScript fájlok letöltésének szükségességét és megakadályozva a Google nyomon követését.”",
+      "„Hasonló megoldásokat vezettek be a YouTube, a SoundCloud és a Reddit beágyazások esetében is, hogy javítsák a funkcionalitást és minimalizálják a felesleges terhelést.”",
+      "„Vita folyik arról, hogy a könnyebb beágyazások csökkenthetik-e az elköteleződést a lassabb videóindítási idők miatt, de sokan úgy vélik, hogy az általános oldalbetöltési idő javítása fontosabb a felhasználói élmény és a webhely teljesítménye szempontjából.”"
+    ],
+    "points": 236,
+    "commentCount": 135,
+    "retryCount": 0,
+    "time": 1720355875
+  },
+  {
+    "id": 40896102,
+    "title": "„A malloc tönkretette Serenity JPGLoaderét, avagy: hogyan nyerjük meg a lottót (2021)”",
+    "originLink": "https://sin-ack.github.io/posts/jpg-loader-bork/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896102",
+    "commentBody": "",
+    "originSummary": [
+      "„A SerenityOS JPG képdekódolásában lévő hiba helytelen színmegjelenítést okozott az RGB és a BGR közötti összetévesztés miatt.”",
+      "„A probléma visszavezethető egy `malloc_good_size()` implementáló commitre, amely megváltoztatta a memóriafoglalást és hatással volt az olyan adatstruktúrákra, mint a `HashTable` és a `Vector`, amelyeket a `JPGLoader` használ.”",
+      "„A javítás során biztosítani kellett a determinisztikus iterációt a `JPGLoader` komponensei felett, kiemelve, hogy az egyszerű változtatások hogyan fedhetnek fel jelentős alapvető problémákat.”"
+    ],
+    "commentSummary": [
+      "„Néhány hash tábla megvalósítás véletlenszerűséget vezet be, hogy megakadályozza az elemek sorrendjére való támaszkodást és növelje a biztonságot, míg a modern megvalósítások gyakran garantálják a beillesztési sorrend szerinti iterációt.”",
+      "„A JavaScript és a Python szabványosított beszúrási sorrendet alkalmaznak hash tábla implementációikban, a Python ezt a 3.7-es verzióban vezette be.”",
+      "„A Rust különböző hash tábla opciókat kínál (`HashMap`, `BTreeMap`, `IndexMap`), és a Perl az 5.18-as verzió után véletlenszerű magokat vezetett be a hash táblákhoz.”"
+    ],
+    "points": 177,
+    "commentCount": 143,
+    "retryCount": 0,
+    "time": 1720341723
+  },
+  {
+    "id": 40895672,
+    "title": "„BeaconDB – Alternatíva a Mozilla Location Services-hez”",
+    "originLink": "https://beacondb.net/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895672",
+    "commentBody": "",
+    "originSummary": [
+      "„A beaconDB egy nyilvános, vezeték nélküli helymeghatározási adatbázis, amely 177,176 hálózatot, 4,126 jeladót és 6,106 tornyot tartalmaz 30 országban, etikus forrásból származó, beleegyezésen alapuló adatgyűjtéssel.”",
+      "„Az adatbázis adatvédelmi szempontból barátságos, elhomályosítja az információkat a továbbítók és hozzájárulók védelme érdekében, és fizikai közelséget igényel az adatok frissítéséhez, így ellenáll a visszaéléseknek.”",
+      "„A fejlesztők használhatják a `https://beacondb.net/v1/geolocate` végpontot, amely kompatibilis az Ichnaea kérésformátumával, de nem alkalmas nagy forgalmú alkalmazásokhoz; a forráskód elérhető a Codeberg-en.”"
+    ],
+    "commentSummary": [
+      "„A BeaconDB-t a Mozilla Location Services (MLS) alternatívájaként mutatják be, amely az etikusan gyűjtött, beleegyezésen alapuló adatgyűjtésre összpontosít.”",
+      "„Az Apple és a Google-tól eltérően a BeaconDB nem teszi közzé a MAC-címeket olvasható formában, hanem hash-elt vagy összesített adatokat használ a magánélet védelme érdekében.”",
+      "„A BeaconDB az egyetlen nem nagy technológiai vállalat által fejlesztett adatbázis helymeghatározó szolgáltatásokhoz, amely nyílt forráskódú megoldást kíván nyújtani és lehetséges együttműködésekről tárgyal.”"
+    ],
+    "points": 170,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1720333550
+  },
+  {
+    "id": 40897506,
+    "title": "„A rendszerszintű programozási találkozók újjáéledése”",
+    "originLink": "https://notes.eatonphil.com/2024-07-07-systems-meetups.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897506",
+    "commentBody": "",
+    "originSummary": [
+      "„2024-ben újjáéledtek a magas színvonalú rendszerszintű programozási találkozók olyan városokban, mint München, Berlin, San Francisco, New York City és Bengaluru.”",
+      "„A NYC Systems Coffee Club, amely 2023 decemberében indult, mérnöki kihívásokra összpontosít, és gyorsan növekedett, inspirálva hasonló találkozókat világszerte.”",
+      "„A találkozók szervezéséhez szükséges kulcsfontosságú tanácsok közé tartozik a helyszín biztosítása, a technikai tartalomra való összpontosítás, az előadók megtalálása iparági kapcsolatok révén, valamint az együttműködés más szervezőkkel.”"
+    ],
+    "commentSummary": [
+      "„A rendszerszintű programozási találkozók újjáéledést tapasztalnak, ami kiemeli a közösség megújult érdeklődését az alacsony szintű programozás és a rendszerarchitektúra iránt.”",
+      "„Az ilyen találkozók szervezése kihívásokkal jár, beleértve a stabil helyszínek megtalálását, amelyek gyakran erős belső támogatást vagy önkormányzati támogatást igényelnek a következetes helyszínek biztosításához.”",
+      "„A meetup tartalmának minősége és fókusza kulcsfontosságú, mivel egyes csoportok küzdenek azzal, hogy egyensúlyt teremtsenek a valódi technikai megbeszélések és az előadók önreklámozó prezentációi között.”"
+    ],
+    "points": 164,
+    "commentCount": 65,
+    "retryCount": 0,
+    "time": 1720358437
+  },
+  {
+    "id": 40892812,
+    "title": "„Hol találhatók jó források az audió feldolgozás tanulásához?”",
+    "originLink": "https://news.ycombinator.com/item?id=40892812",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40892812",
+    "commentBody": "",
+    "originSummary": [
+      "„A felhasználó olyan forrásokat keres, amelyek segítségével egy harmonizátort programozhat, hasonlót ahhoz, amit az MIT-s Ben Bloomberg készített Jacob Collier számára.”",
+      "„Szükségük van hozzáférhető információra a hangmagasság- és formátumváltásról, amely megőrzi a természetes hangminőséget.”",
+      "„A felhasználó kiterjedt programozási tapasztalattal rendelkezik, de hiányzik a tudása az audiofeldolgozás terén, ami kezdőbarát, mégis átfogó források iránti igényt jelez.”"
+    ],
+    "commentSummary": [
+      "„Egy felhasználó olyan forrásokat keres, amelyek segítségével egy Jacob Collier harmonizátorhoz hasonló programot készíthet, amelyet az MIT Ben Bloombergje hozott létre, különös tekintettel a hangmagasság és a formátum eltolására.”",
+      "„Ajánlott források közé tartoznak a Stanford CCRMA nyílt kurzus anyagai, az iparági szabványnak számító könyvtárak, mint például a Zplane által készített Elastique, valamint olyan könyvek, mint Udo Zölzer \"DAFX - Digital Audio Effects\" című műve.”",
+      "„További javaslatok közé tartoznak a bemutatók, YouTube csatornák és közösségi fórumok, mint például az Officehours.global, amelyek hálózatépítésre és további tanulásra is alkalmasak.”"
+    ],
+    "points": 144,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1720295988
+  },
+  {
+    "id": 40893866,
+    "title": "„Egy ingyenes minimalista napi szokáskövető”",
+    "originLink": "https://rdht.vercel.app/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893866",
+    "commentBody": "",
+    "originSummary": [
+      "„Egy új szokáskövető alkalmazást fejlesztett ki egy olyan személy, aki elégedetlen volt a meglévő lehetőségekkel. Az alkalmazás tartalmaz sorozatkövetést, offline használhatóságot, sorozatfagyasztást, vizuális következetességi térképet és szüneteltetési funkciót.”",
+      "„Az alkalmazás React segítségével készült a frontendhez, Dexie cloudot használ a tároláshoz és szinkronizáláshoz, és a Vercelen van hosztolva.”",
+      "„A fejlesztő elérhetővé tette az alkalmazást a nyilvánosság számára, bemutatva egy személyes projektet, amely közösségi erőforrássá vált.”"
+    ],
+    "commentSummary": [
+      "„Egy új, ingyenes minimalista napi szokáskövető alkalmazás készült, hogy pótolja a meglévő alkalmazások hiányosságait. Az alkalmazás tartalmaz sorozatkövetést, offline használatot, sorozatfagyasztást, vizuális következetességi térképet és szünet funkciót.”",
+      "„React és Dexie cloud segítségével készült, és a Vercel-en van hosztolva. Az alkalmazás visszajelzéseket kapott a fejlesztésekre vonatkozóan, különösen az iPhone felhasználók részéről, beleértve a rossz szokásokra vonatkozó javaslatokat, a dizájn finomításait és a hibajavításokat.”",
+      "„A felhasználók értékelik a letisztult dizájnt és az offline funkcionalitást, javaslatok érkeztek egy összecsukott nézetre és jobb mobilkompatibilitásra; egyelőre nincsenek bevételszerzési tervek.”"
+    ],
+    "points": 117,
+    "commentCount": 51,
+    "retryCount": 0,
+    "time": 1720305433
+  },
+  {
+    "id": 40895441,
+    "title": "„Miért ábrándult ki Olaszország a korianderből”",
+    "originLink": "https://www.atlasobscura.com/articles/what-are-italian-herbs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895441",
+    "commentBody": "",
+    "originSummary": [
+      "„A koriander, amely egykor az ókori római konyha alapanyaga volt, szinte teljesen eltűnt a modern olasz főzésből, különösen a levelei.”",
+      "„A hanyatlás Róma után kezdődött, amit a germán törzsek és az egzotikus fűszerek, mint a fahéj és a kardamom iránti preferencia befolyásolt.”",
+      "„Annak ellenére, hogy történelmileg jelen volt, a koriandert ma már idegen összetevőnek tekintik Olaszországban, ellentétben más fűszernövényekkel, mint például a bazsalikom.”"
+    ],
+    "commentSummary": [
+      "„Olaszország koriander iránti ellenszenve 1544-re nyúlik vissza, amikor Pietro Andrea Mattioli botanikus a leveleit ágyi poloskák szagához hasonlította.”",
+      "„Az ellenszenv genetikai befolyás alatt állhat, mivel egyes emberek a koriandert szappanízűnek érzékelik egy specifikus gén miatt.”",
+      "„A koriander népszerűségének csökkenése Olaszországban szintén összefügg a változó kulináris trendekkel és a migrációs mintákkal, bemutatva a genetika, a kultúra és a személyes preferenciák összetett kölcsönhatását az ízlések formálásában.”"
+    ],
+    "points": 108,
+    "commentCount": 116,
+    "retryCount": 0,
+    "time": 1720329769
+  },
+  {
+    "id": 40895167,
+    "title": "„Az \"Out of Band\" hálózatkezelés nem triviális”",
+    "originLink": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895167",
+    "commentBody": "",
+    "originSummary": [
+      "„A 2022-es Rogers internet- és telefonkimaradás, amely több mint 12 millió kanadait érintett, rávilágított az \"Out of Band\" (OOB) hálózatkezelés fontosságára és összetettségére.”",
+      "„Az OOB menedzsment különálló hardvert és infrastruktúrát igényel, amely elkülönül a fő hálózattól, biztosítva a redundanciát és a biztonságot, de jelentős költségeket és bonyolultságot ad hozzá.”",
+      "„A kisebb hálózatok számára praktikusabb lehet, ha a robusztus, redundáns in-band menedzsmentre összpontosítanak, ahelyett, hogy külön OOB hálózatot tartanának fenn.”"
+    ],
+    "commentSummary": [
+      "„Az Out of Band (OOB) hálózatkezelés elengedhetetlen a hálózat megbízhatóságának fenntartásához, különösen a modern digitális rendszerekben, amelyek hajlamosak a hibás konfigurációkra és meghibásodásokra.”",
+      "„A Rogers kiesés rávilágított a megbízható OOB menedzsment kritikus szükségességére, kiemelve a jobb tervezés és kockázatértékelés fontosságát a hálózati alapvető hibák megelőzése érdekében.”",
+      "„A hatékony OOB menedzsment dedikált, redundáns rendszerek használatát jelenti, gyakran különböző szolgáltatók vagy technológiák, mint például az LTE vagy a műhold alkalmazásával a megbízhatóság biztosítása érdekében.”"
+    ],
+    "points": 105,
+    "commentCount": 70,
+    "retryCount": 0,
+    "time": 1720324841
+  },
+  {
+    "id": 40896873,
+    "title": "„JavaScript végrehajtása egy WebAssembly QuickJS homokozóban”",
+    "originLink": "https://github.com/sebastianwessel/quickjs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896873",
+    "commentBody": "",
+    "originSummary": [
+      "„Ez a TypeScript csomag lehetővé teszi a JavaScript kód biztonságos futtatását egy WebAssembly homokozóban a QuickJS motor használatával, ideális a nem megbízható kód biztonságos futtatásához.”",
+      "„A főbb jellemzők közé tartozik az elszigetelt környezet, a virtuális fájlrendszer, az egyedi node modulok, a HTTP(S) fetch kliens, a chai-alapú tesztfuttató és a hatékony teljesítmény.”",
+      "„A csomag sokoldalú és könnyen integrálható TypeScript projektekbe, felhasználóbarát API-t kínálva a kód végrehajtásához és kezeléséhez.”"
+    ],
+    "commentSummary": [
+      "„Ez a TypeScript csomag lehetővé teszi a JavaScript kód biztonságos futtatását egy WebAssembly homokozóban a QuickJS motor használatával, biztosítva a nem megbízható kód elkülönítését.”",
+      "„A főbb jellemzők közé tartozik egy virtuális fájlrendszer, egyedi node modulok, egy fetch kliens, egy teszt futtató és egy felhasználóbarát API, amelyek támogatják a NodeJS, Deno és Cloudflare Workers környezeteket.”",
+      "„Egy biztonsági figyelmeztetés megjegyzi, hogy a `fetch` engedélyezése kiteszi a gazdagép sütijeit a megbízhatatlan kódoknak, ami potenciálisan veszélyeztetheti a homokozó biztonságát.”"
+    ],
+    "points": 104,
+    "commentCount": 32,
+    "retryCount": 0,
+    "time": 1720352245
+  },
+  {
+    "id": 40895935,
+    "title": "„A tranzisztortól a webböngészőig, egy 12 hetes kurzus vázlata”",
+    "originLink": "https://github.com/geohot/fromthetransistor",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895935",
+    "commentBody": "",
+    "originSummary": [
+      "„A tanfolyam átfogó utazást kínál a tranzisztorok megértésétől a web böngésző fejlesztéséig, gyakorlati megközelítést biztosítva a hardver és szoftver integrációjának elsajátításához.”",
+      "„A főbb projektek közé tartozik egy ARM7 CPU, egy C fordító, egy UNIX-szerű operációs rendszer és egy szöveges alapú webböngésző építése, Verilog, Python, Haskell és C nyelvek használatával.”",
+      "„A tanterv hangsúlyozza a gyakorlati készségeket, mint például a Verilatorral való emuláció, az FPGA tábla tervezése, valamint alapvető rendszerkomponensek, mint az MMU, Ethernet vezérlő és TCP stack megvalósítása.”"
+    ],
+    "commentSummary": [
+      "„A „From the Transistor to the Web Browser” című, 12 hetes kurzus, amelyet geohot tett közzé a GitHubon, vitát váltott ki ambiciózus terjedelme miatt, de 2016 óta minimális frissítéseket kapott.”",
+      "„A felhasználók vitatják annak megvalósíthatóságát, alternatív tanulási eszközöket javasolva, mint például a \"Turing Complete\" és a \"Shenzen I/O\", és azt állítják, hogy túl sűrű lehet a kezdők számára, inkább tapasztalt programozóknak megfelelő.”",
+      "„A kritikusok megkérdőjelezik a kurzus gyakorlatiasságát és a szerző szándékait, túlságosan ambiciózusnak és tartalmatlannak tartva azt a teljes körű Villamos- és Számítástechnikai Mérnöki diplomákhoz képest.”"
+    ],
+    "points": 102,
+    "commentCount": 44,
+    "retryCount": 0,
+    "time": 1720338876
+  },
+  {
+    "id": 40897518,
+    "title": "„Mongo, de Postgres-en és erős konzisztencia előnyökkel”",
+    "originLink": "https://github.com/event-driven-io/Pongo",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897518",
+    "commentBody": "",
+    "originSummary": [
+      "„A Pongo Pongo egy eszköz, amely lehetővé teszi a MongoDB-szerű műveletek használatát a PostgreSQL-en, kihasználva az erős konzisztencia előnyeit.”",
+      "„A MongoDB API hívásokat natív PostgreSQL lekérdezésekké fordítja, a JSONB-t használva a hatékony olvasási/írási műveletekhez és összetett lekérdezésekhez.”",
+      "„A Pongo nem egy hagyományos ORM (Object-Relational Mapping), hanem a dokumentumadatok kezelésére összpontosít, rugalmasságot és teljesítményt kínálva, bár nem teljesen kompatibilis a MongoDB-vel.”"
+    ],
+    "commentSummary": [
+      "„A Pongo egy új projekt, amely MongoDB-szerű API-t biztosít a PostgreSQL tetején, kihasználva a JSONB oszlopok erős konzisztenciájának előnyeit.”",
+      "„A projekt célja, hogy ötvözze a MongoDB könnyű használhatóságát a PostgreSQL robusztus konzisztenciájával és megbízhatóságával, a MongoDB szintaxisát natív PostgreSQL lekérdezésekké fordítva.”",
+      "„Ez a fejlemény azért keltett érdeklődést, mert lehetőséget kínál arra, hogy a MongoDB-hez hasonló élményt nyújtson, miközben a PostgreSQL fejlett funkcióit használja, vonzóvá téve azt a fejlesztők számára, akik erős konzisztenciát keresnek adatbázis-műveleteikben.”"
+    ],
+    "points": 98,
+    "commentCount": 48,
+    "retryCount": 0,
+    "time": 1720358532
+  },
+  {
+    "id": 40896110,
+    "title": "„Tudósok egy év után újra előbukkannak a Mars szimulációs projektből”",
+    "originLink": "https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896110",
+    "commentBody": "",
+    "originSummary": [
+      "„Négy tudós befejezte az egyéves Mars-szimulációt Houston Mars Dune Alpha lakóhelyén, egy 3D-nyomtatott szerkezetben, amelyet a marsi körülmények utánzására terveztek.”",
+      "„A küldetés, amely a NASA Crew Health and Performance Exploration Analog (CHAPEA) programjának része, célja, hogy betekintést nyújtson a jövőbeli Mars-küldetésekhez és a hosszú távú űrkutatáshoz, beleértve az Artemis programot is.”",
+      "„A csapat \"Mars-sétákat\" végzett, és olyan stressztényezőkkel kellett szembenézniük, mint az elszigeteltség és a kommunikációs késések, további CHAPEA küldetéseket terveznek 2025-re és 2027-re.”"
+    ],
+    "commentSummary": [
+      "„A tudósok befejeztek egy egyéves Mars-szimulációt, amely az emberi kitartást vizsgálta elszigetelt, magas stresszű környezetekben.”",
+      "„A projekt hangsúlyozza, hogy a pszichológiai és társadalmi dinamikák kezelése nehezebb, mint a táplálkozási szükségleteké.”",
+      "„A megbeszélések technikai és etikai szempontokat, potenciálisan magas halálozási arányokat, valamint a Mars kolonizációjához szükséges kiterjedt előkészületeket és kisebb kezdeti küldetéseket foglalnak magukban.”"
+    ],
+    "points": 91,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1720341858
+  },
+  {
+    "id": 40896212,
+    "title": "„\"AI\", diákok és episztemikus válság”",
+    "originLink": "https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896212",
+    "commentBody": "",
+    "originSummary": [
+      "„Egy 2024. július 6-i blogbejegyzés egy diák ChatGPT keresőmotor használatáról szól, amelynek következtében a diák hamis információkat hitt el.”",
+      "„A szerző kiemeli az AI által generált félretájékoztatás elleni küzdelem nehézségét, mivel minden diák egyedi, helytelen tényeket kaphat, ami bonyolítja a javítási folyamatot.”",
+      "„A bejegyzés a félretájékoztatás oktatásra gyakorolt szélesebb körű hatásáról elmélkedik, és zaklatás miatt eltávolították.”"
+    ],
+    "commentSummary": [
+      "„A mai diákok jelentős mértékben támaszkodnak a mesterséges intelligenciára és az internetre az információszerzésben, ellentétben a korábbi generációkkal, akik kézi kutatást végeztek a könyvtárakban.”",
+      "„A pedagógusok attól tartanak, hogy ez a függőség akadályozhatja a diákok képességét az információk kritikus értékelésére, aminek következtében az esszék gyakran mélység nélküliek lesznek.”",
+      "„Bár az AI eszközök hasznosak, hamis információkat is generálhatnak, ami vitát indít arról, hogyan integráljuk ezeket az eszközöket az oktatásba, miközben fejlesztjük a kritikai gondolkodási készségeket.”"
+    ],
+    "points": 89,
+    "commentCount": 121,
+    "retryCount": 0,
+    "time": 1720343169
+  },
+  {
+    "id": 40894082,
+    "title": "„Az OpenAI-t feltörték, az egyéves adatvédelmi incidenst nem jelentették a nyilvánosságnak”",
+    "originLink": "https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40894082",
+    "commentBody": "",
+    "originSummary": [
+      "„Hackerek tavaly év elején betörtek az OpenAI belső üzenetküldő rendszereibe, érzékeny információkat hozva nyilvánosságra, de nem fértek hozzá a kulcsfontosságú mesterséges intelligencia rendszerekhez, ami biztonsági és nemzetbiztonsági aggodalmakat vet fel.”",
+      "„Az OpenAI 2023 áprilisában belsőleg jelentette az incidenst, kijelentve, hogy nem loptak el ügyféladatokat, és a hacker valószínűleg nem állt kormányzati kapcsolatokban; azonban a biztonsági rés fokozott félelmeket keltett a külföldi ellenfelek, különösen Kína, AI technológiáinak fejlődésével kapcsolatban.”",
+      "„Az OpenAI azóta javította biztonsági intézkedéseit, létrehozott egy Biztonsági és Védelmi Bizottságot, és az eset ösztönözte a szövetségi és állami szabályozásokkal kapcsolatos vitákat az AI technológia kiadásának ellenőrzésére.”"
+    ],
+    "commentSummary": [
+      "„Az OpenAI tavaly egy be nem jelentett hackertámadást szenvedett el, ami felhasználói aggodalmakat váltott ki az átláthatósággal és a biztonsági gyakorlatokkal kapcsolatban.”",
+      "„A biztonsági rés az belső üzenetküldő rendszerekhez való hozzáférést érintette, de nem veszélyeztette a kulcsfontosságú mesterséges intelligencia technológiákat.”",
+      "„A felhasználók megbeszélték a hibák jelentésével kapcsolatos nehézségeket és az OpenAI szokásos biztonsági jelentési gyakorlatával kapcsolatos frusztrációikat.”"
+    ],
+    "points": 84,
+    "commentCount": 26,
+    "retryCount": 0,
+    "time": 1720308293
+  },
+  {
+    "id": 40893749,
+    "title": "„Mi okozza a migrént? Az 'agyelsötétedés' tanulmánya nyomokat kínál”",
+    "originLink": "https://www.nature.com/articles/d41586-024-02222-x",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893749",
+    "commentBody": "",
+    "originSummary": [
+      "„Egy egereken végzett tanulmány, amelyet 2024. július 4-én publikáltak a Science folyóiratban, új betekintést nyújt a migrén okaira, összekapcsolva a rövid agyi 'kikapcsolásokat' a koponyában lévő fájdalomreceptorokat aktiváló agy-gerincvelői folyadék változásaival.”",
+      "„A kutatás azt sugallja, hogy a migrén védelmi mechanizmusként szolgálhat, jelezve a pihenés szükségességét, és azonosít egy korábban ismeretlen rést a trigeminális ganglion körüli védőrétegekben.”",
+      "„Ez a felfedezés új kezelések kifejlesztéséhez vezethet a migrén ellen, az újonnan azonosított mechanizmusok célba vételével.”"
+    ],
+    "commentSummary": [
+      "„Egy tanulmány szerint a kortikális terjedő depresszió (CSD), egy \"agyelsötétedés,\" szerepet játszhat a migrén kialakulásában.”",
+      "„Az emberek különböző kiváltó okokat és kezeléseket jelentettek, beleértve az étrendi változtatásokat, a Rizatriptanhoz hasonló gyógyszereket, valamint az életmódbeli módosításokat, mint például a jobb alvás és a megfelelő hidratálás.”",
+      "„A megbeszélés rávilágít a migrén összetettségére, mivel különböző kiváltó okok és kezelések különböző embereknél hatékonyak.”"
+    ],
+    "points": 84,
+    "commentCount": 72,
+    "retryCount": 0,
+    "time": 1720303961
+  }
+]

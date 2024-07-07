@@ -15,12 +15,208 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 06 Jul 2024 19:10:41 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 07 Jul 2024 19:09:26 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/fi.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 06 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[fi]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-07]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/07&#39;</h2>
+<h1>2024-07-07</h1>
+<h2><a href="https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/">Upotetut YouTube-videot ovat todella raskaita ja sen voi korjata</a></h2>
+<ul>
+<li>Upotetut YouTube-videot ovat raskaita resursseille, sillä jokainen upotus on noin 1,3 Mt ja vaatii 32 pyyntöä, mikä johtaa hitaisiin latausaikoihin ja suureen tiedonsiirtoon.</li>
+<li>Web-komponentti, kuten Paul Irishin &quot;lite-youtube-embed&quot;, voi pienentää kokoa noin 100 kilotavuun, jakaa resursseja ja parantaa suorituskykyä merkittävästi.</li>
+<li>Tämän ratkaisun toteuttaminen edellyttää JavaScriptin linkittämistä, komponentin käyttämistä HTML:ssä ja skriptin lataamista asynkronisesti paremman suorituskyvyn saavuttamiseksi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897205">Reaktiot</a></h3>
+<ul>
+<li>Yhteisöfoorumi on korvannut YouTube-upotukset välitetyillä pikkukuvilla, jotka latautuvat vasta, kun niitä klikataan. Tämä vähentää tarvetta ladata suuria JavaScript-tiedostoja ja estää Googlen seurannan.</li>
+<li>Samanlaisia ratkaisuja on toteutettu YouTube-, SoundCloud- ja Reddit-upotuksille toiminnallisuuden parantamiseksi ja turhan kuormituksen minimoimiseksi.</li>
+<li>On kiistaa siitä, voivatko kevyemmät upotukset vähentää sitoutumista hitaampien videon käynnistysaikojen vuoksi, mutta monet uskovat, että sivun kokonaislatausajan parantaminen on tärkeämpää käyttäjäkokemuksen ja sivuston suorituskyvyn kannalta.</li>
+</ul>
+<h2><a href="https://sin-ack.github.io/posts/jpg-loader-bork/">Malloc rikkoi Serenityn JPGLoaderin, tai: kuinka voittaa lotossa (2021)</a></h2>
+<ul>
+<li>Virhe SerenityOS:n JPG-kuvien dekoodauksessa aiheutti väärän värinäytön RGB:n ja BGR:n sekaannuksen vuoksi.</li>
+<li>Ongelma jäljitettiin <code>malloc_good_size()</code>-toiminnon toteutukseen, joka muutti muistinvarausta ja vaikutti <code>JPGLoader</code>-ohjelmassa käytettyihin tietorakenteisiin, kuten <code>HashTable</code> ja <code>Vector</code>.</li>
+<li>Korjaus sisälsi deterministisen iteraation varmistamisen <code>JPGLoader</code>-komponenteissa, mikä korostaa, kuinka yksinkertaiset muutokset voivat paljastaa merkittäviä taustalla olevia ongelmia.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896102">Reaktiot</a></h3>
+<ul>
+<li>Jotkin hajautustaulun toteutukset lisäävät satunnaisuutta estääkseen elementtien järjestykseen luottamisen ja parantaakseen turvallisuutta, kun taas nykyaikaiset toteutukset usein takaavat iteraation lisäysjärjestyksessä.</li>
+<li>JavaScript ja Python ovat standardoineet lisäysjärjestyksen hajautustaulujensa toteutuksissa, ja Python otti tämän käyttöön versiossa 3.7.</li>
+<li>Rust tarjoaa erilaisia hajautustaulu-vaihtoehtoja (<code>HashMap</code>, <code>BTreeMap</code>, <code>IndexMap</code>), ja Perl otti käyttöön satunnaissiementen käytön hajautustauluissa version 5.18 jälkeen.</li>
+</ul>
+<h2><a href="https://beacondb.net/">BeaconDB – Vaihtoehto Mozilla Location Services -palvelulle</a></h2>
+<ul>
+<li>beaconDB on julkisen sektorin langaton paikannustietokanta, joka kattaa 177 176 verkkoa, 4 126 majakkaa ja 6 106 tornia 30 maassa, ja sen tiedonkeruu perustuu eettisesti hankittuun, vapaaehtoiseen osallistumiseen.</li>
+<li>Tietokanta on yksityisyyttä kunnioittava, hämärtäen tietoja lähettäjien ja avustajien suojaamiseksi, ja se vaatii fyysisen läheisyyden tietojen päivittämiseksi, mikä tekee siitä väärinkäytön kestävän.</li>
+<li>Kehittäjät voivat käyttää päätepistettä <code>https://beacondb.net/v1/geolocate</code>, joka on yhteensopiva Ichnaean pyyntömuodon kanssa, mutta se ei sovellu suuriliikenteisiin sovelluksiin; lähdekoodi on saatavilla Codebergissä.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895672">Reaktiot</a></h3>
+<ul>
+<li>BeaconDB esitetään vaihtoehtona Mozilla Location Servicesille (MLS), keskittyen eettisesti hankittuun, vapaaehtoiseen tiedonkeruuseen.</li>
+<li>Toisin kuin Apple ja Google, BeaconDB ei julkaise selväkielisiä MAC-osoitteita, vaan käyttää hajautettua tai yhdistettyä dataa yksityisyyden parantamiseksi.</li>
+<li>BeaconDB on ainoa ei-suurten teknologiayritysten tietokanta sijaintipalveluille, jonka tavoitteena on tarjota avoimen lähdekoodin ratkaisu ja keskustella mahdollisista yhteistyömahdollisuuksista.</li>
+</ul>
+<h2><a href="https://notes.eatonphil.com/2024-07-07-systems-meetups.html">Järjestelmäohjelmoinnin tapaamisten uudelleenherääminen</a></h2>
+<ul>
+<li>Vuonna 2024 on ollut uudelleen nousua korkealaatuisissa järjestelmäsuunnittelun tapaamisissa kaupungeissa kuten München, Berliini, San Francisco, New York City ja Bengaluru.</li>
+<li>NYC Systems Coffee Club, joka aloitettiin joulukuussa 2023, keskittyy insinöörihaasteisiin ja on kasvanut nopeasti, inspiroiden samanlaisia tapaamisia maailmanlaajuisesti.</li>
+<li>Keskeisiä neuvoja tapaamisten järjestämiseen ovat isäntäpaikan varmistaminen, tekniseen sisältöön keskittyminen, puhujien löytäminen alan yhteyksien kautta ja yhteistyö muiden järjestäjien kanssa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897506">Reaktiot</a></h3>
+<ul>
+<li>Järjestelmien ohjelmointitapaamiset kokevat uudelleen nousua, mikä korostaa yhteisön uudistunutta kiinnostusta matalan tason ohjelmointiin ja järjestelmäarkkitehtuuriin.</li>
+<li>Järjestää tällaisia tapaamisia kohtaa haasteita, kuten vakaan tapahtumapaikan löytäminen, mikä usein vaatii vahvaa sisäistä tukea tai kunnallista tukea, jotta voidaan varmistaa johdonmukaiset sijainnit.</li>
+<li>Laadukkaat ja keskittyneet tapaamisten sisällöt ovat ratkaisevan tärkeitä, sillä jotkut ryhmät kamppailevat tasapainottaakseen aitojen teknisten keskustelujen ja puhujien itseään mainostavien esitysten välillä.</li>
+</ul>
+<h2><a href="https://news.ycombinator.com/item?id=40892812">Missä ovat hyvät resurssit äänenkäsittelyn oppimiseen?</a></h2>
+<ul>
+<li>Useri etsii resursseja ohjelmoidakseen harmonisaattorin, joka on samanlainen kuin MIT:n Ben Bloombergin Jacob Collierille luoma.</li>
+<li>He tarvitsevat helposti saatavilla olevaa tietoa sävelkorkeuden ja formaatin muuttamisesta, joka säilyttää luonnollisen äänenlaadun.</li>
+<li>Käyttäjällä on laaja ohjelmointikokemus, mutta häneltä puuttuu tietämys äänikäsittelystä, mikä osoittaa tarpeen aloittelijaystävällisille mutta kattaville resursseille.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40892812">Reaktiot</a></h3>
+<ul>
+<li>Eräs käyttäjä etsii resursseja ohjelmoidakseen harmonisaattorin, joka on samanlainen kuin Jacob Collierin käyttämä ja MIT:n Ben Bloombergin luoma, keskittyen sävelkorkeuden ja muodon siirtoon.</li>
+<li>Suositeltuihin resursseihin kuuluvat CCRMA:n avoimet kurssimateriaalit Stanfordista, teollisuusstandardin mukaiset kirjastot kuten Zplanen Elastique sekä kirjat kuten &quot;DAFX - Digital Audio Effects&quot; Udo Zölzerin kirjoittamana.</li>
+<li>Lisäsuosituksiin kuuluvat tutoriaalit, YouTube-kanavat ja yhteisöfoorumit, kuten Officehours.global, verkostoitumista ja lisäoppimista varten.</li>
+</ul>
+<h2><a href="https://rdht.vercel.app/">Ilmainen minimalistinen päivittäinen tapaseuranta</a></h2>
+<ul>
+<li>Uusi tapaseurantasovellus on kehitetty henkilön toimesta, joka oli tyytymätön olemassa oleviin vaihtoehtoihin. Sovelluksessa on ominaisuuksia, kuten putkien seuranta, offline-käyttömahdollisuus, putkien jäädytys, visuaalinen johdonmukaisuuskartta ja taukotoiminto.</li>
+<li>Sovellus on rakennettu käyttämällä Reactia frontendissä, Dexie cloudia tallennukseen ja synkronointiin, ja se on isännöity Vercelissä.</li>
+<li>Sovelluskehittäjä on tehnyt sovelluksen julkiseen käyttöön, esitellen henkilökohtaisen projektin, joka on muutettu yhteisön resurssiksi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40893866">Reaktiot</a></h3>
+<ul>
+<li>Uusi ilmainen minimalistinen päivittäinen tapaseuranta on luotu täyttämään olemassa olevien sovellusten puutteet. Se sisältää putkiseurannan, offline-käytön, putkien jäädytyksen, visuaalisen johdonmukaisuuskartan ja taukotoiminnon.</li>
+<li>Rakennettu Reactilla ja Dexie Cloudilla, ja isännöity Vercelissä, sovellus on saanut palautetta parannuksista, erityisesti iPhone-käyttäjiltä, mukaan lukien ehdotuksia huonoista tavoista, suunnittelun hienosäädöistä ja virheenkorjauksista.</li>
+<li>Kayttäjät arvostavat siistiä suunnittelua ja offline-toiminnallisuutta, ja heillä on ehdotuksia tiivistetystä näkymästä ja paremmasta mobiiliyhteensopivuudesta; rahallistamissuunnitelmia ei vielä ole.</li>
+</ul>
+<h2><a href="https://www.atlasobscura.com/articles/what-are-italian-herbs">Miksi Italia menetti kiinnostuksensa korianteriin</a></h2>
+<ul>
+<li>Korianteri, joka oli aikoinaan peruselintarvike muinaisessa roomalaisessa keittiössä, on lähes kadonnut nykyaikaisesta italialaisesta ruoanlaitosta, erityisesti sen lehdet.</li>
+<li>Lasku alkoi Rooman jälkeen, germaanisten heimojen vaikutuksesta ja eksoottisten mausteiden, kuten kanelin ja kardemumman, suosion myötä.</li>
+<li>Huolimatta historiallisesta läsnäolostaan, korianteria pidetään nykyään Italiassa vieraana ainesosana, toisin kuin muita yrttejä, kuten basilikaa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895441">Reaktiot</a></h3>
+<ul>
+<li>Italian inho korianteria kohtaan juontaa juurensa vuoteen 1544, jolloin kasvitieteilijä Pietro Andrea Mattioli kuvaili sen lehtiä luteiden hajuisiksi.</li>
+<li>Vastenmielisyys voi olla geneettisesti vaikuttunut, sillä jotkut ihmiset kokevat korianterin maistuvan saippualta tietyn geenin vuoksi.</li>
+<li>Lasku korianterin suosiosta Italiassa liittyy myös muuttuviin kulinaarisiin trendeihin ja muuttoliikkeisiin, mikä havainnollistaa genetiikan, kulttuurin ja henkilökohtaisten mieltymysten monimutkaista vuorovaikutusta ruokamieltymysten muotoutumisessa.</li>
+</ul>
+<h2><a href="https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial">&quot;Out of Band&quot; -verkonhallinta ei ole yksinkertaista</a></h2>
+<ul>
+<li>Vuoden 2022 Rogersin internet- ja puhelinverkon katkos, joka vaikutti yli 12 miljoonaan kanadalaiseen, korosti &quot;Out of Band&quot; (OOB) -verkonhallinnan tärkeyttä ja monimutkaisuutta.</li>
+<li>OOB-hallinta vaatii erillisen laitteiston ja infrastruktuurin pääverkosta, mikä varmistaa redundanssin ja turvallisuuden, mutta lisää merkittävästi kustannuksia ja monimutkaisuutta.</li>
+<li>Pienemmät verkot saattavat pitää käytännöllisempänä keskittyä vankkaan, redundanttiin in-band-hallintaan sen sijaan, että ylläpitäisivät erillistä OOB-verkkoa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895167">Reaktiot</a></h3>
+<ul>
+<li>Verkon hallinta &quot;Out of Band&quot; (OOB) -menetelmällä on olennaista verkon luotettavuuden ylläpitämiseksi, erityisesti nykyaikaisissa digitaalisissa järjestelmissä, jotka ovat alttiita virheellisille määrityksille ja vioille.</li>
+<li>Rogersin katkos korosti vahvan OOB-hallinnan kriittistä tarvetta, tuoden esiin paremman suunnittelun ja riskinarvioinnin merkityksen ydinverkon vikojen estämiseksi.</li>
+<li>Tehokas OOB-hallinta edellyttää omistettujen, redundanttien järjestelmien käyttöä, usein hyödyntäen eri palveluntarjoajia tai teknologioita, kuten LTE:tä tai satelliittia, luotettavuuden varmistamiseksi.</li>
+</ul>
+<h2><a href="https://github.com/sebastianwessel/quickjs">Suorita JavaScript WebAssembly QuickJS-hiekkalaatikossa</a></h2>
+<ul>
+<li>Tämä TypeScript-paketti mahdollistaa JavaScript-koodin turvallisen suorittamisen WebAssembly-hiekkalaatikossa käyttäen QuickJS-moottoria, mikä on ihanteellista epäluotettavan koodin turvalliseen ajamiseen.</li>
+<li>Keskeisiä ominaisuuksia ovat eristetty ympäristö, virtuaalinen tiedostojärjestelmä, mukautetut solmumoduulit, HTTP(S)-hakuklientti, chai-pohjainen testiajo ja tehokas suorituskyky.</li>
+<li>Pakkaus on monipuolinen ja helppo integroida TypeScript-projekteihin, tarjoten käyttäjäystävällisen API:n koodin suorittamiseen ja hallintaan.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896873">Reaktiot</a></h3>
+<ul>
+<li>Tämä TypeScript-paketti mahdollistaa JavaScript-koodin turvallisen suorittamisen WebAssembly-hiekkalaatikossa käyttäen QuickJS-moottoria, varmistaen epäluotettavan koodin eristämisen.</li>
+<li>Keskeisiä ominaisuuksia ovat virtuaalinen tiedostojärjestelmä, mukautetut solmumoduulit, hakuklientti, testin suorittaja ja käyttäjäystävällinen API, jotka tukevat ympäristöjä kuten NodeJS, Deno ja Cloudflare Workers.</li>
+<li>Turvavaroitus huomauttaa, että <code>fetch</code>-toiminnon ottaminen käyttöön voi altistaa isännän evästeet luottamattomalle koodille, mikä voi vaarantaa hiekkalaatikon turvallisuuden.</li>
+</ul>
+<h2><a href="https://github.com/geohot/fromthetransistor">Transistorista verkkoselaimeen, karkea hahmotelma 12 viikon kurssille</a></h2>
+<ul>
+<li>Kurssi kattaa kattavan matkan transistoreiden ymmärtämisestä verkkoselaimen kehittämiseen, tarjoten käytännönläheisen lähestymistavan laitteiston ja ohjelmiston integroinnin oppimiseen.</li>
+<li>Keskeisiä projekteja ovat ARM7-suorittimen rakentaminen, C-kääntäjän kehittäminen, UNIX-tyyppisen käyttöjärjestelmän luominen ja tekstipohjaisen verkkoselaimen tekeminen käyttäen kieliä kuten Verilog, Python, Haskell ja C.</li>
+<li>Opetussuunnitelma painottaa käytännön taitoja, kuten Verilatorilla emulointia, FPGA-piirilevyn suunnittelua ja keskeisten järjestelmäkomponenttien, kuten MMU:n, Ethernet-ohjaimen ja TCP-pinojen toteuttamista.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40895935">Reaktiot</a></h3>
+<ul>
+<li>Geohotin GitHubissa tarjoama 12 viikon kurssi nimeltä &quot;From the Transistor to the Web Browser&quot; on herättänyt keskustelua kunnianhimoisen laajuutensa vuoksi, mutta päivityksiä on tullut vain vähän vuoden 2016 jälkeen.</li>
+<li>Käyttäjät keskustelevat sen toteutettavuudesta, ehdottaen vaihtoehtoisia oppimistyökaluja kuten &quot;Turing Complete&quot; ja &quot;Shenzen I/O,&quot; ja väittävät sen olevan liian monimutkainen aloittelijoille, paremmin kokeneille ohjelmoijille sopiva.</li>
+<li>Kriitikot kyseenalaistavat kurssin käytännöllisyyden ja tekijän aikomukset, pitäen sitä liian kunnianhimoisena ja sisällöltään puutteellisena verrattuna kattaviin sähkö- ja tietotekniikan tutkintoihin.</li>
+</ul>
+<h2><a href="https://github.com/event-driven-io/Pongo">Mongo mutta Postgresilla ja vahvoilla johdonmukaisuushyödyillä</a></h2>
+<ul>
+<li>Pongo Pongo on työkalu, joka mahdollistaa MongoDB-tyyppisten operaatioiden käytön PostgreSQL:ssä, hyödyntäen vahvan konsistenssin etuja.</li>
+<li>Se kääntää MongoDB API -kutsut natiiviksi PostgreSQL-kyselyiksi, hyödyntäen JSONB:tä tehokkaisiin luku-/kirjoitusoperaatioihin ja monimutkaisiin kyselyihin.</li>
+<li>Pongo ei ole perinteinen ORM (Object-Relational Mapping), vaan keskittyy dokumenttitietojen käsittelyyn, tarjoten joustavuutta ja suorituskykyä, vaikka se ei olekaan täysin MongoDB-yhteensopiva.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40897518">Reaktiot</a></h3>
+<ul>
+<li>Pongo on uusi projekti, joka tarjoaa MongoDB-tyyppisen API:n PostgreSQL:n päälle, hyödyntäen JSONB-sarakkeita vahvan johdonmukaisuuden etujen saavuttamiseksi.</li>
+<li>Projektin tavoitteena on yhdistää MongoDB:n helppokäyttöisyys PostgreSQL:n vankkaan johdonmukaisuuteen ja luotettavuuteen, kääntämällä MongoDB-syntaksi alkuperäisiksi PostgreSQL-kyselyiksi.</li>
+<li>Tämä kehitys on herättänyt kiinnostusta, koska sillä on potentiaalia tarjota tuttu MongoDB-kokemus samalla kun hyödynnetään PostgreSQL:n edistyneitä ominaisuuksia, mikä houkuttelee kehittäjiä, jotka etsivät vahvaa johdonmukaisuutta tietokantaoperaatioissaan.</li>
+</ul>
+<h2><a href="https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838">Tutkijat palaavat vuoden Mars-simulaatioprojektin jälkeen</a></h2>
+<ul>
+<li>Neljä tiedemiestä suoritti vuoden mittaisen Mars-simulaation Houstonin Mars Dune Alpha -habitaatissa, joka on 3D-tulostettu rakenne, joka on suunniteltu jäljittelemään Marsin olosuhteita.</li>
+<li>Tehtävä, joka on osa NASA:n Crew Health and Performance Exploration Analog (CHAPEA) -ohjelmaa, pyrkii keräämään tietoa tulevia Mars-matkoja ja pitkäaikaista avaruustutkimusta varten, mukaan lukien Artemis-ohjelma.</li>
+<li>Tiimi suoritti &quot;Marskävelyjä&quot; ja käsitteli stressitekijöitä, kuten eristäytymistä ja viestinnän viiveitä, ja lisämissioita CHAPEA-suunniteltiin vuosille 2025 ja 2027.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896110">Reaktiot</a></h3>
+<ul>
+<li>Tutkijat ovat päättäneet vuoden mittaisen Mars-simulaation, joka keskittyi ihmisen kestävyyteen eristetyissä, korkean stressin ympäristöissä.</li>
+<li>Projekti korostaa, että psykologisten ja sosiaalisten dynamiikkojen hallinta on haastavampaa kuin ravitsemustarpeiden.</li>
+<li>Keskusteluihin sisältyy teknisiä ja eettisiä näkökohtia, mahdollisesti korkeat kuolleisuusluvut sekä laajan valmistelun ja pienempien alkuvaiheen tehtävien tarve Marsin kolonisaatiota varten.</li>
+</ul>
+<h2><a href="https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html">&quot;AI&quot;, opiskelijat ja episteminen kriisi</a></h2>
+<ul>
+<li>Blogikirjoitus 6. heinäkuuta 2024 käsittelee opiskelijan ChatGPT:n käyttöä hakukoneena, mikä johti siihen, että opiskelija uskoi virheellistä tietoa.</li>
+<li>Kirjoittaja korostaa AI:n tuottaman väärän tiedon torjumisen vaikeutta, sillä jokainen opiskelija saattaa saada ainutlaatuisia virheellisiä tietoja, mikä monimutkaistaa korjausprosessia.</li>
+<li>Kirjoitus pohtii laajemmin väärän tiedon vaikutusta koulutukseen ja poistettiin häirinnän vuoksi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40896212">Reaktiot</a></h3>
+<ul>
+<li>Nykyään opiskelijat ovat merkittävästi riippuvaisia tekoälystä ja internetistä tiedonhankinnassa, mikä eroaa aiemmista sukupolvista, jotka tekivät manuaalista tutkimusta kirjastoissa.</li>
+<li>Opettajat ovat huolissaan siitä, että tämä riippuvuus saattaa heikentää opiskelijoiden kykyä arvioida tietoa kriittisesti, mikä johtaa usein syvyyttä vailla oleviin esseisiin.</li>
+<li>Vaikka tekoälytyökalut ovat hyödyllisiä, ne voivat myös tuottaa virheellistä tietoa, mikä herättää keskustelua näiden työkalujen integroimisesta koulutukseen samalla, kun edistetään kriittistä ajattelua.</li>
+</ul>
+<h2><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public">OpenAI hakkeroitiin, vuoden vanhasta tietomurrosta ei ilmoitettu julkisuuteen</a></h2>
+<ul>
+<li>Hakkerit murtautuivat OpenAI:n sisäisiin viestintäjärjestelmiin viime vuoden alussa, paljastaen arkaluonteista tietoa, mutta eivät päässeet käsiksi keskeisiin tekoälyjärjestelmiin, mikä herätti turvallisuus- ja kansallisen turvallisuuden huolia.</li>
+<li>OpenAI ilmoitti tapauksesta sisäisesti huhtikuussa 2023, todeten, että asiakastietoja ei varastettu ja että hakkerilla ei todennäköisesti ollut yhteyksiä hallitukseen; kuitenkin tietomurto on lisännyt pelkoja ulkomaisten vihollisten, erityisesti Kiinan, edistyksestä tekoälyteknologioissaan.</li>
+<li>OpenAI on sittemmin parantanut turvallisuustoimiaan, perustanut turvallisuus- ja suojelukomitean, ja tapaus on herättänyt keskusteluja liittovaltion ja osavaltioiden sääntelytoimista AI-teknologian julkaisun hallitsemiseksi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40894082">Reaktiot</a></h3>
+<ul>
+<li>OpenAI koki viime vuonna ilmoittamattoman hakkeroinnin, mikä johti käyttäjien huoliin läpinäkyvyydestä ja turvallisuuskäytännöistä.</li>
+<li>Rikkomus koski pääsyä sisäisiin viestintäjärjestelmiin, mutta ei vaarantanut keskeisiä tekoälyteknologioita.</li>
+<li>Käyttäjät keskustelivat vaikeuksista virheiden raportoinnissa ja turhautumisista OpenAI:n tavanomaisiin tietoturvaraportointikäytäntöihin liittyen.</li>
+</ul>
+<h2><a href="https://www.nature.com/articles/d41586-024-02222-x">Mikä aiheuttaa migreeniä? Tutkimus &#39;aivojen pimenemisestä&#39; tarjoaa vihjeitä</a></h2>
+<ul>
+<li>Tutkimus hiirillä, joka julkaistiin Science-lehdessä 4. heinäkuuta 2024, paljastaa uusia näkemyksiä migreenin syistä, yhdistäen lyhyet aivojen &#39;pimennykset&#39; aivo-selkäydinnesteen muutoksiin, jotka aktivoivat kipureseptoreita kallossa.</li>
+<li>Tutkimus viittaa siihen, että migreenit saattavat toimia suojamekanismina, joka viestii levon tarpeesta, ja tunnistaa aiemmin tuntemattoman aukon kolmoishermosolmun ympärillä olevissa suojakerroksissa.</li>
+<li>Tämä löytö voisi johtaa uusien migreenin hoitomuotojen kehittämiseen kohdistamalla hoidot juuri tunnistettuihin mekanismeihin.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40893749">Reaktiot</a></h3>
+<ul>
+<li>Tutkimus viittaa siihen, että kortikaalinen leviävä depressio (CSD), &quot;aivojen pimeneminen&quot;, saattaa olla osallisena migreeneissä.</li>
+<li>Ihmiset raportoivat erilaisista laukaisevista tekijöistä ja hoidoista, mukaan lukien ruokavalion muutokset, lääkkeet kuten Rizatriptaani ja elämäntapamuutokset, kuten parempi uni ja nesteytys.</li>
+<li>Keskustelu korostaa migreenien monimutkaisuutta, sillä eri laukaisijat ja hoidot ovat tehokkaita eri henkilöille.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Upotetut YouTube-videot ovat todella raskaita ja sen voi korjata" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Upotetut%20YouTube-videot%20ovat%20todella%20raskaita%20ja%20sen%20voi%20korjata&subheading=sunnuntaina%207.%20hein%C3%A4kuuta%202024%3A%20Hacker%20News%20yhteenveto" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/fi/2024/07/07</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-06]]></title>
             <description
@@ -1684,192 +1880,6 @@
             <link>https://hn.cho.sh/fi/2024/06/28</link>
             <guid isPermaLink="false">2024-06-28T00:00:00.000Z</guid>
             <pubDate>Fri, 28 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-27]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/27&#39;</h2>
-<h1>2024-06-27</h1>
-<h2><a href="https://www.tomshardware.com/tech-industry/cyber-security/south-korean-telecom-company-attacks-torrent-users-with-malware-over-600000-people-report-missing-files-strange-folders-and-disabled-pcs">Eteläkorealainen telealan yritys hyökkää torrent-käyttäjien kimppuun haittaohjelmilla</a></h2>
-<ul>
-<li>KT Corporation, merkittävä eteläkorealainen telekommunikaatioyhtiö, tartutti tahallaan yli 600 000 käyttäjää haittaohjelmalla häiritäkseen Webhardin BitTorrent-pohjaista Grid-palvelua toukokuusta 2020 alkaen.</li>
-<li>Vakoiluohjelma aiheutti ongelmia, kuten puuttuvia tiedostoja, outoja kansioita ja poissa käytöstä olevia tietokoneita, ja sen jäljet johtivat KT:n datakeskukseen.</li>
-<li>Viranomaiset ovat syyttäneet 13 henkilöä, mukaan lukien KT:n työntekijöitä, ja KT puolusti toimiaan viittaamalla verkon kuormitukseen ja maksamattomiin käyttömaksuihin, vaikka luvaton haittaohjelman asennus aiheutti merkittäviä ongelmia asiakkaille.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805099">Reaktiot</a></h3>
-<ul>
-<li>Eteläkorealainen teleoperaattori väitetysti kohdistaa torrent-käyttäjiin haittaohjelmia, mikä herättää merkittäviä yksityisyys- ja eettisiä huolenaiheita.</li>
-<li>Tapauksessa korostuvat Etelä-Korean internet-palveluntarjoajien (ISP) jatkuvat ongelmat, kuten korkeat maksut ja mahdollinen vallan väärinkäyttö.</li>
-<li>Tämä tilanne on herättänyt keskusteluja internetin vapaudesta ja infrastruktuurista Etelä-Koreassa, joka oli aiemmin tunnettu nopeista internet-yhteyksistään, mutta jota nyt kritisoidaan vanhentuneista käytännöistä ja hallituksen kontrollista.</li>
-</ul>
-<h2><a href="https://latenighter.com/news/paramount-axes-comedy-central-website-show-clips-library/">25 vuoden videoleikkeet poissa, kun Paramount lakkauttaa Comedy Centralin verkkosivuston</a></h2>
-<ul>
-<li>Paramount on sulkenut ComedyCentral.com-sivuston, poistaen yli 25 vuoden klipit The Daily Show&#39;sta ja The Colbert Reportista, ohjaten kävijät TV-palveluntarjoajille tai Paramount+:lle.</li>
-<li>Muita ohjelmia, kuten The Opposition with Jordan Klepper ja Lights Out with David Spade, on myös vaikutettu, eikä vanhempia jaksoja ole saatavilla Paramount+:ssa.</li>
-<li>Tämä toimenpide on osa Paramountin kustannusten leikkaustoimenpiteitä hallita yli 14 miljardin dollarin velkaa, seuraten samankaltaisia toimia MTV.comin ja CMT.comin kanssa, pyrkien virtaviivaistamaan sivustoja ja ohjaamaan katsojia Paramount+:aan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40807032">Reaktiot</a></h3>
-<ul>
-<li>Paramount on poistanut 25 vuoden videoleikkeet Comedy Centralin verkkosivustolta, mikä on herättänyt kritiikkiä heidän johdon oletetusta sisällön aliarvostuksesta.</li>
-<li>Kriitikot väittävät, että sisältö olisi voitu kaupallistaa tai säilyttää, korostaen median oikeuksien ja sääntelyhaasteiden monimutkaisuutta vanhemman sisällön jakelussa.</li>
-<li>Poistamista pidetään Paramountin kustannusten leikkaustoimenpiteenä taloudellisten vaikeuksien keskellä, ja jotkut surevat kulttuurihistorian menetystä ja ehdottavat piratismia säilyttämiskeinona.</li>
-</ul>
-<h2><a href="https://web.dev/case-studies/google-sheets-wasmgc">Google Sheets siirsi laskentatyöntekijänsä JavaScriptistä WasmGC:hen</a></h2>
-<ul>
-<li>Google Sheets on siirtynyt JavaScriptistä WasmGC:hen (WebAssembly Garbage Collection) parantaakseen suorituskykyä, erityisesti suurten taulukoiden osalta.</li>
-<li>WasmGC tukee roskienkeräykseen perustuvia kieliä, kuten Javaa, tarjoten lähes alkuperäisen nopeuden verkossa, ja Google Sheets on yksi ensimmäisistä, joka ottaa sen käyttöön.</li>
-<li>Alkuperäinen WasmGC:n suorituskyky oli hitaampi kuin JavaScriptin, mutta myöhemmät optimoinnit ovat merkittävästi parantaneet sen nopeutta, mikä osoittaa sen potentiaalin mullistaa web-sovellusten kehitystä.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40808820">Reaktiot</a></h3>
-<ul>
-<li>Google Sheets siirtyi laskentamoottorissaan JavaScriptistä WasmGC:hen, mikä aluksi johti hitaampaan suorituskykyyn, mutta myöhemmin optimoitiin olemaan kaksi kertaa nopeampi kuin JS-versio.</li>
-<li>Siirto vaati merkittäviä uudelleentoteutuspyrkimyksiä, mukaan lukien devirtualisointi ja selaimen API:en hyödyntäminen, tavoitteena parantaa suorituskykyä ja käyttää natiivia V8-roskankerääjää.</li>
-<li>Huolimatta parannuksista, jotkut käyttäjät pitävät Google Sheetsiä edelleen hitaampana verrattuna alkuperäisiin sovelluksiin, kuten Exceliin, mikä korostaa verkkoteknologioiden jatkuvaa kehitystä ja optimointia.</li>
-</ul>
-<h2><a href="https://thezvi.substack.com/p/on-claude-35-sonnet">Claude 3.5 Sonetti</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40806698">Reaktiot</a></h3>
-<ul>
-<li>Anthropic on esitellyt Pro- ja Team-käyttäjille Projects-ominaisuuden, joka mahdollistaa useiden projektien omilla viitemateriaaleilla, parantaen käyttäjien mukavuutta.</li>
-<li>Claude 3.5 Sonnet saa kiitosta koodauskyvyistään, ja käyttäjät huomauttavat sen auttavan asiantuntijaohjelmoijia työskentelemään nopeammin ja olevan parempi kuin muut mallit, kuten GPT-4.</li>
-<li>Käyttäjät keskustelevat Claude 3.5 Sonnetin käytännön sovelluksista ja rajoituksista, mukaan lukien sen suorituskyky tiivistämisessä, suositustehtävissä ja koodausavussa, ja jotkut pitävät sitä parempana kuin OpenAI:n tarjontaa.</li>
-</ul>
-<h2><a href="http://mynor.org/my4th_forthdeck.htm">Forth Deck mini: kannettava Forth-tietokone erillisellä suorittimella</a></h2>
-<ul>
-<li>Forth Deck mini on kannettava Forth-tietokone, jossa on erillinen suoritin, 40x4 merkin LCD-näyttö, 56-painikkeinen QWERTY-näppäimistö ja 6,6 Wh LiPo-akku, jonka käyttöaika on 6 tuntia.</li>
-<li>Siihen kuuluu 8-bittinen CMOS-logiikkasuoritin, 32 KB ROM, 32 KB RAM, jopa 256 KB EEPROM ja RS-232 4800 baudin nopeudella, mikä muistuttaa 70- ja 80-lukujen kotitietokoneita, joissa oli sisäänrakennetut Basic-tulkitsimet.</li>
-<li>Laite voidaan koota Budgetronicsin sarjan avulla, lukuun ottamatta akkua ja latauspiiriä, ja se on lisensoitu Creative Commons Attribution-ShareAlike 4.0 International -lisenssillä.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40804122">Reaktiot</a></h3>
-<ul>
-<li>Forth Deck mini on kannettava Forth-tietokone, jossa on erillisistä logiikkapiireistä ja EEPROM-muistista rakennettu suoritin. Se toimii 8-bittisellä data- ja osoiteväylällä.</li>
-<li>Harrastajat keskustelevat sen suunnittelusta, mahdollisista muutoksista ja vertailuista muihin suorittimiin, kuten Novix NC4000:een, sekä ajatuksesta Forth-pohjaisesta Factor-murteesta skriptausta varten.</li>
-<li>Keskustelu tuo esiin haasteet nykyaikaisten harrastelijatietokoneiden luomisessa, joissa on hyvät näppäimistöt ja näytöt, viitaten laitteisiin kuten TRS-80 Model 100 ja AlphaSmart, ja mainiten vaihtoehtoja kuten M5Stack Cardputer ja Zorzpad.</li>
-</ul>
-<h2><a href="https://www.npr.org/sections/shots-health-news/2024/06/26/g-s1-6177/brain-waste-removal-system-amyloid-alzheimer-toxins">Aivot tuottavat paljon jätettä. Nyt tiedemiehet uskovat tietävänsä, minne se menee.</a></h2>
-<ul>
-<li>Tutkijat ovat paljastaneet uusia yksityiskohtia aivojen jätteidenpoistojärjestelmästä, joka on olennaisen tärkeä aivojen terveyden ylläpitämiseksi ja häiriöiden ehkäisemiseksi.</li>
-<li>Tutkimus, joka on julkaistu Nature-lehdessä, paljastaa, että hitaat sähköaallot unen aikana auttavat työntämään jäteaineita sisältävää nestettä syvältä aivoista niiden pinnalle, missä se imeytyy verenkiertoon ja poistetaan maksan ja munuaisten kautta.</li>
-<li>Tämä glymfaattinen järjestelmä on ratkaisevan tärkeä amyloidin, Alzheimerin tautiin liittyvän aineen, poistamisessa, ja heikentynyt jätteiden poisto saattaa myötävaikuttaa erilaisiin aivosairauksiin, kuten Alzheimerin tautiin, Parkinsonin tautiin, päänsärkyihin ja masennukseen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805251">Reaktiot</a></h3>
-<ul>
-<li>Tutkijat ovat havainneet, että syvä uni on ratkaisevan tärkeää aivojen jäteaineiden, mukaan lukien Alzheimerin ja dementian yhteydessä olevien amyloidiproteiinien, poistamisessa.</li>
-<li>Tutkimukset viittaavat siihen, että hitaiden sähköaaltojen indusointi aivoissa valon ja äänen stimulaation avulla voisi tehostaa tätä jätteenpoistoa, vaikka useimmat tutkimukset on tällä hetkellä tehty hiirillä.</li>
-<li>Tekijöitä, kuten kahvin kulutus, liikunta ja uniryhmät, käsitellään myös niiden mahdollisen vaikutuksen aivoterveyteen.</li>
-</ul>
-<h2><a href="https://fastvoiceagent.cerebrium.ai/">Äänibotit, joiden vasteaika on 500 ms</a></h2>
-<ul>
-<li>Kokeilut äänikäyttöliittymien ja suurten kielimallien (LLM) kanssa alkoivat GPT-4:n julkaisun jälkeen, mikä korosti äänivuorovaikutusten mukaansatempaavaa luonnetta ja uusia haasteita generatiivisen tekoälyn kanssa.</li>
-<li>500 ms:n ääni-ääni-vastausajan saavuttaminen on haastavaa, mutta mahdollista isännöimällä transkriptio, LLM-päättely ja äänentuotto yhdessä, optimoimalla datan reititys ja varmistamalla hyvä wifi- ja VRAM-välimuisti.</li>
-<li>500 ms:n suorituskykyyn kykenevän äänibotin demo ja kontti käyttöönottoa varten A10/A100/H100 GPU:ille on saatavilla, ja nykyiset mittarit osoittavat kokonaisvasteajan olevan 759 ms, mikä viittaa nopeaan tekoälyn kehitykseen ja mahdollisiin tuleviin yksinkertaistuksiin.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805010">Reaktiot</a></h3>
-<ul>
-<li>Äänibottien saavuttaminen 500 ms:n vasteajoilla on mahdollista optimoimalla transkriptio-, LLM-päätelmä- ja äänentuotantoprosessit sekä tehokkaalla datan reitityksellä ja välimuistilla.</li>
-<li>Mittarit ääni-ääni-vastaukselle ovat yhteensä 759 ms, mutta tulevat LLM:t, joilla on natiivit äänikapasiteetit, voivat edelleen lyhentää tätä aikaa.</li>
-<li>Käyttäjät korostivat matalan viiveen merkitystä tekoälyvuorovaikutuksissa, erityisesti asiakaspalvelussa, ja keskustelivat mahdollisista teknisistä parannuksista, kuten selaintuen ja laitekohtaisen käsittelyn lisäämisestä.</li>
-</ul>
-<h2><a href="https://fabric8labs.com">Seuraavan sukupolven 3D-metallitulostus</a></h2>
-<ul>
-<li>Fabric8Labs, San Diegossa sijaitseva startup-yritys, on saanut 50 miljoonan dollarin rahoituksen B-sarjan rahoituskierroksella edistääkseen elektrokemiallista lisäainevalmistusteknologiaansa.</li>
-<li>Rahoitus tukee uuden 3D-tulostustehtaan rakentamista, mikä lisää merkittävästi yrityksen työvoimaa.</li>
-<li>Tämä investointi korostaa kasvavaa kiinnostusta ja pääoman virtausta 3D-tulostusalan startup-yrityksiin, jota ajavat innovatiiviset valmistusteknologiat.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40803783">Reaktiot</a></h3>
-<ul>
-<li>Fabric8Labsin seuraavan sukupolven 3D-metallitulostus käyttää elektrokemiallisia menetelmiä tarkkaan, nopeaan ja monipuoliseen valmistukseen, saavuttaen mikronitason tarkkuuden.</li>
-<li>Tämä tekniikka yhdistää additiivisia ja subtraktiivisia prosesseja, pääasiassa puhtaiden metallien ja joidenkin seosten tallettamista, tehden siitä turvallisemman ja energiatehokkaamman välttämällä korkeita lämpötiloja ja metallijauheita.</li>
-<li>Kangasta8Labsin teknologia on lupaava sovelluksille, kuten piirilevyille (Printed Circuit Boards) ja monimutkaisille sisäisille rakenteille, ja yritys tutkii kaupallisia mahdollisuuksia tällä ainutlaatuisella lähestymistavalla.</li>
-</ul>
-<h2><a href="https://lars.ingebrigtsen.no/2024/06/26/a-new-package-for-making-charts-in-emacs-eplot/">Eplot: Uusi paketti kaavioiden tekemiseen Emacsissa</a></h2>
-<ul>
-<li>Uusi Emacs-paketti nimeltä eplot on julkaistu, ja se on suunniteltu yksinkertaisten kaavioiden luomiseen suoraan Emacsissa.</li>
-<li>eplot korjaa chart.el:n ja Gnuplotin kaltaisista olemassa olevista työkaluista löytyviä rajoituksia tarjoamalla ominaisuuksia, kuten järkevät Y-akselin numerot ja SVG-liukuvärit.</li>
-<li>Pakkaus on käyttäjäystävällinen, ja sen avulla käyttäjät voivat luoda kaavioita kirjoittamalla M-x eplot puskuriin, jossa on numeroita. Se on dokumentoitu GitHubissa.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40807923">Reaktiot</a></h3>
-<ul>
-<li>Uusi paketti nimeltä Eplot on julkaistu kaavioiden luomiseen Emacsissa, joka on suosittu tekstieditori kehittäjien keskuudessa.</li>
-<li>Pakkaus on saanut huomiota yksinkertaisuudestaan ja joustavuudestaan, ja käyttäjäkokemuksen parantamiseksi on ehdotettu Emacsin tiedosto- ja hakemistokohtaisten muuttujien hyödyntämistä.</li>
-<li>Keskusteluissa korostetaan vertailuja muiden kaaviotyökalujen, kuten Gnuplotin ja Matplotlibin, kanssa, huomioiden kunkin vahvuudet ja heikkoudet Emacsin yhteydessä.</li>
-</ul>
-<h2><a href="https://www.joanwestenberg.com/6-months-ago,-i-left-the-bullshit-industrial-complex">6 kuukautta sitten jätin paskan teollisuuskompleksin</a></h2>
-<ul>
-<li>Entinen teknologia-alan PR-ammattilainen paljastaa menneisyytensä ylihypetettyjen startup-yritysten mainostamisessa, mikä rahoitti ylellisen elämäntyylin mutta johti eettisiin epäilyksiin.</li>
-<li>He päättivät jättää tuottoisan mutta moraalisesti kyseenalaisen alan keskittyäkseen rehelliseen kirjoittamiseen teknologian ja riskipääoman todellisista inhimillisistä vaikutuksista.</li>
-<li>Huolimatta taloudellisista ja urariskeistä, he löytävät rehellisyyden ja henkilökohtaisen täyttymyksen uudella polullaan, hyläten teknologiateollisuuden tyhjät lupaukset.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40806930">Reaktiot</a></h3>
-<ul>
-<li>Kirjoittaja ilmaisee pettymyksensä teknologia-alan suhteen, huomauttaen muutoksen ihmisten ongelmien ratkaisemisesta arvon hyödyntämiseen viimeisten 25 vuoden aikana.</li>
-<li>Keskeisiin havaintoihin kuuluu Reddit-viesti, jossa väitetään 90-luvun olleen ihmiskunnan huippuaikaa, sekä viraalinen lainaus, jossa todetaan tekoälyn tekevän kotitöitä luovan työn sijaan, mikä korostaa nostalgista näkemystä menneisyyden teknologisesta optimismista.</li>
-<li>Huolimatta huolista datan hyväksikäytöstä ja voiton tavoittelusta, avoimen lähdekoodin yhteisöissä ja innovatiivisissa hakkeroinneissa on yhä toivoa, vaikka armoton voiton tavoittelu onkin johtanut laajaan pettymykseen.</li>
-</ul>
-<h2><a href="https://www.govexec.com/pay-benefits/2024/06/federal-whistleblowers-are-entitled-damages-missed-future-pay-court-rules/397638/">Liittovaltion ilmiantajilla on oikeus korvauksiin menetetystä tulevasta palkasta, tuomioistuin päättää</a></h2>
-<ul>
-<li>Yhdysvaltain liittovalitustuomioistuin päätti, että liittovaltion ilmiantajat voivat saada korvausta tulevista menetetyistä ansioista, jos heidän irtisanomisensa on vahingoittanut heidän ansaintamahdollisuuksiaan.</li>
-<li>Deborah Perlick, joka erotettiin ilmoitettuaan kadonneista varoista, onnistui perustelemaan lisäkorvauksen tarpeen takaisinmaksun lisäksi, mikä vaikuttaa tuleviin työmahdollisuuksiin.</li>
-<li>Tämä päätös luo ennakkotapauksen liittovaltion ilmiantajille, sallien vaatimukset tulevista menetetyistä ansioista ilman taattua tulevaa työllisyyttä, ja tapaus palautettiin Merit Systems Protection Boardille lopullista päätöstä varten.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40804489">Reaktiot</a></h3>
-<ul>
-<li>Tuomioistuin on päättänyt, että liittovaltion ilmiantajilla on oikeus korvauksiin menetetystä tulevasta palkasta, vaikka heillä ei olisi taattua tulevaa työpaikkaa, edellyttäen, että on riittävästi todisteita todennäköisestä tulevasta työllistymisestä.</li>
-<li>Tämä päätös saattaa rohkaista enemmän ilmiantajia lievittämällä huolia tulevien ansioiden menettämisestä ja yhdenmukaistaa valtion työntekijöiden oikeudet yksityisen sektorin työntekijöiden oikeuksien kanssa.</li>
-<li>Tapaus, joka koski VA:n (Veterans Affairs) työntekijää, korosti, että maineen vahingoittuminen, joka vaikuttaa tuleviin ansioihin, on korvattavissa.</li>
-</ul>
-<h2><a href="https://www.ams.org/notices/199701/comm-rota.pdf">Oppitunnit, jotka olisin toivonut minulle opetettavan (1996) [pdf]</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40808933">Reaktiot</a></h3>
-<ul>
-<li>&quot;Oppitunnit, jotka olisin halunnut oppia (1996)&quot; Gian-Carlo Rotan kirjoittamana herätti keskusteluja Hacker Newsissä, jossa käyttäjät jakoivat ainutlaatuisia mittayksiköitä, kuten &quot;mikrosata&quot; (50 minuuttia) ja &quot;nanoekkeri&quot; (4 neliömillimetriä).</li>
-<li>Keskusteluissa käsiteltiin myös luentojen kestoa, keskittymiskykyä ja kiinnostavien johdantojen merkitystä akateemisissa kirjoituksissa, mikä heijastaa Rotan vaikuttavia opetuksia.</li>
-<li>Lanka korosti toistuvaa kiinnostusta Rotan näkemyksiin, kun käyttäjät muistelivat henkilökohtaisia kokemuksiaan ja viittasivat aiheeseen liittyviin keskusteluihin ja resursseihin.</li>
-</ul>
-<h2><a href="https://www.lawgazette.co.uk/news/post-office-lawyers-held-secret-meeting-with-judge-to-stop-disclosure/5119593.article">Postin lakimiehet pitivät salaisen kokouksen tuomarin kanssa estääkseen tietojen paljastamisen</a></h2>
-<ul>
-<li>Postin lakimiehet pitivät salaisen kokouksen tuomarin kanssa vuonna 2013 estääkseen raportin, joka paljasti mahdollisia ongelmia Horizon-järjestelmässä, luovuttamisen puolustuksen asianajajille rikosoikeudenkäynnissä.</li>
-<li>Kuulemisessa todettiin, että syyttäjä Martin Smith myönsi, ettei hän noudattanut velvollisuuksiaan ja häneltä puuttui tarvittava asiantuntemus, mikä herätti huolta aiemmista tuomioista ja tiedonantokäytännöistä.</li>
-<li>Tutkinta jatkuu ja paljastaa useita tiedonantoon liittyviä ongelmia, kun Posti lähestyy sovittelua ja tarkastelee aiempia tuomioita.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40808808">Reaktiot</a></h3>
-<ul>
-<li>Postin lakimiehet tapasivat salaa tuomarin estääkseen todisteiden paljastamisen, mikä johti vääriin tuomioihin.</li>
-<li>Julkiset puolustajat ovat ylikuormitettuja, käsitellen jopa 700 tapausta vuosittain, mikä haittaa tehokasta puolustusta.</li>
-<li>Oikeusjärjestelmä suosii niitä, joilla on varaa yksityisiin asianajajiin, mikä korostaa oikeudellisten uudistusten ja julkisten puolustajien parempaa rahoitusta oikeudenmukaisten oikeudenkäyntien varmistamiseksi.</li>
-</ul>
-<h2><a href="https://www.readmargins.com/p/doordash-and-pizza-arbitrage">DoorDash ja pizzaarbitraasi (2020)</a></h2>
-<ul>
-<li>Doordash listasi pizzerian ilman omistajan lupaa, mikä johti ongelmiin kylmien toimitusten ja virheellisten hintojen kanssa.</li>
-<li>Arbitraasimahdollisuus syntyi Doordashin hinnoitteluvirheiden vuoksi, mikä mahdollisti voiton tilaamalla alhaisemmilla hinnoilla ja myymällä korkeammilla ravintolahinnoilla.</li>
-<li>Artikkeli kritisoi ruoan toimitusliiketoimintamallia tehottomaksi ja riistäväksi, ehdottaen, että integroidumpi lähestymistapa, kuten Domino&#39;silla, saattaisi olla kestävämpi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40806356">Reaktiot</a></h3>
-<ul>
-<li>DoorDash ja vastaavat ruoan toimituspalvelut kohtaavat kritiikkiä kestämättömistä liiketoimintamalleista, jotka perustuvat alipalkattuun työvoimaan ja korkeisiin asiakashankintakustannuksiin.</li>
-<li>Kriitikot väittävät, että nämä käytännöt pahentavat taloudellista epätasa-arvoa ja ehdottavat kertyneen pääoman verottamista varallisuuden uudelleenjakamiseksi.</li>
-<li>Keskusteluun sisältyy huolia ravintoloiden laadun heikkenemisestä ja näiden toimituspalveluiden eettisyydestä, kyseenalaistaen niiden pitkän aikavälin kestävyyden ja hyödyt.</li>
-</ul>
-<h2><a href="https://github.com/corcel/corcel">Corcel – Käytä WordPress-taustajärjestelmää Laravelin tai minkä tahansa PHP-sovelluksen kanssa</a></h2>
-<ul>
-<li>Corcel on PHP-kirjasto, joka on rakennettu Laravelin Eloquent ORM:n päälle, mahdollistaen suoran tiedon haun WordPress-tietokannasta. Sitä voi käyttää Laravelin tai minkä tahansa PHP-projektin kanssa Composerin kautta.</li>
-<li>Keskeisiä ominaisuuksia ovat tuki mukautetuille viestityypeille, lyhytkoodeille, taksonomioille, sivuille, liitteille, versioille, pikkukuville, asetuksille, valikoille, käyttäjille ja todennukselle.</li>
-<li>Asennus ja konfigurointi ovat yksinkertaisia, sisältäen automaattisen rekisteröinnin Laravel 5.5+ -versioille ja manuaalisen asennuksen vanhemmille versioille tai ei-Laravel-projekteille.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40805351">Reaktiot</a></h3>
-<ul>
-<li>Corcel mahdollistaa WordPress-taustajärjestelmän käytön Laravelin tai minkä tahansa PHP-sovelluksen kanssa, osoittautuen tehokkaaksi tuotantoympäristöissä.</li>
-<li>Monet käyttäjät ovat onnistuneesti integroineet Corcelin Laravelin, Filamentin ja LunarPHP:n kanssa parantaakseen suorituskykyä, esimerkiksi pelastaakseen hitaat WooCommerce-sivustot.</li>
-<li>Corcelia kiitetään sen saumattomasta käyttöliittymästä WordPress-datan kanssa, tarjoten ylläpidettävän ratkaisun PHP-projekteille, jotka tarvitsevat vuorovaikutusta WordPress-tietokantojen kanssa, ja sitä verrataan suotuisasti työkaluihin kuten Prismic, Strapi ja Shopify.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Eteläkorealainen telealan yritys hyökkää torrent-käyttäjien kimppuun haittaohjelmilla" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Etel%C3%A4korealainen%20telealan%20yritys%20hy%C3%B6kk%C3%A4%C3%A4%20torrent-k%C3%A4ytt%C3%A4jien%20kimppuun%20haittaohjelmilla&subheading=torstaina%2027.%20kes%C3%A4kuuta%202024%3A%20Hacker%20News%20yhteenveto" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/fi/2024/06/27</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

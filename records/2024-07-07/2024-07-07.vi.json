@@ -1,0 +1,332 @@
+[
+  {
+    "id": 40897205,
+    "title": "Nhúng YouTube rất nặng và có thể khắc phục được",
+    "originLink": "https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897205",
+    "commentBody": "",
+    "originSummary": [
+      "Nhúng YouTube tiêu tốn nhiều tài nguyên, với mỗi lần nhúng khoảng 1.3MB và 32 yêu cầu, dẫn đến thời gian tải chậm và lượng dữ liệu truyền tải cao.",
+      "Thành phần Web như \"lite-youtube-embed\" của Paul Irish có thể giảm kích thước xuống khoảng 100k, chia sẻ tài nguyên và cải thiện hiệu suất đáng kể.",
+      "Việc triển khai giải pháp này bao gồm liên kết JavaScript, sử dụng thành phần trong HTML và tải script không đồng bộ để có hiệu suất tốt hơn."
+    ],
+    "commentSummary": [
+      "Một nền tảng diễn đàn cộng đồng đã thay thế các nhúng YouTube bằng các hình thu nhỏ được ủy quyền, chỉ tải khi được nhấp vào, giảm nhu cầu tải xuống các tệp JavaScript lớn và ngăn chặn việc theo dõi của Google.",
+      "Những giải pháp tương tự đã được triển khai cho các nhúng YouTube, SoundCloud và Reddit để tăng cường chức năng và giảm thiểu sự cồng kềnh.",
+      "Hiện đang có tranh luận về việc liệu các nhúng nhẹ hơn có thể giảm sự tương tác do thời gian bắt đầu video chậm hơn hay không, nhưng nhiều người tin rằng cải thiện thời gian tải trang tổng thể quan trọng hơn cho trải nghiệm người dùng và hiệu suất của trang web."
+    ],
+    "points": 236,
+    "commentCount": 135,
+    "retryCount": 0,
+    "time": 1720355875
+  },
+  {
+    "id": 40896102,
+    "title": "Malloc phá vỡ JPGLoader của Serenity, hoặc: làm thế nào để trúng xổ số (2021)",
+    "originLink": "https://sin-ack.github.io/posts/jpg-loader-bork/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896102",
+    "commentBody": "",
+    "originSummary": [
+      "Do lỗi trong quá trình giải mã hình ảnh JPG của SerenityOS, màu sắc hiển thị không chính xác do nhầm lẫn giữa RGB và BGR.",
+      "Vấn đề được truy ngược lại một commit triển khai `malloc_good_size()`, đã thay đổi việc phân bổ bộ nhớ và ảnh hưởng đến các cấu trúc dữ liệu như `HashTable` và `Vector` được sử dụng trong `JPGLoader`.",
+      "Việc sửa chữa liên quan đến việc đảm bảo lặp lại có tính quyết định đối với các thành phần trong `JPGLoader`, nhấn mạnh cách những thay đổi đơn giản có thể phát hiện ra các vấn đề cơ bản quan trọng."
+    ],
+    "commentSummary": [
+      "Một số triển khai bảng băm đưa vào tính ngẫu nhiên để ngăn chặn sự phụ thuộc vào thứ tự phần tử và tăng cường bảo mật, trong khi các triển khai hiện đại thường đảm bảo việc lặp lại theo thứ tự chèn.",
+      "JavaScript và Python đã chuẩn hóa thứ tự chèn trong các triển khai bảng băm của họ, với Python áp dụng điều này từ phiên bản 3.7.",
+      "Rust cung cấp các tùy chọn bảng băm khác nhau (`HashMap`, `BTreeMap`, `IndexMap`), và Perl đã giới thiệu các hạt giống ngẫu nhiên cho bảng băm sau phiên bản 5.18."
+    ],
+    "points": 177,
+    "commentCount": 143,
+    "retryCount": 0,
+    "time": 1720341723
+  },
+  {
+    "id": 40895672,
+    "title": "BeaconDB – Một Giải Pháp Thay Thế cho Dịch Vụ Định Vị của Mozilla",
+    "originLink": "https://beacondb.net/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895672",
+    "commentBody": "",
+    "originSummary": [
+      "beaconDB là một cơ sở dữ liệu định vị không dây thuộc phạm vi công cộng, bao gồm 177.176 mạng, 4.126 đèn hiệu, 6.106 tháp trên 30 quốc gia, với dữ liệu được thu thập một cách có đạo đức và tự nguyện.",
+      "Database này thân thiện với quyền riêng tư, làm mờ thông tin để bảo vệ người truyền và người đóng góp, và yêu cầu sự gần gũi về mặt vật lý để cập nhật dữ liệu, làm cho nó chống lại việc lạm dụng.",
+      "Nhà phát triển có thể sử dụng điểm cuối `https://beacondb.net/v1/geolocate`, tương thích với định dạng yêu cầu của Ichnaea, nhưng nó không phù hợp cho các ứng dụng có lưu lượng truy cập cao; mã nguồn có sẵn trên Codeberg."
+    ],
+    "commentSummary": [
+      "BeaconDB được giới thiệu như một sự thay thế cho Mozilla Location Services (MLS), tập trung vào việc thu thập dữ liệu có nguồn gốc đạo đức và dựa trên sự đồng ý của người dùng.",
+      "Không giống như Apple và Google, BeaconDB không công bố địa chỉ MAC dưới dạng văn bản rõ ràng, thay vào đó sử dụng dữ liệu đã được băm hoặc tổng hợp để tăng cường bảo mật.",
+      "BeaconDB là cơ sở dữ liệu duy nhất không thuộc các công ty công nghệ lớn dành cho dịch vụ định vị, nhằm cung cấp một giải pháp mã nguồn mở và thảo luận về các hợp tác tiềm năng."
+    ],
+    "points": 170,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1720333550
+  },
+  {
+    "id": 40897506,
+    "title": "Một sự tái khởi động của các buổi gặp gỡ lập trình hệ thống",
+    "originLink": "https://notes.eatonphil.com/2024-07-07-systems-meetups.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897506",
+    "commentBody": "",
+    "originSummary": [
+      "Đã có sự hồi sinh của các buổi gặp gỡ lập trình hệ thống chất lượng cao tại các thành phố như Munich, Berlin, San Francisco, New York City và Bengaluru vào năm 2024.",
+      "CLB Cà Phê Hệ Thống NYC, bắt đầu vào tháng 12 năm 2023, tập trung vào các thách thức kỹ thuật và đã phát triển nhanh chóng, truyền cảm hứng cho các buổi gặp gỡ tương tự trên toàn cầu.",
+      "Những lời khuyên quan trọng để tổ chức các buổi gặp mặt bao gồm tìm kiếm một địa điểm tổ chức, tập trung vào nội dung kỹ thuật, tìm kiếm diễn giả thông qua các mối quan hệ trong ngành, và hợp tác với các nhà tổ chức khác."
+    ],
+    "commentSummary": [
+      "Hội thảo lập trình hệ thống đang trải qua một sự hồi sinh, nhấn mạnh sự quan tâm trở lại của cộng đồng đối với lập trình cấp thấp và kiến trúc hệ thống.",
+      "Việc tổ chức các buổi gặp mặt như vậy gặp phải nhiều thách thức, bao gồm việc tìm kiếm địa điểm ổn định, thường đòi hỏi sự hỗ trợ mạnh mẽ từ bên trong hoặc sự ủng hộ của chính quyền địa phương để đảm bảo các địa điểm nhất quán.",
+      "Chất lượng và trọng tâm của nội dung buổi gặp mặt là rất quan trọng, với một số nhóm gặp khó khăn trong việc cân bằng giữa các cuộc thảo luận kỹ thuật thực sự và các bài thuyết trình tự quảng cáo của diễn giả."
+    ],
+    "points": 164,
+    "commentCount": 65,
+    "retryCount": 0,
+    "time": 1720358437
+  },
+  {
+    "id": 40892812,
+    "title": "Những nguồn tài liệu tốt để học xử lý âm thanh ở đâu?",
+    "originLink": "https://news.ycombinator.com/item?id=40892812",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40892812",
+    "commentBody": "",
+    "originSummary": [
+      "Người dùng đang tìm kiếm tài liệu để lập trình một bộ hòa âm tương tự như bộ mà Ben Bloomberg của MIT đã tạo ra cho Jacob Collier.",
+      "Họ cần thông tin dễ tiếp cận về việc thay đổi cao độ và định dạng mà vẫn duy trì chất lượng âm thanh tự nhiên.",
+      "Người dùng có kinh nghiệm lập trình phong phú nhưng thiếu kiến thức về xử lý âm thanh, cho thấy cần có các tài liệu thân thiện với người mới bắt đầu nhưng toàn diện."
+    ],
+    "commentSummary": [
+      "Người dùng đang tìm kiếm tài nguyên để lập trình một bộ hòa âm tương tự như của Jacob Collier, được tạo bởi Ben Bloomberg của MIT, tập trung vào việc thay đổi cao độ và định dạng.",
+      "Những tài nguyên được khuyến nghị bao gồm tài liệu khóa học mở từ CCRMA tại Stanford, các thư viện tiêu chuẩn ngành như Elastique của Zplane, và các cuốn sách như \"DAFX - Digital Audio Effects\" của Udo Zölzer.",
+      "Những gợi ý bổ sung bao gồm các hướng dẫn, kênh YouTube và các diễn đàn cộng đồng như Officehours.global để kết nối và học hỏi thêm."
+    ],
+    "points": 144,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1720295988
+  },
+  {
+    "id": 40893866,
+    "title": "Trình theo dõi thói quen hàng ngày tối giản miễn phí",
+    "originLink": "https://rdht.vercel.app/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893866",
+    "commentBody": "",
+    "originSummary": [
+      "Đã có một ứng dụng theo dõi thói quen mới được phát triển bởi một cá nhân không hài lòng với các tùy chọn hiện có, với các tính năng theo dõi chuỗi, khả năng sử dụng ngoại tuyến, đóng băng chuỗi, bản đồ nhất quán trực quan và chức năng tạm dừng.",
+      "Ứng dụng được xây dựng bằng React cho phần giao diện người dùng, Dexie cloud cho lưu trữ và đồng bộ hóa, và được lưu trữ trên Vercel.",
+      "Nhà phát triển đã làm cho ứng dụng có sẵn cho công chúng sử dụng, trình bày một dự án cá nhân đã được chuyển thành một tài nguyên cộng đồng."
+    ],
+    "commentSummary": [
+      "Bộ theo dõi thói quen hàng ngày tối giản mới miễn phí đã được tạo ra để giải quyết những thiếu sót trong các ứng dụng hiện có, bao gồm theo dõi chuỗi, sử dụng ngoại tuyến, đóng băng chuỗi, bản đồ nhất quán trực quan và chức năng tạm dừng.",
+      "Bản dựng với React và Dexie cloud, và được lưu trữ trên Vercel, ứng dụng đã nhận được phản hồi về các cải tiến, đặc biệt là từ người dùng iPhone, bao gồm các đề xuất về thói quen xấu, điều chỉnh thiết kế và sửa lỗi.",
+      "Người dùng đánh giá cao thiết kế gọn gàng và chức năng ngoại tuyến, với các đề xuất cho chế độ xem thu gọn và khả năng tương thích tốt hơn trên di động; hiện chưa có kế hoạch kiếm tiền."
+    ],
+    "points": 117,
+    "commentCount": 51,
+    "retryCount": 0,
+    "time": 1720305433
+  },
+  {
+    "id": 40895441,
+    "title": "Vì sao nước Ý không còn yêu thích rau mùi",
+    "originLink": "https://www.atlasobscura.com/articles/what-are-italian-herbs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895441",
+    "commentBody": "",
+    "originSummary": [
+      "Cây ngò, từng là một nguyên liệu chính trong ẩm thực La Mã cổ đại, gần như đã biến mất khỏi ẩm thực Ý hiện đại, đặc biệt là lá của nó.",
+      "Thời kỳ suy tàn bắt đầu sau thời kỳ La Mã, bị ảnh hưởng bởi các bộ tộc Germanic và sự ưa chuộng các loại gia vị ngoại lai như quế và bạch đậu khấu.",
+      "Mặc dù có mặt từ lâu đời, rau mùi hiện nay được coi là một nguyên liệu ngoại lai ở Ý, không giống như các loại thảo mộc khác như húng quế."
+    ],
+    "commentSummary": [
+      "Italy không thích rau mùi từ năm 1544 khi nhà thực vật học Pietro Andrea Mattioli mô tả lá của nó có mùi giống như rệp.",
+      "Ác cảm có thể bị ảnh hưởng bởi di truyền, vì một số người cảm nhận mùi vị của rau mùi giống như xà phòng do một gen cụ thể.",
+      "Việc giảm sút sự phổ biến của rau mùi ở Ý cũng liên quan đến các xu hướng ẩm thực thay đổi và các mô hình di cư, minh họa sự tương tác phức tạp giữa di truyền, văn hóa và sở thích cá nhân trong việc hình thành khẩu vị thực phẩm."
+    ],
+    "points": 108,
+    "commentCount": 116,
+    "retryCount": 0,
+    "time": 1720329769
+  },
+  {
+    "id": 40895167,
+    "title": "Quản lý mạng \"Out of Band\" không phải là việc đơn giản",
+    "originLink": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895167",
+    "commentBody": "",
+    "originSummary": [
+      "Vụ mất kết nối Internet và điện thoại của Rogers năm 2022, ảnh hưởng đến hơn 12 triệu người Canada, đã làm nổi bật tầm quan trọng và sự phức tạp của quản lý mạng \"Out of Band\" (OOB).",
+      "OOB management yêu cầu phần cứng và cơ sở hạ tầng riêng biệt tách rời khỏi mạng chính, đảm bảo tính dự phòng và bảo mật nhưng làm tăng đáng kể chi phí và độ phức tạp.",
+      "Những mạng nhỏ hơn có thể thấy thực tế hơn khi tập trung vào quản lý trong băng tần mạnh mẽ, dự phòng thay vì duy trì một mạng OOB riêng biệt."
+    ],
+    "commentSummary": [
+      "Quản lý mạng \"Out of Band\" (OOB) là rất cần thiết để duy trì độ tin cậy của mạng, đặc biệt trong các hệ thống kỹ thuật số hiện đại dễ bị sai cấu hình và hỏng hóc.",
+      "Việc mất kết nối của Rogers đã nhấn mạnh nhu cầu cấp thiết về quản lý OOB mạnh mẽ, làm nổi bật tầm quan trọng của việc lập kế hoạch và đánh giá rủi ro tốt hơn để ngăn chặn các sự cố mạng cốt lõi.",
+      "Quản lý OOB hiệu quả bao gồm việc sử dụng các hệ thống chuyên dụng, dự phòng, thường tận dụng các nhà cung cấp hoặc công nghệ khác nhau như LTE hoặc vệ tinh để đảm bảo độ tin cậy."
+    ],
+    "points": 105,
+    "commentCount": 70,
+    "retryCount": 0,
+    "time": 1720324841
+  },
+  {
+    "id": 40896873,
+    "title": "Thực thi JavaScript trong một sandbox WebAssembly QuickJS",
+    "originLink": "https://github.com/sebastianwessel/quickjs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896873",
+    "commentBody": "",
+    "originSummary": [
+      "Package TypeScript này cho phép thực thi an toàn mã JavaScript trong một sandbox WebAssembly sử dụng engine QuickJS, lý tưởng để chạy mã không đáng tin cậy một cách an toàn.",
+      "Những tính năng chính bao gồm môi trường cách ly, hệ thống tệp ảo, các module node tùy chỉnh, khách hàng HTTP(S) fetch, trình chạy kiểm tra dựa trên chai, và hiệu suất hiệu quả.",
+      "Package này linh hoạt và dễ dàng tích hợp với các dự án TypeScript, cung cấp một API thân thiện với người dùng để thực thi và quản lý mã."
+    ],
+    "commentSummary": [
+      "Package TypeScript này cho phép thực thi an toàn mã JavaScript trong một sandbox WebAssembly sử dụng engine QuickJS, đảm bảo cách ly mã không đáng tin cậy.",
+      "Những tính năng chính bao gồm hệ thống tệp ảo, các module node tùy chỉnh, một client fetch, một trình chạy thử nghiệm, và một API thân thiện với người dùng, hỗ trợ các môi trường như NodeJS, Deno, và Cloudflare Workers.",
+      "Thông báo bảo mật lưu ý rằng việc kích hoạt `fetch` có thể làm lộ cookie của máy chủ cho mã không đáng tin cậy, có thể làm suy giảm tính an toàn của sandbox."
+    ],
+    "points": 104,
+    "commentCount": 32,
+    "retryCount": 0,
+    "time": 1720352245
+  },
+  {
+    "id": 40895935,
+    "title": "Khởi nguồn từ Transistor đến Trình duyệt Web, một phác thảo sơ lược cho khóa học 12 tuần",
+    "originLink": "https://github.com/geohot/fromthetransistor",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895935",
+    "commentBody": "",
+    "originSummary": [
+      "Khóa học bao gồm một hành trình toàn diện từ việc hiểu về transistor đến phát triển một trình duyệt web, cung cấp một phương pháp tiếp cận thực hành để học tích hợp phần cứng và phần mềm.",
+      "Những dự án chính bao gồm xây dựng một CPU ARM7, một trình biên dịch C, một hệ điều hành giống UNIX, và một trình duyệt web dựa trên văn bản, sử dụng các ngôn ngữ như Verilog, Python, Haskell, và C.",
+      "Chương trình giảng dạy nhấn mạnh các kỹ năng thực hành như mô phỏng với Verilator, thiết kế bảng mạch FPGA, và triển khai các thành phần hệ thống thiết yếu như MMU, bộ điều khiển Ethernet, và ngăn xếp TCP."
+    ],
+    "commentSummary": [
+      "Bài học kéo dài 12 tuần có tựa đề 'Từ Transistor đến Trình duyệt Web' của geohot trên GitHub đã tạo ra nhiều cuộc thảo luận do phạm vi đầy tham vọng nhưng lại có rất ít cập nhật kể từ năm 2016.",
+      "Người dùng tranh luận về tính khả thi của nó, đề xuất các công cụ học tập thay thế như \"Turing Complete\" và \"Shenzen I/O,\" và cho rằng nó có thể quá phức tạp đối với người mới bắt đầu, phù hợp hơn cho các lập trình viên có kinh nghiệm.",
+      "Những người phê bình đặt câu hỏi về tính thực tiễn của khóa học và ý định của tác giả, cho rằng nó quá tham vọng và thiếu nội dung so với các bằng cấp Kỹ thuật Điện và Máy tính toàn diện."
+    ],
+    "points": 102,
+    "commentCount": 44,
+    "retryCount": 0,
+    "time": 1720338876
+  },
+  {
+    "id": 40897518,
+    "title": "Mongo nhưng trên Postgres và với lợi ích của tính nhất quán mạnh",
+    "originLink": "https://github.com/event-driven-io/Pongo",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897518",
+    "commentBody": "",
+    "originSummary": [
+      "Pongo Pongo là một công cụ cho phép sử dụng các thao tác giống MongoDB trên PostgreSQL, tận dụng lợi ích của tính nhất quán mạnh.",
+      "Chuyển đổi các cuộc gọi API của MongoDB thành các truy vấn PostgreSQL gốc, sử dụng JSONB để thực hiện các thao tác đọc/ghi hiệu quả và các truy vấn phức tạp.",
+      "Pongo không phải là một ORM (Object-Relational Mapping) truyền thống mà tập trung vào xử lý dữ liệu tài liệu, mang lại sự linh hoạt và hiệu suất, mặc dù nó không hoàn toàn tuân thủ MongoDB."
+    ],
+    "commentSummary": [
+      "Pongo là một dự án mới cung cấp API giống MongoDB trên nền tảng PostgreSQL, tận dụng các cột JSONB để mang lại lợi ích về tính nhất quán mạnh mẽ.",
+      "Đề án nhằm kết hợp sự dễ sử dụng của MongoDB với tính nhất quán và độ tin cậy mạnh mẽ của PostgreSQL, chuyển đổi cú pháp MongoDB thành các truy vấn PostgreSQL gốc.",
+      "Phát triển này đã thu hút sự quan tâm do tiềm năng cung cấp trải nghiệm MongoDB quen thuộc trong khi sử dụng các tính năng tiên tiến của PostgreSQL, thu hút các nhà phát triển tìm kiếm sự nhất quán mạnh mẽ trong các hoạt động cơ sở dữ liệu của họ."
+    ],
+    "points": 98,
+    "commentCount": 48,
+    "retryCount": 0,
+    "time": 1720358532
+  },
+  {
+    "id": 40896110,
+    "title": "Nhà khoa học tái xuất sau một năm trong dự án mô phỏng sao Hỏa",
+    "originLink": "https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896110",
+    "commentBody": "",
+    "originSummary": [
+      "Hai nhà khoa học đã hoàn thành một năm mô phỏng sao Hỏa tại khu vực Mars Dune Alpha ở Houston, một cấu trúc in 3D được thiết kế để tái tạo điều kiện trên sao Hỏa.",
+      "Chương trình này, một phần của Dự án Nghiên cứu Sức khỏe và Hiệu suất Phi hành đoàn của NASA (CHAPEA), nhằm thu thập thông tin cho các sứ mệnh tương lai đến sao Hỏa và thám hiểm không gian dài hạn, bao gồm cả chương trình Artemis.",
+      "Một nhóm đã thực hiện các \"Marswalks\" và đối phó với các yếu tố gây căng thẳng như sự cô lập và sự chậm trễ trong giao tiếp, với các nhiệm vụ CHAPEA bổ sung được lên kế hoạch cho năm 2025 và 2027."
+    ],
+    "commentSummary": [
+      "Những nhà khoa học đã kết thúc một cuộc mô phỏng sao Hỏa kéo dài một năm, tập trung vào khả năng chịu đựng của con người trong các môi trường cô lập và căng thẳng cao.",
+      "Đề án nhấn mạnh rằng các động lực tâm lý và xã hội khó quản lý hơn so với nhu cầu dinh dưỡng.",
+      "Thảo luận bao gồm các cân nhắc kỹ thuật và đạo đức, tỷ lệ tử vong cao tiềm ẩn, và sự cần thiết phải chuẩn bị kỹ lưỡng và thực hiện các sứ mệnh ban đầu nhỏ hơn cho việc định cư trên sao Hỏa."
+    ],
+    "points": 91,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1720341858
+  },
+  {
+    "id": 40896212,
+    "title": "\"AI\", sinh viên, và khủng hoảng tri thức",
+    "originLink": "https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896212",
+    "commentBody": "",
+    "originSummary": [
+      "Trong một bài đăng blog từ ngày 6 tháng 7 năm 2024, có đề cập đến việc một sinh viên sử dụng ChatGPT như một công cụ tìm kiếm, dẫn đến việc sinh viên này tin vào thông tin sai lệch.",
+      "Người viết nhấn mạnh sự khó khăn trong việc chống lại thông tin sai lệch do AI tạo ra, vì mỗi học sinh có thể nhận được những thông tin sai lệch khác nhau, làm phức tạp quá trình sửa chữa.",
+      "Đoạn bài viết phản ánh về vấn đề rộng lớn hơn của tác động của thông tin sai lệch đối với giáo dục và đã bị gỡ bỏ do quấy rối."
+    ],
+    "commentSummary": [
+      "Học sinh ngày nay phụ thuộc đáng kể vào AI và internet để tìm kiếm thông tin, trái ngược với các thế hệ trước đây, những người đã thực hiện nghiên cứu thủ công trong các thư viện.",
+      "Những người làm giáo dục lo ngại rằng sự phụ thuộc này có thể cản trở khả năng đánh giá thông tin một cách phê phán của học sinh, dẫn đến các bài luận thường thiếu chiều sâu.",
+      "Trong khi các công cụ AI hữu ích, chúng cũng có thể tạo ra thông tin sai lệch, gây ra cuộc tranh luận về việc tích hợp các công cụ này vào giáo dục đồng thời phát triển kỹ năng tư duy phản biện."
+    ],
+    "points": 89,
+    "commentCount": 121,
+    "retryCount": 0,
+    "time": 1720343169
+  },
+  {
+    "id": 40894082,
+    "title": "OpenAI bị tấn công, sự cố vi phạm từ năm trước không được báo cáo cho công chúng",
+    "originLink": "https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40894082",
+    "commentBody": "",
+    "originSummary": [
+      "Hacker đã xâm nhập vào hệ thống nhắn tin nội bộ của OpenAI vào đầu năm ngoái, làm lộ thông tin nhạy cảm nhưng không truy cập vào các hệ thống AI quan trọng, gây ra lo ngại về an ninh và an ninh quốc gia.",
+      "OpenAI đã tiết lộ sự cố này nội bộ vào tháng 4 năm 2023, cho biết không có dữ liệu khách hàng nào bị đánh cắp và hacker có khả năng không có liên hệ với chính phủ; tuy nhiên, sự vi phạm này đã dẫn đến lo ngại gia tăng về các đối thủ nước ngoài, đặc biệt là Trung Quốc, đang phát triển công nghệ AI của họ.",
+      "OpenAI đã cải thiện các biện pháp an ninh của mình, thành lập Ủy ban An toàn và An ninh, và sự cố này đã thúc đẩy các cuộc thảo luận về quy định liên bang và tiểu bang để kiểm soát việc phát hành công nghệ AI."
+    ],
+    "commentSummary": [
+      "Một vụ tấn công chưa được báo cáo đã xảy ra tại OpenAI vào năm ngoái, dẫn đến lo ngại của người dùng về tính minh bạch và các biện pháp an ninh.",
+      "Vi phạm liên quan đến việc truy cập vào các hệ thống nhắn tin nội bộ nhưng không làm tổn hại đến các công nghệ AI quan trọng.",
+      "Người dùng đã thảo luận về những khó khăn trong việc báo cáo lỗi và sự thất vọng với các quy trình báo cáo bảo mật tiêu chuẩn của OpenAI."
+    ],
+    "points": 84,
+    "commentCount": 26,
+    "retryCount": 0,
+    "time": 1720308293
+  },
+  {
+    "id": 40893749,
+    "title": "Nguyên nhân gây ra chứng đau nửa đầu là gì? Nghiên cứu về 'sự mất điện của não' cung cấp manh mối",
+    "originLink": "https://www.nature.com/articles/d41586-024-02222-x",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893749",
+    "commentBody": "",
+    "originSummary": [
+      "Bài nghiên cứu trên chuột, được công bố trên tạp chí Science vào ngày 4 tháng 7 năm 2024, tiết lộ những hiểu biết mới về nguyên nhân gây ra chứng đau nửa đầu, liên kết các 'khoảng đen' ngắn trong não với những thay đổi trong dịch não tủy kích hoạt các thụ thể đau trong hộp sọ.",
+      "Những nghiên cứu cho thấy chứng đau nửa đầu có thể đóng vai trò như một cơ chế bảo vệ, báo hiệu nhu cầu nghỉ ngơi và xác định một khoảng trống chưa được biết đến trước đây trong các lớp bảo vệ xung quanh hạch sinh ba.",
+      "Phát hiện này có thể dẫn đến việc phát triển các phương pháp điều trị mới cho chứng đau nửa đầu bằng cách nhắm vào các cơ chế mới được xác định."
+    ],
+    "commentSummary": [
+      "Một nghiên cứu cho thấy rằng sự lan truyền trầm cảm vỏ não (CSD), một hiện tượng \"mất điện não,\" có thể liên quan đến chứng đau nửa đầu.",
+      "Người ta báo cáo các yếu tố kích hoạt và phương pháp điều trị khác nhau, bao gồm thay đổi chế độ ăn uống, các loại thuốc như Rizatriptan, và điều chỉnh lối sống như cải thiện giấc ngủ và duy trì đủ nước.",
+      "Cuộc thảo luận nhấn mạnh sự phức tạp của chứng đau nửa đầu, với các tác nhân kích thích và phương pháp điều trị khác nhau có hiệu quả đối với từng cá nhân."
+    ],
+    "points": 84,
+    "commentCount": 72,
+    "retryCount": 0,
+    "time": 1720303961
+  }
+]

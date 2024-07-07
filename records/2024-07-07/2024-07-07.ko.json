@@ -1,0 +1,332 @@
+[
+  {
+    "id": 40897205,
+    "title": "유튜브 임베드는 매우 무겁지만 해결할 수 있습니다",
+    "originLink": "https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897205",
+    "commentBody": "",
+    "originSummary": [
+      "유튜브 임베드는 리소스를 많이 소모하며, 각 임베드당 약 1.3MB와 32개의 요청이 발생하여 로드 시간이 느리고 데이터 전송량이 많아집니다.",
+      "Paul Irish의 'lite-youtube-embed'와 같은 웹 컴포넌트는 리소스를 공유하고 성능을 크게 향상시키면서 크기를 약 100k로 줄일 수 있습니다.",
+      "이 솔루션을 구현하려면 JavaScript를 연결하고, HTML에서 컴포넌트를 사용하며, 더 나은 성능을 위해 스크립트를 비동기적으로 로드해야 합니다."
+    ],
+    "commentSummary": [
+      "커뮤니티 포럼 플랫폼은 YouTube 임베드를 프록시된 썸네일로 대체하여 클릭할 때만 로드되도록 하여 대용량 JavaScript 파일을 다운로드할 필요를 줄이고 Google 추적을 방지합니다.",
+      "유사한 솔루션이 YouTube, SoundCloud 및 Reddit 임베드에 대해 기능을 향상시키고 불필요한 요소를 최소화하기 위해 구현되었습니다.",
+      "더 가벼운 임베드가 비디오 시작 시간이 느려져서 참여도를 감소시킬 수 있는지에 대한 논쟁이 있지만, 많은 사람들은 전체 페이지 로드 시간을 개선하는 것이 사용자 경험과 사이트 성능에 더 중요하다고 믿고 있습니다."
+    ],
+    "points": 236,
+    "commentCount": 135,
+    "retryCount": 0,
+    "time": 1720355875
+  },
+  {
+    "id": 40896102,
+    "title": "Malloc이 Serenity의 JPGLoader를 망가뜨리다, 또는: 복권에 당첨되는 방법 (2021)",
+    "originLink": "https://sin-ack.github.io/posts/jpg-loader-bork/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896102",
+    "commentBody": "",
+    "originSummary": [
+      "SerenityOS의 JPG 이미지 디코딩에서 RGB와 BGR 혼동으로 인해 잘못된 색상 표시가 발생했습니다.",
+      "문제는 `malloc_good_size()`를 구현한 커밋으로 거슬러 올라갔으며, 이는 메모리 할당을 변경하고 `JPGLoader`에서 사용되는 `HashTable` 및 `Vector`와 같은 데이터 구조에 영향을 미쳤습니다.",
+      "수정 사항은 `JPGLoader`에서 구성 요소에 대한 결정론적 반복을 보장하는 것이었으며, 이는 간단한 변경이 중요한 근본 문제를 드러낼 수 있음을 강조합니다."
+    ],
+    "commentSummary": [
+      "일부 해시 테이블 구현은 요소 순서에 의존하지 않도록 하고 보안을 강화하기 위해 무작위성을 도입하며, 현대 구현은 종종 삽입 순서에 따른 반복을 보장합니다.",
+      "JavaScript와 Python은 해시 테이블 구현에서 삽입 순서를 표준화했으며, Python은 버전 3.7에서 이를 채택했습니다.",
+      "Rust는 다양한 해시 테이블 옵션(`HashMap`, `BTreeMap`, `IndexMap`)을 제공하며, Perl은 버전 5.18 이후 해시 테이블에 랜덤 시드를 도입했습니다."
+    ],
+    "points": 177,
+    "commentCount": 143,
+    "retryCount": 0,
+    "time": 1720341723
+  },
+  {
+    "id": 40895672,
+    "title": "BeaconDB – Mozilla 위치 서비스의 대안",
+    "originLink": "https://beacondb.net/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895672",
+    "commentBody": "",
+    "originSummary": [
+      "beaconDB는 30개국에 걸쳐 177,176개의 네트워크, 4,126개의 비콘, 6,106개의 타워를 포함하는 공공 도메인 무선 위치 데이터베이스로, 윤리적으로 수집된 옵트인 데이터를 포함하고 있습니다.",
+      "데이터베이스는 전송자와 기여자의 정보를 보호하기 위해 정보를 난독화하여 프라이버시 친화적이며, 데이터를 업데이트하려면 물리적 근접성이 필요하여 남용에 저항할 수 있습니다.",
+      "개발자는 Ichnaea의 요청 형식과 호환되는 `https://beacondb.net/v1/geolocate` 엔드포인트를 사용할 수 있지만, 이는 고트래픽 애플리케이션에는 적합하지 않습니다. 소스 코드는 Codeberg에서 이용할 수 있습니다."
+    ],
+    "commentSummary": [
+      "BeaconDB는 윤리적으로 수집된 옵트인 데이터 수집에 중점을 두고 Mozilla Location Services(MLS)의 대안으로 제시됩니다.",
+      "애플과 구글과 달리, BeaconDB는 평문 MAC 주소를 공개하지 않고, 해시된 데이터나 집계된 데이터를 사용하여 프라이버시를 강화합니다.",
+      "BeaconDB는 위치 서비스용으로 빅 테크가 아닌 유일한 데이터베이스로, 오픈 소스 솔루션을 제공하고 잠재적인 협업을 논의하는 것을 목표로 합니다."
+    ],
+    "points": 170,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1720333550
+  },
+  {
+    "id": 40897506,
+    "title": "시스템 프로그래밍 모임의 재활성화",
+    "originLink": "https://notes.eatonphil.com/2024-07-07-systems-meetups.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897506",
+    "commentBody": "",
+    "originSummary": [
+      "2024년에는 뮌헨, 베를린, 샌프란시스코, 뉴욕, 벵갈루루와 같은 도시에서 고품질 시스템 프로그래밍 밋업이 다시 활기를 띠고 있습니다.",
+      "2023년 12월에 시작된 NYC 시스템 커피 클럽은 엔지니어링 과제에 중점을 두고 있으며, 빠르게 성장하여 전 세계적으로 유사한 모임에 영감을 주고 있습니다.",
+      "모임을 조직하기 위한 주요 조언으로는 호스트 장소 확보, 기술 콘텐츠에 집중, 업계 인맥을 통한 연사 찾기, 다른 조직자들과의 협력이 포함됩니다."
+    ],
+    "commentSummary": [
+      "시스템 프로그래밍 모임이 부활하고 있으며, 이는 저수준 프로그래밍과 시스템 아키텍처에 대한 커뮤니티의 새로운 관심을 반영하고 있습니다.",
+      "이러한 모임을 조직하는 데는 안정적인 장소를 찾는 것과 같은 어려움이 따르며, 이는 종종 일관된 장소를 확보하기 위해 강력한 내부 지원이나 시의 지원이 필요합니다.",
+      "모임 콘텐츠의 품질과 초점은 매우 중요하며, 일부 그룹은 진정한 기술 토론과 연사들의 자기 홍보 프레젠테이션 사이에서 균형을 맞추는 데 어려움을 겪고 있습니다."
+    ],
+    "points": 164,
+    "commentCount": 65,
+    "retryCount": 0,
+    "time": 1720358437
+  },
+  {
+    "id": 40892812,
+    "title": "오디오 처리 학습을 위한 좋은 자료는 어디에 있나요?",
+    "originLink": "https://news.ycombinator.com/item?id=40892812",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40892812",
+    "commentBody": "",
+    "originSummary": [
+      "사용자는 MIT의 벤 블룸버그가 제이콥 콜리어를 위해 만든 것과 유사한 하모나이저를 프로그래밍하기 위한 자료를 찾고 있습니다.",
+      "그들은 자연스러운 음질을 유지하는 피치 시프팅 및 포맷 시프팅에 대한 접근 가능한 정보가 필요합니다.",
+      "사용자는 광범위한 프로그래밍 경험을 가지고 있지만 오디오 처리에 대한 지식이 부족하여 초보자에게 친숙하면서도 포괄적인 자료가 필요함을 나타냅니다."
+    ],
+    "commentSummary": [
+      "한 사용자가 MIT의 Ben Bloomberg가 만든 Jacob Collier의 하모나이저와 유사한 프로그램을 작성하기 위한 자료를 찾고 있으며, 피치 및 포맷 변환에 중점을 두고 있습니다.",
+      "추천 자료에는 스탠포드 CCRMA의 오픈 코스 자료, Zplane의 Elastique와 같은 산업 표준 라이브러리, 그리고 Udo Zölzer의 'DAFX - Digital Audio Effects'와 같은 책이 포함됩니다.",
+      "추가 제안 사항으로는 네트워킹 및 추가 학습을 위한 튜토리얼, 유튜브 채널, 그리고 Officehours.global과 같은 커뮤니티 포럼이 있습니다."
+    ],
+    "points": 144,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1720295988
+  },
+  {
+    "id": 40893866,
+    "title": "무료 미니멀리스트 일일 습관 추적기",
+    "originLink": "https://rdht.vercel.app/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893866",
+    "commentBody": "",
+    "originSummary": [
+      "기존 옵션에 불만을 가진 개인이 새로운 습관 추적 앱을 개발했으며, 이 앱은 연속 추적, 오프라인 사용 가능성, 연속 중단, 시각적 일관성 지도 및 일시 정지 기능을 특징으로 합니다.",
+      "이 앱은 프론트엔드에 React를 사용하고, 저장 및 동기화를 위해 Dexie 클라우드를 사용하며, Vercel에 호스팅됩니다.",
+      "개발자는 개인 프로젝트를 커뮤니티 자원으로 전환하여 대중이 사용할 수 있도록 앱을 공개했습니다."
+    ],
+    "commentSummary": [
+      "기존 앱의 부족한 점을 보완하기 위해 새로운 무료 미니멀리스트 일일 습관 추적기가 만들어졌습니다. 이 앱은 연속 기록 추적, 오프라인 사용, 연속 기록 동결, 시각적 일관성 지도, 일시 정지 기능을 제공합니다.",
+      "React와 Dexie 클라우드로 구축되고 Vercel에 호스팅된 이 앱은 특히 iPhone 사용자들로부터 개선을 위한 피드백을 받았으며, 나쁜 습관에 대한 제안, 디자인 수정 및 버그 수정이 포함되었습니다.",
+      "사용자들은 깔끔한 디자인과 오프라인 기능을 높이 평가하며, 축소된 보기와 더 나은 모바일 호환성에 대한 제안을 하고 있습니다; 아직 수익화 계획은 없습니다."
+    ],
+    "points": 117,
+    "commentCount": 51,
+    "retryCount": 0,
+    "time": 1720305433
+  },
+  {
+    "id": 40895441,
+    "title": "왜 이탈리아는 고수를 사랑하지 않게 되었는가",
+    "originLink": "https://www.atlasobscura.com/articles/what-are-italian-herbs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895441",
+    "commentBody": "",
+    "originSummary": [
+      "고수는 한때 고대 로마 요리의 주식이었으나, 특히 그 잎은 현대 이탈리아 요리에서 거의 사라졌습니다.",
+      "쇠퇴는 로마 이후에 시작되었으며, 게르만 부족들과 계피와 카다멈 같은 이국적인 향신료에 대한 선호에 의해 영향을 받았습니다.",
+      "역사적인 존재에도 불구하고, 고수는 이제 이탈리아에서 바질과 같은 다른 허브와 달리 외국 재료로 여겨집니다."
+    ],
+    "commentSummary": [
+      "이탈리아의 고수에 대한 반감은 1544년으로 거슬러 올라가는데, 당시 식물학자 피에트로 안드레아 마티올리는 고수 잎이 침대 벌레 냄새가 난다고 묘사했습니다.",
+      "이 혐오는 특정 유전자 때문에 일부 사람들이 고수를 비누 맛으로 인식하기 때문에 유전적으로 영향을 받을 수 있습니다.",
+      "이탈리아에서 고수의 인기가 감소한 것은 또한 변화하는 요리 트렌드와 이주 패턴과도 관련이 있으며, 이는 음식 취향을 형성하는 데 있어 유전학, 문화, 개인적 선호도 간의 복잡한 상호작용을 보여줍니다."
+    ],
+    "points": 108,
+    "commentCount": 116,
+    "retryCount": 0,
+    "time": 1720329769
+  },
+  {
+    "id": 40895167,
+    "title": "밴드 외 네트워크 관리가 간단하지 않다",
+    "originLink": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895167",
+    "commentBody": "",
+    "originSummary": [
+      "2022년 로저스 인터넷 및 전화 장애는 1,200만 명 이상의 캐나다인에게 영향을 미쳤으며, '밴드 외' (OOB) 네트워크 관리의 중요성과 복잡성을 부각시켰습니다.",
+      "OOB 관리는 메인 네트워크와 분리된 전용 하드웨어와 인프라를 필요로 하며, 이는 중복성과 보안을 보장하지만 상당한 비용과 복잡성을 추가합니다.",
+      "규모가 작은 네트워크는 별도의 OOB 네트워크를 유지하는 것보다 강력하고 중복된 인밴드 관리에 집중하는 것이 더 실용적일 수 있습니다."
+    ],
+    "commentSummary": [
+      "\"대역 외\" (OOB) 네트워크 관리는 특히 잘못된 구성 및 실패에 취약한 현대 디지털 시스템에서 네트워크 신뢰성을 유지하는 데 필수적입니다.",
+      "로저스의 장애는 강력한 OOB 관리의 필요성을 강조하며, 핵심 네트워크 장애를 방지하기 위한 더 나은 계획과 위험 평가의 중요성을 부각시켰습니다.",
+      "효과적인 OOB 관리는 신뢰성을 보장하기 위해 종종 다른 제공자나 LTE 또는 위성 같은 기술을 활용하여 전용의 중복 시스템을 사용하는 것을 포함합니다."
+    ],
+    "points": 105,
+    "commentCount": 70,
+    "retryCount": 0,
+    "time": 1720324841
+  },
+  {
+    "id": 40896873,
+    "title": "WebAssembly QuickJS 샌드박스에서 JavaScript 실행",
+    "originLink": "https://github.com/sebastianwessel/quickjs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896873",
+    "commentBody": "",
+    "originSummary": [
+      "이 TypeScript 패키지는 QuickJS 엔진을 사용하여 WebAssembly 샌드박스 내에서 JavaScript 코드를 안전하게 실행할 수 있게 해주며, 신뢰할 수 없는 코드를 안전하게 실행하는 데 이상적입니다.",
+      "주요 기능으로는 격리된 환경, 가상 파일 시스템, 사용자 정의 노드 모듈, HTTP(S) 페치 클라이언트, 차이 기반 테스트 러너, 그리고 효율적인 성능이 포함됩니다.",
+      "이 패키지는 다재다능하며 TypeScript 프로젝트에 쉽게 통합할 수 있으며, 코드 실행 및 관리를 위한 사용자 친화적인 API를 제공합니다."
+    ],
+    "commentSummary": [
+      "이 TypeScript 패키지는 QuickJS 엔진을 사용하여 WebAssembly 샌드박스 내에서 JavaScript 코드를 안전하게 실행할 수 있게 하며, 신뢰할 수 없는 코드의 격리를 보장합니다.",
+      "주요 기능으로는 가상 파일 시스템, 사용자 정의 노드 모듈, fetch 클라이언트, 테스트 실행기, 그리고 사용자 친화적인 API가 있으며, NodeJS, Deno, Cloudflare Workers와 같은 환경을 지원합니다.",
+      "보안 경고는 `fetch`를 활성화하면 호스트의 쿠키가 신뢰할 수 없는 코드에 노출되어 샌드박스의 안전이 손상될 수 있음을 지적합니다."
+    ],
+    "points": 104,
+    "commentCount": 32,
+    "retryCount": 0,
+    "time": 1720352245
+  },
+  {
+    "id": 40895935,
+    "title": "트랜지스터에서 웹 브라우저까지, 12주 과정의 대략적인 개요",
+    "originLink": "https://github.com/geohot/fromthetransistor",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40895935",
+    "commentBody": "",
+    "originSummary": [
+      "이 과정은 트랜지스터 이해부터 웹 브라우저 개발까지 포괄적인 여정을 다루며, 하드웨어와 소프트웨어 통합을 배우는 실습 접근 방식을 제공합니다.",
+      "주요 프로젝트에는 Verilog, Python, Haskell, C와 같은 언어를 사용하여 ARM7 CPU, C 컴파일러, UNIX 유사 운영 체제, 텍스트 기반 웹 브라우저를 구축하는 것이 포함됩니다.",
+      "커리큘럼은 Verilator를 사용한 에뮬레이션, FPGA 보드 설계, MMU, 이더넷 컨트롤러 및 TCP 스택과 같은 필수 시스템 구성 요소 구현과 같은 실용적인 기술을 강조합니다."
+    ],
+    "commentSummary": [
+      "GitHub에서 geohot가 제공하는 '트랜지스터에서 웹 브라우저까지'라는 제목의 12주 과정은 그 야심찬 범위로 인해 논의를 불러일으켰지만, 2016년 이후로는 업데이트가 거의 없었습니다.",
+      "사용자들은 그것의 실행 가능성에 대해 토론하며 'Turing Complete'와 'Shenzen I/O'와 같은 대체 학습 도구를 제안하고, 초보자에게는 너무 복잡할 수 있으며 경험이 많은 프로그래머에게 더 적합하다고 주장합니다.",
+      "비평가들은 이 과정의 실용성과 저자의 의도를 의심하며, 이를 포괄적인 전기 및 컴퓨터 공학 학위와 비교했을 때 지나치게 야심차고 실질적인 내용이 부족하다고 보고 있다."
+    ],
+    "points": 102,
+    "commentCount": 44,
+    "retryCount": 0,
+    "time": 1720338876
+  },
+  {
+    "id": 40897518,
+    "title": "Postgres에서 실행되는 Mongo이지만 강력한 일관성 혜택을 제공",
+    "originLink": "https://github.com/event-driven-io/Pongo",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40897518",
+    "commentBody": "",
+    "originSummary": [
+      "폰고 폰고는 강력한 일관성의 이점을 활용하여 PostgreSQL에서 MongoDB와 유사한 작업을 수행할 수 있게 해주는 도구입니다.",
+      "MongoDB API 호출을 네이티브 PostgreSQL 쿼리로 변환하며, JSONB를 활용하여 효율적인 읽기/쓰기 작업과 복잡한 쿼리를 수행합니다.",
+      "Pongo는 전통적인 ORM(객체-관계 매핑)이 아니지만 문서 데이터 처리를 중점으로 하여 유연성과 성능을 제공하며, 완전히 MongoDB와 호환되지는 않습니다."
+    ],
+    "commentSummary": [
+      "Pongo는 강력한 일관성 혜택을 위해 JSONB 열을 활용하여 PostgreSQL 위에 MongoDB와 유사한 API를 제공하는 새로운 프로젝트입니다.",
+      "이 프로젝트는 MongoDB의 사용 편의성과 PostgreSQL의 견고한 일관성 및 신뢰성을 결합하여 MongoDB 구문을 네이티브 PostgreSQL 쿼리로 변환하는 것을 목표로 합니다.",
+      "이 개발은 PostgreSQL의 고급 기능을 활용하면서도 친숙한 MongoDB 경험을 제공할 가능성 때문에 관심을 불러일으켰으며, 데이터베이스 운영에서 강력한 일관성을 찾는 개발자들에게 매력적입니다."
+    ],
+    "points": 98,
+    "commentCount": 48,
+    "retryCount": 0,
+    "time": 1720358532
+  },
+  {
+    "id": 40896110,
+    "title": "과학자들이 화성 시뮬레이션 프로젝트에서 1년 만에 다시 등장하다",
+    "originLink": "https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896110",
+    "commentBody": "",
+    "originSummary": [
+      "네 명의 과학자들이 화성의 조건을 재현하기 위해 설계된 3D 프린팅 구조물인 휴스턴의 Mars Dune Alpha 서식지에서 1년간의 화성 시뮬레이션을 완료했습니다.",
+      "이 임무는 NASA의 승무원 건강 및 성능 탐사 아날로그(CHAPEA)의 일환으로, 미래의 화성 임무와 장기 우주 탐사, 아르테미스 프로그램을 포함한 통찰력을 수집하는 것을 목표로 합니다.",
+      "팀은 '화성 산책'을 수행하고 고립과 통신 지연과 같은 스트레스 요인에 대처했으며, 2025년과 2027년에 추가 CHAPEA 임무가 계획되어 있습니다."
+    ],
+    "commentSummary": [
+      "과학자들은 고립되고 고강도의 환경에서 인간의 인내력을 집중적으로 연구한 1년간의 화성 시뮬레이션을 마무리했습니다.",
+      "이 프로젝트는 심리적 및 사회적 역학이 영양적 필요보다 관리하기 더 어렵다는 점을 강조합니다.",
+      "논의에는 기술적 및 윤리적 고려 사항, 잠재적인 높은 사망률, 그리고 화성 식민지화를 위한 광범위한 준비와 소규모 초기 임무의 필요성이 포함됩니다."
+    ],
+    "points": 91,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1720341858
+  },
+  {
+    "id": 40896212,
+    "title": "\"AI\", 학생들, 그리고 인식론적 위기",
+    "originLink": "https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40896212",
+    "commentBody": "",
+    "originSummary": [
+      "2024년 7월 6일의 블로그 게시물은 한 학생이 검색 엔진으로 ChatGPT를 사용한 결과, 잘못된 정보를 믿게 된 사례를 다루고 있습니다.",
+      "저자는 각 학생이 고유한 잘못된 사실을 받을 수 있어 수정 과정이 복잡해지기 때문에 AI가 생성한 허위 정보를 퇴치하는 것이 어렵다는 점을 강조합니다.",
+      "그 게시물은 잘못된 정보가 교육에 미치는 광범위한 문제를 반영하며 괴롭힘으로 인해 삭제되었습니다."
+    ],
+    "commentSummary": [
+      "오늘날 학생들은 정보 수집을 위해 AI와 인터넷에 크게 의존하는 반면, 이전 세대는 도서관에서 수작업으로 연구를 수행했습니다.",
+      "교육자들은 이러한 의존이 학생들의 정보를 비판적으로 평가하는 능력을 저해하여 종종 깊이가 부족한 에세이를 작성하게 될까 봐 우려하고 있습니다.",
+      "AI 도구는 유용하지만, 잘못된 정보를 생성할 수도 있어 이러한 도구를 교육에 통합하면서 비판적 사고 능력을 기르는 것에 대한 논쟁을 불러일으킬 수 있습니다."
+    ],
+    "points": 89,
+    "commentCount": 121,
+    "retryCount": 0,
+    "time": 1720343169
+  },
+  {
+    "id": 40894082,
+    "title": "OpenAI는 해킹당했으며, 1년 된 침해 사건이 대중에게 보고되지 않았다",
+    "originLink": "https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40894082",
+    "commentBody": "",
+    "originSummary": [
+      "해커들이 작년 초에 OpenAI의 내부 메시징 시스템을 침해하여 민감한 정보를 노출시켰으나 주요 AI 시스템에는 접근하지 못해 보안 및 국가 안보 우려를 불러일으켰습니다.",
+      "OpenAI는 2023년 4월에 내부적으로 사건을 공개하며 고객 데이터가 도난당하지 않았고 해커가 정부와 연관이 없을 가능성이 높다고 밝혔습니다. 그러나 이 침해 사건은 특히 중국과 같은 외국 적대 세력이 AI 기술을 발전시키는 것에 대한 우려를 증폭시켰습니다.",
+      "OpenAI는 그 이후로 보안 조치를 개선하고 안전 및 보안 위원회를 설립했으며, 이 사건은 AI 기술 출시를 통제하기 위한 연방 및 주 규제에 대한 논의를 촉발했습니다."
+    ],
+    "commentSummary": [
+      "오픈AI는 작년에 보고되지 않은 해킹을 경험하여 투명성과 보안 관행에 대한 사용자들의 우려를 불러일으켰습니다.",
+      "이번 침해는 내부 메시징 시스템에 대한 접근을 포함했지만 주요 AI 기술은 손상되지 않았습니다.",
+      "사용자들은 버그 보고의 어려움과 OpenAI의 표준 보안 보고 관행에 대한 불만을 논의했습니다."
+    ],
+    "points": 84,
+    "commentCount": 26,
+    "retryCount": 0,
+    "time": 1720308293
+  },
+  {
+    "id": 40893749,
+    "title": "편두통의 원인은 무엇인가? '뇌의 정전'에 대한 연구가 단서를 제공하다",
+    "originLink": "https://www.nature.com/articles/d41586-024-02222-x",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40893749",
+    "commentBody": "",
+    "originSummary": [
+      "2024년 7월 4일 사이언스에 발표된 쥐를 대상으로 한 연구는 뇌척수액의 변화가 두개골의 통증 수용체를 활성화시키는 짧은 뇌 '블랙아웃'과 편두통 원인 사이의 새로운 연관성을 밝혀냈습니다.",
+      "연구에 따르면 편두통은 휴식이 필요하다는 신호를 보내는 보호 메커니즘으로 작용할 수 있으며, 삼차신경절 주변의 보호층에 이전에 알려지지 않은 틈이 있음을 확인했습니다.",
+      "이 발견은 새로 확인된 메커니즘을 표적으로 하여 편두통에 대한 새로운 치료법 개발로 이어질 수 있습니다."
+    ],
+    "commentSummary": [
+      "한 연구에 따르면, '뇌의 정전'으로 알려진 피질 확산 우울증(CSD)이 편두통과 관련이 있을 수 있다고 합니다.",
+      "사람들은 식이 변화, 리자트립탄과 같은 약물, 그리고 수면 개선과 수분 섭취와 같은 생활 습관 조정을 포함한 다양한 유발 요인과 치료법을 보고했습니다.",
+      "이 논의는 편두통의 복잡성을 강조하며, 각기 다른 유발 요인과 치료법이 개인마다 다르게 효과적일 수 있음을 보여줍니다."
+    ],
+    "points": 84,
+    "commentCount": 72,
+    "retryCount": 0,
+    "time": 1720303961
+  }
+]

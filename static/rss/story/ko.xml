@@ -15,11 +15,219 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 06 Jul 2024 19:10:41 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 07 Jul 2024 19:09:26 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/story/ko.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 06 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
         <language><![CDATA[ko]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[유튜브 임베드는 매우 무겁지만 해결할 수 있습니다]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>유튜브 임베드는 리소스를 많이 소모하며, 각 임베드당 약 1.3MB와 32개의 요청이 발생하여 로드 시간이 느리고 데이터 전송량이 많아집니다.</li>
+<li>Paul Irish의 &#39;lite-youtube-embed&#39;와 같은 웹 컴포넌트는 리소스를 공유하고 성능을 크게 향상시키면서 크기를 약 100k로 줄일 수 있습니다.</li>
+<li>이 솔루션을 구현하려면 JavaScript를 연결하고, HTML에서 컴포넌트를 사용하며, 더 나은 성능을 위해 스크립트를 비동기적으로 로드해야 합니다.</li>
+</ul>
+]]></description>
+            <link>https://frontendmasters.com/blog/youtube-embeds-are-bananas-heavy-and-its-fixable/</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z유튜브 임베드는 매우 무겁지만 해결할 수 있습니다</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Malloc이 Serenity의 JPGLoader를 망가뜨리다, 또는: 복권에 당첨되는 방법 (2021)]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>SerenityOS의 JPG 이미지 디코딩에서 RGB와 BGR 혼동으로 인해 잘못된 색상 표시가 발생했습니다.</li>
+<li>문제는 <code>malloc_good_size()</code>를 구현한 커밋으로 거슬러 올라갔으며, 이는 메모리 할당을 변경하고 <code>JPGLoader</code>에서 사용되는 <code>HashTable</code> 및 <code>Vector</code>와 같은 데이터 구조에 영향을 미쳤습니다.</li>
+<li>수정 사항은 <code>JPGLoader</code>에서 구성 요소에 대한 결정론적 반복을 보장하는 것이었으며, 이는 간단한 변경이 중요한 근본 문제를 드러낼 수 있음을 강조합니다.</li>
+</ul>
+]]></description>
+            <link>https://sin-ack.github.io/posts/jpg-loader-bork/</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-07T00:00:00.000ZMalloc이 Serenity의 JPGLoader를 망가뜨리다, 또는: 복권에 당첨되는 방법 (2021)</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[BeaconDB – Mozilla 위치 서비스의 대안]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>beaconDB는 30개국에 걸쳐 177,176개의 네트워크, 4,126개의 비콘, 6,106개의 타워를 포함하는 공공 도메인 무선 위치 데이터베이스로, 윤리적으로 수집된 옵트인 데이터를 포함하고 있습니다.</li>
+<li>데이터베이스는 전송자와 기여자의 정보를 보호하기 위해 정보를 난독화하여 프라이버시 친화적이며, 데이터를 업데이트하려면 물리적 근접성이 필요하여 남용에 저항할 수 있습니다.</li>
+<li>개발자는 Ichnaea의 요청 형식과 호환되는 <code>https://beacondb.net/v1/geolocate</code> 엔드포인트를 사용할 수 있지만, 이는 고트래픽 애플리케이션에는 적합하지 않습니다. 소스 코드는 Codeberg에서 이용할 수 있습니다.</li>
+</ul>
+]]></description>
+            <link>https://beacondb.net/</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000ZBeaconDB – Mozilla 위치 서비스의 대안</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[시스템 프로그래밍 모임의 재활성화]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>2024년에는 뮌헨, 베를린, 샌프란시스코, 뉴욕, 벵갈루루와 같은 도시에서 고품질 시스템 프로그래밍 밋업이 다시 활기를 띠고 있습니다.</li>
+<li>2023년 12월에 시작된 NYC 시스템 커피 클럽은 엔지니어링 과제에 중점을 두고 있으며, 빠르게 성장하여 전 세계적으로 유사한 모임에 영감을 주고 있습니다.</li>
+<li>모임을 조직하기 위한 주요 조언으로는 호스트 장소 확보, 기술 콘텐츠에 집중, 업계 인맥을 통한 연사 찾기, 다른 조직자들과의 협력이 포함됩니다.</li>
+</ul>
+]]></description>
+            <link>https://notes.eatonphil.com/2024-07-07-systems-meetups.html</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z시스템 프로그래밍 모임의 재활성화</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[오디오 처리 학습을 위한 좋은 자료는 어디에 있나요?]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>사용자는 MIT의 벤 블룸버그가 제이콥 콜리어를 위해 만든 것과 유사한 하모나이저를 프로그래밍하기 위한 자료를 찾고 있습니다.</li>
+<li>그들은 자연스러운 음질을 유지하는 피치 시프팅 및 포맷 시프팅에 대한 접근 가능한 정보가 필요합니다.</li>
+<li>사용자는 광범위한 프로그래밍 경험을 가지고 있지만 오디오 처리에 대한 지식이 부족하여 초보자에게 친숙하면서도 포괄적인 자료가 필요함을 나타냅니다.</li>
+</ul>
+]]></description>
+            <link>https://news.ycombinator.com/item?id=40892812</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z오디오 처리 학습을 위한 좋은 자료는 어디에 있나요?</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[무료 미니멀리스트 일일 습관 추적기]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>기존 옵션에 불만을 가진 개인이 새로운 습관 추적 앱을 개발했으며, 이 앱은 연속 추적, 오프라인 사용 가능성, 연속 중단, 시각적 일관성 지도 및 일시 정지 기능을 특징으로 합니다.</li>
+<li>이 앱은 프론트엔드에 React를 사용하고, 저장 및 동기화를 위해 Dexie 클라우드를 사용하며, Vercel에 호스팅됩니다.</li>
+<li>개발자는 개인 프로젝트를 커뮤니티 자원으로 전환하여 대중이 사용할 수 있도록 앱을 공개했습니다.</li>
+</ul>
+]]></description>
+            <link>https://rdht.vercel.app/</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z무료 미니멀리스트 일일 습관 추적기</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[왜 이탈리아는 고수를 사랑하지 않게 되었는가]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>고수는 한때 고대 로마 요리의 주식이었으나, 특히 그 잎은 현대 이탈리아 요리에서 거의 사라졌습니다.</li>
+<li>쇠퇴는 로마 이후에 시작되었으며, 게르만 부족들과 계피와 카다멈 같은 이국적인 향신료에 대한 선호에 의해 영향을 받았습니다.</li>
+<li>역사적인 존재에도 불구하고, 고수는 이제 이탈리아에서 바질과 같은 다른 허브와 달리 외국 재료로 여겨집니다.</li>
+</ul>
+]]></description>
+            <link>https://www.atlasobscura.com/articles/what-are-italian-herbs</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z왜 이탈리아는 고수를 사랑하지 않게 되었는가</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[밴드 외 네트워크 관리가 간단하지 않다]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>2022년 로저스 인터넷 및 전화 장애는 1,200만 명 이상의 캐나다인에게 영향을 미쳤으며, &#39;밴드 외&#39; (OOB) 네트워크 관리의 중요성과 복잡성을 부각시켰습니다.</li>
+<li>OOB 관리는 메인 네트워크와 분리된 전용 하드웨어와 인프라를 필요로 하며, 이는 중복성과 보안을 보장하지만 상당한 비용과 복잡성을 추가합니다.</li>
+<li>규모가 작은 네트워크는 별도의 OOB 네트워크를 유지하는 것보다 강력하고 중복된 인밴드 관리에 집중하는 것이 더 실용적일 수 있습니다.</li>
+</ul>
+]]></description>
+            <link>https://utcc.utoronto.ca/~cks/space/blog/sysadmin/OutOfBandManagementNotTrivial</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z밴드 외 네트워크 관리가 간단하지 않다</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[WebAssembly QuickJS 샌드박스에서 JavaScript 실행]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>이 TypeScript 패키지는 QuickJS 엔진을 사용하여 WebAssembly 샌드박스 내에서 JavaScript 코드를 안전하게 실행할 수 있게 해주며, 신뢰할 수 없는 코드를 안전하게 실행하는 데 이상적입니다.</li>
+<li>주요 기능으로는 격리된 환경, 가상 파일 시스템, 사용자 정의 노드 모듈, HTTP(S) 페치 클라이언트, 차이 기반 테스트 러너, 그리고 효율적인 성능이 포함됩니다.</li>
+<li>이 패키지는 다재다능하며 TypeScript 프로젝트에 쉽게 통합할 수 있으며, 코드 실행 및 관리를 위한 사용자 친화적인 API를 제공합니다.</li>
+</ul>
+]]></description>
+            <link>https://github.com/sebastianwessel/quickjs</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000ZWebAssembly QuickJS 샌드박스에서 JavaScript 실행</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[트랜지스터에서 웹 브라우저까지, 12주 과정의 대략적인 개요]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>이 과정은 트랜지스터 이해부터 웹 브라우저 개발까지 포괄적인 여정을 다루며, 하드웨어와 소프트웨어 통합을 배우는 실습 접근 방식을 제공합니다.</li>
+<li>주요 프로젝트에는 Verilog, Python, Haskell, C와 같은 언어를 사용하여 ARM7 CPU, C 컴파일러, UNIX 유사 운영 체제, 텍스트 기반 웹 브라우저를 구축하는 것이 포함됩니다.</li>
+<li>커리큘럼은 Verilator를 사용한 에뮬레이션, FPGA 보드 설계, MMU, 이더넷 컨트롤러 및 TCP 스택과 같은 필수 시스템 구성 요소 구현과 같은 실용적인 기술을 강조합니다.</li>
+</ul>
+]]></description>
+            <link>https://github.com/geohot/fromthetransistor</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-07T00:00:00.000Z트랜지스터에서 웹 브라우저까지, 12주 과정의 대략적인 개요</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Postgres에서 실행되는 Mongo이지만 강력한 일관성 혜택을 제공]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>폰고 폰고는 강력한 일관성의 이점을 활용하여 PostgreSQL에서 MongoDB와 유사한 작업을 수행할 수 있게 해주는 도구입니다.</li>
+<li>MongoDB API 호출을 네이티브 PostgreSQL 쿼리로 변환하며, JSONB를 활용하여 효율적인 읽기/쓰기 작업과 복잡한 쿼리를 수행합니다.</li>
+<li>Pongo는 전통적인 ORM(객체-관계 매핑)이 아니지만 문서 데이터 처리를 중점으로 하여 유연성과 성능을 제공하며, 완전히 MongoDB와 호환되지는 않습니다.</li>
+</ul>
+]]></description>
+            <link>https://github.com/event-driven-io/Pongo</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-07T00:00:00.000ZPostgres에서 실행되는 Mongo이지만 강력한 일관성 혜택을 제공</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[과학자들이 화성 시뮬레이션 프로젝트에서 1년 만에 다시 등장하다]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>네 명의 과학자들이 화성의 조건을 재현하기 위해 설계된 3D 프린팅 구조물인 휴스턴의 Mars Dune Alpha 서식지에서 1년간의 화성 시뮬레이션을 완료했습니다.</li>
+<li>이 임무는 NASA의 승무원 건강 및 성능 탐사 아날로그(CHAPEA)의 일환으로, 미래의 화성 임무와 장기 우주 탐사, 아르테미스 프로그램을 포함한 통찰력을 수집하는 것을 목표로 합니다.</li>
+<li>팀은 &#39;화성 산책&#39;을 수행하고 고립과 통신 지연과 같은 스트레스 요인에 대처했으며, 2025년과 2027년에 추가 CHAPEA 임무가 계획되어 있습니다.</li>
+</ul>
+]]></description>
+            <link>https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-07T00:00:00.000Z과학자들이 화성 시뮬레이션 프로젝트에서 1년 만에 다시 등장하다</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA["AI", 학생들, 그리고 인식론적 위기]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>2024년 7월 6일의 블로그 게시물은 한 학생이 검색 엔진으로 ChatGPT를 사용한 결과, 잘못된 정보를 믿게 된 사례를 다루고 있습니다.</li>
+<li>저자는 각 학생이 고유한 잘못된 사실을 받을 수 있어 수정 과정이 복잡해지기 때문에 AI가 생성한 허위 정보를 퇴치하는 것이 어렵다는 점을 강조합니다.</li>
+<li>그 게시물은 잘못된 정보가 교육에 미치는 광범위한 문제를 반영하며 괴롭힘으로 인해 삭제되었습니다.</li>
+</ul>
+]]></description>
+            <link>https://miniver.blogspot.com/2024/07/ai-students-and-epistemic-crisis.html</link>
+            <guid isPermaLink="false">2024-07-07T00:00:00.000Z&quot;AI&quot;, 학생들, 그리고 인식론적 위기</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[OpenAI는 해킹당했으며, 1년 된 침해 사건이 대중에게 보고되지 않았다]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>해커들이 작년 초에 OpenAI의 내부 메시징 시스템을 침해하여 민감한 정보를 노출시켰으나 주요 AI 시스템에는 접근하지 못해 보안 및 국가 안보 우려를 불러일으켰습니다.</li>
+<li>OpenAI는 2023년 4월에 내부적으로 사건을 공개하며 고객 데이터가 도난당하지 않았고 해커가 정부와 연관이 없을 가능성이 높다고 밝혔습니다. 그러나 이 침해 사건은 특히 중국과 같은 외국 적대 세력이 AI 기술을 발전시키는 것에 대한 우려를 증폭시켰습니다.</li>
+<li>OpenAI는 그 이후로 보안 조치를 개선하고 안전 및 보안 위원회를 설립했으며, 이 사건은 AI 기술 출시를 통제하기 위한 연방 및 주 규제에 대한 논의를 촉발했습니다.</li>
+</ul>
+]]></description>
+            <link
+      >https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-was-hacked-revealing-internal-secrets-and-raising-national-security-concerns-year-old-breach-wasnt-reported-to-the-public</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-07T00:00:00.000ZOpenAI는 해킹당했으며, 1년 된 침해 사건이 대중에게 보고되지 않았다</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[편두통의 원인은 무엇인가? '뇌의 정전'에 대한 연구가 단서를 제공하다]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>2024년 7월 4일 사이언스에 발표된 쥐를 대상으로 한 연구는 뇌척수액의 변화가 두개골의 통증 수용체를 활성화시키는 짧은 뇌 &#39;블랙아웃&#39;과 편두통 원인 사이의 새로운 연관성을 밝혀냈습니다.</li>
+<li>연구에 따르면 편두통은 휴식이 필요하다는 신호를 보내는 보호 메커니즘으로 작용할 수 있으며, 삼차신경절 주변의 보호층에 이전에 알려지지 않은 틈이 있음을 확인했습니다.</li>
+<li>이 발견은 새로 확인된 메커니즘을 표적으로 하여 편두통에 대한 새로운 치료법 개발로 이어질 수 있습니다.</li>
+</ul>
+]]></description>
+            <link>https://www.nature.com/articles/d41586-024-02222-x</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-07T00:00:00.000Z편두통의 원인은 무엇인가? &apos;뇌의 정전&apos;에 대한 연구가 단서를 제공하다</guid>
+            <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[도덕경, 어슐러 K. 르 귄 번역 (1997)]]></title>
             <description
@@ -1807,211 +2015,6 @@
         isPermaLink="false"
       >2024-06-28T00:00:00.000Z라이소토프 프로젝트: 살아있는 코뿔소에 방사성 동위원소 삽입</guid>
             <pubDate>Fri, 28 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[한국 통신 회사, 토렌트 사용자들에게 악성 소프트웨어로 공격]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>KT Corporation, 주요 한국 통신 회사가 2020년 5월부터 Webhard의 BitTorrent 기반 그리드 서비스를 방해하기 위해 60만 명 이상의 사용자에게 악성 소프트웨어를 의도적으로 감염시켰습니다.</li>
-<li>악성 소프트웨어는 파일 누락, 이상한 폴더, 비활성화된 PC와 같은 문제를 일으켰으며, KT의 데이터 센터로 추적되었습니다.</li>
-<li>당국은 KT 직원들을 포함한 13명을 기소했으며, KT는 네트워크 부하와 미납 사용료를 이유로 자신의 행동을 변호했지만, 무단으로 설치된 악성 소프트웨어는 고객들에게 심각한 문제를 초래했습니다.</li>
-</ul>
-]]></description>
-            <link
-      >https://www.tomshardware.com/tech-industry/cyber-security/south-korean-telecom-company-attacks-torrent-users-with-malware-over-600000-people-report-missing-files-strange-folders-and-disabled-pcs</link>
-            <guid
-        isPermaLink="false"
-      >2024-06-27T00:00:00.000Z한국 통신 회사, 토렌트 사용자들에게 악성 소프트웨어로 공격</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[파라마운트가 코미디 센트럴 웹사이트를 폐쇄하면서 25년간의 비디오 클립이 사라졌다]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>파라마운트는 ComedyCentral.com을 폐쇄하고, 25년 이상의 The Daily Show와 The Colbert Report 클립을 제거했으며, 방문자들을 TV 제공업체나 Paramount+로 안내하고 있습니다.</li>
-<li>조던 클레퍼와 함께하는 The Opposition 및 데이비드 스페이드와 함께하는 Lights Out과 같은 다른 프로그램들도 영향을 받아, 이전 에피소드는 Paramount+에서 이용할 수 없습니다.</li>
-<li>이 조치는 MTV.com과 CMT.com에서의 유사한 조치에 이어, 사이트를 간소화하고 시청자를 Paramount+로 유도하기 위한 목적으로, 140억 달러 이상의 부채를 관리하기 위한 파라마운트의 비용 절감 조치의 일환입니다.</li>
-</ul>
-]]></description>
-            <link>https://latenighter.com/news/paramount-axes-comedy-central-website-show-clips-library/</link>
-            <guid
-        isPermaLink="false"
-      >2024-06-27T00:00:00.000Z파라마운트가 코미디 센트럴 웹사이트를 폐쇄하면서 25년간의 비디오 클립이 사라졌다</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Google Sheets는 계산 작업자를 JavaScript에서 WasmGC로 이전했습니다]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Google Sheets는 성능을 향상시키기 위해 특히 대형 스프레드시트에서 JavaScript에서 WasmGC(WebAssembly Garbage Collection)로 전환했습니다.</li>
-<li>웹에서 거의 네이티브 속도를 제공하는 WasmGC는 Java와 같은 가비지 컬렉션 언어를 지원하며, Google Sheets는 이를 처음으로 구현한 애플리케이션 중 하나입니다.</li>
-<li>초기 WasmGC의 성능은 JavaScript보다 느렸지만, 이후 최적화를 통해 속도가 크게 향상되어 웹 애플리케이션 개발에 혁신을 가져올 잠재력을 보여주고 있습니다.</li>
-</ul>
-]]></description>
-            <link>https://web.dev/case-studies/google-sheets-wasmgc</link>
-            <guid
-        isPermaLink="false"
-      >2024-06-27T00:00:00.000ZGoogle Sheets는 계산 작업자를 JavaScript에서 WasmGC로 이전했습니다</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[클로드 3.5 소네트]]></title>
-            <description><![CDATA[<p>- </p>
-]]></description>
-            <link>https://thezvi.substack.com/p/on-claude-35-sonnet</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z클로드 3.5 소네트</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[포스 덱 미니: 개별 CPU를 갖춘 휴대용 포스 컴퓨터]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Forth Deck mini는 40x4 문자 LCD, 56버튼 QWERTY 키보드, 6시간 사용 가능한 6.6 Wh LiPo 배터리를 갖춘 휴대용 Forth 컴퓨터입니다.</li>
-<li>8비트 CMOS 논리 CPU, 32 KB ROM, 32 KB RAM, 최대 256 KB EEPROM, 그리고 4800 보드의 RS-232를 포함하며, 70년대와 80년대의 내장형 Basic 인터프리터가 있는 가정용 컴퓨터를 연상시킵니다.</li>
-<li>이 장치는 배터리와 충전 회로를 제외하고 Budgetronics의 키트를 사용하여 조립할 수 있으며, 크리에이티브 커먼즈 저작자표시-동일조건변경허락 4.0 국제 라이선스에 따라 라이선스가 부여됩니다.</li>
-</ul>
-]]></description>
-            <link>http://mynor.org/my4th_forthdeck.htm</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z포스 덱 미니: 개별 CPU를 갖춘 휴대용 포스 컴퓨터</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title
-      ><![CDATA[뇌는 많은 폐기물을 생성합니다. 이제 과학자들은 그것이 어디로 가는지 알고 있다고 생각합니다.]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>과학자들은 뇌 건강을 유지하고 질병을 예방하는 데 필수적인 뇌의 노폐물 제거 시스템에 대한 새로운 세부 사항을 밝혀냈습니다.</li>
-<li>네이처에 발표된 연구에 따르면, 수면 중 느린 전기파가 뇌 깊숙한 곳에서 표면으로 노폐물이 가득한 체액을 밀어내어, 이 체액이 혈류로 흡수되고 간과 신장에 의해 제거된다고 합니다.</li>
-<li>이 글림프 시스템은 알츠하이머병과 관련된 물질인 아밀로이드를 제거하는 데 중요하며, 노폐물 제거가 제대로 이루어지지 않으면 알츠하이머병, 파킨슨병, 두통, 우울증과 같은 다양한 뇌 질환에 기여할 수 있습니다.</li>
-</ul>
-]]></description>
-            <link
-      >https://www.npr.org/sections/shots-health-news/2024/06/26/g-s1-6177/brain-waste-removal-system-amyloid-alzheimer-toxins</link>
-            <guid
-        isPermaLink="false"
-      >2024-06-27T00:00:00.000Z뇌는 많은 폐기물을 생성합니다. 이제 과학자들은 그것이 어디로 가는지 알고 있다고 생각합니다.</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[응답 시간이 500ms인 음성 봇]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>GPT-4 출시 이후 음성 인터페이스와 대형 언어 모델(LLM)에 대한 실험이 시작되었으며, 이는 생성형 AI와의 음성 상호작용의 매력적인 특성과 새로운 도전 과제를 부각시켰습니다.</li>
-<li>500ms 음성-음성 응답 시간을 달성하는 것은 도전적이지만, 전사, LLM 추론 및 음성 생성을 함께 호스팅하고, 데이터 라우팅을 최적화하며, 양호한 와이파이와 VRAM 캐싱을 보장함으로써 가능합니다.</li>
-<li>500ms 대응이 가능한 음성 봇과 A10/A100/H100 GPU에 배포할 수 있는 컨테이너의 데모가 제공되며, 현재 메트릭스는 총 응답 주기가 759ms임을 보여주어 AI의 빠른 진화와 향후 간소화 가능성을 나타냅니다.</li>
-</ul>
-]]></description>
-            <link>https://fastvoiceagent.cerebrium.ai/</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z응답 시간이 500ms인 음성 봇</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[차세대 3D 금속 프린팅]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>샌디에이고에 위치한 스타트업 Fabric8Labs가 전기화학적 적층 제조 기술을 발전시키기 위해 시리즈 B 자금 조달에서 5천만 달러를 확보했습니다.</li>
-<li>이 자금은 새로운 3D 프린팅 공장의 건설을 지원하여 회사의 인력을 크게 증가시킬 것입니다.</li>
-<li>이 투자는 혁신적인 제조 기술에 의해 3D 프린팅 스타트업에 대한 관심과 자본 유입이 증가하고 있음을 강조합니다.</li>
-</ul>
-]]></description>
-            <link>https://fabric8labs.com</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z차세대 3D 금속 프린팅</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Eplot: Emacs에서 차트를 만드는 새로운 패키지]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>새로운 Emacs 패키지인 eplot이 출시되었으며, Emacs 내에서 직접 간단한 플롯을 생성하도록 설계되었습니다.</li>
-<li>eplot은 chart.el과 Gnuplot 같은 기존 도구에서 발견되는 한계를 해결하며, 합리적인 Y축 숫자와 SVG 그라디언트와 같은 기능을 제공합니다.</li>
-<li>이 패키지는 사용하기 쉬워서 사용자가 숫자가 있는 버퍼에서 M-x eplot을 입력하여 플롯을 생성할 수 있으며, GitHub에 문서화되어 있습니다.</li>
-</ul>
-]]></description>
-            <link>https://lars.ingebrigtsen.no/2024/06/26/a-new-package-for-making-charts-in-emacs-eplot/</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000ZEplot: Emacs에서 차트를 만드는 새로운 패키지</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[6개월 전, 나는 엉터리 산업 단지를 떠났다]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>한 전직 기술 홍보 전문가가 과대평가된 스타트업을 홍보했던 과거를 밝히며, 이는 호화로운 생활을 가능하게 했지만 윤리적 의문을 불러일으켰다고 전했다.</li>
-<li>그들은 수익성이 있지만 도덕적으로 의심스러운 산업을 떠나 기술과 벤처 자본이 인간에게 미치는 실제 영향에 대한 정직한 글쓰기에 집중하기로 결정했다.</li>
-<li>재정적 및 경력적 위험에도 불구하고, 그들은 기술 산업의 공허한 약속을 거부하고 새로운 길에서 진실성과 개인적 성취를 찾는다.</li>
-</ul>
-]]></description>
-            <link>https://www.joanwestenberg.com/6-months-ago,-i-left-the-bullshit-industrial-complex</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z6개월 전, 나는 엉터리 산업 단지를 떠났다</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title
-      ><![CDATA[연방법 위반 고발자는 놓친 미래 급여에 대한 손해 배상을 받을 자격이 있다고 법원이 판결]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>미국 연방 순회 항소법원은 연방 내부고발자가 해고로 인해 수입 잠재력이 손상된 경우 미래의 손실 수입에 대한 보상금을 받을 수 있다고 판결했습니다.</li>
-<li>데보라 퍼릭은 자금 누락을 보고한 후 해고되었으나, 추가 보상을 성공적으로 주장하여 미래의 취업 전망에 영향을 미쳤습니다.</li>
-<li>이 판결은 연방 내부고발자들에게 보장된 미래 고용 없이도 향후 손실된 수입에 대한 청구를 허용하는 선례를 설정하며, 사건은 최종 결정을 위해 공적자격보호위원회로 환송되었습니다.</li>
-</ul>
-]]></description>
-            <link
-      >https://www.govexec.com/pay-benefits/2024/06/federal-whistleblowers-are-entitled-damages-missed-future-pay-court-rules/397638/</link>
-            <guid
-        isPermaLink="false"
-      >2024-06-27T00:00:00.000Z연방법 위반 고발자는 놓친 미래 급여에 대한 손해 배상을 받을 자격이 있다고 법원이 판결</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[내가 배웠으면 좋았을 교훈들 (1996) [pdf]]]></title>
-            <description><![CDATA[<p>- </p>
-]]></description>
-            <link>https://www.ams.org/notices/199701/comm-rota.pdf</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z내가 배웠으면 좋았을 교훈들 (1996) [pdf]</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[우체국 변호사들이 공개를 막기 위해 판사와 비밀 회의를 가졌다]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>2013년, 우체국의 변호사들은 형사 재판에서 변호인 측 변호사들에게 Horizon 시스템의 잠재적 문제를 밝히는 보고서의 공개를 막기 위해 판사와 비밀 회의를 가졌습니다.</li>
-<li>조사에서 기소 변호사 마틴 스미스가 자신의 의무를 준수하지 않았고 필요한 전문 지식이 부족했다고 인정했으며, 이는 과거의 유죄 판결과 공개 관행에 대한 우려를 불러일으켰다고 들었습니다.</li>
-<li>우체국이 중재와 과거 유죄 판결에 대한 검토에 접근함에 따라 진행 중인 조사는 여러 공개 문제를 계속해서 밝혀내고 있습니다.</li>
-</ul>
-]]></description>
-            <link
-      >https://www.lawgazette.co.uk/news/post-office-lawyers-held-secret-meeting-with-judge-to-stop-disclosure/5119593.article</link>
-            <guid
-        isPermaLink="false"
-      >2024-06-27T00:00:00.000Z우체국 변호사들이 공개를 막기 위해 판사와 비밀 회의를 가졌다</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[도어대시와 피자 차익 거래 (2020)]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>도어대시는 주인의 허락 없이 피자 가게를 목록에 올려서 배달이 식거나 가격이 잘못되는 문제를 초래했습니다.</li>
-<li>도어대시의 가격 오류로 인해 낮은 가격에 주문하고 더 높은 레스토랑 가격에 판매하여 이익을 얻을 수 있는 차익 거래 기회가 생겼습니다.</li>
-<li>이 기사는 음식 배달 비즈니스 모델이 비효율적이고 착취적이라고 비판하며, 도미노와 같은 더 통합된 접근 방식이 더 지속 가능할 수 있다고 제안합니다.</li>
-</ul>
-]]></description>
-            <link>https://www.readmargins.com/p/doordash-and-pizza-arbitrage</link>
-            <guid isPermaLink="false">2024-06-27T00:00:00.000Z도어대시와 피자 차익 거래 (2020)</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Corcel – Laravel 또는 다른 PHP 애플리케이션과 함께 WordPress 백엔드를 사용하세요]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Corcel은 Laravel의 Eloquent ORM을 기반으로 구축된 PHP 라이브러리로, WordPress 데이터베이스에서 직접 데이터를 가져올 수 있으며, Composer를 통해 Laravel 또는 다른 PHP 프로젝트에서 사용할 수 있습니다.</li>
-<li>주요 기능으로는 사용자 정의 게시물 유형, 숏코드, 분류법, 페이지, 첨부 파일, 수정본, 썸네일, 옵션, 메뉴, 사용자 및 인증 지원이 포함됩니다.</li>
-<li>설치 및 구성은 간단하며, Laravel 5.5+ 버전에서는 자동 등록이 가능하고, 이전 버전이나 비-Laravel 프로젝트의 경우 수동 설정이 필요합니다.</li>
-</ul>
-]]></description>
-            <link>https://github.com/corcel/corcel</link>
-            <guid
-        isPermaLink="false"
-      >2024-06-27T00:00:00.000ZCorcel – Laravel 또는 다른 PHP 애플리케이션과 함께 WordPress 백엔드를 사용하세요</guid>
-            <pubDate>Thu, 27 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
