@@ -15,12 +15,178 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 07 Jul 2024 19:09:26 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 08 Jul 2024 19:11:53 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/da.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 08 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[da]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-08]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/08&#39;</h2>
+<h1>2024-07-08</h1>
+<h2><a href="https://conduition.io/coding/ticketmaster/">Reverse Engineering Ticketmaster&#39;s roterende stregkoder</a></h2>
+<ul>
+<li>TicketMasters SafeTix-system bruger roterende stregkoder, der vises i en mobilapp, hvilket komplicerer billetprocessen og forhindrer nem udskrivning eller skærmbilleder.</li>
+<li>Problemer opstår, når der ikke er internetforbindelse på stedet, hvilket gør det vanskeligt at indlæse stregkoden, og systemet sigter mod at reducere videresalg af billetter og indsamle brugerdata.</li>
+<li>Reverse engineering afslører, at stregkoderne bruger PDF417-format med en bearer token og to TOTPs, som kan udtrækkes ved hjælp af Chrome DevTools, hvilket muliggør offline lagring af billetter op til 20 timer før begivenheden.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40906148">Reaktioner</a></h3>
+<ul>
+<li>Indlægget diskuterer reverse engineering af Ticketmasters roterende stregkoder og fremhæver potentialet for svindelfri videresalg af billetter fra tredjeparter, hvis Ticketmaster og AXS dokumenterede deres QR-kodekryptografi og eksponerede apps/API&#39;er til verifikation.</li>
+<li>Diskussionen kritiserer Ticketmasters monopol på videresalg af billetter og antyder, at deres modvilje mod at støtte tredjepartsverifikation gavner deres kontrol over markedet.</li>
+<li>Debatten strækker sig til etiske overvejelser for udviklere og virksomheder, hvor nogle hævder, at samfundsstrukturer og regeringssvigt bidrager til monopolistiske praksisser, snarere end udviklerne selv.</li>
+</ul>
+<h2><a href="https://dgerrells.com/blog/how-fast-is-javascript-simulating-20-000-000-particles">Simulering af 20M Partikler i JavaScript</a></h2>
+<ul>
+<li>Forfatteren tilbragte flere måneder med at eksperimentere med delte array-buffere, en funktion i JavaScript, der gør det muligt for flere tråde at dele hukommelse effektivt.</li>
+<li>De har udviklet en endelig applikation, der viser disse eksperimenter, og de inviterer til feedback og idéer til yderligere simulationer i JavaScript.</li>
+<li>Indlægget fremhæver potentialet ved delte array-buffere til at skabe mere komplekse og effektive simulationer i webudvikling.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40902012">Reaktioner</a></h3>
+<ul>
+<li>En udvikler simulerede med succes 20 millioner partikler ved hjælp af JavaScript, ved at udnytte delte array-buffere over flere måneders fritid.</li>
+<li>Indlægget inkluderer en afsluttende app-demo og inviterer til forslag til at simulere endnu flere partikler i JavaScript.</li>
+<li>Fællesskabet gav forskellige tilbagemeldinger, herunder at integrere simuleringen for lettere adgang, optimere ydeevnen og bruge forskellige teknologier som WebGL og WebGPU til rendering.</li>
+</ul>
+<h2><a href="https://www.cnbc.com/2024/07/08/boeing-to-plead-guilty-to-criminal-fraud-charge-stemming-from-737-max-crashes.html">Boeing vil erklære sig skyldig i anklage om kriminel svindel som følge af 737 MAX-ulykkerne</a></h2>
+<ul>
+<li>Boeing vil erklære sig skyldig i en sammensværgelsesbedragerianklage relateret til 737 Max-ulykkerne, og de er enige om at betale en bøde på 243,6 millioner dollars og installere en tredjeparts compliance-monitor.</li>
+<li>Handlen, som undgår en retssag, kræver godkendelse fra en føderal dommer og kan påvirke Boeings evne til at sælge til den amerikanske regering.</li>
+<li>Boeing skal også investere 455 millioner dollars i overholdelses- og sikkerhedsprogrammer og lade sin bestyrelse mødes med ofrenes familier fra flystyrtene.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40902749">Reaktioner</a></h3>
+<ul>
+<li>Boeing vil erklære sig skyldig i en kriminel bedragerisag vedrørende 737 MAX-ulykkerne, mens ofrenes familier går ind for en offentlig retssag for at afsløre alle fakta.</li>
+<li>Forliget indebærer en bøde på $243,6 millioner og en treårig tredjeparts overvågning, men kritikere hævder, at dette er utilstrækkeligt og kræver individuel ansvarlighed.</li>
+<li>Den sag understreger vedvarende problemer med virksomheders ansvarlighed og rejser spørgsmål om effektiviteten af sanktioner i at ændre virksomhedskulturen.</li>
+</ul>
+<h2><a href="http://jackkelly.name/blog/archives/2024/07/06/im_funding_ladybird_because_i_cant_fund_firefox/">Jeg finansierer Ladybird, fordi jeg ikke kan finansiere Firefox</a></h2>
+<ul>
+<li>Årsagen til, at forfatteren finansierer Ladybird Browser Initiative, er, at Mozilla ikke tillader direkte brugerfinansiering af Firefox.</li>
+<li>Browserdiversitet er afgørende for at forhindre, at en enkelt leverandør, som Chrome, kontrollerer webstandarder og indfører brugervendtlige funktioner.</li>
+<li>Ladybird, oprindeligt en del af SerenityOS, er nu et separat projekt, der sigter mod sin første alpha-udgivelse i 2026 og er åbent for brugerfinansiering.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40900648">Reaktioner</a></h3>
+<ul>
+<li>Årsagen til, at forfatteren finansierer Ladybird, er, at Mozilla prioriterer online annoncering over udviklingen af Firefox, hvilket gør Mozilla mere til et projekt for reklamefremme.</li>
+<li>Mozilla&#39;s skift fra en fond til en virksomhed har gjort den afhængig af reklameindtægter, især fra Google, og den modtager ikke donationer specifikt til Firefox-udvikling.</li>
+<li>Alternativer som Servo rendering engine og Ladybird, der planlægger at overgå fra C++ til et sikrere sprog, foreslås som værdige til støtte.</li>
+</ul>
+<h2><a href="https://samkriss.substack.com/p/the-internet-is-already-over">Internettet er allerede forbi (2022)</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40899761">Reaktioner</a></h3>
+<ul>
+<li>Internettet udvikler sig på grund af faktorer som reklame, politik og AI, hvilket fører til mere begrænsede og censurerede versioner.</li>
+<li>Der er en debat mellem at opretholde kontrol gennem censur og bevare internettets potentiale for åben kommunikation.</li>
+<li>Skiftet fra offentlige rum til private fora som Discord og Slack indikerer en bevægelse væk fra det åbne web, men nichefællesskaber tilbyder stadig værdi.</li>
+</ul>
+<h2><a href="https://old.reddit.com/r/programming/comments/1dxmroj/zed_editor_automatically_downloads_binaries_and/">Zed Editor downloader automatisk binære filer og NPM-pakker uden samtykke</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40902826">Reaktioner</a></h3>
+<ul>
+<li>Zed Editor downloader binære filer og NPM-pakker uden brugerens samtykke, hvilket rejser bekymringer om sikkerhed og forsyningskædeangreb.</li>
+<li>Brugere sammenligner det med VSCode, som anmoder om tilladelse, og understreger behovet for brugerens kontrol og sikkerhed i IDE&#39;er.</li>
+<li>Zeds team anerkender problemet og planlægger at tage fat på det, hvilket udløser en debat om balancen mellem bekvemmelighed og sikkerhed i udviklingsværktøjer.</li>
+</ul>
+<h2><a href="https://brooker.co.za/misc-blog/2024/01/23/skis.html">Bliver ski sløve?</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40902740">Reaktioner</a></h3>
+<ul>
+<li>Skiene kan blive sløve, især når de bruges på hård eller iset sne, hvilket gør skarpe kanter og korrekt hældning afgørende for præstationen.</li>
+<li>Regelmæssig vedligeholdelse med en diamantsten er normalt tilstrækkelig, medmindre skiene er beskadiget af sten eller rust.</li>
+<li>Selvom teknisk anlagte skiløbere kan have gavn af at lære at vedligeholde deres ski, finder mange det mere praktisk at få dem professionelt justeret, især dem med familier.</li>
+</ul>
+<h2><a href="https://github.com/onlook-dev/studio">Open-sourcet Webflow til din egen app</a></h2>
+<ul>
+<li>Onlook Studio har introduceret en app, der giver udviklere mulighed for visuelt at redigere deres lokalt kørende React-applikationer og skrive koden tilbage i realtid.</li>
+<li>Appen kører lokalt, kræver kun en simpel plugin-tilføjelse og inkluderer funktioner som en React-parser, forbehandler og CSS-konvertering til Tailwind.</li>
+<li>Fremtidige udviklinger inkluderer inspektion og udvælgelse af lag, omorganisering af elementer og A/B-testning af ændringer, før de implementeres i koden.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40904862">Reaktioner</a></h3>
+<ul>
+<li>Onlook Studio introducerer et open-source værktøj til visuelt at redigere React-apps lokalt, hvilket sikrer, at udviklere bevarer fuld ejerskab over koden.</li>
+<li>Appen har en React-parser, en forbehandler og en CSS-til-Tailwind-konvertering, der kører som en Electron-app for realtidsopdateringer af koden.</li>
+<li>Fremtidige planer inkluderer proof-of-concept-funktioner som laginspektion og A/B-testning, med potentiel indtjening gennem en hostet version til teamsamarbejde.</li>
+</ul>
+<h2><a href="https://noamzeise.com/2024/07/05/mini-monitor.html">En mini-skærm til en Pi</a></h2>
+<ul>
+<li>Dette indlæg beskriver brugen af en 2-tommers skærm som en monitor til en Raspberry Pi med det formål at skabe en håndholdt konsol med et tastatur.</li>
+<li>Displayet, drevet af en ST7789-controller og forbundet via SPI, bruger 2,5 MB RAM og ~2% CPU, hvilket sikrer batteriets effektivitet.</li>
+<li>Opsætningsinstruktioner inkluderer kabelføring, aktivering af SPI, indstilling af framebuffer- og X-skærmstørrelser samt installation af spejlingsprogrammet som en systemtjeneste.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40901623">Reaktioner</a></h3>
+<ul>
+<li>Et mini-monitorprojekt til Raspberry Pi tiltrækker opmærksomhed, med diskussioner om optimering af hardwareforbindelser og displaymuligheder.</li>
+<li>Brugere deler tips om brug af 3D-print til specialfremstillede etuier, med forslag om at tjekke lokale biblioteker eller bruge 3D-printtjenester for resultater af høj kvalitet.</li>
+<li>Forskellige visningsmuligheder og konfigurationer undersøges, herunder brug af små tabletskærme, Waveshare-skærme og implementering af korrekte DRM (Digital Rights Management) kerne-drivere for bedre ydeevne.</li>
+</ul>
+<h2><a href="https://github.com/Xpra-org/xpra">Xpra: Vedvarende fjernapplikationer til X11</a></h2>
+<ul>
+<li>Xpra, et open source-værktøj, gør det muligt at køre X11-programmer på en fjernvært og vise dem lokalt, med mulighed for at genoprette forbindelsen uden at miste tilstanden.</li>
+<li>Det understøtter forskellige platforme og integrerer funktioner som lyd, printere, udklipsholder, systembakker, meddelelser og webcams, tilpasset til forskellige netværksforhold.</li>
+<li>Installation er tilgængelig for Windows, MacOS og Linux, med omfattende dokumentation og support gennem ofte stillede spørgsmål, GitHub-diskussioner, IRC og Discord.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40903870">Reaktioner</a></h3>
+<ul>
+<li>Xpra er et værktøj til vedvarende fjernapplikationer på X11, som gør det muligt for brugere at opretholde applikationstilstande på tværs af sessioner.</li>
+<li>Diskussionen fremhæver forskellige fjernskrivebordsløsninger, herunder Xpra, NoMachine, RustDesk og NICE DCV, hver med unikke funktioner og brugerpræferencer.</li>
+<li>Der er en igangværende debat mellem brugen af X11 og Wayland, hvor brugere bemærker fordele og ulemper ved hver, herunder hardwareunderstøttelse, sikkerhed og kompatibilitetsproblemer.</li>
+</ul>
+<h2><a href="https://www.theglobeandmail.com/canada/alberta/article-for-the-first-time-in-more-than-150-years-albertas-electricity-is-coal/">For første gang i mere end 150 år er Albertas elektricitet kulfri</a></h2>
+<ul>
+<li>Albertas sidste kulkraftværk, Enhed 2 ved Genesee Generating Station, blev lukket ned den 16. juni, hvilket markerer afslutningen på kulfyret elektricitet i provinsen.</li>
+<li>Udfasningen af kul blev fremskyndet under Det Nye Demokratiske Partis ledelse efter 2015 med politikker som stærkere kulstofprissætning og en forpligtelse til 30% vedvarende energi inden 2030.</li>
+<li>På trods af milepælen forbliver udfordringer som behovet for mere vind- og solenergi, lagringsløsninger og opdateret infrastruktur, især med Albertas nylige moratorium for vedvarende energi og markedsomstrukturering.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40905706">Reaktioner</a></h3>
+<ul>
+<li>Alberta er for første gang i over 150 år gået over til at være kulfri, hvilket har udløst en debat om omkostningerne og fordelene ved dette skridt.</li>
+<li>Critikere fremhæver, at mens Alberta er skiftet til naturgas, kritiseres den nuværende regering for ikke at støtte investeringer i vedvarende energi.</li>
+<li>Diskussionen inkluderer sammenligninger med lande som Kina, der trods stigende kulforbrug også investerer kraftigt i vedvarende energi og atomenergi, hvilket understreger den globale kompleksitet i at tackle klimakrisen.</li>
+</ul>
+<h2><a href="https://www.icann.org/resources/pages/gtld-registry-agreement-termination-2015-10-09-en">ICANN&#39;s liste over forladte forfængeligheds-TLD&#39;er</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40899778">Reaktioner</a></h3>
+<ul>
+<li>ICANN (Internet Corporation for Assigned Names and Numbers) har udgivet en liste over forladte vanity TLD&#39;er (Top-Level Domains), som er tilpassede domæneendelser som f.eks. .brandname.</li>
+<li>Der var en betydelig efterspørgsel efter gTLD&#39;er (generiske topdomæner) i slutningen af 2000&#39;erne, men mange virksomheder indså, at de ikke havde brug for dem efter at have betalt høje gebyrer, såsom evalueringsgebyret på $185.000.</li>
+<li>Mange forfængeligheds-TLD&#39;er er nu ubrugte eller forladte, hvilket fremhæver den oprindelige overvurdering af deres værdi og skiftet i internetbrug mod søgemaskiner og apps.</li>
+</ul>
+<h2><a href="https://unit.software/">Unit er et generelt formål visuelt programmeringssystem</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40900029">Reaktioner</a></h3>
+<ul>
+<li>Unit er et generelt visuelt programmeringssystem, der står over for kognitive skalerbarhedsproblemer og sammenfiltrede forbindelser, hvilket gør visuel programmering udfordrende.</li>
+<li>Brugere værdsætter visse designelementer, såsom opgavefokuserede widgets, men sammenligner det med værktøjer som LabVIEW og OpenSCAD Graph Editor, hvilket fremhæver både fordele og begrænsninger.</li>
+<li>Diskussioner understreger vanskeligheden ved at organisere visuel kode, behovet for forbedret brugeroplevelse (UX) og potentialet i blandede modale computermiljøer.</li>
+</ul>
+<h2><a href="https://meduza.io/en/feature/2021/04/01/it-s-like-i-drew-a-door-and-disappeared-through-it">&quot;Det er som om, jeg tegnede en dør og forsvandt igennem den&quot; (2021)</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40902604">Reaktioner</a></h3>
+<ul>
+<li>Artiklen diskuterer det alvorlige fald i donationer til velgørenhedsorganisationer som Nochlezhki efter en fuldskala invasion, hvilket har ført til, at mange arrangører er blevet tvunget ud.</li>
+<li>Situationen forventes at forværres efter demobilisering på grund af dårlig PTSD-behandling, øgede kriminalitetsrater og økonomisk nedgang.</li>
+<li>Artiklen fremhæver den dybe indvirkning af hjemløshed og de udfordringer, som de berørte står over for, og understreger vigtigheden af ordentlig retshåndhævelse og retfærdighed.</li>
+</ul>
+<h2><a href="https://paulgraham.com/persistence.html">Den rigtige slags stædig</a></h2>
+<ul>
+<li>Vedholdenhed og stædighed indebærer begge beslutsomhed, men de adskiller sig grundlæggende i tilgang og resultat.</li>
+<li>Vedholdende individer tilpasser deres strategier baseret på feedback, hvilket viser modstandsdygtighed, god dømmekraft og fokus på mål.</li>
+<li>Stædige individer holder stædigt fast i deres oprindelige idéer, hvilket ofte fører til fiasko, især i komplekse situationer.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40907155">Reaktioner</a></h3>
+<ul>
+<li>Paul Grahams artikel skelner mellem stædige og vedholdende mennesker, idet han bemærker, at stædige personer virker mere selvsikre, men er mindre åbne for feedback, mens vedholdende personer er mere fleksible og villige til at lære.</li>
+<li>Offentligheden forveksler ofte stædighed med selvtillid, især i offentlige fora, hvilket fører til misfortolkninger.</li>
+<li>Artiklen udforsker også vækst- og faste tankesæt, med blandede reaktioner fra kommentatorer, der enten er enige i Grahams synspunkter eller finder hans definitioner for simple eller overlappende.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Reverse Engineering Ticketmaster's roterende stregkoder" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Reverse%20Engineering%20Ticketmaster's%20roterende%20stregkoder&subheading=mandag%20den%208.%20juli%202024%3A%20Resum%C3%A9%20af%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/da/2024/07/08</link>
+            <guid isPermaLink="false">2024-07-08T00:00:00.000Z</guid>
+            <pubDate>Mon, 08 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-07]]></title>
             <description
@@ -1701,182 +1867,6 @@
             <link>https://hn.cho.sh/da/2024/06/29</link>
             <guid isPermaLink="false">2024-06-29T00:00:00.000Z</guid>
             <pubDate>Sat, 29 Jun 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-06-28]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/06/28&#39;</h2>
-<h1>2024-06-28</h1>
-<h2><a href="https://anvaka.github.io/pm/">Softwaregalakser</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40817852">Reaktioner</a></h3>
-<ul>
-<li>Software Galaxies visualiserer softwareprojekter som prikker, der repræsenterer hvert program og dets kompleksitet, hvilket skaber diskussioner om dets udfordringer og potentielle forbedringer.</li>
-<li>Brugere debatterer visualiseringens praktiske anvendelighed, hvor nogle foreslår, at den kunne tjene som et pædagogisk værktøj, mens andre mindes lignende værktøjer.</li>
-<li>Der er interesse i at udvide de inkluderede datasæt, såsom Linux Kernel eller Java Maven repository, hvilket fremhæver projektets kunstneriske og tekniske præstation.</li>
-</ul>
-<h2><a href="https://apnews.com/article/justice-department-health-care-fraud-garland-24948b951896d0f265c29ba3fcacf858">200 personer anklaget i forbindelse med nedslag mod sundhedssvindel på 2,7 milliarder dollars</a></h2>
-<ul>
-<li>Den amerikanske justitsminister Merrick Garland annoncerede anklager mod næsten 200 personer i en landsdækkende indsats mod sundhedssvig, med falske krav, der beløber sig til over 2,7 milliarder dollars.</li>
-<li>Anklagerne omfatter en svindelordning på 900 millioner dollars i Arizona, hvor to ejere af sårplejefirmaer angiveligt modtog over 330 millioner dollars i returkommissioner for svigagtig fakturering til Medicare, hvilket resulterede i patientdødsfald.</li>
-<li>Autoriteter beslaglagde over 230 millioner dollars i aktiver og anklagede 193 personer, herunder 76 medicinske fagfolk, for andre ordninger, der involverede falsk afhængighedsbehandling for indianere og forkert mærkede HIV-mediciner i Florida.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40815139">Reaktioner</a></h3>
-<ul>
-<li>Autoriteterne har anklaget 200 personer i en sundhedssvigoperation på 2,7 milliarder dollars, hvilket understreger operationens omfang og alvor.</li>
-<li>Af dem, der blev anklaget, blev Alexandra Gehrke og Jeffrey King arresteret i Phoenix lufthavn med belastende bøger om at undgå retshåndhævelse, hvilket tyder på, at de forberedte sig på at flygte.</li>
-<li>Den sag understreger vigtigheden af beviser som pakkede tasker og specifik litteratur i at bestemme flugtrisiko og påvirke retslige beslutninger om kaution og strafudmåling.</li>
-</ul>
-<h2><a href="https://www.valve.computer/">Et moderne 8-bit design, bygget ved hjælp af termioniske ventiler fra 1950&#39;erne</a></h2>
-<ul>
-<li>Valve.Computer er en moderne 8-bit computer, der bruger termioniske ventiler fra 1950&#39;erne, først operationel den 28. maj 2021, og nu monteret som en kunstinstallation.</li>
-<li>Den bruger 1.120 termioniske trioder konfigureret som NOR-gates, der danner hukommelsesregistre, en 8-bit ALU, oscillatorer og relædrivere, og kan køre programmer som PONG og en 32-bit Fibonacci-sekvens.</li>
-<li>Projektet, inspireret af Bletchley Park, tog 18 måneder at bygge og er indstillet til Turner-prisen, hvilket fremhæver dets kunstneriske og tekniske kvaliteter.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40814011">Reaktioner</a></h3>
-<ul>
-<li>En moderne 8-bit computer bygget ved hjælp af termioniske ventiler fra 1950&#39;erne har skabt betydelig interesse og diskussion blandt teknologientusiaster.</li>
-<li>Brugere delte historier om gammelt hardware, forskellene mellem kolde og varme opstarter, og kompleksiteten af termioniske ventiler, hvilket fremhævede både udfordringerne og dedikationen involveret.</li>
-<li>Projektet blev rost for sin kreativitet, vækkede nostalgi og understregede vigtigheden af støttende partnere i forfølgelsen af ens passioner.</li>
-</ul>
-<h2><a href="https://www.axios.com/2024/06/28/supreme-court-chevron-doctrine-ruling">USA&#39;s højesteret omstøder 40 år gammel &quot;Chevron-deference&quot; doktrin</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40820949">Reaktioner</a></h3>
-<ul>
-<li>USA&#39;s højesteret har omstødt &quot;Chevron-deference&quot;-doktrinen, hvilket afslutter en 40-årig præcedens, der tillod føderale agenturer at fortolke tvetydige love.</li>
-<li>Kritikere hævder, at denne beslutning kan føre til ustabilitet, da domstole nu vil fortolke tvetydige love, hvilket potentielt kan øge Kongressens lovgivningsmæssige arbejdsbyrde og påvirke den reguleringsmæssige stabilitet.</li>
-<li>Dommerens afgørelse betragtes som et betydeligt skift i magtbalancen mellem regeringens grene, idet dommer Kagan er uenig og mener, at agenturer er bedre egnet til at fortolke love på grund af deres ekspertise.</li>
-</ul>
-<h2><a href="https://imbue.com/research/70b-infrastructure/">Opsætning af infrastruktur og open-source scripts til at træne en 70B model fra bunden</a></h2>
-<ul>
-<li>Et lille team trænede med succes en model med 70 milliarder parametre på deres infrastruktur, hvilket overgik zero-shot GPT-4 i ræsonneringsopgaver.</li>
-<li>Opsætningen involverede 4.092 H100 GPU&#39;er fordelt på 511 computere, forbundet via et tre-lags InfiniBand-netværk, med detaljeret provisionering, diagnostik og automatiserede sundhedstjek.</li>
-<li>De deler en omfattende vejledning og scripts til opsætning af lignende infrastruktur, med vægt på reproducerbarhed, automatisering og grundig testning, og er åbne for ansættelser.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40816158">Reaktioner</a></h3>
-<ul>
-<li>Et lille team trænede med succes en model med 70 milliarder parametre fra bunden, som overgik zero-shot GPT-4 i ræsonneringsopgaver.</li>
-<li>De benyttede en højtydende klynge med over 12.000 forbindelser, hvilket sikrede problemfri drift af alle komponenter.</li>
-<li>Teamet deler open-source scripts og en vejledning til opsætning af infrastruktur som en del af et tre-delt værktøjssæt, der også inkluderer afsnit om evalueringer og hyperparameteroptimering.</li>
-</ul>
-<h2><a href="https://lwn.net/SubscriberLink/979671/4fb7c1827536d1ae/">Python kæmper med afvisninger fra Apple App Store</a></h2>
-<ul>
-<li>En opgradering fra Python 3.11 til 3.12 medførte, at nogle Python-apps blev afvist af Apples app-butikker på grund af tilstedeværelsen af strengen &quot;itms-services&quot; i urllib-parseren, hvilket er forbudt i sandboxede apps på macOS.</li>
-<li>Eric Froemlings fejlrapport førte til en diskussion blandt Python-udviklere om, hvordan man kan imødekomme app store-gennemgangsprocesser, idet man overvejede løsninger som obfuskering og distribution-niveau patching.</li>
-<li>Der blev opnået enighed om at tilføje en build-time mulighed kaldet &quot;--with-app-store-compliance&quot; for Python 3.13, som ville fjerne problematisk kode til app store-indsendelser, hvilket fremhæver de udfordringer, som fri software-projekter står over for med uigennemsigtige gennemgangsprocesser.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40815130">Reaktioner</a></h3>
-<ul>
-<li>Python-apps bliver afvist fra Apple App Store på grund af &quot;itms-services&quot; URL-skemaet i deres binære filer, og Windows Defender markerer også disse apps, når de er bygget med PyInstaller.</li>
-<li>Udviklere hævder, at store OS-platforme hæmmer små udviklere ved at kræve dyre kode-signeringscertifikater, hvilket gør app-distribution udfordrende.</li>
-<li>Foreslåede alternativer inkluderer at bruge Homebrew til Mac-apps eller gratis certifikater fra SignPath til Windows-bygninger, hvilket fremhæver det bredere problem med sikkerhedsrelaterede afvisninger i app-distribution.</li>
-</ul>
-<h2><a href="https://community.frame.work/t/now-available-in-denmark-finland-and-sweden/53690">Frame.work laptop nu tilgængelig i Danmark, Finland og Sverige</a></h2>
-<ul>
-<li>DestroyaFramework har annonceret, at deres produkter, inklusive Framework Laptop 13 og 16, nu er tilgængelige for forsendelse til Danmark, Finland og Sverige.</li>
-<li>Den nye Framework Laptop 13 med Intel Core Ultra Series 1 processorer er tilgængelig for forudbestilling, sammen med danske og svenske/finske tastaturer.</li>
-<li>Keyboards til Framework Laptop 16 vil være tilgængelige i slutningen af juli, med e-mailadvarsler for lageropdateringer tilgængelige på produktsiden.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40818422">Reaktioner</a></h3>
-<ul>
-<li>Frame.work-laptoppen er nu tilgængelig i Danmark, Finland og Sverige, med ordentlige danske tastaturer, som imødekommer kritik af nordiske tastaturlayouts til kodning.</li>
-<li>Frameworks modulære design muliggør nemme opgraderinger og reparationer, hvilket understreger reparerbarhed og miljømæssige fordele, selvom nogle brugere bemærker problemer med batterilevetid og webkameraets kvalitet.</li>
-<li>Udvidelse til Norge er kompliceret af landets ikke-EU-status, hvilket påvirker omkostninger og logistik.</li>
-</ul>
-<h2><a href="https://techcrunch.com/2024/06/27/fcc-rule-would-make-carriers-unlock-all-phones-after-60-days/">FCC-regel vil tvinge udbydere til at låse alle telefoner op efter 60 dage</a></h2>
-<ul>
-<li>FCC foreslår en regel, der kræver, at udbydere låser telefoner op 60 dage efter køb for at forenkle processen for forbrugerne.</li>
-<li>FCC-formand Jessica Rosenworcel annoncerede meddelelsen om forslag til regeludformning (NPRM) for at etablere klare, landsdækkende regler for oplåsning, med offentlig feedback inviteret fra den 18. juli.</li>
-<li>Reglen har til formål at skabe konsistens og gennemsigtighed, hvilket gør det lettere for forbrugerne at skifte udbyder.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40814728">Reaktioner</a></h3>
-<ul>
-<li>FCC har foreslået en regel, der pålægger udbydere at låse telefoner op efter 60 dage, med det formål at reducere elektronisk affald og lette skift mellem udbydere.</li>
-<li>USA er unik ved at have operatørlåste telefoner, hvilket giver operatørerne betydelig kontrol over telefonfunktioner og opdateringer, i modsætning til Europa, hvor telefoner kan låses eksternt ved manglende betaling.</li>
-<li>Forslaget har udløst debat, hvor nogle ser operatørlåse som forbrugerfjendtlige, mens andre hævder, at de hjælper med at finansiere telefoner for personer med dårlig kredit.</li>
-</ul>
-<h2><a href="https://www.infoworld.com/article/3715702/maker-of-rstudio-launches-new-r-and-python-ide.html">Skaberen af RStudio lancerer ny R og Python IDE</a></h2>
-<ul>
-<li>Posit, tidligere kendt som RStudio, har udgivet en betaversion af Positron, et nyt integreret udviklingsmiljø (IDE) for R og Python, baseret på Visual Studio Code.</li>
-<li>Positron er tilgængelig for macOS, Windows og Linux og er designet til at være brugervenlig med indbygget support til R og Python, hvilket eliminerer behovet for yderligere udvidelser.</li>
-<li>IDE&#39;en inkluderer en data- og variabeludforsker for nem datamanipulation og understøtter andre VS Code-udvidelser via OpenVSX-registret, selvom det stadig er i tidlig udvikling.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40815097">Reaktioner</a></h3>
-<ul>
-<li>Skaberen af RStudio har lanceret et nyt integreret udviklingsmiljø (IDE) kaldet Positron, som understøtter både R og Python.</li>
-<li>På trods af den nye udgivelse vil RStudio fortsat blive udviklet og vedligeholdt, med nogle R-specifikke funktioner, der forbliver eksklusive for det.</li>
-<li>Positron sigter mod at bygge bro mellem R og Python ved at tilbyde et samlet miljø til dataanalyse og pakkeudvikling.</li>
-</ul>
-<h2><a href="https://www.apricitas.io/p/the-death-of-nyc-congestion-pricing">NYC&#39;s trængselsafgift død</a></h2>
-<ul>
-<li>Guvernør Kathy Hochul annoncerede en ubegrænset pause i New York Citys trængselsafgiftsordning, som havde til formål at opkræve betaling fra køretøjer, der kører ind i Lower Manhattan, for at finansiere transportprojekter.</li>
-<li>Aflysningen, drevet af modstand fra forstadsbilister og bekymringer om MTA&#39;s udgiftseffektivitet, bringer vigtige infrastrukturprojekter og finansiering i fare.</li>
-<li>Denne beslutning understreger bredere problemer i amerikanske byer og infrastruktur, idet den fremhæver ineffektivitet, høje omkostninger og lokal modstand mod investeringer i offentlig transport.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40817079">Reaktioner</a></h3>
-<ul>
-<li>New York Citys trængselsafgiftsplan, der har til formål at reducere trafikken og finansiere offentlig transport, er blevet forsinket af statens politik.</li>
-<li>Critikere nævner MTA&#39;s fejladministration og høje omkostninger som grunde imod yderligere finansiering, mens tilhængere hævder, at det kunne forbedre trafikflowet og den offentlige transport.</li>
-<li>Debatten understreger bredere spørgsmål inden for byplanlægning og offentlig politik, hvor bekvemmelighed afvejes mod bæredygtighed.</li>
-</ul>
-<h2><a href="https://www.flightradar24.com/blog/is-cat-more-common/">Bliver klarluftsturbulens mere almindelig?</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40819784">Reaktioner</a></h3>
-<ul>
-<li>Clear Air Turbulence (CAT) hændelser viser ikke en tendens i ulykkesstatistikkerne, da NTSB kun rapporterer betydelige hændelser.</li>
-<li>Faktorer som klimaforandringer og øget flyrejseaktivitet kan bidrage til hyppigere CAT, men nyere fly med avancerede sensorer og pilotrapportering gør det vanskeligt at måle nøjagtigt.</li>
-<li>Jetstrømmens adfærd, påvirket af klimaforandringer, påvirker også hyppigheden af CAT, men moderne fly er designet til at håndtere turbulens, og piloter er trænet til at håndtere det.</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=40818809">Hvad er den bedste kodebase, du nogensinde har arbejdet på?</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40818809">Reaktioner</a></h3>
-<ul>
-<li>Googles monorepo bliver rost for sine enestående værktøjer, som inkluderer øjeblikkelig oprettelse af mutable snapshots og perfekt reproducerbare builds på klynger.</li>
-<li>Funktioner som øjeblikkelig kodesøgning, hurtig skyld og symbolopslag samt omfattende forudgående kontrol sikrer høj produktivitet og ensartet kode-/testkvalitet.</li>
-<li>Miljøet håndhæver en konsekvent stil gennem kultur, automatiske linters og obligatoriske kodegennemgange, hvilket gør det til en enestående oplevelse for udviklere.</li>
-</ul>
-<h2><a href="https://www.nature.com/articles/d41586-024-02003-6">Ny måder at fange gravitationsbølger på</a></h2>
-<ul>
-<li>Den første direkte påvisning af gravitationsbølger i 2015 af LIGO og Virgo-observatorierne revolutionerede fysikken og gjorde det muligt for astronomer at &#39;høre&#39; kosmiske begivenheder.</li>
-<li>De nuværende detektorer er begrænset til frekvenser mellem 100–1.000 Hz, men nye instrumenter og teknikker sigter mod at detektere et bredere område, fra megahertz til nanohertz frekvenser.</li>
-<li>Fem nye metoder inkluderer Pulsar Timing Arrays, Mikrobølgeteleskoper, Atominterferometri, Desktopdetektorer og Kvantekrystaller, som hver især retter sig mod forskellige frekvensområder og lover at afsløre flere kosmiske fænomener.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40820063">Reaktioner</a></h3>
-<ul>
-<li>Den første generation af gravitationsbølgedetektorer lykkedes ikke med at detektere bølger, hvilket miskrediterede Webers påstand fra 1987, men nuværende interferometre som LIGO, Virgo og KAGRA har med succes detekteret dem.</li>
-<li>Gravitationsbølger bekræfter Einsteins generelle relativitetsteori, men en kvanteteori om tyngdekraften forbliver uløst, hvor strengteori og Loop Quantum Gravity tilbyder potentielle, men udfordrende forklaringer.</li>
-<li>Fremtidige projekter som LISA sigter mod at forbedre detektionskapaciteterne, og offentlige rundvisninger på LIGO-faciliteterne er tilgængelige til uddannelsesformål.</li>
-</ul>
-<h2><a href="https://www.sciencealert.com/parkinsons-link-to-gut-bacteria-suggests-unexpected-simple-treatment">Parkinsons forbindelse til tarmbakterier antyder uventet, enkel behandling</a></h2>
-<ul>
-<li>Forskere har identificeret specifikke tarmmikrober, der er forbundet med nedsatte niveauer af riboflavin (vitamin B2) og biotin (vitamin B7) hos Parkinson-patienter, hvilket antyder, at B-vitamintilskud kan være en potentiel behandling.</li>
-<li>Undersøgelsen, ledet af Hiroshi Nishiwaki fra Nagoya Universitet, fandt, at ændringer i tarmbakterier påvirkede produktionen af kortkædede fedtsyrer (SCFA&#39;er) og polyaminer, som er afgørende for et sundt tarm slimlag.</li>
-<li>Resultaterne, offentliggjort i npj Parkinson&#39;s Disease, indikerer, at opretholdelse af en sund tarmmikrobiom og reduktion af miljøgifte kan hjælpe med at beskytte mod Parkinsons symptomer.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40818987">Reaktioner</a></h3>
-<ul>
-<li>En undersøgelse antyder en forbindelse mellem tarmbakterier og Parkinsons sygdom, hvilket indikerer, at visse bakteriestammer kan bidrage til tilstanden.</li>
-<li>Der er opstået diskussioner om de potentielle fordele ved at supplere med vitaminer som riboflavin (B2) og biotin (B7) for at lindre symptomer.</li>
-<li>Undersøgelsen understreger vigtigheden af tarmens sundhed for neurologiske tilstande, men påpeger, at der er behov for mere forskning, og at nuværende behandlinger ikke bør ignoreres.</li>
-</ul>
-<h2><a href="https://www.wits.ac.za/news/latest-news/general-news/2024/2024-06/a-novel-way-to-save-rhinos-.html">Rhisotope-projektet: Indsættelse af radioisotoper i levende næsehorn</a></h2>
-<ul>
-<li>Rhisotope-projektet ved Wits University er begyndt at indsætte lave doser af radioisotoper i næsehornshorn for at hjælpe med at opdage smuglede horn ved internationale grænser.</li>
-<li>Denne innovative tilgang, overvåget over seks måneder, sigter mod at afskrække krybskytteri ved at gøre næsehornshorn detekterbare og mindre værdifulde på det sorte marked.</li>
-<li>Projektet udnytter den globale nukleare sikkerhedsinfrastruktur og fokuserer på uddannelse og social opgradering, især med henblik på at styrke kvinder og piger i landdistrikter.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40819617">Reaktioner</a></h3>
-<ul>
-<li>Rhisotope-projektet har til formål at afskrække krybskytteri på næsehorn ved at indsætte radioisotoper i deres horn, hvilket gør dem detekterbare ved grænserne.</li>
-<li>Kritikere hævder, at metoden er ineffektiv på grund af den langsomme injektionsproces og svag håndhævelse af anti-elfenbenslove, og foreslår alternativer som farvning, toksininfusion eller laboratoriedyrket keratin.</li>
-<li>Projektet er i øjeblikket i proof-of-concept-fasen, med igangværende forskning for at vurdere dets levedygtighed og sikkerhed.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Softwaregalakser" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Softwaregalakser&subheading=fredag%20den%2028.%20juni%202024%3A%20Resum%C3%A9%20af%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/da/2024/06/28</link>
-            <guid isPermaLink="false">2024-06-28T00:00:00.000Z</guid>
-            <pubDate>Fri, 28 Jun 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
