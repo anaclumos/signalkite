@@ -15,12 +15,203 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 11 Jul 2024 19:12:51 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 12 Jul 2024 19:15:13 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/da.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Thu, 11 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Fri, 12 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[da]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-12]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/12&#39;</h2>
+<h1>2024-07-12</h1>
+<h2><a href="https://webvm.io/">WebVM er et serverløst virtuelt Linux-miljø, der kører på klientsiden</a></h2>
+<ul>
+<li>WebVM er et serverløst virtuelt Linux-miljø, der kører fuldstændigt klient-side ved hjælp af HTML5 og WebAssembly, drevet af CheerpX virtualiseringsmotoren.</li>
+<li>Det muliggør sikker, sandboxed udførelse af x86-binærfiler i enhver browser, med en x86-til-WebAssembly JIT (Just-In-Time) compiler, et virtuelt blokbaseret filsystem og en Linux syscall-emulator.</li>
+<li>Ny funktion: Brugere kan nu oprette brugerdefinerede WebVM-billeder ved hjælp af Dockerfile, hvilket øger fleksibiliteten og tilpasningsmulighederne.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40940225">Reaktioner</a></h3>
+<ul>
+<li>WebVM er et serverløst virtuelt Linux-miljø, der kører på klientsiden, ved hjælp af en CheerpX-bygning hostet af Leaning Technologies og understøtter netværk via Tailscale.</li>
+<li>Til forskel fra fulde systememulatorer fungerer WebVM som en Linux syscall-emulator for brugerland-binære filer, hvilket giver større fleksibilitet og hastighed.</li>
+<li>Det er ikke open-source, og selv-hosting af CheerpX-motoren er forbudt, hvilket gør det velegnet til uddannelse, live dokumentation, softwarebevaring og web-IDE-udvikling, selvom det har begrænsninger som ydeevneproblemer på mobile enheder og delvis offline-funktionalitet.</li>
+</ul>
+<h2><a href="https://techcrunch.com/2024/07/12/att-phone-records-stolen-data-breach/">AT&amp;T siger, at kriminelle stjal telefonoptegnelser for &#39;næsten alle&#39; kunder i databrud</a></h2>
+<ul>
+<li>AT&amp;T bekræftede et databrud, der påvirker næsten 110 millioner kunder, og som involverer telefonnumre, opkalds- og tekstbeskeder samt placeringsrelaterede oplysninger.</li>
+<li>Bruddet, der er knyttet til cloud-dataleverandøren Snowflake, omfatter metadata, men ikke indholdet af opkald eller sms&#39;er.</li>
+<li>FBI og DOJ forsinkede offentliggørelsen på grund af nationale sikkerhedshensyn, hvilket markerer AT&amp;T&#39;s anden sikkerhedshændelse i år.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40944505">Reaktioner</a></h3>
+<ul>
+<li>AT&amp;T oplevede et databrud, der påvirkede næsten alle kunder, og afslørede opkalds- og tekstmetadata, men ikke indhold eller tidsstempler.</li>
+<li>På trods af et indledende aktiefald forbliver markedet stort set upåvirket, hvilket afspejler en tro på, at virksomheder står over for minimale økonomiske konsekvenser for sådanne overtrædelser.</li>
+<li>Den hændelse, der er forbundet med Snowflakes cloud-platform, har udløst opfordringer til strengere datalagringspolitikker, bedre sikkerhedspraksis og potentielt store bøder eller retssager for at håndhæve virksomheders ansvarlighed.</li>
+</ul>
+<h2><a href="https://physicsbaseddeeplearning.org/intro.html">Fysikbaseret Deep Learning Bog</a></h2>
+<ul>
+<li>Fysik-baseret Deep Learning Bog (v0.2) giver en praktisk introduktion til deep learning i fysiske simulationer, med praktiske eksempler i Jupyter-notebooks.</li>
+<li>Ny i version 0.2: Udvidet afsnit om integration af differentierbar programmering (DP) i træning af neurale netværk (NN) og et nyt kapitel om forbedrede læringsmetoder til fysikproblemer.</li>
+<li>Fremtidige opdateringer vil inkludere kapitler om træning af netværk til forudsigelse af væskestrømning, brug af model-ligninger som residualer, interaktion med simulatorer for inverse problemer og udnyttelse af højere-ordens information til bedre neurale netværk.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40941056">Reaktioner</a></h3>
+<ul>
+<li>En ny bog med titlen &quot;Physics-Based Deep Learning&quot; er blevet introduceret, med fokus på at anvende dyb læring til fysiksimuleringer frem for generelle dyb læringskoncepter fra en fysikers perspektiv.</li>
+<li>Den bog indeholder praktiske kodeeksempler i Jupyter-notebooks, fysiske tabskontrakter, differentierbare simulationer, træningsalgoritmer til fysikproblemer, forstærkningslæring og usikkerhedsmodellering.</li>
+<li>Den bog er produceret af Physics-based Simulation Group og er tilgængelig for download på arXiv, med yderligere ressourcer og diskussioner tilgængelige på forskellige platforme som YouTube og GitHub.</li>
+</ul>
+<h2><a href="https://ochagavia.nl/blog/using-s3-as-a-container-registry/">Brug af S3 som en Container Registry</a></h2>
+<ul>
+<li>En udvikler har demonstreret brugen af Amazon S3 som et containerregister ved at eksponere en S3-bucket gennem HTTP og uploade containerbilledefiler til specifikke stier, hvilket muliggør <code>docker pull</code>-operationer.</li>
+<li>Den største fordel ved at bruge S3 frem for traditionelle containerregistre som DockerHub eller Amazon ECR er markant hurtigere uploadhastigheder på grund af parallelle chunkede uploads.</li>
+<li>Denne eksperimentelle tilgang mangler funktioner som automatiserede sikkerhedsscanninger og adgangskontroller, men kan føre til hosting af offentlige containerbilleder i Cloudflares R2 med gratis udgående trafik.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40942732">Reaktioner</a></h3>
+<ul>
+<li>Brugen af Amazon S3 som en containerregistreringsdatabase bliver diskuteret, hvilket fremhæver dets potentiale som et alternativ til traditionelle containerregistreringsdatabaser som DockerHub og AWS ECR.</li>
+<li>Diskussionen kritiserer OCI (Open Container Initiative) Distribution Spec for dens ineffektivitet, såsom krav om sekventielle laguploads og mangel på standardiseret paginering til liste over tags.</li>
+<li>Docker&#39;s indvirkning på softwareudvikling er omdiskuteret, hvor nogle roser dets forenkling af afhængighedsstyring, mens andre kritiserer det for ikke at forbedre slutproduktets pålidelighed eller udviklingshastighed.</li>
+</ul>
+<h2><a href="https://nelson.cloud/as-an-employee-you-are-disposable/">Som medarbejder er du udskiftelig (2023)</a></h2>
+<ul>
+<li>De seneste afskedigelser i teknologibranchen indikerer, at medarbejdere ofte betragtes som udskiftelige af ledelsen, selv i profitable virksomheder.</li>
+<li>Virksomheder som Microsoft fortsætter med at afskedige medarbejdere og implementere lønstop på trods af at have overgået investorernes forventninger og have høje indtægter.</li>
+<li>Velhavende ledere, såsom Tim Gurner, har fremsat kommentarer, der forstærker opfattelsen af, at medarbejdere er udskiftelige, uanset deres bidrag eller anciennitet.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40943436">Reaktioner</a></h3>
+<ul>
+<li>Virksomheder er transaktionelle enheder og kan afskedige medarbejdere, når det gavner dem, hvilket understreger, at medarbejdere ikke er uundværlige.</li>
+<li>Overansættelser og afskedigelser er ofte strategier for at øge aktionærværdien, hvilket understreger vigtigheden af, at medarbejdere fokuserer på deres egne interesser og søger retfærdig kompensation.</li>
+<li>At overveje fagforeninger og open-source kode kan være gavnligt for udviklere, da det styrker ideen om, at forholdet mellem arbejdsgiver og medarbejder grundlæggende er en forretningsaftale.</li>
+</ul>
+<h2><a href="https://github.com/Wack0/maciNTosh">Windows NT til Power Macintosh</a></h2>
+<ul>
+<li>Arkivet indeholder kildekode til ARC firmware og dens loader, rettet mod New World Power Macintosh-systemer, der bruger Gossamer-arkitekturen, inklusive modeller som iMac G3 og Power Macintosh G3.</li>
+<li>ARC-firmwaren understøtter forskellige drivere, men kun NT4 er i øjeblikket kompatibel, med potentiel fremtidig support for NT 3.51.</li>
+<li>Installation indebærer at downloade binære filer, partitionere disken og følge anvisningerne for at opsætte NT4, med kendte problemer som ustabilitet og specifikke trin, der kræves for dual-booting med Mac-partitioner.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40945076">Reaktioner</a></h3>
+<ul>
+<li>En udvikler har portet Windows NT til at køre på Power Macintosh, hvilket vækker nostalgi og diskussioner om alternative OS-historier.</li>
+<li>Windows NT blev designet til at være portabel og understøttede forskellige arkitekturer som PowerPC, MIPS og Alpha, selvom det primært var kendt for x86.</li>
+<li>Dette projekt fremhæver den tekniske gennemførlighed af at tilpasse NT til forskellige hardwareplatforme og viser modulariteten i dets design.</li>
+</ul>
+<h2><a href="https://news.mit.edu/2024/charmed-collaboration-creates-therapy-candidate-fatal-prion-diseases-0627">Gen-silencing værktøj viser lovende resultater som en fremtidig terapi mod prionsygdomme</a></h2>
+<ul>
+<li>CHARM (Coupled Histone tail for Autoinhibition Release of Methyltransferase) er et nyt gen-silenceringsværktøj udviklet af Broad Institute og Whitehead Institute, som viser potentiale til behandling af prionsygdomme og andre neurodegenerative tilstande.</li>
+<li>Dette værktøj bruger epigenetisk redigering til at slukke for sygdomsfremkaldende gener, inklusive prionproteingenet, uden at ændre den underliggende DNA, hvilket potentielt tilbyder en engangsbehandling.</li>
+<li>Forskerholdet, ledet af Sonia Vallabh og Jonathan Weissman, har gjort betydelige fremskridt, skabt en kompakt, effektiv og lavtoksisk gendæmper og er nu ved at forfine CHARM til kliniske forsøg.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40939703">Reaktioner</a></h3>
+<ul>
+<li>Et gen-silencing værktøj, leveret via Adeno-Associated Virus (AAV), viser potentiale som en terapi for prionsygdomme, som i øjeblikket er 100% dødelige og resistente over for destruktion.</li>
+<li>Dette værktøj fungerer ved at dæmpe prionprotein-genet, hvilket potentielt kan forhindre eller vende sygdommen, og det kunne være effektivt mod både genetiske og erhvervede prioner.</li>
+<li>Selvom det er lovende, er værktøjets langsigtede virkninger på hukommelse og kognition stadig under undersøgelse, med igangværende forskning, der udforsker anvendelser for andre prionlignende sygdomme som Alzheimers og Parkinsons.</li>
+</ul>
+<h2><a href="https://github.com/taubyte/tau">Tau: Open-source PaaS – Et selvhostet alternativ til Vercel / Netlify / Cloudflare</a></h2>
+<ul>
+<li>Tau er en ny ramme designet til at bygge lav-vedligeholdelses, meget skalerbare cloud computing-platforme, der fungerer som et alternativ til tjenester som Vercel, Netlify og AWS.</li>
+<li>Vigtige funktioner inkluderer minimal konfiguration, Git-native infrastrukturændringer, peer-to-peer netværk og support til WebAssembly, med fremtidige planer for containere og virtuelle maskiner.</li>
+<li>Tau sigter mod at reducere infrastrukturudgifter og udviklingstid ved at tilbyde en udviklervenlig platform med værktøjer til lokal udvikling og end-to-end testning.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40946033">Reaktioner</a></h3>
+<ul>
+<li>Tau er en open source, selvhostet Platform as a Service (PaaS) alternativ til Vercel, Netlify og Cloudflare, der anvender libp2p til netværksautodiscovery og IPFS til distribueret lagring.</li>
+<li>Det er WebAssembly-native, hvilket giver fordele som at undgå leverandørlåsning, men brugere har bemærket, at dokumentationen er vag, og konceptet er uklart.</li>
+<li>Det er almindeligt at sammenligne med Kubernetes og andre PaaS-løsninger som Coolify og CapRover, hvilket indikerer projektets potentiale, men understreger behovet for bedre dokumentation og klarere kommunikation af dets funktioner og fordele.</li>
+</ul>
+<h2><a href="https://github.com/karpathy/llm.c/discussions/677">Karpathy: Lad os reproducere GPT-2 (1.6B): en 8XH100 node 24h $672 i llm.c</a></h2>
+<ul>
+<li>Forskere har genskabt GPT-2 (1.6B) ved hjælp af llm.c, en C/CUDA-implementering, på en enkelt 8XH100-node på 24 timer for $672, og dermed omgået typiske Python-baserede dybdelæringsstakke som PyTorch.</li>
+<li>På trods af nogle justerings- og stabilitetsproblemer er modellens ydeevne sammenlignelig med GPT-2, vurderet ved hjælp af metrikker som valideringstab og HellaSwag-nøjagtighed.</li>
+<li>Indlægget dækker også hukommelsesstyring, multi-node træning og sammenligner implementeringen med en PyTorch-version, med fremtidige planer om at optimere hyperparametre og forbedre træningsstabiliteten.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40939707">Reaktioner</a></h3>
+<ul>
+<li>Andrej Karpathy genskabte med succes GPT-2 (1,6 milliarder parametre) på en enkelt 8XH100 node på 24 timer til en pris af $672.</li>
+<li>Fremskridt inden for AI-hardware kan potentielt sænke omkostningerne og reducere træningstiderne i fremtiden.</li>
+<li>Selvom AI i videospil viser lovende takter for at forbedre NPC&#39;er og historiefortælling, står den nuværende teknologi stadig over for betydelige begrænsninger, især inden for tekstgenerering til narrativ og dialog.</li>
+</ul>
+<h2><a href="https://abe.today/blogs/main/floppy8-a-tiny-computer-in-a-floppy-drive">Floppy8 – En lille computer, i et diskettedrev (2023)</a></h2>
+<ul>
+<li>Floppy8 er en mikrocomputer og et cartridgesystem bygget inde i et diskettedrev, der er i stand til at afspille 4K-film og spil med trådløse controllere og motoriseret cartridge-udkast.</li>
+<li>Projektet involverede at genanvende en Amiga 1010 diskdrev, designe et nyt medieformat og omfattende 3D-printning og elektrisk ingeniørarbejde for at få alle komponenter til at passe inde i drevet.</li>
+<li>Skaberen brugte en Latte Panda 3 Delta-computer og specialfremstillede 3D-printede patroner, og overvandt udfordringer med størrelsesbegrænsninger, udstødningsmekanismer og LED-kontrol for at fuldføre projektet.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40942141">Reaktioner</a></h3>
+<ul>
+<li>Floppy8 er en lille computer indbygget i et 3,5&quot; diskettedrev, der minder om tidligere kompakte computerprojekter som Amiga 1200-klonen og Ross SPARCPlug.</li>
+<li>Skaberen, abeisgreat, delte en video, der detaljerede projektet, inklusive SD-kortbaserede kassetter og andre tekniske aspekter, hvilket vakte interesse og beundring i tech-fællesskabet.</li>
+<li>Diskussioner fremhæver nostalgien og innovationen i at tilpasse computere til små formfaktorer, med henvisninger til historiske forsøg og moderne gør-det-selv-projekter.</li>
+</ul>
+<h2><a href="https://blog.fal.ai/auraflow/">AuraFlow v0.1: et open source-alternativ til Stable Diffusion 3</a></h2>
+<ul>
+<li>AuraFlow v0.1 er en open-source, flow-baseret tekst-til-billede genereringsmodel, der demonstrerer den open-source AI-verdens robusthed.</li>
+<li>Modellen udmærker sig ved at generere detaljerede billeder ud fra tekstbeskrivelser og inkorporerer avancerede teknikker som zero-shot læringshastighedsoverførsel og gen-beskrivelse.</li>
+<li>Med 6,8 milliarder parametre blev AuraFlow trænet over fire uger, opnåede høje GenEval-scorer, og fremtidige planer inkluderer yderligere træning og udvikling af effektive modeller til forbruger-GPU&#39;er.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40941853">Reaktioner</a></h3>
+<ul>
+<li>AuraFlow v0.1 er et open-source alternativ til Stable Diffusion 3, som viser lovende resultater på trods af at være en tidlig udgivelse.</li>
+<li>Modellen klarer sig godt med enkle anmodninger, men har svært ved komplekse og negationer, hvilket indikerer områder, der kan forbedres.</li>
+<li>Diskussioner fremhæver modellens begrænsninger i at generere realistiske menneskekroppe og håndtere nuancerede tekstprompter, hvilket afspejler de løbende udfordringer inden for AI-billedgenerering.</li>
+</ul>
+<h2><a href="https://mazzo.li/posts/value-speculation.html">Slå L1-cachen med værdispekulation (2021)</a></h2>
+<ul>
+<li>Indlægget diskuterer brugen af værdispekulation til at forbedre CPU-ydeevnen ved at udnytte grenspredictoren til at gætte værdier og reducere datadependenser i tætte løkker.</li>
+<li>Ved at spekulere på den næste nodes adresse i en sammenlægningsfunktion for en sammenkædet liste, sigter teknikken mod at omgå L1-cache-læseforsinkelser, hvilket resulterer i betydelige ydeevneforbedringer.</li>
+<li>Selvom compilere ofte optimerer dette trick væk, sikrer brugen af inline assembly, at spekulationen forbliver, hvilket fører til en 50-200% stigning i funktionens hastighed, når data passer inden for CPU-cacherne.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40940241">Reaktioner</a></h3>
+<ul>
+<li>Artiklen &quot;Beating the L1 cache with value speculation&quot; (2021) af mazzo.li undersøger optimering af hukommelseslayout i linkede lister gennem værdispekulation og understreger vigtigheden af lineært hukommelseslayout af noder.</li>
+<li>Kommentatorer debatterer metodens praktiske anvendelighed og effektivitet, hvor nogle værdsætter dens snedighed, men stiller spørgsmålstegn ved dens brede anvendelighed.</li>
+<li>Diskussioner dækker også relaterede tekniske detaljer som instruktionseksekvering, hukommelsesmodeller, potentielle anvendelsestilfælde og muligheden for, at compilere kan automatisere sådanne optimeringer.</li>
+</ul>
+<h2><a href="https://gizmodo.com/apple-vision-pro-u-s-sales-2000469302">Apple Vision Pro-salget i USA er så godt som dødt, siger markedsanalytikere</a></h2>
+<ul>
+<li>Apple Vision Pro-salget i USA falder kraftigt, med en forventet nedgang på 75% inden udgangen af august 2024, da de fleste interesserede købere allerede har købt det $3.500 dyre headset.</li>
+<li>Den nuværende model har ikke nået 100.000 solgte enheder, hvilket har fået Apple til at sænke sine salgforventninger og overveje en billigere model, der rygtes at koste omkring $1.750, til 2025.</li>
+<li>Apple udvikler også en visionOS-opdatering for at forbedre brugeroplevelsen, hvilket kan hjælpe med at opretholde interessen indtil udgivelsen af det mere overkommelige headset.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40939627">Reaktioner</a></h3>
+<ul>
+<li>Apple Vision Pro-salget i USA underpræsterer på grund af begrænset brugerinteresse og udviklerstøtte.</li>
+<li>Den høje pris på $3500 og det begrænsede indhold er betydelige forhindringer, der afskrækker både forbrugere og udviklere.</li>
+<li>Analytikere foreslår, at Apple muligvis skal genoverveje sin strategi, eventuelt ved at skabe en mere overkommelig version eller forbedre sit softwareøkosystem for at øge tiltrækningskraften.</li>
+</ul>
+<h2><a href="https://alderongames.com/intel-crashes">Intel sælger defekte 13.-14. generations CPU&#39;er</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=40946644">Reaktioner</a></h3>
+<ul>
+<li>Intel sælger angiveligt defekte 13. og 14. generations CPU&#39;er, hvilket fører til nedbrud, BSOD&#39;er (Blue Screen of Death) og andre fejl, med nogle rapporter, der indikerer, at problemerne forværres over tid.</li>
+<li>Betroede kilder som RadGames og Level1Techs har bekræftet disse ustabilitetsproblemer, som muligvis kan være forbundet med Intels aggressive strøm- og termiske styringsstrategier.</li>
+<li>På grund af disse vedvarende problemer overvejer mange brugere at skifte til AMD som et alternativ.</li>
+</ul>
+<h2><a href="https://www.geaerospace.com/news/press-releases/ge-aerospace-successfully-develops-and-tests-new-hypersonic-dual-mode-ramjet">GE Aerospace udvikler og tester med succes ny hypersonisk dual-mode ramjet</a></h2>
+<ul>
+<li>GE Aerospace har med succes udviklet og testet en ny hypersonisk dual-mode ramjet på under 11 måneder, hvilket demonstrerer en tredobling af luftstrømmen i forhold til tidligere teknologier.</li>
+<li>Dette resultat understreger GE Aerospaces engagement i at fremme hypersonisk teknologi, hvor den næste fase fokuserer på yderligere testning og teknologidemonstration.</li>
+<li>Projektet var et samarbejde mellem GE Aerospace, Innoveering og GE Aerospace&#39;s forskningscenter, hvilket fremhæver teamets hurtige fremskridt og dedikation.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40943253">Reaktioner</a></h3>
+<ul>
+<li>GE Aerospace har i samarbejde med Innoveering og deres forskningscenter udviklet og testet en ny hypersonisk dual-mode ramjet på under 11 måneder.</li>
+<li>Teknologien, sandsynligvis baseret på et eksisterende design, er beregnet til missiler eller højhastighedsfly, ikke kommerciel luftfart, på grund af de ekstreme hastigheder og forhold.</li>
+<li>Dette projekt understreger betydelige fremskridt inden for hypersonisk fremdrift, som er afgørende for militære anvendelser.</li>
+</ul>
+<head>
+  <meta property="og:title" content="WebVM er et serverløst virtuelt Linux-miljø, der kører på klientsiden" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=WebVM%20er%20et%20serverl%C3%B8st%20virtuelt%20Linux-milj%C3%B8%2C%20der%20k%C3%B8rer%20p%C3%A5%20klientsiden&subheading=fredag%20den%2012.%20juli%202024%3A%20Resum%C3%A9%20af%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/da/2024/07/12</link>
+            <guid isPermaLink="false">2024-07-12T00:00:00.000Z</guid>
+            <pubDate>Fri, 12 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-11]]></title>
             <description
@@ -1676,201 +1867,6 @@
             <link>https://hn.cho.sh/da/2024/07/03</link>
             <guid isPermaLink="false">2024-07-03T00:00:00.000Z</guid>
             <pubDate>Wed, 03 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-02]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/02&#39;</h2>
-<h1>2024-07-02</h1>
-<h2><a href="https://unchartedterritories.tomaspueyo.com/p/why-is-chile-so-long">Hvorfor er Chile så langt?</a></h2>
-<ul>
-<li>Chiles unikke længde skyldes Andesbjergene, der skaber en smal stribe land mellem bjergene og Stillehavet.</li>
-<li>Landets geografi er formet af sammenstødet mellem Nazca- og Sydamerikanske tektoniske plader, hvilket danner Andesbjergene.</li>
-<li>Chiles grænser var historisk omstridte, især i Stillehavskrigen, hvor det erhvervede ressourcerige territorier.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40856030">Reaktioner</a></h3>
-<ul>
-<li>Chiles unikke geografi, med Andesbjergene og Stillehavet som naturlige grænser, samt historiske faktorer har formet dets lange og smalle form.</li>
-<li>Landet strækker sig over forskellige klimaer, fra Atacama-ørkenen i nord til kolde sydlige regioner, hvilket påvirker dets centraliserede befolkning i Santiago.</li>
-<li>Chiles varierede geografi påvirker også dets spanske dialekt, hvilket giver den unikke karakteristika sammenlignet med andre spansktalende regioner.</li>
-</ul>
-<h2><a href="https://ladybird.org/index.html">Velkommen til Ladybird, en virkelig uafhængig webbrowser</a></h2>
-<ul>
-<li>Ladybird er en uafhængig webbrowser og motor, oprindeligt en HTML-fremviser for SerenityOS, som nu understøtter Linux, macOS og andre Unix-lignende systemer.</li>
-<li>Unikke funktioner inkluderer ingen kode fra andre browsere, et enestående fokus på at være en webbrowser og ingen indtjening gennem annoncer eller brugerdata.</li>
-<li>En Alpha-udgivelse er planlagt til sommeren 2026, med udvikling finansieret af sponsorater og donationer, og et team på 4 fuldtidsingeniører.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40854836">Reaktioner</a></h3>
-<ul>
-<li>Ladybird er en uafhængig webbrowser, og dens officielle hjemmeside er ladybird.org.</li>
-<li>Diskussioner og kommentarer om Ladybird er blevet flyttet til en specifik tråd på Hacker News, som i øjeblikket er fremhævet på forsiden.</li>
-</ul>
-<h2><a href="https://github.com/vslavik/diff-pdf">Diff-pdf: værktøj til visuelt at sammenligne to PDF&#39;er</a></h2>
-<ul>
-<li>Værktøjet <code>diff-pdf</code> giver brugerne mulighed for visuelt at sammenligne to PDF-filer og fremhæve forskelle, hvis der er nogen.</li>
-<li>Arkivet udvikles ikke aktivt, og brugere opfordres til at indsende pull requests for forbedringer, men bør ikke forvente support eller nye funktioner.</li>
-<li>Installationsvejledninger er tilgængelige for forskellige operativsystemer, herunder Windows, macOS og flere Linux-distributioner, med detaljerede trin til kompilering fra kildekode.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40854319">Reaktioner</a></h3>
-<ul>
-<li>Diff-pdf er et værktøj designet til visuelt at sammenligne to PDF-filer, hvor brugere diskuterer dets anvendelighed og alternativer som ImageMagick, Delta Walker og Beyond Compare.</li>
-<li>Brugere deler scripts og konfigurationer til at integrere PDF-sammenligning i arbejdsgange, herunder CI (Continuous Integration) pipelines og git, og fremhæver praktiske anvendelser inden for hardwaredesign og lærebogssammenligninger.</li>
-<li>Diskussionen fremhæver styrkerne og begrænsningerne ved forskellige værktøjer, med præferencer delt mellem open-source muligheder og proprietær software baseret på specifikke funktioner.</li>
-</ul>
-<h2><a href="https://ersei.net/en/blog/fuse-root">Opstart af Linux fra Google Drive</a></h2>
-<ul>
-<li>En udvikler bootede succesfuldt Linux fra Google Drive ved hjælp af FUSE og tilpasset initramfs, hvilket viser en ny tilgang til cloud-native computing.</li>
-<li>Processen involverede brug af google-drive-ocamlfuse til at montere Google Drive og overføre Arch Linux, trods udfordringer som ødelagte symlinks og langsom ydeevne.</li>
-<li>Dette proof of concept, testet på ægte hardware, fremhæver fremtidige muligheder såsom at boote Linux fra SSH eller et Git-repository, hvilket understreger potentialet for innovative cloud-native løsninger.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40853770">Reaktioner</a></h3>
-<ul>
-<li>En ny metode er blevet demonstreret til at starte Linux direkte fra Google Drive, hvilket minder om ældre netværksstartteknikker som Sun Solaris&#39; wanboot.</li>
-<li>Denne tilgang udnytter moderne UEFI (Unified Extensible Firmware Interface) kapaciteter, som kan starte fra HTTP, hvilket gør det muligt at indlæse både initramfs (initial RAM filesystem) og kernen over netværket.</li>
-<li>Diskussionen fremhæver potentialet for at bruge lignende metoder til enheder som Raspberry Pi, der allerede kan udføre netværksopstart ved hjælp af PXE (Preboot Execution Environment) og andre protokoller.</li>
-</ul>
-<h2><a href="https://hallofdreams.org/posts/hatetris/">At få verdensrekorden i Hatetris (2022)</a></h2>
-<ul>
-<li>HATETRIS, en udfordrende Tetris-variant skabt af Sam Hughes, bruger en deterministisk algoritme til altid at give spilleren den værst mulige brik.</li>
-<li>Den højeste score i HATETRIS blev skubbet til 86 point ved hjælp af Rust-optimeringer, heuristisk strålesøgning og parameterjustering på AWS.</li>
-<li>Vigtige lærdomme inkluderer vigtigheden af profilering, effektive datastrukturer, betydeligt hardware til maskinlæring og kombination af heuristikker for bedre resultater.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40851919">Reaktioner</a></h3>
-<ul>
-<li>Diskussionen centrerer sig om at opnå en verdensrekord i Hatetris, en Tetris-variant, der altid giver den værst mulige brik, hvilket fremhæver de tekniske udfordringer og den vedholdenhed, der er involveret.</li>
-<li>Deltagerne deler personlige oplevelser, relaterede projekter og refleksioner om maskinlæring, neurale netværk og enklere metoder som beam search i håndteringen af sådanne komplekse problemer.</li>
-<li>Diskussionen berører også den vedvarende appel af Tetris-varianter, juridiske udfordringer ved at skabe kloner og virkningen af Tetris-effekten på udviklere.</li>
-</ul>
-<h2><a href="https://makojs.dev/blog/mako-open-sourced">Makro – hurtig, produktionsklar web bundler baseret på Rust</a></h2>
-<ul>
-<li>Mako, et hurtigt, produktionsklart front-end build-værktøj baseret på Rust, er nu open source og tilgængeligt på GitHub.</li>
-<li>Udviklet for at løse problemer med byggehastighed har Mako markant reduceret byggetiderne, f.eks. fra 16s til 3,9s for Ant Design Pro.</li>
-<li>Projektet, der blev startet i marts 2023, blev internt frigivet hos Ant Group i november 2023 og open-sourcet i juni 2024.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40853845">Reaktioner</a></h3>
-<ul>
-<li>Mako er en hurtig, produktionsklar web-bundler udviklet i Rust, designet til at forbedre udviklingscyklussen ved effektivt at samle webapplikationer.</li>
-<li>Det sigter mod at minimere kompromiset med langsommere initiale indlæsningstider, som ofte er forbundet med bundling, og planlægger at understøtte unplugin-systemet for bedre kompatibilitet med eksisterende økosystemer.</li>
-<li>Diskussionen fremhæver fordelene ved bundlere, såsom optimal caching og code splitting, og sammenligner Mako med andre værktøjer som esbuild og swc, idet den bemærker den løbende udvikling og konkurrence inden for web bundler-området.</li>
-</ul>
-<h2><a href="https://two-wrongs.com/code-reviews-do-find-bugs.html">Code reviews finder fejl</a></h2>
-<ul>
-<li>Microsoft-undersøgelsen fra 2015 med titlen &quot;Code Reviews Do Not Find Bugs&quot; hævder, at kun omkring 15% af kommentarer til kodegennemgang indikerer mulige fejl, men denne statistik er vildledende.</li>
-<li>Tidligere forskning indikerer, at kodegennemgange og parprogrammering kan finde yderligere 60% af fejlene med kun en 15% stigning i tidsinvestering, især effektivt på små kodebidder.</li>
-<li>Microsoft-papirets tese modsiges af beviser, der viser kodegennemgangers effektivitet i fejlregistrering og læring af kodebasen, hvor det reelle problem er den gennemsnitlige gennemgangstid på 24 timer.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40851895">Reaktioner</a></h3>
-<ul>
-<li>Code reviews er effektive til at identificere fejl, teknisk gæld og kodeproblemer, hvilket bidrager til en mere vedligeholdelsesvenlig kodebase.</li>
-<li>Diskussionen fremhæver vigtigheden af at opbygge en støttende kodegennemgangskultur, herunder praksisser som at bruge feature flags, opdele ændringer i mindre dele og sætte klare forventninger.</li>
-<li>Debatten inkluderer forskellige perspektiver på effektiviteten og nødvendigheden af kodegennemgange, hvor nogle går ind for alternativer som parprogrammering og automatiseret testning for at supplere eller erstatte traditionelle gennemgange.</li>
-</ul>
-<h2><a href="https://lunduke.locals.com/post/5812560/ladybird-web-browser-becomes-a-non-profit-with-1-million-from-github-founder">Ladybird Web Browser bliver en non-profit med $1M fra GitHub-grundlæggeren</a></h2>
-<ul>
-<li>Ladybird Browser Initiative, en non-profit organisation grundlagt af GitHubs Chris Wanstrath og SerenityOS&#39;s Andreas Kling, har til formål at udvikle en webbrowser fri for virksomheders og reklameindflydelse.</li>
-<li>Med $1 million fra Wanstrath og tidligere finansiering fra Shopify planlægger Ladybird at udgive en alpha-version inden 2026 med fokus på brugerens privatliv og åbne standarder.</li>
-<li>Initiativet har allerede ansat flere fuldtidsudviklere og gjort betydelige fremskridt, på trods af skepsis, med ambitionen om at tilbyde en virkelig uafhængig browsingoplevelse.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40856791">Reaktioner</a></h3>
-<ul>
-<li>Ladybird Web Browser er overgået til en non-profit organisation med en donation på $1M fra GitHub-grundlægger Chris Wanstrath.</li>
-<li>Grundlægger Andreas Kling talte om projektets fremtid og understregede optimisme trods tvivl om at udvikle en ny browser uden betydelig finansiering.</li>
-<li>Teamet sigter mod at støtte åbne webstandarder, opretholde et lille team for økonomisk bæredygtighed og holde projektet open-source under en permissiv licens, mens de udforsker hukommelsessikre sprog til fremtidig udvikling.</li>
-</ul>
-<h2><a href="https://www.quantamagazine.org/amateur-mathematicians-find-fifth-busy-beaver-turing-machine-20240702/">Med den femte travle bæver nærmer forskere sig beregningens grænser</a></h2>
-<ul>
-<li>Forskere har fastslået værdien af BB(5), som repræsenterer kompleksiteten af et simpelt computerprogram kendt som den femte travle bæver, efter årtiers indsats.</li>
-<li>Værdien blev verificeret ved hjælp af Coq-bevisassistenten, hvilket sikrer matematisk nøjagtighed, og den femte busy beaver stopper efter 47.176.870 trin.</li>
-<li>Dette resultat involverede et mangfoldigt team, herunder bidrag fra både amatørmatematikere og eksperter, og det kan være det sidste busy beaver-tal, der bestemmes, på grund af den enorme vanskelighed ved BB(6).</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40857041">Reaktioner</a></h3>
-<ul>
-<li>Forskere nærmer sig de beregningsmæssige grænser med det femte busy beaver-problem, som bestemmer det maksimale antal trin, en Turing-maskine med et givet antal tilstande kan tage, før den stopper.</li>
-<li>En betydelig milepæl er blevet nået med et bevis ved hjælp af Coq, et formelt verifikationsværktøj, hvilket markerer fremskridt inden for området.</li>
-<li>Det femte busy beaver-tal, BB(5), er blevet bevist til at være 47.176.870 trin, selvom udfordringer som den uoverkommelige seks-regel maskine relateret til Collatz-formodningen stadig består.</li>
-</ul>
-<h2><a href="https://ai.meta.com/research/publications/meta-3d-gen/">Meta 3D Gen</a></h2>
-<ul>
-<li>Meta 3D Gen (3DGen) er en avanceret pipeline, der genererer 3D-aktiver fra tekst på under et minut og udmærker sig i præcision og kvalitet.</li>
-<li>Det understøtter fysisk-baseret rendering (PBR) og generativ reteksturering, hvilket overgår industristandarderne både i hastighed og visuel kvalitet.</li>
-<li>3DGen integrerer Meta 3D AssetGen og Meta 3D TextureGen, som repræsenterer 3D-objekter i visnings-, volumetriske og UV-rum.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40857517">Reaktioner</a></h3>
-<ul>
-<li>Meta udvikler et nyt værktøj, Meta 3D Gen, der sigter mod at forbedre VR-indholdsgenerering, som i øjeblikket er arbejdskrævende.</li>
-<li>De eksisterende tjenester som Meshy, Rodin og Luma Labs mangler den nødvendige kvalitet til detaljerede VR-modeller, hvilket understreger behovet for bedre løsninger.</li>
-<li>Fællesskabet håber, at Metas løsning vil tackle problemer som dårlig teksturkvalitet og ineffektiv topologi i de nuværende værktøjer til generering af 3D-modeller.</li>
-</ul>
-<h2><a href="https://github.com/pretzelai/pretzelai/blob/main/README.md">Tilføjelse af Mistral Codestral og GPT-4o til Jupyter Notebooks</a></h2>
-<ul>
-<li>Pretzel er en ny fork af Jupyter Lab, der integrerer AI-kodegenereringsfunktioner og adresserer manglen på sådanne udvidelser i den oprindelige Jupyter.</li>
-<li>Vigtige funktioner inkluderer inline fane-autofuldførelse, celle-niveau kodegenerering og en sidebjælke-chat, alle designet til at forbedre kodeoplevelsen med kontekstuel AI-assistance.</li>
-<li>Pretzel sigter mod at modernisere Jupyter med yderligere funktioner som realtids-samarbejde, SQL-understøttelse, en visuel analysebygger og en VSCode-lignende grænseflade, hvilket gør det til et omfattende værktøj for dataforskere.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40857009">Reaktioner</a></h3>
-<ul>
-<li>Pretzel er en gratis, open-source forgrening af Jupyter Lab, der tilføjer AI-kodegenereringsfunktioner for en mere integreret og kontekstbevidst oplevelse.</li>
-<li>Vigtige funktioner inkluderer inline Tab-autofuldførelse ved hjælp af Mistral Codestral eller GPT-4o, celle-niveau kodegenerering og en sidebjælkechat med kontekst fra den aktuelle celle eller markeret tekst.</li>
-<li>Pretzel sigter mod at modernisere Jupyter med funktioner som realtids-samarbejde, SQL-understøttelse og en visuel analysebygger, hvilket adskiller det fra andre AI-integrerede værktøjer som Noteable, Deepnote, Jupyter-ai, Colab og CoCalc.</li>
-</ul>
-<h2><a href="https://joinup.ec.europa.eu/collection/open-source-observatory-osor/news/new-open-source-law-switzerland">Schweiz kræver offentliggørelse af softwarekildekode for den offentlige sektor</a></h2>
-<ul>
-<li>Schweiz har vedtaget &quot;Forbundsloven om brug af elektroniske midler til opfyldelse af statslige opgaver&quot; (EMBAG), som påbyder open source-software (OSS) i offentlige organer.</li>
-<li>Lovgivningen, ledet af professor Dr. Matthias Stürmer, sigter mod at reducere leverandørlåsning, sænke skatteydernes omkostninger og forbedre tjenester gennem øget konkurrence og innovation.</li>
-<li>EMBAG fremmer gennemsigtighed og effektivitet ved at kræve, at offentlige organer offentliggør softwarekildekode, medmindre det er begrænset af tredjepartsrettigheder eller sikkerhedshensyn, og giver dem mulighed for at tilbyde yderligere IT-tjenester til omkostningsdækkende vederlag.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40852084">Reaktioner</a></h3>
-<ul>
-<li>Schweiz&#39; EMBAG-lov kræver offentliggørelse af kildekoden til software i den offentlige sektor, med undtagelser for tredjepartsrettigheder eller sikkerhedshensyn.</li>
-<li>Lovgivningen har til formål at fremme open-source software (OSS) og giver offentlige organer mulighed for at tilbyde relaterede tjenester til omkostningsdækkende priser, selvom kritikere bekymrer sig om potentielle smuthuller og uklar håndhævelse.</li>
-<li>Dette initiativ kunne føre til bredere OSS-adoption i offentlige tjenester, på trods af udfordringer med revision og overholdelse.</li>
-</ul>
-<h2><a href="https://asteriskmag.com/issues/06/when-rand-made-magic-in-santa-monica">Da RAND skabte magi i Santa Monica</a></h2>
-<ul>
-<li>RAND Corporations guldalder, der strakte sig over to årtier, førte til store fremskridt inden for nuklear strategi, satellitter, systemanalyse og tidlig databehandling.</li>
-<li>Indledningsvis en forskningsafdeling af luftvåbnet, blev RAND&#39;s succes drevet af et talentfuldt, uafhængigt og tværfagligt team, der bidrog til områder som spilteori, kunstig intelligens og pakkekobling.</li>
-<li>Med tiden skiftede RAND&#39;s fokus på grund af anstrengte relationer med luftvåbnet og diversificering til forskning i socialpolitik, hvilket førte til et fald i banebrydende videnskab og innovation.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40849840">Reaktioner</a></h3>
-<ul>
-<li>RAND Corporation var meget indflydelsesrig under Anden Verdenskrig og Den Kolde Krig, svarende til de højdepunkter, som Google eller Bell Labs har haft.</li>
-<li>Det var et knudepunkt for fremtrædende dataloger og matematikere, der bidrog væsentligt til det felt, der nu er kendt som datavidenskab, oprindeligt kaldet &#39;Operations Research&#39;.</li>
-<li>På trods af dets historiske betydning og innovative kontordesigns for samarbejde, er RAND&#39;s moderne anerkendelse aftaget, med dets arv, der inkluderer både banebrydende forskning og kontroversielle strategier som dem under Vietnamkrigen.</li>
-</ul>
-<h2><a href="https://blog.brachiosoft.com/en/posts/git/">En Git-historie: Ikke så sjov denne gang</a></h2>
-<ul>
-<li>Linus Torvalds skabte Git af nødvendighed i 2005, efter at den frie licens til BitKeeper, et tidligere anvendt versionskontrolsystem, blev tilbagekaldt.</li>
-<li>Git&#39;s udvikling var inspireret af Monotone, men havde til formål at være enklere og hurtigere, og det fik hurtigt bidragydere og popularitet, især inden for Ruby-fællesskabet.</li>
-<li>GitHub, lanceret i 2008, øgede markant Gits udbredelse, hvilket førte til dets nuværende dominans på markedet for versionskontrol med en andel på 94%.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40849363">Reaktioner</a></h3>
-<ul>
-<li>Indlægget diskuterer historien og udviklingen af versionskontrolsystemer, med særlig fokus på Git og dets forgængere som BitKeeper og Mercurial.</li>
-<li>Det fremhæver Gits dominans på markedet med en andel på 94% ifølge en Stack Overflow-undersøgelse fra 2022 og diskuterer, om noget fremtidigt system kunne erstatte det.</li>
-<li>Diskussionen inkluderer personlige anekdoter og meninger om forskellige versionskontrolsystemer, med vægt på Gits udbredte anvendelse og integration i moderne udviklingsarbejdsgange.</li>
-</ul>
-<h2><a href="https://www.nbcnews.com/news/latino/-great-sadness-venezuela-first-andean-country-lose-glaciers-rcna153784">Venezuela er det første andinske land, der mister alle sine gletsjere</a></h2>
-<ul>
-<li>Venezuela er blevet det første andinske land til at miste alle sine gletsjere, da Humboldt-gletsjeren i Sierra Nevada nu er for lille til at blive klassificeret som en gletsjer.</li>
-<li>Den Internationale Klima- og Kryosfæreinitiativ (ICCI) bekræftede denne status og bemærkede, at Venezuela havde seks gletsjere i Sierra Nevada, men kun Humboldt-gletsjeren var tilbage i 2011.</li>
-<li>Forskere tilskriver gletsjerens forsvinden til klimaforandringer og stigende globale temperaturer, med en undersøgelse fra 2023, der forudsiger, at 83% af verdens gletsjere kunne forsvinde inden 2100, hvis temperaturerne fortsætter med at stige.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40850313">Reaktioner</a></h3>
-<ul>
-<li>Venezuela er det første andinske land, der mister alle sine gletsjere, med gletsjeroverfladen, der er skrumpet fra 2.317 kvadratkilometer i 1952 til kun 0.046 kvadratkilometer i 2019.</li>
-<li>Denne drastiske reduktion understreger den alvorlige påvirkning af klimaændringer på miljøet.</li>
-<li>Tabet har foranlediget diskussioner om nøjagtigheden af disse tal og de bredere følelsesmæssige og miljømæssige konsekvenser af gletsjerens tilbagetrækning.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Hvorfor er Chile så langt?" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Hvorfor%20er%20Chile%20s%C3%A5%20langt%3F&subheading=tirsdag%20den%202.%20juli%202024%3A%20Resum%C3%A9%20af%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/da/2024/07/02</link>
-            <guid isPermaLink="false">2024-07-02T00:00:00.000Z</guid>
-            <pubDate>Tue, 02 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

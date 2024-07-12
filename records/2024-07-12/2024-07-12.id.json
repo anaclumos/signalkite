@@ -1,0 +1,328 @@
+[
+  {
+    "id": 40940225,
+    "title": "WebVM adalah lingkungan virtual Linux tanpa server yang berjalan di sisi klien",
+    "originLink": "https://webvm.io/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40940225",
+    "commentBody": "",
+    "originSummary": [
+      "WebVM adalah lingkungan virtual Linux tanpa server yang berjalan sepenuhnya di sisi klien menggunakan HTML5 dan WebAssembly, didukung oleh mesin virtualisasi CheerpX.",
+      "Itu memungkinkan eksekusi biner x86 yang aman dan terisolasi di browser mana pun, dengan fitur kompiler JIT (Just-In-Time) x86-ke-WebAssembly, sistem file berbasis blok virtual, dan emulator syscall Linux.",
+      "Fitur baru: Pengguna sekarang dapat membuat gambar WebVM kustom menggunakan Dockerfile, meningkatkan fleksibilitas dan kustomisasi."
+    ],
+    "commentSummary": [
+      "WebVM adalah lingkungan virtual Linux tanpa server yang berjalan di sisi klien, memanfaatkan build CheerpX yang dihosting oleh Leaning Technologies dan mendukung jaringan melalui Tailscale.",
+      "Berbeda dengan emulator sistem penuh, WebVM berfungsi sebagai emulator syscall Linux untuk biner userland, menawarkan fleksibilitas dan kecepatan yang lebih tinggi.",
+      "Itu bukan open-source, dan self-hosting mesin CheerpX dilarang, membuatnya cocok untuk pendidikan, dokumentasi langsung, pelestarian perangkat lunak, dan pengembangan web IDE, meskipun memiliki keterbatasan seperti masalah kinerja pada perangkat mobile dan fungsionalitas offline yang parsial."
+    ],
+    "points": 572,
+    "commentCount": 119,
+    "retryCount": 0,
+    "time": 1720728981
+  },
+  {
+    "id": 40944505,
+    "title": "AT&T mengatakan para penjahat mencuri catatan telepon dari 'hampir semua' pelanggan dalam pelanggaran data",
+    "originLink": "https://techcrunch.com/2024/07/12/att-phone-records-stolen-data-breach/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40944505",
+    "commentBody": "",
+    "originSummary": [
+      "AT&T mengonfirmasi adanya pelanggaran data yang memengaruhi hampir 110 juta pelanggan, yang melibatkan nomor telepon, catatan panggilan dan pesan teks, serta informasi terkait lokasi.",
+      "Pelanggaran tersebut, yang terkait dengan penyedia data cloud Snowflake, mencakup metadata tetapi tidak termasuk konten panggilan atau pesan teks.",
+      "Kekhawatiran keamanan nasional membuat FBI dan DOJ menunda pemberitahuan publik, menandai insiden keamanan kedua AT&T tahun ini."
+    ],
+    "commentSummary": [
+      "AT&T mengalami pelanggaran data yang mempengaruhi hampir semua pelanggan, mengekspos metadata panggilan dan teks tetapi tidak termasuk konten atau cap waktu.",
+      "Meskipun terjadi penurunan saham awal, pasar tetap sebagian besar tidak terpengaruh, mencerminkan keyakinan bahwa perusahaan menghadapi konsekuensi finansial yang minimal untuk pelanggaran semacam itu.",
+      "Insiden tersebut, yang terkait dengan platform cloud Snowflake, telah memicu seruan untuk kebijakan retensi data yang lebih ketat, praktik keamanan yang lebih baik, dan potensi denda besar atau tuntutan hukum untuk menegakkan akuntabilitas perusahaan."
+    ],
+    "points": 285,
+    "commentCount": 214,
+    "retryCount": 0,
+    "time": 1720783074
+  },
+  {
+    "id": 40941056,
+    "title": "Fisika Berbasis Pembelajaran Mendalam Buku",
+    "originLink": "https://physicsbaseddeeplearning.org/intro.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40941056",
+    "commentBody": "",
+    "originSummary": [
+      "The Physics-based Deep Learning Book (v0.2) memberikan pengenalan praktis tentang pembelajaran mendalam dalam simulasi fisik, dengan contoh-contoh praktis menggunakan Jupyter notebook.",
+      "Baru di versi 0.2: Bagian yang diperluas tentang mengintegrasikan pemrograman yang dapat dibedakan (DP) ke dalam pelatihan jaringan saraf (NN) dan bab baru tentang metode pembelajaran yang ditingkatkan untuk masalah fisika.",
+      "Pembaruan di masa depan akan mencakup bab tentang pelatihan jaringan untuk prediksi aliran fluida, menggunakan persamaan model sebagai residu, berinteraksi dengan simulator untuk masalah invers, dan memanfaatkan informasi orde tinggi untuk jaringan neural yang lebih baik."
+    ],
+    "commentSummary": [
+      "Telah diperkenalkan sebuah buku baru berjudul \"Physics-Based Deep Learning\", yang berfokus pada penerapan pembelajaran mendalam pada simulasi fisika daripada konsep pembelajaran mendalam umum dari perspektif seorang fisikawan.",
+      "Buku ini mencakup contoh kode praktis dalam Jupyter notebook, batasan kerugian fisik, simulasi yang dapat dibedakan, algoritma pelatihan untuk masalah fisika, pembelajaran penguatan, dan pemodelan ketidakpastian.",
+      "Buku ini diproduksi oleh Physics-based Simulation Group dan tersedia untuk diunduh di arXiv, dengan sumber daya tambahan dan diskusi yang tersedia di berbagai platform seperti YouTube dan GitHub."
+    ],
+    "points": 283,
+    "commentCount": 20,
+    "retryCount": 0,
+    "time": 1720735810
+  },
+  {
+    "id": 40942732,
+    "title": "Penggunaan S3 sebagai Container Registry",
+    "originLink": "https://ochagavia.nl/blog/using-s3-as-a-container-registry/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40942732",
+    "commentBody": "",
+    "originSummary": [
+      "Seorang pengembang telah mendemonstrasikan penggunaan Amazon S3 sebagai registry kontainer dengan mengekspos bucket S3 melalui HTTP dan mengunggah file gambar kontainer ke jalur tertentu, memungkinkan operasi `docker pull`.",
+      "Kelebihan utama menggunakan S3 dibandingkan dengan registri kontainer tradisional seperti DockerHub atau Amazon ECR adalah kecepatan unggah yang jauh lebih cepat karena unggahan terpotong paralel.",
+      "Pendekatan eksperimental ini tidak memiliki fitur seperti pemindaian keamanan otomatis dan kontrol akses, tetapi dapat mengarah pada hosting gambar kontainer publik di Cloudflare's R2 dengan egress gratis."
+    ],
+    "commentSummary": [
+      "Penggunaan Amazon S3 sebagai registry kontainer sedang dibahas, menyoroti potensinya sebagai alternatif untuk registry kontainer tradisional seperti DockerHub dan AWS ECR.",
+      "Percakapan tersebut mengkritik Spesifikasi Distribusi OCI (Open Container Initiative) karena ketidakefisienannya, seperti mengharuskan pengunggahan lapisan secara berurutan dan tidak adanya paginasi standar untuk daftar tag.",
+      "Dampak Docker pada pengembangan perangkat lunak diperdebatkan, dengan beberapa memuji penyederhanaan manajemen dependensinya dan yang lain mengkritiknya karena tidak meningkatkan keandalan produk akhir atau kecepatan pengembangan."
+    ],
+    "points": 255,
+    "commentCount": 111,
+    "retryCount": 0,
+    "time": 1720758383
+  },
+  {
+    "id": 40943436,
+    "title": "Sebagai Karyawan, Anda Dapat Digantikan (2023)",
+    "originLink": "https://nelson.cloud/as-an-employee-you-are-disposable/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40943436",
+    "commentBody": "",
+    "originSummary": [
+      "PHK teknologi baru-baru ini menunjukkan bahwa karyawan sering dianggap sebagai barang sekali pakai oleh eksekutif, bahkan di perusahaan yang menguntungkan.",
+      "Perusahaan seperti Microsoft terus melakukan pemutusan hubungan kerja dan membekukan gaji meskipun melebihi ekspektasi investor dan memiliki pendapatan yang tinggi.",
+      "Karyawan kaya, seperti Tim Gurner, telah membuat komentar yang memperkuat gagasan bahwa karyawan dapat digantikan, terlepas dari kontribusi atau masa kerja mereka."
+    ],
+    "commentSummary": [
+      "Perusahaan adalah entitas transaksional dan mungkin memberhentikan karyawan ketika hal itu menguntungkan mereka, menekankan bahwa karyawan tidaklah tak tergantikan.",
+      "Over-hiring dan pemutusan hubungan kerja sering kali merupakan strategi untuk meningkatkan nilai pemegang saham, yang menyoroti pentingnya karyawan untuk fokus pada kepentingan mereka sendiri dan mencari kompensasi yang adil.",
+      "Mempertimbangkan serikat pekerja dan kode sumber terbuka dapat bermanfaat bagi pengembang, memperkuat gagasan bahwa hubungan antara pemberi kerja dan karyawan pada dasarnya adalah kesepakatan bisnis."
+    ],
+    "points": 238,
+    "commentCount": 350,
+    "retryCount": 0,
+    "time": 1720770076
+  },
+  {
+    "id": 40945076,
+    "title": "Windows NT untuk Power Macintosh",
+    "originLink": "https://github.com/Wack0/maciNTosh",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40945076",
+    "commentBody": "",
+    "originSummary": [
+      "Kumpulan repositori ini berisi kode sumber untuk firmware ARC dan pemuatnya, yang ditujukan untuk sistem New World Power Macintosh menggunakan arsitektur Gossamer, termasuk model seperti iMac G3 dan Power Macintosh G3.",
+      "Firmware ARC mendukung berbagai driver, tetapi saat ini hanya NT4 yang kompatibel, dengan potensi dukungan di masa depan untuk NT 3.51.",
+      "Instalasi melibatkan pengunduhan biner, partisi disk, dan mengikuti petunjuk untuk mengatur NT4, dengan masalah yang diketahui seperti ketidakstabilan dan langkah-langkah khusus yang diperlukan untuk dual-booting dengan partisi Mac."
+    ],
+    "commentSummary": [
+      "Kemunculan seorang pengembang yang berhasil memporting Windows NT untuk berjalan di Power Macintosh telah memicu nostalgia dan diskusi tentang sejarah alternatif sistem operasi.",
+      "Windows NT dirancang untuk dapat dipindahkan, mendukung berbagai arsitektur seperti PowerPC, MIPS, dan Alpha, meskipun terutama dikenal untuk x86.",
+      "Proyek ini menyoroti kelayakan teknis dalam mengadaptasi NT ke berbagai platform perangkat keras, menunjukkan modularitas dari desainnya."
+    ],
+    "points": 209,
+    "commentCount": 110,
+    "retryCount": 0,
+    "time": 1720788718
+  },
+  {
+    "id": 40939703,
+    "title": "Alat pemadam gen menunjukkan harapan sebagai terapi masa depan melawan penyakit prion",
+    "originLink": "https://news.mit.edu/2024/charmed-collaboration-creates-therapy-candidate-fatal-prion-diseases-0627",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40939703",
+    "commentBody": "",
+    "originSummary": [
+      "CHARM (Coupled Histone tail for Autoinhibition Release of Methyltransferase) adalah alat baru untuk penghambatan gen yang dikembangkan oleh Broad Institute dan Whitehead Institute, menunjukkan potensi untuk mengobati penyakit prion dan kondisi neurodegeneratif lainnya.",
+      "Alat ini menggunakan pengeditan epigenetik untuk membungkam gen penyebab penyakit, termasuk gen protein prion, tanpa mengubah DNA dasar, yang berpotensi menawarkan pengobatan satu kali.",
+      "Kami tim peneliti yang dipimpin oleh Sonia Vallabh dan Jonathan Weissman telah membuat kemajuan signifikan, menciptakan penghambat gen yang ringkas, efektif, dan rendah toksisitas, dan sekarang sedang menyempurnakan CHARM untuk uji klinis."
+    ],
+    "commentSummary": [
+      "Alat pemadaman gen, yang dikirimkan melalui Virus Adeno-Asosiasi (AAV), menunjukkan potensi sebagai terapi untuk penyakit prion, yang saat ini 100% fatal dan tahan terhadap penghancuran.",
+      "Alat ini bekerja dengan membungkam gen protein prion, yang berpotensi mencegah atau membalikkan penyakit, dan bisa efektif melawan prion genetik maupun yang didapat.",
+      "Walaupun menjanjikan, efek jangka panjang alat ini terhadap memori dan kognisi masih dalam penyelidikan, dengan penelitian yang sedang berlangsung mengeksplorasi aplikasi untuk penyakit prion-like lainnya seperti Alzheimer dan Parkinson."
+    ],
+    "points": 204,
+    "commentCount": 63,
+    "retryCount": 0,
+    "time": 1720725668
+  },
+  {
+    "id": 40946033,
+    "title": "Tau: PaaS Open-source – Alternatif Vercel / Netlify / Cloudflare yang di-hosting sendiri",
+    "originLink": "https://github.com/taubyte/tau",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40946033",
+    "commentBody": "",
+    "originSummary": [
+      "Tau adalah kerangka kerja baru yang dirancang untuk membangun platform komputasi awan yang mudah dirawat dan sangat skalabel, berfungsi sebagai alternatif untuk layanan seperti Vercel, Netlify, dan AWS.",
+      "Fitur utama termasuk konfigurasi minimal, perubahan infrastruktur asli Git, jaringan peer-to-peer, dan dukungan untuk WebAssembly, dengan rencana masa depan untuk kontainer dan VM.",
+      "Tau bertujuan untuk mengurangi biaya infrastruktur dan waktu pengembangan, menyediakan platform yang ramah pengembang dengan alat untuk pengembangan lokal dan pengujian menyeluruh."
+    ],
+    "commentSummary": [
+      "Tau adalah Platform as a Service (PaaS) sumber terbuka dan di-hosting sendiri yang menjadi alternatif untuk Vercel, Netlify, dan Cloudflare, menggunakan libp2p untuk penemuan jaringan otomatis dan IPFS untuk penyimpanan terdistribusi.",
+      "Itu adalah WebAssembly-native, menawarkan manfaat seperti menghindari ketergantungan pada vendor tertentu, tetapi pengguna mencatat bahwa dokumentasinya samar dan konsepnya tidak jelas.",
+      "Perbandingan dengan Kubernetes dan solusi PaaS lainnya seperti Coolify dan CapRover adalah hal yang umum, menunjukkan potensi proyek ini tetapi menyoroti kebutuhan akan dokumentasi yang lebih baik dan komunikasi yang lebih jelas tentang fitur dan manfaatnya."
+    ],
+    "points": 178,
+    "commentCount": 58,
+    "retryCount": 0,
+    "time": 1720795282
+  },
+  {
+    "id": 40939707,
+    "title": "Karpathy: Mari kita reproduksi GPT-2 (1.6B): satu node 8XH100 selama 24 jam seharga $672 di llm.c",
+    "originLink": "https://github.com/karpathy/llm.c/discussions/677",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40939707",
+    "commentBody": "",
+    "originSummary": [
+      "Para peneliti telah mereproduksi GPT-2 (1.6B) menggunakan llm.c, sebuah implementasi C/CUDA, pada satu node 8XH100 dalam 24 jam dengan biaya $672, melewati tumpukan pembelajaran mendalam berbasis Python seperti PyTorch.",
+      "Meskipun ada beberapa masalah penyetelan dan stabilitas, kinerja model ini sebanding dengan GPT-2, dievaluasi menggunakan metrik seperti kehilangan validasi dan akurasi HellaSwag.",
+      "Postingan tersebut juga mencakup manajemen memori, pelatihan multi-node, dan membandingkan implementasinya dengan versi PyTorch, dengan rencana masa depan untuk mengoptimalkan hyperparameter dan meningkatkan stabilitas pelatihan."
+    ],
+    "commentSummary": [
+      "Andrej Karpathy berhasil mereproduksi GPT-2 (1,6 miliar parameter) pada satu node 8XH100 dalam waktu 24 jam dengan biaya $672.",
+      "Perkembangan perangkat keras AI berpotensi menurunkan biaya dan mengurangi waktu pelatihan di masa depan.",
+      "Walaupun AI dalam video game menunjukkan potensi untuk meningkatkan NPC dan penceritaan, teknologi saat ini masih menghadapi keterbatasan yang signifikan, terutama dalam pembuatan teks untuk narasi dan dialog."
+    ],
+    "points": 177,
+    "commentCount": 53,
+    "retryCount": 0,
+    "time": 1720725707
+  },
+  {
+    "id": 40942141,
+    "title": "Floppy8 – Sebuah Komputer Kecil, dalam Sebuah Floppy Drive (2023)",
+    "originLink": "https://abe.today/blogs/main/floppy8-a-tiny-computer-in-a-floppy-drive",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40942141",
+    "commentBody": "",
+    "originSummary": [
+      "Floppy8 adalah sebuah mikrokomputer dan sistem kartrid yang dibangun di dalam sebuah floppy drive, mampu memutar film 4K dan permainan dengan pengendali nirkabel serta pengeluaran kartrid bermotor.",
+      "Proyek ini melibatkan penggunaan kembali disk drive Amiga 1010, merancang format media baru, serta pencetakan 3D dan rekayasa listrik yang ekstensif untuk memasukkan semua komponen ke dalam drive.",
+      "Kreator menggunakan komputer Latte Panda 3 Delta dan kartrid cetak 3D khusus, mengatasi tantangan dalam keterbatasan ukuran, mekanisme ejeksi, dan kontrol LED untuk menyelesaikan proyek tersebut."
+    ],
+    "commentSummary": [
+      "Floppy8 adalah komputer kecil yang dibangun ke dalam drive floppy 3,5\", mengingatkan pada proyek komputasi kompak masa lalu seperti klon Amiga 1200 dan Ross SPARCPlug.",
+      "Pembuatnya, abeisgreat, membagikan sebuah video yang merinci proyek tersebut, termasuk kartrid berbasis kartu SD dan aspek teknis lainnya, yang memicu minat dan kekaguman di komunitas teknologi.",
+      "Diskusi menyoroti nostalgia dan inovasi dalam menyesuaikan komputer ke dalam faktor bentuk kecil, dengan referensi pada upaya historis dan proyek DIY modern."
+    ],
+    "points": 159,
+    "commentCount": 36,
+    "retryCount": 0,
+    "time": 1720748705
+  },
+  {
+    "id": 40941853,
+    "title": "AuraFlow v0.1: alternatif sumber terbuka untuk Stable Diffusion 3",
+    "originLink": "https://blog.fal.ai/auraflow/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40941853",
+    "commentBody": "",
+    "originSummary": [
+      "AuraFlow v0.1 adalah model generasi teks-ke-gambar berbasis aliran yang bersumber terbuka, menunjukkan ketahanan komunitas AI sumber terbuka.",
+      "Model ini unggul dalam menghasilkan gambar yang detail dari deskripsi teks dan menggabungkan teknik-teknik canggih seperti transfer laju pembelajaran zero-shot dan re-captioning.",
+      "Dengan 6,8 miliar parameter, AuraFlow dilatih selama empat minggu, mencapai skor GenEval yang tinggi, dan rencana masa depan termasuk pelatihan lebih lanjut serta mengembangkan model yang efisien untuk GPU konsumen."
+    ],
+    "commentSummary": [
+      "AuraFlow v0.1 adalah alternatif sumber terbuka untuk Stable Diffusion 3, menunjukkan potensi meskipun masih dalam rilis awal.",
+      "Kinerja model baik pada perintah sederhana tetapi kesulitan dengan yang kompleks dan negasi, menunjukkan area yang perlu ditingkatkan.",
+      "Diskusi menyoroti keterbatasan model dalam menghasilkan tubuh manusia yang realistis dan menangani petunjuk teks yang bernuansa, mencerminkan tantangan yang sedang berlangsung dalam pembuatan gambar AI."
+    ],
+    "points": 137,
+    "commentCount": 31,
+    "retryCount": 0,
+    "time": 1720744963
+  },
+  {
+    "id": 40940241,
+    "title": "Melampaui cache L1 dengan spekulasi nilai (2021)",
+    "originLink": "https://mazzo.li/posts/value-speculation.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40940241",
+    "commentBody": "",
+    "originSummary": [
+      "Kirimannya membahas penggunaan spekulasi nilai untuk meningkatkan kinerja CPU dengan memanfaatkan prediktor cabang untuk menebak nilai dan mengurangi ketergantungan data dalam loop yang ketat.",
+      "Melalui spekulasi alamat node berikutnya dalam fungsi penjumlahan linked list, teknik ini bertujuan untuk melewati penundaan pembacaan cache L1, yang menghasilkan peningkatan kinerja yang signifikan.",
+      "Meskipun kompiler sering mengoptimalkan trik ini, menggunakan assembly inline memastikan spekulasi tetap ada, yang mengarah pada peningkatan kecepatan fungsi sebesar 50-200% ketika data sesuai dengan cache CPU."
+    ],
+    "commentSummary": [
+      "Artikel 'Mengalahkan cache L1 dengan spekulasi nilai' (2021) oleh mazzo.li mengeksplorasi pengoptimalan tata letak memori dalam daftar tertaut melalui spekulasi nilai, menekankan pentingnya tata letak memori linear dari node-node.",
+      "Para komentator memperdebatkan kepraktisan dan efektivitas metode ini, dengan beberapa menghargai kecerdasannya tetapi mempertanyakan penerapannya secara luas.",
+      "Diskusi juga mencakup detail teknis terkait seperti eksekusi instruksi, model memori, potensi kasus penggunaan, dan kemungkinan kompilator mengotomatisasi optimasi semacam itu."
+    ],
+    "points": 125,
+    "commentCount": 29,
+    "retryCount": 0,
+    "time": 1720729078
+  },
+  {
+    "id": 40939627,
+    "title": "Penjualan Apple Vision Pro di AS Hampir Mati, Kata Analis Pasar",
+    "originLink": "https://gizmodo.com/apple-vision-pro-u-s-sales-2000469302",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40939627",
+    "commentBody": "",
+    "originSummary": [
+      "Penjualan Apple Vision Pro di AS menurun tajam, dengan penurunan yang diproyeksikan mencapai 75% pada akhir Agustus 2024, karena sebagian besar pembeli yang tertarik telah membeli headset seharga $3.500 tersebut.",
+      "Model saat ini belum mencapai 100.000 unit terjual, sehingga Apple menurunkan ekspektasi penjualannya dan mempertimbangkan model yang lebih murah, yang dikabarkan sekitar $1.750, untuk tahun 2025.",
+      "Apple juga sedang mengembangkan pembaruan visionOS untuk meningkatkan pengalaman pengguna, yang mungkin dapat membantu mempertahankan minat hingga peluncuran headset yang lebih terjangkau."
+    ],
+    "commentSummary": [
+      "Penjualan Apple Vision Pro di AS kurang memuaskan karena minat pengguna dan dukungan pengembang yang terbatas.",
+      "Kendala utama adalah harga tinggi sebesar $3500 dan konten yang terbatas, yang menghalangi baik konsumen maupun pengembang.",
+      "Analis menyarankan Apple mungkin perlu mempertimbangkan kembali strateginya, mungkin dengan menciptakan versi yang lebih terjangkau atau meningkatkan ekosistem perangkat lunaknya untuk memperluas daya tarik."
+    ],
+    "points": 121,
+    "commentCount": 209,
+    "retryCount": 0,
+    "time": 1720725140
+  },
+  {
+    "id": 40946644,
+    "title": "Intel menjual CPU Generasi ke-13 dan ke-14 yang cacat",
+    "originLink": "https://alderongames.com/intel-crashes",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40946644",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Intel diduga menjual CPU Generasi ke-13 dan ke-14 yang cacat, yang menyebabkan crash, BSOD (Blue Screen of Death), dan kesalahan lainnya, dengan beberapa laporan menunjukkan bahwa masalah tersebut semakin memburuk seiring waktu.",
+      "Sumber terpercaya seperti RadGames dan Level1Techs telah mengonfirmasi masalah ketidakstabilan ini, yang mungkin terkait dengan strategi manajemen daya dan termal agresif dari Intel.",
+      "Karena masalah yang terus-menerus ini, banyak pengguna mempertimbangkan untuk beralih ke AMD sebagai alternatif."
+    ],
+    "points": 113,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1720799212
+  },
+  {
+    "id": 40943253,
+    "title": "GE Aerospace Berhasil Mengembangkan dan Menguji Ramjet Dual-Mode Hipersonik Baru",
+    "originLink": "https://www.geaerospace.com/news/press-releases/ge-aerospace-successfully-develops-and-tests-new-hypersonic-dual-mode-ramjet",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=40943253",
+    "commentBody": "",
+    "originSummary": [
+      "GE Aerospace telah berhasil mengembangkan dan menguji ramjet dual-mode hipersonik baru dalam waktu kurang dari 11 bulan, menunjukkan peningkatan aliran udara tiga kali lipat dibandingkan teknologi sebelumnya.",
+      "Prestasi ini menegaskan komitmen GE Aerospace untuk memajukan teknologi hipersonik, dengan fase berikutnya berfokus pada pengujian lebih lanjut dan demonstrasi teknologi.",
+      "The project was a collaborative effort between GE Aerospace, Innoveering, and GE Aerospace’s Research Center, highlighting the rapid progress and dedication of the team."
+    ],
+    "commentSummary": [
+      "GE Aerospace, bekerja sama dengan Innoveering dan Pusat Penelitian mereka, telah mengembangkan dan menguji ramjet dual-mode hipersonik baru dalam waktu kurang dari 11 bulan.",
+      "Kemungkinan teknologi ini didasarkan pada desain yang sudah ada, ditujukan untuk rudal atau pesawat berkecepatan tinggi, bukan penerbangan komersial, karena kecepatan dan kondisi yang ekstrem.",
+      "Proyek ini menekankan kemajuan signifikan dalam propulsi hipersonik, yang sangat penting untuk aplikasi militer."
+    ],
+    "points": 113,
+    "commentCount": 116,
+    "retryCount": 0,
+    "time": 1720767259
+  }
+]
