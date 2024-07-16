@@ -15,12 +15,208 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 15 Jul 2024 19:10:49 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 16 Jul 2024 19:17:21 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/vi.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Mon, 15 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Tue, 16 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[vi]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-16]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/16&#39;</h2>
+<h1>2024-07-16</h1>
+<h2><a href="https://docs.scale-lang.com/">Chạy CUDA, không chỉnh sửa, trên GPU của AMD</a></h2>
+<ul>
+<li>SCALE của Spectral Compute là một bộ công cụ lập trình GPGPU (tính toán đa mục đích trên các đơn vị xử lý đồ họa) cho phép biên dịch gốc các ứng dụng CUDA cho GPU của AMD mà không cần sửa đổi mã CUDA gốc hoặc hệ thống xây dựng.</li>
+<li>SCALE hoạt động như một sự thay thế trực tiếp cho trình biên dịch nvcc của NVIDIA, cho phép tích hợp liền mạch với các công cụ và kịch bản xây dựng hiện có, và hỗ trợ các dự án CUDA mã nguồn mở khác nhau như NVIDIA Thrust và Blender Cycles.</li>
+<li>Hiện tại, SCALE hỗ trợ các GPU AMD như gfx1030 (Navi 21, RDNA 2.0) và gfx1100 (Navi 31, RDNA 3.0), với việc phát triển liên tục cho các kiến trúc GPU bổ sung.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40970560">phản ứng</a></h3>
+<ul>
+<li>Cuộc thảo luận tập trung vào tính khả thi và những tác động của việc chạy CUDA (Kiến trúc Thiết bị Tính toán Hợp nhất) trên các GPU của AMD, nhấn mạnh những thách thức về kỹ thuật và pháp lý.</li>
+<li>Vài người cho rằng việc hỗ trợ các lớp dịch cho CUDA trên GPU của AMD là không thực tế và đề xuất tập trung vào các dự án mã nguồn mở như PyTorch thay vào đó.</li>
+<li>HIP (Heterogeneous-Compute Interface for Portability) được đề cập như một giải pháp tiềm năng với ít công sức để chuyển mã CUDA sang GPU của AMD, mặc dù nó không hoàn toàn không tốn công sức.</li>
+</ul>
+<h2><a href="https://www.heise.de/en/news/For-advertising-Firefox-now-collects-user-data-by-default-9801345.html">Để phục vụ quảng cáo, Firefox hiện thu thập dữ liệu người dùng theo mặc định</a></h2>
+<ul>
+<li>Phiên bản mới nhất của Firefox hiện thu thập dữ liệu người dùng theo mặc định, giới thiệu Tính năng Quy gán Bảo vệ Quyền riêng tư (PPA) cho việc đo lường quảng cáo ẩn danh, điều này đã gây ra tranh cãi.</li>
+<li>Những người chỉ trích cho rằng việc thu thập dữ liệu mặc định này làm suy yếu niềm tin của người dùng và nghi ngờ ý định của Mozilla nhằm tăng doanh thu, thách thức danh tiếng về quyền riêng tư của Firefox.</li>
+<li>Hiệp hội Bảo vệ Quyền riêng tư (PPA) sử dụng một máy chủ tổng hợp để ẩn danh dữ liệu, nhưng vẫn còn lo ngại về việc dữ liệu rời khỏi máy tính của người dùng và khả năng truy cập trong tương lai bởi các nhà quảng cáo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40974112">phản ứng</a></h3>
+<ul>
+<li>Firefox đã bắt đầu thu thập dữ liệu người dùng mặc định cho mục đích quảng cáo, điều này có thể được tắt trong cài đặt dưới mục Quyền riêng tư &amp; Bảo mật.</li>
+<li>Người dùng đã báo cáo rằng cài đặt để vô hiệu hóa tính năng này không dễ dàng tìm kiếm và không đồng bộ trên các thiết bị.</li>
+<li>Một giám đốc kỹ thuật của Mozilla cho rằng tính năng này cân bằng giữa quyền riêng tư và đo lường quảng cáo, nhưng sự hoài nghi và chỉ trích từ người dùng vẫn tiếp tục tồn tại.</li>
+</ul>
+<h2><a href="https://github.com/exo-explore/exo">Exo: Vận hành cụm AI của riêng bạn tại nhà với các thiết bị hàng ngày</a></h2>
+<ul>
+<li>Exo cho phép người dùng tạo một cụm AI tại nhà bằng cách sử dụng các thiết bị hàng ngày như iPhone, iPad, Android, Mac và hệ thống Linux, loại bỏ nhu cầu sử dụng các GPU NVIDIA đắt tiền.</li>
+<li>Những tính năng chính bao gồm hỗ trợ nhiều mô hình (ví dụ, LLaMA), phân chia mô hình động, tự động phát hiện thiết bị, và API tương thích với ChatGPT, tất cả đều sử dụng kết nối ngang hàng mà không cần kiến trúc chủ-thợ.</li>
+<li>Exo là phần mềm thử nghiệm, vì vậy người dùng nên mong đợi các lỗi ban đầu và được khuyến khích báo cáo các vấn đề cũng như đóng góp cho cộng đồng.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40973339">phản ứng</a></h3>
+<ul>
+<li>Exo cho phép người dùng chạy các cụm AI của riêng họ tại nhà bằng cách sử dụng các thiết bị hàng ngày, cung cấp một giải pháp thay thế cho việc tính toán AI dựa trên đám mây.</li>
+<li>Đề án hỗ trợ nhiều loại phần cứng khác nhau, bao gồm điện thoại và máy tính xách tay cũ, và nhằm cung cấp quyền riêng tư, tùy chỉnh và truy cập ngoại tuyến cho các mô hình AI.</li>
+<li>Thảo luận nêu bật những đánh đổi giữa các mô hình AI cục bộ và đám mây, bao gồm chi phí, hiệu suất và quyền riêng tư, với một số người dùng ưa chuộng các thiết lập cục bộ cho dữ liệu cá nhân hoặc nhạy cảm.</li>
+</ul>
+<h2><a href="https://horizon.pics">Horizon – Giải pháp thay thế riêng tư cho Imgur</a></h2>
+<ul>
+<li>James, một kỹ sư full-stack 17 tuổi đến từ Canada, đã phát triển Horizon Pics, một dịch vụ lưu trữ tệp tập trung vào bảo mật, quyền riêng tư và nhu cầu của người dùng, không có quảng cáo hay bán dữ liệu.</li>
+<li>Vừa qua, Horizon Pics đã tiến hành tái thương hiệu và ra mắt một ứng dụng máy tính để bàn mới có tên là Alpine, ứng dụng này tự động tải lên các ảnh chụp màn hình và nội dung clipboard, cung cấp các tính năng như tự động xóa và mã hóa đầu cuối.</li>
+<li>Ứng dụng được xây dựng với các công nghệ hiện đại như Tauri, TypeScript, SvelteKit, Sass và Rust, và Horizon Pics cung cấp cả gói miễn phí và gói trả phí với các giới hạn lưu trữ khác nhau.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40972122">phản ứng</a></h3>
+<ul>
+<li>Horizon Pics, được phát triển bởi một kỹ sư full-stack 17 tuổi từ Canada, là một lựa chọn thay thế riêng tư cho Imgur, cung cấp dịch vụ lưu trữ tệp không có quảng cáo và an toàn.</li>
+<li>Địch vụ gần đây đã ra mắt một thương hiệu mới, bao gồm một ứng dụng máy tính để bàn mới có tên là Alpine, tự động tải lên các ảnh chụp màn hình và bảng tạm với các tùy chọn bảo mật.</li>
+<li>Horizon Pics cung cấp cả gói miễn phí với dung lượng lưu trữ giới hạn và gói trả phí với giới hạn cao hơn, nhằm thu hút người dùng tìm kiếm các giải pháp lưu trữ tệp tập trung vào quyền riêng tư.</li>
+</ul>
+<h2><a href="https://www.thebignewsletter.com/p/inside-the-mafia-of-pharma-pricing">Giá cả Mafia của Ngành Dược</a></h2>
+<ul>
+<li>Phúc trình mới của FTC tiết lộ cách một số tập đoàn y tế, được ví như mafia, kiểm soát 4% tổng số tiền của Hoa Kỳ thông qua việc định giá dược phẩm.</li>
+<li>Nhà quản lý lợi ích dược phẩm (PBMs) được xác định là những nhân tố chính làm tăng giá thuốc bằng cách kiểm soát giá cả và chuyển hướng quỹ về phía họ.</li>
+<li>Những hành động của FTC và các thay đổi lập pháp tiềm năng nhằm giải quyết việc độc quyền hóa giá dược phẩm bởi các PBM, điều này đã dẫn đến chi phí tăng cao đáng kể.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40971553">phản ứng</a></h3>
+<ul>
+<li>Đoạn viết thảo luận về các hành vi phi đạo đức trong ngành công nghiệp dược phẩm, đặc biệt liên quan đến các Nhà Quản Lý Lợi Ích Dược Phẩm (PBMs) và các công ty dược.</li>
+<li>Những vấn đề chính bao gồm việc bán dữ liệu kê đơn, các khoản &quot;hoàn trả&quot; hợp pháp hoạt động như các khoản hối lộ, và ảnh hưởng của các động lực tài chính đến chẩn đoán và kê đơn y tế.</li>
+<li>Cuộc trò chuyện nhấn mạnh sự cần thiết của tính minh bạch và quy định để giải quyết các biến dạng thị trường và bảo vệ bệnh nhân khỏi hành vi phi đạo đức và giá thuốc bị thổi phồng.</li>
+</ul>
+<h2><a href="https://www.interdb.jp/dl/">Cuốn Hướng Dẫn Kỹ Sư Về Học Sâu: Hiểu Về Mô Hình Transformer</a></h2>
+<ul>
+<li>Văn bản, &quot;Hướng Dẫn Của Kỹ Sư Về Học Sâu,&quot; cung cấp một hướng dẫn toàn diện để hiểu mô hình Transformer, một bước đột phá quan trọng trong AI được giới thiệu vào năm 2017.</li>
+<li>Bao gồm các khái niệm cơ bản về mạng nơ-ron, RNNs (Mạng Nơ-ron Tái Phát), NLP (Xử lý Ngôn ngữ Tự nhiên), và các cơ chế chú ý, kèm theo các ví dụ mã Python hoạt động và tài liệu tham khảo để khám phá thêm.</li>
+<li>Phát hành vào ngày 21 tháng 5 năm 2024, nó miễn phí cho việc sử dụng giáo dục và phi thương mại, được tác giả bởi Hironobu SUZUKI, một lập trình viên phần mềm dày dặn kinh nghiệm và người đam mê AI.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40974193">phản ứng</a></h3>
+<ul>
+<li>Đoạn bài viết thảo luận về các nguồn tài liệu khác nhau để hiểu mô hình Transformer trong học sâu, nêu bật các tùy chọn miễn phí và trả phí.</li>
+<li>Những khuyến nghị bao gồm &quot;The Annotated Transformer,&quot; &quot;Transformers from Scratch,&quot; loạt bài của Andrej Karpathy, và các phần giới thiệu trực quan của 3Blue1Brown.</li>
+<li>Hiện đang có một cuộc tranh luận về sự liên quan của Keras, với một số người dùng lưu ý rằng nó đang giảm sút trong giới học thuật và công nghiệp ưa chuộng JAX, trong khi những người khác đề cập đến việc Keras 3 hỗ trợ nhiều backend.</li>
+</ul>
+<h2><a href="https://mistral.ai/news/codestral-mamba/">Mãng xà Codestral</a></h2>
+<ul>
+<li>Vào ngày 16 tháng 7 năm 2024, Mistral AI đã giới thiệu Codestral Mamba, một kiến trúc mới được phát triển cùng với Albert Gu và Tri Dao, cung cấp khả năng suy luận theo thời gian tuyến tính và khả năng mô hình hóa các chuỗi có độ dài vô hạn.</li>
+<li>Codestral Mamba hiệu quả cho năng suất mã, hoạt động tương đương với các mô hình transformer tiên tiến nhất (SOTA), và hỗ trợ truy xuất trong ngữ cảnh lên đến 256k token.</li>
+<li>Model này có thể triển khai thông qua các SDK khác nhau, với trọng số thô có sẵn trên HuggingFace, và miễn phí theo giấy phép Apache 2.0, trong khi Codestral 22B có giấy phép thương mại và cộng đồng.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40977103">phản ứng</a></h3>
+<ul>
+<li>Codestral Mamba, một mẫu mới từ Mistral.ai, đã được phát hành và đang thu hút sự quan tâm nhờ vào kiến trúc và khả năng độc đáo của nó.</li>
+<li>Model này hỗ trợ 256k token ngữ cảnh và cung cấp thời gian suy luận tuyến tính, làm cho nó cạnh tranh với các mô hình dựa trên transformer.</li>
+<li>Hiện đang có cuộc thảo luận về việc tích hợp Codestral Mamba với các môi trường phát triển như VS Code và IntelliJ, nhưng hỗ trợ hiện tại còn hạn chế.</li>
+</ul>
+<h2><a href="https://www.theguardian.com/us-news/article/2024/jul/15/peter-buxtun-tuskegee-whistleblower-dies">Peter Buxtun, người tố giác đã phơi bày nghiên cứu bệnh giang mai Tuskegee, đã qua đời</a></h2>
+<ul>
+<li>Peter Buxtun, người tố giác đã phơi bày nghiên cứu bệnh giang mai Tuskegee phi đạo đức, đã qua đời ở tuổi 86.</li>
+<li>Tiết lộ của Buxtun đã dẫn đến việc chấm dứt nghiên cứu vào năm 1972, các phiên điều trần của quốc hội, và một khoản bồi thường 10 triệu đô la cho các nạn nhân.</li>
+<li>Việc ông so sánh nghiên cứu này với các thí nghiệm y khoa của Đức Quốc xã đã thúc đẩy các quy định nghiên cứu mới của chính phủ, nhấn mạnh tác động đáng kể của ông đối với các tiêu chuẩn đạo đức trong nghiên cứu y khoa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40973422">phản ứng</a></h3>
+<ul>
+<li>Peter Buxtun, người tố giác đã phơi bày nghiên cứu bệnh giang mai Tuskegee phi đạo đức, đã qua đời.</li>
+<li>Những lo ngại của Buxtun về nghiên cứu, trong đó không cung cấp điều trị cho những người đàn ông Mỹ gốc Phi mắc bệnh giang mai, đã bị phớt lờ trong sáu năm trước khi thu hút sự chú ý.</li>
+<li>Cuộc nghiên cứu Tuskegee đã để lại những tác động lâu dài, bao gồm việc góp phần vào sự do dự về vaccine trong các cộng đồng người Mỹ gốc Phi và làm nổi bật sự phân biệt chủng tộc có hệ thống trong nghiên cứu y học.</li>
+</ul>
+<h2><a href="https://lithub.com/what-the-all-american-delusion-of-the-polygraph-says-about-our-relationship-to-fact-and-fiction/">Ảo tưởng về máy phát hiện nói dối</a></h2>
+<ul>
+<li>Justin St. Germain khám phá những ranh giới mờ nhạt giữa ký ức, hồi ký và huyền thoại thông qua trải nghiệm của mình với bài kiểm tra nói dối trong quá trình xin việc tại Cơ quan Hải quan và Bảo vệ Biên giới.</li>
+<li>He lập luận rằng máy phát hiện nói dối, thường được coi là máy phát hiện nói dối, thực ra tạo ra sự thật hơn là phát hiện sự thật, và so sánh điều này với việc viết hồi ký.</li>
+<li>Germain thảo luận về lịch sử gây tranh cãi của máy phát hiện nói dối, việc sử dụng nó để ép cung, và vai trò biểu tượng của nó trong việc khẳng định quyền lực nhà nước, nhấn mạnh những thiếu sót của nó và sự ám ảnh của người Mỹ với một sự thật đơn giản, có thể phát hiện.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40972437">phản ứng</a></h3>
+<ul>
+<li>Người tác giả kể lại việc phải tham gia kiểm tra bằng máy phát hiện nói dối khi mười chín tuổi do bị nghi ngờ ăn cắp tại nơi làm việc, mặc dù vô tội.</li>
+<li>Máy phát hiện nói dối bị chỉ trích vì việc sử dụng chúng để ép buộc lời thú tội hơn là phát hiện nói dối một cách chính xác, thường dẫn đến căng thẳng và kết quả không đáng tin cậy.</li>
+<li>Mặc dù độ chính xác của chúng còn gây tranh cãi, máy phát hiện nói dối vẫn tiếp tục được sử dụng trong các cuộc kiểm tra tuyển dụng và điều tra tội phạm như một công cụ để đe dọa.</li>
+</ul>
+<h2><a href="https://www.binwang.me/2024-07-12-A-Review-of-Linux-on-Surface-Pro-4.html">Đánh giá về Linux trên Surface Pro 4</a></h2>
+<ul>
+<li>Người tác giả đã thử nghiệm cài đặt Linux trên Surface Pro 4, ban đầu được mua vào năm 2016, để khám phá tính khả thi của nó cho các trường hợp sử dụng khác nhau như duyệt internet, tiêu thụ phương tiện truyền thông và vẽ phác thảo.</li>
+<li>Việc cài đặt Linux rất đơn giản khi sử dụng EndeavourOS và Fedora Workstation 40, nhưng chức năng máy tính bảng gặp vấn đề, với các sự cố như chạm ma, từ chối lòng bàn tay kém và tiêu hao pin đáng kể khi ở chế độ ngủ.</li>
+<li>Do những vấn đề này, tác giả đã quay lại sử dụng Windows 10, thấy nó phù hợp hơn với nhu cầu của mình, nhưng có thể sẽ xem xét lại Linux sau khi Windows 10 hết hạn vào năm tới.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40973123">phản ứng</a></h3>
+<ul>
+<li>Việc đánh giá việc chạy Linux trên Surface Pro 4 đã gây ra nhiều cuộc thảo luận đáng kể, làm nổi bật các trải nghiệm khác nhau của người dùng với Linux trên các phần cứng khác nhau.</li>
+<li>Rất nhiều người dùng so sánh trải nghiệm của họ với Linux trên các thiết bị khác, chẳng hạn như Dell XPS và ThinkPad, lưu ý các vấn đề như chế độ ngủ, quản lý năng lượng và tích hợp phần cứng.</li>
+<li>Cuộc trò chuyện nhấn mạnh những thách thức trong việc đạt được sự tích hợp liền mạch giữa phần cứng và phần mềm trên Linux, tương tự như macOS trên MacBook, do những phức tạp trong phát triển trình điều khiển thiết bị.</li>
+</ul>
+<h2><a href="https://www.ft.com/content/0512638c-b7c2-11e6-961e-a1acd97f622d">Những người thợ kim hoàn làm thế nào để thu thập từng hạt bụi vàng cuối cùng? (2017)</a></h2>
+<ul>
+<li>Gary Williams của Mastermelt quản lý việc đốt rác thải thương mại để thu hồi kim loại quý, với các thợ kim hoàn thu thập từng hạt bụi vàng từ xưởng của họ để xử lý.</li>
+<li>Quá trình này bao gồm việc đun nóng các vật liệu đến 2.000 độ C để thu hồi các kim loại như vàng và bạch kim, với các kỹ thuật và công nghệ tiên tiến hỗ trợ trong việc thu giữ nhiều chất thải hơn.</li>
+<li>Niềm tin giữa các thợ kim hoàn và các nhà tinh chế là rất quan trọng, và ngành công nghiệp này liên tục cải tiến các phương pháp để tối đa hóa việc thu hồi kim loại quý.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40972134">phản ứng</a></h3>
+<ul>
+<li>Thợ kim hoàn sử dụng các phương pháp tỉ mỉ để thu giữ từng hạt bụi vàng, bao gồm nâng cấp cửa sổ, giặt là tại chỗ và xé sàn nhà.</li>
+<li>Những thực hành này gợi nhớ đến các nỗ lực lịch sử, chẳng hạn như việc thu hồi bạc từ sàn nhà và thiết bị của Dự án Manhattan.</li>
+<li>Thợ kim hoàn ở các thành phố như Sydney và New York thu hồi vàng từ sàn xưởng và vỉa hè, nhấn mạnh sự khéo léo của ngành và việc giảm thiểu tổn thất vật liệu.</li>
+</ul>
+<h2><a href="https://www.typefox.io/blog/open-collaboration-tools-announcement/">Những Công Cụ Hợp Tác Mở</a></h2>
+<ul>
+<li>Open Collaboration Tools là một dự án mã nguồn mở nhằm nâng cao làm việc nhóm từ xa thông qua việc chia sẻ trực tiếp nội dung của Môi trường Phát triển Tích hợp (IDE).</li>
+<li>Những tính năng chính bao gồm các tiện ích mở rộng cho VS Code và Eclipse Theia, một ứng dụng máy chủ cho việc xác thực và cộng tác, và một giao thức mở với mã hóa đầu cuối.</li>
+<li>Đề án giải quyết các lỗ hổng trong các công cụ hiện có bằng cách cung cấp không khóa nhà cung cấp, khả năng mở rộng tuyệt đối, các tùy chọn triển khai linh hoạt và giấy phép mã nguồn mở theo Giấy phép MIT.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40970621">phản ứng</a></h3>
+<ul>
+<li>Open Collaboration Tools của TypeFox đang thu hút sự chú ý, đặc biệt là từ người dùng openvscode-server và Eclipse Theia, nhờ vào tiềm năng cải thiện sự hợp tác từ xa.</li>
+<li>Dụng cụ của TypeFox, bao gồm Sprotty, Langium và Theia, đang được nhấn mạnh, với suy đoán rằng Theia có thể thay thế openvscode-server nếu nó thực hiện được những lời hứa của mình.</li>
+<li>Cuộc thảo luận bao gồm sự quan tâm đến khả năng mở rộng và sẵn sàng của nhà cung cấp YJS cho việc chỉnh sửa hợp tác, và so sánh với các phương pháp hợp tác khác như chia sẻ màn hình và VS Live Share.</li>
+</ul>
+<h2><a href="https://www.washingtonpost.com/technology/2024/07/13/openai-safety-risks-whistleblower-sec/">Những người tố giác cho biết OpenAI đã cấm nhân viên công khai các rủi ro an toàn một cách bất hợp pháp</a></h2>
+<ul>
+<li>Những người tố giác tại OpenAI đã nộp đơn khiếu nại lên SEC, cáo buộc công ty này đã hạn chế bất hợp pháp nhân viên cảnh báo các cơ quan quản lý về những rủi ro của công nghệ của mình.</li>
+<li>Đơn khiếu nại cho rằng các thỏa thuận lao động của OpenAI đã vi phạm luật liên bang bằng cách yêu cầu nhân viên từ bỏ quyền nhận bồi thường khi tố giác và phải xin phép công ty trước khi tiết lộ thông tin cho các cơ quan chức năng.</li>
+<li>OpenAI đã tuyên bố rằng họ ủng hộ các tiết lộ được bảo vệ và đã sửa đổi các chính sách của mình, trong khi SEC đã thừa nhận đơn khiếu nại nhưng chưa xác nhận một cuộc điều tra.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40974154">phản ứng</a></h3>
+<ul>
+<li>Những người tố giác cho rằng OpenAI đã hạn chế nhân viên thảo luận về các rủi ro an toàn, làm dấy lên lo ngại về việc công ty sử dụng các thỏa thuận không tiết lộ thông tin (NDA).</li>
+<li>Những người chỉ trích cho rằng sự nhấn mạnh của OpenAI vào &quot;rủi ro an toàn&quot; có thể liên quan nhiều hơn đến chiến lược tiếp thị và quy định hơn là các mối đe dọa thực sự, tương tự như các chiến thuật được sử dụng bởi các công ty công nghệ khác.</li>
+<li>Cuộc tranh luận mở rộng đến các tác động đạo đức của việc phát triển AI, bao gồm việc sử dụng các mô hình thiên vị và tác động rộng hơn của việc điều chỉnh AI.</li>
+</ul>
+<h2><a href="https://github.com/dicksites/KUtrace">KUtrace: Công cụ theo dõi nhân Linux với chi phí thấp</a></h2>
+<ul>
+<li>KUtrace là một công cụ theo dõi nhân Linux với chi phí thấp, được thiết kế để phân tích hiệu suất bằng cách theo dõi các chuyển đổi giữa nhân và người dùng.</li>
+<li>Chương trình này tạo ra các dòng thời gian chi tiết cho từng lõi CPU có thể phóng to đến từng nano giây, hỗ trợ giải quyết các vấn đề về hiệu suất trong các trung tâm dữ liệu và lái xe tự động thời gian thực.</li>
+<li>Phần mềm này hỗ trợ bộ vi xử lý x86 và ARM, được mã nguồn mở theo nhiều giấy phép khác nhau, và bao gồm các tệp từ cuốn sách &quot;Hiểu về Động lực Phần mềm&quot; của Richard L. Sites.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40972099">phản ứng</a></h3>
+<ul>
+<li>KUtrace là một công cụ theo dõi nhân Linux với chi phí thấp, được thiết kế để giúp hiểu rõ các nút thắt hiệu suất, đặc biệt trong các hệ thống đa máy.</li>
+<li>Không giống như các công cụ eBPF, KUtrace yêu cầu các bản vá kernel và quyền truy cập root, đòi hỏi phải bảo trì thường xuyên.</li>
+<li>Được khen ngợi vì tính hiệu quả của nó, công cụ này được khuyến nghị cùng với cuốn sách &quot;Hiểu về Động lực Phần mềm&quot; của tác giả Dick Sites để có thêm những hiểu biết sâu sắc về hiệu suất hệ thống.</li>
+</ul>
+<h2><a href="https://twitter.com/karpathy/status/1813263734707790301">Tôi đang bắt đầu một công ty AI+Giáo dục</a></h2>
+<ul>
+<li>Andrej Karpathy đã công bố việc ra mắt công ty mới của mình, Eureka Labs, tập trung vào việc tích hợp AI với giáo dục.</li>
+<li>Eureka Labs hướng tới việc tạo ra một trường học gốc AI nhằm cách mạng hóa trải nghiệm học tập.</li>
+<li>Thông báo được đưa ra qua một tweet, thu hút sự quan tâm đáng kể từ cộng đồng công nghệ và giáo dục.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=40978731">phản ứng</a></h3>
+<ul>
+<li>Andrej Karpathy đang khởi động một công ty AI+Giáo dục, khơi dậy các cuộc thảo luận về vai trò của AI trong giáo dục.</li>
+<li>Ý kiến khác nhau về tiềm năng của AI, với một số người cho rằng nó có thể hỗ trợ nhưng không thể thay thế giáo viên, trong khi những người khác tin rằng AI có thể nâng cao và cá nhân hóa trải nghiệm học tập.</li>
+<li>Cuộc tranh luận làm nổi bật bối cảnh đang phát triển của công nghệ giáo dục, nhấn mạnh sự cần thiết của các giải pháp sáng tạo để cải thiện việc giảng dạy và học tập.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Chạy CUDA, không chỉnh sửa, trên GPU của AMD" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Ch%E1%BA%A1y%20CUDA%2C%20kh%C3%B4ng%20ch%E1%BB%89nh%20s%E1%BB%ADa%2C%20tr%C3%AAn%20GPU%20c%E1%BB%A7a%20AMD&subheading=Th%E1%BB%A9%20Ba%2C%2016%20th%C3%A1ng%207%2C%202024%3A%20T%C3%B3m%20t%E1%BA%AFt%20tin%20t%E1%BB%A9c%20v%E1%BB%81%20hacker" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/vi/2024/07/16</link>
+            <guid isPermaLink="false">2024-07-16T00:00:00.000Z</guid>
+            <pubDate>Tue, 16 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-15]]></title>
             <description
@@ -1697,187 +1893,6 @@
             <link>https://hn.cho.sh/vi/2024/07/07</link>
             <guid isPermaLink="false">2024-07-07T00:00:00.000Z</guid>
             <pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-06]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/06&#39;</h2>
-<h1>2024-07-06</h1>
-<h2><a href="https://github.com/nrrb/tao-te-ching/blob/master/Ursula%20K%20Le%20Guin.md">Đạo Đức Kinh dịch bởi Ursula Le Guin (1997)</a></h2>
-<ul>
-<li>Tác phẩm &quot;Đạo Đức Kinh&quot; của Lão Tử, được dịch bởi Ursula K. Le Guin, khám phá những khái niệm triết học sâu sắc về bản chất của sự tồn tại, lãnh đạo và trí tuệ.</li>
-<li>Những chủ đề chính bao gồm tầm quan trọng của sự đơn giản, khiêm tốn và hành động mà không cần nỗ lực, nhấn mạnh rằng sức mạnh và trí tuệ thực sự đến từ việc hòa hợp với con đường tự nhiên (Đạo).</li>
-<li>Văn bản được chia thành 81 chương, mỗi chương cung cấp những hiểu biết về cách sống hài hòa, lãnh đạo hiệu quả và hiểu những chân lý sâu sắc của cuộc sống thông qua các nghịch lý và ẩn dụ.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40886419">phản ứng</a></h3>
-<ul>
-<li>Phiên bản Đạo Đức Kinh của Ursula Le Guin không phải là một bản dịch trực tiếp mà là một bản diễn giải dựa trên các bản dịch và phiên âm hiện có, vì bà không biết tiếng Trung.</li>
-<li>Văn bản có tính mơ hồ vốn có trong tiếng Trung cổ điển cho phép nhiều cách diễn giải khác nhau, khiến việc nắm bắt đầy đủ ý nghĩa của nó trong bất kỳ bản dịch nào trở nên khó khăn.</li>
-<li>Cuộc thảo luận nhấn mạnh tầm quan trọng của việc hiểu bản chất triết học của Đạo Đức Kinh và những hạn chế của việc dịch các văn bản như vậy mà không có kiến thức về ngôn ngữ gốc.</li>
-</ul>
-<h2><a href="https://radio.garden/">Radio Garden</a></h2>
-<ul>
-<li>Radio Garden cho phép người dùng khám phá các đài phát thanh trực tiếp trên toàn cầu bằng cách xoay một quả địa cầu ảo, mang lại trải nghiệm độc đáo và tương tác.</li>
-<li>Những tính năng của nền tảng bao gồm các cài đặt tùy chỉnh như kích thước phông chữ, màu sắc và chủ đề, và hỗ trợ nhiều kích thước màn hình và thiết bị khác nhau để mang lại trải nghiệm người dùng tối ưu.</li>
-<li>Điều này đảm bảo tính tương thích với các trình duyệt cũ hơn và bao gồm các yếu tố thiết kế thân thiện với người dùng như nút phát dễ sử dụng và hoạt ảnh tải.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40887359">phản ứng</a></h3>
-<ul>
-<li>Radio Garden cho phép người dùng nghe các đài phát thanh toàn cầu, nhưng một danh sách phát WinAmp do người dùng tạo ra đã gặp vấn đề khi nhiều luồng bị ngắt kết nối.</li>
-<li>Radio-browser.info cung cấp một tệp JSON với khoảng 50.000 đài, phục vụ như một lựa chọn thay thế cho những ai tìm kiếm danh sách đầy đủ các luồng công cộng.</li>
-<li>Người dùng đã chia sẻ các lựa chọn thay thế khác như WebSDR và radiooooo.com, mặc dù người dùng tại Vương quốc Anh có thể gặp phải hạn chế do vấn đề bản quyền.</li>
-</ul>
-<h2><a href="https://duckdb.org/2024/07/05/community-extensions.html">DuckDB Community Extensions</a></h2>
-<ul>
-<li>DuckDB đã giới thiệu một kho lưu trữ Tiện ích Mở rộng Cộng đồng, đơn giản hóa việc cài đặt và bảo trì các tiện ích mở rộng và giảm bớt gánh nặng cho các nhà phát triển.</li>
-<li>Kể từ phiên bản 0.3.2, các tiện ích mở rộng có thể được cài đặt và tải bằng các lệnh đơn giản, hỗ trợ nhiều hệ điều hành và kiến trúc bộ xử lý khác nhau, với khoảng sáu triệu lượt tải xuống hàng tuần.</li>
-<li>Kho lưu trữ cho phép các nhà phát triển xuất bản các tiện ích mở rộng mà không cần xử lý các phức tạp về biên dịch và phân phối, nâng cao trải nghiệm của nhà phát triển và khuyến khích sự đóng góp từ cộng đồng.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40885238">phản ứng</a></h3>
-<ul>
-<li>DuckDB Community Extensions đã giới thiệu hỗ trợ cho WebAssembly (WASM), nâng cao tính năng và hiệu suất của nó trong các môi trường web.</li>
-<li>Tiện ích mở rộng shellfs cho phép sử dụng các lệnh shell cho đầu vào/đầu ra, cải thiện tính hữu dụng của DuckDB như một công cụ dòng lệnh.</li>
-<li>Bên cạnh việc DuckDB tải xuống các tệp nhị phân mở rộng, mặc dù các tệp này được xác thực bằng cách kiểm tra chữ ký, vẫn có những lo ngại về an ninh chuỗi cung ứng.</li>
-</ul>
-<h2><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1863246">Đôi khi các mục trong menu ngữ cảnh Sao chép và Dán bị vô hiệu hóa khi chúng không nên bị vô hiệu hóa</a></h2>
-<ul>
-<li>Bug 1863246 liên quan đến các mục trong menu ngữ cảnh Sao chép và Dán bị vô hiệu hóa trong Firefox 97 trên Windows 10, đặc biệt sau khi đánh dấu trang và điều hướng qua lại.</li>
-<li>Vấn đề là một sự thoái lui được phát hiện trong Firefox 129, và đội ngũ hiện đang làm việc để khắc phục tình trạng đua tranh giữa các quy trình cập nhật ngữ cảnh duyệt web đang hoạt động.</li>
-<li>Giải pháp tạm thời bao gồm việc nhấp vào thanh địa chỉ hoặc chuyển đổi tab để kích hoạt lại các mục trong menu ngữ cảnh.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40886954">phản ứng</a></h3>
-<ul>
-<li>Người dùng Firefox đang gặp phải một lỗi khiến các mục trong menu ngữ cảnh Sao chép và Dán đôi khi bị vô hiệu hóa, ảnh hưởng đến cả nền tảng Windows và Linux.</li>
-<li>Vấn đề này khó tái hiện một cách nhất quán và liên quan đến các tương tác phức tạp giữa các thành phần trình duyệt khác nhau, dẫn đến sự thất vọng của người dùng.</li>
-<li>Đang có những đề xuất sửa chữa và dự kiến sẽ có một phiên bản phát hành trong tương lai để giải quyết vấn đề này, nhấn mạnh những thách thức liên tục trong việc duy trì chức năng của trình duyệt.</li>
-</ul>
-<h2><a href="https://differ.blog/p/here-s-how-you-can-build-and-train-gpt-2-from-scratch-using-pytorch-ace4ba">Xây dựng và huấn luyện GPT-2 từ đầu bằng PyTorch</a></h2>
-<ul>
-<li>Đoạn bài viết cung cấp hướng dẫn từng bước về cách xây dựng và huấn luyện mô hình ngôn ngữ GPT-2 từ đầu bằng PyTorch, dành cho mọi cấp độ chuyên môn về Python hoặc học máy.</li>
-<li>Bao gồm các ví dụ thực tế, chẳng hạn như huấn luyện mô hình trên các bài hát của Taylor Swift và Ed Sheeran, với các tài nguyên như tập dữ liệu và mã nguồn có sẵn trên GitHub.</li>
-<li>Những thành phần chính được đề cập bao gồm xây dựng một bộ tách từ tùy chỉnh, tạo một bộ tải dữ liệu, và triển khai một mô hình ngôn ngữ đơn giản, làm cho nó trở thành một giới thiệu toàn diện về việc huấn luyện mô hình ngôn ngữ.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40888090">phản ứng</a></h3>
-<ul>
-<li>Trong một bài đăng trên blog, người viết thảo luận về việc xây dựng và huấn luyện GPT-2, một mô hình transformer được huấn luyện trước để tạo văn bản, từ đầu bằng cách sử dụng PyTorch, một thư viện học máy phổ biến.</li>
-<li>Đoạn đăng đã khơi mào một cuộc tranh luận về hiệu quả của việc học qua văn bản so với video, với một số người dùng đề xuất các video hướng dẫn của Andrej Karpathy vì tính dễ tiếp cận và những hiểu biết thực tiễn của chúng.</li>
-<li>Một số người dùng đề xuất sử dụng các kiến trúc đã được thiết lập như LLaMA cho các ứng dụng thực tế, cho thấy sự ưu tiên cho việc tận dụng các giải pháp mạnh mẽ hiện có thay vì bắt đầu từ đầu.</li>
-</ul>
-<h2><a href="https://www.reuters.com/technology/epic-games-says-apple-stalling-launch-its-game-store-europe-2024-07-05/">Apple chấp thuận ứng dụng chợ của Epic Games tại châu Âu</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40888461">phản ứng</a></h3>
-<ul>
-<li>Apple đã phê duyệt ứng dụng chợ của Epic Games tại châu Âu, khơi mào cuộc tranh luận về sự kiểm soát của Apple đối với các cửa hàng ứng dụng bên thứ ba và quy trình đánh giá ứng dụng của hãng.</li>
-<li>Những nhà phê bình nêu bật mối lo ngại về việc Apple phụ thuộc vào doanh thu từ các trò chơi miễn phí có tính chất săn mồi và yêu cầu thay đổi thiết kế ứng dụng.</li>
-<li>Việc phê duyệt diễn ra trong bối cảnh giám sát chặt chẽ và các hành động tiềm năng của cơ quan quản lý ở EU.</li>
-</ul>
-<h2><a href="https://matklad.github.io/2024/07/05/properly-testing-concurrent-data-structures.html">Kiểm tra đúng cách các cấu trúc dữ liệu đồng thời</a></h2>
-<ul>
-<li>Trong bài viết này, chúng tôi giới thiệu một thư viện Rust có tên là loom, được thiết kế để kiểm tra các cấu trúc dữ liệu không khóa, và khám phá các khái niệm của nó thông qua một ví dụ đơn giản.</li>
-<li>Điều này nêu bật những thách thức của việc kiểm thử các cấu trúc dữ liệu đồng thời, minh họa một bộ đếm đồng thời bị hỏng và các phương pháp kiểm thử khác nhau, bao gồm kiểm thử dựa trên thuộc tính (PBT) và các luồng được quản lý.</li>
-<li>Đoạn viết này có ý nghĩa quan trọng nhờ vào việc giải thích chi tiết cách tạo ra một môi trường kiểm thử có kiểm soát cho các hoạt động đồng thời, cung cấp những hiểu biết quý giá cho các nhà phát triển làm việc với đa luồng và các thao tác nguyên tử trong Rust.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40890035">phản ứng</a></h3>
-<ul>
-<li>Kiểm tra các cấu trúc dữ liệu đồng thời trong Rust liên quan đến việc mô hình hóa chi tiết mô hình bộ nhớ và theo dõi các ghi chép của luồng, với các thư viện như Temper và Loom hỗ trợ quá trình này.</li>
-<li>Shuttle cung cấp một phương pháp kiểm thử ngẫu nhiên, đảm bảo xác suất phát hiện lỗi, trong khi các công cụ khác như Lincheck của JetBrains và Relacy Race Detector được sử dụng cho Kotlin/Java và C++ tương ứng.</li>
-<li>Cuộc thảo luận nhấn mạnh tầm quan trọng của các bài kiểm tra có thể tái lập và những thách thức trong việc đảm bảo an toàn luồng và đồng bộ hóa trong lập trình đồng thời.</li>
-</ul>
-<h2><a href="https://www.skeptic.org.uk/2024/07/research-into-homeopathy-data-falsification-fabrication-and-manipulation/">Nghiên cứu về vi lượng đồng căn: làm giả dữ liệu, ngụy tạo và thao túng</a></h2>
-<ul>
-<li>Edzard Ernst, Giáo sư Danh dự về Y học Bổ sung, nêu bật các vấn đề về việc làm giả và thao túng dữ liệu trong nghiên cứu về vi lượng đồng căn.</li>
-<li>Trong một nghiên cứu năm 2020 của Michael Frass, tuyên bố rằng liệu pháp vi lượng đồng căn có lợi cho bệnh nhân ung thư, đã bị phát hiện làm giả dữ liệu, được xác nhận bởi Cơ quan Liêm chính Khoa học Áo.</li>
-<li>Mặc dù có khuyến nghị thu hồi, tạp chí chỉ đưa ra một &#39;Biểu hiện lo ngại,&#39; để lại nghiên cứu có sai sót vẫn có thể truy cập, dẫn đến các lời kêu gọi áp dụng các biện pháp nghiêm ngặt hơn đối với các nhà nghiên cứu sản xuất kết quả đáng ngờ.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40885397">phản ứng</a></h3>
-<ul>
-<li>Những nghiên cứu gần đây về vi lượng đồng căn đã phát hiện ra các trường hợp làm giả, bịa đặt và thao túng dữ liệu, gây ra những lo ngại đáng kể về tính trung thực của các nghiên cứu trong lĩnh vực này.</li>
-<li>Cuộc thảo luận nêu bật niềm tin sâu sắc vào vi lượng đồng căn ở một số cá nhân, so sánh nó với các lý thuyết trái đất phẳng và lưu ý đến sự khó khăn trong việc thay đổi những niềm tin như vậy do sự thiếu tin tưởng vào y học chính thống và các công ty dược phẩm.</li>
-<li>Điểm hấp dẫn của vi lượng đồng căn và các khoa học giả tương tự thường bắt nguồn từ nhận thức về việc khám phá những sự thật ẩn giấu bị dòng chính bỏ qua, khiến việc thuyết phục những người tin tưởng bằng chứng khoa học trở nên khó khăn.</li>
-</ul>
-<h2><a href="https://www.irrawaddy.com/in-person/interview/war-on-citizens-how-juntas-vpn-ban-is-strangling-communication-in-myanmar.html">Việc cấm VPN đang bóp nghẹt giao tiếp ở Myanmar</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40886689">phản ứng</a></h3>
-<ul>
-<li>Việc cấm VPN ở Myanmar đang gây cản trở lớn cho việc liên lạc, khi người dùng gặp khó khăn do công nghệ Kiểm tra Gói Sâu (DPI) chặn VPN.</li>
-<li>Người dùng đang chia sẻ các phương pháp để vượt qua kiểm duyệt, chẳng hạn như sử dụng các giao thức ngụy trang lưu lượng, và thảo luận về các công cụ thay thế như wstunnel.</li>
-<li>Đoạn bài nhấn mạnh tầm quan trọng của báo chí đạo đức khi đưa tin về các khu vực nhạy cảm như Myanmar.</li>
-</ul>
-<h2><a href="https://www.ams.org/notices/201010/rtx101001303p.pdf">Việc dạy các kỹ năng giải quyết vấn đề chung không thể thay thế cho việc dạy toán [pdf]</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40890847">phản ứng</a></h3>
-<ul>
-<li>Việc dạy các kỹ năng giải quyết vấn đề chung nên bổ sung, chứ không thay thế, việc ghi nhớ các sự kiện và chiến lược cơ bản trong các môn học như toán học và kỹ thuật phần mềm.</li>
-<li>Giáo dục hiện đại thường đánh giá thấp tầm quan trọng của việc ghi nhớ, cho rằng công nghệ có thể lấp đầy khoảng trống này, nhưng việc nhớ nhanh thông tin là cần thiết cho hiệu quả trong các kỳ thi và các nhiệm vụ thực tế.</li>
-<li>Giáo dục hiệu quả nên cân bằng giữa việc hiểu biết và ghi nhớ để phát triển cả chuyên môn và kỹ năng thực tiễn.</li>
-</ul>
-<h2><a href="https://benhoyt.com/writings/hash-table-in-c/">Triển khai bảng băm trong C như thế nào (2021)</a></h2>
-<ul>
-<li>Bài viết cung cấp một hướng dẫn toàn diện về việc triển khai một bảng băm đơn giản trong C, bắt đầu với các khái niệm tìm kiếm tuyến tính và nhị phân.</li>
-<li>Chi tiết việc sử dụng hàm băm FNV-1a và phương pháp thăm dò tuyến tính để xử lý va chạm, với sự nhấn mạnh vào việc thay đổi kích thước bảng để duy trì hiệu quả.</li>
-<li>Việc triển khai bao gồm một API để tạo, hủy, lấy, đặt và lặp qua các mục, và một chương trình demo để đếm tần suất từ, nhấn mạnh mục đích giáo dục của nó hơn là sẵn sàng cho sản xuất.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40887806">phản ứng</a></h3>
-<ul>
-<li>Thảo luận về việc triển khai bảng băm trong C, với nhiều ý kiến khác nhau về việc sử dụng các giải pháp có sẵn so với các triển khai tùy chỉnh.</li>
-<li>Những điểm chính bao gồm tầm quan trọng của hành vi đa luồng, sở thích API, và những hạn chế của bảng tìm kiếm POSIX.</li>
-<li>Đề cập đáng chú ý về các phiên bản tái nhập, thách thức về thay đổi kích thước và các vấn đề quản lý bộ nhớ trong các triển khai bảng băm.</li>
-</ul>
-<h2><a href="https://matija.eu/posts/anxious-generation-safetyism-social-media/">Thế Hệ Lo Âu – Cách Chủ Nghĩa An Toàn và Mạng Xã Hội Đang Gây Hại Cho Trẻ Em</a></h2>
-<ul>
-<li>&quot;Thế hệ lo âu&quot; của Jonathan Haidt cho rằng tỷ lệ bệnh tâm thần gia tăng ở thanh thiếu niên là do mạng xã hội và cách nuôi dạy con cái quá bảo bọc, phân biệt tác hại của mạng xã hội với việc sử dụng internet nói chung.</li>
-<li>Haidt chỉ trích việc nuôi dạy con cái quá bảo vệ và các biện pháp an toàn hiện đại vì đã hạn chế sự độc lập và khả năng phục hồi của trẻ em, đề xuất một &#39;Thang từ Tuổi Thơ đến Tuổi Trưởng Thành&#39; với các trách nhiệm phù hợp với lứa tuổi và trì hoãn việc sử dụng mạng xã hội cho đến khi 16 tuổi.</li>
-<li>Cuốn sách cũng đề cập đến tác động tiêu cực của việc không cho trẻ em tiếp xúc với các quan điểm đa dạng, góp phần vào sự thiếu tự do ngôn luận trong học thuật, và kêu gọi những thay đổi xã hội để chống lại các xu hướng này.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40890534">phản ứng</a></h3>
-<ul>
-<li>Trong bài viết trên matija.eu, tác giả thảo luận về cách &quot;chủ nghĩa an toàn&quot; và mạng xã hội đang ảnh hưởng tiêu cực đến sự phát triển xã hội của trẻ em bằng cách hạn chế thời gian chơi ngoài trời và tăng thời gian sử dụng màn hình.</li>
-<li>Điều này nhấn mạnh rằng sự bảo vệ quá mức của cha mẹ, do lo sợ hậu quả pháp lý, ngăn cản trẻ em chơi ngoài trời mà không có sự giám sát cho đến khi chúng lớn hơn.</li>
-<li>Đồng thời, bài viết cũng xem xét cách cơ sở hạ tầng hiện đại và những thay đổi xã hội góp phần vào vấn đề này, với nhiều bình luận phản ánh về trải nghiệm cá nhân và những tác động xã hội rộng lớn hơn.</li>
-</ul>
-<h2><a href="https://pme.uchicago.edu/news/uchicago-prof-shirley-mengs-laboratory-energy-storage-and-conversion-creates-worlds-first">Pin thể rắn natri không cực dương đầu tiên</a></h2>
-<ul>
-<li>Phòng thí nghiệm của Giáo sư Shirley Meng tại Đại học Chicago đã phát triển pin natri thể rắn không cực dương đầu tiên trên thế giới, một bước tiến quan trọng cho xe điện và lưu trữ lưới điện.</li>
-<li>Đổi mới này, một sự hợp tác giữa UChicago và UC San Diego, sử dụng natri phong phú thay vì lithium, làm cho nó trở nên phải chăng hơn và thân thiện với môi trường hơn.</li>
-<li>Kiến trúc pin mới, được mô tả chi tiết trong tạp chí Nature Energy, có bộ thu dòng điện làm từ bột nhôm, đảm bảo chu kỳ hiệu quả và có thể hỗ trợ đáng kể cho quá trình chuyển đổi sang năng lượng tái tạo.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40891252">phản ứng</a></h3>
-<ul>
-<li>Pin thể rắn natri không cực dương đầu tiên đã được phát triển, sử dụng crom, một nguyên tố phong phú gấp năm lần so với lithium.</li>
-<li>Địa hóa học của crom làm cho nó dễ khai thác hơn, ổn định về mặt nhiệt động lực học hơn và ít khuếch tán hơn so với lithium.</li>
-<li>Mặc dù có sự phát triển đầy hứa hẹn, mật độ năng lượng, thể tích và chi tiết chu kỳ sạc lại của pin mới vẫn đang trong giai đoạn thử nghiệm, và thị trường cạnh tranh đặt ra những thách thức cho việc thương mại hóa.</li>
-</ul>
-<h2><a href="https://www.youtube.com/watch?v=RATHbP1bAhI">7-Eleven đang tái tạo lại mảng kinh doanh thực phẩm của mình để trở nên giống phong cách Nhật Bản hơn [video]</a></h2>
-<ul>
-<li>7/11 ở Nhật Bản cung cấp một loạt các thực phẩm tươi sống và hợp tác với các nhà hàng nổi tiếng, khác với phiên bản ở Mỹ nổi tiếng với Slurpees và hot dog.</li>
-<li>Chuỗi cửa hàng tiện lợi lớn nhất thế giới đang chuyển hướng tập trung vào thực phẩm khi doanh số bán thuốc lá và xăng dầu giảm, tận dụng hệ thống phân phối tinh vi và quản lý hàng tồn kho dựa trên dữ liệu.</li>
-<li>7/11 ở Mỹ hiện đang hợp tác với Warabeya để cung cấp nhiều lựa chọn thực phẩm địa phương hơn và mở rộng dịch vụ giao hàng, nhằm tái tạo sự phấn khích của các cửa hàng tiện lợi Nhật Bản trong thị trường Mỹ.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40885925">phản ứng</a></h3>
-<ul>
-<li>7-Eleven đang cải tổ mảng kinh doanh thực phẩm tại Mỹ để phản ánh mô hình thành công của mình tại Nhật Bản, bao gồm việc cung cấp thực phẩm tươi và các dịch vụ đa dạng.</li>
-<li>Thành công của thương hiệu Nhật Bản đã dẫn đến việc mua lại công ty mẹ của Mỹ, làm nổi bật sự tương phản rõ rệt giữa hai thị trường.</li>
-<li>Chương trình này nhằm giải quyết các vấn đề không hiệu quả trong các cửa hàng tại Mỹ, chẳng hạn như hàng tồn kho chậm luân chuyển, để nâng cao trải nghiệm khách hàng và tăng cường sự lui tới thường xuyên.</li>
-</ul>
-<h2><a href="https://www.chzsoft.de/site/hardware/preserving-a-floppy-disk-with-a-logic-analyzer/">Giữ gìn một đĩa mềm bằng máy phân tích logic và cáp nối tiếp</a></h2>
-<ul>
-<li>Bài báo thảo luận về việc bảo quản đĩa mềm 3.5 inch bằng cách sử dụng máy phân tích logic Saleae Logic 8 và cáp nối tiếp USB, như một giải pháp thay thế cho các thiết bị chuyên dụng như Kryoflux hoặc SuperCard Pro.</li>
-<li>Giải thích quá trình kết nối máy phân tích logic với ổ đĩa mềm, thu thập dữ liệu, và sử dụng một kịch bản Python để tự động hóa quá trình và xuất dữ liệu ở định dạng tệp Supercard Pro (.scp).</li>
-<li>Phương pháp này được kiểm tra với một đĩa không quan trọng, và dữ liệu thu được được xác minh bằng phần mềm HxCFloppyEmulator, với kịch bản Python có sẵn trên GitHub để cải tiến thêm.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40887168">phản ứng</a></h3>
-<ul>
-<li>Bài báo thảo luận về việc bảo quản dữ liệu từ đĩa mềm bằng cách sử dụng máy phân tích logic và cáp nối tiếp, nhấn mạnh các khía cạnh vật lý của giao diện đĩa mềm.</li>
-<li>Một số lựa chọn thay thế mã nguồn mở như GreaseWeazle và FluxEngine được đề cập như là các giải pháp hiệu quả và tiết kiệm chi phí để đọc đĩa mềm.</li>
-<li>Bài thảo luận bao gồm các công cụ và phương pháp khác nhau để xử lý đĩa mềm, nhấn mạnh tầm quan trọng của việc sử dụng các phương pháp độ trung thực cao để tránh mòn phương tiện.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Đạo Đức Kinh dịch bởi Ursula Le Guin (1997)" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%C4%90%E1%BA%A1o%20%C4%90%E1%BB%A9c%20Kinh%20d%E1%BB%8Bch%20b%E1%BB%9Fi%20Ursula%20Le%20Guin%20(1997)&subheading=Th%E1%BB%A9%20B%E1%BA%A3y%2C%206%20th%C3%A1ng%207%2C%202024%3A%20T%C3%B3m%20t%E1%BA%AFt%20tin%20t%E1%BB%A9c%20v%E1%BB%81%20hacker" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/vi/2024/07/06</link>
-            <guid isPermaLink="false">2024-07-06T00:00:00.000Z</guid>
-            <pubDate>Sat, 06 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
