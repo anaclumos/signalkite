@@ -1,0 +1,320 @@
+[
+  {
+    "id": 41031998,
+    "title": "Jellyfin：我們真的很棒",
+    "originLink": "https://forum.jellyfin.org/t-we-re-good-seriously",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031998",
+    "commentBody": "",
+    "originSummary": [
+      "「Jellyfin 的預算超過 24,000 美元，涵蓋 40 個月的開支，並請求用戶將捐款轉向他們所使用的客戶端作者。」",
+      "「此請求符合 Jellyfin 的『無付費開發』政策，因為捐款是自願的，且如果資金減少到僅能支撐 12 個月的運營，該專案將重新評估。」",
+      "社群成員反應積極，計劃支持客戶作者並詢問有關特定客戶支持的問題，例如 WebOS。"
+    ],
+    "commentSummary": [
+      "「Jellyfin，一個開源媒體伺服器專案，宣布他們已經有足夠的資金，並建議捐助者支持其他生態系統專案。」",
+      "社群對於這種做法存在分歧；有些人認為資金應該分配給生態系統開發者，而另一些人則同意 Jellyfin 的決定，避免增加額外的行政負擔。",
+      "討論強調了在開源專案中管理捐款的複雜性和潛在問題，包括透明度、行政負擔以及保持對核心開發的專注。"
+    ],
+    "points": 511,
+    "commentCount": 264,
+    "retryCount": 0,
+    "time": 1721636767
+  },
+  {
+    "id": 41029287,
+    "title": "針腳",
+    "originLink": "https://without.boats/blog/pin/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41029287",
+    "commentBody": "",
+    "originSummary": [
+      "Pin 類型和固定的概念是 Rust 非同步生態系統中至關重要但經常被誤解的組成部分。",
+      "“Pin 是為了支援 async Rust 中的自我參照型別而引入的，確保物件在包含自我參照後不會移動，不同於 Mojo，後者本身就處理物件的身份問題。”",
+      "儘管其必要性，Pin 由於缺乏語法糖和支援，為使用者帶來了顯著的複雜性，導致了重新借用、固定投影以及與 Drop 特徵的互動等問題。"
+    ],
+    "commentSummary": [
+      "「討論圍繞著 Rust 程式語言的 `Pin` 類型，這個類型經常因為文件不清楚而被誤解。」",
+      "Pin 確保某些物件在記憶體中不能被移動，這對於自我參照的結構體來說至關重要，但這個概念在官方文件中並沒有被很好地解釋。",
+      "這段對話強調了需要更好的文件和類比，以使 `Pin` 和 `Unpin` 的概念對 Rust 開發者，特別是那些新手，更容易理解。"
+    ],
+    "points": 421,
+    "commentCount": 93,
+    "retryCount": 0,
+    "time": 1721604216
+  },
+  {
+    "id": 41031037,
+    "title": "Jiff：Rust 的日期時間函式庫",
+    "originLink": "https://github.com/BurntSushi/jiff",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031037",
+    "commentBody": "",
+    "originSummary": [
+      "Jiff 是一個新的 Rust 日期時間函式庫，專注於易用性和效能，靈感來自 JavaScript 的 Temporal 提案。",
+      "它提供了高階的日期時間原語、無縫整合的時區資料庫、支援夏令時間的運算、格式化、解析，以及可選的 Serde 支援。",
+      "Jiff 採用 MIT 或 UNLICENSE 雙重授權，支援 Unix 和 Windows，並需要 Rust 1.70.0 或更新版本。"
+    ],
+    "commentSummary": [
+      "「Jiff 是一個由 BurntSushi 開發的新 Rust 日期時間函式庫，他以創建高品質工具如 ripgrep 而聞名。」",
+      "該程式庫旨在解決日期時間處理中的複雜問題，例如夏令時間(DST)運算、時區感知計算以及回溯時區衝突檢測。",
+      "Jiff 提供比現有標準 Chrono 更加使用者友好且靈活的 API，同時在日期時間操作中保持正確性和功能性。"
+    ],
+    "points": 407,
+    "commentCount": 183,
+    "retryCount": 0,
+    "time": 1721624266
+  },
+  {
+    "id": 41033579,
+    "title": "No More Blue Fridays",
+    "originLink": "https://www.brendangregg.com/blog/2024-07-22/no-more-blue-fridays.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41033579",
+    "commentBody": "",
+    "originSummary": [
+      "7月19日發生的一次重大故障，由於核心驅動程式更新導致全球 Windows 系統崩潰，突顯了需要更安全的更新機制。",
+      "eBPF(extended Berkeley Packet Filter，擴展伯克利封包過濾器)，已經在 Linux 中使用，是一個安全的核心執行環境，可以防止此類崩潰，並且即將被 Windows 支援。",
+      "「eBPF 程式經過安全檢查和沙盒化，提供了增強安全性和降低資源使用等優點，並被 Cisco、Google 和 Meta 等公司用於安全性和可觀察性。」"
+    ],
+    "commentSummary": [
+      "Microsoft 的 eBPF(擴展伯克利封包過濾器)對 Windows 的支援目前僅限於封包過濾，與 Crowdstrike 的全面內核監控驅動程式相比有所不足。",
+      "“將 eBPF 整合到 Windows 現有的框架中具有挑戰性，而且不確定 Microsoft 是否打算將其標準化。”",
+      "eBPF 可以通過隔離核心代碼來增強安全性，但它並不是一個完整的解決方案，正如最近的 Crowdstrike 事件所強調的，這突顯了改進部署實踐和安全措施的必要性。"
+    ],
+    "points": 310,
+    "commentCount": 194,
+    "retryCount": 0,
+    "time": 1721650866
+  },
+  {
+    "id": 41031585,
+    "title": "解析，不要驗證 (2019)",
+    "originLink": "https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031585",
+    "commentBody": "",
+    "originSummary": [
+      "「這篇文章強調了『解析，不要驗證』的原則，提倡通過解析數據來在類型系統中保留信息，而不是通過驗證來丟棄它。」",
+      "它解釋了在像 Haskell 這樣的語言中，如何通過加強參數類型，將部分函數轉變為全函數，並以 `NonEmpty` 列表為例。",
+      "實用建議包括使用精確的資料結構、重構以將證明負擔向上推進，以及避免使用非正規化的資料表示方式，以提高程式的可靠性和安全性。"
+    ],
+    "commentSummary": [
+      "“文章《Parse, Don't Validate》強調解析數據以確保正確性的重要性，而不是在整個程式中反覆驗證數據。”",
+      "這種方法根植於契約設計(Design by Contract)和領域驅動設計(Domain-Driven Design, DDD)等概念，利用強型別系統來強制保證和減少錯誤，使程式碼更容易理解和維護。",
+      "討論強調了實際範例和好處，例如在不同的驗證階段使用不同的類型，並確保資料始終處於有效狀態，這可以簡化複雜的應用程式並提高可靠性。"
+    ],
+    "points": 296,
+    "commentCount": 99,
+    "retryCount": 0,
+    "time": 1721631439
+  },
+  {
+    "id": 41027658,
+    "title": "「當 ChatGPT 進行摘要時，它並未真正執行這項工作」",
+    "originLink": "https://ea.rna.nl/2024/05/27/when-chatgpt-summarises-it-actually-does-nothing-of-the-kind/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41027658",
+    "commentBody": "",
+    "originSummary": [
+      "作者一直在探索和討論 ChatGPT 及其他生成式人工智慧的基礎，旨在提供針對當前熱潮的現實觀點。",
+      "「一個關鍵的見解是，ChatGPT 並不是真正地總結內容，而只是簡單地縮短它，經常遺漏重要的細節和建議，這在與人類生成的 50 頁論文摘要比較中得到了證實。」",
+      "“這個限制源於摘要需要理解，而這正是 ChatGPT 所缺乏的，這導致人們對於 LLM(大型語言模型)在實際商業應用中的可靠性持懷疑態度。”"
+    ],
+    "commentSummary": [
+      "作者認為，ChatGPT 的文本摘要缺乏真正的理解，導致摘要不完整，有時甚至具有誤導性。",
+      "「該評論指出，原始分析中缺乏有關 GPT 模型、提示以及嘗試次數的詳細資訊。」",
+      "用戶的體驗和意見各異，有些人認為 ChatGPT 和其他大型語言模型(LLMs)很有幫助，而另一些人則強調它們的局限性以及需要改進提示和上下文管理。"
+    ],
+    "points": 243,
+    "commentCount": 167,
+    "retryCount": 0,
+    "time": 1721591800
+  },
+  {
+    "id": 41031960,
+    "title": "「Ryanair 在美國法院裁決中贏得對 Booking.com 的屏幕抓取案件」",
+    "originLink": "https://www.rte.ie/news/business/2024/0719/1460807-ryanair-wins-us-court-case-against-bookingcom/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031960",
+    "commentBody": "",
+    "originSummary": [
+      "「美國法院裁定，Booking.com 未經許可訪問瑞安航空的網站，違反了《電腦欺詐和濫用法》，支持瑞安航空反對未經授權的螢幕抓取行為的立場。」",
+      "特拉華州地方法院的陪審團裁定 Booking.com 有意圖詐騙的未經授權存取罪，並駁回了 Booking.com 的誹謗和不正當競爭反訴。",
+      "「瑞安航空(Ryanair)執行長麥可·歐萊瑞(Michael O'Leary)希望這項裁決能減少非法的螢幕抓取和過度收費，而Booking.com則計劃上訴，認為票價比較有助於消費者選擇。」"
+    ],
+    "commentSummary": [
+      "「瑞安航空在美國法院贏得了一起針對Booking.com的法律案件，該案件涉及未經授權訪問以轉售機票，違反了《電腦欺詐和濫用法》。」",
+      "該裁決可能會影響其他使用類似做法的線上旅行代理商，突顯出網頁抓取法律的複雜性。",
+      "「有傳言指出，由於法律先例相互矛盾，該決定可能會被推翻。」"
+    ],
+    "points": 210,
+    "commentCount": 195,
+    "retryCount": 0,
+    "time": 1721636405
+  },
+  {
+    "id": 41032918,
+    "title": "沒有人期望年輕人做任何事，而他們也以什麼都不做來回應(2022)",
+    "originLink": "https://www.robkhenderson.com/p/no-one-expects-young-men-to-do-anything",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41032918",
+    "commentBody": "",
+    "originSummary": [
+      "“Rob Henderson 的文章討論了社會對年輕男性缺乏期望及其負面後果，包括失業率和監禁率的增加。”",
+      "「他提到 Kathryn Edin 和 Maria Kefalas 所著的《Promises I Can Keep》，該書探討了為什麼低收入女性經常將母職置於婚姻之上，並將其歸因於年輕男性的不良行為。」",
+      "「亨德森批評上層階級破壞家庭穩定的規範，同時確保自己的孩子受益於穩定的家庭環境，並主張年輕男性需要高期望才能茁壯成長。」"
+    ],
+    "commentSummary": [
+      "該文章將「無所事事的年輕人」現象歸因於財富不平等以及財富集中在年長的精英階層，這推高了生活必需品的價格並抑制了對新創事業的需求。",
+      "“它還討論了家庭結構的不穩定性，指出社會變遷和經濟壓力已經改變了傳統的家庭動態。”",
+      "“評論文章討論了缺席父親的影響、女性在家庭穩定中的角色，以及導致這些問題的更廣泛的社會和經濟因素。”"
+    ],
+    "points": 201,
+    "commentCount": 397,
+    "retryCount": 0,
+    "time": 1721645031
+  },
+  {
+    "id": 41028887,
+    "title": "「《國家視角》作者詹姆斯·C·斯科特逝世」",
+    "originLink": "https://nitter.poast.org/GerardoMunck/status/1815059432382067053",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41028887",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "「《國家視角》一書的作者詹姆斯·C·史考特已經去世，這引發了科技界對他具影響力的思想的反思。」",
+      "「Scott 的研究強調了國家和科技如何強制一致性，影響醫學、教育和社會互動等領域，從而減少多樣性。」",
+      "在 Hacker News 上的討論探討了 Scott 的概念，特別是軟體中安全性與靈活性之間的平衡，以及技術同質化的更廣泛影響。"
+    ],
+    "points": 197,
+    "commentCount": 39,
+    "retryCount": 0,
+    "time": 1721601209
+  },
+  {
+    "id": 41031112,
+    "title": "Eza：一個現代化且維護良好的 ls 替代品",
+    "originLink": "https://github.com/eza-community/eza",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031112",
+    "commentBody": "",
+    "originSummary": [
+      "「eza 是一個現代化的 ls 指令替代品，適用於 Unix 和 Linux，提供了增強的功能和更好的預設值。」",
+      "主要功能包括顏色標記的檔案類型、符號連結支援、擴展屬性、Git 整合，以及人類可讀的日期格式。",
+      "「eza 旨在變得更加使用者友好且功能豐富，並額外支援超連結、掛載點詳情、SELinux 上下文和亮色終端機顏色。」"
+    ],
+    "commentSummary": [
+      "Eza 被介紹為一個現代且積極維護的替代方案，用於取代傳統的 `ls` 指令，該指令在類 Unix 作業系統中列出目錄內容。",
+      "“討論強調了使用者對目錄列表中「人類可讀日期」的不滿，主張使用精確的時間戳記而非像「1 天前」這樣的相對時間格式。”",
+      "「該文章還提到其他用戶偏好的現代命令列工具，相較於傳統工具，例如 `bat`(具有語法高亮功能的 `cat` 替代品)和 `rg`(ripgrep，一個更快的 `grep` 替代品)。」"
+    ],
+    "points": 194,
+    "commentCount": 162,
+    "retryCount": 0,
+    "time": 1721625443
+  },
+  {
+    "id": 41036844,
+    "title": "「我們能為那些明顯愚蠢的初創公司籌集多少資金？」",
+    "originLink": "https://www.smbc-comics.com/comic/investment-2",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41036844",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "「這篇文章討論了為看似荒謬的創業點子籌集資金的現象，強調了這類創業項目獲得資金的容易程度。」",
+      "它批評了創業生態系統，認為其運作方式像是一種「拉高出貨」計劃，從一個流行領域轉移到另一個，經常浪費資源。",
+      "“這段對話包含了成功新創公司的例子，並討論了焦點團體和 MVP(最小可行產品)在產品開發中的價值和影響。”"
+    ],
+    "points": 171,
+    "commentCount": 86,
+    "retryCount": 0,
+    "time": 1721668554
+  },
+  {
+    "id": 41031975,
+    "title": "我花了18個月構建的一個源碼可用的計費系統",
+    "originLink": "https://billabear.com/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031975",
+    "commentBody": "",
+    "originSummary": [
+      "該平台提供與 Stripe 的深度整合，能夠全面控制計費、稅務管理和自動化工作流程。",
+      "功能包括管理各級稅率、創建自訂訂閱計劃，以及與 Slack 和電子郵件提供商等工具整合。",
+      "該系統支援擴展性、自我託管，並提供詳細的商業洞察，例如訂閱流失率和客戶終身價值。"
+    ],
+    "commentSummary": [
+      "「一個新的開源計費系統 Billabear 在經過 18 個月的開發後正式推出，提供類似於 Stripe 的功能，但其源代碼是根據公平源代碼許可證(FSL)公開的。」",
+      "FSL 允許使用者存取原始碼，並在兩年後轉換為 Apache 2.0 授權，提供比 Stripe 封閉原始碼模式更多的彈性和控制。",
+      "討論強調了對某些使用者來說，源碼可用性的重要性、各種語言的本地化需求，以及處理美國州銷售稅和GDPR合規性的擔憂。"
+    ],
+    "points": 167,
+    "commentCount": 84,
+    "retryCount": 0,
+    "time": 1721636536
+  },
+  {
+    "id": 41037097,
+    "title": "「工人們已經表態：他們要待在家裡」",
+    "originLink": "https://www.computerworld.com/article/2520794/the-workers-have-spoken-theyre-staying-home.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41037097",
+    "commentBody": "",
+    "originSummary": [
+      "「戴爾要求員工在辦公室出勤才能獲得升遷的政策大多被忽視，許多員工選擇待在家中。」",
+      "「Gartner 的報告顯示，48% 的員工認為公司政策偏向領導者的偏好，而非他們自己的需求。」",
+      "遠端工作因其優點而越來越受到青睞，包括無需通勤、更好的工作與生活平衡、節省成本和彈性，高績效者也在尋求遠端工作的機會。"
+    ],
+    "commentSummary": [
+      "「由於環境不佳、缺乏固定辦公桌以及開放式辦公空間中的生產力問題，員工不願意返回辦公室。」",
+      "「許多員工發現遠端工作更有效率，並且對於回到不理想的辦公室環境持抗拒態度，其中通勤是個重要因素。」",
+      "「一些公司正在使用返辦公室的命令作為減少員工數量的策略，而不訴諸於裁員，這引發了關於最佳工作安排的持續辯論。」"
+    ],
+    "points": 158,
+    "commentCount": 145,
+    "retryCount": 0,
+    "time": 1721669795
+  },
+  {
+    "id": 41029987,
+    "title": "「Apollo DN10000：1988 年的四核心 CPU/128Mb RAM 工作站 [pdf]」",
+    "originLink": "https://jim.rees.org/apollo-archive/marketing/1988-ApolloDN10000ProductBrochure.pdf",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41029987",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "「Apollo DN10000，一款於1988年推出的四核心 CPU 工作站，擁有128MB 記憶體，因其歷史意義和技術能力而被懷舊地討論。」",
+      "使用者回憶起它在大學實驗室中的使用，以及它在早期圖形程式設計中的角色，儘管其複雜的 Unix 環境和配置挑戰。",
+      "「這台機器的高昂成本，在1980年代高達25萬美元(相當於今天約66萬美元)，突顯了其高端地位以及自那時以來顯著的技術進步。」"
+    ],
+    "points": 156,
+    "commentCount": 122,
+    "retryCount": 0,
+    "time": 1721610732
+  },
+  {
+    "id": 41030352,
+    "title": "「CrowdStrike 的 Falcon Sensor 也與 Linux 核心恐慌和崩潰有關」",
+    "originLink": "https://www.theregister.com/2024/07/21/crowdstrike_linux_crashes_restoration_tools/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41030352",
+    "commentBody": "",
+    "originSummary": [
+      "「CrowdStrike 的 Falcon Sensor 軟體已經導致 Windows 和 Linux 系統崩潰，包括 Red Hat Enterprise Linux 9.4、Debian 和 Rocky Linux。」",
+      "暫時停用 Falcon Sensor 可以穩定受影響的系統，CrowdStrike 正在測試一個快速恢復工具來解決這個問題。",
+      "這次中斷事件已經對全球造成了重大影響，包括航班取消和醫療延誤，微軟估計有850萬台 Windows 機器受到影響。"
+    ],
+    "commentSummary": [
+      "「CrowdStrike 的 Falcon Sensor 已被發現與 Linux 核心恐慌和崩潰有關，這與 Windows 的藍屏死機(BSOD)問題有所不同。」",
+      "Linux 核心恐慌可能是由於核心的 eBPF(擴展伯克利封包過濾器)實作中的錯誤，可能來自 Red Hat 特定的補丁，這表明是核心錯誤而非供應商問題。",
+      "討論強調了支援多個作業系統版本的挑戰以及核心模組測試所涉及的複雜性，並強調了 Linux 和 Windows 之間在核心可靠性工程方面的差異。"
+    ],
+    "points": 154,
+    "commentCount": 141,
+    "retryCount": 0,
+    "time": 1721614932
+  }
+]

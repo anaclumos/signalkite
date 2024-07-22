@@ -15,12 +15,193 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 21 Jul 2024 19:12:36 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 22 Jul 2024 19:20:31 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/fi.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 21 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 22 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[fi]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-22]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/22&#39;</h2>
+<h1>2024-07-22</h1>
+<h2><a href="https://forum.jellyfin.org/t-we-re-good-seriously">Jellyfin: Meillä menee hyvin, ihan oikeasti</a></h2>
+<ul>
+<li>Jellyfinin budjetti on yli 24 000 dollaria, mikä kattaa 40 kuukauden kulut, ja se pyytää käyttäjiä ohjaamaan lahjoitukset käyttämänsä asiakasohjelmiston tekijöille.</li>
+<li>Tämä pyyntö on linjassa Jellyfinin &quot;ei maksettua kehitystä&quot; -politiikan kanssa, sillä lahjoitukset ovat vapaaehtoisia, ja projekti arvioi tilannetta uudelleen, jos varat laskevat 12 kuukauden käyttövaraan.</li>
+<li>Yhteisön jäsenet reagoivat myönteisesti, suunnitelmissa on tukea Client-kirjoittajia ja kyselyjä erityisestä asiakastuesta, kuten WebOS.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031998">Reaktiot</a></h3>
+<ul>
+<li>Jellyfin, avoimen lähdekoodin mediaserveriprojekti, ilmoitti, että heillä on riittävästi varoja ja ehdotti, että lahjoittajat tukisivat muita ekosysteemiprojekteja sen sijaan.</li>
+<li>Yhteisö on jakautunut tämän lähestymistavan suhteen; jotkut uskovat, että varat tulisi jakaa ekosysteemin kehittäjille, kun taas toiset ovat samaa mieltä Jellyfinin päätöksestä välttää lisähallinnollisia rasitteita.</li>
+<li>Keskustelu tuo esiin avoimen lähdekoodin projektien lahjoitusten hallinnan monimutkaisuudet ja mahdolliset ongelmat, kuten läpinäkyvyyden, hallinnollisen taakan ja keskittymisen säilyttämisen ydinkehityksessä.</li>
+</ul>
+<h2><a href="https://without.boats/blog/pin/">Neula</a></h2>
+<ul>
+<li>Pin-tyyppi ja pinning-konsepti ovat olennaisia, mutta usein väärinymmärrettyjä osia Rustin asynkronisessa ekosysteemissä.</li>
+<li>Pin otettiin käyttöön tukemaan itseviittaavia tyyppejä asynkronisessa Rustissa, varmistaen, että objektit eivät liiku, kun ne sisältävät itseviittauksia, toisin kuin Mojo, joka käsittelee luontaisesti objektin identiteettiä.</li>
+<li>Huolimatta sen tarpeellisuudesta, Pin tuo käyttäjille merkittävää monimutkaisuutta sen syntaktisen sokerin ja tuen puutteen vuoksi, mikä johtaa ongelmiin, kuten uudelleenlainaamiseen, kiinnitettyihin projisointeihin ja vuorovaikutuksiin Drop-ominaisuuden kanssa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41029287">Reaktiot</a></h3>
+<ul>
+<li>Keskustelu pyörii Rust-ohjelmointikielen <code>Pin</code>-tyypin ympärillä, jota usein ymmärretään väärin epäselvän dokumentaation vuoksi.</li>
+<li>Pin varmistaa, että tiettyjä objekteja ei voida siirtää muistissa, mikä on ratkaisevan tärkeää itseviittaaville rakenteille, mutta tätä käsitettä ei ole selitetty hyvin virallisissa asiakirjoissa.</li>
+<li>Keskustelu korostaa tarvetta paremmalle dokumentaatiolle ja analogioille, jotta <code>Pin</code>- ja <code>Unpin</code>-käsitteet olisivat helpommin lähestyttäviä Rust-kehittäjille, erityisesti niille, jotka ovat uusia kielen parissa.</li>
+</ul>
+<h2><a href="https://github.com/BurntSushi/jiff">Jiff: Aikakirjasto Rustille</a></h2>
+<ul>
+<li>Jiff on uusi Rust-aikakirjasto, joka keskittyy helppokäyttöisyyteen ja suorituskykyyn, ja se on saanut inspiraationsa JavaScriptin Temporal-ehdotuksesta.</li>
+<li>Se tarjoaa ominaisuuksia, kuten korkean tason päivämäärä- ja aikaprimitiivit, saumattoman aikavyöhyketietokannan integroinnin, kesäaikaan liittyvän aritmetiikan, muotoilun, jäsentämisen ja valinnaisen Serde-tuen.</li>
+<li>Jiff on kaksoislisensoitu MIT- tai UNLICENSE-lisenssillä, tukee Unixia ja Windowsia, ja vaatii Rust 1.70.0 tai uudemman.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031037">Reaktiot</a></h3>
+<ul>
+<li>Jiff on uusi päivämäärä- ja aikakirjasto Rustille, jonka on kehittänyt BurntSushi, joka tunnetaan korkealaatuisten työkalujen, kuten ripgrep, luomisesta.</li>
+<li>Kirjasto pyrkii käsittelemään päivämäärä- ja aikakäsittelyn monimutkaisuuksia, kuten kesäaikaan liittyvää laskentaa, aikavyöhyketietoisten laskelmien tekemistä ja takautuvien aikavyöhykekonfliktien havaitsemista.</li>
+<li>Jiff tarjoaa käyttäjäystävällisemmän ja joustavamman API:n verrattuna nykyiseen standardiin, Chronoon, säilyttäen samalla oikeellisuuden ja kyvykkyyden päivämäärä- ja aikaoperaatioissa.</li>
+</ul>
+<h2><a href="https://www.brendangregg.com/blog/2024-07-22/no-more-blue-fridays.html">Ei enää sinisiä perjantaita</a></h2>
+<ul>
+<li>Suuri katkos 19. heinäkuuta, jonka aiheutti ytimen ohjainpäivitys, johti maailmanlaajuisiin Windows-järjestelmien kaatumisiin, korostaen turvallisempien päivitysmekanismien tarvetta.</li>
+<li>eBPF (extended Berkeley Packet Filter), jota käytetään jo Linuxissa, on turvallinen ytimen suoritusympäristö, joka voi estää tällaiset kaatumiset ja jota Windows tukee pian.</li>
+<li>eBPF-ohjelmat tarkistetaan turvallisuuden varmistamiseksi ja ne toimivat hiekkalaatikossa, tarjoten etuja kuten parannettua turvallisuutta ja pienempää resurssien käyttöä. Yritykset kuten Cisco, Google ja Meta ovat ottaneet ne käyttöön turvallisuuden ja havaittavuuden parantamiseksi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41033579">Reaktiot</a></h3>
+<ul>
+<li>Microsoftin eBPF (Extended Berkeley Packet Filter) -tuki Windowsille on tällä hetkellä rajoitettu pakettien suodatukseen, toisin kuin Crowdstriken kattavat ytimen valvonta-ajurit.</li>
+<li>eBPF:n integroiminen Windowsin olemassa oleviin kehyksiin on haastavaa, ja on epävarmaa, pyrkiikö Microsoft tekemään siitä standardin.</li>
+<li>eBPF voisi parantaa turvallisuutta eristämällä kernelikoodin, mutta se ei ole täydellinen ratkaisu, kuten äskettäinen Crowdstrike-tapaus korostaa, mikä alleviivaa tarvetta parannettuihin käyttöönotto- ja turvatoimiin.</li>
+</ul>
+<h2><a href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/">Jäsennä, älä validoi (2019)</a></h2>
+<ul>
+<li>Kirjoitus korostaa periaatetta &quot;Jäsennä, älä validoi,&quot; kannattaen datan jäsentämistä tiedon säilyttämiseksi tyyppijärjestelmässä sen sijaan, että se hylättäisiin validoinnin kautta.</li>
+<li>Se selittää, kuinka tyyppeihin perustuva suunnittelu kielissä kuten Haskell voi muuttaa osittaisia funktioita kokonaisiksi funktioiksi vahvistamalla argumenttityyppejä, käyttäen esimerkkinä <code>NonEmpty</code>-listoja.</li>
+<li>Järkeviä neuvoja ovat tarkkojen tietorakenteiden käyttö, refaktorointi todistustaakan siirtämiseksi ylöspäin ja denormalisoitujen tietoesitysten välttäminen ohjelman luotettavuuden ja turvallisuuden parantamiseksi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031585">Reaktiot</a></h3>
+<ul>
+<li>Artikkeli &quot;Parse, Don&#39;t Validate&quot; korostaa datan jäsentämisen tärkeyttä oikeellisuuden varmistamiseksi sen sijaan, että sitä validoitaisiin toistuvasti ohjelman aikana.</li>
+<li>Tämä lähestymistapa, joka perustuu sellaisiin käsitteisiin kuin Design by Contract ja Domain-Driven Design (DDD), hyödyntää vahvoja tyyppijärjestelmiä takausten varmistamiseksi ja virheiden vähentämiseksi, mikä tekee koodista helpommin ymmärrettävää ja ylläpidettävää.</li>
+<li>Keskustelu tuo esiin käytännön esimerkkejä ja etuja, kuten erilaisten tyyppien käyttämisen eri validointivaiheissa ja sen varmistamisen, että tiedot ovat aina kelvollisessa tilassa, mikä voi yksinkertaistaa monimutkaisia sovelluksia ja parantaa luotettavuutta.</li>
+</ul>
+<h2><a href="https://ea.rna.nl/2024/05/27/when-chatgpt-summarises-it-actually-does-nothing-of-the-kind/">Kun ChatGPT tiivistää, se ei tee mitään sellaista.</a></h2>
+<ul>
+<li>Kirjoittaja on tutkinut ja keskustellut ChatGPT:n ja muiden generatiivisten tekoälyjen perusteista, pyrkien tarjoamaan realistisia näkökulmia vallitsevaa hypeä vastaan.</li>
+<li>Keskeinen oivallus on, että ChatGPT ei oikeastaan tiivistä sisältöä, vaan ainoastaan lyhentää sitä, usein jättäen pois olennaisia yksityiskohtia ja ehdotuksia, kuten käy ilmi vertailusta ihmisen laatiman 50-sivuisen paperin tiivistelmän kanssa.</li>
+<li>Tämä rajoitus johtuu siitä, että tiivistäminen vaatii ymmärrystä, jota ChatGPT:ltä puuttuu, mikä johtaa epäilyksiin LLM:ien (suuret kielimallit) luotettavuudesta käytännön liiketoimintasovelluksissa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41027658">Reaktiot</a></h3>
+<ul>
+<li>Kirjoittaja väittää, että ChatGPT:n tekstin tiivistäminen ei perustu todelliseen ymmärrykseen, mikä johtaa epätäydellisiin ja joskus harhaanjohtaviin tiivistelmiin.</li>
+<li>Kritiikki huomauttaa, että alkuperäisestä analyysistä puuttuvat tiedot GPT-mallista, kehotteesta ja yritysten määrästä.</li>
+<li>Käyttäjäkokemukset ja mielipiteet vaihtelevat; jotkut pitävät ChatGPT:tä ja muita suuria kielimalleja hyödyllisinä, kun taas toiset korostavat niiden rajoituksia ja tarvetta parantaa kehotteiden ja kontekstin hallintaa.</li>
+</ul>
+<h2><a href="https://www.rte.ie/news/business/2024/0719/1460807-ryanair-wins-us-court-case-against-bookingcom/">Ryanair voittaa screen scraping -tapauksen Booking.comia vastaan Yhdysvaltain oikeuden päätöksessä</a></h2>
+<ul>
+<li>Yhdysvaltalainen tuomioistuin päätti, että Booking.com rikkoi tietokonepetoksia ja väärinkäytöksiä koskevaa lakia (Computer Fraud and Abuse Act) pääsemällä Ryanairin verkkosivustolle ilman lupaa, tukien Ryanairin kantaa luvattomia tietojen keräämisiä vastaan.</li>
+<li>Delawaren piirioikeuden valamiehistö totesi Booking.comin syylliseksi luvattomaan pääsyyn petostarkoituksessa ja hylkäsi Booking.comin vastakanteet kunnianloukkauksesta ja epäreilusta kilpailusta.</li>
+<li>Ryanairin toimitusjohtaja Michael O&#39;Leary toivoo, että päätös vähentää laitonta ruudunkaappausta ja ylihinnoittelua, kun taas Booking.com aikoo valittaa, väittäen, että hintavertailu hyödyttää kuluttajien valinnanvapautta.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031960">Reaktiot</a></h3>
+<ul>
+<li>Ryanair voitti oikeusjutun Booking.comia vastaan Yhdysvaltain tuomioistuimessa luvattomasta pääsystä jälleenmyydä lippuja, mikä rikkoi tietokonepetoksia ja väärinkäytöksiä koskevaa lakia.</li>
+<li>Tuomio saattaa vaikuttaa muihin vastaavia käytäntöjä käyttäviin online-matkatoimistoihin, korostaen verkkokaavintalakien monimutkaisuutta.</li>
+<li>On spekulaatiota, että päätös saattaa kumoutua ristiriitaisten oikeudellisten ennakkotapausten vuoksi.</li>
+</ul>
+<h2><a href="https://www.robkhenderson.com/p/no-one-expects-young-men-to-do-anything">Ei kukaan odota nuorten miesten tekevän mitään, ja he vastaavat tekemällä ei mitään (2022)</a></h2>
+<ul>
+<li>Rob Hendersonin kirjoitus käsittelee yhteiskunnallisten odotusten puutetta nuorille miehille ja sen negatiivisia seurauksia, kuten lisääntynyttä työttömyyttä ja vankilaan joutumista.</li>
+<li>Viitaten Kathryn Edinin ja Maria Kefalasin teokseen &quot;Promises I Can Keep&quot;, joka tutkii, miksi pienituloiset naiset usein asettavat äitiyden avioliiton edelle, ja selittää sen johtuvan nuorten miesten huonosta käytöksestä.</li>
+<li>Henderson kritisoi yläluokkaa perheiden vakauden normien heikentämisestä samalla kun he varmistavat omien lastensa hyötyvän vakaista kodeista, väittäen, että nuoret miehet tarvitsevat korkeita odotuksia menestyäkseen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41032918">Reaktiot</a></h3>
+<ul>
+<li>Artikkeli liittää ilmiön &quot;nuoret miehet, joilla ei ole mitään tekemistä&quot; varallisuuseroihin ja varallisuuden keskittymiseen vanhempien eliittien keskuuteen, mikä nostaa välttämättömyyksien hintoja ja tukahduttaa kysynnän uusille hankkeille.</li>
+<li>Se käsittelee myös perherakenteiden epävakautta, huomauttaen, että yhteiskunnalliset muutokset ja taloudelliset paineet ovat muuttaneet perinteisiä perhedynamiikkoja.</li>
+<li>Kommentit artikkelista keskustelevat poissaolevien isien vaikutuksesta, naisten roolista perheen vakaudessa sekä laajemmista yhteiskunnallisista ja taloudellisista tekijöistä, jotka vaikuttavat näihin ongelmiin.</li>
+</ul>
+<h2><a href="https://nitter.poast.org/GerardoMunck/status/1815059432382067053">James C. Scott, teoksen Seeing Like a State kirjoittaja, on kuollut</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41028887">Reaktiot</a></h3>
+<ul>
+<li>James C. Scott, kirjan &quot;Seeing Like a State&quot; kirjoittaja, on menehtynyt, mikä on herättänyt pohdintoja hänen vaikutusvaltaisista ideoistaan teknologia-alan yhteisössä.</li>
+<li>Scottin työ korostaa, kuinka valtiot ja teknologia voivat pakottaa yhdenmukaisuutta, vaikuttaen aloihin kuten lääketiede, koulutus ja sosiaalinen vuorovaikutus vähentämällä monimuotoisuutta.</li>
+<li>Keskustelut Hacker Newsissä tutkivat Scottin käsitteitä, erityisesti turvallisuuden ja joustavuuden tasapainoa ohjelmistossa sekä teknologisen homogeenisuuden laajempia vaikutuksia.</li>
+</ul>
+<h2><a href="https://github.com/eza-community/eza">Eza: Moderni, ylläpidetty korvike ls-komennolle</a></h2>
+<ul>
+<li>eza on moderni korvike Unix- ja Linux-järjestelmien ls-komennolle, tarjoten parannettuja ominaisuuksia ja parempia oletusasetuksia.</li>
+<li>Keskeisiä ominaisuuksia ovat värikoodatut tiedostotyypit, symbolisten linkkien tuki, laajennetut attribuutit, Git-integraatio ja helposti luettavat päivämäärät.</li>
+<li>eza pyrkii olemaan käyttäjäystävällisempi ja ominaisuuksiltaan rikkaampi, tarjoten lisätukea hyperlinkeille, liitospisteiden yksityiskohdille, SELinux-kontekstille ja kirkkaille terminaaliväreille.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031112">Reaktiot</a></h3>
+<ul>
+<li>Eza esitellään modernina ja aktiivisesti ylläpidettynä korvaajana perinteiselle <code>ls</code>-komennolle, joka listaa hakemiston sisällön Unix-tyyppisissä käyttöjärjestelmissä.</li>
+<li>Keskustelussa tuodaan esiin käyttäjien turhautuminen &quot;ihmisen luettavissa oleviin päivämääriin&quot; hakemistoluetteloissa, ja kannatetaan tarkkoja aikaleimoja suhteellisten aikamuotojen, kuten &quot;1 päivä sitten&quot;, sijaan.</li>
+<li>Viesti mainitsee myös muita moderneja komentorivityökaluja, joita käyttäjät suosivat perinteisten sijaan, kuten <code>bat</code> (syntaksikorostuksella varustettu <code>cat</code>-korvike) ja <code>rg</code> (ripgrep, nopeampi vaihtoehto <code>grep</code>ille).</li>
+</ul>
+<h2><a href="https://www.smbc-comics.com/comic/investment-2">Kuinka paljon rahaa voimme kerätä läpinäkyvästi idioottimaisille startup-yrityksille?</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41036844">Reaktiot</a></h3>
+<ul>
+<li>Kirjoitus käsittelee ilmiötä, jossa kerätään varoja startup-yrityksille, joilla on näennäisesti järjettömiä ideoita, ja korostaa, kuinka helposti pääomaa voidaan hankkia tällaisille hankkeille.</li>
+<li>Se kritisoi startup-ekosysteemiä, ehdottaen sen toimivan kuin &quot;pump and dump&quot; -järjestelmä, siirtyen yhdestä trendikkäästä alasta toiseen, usein tuhlaten resursseja.</li>
+<li>Keskustelu sisältää esimerkkejä menestyneistä startup-yrityksistä ja pohtii fokusryhmien ja MVP:iden (Minimum Viable Products) arvoa ja vaikutusta tuotekehityksessä.</li>
+</ul>
+<h2><a href="https://billabear.com/">Lähdekoodiltaan saatavilla oleva laskutusjärjestelmä, jonka rakentamiseen olen käyttänyt 18 kuukautta</a></h2>
+<ul>
+<li>Alusta tarjoaa syvän integraation Stripen kanssa, mahdollistaen kattavan hallinnan laskutuksessa, verojen hallinnassa ja automatisoiduissa työnkuluissa.</li>
+<li>Ominaisuuksiin kuuluu verokantojen hallinta eri tasoilla, mukautettujen tilauspakettien luominen ja integrointi työkaluihin, kuten Slack ja sähköpostipalveluntarjoajat.</li>
+<li>Järjestelmä tukee skaalautuvuutta, itseisännöintiä ja tarjoaa yksityiskohtaisia liiketoiminta-analyysejä, kuten tilausten vaihtuvuus ja elinkaariarvo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031975">Reaktiot</a></h3>
+<ul>
+<li>Uusi lähdekoodiltaan saatavilla oleva laskutusjärjestelmä, Billabear, on julkaistu 18 kuukauden kehitystyön jälkeen. Se tarjoaa Stripeen verrattavia ominaisuuksia, mutta lähdekoodi on saatavilla Fair Source License (FSL) -lisenssin alaisuudessa.</li>
+<li>FSL sallii käyttäjien käyttää lähdekoodia, joka siirtyy Apache 2.0 -lisenssiin kahden vuoden jälkeen, tarjoten enemmän joustavuutta ja hallintaa verrattuna Stripen suljettuun lähdekoodimalliin.</li>
+<li>Keskusteluissa korostetaan lähdekoodin saatavuuden tärkeyttä joillekin käyttäjille, tarvetta parempaan lokalisaatioon eri kielillä sekä huolia Yhdysvaltain osavaltioiden myyntiveron ja GDPR:n noudattamisesta.</li>
+</ul>
+<h2><a href="https://www.computerworld.com/article/2520794/the-workers-have-spoken-theyre-staying-home.html">Työntekijät ovat puhuneet: He jäävät kotiin</a></h2>
+<ul>
+<li>Dellin politiikka, joka vaati toimistossa läsnäoloa ylennysten saamiseksi, jätettiin suurelta osin huomiotta, ja monet työntekijät valitsivat jäädä kotiin.</li>
+<li>Gartnerin raportti osoittaa, että 48 % työntekijöistä uskoo yrityksen määräysten suosivan johtajien mieltymyksiä heidän omien tarpeidensa sijaan.</li>
+<li>Etätyö on yhä suositumpaa sen hyötyjen vuoksi, kuten työmatkojen puuttuminen, parempi työn ja vapaa-ajan tasapaino, kustannussäästöt ja joustavuus, ja huippusuorittajat etsivät etätyömahdollisuuksia.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41037097">Reaktiot</a></h3>
+<ul>
+<li>Työntekijät ovat haluttomia palaamaan toimistoihin huonojen ympäristöjen, pysyvien työpöytien puutteen ja avokonttorien tuottavuusongelmien vuoksi.</li>
+<li>Monet työntekijät pitävät etätyötä tehokkaampana ja vastustavat paluuta epäoptimaalisiin toimisto-olosuhteisiin, joista työmatkat ovat merkittävä tekijä.</li>
+<li>Jotkut yritykset käyttävät toimistolle palaamisen määräyksiä strategiana vähentääkseen henkilöstömäärää ilman irtisanomisia, mikä ruokkii jatkuvaa keskustelua optimaalista työjärjestelyistä.</li>
+</ul>
+<h2><a href="https://jim.rees.org/apollo-archive/marketing/1988-ApolloDN10000ProductBrochure.pdf">Apollo DN10000: Neliydinprosessori/128Mt RAM-työasema vuodelta 1988 [pdf]</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41029987">Reaktiot</a></h3>
+<ul>
+<li>Apollo DN10000, neljän suorittimen työasema, jossa on 128 Mt RAM-muistia vuodelta 1988, herättää nostalgisia keskusteluja sen historiallisesta merkityksestä ja teknisistä ominaisuuksista.</li>
+<li>Monet käyttäjät muistavat sen käytön yliopiston laboratorioissa ja sen roolin varhaisessa grafiikkaohjelmoinnissa, huolimatta sen monimutkaisesta Unix-ympäristöstä ja konfigurointihaasteista.</li>
+<li>Koneen korkea hinta, jopa 250 000 dollaria 1980-luvulla (vastaa noin 660 000 dollaria nykyään), korostaa sen premium-asemaa ja merkittäviä teknologisia edistysaskeleita siitä lähtien.</li>
+</ul>
+<h2><a href="https://www.theregister.com/2024/07/21/crowdstrike_linux_crashes_restoration_tools/">CrowdStriken Falcon Sensor on myös yhdistetty Linux-ytimen paniikkitiloihin ja kaatumisiin</a></h2>
+<ul>
+<li>CrowdStriken Falcon Sensor -ohjelmisto on aiheuttanut järjestelmän kaatumisia sekä Windows- että Linux-käyttöjärjestelmissä, mukaan lukien Red Hat Enterprise Linux 9.4, Debian ja Rocky Linux.</li>
+<li>Falcon Sensorin tilapäinen poistaminen käytöstä vakauttaa ongelmista kärsiviä järjestelmiä, ja CrowdStrike testaa nopeaa palautustyökalua ongelman ratkaisemiseksi.</li>
+<li>Häiriöllä on ollut merkittäviä maailmanlaajuisia vaikutuksia, mukaan lukien lentojen peruutukset ja terveydenhuollon viivästykset, ja Microsoft arvioi, että 8,5 miljoonaa Windows-konetta on kärsinyt.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41030352">Reaktiot</a></h3>
+<ul>
+<li>CrowdStriken Falcon Sensor on yhdistetty Linuxin ytimen paniikkitiloihin ja kaatumisiin, jotka eroavat Windowsin BSOD (Blue Screen of Death) -ongelmista.</li>
+<li>Linux-ytimen paniikit johtuvat todennäköisesti virheestä ytimen eBPF (Extended Berkeley Packet Filter) -toteutuksessa, mahdollisesti Red Hat -kohtaisesta korjauksesta, mikä viittaa ydinvirheeseen eikä toimittajan ongelmaan.</li>
+<li>Keskustelu tuo esiin useiden käyttöjärjestelmäversioiden tukemisen haasteet ja ytimen moduulitestauksen monimutkaisuudet, korostaen eroja ytimen luotettavuustekniikassa Linuxin ja Windowsin välillä.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Jellyfin: Meillä menee hyvin, ihan oikeasti" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Jellyfin%3A%20Meill%C3%A4%20menee%20hyvin%2C%20ihan%20oikeasti&subheading=maanantaina%2022.%20hein%C3%A4kuuta%202024%3A%20Hacker%20News%20yhteenveto" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/fi/2024/07/22</link>
+            <guid isPermaLink="false">2024-07-22T00:00:00.000Z</guid>
+            <pubDate>Mon, 22 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-21]]></title>
             <description
@@ -1691,197 +1872,6 @@
             <link>https://hn.cho.sh/fi/2024/07/13</link>
             <guid isPermaLink="false">2024-07-13T00:00:00.000Z</guid>
             <pubDate>Sat, 13 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-12]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/12&#39;</h2>
-<h1>2024-07-12</h1>
-<h2><a href="https://webvm.io/">WebVM on palvelimeton virtuaalinen Linux-ympäristö, joka toimii asiakaspuolella</a></h2>
-<ul>
-<li>WebVM on palvelimeton virtuaalinen Linux-ympäristö, joka toimii kokonaan asiakaspuolella käyttäen HTML5:ttä ja WebAssemblyä, ja sen taustalla on CheerpX-virtualisointimoottori.</li>
-<li>Se mahdollistaa turvallisen, hiekkalaatikossa tapahtuvan x86-binaarien suorittamisen missä tahansa selaimessa, sisältäen x86-WebAssembly JIT (Just-In-Time) -kääntäjän, virtuaalisen lohkopohjaisen tiedostojärjestelmän ja Linux-järjestelmäkutsujen emulaattorin.</li>
-<li>Uusi ominaisuus: Käyttäjät voivat nyt luoda mukautettuja WebVM-kuvia käyttämällä Dockerfile-tiedostoa, mikä parantaa joustavuutta ja mukautettavuutta.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40940225">Reaktiot</a></h3>
-<ul>
-<li>WebVM on palvelimeton virtuaalinen Linux-ympäristö, joka toimii asiakaspuolella, hyödyntäen Leaning Technologiesin isännöimää CheerpX-rakennetta ja tukien verkottumista Tailscalen kautta.</li>
-<li>Toisin kuin täydet järjestelmäemulaattorit, WebVM toimii Linuxin syscall-emulaattorina käyttäjätilan binääreille, tarjoten enemmän joustavuutta ja nopeutta.</li>
-<li>Se ei ole avoimen lähdekoodin, ja CheerpX-moottorin itseisännöinti on kielletty, mikä tekee siitä sopivan koulutukseen, reaaliaikaiseen dokumentointiin, ohjelmistojen säilyttämiseen ja web-IDE-kehitykseen, vaikka sillä onkin rajoituksia, kuten suorituskykyongelmat mobiililaitteilla ja osittainen offline-toiminnallisuus.</li>
-</ul>
-<h2><a href="https://techcrunch.com/2024/07/12/att-phone-records-stolen-data-breach/">AT&amp;T sanoo rikollisten varastaneen &#39;lähes kaikkien&#39; asiakkaiden puhelintiedot tietomurrossa</a></h2>
-<ul>
-<li>AT&amp;T vahvisti tietomurron, joka koskee lähes 110 miljoonaa asiakasta ja sisältää puhelinnumeroita, puhelu- ja tekstiviestitietoja sekä sijaintiin liittyviä tietoja.</li>
-<li>Rikkomus, joka liittyy pilvipalveluntarjoaja Snowflakeen, sisältää metatietoja, mutta ei puheluiden tai tekstiviestien sisältöä.</li>
-<li>FBI ja DOJ viivästyttivät julkista ilmoitusta kansallisen turvallisuuden huolien vuoksi, mikä merkitsee AT&amp;T:n toista tietoturvaloukkausta tänä vuonna.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40944505">Reaktiot</a></h3>
-<ul>
-<li>AT&amp;T koki tietomurron, joka vaikutti lähes kaikkiin asiakkaisiin, paljastaen puhelu- ja tekstiviestimetadataa, mutta ei sisältöä tai aikaleimoja.</li>
-<li>Huolimatta alun perin tapahtuneesta osakekurssin laskusta, markkinat pysyvät suurelta osin ennallaan, mikä heijastaa uskoa siihen, että yritykset kohtaavat vain vähäisiä taloudellisia seuraamuksia tällaisista rikkomuksista.</li>
-<li>Tapaus, joka liittyy Snowflaken pilvialustaan, on herättänyt vaatimuksia tiukemmista tietojen säilytyskäytännöistä, paremmista turvallisuuskäytännöistä sekä mahdollisista suurista sakoista tai oikeusjutuista yritysvastuun varmistamiseksi.</li>
-</ul>
-<h2><a href="https://physicsbaseddeeplearning.org/intro.html">Fysiikkaan perustuva syväoppimisen kirja</a></h2>
-<ul>
-<li>Fysiikkaan perustuva syväoppimiskirja (v0.2) tarjoaa käytännön johdatuksen syväoppimiseen fysikaalisissa simulaatioissa, sisältäen käytännön esimerkkejä Jupyter-muistikirjoissa.</li>
-<li>Uutta versiossa 0.2: Laajennettu osio differentioituvan ohjelmoinnin (DP) integroimisesta neuroverkkojen (NN) koulutukseen ja uusi luku parannetuista oppimismenetelmistä fysiikan ongelmiin.</li>
-<li>Tulevat päivitykset sisältävät lukuja verkkojen kouluttamisesta nestevirtausten ennustamiseen, malliyhtälöiden käyttämisestä residuaaleina, simulaattoreiden hyödyntämisestä käänteisongelmissa ja korkeamman asteen tiedon hyödyntämisestä parempien neuroverkkojen luomiseksi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40941056">Reaktiot</a></h3>
-<ul>
-<li>Uusi kirja nimeltä &quot;Physics-Based Deep Learning&quot; on julkaistu, ja se keskittyy syväoppimisen soveltamiseen fysiikan simulaatioihin yleisten syväoppimiskonseptien sijaan fyysikon näkökulmasta.</li>
-<li>Kirja sisältää käytännön koodiesimerkkejä Jupyter-muistikirjoissa, fyysisiä häviörajoituksia, differentioituvia simulaatioita, fysiikan ongelmien koulutusalgoritmeja, vahvistusoppimista ja epävarmuusmallinnusta.</li>
-<li>Kirjan on tuottanut Physics-based Simulation Group, ja se on ladattavissa arXivista. Lisäresursseja ja keskusteluja on saatavilla eri alustoilla, kuten YouTubessa ja GitHubissa.</li>
-</ul>
-<h2><a href="https://ochagavia.nl/blog/using-s3-as-a-container-registry/">S3:n käyttäminen konttirekisterinä</a></h2>
-<ul>
-<li>Kehittäjä on esitellyt Amazon S3:n käyttämistä konttirekisterinä paljastamalla S3-säilön HTTP:n kautta ja lataamalla konttikuvien tiedostoja tiettyihin polkuihin, mahdollistaen <code>docker pull</code> -toiminnot.</li>
-<li>Merkittävin etu S3:n käytössä perinteisiin konttirekistereihin, kuten DockerHubiin tai Amazon ECR:ään, verrattuna on huomattavasti nopeammat latausnopeudet rinnakkaisten paloiteltujen latausten ansiosta.</li>
-<li>Tämä kokeellinen lähestymistapa ei sisällä ominaisuuksia, kuten automatisoituja tietoturvatarkistuksia ja käyttöoikeuksien hallintaa, mutta se voisi johtaa julkisten konttikuvien isännöintiin Cloudflaren R2:ssa ilman ulosmeneviä liikennemaksuja.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40942732">Reaktiot</a></h3>
-<ul>
-<li>Amazon S3:n käyttöä konttirekisterinä käsitellään, ja siinä korostetaan sen potentiaalia vaihtoehtona perinteisille konttirekistereille, kuten DockerHub ja AWS ECR.</li>
-<li>Keskustelu kritisoi OCI (Open Container Initiative) Distribution Spec -määrittelyä sen tehottomuuksista, kuten vaatimuksesta ladata kerrokset peräkkäin ja standardoidun sivutuksen puuttumisesta tunnisteiden listaamisessa.</li>
-<li>Dockerin vaikutus ohjelmistokehitykseen on kiistanalainen; jotkut ylistävät sen riippuvuuksien hallinnan yksinkertaistamista, kun taas toiset kritisoivat sitä lopputuotteen luotettavuuden tai kehitysnopeuden parantumattomuudesta.</li>
-</ul>
-<h2><a href="https://nelson.cloud/as-an-employee-you-are-disposable/">Työntekijänä olet kertakäyttöinen (2023)</a></h2>
-<ul>
-<li>Viimeaikaiset teknologia-alan irtisanomiset osoittavat, että työntekijöitä pidetään usein kertakäyttöisinä johtajien silmissä, jopa kannattavissa yrityksissä.</li>
-<li>Yritykset kuten Microsoft jatkavat työntekijöiden irtisanomisia ja palkkojen jäädyttämistä, vaikka ne ylittävät sijoittajien odotukset ja niillä on korkeat tulot.</li>
-<li>Varakkaat johtajat, kuten Tim Gurner, ovat tehneet kommentteja, jotka vahvistavat käsitystä siitä, että työntekijät ovat korvattavissa riippumatta heidän panoksestaan tai palvelusajastaan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40943436">Reaktiot</a></h3>
-<ul>
-<li>Yritykset ovat transaktionaalisia yksiköitä ja voivat irtisanoa työntekijöitä, kun se hyödyttää heitä, korostaen, että työntekijät eivät ole korvaamattomia.</li>
-<li>Ylirekrytointi ja irtisanomiset ovat usein strategioita osakkeenomistajien arvon kasvattamiseksi, mikä korostaa työntekijöiden oman edun ja oikeudenmukaisen korvauksen hakemisen tärkeyttä.</li>
-<li>Unionien ja avoimen lähdekoodin huomioon ottaminen voi olla hyödyllistä kehittäjille, vahvistaen ajatusta siitä, että työnantajan ja työntekijän välinen suhde on pohjimmiltaan liiketoimintaa.</li>
-</ul>
-<h2><a href="https://github.com/Wack0/maciNTosh">Windows NT Power Macintoshille</a></h2>
-<ul>
-<li>Arkisto sisältää lähdekoodin ARC-laiteohjelmistolle ja sen lataajalle, jotka on suunnattu New World Power Macintosh -järjestelmiin, jotka käyttävät Gossamer-arkkitehtuuria, mukaan lukien mallit kuten iMac G3 ja Power Macintosh G3.</li>
-<li>ARC-laiteohjelmisto tukee useita ajureita, mutta tällä hetkellä vain NT4 on yhteensopiva, ja tulevaisuudessa mahdollisesti myös NT 3.51.</li>
-<li>Asennus sisältää binäärien lataamisen, levyn osioinnin ja kehotteiden seuraamisen NT4:n asentamiseksi, tunnettuine ongelmineen, kuten epävakaus ja erityiset vaiheet, jotka vaaditaan kaksoiskäynnistyksen asettamiseksi Mac-osioiden kanssa.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40945076">Reaktiot</a></h3>
-<ul>
-<li>Kehittäjä on siirtänyt Windows NT:n toimimaan Power Macintoshilla, herättäen nostalgiaa ja keskusteluja vaihtoehtoisista käyttöjärjestelmähistorioista.</li>
-<li>Windows NT suunniteltiin siirrettäväksi, tukemaan erilaisia arkkitehtuureja kuten PowerPC, MIPS ja Alpha, vaikka se tunnettiin ensisijaisesti x86:sta.</li>
-<li>Tämä projekti korostaa NT:n teknisen toteutettavuuden mukauttamista eri laitteistoalustoille, esitellen sen suunnittelun modulaarisuutta.</li>
-</ul>
-<h2><a href="https://news.mit.edu/2024/charmed-collaboration-creates-therapy-candidate-fatal-prion-diseases-0627">Geenien hiljentämistyökalu lupaa tulevaisuudessa hoitoa prionitauteja vastaan</a></h2>
-<ul>
-<li>CHARM (Coupled Histone tail for Autoinhibition Release of Methyltransferase) on uusi geenien hiljentämistyökalu, jonka Broad Institute ja Whitehead Institute ovat kehittäneet. Se osoittaa potentiaalia prionitautien ja muiden neurodegeneratiivisten sairauksien hoidossa.</li>
-<li>Tämä työkalu käyttää epigeneettistä editointia hiljentääkseen sairautta aiheuttavat geenit, mukaan lukien prioniproteiinigeenin, muuttamatta taustalla olevaa DNA:ta, tarjoten mahdollisesti kertaluonteisen hoidon.</li>
-<li>Tutkimusryhmä, jota johtavat Sonia Vallabh ja Jonathan Weissman, on edistynyt merkittävästi luoden kompaktin, tehokkaan ja vähätoksisen geeninvaimentimen, ja nyt he viimeistelevät CHARM:ia kliinisiä kokeita varten.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939703">Reaktiot</a></h3>
-<ul>
-<li>Geenin hiljentämiseen tarkoitettu työkalu, joka toimitetaan Adeno-Associated Virus (AAV) -viruksen avulla, osoittaa potentiaalia prionitautien hoidossa, jotka ovat tällä hetkellä 100 % kuolemaan johtavia ja tuhoutumista kestäviä.</li>
-<li>Tämä työkalu toimii hiljentämällä prioniproteiinigeenin, mikä voi mahdollisesti estää tai kääntää taudin kulun, ja se voi olla tehokas sekä geneettisiä että hankittuja prioneja vastaan.</li>
-<li>Vaikka lupaava, työkalun pitkäaikaisia vaikutuksia muistiin ja kognitioon tutkitaan edelleen, ja käynnissä oleva tutkimus selvittää sen sovelluksia muihin prionin kaltaisiin sairauksiin, kuten Alzheimerin ja Parkinsonin tautiin.</li>
-</ul>
-<h2><a href="https://github.com/taubyte/tau">Tau: Avoimen lähdekoodin PaaS – Itse isännöity Vercel / Netlify / Cloudflare vaihtoehto</a></h2>
-<ul>
-<li>Tau on uusi kehys, joka on suunniteltu vähäistä ylläpitoa vaativien, erittäin skaalautuvien pilvilaskenta-alustojen rakentamiseen, tarjoten vaihtoehdon palveluille kuten Vercel, Netlify ja AWS.</li>
-<li>Keskeisiä ominaisuuksia ovat minimaalinen konfigurointi, Git-pohjaiset infrastruktuurimuutokset, vertaisverkko ja tuki WebAssemblylle, ja tulevaisuudessa suunnitelmissa on tuki konteille ja virtuaalikoneille.</li>
-<li>Tau pyrkii vähentämään infrastruktuurikustannuksia ja kehitysaikaa tarjoamalla kehittäjäystävällisen alustan, jossa on työkaluja paikalliseen kehitykseen ja end-to-end-testaamiseen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40946033">Reaktiot</a></h3>
-<ul>
-<li>Tau on avoimen lähdekoodin, itse isännöity Platform as a Service (PaaS) -vaihtoehto Vercelille, Netlifylle ja Cloudflarelle, joka hyödyntää libp2p:tä verkon automaattiseen löytämiseen ja IPFS:ää hajautettuun tallennukseen.</li>
-<li>Se on WebAssembly-alkuperäinen, tarjoten etuja kuten toimittajalukon välttäminen, mutta käyttäjät ovat huomanneet, että dokumentaatio on epämääräinen ja konsepti on epäselvä.</li>
-<li>Vertailut Kubernetesiin ja muihin PaaS-ratkaisuihin, kuten Coolify ja CapRover, ovat yleisiä, mikä osoittaa projektin potentiaalin, mutta korostaa paremman dokumentaation ja ominaisuuksien ja hyötyjen selkeämmän viestinnän tarvetta.</li>
-</ul>
-<h2><a href="https://github.com/karpathy/llm.c/discussions/677">Karpathy: Toistetaan GPT-2 (1.6B): yksi 8XH100 solmu 24h $672 llm.c:ssä</a></h2>
-<ul>
-<li>Tutkijat ovat toistaneet GPT-2:n (1.6B) käyttämällä llm.c:tä, C/CUDA-toteutusta, yhdellä 8XH100-solmulla 24 tunnissa hintaan 672 dollaria, ohittaen tyypilliset Python-pohjaiset syväoppimispinot kuten PyTorchin.</li>
-<li>Huolimatta joistakin viritykseen ja vakauteen liittyvistä ongelmista, mallin suorituskyky on verrattavissa GPT-2:een, arvioituna mittareilla kuten validointitappio ja HellaSwag-tarkkuus.</li>
-<li>Kirjoitus käsittelee myös muistinhallintaa, monisolmukoulutusta ja vertaa toteutusta PyTorch-versioon, ja tulevaisuuden suunnitelmiin kuuluu hyperparametrien optimointi ja koulutuksen vakauden parantaminen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939707">Reaktiot</a></h3>
-<ul>
-<li>Andrej Karpathy onnistui toistamaan GPT-2:n (1,6 miljardia parametria) yhdellä 8XH100-solmulla 24 tunnissa, kustannuksiltaan 672 dollaria.</li>
-<li>AI-laitteistojen edistysaskeleet voivat mahdollisesti laskea kustannuksia ja lyhentää koulutusaikoja tulevaisuudessa.</li>
-<li>Vaikka tekoäly videopeleissä lupaa parantaa NPC-hahmoja ja tarinankerrontaa, nykyteknologia kohtaa yhä merkittäviä rajoituksia, erityisesti narratiivin ja dialogin tekstin tuottamisessa.</li>
-</ul>
-<h2><a href="https://abe.today/blogs/main/floppy8-a-tiny-computer-in-a-floppy-drive">Floppy8 – Pieni tietokone, levyasemassa (2023)</a></h2>
-<ul>
-<li>Floppy8 on mikrotietokone ja kasettijärjestelmä, joka on rakennettu levyaseman sisään. Se pystyy toistamaan 4K-elokuvia ja pelejä langattomilla ohjaimilla ja moottoroidulla kasetin ulostulolla.</li>
-<li>Projekti sisälsi Amiga 1010 -levyaseman uudelleenkäytön, uuden mediaformaatin suunnittelun sekä laajamittaisen 3D-tulostuksen ja sähkötekniikan, jotta kaikki komponentit saatiin mahtumaan aseman sisälle.</li>
-<li>Luoja käytti Latte Panda 3 Delta -tietokonetta ja räätälöityjä 3D-tulostettuja kasetteja, voittaen haasteet koon rajoituksissa, ulostulomekanismeissa ja LED-ohjauksessa projektin loppuun saattamiseksi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40942141">Reaktiot</a></h3>
-<ul>
-<li>Floppy8 on pieni tietokone, joka on rakennettu 3,5 tuuman levyasemaan, muistuttaen menneitä kompakteja tietokoneprojekteja, kuten Amiga 1200 -kloonia ja Ross SPARCPlugia.</li>
-<li>Luoja, abeisgreat, jakoi videon, jossa hän esitteli projektin yksityiskohtia, mukaan lukien SD-korttipohjaiset kasetit ja muita teknisiä seikkoja, herättäen kiinnostusta ja ihailua teknologia-yhteisössä.</li>
-<li>Keskustelut korostavat nostalgiaa ja innovaatiota tietokoneiden sovittamisessa pieniin muotoihin, viitaten historiallisiin yrityksiin ja nykyaikaisiin tee-se-itse-projekteihin.</li>
-</ul>
-<h2><a href="https://blog.fal.ai/auraflow/">AuraFlow v0.1: avoimen lähdekoodin vaihtoehto Stable Diffusion 3:lle</a></h2>
-<ul>
-<li>AuraFlow v0.1 on avoimen lähdekoodin, virtauspohjainen tekstistä kuvaksi -generointimalli, joka osoittaa avoimen lähdekoodin tekoäly-yhteisön sitkeyttä.</li>
-<li>Malli loistaa yksityiskohtaisten kuvien luomisessa tekstikuvauksista ja hyödyntää edistyneitä tekniikoita, kuten nolla-shot-oppimisnopeuden siirtoa ja uudelleenkirjoittamista.</li>
-<li>6,8 miljardilla parametrilla varustettu AuraFlow koulutettiin neljän viikon ajan, saavuttaen korkeat GenEval-pisteet, ja tulevaisuuden suunnitelmiin kuuluu lisäkoulutus ja tehokkaiden mallien kehittäminen kuluttajien näytönohjaimille.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40941853">Reaktiot</a></h3>
-<ul>
-<li>AuraFlow v0.1 on avoimen lähdekoodin vaihtoehto Stable Diffusion 3:lle, ja se näyttää lupaavalta, vaikka onkin vasta varhaisessa julkaisuvaiheessa.</li>
-<li>Malli suoriutuu hyvin yksinkertaisista kehotteista, mutta kamppailee monimutkaisten ja kieltomuotoisten kanssa, mikä osoittaa parannustarpeita.</li>
-<li>Keskustelut korostavat mallin rajoituksia realististen ihmiskehojen luomisessa ja vivahteikkaiden tekstikehotteiden käsittelyssä, mikä heijastaa jatkuvia haasteita tekoälykuvageneroinnissa.</li>
-</ul>
-<h2><a href="https://mazzo.li/posts/value-speculation.html">Voittamalla L1-välimuistin arvospekulaatiolla (2021)</a></h2>
-<ul>
-<li>Kirjoituksessa käsitellään arvauksen käyttöä suorittimen suorituskyvyn parantamiseksi hyödyntämällä haarautumisen ennustajaa arvaamaan arvoja ja vähentämään tietoriippuvuuksia tiukoissa silmukoissa.</li>
-<li>Spekuloimalla seuraavan solmun osoitetta linkitetyn listan summatoiminnossa, tekniikan tavoitteena on ohittaa L1-välimuistin lukuviiveet, mikä johtaa merkittäviin suorituskyvyn parannuksiin.</li>
-<li>Vaikka kääntäjät usein optimoivat tämän tempun pois, käyttämällä sisäistä assembly-koodia varmistetaan spekulaation säilyminen, mikä johtaa 50-200% nopeuden kasvuun, kun data mahtuu CPU:n välimuistiin.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40940241">Reaktiot</a></h3>
-<ul>
-<li>Artikkeli &quot;Beating the L1 cache with value speculation&quot; (2021) kirjoittanut mazzo.li tutkii muistirakenteen optimointia linkitetyissä listoissa arvojen spekuloinnin avulla, korostaen solmujen lineaarisen muistirakenteen tärkeyttä.</li>
-<li>Kommentoijat keskustelevat tämän menetelmän käytännöllisyydestä ja tehokkuudesta, ja osa arvostaa sen nokkeluutta, mutta kyseenalaistaa sen laajan sovellettavuuden.</li>
-<li>Keskustelut kattavat myös asiaan liittyvät tekniset yksityiskohdat, kuten käskyjen suorittamisen, muistimallit, mahdolliset käyttötapaukset ja mahdollisuuden, että kääntäjät automatisoivat tällaisia optimointeja.</li>
-</ul>
-<h2><a href="https://gizmodo.com/apple-vision-pro-u-s-sales-2000469302">Markkina-analyytikot sanovat, että Apple Vision Pron myynti Yhdysvalloissa on käytännössä kuollut</a></h2>
-<ul>
-<li>Apple Vision Pron myynti Yhdysvalloissa on laskemassa jyrkästi, ja sen ennustetaan laskevan 75 % elokuun 2024 loppuun mennessä, sillä suurin osa kiinnostuneista ostajista on jo hankkinut 3 500 dollarin hintaisen kuulokkeen.</li>
-<li>Nykyinen malli ei ole saavuttanut 100 000 myydyn yksikön rajaa, mikä on johtanut siihen, että Apple on laskenut myyntiodotuksiaan ja harkitsee halvempaa mallia, jonka huhutaan maksavan noin 1 750 dollaria vuonna 2025.</li>
-<li>Apple kehittää myös visionOS-päivitystä parantaakseen käyttäjäkokemusta, mikä saattaa auttaa ylläpitämään kiinnostusta edullisemman kuulokkeen julkaisuun asti.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939627">Reaktiot</a></h3>
-<ul>
-<li>Apple Vision Pron myynti Yhdysvalloissa alittaa odotukset käyttäjien vähäisen kiinnostuksen ja kehittäjien tuen puutteen vuoksi.</li>
-<li>Korkea 3500 dollarin hinta ja rajoitettu sisältö ovat merkittäviä esteitä, jotka estävät sekä kuluttajia että kehittäjiä.</li>
-<li>Analyytikot ehdottavat, että Applen saattaa olla tarpeen harkita strategiaansa uudelleen, mahdollisesti luomalla edullisempi versio tai parantamalla ohjelmistoekosysteemiään houkuttelevuuden lisäämiseksi.</li>
-</ul>
-<h2><a href="https://alderongames.com/intel-crashes">Intel myy viallisia 13.-14. sukupolven suorittimia</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40946644">Reaktiot</a></h3>
-<ul>
-<li>Intel myy väitetysti viallisia 13. ja 14. sukupolven suorittimia, mikä johtaa kaatumisiin, BSOD-virheisiin (Blue Screen of Death) ja muihin virheisiin, ja joidenkin raporttien mukaan ongelmat pahenevat ajan myötä.</li>
-<li>Luotettavat lähteet, kuten RadGames ja Level1Techs, ovat vahvistaneet nämä epävakausongelmat, jotka saattavat liittyä Intelin aggressiivisiin virran- ja lämmönhallintastrategioihin.</li>
-<li>Monet käyttäjät harkitsevat siirtymistä AMD:hen vaihtoehtona näiden jatkuvien ongelmien vuoksi.</li>
-</ul>
-<h2><a href="https://www.geaerospace.com/news/press-releases/ge-aerospace-successfully-develops-and-tests-new-hypersonic-dual-mode-ramjet">GE Aerospace kehittää ja testaa menestyksekkäästi uuden hypersonisen kaksoistilaramjetin</a></h2>
-<ul>
-<li>GE Aerospace on onnistuneesti kehittänyt ja testannut uuden hypersonisen kaksitoimisen ramjet-moottorin alle 11 kuukaudessa, osoittaen kolminkertaisen ilmavirran kasvun aiempiin teknologioihin verrattuna.</li>
-<li>Tämä saavutus korostaa GE Aerospacen sitoutumista hypersonisen teknologian edistämiseen, ja seuraava vaihe keskittyy lisätestaukseen ja teknologian esittelyyn.</li>
-<li>Projekti oli yhteistyö GE Aerospacen, Innoveeringin ja GE Aerospacen tutkimuskeskuksen välillä, mikä korostaa tiimin nopeaa edistymistä ja omistautumista.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40943253">Reaktiot</a></h3>
-<ul>
-<li>GE Aerospace on yhteistyössä Innoveeringin ja heidän tutkimuskeskuksensa kanssa kehittänyt ja testannut uuden hypersonisen kaksoistilaramjetin alle 11 kuukaudessa.</li>
-<li>Teknologia, joka todennäköisesti perustuu olemassa olevaan suunnitteluun, on tarkoitettu ohjuksille tai suurinopeuksisille lentokoneille, ei kaupalliselle ilmailulle, äärimmäisten nopeuksien ja olosuhteiden vuoksi.</li>
-<li>Tämä projekti korostaa merkittäviä edistysaskeleita hyperäänipropulsiossa, jotka ovat elintärkeitä sotilaallisissa sovelluksissa.</li>
-</ul>
-<head>
-  <meta property="og:title" content="WebVM on palvelimeton virtuaalinen Linux-ympäristö, joka toimii asiakaspuolella" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=WebVM%20on%20palvelimeton%20virtuaalinen%20Linux-ymp%C3%A4rist%C3%B6%2C%20joka%20toimii%20asiakaspuolella&subheading=perjantaina%2012.%20hein%C3%A4kuuta%202024%3A%20Hacker%20News%20yhteenveto" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/fi/2024/07/12</link>
-            <guid isPermaLink="false">2024-07-12T00:00:00.000Z</guid>
-            <pubDate>Fri, 12 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

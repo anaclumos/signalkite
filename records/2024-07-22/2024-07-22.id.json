@@ -1,0 +1,320 @@
+[
+  {
+    "id": 41031998,
+    "title": "Jellyfin: Kami Baik-Baik Saja, Serius",
+    "originLink": "https://forum.jellyfin.org/t-we-re-good-seriously",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031998",
+    "commentBody": "",
+    "originSummary": [
+      "Jellyfin memiliki anggaran lebih dari $24.000, yang mencakup 40 bulan pengeluaran, dan meminta pengguna untuk mengarahkan donasi kepada penulis Klien yang mereka gunakan.",
+      "Permintaan ini sejalan dengan kebijakan \"tidak ada pengembangan berbayar\" Jellyfin, karena donasi bersifat sukarela, dan proyek akan menilai kembali jika dana turun menjadi 12 bulan operasional.",
+      "Anggota komunitas merespons secara positif, dengan rencana untuk mendukung penulis Klien dan pertanyaan tentang dukungan klien tertentu seperti WebOS."
+    ],
+    "commentSummary": [
+      "Jellyfin, sebuah proyek server media sumber terbuka, mengumumkan bahwa mereka memiliki dana yang cukup dan menyarankan para donatur untuk mendukung proyek ekosistem lainnya.",
+      "Komunitas terbagi dalam pendekatan ini; beberapa percaya dana harus didistribusikan kepada pengembang ekosistem, sementara yang lain setuju dengan keputusan Jellyfin untuk menghindari beban administratif tambahan.",
+      "Diskusi tersebut menyoroti kompleksitas dan potensi masalah dalam mengelola donasi di dalam proyek sumber terbuka, termasuk transparansi, beban administratif, dan menjaga fokus pada pengembangan inti."
+    ],
+    "points": 511,
+    "commentCount": 264,
+    "retryCount": 0,
+    "time": 1721636767
+  },
+  {
+    "id": 41029287,
+    "title": "Pin",
+    "originLink": "https://without.boats/blog/pin/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41029287",
+    "commentBody": "",
+    "originSummary": [
+      "Jenis Pin dan konsep pinning adalah komponen penting tetapi sering disalahpahami dalam ekosistem async Rust.",
+      "Pin diperkenalkan untuk mendukung tipe-tipe yang merujuk pada diri sendiri dalam async Rust, memastikan objek tidak berpindah setelah mereka mengandung referensi diri, tidak seperti Mojo, yang secara inheren menangani identitas objek.",
+      "Meskipun diperlukan, Pin memperkenalkan kompleksitas yang signifikan bagi pengguna karena kurangnya sintaksis yang mudah dan dukungan, yang mengarah pada masalah seperti peminjaman ulang, proyeksi yang dipin, dan interaksi dengan trait Drop."
+    ],
+    "commentSummary": [
+      "Diskusi berputar di sekitar tipe `Pin` dalam bahasa pemrograman Rust, yang sering disalahpahami karena dokumentasi yang tidak jelas.",
+      "Pin memastikan bahwa objek tertentu tidak dapat dipindahkan dalam memori, yang sangat penting untuk struct yang merujuk pada dirinya sendiri, tetapi konsep ini tidak dijelaskan dengan baik dalam dokumentasi resmi.",
+      "Keterangan percakapan menyoroti kebutuhan akan dokumentasi dan analogi yang lebih baik untuk membuat konsep `Pin` dan `Unpin` lebih mudah diakses oleh pengembang Rust, terutama mereka yang baru mengenal bahasa tersebut."
+    ],
+    "points": 421,
+    "commentCount": 93,
+    "retryCount": 0,
+    "time": 1721604216
+  },
+  {
+    "id": 41031037,
+    "title": "Jiff: Pustaka datetime untuk Rust",
+    "originLink": "https://github.com/BurntSushi/jiff",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031037",
+    "commentBody": "",
+    "originSummary": [
+      "Jiff adalah perpustakaan datetime Rust baru yang berfokus pada kemudahan penggunaan dan kinerja, terinspirasi oleh proposal Temporal JavaScript.",
+      "Ini menawarkan fitur seperti primitif datetime tingkat tinggi, integrasi mulus dengan Basis Data Zona Waktu, aritmetika yang sadar DST, pemformatan, penguraian, dan dukungan Serde opsional.",
+      "Jiff memiliki lisensi ganda di bawah MIT atau UNLICENSE, mendukung Unix dan Windows, dan memerlukan Rust 1.70.0 atau yang lebih baru."
+    ],
+    "commentSummary": [
+      "Jiff adalah perpustakaan datetime baru untuk Rust, dikembangkan oleh BurntSushi, yang dikenal karena menciptakan alat berkualitas tinggi seperti ripgrep.",
+      "Perpustakaan ini bertujuan untuk menangani kompleksitas dalam penanganan datetime, seperti aritmetika DST (Daylight Saving Time), perhitungan yang sadar zona waktu, dan deteksi konflik zona waktu retrospektif.",
+      "Jiff menawarkan API yang lebih ramah pengguna dan fleksibel dibandingkan dengan standar yang ada, Chrono, sambil tetap menjaga ketepatan dan kemampuan dalam operasi datetime."
+    ],
+    "points": 407,
+    "commentCount": 183,
+    "retryCount": 0,
+    "time": 1721624266
+  },
+  {
+    "id": 41033579,
+    "title": "Tidak Ada Lagi Jumat Biru",
+    "originLink": "https://www.brendangregg.com/blog/2024-07-22/no-more-blue-fridays.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41033579",
+    "commentBody": "",
+    "originSummary": [
+      "Kegagalan besar pada 19 Juli yang disebabkan oleh pembaruan driver kernel menyebabkan kerusakan sistem Windows secara global, menyoroti perlunya mekanisme pembaruan yang lebih aman.",
+      "eBPF (extended Berkeley Packet Filter), yang sudah digunakan di Linux, adalah lingkungan eksekusi kernel yang aman yang dapat mencegah kerusakan semacam itu dan akan segera didukung oleh Windows.",
+      "Program eBPF diperiksa keamanannya dan diisolasi, menawarkan manfaat seperti peningkatan keamanan dan penggunaan sumber daya yang lebih rendah, dengan adopsi oleh perusahaan seperti Cisco, Google, dan Meta untuk keamanan dan observabilitas."
+    ],
+    "commentSummary": [
+      "eBPF (Extended Berkeley Packet Filter) dari Microsoft untuk Windows saat ini terbatas pada penyaringan paket, tidak seperti driver pemantauan kernel komprehensif dari Crowdstrike.",
+      "Integrasi eBPF ke dalam kerangka kerja yang ada di Windows adalah tantangan, dan tidak pasti apakah Microsoft bertujuan untuk menjadikannya standar.",
+      "eBPF dapat meningkatkan keamanan dengan mengisolasi kode kernel, tetapi ini bukan solusi lengkap, seperti yang disoroti oleh insiden Crowdstrike baru-baru ini, yang menekankan perlunya praktik penerapan dan langkah-langkah keamanan yang lebih baik."
+    ],
+    "points": 310,
+    "commentCount": 194,
+    "retryCount": 0,
+    "time": 1721650866
+  },
+  {
+    "id": 41031585,
+    "title": "Parse, Don't Validate (2019)",
+    "originLink": "https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031585",
+    "commentBody": "",
+    "originSummary": [
+      "Postingan tersebut menekankan prinsip 'Parse, don’t validate,' yang menganjurkan untuk melakukan parsing data guna mempertahankan informasi dalam sistem tipe daripada membuangnya melalui validasi.",
+      "Ini menjelaskan bagaimana desain berbasis tipe dalam bahasa seperti Haskell dapat mengubah fungsi parsial menjadi fungsi total dengan memperkuat tipe argumen, menggunakan daftar `NonEmpty` sebagai contoh.",
+      "Nasihat praktis mencakup penggunaan struktur data yang tepat, refactoring untuk mendorong beban pembuktian ke atas, dan menghindari representasi data yang tidak dinormalisasi untuk meningkatkan keandalan dan keamanan program."
+    ],
+    "commentSummary": [
+      "Artikel 'Parse, Don't Validate' menekankan pentingnya mem-parsing data untuk memastikan kebenaran daripada terus-menerus memvalidasinya sepanjang program.",
+      "Pendekatan ini, yang berakar pada konsep seperti Design by Contract dan Domain-Driven Design (DDD), memanfaatkan sistem tipe yang kuat untuk menegakkan jaminan dan mengurangi kesalahan, sehingga membuat kode lebih mudah dipahami dan dipelihara.",
+      "Kajian ini menyoroti contoh-contoh praktis dan manfaatnya, seperti menggunakan jenis yang berbeda untuk tahap validasi yang berbeda dan memastikan bahwa data selalu dalam keadaan valid, yang dapat menyederhanakan aplikasi yang kompleks dan meningkatkan keandalannya."
+    ],
+    "points": 296,
+    "commentCount": 99,
+    "retryCount": 0,
+    "time": 1721631439
+  },
+  {
+    "id": 41027658,
+    "title": "Ketika ChatGPT membuat ringkasan, sebenarnya tidak melakukan hal tersebut",
+    "originLink": "https://ea.rna.nl/2024/05/27/when-chatgpt-summarises-it-actually-does-nothing-of-the-kind/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41027658",
+    "commentBody": "",
+    "originSummary": [
+      "Penulis telah menjelajahi dan mendiskusikan dasar-dasar ChatGPT dan AI Generatif lainnya, dengan tujuan memberikan perspektif yang realistis terhadap hype yang ada.",
+      "Kunci wawasan adalah bahwa ChatGPT tidak benar-benar meringkas konten tetapi hanya memperpendeknya, sering kali melewatkan detail dan proposal penting, seperti yang dibuktikan oleh perbandingan dengan ringkasan yang dihasilkan manusia dari makalah 50 halaman.",
+      "Keterbatasan ini muncul karena merangkum memerlukan pemahaman, yang tidak dimiliki oleh ChatGPT, sehingga menimbulkan skeptisisme tentang keandalan LLM (Model Bahasa Besar) untuk aplikasi bisnis praktis."
+    ],
+    "commentSummary": [
+      "Penulis berpendapat bahwa ringkasan teks ChatGPT kurang memiliki pemahaman yang sebenarnya, sehingga menghasilkan ringkasan yang tidak lengkap dan kadang-kadang menyesatkan.",
+      "Kritik tersebut menunjukkan ketiadaan rincian tentang model GPT, prompt, dan jumlah percobaan dalam analisis asli.",
+      "Pengalaman dan pendapat pengguna bervariasi, dengan beberapa menemukan ChatGPT dan LLM lainnya bermanfaat, sementara yang lain menyoroti keterbatasannya dan kebutuhan akan peningkatan dalam pemberian petunjuk dan manajemen konteks."
+    ],
+    "points": 243,
+    "commentCount": 167,
+    "retryCount": 0,
+    "time": 1721591800
+  },
+  {
+    "id": 41031960,
+    "title": "Ryanair memenangkan kasus screen scraping melawan Booking.com dalam putusan pengadilan AS",
+    "originLink": "https://www.rte.ie/news/business/2024/0719/1460807-ryanair-wins-us-court-case-against-bookingcom/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031960",
+    "commentBody": "",
+    "originSummary": [
+      "Kejaksaan AS memutuskan bahwa Booking.com melanggar Undang-Undang Penipuan dan Penyalahgunaan Komputer dengan mengakses situs web Ryanair tanpa izin, mendukung sikap Ryanair terhadap pengambilan data layar yang tidak sah.",
+      "Juri Pengadilan Distrik Delaware menemukan Booking.com bersalah atas akses tidak sah dengan niat untuk menipu dan menolak gugatan balik Booking.com tentang pencemaran nama baik dan persaingan tidak sehat.",
+      "CEO Ryanair Michael O'Leary berharap putusan tersebut akan mengurangi pengambilan data secara ilegal dan pengenaan biaya berlebihan, sementara Booking.com berencana untuk mengajukan banding, dengan alasan bahwa perbandingan tarif menguntungkan pilihan konsumen."
+    ],
+    "commentSummary": [
+      "Ryanair memenangkan kasus hukum melawan Booking.com di pengadilan AS karena akses tidak sah untuk menjual kembali tiket, melanggar Undang-Undang Penipuan dan Penyalahgunaan Komputer.",
+      "Putusan tersebut dapat mempengaruhi agen perjalanan online lainnya yang menggunakan praktik serupa, menyoroti kompleksitas hukum web scraping.",
+      "Ada spekulasi bahwa keputusan tersebut mungkin akan dibatalkan karena adanya preseden hukum yang bertentangan."
+    ],
+    "points": 210,
+    "commentCount": 195,
+    "retryCount": 0,
+    "time": 1721636405
+  },
+  {
+    "id": 41032918,
+    "title": "Tidak ada yang mengharapkan pemuda melakukan apa pun dan mereka merespons dengan tidak melakukan apa-apa (2022)",
+    "originLink": "https://www.robkhenderson.com/p/no-one-expects-young-men-to-do-anything",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41032918",
+    "commentBody": "",
+    "originSummary": [
+      "Postingan Rob Henderson membahas kurangnya ekspektasi masyarakat terhadap pria muda dan konsekuensi negatifnya, termasuk peningkatan tingkat pengangguran dan pemenjaraan.",
+      "Dia merujuk pada 'Promises I Can Keep' oleh Kathryn Edin dan Maria Kefalas, yang meneliti mengapa wanita berpenghasilan rendah sering memprioritaskan menjadi ibu daripada menikah, dengan mengaitkannya pada perilaku buruk dari pria muda.",
+      "Henderson mengkritik kelas atas karena merusak norma stabilitas keluarga sambil memastikan anak-anak mereka sendiri mendapatkan manfaat dari rumah yang stabil, dengan berargumen bahwa para pemuda membutuhkan harapan yang tinggi untuk berkembang."
+    ],
+    "commentSummary": [
+      "Artikel tersebut mengaitkan fenomena 'pemuda yang tidak memiliki kegiatan' dengan ketimpangan kekayaan dan konsentrasi kekayaan di antara elit yang lebih tua, yang menyebabkan kenaikan harga kebutuhan pokok dan menghambat permintaan untuk usaha baru.",
+      "Ini juga membahas ketidakstabilan struktur keluarga, mencatat bahwa perubahan sosial dan tekanan ekonomi telah mengubah dinamika keluarga tradisional.",
+      "Komentar pada artikel tersebut memperdebatkan dampak dari ayah yang tidak hadir, peran wanita dalam stabilitas keluarga, dan faktor-faktor sosial serta ekonomi yang lebih luas yang berkontribusi pada masalah-masalah ini."
+    ],
+    "points": 201,
+    "commentCount": 397,
+    "retryCount": 0,
+    "time": 1721645031
+  },
+  {
+    "id": 41028887,
+    "title": "James C. Scott, penulis buku Seeing Like a State, telah meninggal dunia",
+    "originLink": "https://nitter.poast.org/GerardoMunck/status/1815059432382067053",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41028887",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "James C. Scott, penulis \"Seeing Like a State,\" telah meninggal dunia, memicu refleksi tentang ide-idenya yang berpengaruh di kalangan komunitas teknologi.",
+      "Kerja Scott menyoroti bagaimana negara dan teknologi dapat menegakkan keseragaman, mempengaruhi bidang seperti kedokteran, pendidikan, dan keterlibatan sosial dengan mengurangi keragaman.",
+      "Diskusi di Hacker News mengeksplorasi konsep-konsep Scott, terutama keseimbangan antara keamanan dan fleksibilitas dalam perangkat lunak, serta implikasi yang lebih luas dari homogenitas teknologi."
+    ],
+    "points": 197,
+    "commentCount": 39,
+    "retryCount": 0,
+    "time": 1721601209
+  },
+  {
+    "id": 41031112,
+    "title": "Eza: Pengganti modern dan terawat untuk ls",
+    "originLink": "https://github.com/eza-community/eza",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031112",
+    "commentBody": "",
+    "originSummary": [
+      "eza adalah pengganti modern untuk perintah ls di Unix dan Linux, menawarkan fitur yang ditingkatkan dan pengaturan default yang lebih baik.",
+      "Fitur utama termasuk jenis file yang diberi kode warna, dukungan symlink, atribut yang diperluas, integrasi Git, dan tanggal yang mudah dibaca.",
+      "eza bertujuan untuk lebih ramah pengguna dan kaya fitur, dengan dukungan tambahan untuk hyperlink, detail titik mount, konteks SELinux, dan warna terminal yang cerah."
+    ],
+    "commentSummary": [
+      "Eza diperkenalkan sebagai pengganti modern dan yang secara aktif dipelihara untuk perintah `ls` tradisional, yang menampilkan isi direktori dalam sistem operasi mirip Unix.",
+      "Diskusi menyoroti frustrasi pengguna dengan \"tanggal yang dapat dibaca manusia\" dalam daftar direktori, menganjurkan penggunaan stempel waktu yang tepat daripada format waktu relatif seperti \"1 hari yang lalu.\"",
+      "Postingan tersebut juga menyebutkan alat baris perintah modern lainnya yang lebih disukai pengguna dibandingkan dengan yang tradisional, seperti `bat` (pengganti `cat` dengan penyorotan sintaks) dan `rg` (ripgrep, alternatif yang lebih cepat untuk `grep`)."
+    ],
+    "points": 194,
+    "commentCount": 162,
+    "retryCount": 0,
+    "time": 1721625443
+  },
+  {
+    "id": 41036844,
+    "title": "Berapa banyak uang yang bisa kita kumpulkan untuk startup yang secara transparan idiot?",
+    "originLink": "https://www.smbc-comics.com/comic/investment-2",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41036844",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Postingan tersebut membahas fenomena penggalangan dana untuk startup dengan ide-ide yang tampaknya tidak masuk akal, menyoroti betapa mudahnya modal dapat diperoleh untuk usaha semacam itu.",
+      "Itu mengkritik ekosistem startup, menyarankan bahwa ekosistem tersebut beroperasi seperti skema 'pump and dump', berpindah dari satu bidang tren ke bidang tren lainnya, sering kali membuang-buang sumber daya.",
+      "Percakapan tersebut mencakup contoh-contoh startup yang sukses dan memperdebatkan nilai serta dampak dari kelompok fokus dan MVP (Minimum Viable Products) dalam pengembangan produk."
+    ],
+    "points": 171,
+    "commentCount": 86,
+    "retryCount": 0,
+    "time": 1721668554
+  },
+  {
+    "id": 41031975,
+    "title": "Suatu sistem penagihan dengan sumber terbuka yang telah saya bangun selama 18 bulan",
+    "originLink": "https://billabear.com/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031975",
+    "commentBody": "",
+    "originSummary": [
+      "Kami menawarkan integrasi mendalam dengan Stripe, memungkinkan kontrol komprehensif atas penagihan, manajemen pajak, dan alur kerja otomatis.",
+      "Fitur-fitur termasuk mengelola tarif pajak di berbagai tingkat, membuat rencana langganan khusus, dan mengintegrasikan dengan alat seperti Slack dan penyedia email.",
+      "Sistem ini mendukung skalabilitas, self-hosting, dan menyediakan wawasan bisnis yang mendetail seperti churn langganan dan nilai umur pelanggan."
+    ],
+    "commentSummary": [
+      "Setelah 18 bulan pengembangan, sebuah sistem penagihan baru yang tersedia sumbernya, Billabear, telah diluncurkan, menawarkan fitur-fitur serupa dengan Stripe tetapi dengan kode sumber yang tersedia di bawah Lisensi Sumber Adil (FSL).",
+      "FSL memungkinkan pengguna untuk mengakses kode sumber, yang beralih ke lisensi Apache 2.0 setelah dua tahun, memberikan lebih banyak fleksibilitas dan kontrol dibandingkan dengan model sumber tertutup Stripe.",
+      "Diskusi menyoroti pentingnya ketersediaan sumber bagi beberapa pengguna, kebutuhan akan lokalisasi yang lebih baik dalam berbagai bahasa, dan kekhawatiran tentang penanganan pajak penjualan negara bagian AS serta kepatuhan GDPR."
+    ],
+    "points": 167,
+    "commentCount": 84,
+    "retryCount": 0,
+    "time": 1721636536
+  },
+  {
+    "id": 41037097,
+    "title": "Para pekerja telah berbicara: Mereka tetap di rumah",
+    "originLink": "https://www.computerworld.com/article/2520794/the-workers-have-spoken-theyre-staying-home.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41037097",
+    "commentBody": "",
+    "originSummary": [
+      "Dell's policy requiring in-office presence for promotions was largely ignored, with many employees opting to stay home.",
+      "Menurut laporan Gartner, 48% karyawan percaya bahwa kebijakan perusahaan lebih mengutamakan preferensi para pemimpin daripada kebutuhan mereka sendiri.",
+      "Kerja jarak jauh semakin disukai karena manfaatnya, termasuk tidak ada perjalanan, keseimbangan kerja-hidup yang lebih baik, penghematan biaya, dan fleksibilitas, dengan para pekerja berkinerja tinggi mencari peluang kerja jarak jauh."
+    ],
+    "commentSummary": [
+      "Para pekerja enggan kembali ke kantor karena lingkungan yang buruk, kurangnya meja permanen, dan masalah produktivitas dalam pengaturan ruang terbuka.",
+      "Banyak karyawan menemukan bahwa bekerja dari jarak jauh lebih efisien dan enggan kembali ke kondisi kantor yang kurang optimal, dengan perjalanan menjadi faktor yang signifikan.",
+      "Beberapa perusahaan menggunakan mandat kembali ke kantor sebagai strategi untuk mengurangi jumlah karyawan tanpa harus melakukan PHK, yang memicu perdebatan berkelanjutan tentang pengaturan kerja yang optimal."
+    ],
+    "points": 158,
+    "commentCount": 145,
+    "retryCount": 0,
+    "time": 1721669795
+  },
+  {
+    "id": 41029987,
+    "title": "Apollo DN10000: Workstation Quad CPU/128Mb RAM dari tahun 1988 [pdf]",
+    "originLink": "https://jim.rees.org/apollo-archive/marketing/1988-ApolloDN10000ProductBrochure.pdf",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41029987",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Workstation Apollo DN10000, dengan empat CPU dan RAM 128MB dari tahun 1988, sedang dibicarakan dengan penuh nostalgia karena signifikansi historis dan kemampuan teknisnya.",
+      "Pengguna mengingat penggunaannya di laboratorium universitas dan perannya dalam pemrograman grafis awal, meskipun lingkungan Unix yang kompleks dan tantangan konfigurasi.",
+      "Biaya tinggi mesin tersebut, hingga $250,000 pada tahun 1980-an (setara dengan sekitar $660,000 saat ini), menyoroti status premiumnya dan kemajuan teknologi yang signifikan sejak saat itu."
+    ],
+    "points": 156,
+    "commentCount": 122,
+    "retryCount": 0,
+    "time": 1721610732
+  },
+  {
+    "id": 41030352,
+    "title": "Sensor Falcon dari CrowdStrike juga dikaitkan dengan kernel panik dan crash pada Linux",
+    "originLink": "https://www.theregister.com/2024/07/21/crowdstrike_linux_crashes_restoration_tools/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41030352",
+    "commentBody": "",
+    "originSummary": [
+      "Kegagalan sistem telah terjadi pada perangkat lunak Falcon Sensor dari CrowdStrike di Windows dan Linux, termasuk Red Hat Enterprise Linux 9.4, Debian, dan Rocky Linux.",
+      "Menonaktifkan Sementara Sensor Falcon menstabilkan sistem yang terpengaruh, dan CrowdStrike sedang menguji alat pemulihan cepat untuk mengatasi masalah tersebut.",
+      "Gangguan tersebut telah memiliki dampak global yang signifikan, termasuk pembatalan penerbangan dan penundaan layanan kesehatan, dengan Microsoft memperkirakan 8,5 juta mesin Windows terpengaruh."
+    ],
+    "commentSummary": [
+      "Koneksi antara Falcon Sensor dari CrowdStrike dengan kernel panik dan crash pada Linux berbeda dengan masalah BSOD (Blue Screen of Death) pada Windows.",
+      "Kernel panik pada Linux kemungkinan disebabkan oleh bug dalam implementasi eBPF (Extended Berkeley Packet Filter) kernel, yang mungkin berasal dari patch khusus Red Hat, menunjukkan adanya bug kernel daripada masalah vendor.",
+      "Diskusi tersebut menyoroti tantangan dalam mendukung berbagai versi OS dan kompleksitas yang terlibat dalam pengujian modul kernel, dengan menekankan perbedaan dalam rekayasa keandalan kernel antara Linux dan Windows."
+    ],
+    "points": 154,
+    "commentCount": 141,
+    "retryCount": 0,
+    "time": 1721614932
+  }
+]

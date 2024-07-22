@@ -15,12 +15,193 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 21 Jul 2024 19:12:36 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 22 Jul 2024 19:20:31 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/nb.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 21 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 22 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[nb]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-22]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/22&#39;</h2>
+<h1>2024-07-22</h1>
+<h2><a href="https://forum.jellyfin.org/t-we-re-good-seriously">Jellyfin: We zijn goed, echt waar</a></h2>
+<ul>
+<li>Jellyfin heeft een budget van meer dan $24.000, dat 40 maanden aan uitgaven dekt, en vraagt gebruikers om donaties door te sturen naar de auteurs van de Clients die ze gebruiken.</li>
+<li>Dit verzoek komt overeen met Jellyfin&#39;s &quot;geen betaalde ontwikkeling&quot; beleid, aangezien donaties vrijwillig zijn, en het project zal heroverwegen als de fondsen dalen tot 12 maanden van runway.</li>
+<li>Gemeenschapsleden reageren positief, met plannen om Client-auteurs te ondersteunen en vragen over specifieke cliëntondersteuning zoals WebOS.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031998">Reaksjoner</a></h3>
+<ul>
+<li>Jellyfin, een open-source mediaserverproject, kondigde aan dat ze voldoende fondsen hebben en stelde voor dat donateurs in plaats daarvan andere ecosysteemprojecten ondersteunen.</li>
+<li>De gemeenschap er verdeeld over deze aanpak; sommigen vinden dat fondsen moeten worden verdeeld onder ecosysteemontwikkelaars, terwijl anderen het eens zijn met Jellyfin&#39;s beslissing om extra administratieve lasten te vermijden.</li>
+<li>De discussie benadrukt de complexiteit en mogelijke problemen bij het beheren van donaties binnen open-source projecten, waaronder transparantie, administratieve overhead en het behouden van de focus op kernontwikkeling.</li>
+</ul>
+<h2><a href="https://without.boats/blog/pin/">Speld</a></h2>
+<ul>
+<li>Het type Pin en het concept van pinnen zijn essentiële maar vaak misbegrepen componenten van Rust&#39;s asynchrone ecosysteem.</li>
+<li>Pin werd geïntroduceerd om zelfverwijzende types in async Rust te ondersteunen, zodat objecten niet verplaatsen zodra ze zelfverwijzingen bevatten, in tegenstelling tot Mojo, dat inherent objectidentiteit afhandelt.</li>
+<li>Ondanks de noodzaak ervan, introduceert Pin aanzienlijke complexiteit voor gebruikers vanwege het gebrek aan syntactische suiker en ondersteuning, wat leidt tot problemen zoals herlenen, vastgezette projecties en interacties met de Drop-eigenschap.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41029287">Reaksjoner</a></h3>
+<ul>
+<li>De discussie draait om het <code>Pin</code> type van de programmeertaal Rust, dat vaak verkeerd begrepen wordt door onduidelijke documentatie.</li>
+<li>&quot;Pin&quot; zorgt ervoor dat bepaalde objekter ikke kan flyttes i minnet, noe som er avgjørende for selvrefererende strukturer, men dette konseptet er ikke godt forklart i de offisielle dokumentene.</li>
+<li>Het gesprek benadrukt de behoefte aan betere documentatie en analogieën om het concept van <code>Pin</code> en <code>Unpin</code> toegankelijker te maken voor Rust-ontwikkelaars, vooral voor degenen die nieuw zijn in de taal.</li>
+</ul>
+<h2><a href="https://github.com/BurntSushi/jiff">Jiff: Datetime-bibliotheek voor Rust</a></h2>
+<ul>
+<li>Jiff is een nieuwe Rust-datumtijd-bibliotheek gericht op gebruiksgemak en prestaties, geïnspireerd door JavaScript&#39;s Temporal-voorstel.</li>
+<li>Het biedt functies zoals high-level datetime-primitieven, naadloze integratie van de Time Zone Database, DST-bewuste rekenkunde, formattering, parsing en optionele Serde-ondersteuning.</li>
+<li>Jiff is dual-licensed under MIT or the UNLICENSE, supports Unix and Windows, and requires Rust 1.70.0 or newer.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031037">Reaksjoner</a></h3>
+<ul>
+<li>Jiff is een nieuwe datetime-bibliotheek voor Rust, ontwikkeld door BurntSushi, bekend om het maken van hoogwaardige tools zoals ripgrep.</li>
+<li>De bibliotheek heeft als doel om complexiteiten in de omgang met datums en tijden aan te pakken, zoals zomertijdrekeningen, tijdzone-bewuste berekeningen en het detecteren van conflicten met terugwerkende kracht in tijdzones.</li>
+<li>Jiff biedt een gebruiksvriendelijkere en flexibelere API in vergelijking met de bestaande standaard, Chrono, terwijl het correctheid en capaciteit in datum-tijd operaties behoudt.</li>
+</ul>
+<h2><a href="https://www.brendangregg.com/blog/2024-07-22/no-more-blue-fridays.html">Geen Blauwe Vrijdagen Meer</a></h2>
+<ul>
+<li>Een grote storing op 19 juli veroorzaakt door een kernel driver update leidde tot wereldwijde crashes van Windows-systemen, wat de noodzaak van veiligere update-mechanismen benadrukt.</li>
+<li>eBPF (extended Berkeley Packet Filter), al gebruikt in Linux, is een veilige kernel-uitvoeringsomgeving die dergelijke crashes kan voorkomen en binnenkort door Windows zal worden ondersteund.</li>
+<li>eBPF-programma&#39;s worden gecontroleerd op veiligheid en in een sandbox geplaatst, wat voordelen biedt zoals verbeterde beveiliging en lager hulpbronnengebruik, met adoptie door bedrijven zoals Cisco, Google en Meta voor beveiliging en observatie.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41033579">Reaksjoner</a></h3>
+<ul>
+<li>Microsofts eBPF (Extended Berkeley Packet Filter)-støtte for Windows er for øyeblikket begrenset til pakkefiltrering, i motsetning til Crowdstrikes omfattende kjerneovervåkingsdrivere.</li>
+<li>Het integreren van eBPF in de bestaande frameworks van Windows is uitdagend, en het is onzeker of Microsoft ernaar streeft om het een standaard te maken.</li>
+<li>eBPF kan de beveiliging verbeteren door kernelcode te isoleren, maar het is geen volledige oplossing, zoals benadrukt door het recente Crowdstrike-incident, dat de noodzaak van verbeterde implementatiepraktijken en beveiligingsmaatregelen onderstreept.</li>
+</ul>
+<h2><a href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/">Parse, Niet Valideren (2019)</a></h2>
+<ul>
+<li>De post benadrukt prinsippet &quot;Parse, don’t validate,&quot; og går inn for å analysere data for å bevare informasjon i typesystemet i stedet for å forkaste det gjennom validering.</li>
+<li>Het legt uit hoe type-gedreven ontwerp in talen zoals Haskell gedeeltelijke functies kan omzetten in totale functies door argumenttypen te versterken, met <code>NonEmpty</code>-lijsten als voorbeeld.</li>
+<li>Praktisch advies omvat het gebruik van nauwkeurige datastructuren, het refactoren om bewijslasten naar boven te duwen, en het vermijden van gedenormaliseerde datarepresentaties om de betrouwbaarheid en veiligheid van programma&#39;s te verbeteren.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031585">Reaksjoner</a></h3>
+<ul>
+<li>Het artikel &#39;Parse, Don&#39;t Validate&#39; benadrukt het belang van het parsen van gegevens om correctheid te waarborgen in plaats van deze herhaaldelijk te valideren gedurende het hele programma.</li>
+<li>Deze benadering, geworteld in concepten zoals Design by Contract en Domain-Driven Design (DDD), maakt gebruik van sterke typesystemen om garanties af te dwingen en fouten te verminderen, waardoor code gemakkelijker te begrijpen en te onderhouden is.</li>
+<li>De discussie belicht praktische voorbeelden en voordelen, zoals het gebruik van verschillende typen voor verschillende validatiestadia en ervoor zorgen dat gegevens altijd in een geldige staat verkeren, wat complexe toepassingen kan vereenvoudigen en de betrouwbaarheid kan verbeteren.</li>
+</ul>
+<h2><a href="https://ea.rna.nl/2024/05/27/when-chatgpt-summarises-it-actually-does-nothing-of-the-kind/">Wanneer ChatGPT samenvat, doet het niets van dien aard</a></h2>
+<ul>
+<li>De auteur heeft de fundamenten van ChatGPT en andere generatieve AI&#39;s verkend en besproken, met als doel realistische perspectieven te bieden tegen de heersende hype.</li>
+<li>Een belangrijk inzicht is dat ChatGPT de inhoud niet echt samenvat, maar deze slechts verkort, waarbij vaak essentiële details en voorstellen ontbreken, zoals blijkt uit een vergelijking met een door mensen gegenereerde samenvatting van een document van 50 pagina&#39;s.</li>
+<li>Deze beperking ontstaat omdat samenvatten begrip vereist, wat ChatGPT mist, wat leidt tot scepsis over de betrouwbaarheid van LLM&#39;s (Grote Taalmodellen) voor praktische zakelijke toepassingen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41027658">Reaksjoner</a></h3>
+<ul>
+<li>De auteur stelt dat de tekstsamenvatting van ChatGPT een echt begrip mist, wat resulteert in onvolledige en soms misleidende samenvattingen.</li>
+<li>De kritiek wijst op de afwezigheid van details over het GPT-model, de prompt en het aantal pogingen in de oorspronkelijke analyse.</li>
+<li>Gebruikerservaringen en meningen variëren, waarbij sommigen ChatGPT en andere LLM&#39;s nuttig vinden, terwijl anderen hun beperkingen benadrukken en de noodzaak van verbeterde prompts en contextbeheer aangeven.</li>
+</ul>
+<h2><a href="https://www.rte.ie/news/business/2024/0719/1460807-ryanair-wins-us-court-case-against-bookingcom/">Ryanair wint zaak over screen scraping tegen Booking.com in Amerikaanse rechtbankuitspraak</a></h2>
+<ul>
+<li>Een Amerikaanse rechtbank oordeelde dat Booking.com de Computer Fraud and Abuse Act had geschonden door zonder toestemming toegang te krijgen tot de website van Ryanair, waarmee de rechtbank de positie van Ryanair tegen ongeoorloofd screen scraping ondersteunde.</li>
+<li>De jury i Delaware District Court fant Booking.com skyldig i uautorisert tilgang med hensikt å bedra og avviste Booking.coms motsøksmål om ærekrenkelse og urettferdig konkurranse.</li>
+<li>Ryanair CEO Michael O&#39;Leary hoopt dat de uitspraak het illegaal screen scraping en overbelasting zal verminderen, terwijl Booking.com van plan is in beroep te gaan, met het argument dat tariefvergelijking de keuzevrijheid van de consument ten goede komt.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031960">Reaksjoner</a></h3>
+<ul>
+<li>Ryanair won een rechtszaak tegen Booking.com in een Amerikaanse rechtbank voor ongeautoriseerde toegang om tickets door te verkopen, in strijd met de Computer Fraud and Abuse Act.</li>
+<li>De uitspraak kan van invloed zijn op andere online reisagenten die soortgelijke praktijken gebruiken, en benadrukt de complexiteit van wetten omtrent webscraping.</li>
+<li>Er is speculatie dat avgjørelsen kan bli omgjort på grunn av motstridende rettslige presedenser.</li>
+</ul>
+<h2><a href="https://www.robkhenderson.com/p/no-one-expects-young-men-to-do-anything">Niemand forventer at unge menn skal gjøre noe, og de svarer med å gjøre ingenting (2022)</a></h2>
+<ul>
+<li>Rob Hendersons innlegg diskuterer mangelen på samfunnsforventninger til unge menn og de negative konsekvensene av dette, inkludert økt arbeidsledighet og fengslingsrater.</li>
+<li>Hij verwijst naar &#39;Promises I Can Keep&#39; van Kathryn Edin en Maria Kefalas, dat onderzoekt waarom vrouwen met een laag inkomen vaak het moederschap boven het huwelijk verkiezen, en dit toeschrijft aan slecht gedrag van jonge mannen.</li>
+<li>Henderson bekritiseert de hogere klasse omdat ze de normen voor gezinsstabiliteit ondermijnen terwijl ze ervoor zorgen dat hun eigen kinderen profiteren van stabiele huizen, en stelt dat jonge mannen hoge verwachtingen nodig hebben om te gedijen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41032918">Reaksjoner</a></h3>
+<ul>
+<li>Het artikel schrijft het fenomeen van &#39;jonge mannen zonder iets te doen&#39; toe aan rijkdomongelijkheid en de concentratie van rijkdom onder oudere elites, wat de prijzen voor benodigdheden opdrijft en de vraag naar nieuwe ondernemingen verstikt.</li>
+<li>Het bespreekt ook de instabiliteit van gezinsstructuren, waarbij wordt opgemerkt dat maatschappelijke veranderingen en economische druk de traditionele gezinsdynamiek hebben veranderd.</li>
+<li>Reacties op het artikel bespreken de impact van afwezige vaders, de rol van vrouwen in gezinsstabiliteit en de bredere maatschappelijke en economische factoren die bijdragen aan deze problemen.</li>
+</ul>
+<h2><a href="https://nitter.poast.org/GerardoMunck/status/1815059432382067053">James C. Scott, auteur van Seeing Like a State, is overleden</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41028887">Reaksjoner</a></h3>
+<ul>
+<li>James C. Scott, auteur van &quot;Seeing Like a State,&quot; is overleden, wat aanleiding geeft tot reflecties over zijn invloedrijke ideeën binnen de techgemeenschap.</li>
+<li>Scott&#39;s werk benadrukt hoe staten en technologie uniformiteit kunnen afdwingen, wat van invloed is op gebieden zoals geneeskunde, onderwijs en sociale betrokkenheid door diversiteit te verminderen.</li>
+<li>Discussies op Hacker News verkennen Scotts concepten, met name de balans tussen veiligheid en flexibiliteit in software, en de bredere implicaties van technologische homogeniteit.</li>
+</ul>
+<h2><a href="https://github.com/eza-community/eza">Eza: Een moderne, onderhouden vervanging voor ls</a></h2>
+<ul>
+<li>eza is een moderne vervanging voor het ls-commando in Unix en Linux, met verbeterde functies en betere standaardinstellingen.</li>
+<li>Belangrijke kenmerken zijn onder andere kleurgecodeerde bestandstypen, symlink-ondersteuning, uitgebreide attributen, Git-integratie en menselijk leesbare datums.</li>
+<li>eza streeft ernaar gebruiksvriendelijker en rijker aan functies te zijn, met extra ondersteuning voor hyperlinking, mount point details, SELinux-context en heldere terminalkleuren.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031112">Reaksjoner</a></h3>
+<ul>
+<li>Eza wordt geïntroduceerd als een moderne en actief onderhouden vervanging voor het traditionele <code>ls</code>-commando, dat de inhoud van directories in Unix-achtige besturingssystemen weergeeft.</li>
+<li>De discussie benadrukt brukerfrustrasjoner med &quot;mensenleesbare datums&quot; in directory-lijsten, en pleit voor exacte tijdstempels in plaats van relatieve tijdsformaten zoals &quot;1 dag geleden.&quot;</li>
+<li>De post vermeldt ook andere moderne commandoregeltools die gebruikers verkiezen boven traditionele, zoals <code>bat</code> (een vervanging voor <code>cat</code> met syntaxisaccentuering) en <code>rg</code> (ripgrep, een snellere alternatieve voor <code>grep</code>).</li>
+</ul>
+<h2><a href="https://www.smbc-comics.com/comic/investment-2">Hoeveel geld kunnen we inzamelen voor transparant idiote startups?</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41036844">Reaksjoner</a></h3>
+<ul>
+<li>Het bericht bespreekt het fenomeen van het inzamelen van geld voor startups met schijnbaar onzinnige ideeën, en benadrukt hoe gemakkelijk kapitaal kan worden verkregen voor dergelijke ondernemingen.</li>
+<li>Het bekritiseert het startup-ecosysteem en suggereert dat het opereert als een &#39;pump and dump&#39;-schema, waarbij het van het ene trendy veld naar het andere gaat en vaak middelen verspilt.</li>
+<li>Het gesprek bevat voorbeelden van succesvolle startups en bespreekt de waarde en impact van focusgroepen en MVP&#39;s (Minimum Viable Products) in productontwikkeling.</li>
+</ul>
+<h2><a href="https://billabear.com/">Een factureringssysteem met beschikbare broncode waar ik 18 maanden aan heb gewerkt</a></h2>
+<ul>
+<li>Het platform biedt diepe integratie met Stripe, waardoor uitgebreide controle over facturering, belastingbeheer en geautomatiseerde workflows mogelijk is.</li>
+<li>Kenmerken zijn onder andere het beheren van belastingtarieven op verschillende niveaus, het maken van aangepaste abonnementsplannen en het integreren met tools zoals Slack en e-mailproviders.</li>
+<li>Het systeem ondersteunt schaalbaarheid, zelfhosting en biedt gedetailleerde zakelijke inzichten zoals abonnementenverloop en levenslange waarde.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031975">Reaksjoner</a></h3>
+<ul>
+<li>Een nieuw bron-beschikbaar factureringssysteem, Billabear, is gelanceerd na 18 maanden ontwikkeling, met functies vergelijkbaar met Stripe maar met de broncode beschikbaar onder de Fair Source License (FSL).</li>
+<li>De FSL stelt gebruikers in staat om toegang te krijgen tot de broncode, die na twee jaar overgaat naar een Apache 2.0-licentie, wat meer flexibiliteit en controle biedt in vergelijking met het gesloten bronmodel van Stripe.</li>
+<li>Discussies benadrukken het belang van bronbeschikbaarheid voor sommige gebruikers, de noodzaak van betere lokalisatie in verschillende talen, en zorgen over de afhandeling van Amerikaanse staatsbelasting en GDPR-naleving.</li>
+</ul>
+<h2><a href="https://www.computerworld.com/article/2520794/the-workers-have-spoken-theyre-staying-home.html">De arbeiders hebben gesproken: Ze blijven thuis</a></h2>
+<ul>
+<li>Dells policy som krever tilstedeværelse på kontoret for forfremmelser ble stort sett ignorert, med mange ansatte som valgte å bli hjemme.</li>
+<li>Een rapport van Gartner geeft aan dat 48% van de werknemers geloven dat bedrijfsvoorschriften de voorkeuren van leiders boven hun eigen behoeften stellen.</li>
+<li>Thuiswerken wordt steeds meer geprefereerd vanwege de voordelen, waaronder geen woon-werkverkeer, een betere balans tussen werk en privé, kostenbesparingen en flexibiliteit, waarbij toppresteerders op zoek zijn naar thuiswerkmogelijkheden.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41037097">Reaksjoner</a></h3>
+<ul>
+<li>Werknemers zijn terughoudend om naar kantoren terug te keren vanwege slechte omgevingen, gebrek aan vaste bureaus en productiviteitsproblemen in open kantoorruimtes.</li>
+<li>Veel werknemers vinden thuiswerken efficiënter en zijn terughoudend om terug te keren naar suboptimale kantooromstandigheden, waarbij woon-werkverkeer een belangrijke factor is.</li>
+<li>Enkele bedrijven gebruiken terugkeer-naar-kantoor mandaten als een strategie om het personeelsbestand te verminderen zonder toevlucht te nemen tot ontslagen, wat het voortdurende debat over optimale werkregelingen aanwakkert.</li>
+</ul>
+<h2><a href="https://jim.rees.org/apollo-archive/marketing/1988-ApolloDN10000ProductBrochure.pdf">Apollo DN10000: Quad CPU/128Mb RAM werkstation uit 1988 [pdf]</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41029987">Reaksjoner</a></h3>
+<ul>
+<li>De Apollo DN10000, een quad CPU-werkstation met 128MB RAM uit 1988, wordt nostalgisch besproken vanwege zijn historische betekenis en technische mogelijkheden.</li>
+<li>Gebruikers herinneren zich het gebruik ervan in universiteitslaboratoria en de rol ervan in vroege grafische programmering, ondanks de complexe Unix-omgeving en configuratie-uitdagingen.</li>
+<li>De hoge kosten van de machine, tot $250.000 in de jaren 1980 (gelijk aan ongeveer $660.000 vandaag), benadrukken zijn premium status en de aanzienlijke technologische vooruitgang sindsdien.</li>
+</ul>
+<h2><a href="https://www.theregister.com/2024/07/21/crowdstrike_linux_crashes_restoration_tools/">CrowdStrike&#39;s Falcon Sensor ook in verband gebracht met Linux kernel panics en crashes</a></h2>
+<ul>
+<li>De Falcon Sensor-software van CrowdStrike heeft systeemcrashes veroorzaakt op zowel Windows als Linux, waaronder Red Hat Enterprise Linux 9.4, Debian en Rocky Linux.</li>
+<li>Het tijdelijk uitschakelen van de Falcon Sensor stabiliseert de getroffen systemen, en CrowdStrike test een snel herstelhulpmiddel om het probleem aan te pakken.</li>
+<li>De verstoring heeft aanzienlijke wereldwijde gevolgen gehad, waaronder vluchtannuleringen en vertragingen in de gezondheidszorg, waarbij Microsoft schat dat 8,5 miljoen Windows-machines zijn getroffen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41030352">Reaksjoner</a></h3>
+<ul>
+<li>De Falcon Sensor van CrowdStrike is in verband gebracht met kernel panics en crashes in Linux, wat verschilt van de BSOD (Blue Screen of Death) problemen in Windows.</li>
+<li>De Linux-kernelpaniek is waarschijnlijk te wijten aan een bug in de eBPF (Extended Berkeley Packet Filter) implementatie van de kernel, mogelijk door een Red Hat-specifieke patch, wat wijst op een kernelbug in plaats van een probleem met de leverancier.</li>
+<li>De discussie benadrukt de uitdagingen van het ondersteunen van meerdere OS-versies en de complexiteit die betrokken is bij het testen van kernelmodules, waarbij de verschillen in kernelbetrouwbaarheidstechniek tussen Linux en Windows worden benadrukt.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Jellyfin: We zijn goed, echt waar" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Jellyfin%3A%20We%20zijn%20goed%2C%20echt%20waar&subheading=mandag%2022.%20juli%202024%3A%20Sammendrag%20av%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/nb/2024/07/22</link>
+            <guid isPermaLink="false">2024-07-22T00:00:00.000Z</guid>
+            <pubDate>Mon, 22 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-21]]></title>
             <description
@@ -1688,197 +1869,6 @@
             <link>https://hn.cho.sh/nb/2024/07/13</link>
             <guid isPermaLink="false">2024-07-13T00:00:00.000Z</guid>
             <pubDate>Sat, 13 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-12]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/12&#39;</h2>
-<h1>2024-07-12</h1>
-<h2><a href="https://webvm.io/">WebVM is een serverloze virtuele Linux-omgeving die client-side draait</a></h2>
-<ul>
-<li>WebVM is een server-loze virtuele Linux-omgeving die volledig client-side draait met behulp van HTML5 en WebAssembly, aangedreven door de CheerpX-virtualisatie-engine.</li>
-<li>Het maakt veilige, sandboxed uitvoering van x86-binaries in elke browser mogelijk, met een x86-naar-WebAssembly JIT (Just-In-Time) compiler, een virtueel blokgebaseerd bestandssysteem en een Linux syscall-emulator.</li>
-<li>Nieuwe functie: Gebruikers kunnen nu aangepaste WebVM-afbeeldingen maken met behulp van Dockerfile, wat de flexibiliteit en aanpassing verbetert.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40940225">Reaksjoner</a></h3>
-<ul>
-<li>WebVM is een server-loze virtuele Linux-omgeving die client-side draait, gebruikmakend van een CheerpX-build gehost door Leaning Technologies en netwerkondersteuning via Tailscale.</li>
-<li>WebVM fungeert als een Linux syscall-emulator voor userland-binaries, in tegenstelling tot volledige systeememulators, en biedt daardoor meer flexibiliteit en snelheid.</li>
-<li>Het is niet open-source, en zelf-hosting van de CheerpX-engine is verboden, waardoor het geschikt is voor onderwijs, live documentatie, softwarebehoud en web-IDE-ontwikkeling, hoewel het beperkingen heeft zoals prestatieproblemen op mobiele apparaten en gedeeltelijke offline functionaliteit.</li>
-</ul>
-<h2><a href="https://techcrunch.com/2024/07/12/att-phone-records-stolen-data-breach/">AT&amp;T zegt dat criminelen telefoongegevens van &#39;bijna alle&#39; klanten hebben gestolen bij een datalek</a></h2>
-<ul>
-<li>AT&amp;T bevestigde een datalek dat bijna 110 miljoen klanten treft, met betrekking tot telefoonnummers, bel- en sms-gegevens en locatiegerelateerde informatie.</li>
-<li>De inbreuk, gekoppeld aan cloudgegevensleverancier Snowflake, omvat metadata maar niet de inhoud van oproepen of sms&#39;jes.</li>
-<li>De FBI en DOJ hebben de openbare kennisgeving uitgesteld vanwege zorgen over de nationale veiligheid, wat het tweede beveiligingsincident van AT&amp;T dit jaar markeert.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40944505">Reaksjoner</a></h3>
-<ul>
-<li>AT&amp;T heeft een datalek ervaren dat bijna alle klanten treft, waarbij bel- en tekstmetadata zijn blootgesteld, maar niet de inhoud of tijdstempels.</li>
-<li>Ondanks een aanvankelijke daling van de aandelen, blijft de markt grotendeels onaangetast, wat een geloof weerspiegelt dat bedrijven minimale financiële gevolgen ondervinden van dergelijke inbreuken.</li>
-<li>Het incident, gekoppeld aan het cloudplatform van Snowflake, heeft geleid tot oproepen voor strengere gegevensbewaaringsbeleid, betere beveiligingspraktijken en mogelijke zware boetes of rechtszaken om de verantwoordelijkheid van bedrijven af te dwingen.</li>
-</ul>
-<h2><a href="https://physicsbaseddeeplearning.org/intro.html">Fysica-gebaseerd Deep Learning Boek</a></h2>
-<ul>
-<li>Het Physics-based Deep Learning Book (v0.2) biedt een praktische introductie tot deep learning in fysieke simulaties, met praktische Jupyter-notebookvoorbeelden.</li>
-<li>Nieuw in versie 0.2: Uitgebreid gedeelte over het integreren van differentieerbare programmering (DP) in de training van neurale netwerken (NN) en een nieuw hoofdstuk over verbeterde leermethoden voor natuurkundige problemen.</li>
-<li>Toekomstige updates zullen hoofdstukken bevatten over het trainen van netwerken voor vloeistofstroomvoorspelling, het gebruik van modelvergelijkingen als residuen, het interactie met simulatoren voor inverse problemen, en het benutten van hogere-orde informatie voor betere neurale netwerken.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40941056">Reaksjoner</a></h3>
-<ul>
-<li>Een nieuw boek getiteld &#39;Physics-Based Deep Learning&#39; is geïntroduceerd, met de nadruk op het toepassen van deep learning op fysicasimulaties in plaats van algemene deep learning-concepten vanuit het perspectief van een natuurkundige.</li>
-<li>Het boek bevat praktische codevoorbeelden in Jupyter-notebooks, fysieke verliesbeperkingen, differentieerbare simulaties, trainingsalgoritmen voor natuurkundige problemen, versterkend leren en onzekerheidsmodellering.</li>
-<li>Het boek is geproduceerd door de Physics-based Simulation Group en is beschikbaar voor download op arXiv, met aanvullende bronnen en discussies beschikbaar op verschillende platforms zoals YouTube en GitHub.</li>
-</ul>
-<h2><a href="https://ochagavia.nl/blog/using-s3-as-a-container-registry/">Gebruik S3 als een Container Registry</a></h2>
-<ul>
-<li>Een ontwikkelaar heeft aangetoond dat Amazon S3 kan worden gebruikt als een containerregister door een S3-bucket via HTTP bloot te stellen en containerbeeldbestanden naar specifieke paden te uploaden, waardoor <code>docker pull</code>-operaties mogelijk zijn.</li>
-<li>Het belangrijkste voordeel van het gebruik van S3 boven traditionele containerregisters zoals DockerHub of Amazon ECR is aanzienlijk snellere uploadsnelheden dankzij parallelle gechunkte uploads.</li>
-<li>Deze experimentele benadering mist functies zoals geautomatiseerde beveiligingsscans en toegangscontroles, maar zou kunnen leiden tot het hosten van openbare containerafbeeldingen in Cloudflare&#39;s R2 met gratis uitgaande gegevens.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40942732">Reaksjoner</a></h3>
-<ul>
-<li>Het gebruik van Amazon S3 als een containerregister wordt besproken, waarbij de nadruk ligt op het potentieel ervan als een alternatief voor traditionele containerregisters zoals DockerHub en AWS ECR.</li>
-<li>Het gesprek bekritiseert de OCI (Open Container Initiative) Distribution Spec vanwege de inefficiënties, zoals het vereisen van sequentiële laaguploads en het ontbreken van gestandaardiseerde paginering voor het weergeven van tags.</li>
-<li>Docker&#39;s impact op softwareontwikkeling wordt besproken, waarbij sommigen de vereenvoudiging van het afhankelijkheidsbeheer prijzen en anderen het bekritiseren omdat het de betrouwbaarheid van het eindproduct of de ontwikkelsnelheid niet verbetert.</li>
-</ul>
-<h2><a href="https://nelson.cloud/as-an-employee-you-are-disposable/">Als werknemer ben je vervangbaar (2023)</a></h2>
-<ul>
-<li>Recente ontslagen in de technologiesector geven aan dat werknemers vaak als wegwerpbaar worden beschouwd door leidinggevenden, zelfs in winstgevende bedrijven.</li>
-<li>Bedrijven zoals Microsoft blijven werknemers ontslaan en salarisbevriezingen doorvoeren ondanks het overtreffen van de verwachtingen van investeerders en het hebben van hoge inkomsten.</li>
-<li>Wealthy executives, zoals Tim Gurner, hebben opmerkingen gemaakt die het idee versterken dat werknemers vervangbaar zijn, ongeacht hun bijdragen of anciënniteit.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40943436">Reaksjoner</a></h3>
-<ul>
-<li>Bedrijven zijn transactionele entiteiten en kunnen werknemers laten gaan wanneer het hen uitkomt, waarbij ze benadrukken dat werknemers niet onmisbaar zijn.</li>
-<li>Over-hiring en ontslagen zijn vaak strategieën om de aandeelhouderswaarde te verhogen, wat het belang benadrukt van werknemers die zich richten op hun eigen belangen en eerlijke compensatie zoeken.</li>
-<li>Het overwegen van vakbonden en het open-sourcen van code kan voordelig zijn voor ontwikkelaars, en versterkt het idee dat de relatie tussen werkgever en werknemer in wezen een zakelijke overeenkomst is.</li>
-</ul>
-<h2><a href="https://github.com/Wack0/maciNTosh">Windows NT voor Power Macintosh</a></h2>
-<ul>
-<li>De repository bevat broncode voor ARC-firmware en de bijbehorende loader, gericht op New World Power Macintosh-systemen die de Gossamer-architectuur gebruiken, waaronder modellen zoals iMac G3 en Power Macintosh G3.</li>
-<li>De ARC-firmware ondersteunt verschillende drivere, maar kun NT4 is momenteel compatibel, met mogelijke toekomstige ondersteuning voor NT 3.51.</li>
-<li>Installatie omvat het downloaden van binaries, het partitioneren van de schijf en het volgen van prompts om NT4 in te stellen, met bekende problemen zoals instabiliteit en specifieke stappen die nodig zijn voor dual-booten met Mac-partities.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40945076">Reaksjoner</a></h3>
-<ul>
-<li>Een ontwikkelaar heeft Windows NT overgezet om te draaien op Power Macintosh, wat nostalgie en discussies over alternatieve OS-geschiedenissen oproept.</li>
-<li>Windows NT was ontworpen om draagbaar te zijn en ondersteunde verschillende architecturen zoals PowerPC, MIPS en Alpha, hoewel het voornamelijk bekend stond om x86.</li>
-<li>Dit project benadrukt de technische haalbaarheid van het aanpassen van NT aan verschillende hardwareplatforms, waarbij de modulariteit van het ontwerp wordt getoond.</li>
-</ul>
-<h2><a href="https://news.mit.edu/2024/charmed-collaboration-creates-therapy-candidate-fatal-prion-diseases-0627">Gen-stilleggende verktøy viser lovende resultater som en fremtidig terapi mot prionsykdommer</a></h2>
-<ul>
-<li>CHARM (Coupled Histone tail for Autoinhibition Release of Methyltransferase) is een nieuw gen-stillegingsinstrument ontwikkeld door het Broad Institute en Whitehead Institute, dat potentieel toont voor de behandeling van prionziekten en andere neurodegeneratieve aandoeningen.</li>
-<li>Deze tool gebruikt epigenetische bewerking om ziekteveroorzakende genen, waaronder het prion-eiwitgen, het zwijgen op te leggen zonder het onderliggende DNA te veranderen, wat mogelijk een eenmalige behandeling biedt.</li>
-<li>Het onderzoeksteam, onder leiding van Sonia Vallabh en Jonathan Weissman, heeft aanzienlijke vooruitgang geboekt, een compact, effectief en laag-toxisch gendempingsmiddel gecreëerd en is nu CHARM aan het verfijnen voor klinische proeven.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939703">Reaksjoner</a></h3>
-<ul>
-<li>Een gen-stilleggend hulpmiddel, geleverd via Adeno-Associated Virus (AAV), toont potentieel als een therapie voor prionziekten, die momenteel 100% dodelijk en resistent tegen vernietiging zijn.</li>
-<li>Deze tool werkt door het prioneiwitgen te dempen, wat mogelijk de ziekte kan voorkomen of omkeren, en zou effectief kunnen zijn tegen zowel genetische als verworven prionen.</li>
-<li>Hoewel veelbelovend, worden de langetermijneffecten van het hulpmiddel op geheugen en cognitie nog steeds onderzocht, met lopend onderzoek dat toepassingen voor andere prionachtige ziekten zoals Alzheimer en Parkinson verkent.</li>
-</ul>
-<h2><a href="https://github.com/taubyte/tau">Tau: Open-source PaaS – Een zelf-gehost Vercel / Netlify / Cloudflare alternatief</a></h2>
-<ul>
-<li>Tau is een nieuw framework ontworpen voor het bouwen van onderhoudsarme, zeer schaalbare cloud computing platforms, en dient als een alternatief voor diensten zoals Vercel, Netlify en AWS.</li>
-<li>Belangrijke kenmerken zijn onder andere minimale configuratie, Git-native infrastructuurwijzigingen, peer-to-peer netwerken en ondersteuning voor WebAssembly, met toekomstige plannen voor containers en VM&#39;s.</li>
-<li>Tau streeft ernaar de infrastructuurkosten en ontwikkeltijd te verminderen, en biedt een ontwikkelaarsvriendelijk platform met tools voor lokale ontwikkeling en end-to-end testen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40946033">Reaksjoner</a></h3>
-<ul>
-<li>Tau is een open-source, zelf-gehost Platform as a Service (PaaS) alternatief voor Vercel, Netlify en Cloudflare, waarbij libp2p wordt gebruikt voor netwerkautodiscovery en IPFS voor gedistribueerde opslag.</li>
-<li>Het is WebAssembly-native, wat voordelen biedt zoals het vermijden van vendor lock-in, maar gebruikers hebben opgemerkt dat de documentatie vaag is en het concept onduidelijk.</li>
-<li>Vergelijkingen met Kubernetes en andere PaaS-oplossingen zoals Coolify en CapRover zijn gebruikelijk, wat wijst op het potentieel van het project, maar benadrukt de noodzaak van betere documentatie en duidelijkere communicatie van de functies en voordelen.</li>
-</ul>
-<h2><a href="https://github.com/karpathy/llm.c/discussions/677">Karpathy: Laten we GPT-2 (1.6B) reproduceren: één 8XH100 node 24h $672 in llm.c</a></h2>
-<ul>
-<li>Onderzoekers hebben GPT-2 (1.6B) gereproduceerd met behulp van llm.c, een C/CUDA-implementatie, op een enkele 8XH100-node in 24 uur voor $672, waarbij ze typische Python-gebaseerde deep learning-stacks zoals PyTorch omzeilen.</li>
-<li>Ondanks enkele afstemmings- en stabiliteitsproblemen is de prestatie van het model vergelijkbaar met GPT-2, beoordeeld aan de hand van metrics zoals validatieverlies en HellaSwag-nauwkeurigheid.</li>
-<li>De post behandelt ook geheugenbeheer, training met meerdere knooppunten, en vergelijkt de implementatie met een PyTorch-versie, met toekomstige plannen om hyperparameters te optimaliseren en de trainingsstabiliteit te verbeteren.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939707">Reaksjoner</a></h3>
-<ul>
-<li>Andrej Karpathy heeft met succes GPT-2 (1,6 miljard parameters) gereproduceerd op een enkele 8XH100-node in 24 uur voor een kostprijs van $672.</li>
-<li>AI-hardware-vooruitgangen kunnen mogelijk de kosten verlagen en de trainingstijden in de toekomst verkorten.</li>
-<li>Hoewel AI in videogames veelbelovend is voor het verbeteren van NPC&#39;s en storytelling, kampt de huidige technologie nog steeds met aanzienlijke beperkingen, vooral bij het genereren van tekst voor narratieven en dialogen.</li>
-</ul>
-<h2><a href="https://abe.today/blogs/main/floppy8-a-tiny-computer-in-a-floppy-drive">Floppy8 – Een kleine computer, in een floppy drive (2023)</a></h2>
-<ul>
-<li>De Floppy8 is een microcomputer en cartridgesysteem ingebouwd in een floppy drive, in staat om 4K-films en -games af te spelen met draadloze controllers en gemotoriseerde cartridge-uitwerping.</li>
-<li>Het project omvatte het hergebruiken van een Amiga 1010 diskdrive, het ontwerpen van een nieuw mediaformaat en uitgebreid 3D-printen en elektrotechniek om alle componenten in de drive te passen.</li>
-<li>De maker brukte en Latte Panda 3 Delta-datamaskin og spesiallagde 3D-printede kassetter, og overvant utfordringer med størrelsesbegrensninger, utkastmekanismer og LED-kontroll for å fullføre prosjektet.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40942141">Reaksjoner</a></h3>
-<ul>
-<li>Floppy8 is een kleine computer ingebouwd in een 3,5&quot; diskettestation, die doet denken aan eerdere compacte computerprojecten zoals de Amiga 1200-kloon en Ross SPARCPlug.</li>
-<li>De maker, abeisgreat, deelde een video waarin het project werd beschreven, inclusief op SD-kaart gebaseerde cartridges en andere technische aspecten, wat interesse en bewondering wekte in de techgemeenschap.</li>
-<li>Discussies benadrukken de nostalgie en innovatie bij het passen van computers in kleine formaten, met verwijzingen naar historische pogingen en moderne doe-het-zelfprojecten.</li>
-</ul>
-<h2><a href="https://blog.fal.ai/auraflow/">AuraFlow v0.1: een open source alternatief voor Stable Diffusion 3</a></h2>
-<ul>
-<li>AuraFlow v0.1 is een open-source, flow-based tekst-naar-beeld generatie model, dat de veerkracht van de open-source AI-gemeenschap aantoont.</li>
-<li>Het model blinkt uit in het genereren van gedetailleerde afbeeldingen op basis van tekstbeschrijvingen en maakt gebruik van geavanceerde technieken zoals zero-shot leeroverdracht en hercaptionering.</li>
-<li>Met 6,8 miljard parameters werd AuraFlow gedurende vier weken getraind, waarbij hoge GenEval-scores werden behaald, en toekomstige plannen omvatten verdere training en het ontwikkelen van efficiënte modellen voor consument-GPU&#39;s.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40941853">Reaksjoner</a></h3>
-<ul>
-<li>AuraFlow v0.1 is een open-source alternatief voor Stable Diffusion 3, en toont belofte ondanks dat het een vroege release is.</li>
-<li>Het model presteert goed bij eenvoudige prompts, maar heeft moeite met complexe prompts en ontkenningen, wat wijst op verbeterpunten.</li>
-<li>Discussies benadrukken de beperkingen van het model bij het genereren van realistische menselijke lichamen en het omgaan met genuanceerde tekstprompts, wat de voortdurende uitdagingen in AI-beeldgeneratie weerspiegelt.</li>
-</ul>
-<h2><a href="https://mazzo.li/posts/value-speculation.html">De L1-cache verslaan met waardespeculatie (2021)</a></h2>
-<ul>
-<li>De post bespreekt het gebruik van waardespeculatie om de CPU-prestaties te verbeteren door de vertakkingsvoorspeller te gebruiken om waarden te raden en gegevensafhankelijkheden in strakke lussen te verminderen.</li>
-<li>Door å spekulere på adressen til den neste noden i en lenket liste-summeringsfunksjon, har teknikken som mål å omgå L1-cacheleseforsinkelser, noe som resulterer i betydelige ytelsesforbedringer.</li>
-<li>Ondanks dat kompilatorer ofte optimaliserer bort dette trikset, sikrer bruk av inline assembly at spekulasjonen forblir, noe som fører til en økning i funksjonshastigheten på 50-200% når data passer innenfor CPU-cacher.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40940241">Reaksjoner</a></h3>
-<ul>
-<li>Het artikel &#39;Beating the L1 cache with value speculation&#39; (2021) door mazzo.li onderzoekt het optimaliseren van geheugenindeling in gekoppelde lijsten door middel van waardespeculatie, waarbij de nadruk ligt op het belang van lineaire geheugenindeling van knooppunten.</li>
-<li>Commentatoren debatteren over de praktische bruikbaarheid en effectiviteit van deze methode, waarbij sommigen de slimheid ervan waarderen maar de brede toepasbaarheid in twijfel trekken.</li>
-<li>Discussies behandelen ook gerelateerde technische details zoals instructie-uitvoering, geheugenmodellen, potentiële gebruiksscenario&#39;s en de mogelijkheid dat compilers dergelijke optimalisaties automatiseren.</li>
-</ul>
-<h2><a href="https://gizmodo.com/apple-vision-pro-u-s-sales-2000469302">Apple Vision Pro U.S. Sales Are All but Dead, Market Analysts Say</a></h2>
-<ul>
-<li>De verkoop van Apple Vision Pro in de VS daalt sterk, met een verwachte daling van 75% tegen eind augustus 2024, aangezien de meeste geïnteresseerde kopers de headset van $3.500 al hebben gekocht.</li>
-<li>Het huidige model heeft de 100.000 verkochte eenheden niet bereikt, waardoor Apple zijn verkoopverwachtingen heeft verlaagd en overweegt een goedkoper model, naar verluidt rond de $1.750, voor 2025.</li>
-<li>Apple ontwikkelt ook een visionOS-update om de gebruikerservaring te verbeteren, wat kan helpen om de interesse te behouden tot de release van de goedkopere headset.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939627">Reaksjoner</a></h3>
-<ul>
-<li>Apple Vision Pro U.S.-salget presterer dårlig på grunn av begrenset brukerinteresse og utviklerstøtte.</li>
-<li>De hoge prijs van $3500 en begrenset innhold er betydelige hindringer som avskrekker både forbrukere og utviklere.</li>
-<li>Analisten suggereren dat Apple mogelijk zijn strategie moet heroverwegen, mogelijk door een meer betaalbare versie te creëren of zijn software-ecosysteem te verbeteren om de aantrekkingskracht te vergroten.</li>
-</ul>
-<h2><a href="https://alderongames.com/intel-crashes">Intel verkoopt defecte 13-14e generatie CPU&#39;s</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40946644">Reaksjoner</a></h3>
-<ul>
-<li>Intel verkoopt naar verluidt defecte 13e en 14e generatie CPU&#39;s, wat leidt tot crashes, BSOD&#39;s (Blue Screen of Death) en andere fouten, waarbij sommige rapporten aangeven dat de problemen na verloop van tijd verergeren.</li>
-<li>Betrouwbare bronnen zoals RadGames en Level1Techs hebben deze instabiliteitsproblemen bevestigd, die mogelijk verband houden met Intel&#39;s agressieve stroom- en thermisch beheerstrategieën.</li>
-<li>Vanwege deze aanhoudende problemen overwegen veel gebruikers over te stappen naar AMD als alternatief.</li>
-</ul>
-<h2><a href="https://www.geaerospace.com/news/press-releases/ge-aerospace-successfully-develops-and-tests-new-hypersonic-dual-mode-ramjet">GE Aerospace ontwikkelt en test met succes nieuwe hypersonische dual-mode ramjet</a></h2>
-<ul>
-<li>GE Aerospace heeft met succes een nieuwe hypersonische dual-mode ramjet ontwikkeld en getest in minder dan 11 maanden, waarbij een drievoudige toename van de luchtstroom ten opzichte van eerdere technologieën werd aangetoond.</li>
-<li>Deze prestatie onderstreept de toewijding van GE Aerospace aan de vooruitgang van hypersonische technologie, waarbij de volgende fase zich richt op verdere tests en technologische demonstraties.</li>
-<li>Het project was een gezamenlijke inspanning van GE Aerospace, Innoveering en het onderzoekscentrum van GE Aerospace, wat de snelle vooruitgang en toewijding van het team benadrukt.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40943253">Reaksjoner</a></h3>
-<ul>
-<li>GE Aerospace heeft in samenwerking met Innoveering en hun Onderzoekscentrum in minder dan 11 maanden een nieuwe hypersonische dual-mode ramjet ontwikkeld en getest.</li>
-<li>De technologie, waarschijnlijk gebaseerd op een bestaand ontwerp, is bedoeld voor raketten of hogesnelheidsvliegtuigen, niet voor commerciële luchtvaart, vanwege de extreme snelheden en omstandigheden.</li>
-<li>Dit project benadrukt belangrijke vooruitgangen in hypersonische voortstuwing, die van vitaal belang zijn voor militaire toepassingen.</li>
-</ul>
-<head>
-  <meta property="og:title" content="WebVM is een serverloze virtuele Linux-omgeving die client-side draait" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=WebVM%20is%20een%20serverloze%20virtuele%20Linux-omgeving%20die%20client-side%20draait&subheading=fredag%2012.%20juli%202024%3A%20Sammendrag%20av%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/nb/2024/07/12</link>
-            <guid isPermaLink="false">2024-07-12T00:00:00.000Z</guid>
-            <pubDate>Fri, 12 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

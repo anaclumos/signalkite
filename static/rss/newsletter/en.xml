@@ -15,12 +15,193 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 21 Jul 2024 19:12:36 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 22 Jul 2024 19:20:31 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/en.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 21 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 22 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[en]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-22]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/22&#39;</h2>
+<h1>2024-07-22</h1>
+<h2><a href="https://forum.jellyfin.org/t-we-re-good-seriously">Jellyfin: We&#39;re Good, Seriously</a></h2>
+<ul>
+<li>Jellyfin has a budget of over $24,000, covering 40 months of expenses, and is asking users to redirect donations to the authors of the Clients they use.</li>
+<li>This request aligns with Jellyfin&#39;s &quot;no paid development&quot; policy, as donations are voluntary, and the project will reassess if funds drop to 12 months of runway.</li>
+<li>Community members are responding positively, with plans to support Client authors and inquiries about specific client support like WebOS.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031998">Reactions</a></h3>
+<ul>
+<li>Jellyfin, an open-source media server project, announced they have sufficient funds and suggested donors support other ecosystem projects instead.</li>
+<li>The community is divided on this approach; some believe funds should be distributed to ecosystem developers, while others agree with Jellyfin&#39;s decision to avoid additional administrative burdens.</li>
+<li>The discussion highlights the complexities and potential issues of managing donations within open-source projects, including transparency, administrative overhead, and maintaining focus on core development.</li>
+</ul>
+<h2><a href="https://without.boats/blog/pin/">Pin</a></h2>
+<ul>
+<li>The Pin type and the concept of pinning are essential but often misunderstood components of Rust&#39;s async ecosystem.</li>
+<li>Pin was introduced to support self-referential types in async Rust, ensuring objects don&#39;t move once they contain self-references, unlike Mojo, which inherently handles object identity.</li>
+<li>Despite its necessity, Pin introduces significant complexity for users due to its lack of syntactic sugar and support, leading to issues like reborrowing, pinned projections, and interactions with the Drop trait.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41029287">Reactions</a></h3>
+<ul>
+<li>The discussion revolves around the Rust programming language&#39;s <code>Pin</code> type, which is often misunderstood due to unclear documentation.</li>
+<li><code>Pin</code> ensures that certain objects cannot be moved in memory, which is crucial for self-referential structs, but this concept is not well-explained in the official docs.</li>
+<li>The conversation highlights the need for better documentation and analogies to make the concept of <code>Pin</code> and <code>Unpin</code> more accessible to Rust developers, especially those new to the language.</li>
+</ul>
+<h2><a href="https://github.com/BurntSushi/jiff">Jiff: Datetime library for Rust</a></h2>
+<ul>
+<li>Jiff is a new Rust datetime library focused on ease of use and performance, inspired by JavaScript&#39;s Temporal proposal.</li>
+<li>It offers features like high-level datetime primitives, seamless Time Zone Database integration, DST-aware arithmetic, formatting, parsing, and optional Serde support.</li>
+<li>Jiff is dual-licensed under MIT or the UNLICENSE, supports Unix and Windows, and requires Rust 1.70.0 or newer.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031037">Reactions</a></h3>
+<ul>
+<li>Jiff is a new datetime library for Rust, developed by BurntSushi, known for creating high-quality tools like ripgrep.</li>
+<li>The library aims to address complexities in datetime handling, such as DST (Daylight Saving Time) arithmetic, timezone-aware calculations, and retrospective timezone conflict detection.</li>
+<li>Jiff offers a more user-friendly and flexible API compared to the existing standard, Chrono, while maintaining correctness and capability in datetime operations.</li>
+</ul>
+<h2><a href="https://www.brendangregg.com/blog/2024-07-22/no-more-blue-fridays.html">No More Blue Fridays</a></h2>
+<ul>
+<li>A major outage on July 19th caused by a kernel driver update led to global Windows system crashes, highlighting the need for safer update mechanisms.</li>
+<li>eBPF (extended Berkeley Packet Filter), already used in Linux, is a secure kernel execution environment that can prevent such crashes and will soon be supported by Windows.</li>
+<li>eBPF programs are safety-checked and sandboxed, offering benefits like enhanced security and lower resource usage, with adoption by companies like Cisco, Google, and Meta for security and observability.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41033579">Reactions</a></h3>
+<ul>
+<li>Microsoft&#39;s eBPF (Extended Berkeley Packet Filter) support for Windows is currently limited to packet filtering, unlike Crowdstrike&#39;s comprehensive kernel monitoring drivers.</li>
+<li>Integrating eBPF into Windows&#39; existing frameworks is challenging, and it&#39;s uncertain if Microsoft aims to make it a standard.</li>
+<li>eBPF could enhance security by isolating kernel code, but it is not a complete solution, as highlighted by the recent Crowdstrike incident, which underscores the need for improved deployment practices and security measures.</li>
+</ul>
+<h2><a href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/">Parse, Don&#39;t Validate (2019)</a></h2>
+<ul>
+<li>The post emphasizes the principle &quot;Parse, don’t validate,&quot; advocating for parsing data to preserve information in the type system rather than discarding it through validation.</li>
+<li>It explains how type-driven design in languages like Haskell can turn partial functions into total functions by strengthening argument types, using <code>NonEmpty</code> lists as an example.</li>
+<li>Practical advice includes using precise data structures, refactoring to push proof burdens upward, and avoiding denormalized data representations to improve program reliability and safety.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031585">Reactions</a></h3>
+<ul>
+<li>The article &quot;Parse, Don&#39;t Validate&quot; emphasizes the importance of parsing data to ensure correctness rather than repeatedly validating it throughout the program.</li>
+<li>This approach, rooted in concepts like Design by Contract and Domain-Driven Design (DDD), leverages strong type systems to enforce guarantees and reduce errors, making code easier to reason about and maintain.</li>
+<li>The discussion highlights practical examples and benefits, such as using distinct types for different validation stages and ensuring that data is always in a valid state, which can simplify complex applications and improve reliability.</li>
+</ul>
+<h2><a href="https://ea.rna.nl/2024/05/27/when-chatgpt-summarises-it-actually-does-nothing-of-the-kind/">When ChatGPT summarises, it does nothing of the kind</a></h2>
+<ul>
+<li>The author has been exploring and discussing the foundations of ChatGPT and other Generative AIs, aiming to provide realistic perspectives against the prevailing hype.</li>
+<li>A key insight is that ChatGPT does not truly summarize content but merely shortens it, often missing essential details and proposals, as evidenced by a comparison with a human-generated summary of a 50-page paper.</li>
+<li>This limitation arises because summarizing requires understanding, which ChatGPT lacks, leading to skepticism about the reliability of LLMs (Large Language Models) for practical business applications.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41027658">Reactions</a></h3>
+<ul>
+<li>The author argues that ChatGPT&#39;s text summarization lacks true understanding, resulting in incomplete and sometimes misleading summaries.</li>
+<li>The critique points out the absence of details about the GPT model, the prompt, and the number of attempts in the original analysis.</li>
+<li>User experiences and opinions vary, with some finding ChatGPT and other LLMs helpful, while others highlight their limitations and the need for improved prompting and context management.</li>
+</ul>
+<h2><a href="https://www.rte.ie/news/business/2024/0719/1460807-ryanair-wins-us-court-case-against-bookingcom/">Ryanair wins screen scraping case against Booking.com in US court ruling</a></h2>
+<ul>
+<li>A US court ruled that Booking.com violated the Computer Fraud and Abuse Act by accessing Ryanair&#39;s website without permission, supporting Ryanair&#39;s stance against unauthorized screen scraping.</li>
+<li>The Delaware District Court jury found Booking.com guilty of unauthorized access with intent to defraud and dismissed Booking.com&#39;s counterclaims of defamation and unfair competition.</li>
+<li>Ryanair CEO Michael O&#39;Leary hopes the ruling will reduce illegal screen scraping and overcharging, while Booking.com plans to appeal, arguing that fare comparison benefits consumer choice.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031960">Reactions</a></h3>
+<ul>
+<li>Ryanair won a legal case against Booking.com in a US court for unauthorized access to resell tickets, violating the Computer Fraud and Abuse Act.</li>
+<li>The ruling could affect other online travel agents using similar practices, highlighting the complexities of web scraping laws.</li>
+<li>There is speculation that the decision might be overturned due to conflicting legal precedents.</li>
+</ul>
+<h2><a href="https://www.robkhenderson.com/p/no-one-expects-young-men-to-do-anything">No one expects young men to do anything and they respond by doing nothing (2022)</a></h2>
+<ul>
+<li>Rob Henderson&#39;s post discusses the lack of societal expectations for young men and its negative consequences, including increased unemployment and incarceration rates.</li>
+<li>He references &quot;Promises I Can Keep&quot; by Kathryn Edin and Maria Kefalas, which examines why low-income women often prioritize motherhood over marriage, attributing it to poor behavior from young males.</li>
+<li>Henderson criticizes the upper class for undermining family stability norms while ensuring their own children benefit from stable homes, arguing that young men need high expectations to thrive.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41032918">Reactions</a></h3>
+<ul>
+<li>The article attributes the phenomenon of &quot;young men with nothing to do&quot; to wealth inequality and the concentration of wealth among older elites, which drives up prices for necessities and stifles demand for new ventures.</li>
+<li>It also discusses the instability of family structures, noting that societal changes and economic pressures have altered traditional family dynamics.</li>
+<li>Comments on the article debate the impact of absentee fathers, the role of women in family stability, and the broader societal and economic factors contributing to these issues.</li>
+</ul>
+<h2><a href="https://nitter.poast.org/GerardoMunck/status/1815059432382067053">James C. Scott, author of Seeing Like a State, has died</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41028887">Reactions</a></h3>
+<ul>
+<li>James C. Scott, author of &quot;Seeing Like a State,&quot; has passed away, prompting reflections on his influential ideas within the tech community.</li>
+<li>Scott&#39;s work highlights how states and technology can enforce uniformity, impacting fields like medicine, education, and social engagement by reducing diversity.</li>
+<li>Discussions on Hacker News explore Scott&#39;s concepts, particularly the balance between security and flexibility in software, and the broader implications of technological homogeneity.</li>
+</ul>
+<h2><a href="https://github.com/eza-community/eza">Eza: A modern, maintained replacement for ls</a></h2>
+<ul>
+<li>eza is a modern replacement for the ls command in Unix and Linux, offering enhanced features and better defaults.</li>
+<li>Key features include color-coded file types, symlink support, extended attributes, Git integration, and human-readable dates.</li>
+<li>eza aims to be more user-friendly and feature-rich, with additional support for hyperlinking, mount point details, SELinux context, and bright terminal colors.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031112">Reactions</a></h3>
+<ul>
+<li>Eza is introduced as a modern and actively maintained replacement for the traditional <code>ls</code> command, which lists directory contents in Unix-like operating systems.</li>
+<li>The discussion highlights user frustrations with &quot;human-readable dates&quot; in directory listings, advocating for exact timestamps instead of relative time formats like &quot;1 day ago.&quot;</li>
+<li>The post also mentions other modern command-line tools that users prefer over traditional ones, such as <code>bat</code> (a <code>cat</code> replacement with syntax highlighting) and <code>rg</code> (ripgrep, a faster alternative to <code>grep</code>).</li>
+</ul>
+<h2><a href="https://www.smbc-comics.com/comic/investment-2">How much money we can raise for transparently idiotic startups?</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41036844">Reactions</a></h3>
+<ul>
+<li>The post discusses the phenomenon of raising funds for startups with seemingly nonsensical ideas, highlighting the ease with which capital can be obtained for such ventures.</li>
+<li>It critiques the startup ecosystem, suggesting it operates like a &quot;pump and dump&quot; scheme, moving from one trendy field to another, often wasting resources.</li>
+<li>The conversation includes examples of successful startups and debates the value and impact of focus groups and MVPs (Minimum Viable Products) in product development.</li>
+</ul>
+<h2><a href="https://billabear.com/">A source-available billing system I&#39;ve spent 18 months building</a></h2>
+<ul>
+<li>The platform offers deep integration with Stripe, enabling comprehensive control over billing, tax management, and automated workflows.</li>
+<li>Features include managing tax rates at various levels, creating custom subscription plans, and integrating with tools like Slack and email providers.</li>
+<li>The system supports scalability, self-hosting, and provides detailed business insights such as subscription churn and lifetime value.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031975">Reactions</a></h3>
+<ul>
+<li>A new source-available billing system, Billabear, has been launched after 18 months of development, offering features similar to Stripe but with the source code available under the Fair Source License (FSL).</li>
+<li>The FSL allows users to access the source code, which transitions to an Apache 2.0 license after two years, providing more flexibility and control compared to Stripe&#39;s closed-source model.</li>
+<li>Discussions highlight the importance of source availability for some users, the need for better localization in various languages, and concerns about handling US state sales tax and GDPR compliance.</li>
+</ul>
+<h2><a href="https://www.computerworld.com/article/2520794/the-workers-have-spoken-theyre-staying-home.html">The workers have spoken: They&#39;re staying home</a></h2>
+<ul>
+<li>Dell&#39;s policy requiring in-office presence for promotions was largely ignored, with many employees opting to stay home.</li>
+<li>A Gartner report indicates that 48% of employees believe company mandates favor leaders&#39; preferences over their own needs.</li>
+<li>Remote work is increasingly preferred for its benefits, including no commutes, better work-life balance, cost savings, and flexibility, with high performers seeking remote opportunities.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41037097">Reactions</a></h3>
+<ul>
+<li>Workers are reluctant to return to offices due to poor environments, lack of permanent desks, and productivity issues in open-plan setups.</li>
+<li>Many employees find remote work more efficient and are resistant to returning to suboptimal office conditions, with commutes being a significant factor.</li>
+<li>Some companies are using return-to-office mandates as a strategy to reduce headcount without resorting to layoffs, fueling the ongoing debate on optimal work arrangements.</li>
+</ul>
+<h2><a href="https://jim.rees.org/apollo-archive/marketing/1988-ApolloDN10000ProductBrochure.pdf">Apollo DN10000: Quad CPU/128Mb RAM workstation from 1988 [pdf]</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41029987">Reactions</a></h3>
+<ul>
+<li>The Apollo DN10000, a quad CPU workstation with 128MB RAM from 1988, is being nostalgically discussed for its historical significance and technical capabilities.</li>
+<li>Users recall its use in university labs and its role in early graphics programming, despite its complex Unix environment and configuration challenges.</li>
+<li>The machine&#39;s high cost, up to $250,000 in the 1980s (equivalent to about $660,000 today), highlights its premium status and the significant technological advancements since then.</li>
+</ul>
+<h2><a href="https://www.theregister.com/2024/07/21/crowdstrike_linux_crashes_restoration_tools/">CrowdStrike&#39;s Falcon Sensor also linked to Linux kernel panics and crashes</a></h2>
+<ul>
+<li>CrowdStrike&#39;s Falcon Sensor software has caused system crashes on both Windows and Linux, including Red Hat Enterprise Linux 9.4, Debian, and Rocky Linux.</li>
+<li>Disabling the Falcon Sensor temporarily stabilizes affected systems, and CrowdStrike is testing a rapid recovery tool to address the issue.</li>
+<li>The disruption has had significant global impacts, including flight cancellations and healthcare delays, with Microsoft estimating 8.5 million Windows machines affected.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41030352">Reactions</a></h3>
+<ul>
+<li>CrowdStrike&#39;s Falcon Sensor has been associated with Linux kernel panics and crashes, distinct from Windows BSOD (Blue Screen of Death) issues.</li>
+<li>The Linux kernel panics are likely due to a bug in the kernel&#39;s eBPF (Extended Berkeley Packet Filter) implementation, potentially from a Red Hat-specific patch, indicating a kernel bug rather than a vendor issue.</li>
+<li>The discussion highlights the challenges of supporting multiple OS versions and the complexities involved in kernel module testing, emphasizing the differences in kernel reliability engineering between Linux and Windows.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Jellyfin: We're Good, Seriously" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Jellyfin%3A%20We're%20Good%2C%20Seriously&subheading=Monday%2C%20July%2022%2C%202024%3A%20Hacker%20News%20Summary" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/2024/07/22</link>
+            <guid isPermaLink="false">2024-07-22T00:00:00.000Z</guid>
+            <pubDate>Mon, 22 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-21]]></title>
             <description
@@ -1688,197 +1869,6 @@
             <link>https://hn.cho.sh/2024/07/13</link>
             <guid isPermaLink="false">2024-07-13T00:00:00.000Z</guid>
             <pubDate>Sat, 13 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-12]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/12&#39;</h2>
-<h1>2024-07-12</h1>
-<h2><a href="https://webvm.io/">WebVM is a server-less virtual Linux environment running client-side</a></h2>
-<ul>
-<li>WebVM is a server-less virtual Linux environment that runs entirely client-side using HTML5 and WebAssembly, powered by the CheerpX virtualization engine.</li>
-<li>It allows safe, sandboxed execution of x86 binaries in any browser, featuring an x86-to-WebAssembly JIT (Just-In-Time) compiler, a virtual block-based file system, and a Linux syscall emulator.</li>
-<li>New feature: Users can now create custom WebVM images using Dockerfile, enhancing flexibility and customization.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40940225">Reactions</a></h3>
-<ul>
-<li>WebVM is a server-less virtual Linux environment running client-side, utilizing a CheerpX build hosted by Leaning Technologies and supporting networking via Tailscale.</li>
-<li>Unlike full system emulators, WebVM acts as a Linux syscall emulator for userland binaries, offering greater flexibility and speed.</li>
-<li>It is not open-source, and self-hosting the CheerpX engine is prohibited, making it suitable for education, live documentation, software preservation, and web IDE development, though it has limitations like performance issues on mobile devices and partial offline functionality.</li>
-</ul>
-<h2><a href="https://techcrunch.com/2024/07/12/att-phone-records-stolen-data-breach/">AT&amp;T says criminals stole phone records of &#39;nearly all&#39; customers in data breach</a></h2>
-<ul>
-<li>AT&amp;T confirmed a data breach affecting nearly 110 million customers, involving phone numbers, call and text records, and location-related information.</li>
-<li>The breach, linked to cloud data provider Snowflake, includes metadata but not the content of calls or texts.</li>
-<li>The FBI and DOJ delayed public notification due to national security concerns, marking AT&amp;T&#39;s second security incident this year.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40944505">Reactions</a></h3>
-<ul>
-<li>AT&amp;T experienced a data breach affecting nearly all customers, exposing call and text metadata but not content or timestamps.</li>
-<li>Despite an initial stock drop, the market remains largely unaffected, reflecting a belief that companies face minimal financial consequences for such breaches.</li>
-<li>The incident, linked to Snowflake&#39;s cloud platform, has sparked calls for stricter data retention policies, better security practices, and potential hefty fines or lawsuits to enforce corporate accountability.</li>
-</ul>
-<h2><a href="https://physicsbaseddeeplearning.org/intro.html">Physics-Based Deep Learning Book</a></h2>
-<ul>
-<li>The Physics-based Deep Learning Book (v0.2) provides a practical introduction to deep learning in physical simulations, with hands-on Jupyter notebook examples.</li>
-<li>New in version 0.2: Extended section on integrating differentiable programming (DP) into neural network (NN) training and a new chapter on improved learning methods for physics problems.</li>
-<li>Future updates will include chapters on training networks for fluid flow prediction, using model equations as residuals, interacting with simulators for inverse problems, and leveraging higher-order information for better neural networks.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40941056">Reactions</a></h3>
-<ul>
-<li>A new book titled &quot;Physics-Based Deep Learning&quot; has been introduced, focusing on applying deep learning to physics simulations rather than general deep learning concepts from a physicist&#39;s perspective.</li>
-<li>The book includes hands-on code examples in Jupyter notebooks, physical loss constraints, differentiable simulations, training algorithms for physics problems, reinforcement learning, and uncertainty modeling.</li>
-<li>The book is produced by the Physics-based Simulation Group and is available for download on arXiv, with additional resources and discussions available on various platforms like YouTube and GitHub.</li>
-</ul>
-<h2><a href="https://ochagavia.nl/blog/using-s3-as-a-container-registry/">Using S3 as a Container Registry</a></h2>
-<ul>
-<li>A developer has demonstrated using Amazon S3 as a container registry by exposing an S3 bucket through HTTP and uploading container image files to specific paths, allowing for <code>docker pull</code> operations.</li>
-<li>The main advantage of using S3 over traditional container registries like DockerHub or Amazon ECR is significantly faster upload speeds due to parallel chunked uploads.</li>
-<li>This experimental approach lacks features like automated security scans and access controls but could lead to hosting public container images in Cloudflare’s R2 with free egress.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40942732">Reactions</a></h3>
-<ul>
-<li>Using Amazon S3 as a container registry is being discussed, highlighting its potential as an alternative to traditional container registries like DockerHub and AWS ECR.</li>
-<li>The conversation critiques the OCI (Open Container Initiative) Distribution Spec for its inefficiencies, such as requiring sequential layer uploads and lacking standardized pagination for listing tags.</li>
-<li>Docker&#39;s impact on software development is debated, with some praising its simplification of dependency management and others criticizing it for not improving end-product reliability or development speed.</li>
-</ul>
-<h2><a href="https://nelson.cloud/as-an-employee-you-are-disposable/">As an Employee, You Are Disposable (2023)</a></h2>
-<ul>
-<li>Recent tech layoffs indicate that employees are often viewed as disposable by executives, even in profitable companies.</li>
-<li>Companies like Microsoft continue to lay off employees and implement pay freezes despite exceeding investor expectations and having high revenues.</li>
-<li>Wealthy executives, such as Tim Gurner, have made comments reinforcing the notion that employees are replaceable, regardless of their contributions or tenure.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40943436">Reactions</a></h3>
-<ul>
-<li>Companies are transactional entities and may let employees go when it benefits them, emphasizing that employees are not indispensable.</li>
-<li>Over-hiring and layoffs are often strategies to boost shareholder value, highlighting the importance of employees focusing on their own interests and seeking fair compensation.</li>
-<li>Considering unions and open-sourcing code can be beneficial for developers, reinforcing the idea that the employer-employee relationship is fundamentally a business deal.</li>
-</ul>
-<h2><a href="https://github.com/Wack0/maciNTosh">Windows NT for Power Macintosh</a></h2>
-<ul>
-<li>The repository contains source code for ARC firmware and its loader, targeting New World Power Macintosh systems using the Gossamer architecture, including models like iMac G3 and Power Macintosh G3.</li>
-<li>The ARC firmware supports various drivers, but only NT4 is currently compatible, with potential future support for NT 3.51.</li>
-<li>Installation involves downloading binaries, partitioning the disk, and following prompts to set up NT4, with known issues such as instability and specific steps required for dual-booting with Mac partitions.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40945076">Reactions</a></h3>
-<ul>
-<li>A developer has ported Windows NT to run on Power Macintosh, sparking nostalgia and discussions about alternative OS histories.</li>
-<li>Windows NT was designed to be portable, supporting various architectures like PowerPC, MIPS, and Alpha, though it was primarily known for x86.</li>
-<li>This project highlights the technical feasibility of adapting NT to different hardware platforms, showcasing the modularity of its design.</li>
-</ul>
-<h2><a href="https://news.mit.edu/2024/charmed-collaboration-creates-therapy-candidate-fatal-prion-diseases-0627">Gene-silencing tool shows promise as a future therapy against prion diseases</a></h2>
-<ul>
-<li>CHARM (Coupled Histone tail for Autoinhibition Release of Methyltransferase) is a new gene-silencing tool developed by the Broad Institute and Whitehead Institute, showing potential for treating prion diseases and other neurodegenerative conditions.</li>
-<li>This tool uses epigenetic editing to silence disease-causing genes, including the prion protein gene, without altering the underlying DNA, potentially offering a one-time treatment.</li>
-<li>The research team, led by Sonia Vallabh and Jonathan Weissman, has made significant progress, creating a compact, effective, and low-toxicity gene silencer, and is now refining CHARM for clinical trials.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939703">Reactions</a></h3>
-<ul>
-<li>A gene-silencing tool, delivered via Adeno-Associated Virus (AAV), shows potential as a therapy for prion diseases, which are currently 100% fatal and resistant to destruction.</li>
-<li>This tool works by silencing the prion protein gene, potentially preventing or reversing the disease, and could be effective against both genetic and acquired prions.</li>
-<li>While promising, the tool&#39;s long-term effects on memory and cognition are still under investigation, with ongoing research exploring applications for other prion-like diseases such as Alzheimer&#39;s and Parkinson&#39;s.</li>
-</ul>
-<h2><a href="https://github.com/taubyte/tau">Tau: Open-source PaaS – A self-hosted Vercel / Netlify / Cloudflare alternative</a></h2>
-<ul>
-<li>Tau is a new framework designed for building low-maintenance, highly scalable cloud computing platforms, serving as an alternative to services like Vercel, Netlify, and AWS.</li>
-<li>Key features include minimal configuration, Git-native infrastructure changes, peer-to-peer networking, and support for WebAssembly, with future plans for containers and VMs.</li>
-<li>Tau aims to reduce infrastructure costs and development time, providing a developer-friendly platform with tools for local development and end-to-end testing.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40946033">Reactions</a></h3>
-<ul>
-<li>Tau is an open-source, self-hosted Platform as a Service (PaaS) alternative to Vercel, Netlify, and Cloudflare, utilizing libp2p for network autodiscovery and IPFS for distributed storage.</li>
-<li>It is WebAssembly-native, offering benefits such as avoiding vendor lock-in, but users have noted that the documentation is vague and the concept is unclear.</li>
-<li>Comparisons to Kubernetes and other PaaS solutions like Coolify and CapRover are common, indicating the project&#39;s potential but highlighting the need for better documentation and clearer communication of its features and benefits.</li>
-</ul>
-<h2><a href="https://github.com/karpathy/llm.c/discussions/677">Karpathy: Let&#39;s reproduce GPT-2 (1.6B): one 8XH100 node 24h $672 in llm.c</a></h2>
-<ul>
-<li>Researchers have reproduced GPT-2 (1.6B) using llm.c, a C/CUDA implementation, on a single 8XH100 node in 24 hours for $672, bypassing typical Python-based deep learning stacks like PyTorch.</li>
-<li>Despite some tuning and stability issues, the model&#39;s performance is comparable to GPT-2, evaluated using metrics like validation loss and HellaSwag accuracy.</li>
-<li>The post also covers memory management, multi-node training, and compares the implementation with a PyTorch version, with future plans to optimize hyperparameters and improve training stability.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939707">Reactions</a></h3>
-<ul>
-<li>Andrej Karpathy successfully reproduced GPT-2 (1.6 billion parameters) on a single 8XH100 node in 24 hours at a cost of $672.</li>
-<li>AI hardware advancements could potentially lower costs and reduce training times in the future.</li>
-<li>While AI in video games shows promise for enhancing NPCs and storytelling, current technology still faces significant limitations, particularly in text generation for narrative and dialogue.</li>
-</ul>
-<h2><a href="https://abe.today/blogs/main/floppy8-a-tiny-computer-in-a-floppy-drive">Floppy8 – A Tiny Computer, in a Floppy Drive (2023)</a></h2>
-<ul>
-<li>The Floppy8 is a microcomputer and cartridge system built inside a floppy drive, capable of playing 4K movies and games with wireless controllers and motorized cartridge ejection.</li>
-<li>The project involved repurposing an Amiga 1010 disk drive, designing a new media format, and extensive 3D printing and electrical engineering to fit all components inside the drive.</li>
-<li>The creator used a Latte Panda 3 Delta computer and custom 3D-printed cartridges, overcoming challenges in size constraints, eject mechanisms, and LED control to complete the project.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40942141">Reactions</a></h3>
-<ul>
-<li>Floppy8 is a tiny computer built into a 3.5&quot; floppy drive, reminiscent of past compact computing projects like the Amiga 1200 clone and Ross SPARCPlug.</li>
-<li>The creator, abeisgreat, shared a video detailing the project, including SD card-based cartridges and other technical aspects, sparking interest and admiration in the tech community.</li>
-<li>Discussions highlight the nostalgia and innovation in fitting computers into small form factors, with references to historical attempts and modern DIY projects.</li>
-</ul>
-<h2><a href="https://blog.fal.ai/auraflow/">AuraFlow v0.1: a open source alternative to Stable Diffusion 3</a></h2>
-<ul>
-<li>AuraFlow v0.1 is an open-source, flow-based text-to-image generation model, demonstrating the resilience of the open-source AI community.</li>
-<li>The model excels in generating detailed images from text descriptions and incorporates advanced techniques like zero-shot learning rate transfer and re-captioning.</li>
-<li>With 6.8 billion parameters, AuraFlow was trained over four weeks, achieving high GenEval scores, and future plans include further training and developing efficient models for consumer GPUs.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40941853">Reactions</a></h3>
-<ul>
-<li>AuraFlow v0.1 is an open-source alternative to Stable Diffusion 3, showing promise despite being an early release.</li>
-<li>The model performs well on simple prompts but struggles with complex ones and negations, indicating areas for improvement.</li>
-<li>Discussions highlight the model&#39;s limitations in generating realistic human bodies and handling nuanced text prompts, reflecting ongoing challenges in AI image generation.</li>
-</ul>
-<h2><a href="https://mazzo.li/posts/value-speculation.html">Beating the L1 cache with value speculation (2021)</a></h2>
-<ul>
-<li>The post discusses using value speculation to enhance CPU performance by leveraging the branch predictor to guess values and reduce data dependencies in tight loops.</li>
-<li>By speculating the next node&#39;s address in a linked list summation function, the technique aims to bypass L1 cache read delays, resulting in significant performance improvements.</li>
-<li>Despite compilers often optimizing away this trick, using inline assembly ensures the speculation remains, leading to a 50-200% increase in function speed when data fits within CPU caches.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40940241">Reactions</a></h3>
-<ul>
-<li>The article &quot;Beating the L1 cache with value speculation&quot; (2021) by mazzo.li explores optimizing memory layout in linked lists through value speculation, emphasizing the importance of linear memory layout of nodes.</li>
-<li>Commenters debate the practicality and effectiveness of this method, with some appreciating its cleverness but questioning its broad applicability.</li>
-<li>Discussions also cover related technical details like instruction execution, memory models, potential use cases, and the possibility of compilers automating such optimizations.</li>
-</ul>
-<h2><a href="https://gizmodo.com/apple-vision-pro-u-s-sales-2000469302">Apple Vision Pro U.S. Sales Are All but Dead, Market Analysts Say</a></h2>
-<ul>
-<li>Apple Vision Pro U.S. sales are declining sharply, with a projected 75% drop by the end of August 2024, as most interested buyers have already purchased the $3,500 headset.</li>
-<li>The current model has not reached 100,000 units sold, leading Apple to lower its sales expectations and consider a cheaper model, rumored to be around $1,750, for 2025.</li>
-<li>Apple is also developing a visionOS update to enhance the user experience, which may help sustain interest until the release of the more affordable headset.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939627">Reactions</a></h3>
-<ul>
-<li>Apple Vision Pro U.S. sales are underperforming due to limited user interest and developer support.</li>
-<li>The high price of $3500 and restricted content are significant obstacles, deterring both consumers and developers.</li>
-<li>Analysts suggest Apple may need to reconsider its strategy, potentially by creating a more affordable version or improving its software ecosystem to broaden appeal.</li>
-</ul>
-<h2><a href="https://alderongames.com/intel-crashes">Intel is selling defective 13-14th Gen CPUs</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40946644">Reactions</a></h3>
-<ul>
-<li>Intel is allegedly selling defective 13th and 14th Gen CPUs, leading to crashes, BSODs (Blue Screen of Death), and other errors, with some reports indicating the issues worsen over time.</li>
-<li>Trusted sources such as RadGames and Level1Techs have confirmed these instability problems, which may be linked to Intel&#39;s aggressive power and thermal management strategies.</li>
-<li>Due to these persistent issues, many users are contemplating switching to AMD as an alternative.</li>
-</ul>
-<h2><a href="https://www.geaerospace.com/news/press-releases/ge-aerospace-successfully-develops-and-tests-new-hypersonic-dual-mode-ramjet">GE Aerospace Successfully Develops and Tests New Hypersonic Dual-Mode Ramjet</a></h2>
-<ul>
-<li>GE Aerospace has successfully developed and tested a new hypersonic dual-mode ramjet in under 11 months, demonstrating a threefold increase in airflow over previous technologies.</li>
-<li>This achievement underscores GE Aerospace&#39;s commitment to advancing hypersonic technology, with the next phase focusing on further testing and technology demonstration.</li>
-<li>The project was a collaborative effort between GE Aerospace, Innoveering, and GE Aerospace’s Research Center, highlighting the rapid progress and dedication of the team.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40943253">Reactions</a></h3>
-<ul>
-<li>GE Aerospace, in collaboration with Innoveering and their Research Center, has developed and tested a new hypersonic dual-mode ramjet in under 11 months.</li>
-<li>The technology, likely based on an existing design, is intended for missiles or high-speed aircraft, not commercial aviation, due to the extreme speeds and conditions.</li>
-<li>This project underscores significant advancements in hypersonic propulsion, which are vital for military applications.</li>
-</ul>
-<head>
-  <meta property="og:title" content="WebVM is a server-less virtual Linux environment running client-side" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=WebVM%20is%20a%20server-less%20virtual%20Linux%20environment%20running%20client-side&subheading=Friday%2C%20July%2012%2C%202024%3A%20Hacker%20News%20Summary" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/2024/07/12</link>
-            <guid isPermaLink="false">2024-07-12T00:00:00.000Z</guid>
-            <pubDate>Fri, 12 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

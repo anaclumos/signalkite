@@ -15,12 +15,193 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 21 Jul 2024 19:12:36 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 22 Jul 2024 19:20:31 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/pt.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 21 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 22 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[pt]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-22]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/22&#39;</h2>
+<h1>2024-07-22</h1>
+<h2><a href="https://forum.jellyfin.org/t-we-re-good-seriously">Jellyfin: Estamos Bem, Sério</a></h2>
+<ul>
+<li>Jellyfin tem um orçamento de mais de $24.000, cobrindo 40 meses de despesas, e está pedindo aos usuários que redirecionem as doações para os autores dos Clientes que utilizam.</li>
+<li>Esta solicitação está alinhada com a política de &quot;não desenvolvimento pago&quot; do Jellyfin, pois as doações são voluntárias, e o projeto será reavaliado se os fundos caírem para 12 meses de operação.</li>
+<li>Os membros da comunidade estão respondendo positivamente, com planos para apoiar autores de clientes e perguntas sobre suporte específico ao cliente, como WebOS.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031998">Reações</a></h3>
+<ul>
+<li>Jellyfin, um projeto de servidor de mídia de código aberto, anunciou que possui fundos suficientes e sugeriu que os doadores apoiem outros projetos do ecossistema.</li>
+<li>A comunidade está dividida sobre essa abordagem; alguns acreditam que os fundos devem ser distribuídos para os desenvolvedores do ecossistema, enquanto outros concordam com a decisão do Jellyfin de evitar encargos administrativos adicionais.</li>
+<li>As discussões destacam as complexidades e os potenciais problemas de gerenciar doações em projetos de código aberto, incluindo transparência, sobrecarga administrativa e a manutenção do foco no desenvolvimento principal.</li>
+</ul>
+<h2><a href="https://without.boats/blog/pin/">Alfinete</a></h2>
+<ul>
+<li>A tipagem Pin e o conceito de fixação são componentes essenciais, mas frequentemente mal compreendidos, do ecossistema assíncrono do Rust.</li>
+<li>Pin foi introduzido para suportar tipos auto-referenciais em Rust assíncrono, garantindo que objetos não se movam uma vez que contenham auto-referências, ao contrário do Mojo, que lida inerentemente com a identidade do objeto.</li>
+<li>Apesar de sua necessidade, o Pin introduz uma complexidade significativa para os usuários devido à sua falta de açúcar sintático e suporte, levando a problemas como reempréstimo, projeções fixadas e interações com o trait Drop.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41029287">Reações</a></h3>
+<ul>
+<li>A discussão gira em torno do tipo <code>Pin</code> da linguagem de programação Rust, que é frequentemente mal compreendido devido à documentação pouco clara.</li>
+<li>‘Pin’ garante que certos objetos não possam ser movidos na memória, o que é crucial para estruturas auto-referenciais, mas esse conceito não é bem explicado na documentação oficial.</li>
+<li>Essa conversa destaca a necessidade de uma melhor documentação e analogias para tornar o conceito de <code>Pin</code> e <code>Unpin</code> mais acessível aos desenvolvedores de Rust, especialmente aqueles que são novos na linguagem.</li>
+</ul>
+<h2><a href="https://github.com/BurntSushi/jiff">Jiff: Biblioteca de data e hora para Rust</a></h2>
+<ul>
+<li>Jiff é uma nova biblioteca de data e hora em Rust focada na facilidade de uso e desempenho, inspirada na proposta Temporal do JavaScript.</li>
+<li>Oferece recursos como primitivas de data e hora de alto nível, integração perfeita com o Banco de Dados de Fuso Horário, aritmética ciente de DST, formatação, análise e suporte opcional ao Serde.</li>
+<li>Jiff é dual-licenciado sob MIT ou UNLICENSE, suporta Unix e Windows, e requer Rust 1.70.0 ou mais recente.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031037">Reações</a></h3>
+<ul>
+<li>Jiff é uma nova biblioteca de data e hora para Rust, desenvolvida por BurntSushi, conhecido por criar ferramentas de alta qualidade como o ripgrep.</li>
+<li>A biblioteca visa abordar complexidades no manuseio de datas e horas, como aritmética de DST (Horário de Verão), cálculos cientes de fuso horário e detecção de conflitos retrospectivos de fuso horário.</li>
+<li>Jiff oferece uma API mais amigável e flexível em comparação com o padrão existente, Chrono, mantendo a precisão e a capacidade nas operações de data e hora.</li>
+</ul>
+<h2><a href="https://www.brendangregg.com/blog/2024-07-22/no-more-blue-fridays.html">No More Blue Fridays</a></h2>
+<ul>
+<li>A grande interrupção em 19 de julho causada por uma atualização de driver de kernel levou a falhas globais no sistema Windows, destacando a necessidade de mecanismos de atualização mais seguros.</li>
+<li>eBPF (extended Berkeley Packet Filter), já utilizado no Linux, é um ambiente de execução seguro no kernel que pode prevenir tais falhas e em breve será suportado pelo Windows.</li>
+<li>Os programas eBPF são verificados quanto à segurança e isolados, oferecendo benefícios como segurança aprimorada e menor uso de recursos, com adoção por empresas como Cisco, Google e Meta para segurança e observabilidade.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41033579">Reações</a></h3>
+<ul>
+<li>Atualmente, o suporte da Microsoft ao eBPF (Extended Berkeley Packet Filter) para Windows é limitado ao filtro de pacotes, ao contrário dos drivers de monitoramento de kernel abrangentes da Crowdstrike.</li>
+<li>Incorporar eBPF nos frameworks existentes do Windows é desafiador, e não é certo se a Microsoft pretende torná-lo um padrão.</li>
+<li>eBPF poderia melhorar a segurança ao isolar o código do kernel, mas não é uma solução completa, como destacado pelo recente incidente da Crowdstrike, que ressalta a necessidade de práticas de implantação aprimoradas e medidas de segurança.</li>
+</ul>
+<h2><a href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/">Analisar, Não Validar (2019)</a></h2>
+<ul>
+<li>A postagem enfatiza o princípio &#39;Parse, don’t validate&#39;, defendendo a análise de dados para preservar informações no sistema de tipos em vez de descartá-las através da validação.</li>
+<li>Explica como o design orientado por tipos em linguagens como Haskell pode transformar funções parciais em funções totais ao fortalecer os tipos de argumentos, usando listas <code>NonEmpty</code> como exemplo.</li>
+<li>Conselhos práticos incluem o uso de estruturas de dados precisas, a refatoração para transferir os encargos de prova para níveis superiores e a evitação de representações de dados desnormalizadas para melhorar a confiabilidade e a segurança do programa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031585">Reações</a></h3>
+<ul>
+<li>O artigo &#39;Parse, Don&#39;t Validate&#39; enfatiza a importância de analisar dados para garantir a correção em vez de validá-los repetidamente ao longo do programa.</li>
+<li>Essa abordagem, enraizada em conceitos como Design by Contract e Domain-Driven Design (DDD), utiliza sistemas de tipos fortes para garantir e reduzir erros, tornando o código mais fácil de entender e manter.</li>
+<li>As discussões destacam exemplos práticos e benefícios, como o uso de tipos distintos para diferentes etapas de validação e a garantia de que os dados estejam sempre em um estado válido, o que pode simplificar aplicações complexas e melhorar a confiabilidade.</li>
+</ul>
+<h2><a href="https://ea.rna.nl/2024/05/27/when-chatgpt-summarises-it-actually-does-nothing-of-the-kind/">Quando o ChatGPT resume, ele não faz nada disso</a></h2>
+<ul>
+<li>Autor tem explorado e discutido as bases do ChatGPT e outras IAs Generativas, com o objetivo de fornecer perspectivas realistas contra o hype predominante.</li>
+<li>Uma percepção importante é que o ChatGPT não resume verdadeiramente o conteúdo, mas apenas o encurta, frequentemente perdendo detalhes essenciais e propostas, como evidenciado por uma comparação com um resumo gerado por humanos de um artigo de 50 páginas.</li>
+<li>Essa limitação surge porque resumir requer compreensão, algo que o ChatGPT não possui, levando ao ceticismo sobre a confiabilidade dos LLMs (Modelos de Linguagem de Grande Escala) para aplicações práticas de negócios.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41027658">Reações</a></h3>
+<ul>
+<li>A autora argumenta que a sumarização de texto do ChatGPT carece de verdadeira compreensão, resultando em resumos incompletos e, às vezes, enganosos.</li>
+<li>As críticas apontam a ausência de detalhes sobre o modelo GPT, o prompt e o número de tentativas na análise original.</li>
+<li>Experiências e opiniões dos usuários variam, com alguns achando o ChatGPT e outros LLMs úteis, enquanto outros destacam suas limitações e a necessidade de melhorar a formulação de perguntas e o gerenciamento de contexto.</li>
+</ul>
+<h2><a href="https://www.rte.ie/news/business/2024/0719/1460807-ryanair-wins-us-court-case-against-bookingcom/">Ryanair vence caso de screen scraping contra Booking.com em decisão judicial nos EUA</a></h2>
+<ul>
+<li>Um tribunal dos EUA decidiu que a Booking.com violou a Lei de Fraude e Abuso de Computadores ao acessar o site da Ryanair sem permissão, apoiando a posição da Ryanair contra a extração não autorizada de dados.</li>
+<li>Ao júri do Tribunal Distrital de Delaware considerou a Booking.com culpada de acesso não autorizado com intenção de fraude e rejeitou as reconvenções da Booking.com de difamação e concorrência desleal.</li>
+<li>CEO da Ryanair, Michael O&#39;Leary, espera que a decisão reduza a extração ilegal de dados e a cobrança excessiva, enquanto a Booking.com planeja apelar, argumentando que a comparação de tarifas beneficia a escolha do consumidor.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031960">Reações</a></h3>
+<ul>
+<li>Ryanair ganhou um processo judicial contra a Booking.com em um tribunal dos EUA por acesso não autorizado para revender passagens, violando a Lei de Fraude e Abuso de Computadores.</li>
+<li>Inicialmente, a decisão pode afetar outros agentes de viagens online que utilizam práticas semelhantes, destacando as complexidades das leis de web scraping.</li>
+<li>Há especulações de que a decisão possa ser revertida devido a precedentes legais conflitantes.</li>
+</ul>
+<h2><a href="https://www.robkhenderson.com/p/no-one-expects-young-men-to-do-anything">Não se espera que os jovens façam nada e eles respondem não fazendo nada (2022)</a></h2>
+<ul>
+<li>Rob Henderson discute em sua postagem a falta de expectativas sociais para os jovens homens e suas consequências negativas, incluindo o aumento das taxas de desemprego e encarceramento.</li>
+<li>Ele faz referência a &#39;Promises I Can Keep&#39; de Kathryn Edin e Maria Kefalas, que examina por que mulheres de baixa renda frequentemente priorizam a maternidade em vez do casamento, atribuindo isso ao mau comportamento dos jovens do sexo masculino.</li>
+<li>Henderson critica a classe alta por minar as normas de estabilidade familiar enquanto garantem que seus próprios filhos se beneficiem de lares estáveis, argumentando que os jovens precisam de altas expectativas para prosperar.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41032918">Reações</a></h3>
+<ul>
+<li>A matéria atribui o fenômeno dos &#39;jovens sem nada para fazer&#39; à desigualdade de riqueza e à concentração de riqueza entre as elites mais velhas, o que eleva os preços dos itens essenciais e sufoca a demanda por novos empreendimentos.</li>
+<li>Também discute a instabilidade das estruturas familiares, observando que as mudanças sociais e as pressões econômicas alteraram a dinâmica tradicional da família.</li>
+<li>Comentários sobre o artigo debatem o impacto dos pais ausentes, o papel das mulheres na estabilidade familiar e os fatores sociais e econômicos mais amplos que contribuem para essas questões.</li>
+</ul>
+<h2><a href="https://nitter.poast.org/GerardoMunck/status/1815059432382067053">James C. Scott, autor de Seeing Like a State, faleceu</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41028887">Reações</a></h3>
+<ul>
+<li>James C. Scott, autor de &#39;Seeing Like a State&#39;, faleceu, provocando reflexões sobre suas ideias influentes na comunidade tecnológica.</li>
+<li>Os trabalhos de Scott destacam como os estados e a tecnologia podem impor a uniformidade, impactando áreas como medicina, educação e engajamento social ao reduzir a diversidade.</li>
+<li>Discussões no Hacker News exploram os conceitos de Scott, particularmente o equilíbrio entre segurança e flexibilidade no software, e as implicações mais amplas da homogeneidade tecnológica.</li>
+</ul>
+<h2><a href="https://github.com/eza-community/eza">Eza: Uma substituição moderna e mantida para o ls</a></h2>
+<ul>
+<li>Eza é uma substituição moderna para o comando ls no Unix e Linux, oferecendo recursos aprimorados e padrões melhores.</li>
+<li>Os principais recursos incluem tipos de arquivos codificados por cores, suporte a links simbólicos, atributos estendidos, integração com Git e datas legíveis por humanos.</li>
+<li>Eza visa ser mais amigável e rico em recursos, com suporte adicional para hiperlinks, detalhes de pontos de montagem, contexto SELinux e cores brilhantes no terminal.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031112">Reações</a></h3>
+<ul>
+<li>Eza é apresentado como um substituto moderno e ativamente mantido para o comando tradicional <code>ls</code>, que lista o conteúdo de diretórios em sistemas operacionais do tipo Unix.</li>
+<li>Os participantes da discussão destacam as frustrações dos usuários com as &quot;datas legíveis por humanos&quot; em listagens de diretórios, defendendo a utilização de carimbos de data e hora exatos em vez de formatos de tempo relativo, como &quot;1 dia atrás.&quot;</li>
+<li>Na postagem também são mencionadas outras ferramentas modernas de linha de comando que os usuários preferem em vez das tradicionais, como <code>bat</code> (um substituto do <code>cat</code> com realce de sintaxe) e <code>rg</code> (ripgrep, uma alternativa mais rápida ao <code>grep</code>).</li>
+</ul>
+<h2><a href="https://www.smbc-comics.com/comic/investment-2">Quanto dinheiro podemos arrecadar para startups transparentemente idiotas?</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41036844">Reações</a></h3>
+<ul>
+<li>As postagens discutem o fenômeno de arrecadar fundos para startups com ideias aparentemente sem sentido, destacando a facilidade com que o capital pode ser obtido para tais empreendimentos.</li>
+<li>Critica o ecossistema de startups, sugerindo que ele opera como um esquema de &#39;pump and dump&#39;, movendo-se de um campo da moda para outro, frequentemente desperdiçando recursos.</li>
+<li>Na conversa, são incluídos exemplos de startups bem-sucedidas e debates sobre o valor e o impacto de grupos focais e MVPs (Produtos Mínimos Viáveis) no desenvolvimento de produtos.</li>
+</ul>
+<h2><a href="https://billabear.com/">Um sistema de faturamento de código aberto que passei 18 meses construindo</a></h2>
+<ul>
+<li>A plataforma oferece integração profunda com o Stripe, permitindo controle abrangente sobre faturamento, gestão de impostos e fluxos de trabalho automatizados.</li>
+<li>Os recursos incluem gerenciar taxas de impostos em vários níveis, criar planos de assinatura personalizados e integrar-se com ferramentas como Slack e provedores de e-mail.</li>
+<li>As funcionalidades do sistema incluem escalabilidade, auto-hospedagem e fornecimento de insights detalhados de negócios, como rotatividade de assinaturas e valor vitalício.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031975">Reações</a></h3>
+<ul>
+<li>Um novo sistema de faturamento com código-fonte disponível, Billabear, foi lançado após 18 meses de desenvolvimento, oferecendo recursos semelhantes ao Stripe, mas com o código-fonte disponível sob a Fair Source License (FSL).</li>
+<li>As FSL permite que os usuários acessem o código-fonte, que passa para uma licença Apache 2.0 após dois anos, proporcionando mais flexibilidade e controle em comparação com o modelo de código fechado da Stripe.</li>
+<li>Discussões destacam a importância da disponibilidade de fontes para alguns usuários, a necessidade de melhor localização em vários idiomas e preocupações sobre o manejo do imposto sobre vendas dos estados dos EUA e a conformidade com o GDPR.</li>
+</ul>
+<h2><a href="https://www.computerworld.com/article/2520794/the-workers-have-spoken-theyre-staying-home.html">As trabalhadoras e os trabalhadores falaram: Eles vão ficar em casa</a></h2>
+<ul>
+<li>Dell&#39;s policy requiring in-office presence for promotions was largely ignored, with many employees opting to stay home.</li>
+<li>Um relatório da Gartner indica que 48% dos funcionários acreditam que as exigências da empresa favorecem as preferências dos líderes em detrimento de suas próprias necessidades.</li>
+<li>Trabalho remoto é cada vez mais preferido por seus benefícios, incluindo a ausência de deslocamentos, melhor equilíbrio entre vida pessoal e profissional, economia de custos e flexibilidade, com profissionais de alto desempenho buscando oportunidades remotas.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41037097">Reações</a></h3>
+<ul>
+<li>Os trabalhadores estão relutantes em retornar aos escritórios devido a ambientes inadequados, falta de mesas permanentes e problemas de produtividade em configurações de plano aberto.</li>
+<li>Muitos funcionários acham o trabalho remoto mais eficiente e resistem a voltar para condições de escritório subótimas, sendo os deslocamentos um fator significativo.</li>
+<li>Algumas empresas estão utilizando mandatos de retorno ao escritório como uma estratégia para reduzir o número de funcionários sem recorrer a demissões, alimentando o debate contínuo sobre arranjos de trabalho ideais.</li>
+</ul>
+<h2><a href="https://jim.rees.org/apollo-archive/marketing/1988-ApolloDN10000ProductBrochure.pdf">Apollo DN10000: Estação de trabalho Quad CPU/128Mb RAM de 1988 [pdf]</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41029987">Reações</a></h3>
+<ul>
+<li>A Apollo DN10000, uma estação de trabalho com quatro CPUs e 128MB de RAM de 1988, está sendo discutida nostalgicamente por sua importância histórica e capacidades técnicas.</li>
+<li>Os usuários lembram de seu uso em laboratórios universitários e de seu papel na programação gráfica inicial, apesar de seu ambiente Unix complexo e dos desafios de configuração.</li>
+<li>A alta custo da máquina, de até $250.000 na década de 1980 (equivalente a cerca de $660.000 hoje), destaca seu status premium e os significativos avanços tecnológicos desde então.</li>
+</ul>
+<h2><a href="https://www.theregister.com/2024/07/21/crowdstrike_linux_crashes_restoration_tools/">CrowdStrike&#39;s Falcon Sensor também está ligado a panics e falhas no kernel do Linux</a></h2>
+<ul>
+<li>CrowdStrike&#39;s Falcon Sensor software causou falhas no sistema tanto no Windows quanto no Linux, incluindo Red Hat Enterprise Linux 9.4, Debian e Rocky Linux.</li>
+<li>Desativar temporariamente o Falcon Sensor estabiliza os sistemas afetados, e a CrowdStrike está testando uma ferramenta de recuperação rápida para resolver o problema.</li>
+<li>A interrupção teve impactos globais significativos, incluindo cancelamentos de voos e atrasos na área da saúde, com a Microsoft estimando que 8,5 milhões de máquinas Windows foram afetadas.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41030352">Reações</a></h3>
+<ul>
+<li>CrowdStrike&#39;s Falcon Sensor tem sido associado a panics e travamentos no kernel do Linux, distintos dos problemas de BSOD (Tela Azul da Morte) no Windows.</li>
+<li>Os panics do kernel do Linux são provavelmente devido a um bug na implementação do eBPF (Extended Berkeley Packet Filter) do kernel, potencialmente de um patch específico da Red Hat, indicando um bug do kernel em vez de um problema do fornecedor.</li>
+<li>As discussões destacam os desafios de suportar múltiplas versões de sistemas operacionais e as complexidades envolvidas no teste de módulos do kernel, enfatizando as diferenças na engenharia de confiabilidade do kernel entre Linux e Windows.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Jellyfin: Estamos Bem, Sério" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Jellyfin%3A%20Estamos%20Bem%2C%20S%C3%A9rio&subheading=segunda-feira%2C%2022%20de%20julho%20de%202024%3A%20Resumo%20do%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/pt/2024/07/22</link>
+            <guid isPermaLink="false">2024-07-22T00:00:00.000Z</guid>
+            <pubDate>Mon, 22 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-21]]></title>
             <description
@@ -1688,197 +1869,6 @@
             <link>https://hn.cho.sh/pt/2024/07/13</link>
             <guid isPermaLink="false">2024-07-13T00:00:00.000Z</guid>
             <pubDate>Sat, 13 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-12]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/12&#39;</h2>
-<h1>2024-07-12</h1>
-<h2><a href="https://webvm.io/">WebVM é um ambiente virtual Linux sem servidor que roda no lado do cliente</a></h2>
-<ul>
-<li>WebVM é um ambiente virtual Linux sem servidor que roda inteiramente no lado do cliente usando HTML5 e WebAssembly, alimentado pelo motor de virtualização CheerpX.</li>
-<li>Permite a execução segura e isolada de binários x86 em qualquer navegador, apresentando um compilador JIT (Just-In-Time) de x86 para WebAssembly, um sistema de arquivos virtual baseado em blocos e um emulador de chamadas de sistema do Linux.</li>
-<li>Nova funcionalidade: Os usuários agora podem criar imagens personalizadas do WebVM usando Dockerfile, aumentando a flexibilidade e a personalização.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40940225">Reações</a></h3>
-<ul>
-<li>WebVM é um ambiente virtual Linux sem servidor que roda no lado do cliente, utilizando uma versão do CheerpX hospedada pela Leaning Technologies e suportando rede via Tailscale.</li>
-<li>Ao contrário dos emuladores de sistema completo, o WebVM atua como um emulador de syscall do Linux para binários de espaço de usuário, oferecendo maior flexibilidade e velocidade.</li>
-<li>Não é de código aberto, e a auto-hospedagem do motor CheerpX é proibida, tornando-o adequado para educação, documentação ao vivo, preservação de software e desenvolvimento de IDEs web, embora tenha limitações como problemas de desempenho em dispositivos móveis e funcionalidade offline parcial.</li>
-</ul>
-<h2><a href="https://techcrunch.com/2024/07/12/att-phone-records-stolen-data-breach/">AT&amp;T diz que criminosos roubaram registros telefônicos de &#39;quase todos&#39; os clientes em violação de dados</a></h2>
-<ul>
-<li>AT&amp;T confirmou uma violação de dados que afeta quase 110 milhões de clientes, envolvendo números de telefone, registros de chamadas e mensagens de texto, e informações relacionadas à localização.</li>
-<li>A violação, ligada ao provedor de dados em nuvem Snowflake, inclui metadados, mas não o conteúdo de chamadas ou mensagens de texto.</li>
-<li>As preocupações com a segurança nacional levaram o FBI e o DOJ a adiar a notificação pública, marcando o segundo incidente de segurança da AT&amp;T neste ano.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40944505">Reações</a></h3>
-<ul>
-<li>AT&amp;T sofreu uma violação de dados que afetou quase todos os clientes, expondo metadados de chamadas e mensagens de texto, mas não o conteúdo ou os carimbos de data e hora.</li>
-<li>Apesar de uma queda inicial nas ações, o mercado permanece amplamente inalterado, refletindo a crença de que as empresas enfrentam consequências financeiras mínimas por tais violações.</li>
-<li>A ocorrência, ligada à plataforma em nuvem da Snowflake, gerou apelos por políticas mais rigorosas de retenção de dados, melhores práticas de segurança e possíveis multas pesadas ou processos judiciais para garantir a responsabilidade corporativa.</li>
-</ul>
-<h2><a href="https://physicsbaseddeeplearning.org/intro.html">Livro de Aprendizado Profundo Baseado em Física</a></h2>
-<ul>
-<li>A Física baseada no Livro de Deep Learning (v0.2) oferece uma introdução prática ao deep learning em simulações físicas, com exemplos práticos em Jupyter notebook.</li>
-<li>Novidade na versão 0.2: Seção ampliada sobre a integração da programação diferenciável (DP) no treinamento de redes neurais (NN) e um novo capítulo sobre métodos de aprendizagem aprimorados para problemas de física.</li>
-<li>Atualizações futuras incluirão capítulos sobre treinamento de redes para previsão de fluxo de fluidos, uso de equações modelo como resíduos, interação com simuladores para problemas inversos e aproveitamento de informações de ordem superior para melhores redes neurais.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40941056">Reações</a></h3>
-<ul>
-<li>A nova obra intitulada &#39;Physics-Based Deep Learning&#39; foi lançada, focando na aplicação do aprendizado profundo em simulações de física, em vez de conceitos gerais de aprendizado profundo sob a perspectiva de um físico.</li>
-<li>As mãos no livro incluem exemplos de código práticos em Jupyter notebooks, restrições de perda física, simulações diferenciáveis, algoritmos de treinamento para problemas de física, aprendizado por reforço e modelagem de incerteza.</li>
-<li>A produção do livro é feita pelo Physics-based Simulation Group e está disponível para download no arXiv, com recursos adicionais e discussões disponíveis em várias plataformas como YouTube e GitHub.</li>
-</ul>
-<h2><a href="https://ochagavia.nl/blog/using-s3-as-a-container-registry/">Usando S3 como um Registro de Contêineres</a></h2>
-<ul>
-<li>A developer demonstrou o uso do Amazon S3 como um registro de contêineres ao expor um bucket S3 através de HTTP e fazer upload de arquivos de imagem de contêiner para caminhos específicos, permitindo operações de <code>docker pull</code>.</li>
-<li>A principal vantagem de usar o S3 em vez de registros de contêineres tradicionais como DockerHub ou Amazon ECR é a velocidade de upload significativamente mais rápida devido aos uploads fragmentados em paralelo.</li>
-<li>Essa abordagem experimental carece de recursos como varreduras de segurança automatizadas e controles de acesso, mas pode levar à hospedagem de imagens de contêiner públicas no R2 da Cloudflare com saída gratuita.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40942732">Reações</a></h3>
-<ul>
-<li>Está sendo discutido o uso do Amazon S3 como um registro de contêineres, destacando seu potencial como uma alternativa aos registros de contêineres tradicionais, como DockerHub e AWS ECR.</li>
-<li>Na conversa, são criticadas as ineficiências da Especificação de Distribuição da OCI (Open Container Initiative), como a exigência de uploads sequenciais de camadas e a falta de paginação padronizada para listar tags.</li>
-<li>Docker&#39;s impact on software development is debated, with some praising its simplification of dependency management and others criticizing it for not improving end-product reliability or development speed.</li>
-</ul>
-<h2><a href="https://nelson.cloud/as-an-employee-you-are-disposable/">As um Empregado, Você é Descartável (2023)</a></h2>
-<ul>
-<li>Os recentes cortes de pessoal no setor de tecnologia indicam que os funcionários são frequentemente vistos como descartáveis pelos executivos, mesmo em empresas lucrativas.</li>
-<li>Empresas como a Microsoft continuam a demitir funcionários e implementar congelamentos salariais, apesar de superarem as expectativas dos investidores e terem altas receitas.</li>
-<li>Executivos ricos, como Tim Gurner, fizeram comentários que reforçam a noção de que os funcionários são substituíveis, independentemente de suas contribuições ou tempo de serviço.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40943436">Reações</a></h3>
-<ul>
-<li>Empresas são entidades transacionais e podem dispensar funcionários quando isso lhes convém, enfatizando que os funcionários não são indispensáveis.</li>
-<li>Contratações excessivas e demissões são frequentemente estratégias para aumentar o valor para os acionistas, destacando a importância de os funcionários focarem em seus próprios interesses e buscarem uma remuneração justa.</li>
-<li>Considerar sindicatos e o código de fonte aberta pode ser benéfico para os desenvolvedores, reforçando a ideia de que a relação empregador-empregado é fundamentalmente um acordo comercial.</li>
-</ul>
-<h2><a href="https://github.com/Wack0/maciNTosh">Windows NT para Power Macintosh</a></h2>
-<ul>
-<li>A repositório contém o código-fonte para o firmware ARC e seu carregador, direcionado para sistemas New World Power Macintosh usando a arquitetura Gossamer, incluindo modelos como iMac G3 e Power Macintosh G3.</li>
-<li>A firmware ARC suporta vários drivers, mas atualmente apenas o NT4 é compatível, com potencial suporte futuro para o NT 3.51.</li>
-<li>Instalação envolve baixar binários, particionar o disco e seguir os prompts para configurar o NT4, com problemas conhecidos como instabilidade e etapas específicas necessárias para dual-boot com partições Mac.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40945076">Reações</a></h3>
-<ul>
-<li>A desenvolvedora portou o Windows NT para rodar no Power Macintosh, despertando nostalgia e discussões sobre histórias alternativas de sistemas operacionais.</li>
-<li>Windows NT foi projetado para ser portátil, suportando várias arquiteturas como PowerPC, MIPS e Alpha, embora fosse principalmente conhecido pelo x86.</li>
-<li>Este projeto destaca a viabilidade técnica de adaptar o NT a diferentes plataformas de hardware, demonstrando a modularidade de seu design.</li>
-</ul>
-<h2><a href="https://news.mit.edu/2024/charmed-collaboration-creates-therapy-candidate-fatal-prion-diseases-0627">Ferramenta de silenciamento de genes mostra promessa como futura terapia contra doenças priônicas</a></h2>
-<ul>
-<li>CHARM (Cauda de Histona Acoplada para Liberação de Autoinibição de Metiltransferase) é uma nova ferramenta de silenciamento de genes desenvolvida pelo Broad Institute e pelo Whitehead Institute, mostrando potencial para o tratamento de doenças priônicas e outras condições neurodegenerativas.</li>
-<li>Esta ferramenta utiliza edição epigenética para silenciar genes causadores de doenças, incluindo o gene da proteína priônica, sem alterar o DNA subjacente, oferecendo potencialmente um tratamento único.</li>
-<li>A equipe de pesquisa, liderada por Sonia Vallabh e Jonathan Weissman, fez progressos significativos, criando um silenciador de genes compacto, eficaz e de baixa toxicidade, e agora está refinando o CHARM para ensaios clínicos.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939703">Reações</a></h3>
-<ul>
-<li>A ferramenta de silenciamento de genes, administrada via Vírus Adeno-Associado (AAV), mostra potencial como terapia para doenças priônicas, que atualmente são 100% fatais e resistentes à destruição.</li>
-<li>Esta ferramenta funciona silenciando o gene da proteína priônica, potencialmente prevenindo ou revertendo a doença, e pode ser eficaz contra prions tanto genéticos quanto adquiridos.</li>
-<li>Embora promissora, os efeitos a longo prazo da ferramenta na memória e cognição ainda estão sendo investigados, com pesquisas em andamento explorando aplicações para outras doenças semelhantes a príons, como Alzheimer e Parkinson.</li>
-</ul>
-<h2><a href="https://github.com/taubyte/tau">Tau: PaaS de código aberto – Uma alternativa auto-hospedada ao Vercel / Netlify / Cloudflare</a></h2>
-<ul>
-<li>Tau é uma nova estrutura projetada para construir plataformas de computação em nuvem de baixa manutenção e altamente escaláveis, servindo como uma alternativa a serviços como Vercel, Netlify e AWS.</li>
-<li>Os principais recursos incluem configuração mínima, mudanças de infraestrutura nativas do Git, rede peer-to-peer e suporte para WebAssembly, com planos futuros para contêineres e VMs.</li>
-<li>Tau visa reduzir os custos de infraestrutura e o tempo de desenvolvimento, oferecendo uma plataforma amigável para desenvolvedores com ferramentas para desenvolvimento local e testes de ponta a ponta.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40946033">Reações</a></h3>
-<ul>
-<li>Tau é uma alternativa de Plataforma como Serviço (PaaS) de código aberto e auto-hospedada ao Vercel, Netlify e Cloudflare, utilizando libp2p para autodiscovery de rede e IPFS para armazenamento distribuído.</li>
-<li>It is WebAssembly-native, oferecendo benefícios como evitar o aprisionamento a um fornecedor, mas os usuários observaram que a documentação é vaga e o conceito é pouco claro.</li>
-<li>Comparações com Kubernetes e outras soluções PaaS como Coolify e CapRover são comuns, indicando o potencial do projeto, mas destacando a necessidade de melhor documentação e comunicação mais clara de suas funcionalidades e benefícios.</li>
-</ul>
-<h2><a href="https://github.com/karpathy/llm.c/discussions/677">Karpathy: Vamos reproduzir o GPT-2 (1.6B): um nó 8XH100 24h $672 em llm.c</a></h2>
-<ul>
-<li>Pesquisadores reproduziram o GPT-2 (1.6B) usando llm.c, uma implementação em C/CUDA, em um único nó 8XH100 em 24 horas por $672, contornando as pilhas típicas de aprendizado profundo baseadas em Python, como o PyTorch.</li>
-<li>Apesar de alguns problemas de ajuste e estabilidade, o desempenho do modelo é comparável ao GPT-2, avaliado usando métricas como perda de validação e precisão no HellaSwag.</li>
-<li>Este post também aborda a gestão de memória, treinamento multi-nó, e compara a implementação com uma versão em PyTorch, com planos futuros para otimizar hiperparâmetros e melhorar a estabilidade do treinamento.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939707">Reações</a></h3>
-<ul>
-<li>Andrej Karpathy reproduziu com sucesso o GPT-2 (1,6 bilhões de parâmetros) em um único nó 8XH100 em 24 horas a um custo de $672.</li>
-<li>Os avanços no hardware de IA podem potencialmente reduzir os custos e diminuir os tempos de treinamento no futuro.</li>
-<li>Embora a IA em videogames mostre potencial para aprimorar NPCs e a narrativa, a tecnologia atual ainda enfrenta limitações significativas, especialmente na geração de texto para narrativa e diálogo.</li>
-</ul>
-<h2><a href="https://abe.today/blogs/main/floppy8-a-tiny-computer-in-a-floppy-drive">Floppy8 – Um Computador Minúsculo, em uma Unidade de Disquete (2023)</a></h2>
-<ul>
-<li>Floppy8 é um microcomputador e sistema de cartuchos embutido em uma unidade de disquete, capaz de reproduzir filmes e jogos em 4K com controladores sem fio e ejeção motorizada de cartuchos.</li>
-<li>A proposta envolveu a reutilização de um drive de disquete Amiga 1010, o design de um novo formato de mídia e a impressão 3D extensiva e engenharia elétrica para encaixar todos os componentes dentro do drive.</li>
-<li>A criadora usou um computador Latte Panda 3 Delta e cartuchos personalizados impressos em 3D, superando desafios de restrições de tamanho, mecanismos de ejeção e controle de LED para completar o projeto.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40942141">Reações</a></h3>
-<ul>
-<li>Floppy8 é um minúsculo computador embutido em um drive de disquete de 3,5&quot;, reminiscente de projetos compactos de computação do passado, como o clone do Amiga 1200 e o Ross SPARCPlug.</li>
-<li>A criadora, abeisgreat, compartilhou um vídeo detalhando o projeto, incluindo cartuchos baseados em cartões SD e outros aspectos técnicos, despertando interesse e admiração na comunidade tecnológica.</li>
-<li>Discussões destacam a nostalgia e a inovação em encaixar computadores em pequenos formatos, com referências a tentativas históricas e projetos DIY modernos.</li>
-</ul>
-<h2><a href="https://blog.fal.ai/auraflow/">AuraFlow v0.1: uma alternativa de código aberto ao Stable Diffusion 3</a></h2>
-<ul>
-<li>AuraFlow v0.1 é um modelo de geração de texto para imagem baseado em fluxo e de código aberto, demonstrando a resiliência da comunidade de IA de código aberto.</li>
-<li>A modelo se destaca na geração de imagens detalhadas a partir de descrições textuais e incorpora técnicas avançadas como transferência de taxa de aprendizado zero-shot e re-captionamento.</li>
-<li>Com 6,8 bilhões de parâmetros, o AuraFlow foi treinado durante quatro semanas, alcançando altas pontuações no GenEval, e os planos futuros incluem mais treinamento e desenvolvimento de modelos eficientes para GPUs de consumo.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40941853">Reações</a></h3>
-<ul>
-<li>AuraFlow v0.1 é uma alternativa de código aberto ao Stable Diffusion 3, mostrando potencial apesar de ser uma versão inicial.</li>
-<li>O modelo tem um bom desempenho em prompts simples, mas enfrenta dificuldades com prompts complexos e negações, indicando áreas para melhoria.</li>
-<li>Discussões destacam as limitações do modelo em gerar corpos humanos realistas e lidar com prompts de texto sutis, refletindo desafios contínuos na geração de imagens por IA.</li>
-</ul>
-<h2><a href="https://mazzo.li/posts/value-speculation.html">Superando o cache L1 com especulação de valor (2021)</a></h2>
-<ul>
-<li>A postagem discute o uso da especulação de valores para melhorar o desempenho da CPU, aproveitando o preditor de ramificações para adivinhar valores e reduzir dependências de dados em loops apertados.</li>
-<li>Especulando o endereço do próximo nó em uma função de soma de lista ligada, a técnica visa contornar os atrasos de leitura do cache L1, resultando em melhorias significativas de desempenho.</li>
-<li>Apesar de os compiladores frequentemente otimizarem essa técnica, o uso de assembly inline garante que a especulação permaneça, levando a um aumento de 50-200% na velocidade da função quando os dados cabem nas caches da CPU.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40940241">Reações</a></h3>
-<ul>
-<li>O artigo &#39;Beating the L1 cache with value speculation&#39; (2021) de mazzo.li explora a otimização do layout de memória em listas ligadas através da especulação de valores, enfatizando a importância do layout linear de memória dos nós.</li>
-<li>Os comentaristas debatem a praticidade e a eficácia deste método, com alguns apreciando sua engenhosidade, mas questionando sua aplicabilidade ampla.</li>
-<li>Discussões também abrangem detalhes técnicos relacionados, como execução de instruções, modelos de memória, casos de uso potenciais e a possibilidade de compiladores automatizarem tais otimizações.</li>
-</ul>
-<h2><a href="https://gizmodo.com/apple-vision-pro-u-s-sales-2000469302">Analistas de mercado dizem que as vendas do Apple Vision Pro nos EUA estão praticamente mortas</a></h2>
-<ul>
-<li>Vendas do Apple Vision Pro nos EUA estão caindo drasticamente, com uma queda projetada de 75% até o final de agosto de 2024, já que a maioria dos compradores interessados já adquiriu o headset de $3.500.</li>
-<li>Até o momento, o modelo atual não atingiu 100.000 unidades vendidas, levando a Apple a reduzir suas expectativas de vendas e considerar um modelo mais barato, que, segundo rumores, custaria cerca de US$ 1.750, para 2025.</li>
-<li>Apple também está desenvolvendo uma atualização do visionOS para melhorar a experiência do usuário, o que pode ajudar a manter o interesse até o lançamento do headset mais acessível.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939627">Reações</a></h3>
-<ul>
-<li>Vendas do Apple Vision Pro nos EUA estão abaixo do esperado devido ao interesse limitado dos usuários e ao suporte dos desenvolvedores.</li>
-<li>Os altos preços de $3500 e o conteúdo restrito são obstáculos significativos, afastando tanto os consumidores quanto os desenvolvedores.</li>
-<li>Analistas sugerem que a Apple pode precisar reconsiderar sua estratégia, potencialmente criando uma versão mais acessível ou melhorando seu ecossistema de software para ampliar seu apelo.</li>
-</ul>
-<h2><a href="https://alderongames.com/intel-crashes">Intel está vendendo CPUs defeituosos da 13ª-14ª geração</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40946644">Reações</a></h3>
-<ul>
-<li>Supostamente, a Intel está vendendo CPUs defeituosos da 13ª e 14ª Geração, levando a travamentos, BSODs (Tela Azul da Morte) e outros erros, com alguns relatos indicando que os problemas pioram com o tempo.</li>
-<li>Fontes confiáveis, como RadGames e Level1Techs, confirmaram esses problemas de instabilidade, que podem estar ligados às estratégias agressivas de gerenciamento de energia e térmica da Intel.</li>
-<li>Devido a esses problemas persistentes, muitos usuários estão contemplando mudar para a AMD como uma alternativa.</li>
-</ul>
-<h2><a href="https://www.geaerospace.com/news/press-releases/ge-aerospace-successfully-develops-and-tests-new-hypersonic-dual-mode-ramjet">GE Aerospace desenvolve e testa com sucesso novo ramjet de modo duplo hipersônico</a></h2>
-<ul>
-<li>GE Aerospace desenvolveu e testou com sucesso um novo ramjet de modo duplo hipersônico em menos de 11 meses, demonstrando um aumento triplo no fluxo de ar em relação às tecnologias anteriores.</li>
-<li>Esta conquista destaca o compromisso da GE Aerospace em avançar na tecnologia hipersônica, com a próxima fase focada em mais testes e demonstração de tecnologia.</li>
-<li>Ao projeto foi um esforço colaborativo entre a GE Aerospace, a Innoveering e o Centro de Pesquisa da GE Aerospace, destacando o rápido progresso e a dedicação da equipe.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40943253">Reações</a></h3>
-<ul>
-<li>GE Aerospace, em colaboração com a Innoveering e seu Centro de Pesquisa, desenvolveu e testou um novo ramjet de modo duplo hipersônico em menos de 11 meses.</li>
-<li>A tecnologia, provavelmente baseada em um design existente, é destinada a mísseis ou aeronaves de alta velocidade, não à aviação comercial, devido às velocidades extremas e condições.</li>
-<li>Este projeto destaca avanços significativos na propulsão hipersônica, que são vitais para aplicações militares.</li>
-</ul>
-<head>
-  <meta property="og:title" content="WebVM é um ambiente virtual Linux sem servidor que roda no lado do cliente" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=WebVM%20%C3%A9%20um%20ambiente%20virtual%20Linux%20sem%20servidor%20que%20roda%20no%20lado%20do%20cliente&subheading=sexta-feira%2C%2012%20de%20julho%20de%202024%3A%20Resumo%20do%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/pt/2024/07/12</link>
-            <guid isPermaLink="false">2024-07-12T00:00:00.000Z</guid>
-            <pubDate>Fri, 12 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

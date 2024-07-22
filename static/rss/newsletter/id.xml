@@ -15,12 +15,193 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 21 Jul 2024 19:12:36 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 22 Jul 2024 19:20:31 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/id.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 21 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 22 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[id]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-22]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/22&#39;</h2>
+<h1>2024-07-22</h1>
+<h2><a href="https://forum.jellyfin.org/t-we-re-good-seriously">Jellyfin: Kami Baik-Baik Saja, Serius</a></h2>
+<ul>
+<li>Jellyfin memiliki anggaran lebih dari $24.000, yang mencakup 40 bulan pengeluaran, dan meminta pengguna untuk mengarahkan donasi kepada penulis Klien yang mereka gunakan.</li>
+<li>Permintaan ini sejalan dengan kebijakan &quot;tidak ada pengembangan berbayar&quot; Jellyfin, karena donasi bersifat sukarela, dan proyek akan menilai kembali jika dana turun menjadi 12 bulan operasional.</li>
+<li>Anggota komunitas merespons secara positif, dengan rencana untuk mendukung penulis Klien dan pertanyaan tentang dukungan klien tertentu seperti WebOS.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031998">Reaksi</a></h3>
+<ul>
+<li>Jellyfin, sebuah proyek server media sumber terbuka, mengumumkan bahwa mereka memiliki dana yang cukup dan menyarankan para donatur untuk mendukung proyek ekosistem lainnya.</li>
+<li>Komunitas terbagi dalam pendekatan ini; beberapa percaya dana harus didistribusikan kepada pengembang ekosistem, sementara yang lain setuju dengan keputusan Jellyfin untuk menghindari beban administratif tambahan.</li>
+<li>Diskusi tersebut menyoroti kompleksitas dan potensi masalah dalam mengelola donasi di dalam proyek sumber terbuka, termasuk transparansi, beban administratif, dan menjaga fokus pada pengembangan inti.</li>
+</ul>
+<h2><a href="https://without.boats/blog/pin/">Pin</a></h2>
+<ul>
+<li>Jenis Pin dan konsep pinning adalah komponen penting tetapi sering disalahpahami dalam ekosistem async Rust.</li>
+<li>Pin diperkenalkan untuk mendukung tipe-tipe yang merujuk pada diri sendiri dalam async Rust, memastikan objek tidak berpindah setelah mereka mengandung referensi diri, tidak seperti Mojo, yang secara inheren menangani identitas objek.</li>
+<li>Meskipun diperlukan, Pin memperkenalkan kompleksitas yang signifikan bagi pengguna karena kurangnya sintaksis yang mudah dan dukungan, yang mengarah pada masalah seperti peminjaman ulang, proyeksi yang dipin, dan interaksi dengan trait Drop.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41029287">Reaksi</a></h3>
+<ul>
+<li>Diskusi berputar di sekitar tipe <code>Pin</code> dalam bahasa pemrograman Rust, yang sering disalahpahami karena dokumentasi yang tidak jelas.</li>
+<li>Pin memastikan bahwa objek tertentu tidak dapat dipindahkan dalam memori, yang sangat penting untuk struct yang merujuk pada dirinya sendiri, tetapi konsep ini tidak dijelaskan dengan baik dalam dokumentasi resmi.</li>
+<li>Keterangan percakapan menyoroti kebutuhan akan dokumentasi dan analogi yang lebih baik untuk membuat konsep <code>Pin</code> dan <code>Unpin</code> lebih mudah diakses oleh pengembang Rust, terutama mereka yang baru mengenal bahasa tersebut.</li>
+</ul>
+<h2><a href="https://github.com/BurntSushi/jiff">Jiff: Pustaka datetime untuk Rust</a></h2>
+<ul>
+<li>Jiff adalah perpustakaan datetime Rust baru yang berfokus pada kemudahan penggunaan dan kinerja, terinspirasi oleh proposal Temporal JavaScript.</li>
+<li>Ini menawarkan fitur seperti primitif datetime tingkat tinggi, integrasi mulus dengan Basis Data Zona Waktu, aritmetika yang sadar DST, pemformatan, penguraian, dan dukungan Serde opsional.</li>
+<li>Jiff memiliki lisensi ganda di bawah MIT atau UNLICENSE, mendukung Unix dan Windows, dan memerlukan Rust 1.70.0 atau yang lebih baru.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031037">Reaksi</a></h3>
+<ul>
+<li>Jiff adalah perpustakaan datetime baru untuk Rust, dikembangkan oleh BurntSushi, yang dikenal karena menciptakan alat berkualitas tinggi seperti ripgrep.</li>
+<li>Perpustakaan ini bertujuan untuk menangani kompleksitas dalam penanganan datetime, seperti aritmetika DST (Daylight Saving Time), perhitungan yang sadar zona waktu, dan deteksi konflik zona waktu retrospektif.</li>
+<li>Jiff menawarkan API yang lebih ramah pengguna dan fleksibel dibandingkan dengan standar yang ada, Chrono, sambil tetap menjaga ketepatan dan kemampuan dalam operasi datetime.</li>
+</ul>
+<h2><a href="https://www.brendangregg.com/blog/2024-07-22/no-more-blue-fridays.html">Tidak Ada Lagi Jumat Biru</a></h2>
+<ul>
+<li>Kegagalan besar pada 19 Juli yang disebabkan oleh pembaruan driver kernel menyebabkan kerusakan sistem Windows secara global, menyoroti perlunya mekanisme pembaruan yang lebih aman.</li>
+<li>eBPF (extended Berkeley Packet Filter), yang sudah digunakan di Linux, adalah lingkungan eksekusi kernel yang aman yang dapat mencegah kerusakan semacam itu dan akan segera didukung oleh Windows.</li>
+<li>Program eBPF diperiksa keamanannya dan diisolasi, menawarkan manfaat seperti peningkatan keamanan dan penggunaan sumber daya yang lebih rendah, dengan adopsi oleh perusahaan seperti Cisco, Google, dan Meta untuk keamanan dan observabilitas.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41033579">Reaksi</a></h3>
+<ul>
+<li>eBPF (Extended Berkeley Packet Filter) dari Microsoft untuk Windows saat ini terbatas pada penyaringan paket, tidak seperti driver pemantauan kernel komprehensif dari Crowdstrike.</li>
+<li>Integrasi eBPF ke dalam kerangka kerja yang ada di Windows adalah tantangan, dan tidak pasti apakah Microsoft bertujuan untuk menjadikannya standar.</li>
+<li>eBPF dapat meningkatkan keamanan dengan mengisolasi kode kernel, tetapi ini bukan solusi lengkap, seperti yang disoroti oleh insiden Crowdstrike baru-baru ini, yang menekankan perlunya praktik penerapan dan langkah-langkah keamanan yang lebih baik.</li>
+</ul>
+<h2><a href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/">Parse, Don&#39;t Validate (2019)</a></h2>
+<ul>
+<li>Postingan tersebut menekankan prinsip &#39;Parse, don’t validate,&#39; yang menganjurkan untuk melakukan parsing data guna mempertahankan informasi dalam sistem tipe daripada membuangnya melalui validasi.</li>
+<li>Ini menjelaskan bagaimana desain berbasis tipe dalam bahasa seperti Haskell dapat mengubah fungsi parsial menjadi fungsi total dengan memperkuat tipe argumen, menggunakan daftar <code>NonEmpty</code> sebagai contoh.</li>
+<li>Nasihat praktis mencakup penggunaan struktur data yang tepat, refactoring untuk mendorong beban pembuktian ke atas, dan menghindari representasi data yang tidak dinormalisasi untuk meningkatkan keandalan dan keamanan program.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031585">Reaksi</a></h3>
+<ul>
+<li>Artikel &#39;Parse, Don&#39;t Validate&#39; menekankan pentingnya mem-parsing data untuk memastikan kebenaran daripada terus-menerus memvalidasinya sepanjang program.</li>
+<li>Pendekatan ini, yang berakar pada konsep seperti Design by Contract dan Domain-Driven Design (DDD), memanfaatkan sistem tipe yang kuat untuk menegakkan jaminan dan mengurangi kesalahan, sehingga membuat kode lebih mudah dipahami dan dipelihara.</li>
+<li>Kajian ini menyoroti contoh-contoh praktis dan manfaatnya, seperti menggunakan jenis yang berbeda untuk tahap validasi yang berbeda dan memastikan bahwa data selalu dalam keadaan valid, yang dapat menyederhanakan aplikasi yang kompleks dan meningkatkan keandalannya.</li>
+</ul>
+<h2><a href="https://ea.rna.nl/2024/05/27/when-chatgpt-summarises-it-actually-does-nothing-of-the-kind/">Ketika ChatGPT membuat ringkasan, sebenarnya tidak melakukan hal tersebut</a></h2>
+<ul>
+<li>Penulis telah menjelajahi dan mendiskusikan dasar-dasar ChatGPT dan AI Generatif lainnya, dengan tujuan memberikan perspektif yang realistis terhadap hype yang ada.</li>
+<li>Kunci wawasan adalah bahwa ChatGPT tidak benar-benar meringkas konten tetapi hanya memperpendeknya, sering kali melewatkan detail dan proposal penting, seperti yang dibuktikan oleh perbandingan dengan ringkasan yang dihasilkan manusia dari makalah 50 halaman.</li>
+<li>Keterbatasan ini muncul karena merangkum memerlukan pemahaman, yang tidak dimiliki oleh ChatGPT, sehingga menimbulkan skeptisisme tentang keandalan LLM (Model Bahasa Besar) untuk aplikasi bisnis praktis.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41027658">Reaksi</a></h3>
+<ul>
+<li>Penulis berpendapat bahwa ringkasan teks ChatGPT kurang memiliki pemahaman yang sebenarnya, sehingga menghasilkan ringkasan yang tidak lengkap dan kadang-kadang menyesatkan.</li>
+<li>Kritik tersebut menunjukkan ketiadaan rincian tentang model GPT, prompt, dan jumlah percobaan dalam analisis asli.</li>
+<li>Pengalaman dan pendapat pengguna bervariasi, dengan beberapa menemukan ChatGPT dan LLM lainnya bermanfaat, sementara yang lain menyoroti keterbatasannya dan kebutuhan akan peningkatan dalam pemberian petunjuk dan manajemen konteks.</li>
+</ul>
+<h2><a href="https://www.rte.ie/news/business/2024/0719/1460807-ryanair-wins-us-court-case-against-bookingcom/">Ryanair memenangkan kasus screen scraping melawan Booking.com dalam putusan pengadilan AS</a></h2>
+<ul>
+<li>Kejaksaan AS memutuskan bahwa Booking.com melanggar Undang-Undang Penipuan dan Penyalahgunaan Komputer dengan mengakses situs web Ryanair tanpa izin, mendukung sikap Ryanair terhadap pengambilan data layar yang tidak sah.</li>
+<li>Juri Pengadilan Distrik Delaware menemukan Booking.com bersalah atas akses tidak sah dengan niat untuk menipu dan menolak gugatan balik Booking.com tentang pencemaran nama baik dan persaingan tidak sehat.</li>
+<li>CEO Ryanair Michael O&#39;Leary berharap putusan tersebut akan mengurangi pengambilan data secara ilegal dan pengenaan biaya berlebihan, sementara Booking.com berencana untuk mengajukan banding, dengan alasan bahwa perbandingan tarif menguntungkan pilihan konsumen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031960">Reaksi</a></h3>
+<ul>
+<li>Ryanair memenangkan kasus hukum melawan Booking.com di pengadilan AS karena akses tidak sah untuk menjual kembali tiket, melanggar Undang-Undang Penipuan dan Penyalahgunaan Komputer.</li>
+<li>Putusan tersebut dapat mempengaruhi agen perjalanan online lainnya yang menggunakan praktik serupa, menyoroti kompleksitas hukum web scraping.</li>
+<li>Ada spekulasi bahwa keputusan tersebut mungkin akan dibatalkan karena adanya preseden hukum yang bertentangan.</li>
+</ul>
+<h2><a href="https://www.robkhenderson.com/p/no-one-expects-young-men-to-do-anything">Tidak ada yang mengharapkan pemuda melakukan apa pun dan mereka merespons dengan tidak melakukan apa-apa (2022)</a></h2>
+<ul>
+<li>Postingan Rob Henderson membahas kurangnya ekspektasi masyarakat terhadap pria muda dan konsekuensi negatifnya, termasuk peningkatan tingkat pengangguran dan pemenjaraan.</li>
+<li>Dia merujuk pada &#39;Promises I Can Keep&#39; oleh Kathryn Edin dan Maria Kefalas, yang meneliti mengapa wanita berpenghasilan rendah sering memprioritaskan menjadi ibu daripada menikah, dengan mengaitkannya pada perilaku buruk dari pria muda.</li>
+<li>Henderson mengkritik kelas atas karena merusak norma stabilitas keluarga sambil memastikan anak-anak mereka sendiri mendapatkan manfaat dari rumah yang stabil, dengan berargumen bahwa para pemuda membutuhkan harapan yang tinggi untuk berkembang.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41032918">Reaksi</a></h3>
+<ul>
+<li>Artikel tersebut mengaitkan fenomena &#39;pemuda yang tidak memiliki kegiatan&#39; dengan ketimpangan kekayaan dan konsentrasi kekayaan di antara elit yang lebih tua, yang menyebabkan kenaikan harga kebutuhan pokok dan menghambat permintaan untuk usaha baru.</li>
+<li>Ini juga membahas ketidakstabilan struktur keluarga, mencatat bahwa perubahan sosial dan tekanan ekonomi telah mengubah dinamika keluarga tradisional.</li>
+<li>Komentar pada artikel tersebut memperdebatkan dampak dari ayah yang tidak hadir, peran wanita dalam stabilitas keluarga, dan faktor-faktor sosial serta ekonomi yang lebih luas yang berkontribusi pada masalah-masalah ini.</li>
+</ul>
+<h2><a href="https://nitter.poast.org/GerardoMunck/status/1815059432382067053">James C. Scott, penulis buku Seeing Like a State, telah meninggal dunia</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41028887">Reaksi</a></h3>
+<ul>
+<li>James C. Scott, penulis &quot;Seeing Like a State,&quot; telah meninggal dunia, memicu refleksi tentang ide-idenya yang berpengaruh di kalangan komunitas teknologi.</li>
+<li>Kerja Scott menyoroti bagaimana negara dan teknologi dapat menegakkan keseragaman, mempengaruhi bidang seperti kedokteran, pendidikan, dan keterlibatan sosial dengan mengurangi keragaman.</li>
+<li>Diskusi di Hacker News mengeksplorasi konsep-konsep Scott, terutama keseimbangan antara keamanan dan fleksibilitas dalam perangkat lunak, serta implikasi yang lebih luas dari homogenitas teknologi.</li>
+</ul>
+<h2><a href="https://github.com/eza-community/eza">Eza: Pengganti modern dan terawat untuk ls</a></h2>
+<ul>
+<li>eza adalah pengganti modern untuk perintah ls di Unix dan Linux, menawarkan fitur yang ditingkatkan dan pengaturan default yang lebih baik.</li>
+<li>Fitur utama termasuk jenis file yang diberi kode warna, dukungan symlink, atribut yang diperluas, integrasi Git, dan tanggal yang mudah dibaca.</li>
+<li>eza bertujuan untuk lebih ramah pengguna dan kaya fitur, dengan dukungan tambahan untuk hyperlink, detail titik mount, konteks SELinux, dan warna terminal yang cerah.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031112">Reaksi</a></h3>
+<ul>
+<li>Eza diperkenalkan sebagai pengganti modern dan yang secara aktif dipelihara untuk perintah <code>ls</code> tradisional, yang menampilkan isi direktori dalam sistem operasi mirip Unix.</li>
+<li>Diskusi menyoroti frustrasi pengguna dengan &quot;tanggal yang dapat dibaca manusia&quot; dalam daftar direktori, menganjurkan penggunaan stempel waktu yang tepat daripada format waktu relatif seperti &quot;1 hari yang lalu.&quot;</li>
+<li>Postingan tersebut juga menyebutkan alat baris perintah modern lainnya yang lebih disukai pengguna dibandingkan dengan yang tradisional, seperti <code>bat</code> (pengganti <code>cat</code> dengan penyorotan sintaks) dan <code>rg</code> (ripgrep, alternatif yang lebih cepat untuk <code>grep</code>).</li>
+</ul>
+<h2><a href="https://www.smbc-comics.com/comic/investment-2">Berapa banyak uang yang bisa kita kumpulkan untuk startup yang secara transparan idiot?</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41036844">Reaksi</a></h3>
+<ul>
+<li>Postingan tersebut membahas fenomena penggalangan dana untuk startup dengan ide-ide yang tampaknya tidak masuk akal, menyoroti betapa mudahnya modal dapat diperoleh untuk usaha semacam itu.</li>
+<li>Itu mengkritik ekosistem startup, menyarankan bahwa ekosistem tersebut beroperasi seperti skema &#39;pump and dump&#39;, berpindah dari satu bidang tren ke bidang tren lainnya, sering kali membuang-buang sumber daya.</li>
+<li>Percakapan tersebut mencakup contoh-contoh startup yang sukses dan memperdebatkan nilai serta dampak dari kelompok fokus dan MVP (Minimum Viable Products) dalam pengembangan produk.</li>
+</ul>
+<h2><a href="https://billabear.com/">Suatu sistem penagihan dengan sumber terbuka yang telah saya bangun selama 18 bulan</a></h2>
+<ul>
+<li>Kami menawarkan integrasi mendalam dengan Stripe, memungkinkan kontrol komprehensif atas penagihan, manajemen pajak, dan alur kerja otomatis.</li>
+<li>Fitur-fitur termasuk mengelola tarif pajak di berbagai tingkat, membuat rencana langganan khusus, dan mengintegrasikan dengan alat seperti Slack dan penyedia email.</li>
+<li>Sistem ini mendukung skalabilitas, self-hosting, dan menyediakan wawasan bisnis yang mendetail seperti churn langganan dan nilai umur pelanggan.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031975">Reaksi</a></h3>
+<ul>
+<li>Setelah 18 bulan pengembangan, sebuah sistem penagihan baru yang tersedia sumbernya, Billabear, telah diluncurkan, menawarkan fitur-fitur serupa dengan Stripe tetapi dengan kode sumber yang tersedia di bawah Lisensi Sumber Adil (FSL).</li>
+<li>FSL memungkinkan pengguna untuk mengakses kode sumber, yang beralih ke lisensi Apache 2.0 setelah dua tahun, memberikan lebih banyak fleksibilitas dan kontrol dibandingkan dengan model sumber tertutup Stripe.</li>
+<li>Diskusi menyoroti pentingnya ketersediaan sumber bagi beberapa pengguna, kebutuhan akan lokalisasi yang lebih baik dalam berbagai bahasa, dan kekhawatiran tentang penanganan pajak penjualan negara bagian AS serta kepatuhan GDPR.</li>
+</ul>
+<h2><a href="https://www.computerworld.com/article/2520794/the-workers-have-spoken-theyre-staying-home.html">Para pekerja telah berbicara: Mereka tetap di rumah</a></h2>
+<ul>
+<li>Dell&#39;s policy requiring in-office presence for promotions was largely ignored, with many employees opting to stay home.</li>
+<li>Menurut laporan Gartner, 48% karyawan percaya bahwa kebijakan perusahaan lebih mengutamakan preferensi para pemimpin daripada kebutuhan mereka sendiri.</li>
+<li>Kerja jarak jauh semakin disukai karena manfaatnya, termasuk tidak ada perjalanan, keseimbangan kerja-hidup yang lebih baik, penghematan biaya, dan fleksibilitas, dengan para pekerja berkinerja tinggi mencari peluang kerja jarak jauh.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41037097">Reaksi</a></h3>
+<ul>
+<li>Para pekerja enggan kembali ke kantor karena lingkungan yang buruk, kurangnya meja permanen, dan masalah produktivitas dalam pengaturan ruang terbuka.</li>
+<li>Banyak karyawan menemukan bahwa bekerja dari jarak jauh lebih efisien dan enggan kembali ke kondisi kantor yang kurang optimal, dengan perjalanan menjadi faktor yang signifikan.</li>
+<li>Beberapa perusahaan menggunakan mandat kembali ke kantor sebagai strategi untuk mengurangi jumlah karyawan tanpa harus melakukan PHK, yang memicu perdebatan berkelanjutan tentang pengaturan kerja yang optimal.</li>
+</ul>
+<h2><a href="https://jim.rees.org/apollo-archive/marketing/1988-ApolloDN10000ProductBrochure.pdf">Apollo DN10000: Workstation Quad CPU/128Mb RAM dari tahun 1988 [pdf]</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41029987">Reaksi</a></h3>
+<ul>
+<li>Workstation Apollo DN10000, dengan empat CPU dan RAM 128MB dari tahun 1988, sedang dibicarakan dengan penuh nostalgia karena signifikansi historis dan kemampuan teknisnya.</li>
+<li>Pengguna mengingat penggunaannya di laboratorium universitas dan perannya dalam pemrograman grafis awal, meskipun lingkungan Unix yang kompleks dan tantangan konfigurasi.</li>
+<li>Biaya tinggi mesin tersebut, hingga $250,000 pada tahun 1980-an (setara dengan sekitar $660,000 saat ini), menyoroti status premiumnya dan kemajuan teknologi yang signifikan sejak saat itu.</li>
+</ul>
+<h2><a href="https://www.theregister.com/2024/07/21/crowdstrike_linux_crashes_restoration_tools/">Sensor Falcon dari CrowdStrike juga dikaitkan dengan kernel panik dan crash pada Linux</a></h2>
+<ul>
+<li>Kegagalan sistem telah terjadi pada perangkat lunak Falcon Sensor dari CrowdStrike di Windows dan Linux, termasuk Red Hat Enterprise Linux 9.4, Debian, dan Rocky Linux.</li>
+<li>Menonaktifkan Sementara Sensor Falcon menstabilkan sistem yang terpengaruh, dan CrowdStrike sedang menguji alat pemulihan cepat untuk mengatasi masalah tersebut.</li>
+<li>Gangguan tersebut telah memiliki dampak global yang signifikan, termasuk pembatalan penerbangan dan penundaan layanan kesehatan, dengan Microsoft memperkirakan 8,5 juta mesin Windows terpengaruh.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41030352">Reaksi</a></h3>
+<ul>
+<li>Koneksi antara Falcon Sensor dari CrowdStrike dengan kernel panik dan crash pada Linux berbeda dengan masalah BSOD (Blue Screen of Death) pada Windows.</li>
+<li>Kernel panik pada Linux kemungkinan disebabkan oleh bug dalam implementasi eBPF (Extended Berkeley Packet Filter) kernel, yang mungkin berasal dari patch khusus Red Hat, menunjukkan adanya bug kernel daripada masalah vendor.</li>
+<li>Diskusi tersebut menyoroti tantangan dalam mendukung berbagai versi OS dan kompleksitas yang terlibat dalam pengujian modul kernel, dengan menekankan perbedaan dalam rekayasa keandalan kernel antara Linux dan Windows.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Jellyfin: Kami Baik-Baik Saja, Serius" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Jellyfin%3A%20Kami%20Baik-Baik%20Saja%2C%20Serius&subheading=Senin%2C%2022%20Juli%202024%3A%20Ringkasan%20Berita%20Peretas" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/id/2024/07/22</link>
+            <guid isPermaLink="false">2024-07-22T00:00:00.000Z</guid>
+            <pubDate>Mon, 22 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-21]]></title>
             <description
@@ -1688,197 +1869,6 @@
             <link>https://hn.cho.sh/id/2024/07/13</link>
             <guid isPermaLink="false">2024-07-13T00:00:00.000Z</guid>
             <pubDate>Sat, 13 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-12]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/12&#39;</h2>
-<h1>2024-07-12</h1>
-<h2><a href="https://webvm.io/">WebVM adalah lingkungan virtual Linux tanpa server yang berjalan di sisi klien</a></h2>
-<ul>
-<li>WebVM adalah lingkungan virtual Linux tanpa server yang berjalan sepenuhnya di sisi klien menggunakan HTML5 dan WebAssembly, didukung oleh mesin virtualisasi CheerpX.</li>
-<li>Itu memungkinkan eksekusi biner x86 yang aman dan terisolasi di browser mana pun, dengan fitur kompiler JIT (Just-In-Time) x86-ke-WebAssembly, sistem file berbasis blok virtual, dan emulator syscall Linux.</li>
-<li>Fitur baru: Pengguna sekarang dapat membuat gambar WebVM kustom menggunakan Dockerfile, meningkatkan fleksibilitas dan kustomisasi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40940225">Reaksi</a></h3>
-<ul>
-<li>WebVM adalah lingkungan virtual Linux tanpa server yang berjalan di sisi klien, memanfaatkan build CheerpX yang dihosting oleh Leaning Technologies dan mendukung jaringan melalui Tailscale.</li>
-<li>Berbeda dengan emulator sistem penuh, WebVM berfungsi sebagai emulator syscall Linux untuk biner userland, menawarkan fleksibilitas dan kecepatan yang lebih tinggi.</li>
-<li>Itu bukan open-source, dan self-hosting mesin CheerpX dilarang, membuatnya cocok untuk pendidikan, dokumentasi langsung, pelestarian perangkat lunak, dan pengembangan web IDE, meskipun memiliki keterbatasan seperti masalah kinerja pada perangkat mobile dan fungsionalitas offline yang parsial.</li>
-</ul>
-<h2><a href="https://techcrunch.com/2024/07/12/att-phone-records-stolen-data-breach/">AT&amp;T mengatakan para penjahat mencuri catatan telepon dari &#39;hampir semua&#39; pelanggan dalam pelanggaran data</a></h2>
-<ul>
-<li>AT&amp;T mengonfirmasi adanya pelanggaran data yang memengaruhi hampir 110 juta pelanggan, yang melibatkan nomor telepon, catatan panggilan dan pesan teks, serta informasi terkait lokasi.</li>
-<li>Pelanggaran tersebut, yang terkait dengan penyedia data cloud Snowflake, mencakup metadata tetapi tidak termasuk konten panggilan atau pesan teks.</li>
-<li>Kekhawatiran keamanan nasional membuat FBI dan DOJ menunda pemberitahuan publik, menandai insiden keamanan kedua AT&amp;T tahun ini.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40944505">Reaksi</a></h3>
-<ul>
-<li>AT&amp;T mengalami pelanggaran data yang mempengaruhi hampir semua pelanggan, mengekspos metadata panggilan dan teks tetapi tidak termasuk konten atau cap waktu.</li>
-<li>Meskipun terjadi penurunan saham awal, pasar tetap sebagian besar tidak terpengaruh, mencerminkan keyakinan bahwa perusahaan menghadapi konsekuensi finansial yang minimal untuk pelanggaran semacam itu.</li>
-<li>Insiden tersebut, yang terkait dengan platform cloud Snowflake, telah memicu seruan untuk kebijakan retensi data yang lebih ketat, praktik keamanan yang lebih baik, dan potensi denda besar atau tuntutan hukum untuk menegakkan akuntabilitas perusahaan.</li>
-</ul>
-<h2><a href="https://physicsbaseddeeplearning.org/intro.html">Fisika Berbasis Pembelajaran Mendalam Buku</a></h2>
-<ul>
-<li>The Physics-based Deep Learning Book (v0.2) memberikan pengenalan praktis tentang pembelajaran mendalam dalam simulasi fisik, dengan contoh-contoh praktis menggunakan Jupyter notebook.</li>
-<li>Baru di versi 0.2: Bagian yang diperluas tentang mengintegrasikan pemrograman yang dapat dibedakan (DP) ke dalam pelatihan jaringan saraf (NN) dan bab baru tentang metode pembelajaran yang ditingkatkan untuk masalah fisika.</li>
-<li>Pembaruan di masa depan akan mencakup bab tentang pelatihan jaringan untuk prediksi aliran fluida, menggunakan persamaan model sebagai residu, berinteraksi dengan simulator untuk masalah invers, dan memanfaatkan informasi orde tinggi untuk jaringan neural yang lebih baik.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40941056">Reaksi</a></h3>
-<ul>
-<li>Telah diperkenalkan sebuah buku baru berjudul &quot;Physics-Based Deep Learning&quot;, yang berfokus pada penerapan pembelajaran mendalam pada simulasi fisika daripada konsep pembelajaran mendalam umum dari perspektif seorang fisikawan.</li>
-<li>Buku ini mencakup contoh kode praktis dalam Jupyter notebook, batasan kerugian fisik, simulasi yang dapat dibedakan, algoritma pelatihan untuk masalah fisika, pembelajaran penguatan, dan pemodelan ketidakpastian.</li>
-<li>Buku ini diproduksi oleh Physics-based Simulation Group dan tersedia untuk diunduh di arXiv, dengan sumber daya tambahan dan diskusi yang tersedia di berbagai platform seperti YouTube dan GitHub.</li>
-</ul>
-<h2><a href="https://ochagavia.nl/blog/using-s3-as-a-container-registry/">Penggunaan S3 sebagai Container Registry</a></h2>
-<ul>
-<li>Seorang pengembang telah mendemonstrasikan penggunaan Amazon S3 sebagai registry kontainer dengan mengekspos bucket S3 melalui HTTP dan mengunggah file gambar kontainer ke jalur tertentu, memungkinkan operasi <code>docker pull</code>.</li>
-<li>Kelebihan utama menggunakan S3 dibandingkan dengan registri kontainer tradisional seperti DockerHub atau Amazon ECR adalah kecepatan unggah yang jauh lebih cepat karena unggahan terpotong paralel.</li>
-<li>Pendekatan eksperimental ini tidak memiliki fitur seperti pemindaian keamanan otomatis dan kontrol akses, tetapi dapat mengarah pada hosting gambar kontainer publik di Cloudflare&#39;s R2 dengan egress gratis.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40942732">Reaksi</a></h3>
-<ul>
-<li>Penggunaan Amazon S3 sebagai registry kontainer sedang dibahas, menyoroti potensinya sebagai alternatif untuk registry kontainer tradisional seperti DockerHub dan AWS ECR.</li>
-<li>Percakapan tersebut mengkritik Spesifikasi Distribusi OCI (Open Container Initiative) karena ketidakefisienannya, seperti mengharuskan pengunggahan lapisan secara berurutan dan tidak adanya paginasi standar untuk daftar tag.</li>
-<li>Dampak Docker pada pengembangan perangkat lunak diperdebatkan, dengan beberapa memuji penyederhanaan manajemen dependensinya dan yang lain mengkritiknya karena tidak meningkatkan keandalan produk akhir atau kecepatan pengembangan.</li>
-</ul>
-<h2><a href="https://nelson.cloud/as-an-employee-you-are-disposable/">Sebagai Karyawan, Anda Dapat Digantikan (2023)</a></h2>
-<ul>
-<li>PHK teknologi baru-baru ini menunjukkan bahwa karyawan sering dianggap sebagai barang sekali pakai oleh eksekutif, bahkan di perusahaan yang menguntungkan.</li>
-<li>Perusahaan seperti Microsoft terus melakukan pemutusan hubungan kerja dan membekukan gaji meskipun melebihi ekspektasi investor dan memiliki pendapatan yang tinggi.</li>
-<li>Karyawan kaya, seperti Tim Gurner, telah membuat komentar yang memperkuat gagasan bahwa karyawan dapat digantikan, terlepas dari kontribusi atau masa kerja mereka.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40943436">Reaksi</a></h3>
-<ul>
-<li>Perusahaan adalah entitas transaksional dan mungkin memberhentikan karyawan ketika hal itu menguntungkan mereka, menekankan bahwa karyawan tidaklah tak tergantikan.</li>
-<li>Over-hiring dan pemutusan hubungan kerja sering kali merupakan strategi untuk meningkatkan nilai pemegang saham, yang menyoroti pentingnya karyawan untuk fokus pada kepentingan mereka sendiri dan mencari kompensasi yang adil.</li>
-<li>Mempertimbangkan serikat pekerja dan kode sumber terbuka dapat bermanfaat bagi pengembang, memperkuat gagasan bahwa hubungan antara pemberi kerja dan karyawan pada dasarnya adalah kesepakatan bisnis.</li>
-</ul>
-<h2><a href="https://github.com/Wack0/maciNTosh">Windows NT untuk Power Macintosh</a></h2>
-<ul>
-<li>Kumpulan repositori ini berisi kode sumber untuk firmware ARC dan pemuatnya, yang ditujukan untuk sistem New World Power Macintosh menggunakan arsitektur Gossamer, termasuk model seperti iMac G3 dan Power Macintosh G3.</li>
-<li>Firmware ARC mendukung berbagai driver, tetapi saat ini hanya NT4 yang kompatibel, dengan potensi dukungan di masa depan untuk NT 3.51.</li>
-<li>Instalasi melibatkan pengunduhan biner, partisi disk, dan mengikuti petunjuk untuk mengatur NT4, dengan masalah yang diketahui seperti ketidakstabilan dan langkah-langkah khusus yang diperlukan untuk dual-booting dengan partisi Mac.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40945076">Reaksi</a></h3>
-<ul>
-<li>Kemunculan seorang pengembang yang berhasil memporting Windows NT untuk berjalan di Power Macintosh telah memicu nostalgia dan diskusi tentang sejarah alternatif sistem operasi.</li>
-<li>Windows NT dirancang untuk dapat dipindahkan, mendukung berbagai arsitektur seperti PowerPC, MIPS, dan Alpha, meskipun terutama dikenal untuk x86.</li>
-<li>Proyek ini menyoroti kelayakan teknis dalam mengadaptasi NT ke berbagai platform perangkat keras, menunjukkan modularitas dari desainnya.</li>
-</ul>
-<h2><a href="https://news.mit.edu/2024/charmed-collaboration-creates-therapy-candidate-fatal-prion-diseases-0627">Alat pemadam gen menunjukkan harapan sebagai terapi masa depan melawan penyakit prion</a></h2>
-<ul>
-<li>CHARM (Coupled Histone tail for Autoinhibition Release of Methyltransferase) adalah alat baru untuk penghambatan gen yang dikembangkan oleh Broad Institute dan Whitehead Institute, menunjukkan potensi untuk mengobati penyakit prion dan kondisi neurodegeneratif lainnya.</li>
-<li>Alat ini menggunakan pengeditan epigenetik untuk membungkam gen penyebab penyakit, termasuk gen protein prion, tanpa mengubah DNA dasar, yang berpotensi menawarkan pengobatan satu kali.</li>
-<li>Kami tim peneliti yang dipimpin oleh Sonia Vallabh dan Jonathan Weissman telah membuat kemajuan signifikan, menciptakan penghambat gen yang ringkas, efektif, dan rendah toksisitas, dan sekarang sedang menyempurnakan CHARM untuk uji klinis.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939703">Reaksi</a></h3>
-<ul>
-<li>Alat pemadaman gen, yang dikirimkan melalui Virus Adeno-Asosiasi (AAV), menunjukkan potensi sebagai terapi untuk penyakit prion, yang saat ini 100% fatal dan tahan terhadap penghancuran.</li>
-<li>Alat ini bekerja dengan membungkam gen protein prion, yang berpotensi mencegah atau membalikkan penyakit, dan bisa efektif melawan prion genetik maupun yang didapat.</li>
-<li>Walaupun menjanjikan, efek jangka panjang alat ini terhadap memori dan kognisi masih dalam penyelidikan, dengan penelitian yang sedang berlangsung mengeksplorasi aplikasi untuk penyakit prion-like lainnya seperti Alzheimer dan Parkinson.</li>
-</ul>
-<h2><a href="https://github.com/taubyte/tau">Tau: PaaS Open-source – Alternatif Vercel / Netlify / Cloudflare yang di-hosting sendiri</a></h2>
-<ul>
-<li>Tau adalah kerangka kerja baru yang dirancang untuk membangun platform komputasi awan yang mudah dirawat dan sangat skalabel, berfungsi sebagai alternatif untuk layanan seperti Vercel, Netlify, dan AWS.</li>
-<li>Fitur utama termasuk konfigurasi minimal, perubahan infrastruktur asli Git, jaringan peer-to-peer, dan dukungan untuk WebAssembly, dengan rencana masa depan untuk kontainer dan VM.</li>
-<li>Tau bertujuan untuk mengurangi biaya infrastruktur dan waktu pengembangan, menyediakan platform yang ramah pengembang dengan alat untuk pengembangan lokal dan pengujian menyeluruh.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40946033">Reaksi</a></h3>
-<ul>
-<li>Tau adalah Platform as a Service (PaaS) sumber terbuka dan di-hosting sendiri yang menjadi alternatif untuk Vercel, Netlify, dan Cloudflare, menggunakan libp2p untuk penemuan jaringan otomatis dan IPFS untuk penyimpanan terdistribusi.</li>
-<li>Itu adalah WebAssembly-native, menawarkan manfaat seperti menghindari ketergantungan pada vendor tertentu, tetapi pengguna mencatat bahwa dokumentasinya samar dan konsepnya tidak jelas.</li>
-<li>Perbandingan dengan Kubernetes dan solusi PaaS lainnya seperti Coolify dan CapRover adalah hal yang umum, menunjukkan potensi proyek ini tetapi menyoroti kebutuhan akan dokumentasi yang lebih baik dan komunikasi yang lebih jelas tentang fitur dan manfaatnya.</li>
-</ul>
-<h2><a href="https://github.com/karpathy/llm.c/discussions/677">Karpathy: Mari kita reproduksi GPT-2 (1.6B): satu node 8XH100 selama 24 jam seharga $672 di llm.c</a></h2>
-<ul>
-<li>Para peneliti telah mereproduksi GPT-2 (1.6B) menggunakan llm.c, sebuah implementasi C/CUDA, pada satu node 8XH100 dalam 24 jam dengan biaya $672, melewati tumpukan pembelajaran mendalam berbasis Python seperti PyTorch.</li>
-<li>Meskipun ada beberapa masalah penyetelan dan stabilitas, kinerja model ini sebanding dengan GPT-2, dievaluasi menggunakan metrik seperti kehilangan validasi dan akurasi HellaSwag.</li>
-<li>Postingan tersebut juga mencakup manajemen memori, pelatihan multi-node, dan membandingkan implementasinya dengan versi PyTorch, dengan rencana masa depan untuk mengoptimalkan hyperparameter dan meningkatkan stabilitas pelatihan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939707">Reaksi</a></h3>
-<ul>
-<li>Andrej Karpathy berhasil mereproduksi GPT-2 (1,6 miliar parameter) pada satu node 8XH100 dalam waktu 24 jam dengan biaya $672.</li>
-<li>Perkembangan perangkat keras AI berpotensi menurunkan biaya dan mengurangi waktu pelatihan di masa depan.</li>
-<li>Walaupun AI dalam video game menunjukkan potensi untuk meningkatkan NPC dan penceritaan, teknologi saat ini masih menghadapi keterbatasan yang signifikan, terutama dalam pembuatan teks untuk narasi dan dialog.</li>
-</ul>
-<h2><a href="https://abe.today/blogs/main/floppy8-a-tiny-computer-in-a-floppy-drive">Floppy8 – Sebuah Komputer Kecil, dalam Sebuah Floppy Drive (2023)</a></h2>
-<ul>
-<li>Floppy8 adalah sebuah mikrokomputer dan sistem kartrid yang dibangun di dalam sebuah floppy drive, mampu memutar film 4K dan permainan dengan pengendali nirkabel serta pengeluaran kartrid bermotor.</li>
-<li>Proyek ini melibatkan penggunaan kembali disk drive Amiga 1010, merancang format media baru, serta pencetakan 3D dan rekayasa listrik yang ekstensif untuk memasukkan semua komponen ke dalam drive.</li>
-<li>Kreator menggunakan komputer Latte Panda 3 Delta dan kartrid cetak 3D khusus, mengatasi tantangan dalam keterbatasan ukuran, mekanisme ejeksi, dan kontrol LED untuk menyelesaikan proyek tersebut.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40942141">Reaksi</a></h3>
-<ul>
-<li>Floppy8 adalah komputer kecil yang dibangun ke dalam drive floppy 3,5&quot;, mengingatkan pada proyek komputasi kompak masa lalu seperti klon Amiga 1200 dan Ross SPARCPlug.</li>
-<li>Pembuatnya, abeisgreat, membagikan sebuah video yang merinci proyek tersebut, termasuk kartrid berbasis kartu SD dan aspek teknis lainnya, yang memicu minat dan kekaguman di komunitas teknologi.</li>
-<li>Diskusi menyoroti nostalgia dan inovasi dalam menyesuaikan komputer ke dalam faktor bentuk kecil, dengan referensi pada upaya historis dan proyek DIY modern.</li>
-</ul>
-<h2><a href="https://blog.fal.ai/auraflow/">AuraFlow v0.1: alternatif sumber terbuka untuk Stable Diffusion 3</a></h2>
-<ul>
-<li>AuraFlow v0.1 adalah model generasi teks-ke-gambar berbasis aliran yang bersumber terbuka, menunjukkan ketahanan komunitas AI sumber terbuka.</li>
-<li>Model ini unggul dalam menghasilkan gambar yang detail dari deskripsi teks dan menggabungkan teknik-teknik canggih seperti transfer laju pembelajaran zero-shot dan re-captioning.</li>
-<li>Dengan 6,8 miliar parameter, AuraFlow dilatih selama empat minggu, mencapai skor GenEval yang tinggi, dan rencana masa depan termasuk pelatihan lebih lanjut serta mengembangkan model yang efisien untuk GPU konsumen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40941853">Reaksi</a></h3>
-<ul>
-<li>AuraFlow v0.1 adalah alternatif sumber terbuka untuk Stable Diffusion 3, menunjukkan potensi meskipun masih dalam rilis awal.</li>
-<li>Kinerja model baik pada perintah sederhana tetapi kesulitan dengan yang kompleks dan negasi, menunjukkan area yang perlu ditingkatkan.</li>
-<li>Diskusi menyoroti keterbatasan model dalam menghasilkan tubuh manusia yang realistis dan menangani petunjuk teks yang bernuansa, mencerminkan tantangan yang sedang berlangsung dalam pembuatan gambar AI.</li>
-</ul>
-<h2><a href="https://mazzo.li/posts/value-speculation.html">Melampaui cache L1 dengan spekulasi nilai (2021)</a></h2>
-<ul>
-<li>Kirimannya membahas penggunaan spekulasi nilai untuk meningkatkan kinerja CPU dengan memanfaatkan prediktor cabang untuk menebak nilai dan mengurangi ketergantungan data dalam loop yang ketat.</li>
-<li>Melalui spekulasi alamat node berikutnya dalam fungsi penjumlahan linked list, teknik ini bertujuan untuk melewati penundaan pembacaan cache L1, yang menghasilkan peningkatan kinerja yang signifikan.</li>
-<li>Meskipun kompiler sering mengoptimalkan trik ini, menggunakan assembly inline memastikan spekulasi tetap ada, yang mengarah pada peningkatan kecepatan fungsi sebesar 50-200% ketika data sesuai dengan cache CPU.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40940241">Reaksi</a></h3>
-<ul>
-<li>Artikel &#39;Mengalahkan cache L1 dengan spekulasi nilai&#39; (2021) oleh mazzo.li mengeksplorasi pengoptimalan tata letak memori dalam daftar tertaut melalui spekulasi nilai, menekankan pentingnya tata letak memori linear dari node-node.</li>
-<li>Para komentator memperdebatkan kepraktisan dan efektivitas metode ini, dengan beberapa menghargai kecerdasannya tetapi mempertanyakan penerapannya secara luas.</li>
-<li>Diskusi juga mencakup detail teknis terkait seperti eksekusi instruksi, model memori, potensi kasus penggunaan, dan kemungkinan kompilator mengotomatisasi optimasi semacam itu.</li>
-</ul>
-<h2><a href="https://gizmodo.com/apple-vision-pro-u-s-sales-2000469302">Penjualan Apple Vision Pro di AS Hampir Mati, Kata Analis Pasar</a></h2>
-<ul>
-<li>Penjualan Apple Vision Pro di AS menurun tajam, dengan penurunan yang diproyeksikan mencapai 75% pada akhir Agustus 2024, karena sebagian besar pembeli yang tertarik telah membeli headset seharga $3.500 tersebut.</li>
-<li>Model saat ini belum mencapai 100.000 unit terjual, sehingga Apple menurunkan ekspektasi penjualannya dan mempertimbangkan model yang lebih murah, yang dikabarkan sekitar $1.750, untuk tahun 2025.</li>
-<li>Apple juga sedang mengembangkan pembaruan visionOS untuk meningkatkan pengalaman pengguna, yang mungkin dapat membantu mempertahankan minat hingga peluncuran headset yang lebih terjangkau.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939627">Reaksi</a></h3>
-<ul>
-<li>Penjualan Apple Vision Pro di AS kurang memuaskan karena minat pengguna dan dukungan pengembang yang terbatas.</li>
-<li>Kendala utama adalah harga tinggi sebesar $3500 dan konten yang terbatas, yang menghalangi baik konsumen maupun pengembang.</li>
-<li>Analis menyarankan Apple mungkin perlu mempertimbangkan kembali strateginya, mungkin dengan menciptakan versi yang lebih terjangkau atau meningkatkan ekosistem perangkat lunaknya untuk memperluas daya tarik.</li>
-</ul>
-<h2><a href="https://alderongames.com/intel-crashes">Intel menjual CPU Generasi ke-13 dan ke-14 yang cacat</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40946644">Reaksi</a></h3>
-<ul>
-<li>Intel diduga menjual CPU Generasi ke-13 dan ke-14 yang cacat, yang menyebabkan crash, BSOD (Blue Screen of Death), dan kesalahan lainnya, dengan beberapa laporan menunjukkan bahwa masalah tersebut semakin memburuk seiring waktu.</li>
-<li>Sumber terpercaya seperti RadGames dan Level1Techs telah mengonfirmasi masalah ketidakstabilan ini, yang mungkin terkait dengan strategi manajemen daya dan termal agresif dari Intel.</li>
-<li>Karena masalah yang terus-menerus ini, banyak pengguna mempertimbangkan untuk beralih ke AMD sebagai alternatif.</li>
-</ul>
-<h2><a href="https://www.geaerospace.com/news/press-releases/ge-aerospace-successfully-develops-and-tests-new-hypersonic-dual-mode-ramjet">GE Aerospace Berhasil Mengembangkan dan Menguji Ramjet Dual-Mode Hipersonik Baru</a></h2>
-<ul>
-<li>GE Aerospace telah berhasil mengembangkan dan menguji ramjet dual-mode hipersonik baru dalam waktu kurang dari 11 bulan, menunjukkan peningkatan aliran udara tiga kali lipat dibandingkan teknologi sebelumnya.</li>
-<li>Prestasi ini menegaskan komitmen GE Aerospace untuk memajukan teknologi hipersonik, dengan fase berikutnya berfokus pada pengujian lebih lanjut dan demonstrasi teknologi.</li>
-<li>The project was a collaborative effort between GE Aerospace, Innoveering, and GE Aerospace’s Research Center, highlighting the rapid progress and dedication of the team.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40943253">Reaksi</a></h3>
-<ul>
-<li>GE Aerospace, bekerja sama dengan Innoveering dan Pusat Penelitian mereka, telah mengembangkan dan menguji ramjet dual-mode hipersonik baru dalam waktu kurang dari 11 bulan.</li>
-<li>Kemungkinan teknologi ini didasarkan pada desain yang sudah ada, ditujukan untuk rudal atau pesawat berkecepatan tinggi, bukan penerbangan komersial, karena kecepatan dan kondisi yang ekstrem.</li>
-<li>Proyek ini menekankan kemajuan signifikan dalam propulsi hipersonik, yang sangat penting untuk aplikasi militer.</li>
-</ul>
-<head>
-  <meta property="og:title" content="WebVM adalah lingkungan virtual Linux tanpa server yang berjalan di sisi klien" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=WebVM%20adalah%20lingkungan%20virtual%20Linux%20tanpa%20server%20yang%20berjalan%20di%20sisi%20klien&subheading=Jumat%2C%2012%20Juli%202024%3A%20Ringkasan%20Berita%20Peretas" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/id/2024/07/12</link>
-            <guid isPermaLink="false">2024-07-12T00:00:00.000Z</guid>
-            <pubDate>Fri, 12 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

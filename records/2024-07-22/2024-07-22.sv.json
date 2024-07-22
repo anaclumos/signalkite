@@ -1,0 +1,320 @@
+[
+  {
+    "id": 41031998,
+    "title": "Jellyfin: Vi är bra, på riktigt",
+    "originLink": "https://forum.jellyfin.org/t-we-re-good-seriously",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031998",
+    "commentBody": "",
+    "originSummary": [
+      "Jellyfin har en budget på över 24 000 dollar, vilket täcker 40 månaders utgifter, och ber användare att omdirigera donationer till författarna av de klienter de använder.",
+      "Denna begäran överensstämmer med Jellyfins policy om \"ingen betald utveckling\", eftersom donationer är frivilliga och projektet kommer att omvärdera om medlen sjunker till 12 månaders drift.",
+      "Medlemmar i samhället svarar positivt, med planer på att stödja klientförfattare och förfrågningar om specifikt klientsupport som WebOS."
+    ],
+    "commentSummary": [
+      "Jellyfin, ett öppen källkodsprojekt för medieservrar, meddelade att de har tillräckliga medel och föreslog att givare istället stödjer andra projekt inom ekosystemet.",
+      "Gemenskapen är delad i denna fråga; vissa anser att medel bör fördelas till ekosystemutvecklare, medan andra håller med Jellyfins beslut att undvika ytterligare administrativa bördor.",
+      "Diskussionen belyser komplexiteten och potentiella problem med att hantera donationer inom öppen källkodsprojekt, inklusive transparens, administrativt arbete och att bibehålla fokus på kärnutveckling."
+    ],
+    "points": 511,
+    "commentCount": 264,
+    "retryCount": 0,
+    "time": 1721636767
+  },
+  {
+    "id": 41029287,
+    "title": "Stift",
+    "originLink": "https://without.boats/blog/pin/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41029287",
+    "commentBody": "",
+    "originSummary": [
+      "Pin-typen och konceptet med pinning är väsentliga men ofta missförstådda komponenter i Rusts asynkrona ekosystem.",
+      "Pin introducerades för att stödja självrefererande typer i asynkron Rust, vilket säkerställer att objekt inte flyttas när de innehåller självreferenser, till skillnad från Mojo, som hanterar objektidentitet på ett inneboende sätt.",
+      "Trots sin nödvändighet introducerar Pin betydande komplexitet för användare på grund av dess brist på syntaktiskt socker och stöd, vilket leder till problem som omutlånande, fastnålade projektioner och interaktioner med Drop-egenskapen."
+    ],
+    "commentSummary": [
+      "Diskussionen kretsar kring programmeringsspråket Rusts `Pin`-typ, som ofta missförstås på grund av otydlig dokumentation.",
+      "Pin säkerställer att vissa objekt inte kan flyttas i minnet, vilket är avgörande för självrefererande strukturer, men detta koncept är inte väl förklarat i den officiella dokumentationen.",
+      "Konversationen belyser behovet av bättre dokumentation och analogier för att göra konceptet `Pin` och `Unpin` mer tillgängligt för Rust-utvecklare, särskilt de som är nya i språket."
+    ],
+    "points": 421,
+    "commentCount": 93,
+    "retryCount": 0,
+    "time": 1721604216
+  },
+  {
+    "id": 41031037,
+    "title": "Jiff: Datumbibliotek för Rust",
+    "originLink": "https://github.com/BurntSushi/jiff",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031037",
+    "commentBody": "",
+    "originSummary": [
+      "Jiff är ett nytt Rust-datumbibliotek som fokuserar på användarvänlighet och prestanda, inspirerat av JavaScripts Temporal-förslag.",
+      "Den erbjuder funktioner som hög-nivå datetime-primitiver, sömlös integration med Time Zone Database, DST-medveten aritmetik, formatering, parsning och valfritt stöd för Serde.",
+      "Jiff är dubbellicensierad under MIT eller UNLICENSE, stöder Unix och Windows, och kräver Rust 1.70.0 eller nyare."
+    ],
+    "commentSummary": [
+      "Jiff är ett nytt datetime-bibliotek för Rust, utvecklat av BurntSushi, känd för att skapa högkvalitativa verktyg som ripgrep.",
+      "Biblioteket syftar till att hantera komplexiteter i datum- och tidshantering, såsom DST (sommartid) aritmetik, tidszonsmedvetna beräkningar och retrospektiv detektering av tidszonskonflikter.",
+      "Jiff erbjuder ett mer användarvänligt och flexibelt API jämfört med den befintliga standarden, Chrono, samtidigt som den bibehåller korrekthet och kapacitet i datum- och tidsoperationer."
+    ],
+    "points": 407,
+    "commentCount": 183,
+    "retryCount": 0,
+    "time": 1721624266
+  },
+  {
+    "id": 41033579,
+    "title": "Slut på blåa fredagar",
+    "originLink": "https://www.brendangregg.com/blog/2024-07-22/no-more-blue-fridays.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41033579",
+    "commentBody": "",
+    "originSummary": [
+      "En större avbrott den 19 juli orsakat av en uppdatering av en kärndrivrutin ledde till globala systemkrascher i Windows, vilket belyser behovet av säkrare uppdateringsmekanismer.",
+      "eBPF (extended Berkeley Packet Filter), som redan används i Linux, är en säker exekveringsmiljö för kärnan som kan förhindra sådana krascher och kommer snart att stödjas av Windows.",
+      "eBPF-program är säkerhetskontrollerade och sandlådeförsedda, vilket erbjuder fördelar som förbättrad säkerhet och lägre resursanvändning, med adoption av företag som Cisco, Google och Meta för säkerhet och observabilitet."
+    ],
+    "commentSummary": [
+      "Microsofts eBPF (Extended Berkeley Packet Filter) stöd för Windows är för närvarande begränsat till paketfiltrering, till skillnad från Crowdstrikes omfattande kärnövervakningsdrivrutiner.",
+      "Att integrera eBPF i Windows befintliga ramverk är utmanande, och det är osäkert om Microsoft strävar efter att göra det till en standard.",
+      "eBPF skulle kunna förbättra säkerheten genom att isolera kärnkod, men det är ingen komplett lösning, vilket framhävs av den senaste Crowdstrike-incidenten, som understryker behovet av förbättrade implementeringsmetoder och säkerhetsåtgärder."
+    ],
+    "points": 310,
+    "commentCount": 194,
+    "retryCount": 0,
+    "time": 1721650866
+  },
+  {
+    "id": 41031585,
+    "title": "Analysera, inte validera (2019)",
+    "originLink": "https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031585",
+    "commentBody": "",
+    "originSummary": [
+      "Texten betonar principen \"Analysera, inte validera,\" och förespråkar att analysera data för att bevara information i typsystemet istället för att kassera den genom validering.",
+      "Det förklarar hur typdriven design i språk som Haskell kan omvandla partiella funktioner till totala funktioner genom att stärka argumenttyper, med `NonEmpty`-listor som exempel.",
+      "Praktiska råd inkluderar att använda precisa datastrukturer, refaktorisera för att flytta bevisbördan uppåt och undvika denormaliserade datarepresentationer för att förbättra programmens tillförlitlighet och säkerhet."
+    ],
+    "commentSummary": [
+      "Artikeln \"Parse, Don't Validate\" betonar vikten av att parsa data för att säkerställa korrekthet snarare än att upprepade gånger validera den genom hela programmet.",
+      "Denna metod, som är rotad i koncept som Design by Contract och Domain-Driven Design (DDD), utnyttjar starka typsystem för att upprätthålla garantier och minska fel, vilket gör koden lättare att förstå och underhålla.",
+      "Diskussionen lyfter fram praktiska exempel och fördelar, såsom att använda olika typer för olika valideringssteg och säkerställa att data alltid är i ett giltigt tillstånd, vilket kan förenkla komplexa applikationer och förbättra tillförlitligheten."
+    ],
+    "points": 296,
+    "commentCount": 99,
+    "retryCount": 0,
+    "time": 1721631439
+  },
+  {
+    "id": 41027658,
+    "title": "När ChatGPT sammanfattar, gör den inget sådant",
+    "originLink": "https://ea.rna.nl/2024/05/27/when-chatgpt-summarises-it-actually-does-nothing-of-the-kind/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41027658",
+    "commentBody": "",
+    "originSummary": [
+      "Författaren har utforskat och diskuterat grunderna för ChatGPT och andra generativa AI:er, med målet att ge realistiska perspektiv mot den rådande hypen.",
+      "En viktig insikt är att ChatGPT inte verkligen sammanfattar innehåll utan bara förkortar det, vilket ofta leder till att väsentliga detaljer och förslag missas, vilket framgår av en jämförelse med en människogenererad sammanfattning av ett 50-sidigt dokument.",
+      "Denna begränsning uppstår eftersom sammanfattning kräver förståelse, vilket ChatGPT saknar, vilket leder till skepsis om tillförlitligheten hos LLM (stora språkmodeller) för praktiska affärsapplikationer."
+    ],
+    "commentSummary": [
+      "Författaren hävdar att ChatGPT:s textsammanfattning saknar verklig förståelse, vilket resulterar i ofullständiga och ibland vilseledande sammanfattningar.",
+      "Den kritik som framförs påpekar avsaknaden av detaljer om GPT-modellen, prompten och antalet försök i den ursprungliga analysen.",
+      "Användarupplevelser och åsikter varierar, där vissa finner ChatGPT och andra LLM:er hjälpsamma, medan andra påpekar deras begränsningar och behovet av förbättrad promptning och kontexthantering."
+    ],
+    "points": 243,
+    "commentCount": 167,
+    "retryCount": 0,
+    "time": 1721591800
+  },
+  {
+    "id": 41031960,
+    "title": "Ryanair vinner mål om skärmskrapning mot Booking.com i amerikansk domstol",
+    "originLink": "https://www.rte.ie/news/business/2024/0719/1460807-ryanair-wins-us-court-case-against-bookingcom/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031960",
+    "commentBody": "",
+    "originSummary": [
+      "En amerikansk domstol fastslog att Booking.com bröt mot lagen om datorbedrägeri och missbruk genom att utan tillstånd få tillgång till Ryanairs webbplats, vilket stödjer Ryanairs ståndpunkt mot obehörig skärmskrapning.",
+      "En jury i Delaware District Court fann Booking.com skyldig till obehörig åtkomst med avsikt att bedra och avvisade Booking.coms motkrav om förtal och illojal konkurrens.",
+      "Ryanairs VD Michael O'Leary hoppas att domen kommer att minska olaglig skärmskrapning och överdebitering, medan Booking.com planerar att överklaga och hävdar att prisjämförelser gynnar konsumenternas valmöjligheter."
+    ],
+    "commentSummary": [
+      "Ryanair vann en rättstvist mot Booking.com i en amerikansk domstol för obehörig åtkomst för att återförsälja biljetter, vilket bryter mot Computer Fraud and Abuse Act.",
+      "Utslaget kan påverka andra online-resebyråer som använder liknande metoder och belyser komplexiteten i lagarna kring webbscraping.",
+      "Det spekuleras i att beslutet kan komma att upphävas på grund av motstridiga rättsliga prejudikat."
+    ],
+    "points": 210,
+    "commentCount": 195,
+    "retryCount": 0,
+    "time": 1721636405
+  },
+  {
+    "id": 41032918,
+    "title": "Ingen förväntar sig att unga män ska göra något och de svarar genom att inte göra någonting (2022)",
+    "originLink": "https://www.robkhenderson.com/p/no-one-expects-young-men-to-do-anything",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41032918",
+    "commentBody": "",
+    "originSummary": [
+      "Rob Hendersons inlägg diskuterar bristen på samhälleliga förväntningar för unga män och dess negativa konsekvenser, inklusive ökade arbetslöshets- och fängelsefrekvenser.",
+      "Han hänvisar till \"Promises I Can Keep\" av Kathryn Edin och Maria Kefalas, som undersöker varför kvinnor med låg inkomst ofta prioriterar moderskap framför äktenskap, och tillskriver det dåligt beteende från unga män.",
+      "Henderson kritiserar överklassen för att undergräva normerna för familjestabilitet samtidigt som de ser till att deras egna barn drar nytta av stabila hem, och hävdar att unga män behöver höga förväntningar för att blomstra."
+    ],
+    "commentSummary": [
+      "Artikeln tillskriver fenomenet med 'unga män utan något att göra' till ojämlikhet i förmögenhet och koncentrationen av rikedom bland äldre eliter, vilket driver upp priserna på nödvändigheter och kväver efterfrågan på nya företag.",
+      "Den diskuterar också instabiliteten i familjestrukturer och noterar att samhällsförändringar och ekonomiska påfrestningar har förändrat traditionella familjedynamiker.",
+      "Kommentarer om artikeln debatterar påverkan av frånvarande fäder, kvinnors roll i familjens stabilitet och de bredare samhälleliga och ekonomiska faktorer som bidrar till dessa problem."
+    ],
+    "points": 201,
+    "commentCount": 397,
+    "retryCount": 0,
+    "time": 1721645031
+  },
+  {
+    "id": 41028887,
+    "title": "James C. Scott, författare till Seeing Like a State, har avlidit",
+    "originLink": "https://nitter.poast.org/GerardoMunck/status/1815059432382067053",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41028887",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "James C. Scott, författare till \"Seeing Like a State,\" har gått bort, vilket har lett till reflektioner över hans inflytelserika idéer inom teknikgemenskapen.",
+      "Scotts arbete belyser hur stater och teknik kan upprätthålla enhetlighet, vilket påverkar områden som medicin, utbildning och socialt engagemang genom att minska mångfalden.",
+      "Diskussioner på Hacker News utforskar Scotts koncept, särskilt balansen mellan säkerhet och flexibilitet i mjukvara, samt de bredare konsekvenserna av teknologisk homogenitet."
+    ],
+    "points": 197,
+    "commentCount": 39,
+    "retryCount": 0,
+    "time": 1721601209
+  },
+  {
+    "id": 41031112,
+    "title": "Eza: En modern, underhållen ersättning för ls",
+    "originLink": "https://github.com/eza-community/eza",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031112",
+    "commentBody": "",
+    "originSummary": [
+      "eza är en modern ersättning för ls-kommandot i Unix och Linux, som erbjuder förbättrade funktioner och bättre standardinställningar.",
+      "Viktiga funktioner inkluderar färgkodade filtyper, stöd för symlänkar, utökade attribut, Git-integration och lättlästa datum.",
+      "eza syftar till att vara mer användarvänlig och funktionsrik, med ytterligare stöd för hyperlänkning, monteringspunktsdetaljer, SELinux-kontekst och ljusa terminalfärger."
+    ],
+    "commentSummary": [
+      "Eza introduceras som en modern och aktivt underhållen ersättning för det traditionella `ls`-kommandot, som listar kataloginnehåll i Unix-liknande operativsystem.",
+      "Diskussionen belyser användarfrustrationer med \"lättlästa datum\" i kataloglistor och förespråkar exakta tidsstämplar istället för relativa tidsformat som \"1 dag sedan.\"",
+      "Posten nämner också andra moderna kommandoradsverktyg som användare föredrar framför traditionella, såsom `bat` (en ersättning för `cat` med syntaxmarkering) och `rg` (ripgrep, ett snabbare alternativ till `grep`)."
+    ],
+    "points": 194,
+    "commentCount": 162,
+    "retryCount": 0,
+    "time": 1721625443
+  },
+  {
+    "id": 41036844,
+    "title": "Hur mycket pengar kan vi samla in för genomskinligt idiotiska startups?",
+    "originLink": "https://www.smbc-comics.com/comic/investment-2",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41036844",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Artikeln diskuterar fenomenet att samla in pengar till startups med till synes nonsensiska idéer, och belyser hur enkelt det är att få kapital för sådana projekt.",
+      "Den kritiserar startup-ekosystemet och antyder att det fungerar som ett \"pump and dump\"-schema, där man rör sig från ett trendigt område till ett annat och ofta slösar resurser.",
+      "Konversationen inkluderar exempel på framgångsrika startups och diskuterar värdet och effekten av fokusgrupper och MVPs (Minimum Viable Products) i produktutveckling."
+    ],
+    "points": 171,
+    "commentCount": 86,
+    "retryCount": 0,
+    "time": 1721668554
+  },
+  {
+    "id": 41031975,
+    "title": "En tillgänglig källkodsfaktureringssystem som jag har tillbringat 18 månader med att bygga",
+    "originLink": "https://billabear.com/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41031975",
+    "commentBody": "",
+    "originSummary": [
+      "Plattformen erbjuder djup integration med Stripe, vilket möjliggör omfattande kontroll över fakturering, skattehantering och automatiserade arbetsflöden.",
+      "Funktioner inkluderar hantering av skattesatser på olika nivåer, skapa anpassade prenumerationsplaner och integrering med verktyg som Slack och e-postleverantörer.",
+      "Systemet stöder skalbarhet, egen hosting och ger detaljerade affärsinsikter som prenumerationsbortfall och livstidsvärde."
+    ],
+    "commentSummary": [
+      "Efter 18 månaders utveckling har ett nytt källkodstillgängligt faktureringssystem, Billabear, lanserats, som erbjuder funktioner liknande Stripe men med källkoden tillgänglig under Fair Source License (FSL).",
+      "FSL tillåter användare att komma åt källkoden, som övergår till en Apache 2.0-licens efter två år, vilket ger mer flexibilitet och kontroll jämfört med Stripes slutna källkodsmodell.",
+      "Diskussioner belyser vikten av källtillgänglighet för vissa användare, behovet av bättre lokalisering på olika språk och oro över hanteringen av amerikansk delstatlig försäljningsskatt och GDPR-efterlevnad."
+    ],
+    "points": 167,
+    "commentCount": 84,
+    "retryCount": 0,
+    "time": 1721636536
+  },
+  {
+    "id": 41037097,
+    "title": "Arbetarna har sagt sitt: De stannar hemma",
+    "originLink": "https://www.computerworld.com/article/2520794/the-workers-have-spoken-theyre-staying-home.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41037097",
+    "commentBody": "",
+    "originSummary": [
+      "Dells policy som krävde närvaro på kontoret för befordran ignorerades till stor del, med många anställda som valde att stanna hemma.",
+      "En rapport från Gartner visar att 48% av de anställda anser att företagets direktiv gynnar ledarnas preferenser framför deras egna behov.",
+      "Distansarbete föredras alltmer för sina fördelar, inklusive inga pendlingar, bättre balans mellan arbete och privatliv, kostnadsbesparingar och flexibilitet, med högpresterande individer som söker fjärrarbetsmöjligheter."
+    ],
+    "commentSummary": [
+      "Arbetare är ovilliga att återvända till kontoren på grund av dåliga miljöer, brist på permanenta skrivbord och produktivitetsproblem i öppna kontorslandskap.",
+      "Flera anställda tycker att distansarbete är mer effektivt och är motvilliga till att återvända till suboptimala kontorsförhållanden, där pendling är en betydande faktor.",
+      "Vissa företag använder återgång till kontoret-mandat som en strategi för att minska personalstyrkan utan att behöva genomföra uppsägningar, vilket eldar på den pågående debatten om optimala arbetsarrangemang."
+    ],
+    "points": 158,
+    "commentCount": 145,
+    "retryCount": 0,
+    "time": 1721669795
+  },
+  {
+    "id": 41029987,
+    "title": "Apollo DN10000: Quad CPU/128Mb RAM arbetsstation från 1988 [pdf]",
+    "originLink": "https://jim.rees.org/apollo-archive/marketing/1988-ApolloDN10000ProductBrochure.pdf",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41029987",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Den Apollo DN10000, en arbetsstation med fyra CPU:er och 128MB RAM från 1988, diskuteras nostalgiskt för dess historiska betydelse och tekniska kapacitet.",
+      "Användare minns dess användning i universitetslaboratorier och dess roll i tidig grafikprogrammering, trots dess komplexa Unix-miljö och konfigurationsutmaningar.",
+      "Maskinens höga kostnad, upp till 250 000 dollar på 1980-talet (motsvarande cirka 660 000 dollar idag), understryker dess premiumstatus och de betydande teknologiska framstegen sedan dess."
+    ],
+    "points": 156,
+    "commentCount": 122,
+    "retryCount": 0,
+    "time": 1721610732
+  },
+  {
+    "id": 41030352,
+    "title": "CrowdStrikes Falcon Sensor kopplas också till panik och krascher i Linux-kärnan",
+    "originLink": "https://www.theregister.com/2024/07/21/crowdstrike_linux_crashes_restoration_tools/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41030352",
+    "commentBody": "",
+    "originSummary": [
+      "CrowdStrikes Falcon Sensor-programvara har orsakat systemkrascher på både Windows och Linux, inklusive Red Hat Enterprise Linux 9.4, Debian och Rocky Linux.",
+      "Att inaktivera Falcon-sensorn stabiliserar tillfälligt de påverkade systemen, och CrowdStrike testar ett snabbåterställningsverktyg för att åtgärda problemet.",
+      "Störningen har haft betydande globala konsekvenser, inklusive inställda flyg och förseningar inom sjukvården, med Microsofts uppskattning att 8,5 miljoner Windows-maskiner har påverkats."
+    ],
+    "commentSummary": [
+      "CrowdStrikes Falcon Sensor har kopplats till panik och krascher i Linux-kärnan, vilket skiljer sig från Windows BSOD (Blue Screen of Death) problem.",
+      "Linux-kernelpanikerna beror sannolikt på en bugg i kernelns eBPF (Extended Berkeley Packet Filter)-implementering, potentiellt från en Red Hat-specifik patch, vilket indikerar en kernelbugg snarare än ett leverantörsproblem.",
+      "Diskussionen belyser utmaningarna med att stödja flera OS-versioner och de komplexiteter som är involverade i testning av kärnmoduler, och betonar skillnaderna i kärnans tillförlitlighetsingenjörskonst mellan Linux och Windows."
+    ],
+    "points": 154,
+    "commentCount": 141,
+    "retryCount": 0,
+    "time": 1721614932
+  }
+]

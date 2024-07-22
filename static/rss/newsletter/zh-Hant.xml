@@ -15,12 +15,193 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 21 Jul 2024 19:12:36 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 22 Jul 2024 19:20:32 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/zh-Hant.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 21 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 22 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[zh-Hant]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-22]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/22&#39;</h2>
+<h1>2024-07-22</h1>
+<h2><a href="https://forum.jellyfin.org/t-we-re-good-seriously">Jellyfin：我們真的很棒</a></h2>
+<ul>
+<li>「Jellyfin 的預算超過 24,000 美元，涵蓋 40 個月的開支，並請求用戶將捐款轉向他們所使用的客戶端作者。」</li>
+<li>「此請求符合 Jellyfin 的『無付費開發』政策，因為捐款是自願的，且如果資金減少到僅能支撐 12 個月的運營，該專案將重新評估。」</li>
+<li>社群成員反應積極，計劃支持客戶作者並詢問有關特定客戶支持的問題，例如 WebOS。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031998">評論</a></h3>
+<ul>
+<li>「Jellyfin，一個開源媒體伺服器專案，宣布他們已經有足夠的資金，並建議捐助者支持其他生態系統專案。」</li>
+<li>社群對於這種做法存在分歧；有些人認為資金應該分配給生態系統開發者，而另一些人則同意 Jellyfin 的決定，避免增加額外的行政負擔。</li>
+<li>討論強調了在開源專案中管理捐款的複雜性和潛在問題，包括透明度、行政負擔以及保持對核心開發的專注。</li>
+</ul>
+<h2><a href="https://without.boats/blog/pin/">針腳</a></h2>
+<ul>
+<li>Pin 類型和固定的概念是 Rust 非同步生態系統中至關重要但經常被誤解的組成部分。</li>
+<li>“Pin 是為了支援 async Rust 中的自我參照型別而引入的，確保物件在包含自我參照後不會移動，不同於 Mojo，後者本身就處理物件的身份問題。”</li>
+<li>儘管其必要性，Pin 由於缺乏語法糖和支援，為使用者帶來了顯著的複雜性，導致了重新借用、固定投影以及與 Drop 特徵的互動等問題。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41029287">評論</a></h3>
+<ul>
+<li>「討論圍繞著 Rust 程式語言的 <code>Pin</code> 類型，這個類型經常因為文件不清楚而被誤解。」</li>
+<li>Pin 確保某些物件在記憶體中不能被移動，這對於自我參照的結構體來說至關重要，但這個概念在官方文件中並沒有被很好地解釋。</li>
+<li>這段對話強調了需要更好的文件和類比，以使 <code>Pin</code> 和 <code>Unpin</code> 的概念對 Rust 開發者，特別是那些新手，更容易理解。</li>
+</ul>
+<h2><a href="https://github.com/BurntSushi/jiff">Jiff：Rust 的日期時間函式庫</a></h2>
+<ul>
+<li>Jiff 是一個新的 Rust 日期時間函式庫，專注於易用性和效能，靈感來自 JavaScript 的 Temporal 提案。</li>
+<li>它提供了高階的日期時間原語、無縫整合的時區資料庫、支援夏令時間的運算、格式化、解析，以及可選的 Serde 支援。</li>
+<li>Jiff 採用 MIT 或 UNLICENSE 雙重授權，支援 Unix 和 Windows，並需要 Rust 1.70.0 或更新版本。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031037">評論</a></h3>
+<ul>
+<li>「Jiff 是一個由 BurntSushi 開發的新 Rust 日期時間函式庫，他以創建高品質工具如 ripgrep 而聞名。」</li>
+<li>該程式庫旨在解決日期時間處理中的複雜問題，例如夏令時間(DST)運算、時區感知計算以及回溯時區衝突檢測。</li>
+<li>Jiff 提供比現有標準 Chrono 更加使用者友好且靈活的 API，同時在日期時間操作中保持正確性和功能性。</li>
+</ul>
+<h2><a href="https://www.brendangregg.com/blog/2024-07-22/no-more-blue-fridays.html">No More Blue Fridays</a></h2>
+<ul>
+<li>7月19日發生的一次重大故障，由於核心驅動程式更新導致全球 Windows 系統崩潰，突顯了需要更安全的更新機制。</li>
+<li>eBPF(extended Berkeley Packet Filter，擴展伯克利封包過濾器)，已經在 Linux 中使用，是一個安全的核心執行環境，可以防止此類崩潰，並且即將被 Windows 支援。</li>
+<li>「eBPF 程式經過安全檢查和沙盒化，提供了增強安全性和降低資源使用等優點，並被 Cisco、Google 和 Meta 等公司用於安全性和可觀察性。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41033579">評論</a></h3>
+<ul>
+<li>Microsoft 的 eBPF(擴展伯克利封包過濾器)對 Windows 的支援目前僅限於封包過濾，與 Crowdstrike 的全面內核監控驅動程式相比有所不足。</li>
+<li>“將 eBPF 整合到 Windows 現有的框架中具有挑戰性，而且不確定 Microsoft 是否打算將其標準化。”</li>
+<li>eBPF 可以通過隔離核心代碼來增強安全性，但它並不是一個完整的解決方案，正如最近的 Crowdstrike 事件所強調的，這突顯了改進部署實踐和安全措施的必要性。</li>
+</ul>
+<h2><a href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/">解析，不要驗證 (2019)</a></h2>
+<ul>
+<li>「這篇文章強調了『解析，不要驗證』的原則，提倡通過解析數據來在類型系統中保留信息，而不是通過驗證來丟棄它。」</li>
+<li>它解釋了在像 Haskell 這樣的語言中，如何通過加強參數類型，將部分函數轉變為全函數，並以 <code>NonEmpty</code> 列表為例。</li>
+<li>實用建議包括使用精確的資料結構、重構以將證明負擔向上推進，以及避免使用非正規化的資料表示方式，以提高程式的可靠性和安全性。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031585">評論</a></h3>
+<ul>
+<li>“文章《Parse, Don&#39;t Validate》強調解析數據以確保正確性的重要性，而不是在整個程式中反覆驗證數據。”</li>
+<li>這種方法根植於契約設計(Design by Contract)和領域驅動設計(Domain-Driven Design, DDD)等概念，利用強型別系統來強制保證和減少錯誤，使程式碼更容易理解和維護。</li>
+<li>討論強調了實際範例和好處，例如在不同的驗證階段使用不同的類型，並確保資料始終處於有效狀態，這可以簡化複雜的應用程式並提高可靠性。</li>
+</ul>
+<h2><a href="https://ea.rna.nl/2024/05/27/when-chatgpt-summarises-it-actually-does-nothing-of-the-kind/">「當 ChatGPT 進行摘要時，它並未真正執行這項工作」</a></h2>
+<ul>
+<li>作者一直在探索和討論 ChatGPT 及其他生成式人工智慧的基礎，旨在提供針對當前熱潮的現實觀點。</li>
+<li>「一個關鍵的見解是，ChatGPT 並不是真正地總結內容，而只是簡單地縮短它，經常遺漏重要的細節和建議，這在與人類生成的 50 頁論文摘要比較中得到了證實。」</li>
+<li>“這個限制源於摘要需要理解，而這正是 ChatGPT 所缺乏的，這導致人們對於 LLM(大型語言模型)在實際商業應用中的可靠性持懷疑態度。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41027658">評論</a></h3>
+<ul>
+<li>作者認為，ChatGPT 的文本摘要缺乏真正的理解，導致摘要不完整，有時甚至具有誤導性。</li>
+<li>「該評論指出，原始分析中缺乏有關 GPT 模型、提示以及嘗試次數的詳細資訊。」</li>
+<li>用戶的體驗和意見各異，有些人認為 ChatGPT 和其他大型語言模型(LLMs)很有幫助，而另一些人則強調它們的局限性以及需要改進提示和上下文管理。</li>
+</ul>
+<h2><a href="https://www.rte.ie/news/business/2024/0719/1460807-ryanair-wins-us-court-case-against-bookingcom/">「Ryanair 在美國法院裁決中贏得對 Booking.com 的屏幕抓取案件」</a></h2>
+<ul>
+<li>「美國法院裁定，Booking.com 未經許可訪問瑞安航空的網站，違反了《電腦欺詐和濫用法》，支持瑞安航空反對未經授權的螢幕抓取行為的立場。」</li>
+<li>特拉華州地方法院的陪審團裁定 Booking.com 有意圖詐騙的未經授權存取罪，並駁回了 Booking.com 的誹謗和不正當競爭反訴。</li>
+<li>「瑞安航空(Ryanair)執行長麥可·歐萊瑞(Michael O&#39;Leary)希望這項裁決能減少非法的螢幕抓取和過度收費，而Booking.com則計劃上訴，認為票價比較有助於消費者選擇。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031960">評論</a></h3>
+<ul>
+<li>「瑞安航空在美國法院贏得了一起針對Booking.com的法律案件，該案件涉及未經授權訪問以轉售機票，違反了《電腦欺詐和濫用法》。」</li>
+<li>該裁決可能會影響其他使用類似做法的線上旅行代理商，突顯出網頁抓取法律的複雜性。</li>
+<li>「有傳言指出，由於法律先例相互矛盾，該決定可能會被推翻。」</li>
+</ul>
+<h2><a href="https://www.robkhenderson.com/p/no-one-expects-young-men-to-do-anything">沒有人期望年輕人做任何事，而他們也以什麼都不做來回應(2022)</a></h2>
+<ul>
+<li>“Rob Henderson 的文章討論了社會對年輕男性缺乏期望及其負面後果，包括失業率和監禁率的增加。”</li>
+<li>「他提到 Kathryn Edin 和 Maria Kefalas 所著的《Promises I Can Keep》，該書探討了為什麼低收入女性經常將母職置於婚姻之上，並將其歸因於年輕男性的不良行為。」</li>
+<li>「亨德森批評上層階級破壞家庭穩定的規範，同時確保自己的孩子受益於穩定的家庭環境，並主張年輕男性需要高期望才能茁壯成長。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41032918">評論</a></h3>
+<ul>
+<li>該文章將「無所事事的年輕人」現象歸因於財富不平等以及財富集中在年長的精英階層，這推高了生活必需品的價格並抑制了對新創事業的需求。</li>
+<li>“它還討論了家庭結構的不穩定性，指出社會變遷和經濟壓力已經改變了傳統的家庭動態。”</li>
+<li>“評論文章討論了缺席父親的影響、女性在家庭穩定中的角色，以及導致這些問題的更廣泛的社會和經濟因素。”</li>
+</ul>
+<h2><a href="https://nitter.poast.org/GerardoMunck/status/1815059432382067053">「《國家視角》作者詹姆斯·C·斯科特逝世」</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41028887">評論</a></h3>
+<ul>
+<li>「《國家視角》一書的作者詹姆斯·C·史考特已經去世，這引發了科技界對他具影響力的思想的反思。」</li>
+<li>「Scott 的研究強調了國家和科技如何強制一致性，影響醫學、教育和社會互動等領域，從而減少多樣性。」</li>
+<li>在 Hacker News 上的討論探討了 Scott 的概念，特別是軟體中安全性與靈活性之間的平衡，以及技術同質化的更廣泛影響。</li>
+</ul>
+<h2><a href="https://github.com/eza-community/eza">Eza：一個現代化且維護良好的 ls 替代品</a></h2>
+<ul>
+<li>「eza 是一個現代化的 ls 指令替代品，適用於 Unix 和 Linux，提供了增強的功能和更好的預設值。」</li>
+<li>主要功能包括顏色標記的檔案類型、符號連結支援、擴展屬性、Git 整合，以及人類可讀的日期格式。</li>
+<li>「eza 旨在變得更加使用者友好且功能豐富，並額外支援超連結、掛載點詳情、SELinux 上下文和亮色終端機顏色。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031112">評論</a></h3>
+<ul>
+<li>Eza 被介紹為一個現代且積極維護的替代方案，用於取代傳統的 <code>ls</code> 指令，該指令在類 Unix 作業系統中列出目錄內容。</li>
+<li>“討論強調了使用者對目錄列表中「人類可讀日期」的不滿，主張使用精確的時間戳記而非像「1 天前」這樣的相對時間格式。”</li>
+<li>「該文章還提到其他用戶偏好的現代命令列工具，相較於傳統工具，例如 <code>bat</code>(具有語法高亮功能的 <code>cat</code> 替代品)和 <code>rg</code>(ripgrep，一個更快的 <code>grep</code> 替代品)。」</li>
+</ul>
+<h2><a href="https://www.smbc-comics.com/comic/investment-2">「我們能為那些明顯愚蠢的初創公司籌集多少資金？」</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41036844">評論</a></h3>
+<ul>
+<li>「這篇文章討論了為看似荒謬的創業點子籌集資金的現象，強調了這類創業項目獲得資金的容易程度。」</li>
+<li>它批評了創業生態系統，認為其運作方式像是一種「拉高出貨」計劃，從一個流行領域轉移到另一個，經常浪費資源。</li>
+<li>“這段對話包含了成功新創公司的例子，並討論了焦點團體和 MVP(最小可行產品)在產品開發中的價值和影響。”</li>
+</ul>
+<h2><a href="https://billabear.com/">我花了18個月構建的一個源碼可用的計費系統</a></h2>
+<ul>
+<li>該平台提供與 Stripe 的深度整合，能夠全面控制計費、稅務管理和自動化工作流程。</li>
+<li>功能包括管理各級稅率、創建自訂訂閱計劃，以及與 Slack 和電子郵件提供商等工具整合。</li>
+<li>該系統支援擴展性、自我託管，並提供詳細的商業洞察，例如訂閱流失率和客戶終身價值。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41031975">評論</a></h3>
+<ul>
+<li>「一個新的開源計費系統 Billabear 在經過 18 個月的開發後正式推出，提供類似於 Stripe 的功能，但其源代碼是根據公平源代碼許可證(FSL)公開的。」</li>
+<li>FSL 允許使用者存取原始碼，並在兩年後轉換為 Apache 2.0 授權，提供比 Stripe 封閉原始碼模式更多的彈性和控制。</li>
+<li>討論強調了對某些使用者來說，源碼可用性的重要性、各種語言的本地化需求，以及處理美國州銷售稅和GDPR合規性的擔憂。</li>
+</ul>
+<h2><a href="https://www.computerworld.com/article/2520794/the-workers-have-spoken-theyre-staying-home.html">「工人們已經表態：他們要待在家裡」</a></h2>
+<ul>
+<li>「戴爾要求員工在辦公室出勤才能獲得升遷的政策大多被忽視，許多員工選擇待在家中。」</li>
+<li>「Gartner 的報告顯示，48% 的員工認為公司政策偏向領導者的偏好，而非他們自己的需求。」</li>
+<li>遠端工作因其優點而越來越受到青睞，包括無需通勤、更好的工作與生活平衡、節省成本和彈性，高績效者也在尋求遠端工作的機會。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41037097">評論</a></h3>
+<ul>
+<li>「由於環境不佳、缺乏固定辦公桌以及開放式辦公空間中的生產力問題，員工不願意返回辦公室。」</li>
+<li>「許多員工發現遠端工作更有效率，並且對於回到不理想的辦公室環境持抗拒態度，其中通勤是個重要因素。」</li>
+<li>「一些公司正在使用返辦公室的命令作為減少員工數量的策略，而不訴諸於裁員，這引發了關於最佳工作安排的持續辯論。」</li>
+</ul>
+<h2><a href="https://jim.rees.org/apollo-archive/marketing/1988-ApolloDN10000ProductBrochure.pdf">「Apollo DN10000：1988 年的四核心 CPU/128Mb RAM 工作站 [pdf]」</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41029987">評論</a></h3>
+<ul>
+<li>「Apollo DN10000，一款於1988年推出的四核心 CPU 工作站，擁有128MB 記憶體，因其歷史意義和技術能力而被懷舊地討論。」</li>
+<li>使用者回憶起它在大學實驗室中的使用，以及它在早期圖形程式設計中的角色，儘管其複雜的 Unix 環境和配置挑戰。</li>
+<li>「這台機器的高昂成本，在1980年代高達25萬美元(相當於今天約66萬美元)，突顯了其高端地位以及自那時以來顯著的技術進步。」</li>
+</ul>
+<h2><a href="https://www.theregister.com/2024/07/21/crowdstrike_linux_crashes_restoration_tools/">「CrowdStrike 的 Falcon Sensor 也與 Linux 核心恐慌和崩潰有關」</a></h2>
+<ul>
+<li>「CrowdStrike 的 Falcon Sensor 軟體已經導致 Windows 和 Linux 系統崩潰，包括 Red Hat Enterprise Linux 9.4、Debian 和 Rocky Linux。」</li>
+<li>暫時停用 Falcon Sensor 可以穩定受影響的系統，CrowdStrike 正在測試一個快速恢復工具來解決這個問題。</li>
+<li>這次中斷事件已經對全球造成了重大影響，包括航班取消和醫療延誤，微軟估計有850萬台 Windows 機器受到影響。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41030352">評論</a></h3>
+<ul>
+<li>「CrowdStrike 的 Falcon Sensor 已被發現與 Linux 核心恐慌和崩潰有關，這與 Windows 的藍屏死機(BSOD)問題有所不同。」</li>
+<li>Linux 核心恐慌可能是由於核心的 eBPF(擴展伯克利封包過濾器)實作中的錯誤，可能來自 Red Hat 特定的補丁，這表明是核心錯誤而非供應商問題。</li>
+<li>討論強調了支援多個作業系統版本的挑戰以及核心模組測試所涉及的複雜性，並強調了 Linux 和 Windows 之間在核心可靠性工程方面的差異。</li>
+</ul>
+<head>
+  <meta property="og:title" content="Jellyfin：我們真的很棒" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Jellyfin%EF%BC%9A%E6%88%91%E5%80%91%E7%9C%9F%E7%9A%84%E5%BE%88%E6%A3%92&subheading=2024%E5%B9%B47%E6%9C%8822%E6%97%A5%20%E6%98%9F%E6%9C%9F%E4%B8%80%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/zh/Hant/2024/07/22</link>
+            <guid isPermaLink="false">2024-07-22T00:00:00.000Z</guid>
+            <pubDate>Mon, 22 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-21]]></title>
             <description
@@ -1688,197 +1869,6 @@
             <link>https://hn.cho.sh/zh/Hant/2024/07/13</link>
             <guid isPermaLink="false">2024-07-13T00:00:00.000Z</guid>
             <pubDate>Sat, 13 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-12]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/12&#39;</h2>
-<h1>2024-07-12</h1>
-<h2><a href="https://webvm.io/">WebVM 是一個無伺服器的虛擬 Linux 環境，運行於客戶端</a></h2>
-<ul>
-<li>WebVM 是一個無伺服器的虛擬 Linux 環境，完全在客戶端使用 HTML5 和 WebAssembly 運行，由 CheerpX 虛擬化引擎提供支持。</li>
-<li>它允許在任何瀏覽器中安全地、沙盒化地執行 x86 二進位檔案，具備 x86 到 WebAssembly 的即時編譯器、一個虛擬區塊式檔案系統，以及一個 Linux 系統呼叫模擬器。</li>
-<li>新功能：使用者現在可以使用 Dockerfile 創建自訂的 WebVM 映像，提升靈活性和自訂性。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40940225">評論</a></h3>
-<ul>
-<li>WebVM 是一個無伺服器的虛擬 Linux 環境，運行於客戶端，利用由 Leaning Technologies 提供的 CheerpX 構建，並通過 Tailscale 支援網路連接。</li>
-<li>「與完整系統模擬器不同，WebVM 作為用於使用者空間二進位檔的 Linux 系統呼叫模擬器，提供了更大的靈活性和速度。」</li>
-<li>它不是開源的，且禁止自行託管 CheerpX 引擎，這使得它適合用於教育、即時文件、軟體保存和網頁 IDE 開發，儘管它在行動裝置上的效能問題和部分離線功能方面有一些限制。</li>
-</ul>
-<h2><a href="https://techcrunch.com/2024/07/12/att-phone-records-stolen-data-breach/">AT&amp;T 表示，犯罪分子在資料外洩事件中竊取了『幾乎所有』客戶的電話記錄</a></h2>
-<ul>
-<li>AT&amp;T 確認了一起數據洩露事件，影響了近 1.1 億名客戶，涉及電話號碼、通話和簡訊記錄以及與位置相關的信息。</li>
-<li>「此次資料外洩事件與雲端數據提供商 Snowflake 有關，洩露的資料包括元數據，但不包含通話或簡訊的內容。」</li>
-<li>「由於國家安全考量，FBI 和 DOJ 延遲了公開通知，這是 AT&amp;T 今年的第二次安全事件。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40944505">評論</a></h3>
-<ul>
-<li>AT&amp;T 遭遇資料外洩事件，影響了幾乎所有客戶，洩露了通話和簡訊的元數據，但不包括內容或時間戳。</li>
-<li>「儘管初期股價下跌，市場仍然大致不受影響，反映出人們認為公司因這類違規行為面臨的財務後果微乎其微。」</li>
-<li>這起事件與 Snowflake 的雲端平台有關，已引發對更嚴格的資料保存政策、更好的安全措施以及可能的巨額罰款或訴訟以強制企業問責的呼聲。</li>
-</ul>
-<h2><a href="https://physicsbaseddeeplearning.org/intro.html">基於物理的深度學習書籍</a></h2>
-<ul>
-<li>「基於物理的深度學習書籍(v0.2)提供了物理模擬中深度學習的實用介紹，並附有實作的 Jupyter notebook 範例。」</li>
-<li>版本 0.2 新增內容：擴展了將可微分程式設計(DP)整合到神經網路(NN)訓練中的部分，並新增了一章有關改進物理問題學習方法的內容。</li>
-<li>未來的更新將包括關於訓練網路以預測流體流動、使用模型方程作為殘差、與模擬器互動以解決逆問題，以及利用高階資訊來改進神經網路的章節。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40941056">評論</a></h3>
-<ul>
-<li>「一本名為《基於物理的深度學習》的新書已經問世，該書著重於從物理學家的角度將深度學習應用於物理模擬，而非一般的深度學習概念。」</li>
-<li>這本書包含在 Jupyter 筆記本中的實作程式碼範例、物理損失約束、可微分模擬、物理問題的訓練算法、強化學習和不確定性建模。</li>
-<li>這本書由基於物理模擬小組製作，可在 arXiv 上下載，並且在 YouTube 和 GitHub 等各種平台上提供額外的資源和討論。</li>
-</ul>
-<h2><a href="https://ochagavia.nl/blog/using-s3-as-a-container-registry/">使用 S3 作為容器註冊表</a></h2>
-<ul>
-<li>“A developer 已經展示了如何使用 Amazon S3 作為容器註冊表，通過 HTTP 暴露 S3 bucket 並將容器映像檔案上傳到特定路徑，從而允許進行 <code>docker pull</code> 操作。”</li>
-<li>使用 S3 相較於傳統的容器註冊表如 DockerHub 或 Amazon ECR 的主要優勢在於，由於並行分塊上傳，能顯著提高上傳速度。</li>
-<li>這種實驗性方法缺乏自動化安全掃描和存取控制等功能，但可能會導致在 Cloudflare 的 R2 中託管公共容器映像檔並享有免費流量。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40942732">評論</a></h3>
-<ul>
-<li>正在討論使用 Amazon S3 作為容器註冊表，強調其作為 DockerHub 和 AWS ECR 等傳統容器註冊表的替代方案的潛力。</li>
-<li>「這段對話批評了 OCI(開放容器倡議)分發規範的低效性，例如需要順序上傳層以及缺乏標準化的標籤列出分頁功能。」</li>
-<li>“Docker 對軟體開發的影響存在爭議，有些人讚揚它簡化了依賴管理，而另一些人則批評它未能提升最終產品的可靠性或開發速度。”</li>
-</ul>
-<h2><a href="https://nelson.cloud/as-an-employee-you-are-disposable/">作為員工，你是可替代的 (2023)</a></h2>
-<ul>
-<li>最近的科技業裁員顯示，即使在盈利的公司，員工仍常被高層視為可有可無。</li>
-<li>儘管超出投資者預期並擁有高收入，像微軟這樣的公司仍然持續裁員並實施凍薪政策。</li>
-<li>「富有的高管，例如 Tim Gurner，曾發表評論強調員工是可替換的，不論他們的貢獻或任期長短。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40943436">評論</a></h3>
-<ul>
-<li>公司是交易性實體，當對公司有利時，可能會解僱員工，強調員工並非不可或缺。</li>
-<li>“過度招聘和裁員往往是提升股東價值的策略，這突顯了員工專注於自身利益並尋求公平報酬的重要性。”</li>
-<li>「考慮工會和開源代碼對開發者有益，這強化了雇主與雇員關係本質上是一種商業交易的觀念。」</li>
-</ul>
-<h2><a href="https://github.com/Wack0/maciNTosh">Windows NT for Power Macintosh</a></h2>
-<ul>
-<li>此儲存庫包含針對使用 Gossamer 架構的新世界 Power Macintosh 系統的 ARC 韌體及其加載器的源代碼，包括 iMac G3 和 Power Macintosh G3 等型號。</li>
-<li>ARC 韌體支援各種驅動程式，但目前僅與 NT4 相容，未來可能支援 NT 3.51。</li>
-<li>安裝過程包括下載二進位檔案、分割磁碟，並按照提示設置 NT4，已知問題包括不穩定性以及與 Mac 分割區雙重啟動所需的特定步驟。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40945076">評論</a></h3>
-<ul>
-<li>「一位開發者已經將 Windows NT 移植到 Power Macintosh 上運行，這引發了懷舊情懷和關於替代作業系統歷史的討論。」</li>
-<li>「Windows NT 被設計成具有可移植性，支援多種架構如 PowerPC、MIPS 和 Alpha，儘管它主要以 x86 架構聞名。」</li>
-<li>這個專案強調了將 NT 適應不同硬體平台的技術可行性，展示了其設計的模組化特性。</li>
-</ul>
-<h2><a href="https://news.mit.edu/2024/charmed-collaboration-creates-therapy-candidate-fatal-prion-diseases-0627">“基因沉默工具顯示出作為未來治療普里昂疾病的潛力”</a></h2>
-<ul>
-<li>“CHARM(Coupled Histone tail for Autoinhibition Release of Methyltransferase)是由布羅德研究所和懷特黑德研究所開發的一種新的基因沉默工具，顯示出治療普里昂疾病和其他神經退行性疾病的潛力。”</li>
-<li>「此工具使用表觀遺傳編輯來沉默致病基因，包括普里昂蛋白基因，而不改變基礎DNA，可能提供一次性的治療。」</li>
-<li>由 Sonia Vallabh 和 Jonathan Weissman 領導的研究團隊已經取得了顯著進展，創造了一種緊湊、高效且低毒性的基因沉默劑，並且現在正在為臨床試驗改進 CHARM。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939703">評論</a></h3>
-<ul>
-<li>一種通過腺相關病毒(AAV)傳遞的基因沉默工具顯示出作為治療目前100%致命且難以摧毀的普里昂疾病的潛力。</li>
-<li>這個工具通過抑制普利昂蛋白基因來運作，可能預防或逆轉疾病，並且對遺傳性和後天性普利昂都可能有效。</li>
-<li>「雖然前景看好，但該工具對記憶和認知的長期影響仍在研究中，目前的研究也在探索其對其他類似普里昂疾病(如阿茲海默症和帕金森症)的應用。」</li>
-</ul>
-<h2><a href="https://github.com/taubyte/tau">Tau：開源 PaaS – 一個自託管的 Vercel / Netlify / Cloudflare 替代方案</a></h2>
-<ul>
-<li>“Tau 是一個新框架，旨在構建低維護、高擴展性的雲端運算平台，作為 Vercel、Netlify 和 AWS 等服務的替代方案。”</li>
-<li>「主要特點包括最小化配置、Git 原生基礎設施變更、點對點網路以及對 WebAssembly 的支援，未來還計劃支援容器和虛擬機。」</li>
-<li>「Tau 旨在降低基礎設施成本和開發時間，提供一個對開發者友好的平台，並配備用於本地開發和端到端測試的工具。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40946033">評論</a></h3>
-<ul>
-<li>Tau 是一個開源、自主託管的服務平台(PaaS)替代方案，相較於 Vercel、Netlify 和 Cloudflare，Tau 使用 libp2p 進行網路自動發現，並使用 IPFS 進行分散式存儲。</li>
-<li>它是 WebAssembly 原生的，提供了避免供應商鎖定等好處，但使用者指出其文件模糊且概念不清楚。</li>
-<li>“與 Kubernetes 及其他 PaaS 解決方案如 Coolify 和 CapRover 的比較是常見的，這表明了該專案的潛力，但也突顯了需要更好的文件和更清晰的功能與效益溝通。”</li>
-</ul>
-<h2><a href="https://github.com/karpathy/llm.c/discussions/677">Karpathy：讓我們重現 GPT-2(1.6B)：一個 8XH100 節點 24 小時 $672 在 llm.c</a></h2>
-<ul>
-<li>研究人員使用 llm.c(一個 C/CUDA 實作)在單一 8XH100 節點上於 24 小時內以 672 美元的成本重現了 GPT-2(1.6B)，繞過了典型的基於 Python 的深度學習框架如 PyTorch。</li>
-<li>「儘管存在一些調整和穩定性問題，該模型的表現與 GPT-2 相當，使用驗證損失和 HellaSwag 準確度等指標進行評估。」</li>
-<li>這篇文章還涵蓋了記憶體管理、多節點訓練，並與 PyTorch 版本進行比較，未來計劃優化超參數並改善訓練穩定性。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939707">評論</a></h3>
-<ul>
-<li>「Andrej Karpathy 成功在單一 8XH100 節點上於 24 小時內重現了 GPT-2(16 億參數)，成本為 672 美元。」</li>
-<li>AI 硬體的進步可能在未來降低成本並縮短訓練時間。</li>
-<li>雖然人工智慧在電子遊戲中展現了提升非玩家角色(NPC)和敘事能力的潛力，但現有技術在生成敘事和對話文本方面仍面臨顯著的限制。</li>
-</ul>
-<h2><a href="https://abe.today/blogs/main/floppy8-a-tiny-computer-in-a-floppy-drive">「Floppy8 – 一個小型電腦，內建於軟碟機中(2023)」</a></h2>
-<ul>
-<li>Floppy8 是一款內建於軟碟機內的微型電腦和卡匣系統，能夠播放 4K 電影和遊戲，並配備無線控制器和自動彈出卡匣功能。</li>
-<li>該專案涉及重新利用 Amiga 1010 磁碟機、設計一種新的媒體格式，以及大量的 3D 列印和電機工程，以將所有元件安裝在磁碟機內部。</li>
-<li>創作者使用了一台Latte Panda 3 Delta電腦和自訂的3D列印卡匣，克服了尺寸限制、彈出機制和LED控制的挑戰，完成了這個專案。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40942141">評論</a></h3>
-<ul>
-<li>「Floppy8 是一台內建於 3.5 吋軟碟機中的微型電腦，讓人聯想到過去的緊湊型計算專案，如 Amiga 1200 克隆和 Ross SPARCPlug。」</li>
-<li>創作者 abeisgreat 分享了一段影片，詳細介紹了這個專案，包括基於 SD 卡的卡匣和其他技術方面的細節，激起了科技社群的興趣和讚賞。</li>
-<li>討論強調了將電腦安裝在小型外殼中的懷舊感和創新，並提及了歷史上的嘗試和現代的 DIY 專案。</li>
-</ul>
-<h2><a href="https://blog.fal.ai/auraflow/">「AuraFlow v0.1：一個開源的 Stable Diffusion 3 替代方案」</a></h2>
-<ul>
-<li>“AuraFlow v0.1 是一個開源的、基於流程的文字轉圖像生成模型，展示了開源 AI 社群的韌性。”</li>
-<li>該模型在從文字描述生成詳細圖像方面表現出色，並且融合了零樣本學習率轉移和重新標註等先進技術。</li>
-<li>「AuraFlow 擁有 68 億個參數，經過四週的訓練，取得了高分的 GenEval 成績，未來計劃包括進一步訓練和開發適用於消費者 GPU 的高效模型。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40941853">評論</a></h3>
-<ul>
-<li>「AuraFlow v0.1 是一個開源的 Stable Diffusion 3 替代方案，儘管是早期版本，但顯示出很大的潛力。」</li>
-<li>該模型在簡單提示上表現良好，但在處理複雜提示和否定句時表現不佳，顯示出需要改進的地方。</li>
-<li>討論強調了該模型在生成逼真人體和處理細微文本提示方面的限制，反映了 AI 圖像生成中持續存在的挑戰。</li>
-</ul>
-<h2><a href="https://mazzo.li/posts/value-speculation.html">以數值推測擊敗 L1 快取(2021)</a></h2>
-<ul>
-<li>這篇文章討論了使用數值推測來提升 CPU 性能，透過利用分支預測器來猜測數值並減少緊密迴圈中的資料依賴性。</li>
-<li>透過推測鏈結串列加總函數中下一個節點的地址，該技術旨在繞過 L1 快取讀取延遲，從而顯著提升性能。</li>
-<li>「儘管編譯器經常會優化掉這個技巧，使用內嵌組合語言可以確保推測執行仍然存在，當數據適合於 CPU 快取時，函數速度可以提高 50-200%。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40940241">評論</a></h3>
-<ul>
-<li>mazzo.li 在 2021 年發表的文章《Beating the L1 cache with value speculation》探討了通過值推測來優化鏈結串列中的記憶體佈局，強調節點線性記憶體佈局的重要性。</li>
-<li>「評論者們對這種方法的實用性和有效性展開辯論，有些人欣賞其巧妙之處，但質疑其廣泛適用性。」</li>
-<li>討論還涵蓋了相關的技術細節，如指令執行、記憶體模型、潛在的使用案例，以及編譯器自動化此類優化的可能性。</li>
-</ul>
-<h2><a href="https://gizmodo.com/apple-vision-pro-u-s-sales-2000469302">市場分析師表示，Apple Vision Pro 在美國的銷售幾乎已經停滯不前</a></h2>
-<ul>
-<li>Apple Vision Pro 美國銷售量正在急劇下降，預計到 2024 年 8 月底將下降 75%，因為大多數有興趣的買家已經購買了這款 3,500 美元的頭戴裝置。</li>
-<li>目前的型號尚未達到10萬台的銷售量，這使得蘋果降低了銷售預期，並考慮在2025年推出一款價格較低的型號，傳聞價格約為1,750美元。</li>
-<li>Apple 也正在開發 visionOS 更新，以提升使用者體驗，這可能有助於在更實惠的頭戴裝置推出之前維持興趣。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40939627">評論</a></h3>
-<ul>
-<li>由於用戶興趣有限和開發者支持不足，Apple Vision Pro 在美國的銷售表現不佳。</li>
-<li>「3500美元的高價和受限的內容是顯著的障礙，阻礙了消費者和開發者。」</li>
-<li>分析師建議蘋果可能需要重新考慮其策略，或許可以通過推出更實惠的版本或改進其軟體生態系統來擴大吸引力。</li>
-</ul>
-<h2><a href="https://alderongames.com/intel-crashes">Intel 正在銷售有缺陷的第 13-14 代 CPU</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40946644">評論</a></h3>
-<ul>
-<li>據稱，英特爾正在銷售有缺陷的第13代和第14代處理器，導致系統崩潰、藍屏死機(BSOD)和其他錯誤，有些報告指出這些問題隨著時間的推移會變得更嚴重。</li>
-<li>「可信來源如 RadGames 和 Level1Techs 已確認這些不穩定問題，這可能與 Intel 激進的電力和熱管理策略有關。」</li>
-<li>「由於這些持續存在的問題，許多使用者正在考慮轉換到 AMD 作為替代方案。」</li>
-</ul>
-<h2><a href="https://www.geaerospace.com/news/press-releases/ge-aerospace-successfully-develops-and-tests-new-hypersonic-dual-mode-ramjet">“GE 航空成功開發並測試新型高超音速雙模態衝壓發動機”</a></h2>
-<ul>
-<li>「GE 航太公司在不到 11 個月的時間內成功開發並測試了一款新的高超音速雙模態衝壓發動機，展示了相較於先前技術三倍的氣流增量。」</li>
-<li>這項成就強調了GE航空航太致力於推進高超音速技術，下一階段將專注於進一步測試和技術展示。</li>
-<li>該專案是 GE 航空、Innoveering 和 GE 航空研究中心之間的合作成果，突顯了團隊的快速進展和奉獻精神。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40943253">評論</a></h3>
-<ul>
-<li>「GE 航空與 Innoveering 及其研究中心合作，在不到 11 個月的時間內開發並測試了一款新的高超音速雙模態衝壓發動機。」</li>
-<li>這項技術可能基於現有設計，旨在用於導彈或高速飛機，而非商業航空，因為其極端的速度和條件。</li>
-<li>「這個專案強調了高超音速推進技術的重大進展，這對於軍事應用至關重要。」</li>
-</ul>
-<head>
-  <meta property="og:title" content="WebVM 是一個無伺服器的虛擬 Linux 環境，運行於客戶端" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=WebVM%20%E6%98%AF%E4%B8%80%E5%80%8B%E7%84%A1%E4%BC%BA%E6%9C%8D%E5%99%A8%E7%9A%84%E8%99%9B%E6%93%AC%20Linux%20%E7%92%B0%E5%A2%83%EF%BC%8C%E9%81%8B%E8%A1%8C%E6%96%BC%E5%AE%A2%E6%88%B6%E7%AB%AF&subheading=2024%E5%B9%B47%E6%9C%8812%E6%97%A5%20%E6%98%9F%E6%9C%9F%E4%BA%94%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/zh/Hant/2024/07/12</link>
-            <guid isPermaLink="false">2024-07-12T00:00:00.000Z</guid>
-            <pubDate>Fri, 12 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
