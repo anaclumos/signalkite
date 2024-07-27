@@ -15,12 +15,208 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 26 Jul 2024 19:14:09 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 27 Jul 2024 19:09:46 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/zh-Hant.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Fri, 26 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[zh-Hant]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-27]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/27&#39;</h2>
+<h1>2024-07-27</h1>
+<h2><a href="https://sqlite.org/fasterthanfs.html">SQLite：比檔案系統快 35%</a></h2>
+<ul>
+<li>「SQLite 讀取和寫入小型二進位大物件(例如縮圖)比使用磁碟上的單個檔案快 35%，並且使用的磁碟空間少約 20%。」</li>
+<li>效率歸因於較少的 open() 和 close() 系統呼叫以及更緊密的數據打包，預計未來版本的性能將會提升。</li>
+<li>測試顯示，SQLite 通常比直接文件 I/O 表現更佳，尤其是在啟用了防毒軟體的 Windows 系統上，儘管性能可能會根據硬體和作業系統而有所不同。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085376">評論</a></h3>
+<ul>
+<li>由於較少的開啟/關閉系統呼叫以及不需要檔案系統屬性或中繼資料檢查，SQLite 比傳統檔案系統快 35%。</li>
+<li>這項效能提升在 Windows 上尤其顯著，因為檔案系統呼叫本質上較慢。</li>
+<li>「儘管存在一些限制，例如 2GB 的 blob 最大值和處理層次數據的挑戰，SQLite 的速度和簡單性使其在日誌和其他數據存儲方面具有優勢。」</li>
+</ul>
+<h2><a href="https://sysprog21.github.io/lkmpg/">Linux 核心模組程式設計指南</a></h2>
+<ul>
+<li>《Linux 核心模組程式設計指南》提供了關於創建和管理核心模組的全面介紹。核心模組是動態可加載的程式碼段，能在不需要重新啟動的情況下增強核心功能。</li>
+<li>「用於操作核心模組的主要工具和指令包括 <code>modprobe</code>、<code>insmod</code>、<code>depmod</code>、<code>lsmod</code> 和 <code>cat /proc/modules</code>。」</li>
+<li>本指南涵蓋了模組初始化與清理、處理命令列參數、管理裝置驅動程式、與 <code>/proc</code> 和 <code>sysfs</code> 檔案系統互動，以及避免核心程式設計中的常見陷阱等重要主題。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083972">評論</a></h3>
+<ul>
+<li>「Linux 核心模組程式設計指南強調使用 QEMU 進行核心駭客活動，並建議更新 Linux 裝置驅動程式書籍。」</li>
+<li>「Greg KH 確認《Linux Device Drivers》第四版不會出版，這引發了關於替代資源的討論，例如《The Linux Memory Manager》和《Linux Insides》。」</li>
+<li>“用戶分享了使用 QEMU 進行除錯和 WireGuard 測試套件進行核心模組開發的經驗，強調了人工審查在撰寫過程中的重要性。”</li>
+</ul>
+<h2><a href="https://reason.com/2024/07/26/courts-close-the-loophole-letting-the-feds-search-your-phone-at-the-border/">「法院關閉了讓聯邦政府在邊境搜查你手機的漏洞」</a></h2>
+<ul>
+<li>一位聯邦法官裁定，海關與邊境保護局(CBP)在邊境無法在沒有搜查令的情況下檢查電子設備，這解決了第四修正案中的一個漏洞。</li>
+<li>「法官妮娜·莫里森表示，手機搜索是『非例行性』的，需要有合理的理由和搜查令，並將其與脫衣搜查相比，因為它們對隱私有重大影響。」</li>
+<li>“這項裁決得到了公民自由主義者的支持，被視為對新聞自由和隱私權至關重要，這與其他巡迴法院和地區的類似決定一致。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083286">評論</a></h3>
+<ul>
+<li>「紐約的一家地方法院裁定，無令狀的手機搜查在邊境屬於『非例行』，且比其他類型的搜查更具侵入性，類似於脫衣搜查。」</li>
+<li>“此決定並不具約束性先例，且與其他巡迴法院的裁決相矛盾，這表明由於現有的『巡迴法院分歧』，最高法院可能會處理此問題。”</li>
+<li>該裁決反映了關於隱私權和政府權力的持續辯論，特別是在邊境安全和第四修正案的背景下。</li>
+</ul>
+<h2><a href="https://web.stanford.edu/class/cs81n/command.txt">「一開始是命令列(1999)」</a></h2>
+<ul>
+<li>Neal Stephenson 的文章《In the Beginning was the Command Line》探討了作業系統(OS)的演變及其市場動態，重點關注蘋果和微軟。</li>
+<li>微軟透過將作業系統像消費品一樣銷售，強調便利性和易用性，達到了市場主導地位，這與重視簡單勝過複雜的廣泛文化趨勢相呼應。</li>
+<li>「儘管有像 Linux 和 BeOS 這樣優秀且免費的替代方案崛起，大多數消費者仍然偏好微軟熟悉的產品，這突顯了社會對透過圖形使用者介面(GUI)進行中介體驗的偏好。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41084795">評論</a></h3>
+<ul>
+<li>“尼爾·史蒂芬森的文章《起初是命令行》(1999)強調了命令行介面(CLI)相較於圖形使用者介面(GUI)的優勢，特別是其簡潔性和溝通的便利性。”</li>
+<li>“這篇文章將作業系統的演變比作汽車，強調了儘管圖形使用者介面(GUI)很受歡迎，但命令列介面(CLI)仍提供了穩定性和使用者控制。”</li>
+<li>它還深入探討了科技介面在文化和哲學上的影響，提供了我們如何與科技互動的更廣泛視角。</li>
+</ul>
+<h2><a href="https://blog.singleton.io/posts/2022-10-17-otp-on-wrist/">在我的手腕上使用最智能的愚蠢手錶生成 TOTP 令牌</a></h2>
+<ul>
+<li>「Sensor Watch 已經推出了一款新的替換邏輯板，用於經典的 Casio F-91W，將其升級為 ARM Cortex M0+ 處理器，同時保留了原有的 LCD、按鈕和壓電蜂鳴器。」</li>
+<li>升級後的主板是可編程的，允許自訂錶面和實用應用程式，包括像是雙重驗證(2FA)代碼、速率計、世界時鐘等功能。</li>
+<li>這款手錶很容易破解，配有基於 WebAssembly 的模擬器供測試使用，並且提供詳細的文件，適合有興趣修改或製作自己錶面的使用者。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41081435">評論</a></h3>
+<ul>
+<li>在 Hacker News 上的一個討論中，強調了在 Casio 手錶上使用 TOTP(基於時間的一次性密碼)令牌，特別是 F-91W 和 A158W 型號，用於雙重驗證(2FA)。</li>
+<li>“該專案涉及修改手錶的韌體以顯示 TOTP 驗證碼，並且社群貢獻增強了如使用者校準等功能，甚至為手錶創建遊戲。”</li>
+<li>“有人對於在手錶上顯示 TOTP 驗證碼的安全性表示擔憂，有些人建議使用 FIDO2 硬體金鑰作為替代方案，以更好地防範網路釣魚攻擊。”</li>
+</ul>
+<h2><a href="https://ntk148v.github.io/posts/linux-network-performance-ultimate-guide/">「Linux 網路效能終極指南」</a></h2>
+<ul>
+<li>「本指南深入探討了優化 Linux 網路效能的方法，涵蓋從網路堆疊到進階封包處理技術的各種主題。」</li>
+<li>關鍵的調整步驟包括調整 NIC 環形緩衝區大小、中斷合併、IRQ 親和性，以及使用像 AF_PACKET、DPDK 和 XDP 這樣的工具來進行高效能的封包處理。</li>
+<li>使用 <code>ethtool</code>、<code>sysctl</code> 和 <code>netstat</code> 等工具來監控和調整網路設定，對於維持最佳效能是至關重要的。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083801">評論</a></h3>
+<ul>
+<li>「《Linux 網路效能終極指南》是一本全面的資源，專門用於使用 Linux 優化網路效能，特別適合從事高速網路工作的人士。」</li>
+<li>“有一位使用者分享了一個成功案例，描述他們使用商用現成硬體(COTS)和 Wireguard 建立了一個具成本效益的 10Gbps 加密網路，成本遠低於商業硬體解決方案。”</li>
+<li>評論中的討論包括實用的技巧，例如調整 TCP 緩衝區大小，以及自動性能調整工具，如 Oracle 的 bpftune。</li>
+</ul>
+<h2><a href="https://github.com/joshuacline/windick">Windows 恢復環境和可開機 USB 創建工具僅需 200kb</a></h2>
+<ul>
+<li>Windows 部署映像自訂工具包是一個設計用於自訂和部署 Windows 映像的命令行工具。</li>
+<li>它為 IT 專業人員和系統管理員提供了一個原生解決方案，以簡化部署過程。</li>
+<li>教學影片和其他資訊可以在 YouTube 和 Microsoft 的官方文件上找到。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083987">評論</a></h3>
+<ul>
+<li>「一款新的基於 Shell 的工具已經發布，用於創建 Windows 恢復環境和可啟動的 USB，僅需 200 KB。」</li>
+<li>這個工具以一個包含3,085行程式碼的大型批次檔撰寫，展示了令人印象深刻的奉獻精神和效率，特別是在有像PowerShell這樣更現代的腳本語言可用的情況下。</li>
+<li>該專案受到 Android 的 clockworkmod recovery 啟發，旨在使用「live-of-the-land」命令，這意味著它沒有任何依賴性，並且僅在 Windows 下運行。</li>
+</ul>
+<h2><a href="https://krebsonsecurity.com/2024/07/crooks-bypassed-googles-email-verification-to-create-workspace-accounts-access-3rd-party-services/">「不法分子繞過 Google 的電子郵件驗證創建 Workspace 帳戶，進行存取」</a></h2>
+<ul>
+<li>「Google 修復了一個身份驗證漏洞，該漏洞允許犯罪分子繞過電子郵件驗證來創建 Google Workspace 帳戶並冒充域名持有者。」</li>
+<li>問題在72小時內解決，並實施了額外的檢測措施以防止未來的濫用。</li>
+<li>攻擊者的目的是冒充域名持有者以使用第三方服務，而不是濫用 Google 服務，這些惡意活動涉及數千個未經域名驗證而創建的 Workspace 帳戶。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41082502">評論</a></h3>
+<ul>
+<li>攻擊者繞過了 Google 的電子郵件驗證，創建了未經授權的 Workspace 帳戶，導致潛在的安全漏洞和未註冊網域收到意外的歡迎電子郵件。</li>
+<li>「這些未經授權的帳戶被用來在第三方網站上利用『使用 Google 登入』功能，導致受害者在取回他們的網域時遇到困難。」</li>
+<li>「該事件突顯了 Google 系統中的漏洞以及與社交登入相關的風險，促使人們呼籲改進措施，例如強制 DNS 驗證。」</li>
+</ul>
+<h2><a href="https://github.com/devrim/cloudflare-noip">使用 Cloudflare 和 Cronjob 的免費 DDNS</a></h2>
+<ul>
+<li>此專案透過使用免費帳戶和排程任務(cronjob)自動更新 Cloudflare 上的 DNS 紀錄，提供了一個免費的動態 DNS 服務替代方案。</li>
+<li>“使用者需要複製儲存庫，建立配置檔案(<code>keys.json</code> 和 <code>records.json</code>)，並設置一個 cronjob 或等效的任務排程器，以定期執行該腳本。”</li>
+<li>「此腳本會使用機器當前的 IP 地址來更新 Cloudflare 上的 DNS 紀錄，這是一個經濟實惠的動態 DNS 解決方案。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41081810">評論</a></h3>
+<ul>
+<li>「一個 GitHub 專案提供使用 Cloudflare 和 cron 工作排程的免費動態 DNS(DDNS)解決方案，吸引了科技社群的高度關注。」</li>
+<li>“用戶討論使用 Cloudflare 作為 DDNS 的優缺點，包括潛在的誘餌轉換策略以及強制 TLS 終止和上傳限制等限制。”</li>
+<li>提到了替代方案和類似的專案，例如使用 Cloudflare 隧道、Tailscale 和其他 DDNS 客戶端，強調了管理動態 IP 位址的多種解決方案。</li>
+</ul>
+<h2><a href="https://huyenchip.com/ml-interviews-book/">機器學習面試指南書</a></h2>
+<ul>
+<li>《機器學習面試指南》提供了全面的機器學習面試過程指南，涵蓋了職位、公司類型、面試形式和問題類型。</li>
+<li>它包含超過 200 個知識問題和 30 個開放性問題，旨在幫助候選人和招聘經理了解並準備機器學習面試。</li>
+<li>本書由 Chip Huyen 撰寫，他在大型科技公司和新創公司面試方面擁有豐富的經驗，書中匯集了實用的見解和準備策略。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083534">評論</a></h3>
+<ul>
+<li>由 Huyen Chip 所著的《Introduction to Machine Learning Interviews》一書正在被討論，對於其在準備機器學習面試方面的效果，意見不一。</li>
+<li>有些使用者認為這本書的問題比實際的機器學習面試要簡單，另一些人則推薦《Deep Learning Interviews》這本書，認為它更具吸引力且更具代表性。</li>
+<li>“關於使用書中的範本問題是否具有相關性存在爭論，有些人主張應該創建個性化的專案。”</li>
+</ul>
+<h2><a href="https://github.com/narumatt/sqlitefs">「Sqlitefs：將 SQLite 作為檔案系統」</a></h2>
+<ul>
+<li>sqlite-fs 讓 Linux 和 MacOS 使用者可以將 SQLite 資料庫檔案掛載為一般檔案系統，透過資料庫來進行檔案操作。</li>
+<li>需要最新的 Rust 程式語言(≥ 1.38)以及 libfuse(Linux)或 osxfuse(MacOS)才能運作。</li>
+<li>支援各種檔案操作，例如建立、讀取、寫入、刪除檔案和目錄、更改屬性以及處理檔案鎖，並具備嚴格的錯誤處理機制。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085856">評論</a></h3>
+<ul>
+<li>SQLiteFS 是一個使用 SQLite 作為檔案系統的專案，因其獨特的檔案儲存方式而引起了關注。</li>
+<li>這個概念讓人聯想到微軟取消的 WinFS 專案，該專案旨在使用 SQL Server 作為檔案系統。</li>
+<li>「儘管有幽默和理論討論，實際應用如使用 SQLiteFS 進行記憶體內操作或快取正在被考慮。」</li>
+</ul>
+<h2><a href="https://boogiemath.org/meta/meta-9.html">「奧斯卡·扎里斯基是現代代數幾何學的奠基人之一」</a></h2>
+<ul>
+<li>「奧斯卡·扎里斯基(1899-1986)是現代代數幾何學中的關鍵人物，以其具有影響力的著作《代數曲面》及其對該領域的重要貢獻而聞名。」</li>
+<li>儘管 Zariski 開始學術生涯的時間比一般人晚，但他在八十多歲時仍然活躍，並在全純函數方面有著顯著的研究成果，且在多所著名學府中度過了豐富的學術旅程。</li>
+<li>他生活中一個有趣的軼事是，因為深陷於一個數學問題而差點錯過自己的婚禮，這突顯了他對數學的極度投入。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41086060">評論</a></h3>
+<ul>
+<li>「奧斯卡·扎里斯基被公認為現代代數幾何學的創始人之一。」</li>
+<li>用戶分享了軼事並討論了各種主題，包括數學家卡勒·瓦伊薩拉的幽默事件和「想像力因子」，這個因子衡量了在現實世界與想像世界中花費的時間。</li>
+<li>對話還深入探討了歷史和政治議題，例如俄國革命以及共產主義與資本主義的辯論。</li>
+</ul>
+<h2><a href="https://www.cs.cornell.edu/~asampson/blog/bril.html">“Bril：用於教學編譯器的中間語言”</a></h2>
+<ul>
+<li>Bril，大紅中間語言，是為了簡化編譯器教學而創建的，優先考慮易用性和簡單性，而非性能和代碼大小。</li>
+<li>Bril 程式是 JSON 文件，使其可以用任何程式語言存取並且容易分享。</li>
+<li>Bril 生態系統已經擴展，包含學生的貢獻，如工具和語言擴展，儘管其 SSA(靜態單一指派)形式需要改進。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41084318">評論</a></h3>
+<ul>
+<li>Bril 是一種中間語言(IL)，由康奈爾大學設計，用於教學編譯器。</li>
+<li>“討論強調了重新設計 Bril 的靜態單一賦值(SSA)形式的必要性，並與其他中間語言(IL)如 A-正常形式(ANF)和續延傳遞風格(CPS)進行比較。”</li>
+<li>有些人認為現有的中間語言(如 LLVM)已足夠用於教育目的，而另一些人則強調 Bril 在教授編譯器概念方面的獨特方法。</li>
+</ul>
+<h2><a href="https://fabiensanglard.net/dc/">驅動編譯器</a></h2>
+<ul>
+<li>這個系列旨在填補文學中關於使用工具將程式轉換為可執行檔的空白，重點在於核心概念，而不是教學語言或如何編寫編譯器。</li>
+<li>它提供了使用 bintools 和驅動程式詳細模式(-v)的可重現步驟，幫助讀者在基本範例之外進行探索，假設使用的是搭載 gcc 或 clang 編譯器的 Linux 平台。</li>
+<li>這個系列分為五個部分：Driver、cpp(前處理器)、cc(編譯器)、ld(連結器)和 Loader，提供了一個結構化的方法來理解編譯過程。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083077">評論</a></h3>
+<ul>
+<li>這篇文章對 C 和 C++ 工具鏈提供了極好的介紹，重點在於 Linux 和基於 ELF 的平台。</li>
+<li>「關鍵澄清包括 C++ 標準庫比 STL 更廣泛，且 ::operator new() 是運行時的一部分，而不僅僅是模板。」</li>
+<li>這篇文章應該更好地區分作業系統核心載入器和使用者空間動態載入器。</li>
+</ul>
+<h2><a href="https://blog.davidv.dev/posts/pcie-driver-dma/">了解 PCI-e：驅動程式與 DMA</a></h2>
+<ul>
+<li>「這篇文章詳細介紹了一個基本的 PCI-e(周邊元件互連快速通道)裝置驅動程式的實作，重點在於記憶體映射和 DMA(直接記憶體存取)操作。」</li>
+<li>它解釋了 <code>struct pci_driver</code> 的創建、用於使用者空間互動的字元裝置設置，以及使用 MSI(訊息信號中斷)來處理非同步 DMA 傳輸。</li>
+<li>「這篇文章因其關於開發 PCI-e 裝置驅動程式的實用指南而顯得重要，內容包括程式碼片段和內核文件的參考資料，對於新進的軟體工程師來說非常有價值。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085713">評論</a></h3>
+<ul>
+<li>討論的重點是使用 FPGA(現場可編程門陣列)來構建顯示適配器，並著重於 PCI-e(周邊元件互聯快速通道)硬 IP(智慧財產)。</li>
+<li>「推薦各種價格實惠的 FPGA 開發板，包括 Spartan 6、Artix、Screamer PCIe Squirrel 和 Litefury，這些開發板支援 PCIe 和數位視訊輸出。」</li>
+<li>「該文章還強調了用於製作視頻卡的資源和設計，並提到可能使用 Displayport Alt 模式和 UVC 類型的 USB3 攝像頭進行視頻輸出。」</li>
+</ul>
+<head>
+  <meta property="og:title" content="SQLite：比檔案系統快 35%" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=SQLite%EF%BC%9A%E6%AF%94%E6%AA%94%E6%A1%88%E7%B3%BB%E7%B5%B1%E5%BF%AB%2035%25&subheading=2024%E5%B9%B47%E6%9C%8827%E6%97%A5%20%E6%98%9F%E6%9C%9F%E5%85%AD%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/zh/Hant/2024/07/27</link>
+            <guid isPermaLink="false">2024-07-27T00:00:00.000Z</guid>
+            <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-26]]></title>
             <description
@@ -1680,187 +1876,6 @@
             <link>https://hn.cho.sh/zh/Hant/2024/07/18</link>
             <guid isPermaLink="false">2024-07-18T00:00:00.000Z</guid>
             <pubDate>Thu, 18 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-17]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/17&#39;</h2>
-<h1>2024-07-17</h1>
-<h2><a href="https://workspaceupdates.googleblog.com/2024/07/import-and-export-markdown-in-google-docs.html">在 Google 文件中匯入和匯出 Markdown</a></h2>
-<ul>
-<li>Google 文件現在支援增強的 Markdown 功能，包括在貼上時將 Markdown 轉換為文件內容、將文件內容複製為 Markdown、將文件匯出為 Markdown，以及將 Markdown 匯入為文件。</li>
-<li>「此更新對技術內容撰寫者有利，能夠更輕鬆地在 Docs 和 Markdown 之間進行轉換，以便於協作和文件編寫。」</li>
-<li>「快速發布和計劃發布域的推廣將於 2024 年 7 月 16 日開始，並適用於所有 Google Workspace 客戶、Workspace 個人訂閱者和個人 Google 帳戶用戶。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40982118">評論</a></h3>
-<ul>
-<li>Google 文件現在支援完整的 Markdown 匯入/匯出，提升了其對技術寫作者和 Markdown 文件合作者的實用性。</li>
-<li>「此功能正在逐步推出，以便及早捕捉嚴重的錯誤，因此用戶可能不會立即看到。」</li>
-<li>Google 雲端硬碟及其 API 也將支援這項新的 Markdown 功能，儘管有些使用者對於推行速度緩慢以及對程式碼區塊和註解等元素的支援不完整表示擔憂。</li>
-</ul>
-<h2><a href="https://matt.sh/panic-at-the-job-market">求職市場的恐慌</a></h2>
-<ul>
-<li>由於利率上升、投機性資金和不當的招聘慣例，科技職場市場正處於動盪之中。</li>
-<li>「較高的利率使公司傾向於投資於安全的政府擔保帳戶，而非風險較高的投資項目，導致科技業的失業情況。」</li>
-<li>招聘過程經常集中在無關緊要的程式碼測試和行為面試，未能評估候選人的真實經驗和能力。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40986894">評論</a></h3>
-<ul>
-<li>就業市場在多個行業中都面臨挑戰，包括科技業，複雜的招聘流程往往忽視了個人檔案和貢獻。</li>
-<li>“建立人脈至關重要，因為求職網站經常隱藏履歷，而科技職場面臨機會減少的情況，企業則專注於不相關的技能和隨意的要求。”</li>
-<li>「低效的招聘流程可能顯示出工作環境不佳，而就業市場的不合理性可能會超過個人的財務穩定性，進一步複雜化尋找合適工作的過程。」</li>
-</ul>
-<h2><a href="https://www.da.vidbuchanan.co.uk/blog/r1-jailbreak.html">破解 RabbitOS：揭露秘密日誌和 GPL 違規行為</a></h2>
-<ul>
-<li>「David Buchanan 已經開發出一種適用於 Rabbit R1 的『有線越獄』，可以在不解鎖 bootloader 或更改內部存儲的情況下獲得 root 權限。」</li>
-<li>「Rabbit R1 使用 MediaTek MT6765 SoC，因廣泛的用戶數據記錄和 GPL 違規行為而受到批評，這些問題在最近的更新中部分得到解決。」</li>
-<li>「Buchanan 的研究發現，RabbitOS 是一個經過大量修改的 Android 13 AOSP，主要強制執行單一應用程式的展示模式，他還發布了一個工具來幫助進一步探索這個裝置。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40987730">評論</a></h3>
-<ul>
-<li>「破解 RabbitOS 揭露了秘密日誌和潛在的 GPL(通用公共許可證)違規行為，引發了隱私和法律問題。」</li>
-<li>“日誌包含敏感數據，例如精確的 GPS 位置、WiFi 網路名稱、附近基地台的 ID 和使用者令牌，其中一些會被發送到 Rabbit 的伺服器。”</li>
-<li>「Rabbit Inc. 發布了一個更新版本(v0.8.112)來解決這些日誌問題，但這場爭議突顯了人們對科技產品中的數據隱私和透明度的持續關注。」</li>
-</ul>
-<h2><a href="https://www.justinmath.com/the-greatest-educational-life-hack-learning-math-ahead-of-time/">「最強的教育生活技巧：提前學習數學」</a></h2>
-<ul>
-<li>提前學習數學可以帶來更好的成績、避免不良教學的影響，並獲得實習機會、研究項目和強有力的推薦信，這些對於大學和職業機會至關重要。</li>
-<li>超越微積分的高等數學課程，如線性代數和微分方程，對於許多定量領域來說是必不可少的，並且可以加速學生進入專業領域，提升職業成就。</li>
-<li>“研究顯示，教育加速並不會損害心理健康，反而會帶來更大的學術和職業成功，儘管普遍存在誤解和後勤挑戰。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40983734">評論</a></h3>
-<ul>
-<li>「一位使用者分享了他們在30多歲時克服數學恐懼的過程，強調學習數學永遠不嫌晚，並指出數學對於解決問題和深入了解程式設計的好處。」</li>
-<li>“對於晚年學習數學的建議包括從基礎數學書籍開始，利用社區大學的資源，並逐步進展到高級主題。”</li>
-<li>“討論還強調了早期數學教育、家長參與和像公文數學這樣的外部資源的重要性，以及更廣泛的教育系統在促進自學和動機方面的作用。”</li>
-</ul>
-<h2><a href="https://www.mailgun.com/blog/email/ai-phishing/">「詐騙的黃金時代：人工智慧驅動的網路釣魚」</a></h2>
-<ul>
-<li>生成式人工智慧使詐騙者能夠發送高度個人化且具有說服力的網路釣魚電子郵件，克服語言障礙並自動化大規模活動。</li>
-<li>像 WormGPT 和 FraudGPT 這樣的 AI 工具可以幫助生成網路釣魚電子郵件和偽造網站，大幅減少創建有效攻擊所需的時間。</li>
-<li>防禦策略包括實施 DMARC(基於域的郵件驗證、報告與一致性)、識別 AI 網路釣魚攻擊、使用多層次安全措施以及維持良好的發信者信譽。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40981067">評論</a></h3>
-<ul>
-<li>由人工智慧驅動的網路釣魚詐騙變得越來越精密，利用像是Llama的文字技術、Whisper/Tortoise的語音技術以及Stable Diffusion的影像技術，儘管它們的部署仍然有限。</li>
-<li>儘管人工智慧有可能增強網路釣魚攻擊，傳統方法如印度呼叫中心詐騙仍然非常有效且經濟可行，最近的一個案例顯示，一位老年人被騙走了25,000美元。</li>
-<li>「銀行和其他機構正在提升其詐騙偵測能力，但隨著人工智慧驅動的詐騙增加，尤其是對於像老年人這樣的弱勢群體，需要加強意識和教育。」</li>
-</ul>
-<h2><a href="https://thetinypod.com/">「TinyPod – 帶有滾輪的 Apple Watch 保護殼」</a></h2>
-<ul>
-<li>介紹 tinyPod，一款緊湊型裝置，提供電話、音樂、訊息等基本功能，全部由您的 Apple Watch 驅動。</li>
-<li>主要特點包括觸感滾輪、快速磁吸充電、多日電池續航、Apple Pay 以及 32GB 媒體儲存空間。</li>
-<li>有兩種型號可供選擇：tinyPod，配有滾輪，售價 $79.99；tinyPod lite，無滾輪，售價 $29.99，兼容多款 Apple Watch 系列，將於今年夏天出貨。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40987402">評論</a></h3>
-<ul>
-<li>「TinyPod 是一款 Apple Watch 保護殼，結合了類似 iPod 點擊輪的滾輪，與數位錶冠形成機械連動。」</li>
-<li>「這款產品被視為一個有趣且小眾的硬體創意，吸引那些欣賞獨特和奇特科技小玩意的人，儘管它並不實用。」</li>
-<li>關於產品網頁功能的評價褒貶不一，有些使用者在 Firefox 上遇到問題，而其他人則覺得設計很吸引人。</li>
-</ul>
-<h2><a href="https://github.com/libarchive/libarchive/pull/1609">Jia Tan「JiaT75」：在使用 bsdtar 解壓縮時新增錯誤提示文字(2021)</a></h2>
-<ul>
-<li>“Libarchive 合併了一個提交，為使用 bsdtar 時的警告新增錯誤文本，以解決問題 #1561，但有人對將 safe_fprintf 替換為不安全的 fprintf 表示擔憂。”</li>
-<li>「已實施修正以恢復使用 safe_fprintf 並正確處理 errno，並建議進行進一步的審計以及針對該問題發布 CVE(Common Vulnerabilities and Exposures，常見漏洞與暴露)。」</li>
-<li>「討論強調了徹底程式碼審查和維持開源專案安全的重要性，並且問題在對話鎖定後得到解決。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40984589">評論</a></h3>
-<ul>
-<li>「Jia Tan &#39;JiaT75&#39; 在 2021 年為 bsdtar 的警告訊息新增了錯誤文字，這引發了 GitHub 上關於註解品質和程式碼變更審查的激烈討論。」</li>
-<li>“辯論突顯了維護大型軟體專案的挑戰，以及人工智慧在提升安全性審查中的潛在角色。”</li>
-<li>該事件突顯了偵測惡意程式碼的困難，尤其是來自已知貢獻者的程式碼，並將賈坦(Jia Tan)與對 xz 工具的國家支持攻擊聯繫起來。</li>
-</ul>
-<h2><a href="https://www.theverge.com/2024/7/16/24199686/puerto-rico-fossil-fuel-industry-lawsuit-climate-change">「波多黎各對化石燃料公司提起10億美元訴訟」</a></h2>
-<ul>
-<li>「波多黎各已對主要化石燃料公司提起10億美元的訴訟，包括埃克森美孚、英國石油公司、雪佛龍、殼牌和康菲石油公司，指控其涉嫌誤導公眾關於氣候變遷的資訊並延遲向清潔能源的轉型。」</li>
-<li>“這起在聖胡安提起的訴訟聲稱，這些公司在推廣化石燃料時未充分警告其危險性，違反了貿易法，並尋求賠償以應對如瑪麗亞颶風等氣候災害。”</li>
-<li>這項法律行動是針對化石燃料產業的類似訴訟趨勢的一部分，突顯出對氣候相關影響日益增長的問責努力。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40986213">評論</a></h3>
-<ul>
-<li>「波多黎各已對化石燃料公司提起10億美元的訴訟，指控它們造成與氣候變遷相關的損害，並尋求更嚴格的環境法規。」</li>
-<li>這起訴訟強調了化石燃料的經濟利益與可持續發展實踐及企業責任之間的持續辯論。</li>
-<li>“意見分歧，有些人強調企業對污染和錯誤資訊的責任的重要性，而另一些人則強調個人行動和政府政策在應對氣候變遷中的作用。”</li>
-</ul>
-<h2><a href="https://www.reuters.com/markets/deals/google-backed-software-developer-gitlab-explores-sale-sources-say-2024-07-17/">Gitlab 探討出售事宜</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40983486">評論</a></h3>
-<ul>
-<li>Gitlab 正在考慮出售，這引起了用戶對潛在關閉或服務模式變更的擔憂，讓人聯想到過去 RedHat 和 CentOS 的問題。</li>
-<li>“用戶們討論了像 Gitlab 這樣的開源選項的優點，提到更容易的遷移和社群支持，同時也猜測潛在的買家如 Datadog 或 IBM。”</li>
-<li>對於 Gitlab 價格和企業導向的批評，已經讓一些使用者考慮轉向 GitHub 等替代方案，這反映了對未來穩定性和成本的複雜情緒。</li>
-</ul>
-<h2><a href="https://vedgie.net/writing/darwin_machines.md">「達爾文機器」</a></h2>
-<ul>
-<li>「這篇文章討論了威廉·卡爾文在《大腦密碼》中的理論，該理論提出大腦在微柱內使用進化過程來處理感官輸入並找到最“適合”的模式。」</li>
-<li>“該理論認為，大腦的結構，特別是新皮質的柱狀體和微柱狀體，允許高效的問題解決和並行處理，這可以應用於人工智慧(AI)和機器學習(ML)。”</li>
-<li>作者正在嘗試使用神經網路來模仿這個演化過程，並尋求在這個領域中的研究和學術見解，強調人工智慧深度思考能力的潛在進展。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40981068">評論</a></h3>
-<ul>
-<li>「這篇文章討論了達爾文機器的概念，其中不同的感官數據模態由大腦微柱處理，每個微柱輸出獨特的放電模式，這些模式相互競爭並強化主導模式，從而幫助學習。」</li>
-<li>“膠囊路由演算法，由 Geoffrey Hinton 提出，旨在使用期望最大化(EM)過程來實現這一想法，但在人工智慧研究中已被變壓器的成功所掩蓋。”</li>
-<li>討論強調了理解大腦功能和神經網絡的重要性，提到赫布學習以及深入探索神經活動中的時間動態的必要性。</li>
-</ul>
-<h2><a href="https://github.com/guywaldman/magic-cli">Magic-cli – 你的命令列副駕駛</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40980715">評論</a></h3>
-<ul>
-<li>Magic-cli 是由 Guy Waldman 開發的一個命令列助手，由於其預設的「不安全執行」模式，引發了討論，有人建議應該改為更安全的預設模式，例如「剪貼簿」模式。</li>
-<li>用戶分享了他們的意見和經驗，提到了替代工具如 zsh_codex、aichat 和 Warp 終端。</li>
-<li>該專案是用 Rust 建構的，這引發了關於其相較於其他語言中較簡單實現的複雜性問題。</li>
-</ul>
-<h2><a href="https://developers.google.com/tag-platform/tag-manager/first-party/setup-guide">「Google 提出繞過標籤管理工具自動封鎖的方法」</a></h2>
-<ul>
-<li>「Google 正在推出一項測試功能，允許在第一方模式下部署標籤，透過使用網站的網域來託管，提升標籤效能和數據隱私。」</li>
-<li>設置過程包括在網域上保留一條獨特的路徑，通過 Google Cloud 或 Cloudflare 等服務路由流量，並更新網站腳本以使用新的測量路徑。</li>
-<li>鼓勵使用者使用 Tag Assistant 測試設置，並通過指定的反饋表單或聯絡電子郵件提供意見。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40983585">評論</a></h3>
-<ul>
-<li>「Google 已經引入了一種繞過其 Tag Manager 自動封鎖的方法，這引發了對隱私和廣告攔截器有效性的擔憂。」</li>
-<li>“用戶討論了阻止追蹤的策略，例如使用 uBlock Origin 並預設禁用 JavaScript，然後根據需要選擇性地啟用它，以獲得使用便利性和速度優勢。”</li>
-<li>Google 的新方法引發了一場關於如何在商業目的的數據收集與用戶隱私之間取得平衡的辯論，一些用戶對 Google 的追蹤行為表示不滿。</li>
-</ul>
-<h2><a href="https://www.nytimes.com/2024/07/16/dining/pete-wells-steps-down-food-critic.html">在審查餐廳 12 年後，我將離開這個崗位</a></h2>
-<ul>
-<li>「Pete Wells 在擔任《紐約時報》餐廳評論家 12 年後，由於健康問題，包括高膽固醇、血糖和高血壓，決定辭職。」</li>
-<li>儘管他的角色具有回報性，但頻繁造訪餐廳對於威爾斯的身體負擔已經變得無法持續。</li>
-<li>「Wells 將繼續留在《紐約時報》，但將不再負責每週評論的工作，轉而專注於自己的健康和更平衡的生活方式。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40979539">評論</a></h3>
-<ul>
-<li>「一位長期的餐廳評論家在經歷了12年後即將卸任，引發了關於他影響力及餐廳評論未來的討論。」</li>
-<li>「這位評論家以其多樣化的餐廳選擇和獨特的、有時略顯冷漠的評論方式而聞名。」</li>
-<li>這項公告引起了對新任評論員 Mellissa Clark 的期待，以及對餐飲業從業者經歷的反思。</li>
-</ul>
-<h2><a href="https://github.com/bobbyiliev/introduction-to-bash-scripting">介紹 Bash 腳本</a></h2>
-<ul>
-<li>一本關於 Bash 腳本編寫的開源指南/電子書已經發布，旨在為開發人員、系統管理員和 DevOps 工程師自動化任務。</li>
-<li>這本電子書涵蓋了從基本的 Bash 結構到進階腳本技術的廣泛主題，包括與 API 的互動和生成密碼。</li>
-<li>其他資源包括迷你視頻課程、通過 Katacoda 進行的互動培訓，以及來自 Linux DevOps 工程師 Bobby Iliev 的貢獻。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40982011">評論</a></h3>
-<ul>
-<li>Bash 腳本常被拿來與 Python 比較用於終端機任務，Bash 因其原生的終端機整合，在檔案系統操作和簡單指令序列方面更為高效。</li>
-<li>批評者指出 Python 在處理基本任務時的複雜性以及 Bash 的笨拙語法，但在沒有預裝 Python 的環境中，Bash 仍然是必不可少的。</li>
-<li>「像 Ruby 的 shell 或 Perl 用於文字解析的替代方案存在，並且像 ChatGPT 這樣的工具可以協助生成腳本，但了解 Bash 的基本知識仍然是有價值的。」</li>
-</ul>
-<h2><a href="https://www.gartner.com/en/articles/the-data-is-in-return-to-office-mandates-aren-t-worth-the-talent-risks">重返辦公室的強制要求不值得冒人才流失的風險</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40983717">評論</a></h3>
-<ul>
-<li>“返回辦公室(RTO)的要求可能會導致失去頂尖人才，因為有其他選擇的員工可能會率先離職，這可能會引發多米諾效應。”</li>
-<li>彈性的選項，例如旅遊補助或改善辦公室設施，被建議作為比嚴格的返回辦公室規定更好的替代方案。</li>
-<li>“這場辯論包括了對生產力、指導和個人偏好的觀點，有些人認為返回辦公室(RTO)是由過時的管理觀點或經濟壓力所驅動的。”</li>
-</ul>
-<head>
-  <meta property="og:title" content="在 Google 文件中匯入和匯出 Markdown" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E5%9C%A8%20Google%20%E6%96%87%E4%BB%B6%E4%B8%AD%E5%8C%AF%E5%85%A5%E5%92%8C%E5%8C%AF%E5%87%BA%20Markdown&subheading=2024%E5%B9%B47%E6%9C%8817%E6%97%A5%20%E6%98%9F%E6%9C%9F%E4%B8%89%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/zh/Hant/2024/07/17</link>
-            <guid isPermaLink="false">2024-07-17T00:00:00.000Z</guid>
-            <pubDate>Wed, 17 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

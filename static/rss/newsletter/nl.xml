@@ -15,12 +15,208 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 26 Jul 2024 19:14:09 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 27 Jul 2024 19:09:46 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/nl.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Fri, 26 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[nl]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-27]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/27&#39;</h2>
+<h1>2024-07-27</h1>
+<h2><a href="https://sqlite.org/fasterthanfs.html">SQLite: 35 % raskere enn filsystemet</a></h2>
+<ul>
+<li>SQLite leser og skriver små blobs (f.eks. miniatyrbilder) 35 % raskere enn ved bruk av individuelle filer på disk, og bruker omtrent 20 % mindre diskplass.</li>
+<li>Effektiviteten tilskrives færre open() og close() systemkall og tettere datapakking, med forventet ytelsesforbedring i fremtidige versjoner.</li>
+<li>Tester viser at SQLite generelt overgår direkte fil-I/O, spesielt på Windows med antivirusprogramvare aktivert, selv om ytelsen kan variere basert på maskinvare og operativsystem.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085376">Reacties</a></h3>
+<ul>
+<li>SQLite er 35 % raskere enn tradisjonelle filsystemer på grunn av færre åpne/lukke systemanrop og ingen behov for filsystemattributter eller metadata-sjekker.</li>
+<li>Ytelsesforbedringen er spesielt betydelig på Windows, hvor filsystemanrop er iboende tregere.</li>
+<li>Til tross for noen begrensninger, som en maksimal blob-størrelse på 2 GB og utfordringer med hierarkiske data, gjør SQLite&#39;s hastighet og enkelhet det fordelaktig for logger og annen datalagring.</li>
+</ul>
+<h2><a href="https://sysprog21.github.io/lkmpg/">Linux Kernel Module Programmeringsveiledning</a></h2>
+<ul>
+<li>Linux Kernel Module Programming Guide gir en omfattende introduksjon til å lage og administrere kjernemoduler, som er dynamisk lastbare kodebiter som forbedrer kjernefunksjonene uten å kreve en omstart.</li>
+<li>Viktige verktøy og kommandoer for å arbeide med kjernemoduler inkluderer <code>modprobe</code>, <code>insmod</code>, <code>depmod</code>, <code>lsmod</code> og <code>cat /proc/modules</code>.</li>
+<li>Guiden dekker essensielle emner som initialisering og opprydding av moduler, håndtering av kommandolinjeargumenter, administrasjon av enhetsdrivere, interaksjon med <code>/proc</code>- og <code>sysfs</code>-filsystemene, og unngåelse av vanlige fallgruver i kjerneprogrammering.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083972">Reacties</a></h3>
+<ul>
+<li>Linux Kernel Module Programming Guide fremhever bruk av QEMU for kjerne-hacking og foreslår å oppdatere bøker om Linux-enhetsdrivere.</li>
+<li>Greg KH bekreftet at det ikke vil bli en 4. utgave av boken Linux Device Drivers, noe som utløste diskusjoner om alternative ressurser som &quot;The Linux Memory Manager&quot; og &quot;Linux Insides.&quot;</li>
+<li>Brukere delte erfaringer med QEMU for feilsøking og WireGuard test suite for utvikling av kjernemoduler, og understreket viktigheten av menneskelig gjennomgang i skriving.</li>
+</ul>
+<h2><a href="https://reason.com/2024/07/26/courts-close-the-loophole-letting-the-feds-search-your-phone-at-the-border/">Domstoler tetter smutthullet som lar føderale myndigheter søke gjennom telefonen din ved grensen</a></h2>
+<ul>
+<li>En føderal dommer avgjorde at Customs and Border Protection (CBP) ikke kan søke i elektronikk ved grensen uten en ransakingsordre, og adresserte dermed et smutthull i det fjerde grunnlovstillegget.</li>
+<li>Dommer Nina Morrison uttalte at ransaking av mobiltelefoner er &#39;ikke-rutinemessig&#39; og krever sannsynlig grunn og en ransakingsordre, og sammenlignet dem med kroppsvisitasjoner på grunn av deres betydelige innvirkning på personvernet.</li>
+<li>Avgjørelsen, støttet av borgerrettsforkjempere, anses som avgjørende for pressefrihet og personvernrettigheter, etter lignende beslutninger i andre kretser og distrikter.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083286">Reacties</a></h3>
+<ul>
+<li>En distriktsdomstol i New York avgjorde at ransaking av mobiltelefoner uten ransakingsordre ved grensen er &quot;ikke-rutinemessig&quot; og mer inngripende enn andre typer ransakinger, og sammenlignet dem med kroppsvisitasjoner.</li>
+<li>Avgjørelsen er ikke bindende presedens og står i kontrast til avgjørelser fra andre kretsdomstoler, noe som indikerer en potensiell mulighet for at Høyesterett vil ta opp saken på grunn av den eksisterende &quot;kretsdelingen.&quot;</li>
+<li>Avgjørelsen reflekterer pågående debatter om personvernrettigheter og statens makt, spesielt i konteksten av grensesikkerhet og det fjerde grunnlovstillegget.</li>
+</ul>
+<h2><a href="https://web.stanford.edu/class/cs81n/command.txt">Begynnelsen var kommandolinjen (1999)</a></h2>
+<ul>
+<li>Innledningen til Neal Stephensons essay &quot;In the Beginning was the Command Line&quot; utforsker utviklingen av operativsystemer (OS) og deres markedsdynamikk, med fokus på Apple og Microsoft.</li>
+<li>Microsoft oppnådde markedsdominans ved å selge operativsystemer som forbruksvarer, med vekt på bekvemmelighet og enkelhet, noe som resonerte med bredere kulturelle trender som verdsatte enkelhet over kompleksitet.</li>
+<li>Til tross for fremveksten av overlegne, gratis alternativer som Linux og BeOS, foretrakk de fleste forbrukere Microsofts kjente produkter, noe som fremhever et samfunnsmessig preferanse for medierte opplevelser gjennom grafiske brukergrensesnitt (GUIer).</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41084795">Reacties</a></h3>
+<ul>
+<li>Neal Stephensons essay &quot;In the Beginning Was the Command Line&quot; (1999) fremhever fordelene med kommandolinjegrensesnitt (CLI) over grafiske brukergrensesnitt (GUI), og understreker deres kortfattethet og enkelhet i kommunikasjon.</li>
+<li>Essayet sammenligner utviklingen av operativsystemer med biler, og understreker stabiliteten og brukerkontrollen som tilbys av kommandolinjegrensesnitt til tross for populariteten til grafiske brukergrensesnitt.</li>
+<li>Den går også inn på de kulturelle og filosofiske implikasjonene av teknologigrensesnitt, og gir et bredere perspektiv på hvordan vi samhandler med teknologi.</li>
+</ul>
+<h2><a href="https://blog.singleton.io/posts/2022-10-17-otp-on-wrist/">OTP-tokens på håndleddet mitt med den smarteste dumme klokken</a></h2>
+<ul>
+<li>Sensor Watch har lansert et nytt erstatningslogikkort for den klassiske Casio F-91W, og oppgraderer den med en ARM Cortex M0+ prosessor samtidig som den beholder den originale LCD-skjermen, knappene og piezo-summeren.</li>
+<li>Det oppgraderte kortet er programmerbart, noe som gjør det mulig å tilpasse urskiver og verktøyapper, inkludert funksjoner som 2FA-tokens, ratemeter, verdensklokke og mer.</li>
+<li>Klokken er enkel å hacke, med en wasm-basert emulator for testing, og detaljert dokumentasjon er tilgjengelig for de som er interessert i å modifisere eller lage sine egne urskiver.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41081435">Reacties</a></h3>
+<ul>
+<li>En diskusjon på Hacker News fremhever bruken av TOTP (Time-based One-Time Password) tokens på Casio-klokker, spesielt modellene F-91W og A158W, for tofaktorautentisering (2FA).</li>
+<li>Prosjektet innebærer å modifisere klokkens firmware for å vise TOTP-koder, med bidrag fra fellesskapet som forbedrer funksjoner som brukerkalibrering og til og med å lage spill for klokken.</li>
+<li>Det er bekymringer for sikkerheten ved å ha TOTP-koder synlige på en klokke, og noen foreslår alternativer som FIDO2-maskinvarenøkler for bedre beskyttelse mot phishing-angrep.</li>
+</ul>
+<h2><a href="https://ntk148v.github.io/posts/linux-network-performance-ultimate-guide/">Linux Network Performance Ultimate Guide</a></h2>
+<ul>
+<li>Guiden gir en grundig oversikt over optimalisering av nettverksprestasjoner i Linux, og dekker emner fra nettverksstakken til avanserte pakkebehandlingsteknikker.</li>
+<li>Viktige innstillingstrinn inkluderer justering av NIC-ringbufferstørrelser, avbruddskoalescens, IRQ-affinitet og bruk av verktøy som AF_PACKET, DPDK og XDP for høyytelses pakkehåndtering.</li>
+<li>Overvåking og justering av nettverksinnstillinger med verktøy som <code>ethtool</code>, <code>sysctl</code> og <code>netstat</code> er essensielt for å opprettholde optimal ytelse.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083801">Reacties</a></h3>
+<ul>
+<li>Den «Linux Network Performance Ultimate Guide» er en omfattende ressurs for å optimalisere nettverksytelse ved bruk av Linux, spesielt nyttig for de som arbeider med høyhastighetsnettverk.</li>
+<li>En bruker delte en suksesshistorie om å bygge et kostnadseffektivt 10Gbps kryptert nettverk ved å bruke kommersielt tilgjengelig hyllevare (COTS) og Wireguard, som betydelig undergikk kommersielle maskinvareløsninger.</li>
+<li>Diskusjoner i kommentarene inkluderer praktiske tips, som å justere TCP-bufferstørrelser, og verktøy for automatisk ytelsesjustering, som Oracles bpftune.</li>
+</ul>
+<h2><a href="https://github.com/joshuacline/windick">Windows-gjenopprettingsmiljø og oppstartbar USB-oppretter i 200kb</a></h2>
+<ul>
+<li>Windows Deployment Image Customization Kit er et kommandoskallverktøy designet for å tilpasse og distribuere Windows-avbildninger.</li>
+<li>Det gir en native løsning for IT-profesjonelle og systemadministratorer for å effektivisere distribusjonsprosessen.</li>
+<li>Veiledninger og tilleggsinformasjon er tilgjengelig på plattformer som YouTube og Microsofts offisielle dokumentasjon.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083987">Reacties</a></h3>
+<ul>
+<li>Et nytt verktøy basert på shell for å lage et Windows-gjenopprettingsmiljø og oppstartbar USB har blitt utgitt, og det passer inn i bare 200 kilobytes.</li>
+<li>Verktøyet, skrevet som en stor batch-fil med 3 085 kodelinjer, viser imponerende dedikasjon og effektivitet, spesielt gitt tilgjengeligheten av mer moderne skriptspråk som PowerShell.</li>
+<li>Prosjektet er inspirert av clockworkmod recovery for Android og har som mål å bruke &quot;live-of-the-land&quot;-kommandoer, noe som betyr at det har null avhengigheter og fungerer utelukkende under Windows.</li>
+</ul>
+<h2><a href="https://krebsonsecurity.com/2024/07/crooks-bypassed-googles-email-verification-to-create-workspace-accounts-access-3rd-party-services/">Svindlere omgått Googles e-postverifisering for å opprette Workspace-kontoer, tilgang</a></h2>
+<ul>
+<li>Google fikset en autentiseringssvakhet som tillot kriminelle å omgå e-postverifisering for å opprette Google Workspace-kontoer og utgi seg for å være domeneinnehavere.</li>
+<li>Problemet ble løst innen 72 timer, og ytterligere deteksjonstiltak ble implementert for å forhindre fremtidig misbruk.</li>
+<li>Angriperne hadde som mål å utgi seg for domenebrukere overfor tredjepartstjenester, ikke å misbruke Googles tjenester, og den ondsinnede aktiviteten involverte noen tusen Workspace-kontoer opprettet uten domenebekreftelse.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41082502">Reacties</a></h3>
+<ul>
+<li>Angripere omgått Googles e-postverifisering for å opprette uautoriserte Workspace-kontoer, noe som førte til potensielle sikkerhetsbrudd og uventede velkomst-e-poster for uregistrerte domener.</li>
+<li>Disse uautoriserte kontoene ble brukt til å utnytte «Logg inn med Google» på tredjeparts nettsteder, noe som forårsaket vanskeligheter for ofrene med å gjenvinne sine domener.</li>
+<li>Incidentet understreker sårbarheter i Googles system og risikoene forbundet med sosiale pålogginger, noe som fører til oppfordringer om forbedringer som obligatorisk DNS-verifisering.</li>
+</ul>
+<h2><a href="https://github.com/devrim/cloudflare-noip">Gratis DDNS med Cloudflare og en Cronjob</a></h2>
+<ul>
+<li>Dette prosjektet gir et gratis alternativ til betalte dynamiske DNS-tjenester ved å automatisere DNS-oppdateringer på Cloudflare ved hjelp av en gratis konto og en cronjob.</li>
+<li>Brukere må klone depotet, opprette konfigurasjonsfiler (<code>keys.json</code> og <code>records.json</code>), og sette opp en cronjobb eller tilsvarende oppgaveplanlegger for å kjøre skriptet med jevne mellomrom.</li>
+<li>Scriptet oppdaterer DNS-poster på Cloudflare med maskinens nåværende IP-adresse, noe som gjør det til en kostnadseffektiv løsning for dynamiske DNS-behov.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41081810">Reacties</a></h3>
+<ul>
+<li>Et GitHub-prosjekt tilbyr en gratis Dynamic DNS (DDNS)-løsning ved bruk av Cloudflare og en cron-jobb, og tiltrekker seg betydelig interesse fra teknologisamfunnet.</li>
+<li>Brukere diskuterer fordeler og ulemper ved å bruke Cloudflare for DDNS, inkludert potensielle lokke- og byttetaktikker og begrensninger som obligatorisk TLS-terminering og opplastingsbegrensninger.</li>
+<li>Alternativer og lignende prosjekter nevnes, som å bruke Cloudflare-tunneler, Tailscale og andre DDNS-klienter, og fremhever mangfoldet av løsninger som er tilgjengelige for å administrere dynamiske IP-adresser.</li>
+</ul>
+<h2><a href="https://huyenchip.com/ml-interviews-book/">Introduksjon til intervjuer om maskinlæring bok</a></h2>
+<ul>
+<li>Introduksjon til maskinlæringsintervjuer-boken gir en omfattende guide til ML-intervjuprosessen, og dekker roller, selskaps typer, intervjuformater og spørsmålstyper.</li>
+<li>Den inneholder over 200 kunnskapsspørsmål og 30 åpne spørsmål, med mål om å hjelpe både kandidater og ansettelsesansvarlige med å forstå og forberede seg til ML-intervjuer.</li>
+<li>Skrevet av Chip Huyen, som har omfattende erfaring med intervjuer hos store teknologiselskaper og oppstartsbedrifter, samler boken praktiske innsikter og forberedelsesstrategier.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083534">Reacties</a></h3>
+<ul>
+<li>Det diskuteres om boken &quot;Introduction to Machine Learning Interviews&quot; av Huyen Chip, med blandede meninger om dens effektivitet for å forberede seg til ML-intervjuer.</li>
+<li>Enkelte brukere antyder at spørsmålene i boken er enklere sammenlignet med faktiske ML-intervjuer, og andre anbefaler boken &quot;Deep Learning Interviews&quot; som mer engasjerende og representativ.</li>
+<li>Det er en debatt om relevansen av å bruke standardspørsmål fra boken, med noen som argumenterer for å lage personlige prosjekter i stedet.</li>
+</ul>
+<h2><a href="https://github.com/narumatt/sqlitefs">Sqlitefs: SQLite som et filsystem</a></h2>
+<ul>
+<li>sqlite-fs gjør det mulig for Linux- og MacOS-brukere å montere en SQLite-databasefil som et vanlig filsystem, noe som letter filoperasjoner gjennom en database.</li>
+<li>Trenger det nyeste Rust programmeringsspråket (≥ 1.38) og libfuse (Linux) eller osxfuse (MacOS) for funksjonalitet.</li>
+<li>Støtter ulike filoperasjoner som å opprette, lese, skrive, slette filer og kataloger, endre attributter og håndtere fillåser, med streng feilhåndtering.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085856">Reacties</a></h3>
+<ul>
+<li>SQLiteFS er et prosjekt som bruker SQLite som et filsystem, og vekker interesse for sin unike tilnærming til fil-lagring.</li>
+<li>Konseptet minner om Microsofts kansellerte WinFS-prosjekt, som hadde som mål å bruke SQL Server som et filsystem.</li>
+<li>Til tross for humoren og de teoretiske diskusjonene, blir praktiske anvendelser som å bruke SQLiteFS for operasjoner i minnet eller caching vurdert.</li>
+</ul>
+<h2><a href="https://boogiemath.org/meta/meta-9.html">Oscar Zariski var en av grunnleggerne av moderne algebraisk geometri</a></h2>
+<ul>
+<li>Oscar Zariski (1899-1986) var en sentral skikkelse innen moderne algebraisk geometri, kjent for sin innflytelsesrike bok &quot;Algebraic Surfaces&quot; og sine betydelige bidrag til feltet.</li>
+<li>Til tross for at han startet sin akademiske karriere senere enn vanlig, forble Zariski aktiv inn i åttiårene, med bemerkelsesverdig arbeid med holomorfe funksjoner og en rik akademisk reise gjennom prestisjetunge institusjoner.</li>
+<li>En interessant anekdote fra livet hans inkluderer at han nesten gikk glipp av sitt eget bryllup på grunn av at han var dypt oppslukt i et matematisk problem, noe som fremhever hans intense dedikasjon til matematikk.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41086060">Reacties</a></h3>
+<ul>
+<li>Oscar Zariski er anerkjent som en grunnlegger av moderne algebraisk geometri.</li>
+<li>Brukere delte anekdoter og diskuterte ulike emner, inkludert matematikeren Kalle Väisäläs humoristiske hendelse og &quot;fantasifaktoren,&quot; som måler tid brukt i virkelige vs. imaginære verdener.</li>
+<li>Diskusjonen gikk også inn på historiske og politiske temaer, som den russiske revolusjonen og debatter om kommunisme vs. kapitalisme.</li>
+</ul>
+<h2><a href="https://www.cs.cornell.edu/~asampson/blog/bril.html">Bril: Et mellomliggende språk for undervisning i kompilatorer</a></h2>
+<ul>
+<li>Bril, det store røde mellomliggende språket, ble opprettet for å forenkle undervisningen i kompilatorer ved å prioritere brukervennlighet og enkelhet fremfor ytelse og kode størrelse.</li>
+<li>Bril-programmer er JSON-dokumenter, noe som gjør dem tilgjengelige med ethvert programmeringsspråk og enkle å dele.</li>
+<li>Bril-økosystemet har utvidet seg med studentbidrag, inkludert verktøy og språkforlengelser, selv om dets SSA (Static Single Assignment) form trenger forbedring.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41084318">Reacties</a></h3>
+<ul>
+<li>Bril er et mellomliggende språk (IL) designet for å lære kompilatorer, utviklet av Cornell University.</li>
+<li>Diskusjoner fremhever behovet for å omarbeide Brils Static Single Assignment (SSA)-form og sammenligninger med andre IL-er som ANF (A-Normal Form) og CPS (Continuation-Passing Style).</li>
+<li>Noen hevder at eksisterende IL-er som LLVM er tilstrekkelige for pedagogiske formål, mens andre understreker Brils unike tilnærming til å lære bort kompilatorkonsepter.</li>
+</ul>
+<h2><a href="https://fabiensanglard.net/dc/">Å kjøre kompilatorer</a></h2>
+<ul>
+<li>Serien har som mål å fylle gapet i litteraturen om bruk av verktøy for å gjøre programmer om til kjørbare filer, med fokus på kjernebegreper i stedet for å lære et språk eller hvordan man skriver en kompilator.</li>
+<li>Den gir reproduserbare trinn ved bruk av bintools og driverens verbose-modus (-v) for å hjelpe leserne med å utforske utover grunnleggende eksempler, forutsatt en Linux-plattform med gcc- eller clang-kompilatorer.</li>
+<li>Serien er delt inn i fem deler: Driver, cpp (forprosessor), cc (kompilator), ld (linker) og Loader, og tilbyr en strukturert tilnærming til å forstå kompilasjonsprosessen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083077">Reacties</a></h3>
+<ul>
+<li>Artikkelen gir en utmerket introduksjon til C- og C++-verktøykjeden, med fokus på Linux og ELF-baserte plattformer.</li>
+<li>Viktige avklaringer inkluderer at C++ standardbiblioteket er bredere enn STL, og ::operator new() er en del av kjøretiden, ikke bare en mal.</li>
+<li>Artikkelen bør bedre skille mellom OS-kernel-lasteren og brukerspace-dynamisk laster.</li>
+</ul>
+<h2><a href="https://blog.davidv.dev/posts/pcie-driver-dma/">Å lære om PCI-e: Driver og DMA</a></h2>
+<ul>
+<li>Innlegget beskriver implementeringen av en grunnleggende PCI-e (Peripheral Component Interconnect Express) enhetsdriver, med fokus på minnekartlegging og DMA (Direct Memory Access) operasjoner.</li>
+<li>Det forklarer opprettelsen av en <code>struct pci_driver</code>, oppsettet av en tegn-enhet for brukerrom-interaksjon, og bruken av MSI (Message Signalled Interrupts) for håndtering av asynkrone DMA-overføringer.</li>
+<li>Innlegget er betydningsfullt for sin praktiske veiledning om utvikling av en PCI-e enhetsdriver, inkludert kodeeksempler og referanser til kjernedokumentasjon, noe som gjør det verdifullt for nye programvareingeniører.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085713">Reacties</a></h3>
+<ul>
+<li>Diskusjonen dreier seg om å bruke en FPGA (Field-Programmable Gate Array) til å bygge en skjermadapter, med fokus på PCI-e (Peripheral Component Interconnect Express) hard IP (Intellectual Property).</li>
+<li>Flere rimelige FPGA-kort anbefales, inkludert Spartan 6, Artix, Screamer PCIe Squirrel og Litefury, som støtter PCIe og digital video utgang.</li>
+<li>Innlegget fremhever også ressurser og design for å lage videokort og nevner den potensielle bruken av Displayport Alt-modus og UVC-type USB3-webkameraer for video utgang.</li>
+</ul>
+<head>
+  <meta property="og:title" content="SQLite: 35 % raskere enn filsystemet" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=SQLite%3A%2035%20%25%20raskere%20enn%20filsystemet&subheading=zaterdag%2027%20juli%202024%3A%20Samenvatting%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/nl/2024/07/27</link>
+            <guid isPermaLink="false">2024-07-27T00:00:00.000Z</guid>
+            <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-26]]></title>
             <description
@@ -1683,187 +1879,6 @@
             <link>https://hn.cho.sh/nl/2024/07/18</link>
             <guid isPermaLink="false">2024-07-18T00:00:00.000Z</guid>
             <pubDate>Thu, 18 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-17]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/17&#39;</h2>
-<h1>2024-07-17</h1>
-<h2><a href="https://workspaceupdates.googleblog.com/2024/07/import-and-export-markdown-in-google-docs.html">Importer og eksporter Markdown i Google Docs</a></h2>
-<ul>
-<li>Google Docs støtter nå forbedrede Markdown-funksjoner, inkludert konvertering av Markdown til Docs-innhold ved innliming, kopiering av Docs-innhold som Markdown, eksport av et dokument som Markdown og import av Markdown som et dokument.</li>
-<li>Denne oppdateringen er gunstig for tekniske innholdsforfattere, og gjør det enklere å konvertere mellom Docs og Markdown for samarbeid og dokumentasjon.</li>
-<li>Utrullingen begynner 16. juli 2024 for Rapid Release og Scheduled Release-domener, og er tilgjengelig for alle Google Workspace-kunder, Workspace Individual-abonnenter og personlige Google-kontobrukere.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40982118">Reacties</a></h3>
-<ul>
-<li>Google Docs støtter nå full import/eksport av Markdown, noe som øker nytteverdien for tekniske skribenter og samarbeidspartnere på Markdown-dokumenter.</li>
-<li>Funksjonen rulles gradvis ut for å fange opp alvorlige feil tidlig, så brukere ser den kanskje ikke umiddelbart.</li>
-<li>Google Drive og dets API-er vil også støtte denne nye Markdown-funksjonaliteten, selv om noen brukere har bekymringer om trege utrullinger og ufullstendig støtte for elementer som kodeblokker og kommentarer.</li>
-</ul>
-<h2><a href="https://matt.sh/panic-at-the-job-market">Panikken i arbeidsmarkedet</a></h2>
-<ul>
-<li>Teknologijobmarkedet er i uro på grunn av stigende renter, spekulativ finansiering og feilaktige ansettelsespraksiser.</li>
-<li>Høyere renter fører til at selskaper investerer i sikre, statlig støttede kontoer i stedet for risikofylte satsinger, noe som fører til tap av arbeidsplasser i teknologisektoren.</li>
-<li>Ansettelsesprosessen fokuserer ofte på irrelevante kodingstester og atferdsintervjuer, og klarer ikke å vurdere kandidatenes reelle erfaring og evner.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40986894">Reacties</a></h3>
-<ul>
-<li>Arbeidsmarkedet er utfordrende på tvers av flere bransjer, inkludert teknologi, med komplekse ansettelsesprosesser som overser individuelle profiler og bidrag.</li>
-<li>Networking er essensielt ettersom jobbportaler ofte skjuler CV-er, og markedet for teknologijobber står overfor minkende muligheter med selskaper som fokuserer på irrelevante ferdigheter og vilkårlige krav.</li>
-<li>Ueffektive ansettelsespraksiser kan indikere dårlige arbeidsmiljøer, og irrasjonaliteten i arbeidsmarkedet kan vare lenger enn individers økonomiske stabilitet, noe som kompliserer søket etter passende arbeid.</li>
-</ul>
-<h2><a href="https://www.da.vidbuchanan.co.uk/blog/r1-jailbreak.html">Jailbreaking RabbitOS: Avdekke hemmelige logger og GPL-brudd</a></h2>
-<ul>
-<li>David Buchanan har utviklet en «tethered jailbreak» for Rabbit R1, som gir root-tilgang uten å låse opp bootloaderen eller endre intern lagring.</li>
-<li>Kaninen R1, som bruker en MediaTek MT6765 SoC, har blitt kritisert for omfattende brukerdataregistrering og GPL-brudd, som delvis ble adressert i en nylig oppdatering.</li>
-<li>Buchanans funn avslører at RabbitOS er en sterkt modifisert Android 13 AOSP, som primært håndhever en enkelt-app kioskmodus, og han har gitt ut et verktøy for å hjelpe videre utforskning av enheten.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40987730">Reacties</a></h3>
-<ul>
-<li>Jailbreaking RabbitOS har avslørt hemmelige logger og potensielle GPL (General Public License) brudd, noe som reiser bekymringer om personvern og juridiske spørsmål.</li>
-<li>Logger inkluderer sensitive data som presise GPS-posisjoner, navn på WiFi-nettverk, ID-er til nærliggende celletårn og brukertokens, hvorav noen sendes til Rabbits servere.</li>
-<li>Rabbit Inc. ga ut en oppdatering (v0.8.112) som adresserer disse loggingsproblemene, men kontroversen fremhever pågående bekymringer om datavern og åpenhet i teknologiprodukter.</li>
-</ul>
-<h2><a href="https://www.justinmath.com/the-greatest-educational-life-hack-learning-math-ahead-of-time/">Den beste utdanningslivshacken: Lære matematikk på forhånd</a></h2>
-<ul>
-<li>Å lære matematikk på forhånd kan føre til bedre karakterer, beskyttelse mot dårlig undervisning og tilgang til praksisplasser, forskningsprosjekter og sterke anbefalingsbrev, som er avgjørende for muligheter innen høyere utdanning og karriere.</li>
-<li>Avanserte matematikkurs utover kalkulus, som Lineær Algebra og Differensialligninger, er essensielle for mange kvantitative felt og kan raskt føre studenter inn i spesialiserte felt, noe som forbedrer karriereprestasjoner.</li>
-<li>Forskning indikerer at pedagogisk akselerasjon ikke skader psykisk velvære og fører til større akademisk og profesjonell suksess, til tross for vanlige misoppfatninger og logistiske utfordringer.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40983734">Reacties</a></h3>
-<ul>
-<li>En bruker delte sin reise med å overvinne matematikkfobi i 30-årene, og fremhevet at det aldri er for sent å lære matematikk og dens fordeler for problemløsning og innsikt i programmering.</li>
-<li>Forslag for å lære matematikk senere i livet inkluderte å starte med grunnleggende matematikkbøker, utnytte ressurser fra community college, og gradvis gå videre til avanserte emner.</li>
-<li>Diskusjonen understreket også viktigheten av tidlig matematikkundervisning, foreldreinvolvering og eksterne ressurser som Kumon, samt utdanningssystemets bredere rolle i å fremme selvstudium og motivasjon.</li>
-</ul>
-<h2><a href="https://www.mailgun.com/blog/email/ai-phishing/">Svindlernes gullalder: AI-drevet phishing</a></h2>
-<ul>
-<li>Generativ AI gjør det mulig for svindlere å sende svært personlige og overbevisende phishing-e-poster, overvinne språkbarrierer og automatisere masse kampanjer.</li>
-<li>AI-verktøy som WormGPT og FraudGPT hjelper til med å generere phishing-e-poster og forfalske nettsteder, noe som reduserer tiden som trengs for å lage effektive angrep betydelig.</li>
-<li>Forsvarsstrategier inkluderer implementering av DMARC (Domain-based Message Authentication, Reporting &amp; Conformance), gjenkjenning av AI-phishingforsøk, bruk av flerlags sikkerhet og opprettholdelse av en sterk avsenderreputasjon.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40981067">Reacties</a></h3>
-<ul>
-<li>AI-drevne phishing-svindler blir mer sofistikerte, og utnytter teknologier som Llama for tekst, Whisper/Tortoise for stemme, og Stable Diffusion for bilder, selv om deres distribusjon fortsatt er begrenset.</li>
-<li>Til tross for potensialet for at AI kan forbedre phishing, forblir tradisjonelle metoder som indiske callsenter-svindler svært effektive og økonomisk levedyktige, som vist i en nylig sak hvor en eldre person ble svindlet for $25,000.</li>
-<li>Banker og andre institusjoner forbedrer sine evner til å oppdage svindel, men økningen av AI-drevne svindler krever økt bevissthet og utdanning, spesielt for sårbare grupper som eldre.</li>
-</ul>
-<h2><a href="https://thetinypod.com/">TinyPod – Apple Watch-deksel med rullehjul</a></h2>
-<ul>
-<li>Vi introduserer tinyPod, en kompakt enhet som tilbyr essensielle funksjoner som telefon, musikk, meldinger og mer, alt drevet av din Apple Watch.</li>
-<li>Viktige funksjoner inkluderer et taktilt rullehjul, rask magnetisk lading, batterilevetid på flere dager, Apple Pay og 32 GB lagring for media.</li>
-<li>Tilgjengelig i to modeller: tinyPod med et rullehjul for $79,99 og tinyPod lite uten rullehjul for $29,99, kompatibel med ulike Apple Watch-serier, leveres denne sommeren.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40987402">Reacties</a></h3>
-<ul>
-<li>TinyPod er et Apple Watch-deksel som inkluderer et rullehjul, som minner om iPodens klikkhjul, og skaper en mekanisk kobling med den digitale kronen.</li>
-<li>Produktet blir sett på som en morsom, nisje maskinvareidé, som appellerer til de som setter pris på unike og lunefulle teknologiske dingser, til tross for dens upraktiskhet.</li>
-<li>Det er blandede anmeldelser om produktets nettsidefunksjonalitet, med noen brukere som opplever problemer på Firefox, mens andre synes designet er tiltalende.</li>
-</ul>
-<h2><a href="https://github.com/libarchive/libarchive/pull/1609">Jia Tan &quot;JiaT75&quot;: La til feilmelding til advarsel ved utpakking med bsdtar (2021)</a></h2>
-<ul>
-<li>Libarchive fusjonerte en commit for å legge til feilmeldinger til advarsler ved bruk av bsdtar, og adresserte problem #1561, men bekymringer om å erstatte safe_fprintf med usikre fprintf ble reist.</li>
-<li>En løsning ble implementert for å gå tilbake til safe_fprintf og bruke korrekt errno-håndtering, med forslag til ytterligere revisjoner og en CVE (Common Vulnerabilities and Exposures) for problemet.</li>
-<li>Diskusjonen understreket viktigheten av grundige kodegjennomganger og opprettholdelse av sikkerhet i open-source-prosjekter, og problemet ble løst med samtalen låst.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40984589">Reacties</a></h3>
-<ul>
-<li>Jia Tan &quot;JiaT75&quot; la til feilmeldingstekst til en advarsel i bsdtar i 2021, noe som førte til en opphetet GitHub-diskusjon om kommentarens kvalitet og granskning av kodeendringer.</li>
-<li>Debatten fremhevet utfordringene med å vedlikeholde store programvareprosjekter og den potensielle rollen til AI i å forbedre sikkerhetsgjennomganger.</li>
-<li>Den hendelsen understreket vanskeligheten med å oppdage ondsinnet kode, spesielt fra kjente bidragsytere, og knyttet Jia Tan til et statssponset angrep på xz-verktøyet.</li>
-</ul>
-<h2><a href="https://www.theverge.com/2024/7/16/24199686/puerto-rico-fossil-fuel-industry-lawsuit-climate-change">Puerto Rico saksøker fossile brenselselskaper for 1 milliard dollar</a></h2>
-<ul>
-<li>Puerto Rico har anlagt et søksmål på 1 milliard dollar mot store fossile brenselselskaper, inkludert ExxonMobil, BP, Chevron, Shell og ConocoPhillips, for angivelig å ha villedet offentligheten om klimaendringer og forsinket overgangen til ren energi.</li>
-<li>Rettsaken, anlagt i San Juan, hevder at disse selskapene brøt handelslovene ved å promotere fossile brensler uten tilstrekkelige advarsler om farene deres, og søker erstatning for å forsvare seg mot klimakatastrofer som orkanen Maria.</li>
-<li>Dette søksmålet er en del av en bredere trend med lignende søksmål mot fossilindustrien, som fremhever økende ansvarlighetsinnsats for klima-relaterte påvirkninger.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40986213">Reacties</a></h3>
-<ul>
-<li>Puerto Rico har innledet et søksmål på 1 milliard dollar mot fossile brenselselskaper, og anklager dem for å forårsake klimarelaterte skader og søker strengere miljøreguleringer.</li>
-<li>Rettsaken understreker den pågående debatten mellom de økonomiske fordelene ved fossile brensler og nødvendigheten av bærekraftige praksiser og bedriftsansvar.</li>
-<li>Meningen er delte, med noen som understreker viktigheten av bedriftens ansvar for forurensning og feilinformasjon, mens andre legger vekt på rollen til individuelle handlinger og myndighetens politikk i bekjempelsen av klimaendringer.</li>
-</ul>
-<h2><a href="https://www.reuters.com/markets/deals/google-backed-software-developer-gitlab-explores-sale-sources-say-2024-07-17/">Gitlab utforsker salg</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40983486">Reacties</a></h3>
-<ul>
-<li>Gitlab vurderer et salg, noe som vekker bekymring blant brukerne om potensielle nedleggelser eller endringer i tjenestemodeller, som minner om tidligere problemer med RedHat og CentOS.</li>
-<li>Brukere diskuterer fordelene med open-source alternativer som Gitlab, og nevner enklere migrering og fellesskapsstøtte, samtidig som de spekulerer i potensielle kjøpere som Datadog eller IBM.</li>
-<li>Det har vært kritikk av Gitlabs prising og fokus på bedriftskunder, noe som har fått noen brukere til å vurdere å bytte til alternativer som GitHub, og dette gjenspeiler blandede følelser om fremtidig stabilitet og kostnader.</li>
-</ul>
-<h2><a href="https://vedgie.net/writing/darwin_machines.md">Darwin-maskiner</a></h2>
-<ul>
-<li>Artikkelen diskuterer William Calvins teori fra &quot;The Cerebral Code,&quot; som antyder at hjernen bruker evolusjonære prosesser innenfor minikolonner for å behandle sensoriske input og finne de mest &quot;passende&quot; mønstrene.</li>
-<li>Teorien hevder at hjernens struktur, spesielt neocortexens kolonner og minikolonner, tillater effektiv problemløsning og parallell prosessering, noe som kan anvendes på AI og maskinlæring (ML).</li>
-<li>Forfatteren eksperimenterer med nevrale nettverk for å etterligne denne evolusjonære prosessen og søker råd om forskning og akademisk innsikt på dette feltet, med vekt på potensielle fremskritt i AI&#39;s dype tenkeevner.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40981068">Reacties</a></h3>
-<ul>
-<li>Innlegget diskuterer konseptet Darwin-maskiner, der forskjellige sensoriske datamodaliteter behandles av hjerne-minikolonner, som hver gir unike fyringsmønstre som konkurrerer og forsterker det dominerende mønsteret, noe som hjelper læring.</li>
-<li>Capsule-rutingsalgoritmer, foreslått av Geoffrey Hinton, har som mål å implementere denne ideen ved hjelp av forventningsmaksimeringsprosesser (EM), men har blitt overskygget av suksessen til transformatorer i AI-forskning.</li>
-<li>Diskusjonen fremhever viktigheten av å forstå hjernefunksjon og nevrale nettverk, med referanse til Hebbiansk læring og behovet for dypere utforskning av temporale dynamikker i nevrale aktiviteter.</li>
-</ul>
-<h2><a href="https://github.com/guywaldman/magic-cli">Magic-cli – En copilot for kommandolinjen din</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40980715">Reacties</a></h3>
-<ul>
-<li>Magic-cli, en kommandolinje-copilot utviklet av Guy Waldman, har utløst diskusjoner på grunn av sin standard &quot;unsafe-execution&quot;-modus, med forslag om en tryggere standard som &quot;clipboard&quot;-modus.</li>
-<li>Brukere har delt meninger og erfaringer, og nevnt alternative verktøy som zsh_codex, aichat og Warp terminal.</li>
-<li>Prosjektet er bygget i Rust, noe som reiser spørsmål om dets kompleksitet sammenlignet med enklere implementeringer i andre språk.</li>
-</ul>
-<h2><a href="https://developers.google.com/tag-platform/tag-manager/first-party/setup-guide">Google presenterer metode for å omgå automatisk blokkering av tag manager</a></h2>
-<ul>
-<li>Google introduserer en betafunksjon for å distribuere tagger i førstepartsmodus, noe som forbedrer taggens ytelse og databeskyttelse ved å bruke nettstedets domene for hosting.</li>
-<li>Oppsettet innebærer å reservere en unik sti på domenet, rute trafikk gjennom tjenester som Google Cloud eller Cloudflare, og oppdatere nettsideskript for å bruke den nye målingsstien.</li>
-<li>Brukere oppfordres til å teste oppsettet ved å bruke Tag Assistant og gi tilbakemelding gjennom et eget tilbakemeldingsskjema eller kontakt-e-post.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40983585">Reacties</a></h3>
-<ul>
-<li>Google har introdusert en metode for å omgå den automatiske blokkeringen av sin Tag Manager, noe som vekker bekymring for personvern og effektiviteten til annonseblokkere.</li>
-<li>Brukere diskuterer strategier for å blokkere sporing, som å bruke uBlock Origin med JavaScript deaktivert som standard, og selektivt aktivere det for brukervennlighet og hastighetsfordeler.</li>
-<li>Den nye metoden fra Google har utløst en debatt om å balansere datainnsamling for forretningsformål med brukernes personvern, med noen brukere som uttrykker frustrasjon over Googles sporingspraksis.</li>
-</ul>
-<h2><a href="https://www.nytimes.com/2024/07/16/dining/pete-wells-steps-down-food-critic.html">Etter 12 år med å anmelde restauranter, forlater jeg bordet</a></h2>
-<ul>
-<li>Pete Wells, etter 12 år som restaurantkritiker for The New York Times, trekker seg på grunn av helseproblemer, inkludert høyt kolesterol, blodsukker og hypertensjon.</li>
-<li>Til tross for den givende naturen i rollen hans, har den fysiske belastningen av hyppige restaurantbesøk blitt uholdbar for Wells.</li>
-<li>Wells vil forbli i The Times, men vil ikke lenger håndtere kravene til ukentlige anmeldelser, og velger i stedet å fokusere på helsen sin og en mer balansert livsstil.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40979539">Reacties</a></h3>
-<ul>
-<li>En mangeårig restaurantanmelder trekker seg etter 12 år, noe som utløser diskusjoner om hans innvirkning og fremtiden for restaurantanmeldelser.</li>
-<li>Anmelderen var kjent for sine mangfoldige restaurantvalg og sin unike, noen ganger avvisende, tilnærming til anmeldelser.</li>
-<li>Kunngjøringen har skapt begeistring for den kommende anmelderen, Mellissa Clark, og refleksjoner over erfaringene til de som er i restaurantbransjen.</li>
-</ul>
-<h2><a href="https://github.com/bobbyiliev/introduction-to-bash-scripting">Introduksjon til Bash-skripting</a></h2>
-<ul>
-<li>En åpen kildekode guide/e-bok om Bash-skripting har blitt utgitt, rettet mot å automatisere oppgaver for utviklere, systemadministratorer og DevOps-ingeniører.</li>
-<li>Eboken dekker et bredt spekter av emner fra grunnleggende Bash-struktur til avanserte skriptteknikker, inkludert arbeid med API-er og generering av passord.</li>
-<li>Ytterligere ressurser inkluderer et mini videokurs, interaktiv opplæring via Katacoda, og bidrag fra Linux DevOps-ingeniør, Bobby Iliev.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40982011">Reacties</a></h3>
-<ul>
-<li>Bash-skripting blir ofte sammenlignet med Python for terminaloppgaver, der Bash er mer effektiv for filsystemoperasjoner og enkle kommandosekvenser på grunn av sin native terminalintegrasjon.</li>
-<li>Kritikere fremhever Pythons kompleksitet for grunnleggende oppgaver og Bashs klønete syntaks, men Bash forblir essensiell i miljøer uten Python forhåndsinstallert.</li>
-<li>Alternativer som Rubys shell eller Perl for tekstparsing finnes, og verktøy som ChatGPT kan hjelpe til med skriptgenerering, men det er fortsatt verdifullt å forstå Bash-grunnleggende.</li>
-</ul>
-<h2><a href="https://www.gartner.com/en/articles/the-data-is-in-return-to-office-mandates-aren-t-worth-the-talent-risks">Retur-til-kontor-mandater er ikke verdt talentrisikoen</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40983717">Reacties</a></h3>
-<ul>
-<li>Pålegg om å vende tilbake til kontoret (RTO) risikerer å miste topp talent, ettersom ansatte med alternativer kan forlate først, noe som potensielt kan forårsake en dominoeffekt.</li>
-<li>Fleksible alternativer, som reisekompensasjon eller forbedrede kontorfasiliteter, foreslås som bedre alternativer til strenge RTO-mandater.</li>
-<li>Debatten inkluderer perspektiver på produktivitet, veiledning og personlige preferanser, hvor noen ser på RTO som drevet av utdaterte ledelsesoppfatninger eller økonomiske press.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Importer og eksporter Markdown i Google Docs" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Importer%20og%20eksporter%20Markdown%20i%20Google%20Docs&subheading=woensdag%2017%20juli%202024%3A%20Samenvatting%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/nl/2024/07/17</link>
-            <guid isPermaLink="false">2024-07-17T00:00:00.000Z</guid>
-            <pubDate>Wed, 17 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

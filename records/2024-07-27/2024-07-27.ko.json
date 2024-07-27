@@ -1,0 +1,332 @@
+[
+  {
+    "id": 41085376,
+    "title": "SQLite: 파일 시스템보다 35% 더 빠름",
+    "originLink": "https://sqlite.org/fasterthanfs.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41085376",
+    "commentBody": "",
+    "originSummary": [
+      "SQLite는 작은 블롭(예: 썸네일 이미지)을 디스크의 개별 파일을 사용하는 것보다 35% 더 빠르게 읽고 쓰며, 약 20% 적은 디스크 공간을 사용합니다.",
+      "효율성은 더 적은 open() 및 close() 시스템 호출과 더 긴밀한 데이터 패킹 덕분이며, 향후 버전에서는 성능이 향상될 것으로 예상됩니다.",
+      "테스트 결과 SQLite는 일반적으로 직접 파일 I/O보다 성능이 뛰어나며, 특히 안티바이러스 소프트웨어가 활성화된 Windows에서 그렇습니다. 다만 성능은 하드웨어와 운영 체제에 따라 달라질 수 있습니다."
+    ],
+    "commentSummary": [
+      "SQLite는 파일 시스템 속성이나 메타데이터 검사가 필요 없고, 열기/닫기 시스템 호출이 적기 때문에 전통적인 파일 시스템보다 35% 더 빠릅니다.",
+      "이 성능 향상은 파일 시스템 호출이 본질적으로 더 느린 Windows에서 특히 중요합니다.",
+      "일부 제한 사항, 예를 들어 2GB 블롭 최대 크기와 계층적 데이터 처리의 어려움에도 불구하고, SQLite의 속도와 단순성은 로그 및 기타 데이터 저장에 유리합니다."
+    ],
+    "points": 415,
+    "commentCount": 155,
+    "retryCount": 0,
+    "time": 1722071429
+  },
+  {
+    "id": 41083972,
+    "title": "리눅스 커널 모듈 프로그래밍 가이드",
+    "originLink": "https://sysprog21.github.io/lkmpg/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083972",
+    "commentBody": "",
+    "originSummary": [
+      "리눅스 커널 모듈 프로그래밍 가이드는 커널 모듈을 생성하고 관리하는 방법에 대한 포괄적인 소개를 제공합니다. 커널 모듈은 재부팅 없이 커널 기능을 향상시키는 동적으로 로드 가능한 코드 세그먼트입니다.",
+      "커널 모듈 작업에 필요한 주요 도구와 명령어로는 `modprobe`, `insmod`, `depmod`, `lsmod`, 그리고 `cat /proc/modules`가 있습니다.",
+      "이 가이드는 모듈 초기화 및 정리, 명령줄 인수 처리, 장치 드라이버 관리, `/proc` 및 `sysfs` 파일 시스템과의 상호 작용, 그리고 커널 프로그래밍에서 흔히 발생하는 함정을 피하는 방법과 같은 필수 주제를 다룹니다."
+    ],
+    "commentSummary": [
+      "리눅스 커널 모듈 프로그래밍 가이드는 커널 해킹을 위해 QEMU를 사용하는 것을 강조하며 리눅스 디바이스 드라이버 책을 업데이트할 것을 제안합니다.",
+      "Greg KH는 Linux Device Drivers 책의 4판이 나오지 않을 것이라고 확인했으며, 이에 따라 'The Linux Memory Manager'와 'Linux Insides'와 같은 대체 자료에 대한 논의가 촉발되었습니다.",
+      "사용자들은 디버깅을 위해 QEMU를 사용한 경험과 커널 모듈 개발을 위한 WireGuard 테스트 스위트를 공유하며, 글 작성에서 인간 검토의 중요성을 강조했습니다."
+    ],
+    "points": 268,
+    "commentCount": 25,
+    "retryCount": 0,
+    "time": 1722045875
+  },
+  {
+    "id": 41083286,
+    "title": "법원, 연방 정부가 국경에서 휴대전화를 수색할 수 있는 허점을 폐쇄하다",
+    "originLink": "https://reason.com/2024/07/26/courts-close-the-loophole-letting-the-feds-search-your-phone-at-the-border/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083286",
+    "commentBody": "",
+    "originSummary": [
+      "연방 판사는 세관 및 국경 보호국(CBP)이 영장 없이 국경에서 전자 기기를 검색할 수 없다고 판결하여, 수정헌법 제4조의 허점을 해결했습니다.",
+      "니나 모리슨 판사는 휴대전화 검색이 '비일상적'이며 상당한 사생활 침해로 인해 신체 수색에 비유할 수 있다고 하면서, 이를 위해서는 상당한 이유와 영장이 필요하다고 밝혔다.",
+      "시민 자유주의자들이 지지하는 이번 판결은 다른 회로와 지구에서의 유사한 결정에 이어 언론의 자유와 프라이버시 권리에 있어 중요한 것으로 여겨진다."
+    ],
+    "commentSummary": [
+      "뉴욕의 한 지방법원은 국경에서 영장 없이 휴대전화를 수색하는 것이 '비일상적'이며 다른 유형의 수색보다 더 침해적이라고 판결하면서 이를 신체 수색에 비유했습니다.",
+      "이 결정은 구속력 있는 선례가 아니며 다른 순회 법원의 판결과 대조되어, 기존의 '순회 법원 간의 분열'로 인해 대법원이 이 문제를 다룰 가능성을 시사합니다.",
+      "그 판결은 특히 국경 보안과 제4차 수정헌법과 관련하여 사생활 권리와 정부 권한에 대한 지속적인 논쟁을 반영합니다."
+    ],
+    "points": 260,
+    "commentCount": 106,
+    "retryCount": 0,
+    "time": 1722036981
+  },
+  {
+    "id": 41084795,
+    "title": "처음에는 명령줄이 있었다 (1999)",
+    "originLink": "https://web.stanford.edu/class/cs81n/command.txt",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41084795",
+    "commentBody": "",
+    "originSummary": [
+      "닐 스티븐슨의 에세이 '처음에는 명령 줄이 있었다'는 운영 체제(OS)의 진화와 시장 역학을 탐구하며, 애플과 마이크로소프트에 중점을 둔다.",
+      "마이크로소프트는 운영 체제를 소비재처럼 판매하여 시장 지배력을 확보했으며, 편리함과 용이성을 강조하여 복잡성보다 단순성을 중시하는 광범위한 문화적 경향과 공감대를 형성했습니다.",
+      "리눅스와 BeOS와 같은 우수한 무료 대안의 등장에도 불구하고, 대부분의 소비자들은 마이크로소프트의 익숙한 제품을 선호했으며, 이는 그래픽 사용자 인터페이스(GUI)를 통한 중재된 경험에 대한 사회적 선호를 강조합니다."
+    ],
+    "commentSummary": [
+      "닐 스티븐슨의 에세이 '처음에 명령 줄이 있었다' (1999)는 명령 줄 인터페이스(CLI)가 그래픽 사용자 인터페이스(GUI)보다 간결하고 의사소통이 용이하다는 장점을 강조합니다.",
+      "이 에세이는 운영 체제의 진화를 자동차에 비유하며, GUI의 인기가 높음에도 불구하고 CLI가 제공하는 안정성과 사용자 제어를 강조하고 있다.",
+      "또한 기술 인터페이스의 문화적 및 철학적 함의에 대해 탐구하며, 우리가 기술과 상호작용하는 방식에 대한 더 넓은 관점을 제공합니다."
+    ],
+    "points": 237,
+    "commentCount": 152,
+    "retryCount": 0,
+    "time": 1722061502
+  },
+  {
+    "id": 41081435,
+    "title": "가장 똑똑한 덤 워치로 내 손목에 TOTP 토큰",
+    "originLink": "https://blog.singleton.io/posts/2022-10-17-otp-on-wrist/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41081435",
+    "commentBody": "",
+    "originSummary": [
+      "Sensor Watch는 클래식 Casio F-91W를 위한 새로운 교체용 로직 보드를 출시하여 원래의 LCD, 푸셔 및 피에조 버저를 유지하면서 ARM Cortex M0+ 프로세서로 업그레이드했습니다.",
+      "업그레이드된 보드는 프로그래밍이 가능하여 맞춤형 시계 화면과 유틸리티 앱을 사용할 수 있으며, 2FA 토큰, 속도계, 세계 시계 등과 같은 기능을 포함합니다.",
+      "이 시계는 해킹이 용이하며, 테스트를 위한 wasm 기반 에뮬레이터와 시계 화면을 수정하거나 직접 제작하려는 사람들을 위한 자세한 문서가 제공됩니다."
+    ],
+    "commentSummary": [
+      "해커 뉴스에서의 논의는 2단계 인증(2FA)을 위해 카시오 시계, 특히 F-91W 및 A158W 모델에서 TOTP(시간 기반 일회용 비밀번호) 토큰의 사용을 강조합니다.",
+      "이 프로젝트는 시계의 펌웨어를 수정하여 TOTP 코드를 표시하는 것을 포함하며, 커뮤니티의 기여로 사용자 보정 기능을 향상시키고 심지어 시계를 위한 게임을 만드는 것까지 포함됩니다.",
+      "시계에 TOTP 코드가 표시되는 것에 대한 보안 우려가 제기되었으며, 일부는 피싱 공격에 대한 더 나은 보호를 위해 FIDO2 하드웨어 키와 같은 대안을 제안하고 있습니다."
+    ],
+    "points": 213,
+    "commentCount": 46,
+    "retryCount": 0,
+    "time": 1722021643
+  },
+  {
+    "id": 41083801,
+    "title": "리눅스 네트워크 성능 궁극 가이드",
+    "originLink": "https://ntk148v.github.io/posts/linux-network-performance-ultimate-guide/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083801",
+    "commentBody": "",
+    "originSummary": [
+      "이 가이드는 네트워킹 스택에서 고급 패킷 처리 기술에 이르기까지 Linux 네트워크 성능 최적화에 대한 심층적인 내용을 제공합니다.",
+      "주요 튜닝 단계에는 NIC 링 버퍼 크기 조정, 인터럽트 코얼레센스, IRQ 어피니티 조정, 그리고 고성능 패킷 처리를 위한 AF_PACKET, DPDK, XDP와 같은 도구 사용이 포함됩니다.",
+      "네트워크 설정을 `ethtool`, `sysctl`, `netstat`와 같은 도구로 모니터링하고 조정하는 것은 최적의 성능을 유지하는 데 필수적입니다."
+    ],
+    "commentSummary": [
+      "\"리눅스 네트워크 성능 궁극 가이드\"는 리눅스를 사용하여 네트워크 성능을 최적화하는 데 필요한 포괄적인 자료로, 특히 고속 네트워크를 다루는 사람들에게 유용합니다.",
+      "한 사용자가 상용 기성품(COTS) 하드웨어와 Wireguard를 사용하여 비용 효율적인 10Gbps 암호화 네트워크를 구축한 성공 사례를 공유했습니다. 이는 상용 하드웨어 솔루션보다 훨씬 저렴했습니다.",
+      "댓글에서의 논의는 TCP 버퍼 크기 조정과 같은 실용적인 팁과 Oracle의 bpftune과 같은 자동 성능 조정 도구를 포함합니다."
+    ],
+    "points": 175,
+    "commentCount": 15,
+    "retryCount": 0,
+    "time": 1722043073
+  },
+  {
+    "id": 41083987,
+    "title": "200kb의 윈도우 복구 환경 및 부팅 가능한 USB 생성기",
+    "originLink": "https://github.com/joshuacline/windick",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083987",
+    "commentBody": "",
+    "originSummary": [
+      "Windows 배포 이미지 커스터마이제이션 키트는 Windows 이미지를 커스터마이징하고 배포하기 위해 설계된 명령 셸 도구입니다.",
+      "IT 전문가와 시스템 관리자에게 배포 프로세스를 간소화할 수 있는 네이티브 솔루션을 제공합니다.",
+      "튜토리얼과 추가 정보는 YouTube와 Microsoft의 공식 문서와 같은 플랫폼에서 이용할 수 있습니다."
+    ],
+    "commentSummary": [
+      "새로운 셸 기반 도구가 출시되어 윈도우 복구 환경 및 부팅 가능한 USB를 생성할 수 있으며, 크기는 단지 200킬로바이트에 불과합니다.",
+      "이 도구는 3,085줄의 코드로 작성된 대형 배치 파일로, 특히 PowerShell과 같은 더 현대적인 스크립팅 언어가 사용 가능한 상황에서 인상적인 헌신과 효율성을 보여줍니다.",
+      "이 프로젝트는 안드로이드용 clockworkmod 복구에서 영감을 받았으며, 'live-of-the-land' 명령어를 사용하여 의존성이 전혀 없고 오직 윈도우에서만 작동하는 것을 목표로 합니다."
+    ],
+    "points": 163,
+    "commentCount": 35,
+    "retryCount": 0,
+    "time": 1722046170
+  },
+  {
+    "id": 41082502,
+    "title": "사기꾼들이 구글의 이메일 인증을 우회하여 워크스페이스 계정을 생성하다",
+    "originLink": "https://krebsonsecurity.com/2024/07/crooks-bypassed-googles-email-verification-to-create-workspace-accounts-access-3rd-party-services/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41082502",
+    "commentBody": "",
+    "originSummary": [
+      "구글은 범죄자들이 이메일 인증을 우회하여 구글 워크스페이스 계정을 생성하고 도메인 소유자를 사칭할 수 있게 했던 인증 취약점을 수정했습니다.",
+      "문제는 72시간 이내에 해결되었으며, 향후 남용을 방지하기 위해 추가적인 탐지 조치가 시행되었습니다.",
+      "공격자들은 Google 서비스를 악용하려는 것이 아니라 제3자 서비스에 도메인 소유자를 사칭하는 것을 목표로 했으며, 악의적인 활동은 도메인 검증 없이 생성된 몇 천 개의 Workspace 계정을 포함했습니다."
+    ],
+    "commentSummary": [
+      "공격자들이 구글의 이메일 인증을 우회하여 무단으로 워크스페이스 계정을 생성함으로써 보안 침해와 등록되지 않은 도메인에 대한 예상치 못한 환영 이메일을 초래했습니다.",
+      "이러한 무단 계정은 제3자 사이트에서 'Google로 로그인'을 악용하는 데 사용되어 피해자들이 도메인을 되찾는 데 어려움을 겪게 했습니다.",
+      "이번 사건은 구글 시스템의 취약성과 소셜 로그인과 관련된 위험성을 강조하며, DNS 검증 의무화와 같은 개선 요구를 촉구하고 있습니다."
+    ],
+    "points": 163,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1722029640
+  },
+  {
+    "id": 41081810,
+    "title": "Cloudflare와 Cronjob을 이용한 무료 DDNS",
+    "originLink": "https://github.com/devrim/cloudflare-noip",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41081810",
+    "commentBody": "",
+    "originSummary": [
+      "이 프로젝트는 무료 계정과 크론잡을 사용하여 Cloudflare에서 DNS 레코드 업데이트를 자동화함으로써 유료 동적 DNS 서비스에 대한 무료 대안을 제공합니다.",
+      "사용자는 저장소를 클론하고, 구성 파일(`keys.json` 및 `records.json`)을 생성하며, 스크립트를 정기적으로 실행하기 위해 크론잡 또는 이에 상응하는 작업 스케줄러를 설정해야 합니다.",
+      "이 스크립트는 Cloudflare에서 기기의 현재 IP 주소로 DNS 레코드를 업데이트하여 동적 DNS 요구에 대한 비용 효율적인 솔루션을 제공합니다."
+    ],
+    "commentSummary": [
+      "GitHub 프로젝트는 Cloudflare와 cron 작업을 사용한 무료 동적 DNS(DDNS) 솔루션을 제공하여 기술 커뮤니티의 큰 관심을 끌고 있습니다.",
+      "사용자들은 Cloudflare를 DDNS에 사용하는 것의 장단점에 대해 논의하며, 잠재적인 미끼 및 전환 전술과 필수적인 TLS 종료 및 업로드 제한과 같은 제한 사항을 포함합니다.",
+      "대안 및 유사한 프로젝트로는 Cloudflare 터널, Tailscale 및 기타 DDNS 클라이언트를 사용하는 것이 언급되며, 동적 IP 주소를 관리하기 위한 다양한 솔루션이 있음을 강조합니다."
+    ],
+    "points": 151,
+    "commentCount": 94,
+    "retryCount": 0,
+    "time": 1722024472
+  },
+  {
+    "id": 41083534,
+    "title": "머신러닝 인터뷰 입문서",
+    "originLink": "https://huyenchip.com/ml-interviews-book/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083534",
+    "commentBody": "",
+    "originSummary": [
+      "‘머신러닝 인터뷰 입문서’는 역할, 회사 유형, 인터뷰 형식 및 질문 유형을 다루며 ML 인터뷰 과정에 대한 포괄적인 가이드를 제공합니다.",
+      "200개 이상의 지식 질문과 30개의 개방형 질문이 포함되어 있으며, 이는 후보자와 채용 관리자가 ML 인터뷰를 이해하고 준비하는 데 도움을 주기 위한 것입니다.",
+      "이 책은 주요 기술 회사와 스타트업에서의 인터뷰 경험이 풍부한 칩 후옌이 저술했으며, 실용적인 통찰과 준비 전략을 통합하고 있습니다."
+    ],
+    "commentSummary": [
+      "휴옌 칩의 '머신러닝 인터뷰 입문' 책이 논의되고 있으며, 이 책이 머신러닝 인터뷰 준비에 얼마나 효과적인지에 대한 의견이 엇갈리고 있다.",
+      "일부 사용자는 이 책의 질문이 실제 머신러닝 인터뷰에 비해 더 쉽다고 제안하며, 다른 사람들은 '딥러닝 인터뷰' 책이 더 흥미롭고 대표적이라고 추천합니다.",
+      "책에서 제공하는 상투적인 질문을 사용하는 것의 적절성에 대한 논쟁이 있으며, 일부는 대신 개인화된 프로젝트를 만드는 것을 지지하고 있습니다."
+    ],
+    "points": 145,
+    "commentCount": 9,
+    "retryCount": 0,
+    "time": 1722039572
+  },
+  {
+    "id": 41085856,
+    "title": "Sqlitefs: 파일 시스템으로서의 SQLite",
+    "originLink": "https://github.com/narumatt/sqlitefs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41085856",
+    "commentBody": "",
+    "originSummary": [
+      "sqlite-fs는 Linux 및 MacOS 사용자가 SQLite 데이터베이스 파일을 일반 파일 시스템으로 마운트할 수 있게 하여 데이터베이스를 통한 파일 작업을 용이하게 합니다.",
+      "최신 Rust 프로그래밍 언어(≥ 1.38)와 기능을 위해 libfuse(Linux) 또는 osxfuse(MacOS)가 필요합니다.",
+      "파일 및 디렉토리 생성, 읽기, 쓰기, 삭제, 속성 변경, 파일 잠금 처리 등 다양한 파일 작업을 지원하며, 엄격한 오류 처리를 제공합니다."
+    ],
+    "commentSummary": [
+      "SQLiteFS는 파일 시스템으로 SQLite를 사용하는 프로젝트로, 파일 저장에 대한 독특한 접근 방식으로 관심을 끌고 있습니다.",
+      "이 개념은 SQL Server를 파일 시스템으로 사용하려 했던 마이크로소프트의 취소된 WinFS 프로젝트를 연상시킵니다.",
+      "유머와 이론적 논의에도 불구하고, SQLiteFS를 메모리 내 작업이나 캐싱에 사용하는 것과 같은 실용적인 응용이 고려되고 있습니다."
+    ],
+    "points": 128,
+    "commentCount": 37,
+    "retryCount": 0,
+    "time": 1722079756
+  },
+  {
+    "id": 41086060,
+    "title": "오스카 자리스키는 현대 대수기하학의 창시자 중 한 명이었다",
+    "originLink": "https://boogiemath.org/meta/meta-9.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41086060",
+    "commentBody": "",
+    "originSummary": [
+      "오스카 자리스키(1899-1986)는 현대 대수기하학의 중요한 인물로, 그의 영향력 있는 저서 '대수적 곡면'과 이 분야에 대한 중요한 기여로 잘 알려져 있습니다.",
+      "비록 학문적 경력을 평소보다 늦게 시작했음에도 불구하고, 자리스키는 80대까지 활발히 활동하며 홀로모픽 함수에 대한 주목할 만한 연구와 명망 있는 기관들을 통한 풍부한 학문적 여정을 이어갔다.",
+      "그의 삶에서 흥미로운 일화 중 하나는 수학 문제에 깊이 몰두한 나머지 자신의 결혼식을 거의 놓칠 뻔한 사건으로, 이는 수학에 대한 그의 강한 헌신을 잘 보여준다."
+    ],
+    "commentSummary": [
+      "오스카 자리스키는 현대 대수기하학의 창시자로 인정받고 있다.",
+      "사용자들은 일화를 공유하고 다양한 주제를 논의했으며, 여기에는 수학자 칼레 바이살라의 유머러스한 사건과 실제 세계와 상상 세계에서 보낸 시간을 측정하는 '상상력 요소'가 포함되었습니다.",
+      "대화는 또한 러시아 혁명과 공산주의 대 자본주의에 대한 논쟁과 같은 역사적 및 정치적 논의로 깊이 들어갔다."
+    ],
+    "points": 123,
+    "commentCount": 49,
+    "retryCount": 0,
+    "time": 1722082338
+  },
+  {
+    "id": 41084318,
+    "title": "Bril: 컴파일러 교육을 위한 중간 언어",
+    "originLink": "https://www.cs.cornell.edu/~asampson/blog/bril.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41084318",
+    "commentBody": "",
+    "originSummary": [
+      "Bril, Big Red Intermediate Language는 성능과 코드 크기보다 사용의 용이성과 단순성을 우선시하여 컴파일러 교육을 단순화하기 위해 만들어졌습니다.",
+      "Bril 프로그램은 JSON 문서로 되어 있어 어떤 프로그래밍 언어로도 접근할 수 있으며 공유하기 쉽습니다.",
+      "Bril 생태계는 학생들의 기여로 도구와 언어 확장을 포함하여 확장되었지만, SSA(정적 단일 할당) 형식은 개선이 필요합니다."
+    ],
+    "commentSummary": [
+      "Bril은 컴파일러 교육을 위해 코넬 대학교에서 개발한 중간 언어(IL)입니다.",
+      "논의는 Bril의 정적 단일 할당(SSA) 형식의 재작업 필요성과 ANF(A-정규형) 및 CPS(연속 전달 스타일)와 같은 다른 IL과의 비교를 강조합니다.",
+      "일부는 LLVM과 같은 기존의 중간 언어가 교육 목적으로 충분하다고 주장하는 반면, 다른 사람들은 컴파일러 개념을 가르치는 데 있어 Bril의 독특한 접근 방식을 강조합니다."
+    ],
+    "points": 112,
+    "commentCount": 13,
+    "retryCount": 0,
+    "time": 1722052249
+  },
+  {
+    "id": 41083077,
+    "title": "컴파일러 구동",
+    "originLink": "https://fabiensanglard.net/dc/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083077",
+    "commentBody": "",
+    "originSummary": [
+      "이 시리즈는 언어를 가르치거나 컴파일러 작성 방법을 가르치는 것이 아니라, 프로그램을 실행 파일로 변환하는 도구 사용에 관한 문학의 공백을 채우는 것을 목표로 합니다.",
+      "리눅스 플랫폼에서 gcc 또는 clang 컴파일러를 사용한다고 가정하고, bintools와 드라이버 자세한 모드(-v)를 사용하여 독자가 기본 예제를 넘어 탐색할 수 있도록 재현 가능한 단계를 제공합니다.",
+      "이 시리즈는 드라이버, cpp(전처리기), cc(컴파일러), ld(링커), 로더의 다섯 부분으로 나뉘어져 있으며, 컴파일 과정에 대한 체계적인 접근 방식을 제공합니다."
+    ],
+    "commentSummary": [
+      "이 기사는 Linux 및 ELF 기반 플랫폼에 중점을 두고 C 및 C++ 툴체인에 대한 훌륭한 소개를 제공합니다.",
+      "주요 명확한 사항에는 C++ 표준 라이브러리가 STL보다 더 광범위하며, ::operator new()는 단순한 템플릿이 아니라 런타임의 일부라는 점이 포함됩니다.",
+      "그 기사는 OS 커널 로더와 사용자 공간 동적 로더를 더 잘 구분해야 합니다."
+    ],
+    "points": 106,
+    "commentCount": 5,
+    "retryCount": 0,
+    "time": 1722034644
+  },
+  {
+    "id": 41085713,
+    "title": "PCI-e에 대해 배우기: 드라이버와 DMA",
+    "originLink": "https://blog.davidv.dev/posts/pcie-driver-dma/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41085713",
+    "commentBody": "",
+    "originSummary": [
+      "이 게시물은 메모리 매핑과 DMA(직접 메모리 접근) 작업에 중점을 두고 기본 PCI-e(주변 장치 인터커넥트 익스프레스) 장치 드라이버의 구현에 대해 설명합니다.",
+      "이는 `struct pci_driver`의 생성, 사용자 공간 상호 작용을 위한 문자 장치 설정, 비동기 DMA 전송 처리를 위한 MSI(메시지 신호 인터럽트)의 사용을 설명합니다.",
+      "이 게시물은 PCI-e 장치 드라이버 개발에 대한 실용적인 가이드로서, 코드 스니펫과 커널 문서에 대한 참조를 포함하고 있어 신입 소프트웨어 엔지니어들에게 유용합니다."
+    ],
+    "commentSummary": [
+      "논의는 FPGA(현장 프로그래머블 게이트 어레이)를 사용하여 디스플레이 어댑터를 구축하는 것에 중점을 두고 있으며, 특히 PCI-e(주변 장치 인터커넥트 익스프레스) 하드 IP(지적 재산)에 초점을 맞추고 있습니다.",
+      "다양한 저렴한 FPGA 보드가 추천되며, Spartan 6, Artix, Screamer PCIe Squirrel, Litefury 등이 포함되며, 이들은 PCIe와 디지털 비디오 출력을 지원합니다.",
+      "이 게시물은 비디오 카드를 만드는 데 필요한 리소스와 디자인을 강조하고, 비디오 출력용으로 Displayport Alt 모드와 UVC 타입 USB3 웹캠의 잠재적 사용에 대해 언급합니다."
+    ],
+    "points": 104,
+    "commentCount": 8,
+    "retryCount": 0,
+    "time": 1722077743
+  }
+]

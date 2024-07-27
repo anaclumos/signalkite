@@ -15,12 +15,208 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 26 Jul 2024 19:14:09 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 27 Jul 2024 19:09:46 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/es.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Fri, 26 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[es]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-27]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/27&#39;</h2>
+<h1>2024-07-27</h1>
+<h2><a href="https://sqlite.org/fasterthanfs.html">SQLite: 35% más rápido que el sistema de archivos</a></h2>
+<ul>
+<li>SQLite lee y escribe pequeños blobs (por ejemplo, imágenes en miniatura) un 35% más rápido que usando archivos individuales en el disco, y utiliza aproximadamente un 20% menos de espacio en disco.</li>
+<li>La eficiencia se atribuye a menos llamadas al sistema open() y close() y a un empaquetado de datos más compacto, con un rendimiento que se espera mejore en versiones futuras.</li>
+<li>Las pruebas muestran que SQLite generalmente supera al I/O de archivos directo, especialmente en Windows con el software antivirus habilitado, aunque el rendimiento puede variar según el hardware y el sistema operativo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085376">Reacciones</a></h3>
+<ul>
+<li>SQLite es un 35% más rápido que los sistemas de archivos tradicionales debido a un menor número de llamadas al sistema de apertura/cierre y a la ausencia de necesidad de atributos del sistema de archivos o verificaciones de metadatos.</li>
+<li>Este aumento de rendimiento es especialmente significativo en Windows, donde las llamadas al sistema de archivos son inherentemente más lentas.</li>
+<li>A pesar de algunas limitaciones, como un máximo de 2GB para blobs y desafíos con datos jerárquicos, la velocidad y simplicidad de SQLite lo hacen ventajoso para registros y otros almacenamientos de datos.</li>
+</ul>
+<h2><a href="https://sysprog21.github.io/lkmpg/">La Guía de Programación de Módulos del Núcleo de Linux</a></h2>
+<ul>
+<li>La Guía de Programación de Módulos del Núcleo de Linux ofrece una introducción completa a la creación y gestión de módulos del núcleo, que son segmentos de código cargables dinámicamente que mejoran las capacidades del núcleo sin requerir un reinicio.</li>
+<li>Las herramientas y comandos clave para trabajar con módulos del kernel incluyen <code>modprobe</code>, <code>insmod</code>, <code>depmod</code>, <code>lsmod</code> y <code>cat /proc/modules</code>.</li>
+<li>La guía cubre temas esenciales como la inicialización y limpieza de módulos, el manejo de argumentos de línea de comandos, la gestión de controladores de dispositivos, la interacción con los sistemas de archivos <code>/proc</code> y <code>sysfs</code>, y cómo evitar errores comunes en la programación del kernel.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083972">Reacciones</a></h3>
+<ul>
+<li>La Guía de Programación de Módulos del Kernel de Linux destaca el uso de QEMU para la manipulación del kernel y sugiere actualizar los libros de controladores de dispositivos de Linux.</li>
+<li>Greg KH confirmó que no habrá una cuarta edición del libro Linux Device Drivers, lo que ha generado discusiones sobre recursos alternativos como &quot;The Linux Memory Manager&quot; y &quot;Linux Insides&quot;.</li>
+<li>Los usuarios compartieron experiencias con QEMU para depuración y la suite de pruebas de WireGuard para el desarrollo de módulos del kernel, enfatizando la importancia de la revisión humana en la escritura.</li>
+</ul>
+<h2><a href="https://reason.com/2024/07/26/courts-close-the-loophole-letting-the-feds-search-your-phone-at-the-border/">Cortes cierran la laguna legal que permitía a los federales registrar tu teléfono en la frontera</a></h2>
+<ul>
+<li>Un juez federal dictaminó que la Oficina de Aduanas y Protección Fronteriza (CBP) no puede registrar dispositivos electrónicos en la frontera sin una orden judicial, abordando una laguna en la Cuarta Enmienda.</li>
+<li>El juez Nina Morrison afirmó que las búsquedas en teléfonos móviles son &quot;no rutinarias&quot; y requieren causa probable y una orden judicial, comparándolas con registros corporales debido a su significativo impacto en la privacidad.</li>
+<li>La sentencia, respaldada por libertarios civiles, se considera crucial para la libertad de prensa y los derechos de privacidad, siguiendo decisiones similares en otros circuitos y distritos.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083286">Reacciones</a></h3>
+<ul>
+<li>Un Tribunal de Distrito en Nueva York dictaminó que las búsquedas de teléfonos celulares sin orden judicial en la frontera son &quot;no rutinarias&quot; y más invasivas que otros tipos de búsquedas, comparándolas con registros corporales.</li>
+<li>Esta decisión no es un precedente vinculante y contrasta con fallos de otros Tribunales de Circuito, lo que indica una posible intervención de la Corte Suprema para abordar el asunto debido a la existente &quot;división de circuitos&quot;.</li>
+<li>La sentencia refleja los debates en curso sobre los derechos de privacidad y los poderes del gobierno, especialmente en el contexto de la seguridad fronteriza y la Cuarta Enmienda.</li>
+</ul>
+<h2><a href="https://web.stanford.edu/class/cs81n/command.txt">En el principio era la línea de comandos (1999)</a></h2>
+<ul>
+<li>El ensayo de Neal Stephenson &quot;In the Beginning was the Command Line&quot; explora la evolución de los sistemas operativos (OS) y sus dinámicas de mercado, centrándose en Apple y Microsoft.</li>
+<li>Microsoft logró el dominio del mercado vendiendo sistemas operativos como bienes de consumo, enfatizando la conveniencia y la facilidad, lo que resonó con las tendencias culturales más amplias que valoran la simplicidad sobre la complejidad.</li>
+<li>A pesar del surgimiento de alternativas superiores y gratuitas como Linux y BeOS, la mayoría de los consumidores preferían los productos familiares de Microsoft, destacando una preferencia social por experiencias mediadas a través de interfaces gráficas de usuario (GUIs).</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41084795">Reacciones</a></h3>
+<ul>
+<li>El ensayo de Neal Stephenson &quot;In the Beginning Was the Command Line&quot; (1999) destaca las ventajas de las Interfaces de Línea de Comandos (CLI) sobre las Interfaces Gráficas de Usuario (GUIs), enfatizando su concisión y facilidad de comunicación.</li>
+<li>La redacción compara la evolución de los sistemas operativos con los automóviles, destacando la estabilidad y el control del usuario proporcionados por las interfaces de línea de comandos a pesar de la popularidad de las interfaces gráficas de usuario.</li>
+<li>También profundiza en las implicaciones culturales y filosóficas de las interfaces tecnológicas, ofreciendo una perspectiva más amplia sobre cómo interactuamos con la tecnología.</li>
+</ul>
+<h2><a href="https://blog.singleton.io/posts/2022-10-17-otp-on-wrist/">TOTP tokens en mi muñeca con el reloj tonto más inteligente</a></h2>
+<ul>
+<li>Sensor Watch ha lanzado una nueva placa lógica de reemplazo para el clásico Casio F-91W, actualizándolo con un procesador ARM Cortex M0+ mientras conserva la pantalla LCD original, los pulsadores y el zumbador piezoeléctrico.</li>
+<li>La placa mejorada es programable, lo que permite personalizar las carátulas del reloj y las aplicaciones de utilidad, incluyendo características como tokens 2FA, medidor de frecuencia, reloj mundial y más.</li>
+<li>La relojería es fácil de hackear, con un emulador basado en wasm para pruebas, y hay documentación detallada disponible para aquellos interesados en modificar o crear sus propias carátulas de reloj.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41081435">Reacciones</a></h3>
+<ul>
+<li>Una discusión en Hacker News destaca el uso de tokens TOTP (Contraseña de un solo uso basada en el tiempo) en relojes Casio, específicamente en los modelos F-91W y A158W, para la autenticación de dos factores (2FA).</li>
+<li>El proyecto implica modificar el firmware del reloj para mostrar códigos TOTP, con contribuciones de la comunidad que mejoran características como la calibración del usuario e incluso la creación de juegos para el reloj.</li>
+<li>Se han planteado preocupaciones sobre la seguridad de tener códigos TOTP visibles en un reloj, y algunos sugieren alternativas como las llaves de hardware FIDO2 para una mejor protección contra ataques de phishing.</li>
+</ul>
+<h2><a href="https://ntk148v.github.io/posts/linux-network-performance-ultimate-guide/">Guía Definitiva del Rendimiento de Redes en Linux</a></h2>
+<ul>
+<li>La guía ofrece una mirada profunda a la optimización del rendimiento de la red en Linux, abarcando temas desde la pila de red hasta técnicas avanzadas de procesamiento de paquetes.</li>
+<li>Los pasos clave de ajuste incluyen ajustar los tamaños del búfer de anillo de la NIC, la coalición de interrupciones, la afinidad de IRQ y el uso de herramientas como AF_PACKET, DPDK y XDP para el manejo de paquetes de alto rendimiento.</li>
+<li>Monitorear y ajustar la configuración de la red con herramientas como <code>ethtool</code>, <code>sysctl</code> y <code>netstat</code> es esencial para mantener un rendimiento óptimo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083801">Reacciones</a></h3>
+<ul>
+<li>La &#39;Guía Definitiva del Rendimiento de Redes en Linux&#39; es un recurso integral para optimizar el rendimiento de la red utilizando Linux, particularmente útil para aquellos que trabajan con redes de alta velocidad.</li>
+<li>Un usuario compartió una historia de éxito sobre la construcción de una red cifrada de 10 Gbps rentable utilizando hardware comercial disponible en el mercado (COTS) y Wireguard, reduciendo significativamente los costos en comparación con las soluciones de hardware comerciales.</li>
+<li>Las discusiones en los comentarios incluyen consejos prácticos, como ajustar los tamaños de los búferes TCP, y herramientas para la optimización automática del rendimiento, como bpftune de Oracle.</li>
+</ul>
+<h2><a href="https://github.com/joshuacline/windick">Entorno de recuperación de Windows y creador de USB de arranque en 200kb</a></h2>
+<ul>
+<li>El Kit de Personalización de Imágenes de Implementación de Windows es una herramienta de línea de comandos diseñada para personalizar e implementar imágenes de Windows.</li>
+<li>Proporciona una solución nativa para que los profesionales de TI y los administradores de sistemas optimicen el proceso de implementación.</li>
+<li>Tutoriales e información adicional están disponibles en plataformas como YouTube y la documentación oficial de Microsoft.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083987">Reacciones</a></h3>
+<ul>
+<li>Se ha lanzado una nueva herramienta basada en shell para crear un entorno de recuperación de Windows y un USB de arranque, con un tamaño de solo 200 kilobytes.</li>
+<li>La herramienta, escrita como un archivo por lotes grande con 3,085 líneas de código, demuestra una dedicación y eficiencia impresionantes, especialmente dada la disponibilidad de lenguajes de scripting más modernos como PowerShell.</li>
+<li>La inspiración del proyecto proviene de clockworkmod recovery para Android y tiene como objetivo utilizar comandos &quot;live-of-the-land&quot;, lo que significa que no tiene dependencias y funciona únicamente en Windows.</li>
+</ul>
+<h2><a href="https://krebsonsecurity.com/2024/07/crooks-bypassed-googles-email-verification-to-create-workspace-accounts-access-3rd-party-services/">Los delincuentes eludieron la verificación de correo electrónico de Google para crear cuentas de Workspace, Acces</a></h2>
+<ul>
+<li>Google solucionó una debilidad de autenticación que permitía a los delincuentes eludir la verificación de correo electrónico para crear cuentas de Google Workspace e impersonar a los titulares de dominios.</li>
+<li>La cuestión se resolvió en 72 horas y se implementaron medidas adicionales de detección para prevenir futuros abusos.</li>
+<li>Los atacantes pretendían hacerse pasar por titulares de dominios ante servicios de terceros, no abusar de los servicios de Google, y la actividad maliciosa involucró unas pocas miles de cuentas de Workspace creadas sin verificación de dominio.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41082502">Reacciones</a></h3>
+<ul>
+<li>Los atacantes eludieron la verificación de correo electrónico de Google para crear cuentas de Workspace no autorizadas, lo que llevó a posibles brechas de seguridad y correos electrónicos de bienvenida inesperados para dominios no registrados.</li>
+<li>Estas cuentas no autorizadas se utilizaron para explotar &quot;Iniciar sesión con Google&quot; en sitios de terceros, causando dificultades a las víctimas para recuperar sus dominios.</li>
+<li>La incidencia subraya las vulnerabilidades en el sistema de Google y los riesgos asociados con los inicios de sesión sociales, lo que ha llevado a pedir mejoras como la verificación obligatoria de DNS.</li>
+</ul>
+<h2><a href="https://github.com/devrim/cloudflare-noip">DDNS gratuito con Cloudflare y un Cronjob</a></h2>
+<ul>
+<li>Este proyecto ofrece una alternativa gratuita a los servicios de DNS dinámico de pago al automatizar las actualizaciones de registros DNS en Cloudflare utilizando una cuenta gratuita y un cronjob.</li>
+<li>Los usuarios deben clonar el repositorio, crear archivos de configuración (<code>keys.json</code> y <code>records.json</code>), y configurar un cronjob o un programador de tareas equivalente para ejecutar el script a intervalos regulares.</li>
+<li>El script actualiza los registros DNS en Cloudflare con la dirección IP actual de la máquina, lo que lo convierte en una solución rentable para las necesidades de DNS dinámico.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41081810">Reacciones</a></h3>
+<ul>
+<li>Un proyecto de GitHub ofrece una solución gratuita de DNS dinámico (DDNS) utilizando Cloudflare y un trabajo cron, atrayendo un interés significativo de la comunidad tecnológica.</li>
+<li>Los usuarios discuten los pros y los contras de usar Cloudflare para DDNS, incluyendo posibles tácticas de cebo y cambio y limitaciones como la terminación obligatoria de TLS y restricciones de carga.</li>
+<li>Se mencionan alternativas y proyectos similares, como el uso de túneles de Cloudflare, Tailscale y otros clientes DDNS, destacando la variedad de soluciones disponibles para gestionar direcciones IP dinámicas.</li>
+</ul>
+<h2><a href="https://huyenchip.com/ml-interviews-book/">Introducción a las Entrevistas de Aprendizaje Automático Libro</a></h2>
+<ul>
+<li>La &#39;Introducción al Libro de Entrevistas de Aprendizaje Automático&#39; ofrece una guía completa sobre el proceso de entrevistas en ML, cubriendo roles, tipos de empresas, formatos de entrevistas y tipos de preguntas.</li>
+<li>Incluye más de 200 preguntas de conocimiento y 30 preguntas abiertas, con el objetivo de ayudar tanto a los candidatos como a los gerentes de contratación a comprender y prepararse para las entrevistas de ML.</li>
+<li>Escrito por Chip Huyen, quien tiene una amplia experiencia con entrevistas en grandes empresas tecnológicas y startups, el libro consolida conocimientos prácticos y estrategias de preparación.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083534">Reacciones</a></h3>
+<ul>
+<li>La discusión sobre el libro &#39;Introduction to Machine Learning Interviews&#39; de Huyen Chip presenta opiniones mixtas sobre su efectividad para prepararse para entrevistas de ML.</li>
+<li>Algunos usuarios sugieren que las preguntas del libro son más fáciles en comparación con las entrevistas reales de ML, y otros recomiendan el libro &#39;Deep Learning Interviews&#39; por ser más atractivo y representativo.</li>
+<li>Existe un debate sobre la relevancia de utilizar preguntas estándar del libro, con algunos abogando por crear proyectos personalizados en su lugar.</li>
+</ul>
+<h2><a href="https://github.com/narumatt/sqlitefs">Sqlitefs: SQLite como un sistema de archivos</a></h2>
+<ul>
+<li>sqlite-fs permite a los usuarios de Linux y MacOS montar un archivo de base de datos SQLite como un sistema de archivos regular, facilitando las operaciones de archivos a través de una base de datos.</li>
+<li>Requiere el último lenguaje de programación Rust (≥ 1.38) y libfuse (Linux) o osxfuse (MacOS) para su funcionalidad.</li>
+<li>Admite varias operaciones de archivos, como crear, leer, escribir, eliminar archivos y directorios, cambiar atributos y manejar bloqueos de archivos, con un manejo de errores estricto.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085856">Reacciones</a></h3>
+<ul>
+<li>SQLiteFS es un proyecto que utiliza SQLite como un sistema de archivos, atrayendo interés por su enfoque único en el almacenamiento de archivos.</li>
+<li>La idea recuerda al proyecto cancelado de Microsoft, WinFS, que tenía como objetivo usar SQL Server como sistema de archivos.</li>
+<li>A pesar del humor y las discusiones teóricas, se están considerando aplicaciones prácticas como el uso de SQLiteFS para operaciones en memoria o almacenamiento en caché.</li>
+</ul>
+<h2><a href="https://boogiemath.org/meta/meta-9.html">Oscar Zariski fue uno de los fundadores de la geometría algebraica moderna</a></h2>
+<ul>
+<li>Oscar Zariski (1899-1986) fue una figura clave en la geometría algebraica moderna, conocido por su influyente libro &quot;Algebraic Surfaces&quot; y sus importantes contribuciones al campo.</li>
+<li>A pesar de comenzar su carrera académica más tarde de lo habitual, Zariski se mantuvo activo hasta sus ochenta años, con un trabajo notable en funciones holomorfas y un rico recorrido académico por instituciones prestigiosas.</li>
+<li>Una anécdota interesante de su vida incluye casi perderse su propia boda debido a estar profundamente absorto en un problema matemático, lo que resalta su intensa dedicación a las matemáticas.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41086060">Reacciones</a></h3>
+<ul>
+<li>Oscar Zariski es reconocido como uno de los fundadores de la geometría algebraica moderna.</li>
+<li>Los usuarios compartieron anécdotas y discutieron diversos temas, incluyendo el incidente humorístico del matemático Kalle Väisälä y el &quot;factor de imaginación,&quot; que mide el tiempo pasado en mundos reales vs. imaginarios.</li>
+<li>La conversación también profundizó en discusiones históricas y políticas, como la Revolución Rusa y los debates sobre el comunismo versus el capitalismo.</li>
+</ul>
+<h2><a href="https://www.cs.cornell.edu/~asampson/blog/bril.html">Bril: Un lenguaje intermedio para la enseñanza de compiladores</a></h2>
+<ul>
+<li>Bril, el Gran Lenguaje Intermedio Rojo, fue creado para simplificar la enseñanza de compiladores al priorizar la facilidad de uso y la simplicidad sobre el rendimiento y el tamaño del código.</li>
+<li>Los programas Bril son documentos JSON, lo que los hace accesibles con cualquier lenguaje de programación y fáciles de compartir.</li>
+<li>La ecosistema de Bril se ha expandido con las contribuciones de los estudiantes, incluyendo herramientas y extensiones de lenguaje, aunque su forma SSA (Asignación Única Estática) necesita mejoras.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41084318">Reacciones</a></h3>
+<ul>
+<li>Bril es un lenguaje intermedio (IL) diseñado para la enseñanza de compiladores, desarrollado por la Universidad de Cornell.</li>
+<li>Las discusiones destacan la necesidad de reelaborar la forma de Asignación Única Estática (SSA) de Bril y las comparaciones con otros IL como ANF (Forma A-Normal) y CPS (Estilo de Paso de Continuación).</li>
+<li>Algunos argumentan que los IL existentes como LLVM son suficientes para fines educativos, mientras que otros enfatizan el enfoque único de Bril para enseñar conceptos de compiladores.</li>
+</ul>
+<h2><a href="https://fabiensanglard.net/dc/">Compiladores de conducción</a></h2>
+<ul>
+<li>La serie tiene como objetivo llenar el vacío en la literatura sobre el uso de herramientas para convertir programas en ejecutables, centrándose en conceptos fundamentales en lugar de enseñar un lenguaje o cómo escribir un compilador.</li>
+<li>Proporciona pasos reproducibles utilizando bintools y el modo detallado del controlador (-v) para ayudar a los lectores a explorar más allá de los ejemplos básicos, asumiendo una plataforma Linux con compiladores gcc o clang.</li>
+<li>La serie se divide en cinco partes: Driver, cpp (preprocesador), cc (compilador), ld (enlazador) y Loader, ofreciendo un enfoque estructurado para entender el proceso de compilación.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083077">Reacciones</a></h3>
+<ul>
+<li>La artículo ofrece una excelente introducción a la cadena de herramientas de C y C++, centrándose en plataformas basadas en Linux y ELF.</li>
+<li>Las aclaraciones clave incluyen que la biblioteca estándar de C++ es más amplia que la STL, y que ::operator new() es parte del tiempo de ejecución, no solo una plantilla.</li>
+<li>La redacción del artículo debería distinguir mejor entre el cargador del núcleo del sistema operativo y el cargador dinámico del espacio de usuario.</li>
+</ul>
+<h2><a href="https://blog.davidv.dev/posts/pcie-driver-dma/">Aprendiendo sobre PCI-e: Controlador y DMA</a></h2>
+<ul>
+<li>La publicación detalla la implementación de un controlador de dispositivo PCI-e (Peripheral Component Interconnect Express) básico, centrándose en la asignación de memoria y las operaciones de DMA (Acceso Directo a Memoria).</li>
+<li>Explica la creación de un <code>struct pci_driver</code>, la configuración de un dispositivo de caracteres para la interacción con el espacio de usuario y el uso de MSI (Interrupciones Señalizadas por Mensaje) para manejar transferencias DMA asíncronas.</li>
+<li>La publicación es significativa por su guía práctica sobre el desarrollo de un controlador de dispositivo PCI-e, incluyendo fragmentos de código y referencias a la documentación del kernel, lo que la hace valiosa para los nuevos ingenieros de software.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085713">Reacciones</a></h3>
+<ul>
+<li>La discusión se centra en el uso de un FPGA (Field-Programmable Gate Array) para construir un adaptador de pantalla, con un enfoque en PCI-e (Peripheral Component Interconnect Express) hard IP (Propiedad Intelectual).</li>
+<li>Se recomiendan varias placas FPGA asequibles, incluidas Spartan 6, Artix, Screamer PCIe Squirrel y Litefury, que admiten PCIe y salida de video digital.</li>
+<li>La publicación también destaca recursos y diseños para crear tarjetas de video y menciona el uso potencial del modo Alt de Displayport y cámaras web USB3 tipo UVC para la salida de video.</li>
+</ul>
+<head>
+  <meta property="og:title" content="SQLite: 35% más rápido que el sistema de archivos" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=SQLite%3A%2035%25%20m%C3%A1s%20r%C3%A1pido%20que%20el%20sistema%20de%20archivos&subheading=s%C3%A1bado%2C%2027%20de%20julio%20de%202024%3A%20Resumen%20de%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/es/2024/07/27</link>
+            <guid isPermaLink="false">2024-07-27T00:00:00.000Z</guid>
+            <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-26]]></title>
             <description
@@ -1680,187 +1876,6 @@
             <link>https://hn.cho.sh/es/2024/07/18</link>
             <guid isPermaLink="false">2024-07-18T00:00:00.000Z</guid>
             <pubDate>Thu, 18 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-17]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/17&#39;</h2>
-<h1>2024-07-17</h1>
-<h2><a href="https://workspaceupdates.googleblog.com/2024/07/import-and-export-markdown-in-google-docs.html">Importar y exportar Markdown en Google Docs</a></h2>
-<ul>
-<li>Google Docs ahora admite funciones mejoradas de Markdown, incluyendo la conversión de Markdown a contenido de Docs al pegar, copiar contenido de Docs como Markdown, exportar un Doc como Markdown e importar Markdown como un Doc.</li>
-<li>Esta actualización es beneficiosa para los redactores de contenido técnico, ya que facilita la conversión entre Docs y Markdown para la colaboración y la documentación.</li>
-<li>La implementación comienza el 16 de julio de 2024 para los dominios de Lanzamiento Rápido y Lanzamiento Programado, y está disponible para todos los clientes de Google Workspace, suscriptores individuales de Workspace y usuarios de cuentas personales de Google.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40982118">Reacciones</a></h3>
-<ul>
-<li>Google Docs ahora admite la importación/exportación completa de Markdown, mejorando su utilidad para escritores técnicos y colaboradores en documentos Markdown.</li>
-<li>La función se está implementando gradualmente para detectar errores graves temprano, por lo que es posible que los usuarios no la vean de inmediato.</li>
-<li>Google Drive y sus API también admitirán esta nueva capacidad de Markdown, aunque algunos usuarios tienen preocupaciones sobre los despliegues lentos y el soporte incompleto para elementos como bloques de código y comentarios.</li>
-</ul>
-<h2><a href="https://matt.sh/panic-at-the-job-market">Pánico en el mercado laboral</a></h2>
-<ul>
-<li>La industria de empleos tecnológicos está en crisis debido al aumento de las tasas de interés, la financiación especulativa y las prácticas de contratación defectuosas.</li>
-<li>Higher interest rates lead companies to invest in safe government-backed accounts rather than risky ventures, causing job losses in the tech sector.</li>
-<li>La contratación a menudo se centra en pruebas de codificación irrelevantes y entrevistas conductuales, sin evaluar la verdadera experiencia y capacidades de los candidatos.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40986894">Reacciones</a></h3>
-<ul>
-<li>La situación del mercado laboral es desafiante en múltiples industrias, incluida la tecnología, con procesos de contratación complejos que pasan por alto los perfiles y contribuciones individuales.</li>
-<li>El networking es esencial ya que los portales de empleo a menudo ocultan los currículums, y el mercado laboral tecnológico enfrenta oportunidades menguantes con empresas que se centran en habilidades irrelevantes y requisitos arbitrarios.</li>
-<li>Ineficientes prácticas de contratación pueden indicar entornos laborales deficientes, y la irracionalidad del mercado laboral puede perdurar más allá de la estabilidad financiera de los individuos, complicando la búsqueda de un empleo adecuado.</li>
-</ul>
-<h2><a href="https://www.da.vidbuchanan.co.uk/blog/r1-jailbreak.html">Jailbreaking RabbitOS: Descubriendo registros secretos y violaciones de la GPL</a></h2>
-<ul>
-<li>David Buchanan ha desarrollado un &quot;jailbreak atado&quot; para el Rabbit R1, permitiendo acceso root sin desbloquear el gestor de arranque ni alterar el almacenamiento interno.</li>
-<li>La Rabbit R1, que utiliza un SoC MediaTek MT6765, ha sido criticada por el extenso registro de datos de los usuarios y las violaciones de la GPL, que fueron parcialmente abordadas en una actualización reciente.</li>
-<li>Buchanan ha descubierto que RabbitOS es una versión de Android 13 AOSP fuertemente modificada, que principalmente impone un modo quiosco de una sola aplicación, y ha lanzado una herramienta para ayudar en la exploración adicional del dispositivo.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40987730">Reacciones</a></h3>
-<ul>
-<li>El jailbreak de RabbitOS ha revelado registros secretos y posibles violaciones de la GPL (Licencia Pública General), lo que plantea preocupaciones de privacidad y legales.</li>
-<li>Los registros incluyen datos sensibles como ubicaciones GPS precisas, nombres de redes WiFi, identificaciones de torres de telefonía celular cercanas y tokens de usuario, algunos de los cuales se envían a los servidores de Rabbit.</li>
-<li>Rabbit Inc. lanzó una actualización (v0.8.112) que aborda estos problemas de registro, pero la controversia resalta las preocupaciones continuas sobre la privacidad de los datos y la transparencia en los productos tecnológicos.</li>
-</ul>
-<h2><a href="https://www.justinmath.com/the-greatest-educational-life-hack-learning-math-ahead-of-time/">La mejor estrategia educativa: aprender matemáticas por adelantado</a></h2>
-<ul>
-<li>Aprender matemáticas con anticipación puede llevar a mejores calificaciones, protección contra una mala enseñanza y acceso a pasantías, proyectos de investigación y cartas de recomendación sólidas, que son cruciales para las oportunidades universitarias y profesionales.</li>
-<li>Los cursos avanzados de matemáticas más allá del cálculo, como Álgebra Lineal y Ecuaciones Diferenciales, son esenciales para muchos campos cuantitativos y pueden acelerar a los estudiantes hacia campos especializados, mejorando los logros profesionales.</li>
-<li>Las investigaciones indican que la aceleración educativa no perjudica el bienestar psicológico y conduce a un mayor éxito académico y profesional, a pesar de los conceptos erróneos comunes y los desafíos logísticos.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40983734">Reacciones</a></h3>
-<ul>
-<li>Un usuario compartió su experiencia de superar la fobia a las matemáticas en sus 30 años, destacando que nunca es demasiado tarde para aprender matemáticas y sus beneficios para la resolución de problemas y conocimientos en programación.</li>
-<li>Las sugerencias para aprender matemáticas en la vida adulta incluían comenzar con libros de matemáticas básicos, utilizar los recursos de los colegios comunitarios y avanzar gradualmente hacia temas más avanzados.</li>
-<li>La discusión también enfatizó la importancia de la educación matemática temprana, la participación de los padres y recursos externos como Kumon, así como el papel del sistema educativo en general para fomentar el autoestudio y la motivación.</li>
-</ul>
-<h2><a href="https://www.mailgun.com/blog/email/ai-phishing/">La edad dorada de los estafadores: phishing potenciado por IA</a></h2>
-<ul>
-<li>Las IA generativas permiten a los estafadores enviar correos electrónicos de phishing altamente personalizados y convincentes, superando las barreras del idioma y automatizando campañas masivas.</li>
-<li>Las herramientas de IA como WormGPT y FraudGPT ayudan a generar correos electrónicos de phishing y sitios web falsificados, reduciendo significativamente el tiempo necesario para crear ataques efectivos.</li>
-<li>Las estrategias de defensa incluyen la implementación de DMARC (Autenticación de Mensajes Basada en Dominio, Informes y Conformidad), el reconocimiento de intentos de phishing con IA, el uso de seguridad en múltiples capas y el mantenimiento de una fuerte reputación del remitente.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40981067">Reacciones</a></h3>
-<ul>
-<li>Las estafas de phishing impulsadas por IA se están volviendo más sofisticadas, aprovechando tecnologías como Llama para texto, Whisper/Tortoise para voz y Stable Diffusion para imágenes, aunque su implementación aún es limitada.</li>
-<li>A pesar del potencial de la IA para mejorar el phishing, los métodos tradicionales como las estafas de centros de llamadas en India siguen siendo altamente efectivos y económicamente viables, como lo demuestra un caso reciente en el que una persona mayor fue estafada con $25,000.</li>
-<li>Bancos y otras instituciones están mejorando sus capacidades de detección de estafas, pero el aumento de estafas impulsadas por IA requiere una mayor conciencia y educación, especialmente para poblaciones vulnerables como los ancianos.</li>
-</ul>
-<h2><a href="https://thetinypod.com/">TinyPod – Funda para Apple Watch con rueda de desplazamiento</a></h2>
-<ul>
-<li>Presentamos tinyPod, un dispositivo compacto que ofrece funciones esenciales como teléfono, música, mensajería y más, todo impulsado por tu Apple Watch.</li>
-<li>Las características clave incluyen una rueda de desplazamiento táctil, carga magnética rápida, batería de varios días, Apple Pay y 32GB de almacenamiento para medios.</li>
-<li>Disponible en dos modelos: tinyPod con rueda de desplazamiento por $79.99 y tinyPod lite sin rueda de desplazamiento por $29.99, compatible con varias series de Apple Watch, disponible este verano.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40987402">Reacciones</a></h3>
-<ul>
-<li>TinyPod es una funda para Apple Watch que incorpora una rueda de desplazamiento, que recuerda a la rueda de clic del iPod, creando un enlace mecánico con la corona digital.</li>
-<li>La gente ve el producto como una idea de hardware divertida y de nicho, que atrae a aquellos que aprecian los gadgets tecnológicos únicos y caprichosos, a pesar de su falta de practicidad.</li>
-<li>Hay opiniones mixtas sobre la funcionalidad de la página web del producto, con algunos usuarios experimentando problemas en Firefox, mientras que otros encuentran el diseño atractivo.</li>
-</ul>
-<h2><a href="https://github.com/libarchive/libarchive/pull/1609">Jia Tan &quot;JiaT75&quot;: Añadió texto de error a la advertencia al descomprimir con bsdtar (2021)</a></h2>
-<ul>
-<li>Libarchive fusionó un commit para agregar texto de error a las advertencias al usar bsdtar, abordando el problema #1561, pero se plantearon preocupaciones sobre reemplazar safe_fprintf con el inseguro fprintf.</li>
-<li>Se implementó una solución para revertir a safe_fprintf y usar el manejo correcto de errno, con sugerencias para auditorías adicionales y un CVE (Common Vulnerabilities and Exposures) para el problema.</li>
-<li>La discusión subrayó la importancia de las revisiones de código exhaustivas y el mantenimiento de la seguridad en los proyectos de código abierto, y el problema se resolvió con la conversación bloqueada.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40984589">Reacciones</a></h3>
-<ul>
-<li>Jia Tan &quot;JiaT75&quot; añadió texto de error a una advertencia en bsdtar en 2021, lo que llevó a una acalorada discusión en GitHub sobre la calidad de los comentarios y el escrutinio de los cambios en el código.</li>
-<li>La discusión destacó los desafíos de mantener grandes proyectos de software y el papel potencial de la IA en la mejora de las revisiones de seguridad.</li>
-<li>La incidencia subrayó la dificultad de detectar código malicioso, especialmente de colaboradores conocidos, y vinculó a Jia Tan con un ataque patrocinado por el estado contra la herramienta xz.</li>
-</ul>
-<h2><a href="https://www.theverge.com/2024/7/16/24199686/puerto-rico-fossil-fuel-industry-lawsuit-climate-change">Puerto Rico presenta demanda de $1 mil millones contra empresas de combustibles fósiles</a></h2>
-<ul>
-<li>Puerto Rico ha presentado una demanda de mil millones de dólares contra las principales compañías de combustibles fósiles, incluidas ExxonMobil, BP, Chevron, Shell y ConocoPhillips, por supuestamente engañar al público sobre el cambio climático y retrasar la transición hacia la energía limpia.</li>
-<li>La demanda, presentada en San Juan, afirma que estas empresas violaron las leyes comerciales al promover combustibles fósiles sin advertencias adecuadas sobre sus peligros, buscando daños para defenderse contra desastres climáticos como el huracán María.</li>
-<li>Esta acción legal es parte de una tendencia más amplia de demandas similares contra la industria de los combustibles fósiles, destacando los crecientes esfuerzos de responsabilidad por los impactos relacionados con el clima.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40986213">Reacciones</a></h3>
-<ul>
-<li>Puerto Rico ha iniciado una demanda de $1 mil millones contra las compañías de combustibles fósiles, acusándolas de causar daños relacionados con el cambio climático y buscando regulaciones ambientales más estrictas.</li>
-<li>La demanda subraya el debate continuo entre los beneficios económicos de los combustibles fósiles y la necesidad de prácticas sostenibles y responsabilidad corporativa.</li>
-<li>Las opiniones están divididas, con algunos enfatizando la importancia de la responsabilidad corporativa por la contaminación y la desinformación, mientras que otros destacan el papel de las acciones individuales y las políticas gubernamentales en la lucha contra el cambio climático.</li>
-</ul>
-<h2><a href="https://www.reuters.com/markets/deals/google-backed-software-developer-gitlab-explores-sale-sources-say-2024-07-17/">Gitlab explora la venta</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40983486">Reacciones</a></h3>
-<ul>
-<li>Gitlab está considerando una venta, lo que genera preocupaciones entre los usuarios sobre posibles cierres o cambios en los modelos de servicio, recordando problemas pasados con RedHat y CentOS.</li>
-<li>Los usuarios debaten los méritos de las opciones de código abierto como Gitlab, citando una migración más fácil y el apoyo de la comunidad, mientras especulan sobre posibles compradores como Datadog o IBM.</li>
-<li>Las críticas a los precios y el enfoque empresarial de Gitlab han llevado a algunos usuarios a contemplar cambiar a alternativas como GitHub, reflejando sentimientos mixtos sobre la estabilidad futura y los costos.</li>
-</ul>
-<h2><a href="https://vedgie.net/writing/darwin_machines.md">Máquinas de Darwin</a></h2>
-<ul>
-<li>La publicación discute la teoría de William Calvin en &quot;The Cerebral Code&quot;, que sugiere que el cerebro utiliza procesos evolutivos dentro de las minicolumnas para procesar las entradas sensoriales y encontrar los patrones más &quot;aptos&quot;.</li>
-<li>La teoría postula que la estructura del cerebro, particularmente las columnas y minicolumnas del neocórtex, permite una resolución de problemas eficiente y un procesamiento paralelo, lo cual podría aplicarse a la inteligencia artificial (IA) y el aprendizaje automático (ML).</li>
-<li>La autora está experimentando con redes neuronales para imitar este proceso evolutivo y busca consejos sobre investigaciones y conocimientos académicos en este campo, destacando posibles avances en las capacidades de pensamiento profundo de la IA.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40981068">Reacciones</a></h3>
-<ul>
-<li>La publicación discute el concepto de Máquinas Darwin, donde diferentes modalidades de datos sensoriales son procesadas por minicolumnas cerebrales, cada una produciendo patrones de disparo únicos que compiten y refuerzan el patrón dominante, ayudando al aprendizaje.</li>
-<li>Los algoritmos de enrutamiento de cápsulas, propuestos por Geoffrey Hinton, tienen como objetivo implementar esta idea utilizando procesos de expectativa-maximización (EM), pero han sido eclipsados por el éxito de los transformadores en la investigación de IA.</li>
-<li>La discusión destaca la importancia de comprender la función cerebral y las redes neuronales, haciendo referencia al aprendizaje hebbiano y la necesidad de una exploración más profunda de las dinámicas temporales en la actividad neuronal.</li>
-</ul>
-<h2><a href="https://github.com/guywaldman/magic-cli">Magic-cli – Un copiloto para tu línea de comandos</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40980715">Reacciones</a></h3>
-<ul>
-<li>Magic-cli, un copiloto de línea de comandos desarrollado por Guy Waldman, ha generado debates debido a su modo predeterminado de &quot;ejecución no segura&quot;, con sugerencias para un modo predeterminado más seguro como el modo &quot;portapapeles&quot;.</li>
-<li>Los usuarios han compartido opiniones y experiencias, mencionando herramientas alternativas como zsh_codex, aichat y Warp terminal.</li>
-<li>La construcción del proyecto en Rust plantea preguntas sobre su complejidad en comparación con implementaciones más simples en otros lenguajes.</li>
-</ul>
-<h2><a href="https://developers.google.com/tag-platform/tag-manager/first-party/setup-guide">Google presenta un método para eludir el bloqueo automático del gestor de etiquetas</a></h2>
-<ul>
-<li>Google está introduciendo una función beta para implementar etiquetas en modo de primera parte, mejorando el rendimiento de las etiquetas y la privacidad de los datos al utilizar el dominio del sitio web para el alojamiento.</li>
-<li>El proceso implica reservar una ruta única en el dominio, enrutar el tráfico a través de servicios como Google Cloud o Cloudflare, y actualizar los scripts del sitio web para usar la nueva ruta de medición.</li>
-<li>Se anima a los usuarios a probar la configuración utilizando Tag Assistant y proporcionar comentarios a través de un formulario de comentarios designado o un correo electrónico de contacto.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40983585">Reacciones</a></h3>
-<ul>
-<li>Google ha introducido un método para eludir el bloqueo automático de su Tag Manager, lo que genera preocupaciones sobre la privacidad y la efectividad de los bloqueadores de anuncios.</li>
-<li>Los usuarios discuten estrategias para bloquear el rastreo, como usar uBlock Origin con JavaScript deshabilitado por defecto, y habilitarlo selectivamente para facilitar el uso y obtener beneficios de velocidad.</li>
-<li>La nueva metodología de Google ha generado un debate sobre cómo equilibrar la recopilación de datos con fines comerciales y la privacidad del usuario, con algunos usuarios expresando frustración por las prácticas de seguimiento de Google.</li>
-</ul>
-<h2><a href="https://www.nytimes.com/2024/07/16/dining/pete-wells-steps-down-food-critic.html">Después de 12 años de reseñar restaurantes, me retiro de la mesa</a></h2>
-<ul>
-<li>Pete Wells, después de 12 años como crítico de restaurantes de The New York Times, está renunciando debido a problemas de salud, incluyendo colesterol alto, azúcar en la sangre y hipertensión.</li>
-<li>A pesar de la naturaleza gratificante de su papel, el desgaste físico de las frecuentes visitas a restaurantes se ha vuelto insostenible para Wells.</li>
-<li>Wells permanecerá en The Times, pero ya no se encargará de las exigencias de las reseñas semanales, eligiendo en su lugar centrarse en su salud y en un estilo de vida más equilibrado.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40979539">Reacciones</a></h3>
-<ul>
-<li>Un crítico de restaurantes de larga data se retira después de 12 años, lo que ha generado debates sobre su impacto y el futuro de las reseñas de restaurantes.</li>
-<li>El crítico era conocido por su diversa selección de restaurantes y su enfoque único, a veces distante, hacia las reseñas.</li>
-<li>La noticia ha generado entusiasmo por la llegada de la nueva crítica, Mellissa Clark, y reflexiones sobre las experiencias de aquellos en la industria de restaurantes.</li>
-</ul>
-<h2><a href="https://github.com/bobbyiliev/introduction-to-bash-scripting">Introducción a la programación en Bash</a></h2>
-<ul>
-<li>Se ha lanzado una guía/libro electrónico de código abierto sobre scripting en Bash, dirigida a automatizar tareas para desarrolladores, administradores de sistemas e ingenieros de DevOps.</li>
-<li>La guía electrónica abarca una amplia gama de temas, desde la estructura básica de Bash hasta técnicas avanzadas de scripting, incluyendo el trabajo con APIs y la generación de contraseñas.</li>
-<li>Recursos adicionales incluyen un mini curso en video, entrenamiento interactivo a través de Katacoda y contribuciones del Ingeniero de DevOps de Linux, Bobby Iliev.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40982011">Reacciones</a></h3>
-<ul>
-<li>Bash scripting se compara a menudo con Python para tareas de terminal, siendo Bash más eficiente para operaciones de sistema de archivos y secuencias de comandos simples debido a su integración nativa con el terminal.</li>
-<li>Los críticos destacan la complejidad de Python para tareas básicas y la sintaxis torpe de Bash, pero Bash sigue siendo esencial en entornos sin Python preinstalado.</li>
-<li>Existen alternativas como el shell de Ruby o Perl para el análisis de texto, y herramientas como ChatGPT pueden ayudar en la generación de scripts, pero entender los conceptos básicos de Bash sigue siendo valioso.</li>
-</ul>
-<h2><a href="https://www.gartner.com/en/articles/the-data-is-in-return-to-office-mandates-aren-t-worth-the-talent-risks">Los mandatos de regreso a la oficina no valen los riesgos para el talento</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40983717">Reacciones</a></h3>
-<ul>
-<li>Los mandatos de regreso a la oficina (RTO) corren el riesgo de perder a los mejores talentos, ya que los empleados con alternativas pueden irse primero, lo que podría causar un efecto dominó.</li>
-<li>Opciones flexibles, como la compensación por viajes o la mejora de las comodidades en la oficina, se sugieren como mejores alternativas a los mandatos estrictos de regreso a la oficina.</li>
-<li>La discusión incluye perspectivas sobre la productividad, el mentorazgo y las preferencias personales, con algunos viendo el RTO como impulsado por visiones de gestión anticuadas o presiones económicas.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Importar y exportar Markdown en Google Docs" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Importar%20y%20exportar%20Markdown%20en%20Google%20Docs&subheading=mi%C3%A9rcoles%2C%2017%20de%20julio%20de%202024%3A%20Resumen%20de%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/es/2024/07/17</link>
-            <guid isPermaLink="false">2024-07-17T00:00:00.000Z</guid>
-            <pubDate>Wed, 17 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

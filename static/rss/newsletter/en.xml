@@ -15,12 +15,208 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 26 Jul 2024 19:14:09 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 27 Jul 2024 19:09:46 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/en.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Fri, 26 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[en]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-27]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/27&#39;</h2>
+<h1>2024-07-27</h1>
+<h2><a href="https://sqlite.org/fasterthanfs.html">SQLite: 35% Faster Than the Filesystem</a></h2>
+<ul>
+<li>SQLite reads and writes small blobs (e.g., thumbnail images) 35% faster than using individual files on disk, and uses about 20% less disk space.</li>
+<li>The efficiency is attributed to fewer open() and close() system calls and tighter data packing, with performance expected to improve in future versions.</li>
+<li>Tests show SQLite generally outperforms direct file I/O, especially on Windows with anti-virus software enabled, though performance can vary based on hardware and OS.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085376">Reactions</a></h3>
+<ul>
+<li>SQLite is 35% faster than traditional filesystems due to fewer open/close system calls and no need for file system attributes or metadata checks.</li>
+<li>This performance boost is especially significant on Windows, where filesystem calls are inherently slower.</li>
+<li>Despite some limitations, such as a 2GB blob maximum and challenges with hierarchical data, SQLite&#39;s speed and simplicity make it advantageous for logs and other data storage.</li>
+</ul>
+<h2><a href="https://sysprog21.github.io/lkmpg/">The Linux Kernel Module Programming Guide</a></h2>
+<ul>
+<li>The Linux Kernel Module Programming Guide provides a comprehensive introduction to creating and managing kernel modules, which are dynamically loadable code segments that enhance kernel capabilities without requiring a reboot.</li>
+<li>Key tools and commands for working with kernel modules include <code>modprobe</code>, <code>insmod</code>, <code>depmod</code>, <code>lsmod</code>, and <code>cat /proc/modules</code>.</li>
+<li>The guide covers essential topics such as module initialization and cleanup, handling command-line arguments, managing device drivers, interacting with the <code>/proc</code> and <code>sysfs</code> file systems, and avoiding common pitfalls in kernel programming.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083972">Reactions</a></h3>
+<ul>
+<li>The Linux Kernel Module Programming Guide highlights using QEMU for kernel hacking and suggests updating Linux device driver books.</li>
+<li>Greg KH confirmed there won&#39;t be a 4th edition of the Linux Device Drivers book, sparking discussions on alternative resources like &quot;The Linux Memory Manager&quot; and &quot;Linux Insides.&quot;</li>
+<li>Users shared experiences with QEMU for debugging and the WireGuard test suite for kernel module development, emphasizing the importance of human review in writing.</li>
+</ul>
+<h2><a href="https://reason.com/2024/07/26/courts-close-the-loophole-letting-the-feds-search-your-phone-at-the-border/">Courts Close the Loophole Letting the Feds Search Your Phone at the Border</a></h2>
+<ul>
+<li>A federal judge ruled that Customs and Border Protection (CBP) cannot search electronics at the border without a warrant, addressing a loophole in the Fourth Amendment.</li>
+<li>Judge Nina Morrison stated that cellphone searches are &quot;nonroutine&quot; and require probable cause and a warrant, comparing them to strip searches due to their significant privacy impact.</li>
+<li>The ruling, supported by civil libertarians, is seen as crucial for press freedom and privacy rights, following similar decisions in other circuits and districts.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083286">Reactions</a></h3>
+<ul>
+<li>A District Court in New York ruled that warrantless cellphone searches at the border are &quot;nonroutine&quot; and more invasive than other types of searches, likening them to strip searches.</li>
+<li>This decision is not binding precedent and contrasts with rulings from other Circuit Courts, indicating a potential for the Supreme Court to address the issue due to the existing &quot;circuit split.&quot;</li>
+<li>The ruling reflects ongoing debates about privacy rights and government powers, especially in the context of border security and the Fourth Amendment.</li>
+</ul>
+<h2><a href="https://web.stanford.edu/class/cs81n/command.txt">In the Beginning Was the Command Line (1999)</a></h2>
+<ul>
+<li>Neal Stephenson&#39;s essay &quot;In the Beginning was the Command Line&quot; explores the evolution of operating systems (OS) and their market dynamics, focusing on Apple and Microsoft.</li>
+<li>Microsoft achieved market dominance by selling OS like consumer goods, emphasizing convenience and ease, which resonated with broader cultural trends valuing simplicity over complexity.</li>
+<li>Despite the rise of superior, free alternatives like Linux and BeOS, most consumers preferred Microsoft&#39;s familiar products, highlighting a societal preference for mediated experiences through graphical user interfaces (GUIs).</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41084795">Reactions</a></h3>
+<ul>
+<li>Neal Stephenson&#39;s essay &quot;In the Beginning Was the Command Line&quot; (1999) highlights the advantages of Command Line Interfaces (CLI) over Graphical User Interfaces (GUIs), emphasizing their conciseness and ease of communication.</li>
+<li>The essay compares the evolution of operating systems to cars, underscoring the stability and user control provided by CLIs despite the popularity of GUIs.</li>
+<li>It also delves into the cultural and philosophical implications of technology interfaces, offering a broader perspective on how we interact with technology.</li>
+</ul>
+<h2><a href="https://blog.singleton.io/posts/2022-10-17-otp-on-wrist/">TOTP tokens on my wrist with the smartest dumb watch</a></h2>
+<ul>
+<li>Sensor Watch has released a new replacement logic board for the classic Casio F-91W, upgrading it with an ARM Cortex M0+ processor while retaining the original LCD, pushers, and piezo-buzzer.</li>
+<li>The upgraded board is programmable, allowing for customizable watchfaces and utility apps, including features like 2FA tokens, ratemeter, world clock, and more.</li>
+<li>The watch is easy to hack, with a wasm-based emulator for testing, and detailed documentation is available for those interested in modifying or building their own watchfaces.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41081435">Reactions</a></h3>
+<ul>
+<li>A discussion on Hacker News highlights the use of TOTP (Time-based One-Time Password) tokens on Casio watches, specifically the F-91W and A158W models, for two-factor authentication (2FA).</li>
+<li>The project involves modifying the watch&#39;s firmware to display TOTP codes, with community contributions enhancing features like user calibration and even creating games for the watch.</li>
+<li>Concerns are raised about the security of having TOTP codes visible on a watch, with some suggesting alternatives like FIDO2 hardware keys for better protection against phishing attacks.</li>
+</ul>
+<h2><a href="https://ntk148v.github.io/posts/linux-network-performance-ultimate-guide/">Linux Network Performance Ultimate Guide</a></h2>
+<ul>
+<li>The guide provides an in-depth look at optimizing Linux network performance, covering topics from the networking stack to advanced packet processing techniques.</li>
+<li>Key tuning steps include adjusting NIC ring buffer sizes, interrupt coalescence, IRQ affinity, and using tools like AF_PACKET, DPDK, and XDP for high-performance packet handling.</li>
+<li>Monitoring and adjusting network settings with tools like <code>ethtool</code>, <code>sysctl</code>, and <code>netstat</code> are essential for maintaining optimal performance.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083801">Reactions</a></h3>
+<ul>
+<li>The &quot;Linux Network Performance Ultimate Guide&quot; is a comprehensive resource for optimizing network performance using Linux, particularly useful for those working with high-speed networks.</li>
+<li>A user shared a success story of building a cost-effective 10Gbps encrypted network using commercial off-the-shelf (COTS) hardware and Wireguard, significantly undercutting commercial hardware solutions.</li>
+<li>Discussions in the comments include practical tips, such as tuning TCP buffer sizes, and tools for automatic performance tuning, like Oracle&#39;s bpftune.</li>
+</ul>
+<h2><a href="https://github.com/joshuacline/windick">Windows recovery environment and bootable USB creator in 200kb</a></h2>
+<ul>
+<li>Windows Deployment Image Customization Kit is a command shell tool designed for customizing and deploying Windows images.</li>
+<li>It provides a native solution for IT professionals and system administrators to streamline the deployment process.</li>
+<li>Tutorials and additional information are available on platforms like YouTube and Microsoft&#39;s official documentation.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083987">Reactions</a></h3>
+<ul>
+<li>A new shell-based tool for creating a Windows recovery environment and bootable USB has been released, fitting into just 200 kilobytes.</li>
+<li>The tool, written as a large batch file with 3,085 lines of code, showcases impressive dedication and efficiency, especially given the availability of more modern scripting languages like PowerShell.</li>
+<li>The project is inspired by clockworkmod recovery for Android and aims to use &quot;live-of-the-land&quot; commands, meaning it has zero dependencies and works solely under Windows.</li>
+</ul>
+<h2><a href="https://krebsonsecurity.com/2024/07/crooks-bypassed-googles-email-verification-to-create-workspace-accounts-access-3rd-party-services/">Crooks Bypassed Google&#39;s Email Verification to Create Workspace Accounts, Acces</a></h2>
+<ul>
+<li>Google fixed an authentication weakness that allowed criminals to bypass email verification to create Google Workspace accounts and impersonate domain holders.</li>
+<li>The issue was resolved within 72 hours, and additional detection measures were implemented to prevent future abuse.</li>
+<li>The attackers aimed to impersonate domain holders to third-party services, not to abuse Google services, and the malicious activity involved a few thousand Workspace accounts created without domain verification.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41082502">Reactions</a></h3>
+<ul>
+<li>Attackers bypassed Google&#39;s email verification to create unauthorized Workspace accounts, leading to potential security breaches and unexpected welcome emails for unregistered domains.</li>
+<li>These unauthorized accounts were used to exploit &quot;Sign in with Google&quot; on third-party sites, causing victims difficulties in reclaiming their domains.</li>
+<li>The incident underscores vulnerabilities in Google&#39;s system and the risks associated with social logins, prompting calls for improvements like mandatory DNS verification.</li>
+</ul>
+<h2><a href="https://github.com/devrim/cloudflare-noip">Free DDNS with Cloudflare and a Cronjob</a></h2>
+<ul>
+<li>This project provides a free alternative to paid dynamic DNS services by automating DNS record updates on Cloudflare using a free account and a cronjob.</li>
+<li>Users need to clone the repository, create configuration files (<code>keys.json</code> and <code>records.json</code>), and set up a cronjob or equivalent task scheduler to run the script at regular intervals.</li>
+<li>The script updates DNS records on Cloudflare with the machine&#39;s current IP address, making it a cost-effective solution for dynamic DNS needs.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41081810">Reactions</a></h3>
+<ul>
+<li>A GitHub project offers a free Dynamic DNS (DDNS) solution using Cloudflare and a cron job, attracting significant interest from the tech community.</li>
+<li>Users discuss the pros and cons of using Cloudflare for DDNS, including potential bait-and-switch tactics and limitations like mandatory TLS termination and upload restrictions.</li>
+<li>Alternatives and similar projects are mentioned, such as using Cloudflare tunnels, Tailscale, and other DDNS clients, highlighting the variety of solutions available for managing dynamic IP addresses.</li>
+</ul>
+<h2><a href="https://huyenchip.com/ml-interviews-book/">Introduction to Machine Learning Interviews Book</a></h2>
+<ul>
+<li>The &quot;Introduction to Machine Learning Interviews Book&quot; provides a comprehensive guide to the ML interview process, covering roles, company types, interview formats, and question types.</li>
+<li>It includes over 200 knowledge questions and 30 open-ended questions, aiming to help both candidates and hiring managers understand and prepare for ML interviews.</li>
+<li>Authored by Chip Huyen, who has extensive experience with interviews at major tech companies and startups, the book consolidates practical insights and preparation strategies.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083534">Reactions</a></h3>
+<ul>
+<li>The &quot;Introduction to Machine Learning Interviews&quot; book by Huyen Chip is being discussed, with mixed opinions on its effectiveness for preparing for ML interviews.</li>
+<li>Some users suggest that the book&#39;s questions are easier compared to actual ML interviews, and others recommend the &quot;Deep Learning Interviews&quot; book as more engaging and representative.</li>
+<li>There is a debate on the relevance of using boilerplate questions from the book, with some advocating for creating personalized projects instead.</li>
+</ul>
+<h2><a href="https://github.com/narumatt/sqlitefs">Sqlitefs: SQLite as a Filesystem</a></h2>
+<ul>
+<li>sqlite-fs enables Linux and MacOS users to mount a SQLite database file as a regular filesystem, facilitating file operations through a database.</li>
+<li>Requires the latest Rust programming language (≥ 1.38) and libfuse (Linux) or osxfuse (MacOS) for functionality.</li>
+<li>Supports various file operations such as creating, reading, writing, deleting files and directories, changing attributes, and handling file locks, with strict error handling.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085856">Reactions</a></h3>
+<ul>
+<li>SQLiteFS is a project that uses SQLite as a filesystem, drawing interest for its unique approach to file storage.</li>
+<li>The concept is reminiscent of Microsoft&#39;s canceled WinFS project, which aimed to use SQL Server as a filesystem.</li>
+<li>Despite the humor and theoretical discussions, practical applications like using SQLiteFS for in-memory operations or caching are being considered.</li>
+</ul>
+<h2><a href="https://boogiemath.org/meta/meta-9.html">Oscar Zariski was one of the founders of modern algebraic geometry</a></h2>
+<ul>
+<li>Oscar Zariski (1899-1986) was a pivotal figure in modern algebraic geometry, known for his influential book &quot;Algebraic Surfaces&quot; and his significant contributions to the field.</li>
+<li>Despite starting his academic career later than usual, Zariski remained active into his eighties, with notable work on holomorphic functions and a rich academic journey through prestigious institutions.</li>
+<li>An interesting anecdote from his life includes nearly missing his own wedding due to being deeply engrossed in a mathematical problem, highlighting his intense dedication to mathematics.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41086060">Reactions</a></h3>
+<ul>
+<li>Oscar Zariski is recognized as a founder of modern algebraic geometry.</li>
+<li>Users shared anecdotes and discussed diverse topics, including mathematician Kalle Väisälä&#39;s humorous incident and the &quot;imagination factor,&quot; which measures time spent in real vs. imaginary worlds.</li>
+<li>The conversation also delved into historical and political discussions, such as the Russian Revolution and debates on communism vs. capitalism.</li>
+</ul>
+<h2><a href="https://www.cs.cornell.edu/~asampson/blog/bril.html">Bril: An Intermediate Language for Teaching Compilers</a></h2>
+<ul>
+<li>Bril, the Big Red Intermediate Language, was created to simplify teaching compilers by prioritizing ease of use and simplicity over performance and code size.</li>
+<li>Bril programs are JSON documents, making them accessible with any programming language and easy to share.</li>
+<li>The Bril ecosystem has expanded with student contributions, including tools and language extensions, though its SSA (Static Single Assignment) form needs improvement.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41084318">Reactions</a></h3>
+<ul>
+<li>Bril is an intermediate language (IL) designed for teaching compilers, developed by Cornell University.</li>
+<li>Discussions highlight the need for reworking Bril&#39;s Static Single Assignment (SSA) form and comparisons with other ILs like ANF (A-Normal Form) and CPS (Continuation-Passing Style).</li>
+<li>Some argue that existing ILs like LLVM are sufficient for educational purposes, while others emphasize Bril&#39;s unique approach to teaching compiler concepts.</li>
+</ul>
+<h2><a href="https://fabiensanglard.net/dc/">Driving Compilers</a></h2>
+<ul>
+<li>The series aims to fill the gap in literature on using tools to turn programs into executables, focusing on core concepts rather than teaching a language or how to write a compiler.</li>
+<li>It provides reproducible steps using bintools and driver verbose mode (-v) to help readers explore beyond basic examples, assuming a Linux platform with gcc or clang compilers.</li>
+<li>The series is divided into five parts: Driver, cpp (pre-processor), cc (compiler), ld (linker), and Loader, offering a structured approach to understanding the compilation process.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083077">Reactions</a></h3>
+<ul>
+<li>The article provides an excellent introduction to the C and C++ toolchain, focusing on Linux and ELF-based platforms.</li>
+<li>Key clarifications include that the C++ standard library is broader than the STL, and ::operator new() is part of the runtime, not just a template.</li>
+<li>The article should better distinguish between the OS kernel loader and the userspace dynamic loader.</li>
+</ul>
+<h2><a href="https://blog.davidv.dev/posts/pcie-driver-dma/">Learning about PCI-e: Driver and DMA</a></h2>
+<ul>
+<li>The post details the implementation of a basic PCI-e (Peripheral Component Interconnect Express) device driver, focusing on memory mapping and DMA (Direct Memory Access) operations.</li>
+<li>It explains the creation of a <code>struct pci_driver</code>, the setup of a character device for user-space interaction, and the use of MSI (Message Signalled Interrupts) for handling asynchronous DMA transfers.</li>
+<li>The post is significant for its practical guide on developing a PCI-e device driver, including code snippets and references to kernel documentation, making it valuable for new software engineers.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085713">Reactions</a></h3>
+<ul>
+<li>The discussion centers around using an FPGA (Field-Programmable Gate Array) to build a display adapter, with a focus on PCI-e (Peripheral Component Interconnect Express) hard IP (Intellectual Property).</li>
+<li>Various affordable FPGA boards are recommended, including Spartan 6, Artix, Screamer PCIe Squirrel, and Litefury, which support PCIe and digital video output.</li>
+<li>The post also highlights resources and designs for creating video cards and mentions the potential use of Displayport Alt mode and UVC-type USB3 webcams for video output.</li>
+</ul>
+<head>
+  <meta property="og:title" content="SQLite: 35% Faster Than the Filesystem" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=SQLite%3A%2035%25%20Faster%20Than%20the%20Filesystem&subheading=Saturday%2C%20July%2027%2C%202024%3A%20Hacker%20News%20Summary" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/2024/07/27</link>
+            <guid isPermaLink="false">2024-07-27T00:00:00.000Z</guid>
+            <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-26]]></title>
             <description
@@ -1680,187 +1876,6 @@
             <link>https://hn.cho.sh/2024/07/18</link>
             <guid isPermaLink="false">2024-07-18T00:00:00.000Z</guid>
             <pubDate>Thu, 18 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-17]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/17&#39;</h2>
-<h1>2024-07-17</h1>
-<h2><a href="https://workspaceupdates.googleblog.com/2024/07/import-and-export-markdown-in-google-docs.html">Import and Export Markdown in Google Docs</a></h2>
-<ul>
-<li>Google Docs now supports enhanced Markdown features, including converting Markdown to Docs content on paste, copying Docs content as Markdown, exporting a Doc as Markdown, and importing Markdown as a Doc.</li>
-<li>This update is beneficial for technical content writers, facilitating easier conversion between Docs and Markdown for collaboration and documentation.</li>
-<li>The rollout begins on July 16, 2024, for Rapid Release and Scheduled Release domains, and is available to all Google Workspace customers, Workspace Individual Subscribers, and personal Google account users.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40982118">Reactions</a></h3>
-<ul>
-<li>Google Docs now supports full import/export of Markdown, enhancing its utility for technical writers and collaborators on Markdown documents.</li>
-<li>The feature is gradually rolling out to catch severe bugs early, so users may not see it immediately.</li>
-<li>Google Drive and its APIs will also support this new Markdown capability, although some users have concerns about slow rollouts and incomplete support for elements like code blocks and comments.</li>
-</ul>
-<h2><a href="https://matt.sh/panic-at-the-job-market">Panic at the Job Market</a></h2>
-<ul>
-<li>The tech job market is in turmoil due to rising interest rates, speculative funding, and flawed hiring practices.</li>
-<li>Higher interest rates lead companies to invest in safe government-backed accounts rather than risky ventures, causing job losses in the tech sector.</li>
-<li>The hiring process often focuses on irrelevant coding tests and behavioral interviews, failing to assess candidates&#39; true experience and capabilities.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40986894">Reactions</a></h3>
-<ul>
-<li>The job market is challenging across multiple industries, including tech, with complex hiring processes that overlook individual profiles and contributions.</li>
-<li>Networking is essential as job portals often obscure resumes, and the tech job market faces diminishing opportunities with companies focusing on irrelevant skills and arbitrary requirements.</li>
-<li>Inefficient hiring practices can indicate poor workplace environments, and the irrationality of the job market can outlast individuals&#39; financial stability, complicating the search for suitable employment.</li>
-</ul>
-<h2><a href="https://www.da.vidbuchanan.co.uk/blog/r1-jailbreak.html">Jailbreaking RabbitOS: Uncovering secret logs, and GPL violations</a></h2>
-<ul>
-<li>David Buchanan has developed a &quot;tethered jailbreak&quot; for the Rabbit R1, allowing root access without unlocking the bootloader or altering internal storage.</li>
-<li>The Rabbit R1, using a MediaTek MT6765 SoC, has been criticized for extensive user data logging and GPL violations, which were partially addressed in a recent update.</li>
-<li>Buchanan&#39;s findings reveal that RabbitOS is a heavily modified Android 13 AOSP, primarily enforcing a single-app kiosk mode, and he has released a tool to aid further exploration of the device.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40987730">Reactions</a></h3>
-<ul>
-<li>Jailbreaking RabbitOS has revealed secret logs and potential GPL (General Public License) violations, raising privacy and legal concerns.</li>
-<li>Logs include sensitive data such as precise GPS locations, WiFi network names, IDs of nearby cell towers, and user tokens, some of which are sent to Rabbit&#39;s servers.</li>
-<li>Rabbit Inc. released an update (v0.8.112) addressing these logging issues, but the controversy highlights ongoing concerns about data privacy and transparency in tech products.</li>
-</ul>
-<h2><a href="https://www.justinmath.com/the-greatest-educational-life-hack-learning-math-ahead-of-time/">The Greatest Educational Life Hack: Learning Math Ahead of Time</a></h2>
-<ul>
-<li>Learning math ahead of time can lead to better grades, protection against poor teaching, and access to internships, research projects, and strong recommendation letters, which are crucial for college and career opportunities.</li>
-<li>Advanced math courses beyond calculus, such as Linear Algebra and Differential Equations, are essential for many quantitative fields and can fast-track students into specialized fields, enhancing career accomplishments.</li>
-<li>Research indicates that educational acceleration does not harm psychological well-being and leads to greater academic and professional success, despite common misconceptions and logistical challenges.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40983734">Reactions</a></h3>
-<ul>
-<li>A user shared their journey of overcoming math-phobia in their 30s, highlighting that it&#39;s never too late to learn math and its benefits for problem-solving and insights into programming.</li>
-<li>Suggestions for learning math later in life included starting with basic math books, utilizing community college resources, and gradually progressing to advanced topics.</li>
-<li>The discussion also emphasized the importance of early math education, parental involvement, and external resources like Kumon, as well as the broader educational system&#39;s role in fostering self-study and motivation.</li>
-</ul>
-<h2><a href="https://www.mailgun.com/blog/email/ai-phishing/">The golden age of scammers: AI-powered phishing</a></h2>
-<ul>
-<li>Generative AI enables scammers to send highly personalized and convincing phishing emails, overcoming language barriers and automating mass campaigns.</li>
-<li>AI tools like WormGPT and FraudGPT assist in generating phishing emails and spoofing websites, significantly reducing the time needed to create effective attacks.</li>
-<li>Defense strategies include implementing DMARC (Domain-based Message Authentication, Reporting &amp; Conformance), recognizing AI phishing attempts, using multi-layered security, and maintaining a strong sender reputation.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40981067">Reactions</a></h3>
-<ul>
-<li>AI-powered phishing scams are becoming more sophisticated, leveraging technologies like Llama for text, Whisper/Tortoise for voice, and Stable Diffusion for images, though their deployment is still limited.</li>
-<li>Despite the potential for AI to enhance phishing, traditional methods like Indian call center scams remain highly effective and economically viable, as evidenced by a recent case where an elderly person was scammed out of $25,000.</li>
-<li>Banks and other institutions are improving their scam detection capabilities, but the rise of AI-driven scams necessitates increased awareness and education, especially for vulnerable populations like the elderly.</li>
-</ul>
-<h2><a href="https://thetinypod.com/">TinyPod – Apple Watch case with scroll wheel</a></h2>
-<ul>
-<li>Introducing tinyPod, a compact device offering essential features like phone, music, messaging, and more, all powered by your Apple Watch.</li>
-<li>Key features include a tactile scroll wheel, quick magnetic charging, multi-day battery life, Apple Pay, and 32GB storage for media.</li>
-<li>Available in two models: tinyPod with a scroll wheel for $79.99 and tinyPod lite without a scroll wheel for $29.99, compatible with various Apple Watch series, shipping this summer.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40987402">Reactions</a></h3>
-<ul>
-<li>TinyPod is an Apple Watch case that incorporates a scroll wheel, reminiscent of the iPod&#39;s clickwheel, creating a mechanical linkage with the digital crown.</li>
-<li>The product is seen as a fun, niche hardware idea, appealing to those who appreciate unique and whimsical tech gadgets, despite its impracticality.</li>
-<li>There are mixed reviews about the product&#39;s webpage functionality, with some users experiencing issues on Firefox, while others find the design appealing.</li>
-</ul>
-<h2><a href="https://github.com/libarchive/libarchive/pull/1609">Jia Tan &quot;JiaT75&quot;: Added error text to warning when untaring with bsdtar (2021)</a></h2>
-<ul>
-<li>Libarchive merged a commit to add error text to warnings when using bsdtar, addressing issue #1561, but concerns about replacing safe_fprintf with unsafe fprintf were raised.</li>
-<li>A fix was implemented to revert to safe_fprintf and use correct errno handling, with suggestions for further audits and a CVE (Common Vulnerabilities and Exposures) for the issue.</li>
-<li>The discussion underscored the importance of thorough code reviews and maintaining security in open-source projects, and the issue was resolved with the conversation locked.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40984589">Reactions</a></h3>
-<ul>
-<li>Jia Tan &quot;JiaT75&quot; added error text to a warning in bsdtar in 2021, leading to a heated GitHub discussion about comment quality and code change scrutiny.</li>
-<li>The debate highlighted the challenges of maintaining large software projects and the potential role of AI in improving security reviews.</li>
-<li>The incident underscored the difficulty of detecting malicious code, especially from known contributors, and linked Jia Tan to a state-sponsored attack on the xz tool.</li>
-</ul>
-<h2><a href="https://www.theverge.com/2024/7/16/24199686/puerto-rico-fossil-fuel-industry-lawsuit-climate-change">Puerto Rico files $1B suit against fossil fuel companies</a></h2>
-<ul>
-<li>Puerto Rico has filed a $1 billion lawsuit against major fossil fuel companies, including ExxonMobil, BP, Chevron, Shell, and ConocoPhillips, for allegedly misleading the public about climate change and delaying the transition to clean energy.</li>
-<li>The lawsuit, filed in San Juan, claims these companies violated trade laws by promoting fossil fuels without adequate warnings about their dangers, seeking damages to defend against climate disasters like Hurricane Maria.</li>
-<li>This legal action is part of a broader trend of similar lawsuits against the fossil fuel industry, highlighting growing accountability efforts for climate-related impacts.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40986213">Reactions</a></h3>
-<ul>
-<li>Puerto Rico has initiated a $1 billion lawsuit against fossil fuel companies, accusing them of causing climate change-related damages and seeking stricter environmental regulations.</li>
-<li>The lawsuit underscores the ongoing debate between the economic benefits of fossil fuels and the necessity for sustainable practices and corporate accountability.</li>
-<li>Opinions are divided, with some emphasizing the importance of corporate responsibility for pollution and misinformation, while others stress the role of individual actions and government policies in combating climate change.</li>
-</ul>
-<h2><a href="https://www.reuters.com/markets/deals/google-backed-software-developer-gitlab-explores-sale-sources-say-2024-07-17/">Gitlab Explores Sale</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40983486">Reactions</a></h3>
-<ul>
-<li>Gitlab is considering a sale, raising concerns among users about potential shutdowns or changes in service models, reminiscent of past issues with RedHat and CentOS.</li>
-<li>Users debate the merits of open-source options like Gitlab, citing easier migration and community support, while speculating on potential buyers such as Datadog or IBM.</li>
-<li>Criticisms of Gitlab&#39;s pricing and enterprise focus have led some users to contemplate switching to alternatives like GitHub, reflecting mixed sentiments about future stability and costs.</li>
-</ul>
-<h2><a href="https://vedgie.net/writing/darwin_machines.md">Darwin Machines</a></h2>
-<ul>
-<li>The post discusses William Calvin&#39;s theory from &quot;The Cerebral Code,&quot; which suggests the brain uses evolutionary processes within minicolumns to process sensory inputs and find the most &quot;fit&quot; patterns.</li>
-<li>The theory posits that the brain&#39;s structure, particularly the neocortex&#39;s columns and minicolumns, allows for efficient problem-solving and parallel processing, which could be applied to AI and machine learning (ML).</li>
-<li>The author is experimenting with neural networks to mimic this evolutionary process and seeks advice on research and academic insights in this field, highlighting potential advancements in AI&#39;s deep thinking capabilities.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40981068">Reactions</a></h3>
-<ul>
-<li>The post discusses the concept of Darwin Machines, where different sensory data modalities are processed by brain minicolumns, each outputting unique firing patterns that compete and reinforce the dominant pattern, aiding learning.</li>
-<li>Capsule-routing algorithms, proposed by Geoffrey Hinton, aim to implement this idea using expectation-maximization (EM) processes, but have been overshadowed by the success of transformers in AI research.</li>
-<li>The discussion highlights the importance of understanding brain function and neural networks, referencing Hebbian learning and the need for deeper exploration of temporal dynamics in neural activity.</li>
-</ul>
-<h2><a href="https://github.com/guywaldman/magic-cli">Magic-cli – A copilot for your command line</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40980715">Reactions</a></h3>
-<ul>
-<li>Magic-cli, a command line copilot developed by Guy Waldman, has sparked discussions due to its default &quot;unsafe-execution&quot; mode, with suggestions for a safer default like &quot;clipboard&quot; mode.</li>
-<li>Users have shared opinions and experiences, mentioning alternative tools such as zsh_codex, aichat, and Warp terminal.</li>
-<li>The project is built in Rust, raising questions about its complexity compared to simpler implementations in other languages.</li>
-</ul>
-<h2><a href="https://developers.google.com/tag-platform/tag-manager/first-party/setup-guide">Google presents method to circumvent automatic blocking of tag manager</a></h2>
-<ul>
-<li>Google is introducing a beta feature for deploying tags in first-party mode, enhancing tag performance and data privacy by using the website&#39;s domain for hosting.</li>
-<li>The setup involves reserving a unique path on the domain, routing traffic through services like Google Cloud or Cloudflare, and updating website scripts to use the new measurement path.</li>
-<li>Users are encouraged to test the setup using Tag Assistant and provide feedback through a designated feedback form or contact email.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40983585">Reactions</a></h3>
-<ul>
-<li>Google has introduced a method to bypass the automatic blocking of its Tag Manager, raising concerns about privacy and the effectiveness of ad blockers.</li>
-<li>Users discuss strategies to block tracking, such as using uBlock Origin with JavaScript disabled by default, and selectively enabling it for ease of use and speed benefits.</li>
-<li>The new method by Google has sparked a debate on balancing data collection for business purposes with user privacy, with some users expressing frustration over Google&#39;s tracking practices.</li>
-</ul>
-<h2><a href="https://www.nytimes.com/2024/07/16/dining/pete-wells-steps-down-food-critic.html">After 12 years of reviewing restaurants, I&#39;m leaving the table</a></h2>
-<ul>
-<li>Pete Wells, after 12 years as The New York Times restaurant critic, is stepping down due to health concerns, including high cholesterol, blood sugar, and hypertension.</li>
-<li>Despite the rewarding nature of his role, the physical toll of frequent restaurant visits has become unsustainable for Wells.</li>
-<li>Wells will remain at The Times but will no longer handle the demands of weekly reviews, choosing instead to focus on his health and a more balanced lifestyle.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40979539">Reactions</a></h3>
-<ul>
-<li>A long-time restaurant reviewer is stepping down after 12 years, sparking discussions about his impact and the future of restaurant reviews.</li>
-<li>The reviewer was known for his diverse restaurant choices and his unique, sometimes standoffish, approach to reviews.</li>
-<li>The announcement has generated excitement for the incoming reviewer, Mellissa Clark, and reflections on the experiences of those in the restaurant industry.</li>
-</ul>
-<h2><a href="https://github.com/bobbyiliev/introduction-to-bash-scripting">Introduction to Bash Scripting</a></h2>
-<ul>
-<li>An open-source guide/ebook on Bash scripting has been released, aimed at automating tasks for developers, system administrators, and DevOps engineers.</li>
-<li>The ebook covers a wide range of topics from basic Bash structure to advanced scripting techniques, including working with APIs and generating passwords.</li>
-<li>Additional resources include a mini video course, interactive training via Katacoda, and contributions from the Linux DevOps Engineer, Bobby Iliev.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40982011">Reactions</a></h3>
-<ul>
-<li>Bash scripting is often compared to Python for terminal tasks, with Bash being more efficient for filesystem operations and simple command sequences due to its native terminal integration.</li>
-<li>Critics highlight Python&#39;s complexity for basic tasks and Bash&#39;s clunky syntax, but Bash remains essential in environments without Python pre-installed.</li>
-<li>Alternatives like Ruby&#39;s shell or Perl for text parsing exist, and tools like ChatGPT can assist in script generation, but understanding Bash basics is still valuable.</li>
-</ul>
-<h2><a href="https://www.gartner.com/en/articles/the-data-is-in-return-to-office-mandates-aren-t-worth-the-talent-risks">Return-to-Office Mandates Aren&#39;t Worth the Talent Risks</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40983717">Reactions</a></h3>
-<ul>
-<li>Return-to-office (RTO) mandates risk losing top talent, as employees with alternatives may leave first, potentially causing a domino effect.</li>
-<li>Flexible options, such as travel compensation or improved office amenities, are suggested as better alternatives to strict RTO mandates.</li>
-<li>The debate includes perspectives on productivity, mentorship, and personal preferences, with some viewing RTO as driven by outdated management views or economic pressures.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Import and Export Markdown in Google Docs" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Import%20and%20Export%20Markdown%20in%20Google%20Docs&subheading=Wednesday%2C%20July%2017%2C%202024%3A%20Hacker%20News%20Summary" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/2024/07/17</link>
-            <guid isPermaLink="false">2024-07-17T00:00:00.000Z</guid>
-            <pubDate>Wed, 17 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

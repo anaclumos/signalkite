@@ -15,12 +15,208 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 26 Jul 2024 19:14:09 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 27 Jul 2024 19:09:46 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/zh-Hans.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Fri, 26 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[zh-Hans]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-27]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/27&#39;</h2>
+<h1>2024-07-27</h1>
+<h2><a href="https://sqlite.org/fasterthanfs.html">“SQLite：比文件系统快35%”</a></h2>
+<ul>
+<li>“SQLite 读取和写入小型二进制大对象(例如缩略图图像)的速度比使用磁盘上的单个文件快 35%，并且使用的磁盘空间少约 20%。”</li>
+<li>“效率归因于更少的open()和close()系统调用以及更紧密的数据打包，预计未来版本的性能将有所提高。”</li>
+<li>“测试表明，SQLite 通常比直接文件 I/O 性能更好，尤其是在启用了防病毒软件的 Windows 系统上，尽管性能可能会因硬件和操作系统的不同而有所变化。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085376">反应</a></h3>
+<ul>
+<li>“由于减少了打开/关闭系统调用的次数，并且不需要文件系统属性或元数据检查，SQLite 比传统文件系统快 35%。”</li>
+<li>“这种性能提升在Windows上尤为显著，因为文件系统调用本质上较慢。”</li>
+<li>“尽管存在一些限制，例如2GB的blob最大值和处理层次数据的挑战，SQLite的速度和简洁性使其在日志和其他数据存储方面具有优势。”</li>
+</ul>
+<h2><a href="https://sysprog21.github.io/lkmpg/">“Linux内核模块编程指南”</a></h2>
+<ul>
+<li>“《Linux内核模块编程指南》提供了一个全面的介绍，讲解如何创建和管理内核模块。内核模块是动态可加载的代码段，可以在不需要重启的情况下增强内核功能。”</li>
+<li>“用于处理内核模块的关键工具和命令包括 <code>modprobe</code>、<code>insmod</code>、<code>depmod</code>、<code>lsmod</code> 和 <code>cat /proc/modules</code>。”</li>
+<li>“本指南涵盖了模块初始化和清理、处理命令行参数、管理设备驱动程序、与 <code>/proc</code> 和 <code>sysfs</code> 文件系统交互以及避免内核编程中常见的陷阱等重要主题。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083972">反应</a></h3>
+<ul>
+<li>“《Linux内核模块编程指南》强调使用QEMU进行内核破解，并建议更新Linux设备驱动程序书籍。”</li>
+<li>“Greg KH确认不会有第4版的《Linux设备驱动程序》书籍，这引发了关于替代资源如《The Linux Memory Manager》和《Linux Insides》的讨论。”</li>
+<li>“用户分享了使用QEMU进行调试和使用WireGuard测试套件进行内核模块开发的经验，强调了人工审查在写作中的重要性。”</li>
+</ul>
+<h2><a href="https://reason.com/2024/07/26/courts-close-the-loophole-letting-the-feds-search-your-phone-at-the-border/">“法院关闭了允许联邦政府在边境搜查你手机的漏洞”</a></h2>
+<ul>
+<li>“联邦法官裁定，海关和边境保护局(CBP)在没有搜查令的情况下不能在边境搜查电子设备，解决了第四修正案中的一个漏洞。”</li>
+<li>“法官尼娜·莫里森表示，手机搜查是‘非常规’的，需要有合理的理由和搜查令，并将其与脱衣搜查进行比较，因为它们对隐私有重大影响。”</li>
+<li>“这项裁决得到了公民自由主义者的支持，被视为对新闻自由和隐私权至关重要，类似的决定在其他巡回法院和地区法院也有出现。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083286">反应</a></h3>
+<ul>
+<li>“纽约的一家地区法院裁定，无证手机搜查在边境是‘非常规’的，比其他类型的搜查更具侵入性，类似于脱衣搜查。”</li>
+<li>“这一决定不具有约束性先例，并且与其他巡回法院的裁决相矛盾，这表明由于现有的‘巡回分歧’，最高法院可能会处理这一问题。”</li>
+<li>“该裁决反映了关于隐私权和政府权力的持续辩论，特别是在边境安全和第四修正案的背景下。”</li>
+</ul>
+<h2><a href="https://web.stanford.edu/class/cs81n/command.txt">“最初是命令行 (1999)”</a></h2>
+<ul>
+<li>“尼尔·斯蒂芬森的文章《最初是命令行》探讨了操作系统(OS)的演变及其市场动态，重点关注苹果和微软。”</li>
+<li>“微软通过将操作系统像消费品一样销售，强调便利性和易用性，从而实现了市场主导地位，这与重视简单而非复杂的更广泛的文化趋势产生了共鸣。”</li>
+<li>“尽管有像Linux和BeOS这样更优越且免费的替代品出现，大多数消费者还是更喜欢微软的熟悉产品，这突显了社会对通过图形用户界面(GUI)进行中介体验的偏好。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41084795">反应</a></h3>
+<ul>
+<li>“尼尔·斯蒂芬森的文章《最初是命令行》(1999)强调了命令行界面(CLI)相对于图形用户界面(GUI)的优势，突出了它们的简洁性和易于交流的特点。”</li>
+<li>“这篇文章将操作系统的演变与汽车进行比较，强调了尽管图形用户界面(GUI)很受欢迎，但命令行界面(CLI)提供了稳定性和用户控制。”</li>
+<li>“它还深入探讨了技术界面的文化和哲学意义，提供了我们如何与技术互动的更广泛视角。”</li>
+</ul>
+<h2><a href="https://blog.singleton.io/posts/2022-10-17-otp-on-wrist/">“我手腕上的TOTP令牌与最智能的哑表”</a></h2>
+<ul>
+<li>“Sensor Watch推出了一款新的替换逻辑板，用于经典的卡西欧F-91W手表，将其升级为ARM Cortex M0+处理器，同时保留了原有的LCD显示屏、按钮和压电蜂鸣器。”</li>
+<li>“升级后的主板是可编程的，允许定制表盘和实用程序应用，包括2FA令牌、速率计、世界时钟等功能。”</li>
+<li>“这款手表很容易破解，配有基于wasm的模拟器用于测试，并且有详细的文档供那些有兴趣修改或制作自己表盘的人使用。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41081435">反应</a></h3>
+<ul>
+<li>“在Hacker News上的一场讨论中，重点介绍了在卡西欧手表(特别是F-91W和A158W型号)上使用TOTP(基于时间的一次性密码)令牌进行双因素认证(2FA)。”</li>
+<li>“该项目涉及修改手表的固件以显示TOTP代码，社区贡献则增强了用户校准等功能，甚至为手表创建游戏。”</li>
+<li>“有人对在手表上显示TOTP代码的安全性表示担忧，有些人建议使用FIDO2硬件密钥等替代方案，以更好地防范网络钓鱼攻击。”</li>
+</ul>
+<h2><a href="https://ntk148v.github.io/posts/linux-network-performance-ultimate-guide/">“Linux网络性能终极指南”</a></h2>
+<ul>
+<li>“该指南深入探讨了优化Linux网络性能的方法，涵盖了从网络栈到高级数据包处理技术的各个主题。”</li>
+<li>“关键的调优步骤包括调整NIC环形缓冲区大小、中断合并、IRQ亲和性，并使用AF_PACKET、DPDK和XDP等工具进行高性能数据包处理。”</li>
+<li>“使用 <code>ethtool</code>、<code>sysctl</code> 和 <code>netstat</code> 等工具监控和调整网络设置对于保持最佳性能至关重要。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083801">反应</a></h3>
+<ul>
+<li>“《Linux网络性能终极指南》是一本全面的资源，旨在使用Linux优化网络性能，特别适用于处理高速网络的人员。”</li>
+<li>“一个用户分享了一个成功案例，讲述了如何使用商用现成硬件(COTS)和Wireguard构建一个具有成本效益的10Gbps加密网络，大大低于商业硬件解决方案的成本。”</li>
+<li>“评论中的讨论包括一些实用的建议，例如调整TCP缓冲区大小，以及用于自动性能调优的工具，如Oracle的bpftune。”</li>
+</ul>
+<h2><a href="https://github.com/joshuacline/windick">“Windows恢复环境和可启动USB创建器，大小为200kb”</a></h2>
+<ul>
+<li>“Windows 部署映像自定义工具包是一种命令行工具，旨在自定义和部署 Windows 映像。”</li>
+<li>“它为IT专业人员和系统管理员提供了一种本地解决方案，以简化部署过程。”</li>
+<li>“教程和其他信息可以在 YouTube 和微软的官方文档等平台上找到。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083987">反应</a></h3>
+<ul>
+<li>“一个新的基于shell的工具已经发布，用于创建Windows恢复环境和可启动的USB，大小仅为200千字节。”</li>
+<li>“这个工具是一个包含3,085行代码的大型批处理文件，展示了令人印象深刻的奉献精神和效率，特别是在有像PowerShell这样更现代的脚本语言可用的情况下。”</li>
+<li>“该项目的灵感来自于Android的clockworkmod恢复，旨在使用“live-of-the-land”命令，这意味着它没有任何依赖性，仅在Windows下运行。”</li>
+</ul>
+<h2><a href="https://krebsonsecurity.com/2024/07/crooks-bypassed-googles-email-verification-to-create-workspace-accounts-access-3rd-party-services/">“骗子绕过谷歌的电子邮件验证创建工作区账户，访问”</a></h2>
+<ul>
+<li>“谷歌修复了一个身份验证漏洞，该漏洞允许犯罪分子绕过电子邮件验证来创建 Google Workspace 账户并冒充域名持有者。”</li>
+<li>“问题在72小时内得到解决，并实施了额外的检测措施以防止未来的滥用。”</li>
+<li>“攻击者旨在冒充域名持有者以访问第三方服务，而不是滥用谷歌服务，这些恶意活动涉及数千个未经域名验证创建的Workspace账户。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41082502">反应</a></h3>
+<ul>
+<li>“攻击者绕过了谷歌的电子邮件验证，创建了未经授权的Workspace账户，导致潜在的安全漏洞和未注册域名收到意外的欢迎邮件。”</li>
+<li>“这些未经授权的账户被用来在第三方网站上利用‘使用 Google 登录’，导致受害者在收回他们的域名时遇到困难。”</li>
+<li>“该事件突显了谷歌系统中的漏洞以及与社交登录相关的风险，促使人们呼吁进行改进，例如强制DNS验证。”</li>
+</ul>
+<h2><a href="https://github.com/devrim/cloudflare-noip">“使用Cloudflare和Cronjob的免费DDNS”</a></h2>
+<ul>
+<li>“该项目通过使用免费账户和定时任务自动更新Cloudflare上的DNS记录，提供了一个免费的替代付费动态DNS服务的方案。”</li>
+<li>“用户需要克隆仓库，创建配置文件(<code>keys.json</code> 和 <code>records.json</code>)，并设置一个定时任务或等效的任务调度器，以定期运行脚本。”</li>
+<li>“该脚本使用机器的当前IP地址更新Cloudflare上的DNS记录，使其成为动态DNS需求的经济高效解决方案。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41081810">反应</a></h3>
+<ul>
+<li>“一个GitHub项目提供了一个使用Cloudflare和cron作业的免费动态DNS(DDNS)解决方案，吸引了技术社区的极大兴趣。”</li>
+<li>“用户讨论了使用Cloudflare进行DDNS的优缺点，包括潜在的诱饵转换策略以及强制TLS终止和上传限制等限制。”</li>
+<li>“提到了替代方案和类似项目，例如使用Cloudflare隧道、Tailscale和其他DDNS客户端，突出了管理动态IP地址的多种解决方案。”</li>
+</ul>
+<h2><a href="https://huyenchip.com/ml-interviews-book/">“机器学习面试指南”</a></h2>
+<ul>
+<li>“《机器学习面试指南》提供了全面的机器学习面试流程指南，涵盖了角色、公司类型、面试形式和问题类型。”</li>
+<li>“它包括超过200个知识问题和30个开放性问题，旨在帮助候选人和招聘经理理解和准备机器学习面试。”</li>
+<li>“由Chip Huyen撰写，他在大型科技公司和初创企业的面试方面拥有丰富的经验，这本书整合了实用的见解和准备策略。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083534">反应</a></h3>
+<ul>
+<li>“关于阮芝的《机器学习面试入门》一书正在讨论中，对于其在准备机器学习面试方面的有效性，意见不一。”</li>
+<li>“有些用户认为这本书的问题比实际的机器学习面试要简单，而另一些人则推荐《深度学习面试》一书，认为它更有趣且更具代表性。”</li>
+<li>“关于使用书中模板问题的相关性存在争论，有些人主张创建个性化项目。”</li>
+</ul>
+<h2><a href="https://github.com/narumatt/sqlitefs">“Sqlitefs：将SQLite用作文件系统”</a></h2>
+<ul>
+<li>“sqlite-fs 使 Linux 和 MacOS 用户能够将 SQLite 数据库文件挂载为常规文件系统，从而通过数据库进行文件操作。”</li>
+<li>“需要最新的 Rust 编程语言(≥ 1.38)和 libfuse(Linux)或 osxfuse(MacOS)才能正常运行。”</li>
+<li>“支持各种文件操作，如创建、读取、写入、删除文件和目录、更改属性以及处理文件锁，并具有严格的错误处理。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085856">反应</a></h3>
+<ul>
+<li>“SQLiteFS 是一个使用 SQLite 作为文件系统的项目，由于其独特的文件存储方法而引起了兴趣。”</li>
+<li>“这个概念让人想起微软取消的WinFS项目，该项目旨在将SQL Server用作文件系统。”</li>
+<li>“尽管有幽默和理论讨论，但像使用SQLiteFS进行内存操作或缓存这样的实际应用正在被考虑。”</li>
+</ul>
+<h2><a href="https://boogiemath.org/meta/meta-9.html">“奥斯卡·扎里斯基是现代代数几何学的奠基人之一”</a></h2>
+<ul>
+<li>“奥斯卡·扎里斯基(1899-1986)是现代代数几何学中的关键人物，以其具有影响力的著作《代数曲面》及其对该领域的重要贡献而闻名。”</li>
+<li>“尽管扎里斯基的学术生涯开始得比平常晚，但他在八十多岁时仍然活跃，尤其是在全纯函数方面有显著贡献，并在多所著名学府中度过了丰富的学术旅程。”</li>
+<li>“一个有趣的轶事是，他曾因深陷于一个数学问题而差点错过自己的婚礼，这突显了他对数学的极度专注。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41086060">反应</a></h3>
+<ul>
+<li>“奥斯卡·扎里斯基被公认为现代代数几何学的奠基人之一。”</li>
+<li>“用户们分享了轶事并讨论了各种话题，包括数学家卡勒·维萨拉的幽默事件和‘想象力因素’，该因素衡量在现实世界与想象世界中花费的时间。”</li>
+<li>“谈话还深入探讨了历史和政治话题，例如俄国革命以及关于共产主义与资本主义的辩论。”</li>
+</ul>
+<h2><a href="https://www.cs.cornell.edu/~asampson/blog/bril.html">“Bril：一种用于教授编译器的中间语言”</a></h2>
+<ul>
+<li>“Bril，大红中间语言，是为了简化编译器教学而创建的，它优先考虑易用性和简洁性，而不是性能和代码大小。”</li>
+<li>“Bril 程序是 JSON 文档，可以用任何编程语言访问，并且易于共享。”</li>
+<li>“Bril 生态系统在学生的贡献下得到了扩展，包括工具和语言扩展，尽管其 SSA(静态单一赋值)形式需要改进。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41084318">反应</a></h3>
+<ul>
+<li>“Bril 是一种中间语言 (IL)，由康奈尔大学开发，用于教授编译器。”</li>
+<li>“讨论强调了重新设计Bril的静态单一赋值(SSA)形式的必要性，并与其他中间语言(IL)如ANF(A-正常形式)和CPS(续传风格)进行了比较。”</li>
+<li>“有些人认为现有的中间语言(如LLVM)足以用于教育目的，而另一些人则强调Bril在教授编译器概念方面的独特方法。”</li>
+</ul>
+<h2><a href="https://fabiensanglard.net/dc/">“驱动编译器”</a></h2>
+<ul>
+<li>“该系列旨在填补关于使用工具将程序转化为可执行文件的文献空白，重点关注核心概念，而不是教授一种语言或如何编写编译器。”</li>
+<li>“它提供了使用bintools和驱动程序详细模式(-v)的可重复步骤，帮助读者在基本示例之外进行探索，假设使用的是带有gcc或clang编译器的Linux平台。”</li>
+<li>“该系列分为五个部分：驱动程序、cpp(预处理器)、cc(编译器)、ld(链接器)和加载器，提供了一种理解编译过程的结构化方法。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083077">反应</a></h3>
+<ul>
+<li>“这篇文章对C和C++工具链进行了出色的介绍，重点关注Linux和基于ELF的平台。”</li>
+<li>“关键澄清包括C++标准库比STL更广泛，以及::operator new()是运行时的一部分，而不仅仅是一个模板。”</li>
+<li>“文章应该更好地区分操作系统内核加载器和用户空间动态加载器。”</li>
+</ul>
+<h2><a href="https://blog.davidv.dev/posts/pcie-driver-dma/">“了解PCI-e：驱动程序和DMA”</a></h2>
+<ul>
+<li>“这篇文章详细介绍了一个基本的PCI-e(外围组件互连快速)设备驱动程序的实现，重点是内存映射和DMA(直接内存访问)操作。”</li>
+<li>“它解释了<code>struct pci_driver</code>的创建、用于用户空间交互的字符设备的设置以及使用MSI(消息信号中断)来处理异步DMA传输。”</li>
+<li>“这篇文章因其关于开发PCI-e设备驱动程序的实用指南而具有重要意义，其中包括代码片段和内核文档的参考，使其对新入职的软件工程师非常有价值。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085713">反应</a></h3>
+<ul>
+<li>“讨论的重点是使用FPGA(现场可编程门阵列)来构建显示适配器，特别关注PCI-e(外围组件互连快速)硬IP(知识产权)。”</li>
+<li>“推荐了各种价格实惠的FPGA开发板，包括Spartan 6、Artix、Screamer PCIe Squirrel和Litefury，这些板卡支持PCIe和数字视频输出。”</li>
+<li>“该帖子还重点介绍了创建视频卡的资源和设计，并提到了使用Displayport Alt模式和UVC类型USB3网络摄像头进行视频输出的潜力。”</li>
+</ul>
+<head>
+  <meta property="og:title" content="“SQLite：比文件系统快35%”" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E2%80%9CSQLite%EF%BC%9A%E6%AF%94%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%BF%AB35%25%E2%80%9D&subheading=2024%E5%B9%B47%E6%9C%8827%E6%97%A5%E6%98%9F%E6%9C%9F%E5%85%AD%3A%20%E9%BB%91%E5%AE%A2%E6%96%B0%E9%97%BB%E6%91%98%E8%A6%81" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/zh/Hans/2024/07/27</link>
+            <guid isPermaLink="false">2024-07-27T00:00:00.000Z</guid>
+            <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-26]]></title>
             <description
@@ -1680,187 +1876,6 @@
             <link>https://hn.cho.sh/zh/Hans/2024/07/18</link>
             <guid isPermaLink="false">2024-07-18T00:00:00.000Z</guid>
             <pubDate>Thu, 18 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-17]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/17&#39;</h2>
-<h1>2024-07-17</h1>
-<h2><a href="https://workspaceupdates.googleblog.com/2024/07/import-and-export-markdown-in-google-docs.html">“在 Google 文档中导入和导出 Markdown”</a></h2>
-<ul>
-<li>“Google Docs 现在支持增强的 Markdown 功能，包括在粘贴时将 Markdown 转换为 Docs 内容、将 Docs 内容复制为 Markdown、将文档导出为 Markdown 以及将 Markdown 导入为文档。”</li>
-<li>“此更新对技术内容撰写者有利，便于在文档和Markdown之间进行更轻松的转换，以便协作和文档编制。”</li>
-<li>“推出将于2024年7月16日开始，适用于快速发布和计划发布域，并向所有Google Workspace客户、Workspace个人订阅者和个人Google账户用户开放。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40982118">反应</a></h3>
-<ul>
-<li>“Google Docs 现在支持完整的 Markdown 导入/导出功能，增强了其对技术写作者和 Markdown 文档合作者的实用性。”</li>
-<li>“该功能正在逐步推出，以便及早捕捉严重的漏洞，因此用户可能不会立即看到它。”</li>
-<li>“Google Drive及其API也将支持这一新的Markdown功能，尽管一些用户对缓慢的推出和对代码块和评论等元素的不完全支持表示担忧。”</li>
-</ul>
-<h2><a href="https://matt.sh/panic-at-the-job-market">“就业市场恐慌”</a></h2>
-<ul>
-<li>“由于利率上升、投机性资金和不完善的招聘实践，科技就业市场陷入混乱。”</li>
-<li>“较高的利率导致公司投资于安全的政府支持账户，而不是冒险的项目，从而导致科技行业的失业。”</li>
-<li>“招聘过程通常集中在无关的编码测试和行为面试上，未能评估候选人的真实经验和能力。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40986894">反应</a></h3>
-<ul>
-<li>“就业市场在多个行业中都充满挑战，包括科技行业，复杂的招聘流程忽视了个人的简历和贡献。”</li>
-<li>“网络是必不可少的，因为求职门户网站经常隐藏简历，而科技就业市场面临机会减少的问题，公司则专注于不相关的技能和任意的要求。”</li>
-<li>“低效的招聘流程可能表明工作环境不佳，而就业市场的非理性可能会超过个人的财务稳定性，从而使寻找合适的工作变得更加复杂。”</li>
-</ul>
-<h2><a href="https://www.da.vidbuchanan.co.uk/blog/r1-jailbreak.html">“越狱RabbitOS：揭示秘密日志和GPL违规行为”</a></h2>
-<ul>
-<li>“David Buchanan开发了一种适用于Rabbit R1的“有线越狱”，无需解锁引导程序或更改内部存储即可获得root权限。”</li>
-<li>“兔子R1使用联发科MT6765 SoC，因广泛的用户数据记录和GPL违规行为而受到批评，最近的更新部分解决了这些问题。”</li>
-<li>“布坎南的研究结果显示，RabbitOS 是一个经过大量修改的 Android 13 AOSP，主要强制执行单应用程序的自助服务模式，他还发布了一款工具以帮助进一步探索该设备。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40987730">反应</a></h3>
-<ul>
-<li>“越狱RabbitOS揭示了秘密日志和潜在的GPL(通用公共许可证)违规行为，引发了隐私和法律问题。”</li>
-<li>“日志包含敏感数据，例如精确的GPS位置、WiFi网络名称、附近蜂窝塔的ID和用户令牌，其中一些会发送到Rabbit的服务器。”</li>
-<li>“兔子公司发布了一个更新版本(v0.8.112)，解决了这些日志问题，但这场争议突显了人们对科技产品数据隐私和透明度的持续关注。”</li>
-</ul>
-<h2><a href="https://www.justinmath.com/the-greatest-educational-life-hack-learning-math-ahead-of-time/">“最伟大的教育生活技巧：提前学习数学”</a></h2>
-<ul>
-<li>“提前学习数学可以带来更好的成绩，防止糟糕的教学，并获得实习、研究项目和强有力的推荐信，这些对于大学和职业机会至关重要。”</li>
-<li>“微积分以外的高级数学课程，如线性代数和微分方程，对于许多定量领域至关重要，并且可以加速学生进入专业领域，提升职业成就。”</li>
-<li>“研究表明，尽管存在常见的误解和后勤挑战，教育加速并不会损害心理健康，反而会带来更大的学术和职业成功。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40983734">反应</a></h3>
-<ul>
-<li>“一个用户分享了他们在30多岁时克服数学恐惧症的经历，强调学习数学永远不会太晚，并且数学对解决问题和编程见解有很大帮助。”</li>
-<li>“关于成年后学习数学的建议包括从基础数学书籍开始，利用社区大学的资源，并逐步进阶到高级主题。”</li>
-<li>“讨论还强调了早期数学教育、家长参与和像公文式教育这样的外部资源的重要性，以及更广泛的教育系统在培养自学和动机方面的作用。”</li>
-</ul>
-<h2><a href="https://www.mailgun.com/blog/email/ai-phishing/">“骗子的黄金时代：人工智能驱动的网络钓鱼”</a></h2>
-<ul>
-<li>“生成式人工智能使得诈骗者能够发送高度个性化且令人信服的网络钓鱼邮件，克服语言障碍并自动化大规模活动。”</li>
-<li>“像WormGPT和FraudGPT这样的AI工具有助于生成网络钓鱼邮件和伪造网站，大大减少了创建有效攻击所需的时间。”</li>
-<li>“防御策略包括实施DMARC(基于域的消息身份验证、报告和一致性)，识别AI钓鱼尝试，使用多层安全措施，并保持强大的发件人信誉。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40981067">反应</a></h3>
-<ul>
-<li>“由人工智能驱动的网络钓鱼骗局变得更加复杂，利用了像Llama这样的文本技术、Whisper/Tortoise的语音技术以及Stable Diffusion的图像技术，尽管它们的部署仍然有限。”</li>
-<li>“尽管人工智能有可能增强网络钓鱼，但传统方法如印度呼叫中心诈骗仍然非常有效且经济可行，最近的一起案件就证明了这一点，一位老年人被骗走了25,000美元。”</li>
-<li>“银行和其他机构正在提高其诈骗检测能力，但人工智能驱动的诈骗增加需要提高意识和教育，特别是对老年人等易受害群体。”</li>
-</ul>
-<h2><a href="https://thetinypod.com/">“TinyPod – 带有滚轮的Apple Watch保护壳”</a></h2>
-<ul>
-<li>“介绍tinyPod，这是一款紧凑型设备，提供电话、音乐、消息等基本功能，全部由您的Apple Watch驱动。”</li>
-<li>“主要特点包括触感滚轮、快速磁吸充电、多天电池续航、Apple Pay 和 32GB 媒体存储。”</li>
-<li>“有两种型号可供选择：带滚轮的tinyPod售价$79.99和不带滚轮的tinyPod lite售价$29.99，兼容各种Apple Watch系列，将于今年夏天发货。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40987402">反应</a></h3>
-<ul>
-<li>“TinyPod 是一个 Apple Watch 保护壳，它结合了一个滚轮，令人想起 iPod 的点击轮，与数字表冠形成机械连接。”</li>
-<li>“该产品被视为一个有趣的小众硬件创意，吸引那些欣赏独特和奇异科技小玩意的人，尽管它不太实用。”</li>
-<li>“关于产品网页功能的评价褒贬不一，有些用户在使用Firefox时遇到问题，而其他用户则认为设计很吸引人。”</li>
-</ul>
-<h2><a href="https://github.com/libarchive/libarchive/pull/1609">“贾谭 &quot;JiaT75&quot;：在使用bsdtar解压时添加了错误文本到警告中(2021)”</a></h2>
-<ul>
-<li>“Libarchive合并了一次提交，添加了在使用bsdtar时的警告错误文本，解决了问题#1561，但有人对用不安全的fprintf替换safe_fprintf表示担忧。”</li>
-<li>“已实施修复措施，恢复使用safe_fprintf并正确处理errno，同时建议进行进一步审计，并为该问题申请CVE(公共漏洞和暴露)。”</li>
-<li>“讨论强调了彻底代码审查和维护开源项目安全的重要性，问题在对话被锁定后得到解决。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40984589">反应</a></h3>
-<ul>
-<li>“Jia Tan &quot;JiaT75&quot; 在 2021 年向 bsdtar 的一个警告中添加了错误文本，导致 GitHub 上关于评论质量和代码变更审查的激烈讨论。”</li>
-<li>“辩论突显了维护大型软件项目的挑战以及人工智能在改进安全审查中的潜在作用。”</li>
-<li>“这一事件突显了检测恶意代码的难度，尤其是来自已知贡献者的恶意代码，并将贾坦与对xz工具的国家支持攻击联系起来。”</li>
-</ul>
-<h2><a href="https://www.theverge.com/2024/7/16/24199686/puerto-rico-fossil-fuel-industry-lawsuit-climate-change">“波多黎各对化石燃料公司提起10亿美元诉讼”</a></h2>
-<ul>
-<li>“波多黎各已对包括埃克森美孚、英国石油公司、雪佛龙、壳牌和康菲石油在内的主要化石燃料公司提起10亿美元的诉讼，指控它们涉嫌误导公众关于气候变化的信息，并延缓向清洁能源的过渡。”</li>
-<li>“这起在圣胡安提起的诉讼声称，这些公司在推广化石燃料时没有充分警告其危险性，违反了贸易法，寻求赔偿以应对像玛丽亚飓风这样的气候灾害。”</li>
-<li>“这项法律行动是针对化石燃料行业类似诉讼的更广泛趋势的一部分，突显了对气候相关影响日益增长的问责努力。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40986213">反应</a></h3>
-<ul>
-<li>“波多黎各已对化石燃料公司提起10亿美元的诉讼，指控它们造成与气候变化相关的损害，并寻求更严格的环境法规。”</li>
-<li>“这起诉讼强调了化石燃料的经济利益与可持续实践和企业责任之间的持续辩论。”</li>
-<li>“意见不一，有些人强调企业在污染和误导信息方面的责任重要性，而另一些人则强调个人行动和政府政策在应对气候变化中的作用。”</li>
-</ul>
-<h2><a href="https://www.reuters.com/markets/deals/google-backed-software-developer-gitlab-explores-sale-sources-say-2024-07-17/">“Gitlab 探索出售”</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40983486">反应</a></h3>
-<ul>
-<li>“Gitlab正在考虑出售，这引起了用户对潜在关闭或服务模式变化的担忧，让人想起过去RedHat和CentOS的问题。”</li>
-<li>“用户们讨论了像Gitlab这样的开源选项的优点，提到更容易的迁移和社区支持，同时猜测潜在的买家如Datadog或IBM。”</li>
-<li>“对Gitlab定价和企业重点的批评使一些用户考虑转向GitHub等替代方案，反映出对未来稳定性和成本的不同看法。”</li>
-</ul>
-<h2><a href="https://vedgie.net/writing/darwin_machines.md">“达尔文机器”</a></h2>
-<ul>
-<li>“这篇文章讨论了威廉·卡尔文在《大脑密码》中的理论，该理论提出大脑在微柱内使用进化过程来处理感官输入并找到最‘适合’的模式。”</li>
-<li>“该理论认为，大脑的结构，特别是新皮质的柱状体和小柱体，能够实现高效的问题解决和并行处理，这些特性可以应用于人工智能和机器学习(ML)。”</li>
-<li>“作者正在尝试使用神经网络来模拟这一进化过程，并寻求在该领域的研究和学术见解，强调人工智能深度思维能力的潜在进展。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40981068">反应</a></h3>
-<ul>
-<li>“这篇文章讨论了达尔文机器的概念，其中不同的感官数据模式由大脑微柱处理，每个微柱输出独特的放电模式，这些模式相互竞争并强化主导模式，从而促进学习。”</li>
-<li>“胶囊路由算法由Geoffrey Hinton提出，旨在使用期望最大化(EM)过程来实现这一想法，但在AI研究中已被变形金刚的成功所掩盖。”</li>
-<li>“讨论强调了理解大脑功能和神经网络的重要性，提到了赫布学习，并指出需要更深入地探索神经活动中的时间动态。”</li>
-</ul>
-<h2><a href="https://github.com/guywaldman/magic-cli">“Magic-cli – 您命令行的副驾驶”</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40980715">反应</a></h3>
-<ul>
-<li>“Magic-cli 是由 Guy Waldman 开发的命令行助手，由于其默认的“unsafe-execution”模式引发了讨论，有人建议使用更安全的默认模式，如“clipboard”模式。”</li>
-<li>“用户分享了意见和经验，提到了zsh_codex、aichat和Warp终端等替代工具。”</li>
-<li>“该项目是用Rust构建的，这引发了关于其复杂性与其他语言中更简单实现的比较问题。”</li>
-</ul>
-<h2><a href="https://developers.google.com/tag-platform/tag-manager/first-party/setup-guide">“谷歌提出绕过标签管理器自动屏蔽的方法”</a></h2>
-<ul>
-<li>“Google 正在推出一个用于以第一方模式部署标签的测试功能，通过使用网站的域名进行托管来提升标签性能和数据隐私。”</li>
-<li>“设置过程包括在域上保留一个唯一路径，通过 Google Cloud 或 Cloudflare 等服务路由流量，并更新网站脚本以使用新的测量路径。”</li>
-<li>“鼓励用户使用Tag Assistant测试设置，并通过指定的反馈表或联系电子邮件提供反馈。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40983585">反应</a></h3>
-<ul>
-<li>“谷歌推出了一种绕过其标签管理器自动屏蔽的方法，这引发了人们对隐私和广告拦截器有效性的担忧。”</li>
-<li>“用户讨论了阻止跟踪的策略，例如使用uBlock Origin并默认禁用JavaScript，然后根据需要选择性地启用它，以便在使用方便和速度方面获得好处。”</li>
-<li>“谷歌的新方法引发了一场关于在商业目的的数据收集与用户隐私之间平衡的辩论，一些用户对谷歌的追踪行为表示不满。”</li>
-</ul>
-<h2><a href="https://www.nytimes.com/2024/07/16/dining/pete-wells-steps-down-food-critic.html">“在审查餐馆12年后，我将离开这个岗位”</a></h2>
-<ul>
-<li>“皮特·威尔斯在担任《纽约时报》餐厅评论员12年后，由于健康问题，包括高胆固醇、血糖和高血压，决定辞职。”</li>
-<li>“尽管他的角色具有回报性，但频繁的餐馆访问对身体的负担已变得难以承受。”</li>
-<li>“威尔斯将继续留在《泰晤士报》，但将不再处理每周评论的需求，而是选择专注于他的健康和更平衡的生活方式。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40979539">反应</a></h3>
-<ul>
-<li>“长期担任餐厅评论员的人在12年后即将卸任，引发了关于他影响力和餐厅评论未来的讨论。”</li>
-<li>“这位评论家以其多样化的餐厅选择和独特的、有时有些冷淡的评论方式而闻名。”</li>
-<li>“这则公告引起了人们对新任评论员梅丽莎·克拉克的期待，并引发了餐饮业从业者对自身经历的反思。”</li>
-</ul>
-<h2><a href="https://github.com/bobbyiliev/introduction-to-bash-scripting">“Bash 脚本编写简介”</a></h2>
-<ul>
-<li>“一个关于Bash脚本编写的开源指南/电子书已经发布，旨在为开发人员、系统管理员和DevOps工程师自动化任务。”</li>
-<li>“这本电子书涵盖了从基本的Bash结构到高级脚本技术的广泛主题，包括与API的交互和生成密码。”</li>
-<li>“额外资源包括一个迷你视频课程，通过Katacoda进行的互动培训，以及来自Linux DevOps工程师Bobby Iliev的贡献。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40982011">反应</a></h3>
-<ul>
-<li>“Bash脚本常被拿来与Python进行终端任务的比较，由于其原生的终端集成，Bash在文件系统操作和简单命令序列方面更高效。”</li>
-<li>“批评者指出，Python在处理基本任务时过于复杂，而Bash的语法笨拙，但在没有预装Python的环境中，Bash仍然是必不可少的。”</li>
-<li>“像 Ruby 的 shell 或 Perl 这样的替代方案用于文本解析是存在的，并且像 ChatGPT 这样的工具可以帮助生成脚本，但理解 Bash 的基础知识仍然很有价值。”</li>
-</ul>
-<h2><a href="https://www.gartner.com/en/articles/the-data-is-in-return-to-office-mandates-aren-t-worth-the-talent-risks">“重返办公室的强制要求不值得冒人才流失的风险”</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40983717">反应</a></h3>
-<ul>
-<li>“重返办公室(RTO)的强制要求有可能失去顶尖人才，因为有其他选择的员工可能会率先离开，从而可能引发多米诺效应。”</li>
-<li>“灵活的选项，如旅行补偿或改善办公设施，被建议作为比严格的返回办公室规定更好的替代方案。”</li>
-<li>“辩论包括对生产力、指导和个人偏好的观点，有些人认为返回办公室是由过时的管理观念或经济压力驱动的。”</li>
-</ul>
-<head>
-  <meta property="og:title" content="“在 Google 文档中导入和导出 Markdown”" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E2%80%9C%E5%9C%A8%20Google%20%E6%96%87%E6%A1%A3%E4%B8%AD%E5%AF%BC%E5%85%A5%E5%92%8C%E5%AF%BC%E5%87%BA%20Markdown%E2%80%9D&subheading=2024%E5%B9%B47%E6%9C%8817%E6%97%A5%E6%98%9F%E6%9C%9F%E4%B8%89%3A%20%E9%BB%91%E5%AE%A2%E6%96%B0%E9%97%BB%E6%91%98%E8%A6%81" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/zh/Hans/2024/07/17</link>
-            <guid isPermaLink="false">2024-07-17T00:00:00.000Z</guid>
-            <pubDate>Wed, 17 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

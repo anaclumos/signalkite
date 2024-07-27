@@ -15,12 +15,208 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 26 Jul 2024 19:14:09 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 27 Jul 2024 19:09:46 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/vi.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Fri, 26 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[vi]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-27]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/27&#39;</h2>
+<h1>2024-07-27</h1>
+<h2><a href="https://sqlite.org/fasterthanfs.html">SQLite: Nhanh hơn 35% so với hệ thống tệp</a></h2>
+<ul>
+<li>SQLite đọc và ghi các blob nhỏ (ví dụ: hình ảnh thu nhỏ) nhanh hơn 35% so với việc sử dụng các tệp riêng lẻ trên đĩa, và sử dụng ít hơn khoảng 20% không gian đĩa.</li>
+<li>Hiệu suất được cho là nhờ vào việc giảm số lượng các lệnh gọi hệ thống open() và close() và việc đóng gói dữ liệu chặt chẽ hơn, với hiệu suất dự kiến sẽ cải thiện trong các phiên bản tương lai.</li>
+<li>Kiểm tra cho thấy SQLite thường vượt trội hơn so với việc truy xuất tệp trực tiếp, đặc biệt là trên Windows khi phần mềm chống virus được kích hoạt, mặc dù hiệu suất có thể thay đổi tùy thuộc vào phần cứng và hệ điều hành.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085376">phản ứng</a></h3>
+<ul>
+<li>SQLite nhanh hơn 35% so với các hệ thống tệp truyền thống do ít cuộc gọi hệ thống mở/đóng hơn và không cần kiểm tra thuộc tính hoặc siêu dữ liệu của hệ thống tệp.</li>
+<li>Hiệu suất tăng cường này đặc biệt đáng kể trên Windows, nơi các cuộc gọi hệ thống tệp vốn dĩ chậm hơn.</li>
+<li>Mặc dù có một số hạn chế, chẳng hạn như giới hạn blob tối đa 2GB và những thách thức với dữ liệu phân cấp, tốc độ và sự đơn giản của SQLite khiến nó trở nên có lợi cho việc lưu trữ nhật ký và các dữ liệu khác.</li>
+</ul>
+<h2><a href="https://sysprog21.github.io/lkmpg/">Hướng dẫn Lập trình Module Nhân Linux</a></h2>
+<ul>
+<li>Cuốn Hướng dẫn Lập trình Module Kernel Linux cung cấp một giới thiệu toàn diện về việc tạo và quản lý các module kernel, là các đoạn mã có thể tải động nhằm tăng cường khả năng của kernel mà không cần khởi động lại.</li>
+<li>Những công cụ và lệnh quan trọng để làm việc với các module kernel bao gồm <code>modprobe</code>, <code>insmod</code>, <code>depmod</code>, <code>lsmod</code>, và <code>cat /proc/modules</code>.</li>
+<li>Cuốn hướng dẫn bao gồm các chủ đề thiết yếu như khởi tạo và dọn dẹp module, xử lý các đối số dòng lệnh, quản lý trình điều khiển thiết bị, tương tác với các hệ thống tệp <code>/proc</code> và <code>sysfs</code>, và tránh các cạm bẫy thường gặp trong lập trình kernel.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083972">phản ứng</a></h3>
+<ul>
+<li>Chương trình Hướng dẫn Lập trình Module Kernel Linux nhấn mạnh việc sử dụng QEMU cho việc hack kernel và đề xuất cập nhật các sách về trình điều khiển thiết bị Linux.</li>
+<li>Greg KH xác nhận sẽ không có ấn bản thứ 4 của cuốn sách Linux Device Drivers, gây ra các cuộc thảo luận về các tài nguyên thay thế như &quot;The Linux Memory Manager&quot; và &quot;Linux Insides.&quot;</li>
+<li>Người dùng đã chia sẻ kinh nghiệm với QEMU để gỡ lỗi và bộ kiểm tra WireGuard cho phát triển mô-đun kernel, nhấn mạnh tầm quan trọng của việc xem xét của con người trong việc viết lách.</li>
+</ul>
+<h2><a href="https://reason.com/2024/07/26/courts-close-the-loophole-letting-the-feds-search-your-phone-at-the-border/">Toà án đóng lỗ hổng cho phép liên bang lục soát điện thoại của bạn tại biên giới</a></h2>
+<ul>
+<li>Thẩm phán liên bang đã phán quyết rằng Cơ quan Hải quan và Bảo vệ Biên giới (CBP) không thể khám xét các thiết bị điện tử tại biên giới mà không có lệnh, giải quyết một lỗ hổng trong Tu chính án thứ Tư.</li>
+<li>Thẩm phán Nina Morrison cho rằng việc khám xét điện thoại di động là &quot;không thường lệ&quot; và cần có lý do xác đáng cũng như lệnh khám xét, so sánh chúng với việc khám xét thân thể do tác động lớn đến quyền riêng tư.</li>
+<li>Phán quyết này, được những người ủng hộ tự do dân sự ủng hộ, được coi là quan trọng đối với tự do báo chí và quyền riêng tư, theo sau các quyết định tương tự ở các khu vực và quận khác.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083286">phản ứng</a></h3>
+<ul>
+<li>Bộ Tòa án Quận ở New York đã phán quyết rằng việc khám xét điện thoại di động không có lệnh tại biên giới là &quot;không thường lệ&quot; và xâm phạm hơn so với các loại khám xét khác, so sánh chúng với việc khám xét lột đồ.</li>
+<li>Quyết định này không phải là tiền lệ ràng buộc và trái ngược với các phán quyết từ các Tòa án Vòng khác, cho thấy khả năng Tòa án Tối cao sẽ giải quyết vấn đề do sự &quot;chia rẽ giữa các vòng&quot;.</li>
+<li>Phán quyết này phản ánh các cuộc tranh luận đang diễn ra về quyền riêng tư và quyền lực của chính phủ, đặc biệt là trong bối cảnh an ninh biên giới và Tu chính án thứ Tư.</li>
+</ul>
+<h2><a href="https://web.stanford.edu/class/cs81n/command.txt">Ban đầu là Dòng lệnh (1999)</a></h2>
+<ul>
+<li>Tiểu luận &quot;In the Beginning was the Command Line&quot; của Neal Stephenson khám phá sự phát triển của các hệ điều hành (OS) và động lực thị trường của chúng, tập trung vào Apple và Microsoft.</li>
+<li>Microsoft đạt được sự thống trị thị trường bằng cách bán hệ điều hành như hàng tiêu dùng, nhấn mạnh sự tiện lợi và dễ sử dụng, điều này phù hợp với xu hướng văn hóa rộng lớn hơn coi trọng sự đơn giản hơn là phức tạp.</li>
+<li>Mặc dù có sự xuất hiện của các lựa chọn thay thế vượt trội và miễn phí như Linux và BeOS, hầu hết người tiêu dùng vẫn ưa chuộng các sản phẩm quen thuộc của Microsoft, điều này nhấn mạnh sự ưa thích của xã hội đối với các trải nghiệm được trung gian hóa thông qua giao diện người dùng đồ họa (GUI).</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41084795">phản ứng</a></h3>
+<ul>
+<li>Tiểu luận &quot;In the Beginning Was the Command Line&quot; (1999) của Neal Stephenson nêu bật những ưu điểm của Giao diện Dòng lệnh (CLI) so với Giao diện Đồ họa Người dùng (GUIs), nhấn mạnh sự ngắn gọn và dễ dàng trong giao tiếp của chúng.</li>
+<li>Tiểu luận so sánh sự phát triển của các hệ điều hành với ô tô, nhấn mạnh sự ổn định và kiểm soát người dùng được cung cấp bởi các giao diện dòng lệnh (CLI) mặc dù giao diện đồ họa người dùng (GUI) phổ biến.</li>
+<li>Điều này cũng đi sâu vào các tác động văn hóa và triết học của giao diện công nghệ, mang lại một góc nhìn rộng hơn về cách chúng ta tương tác với công nghệ.</li>
+</ul>
+<h2><a href="https://blog.singleton.io/posts/2022-10-17-otp-on-wrist/">Token TOTP trên cổ tay tôi với chiếc đồng hồ thông minh nhất</a></h2>
+<ul>
+<li>Sensor Watch đã phát hành một bo mạch logic thay thế mới cho chiếc Casio F-91W cổ điển, nâng cấp nó với bộ vi xử lý ARM Cortex M0+ trong khi vẫn giữ nguyên màn hình LCD, các nút bấm và loa piezo gốc.</li>
+<li>Bo mạch nâng cấp có thể lập trình được, cho phép tùy chỉnh mặt đồng hồ và các ứng dụng tiện ích, bao gồm các tính năng như mã thông báo 2FA, đồng hồ đo tốc độ, đồng hồ thế giới và nhiều hơn nữa.</li>
+<li>Chiếc đồng hồ này dễ dàng để hack, với một trình giả lập dựa trên wasm để thử nghiệm, và có sẵn tài liệu chi tiết cho những ai quan tâm đến việc chỉnh sửa hoặc tự tạo mặt đồng hồ của riêng mình.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41081435">phản ứng</a></h3>
+<ul>
+<li>Cuộc thảo luận trên Hacker News nêu bật việc sử dụng mã TOTP (Mật khẩu dùng một lần dựa trên thời gian) trên đồng hồ Casio, cụ thể là các mẫu F-91W và A158W, cho xác thực hai yếu tố (2FA).</li>
+<li>Đề án bao gồm việc chỉnh sửa firmware của đồng hồ để hiển thị mã TOTP, với sự đóng góp từ cộng đồng nhằm nâng cao các tính năng như hiệu chỉnh người dùng và thậm chí tạo ra các trò chơi cho đồng hồ.</li>
+<li>Những lo ngại được nêu ra về việc hiển thị mã TOTP trên đồng hồ, với một số người đề xuất các giải pháp thay thế như khóa phần cứng FIDO2 để bảo vệ tốt hơn chống lại các cuộc tấn công lừa đảo.</li>
+</ul>
+<h2><a href="https://ntk148v.github.io/posts/linux-network-performance-ultimate-guide/">Linux Network Performance Ultimate Guide</a></h2>
+<ul>
+<li>Cuốn hướng dẫn cung cấp cái nhìn sâu sắc về tối ưu hóa hiệu suất mạng Linux, bao gồm các chủ đề từ ngăn xếp mạng đến các kỹ thuật xử lý gói tin nâng cao.</li>
+<li>Những bước điều chỉnh chính bao gồm điều chỉnh kích thước bộ đệm vòng NIC, hợp nhất ngắt, liên kết IRQ, và sử dụng các công cụ như AF_PACKET, DPDK, và XDP để xử lý gói tin hiệu suất cao.</li>
+<li>Giám sát và điều chỉnh các cài đặt mạng bằng các công cụ như <code>ethtool</code>, <code>sysctl</code> và <code>netstat</code> là cần thiết để duy trì hiệu suất tối ưu.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083801">phản ứng</a></h3>
+<ul>
+<li>Cuốn &quot;Hướng Dẫn Tối Ưu Hiệu Suất Mạng Linux Tối Thượng&quot; là một tài liệu toàn diện về tối ưu hóa hiệu suất mạng sử dụng Linux, đặc biệt hữu ích cho những người làm việc với các mạng tốc độ cao.</li>
+<li>Người dùng đã chia sẻ một câu chuyện thành công về việc xây dựng một mạng 10Gbps được mã hóa với chi phí hiệu quả bằng cách sử dụng phần cứng thương mại có sẵn (COTS) và Wireguard, giảm đáng kể chi phí so với các giải pháp phần cứng thương mại.</li>
+<li>Thảo luận trong phần bình luận bao gồm các mẹo thực tế, chẳng hạn như điều chỉnh kích thước bộ đệm TCP, và các công cụ tự động điều chỉnh hiệu suất, như bpftune của Oracle.</li>
+</ul>
+<h2><a href="https://github.com/joshuacline/windick">Windows môi trường phục hồi và công cụ tạo USB khởi động trong 200kb</a></h2>
+<ul>
+<li>Windows Deployment Image Customization Kit là một công cụ dòng lệnh được thiết kế để tùy chỉnh và triển khai các hình ảnh Windows.</li>
+<li>Giải pháp này cung cấp cho các chuyên gia CNTT và quản trị hệ thống một phương pháp bản địa để đơn giản hóa quy trình triển khai.</li>
+<li>Hướng dẫn và thông tin bổ sung có sẵn trên các nền tảng như YouTube và tài liệu chính thức của Microsoft.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083987">phản ứng</a></h3>
+<ul>
+<li>Một công cụ mới dựa trên shell để tạo môi trường khôi phục Windows và USB khởi động đã được phát hành, chỉ chiếm 200 kilobyte.</li>
+<li>Được viết dưới dạng một tệp batch lớn với 3.085 dòng mã, công cụ này thể hiện sự cống hiến và hiệu quả ấn tượng, đặc biệt khi xét đến sự sẵn có của các ngôn ngữ kịch bản hiện đại hơn như PowerShell.</li>
+<li>Đề án này được lấy cảm hứng từ clockworkmod recovery cho Android và nhằm sử dụng các lệnh &quot;live-of-the-land&quot;, nghĩa là nó không có bất kỳ phụ thuộc nào và hoạt động hoàn toàn dưới môi trường Windows.</li>
+</ul>
+<h2><a href="https://krebsonsecurity.com/2024/07/crooks-bypassed-googles-email-verification-to-create-workspace-accounts-access-3rd-party-services/">Những kẻ lừa đảo đã vượt qua xác minh email của Google để tạo tài khoản Workspace, truy cập</a></h2>
+<ul>
+<li>Google đã khắc phục một điểm yếu xác thực cho phép tội phạm bỏ qua xác minh email để tạo tài khoản Google Workspace và mạo danh chủ sở hữu tên miền.</li>
+<li>Vấn đề đã được giải quyết trong vòng 72 giờ, và các biện pháp phát hiện bổ sung đã được triển khai để ngăn chặn lạm dụng trong tương lai.</li>
+<li>Những kẻ tấn công nhằm mục đích giả mạo chủ sở hữu tên miền để sử dụng các dịch vụ của bên thứ ba, chứ không phải lạm dụng các dịch vụ của Google, và hoạt động độc hại liên quan đến vài nghìn tài khoản Workspace được tạo mà không cần xác minh tên miền.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41082502">phản ứng</a></h3>
+<ul>
+<li>Những kẻ tấn công đã vượt qua xác minh email của Google để tạo các tài khoản Workspace không được phép, dẫn đến các vi phạm bảo mật tiềm ẩn và các email chào mừng không mong muốn cho các tên miền chưa đăng ký.</li>
+<li>Những tài khoản không được phép này đã được sử dụng để khai thác &quot;Đăng nhập bằng Google&quot; trên các trang web của bên thứ ba, gây khó khăn cho nạn nhân trong việc lấy lại tên miền của họ.</li>
+<li>Vụ việc này nhấn mạnh những lỗ hổng trong hệ thống của Google và các rủi ro liên quan đến việc đăng nhập xã hội, kêu gọi cải tiến như xác minh DNS bắt buộc.</li>
+</ul>
+<h2><a href="https://github.com/devrim/cloudflare-noip">DDNS miễn phí với Cloudflare và một Cronjob</a></h2>
+<ul>
+<li>Đề án này cung cấp một giải pháp thay thế miễn phí cho các dịch vụ DNS động trả phí bằng cách tự động cập nhật các bản ghi DNS trên Cloudflare sử dụng tài khoản miễn phí và một cronjob.</li>
+<li>Người dùng cần sao chép kho lưu trữ, tạo các tệp cấu hình (<code>keys.json</code> và <code>records.json</code>), và thiết lập một cronjob hoặc bộ lập lịch tác vụ tương đương để chạy script theo các khoảng thời gian đều đặn.</li>
+<li>Script cập nhật các bản ghi DNS trên Cloudflare với địa chỉ IP hiện tại của máy, làm cho nó trở thành một giải pháp tiết kiệm chi phí cho nhu cầu DNS động.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41081810">phản ứng</a></h3>
+<ul>
+<li>Một dự án trên GitHub cung cấp giải pháp DNS động (DDNS) miễn phí sử dụng Cloudflare và một công việc cron, thu hút sự quan tâm đáng kể từ cộng đồng công nghệ.</li>
+<li>Người dùng thảo luận về ưu và nhược điểm của việc sử dụng Cloudflare cho DDNS, bao gồm các chiến thuật dụ dỗ và thay đổi tiềm năng cũng như các hạn chế như bắt buộc kết thúc TLS và giới hạn tải lên.</li>
+<li>Những lựa chọn thay thế và các dự án tương tự được đề cập, chẳng hạn như sử dụng các đường hầm Cloudflare, Tailscale và các khách hàng DDNS khác, nhấn mạnh sự đa dạng của các giải pháp có sẵn để quản lý địa chỉ IP động.</li>
+</ul>
+<h2><a href="https://huyenchip.com/ml-interviews-book/">Giới thiệu về Sách Phỏng vấn Học máy</a></h2>
+<ul>
+<li>Cuốn sách &#39;Giới thiệu về Phỏng vấn Học máy&#39; cung cấp một hướng dẫn toàn diện về quy trình phỏng vấn ML, bao gồm các vai trò, loại hình công ty, định dạng phỏng vấn và các loại câu hỏi.</li>
+<li>Bao gồm hơn 200 câu hỏi kiến thức và 30 câu hỏi mở, nhằm giúp cả ứng viên và nhà tuyển dụng hiểu và chuẩn bị cho các buổi phỏng vấn về học máy.</li>
+<li>Được viết bởi Chip Huyen, người có nhiều kinh nghiệm với các cuộc phỏng vấn tại các công ty công nghệ lớn và các startup, cuốn sách tổng hợp những hiểu biết thực tiễn và chiến lược chuẩn bị.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083534">phản ứng</a></h3>
+<ul>
+<li>Cuốn sách &quot;Introduction to Machine Learning Interviews&quot; của Huyen Chip đang được thảo luận, với những ý kiến trái chiều về hiệu quả của nó trong việc chuẩn bị cho các buổi phỏng vấn ML.</li>
+<li>Một số người dùng cho rằng các câu hỏi trong sách dễ hơn so với các buổi phỏng vấn ML thực tế, và những người khác khuyến nghị cuốn sách &quot;Deep Learning Interviews&quot; vì nó hấp dẫn và đại diện hơn.</li>
+<li>Có một cuộc tranh luận về sự liên quan của việc sử dụng các câu hỏi mẫu từ sách, với một số người ủng hộ việc tạo ra các dự án cá nhân hóa thay thế.</li>
+</ul>
+<h2><a href="https://github.com/narumatt/sqlitefs">Sqlitefs: SQLite như một Hệ thống Tập tin</a></h2>
+<ul>
+<li>sqlite-fs cho phép người dùng Linux và MacOS gắn kết một tệp cơ sở dữ liệu SQLite như một hệ thống tệp thông thường, giúp thực hiện các thao tác tệp thông qua cơ sở dữ liệu.</li>
+<li>Yêu cầu ngôn ngữ lập trình Rust mới nhất (≥ 1.38) và libfuse (Linux) hoặc osxfuse (MacOS) để hoạt động.</li>
+<li>Hỗ trợ các thao tác tệp khác nhau như tạo, đọc, ghi, xóa tệp và thư mục, thay đổi thuộc tính, và xử lý khóa tệp, với việc xử lý lỗi nghiêm ngặt.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085856">phản ứng</a></h3>
+<ul>
+<li>SQLiteFS là một dự án sử dụng SQLite như một hệ thống tệp, thu hút sự quan tâm nhờ cách tiếp cận độc đáo của nó đối với việc lưu trữ tệp.</li>
+<li>Khái niệm này gợi nhớ đến dự án WinFS bị hủy bỏ của Microsoft, dự án mà nhằm sử dụng SQL Server như một hệ thống tệp.</li>
+<li>Mặc dù có sự hài hước và các cuộc thảo luận lý thuyết, các ứng dụng thực tiễn như sử dụng SQLiteFS cho các hoạt động trong bộ nhớ hoặc bộ nhớ đệm đang được xem xét.</li>
+</ul>
+<h2><a href="https://boogiemath.org/meta/meta-9.html">Oscar Zariski là một trong những người sáng lập hình học đại số hiện đại</a></h2>
+<ul>
+<li>Oscar Zariski (1899-1986) là một nhân vật then chốt trong hình học đại số hiện đại, được biết đến với cuốn sách có ảnh hưởng &quot;Algebraic Surfaces&quot; và những đóng góp quan trọng của ông cho lĩnh vực này.</li>
+<li>Mặc dù bắt đầu sự nghiệp học thuật muộn hơn bình thường, Zariski vẫn hoạt động tích cực đến tận những năm tám mươi tuổi, với công trình đáng chú ý về các hàm holomorphic và một hành trình học thuật phong phú qua các tổ chức danh tiếng.</li>
+<li>Một giai thoại thú vị từ cuộc đời ông bao gồm việc suýt bỏ lỡ đám cưới của chính mình vì quá mải mê với một bài toán, điều này cho thấy sự cống hiến mãnh liệt của ông đối với toán học.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41086060">phản ứng</a></h3>
+<ul>
+<li>Oscar Zariski được công nhận là một trong những người sáng lập hình học đại số hiện đại.</li>
+<li>Người dùng đã chia sẻ những giai thoại và thảo luận về các chủ đề đa dạng, bao gồm sự cố hài hước của nhà toán học Kalle Väisälä và &quot;yếu tố tưởng tượng,&quot; một thước đo thời gian dành cho thế giới thực so với thế giới tưởng tượng.</li>
+<li>Cuộc trò chuyện cũng đi sâu vào các thảo luận lịch sử và chính trị, chẳng hạn như Cách mạng Nga và các cuộc tranh luận về chủ nghĩa cộng sản so với chủ nghĩa tư bản.</li>
+</ul>
+<h2><a href="https://www.cs.cornell.edu/~asampson/blog/bril.html">Bril: Một Ngôn Ngữ Trung Gian để Dạy về Trình Biên Dịch</a></h2>
+<ul>
+<li>Bril, Ngôn ngữ Trung gian Đỏ Lớn, được tạo ra để đơn giản hóa việc giảng dạy trình biên dịch bằng cách ưu tiên sự dễ sử dụng và đơn giản hơn là hiệu suất và kích thước mã.</li>
+<li>Chương trình Bril là các tài liệu JSON, giúp chúng có thể truy cập bằng bất kỳ ngôn ngữ lập trình nào và dễ dàng chia sẻ.</li>
+<li>Vũ trụ Bril đã mở rộng với sự đóng góp của sinh viên, bao gồm các công cụ và mở rộng ngôn ngữ, mặc dù dạng SSA (Static Single Assignment) của nó cần được cải thiện.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41084318">phản ứng</a></h3>
+<ul>
+<li>Bril là một ngôn ngữ trung gian (IL) được thiết kế để giảng dạy về trình biên dịch, phát triển bởi Đại học Cornell.</li>
+<li>Thảo luận nhấn mạnh sự cần thiết phải làm lại dạng Static Single Assignment (SSA) của Bril và so sánh với các IL khác như ANF (A-Normal Form) và CPS (Continuation-Passing Style).</li>
+<li>Vài người cho rằng các ngôn ngữ trung gian hiện có như LLVM là đủ cho mục đích giáo dục, trong khi những người khác nhấn mạnh cách tiếp cận độc đáo của Bril trong việc giảng dạy các khái niệm về trình biên dịch.</li>
+</ul>
+<h2><a href="https://fabiensanglard.net/dc/">Trình biên dịch điều khiển</a></h2>
+<ul>
+<li>Loạt bài này nhằm lấp đầy khoảng trống trong tài liệu về việc sử dụng công cụ để biến các chương trình thành các tệp thực thi, tập trung vào các khái niệm cốt lõi thay vì dạy một ngôn ngữ hay cách viết một trình biên dịch.</li>
+<li>Đoạn văn cung cấp các bước tái tạo sử dụng bintools và chế độ chi tiết của trình điều khiển (-v) để giúp người đọc khám phá vượt ra ngoài các ví dụ cơ bản, giả định một nền tảng Linux với các trình biên dịch gcc hoặc clang.</li>
+<li>Loạt bài này được chia thành năm phần: Driver, cpp (trình tiền xử lý), cc (trình biên dịch), ld (trình liên kết), và Loader, cung cấp một cách tiếp cận có cấu trúc để hiểu quá trình biên dịch.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083077">phản ứng</a></h3>
+<ul>
+<li>Đoạn bài viết cung cấp một phần giới thiệu xuất sắc về chuỗi công cụ C và C++, tập trung vào các nền tảng dựa trên Linux và ELF.</li>
+<li>Những điểm làm rõ quan trọng bao gồm việc thư viện chuẩn C++ rộng hơn STL, và ::operator new() là một phần của runtime, không chỉ là một template.</li>
+<li>Đoạn bài nên phân biệt rõ hơn giữa bộ nạp nhân hệ điều hành và bộ nạp động không gian người dùng.</li>
+</ul>
+<h2><a href="https://blog.davidv.dev/posts/pcie-driver-dma/">Học về PCI-e: Trình điều khiển và DMA</a></h2>
+<ul>
+<li>Đoạn bài viết chi tiết về việc triển khai một trình điều khiển thiết bị PCI-e (Peripheral Component Interconnect Express) cơ bản, tập trung vào việc ánh xạ bộ nhớ và các hoạt động DMA (Direct Memory Access).</li>
+<li>Giải thích việc tạo ra một <code>struct pci_driver</code>, thiết lập một thiết bị ký tự để tương tác với không gian người dùng, và việc sử dụng MSI (Message Signalled Interrupts) để xử lý các chuyển giao DMA không đồng bộ.</li>
+<li>Đoạn viết này quan trọng vì cung cấp hướng dẫn thực tiễn về phát triển trình điều khiển thiết bị PCI-e, bao gồm các đoạn mã và tham chiếu đến tài liệu nhân, làm cho nó trở nên có giá trị đối với các kỹ sư phần mềm mới.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085713">phản ứng</a></h3>
+<ul>
+<li>Cuộc thảo luận xoay quanh việc sử dụng FPGA (Mảng cổng lập trình được tại hiện trường) để xây dựng bộ điều hợp hiển thị, với trọng tâm là IP cứng PCI-e (Kết nối thành phần ngoại vi tốc độ cao).</li>
+<li>Người ta khuyến nghị sử dụng các bảng FPGA giá cả phải chăng khác nhau, bao gồm Spartan 6, Artix, Screamer PCIe Squirrel và Litefury, hỗ trợ PCIe và đầu ra video kỹ thuật số.</li>
+<li>Đoạn bài viết cũng nêu bật các tài nguyên và thiết kế để tạo ra các thẻ video và đề cập đến việc sử dụng tiềm năng của chế độ Displayport Alt và webcam loại UVC USB3 cho đầu ra video.</li>
+</ul>
+<head>
+  <meta property="og:title" content="SQLite: Nhanh hơn 35% so với hệ thống tệp" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=SQLite%3A%20Nhanh%20h%C6%A1n%2035%25%20so%20v%E1%BB%9Bi%20h%E1%BB%87%20th%E1%BB%91ng%20t%E1%BB%87p&subheading=Th%E1%BB%A9%20B%E1%BA%A3y%2C%2027%20th%C3%A1ng%207%2C%202024%3A%20T%C3%B3m%20t%E1%BA%AFt%20tin%20t%E1%BB%A9c%20v%E1%BB%81%20hacker" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/vi/2024/07/27</link>
+            <guid isPermaLink="false">2024-07-27T00:00:00.000Z</guid>
+            <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-26]]></title>
             <description
@@ -1680,187 +1876,6 @@
             <link>https://hn.cho.sh/vi/2024/07/18</link>
             <guid isPermaLink="false">2024-07-18T00:00:00.000Z</guid>
             <pubDate>Thu, 18 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-17]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/17&#39;</h2>
-<h1>2024-07-17</h1>
-<h2><a href="https://workspaceupdates.googleblog.com/2024/07/import-and-export-markdown-in-google-docs.html">Nhập và Xuất Markdown trong Google Docs</a></h2>
-<ul>
-<li>Google Docs hiện hỗ trợ các tính năng Markdown nâng cao, bao gồm chuyển đổi Markdown thành nội dung Docs khi dán, sao chép nội dung Docs dưới dạng Markdown, xuất một tài liệu dưới dạng Markdown và nhập Markdown dưới dạng một tài liệu.</li>
-<li>Đợt cập nhật này có lợi cho các nhà viết nội dung kỹ thuật, giúp việc chuyển đổi giữa Docs và Markdown trở nên dễ dàng hơn cho việc hợp tác và tài liệu hóa.</li>
-<li>Việc triển khai bắt đầu vào ngày 16 tháng 7 năm 2024, cho các miền Phát Hành Nhanh và Phát Hành Theo Lịch Trình, và có sẵn cho tất cả khách hàng Google Workspace, Người Đăng Ký Workspace Cá Nhân, và người dùng tài khoản Google cá nhân.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40982118">phản ứng</a></h3>
-<ul>
-<li>Google Docs hiện hỗ trợ nhập/xuất hoàn toàn Markdown, nâng cao tính hữu ích cho các nhà văn kỹ thuật và những người cộng tác trên các tài liệu Markdown.</li>
-<li>Chức năng này đang được triển khai dần dần để phát hiện sớm các lỗi nghiêm trọng, vì vậy người dùng có thể không thấy nó ngay lập tức.</li>
-<li>Google Drive và các API của nó cũng sẽ hỗ trợ khả năng Markdown mới này, mặc dù một số người dùng lo ngại về việc triển khai chậm và hỗ trợ không đầy đủ cho các yếu tố như khối mã và nhận xét.</li>
-</ul>
-<h2><a href="https://matt.sh/panic-at-the-job-market">Hoảng loạn tại Thị trường Việc làm</a></h2>
-<ul>
-<li>Thị trường việc làm công nghệ đang trong tình trạng hỗn loạn do lãi suất tăng, nguồn vốn đầu cơ và các thực tiễn tuyển dụng sai lầm.</li>
-<li>Higher interest rates lead companies to invest in safe government-backed accounts rather than risky ventures, causing job losses in the tech sector.</li>
-<li>Quá trình tuyển dụng thường tập trung vào các bài kiểm tra mã hóa không liên quan và các cuộc phỏng vấn hành vi, không đánh giá đúng kinh nghiệm và khả năng thực sự của ứng viên.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40986894">phản ứng</a></h3>
-<ul>
-<li>Thị trường việc làm đang gặp nhiều thách thức trong nhiều ngành, bao gồm cả công nghệ, với các quy trình tuyển dụng phức tạp bỏ qua hồ sơ và đóng góp cá nhân.</li>
-<li>Networking là điều cần thiết vì các cổng thông tin việc làm thường che khuất hồ sơ, và thị trường việc làm công nghệ đang đối mặt với cơ hội giảm dần khi các công ty tập trung vào các kỹ năng không liên quan và các yêu cầu tùy tiện.</li>
-<li>Inefficient hiring practices can indicate poor workplace environments, and the irrationality of the job market can outlast individuals&#39; financial stability, complicating the search for suitable employment.</li>
-</ul>
-<h2><a href="https://www.da.vidbuchanan.co.uk/blog/r1-jailbreak.html">Jailbreaking RabbitOS: Khám phá các nhật ký bí mật và vi phạm GPL</a></h2>
-<ul>
-<li>David Buchanan đã phát triển một &quot;jailbreak có dây&quot; cho Rabbit R1, cho phép truy cập root mà không cần mở khóa bootloader hoặc thay đổi bộ nhớ trong.</li>
-<li>Chiếc Rabbit R1, sử dụng SoC MediaTek MT6765, đã bị chỉ trích vì việc ghi lại dữ liệu người dùng quá mức và vi phạm GPL, những vấn đề này đã được giải quyết một phần trong bản cập nhật gần đây.</li>
-<li>Buchanan phát hiện ra rằng RabbitOS là một phiên bản Android 13 AOSP được chỉnh sửa nặng nề, chủ yếu thực thi chế độ kiosk một ứng dụng, và ông đã phát hành một công cụ để hỗ trợ việc khám phá thêm về thiết bị này.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40987730">phản ứng</a></h3>
-<ul>
-<li>Việc bẻ khóa RabbitOS đã tiết lộ các nhật ký bí mật và các vi phạm tiềm năng về GPL (Giấy phép Công cộng Chung), làm dấy lên những lo ngại về quyền riêng tư và pháp lý.</li>
-<li>Nhật ký bao gồm dữ liệu nhạy cảm như vị trí GPS chính xác, tên mạng WiFi, ID của các tháp di động lân cận và mã thông báo người dùng, một số trong đó được gửi đến các máy chủ của Rabbit.</li>
-<li>Rabbit Inc. đã phát hành bản cập nhật (v0.8.112) để giải quyết các vấn đề ghi nhật ký này, nhưng tranh cãi này làm nổi bật những lo ngại liên tục về quyền riêng tư dữ liệu và tính minh bạch trong các sản phẩm công nghệ.</li>
-</ul>
-<h2><a href="https://www.justinmath.com/the-greatest-educational-life-hack-learning-math-ahead-of-time/">Thủ thuật giáo dục tuyệt vời nhất: Học toán trước thời gian</a></h2>
-<ul>
-<li>Học toán trước thời hạn có thể dẫn đến điểm số tốt hơn, bảo vệ khỏi việc giảng dạy kém, và tiếp cận các kỳ thực tập, dự án nghiên cứu, và thư giới thiệu mạnh mẽ, những yếu tố quan trọng cho cơ hội vào đại học và nghề nghiệp.</li>
-<li>Những khóa học toán nâng cao vượt qua giải tích, chẳng hạn như Đại số tuyến tính và Phương trình vi phân, là cần thiết cho nhiều lĩnh vực định lượng và có thể giúp sinh viên nhanh chóng tiến vào các lĩnh vực chuyên môn, nâng cao thành tựu nghề nghiệp.</li>
-<li>Những nghiên cứu chỉ ra rằng việc tăng tốc giáo dục không gây hại cho sức khỏe tâm lý và dẫn đến thành công lớn hơn trong học tập và nghề nghiệp, mặc dù có những hiểu lầm phổ biến và thách thức về mặt tổ chức.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40983734">phản ứng</a></h3>
-<ul>
-<li>Người dùng đã chia sẻ hành trình vượt qua nỗi sợ toán học ở tuổi 30, nhấn mạnh rằng không bao giờ là quá muộn để học toán và những lợi ích của nó đối với việc giải quyết vấn đề và hiểu biết về lập trình.</li>
-<li>Những gợi ý để học toán sau này trong cuộc sống bao gồm bắt đầu với các sách toán cơ bản, sử dụng các nguồn tài nguyên của trường cao đẳng cộng đồng, và dần dần tiến tới các chủ đề nâng cao.</li>
-<li>Cuộc thảo luận cũng nhấn mạnh tầm quan trọng của giáo dục toán học sớm, sự tham gia của phụ huynh, và các nguồn tài nguyên bên ngoài như Kumon, cũng như vai trò của hệ thống giáo dục rộng lớn hơn trong việc thúc đẩy tự học và động lực.</li>
-</ul>
-<h2><a href="https://www.mailgun.com/blog/email/ai-phishing/">Thời đại hoàng kim của những kẻ lừa đảo: Lừa đảo qua AI</a></h2>
-<ul>
-<li>AI sinh tạo cho phép kẻ lừa đảo gửi các email lừa đảo được cá nhân hóa cao và thuyết phục, vượt qua rào cản ngôn ngữ và tự động hóa các chiến dịch quy mô lớn.</li>
-<li>Những công cụ AI như WormGPT và FraudGPT hỗ trợ trong việc tạo ra email lừa đảo và giả mạo trang web, giảm đáng kể thời gian cần thiết để tạo ra các cuộc tấn công hiệu quả.</li>
-<li>Chiến lược phòng thủ bao gồm triển khai DMARC (Xác thực, Báo cáo &amp; Tuân thủ Tin nhắn Dựa trên Miền), nhận diện các nỗ lực lừa đảo AI, sử dụng bảo mật nhiều lớp, và duy trì uy tín người gửi mạnh mẽ.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40981067">phản ứng</a></h3>
-<ul>
-<li>Những vụ lừa đảo phishing sử dụng trí tuệ nhân tạo đang trở nên tinh vi hơn, tận dụng các công nghệ như Llama cho văn bản, Whisper/Tortoise cho giọng nói, và Stable Diffusion cho hình ảnh, mặc dù việc triển khai chúng vẫn còn hạn chế.</li>
-<li>Mặc dù AI có tiềm năng nâng cao các cuộc tấn công lừa đảo, các phương pháp truyền thống như lừa đảo qua trung tâm cuộc gọi ở Ấn Độ vẫn rất hiệu quả và có tính khả thi về mặt kinh tế, như được chứng minh qua một trường hợp gần đây khi một người cao tuổi bị lừa mất 25.000 đô la.</li>
-<li>Banks và các tổ chức khác đang cải thiện khả năng phát hiện lừa đảo của họ, nhưng sự gia tăng của các vụ lừa đảo do AI điều khiển đòi hỏi phải nâng cao nhận thức và giáo dục, đặc biệt là đối với các nhóm dễ bị tổn thương như người cao tuổi.</li>
-</ul>
-<h2><a href="https://thetinypod.com/">TinyPod – Ốp lưng Apple Watch với bánh xe cuộn</a></h2>
-<ul>
-<li>Giới thiệu tinyPod, một thiết bị nhỏ gọn cung cấp các tính năng thiết yếu như điện thoại, âm nhạc, nhắn tin và nhiều hơn nữa, tất cả đều được điều khiển bởi Apple Watch của bạn.</li>
-<li>Những tính năng chính bao gồm bánh xe cuộn cảm ứng, sạc nhanh bằng nam châm, thời lượng pin nhiều ngày, Apple Pay và bộ nhớ 32GB cho phương tiện truyền thông.</li>
-<li>Được cung cấp trong hai mẫu: tinyPod với bánh xe cuộn giá $79.99 và tinyPod lite không có bánh xe cuộn giá $29.99, tương thích với các dòng Apple Watch khác nhau, sẽ được giao hàng vào mùa hè này.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40987402">phản ứng</a></h3>
-<ul>
-<li>TinyPod là một vỏ bảo vệ Apple Watch tích hợp bánh xe cuộn, gợi nhớ đến bánh xe click của iPod, tạo ra một liên kết cơ học với núm vặn kỹ thuật số.</li>
-<li>Đây là một sản phẩm phần cứng thú vị và độc đáo, thu hút những người yêu thích các thiết bị công nghệ độc lạ và vui nhộn, mặc dù nó không thực tế.</li>
-<li>Đánh giá về chức năng của trang web sản phẩm có nhiều ý kiến trái chiều, với một số người dùng gặp vấn đề trên Firefox, trong khi những người khác lại thấy thiết kế hấp dẫn.</li>
-</ul>
-<h2><a href="https://github.com/libarchive/libarchive/pull/1609">Jia Tan &quot;JiaT75&quot;: Đã thêm văn bản lỗi vào cảnh báo khi giải nén bằng bsdtar (2021)</a></h2>
-<ul>
-<li>Libarchive đã hợp nhất một cam kết để thêm văn bản lỗi vào các cảnh báo khi sử dụng bsdtar, giải quyết vấn đề #1561, nhưng đã có những lo ngại về việc thay thế safe_fprintf bằng fprintf không an toàn.</li>
-<li>Đã thực hiện một bản sửa lỗi để quay lại sử dụng safe_fprintf và xử lý errno đúng cách, kèm theo các đề xuất cho các cuộc kiểm tra thêm và một CVE (Common Vulnerabilities and Exposures) cho vấn đề này.</li>
-<li>Cuộc thảo luận nhấn mạnh tầm quan trọng của việc xem xét mã kỹ lưỡng và duy trì an ninh trong các dự án mã nguồn mở, và vấn đề đã được giải quyết với cuộc trò chuyện bị khóa.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40984589">phản ứng</a></h3>
-<ul>
-<li>Jia Tan &quot;JiaT75&quot; đã thêm văn bản lỗi vào một cảnh báo trong bsdtar vào năm 2021, dẫn đến một cuộc thảo luận sôi nổi trên GitHub về chất lượng bình luận và sự kiểm tra kỹ lưỡng các thay đổi mã.</li>
-<li>Cuộc tranh luận đã làm nổi bật những thách thức trong việc duy trì các dự án phần mềm lớn và vai trò tiềm năng của AI trong việc cải thiện các đánh giá bảo mật.</li>
-<li>Vụ việc nhấn mạnh sự khó khăn trong việc phát hiện mã độc, đặc biệt là từ những người đóng góp đã biết, và liên kết Jia Tan với một cuộc tấn công do nhà nước tài trợ vào công cụ xz.</li>
-</ul>
-<h2><a href="https://www.theverge.com/2024/7/16/24199686/puerto-rico-fossil-fuel-industry-lawsuit-climate-change">Puerto Rico kiện các công ty nhiên liệu hóa thạch đòi bồi thường 1 tỷ USD</a></h2>
-<ul>
-<li>Puerto Rico đã đệ đơn kiện trị giá 1 tỷ đô la chống lại các công ty nhiên liệu hóa thạch lớn, bao gồm ExxonMobil, BP, Chevron, Shell và ConocoPhillips, vì bị cáo buộc lừa dối công chúng về biến đổi khí hậu và trì hoãn quá trình chuyển đổi sang năng lượng sạch.</li>
-<li>Bản kiện, được nộp tại San Juan, cáo buộc các công ty này vi phạm luật thương mại bằng cách quảng bá nhiên liệu hóa thạch mà không có cảnh báo đầy đủ về những nguy hiểm của chúng, yêu cầu bồi thường để bảo vệ chống lại các thảm họa khí hậu như bão Maria.</li>
-<li>Vụ kiện này là một phần của xu hướng rộng lớn hơn về các vụ kiện tương tự chống lại ngành công nghiệp nhiên liệu hóa thạch, nhấn mạnh những nỗ lực ngày càng tăng về trách nhiệm đối với các tác động liên quan đến khí hậu.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40986213">phản ứng</a></h3>
-<ul>
-<li>Puerto Rico đã khởi kiện các công ty nhiên liệu hóa thạch với số tiền 1 tỷ đô la, cáo buộc họ gây ra thiệt hại liên quan đến biến đổi khí hậu và yêu cầu các quy định môi trường nghiêm ngặt hơn.</li>
-<li>Vụ kiện nhấn mạnh cuộc tranh luận đang diễn ra giữa lợi ích kinh tế của nhiên liệu hóa thạch và sự cần thiết của các thực hành bền vững và trách nhiệm giải trình của doanh nghiệp.</li>
-<li>Ý kiến được chia ra, với một số người nhấn mạnh tầm quan trọng của trách nhiệm doanh nghiệp đối với ô nhiễm và thông tin sai lệch, trong khi những người khác nhấn mạnh vai trò của hành động cá nhân và chính sách của chính phủ trong việc chống biến đổi khí hậu.</li>
-</ul>
-<h2><a href="https://www.reuters.com/markets/deals/google-backed-software-developer-gitlab-explores-sale-sources-say-2024-07-17/">Gitlab xem xét việc bán</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40983486">phản ứng</a></h3>
-<ul>
-<li>Gitlab đang xem xét việc bán, gây lo ngại cho người dùng về khả năng ngừng hoạt động hoặc thay đổi mô hình dịch vụ, gợi nhớ đến các vấn đề trước đây với RedHat và CentOS.</li>
-<li>Người dùng tranh luận về những ưu điểm của các lựa chọn mã nguồn mở như Gitlab, nhấn mạnh việc di chuyển dễ dàng hơn và sự hỗ trợ từ cộng đồng, đồng thời suy đoán về các nhà mua tiềm năng như Datadog hoặc IBM.</li>
-<li>Những chỉ trích về giá cả và tập trung vào doanh nghiệp của Gitlab đã khiến một số người dùng cân nhắc chuyển sang các lựa chọn thay thế như GitHub, phản ánh những cảm xúc trái chiều về sự ổn định và chi phí trong tương lai.</li>
-</ul>
-<h2><a href="https://vedgie.net/writing/darwin_machines.md">Máy Darwin</a></h2>
-<ul>
-<li>Đoạn viết thảo luận về lý thuyết của William Calvin trong cuốn &quot;The Cerebral Code,&quot; cho rằng não bộ sử dụng các quá trình tiến hóa trong các cột nhỏ để xử lý các đầu vào cảm giác và tìm ra các mẫu &quot;phù hợp&quot; nhất.</li>
-<li>Theo lý thuyết, cấu trúc của não bộ, đặc biệt là các cột và cột nhỏ của vỏ não mới, cho phép giải quyết vấn đề hiệu quả và xử lý song song, điều này có thể được áp dụng cho trí tuệ nhân tạo (AI) và học máy (ML).</li>
-<li>Người tác giả đang thử nghiệm với các mạng nơ-ron để mô phỏng quá trình tiến hóa này và tìm kiếm lời khuyên về nghiên cứu và những hiểu biết học thuật trong lĩnh vực này, nhấn mạnh những tiến bộ tiềm năng trong khả năng tư duy sâu của AI.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40981068">phản ứng</a></h3>
-<ul>
-<li>Đoạn viết thảo luận về khái niệm Máy Darwin, nơi các loại dữ liệu cảm giác khác nhau được xử lý bởi các cột nhỏ trong não, mỗi cột phát ra các mẫu bắn độc đáo cạnh tranh và củng cố mẫu chiếm ưu thế, hỗ trợ quá trình học tập.</li>
-<li>Thuật toán định tuyến capsule, được đề xuất bởi Geoffrey Hinton, nhằm thực hiện ý tưởng này bằng cách sử dụng các quy trình kỳ vọng-tối đa hóa (EM), nhưng đã bị lu mờ bởi sự thành công của các mô hình transformer trong nghiên cứu AI.</li>
-<li>Cuộc thảo luận nhấn mạnh tầm quan trọng của việc hiểu chức năng não bộ và các mạng lưới thần kinh, đề cập đến học thuyết Hebbian và nhu cầu khám phá sâu hơn về động lực học thời gian trong hoạt động thần kinh.</li>
-</ul>
-<h2><a href="https://github.com/guywaldman/magic-cli">Magic-cli – Một trợ lý cho dòng lệnh của bạn</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40980715">phản ứng</a></h3>
-<ul>
-<li>Magic-cli, một công cụ hỗ trợ dòng lệnh được phát triển bởi Guy Waldman, đã gây ra nhiều cuộc thảo luận do chế độ &quot;thực thi không an toàn&quot; mặc định của nó, với các đề xuất cho một chế độ mặc định an toàn hơn như chế độ &quot;clipboard&quot;.</li>
-<li>Người dùng đã chia sẻ ý kiến và trải nghiệm, đề cập đến các công cụ thay thế như zsh_codex, aichat và Warp terminal.</li>
-<li>Đề án được xây dựng bằng Rust, đặt ra câu hỏi về độ phức tạp của nó so với các triển khai đơn giản hơn trong các ngôn ngữ khác.</li>
-</ul>
-<h2><a href="https://developers.google.com/tag-platform/tag-manager/first-party/setup-guide">Google trình bày phương pháp để vượt qua việc chặn tự động của trình quản lý thẻ</a></h2>
-<ul>
-<li>Google đang giới thiệu một tính năng beta để triển khai thẻ trong chế độ bên thứ nhất, cải thiện hiệu suất thẻ và bảo mật dữ liệu bằng cách sử dụng tên miền của trang web để lưu trữ.</li>
-<li>Thiết lập bao gồm việc dành riêng một đường dẫn duy nhất trên miền, định tuyến lưu lượng qua các dịch vụ như Google Cloud hoặc Cloudflare, và cập nhật các tập lệnh trang web để sử dụng đường dẫn đo lường mới.</li>
-<li>Người dùng được khuyến khích kiểm tra thiết lập bằng cách sử dụng Tag Assistant và cung cấp phản hồi thông qua biểu mẫu phản hồi được chỉ định hoặc email liên hệ.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40983585">phản ứng</a></h3>
-<ul>
-<li>Google đã giới thiệu một phương pháp để vượt qua việc chặn tự động của Trình quản lý thẻ của mình, làm dấy lên lo ngại về quyền riêng tư và hiệu quả của các trình chặn quảng cáo.</li>
-<li>Người dùng thảo luận về các chiến lược để chặn theo dõi, chẳng hạn như sử dụng uBlock Origin với JavaScript bị vô hiệu hóa theo mặc định, và chỉ bật nó lên khi cần thiết để dễ sử dụng và tăng tốc độ.</li>
-<li>Phương pháp mới của Google đã gây ra một cuộc tranh luận về việc cân bằng giữa thu thập dữ liệu cho mục đích kinh doanh và quyền riêng tư của người dùng, với một số người dùng bày tỏ sự thất vọng về các thực tiễn theo dõi của Google.</li>
-</ul>
-<h2><a href="https://www.nytimes.com/2024/07/16/dining/pete-wells-steps-down-food-critic.html">Sau 12 năm đánh giá nhà hàng, tôi rời khỏi bàn ăn</a></h2>
-<ul>
-<li>Pete Wells, sau 12 năm làm nhà phê bình ẩm thực cho The New York Times, đang từ chức do các vấn đề sức khỏe, bao gồm cholesterol cao, đường huyết và huyết áp cao.</li>
-<li>Mặc dù công việc của anh ấy rất đáng giá, nhưng gánh nặng thể chất từ việc thường xuyên đến các nhà hàng đã trở nên không thể duy trì đối với Wells.</li>
-<li>Ông Wells sẽ vẫn ở lại The Times nhưng sẽ không còn đảm nhận các yêu cầu của việc viết bài đánh giá hàng tuần nữa, thay vào đó, ông chọn tập trung vào sức khỏe và một lối sống cân bằng hơn.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40979539">phản ứng</a></h3>
-<ul>
-<li>Nhà phê bình nhà hàng lâu năm sẽ từ chức sau 12 năm, gây ra các cuộc thảo luận về ảnh hưởng của ông và tương lai của các bài đánh giá nhà hàng.</li>
-<li>Người đánh giá nổi tiếng với sự lựa chọn nhà hàng đa dạng và cách tiếp cận độc đáo, đôi khi có phần xa cách, trong các bài đánh giá của mình.</li>
-<li>Thông báo đã tạo ra sự phấn khích cho người đánh giá mới, Mellissa Clark, và những suy ngẫm về trải nghiệm của những người trong ngành nhà hàng.</li>
-</ul>
-<h2><a href="https://github.com/bobbyiliev/introduction-to-bash-scripting">Giới thiệu về Bash Scripting</a></h2>
-<ul>
-<li>Đã phát hành một hướng dẫn/sách điện tử mã nguồn mở về Bash scripting, nhằm tự động hóa các tác vụ cho các nhà phát triển, quản trị viên hệ thống và kỹ sư DevOps.</li>
-<li>Cuốn sách điện tử bao gồm nhiều chủ đề từ cấu trúc cơ bản của Bash đến các kỹ thuật kịch bản nâng cao, bao gồm làm việc với API và tạo mật khẩu.</li>
-<li>Những tài nguyên bổ sung bao gồm một khóa học video ngắn, đào tạo tương tác qua Katacoda, và các đóng góp từ Kỹ sư DevOps Linux, Bobby Iliev.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40982011">phản ứng</a></h3>
-<ul>
-<li>Bash scripting thường được so sánh với Python cho các tác vụ trên terminal, với Bash hiệu quả hơn cho các thao tác hệ thống tệp và các chuỗi lệnh đơn giản nhờ tích hợp gốc với terminal.</li>
-<li>Những người phê bình nhấn mạnh sự phức tạp của Python đối với các nhiệm vụ cơ bản và cú pháp cồng kềnh của Bash, nhưng Bash vẫn là cần thiết trong các môi trường không có Python được cài đặt sẵn.</li>
-<li>Những lựa chọn thay thế như shell của Ruby hoặc Perl để phân tích văn bản tồn tại, và các công cụ như ChatGPT có thể hỗ trợ trong việc tạo kịch bản, nhưng việc hiểu các kiến thức cơ bản về Bash vẫn rất có giá trị.</li>
-</ul>
-<h2><a href="https://www.gartner.com/en/articles/the-data-is-in-return-to-office-mandates-aren-t-worth-the-talent-risks">Yêu cầu trở lại văn phòng không đáng với rủi ro về nhân tài</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40983717">phản ứng</a></h3>
-<ul>
-<li>Yêu cầu trở lại văn phòng (RTO) có nguy cơ mất đi những nhân tài hàng đầu, vì những nhân viên có lựa chọn khác có thể rời đi trước, gây ra hiệu ứng domino.</li>
-<li>Những lựa chọn linh hoạt, chẳng hạn như bồi thường chi phí đi lại hoặc cải thiện tiện nghi văn phòng, được đề xuất là những giải pháp thay thế tốt hơn so với các quy định nghiêm ngặt về việc trở lại văn phòng.</li>
-<li>Cuộc tranh luận bao gồm các quan điểm về năng suất, sự hướng dẫn và sở thích cá nhân, với một số người cho rằng RTO bị thúc đẩy bởi quan điểm quản lý lỗi thời hoặc áp lực kinh tế.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Nhập và Xuất Markdown trong Google Docs" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Nh%E1%BA%ADp%20v%C3%A0%20Xu%E1%BA%A5t%20Markdown%20trong%20Google%20Docs&subheading=Th%E1%BB%A9%20T%C6%B0%2C%2017%20th%C3%A1ng%207%2C%202024%3A%20T%C3%B3m%20t%E1%BA%AFt%20tin%20t%E1%BB%A9c%20v%E1%BB%81%20hacker" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/vi/2024/07/17</link>
-            <guid isPermaLink="false">2024-07-17T00:00:00.000Z</guid>
-            <pubDate>Wed, 17 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

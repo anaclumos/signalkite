@@ -15,12 +15,208 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 26 Jul 2024 19:14:09 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 27 Jul 2024 19:09:46 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/ko.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Fri, 26 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[ko]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-27]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/27&#39;</h2>
+<h1>2024-07-27</h1>
+<h2><a href="https://sqlite.org/fasterthanfs.html">SQLite: 파일 시스템보다 35% 더 빠름</a></h2>
+<ul>
+<li>SQLite는 작은 블롭(예: 썸네일 이미지)을 디스크의 개별 파일을 사용하는 것보다 35% 더 빠르게 읽고 쓰며, 약 20% 적은 디스크 공간을 사용합니다.</li>
+<li>효율성은 더 적은 open() 및 close() 시스템 호출과 더 긴밀한 데이터 패킹 덕분이며, 향후 버전에서는 성능이 향상될 것으로 예상됩니다.</li>
+<li>테스트 결과 SQLite는 일반적으로 직접 파일 I/O보다 성능이 뛰어나며, 특히 안티바이러스 소프트웨어가 활성화된 Windows에서 그렇습니다. 다만 성능은 하드웨어와 운영 체제에 따라 달라질 수 있습니다.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085376">반응</a></h3>
+<ul>
+<li>SQLite는 파일 시스템 속성이나 메타데이터 검사가 필요 없고, 열기/닫기 시스템 호출이 적기 때문에 전통적인 파일 시스템보다 35% 더 빠릅니다.</li>
+<li>이 성능 향상은 파일 시스템 호출이 본질적으로 더 느린 Windows에서 특히 중요합니다.</li>
+<li>일부 제한 사항, 예를 들어 2GB 블롭 최대 크기와 계층적 데이터 처리의 어려움에도 불구하고, SQLite의 속도와 단순성은 로그 및 기타 데이터 저장에 유리합니다.</li>
+</ul>
+<h2><a href="https://sysprog21.github.io/lkmpg/">리눅스 커널 모듈 프로그래밍 가이드</a></h2>
+<ul>
+<li>리눅스 커널 모듈 프로그래밍 가이드는 커널 모듈을 생성하고 관리하는 방법에 대한 포괄적인 소개를 제공합니다. 커널 모듈은 재부팅 없이 커널 기능을 향상시키는 동적으로 로드 가능한 코드 세그먼트입니다.</li>
+<li>커널 모듈 작업에 필요한 주요 도구와 명령어로는 <code>modprobe</code>, <code>insmod</code>, <code>depmod</code>, <code>lsmod</code>, 그리고 <code>cat /proc/modules</code>가 있습니다.</li>
+<li>이 가이드는 모듈 초기화 및 정리, 명령줄 인수 처리, 장치 드라이버 관리, <code>/proc</code> 및 <code>sysfs</code> 파일 시스템과의 상호 작용, 그리고 커널 프로그래밍에서 흔히 발생하는 함정을 피하는 방법과 같은 필수 주제를 다룹니다.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083972">반응</a></h3>
+<ul>
+<li>리눅스 커널 모듈 프로그래밍 가이드는 커널 해킹을 위해 QEMU를 사용하는 것을 강조하며 리눅스 디바이스 드라이버 책을 업데이트할 것을 제안합니다.</li>
+<li>Greg KH는 Linux Device Drivers 책의 4판이 나오지 않을 것이라고 확인했으며, 이에 따라 &#39;The Linux Memory Manager&#39;와 &#39;Linux Insides&#39;와 같은 대체 자료에 대한 논의가 촉발되었습니다.</li>
+<li>사용자들은 디버깅을 위해 QEMU를 사용한 경험과 커널 모듈 개발을 위한 WireGuard 테스트 스위트를 공유하며, 글 작성에서 인간 검토의 중요성을 강조했습니다.</li>
+</ul>
+<h2><a href="https://reason.com/2024/07/26/courts-close-the-loophole-letting-the-feds-search-your-phone-at-the-border/">법원, 연방 정부가 국경에서 휴대전화를 수색할 수 있는 허점을 폐쇄하다</a></h2>
+<ul>
+<li>연방 판사는 세관 및 국경 보호국(CBP)이 영장 없이 국경에서 전자 기기를 검색할 수 없다고 판결하여, 수정헌법 제4조의 허점을 해결했습니다.</li>
+<li>니나 모리슨 판사는 휴대전화 검색이 &#39;비일상적&#39;이며 상당한 사생활 침해로 인해 신체 수색에 비유할 수 있다고 하면서, 이를 위해서는 상당한 이유와 영장이 필요하다고 밝혔다.</li>
+<li>시민 자유주의자들이 지지하는 이번 판결은 다른 회로와 지구에서의 유사한 결정에 이어 언론의 자유와 프라이버시 권리에 있어 중요한 것으로 여겨진다.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083286">반응</a></h3>
+<ul>
+<li>뉴욕의 한 지방법원은 국경에서 영장 없이 휴대전화를 수색하는 것이 &#39;비일상적&#39;이며 다른 유형의 수색보다 더 침해적이라고 판결하면서 이를 신체 수색에 비유했습니다.</li>
+<li>이 결정은 구속력 있는 선례가 아니며 다른 순회 법원의 판결과 대조되어, 기존의 &#39;순회 법원 간의 분열&#39;로 인해 대법원이 이 문제를 다룰 가능성을 시사합니다.</li>
+<li>그 판결은 특히 국경 보안과 제4차 수정헌법과 관련하여 사생활 권리와 정부 권한에 대한 지속적인 논쟁을 반영합니다.</li>
+</ul>
+<h2><a href="https://web.stanford.edu/class/cs81n/command.txt">처음에는 명령줄이 있었다 (1999)</a></h2>
+<ul>
+<li>닐 스티븐슨의 에세이 &#39;처음에는 명령 줄이 있었다&#39;는 운영 체제(OS)의 진화와 시장 역학을 탐구하며, 애플과 마이크로소프트에 중점을 둔다.</li>
+<li>마이크로소프트는 운영 체제를 소비재처럼 판매하여 시장 지배력을 확보했으며, 편리함과 용이성을 강조하여 복잡성보다 단순성을 중시하는 광범위한 문화적 경향과 공감대를 형성했습니다.</li>
+<li>리눅스와 BeOS와 같은 우수한 무료 대안의 등장에도 불구하고, 대부분의 소비자들은 마이크로소프트의 익숙한 제품을 선호했으며, 이는 그래픽 사용자 인터페이스(GUI)를 통한 중재된 경험에 대한 사회적 선호를 강조합니다.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41084795">반응</a></h3>
+<ul>
+<li>닐 스티븐슨의 에세이 &#39;처음에 명령 줄이 있었다&#39; (1999)는 명령 줄 인터페이스(CLI)가 그래픽 사용자 인터페이스(GUI)보다 간결하고 의사소통이 용이하다는 장점을 강조합니다.</li>
+<li>이 에세이는 운영 체제의 진화를 자동차에 비유하며, GUI의 인기가 높음에도 불구하고 CLI가 제공하는 안정성과 사용자 제어를 강조하고 있다.</li>
+<li>또한 기술 인터페이스의 문화적 및 철학적 함의에 대해 탐구하며, 우리가 기술과 상호작용하는 방식에 대한 더 넓은 관점을 제공합니다.</li>
+</ul>
+<h2><a href="https://blog.singleton.io/posts/2022-10-17-otp-on-wrist/">가장 똑똑한 덤 워치로 내 손목에 TOTP 토큰</a></h2>
+<ul>
+<li>Sensor Watch는 클래식 Casio F-91W를 위한 새로운 교체용 로직 보드를 출시하여 원래의 LCD, 푸셔 및 피에조 버저를 유지하면서 ARM Cortex M0+ 프로세서로 업그레이드했습니다.</li>
+<li>업그레이드된 보드는 프로그래밍이 가능하여 맞춤형 시계 화면과 유틸리티 앱을 사용할 수 있으며, 2FA 토큰, 속도계, 세계 시계 등과 같은 기능을 포함합니다.</li>
+<li>이 시계는 해킹이 용이하며, 테스트를 위한 wasm 기반 에뮬레이터와 시계 화면을 수정하거나 직접 제작하려는 사람들을 위한 자세한 문서가 제공됩니다.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41081435">반응</a></h3>
+<ul>
+<li>해커 뉴스에서의 논의는 2단계 인증(2FA)을 위해 카시오 시계, 특히 F-91W 및 A158W 모델에서 TOTP(시간 기반 일회용 비밀번호) 토큰의 사용을 강조합니다.</li>
+<li>이 프로젝트는 시계의 펌웨어를 수정하여 TOTP 코드를 표시하는 것을 포함하며, 커뮤니티의 기여로 사용자 보정 기능을 향상시키고 심지어 시계를 위한 게임을 만드는 것까지 포함됩니다.</li>
+<li>시계에 TOTP 코드가 표시되는 것에 대한 보안 우려가 제기되었으며, 일부는 피싱 공격에 대한 더 나은 보호를 위해 FIDO2 하드웨어 키와 같은 대안을 제안하고 있습니다.</li>
+</ul>
+<h2><a href="https://ntk148v.github.io/posts/linux-network-performance-ultimate-guide/">리눅스 네트워크 성능 궁극 가이드</a></h2>
+<ul>
+<li>이 가이드는 네트워킹 스택에서 고급 패킷 처리 기술에 이르기까지 Linux 네트워크 성능 최적화에 대한 심층적인 내용을 제공합니다.</li>
+<li>주요 튜닝 단계에는 NIC 링 버퍼 크기 조정, 인터럽트 코얼레센스, IRQ 어피니티 조정, 그리고 고성능 패킷 처리를 위한 AF_PACKET, DPDK, XDP와 같은 도구 사용이 포함됩니다.</li>
+<li>네트워크 설정을 <code>ethtool</code>, <code>sysctl</code>, <code>netstat</code>와 같은 도구로 모니터링하고 조정하는 것은 최적의 성능을 유지하는 데 필수적입니다.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083801">반응</a></h3>
+<ul>
+<li>&quot;리눅스 네트워크 성능 궁극 가이드&quot;는 리눅스를 사용하여 네트워크 성능을 최적화하는 데 필요한 포괄적인 자료로, 특히 고속 네트워크를 다루는 사람들에게 유용합니다.</li>
+<li>한 사용자가 상용 기성품(COTS) 하드웨어와 Wireguard를 사용하여 비용 효율적인 10Gbps 암호화 네트워크를 구축한 성공 사례를 공유했습니다. 이는 상용 하드웨어 솔루션보다 훨씬 저렴했습니다.</li>
+<li>댓글에서의 논의는 TCP 버퍼 크기 조정과 같은 실용적인 팁과 Oracle의 bpftune과 같은 자동 성능 조정 도구를 포함합니다.</li>
+</ul>
+<h2><a href="https://github.com/joshuacline/windick">200kb의 윈도우 복구 환경 및 부팅 가능한 USB 생성기</a></h2>
+<ul>
+<li>Windows 배포 이미지 커스터마이제이션 키트는 Windows 이미지를 커스터마이징하고 배포하기 위해 설계된 명령 셸 도구입니다.</li>
+<li>IT 전문가와 시스템 관리자에게 배포 프로세스를 간소화할 수 있는 네이티브 솔루션을 제공합니다.</li>
+<li>튜토리얼과 추가 정보는 YouTube와 Microsoft의 공식 문서와 같은 플랫폼에서 이용할 수 있습니다.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083987">반응</a></h3>
+<ul>
+<li>새로운 셸 기반 도구가 출시되어 윈도우 복구 환경 및 부팅 가능한 USB를 생성할 수 있으며, 크기는 단지 200킬로바이트에 불과합니다.</li>
+<li>이 도구는 3,085줄의 코드로 작성된 대형 배치 파일로, 특히 PowerShell과 같은 더 현대적인 스크립팅 언어가 사용 가능한 상황에서 인상적인 헌신과 효율성을 보여줍니다.</li>
+<li>이 프로젝트는 안드로이드용 clockworkmod 복구에서 영감을 받았으며, &#39;live-of-the-land&#39; 명령어를 사용하여 의존성이 전혀 없고 오직 윈도우에서만 작동하는 것을 목표로 합니다.</li>
+</ul>
+<h2><a href="https://krebsonsecurity.com/2024/07/crooks-bypassed-googles-email-verification-to-create-workspace-accounts-access-3rd-party-services/">사기꾼들이 구글의 이메일 인증을 우회하여 워크스페이스 계정을 생성하다</a></h2>
+<ul>
+<li>구글은 범죄자들이 이메일 인증을 우회하여 구글 워크스페이스 계정을 생성하고 도메인 소유자를 사칭할 수 있게 했던 인증 취약점을 수정했습니다.</li>
+<li>문제는 72시간 이내에 해결되었으며, 향후 남용을 방지하기 위해 추가적인 탐지 조치가 시행되었습니다.</li>
+<li>공격자들은 Google 서비스를 악용하려는 것이 아니라 제3자 서비스에 도메인 소유자를 사칭하는 것을 목표로 했으며, 악의적인 활동은 도메인 검증 없이 생성된 몇 천 개의 Workspace 계정을 포함했습니다.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41082502">반응</a></h3>
+<ul>
+<li>공격자들이 구글의 이메일 인증을 우회하여 무단으로 워크스페이스 계정을 생성함으로써 보안 침해와 등록되지 않은 도메인에 대한 예상치 못한 환영 이메일을 초래했습니다.</li>
+<li>이러한 무단 계정은 제3자 사이트에서 &#39;Google로 로그인&#39;을 악용하는 데 사용되어 피해자들이 도메인을 되찾는 데 어려움을 겪게 했습니다.</li>
+<li>이번 사건은 구글 시스템의 취약성과 소셜 로그인과 관련된 위험성을 강조하며, DNS 검증 의무화와 같은 개선 요구를 촉구하고 있습니다.</li>
+</ul>
+<h2><a href="https://github.com/devrim/cloudflare-noip">Cloudflare와 Cronjob을 이용한 무료 DDNS</a></h2>
+<ul>
+<li>이 프로젝트는 무료 계정과 크론잡을 사용하여 Cloudflare에서 DNS 레코드 업데이트를 자동화함으로써 유료 동적 DNS 서비스에 대한 무료 대안을 제공합니다.</li>
+<li>사용자는 저장소를 클론하고, 구성 파일(<code>keys.json</code> 및 <code>records.json</code>)을 생성하며, 스크립트를 정기적으로 실행하기 위해 크론잡 또는 이에 상응하는 작업 스케줄러를 설정해야 합니다.</li>
+<li>이 스크립트는 Cloudflare에서 기기의 현재 IP 주소로 DNS 레코드를 업데이트하여 동적 DNS 요구에 대한 비용 효율적인 솔루션을 제공합니다.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41081810">반응</a></h3>
+<ul>
+<li>GitHub 프로젝트는 Cloudflare와 cron 작업을 사용한 무료 동적 DNS(DDNS) 솔루션을 제공하여 기술 커뮤니티의 큰 관심을 끌고 있습니다.</li>
+<li>사용자들은 Cloudflare를 DDNS에 사용하는 것의 장단점에 대해 논의하며, 잠재적인 미끼 및 전환 전술과 필수적인 TLS 종료 및 업로드 제한과 같은 제한 사항을 포함합니다.</li>
+<li>대안 및 유사한 프로젝트로는 Cloudflare 터널, Tailscale 및 기타 DDNS 클라이언트를 사용하는 것이 언급되며, 동적 IP 주소를 관리하기 위한 다양한 솔루션이 있음을 강조합니다.</li>
+</ul>
+<h2><a href="https://huyenchip.com/ml-interviews-book/">머신러닝 인터뷰 입문서</a></h2>
+<ul>
+<li>‘머신러닝 인터뷰 입문서’는 역할, 회사 유형, 인터뷰 형식 및 질문 유형을 다루며 ML 인터뷰 과정에 대한 포괄적인 가이드를 제공합니다.</li>
+<li>200개 이상의 지식 질문과 30개의 개방형 질문이 포함되어 있으며, 이는 후보자와 채용 관리자가 ML 인터뷰를 이해하고 준비하는 데 도움을 주기 위한 것입니다.</li>
+<li>이 책은 주요 기술 회사와 스타트업에서의 인터뷰 경험이 풍부한 칩 후옌이 저술했으며, 실용적인 통찰과 준비 전략을 통합하고 있습니다.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083534">반응</a></h3>
+<ul>
+<li>휴옌 칩의 &#39;머신러닝 인터뷰 입문&#39; 책이 논의되고 있으며, 이 책이 머신러닝 인터뷰 준비에 얼마나 효과적인지에 대한 의견이 엇갈리고 있다.</li>
+<li>일부 사용자는 이 책의 질문이 실제 머신러닝 인터뷰에 비해 더 쉽다고 제안하며, 다른 사람들은 &#39;딥러닝 인터뷰&#39; 책이 더 흥미롭고 대표적이라고 추천합니다.</li>
+<li>책에서 제공하는 상투적인 질문을 사용하는 것의 적절성에 대한 논쟁이 있으며, 일부는 대신 개인화된 프로젝트를 만드는 것을 지지하고 있습니다.</li>
+</ul>
+<h2><a href="https://github.com/narumatt/sqlitefs">Sqlitefs: 파일 시스템으로서의 SQLite</a></h2>
+<ul>
+<li>sqlite-fs는 Linux 및 MacOS 사용자가 SQLite 데이터베이스 파일을 일반 파일 시스템으로 마운트할 수 있게 하여 데이터베이스를 통한 파일 작업을 용이하게 합니다.</li>
+<li>최신 Rust 프로그래밍 언어(≥ 1.38)와 기능을 위해 libfuse(Linux) 또는 osxfuse(MacOS)가 필요합니다.</li>
+<li>파일 및 디렉토리 생성, 읽기, 쓰기, 삭제, 속성 변경, 파일 잠금 처리 등 다양한 파일 작업을 지원하며, 엄격한 오류 처리를 제공합니다.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085856">반응</a></h3>
+<ul>
+<li>SQLiteFS는 파일 시스템으로 SQLite를 사용하는 프로젝트로, 파일 저장에 대한 독특한 접근 방식으로 관심을 끌고 있습니다.</li>
+<li>이 개념은 SQL Server를 파일 시스템으로 사용하려 했던 마이크로소프트의 취소된 WinFS 프로젝트를 연상시킵니다.</li>
+<li>유머와 이론적 논의에도 불구하고, SQLiteFS를 메모리 내 작업이나 캐싱에 사용하는 것과 같은 실용적인 응용이 고려되고 있습니다.</li>
+</ul>
+<h2><a href="https://boogiemath.org/meta/meta-9.html">오스카 자리스키는 현대 대수기하학의 창시자 중 한 명이었다</a></h2>
+<ul>
+<li>오스카 자리스키(1899-1986)는 현대 대수기하학의 중요한 인물로, 그의 영향력 있는 저서 &#39;대수적 곡면&#39;과 이 분야에 대한 중요한 기여로 잘 알려져 있습니다.</li>
+<li>비록 학문적 경력을 평소보다 늦게 시작했음에도 불구하고, 자리스키는 80대까지 활발히 활동하며 홀로모픽 함수에 대한 주목할 만한 연구와 명망 있는 기관들을 통한 풍부한 학문적 여정을 이어갔다.</li>
+<li>그의 삶에서 흥미로운 일화 중 하나는 수학 문제에 깊이 몰두한 나머지 자신의 결혼식을 거의 놓칠 뻔한 사건으로, 이는 수학에 대한 그의 강한 헌신을 잘 보여준다.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41086060">반응</a></h3>
+<ul>
+<li>오스카 자리스키는 현대 대수기하학의 창시자로 인정받고 있다.</li>
+<li>사용자들은 일화를 공유하고 다양한 주제를 논의했으며, 여기에는 수학자 칼레 바이살라의 유머러스한 사건과 실제 세계와 상상 세계에서 보낸 시간을 측정하는 &#39;상상력 요소&#39;가 포함되었습니다.</li>
+<li>대화는 또한 러시아 혁명과 공산주의 대 자본주의에 대한 논쟁과 같은 역사적 및 정치적 논의로 깊이 들어갔다.</li>
+</ul>
+<h2><a href="https://www.cs.cornell.edu/~asampson/blog/bril.html">Bril: 컴파일러 교육을 위한 중간 언어</a></h2>
+<ul>
+<li>Bril, Big Red Intermediate Language는 성능과 코드 크기보다 사용의 용이성과 단순성을 우선시하여 컴파일러 교육을 단순화하기 위해 만들어졌습니다.</li>
+<li>Bril 프로그램은 JSON 문서로 되어 있어 어떤 프로그래밍 언어로도 접근할 수 있으며 공유하기 쉽습니다.</li>
+<li>Bril 생태계는 학생들의 기여로 도구와 언어 확장을 포함하여 확장되었지만, SSA(정적 단일 할당) 형식은 개선이 필요합니다.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41084318">반응</a></h3>
+<ul>
+<li>Bril은 컴파일러 교육을 위해 코넬 대학교에서 개발한 중간 언어(IL)입니다.</li>
+<li>논의는 Bril의 정적 단일 할당(SSA) 형식의 재작업 필요성과 ANF(A-정규형) 및 CPS(연속 전달 스타일)와 같은 다른 IL과의 비교를 강조합니다.</li>
+<li>일부는 LLVM과 같은 기존의 중간 언어가 교육 목적으로 충분하다고 주장하는 반면, 다른 사람들은 컴파일러 개념을 가르치는 데 있어 Bril의 독특한 접근 방식을 강조합니다.</li>
+</ul>
+<h2><a href="https://fabiensanglard.net/dc/">컴파일러 구동</a></h2>
+<ul>
+<li>이 시리즈는 언어를 가르치거나 컴파일러 작성 방법을 가르치는 것이 아니라, 프로그램을 실행 파일로 변환하는 도구 사용에 관한 문학의 공백을 채우는 것을 목표로 합니다.</li>
+<li>리눅스 플랫폼에서 gcc 또는 clang 컴파일러를 사용한다고 가정하고, bintools와 드라이버 자세한 모드(-v)를 사용하여 독자가 기본 예제를 넘어 탐색할 수 있도록 재현 가능한 단계를 제공합니다.</li>
+<li>이 시리즈는 드라이버, cpp(전처리기), cc(컴파일러), ld(링커), 로더의 다섯 부분으로 나뉘어져 있으며, 컴파일 과정에 대한 체계적인 접근 방식을 제공합니다.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41083077">반응</a></h3>
+<ul>
+<li>이 기사는 Linux 및 ELF 기반 플랫폼에 중점을 두고 C 및 C++ 툴체인에 대한 훌륭한 소개를 제공합니다.</li>
+<li>주요 명확한 사항에는 C++ 표준 라이브러리가 STL보다 더 광범위하며, ::operator new()는 단순한 템플릿이 아니라 런타임의 일부라는 점이 포함됩니다.</li>
+<li>그 기사는 OS 커널 로더와 사용자 공간 동적 로더를 더 잘 구분해야 합니다.</li>
+</ul>
+<h2><a href="https://blog.davidv.dev/posts/pcie-driver-dma/">PCI-e에 대해 배우기: 드라이버와 DMA</a></h2>
+<ul>
+<li>이 게시물은 메모리 매핑과 DMA(직접 메모리 접근) 작업에 중점을 두고 기본 PCI-e(주변 장치 인터커넥트 익스프레스) 장치 드라이버의 구현에 대해 설명합니다.</li>
+<li>이는 <code>struct pci_driver</code>의 생성, 사용자 공간 상호 작용을 위한 문자 장치 설정, 비동기 DMA 전송 처리를 위한 MSI(메시지 신호 인터럽트)의 사용을 설명합니다.</li>
+<li>이 게시물은 PCI-e 장치 드라이버 개발에 대한 실용적인 가이드로서, 코드 스니펫과 커널 문서에 대한 참조를 포함하고 있어 신입 소프트웨어 엔지니어들에게 유용합니다.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41085713">반응</a></h3>
+<ul>
+<li>논의는 FPGA(현장 프로그래머블 게이트 어레이)를 사용하여 디스플레이 어댑터를 구축하는 것에 중점을 두고 있으며, 특히 PCI-e(주변 장치 인터커넥트 익스프레스) 하드 IP(지적 재산)에 초점을 맞추고 있습니다.</li>
+<li>다양한 저렴한 FPGA 보드가 추천되며, Spartan 6, Artix, Screamer PCIe Squirrel, Litefury 등이 포함되며, 이들은 PCIe와 디지털 비디오 출력을 지원합니다.</li>
+<li>이 게시물은 비디오 카드를 만드는 데 필요한 리소스와 디자인을 강조하고, 비디오 출력용으로 Displayport Alt 모드와 UVC 타입 USB3 웹캠의 잠재적 사용에 대해 언급합니다.</li>
+</ul>
+<head>
+  <meta property="og:title" content="SQLite: 파일 시스템보다 35% 더 빠름" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=SQLite%3A%20%ED%8C%8C%EC%9D%BC%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EB%8B%A4%2035%25%20%EB%8D%94%20%EB%B9%A0%EB%A6%84&subheading=2024%EB%85%84%207%EC%9B%94%2027%EC%9D%BC%20%ED%86%A0%EC%9A%94%EC%9D%BC%3A%20%ED%95%B4%EC%BB%A4%EB%89%B4%EC%8A%A4%20%EC%9A%94%EC%95%BD" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/ko/2024/07/27</link>
+            <guid isPermaLink="false">2024-07-27T00:00:00.000Z</guid>
+            <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-26]]></title>
             <description
@@ -1680,187 +1876,6 @@
             <link>https://hn.cho.sh/ko/2024/07/18</link>
             <guid isPermaLink="false">2024-07-18T00:00:00.000Z</guid>
             <pubDate>Thu, 18 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-17]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/17&#39;</h2>
-<h1>2024-07-17</h1>
-<h2><a href="https://workspaceupdates.googleblog.com/2024/07/import-and-export-markdown-in-google-docs.html">Google 문서에서 마크다운 가져오기 및 내보내기</a></h2>
-<ul>
-<li>Google Docs는 이제 향상된 Markdown 기능을 지원합니다. 여기에는 Markdown을 붙여넣을 때 Docs 콘텐츠로 변환, Docs 콘텐츠를 Markdown으로 복사, 문서를 Markdown으로 내보내기, Markdown을 문서로 가져오기 등이 포함됩니다.</li>
-<li>이 업데이트는 기술 콘텐츠 작성자에게 유익하며, 협업 및 문서화를 위해 Docs와 Markdown 간의 변환을 더 쉽게 할 수 있도록 합니다.</li>
-<li>출시는 2024년 7월 16일부터 Rapid Release 및 Scheduled Release 도메인에서 시작되며, 모든 Google Workspace 고객, Workspace Individual 구독자 및 개인 Google 계정 사용자에게 제공됩니다.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40982118">반응</a></h3>
-<ul>
-<li>Google Docs는 이제 Markdown의 전체 가져오기/내보내기를 지원하여 기술 작가와 Markdown 문서의 협업자들에게 유용성을 높였습니다.</li>
-<li>이 기능은 심각한 버그를 조기에 잡기 위해 점진적으로 출시되고 있으므로 사용자들이 즉시 이를 확인하지 못할 수도 있습니다.</li>
-<li>Google 드라이브와 그 API도 이 새로운 마크다운 기능을 지원할 예정이지만, 일부 사용자는 느린 배포와 코드 블록 및 댓글과 같은 요소에 대한 불완전한 지원에 대해 우려하고 있습니다.</li>
-</ul>
-<h2><a href="https://matt.sh/panic-at-the-job-market">취업 시장의 공황</a></h2>
-<ul>
-<li>기술 직업 시장은 금리 상승, 투기적 자금 조달, 그리고 잘못된 채용 관행으로 인해 혼란에 빠져 있습니다.</li>
-<li>더 높은 금리는 기업들이 위험한 사업보다 안전한 정부 보증 계좌에 투자하게 하여 기술 부문에서 일자리 손실을 초래합니다.</li>
-<li>채용 과정은 종종 관련 없는 코딩 테스트와 행동 면접에 중점을 두어, 지원자의 실제 경험과 역량을 평가하지 못합니다.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40986894">반응</a></h3>
-<ul>
-<li>구직 시장은 기술을 포함한 여러 산업에서 도전적이며, 복잡한 채용 절차가 개인의 프로필과 기여를 간과하고 있습니다.</li>
-<li>네트워킹은 필수적입니다. 채용 포털은 종종 이력서를 가리고, 기술 직업 시장은 회사들이 관련 없는 기술과 임의의 요구 사항에 집중하면서 기회가 줄어들고 있습니다.</li>
-<li>비효율적인 채용 관행은 열악한 직장 환경을 나타낼 수 있으며, 직업 시장의 비합리성은 개인의 재정적 안정성을 초과할 수 있어 적합한 고용을 찾는 것을 복잡하게 만듭니다.</li>
-</ul>
-<h2><a href="https://www.da.vidbuchanan.co.uk/blog/r1-jailbreak.html">RabbitOS 탈옥: 비밀 로그와 GPL 위반 사항 발견</a></h2>
-<ul>
-<li>David Buchanan은 Rabbit R1을 위한 &#39;테더드 탈옥&#39;을 개발하여 부트로더를 잠금 해제하거나 내부 저장소를 변경하지 않고도 루트 접근을 가능하게 했습니다.</li>
-<li>미디어텍 MT6765 SoC를 사용하는 Rabbit R1은 광범위한 사용자 데이터 로깅과 GPL 위반으로 비판을 받았으며, 최근 업데이트에서 부분적으로 해결되었습니다.</li>
-<li>부캐넌의 연구 결과에 따르면 RabbitOS는 단일 앱 키오스크 모드를 주로 적용하는 대폭 수정된 Android 13 AOSP이며, 그는 이 장치에 대한 추가 탐색을 돕기 위한 도구를 공개했습니다.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40987730">반응</a></h3>
-<ul>
-<li>RabbitOS를 탈옥한 결과 비밀 로그와 잠재적인 GPL(일반 공중 사용 허가서) 위반이 드러나면서 프라이버시와 법적 문제에 대한 우려가 제기되고 있습니다.</li>
-<li>로그에는 정확한 GPS 위치, WiFi 네트워크 이름, 인근 셀 타워의 ID 및 사용자 토큰과 같은 민감한 데이터가 포함되어 있으며, 이 중 일부는 Rabbit의 서버로 전송됩니다.</li>
-<li>래빗 주식회사는 이러한 로깅 문제를 해결하는 업데이트(v0.8.112)를 발표했지만, 이번 논란은 기술 제품에서 데이터 프라이버시와 투명성에 대한 지속적인 우려를 부각시켰습니다.</li>
-</ul>
-<h2><a href="https://www.justinmath.com/the-greatest-educational-life-hack-learning-math-ahead-of-time/">최고의 교육적 라이프 해크: 미리 수학 배우기</a></h2>
-<ul>
-<li>미리 수학을 배우면 더 좋은 성적을 받을 수 있고, 부실한 교육으로부터 보호받을 수 있으며, 인턴십, 연구 프로젝트, 그리고 강력한 추천서를 받을 수 있는 기회를 얻을 수 있습니다. 이는 대학과 경력 기회에 매우 중요합니다.</li>
-<li>미적분을 넘는 고급 수학 과정, 예를 들어 선형대수학과 미분방정식은 많은 정량적 분야에서 필수적이며, 학생들이 전문 분야로 빠르게 진입할 수 있게 하여 경력 성취를 향상시킬 수 있습니다.</li>
-<li>연구에 따르면 교육 가속화는 심리적 안녕에 해를 끼치지 않으며, 일반적인 오해와 물류적 어려움에도 불구하고 더 큰 학문적 및 직업적 성공으로 이어진다.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40983734">반응</a></h3>
-<ul>
-<li>한 사용자가 30대에 수학 공포증을 극복한 여정을 공유하며, 수학을 배우기에 결코 늦지 않았으며 문제 해결과 프로그래밍에 대한 통찰력에 유익하다는 점을 강조했습니다.</li>
-<li>나중에 수학을 배우기 위한 제안으로는 기본 수학 책으로 시작하고, 커뮤니티 칼리지 자원을 활용하며, 점차 고급 주제로 나아가는 것이 포함되었습니다.</li>
-<li>논의는 또한 초기 수학 교육, 부모의 참여, 쿠몬과 같은 외부 자원, 그리고 자기 학습과 동기 부여를 촉진하는 더 넓은 교육 시스템의 역할의 중요성을 강조했습니다.</li>
-</ul>
-<h2><a href="https://www.mailgun.com/blog/email/ai-phishing/">사기꾼의 황금기: AI 기반 피싱</a></h2>
-<ul>
-<li>생성형 AI는 사기꾼들이 매우 개인화되고 설득력 있는 피싱 이메일을 보내도록 하여 언어 장벽을 극복하고 대규모 캠페인을 자동화할 수 있게 합니다.</li>
-<li>AI 도구인 WormGPT와 FraudGPT는 피싱 이메일 생성 및 웹사이트 스푸핑에 도움을 주어 효과적인 공격을 만드는 데 필요한 시간을 크게 줄여줍니다.</li>
-<li>방어 전략에는 DMARC(도메인 기반 메시지 인증, 보고 및 준수) 구현, AI 피싱 시도 인식, 다층 보안 사용 및 강력한 발신자 평판 유지가 포함됩니다.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40981067">반응</a></h3>
-<ul>
-<li>AI 기반 피싱 사기가 점점 더 정교해지고 있으며, 텍스트를 위한 Llama, 음성을 위한 Whisper/Tortoise, 이미지를 위한 Stable Diffusion과 같은 기술을 활용하고 있지만, 아직 그 배포는 제한적입니다.</li>
-<li>AI가 피싱을 강화할 가능성이 있음에도 불구하고, 인도 콜센터 사기와 같은 전통적인 방법은 여전히 매우 효과적이고 경제적으로 실행 가능하다는 것이 최근 한 노인이 25,000달러를 사기당한 사례로 입증되었습니다.</li>
-<li>은행 및 기타 기관들은 사기 탐지 능력을 향상시키고 있지만, AI 기반 사기의 증가로 인해 특히 노인과 같은 취약 계층을 위한 인식 제고와 교육이 필요합니다.</li>
-</ul>
-<h2><a href="https://thetinypod.com/">타이니팟 – 스크롤 휠이 있는 애플 워치 케이스</a></h2>
-<ul>
-<li>tinyPod을 소개합니다. 이 소형 기기는 전화, 음악, 메시징 등 필수 기능을 제공하며, 모두 Apple Watch로 구동됩니다.</li>
-<li>주요 기능으로는 촉각 스크롤 휠, 빠른 자기 충전, 며칠 동안 지속되는 배터리 수명, Apple Pay, 그리고 미디어를 위한 32GB 저장 공간이 포함됩니다.</li>
-<li>두 가지 모델로 제공됩니다: 스크롤 휠이 있는 tinyPod는 $79.99, 스크롤 휠이 없는 tinyPod lite는 $29.99, 다양한 Apple Watch 시리즈와 호환되며, 이번 여름에 배송됩니다.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40987402">반응</a></h3>
-<ul>
-<li>TinyPod는 iPod의 클릭휠을 연상시키는 스크롤 휠을 통합한 Apple Watch 케이스로, 디지털 크라운과 기계적 연결을 형성합니다.</li>
-<li>그 제품은 비실용적임에도 불구하고 독특하고 기발한 기술 장치를 좋아하는 사람들에게 매력적인 재미있고 틈새 하드웨어 아이디어로 여겨집니다.</li>
-<li>제품 웹페이지 기능에 대한 리뷰는 엇갈리고 있으며, 일부 사용자는 Firefox에서 문제를 겪고 있는 반면, 다른 사용자들은 디자인이 매력적이라고 생각합니다.</li>
-</ul>
-<h2><a href="https://github.com/libarchive/libarchive/pull/1609">Jia Tan &quot;JiaT75&quot;: bsdtar로 압축 해제 시 경고에 오류 텍스트 추가 (2021)</a></h2>
-<ul>
-<li>Libarchive는 bsdtar를 사용할 때 경고에 오류 텍스트를 추가하는 커밋을 병합하여 문제 #1561을 해결했지만, safe_fprintf를 안전하지 않은 fprintf로 대체하는 것에 대한 우려가 제기되었습니다.</li>
-<li>안전한 fprintf로 되돌리고 올바른 errno 처리를 사용하기 위한 수정이 구현되었으며, 추가 감사와 해당 문제에 대한 CVE(공통 취약점 및 노출)에 대한 제안이 포함되었습니다.</li>
-<li>논의는 철저한 코드 리뷰와 오픈 소스 프로젝트에서 보안을 유지하는 것의 중요성을 강조했으며, 대화가 잠기면서 문제가 해결되었습니다.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40984589">반응</a></h3>
-<ul>
-<li>Jia Tan &quot;JiaT75&quot;는 2021년에 bsdtar의 경고에 오류 텍스트를 추가하여 주석 품질과 코드 변경 검토에 대한 열띤 GitHub 토론을 촉발시켰습니다.</li>
-<li>그 토론은 대규모 소프트웨어 프로젝트를 유지하는 데 있어서의 도전 과제와 보안 검토를 개선하는 데 있어 AI의 잠재적 역할을 부각시켰다.</li>
-<li>그 사건은 특히 알려진 기여자로부터 악성 코드를 탐지하는 어려움을 강조했으며, Jia Tan을 xz 도구에 대한 국가 지원 공격과 연관시켰다.</li>
-</ul>
-<h2><a href="https://www.theverge.com/2024/7/16/24199686/puerto-rico-fossil-fuel-industry-lawsuit-climate-change">푸에르토리코, 화석 연료 회사들을 상대로 10억 달러 소송 제기</a></h2>
-<ul>
-<li>푸에르토리코는 엑손모빌, BP, 셰브론, 쉘, 코노코필립스를 포함한 주요 화석 연료 회사들을 상대로 기후 변화에 대해 대중을 오도하고 청정 에너지로의 전환을 지연시킨 혐의로 10억 달러의 소송을 제기했습니다.</li>
-<li>산후안에서 제기된 이 소송은 이러한 회사들이 화석 연료의 위험성에 대한 적절한 경고 없이 이를 홍보함으로써 무역법을 위반했다고 주장하며, 허리케인 마리아와 같은 기후 재해에 대처하기 위한 손해 배상을 요구하고 있습니다.</li>
-<li>이 법적 조치는 화석 연료 산업을 상대로 한 유사한 소송의 광범위한 추세의 일환으로, 기후 관련 영향에 대한 책임을 강조하는 노력의 증가를 보여줍니다.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40986213">반응</a></h3>
-<ul>
-<li>푸에르토리코는 화석 연료 회사들을 상대로 10억 달러 규모의 소송을 제기하여, 이들이 기후 변화와 관련된 피해를 초래했다고 비난하며 더 엄격한 환경 규제를 요구하고 있습니다.</li>
-<li>이 소송은 화석 연료의 경제적 이익과 지속 가능한 관행 및 기업의 책임 필요성 사이의 지속적인 논쟁을 강조합니다.</li>
-<li>의견이 분분한 가운데, 일부는 오염과 허위 정보에 대한 기업의 책임의 중요성을 강조하는 반면, 다른 사람들은 기후 변화에 맞서기 위한 개인 행동과 정부 정책의 역할을 강조합니다.</li>
-</ul>
-<h2><a href="https://www.reuters.com/markets/deals/google-backed-software-developer-gitlab-explores-sale-sources-say-2024-07-17/">Gitlab 매각 검토</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40983486">반응</a></h3>
-<ul>
-<li>Gitlab이 매각을 고려하고 있어 사용자들 사이에서 서비스 모델의 잠재적인 종료나 변경에 대한 우려가 제기되고 있습니다. 이는 과거 RedHat과 CentOS에서 발생한 문제를 떠올리게 합니다.</li>
-<li>사용자들은 Gitlab과 같은 오픈 소스 옵션의 장점에 대해 토론하며, 더 쉬운 마이그레이션과 커뮤니티 지원을 언급하고, Datadog이나 IBM과 같은 잠재적 구매자에 대해 추측하고 있습니다.</li>
-<li>Gitlab의 가격 정책과 기업 중심 접근 방식에 대한 비판으로 인해 일부 사용자들은 GitHub와 같은 대안으로 전환을 고려하고 있으며, 이는 향후 안정성과 비용에 대한 엇갈린 감정을 반영하고 있습니다.</li>
-</ul>
-<h2><a href="https://vedgie.net/writing/darwin_machines.md">다윈 기계</a></h2>
-<ul>
-<li>이 게시물은 &#39;The Cerebral Code&#39;에서 윌리엄 캘빈의 이론을 다루고 있으며, 이 이론은 뇌가 미니컬럼 내에서 진화 과정을 사용하여 감각 입력을 처리하고 가장 &#39;적합한&#39; 패턴을 찾는다는 것을 제안합니다.</li>
-<li>이 이론은 뇌의 구조, 특히 신피질의 기둥과 미세 기둥이 효율적인 문제 해결과 병렬 처리를 가능하게 하며, 이는 인공지능(AI)과 기계 학습(ML)에 적용될 수 있다고 주장합니다.</li>
-<li>저자는 이 진화 과정을 모방하기 위해 신경망을 실험하고 있으며, 이 분야에서 연구 및 학문적 통찰에 대한 조언을 구하고 있습니다. 이는 AI의 심층 사고 능력에서 잠재적인 발전을 강조합니다.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40981068">반응</a></h3>
-<ul>
-<li>이 게시물은 다윈 기계의 개념에 대해 논의하며, 다양한 감각 데이터 양식이 뇌의 미니컬럼에 의해 처리되고, 각각 고유한 발화 패턴을 출력하여 경쟁하고 지배적인 패턴을 강화하여 학습을 돕는다는 내용을 다룹니다.</li>
-<li>제프리 힌튼이 제안한 캡슐 라우팅 알고리즘은 기대-최대화(EM) 과정을 사용하여 이 아이디어를 구현하는 것을 목표로 하지만, AI 연구에서 트랜스포머의 성공에 의해 가려져 왔습니다.</li>
-<li>이 논의는 뇌 기능과 신경 네트워크를 이해하는 것의 중요성을 강조하며, 헤비안 학습과 신경 활동의 시간적 역학에 대한 깊은 탐구의 필요성을 언급하고 있습니다.</li>
-</ul>
-<h2><a href="https://github.com/guywaldman/magic-cli">Magic-cli – 명령줄을 위한 코파일럿</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40980715">반응</a></h3>
-<ul>
-<li>Guy Waldman이 개발한 명령줄 코파일럿인 Magic-cli는 기본 &#39;비안전 실행&#39; 모드로 인해 논란을 일으켰으며, &#39;클립보드&#39; 모드와 같은 더 안전한 기본 설정에 대한 제안이 나오고 있습니다.</li>
-<li>사용자들은 zsh_codex, aichat, Warp 터미널과 같은 대체 도구들을 언급하며 의견과 경험을 공유했습니다.</li>
-<li>이 프로젝트는 Rust로 구축되어 다른 언어의 더 간단한 구현과 비교했을 때 복잡성에 대한 의문을 제기합니다.</li>
-</ul>
-<h2><a href="https://developers.google.com/tag-platform/tag-manager/first-party/setup-guide">구글, 태그 관리자 자동 차단을 우회하는 방법 제시</a></h2>
-<ul>
-<li>Google은 태그 성능과 데이터 프라이버시를 향상시키기 위해 웹사이트의 도메인을 사용하여 호스팅하는 퍼스트 파티 모드에서 태그를 배포하는 베타 기능을 도입하고 있습니다.</li>
-<li>설정에는 도메인에서 고유 경로를 예약하고, Google Cloud나 Cloudflare와 같은 서비스를 통해 트래픽을 라우팅하며, 웹사이트 스크립트를 업데이트하여 새로운 측정 경로를 사용하도록 하는 작업이 포함됩니다.</li>
-<li>사용자들은 Tag Assistant를 사용하여 설정을 테스트하고 지정된 피드백 양식이나 연락 이메일을 통해 피드백을 제공하도록 권장됩니다.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40983585">반응</a></h3>
-<ul>
-<li>구글이 태그 관리자 자동 차단을 우회하는 방법을 도입하여 개인정보 보호와 광고 차단기의 효과에 대한 우려를 불러일으키고 있다.</li>
-<li>사용자들은 기본적으로 JavaScript를 비활성화하고 uBlock Origin을 사용하여 추적을 차단하는 전략을 논의하며, 사용 편의성과 속도 이점을 위해 선택적으로 JavaScript를 활성화합니다.</li>
-<li>구글의 새로운 방법은 비즈니스 목적을 위한 데이터 수집과 사용자 프라이버시의 균형을 맞추는 문제에 대한 논쟁을 촉발했으며, 일부 사용자는 구글의 추적 관행에 대해 불만을 표하고 있습니다.</li>
-</ul>
-<h2><a href="https://www.nytimes.com/2024/07/16/dining/pete-wells-steps-down-food-critic.html">12년 동안 레스토랑을 리뷰한 후, 저는 이제 그만두려 합니다</a></h2>
-<ul>
-<li>피트 웰스는 12년 동안 뉴욕 타임스의 레스토랑 비평가로 활동한 후, 높은 콜레스테롤, 혈당, 고혈압 등 건강 문제로 인해 사임합니다.</li>
-<li>보람 있는 역할에도 불구하고, 빈번한 식당 방문으로 인한 신체적 부담은 웰스에게 지속 가능하지 않게 되었다.</li>
-<li>웰스는 여전히 더 타임스에 남아 있겠지만, 주간 리뷰의 요구를 더 이상 처리하지 않고 대신 건강과 더 균형 잡힌 생활에 집중하기로 선택했습니다.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40979539">반응</a></h3>
-<ul>
-<li>오랜 시간 동안 활동해온 레스토랑 평론가가 12년 만에 물러나면서 그의 영향력과 레스토랑 리뷰의 미래에 대한 논의가 촉발되고 있다.</li>
-<li>그 평론가는 다양한 식당 선택과 독특하고 때로는 냉담한 리뷰 방식으로 유명했다.</li>
-<li>이 발표는 새로 들어오는 리뷰어 멜리사 클락에 대한 기대감을 불러일으켰고, 레스토랑 업계에 종사하는 사람들의 경험에 대한 성찰을 불러일으켰습니다.</li>
-</ul>
-<h2><a href="https://github.com/bobbyiliev/introduction-to-bash-scripting">바쉬 스크립팅 입문</a></h2>
-<ul>
-<li>개발자, 시스템 관리자 및 DevOps 엔지니어를 위한 작업 자동화를 목표로 하는 Bash 스크립팅에 관한 오픈 소스 가이드/전자책이 출시되었습니다.</li>
-<li>이 전자책은 기본적인 Bash 구조부터 고급 스크립팅 기법까지, API 작업 및 비밀번호 생성 등을 포함한 다양한 주제를 다룹니다.</li>
-<li>추가 자료에는 미니 비디오 강좌, Katacoda를 통한 대화형 교육, 그리고 Linux DevOps 엔지니어인 Bobby Iliev의 기여가 포함됩니다.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40982011">반응</a></h3>
-<ul>
-<li>Bash 스크립팅은 종종 터미널 작업을 위해 Python과 비교되며, Bash는 네이티브 터미널 통합 덕분에 파일 시스템 작업 및 간단한 명령 시퀀스에 더 효율적입니다.</li>
-<li>비평가들은 기본 작업에 대한 Python의 복잡성과 Bash의 투박한 구문을 지적하지만, Bash는 Python이 사전 설치되지 않은 환경에서 여전히 필수적입니다.</li>
-<li>루비의 셸이나 텍스트 파싱을 위한 펄과 같은 대안이 존재하며, ChatGPT와 같은 도구는 스크립트 생성에 도움을 줄 수 있지만, Bash 기본을 이해하는 것은 여전히 가치가 있습니다.</li>
-</ul>
-<h2><a href="https://www.gartner.com/en/articles/the-data-is-in-return-to-office-mandates-aren-t-worth-the-talent-risks">사무실 복귀 명령은 인재 위험을 감수할 가치가 없다</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=40983717">반응</a></h3>
-<ul>
-<li>사무실 복귀 명령은 대체 옵션이 있는 직원들이 먼저 떠날 수 있어 최고의 인재를 잃을 위험이 있으며, 이는 도미노 효과를 일으킬 수 있습니다.</li>
-<li>여행 보상이나 개선된 사무실 편의 시설과 같은 유연한 옵션이 엄격한 출근 명령에 대한 더 나은 대안으로 제안됩니다.</li>
-<li>토론에는 생산성, 멘토링 및 개인적 선호도에 대한 관점이 포함되며, 일부는 RTO를 구식 관리 관점이나 경제적 압력에 의해 추진된다고 보고 있습니다.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Google 문서에서 마크다운 가져오기 및 내보내기" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Google%20%EB%AC%B8%EC%84%9C%EC%97%90%EC%84%9C%20%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%20%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0%20%EB%B0%8F%20%EB%82%B4%EB%B3%B4%EB%82%B4%EA%B8%B0&subheading=2024%EB%85%84%207%EC%9B%94%2017%EC%9D%BC%20%EC%88%98%EC%9A%94%EC%9D%BC%3A%20%ED%95%B4%EC%BB%A4%EB%89%B4%EC%8A%A4%20%EC%9A%94%EC%95%BD" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/ko/2024/07/17</link>
-            <guid isPermaLink="false">2024-07-17T00:00:00.000Z</guid>
-            <pubDate>Wed, 17 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

@@ -1,0 +1,332 @@
+[
+  {
+    "id": 41085376,
+    "title": "SQLite: 35 % nopeampi kuin tiedostojärjestelmä",
+    "originLink": "https://sqlite.org/fasterthanfs.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41085376",
+    "commentBody": "",
+    "originSummary": [
+      "SQLite lukee ja kirjoittaa pieniä bittejä (esim. pikkukuvia) 35 % nopeammin kuin käyttämällä yksittäisiä tiedostoja levyllä, ja käyttää noin 20 % vähemmän levytilaa.",
+      "Tehokkuus johtuu vähäisemmistä open() ja close() järjestelmäkutsuista sekä tiiviimmästä datan pakkaamisesta, ja suorituskyvyn odotetaan paranevan tulevissa versioissa.",
+      "Testit osoittavat, että SQLite on yleensä suorituskykyisempi kuin suora tiedostojen I/O, erityisesti Windowsissa, kun virustorjuntaohjelmisto on käytössä, vaikka suorituskyky voi vaihdella laitteiston ja käyttöjärjestelmän mukaan."
+    ],
+    "commentSummary": [
+      "SQLite on 35 % nopeampi kuin perinteiset tiedostojärjestelmät, koska se vaatii vähemmän avaus/sulku-järjestelmäkutsuja eikä tarvitse tiedostojärjestelmän attribuuttien tai metatietojen tarkistuksia.",
+      "Tämä suorituskyvyn parannus on erityisen merkittävä Windowsissa, jossa tiedostojärjestelmäkutsut ovat luontaisesti hitaampia.",
+      "Huolimatta joistakin rajoituksista, kuten 2GB:n blob-maksimista ja haasteista hierarkkisen datan kanssa, SQLite:n nopeus ja yksinkertaisuus tekevät siitä edullisen lokien ja muun datan tallennukseen."
+    ],
+    "points": 415,
+    "commentCount": 155,
+    "retryCount": 0,
+    "time": 1722071429
+  },
+  {
+    "id": 41083972,
+    "title": "Linux-ytimen moduuliohjelmoinnin opas",
+    "originLink": "https://sysprog21.github.io/lkmpg/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083972",
+    "commentBody": "",
+    "originSummary": [
+      "Linux Kernel Module Programming Guide tarjoaa kattavan johdannon ytimen moduulien luomiseen ja hallintaan. Nämä moduulit ovat dynaamisesti ladattavia koodisegmenttejä, jotka parantavat ytimen ominaisuuksia ilman uudelleenkäynnistystä.",
+      "Keskeisiä työkaluja ja komentoja ytimen moduulien kanssa työskentelyyn ovat `modprobe`, `insmod`, `depmod`, `lsmod` ja `cat /proc/modules`.",
+      "Opas kattaa olennaiset aiheet, kuten moduulin alustamisen ja siivoamisen, komentoriviparametrien käsittelyn, laiteajurien hallinnan, vuorovaikutuksen `/proc`- ja `sysfs`-tiedostojärjestelmien kanssa sekä yleisten sudenkuoppien välttämisen ydinohjelmoinnissa."
+    ],
+    "commentSummary": [
+      "Linux Kernel Module Programming Guide korostaa QEMU:n käyttöä kernelin hakkerointiin ja ehdottaa Linux-laitteistoajurikirjojen päivittämistä.",
+      "Greg KH vahvisti, ettei Linux Device Drivers -kirjasta tule neljättä painosta, mikä herätti keskusteluja vaihtoehtoisista resursseista, kuten \"The Linux Memory Manager\" ja \"Linux Insides.\"",
+      "Käyttäjät jakoivat kokemuksiaan QEMU:sta virheenkorjauksessa ja WireGuard-testisarjasta ydinmoduulien kehityksessä, korostaen ihmisen tekemän tarkastuksen tärkeyttä kirjoittamisessa."
+    ],
+    "points": 268,
+    "commentCount": 25,
+    "retryCount": 0,
+    "time": 1722045875
+  },
+  {
+    "id": 41083286,
+    "title": "Tuomioistuimet sulkevat porsaanreiän, joka sallii liittovaltion viranomaisten tutkia puhelimesi rajalla",
+    "originLink": "https://reason.com/2024/07/26/courts-close-the-loophole-letting-the-feds-search-your-phone-at-the-border/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083286",
+    "commentBody": "",
+    "originSummary": [
+      "Liittovaltion tuomari päätti, että Tullin ja rajavartiolaitoksen (CBP) ei voida tutkia elektroniikkaa rajalla ilman etsintälupaa, mikä korjaa neljännen lisäyksen porsaanreiän.",
+      "Tuomari Nina Morrison totesi, että matkapuhelinten etsinnät ovat \"epätavanomaisia\" ja vaativat todennäköisiä syitä ja etsintäluvan, verraten niitä ruumiintarkastuksiin niiden merkittävän yksityisyyteen kohdistuvan vaikutuksen vuoksi.",
+      "Tuomio, jota kansalaisvapauksien puolustajat tukevat, nähdään ratkaisevana lehdistönvapauden ja yksityisyyden oikeuksien kannalta, seuraten samanlaisia päätöksiä muissa piireissä ja alueilla."
+    ],
+    "commentSummary": [
+      "New Yorkin piirioikeus päätti, että rajalla tehtävät matkapuhelinten etsinnät ilman etsintälupaa ovat \"epätavanomaisia\" ja tunkeilevampia kuin muut etsinnät, verraten niitä ruumiintarkastuksiin.",
+      "Tämä päätös ei ole sitova ennakkotapaus ja on ristiriidassa muiden piirioikeuksien päätösten kanssa, mikä viittaa siihen, että korkein oikeus saattaa käsitellä asiaa olemassa olevan \"piirijakojen\" vuoksi.",
+      "Tuomio heijastaa jatkuvia keskusteluja yksityisyyden suojasta ja hallituksen valtuuksista, erityisesti rajaturvallisuuden ja neljännen lisäyksen yhteydessä."
+    ],
+    "points": 260,
+    "commentCount": 106,
+    "retryCount": 0,
+    "time": 1722036981
+  },
+  {
+    "id": 41084795,
+    "title": "Alussa oli komentorivi (1999)",
+    "originLink": "https://web.stanford.edu/class/cs81n/command.txt",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41084795",
+    "commentBody": "",
+    "originSummary": [
+      "Neal Stephensonin essee \"In the Beginning was the Command Line\" tutkii käyttöjärjestelmien (OS) kehitystä ja niiden markkinadynamiikkaa, keskittyen Appleen ja Microsoftiin.",
+      "Microsoft saavutti markkinajohtajuuden myymällä käyttöjärjestelmiä kuin kulutustavaroita, korostaen mukavuutta ja helppoutta, mikä resonoi laajempien kulttuuristen trendien kanssa, jotka arvostivat yksinkertaisuutta monimutkaisuuden sijaan.",
+      "Huolimatta parempien, ilmaisten vaihtoehtojen, kuten Linuxin ja BeOSin, noususta, useimmat kuluttajat suosivat Microsoftin tuttuja tuotteita, mikä korostaa yhteiskunnallista mieltymystä välitettyihin kokemuksiin graafisten käyttöliittymien (GUI) kautta."
+    ],
+    "commentSummary": [
+      "Neal Stephensonin essee \"In the Beginning Was the Command Line\" (1999) korostaa komentorivikäyttöliittymien (CLI) etuja graafisiin käyttöliittymiin (GUI) verrattuna, painottaen niiden ytimekkyyttä ja viestinnän helppoutta.",
+      "Essee vertaa käyttöjärjestelmien kehitystä autoihin, korostaen komentorivikäyttöliittymien tarjoamaa vakautta ja käyttäjän hallintaa graafisten käyttöliittymien suosiosta huolimatta.",
+      "Se syventyy myös teknologian käyttöliittymien kulttuurisiin ja filosofisiin vaikutuksiin, tarjoten laajemman näkökulman siihen, miten olemme vuorovaikutuksessa teknologian kanssa."
+    ],
+    "points": 237,
+    "commentCount": 152,
+    "retryCount": 0,
+    "time": 1722061502
+  },
+  {
+    "id": 41081435,
+    "title": "TOTP-tunnukset ranteessani älykkäimmällä tyhmällä kellolla",
+    "originLink": "https://blog.singleton.io/posts/2022-10-17-otp-on-wrist/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41081435",
+    "commentBody": "",
+    "originSummary": [
+      "Sensor Watch on julkaissut uuden korvaavan logiikkalevyn klassiselle Casio F-91W:lle, päivittäen sen ARM Cortex M0+ -prosessorilla samalla säilyttäen alkuperäisen LCD-näytön, painikkeet ja pietsosummerin.",
+      "Päivitetty piirilevy on ohjelmoitavissa, mikä mahdollistaa mukautettavat kellotaulut ja hyötysovellukset, mukaan lukien ominaisuudet kuten 2FA-tunnukset, nopeusmittari, maailmankello ja paljon muuta.",
+      "Kelloa on helppo hakkeroida, sillä testaukseen on saatavilla wasm-pohjainen emulaattori, ja yksityiskohtainen dokumentaatio on saatavilla niille, jotka ovat kiinnostuneita muokkaamaan tai rakentamaan omia kellotaulujaan."
+    ],
+    "commentSummary": [
+      "Keskustelu Hacker Newsissä korostaa TOTP (Time-based One-Time Password) -tokenien käyttöä Casio-kelloissa, erityisesti F-91W- ja A158W-malleissa, kaksivaiheista todennusta (2FA) varten.",
+      "Projekti sisältää kellon laiteohjelmiston muokkaamisen TOTP-koodien näyttämiseksi, ja yhteisön panokset parantavat ominaisuuksia, kuten käyttäjän kalibrointia ja jopa pelien luomista kellolle.",
+      "Huolenaiheita on herännyt siitä, että TOTP-koodit näkyvät kellossa, ja jotkut ehdottavat vaihtoehtoja, kuten FIDO2-laitteistoavaimia, paremman suojan saamiseksi tietojenkalasteluhyökkäyksiä vastaan."
+    ],
+    "points": 213,
+    "commentCount": 46,
+    "retryCount": 0,
+    "time": 1722021643
+  },
+  {
+    "id": 41083801,
+    "title": "Linux-verkon suorituskyvyn täydellinen opas",
+    "originLink": "https://ntk148v.github.io/posts/linux-network-performance-ultimate-guide/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083801",
+    "commentBody": "",
+    "originSummary": [
+      "Opas tarjoaa syvällisen katsauksen Linux-verkon suorituskyvyn optimointiin, käsitellen aiheita verkkopinosta edistyneisiin pakettien käsittelytekniikoihin.",
+      "Keskeisiä viritysvaiheita ovat NIC-rengaspuskurien koon säätäminen, keskeytyksen koalesenssi, IRQ-affiniteetti ja työkalujen kuten AF_PACKET, DPDK ja XDP käyttäminen korkean suorituskyvyn pakettikäsittelyyn.",
+      "Verkkoasetusten valvonta ja säätäminen työkaluilla, kuten `ethtool`, `sysctl` ja `netstat`, on olennaista optimaalisen suorituskyvyn ylläpitämiseksi."
+    ],
+    "commentSummary": [
+      "Linux Network Performance Ultimate Guide\" on kattava resurssi verkon suorituskyvyn optimointiin Linuxin avulla, erityisen hyödyllinen niille, jotka työskentelevät nopeiden verkkojen parissa.",
+      "Käyttäjä jakoi menestystarinan kustannustehokkaan 10Gbps salatun verkon rakentamisesta kaupallisilla hyllytuotteilla (COTS) ja Wireguardilla, mikä alitti merkittävästi kaupallisten laitteistoratkaisujen hinnan.",
+      "Keskustelut kommenteissa sisältävät käytännön vinkkejä, kuten TCP-puskurikokojen säätämistä, ja työkaluja automaattiseen suorituskyvyn säätöön, kuten Oraclen bpftune."
+    ],
+    "points": 175,
+    "commentCount": 15,
+    "retryCount": 0,
+    "time": 1722043073
+  },
+  {
+    "id": 41083987,
+    "title": "Windowsin palautusympäristö ja käynnistettävän USB:n luontityökalu 200 kilotavussa",
+    "originLink": "https://github.com/joshuacline/windick",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083987",
+    "commentBody": "",
+    "originSummary": [
+      "Windows Deployment Image Customization Kit on komentokuorityökalu, joka on suunniteltu Windows-kuvien mukauttamiseen ja käyttöönottoon.",
+      "Se tarjoaa natiivin ratkaisun IT-ammattilaisille ja järjestelmänvalvojille käyttöönottoprosessin tehostamiseksi.",
+      "Opetusohjelmia ja lisätietoja on saatavilla alustoilla, kuten YouTube ja Microsoftin virallinen dokumentaatio."
+    ],
+    "commentSummary": [
+      "Uusi komentorivipohjainen työkalu Windowsin palautusympäristön ja käynnistettävän USB-muistitikun luomiseen on julkaistu, ja se mahtuu vain 200 kilotavuun.",
+      "Työkalu, joka on kirjoitettu suurena erätiedostona, jossa on 3 085 riviä koodia, osoittaa vaikuttavaa omistautumista ja tehokkuutta, erityisesti kun otetaan huomioon nykyaikaisempien skriptikielien, kuten PowerShellin, saatavuus.",
+      "Projekti on saanut inspiraationsa Androidin clockworkmod recovery -työkalusta ja sen tavoitteena on käyttää \"live-of-the-land\" -komentoja, mikä tarkoittaa, että sillä ei ole lainkaan riippuvuuksia ja se toimii yksinomaan Windowsissa."
+    ],
+    "points": 163,
+    "commentCount": 35,
+    "retryCount": 0,
+    "time": 1722046170
+  },
+  {
+    "id": 41082502,
+    "title": "Rikolliset ohittivat Googlen sähköpostivarmennuksen luodakseen Workspace-tilejä, pääsivät käsiksi",
+    "originLink": "https://krebsonsecurity.com/2024/07/crooks-bypassed-googles-email-verification-to-create-workspace-accounts-access-3rd-party-services/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41082502",
+    "commentBody": "",
+    "originSummary": [
+      "Google korjasi todennusheikkouden, joka salli rikollisten ohittaa sähköpostivahvistuksen luodakseen Google Workspace -tilejä ja esiintyäkseen verkkotunnuksen haltijoina.",
+      "Ongelma ratkaistiin 72 tunnin kuluessa, ja lisähavaitsemistoimenpiteitä otettiin käyttöön tulevan väärinkäytön estämiseksi.",
+      "Hyökkääjien tarkoituksena oli esiintyä verkkotunnusten haltijoina kolmannen osapuolen palveluissa, ei käyttää väärin Googlen palveluita, ja haitallinen toiminta koski muutamaa tuhatta Workspace-tiliä, jotka luotiin ilman verkkotunnuksen vahvistusta."
+    ],
+    "commentSummary": [
+      "Hyökkääjät ohittivat Googlen sähköpostivarmennuksen luodakseen luvattomia Workspace-tilejä, mikä johti mahdollisiin tietoturvaloukkauksiin ja odottamattomiin tervetulosähköposteihin rekisteröimättömille domaineille.",
+      "Näitä luvattomia tilejä käytettiin hyödyntämään \"Kirjaudu sisään Googlella\" -toimintoa kolmannen osapuolen sivustoilla, mikä aiheutti uhreille vaikeuksia saada takaisin verkkotunnuksiaan.",
+      "Tapaus korostaa Googlen järjestelmän haavoittuvuuksia ja sosiaalisten kirjautumisten riskejä, mikä on johtanut vaatimuksiin parannuksista, kuten pakollisesta DNS-varmennuksesta."
+    ],
+    "points": 163,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1722029640
+  },
+  {
+    "id": 41081810,
+    "title": "Ilmainen DDNS Cloudflaren ja Cronjobin avulla",
+    "originLink": "https://github.com/devrim/cloudflare-noip",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41081810",
+    "commentBody": "",
+    "originSummary": [
+      "Tämä projekti tarjoaa ilmaisen vaihtoehdon maksullisille dynaamisille DNS-palveluille automatisoimalla DNS-tietueiden päivitykset Cloudflaressa käyttämällä ilmaista tiliä ja cronjobia.",
+      "Userien täytyy kloonata arkisto, luoda konfiguraatiotiedostot (`keys.json` ja `records.json`), ja asettaa cronjob tai vastaava tehtävien ajastin suorittamaan skripti säännöllisin väliajoin.",
+      "Skripti päivittää DNS-tietueet Cloudflaressa koneen nykyisellä IP-osoitteella, mikä tekee siitä kustannustehokkaan ratkaisun dynaamisiin DNS-tarpeisiin."
+    ],
+    "commentSummary": [
+      "GitHub-projekti tarjoaa ilmaisen dynaamisen DNS (DDNS) -ratkaisun käyttämällä Cloudflarea ja cron-tehtävää, mikä herättää merkittävää kiinnostusta teknologia-yhteisössä.",
+      "Käyttäjät keskustelevat Cloudflaren käytön eduista ja haitoista DDNS:lle, mukaan lukien mahdolliset houkutus- ja vaihtotaktiikat sekä rajoitukset, kuten pakollinen TLS-terminointi ja latausrajoitukset.",
+      "Vaihtoehtoja ja samankaltaisia projekteja mainitaan, kuten Cloudflare-tunnelien, Tailscalen ja muiden DDNS-asiakkaiden käyttö, mikä korostaa saatavilla olevien ratkaisujen moninaisuutta dynaamisten IP-osoitteiden hallintaan."
+    ],
+    "points": 151,
+    "commentCount": 94,
+    "retryCount": 0,
+    "time": 1722024472
+  },
+  {
+    "id": 41083534,
+    "title": "Johdatus koneoppimishaastatteluihin -kirja",
+    "originLink": "https://huyenchip.com/ml-interviews-book/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083534",
+    "commentBody": "",
+    "originSummary": [
+      "Johdatus koneoppimishaastatteluihin -kirja tarjoaa kattavan oppaan koneoppimishaastatteluprosessiin, käsitellen rooleja, yritystyyppejä, haastattelumuotoja ja kysymystyyppejä.",
+      "Se sisältää yli 200 tietokysymystä ja 30 avoimen kysymyksen, joiden tarkoituksena on auttaa sekä ehdokkaita että rekrytointipäälliköitä ymmärtämään ja valmistautumaan koneoppimishaastatteluihin.",
+      "Kirjoittanut Chip Huyen, jolla on laaja kokemus haastatteluista suurissa teknologiayrityksissä ja startup-yrityksissä, kirja kokoaa yhteen käytännön oivalluksia ja valmistautumisstrategioita."
+    ],
+    "commentSummary": [
+      "Kirjaa \"Introduction to Machine Learning Interviews\" kirjoittanut Huyen Chip käsitellään, ja mielipiteet sen tehokkuudesta ML-haastatteluihin valmistautumisessa ovat vaihtelevia.",
+      "Jotkut käyttäjät ehdottavat, että kirjan kysymykset ovat helpompia verrattuna todellisiin koneoppimishaastatteluihin, ja toiset suosittelevat \"Deep Learning Interviews\" -kirjaa, joka on heidän mielestään kiinnostavampi ja edustavampi.",
+      "On käynnissä keskustelu siitä, onko kirjojen valmiiden kysymysten käyttö relevanttia, vai pitäisikö sen sijaan luoda henkilökohtaisia projekteja."
+    ],
+    "points": 145,
+    "commentCount": 9,
+    "retryCount": 0,
+    "time": 1722039572
+  },
+  {
+    "id": 41085856,
+    "title": "Sqlitefs: SQLite tiedostojärjestelmänä",
+    "originLink": "https://github.com/narumatt/sqlitefs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41085856",
+    "commentBody": "",
+    "originSummary": [
+      "sqlite-fs mahdollistaa Linux- ja MacOS-käyttäjien liittää SQLite-tietokantatiedoston tavallisena tiedostojärjestelmänä, mikä helpottaa tiedosto-operaatioita tietokannan kautta.",
+      "Vaatii uusimman Rust-ohjelmointikielen (≥ 1.38) ja libfuse (Linux) tai osxfuse (MacOS) toimiakseen.",
+      "Tukee erilaisia tiedosto-operaatioita, kuten tiedostojen ja hakemistojen luomista, lukemista, kirjoittamista, poistamista, ominaisuuksien muuttamista ja tiedostolukkojen käsittelyä, tiukalla virheenkäsittelyllä."
+    ],
+    "commentSummary": [
+      "SQLiteFS on projekti, joka käyttää SQLitea tiedostojärjestelmänä, herättäen kiinnostusta ainutlaatuisella lähestymistavallaan tiedostojen tallennukseen.",
+      "Konsepti muistuttaa Microsoftin peruutettua WinFS-projektia, jonka tavoitteena oli käyttää SQL Serveriä tiedostojärjestelmänä.",
+      "Huolimatta huumorista ja teoreettisista keskusteluista, käytännön sovelluksia, kuten SQLiteFS:n käyttöä muistinvaraisiin operaatioihin tai välimuistiin, harkitaan."
+    ],
+    "points": 128,
+    "commentCount": 37,
+    "retryCount": 0,
+    "time": 1722079756
+  },
+  {
+    "id": 41086060,
+    "title": "Oscar Zariski oli yksi modernin algebraisen geometrian perustajista",
+    "originLink": "https://boogiemath.org/meta/meta-9.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41086060",
+    "commentBody": "",
+    "originSummary": [
+      "Oscar Zariski (1899-1986) oli keskeinen hahmo modernissa algebraattisessa geometriassa, tunnettu vaikutusvaltaisesta kirjastaan \"Algebraic Surfaces\" ja merkittävistä panoksistaan alalle.",
+      "Vaikka Zariski aloitti akateemisen uransa tavallista myöhemmin, hän pysyi aktiivisena kahdeksankymppiseksi asti, tehden merkittävää työtä holomorfisten funktioiden parissa ja kulkien rikkaan akateemisen matkan arvostettujen instituutioiden kautta.",
+      "Mielenkiintoinen anekdootti hänen elämästään on, että hän oli vähällä myöhästyä omista häistään, koska oli syventynyt matemaattiseen ongelmaan, mikä korostaa hänen intensiivistä omistautumistaan matematiikalle."
+    ],
+    "commentSummary": [
+      "Oscar Zariski tunnustetaan modernin algebraisen geometrian perustajaksi.",
+      "Käyttäjät jakoivat anekdootteja ja keskustelivat monenlaisista aiheista, mukaan lukien matemaatikko Kalle Väisälän humoristinen tapaus ja \"mielikuvitustekijä\", joka mittaa aikaa, joka vietetään todellisessa vs. kuvitteellisessa maailmassa.",
+      "Keskustelu syventyi myös historiallisiin ja poliittisiin aiheisiin, kuten Venäjän vallankumoukseen ja kommunismin ja kapitalismin välisiin väittelyihin."
+    ],
+    "points": 123,
+    "commentCount": 49,
+    "retryCount": 0,
+    "time": 1722082338
+  },
+  {
+    "id": 41084318,
+    "title": "Bril: Välitasokieli kääntäjien opettamiseen",
+    "originLink": "https://www.cs.cornell.edu/~asampson/blog/bril.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41084318",
+    "commentBody": "",
+    "originSummary": [
+      "Bril, Big Red Intermediate Language, luotiin yksinkertaistamaan kääntäjien opettamista asettamalla etusijalle helppokäyttöisyys ja yksinkertaisuus suorituskyvyn ja koodin koon sijaan.",
+      "Bril-ohjelmat ovat JSON-dokumentteja, mikä tekee niistä saavutettavia millä tahansa ohjelmointikielellä ja helppoja jakaa.",
+      "Bril-ekosysteemi on laajentunut opiskelijoiden panoksilla, mukaan lukien työkalut ja kielilaajennukset, vaikka sen SSA (Static Single Assignment) -muoto tarvitsee parannusta."
+    ],
+    "commentSummary": [
+      "Bril on välikieli (IL), joka on suunniteltu opettamaan kääntäjiä, ja sen on kehittänyt Cornellin yliopisto.",
+      "Keskustelut korostavat tarvetta uudistaa Brilin staattista yksittäismääritysmuotoa (SSA) ja vertailuja muihin välimuotoihin, kuten ANF (A-Normal Form) ja CPS (Continuation-Passing Style).",
+      "Jotkut väittävät, että olemassa olevat välikoodit, kuten LLVM, ovat riittäviä opetustarkoituksiin, kun taas toiset korostavat Brilin ainutlaatuista lähestymistapaa kääntäjäkonseptien opettamiseen."
+    ],
+    "points": 112,
+    "commentCount": 13,
+    "retryCount": 0,
+    "time": 1722052249
+  },
+  {
+    "id": 41083077,
+    "title": "Ajaminen kääntäjät",
+    "originLink": "https://fabiensanglard.net/dc/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083077",
+    "commentBody": "",
+    "originSummary": [
+      "Sarja pyrkii täyttämään kirjallisuudessa olevan aukon, joka koskee työkalujen käyttöä ohjelmien muuttamiseksi suoritettaviksi tiedostoiksi, keskittyen ydinkonsepteihin sen sijaan, että opettaisi kieltä tai kuinka kirjoittaa kääntäjä.",
+      "Se tarjoaa toistettavia vaiheita käyttämällä bintools- ja ajurin yksityiskohtaista tilaa (-v) auttaakseen lukijoita tutkimaan perusesimerkkien ulkopuolelle, olettaen Linux-alustan, jossa on gcc- tai clang-kääntäjät.",
+      "Sarja on jaettu viiteen osaan: Driver, cpp (esiprosessori), cc (kääntäjä), ld (linkkeri) ja Loader, tarjoten jäsennellyn lähestymistavan käännösprosessin ymmärtämiseen."
+    ],
+    "commentSummary": [
+      "Artikkeli tarjoaa erinomaisen johdannon C- ja C++-työkaluketjuun, keskittyen Linux- ja ELF-pohjaisiin alustoihin.",
+      "Keskeisiä selvennyksiä ovat, että C++-standardikirjasto on laajempi kuin STL, ja ::operator new() on osa ajonaikaista ympäristöä, ei pelkästään mallia.",
+      "Artikkelin tulisi paremmin erottaa käyttöjärjestelmän ytimen lataaja ja käyttäjätilan dynaaminen lataaja."
+    ],
+    "points": 106,
+    "commentCount": 5,
+    "retryCount": 0,
+    "time": 1722034644
+  },
+  {
+    "id": 41085713,
+    "title": "PCI-e:n oppiminen: Ajuri ja DMA",
+    "originLink": "https://blog.davidv.dev/posts/pcie-driver-dma/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41085713",
+    "commentBody": "",
+    "originSummary": [
+      "Viesti käsittelee perustason PCI-e (Peripheral Component Interconnect Express) laiteajurin toteutusta, keskittyen muistin kartoitukseen ja DMA (Direct Memory Access) -toimintoihin.",
+      "Se selittää `struct pci_driver`-rakenteen luomisen, merkkilaitteen asettamisen käyttäjätilan vuorovaikutusta varten ja MSI:n (Message Signalled Interrupts) käytön asynkronisten DMA-siirtojen käsittelyyn.",
+      "Viesti on merkittävä käytännön oppaansa ansiosta PCI-e-laitteen ajurin kehittämiseen, sisältäen koodiesimerkkejä ja viittauksia ytimen dokumentaatioon, mikä tekee siitä arvokkaan uusille ohjelmistoinsinööreille."
+    ],
+    "commentSummary": [
+      "Keskustelu keskittyy FPGA:n (Field-Programmable Gate Array) käyttämiseen näyttösovittimen rakentamisessa, painottaen PCI-e (Peripheral Component Interconnect Express) hard IP:tä (Intellectual Property).",
+      "Useita edullisia FPGA-kortteja suositellaan, mukaan lukien Spartan 6, Artix, Screamer PCIe Squirrel ja Litefury, jotka tukevat PCIe:tä ja digitaalista videolähtöä.",
+      "Postaus korostaa myös resursseja ja suunnitelmia videokorttien luomiseen ja mainitsee mahdollisen Displayport Alt -tilan ja UVC-tyyppisten USB3-webkameroiden käytön video-ulostuloon."
+    ],
+    "points": 104,
+    "commentCount": 8,
+    "retryCount": 0,
+    "time": 1722077743
+  }
+]

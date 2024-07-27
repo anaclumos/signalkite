@@ -1,0 +1,332 @@
+[
+  {
+    "id": 41085376,
+    "title": "SQLite: 35 % snabbare än filsystemet",
+    "originLink": "https://sqlite.org/fasterthanfs.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41085376",
+    "commentBody": "",
+    "originSummary": [
+      "SQLite läser och skriver små blobbar (t.ex. miniatyrbilder) 35% snabbare än att använda enskilda filer på disken, och använder cirka 20% mindre diskutrymme.",
+      "Effektiviteten tillskrivs färre open() och close() systemanrop och tätare datapackning, med förväntad prestandaförbättring i framtida versioner.",
+      "Tester visar att SQLite generellt överträffar direkt fil-I/O, särskilt på Windows med aktiverad antivirusprogramvara, även om prestandan kan variera beroende på hårdvara och operativsystem."
+    ],
+    "commentSummary": [
+      "SQLite är 35% snabbare än traditionella filsystem på grund av färre öppna/stänga systemanrop och inget behov av filsystemattribut eller metadata-kontroller.",
+      "Denna prestandaförbättring är särskilt betydelsefull på Windows, där filsystemanrop är inneboende långsammare.",
+      "Trots vissa begränsningar, såsom en maximal blobstorlek på 2GB och utmaningar med hierarkisk data, gör SQLite:s snabbhet och enkelhet det fördelaktigt för loggar och annan datalagring."
+    ],
+    "points": 415,
+    "commentCount": 155,
+    "retryCount": 0,
+    "time": 1722071429
+  },
+  {
+    "id": 41083972,
+    "title": "Linux Kernel Module Programmeringsguide",
+    "originLink": "https://sysprog21.github.io/lkmpg/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083972",
+    "commentBody": "",
+    "originSummary": [
+      "Linux Kernel Module Programming Guide ger en omfattande introduktion till att skapa och hantera kärnmoduler, som är dynamiskt laddningsbara kodsegment som förbättrar kärnans kapacitet utan att kräva en omstart.",
+      "Viktiga verktyg och kommandon för att arbeta med kärnmoduler inkluderar `modprobe`, `insmod`, `depmod`, `lsmod` och `cat /proc/modules`.",
+      "Guiden täcker viktiga ämnen som modulinitialisering och -städning, hantering av kommandoradsargument, hantering av enhetsdrivrutiner, interaktion med filsystemen `/proc` och `sysfs`, samt undvikande av vanliga fallgropar i kärnprogrammering."
+    ],
+    "commentSummary": [
+      "Linux Kernel Module Programming Guide betonar användningen av QEMU för kernel-hacking och föreslår att uppdatera böcker om Linux-enhetsdrivrutiner.",
+      "Greg KH bekräftade att det inte kommer att bli en fjärde upplaga av boken Linux Device Drivers, vilket har lett till diskussioner om alternativa resurser som \"The Linux Memory Manager\" och \"Linux Insides.\"",
+      "Användare delade erfarenheter med QEMU för felsökning och WireGuard-testsviten för utveckling av kärnmoduler, och betonade vikten av mänsklig granskning vid skrivande."
+    ],
+    "points": 268,
+    "commentCount": 25,
+    "retryCount": 0,
+    "time": 1722045875
+  },
+  {
+    "id": 41083286,
+    "title": "Domstolar stänger kryphålet som låter federala myndigheter genomsöka din telefon vid gränsen",
+    "originLink": "https://reason.com/2024/07/26/courts-close-the-loophole-letting-the-feds-search-your-phone-at-the-border/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083286",
+    "commentBody": "",
+    "originSummary": [
+      "En federal domare beslutade att Tull- och gränsskyddsmyndigheten (CBP) inte kan genomsöka elektronik vid gränsen utan en husrannsakningsorder, vilket åtgärdar en lucka i det fjärde tillägget.",
+      "Domare Nina Morrison uttalade att genomsökningar av mobiltelefoner är 'icke-rutinmässiga' och kräver sannolika skäl och en husrannsakningsorder, och jämförde dem med kroppsvisitationer på grund av deras betydande integritetspåverkan.",
+      "Domslutet, som stöds av medborgarrättsaktivister, ses som avgörande för pressfrihet och integritetsrättigheter, i linje med liknande beslut i andra kretsar och distrikt."
+    ],
+    "commentSummary": [
+      "En distriktsdomstol i New York beslutade att husrannsakningar av mobiltelefoner vid gränsen utan tillstånd är \"icke-rutinmässiga\" och mer påträngande än andra typer av genomsökningar, och liknade dem vid kroppsvisitationer.",
+      "Detta beslut är inte ett bindande prejudikat och står i kontrast till domar från andra kretsdomstolar, vilket indikerar en möjlighet för Högsta domstolen att ta upp frågan på grund av den befintliga 'kretsdelningen'.",
+      "Utslaget speglar pågående debatter om integritetsrättigheter och statens befogenheter, särskilt i samband med gränssäkerhet och det fjärde tillägget."
+    ],
+    "points": 260,
+    "commentCount": 106,
+    "retryCount": 0,
+    "time": 1722036981
+  },
+  {
+    "id": 41084795,
+    "title": "I början var kommandoraden (1999)",
+    "originLink": "https://web.stanford.edu/class/cs81n/command.txt",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41084795",
+    "commentBody": "",
+    "originSummary": [
+      "Neal Stephensons essä \"In the Beginning was the Command Line\" utforskar utvecklingen av operativsystem (OS) och deras marknadsdynamik, med fokus på Apple och Microsoft.",
+      "Microsoft uppnådde marknadsdominans genom att sälja operativsystem som konsumentvaror, med betoning på bekvämlighet och enkelhet, vilket resonerade med bredare kulturella trender som värderade enkelhet över komplexitet.",
+      "Trots uppkomsten av överlägsna, gratis alternativ som Linux och BeOS, föredrog de flesta konsumenter Microsofts välbekanta produkter, vilket belyser en samhällelig preferens för förmedlade upplevelser genom grafiska användargränssnitt (GUIs)."
+    ],
+    "commentSummary": [
+      "I Neal Stephensons essä 'In the Beginning Was the Command Line' (1999) framhävs fördelarna med kommandoradsgränssnitt (CLI) över grafiska användargränssnitt (GUI), med betoning på deras kortfattade natur och enkelhet i kommunikation.",
+      "Uppsatsen jämför utvecklingen av operativsystem med bilar och betonar den stabilitet och användarkontroll som tillhandahålls av kommandoradsgränssnitt trots grafiska användargränssnitts popularitet.",
+      "Den fördjupar sig också i de kulturella och filosofiska implikationerna av teknologiska gränssnitt, och erbjuder ett bredare perspektiv på hur vi interagerar med teknologi."
+    ],
+    "points": 237,
+    "commentCount": 152,
+    "retryCount": 0,
+    "time": 1722061502
+  },
+  {
+    "id": 41081435,
+    "title": "TOTP-tokens på min handled med den smartaste dumma klockan",
+    "originLink": "https://blog.singleton.io/posts/2022-10-17-otp-on-wrist/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41081435",
+    "commentBody": "",
+    "originSummary": [
+      "Sensor Watch har släppt ett nytt ersättningslogikkort för den klassiska Casio F-91W, uppgraderat med en ARM Cortex M0+ processor samtidigt som den behåller den ursprungliga LCD-skärmen, knapparna och piezo-summern.",
+      "Den uppgraderade kretskortet är programmerbart, vilket möjliggör anpassningsbara urtavlor och verktygsappar, inklusive funktioner som 2FA-tokens, ratemeter, världsklocka och mer.",
+      "Det är enkelt att hacka klockan, med en wasm-baserad emulator för testning, och detaljerad dokumentation finns tillgänglig för dem som är intresserade av att modifiera eller bygga sina egna urtavlor."
+    ],
+    "commentSummary": [
+      "En diskussion på Hacker News belyser användningen av TOTP (Time-based One-Time Password) tokens på Casio-klockor, specifikt modellerna F-91W och A158W, för tvåfaktorsautentisering (2FA).",
+      "Projektet innebär att modifiera klockans firmware för att visa TOTP-koder, med bidrag från gemenskapen som förbättrar funktioner som användarkalibrering och till och med skapar spel för klockan.",
+      "Det uttrycks oro över säkerheten med att ha TOTP-koder synliga på en klocka, och vissa föreslår alternativ som FIDO2-hårdvarunycklar för bättre skydd mot nätfiskeattacker."
+    ],
+    "points": 213,
+    "commentCount": 46,
+    "retryCount": 0,
+    "time": 1722021643
+  },
+  {
+    "id": 41083801,
+    "title": "Den ultimata guiden för nätverksprestanda i Linux",
+    "originLink": "https://ntk148v.github.io/posts/linux-network-performance-ultimate-guide/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083801",
+    "commentBody": "",
+    "originSummary": [
+      "Guiden ger en djupgående översikt över hur man optimerar nätverksprestanda i Linux, och täcker ämnen från nätverksstacken till avancerade tekniker för paketbearbetning.",
+      "Centrala justeringssteg inkluderar att justera NIC-ringbuffertstorlekar, avbrottskoalescens, IRQ-affinitet och att använda verktyg som AF_PACKET, DPDK och XDP för högpresterande pakethantering.",
+      "Att övervaka och justera nätverksinställningar med verktyg som `ethtool`, `sysctl` och `netstat` är avgörande för att upprätthålla optimal prestanda."
+    ],
+    "commentSummary": [
+      "Den \"Ultimata guiden för nätverksprestanda i Linux\" är en omfattande resurs för att optimera nätverksprestanda med hjälp av Linux, särskilt användbar för dem som arbetar med höghastighetsnätverk.",
+      "En användare delade en framgångshistoria om att bygga ett kostnadseffektivt 10Gbps krypterat nätverk med hjälp av kommersiell standardhårdvara (COTS) och Wireguard, vilket avsevärt undergrävde kommersiella hårdvarulösningar.",
+      "Diskussioner i kommentarerna inkluderar praktiska tips, såsom justering av TCP-buffertstorlekar, och verktyg för automatisk prestandajustering, som Oracles bpftune."
+    ],
+    "points": 175,
+    "commentCount": 15,
+    "retryCount": 0,
+    "time": 1722043073
+  },
+  {
+    "id": 41083987,
+    "title": "Windows återställningsmiljö och startbar USB-skapare i 200kb",
+    "originLink": "https://github.com/joshuacline/windick",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083987",
+    "commentBody": "",
+    "originSummary": [
+      "Windows Deployment Image Customization Kit är ett kommandoskalverktyg utformat för att anpassa och distribuera Windows-avbildningar.",
+      "Det erbjuder en inbyggd lösning för IT-proffs och systemadministratörer att effektivisera distributionsprocessen.",
+      "Handledning och ytterligare information finns tillgänglig på plattformar som YouTube och Microsofts officiella dokumentation."
+    ],
+    "commentSummary": [
+      "En ny skalbaserad verktyg för att skapa en Windows-återställningsmiljö och startbar USB har släppts, och den ryms på bara 200 kilobyte.",
+      "Verktyget, skrivet som en stor batchfil med 3 085 rader kod, visar på imponerande engagemang och effektivitet, särskilt med tanke på tillgången till mer moderna skriptspråk som PowerShell.",
+      "Projektet är inspirerat av clockworkmod recovery för Android och syftar till att använda \"live-of-the-land\"-kommandon, vilket innebär att det har noll beroenden och fungerar enbart under Windows."
+    ],
+    "points": 163,
+    "commentCount": 35,
+    "retryCount": 0,
+    "time": 1722046170
+  },
+  {
+    "id": 41082502,
+    "title": "Skurkar kringgick Googles e-postverifiering för att skapa Workspace-konton, tillgång",
+    "originLink": "https://krebsonsecurity.com/2024/07/crooks-bypassed-googles-email-verification-to-create-workspace-accounts-access-3rd-party-services/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41082502",
+    "commentBody": "",
+    "originSummary": [
+      "Google åtgärdade en autentiseringssvaghet som tillät brottslingar att kringgå e-postverifiering för att skapa Google Workspace-konton och utge sig för att vara domäninnehavare.",
+      "Problemet löstes inom 72 timmar, och ytterligare upptäcktsåtgärder infördes för att förhindra framtida missbruk.",
+      "Angriparna siktade på att utge sig för att vara domäninnehavare till tredjepartstjänster, inte för att missbruka Googles tjänster, och den skadliga aktiviteten involverade några tusen Workspace-konton skapade utan domänverifiering."
+    ],
+    "commentSummary": [
+      "Angripare kringgick Googles e-postverifiering för att skapa obehöriga Workspace-konton, vilket ledde till potentiella säkerhetsintrång och oväntade välkomstmejl för oregistrerade domäner.",
+      "De här obehöriga kontona användes för att utnyttja \"Logga in med Google\" på tredjepartssajter, vilket orsakade svårigheter för offren att återfå sina domäner.",
+      "Incidenten understryker sårbarheter i Googles system och riskerna med sociala inloggningar, vilket leder till krav på förbättringar som obligatorisk DNS-verifiering."
+    ],
+    "points": 163,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1722029640
+  },
+  {
+    "id": 41081810,
+    "title": "Gratis DDNS med Cloudflare och ett Cronjob",
+    "originLink": "https://github.com/devrim/cloudflare-noip",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41081810",
+    "commentBody": "",
+    "originSummary": [
+      "Detta projekt erbjuder ett gratis alternativ till betalda dynamiska DNS-tjänster genom att automatisera uppdateringar av DNS-poster på Cloudflare med ett gratis konto och en cronjob.",
+      "Användare behöver klona arkivet, skapa konfigurationsfiler (`keys.json` och `records.json`), och ställa in ett cronjobb eller motsvarande uppgiftsschemaläggare för att köra skriptet med jämna mellanrum.",
+      "Scriptet uppdaterar DNS-poster på Cloudflare med maskinens aktuella IP-adress, vilket gör det till en kostnadseffektiv lösning för dynamiska DNS-behov."
+    ],
+    "commentSummary": [
+      "En GitHub-projekt erbjuder en gratis Dynamic DNS (DDNS)-lösning med hjälp av Cloudflare och ett cron-jobb, vilket väcker stort intresse från teknikgemenskapen.",
+      "Användare diskuterar för- och nackdelar med att använda Cloudflare för DDNS, inklusive potentiella lockbetes- och bytestrategier samt begränsningar som obligatorisk TLS-terminering och uppladdningsrestriktioner.",
+      "Alternativ och liknande projekt nämns, såsom att använda Cloudflare-tunnlar, Tailscale och andra DDNS-klienter, vilket belyser mångfalden av lösningar som finns tillgängliga för att hantera dynamiska IP-adresser."
+    ],
+    "points": 151,
+    "commentCount": 94,
+    "retryCount": 0,
+    "time": 1722024472
+  },
+  {
+    "id": 41083534,
+    "title": "Introduktion till maskininlärningsintervjuer bok",
+    "originLink": "https://huyenchip.com/ml-interviews-book/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083534",
+    "commentBody": "",
+    "originSummary": [
+      "\"Introduktion till maskininlärningsintervjuer-boken\" ger en omfattande guide till ML-intervjuprocessen, och täcker roller, företagstyper, intervjuformat och frågetyper.",
+      "Den innehåller över 200 kunskapsfrågor och 30 öppna frågor, med målet att hjälpa både kandidater och rekryteringschefer att förstå och förbereda sig för ML-intervjuer.",
+      "Författad av Chip Huyen, som har omfattande erfarenhet av intervjuer på stora teknikföretag och startups, sammanställer boken praktiska insikter och förberedelsestrategier."
+    ],
+    "commentSummary": [
+      "Diskussioner pågår om boken \"Introduction to Machine Learning Interviews\" av Huyen Chip, med blandade åsikter om dess effektivitet för att förbereda sig inför ML-intervjuer.",
+      "Vissa användare föreslår att bokens frågor är lättare jämfört med faktiska ML-intervjuer, och andra rekommenderar boken \"Deep Learning Interviews\" som mer engagerande och representativ.",
+      "Det pågår en debatt om relevansen av att använda standardfrågor från boken, där vissa förespråkar att istället skapa personliga projekt."
+    ],
+    "points": 145,
+    "commentCount": 9,
+    "retryCount": 0,
+    "time": 1722039572
+  },
+  {
+    "id": 41085856,
+    "title": "Sqlitefs: SQLite som ett filsystem",
+    "originLink": "https://github.com/narumatt/sqlitefs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41085856",
+    "commentBody": "",
+    "originSummary": [
+      "sqlite-fs gör det möjligt för Linux- och MacOS-användare att montera en SQLite-databasfil som ett vanligt filsystem, vilket underlättar filoperationer genom en databas.",
+      "Kraven är den senaste versionen av programmeringsspråket Rust (≥ 1.38) och libfuse (Linux) eller osxfuse (MacOS) för funktionalitet.",
+      "Stöder olika filoperationer såsom att skapa, läsa, skriva, radera filer och kataloger, ändra attribut och hantera fil-lås, med strikt felhantering."
+    ],
+    "commentSummary": [
+      "SQLiteFS är ett projekt som använder SQLite som ett filsystem, vilket väcker intresse för dess unika tillvägagångssätt för filhantering.",
+      "Konceptet påminner om Microsofts avbrutna WinFS-projekt, som syftade till att använda SQL Server som ett filsystem.",
+      "Trots humorn och de teoretiska diskussionerna övervägs praktiska tillämpningar som att använda SQLiteFS för minnesoperationer eller caching."
+    ],
+    "points": 128,
+    "commentCount": 37,
+    "retryCount": 0,
+    "time": 1722079756
+  },
+  {
+    "id": 41086060,
+    "title": "Oscar Zariski var en av grundarna av modern algebraisk geometri",
+    "originLink": "https://boogiemath.org/meta/meta-9.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41086060",
+    "commentBody": "",
+    "originSummary": [
+      "Oscar Zariski (1899-1986) var en central figur inom modern algebraisk geometri, känd för sin inflytelserika bok \"Algebraic Surfaces\" och sina betydande bidrag till området.",
+      "Trots att han började sin akademiska karriär senare än vanligt, förblev Zariski aktiv in på åttiotalet, med anmärkningsvärt arbete om holomorfa funktioner och en rik akademisk resa genom prestigefyllda institutioner.",
+      "En intressant anekdot från hans liv inkluderar att han nästan missade sitt eget bröllop på grund av att han var djupt försjunken i ett matematiskt problem, vilket belyser hans intensiva hängivenhet till matematiken."
+    ],
+    "commentSummary": [
+      "Oscar Zariski erkänns som en grundare av modern algebraisk geometri.",
+      "Användare delade anekdoter och diskuterade olika ämnen, inklusive matematikern Kalle Väisäläs humoristiska incident och 'imagination factor,' som mäter tid spenderad i verkliga kontra imaginära världar.",
+      "Konversationen fördjupade sig också i historiska och politiska diskussioner, såsom den ryska revolutionen och debatter om kommunism kontra kapitalism."
+    ],
+    "points": 123,
+    "commentCount": 49,
+    "retryCount": 0,
+    "time": 1722082338
+  },
+  {
+    "id": 41084318,
+    "title": "Bril: Ett mellanspråk för att lära ut kompilatorer",
+    "originLink": "https://www.cs.cornell.edu/~asampson/blog/bril.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41084318",
+    "commentBody": "",
+    "originSummary": [
+      "Bril, det stora röda intermediära språket, skapades för att förenkla undervisningen i kompilatorer genom att prioritera användarvänlighet och enkelhet framför prestanda och kodstorlek.",
+      "Bril-program är JSON-dokument, vilket gör dem tillgängliga med vilket programmeringsspråk som helst och lätta att dela.",
+      "Bril-ekosystemet har utökats med studentbidrag, inklusive verktyg och språkförlängningar, även om dess SSA-form (Static Single Assignment) behöver förbättras."
+    ],
+    "commentSummary": [
+      "Bril är ett mellanspråk (IL) utformat för att lära ut kompilatorer, utvecklat av Cornell University.",
+      "Diskussioner belyser behovet av att omarbeta Brils Static Single Assignment (SSA) form och jämförelser med andra ILs som ANF (A-Normal Form) och CPS (Continuation-Passing Style).",
+      "Vissa hävdar att befintliga ILs som LLVM är tillräckliga för utbildningsändamål, medan andra betonar Brils unika tillvägagångssätt för att lära ut kompilatorkoncept."
+    ],
+    "points": 112,
+    "commentCount": 13,
+    "retryCount": 0,
+    "time": 1722052249
+  },
+  {
+    "id": 41083077,
+    "title": "Drivande kompilatorer",
+    "originLink": "https://fabiensanglard.net/dc/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083077",
+    "commentBody": "",
+    "originSummary": [
+      "Serien syftar till att fylla luckan i litteraturen om att använda verktyg för att omvandla program till körbara filer, med fokus på kärnkoncept snarare än att lära ut ett språk eller hur man skriver en kompilator.",
+      "Den tillhandahåller reproducerbara steg med hjälp av bintools och drivrutinens verbose-läge (-v) för att hjälpa läsarna att utforska bortom grundläggande exempel, med antagandet att en Linux-plattform med gcc- eller clang-kompilatorer används.",
+      "Serien är uppdelad i fem delar: Driver, cpp (förprocessor), cc (kompilator), ld (länkare) och Loader, vilket erbjuder en strukturerad metod för att förstå kompilationsprocessen."
+    ],
+    "commentSummary": [
+      "Artikeln ger en utmärkt introduktion till C- och C++-verktygskedjan, med fokus på Linux och ELF-baserade plattformar.",
+      "Viktiga förtydliganden inkluderar att C++ standardbibliotek är bredare än STL, och ::operator new() är en del av runtime, inte bara en mall.",
+      "Artikeln bör bättre skilja mellan OS-kärnladdaren och användarutrymmets dynamiska laddare."
+    ],
+    "points": 106,
+    "commentCount": 5,
+    "retryCount": 0,
+    "time": 1722034644
+  },
+  {
+    "id": 41085713,
+    "title": "Att lära sig om PCI-e: Drivrutin och DMA",
+    "originLink": "https://blog.davidv.dev/posts/pcie-driver-dma/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41085713",
+    "commentBody": "",
+    "originSummary": [
+      "Blogginlägget beskriver implementeringen av en grundläggande PCI-e (Peripheral Component Interconnect Express) enhetsdrivrutin, med fokus på minnesmappning och DMA (Direct Memory Access) operationer.",
+      "Det förklarar skapandet av en `struct pci_driver`, inställningen av en teckenenhet för interaktion med användarutrymmet, och användningen av MSI (Message Signalled Interrupts) för att hantera asynkrona DMA-överföringar.",
+      "Detta inlägg är betydelsefullt för sin praktiska guide om att utveckla en PCI-e enhetsdrivrutin, inklusive kodexempel och hänvisningar till kärndokumentation, vilket gör det värdefullt för nya mjukvaruingenjörer."
+    ],
+    "commentSummary": [
+      "Diskussionen kretsar kring att använda en FPGA (Field-Programmable Gate Array) för att bygga en displayadapter, med fokus på PCI-e (Peripheral Component Interconnect Express) hård IP (Intellectual Property).",
+      "Olika prisvärda FPGA-kort rekommenderas, inklusive Spartan 6, Artix, Screamer PCIe Squirrel och Litefury, som stöder PCIe och digital videooutput.",
+      "Blogginlägget lyfter också fram resurser och design för att skapa videokort och nämner den potentiella användningen av Displayport Alt-läge och UVC-typ USB3-webbkameror för videooutput."
+    ],
+    "points": 104,
+    "commentCount": 8,
+    "retryCount": 0,
+    "time": 1722077743
+  }
+]

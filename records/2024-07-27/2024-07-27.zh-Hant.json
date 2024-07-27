@@ -1,0 +1,332 @@
+[
+  {
+    "id": 41085376,
+    "title": "SQLite：比檔案系統快 35%",
+    "originLink": "https://sqlite.org/fasterthanfs.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41085376",
+    "commentBody": "",
+    "originSummary": [
+      "「SQLite 讀取和寫入小型二進位大物件(例如縮圖)比使用磁碟上的單個檔案快 35%，並且使用的磁碟空間少約 20%。」",
+      "效率歸因於較少的 open() 和 close() 系統呼叫以及更緊密的數據打包，預計未來版本的性能將會提升。",
+      "測試顯示，SQLite 通常比直接文件 I/O 表現更佳，尤其是在啟用了防毒軟體的 Windows 系統上，儘管性能可能會根據硬體和作業系統而有所不同。"
+    ],
+    "commentSummary": [
+      "由於較少的開啟/關閉系統呼叫以及不需要檔案系統屬性或中繼資料檢查，SQLite 比傳統檔案系統快 35%。",
+      "這項效能提升在 Windows 上尤其顯著，因為檔案系統呼叫本質上較慢。",
+      "「儘管存在一些限制，例如 2GB 的 blob 最大值和處理層次數據的挑戰，SQLite 的速度和簡單性使其在日誌和其他數據存儲方面具有優勢。」"
+    ],
+    "points": 415,
+    "commentCount": 155,
+    "retryCount": 0,
+    "time": 1722071429
+  },
+  {
+    "id": 41083972,
+    "title": "Linux 核心模組程式設計指南",
+    "originLink": "https://sysprog21.github.io/lkmpg/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083972",
+    "commentBody": "",
+    "originSummary": [
+      "《Linux 核心模組程式設計指南》提供了關於創建和管理核心模組的全面介紹。核心模組是動態可加載的程式碼段，能在不需要重新啟動的情況下增強核心功能。",
+      "「用於操作核心模組的主要工具和指令包括 `modprobe`、`insmod`、`depmod`、`lsmod` 和 `cat /proc/modules`。」",
+      "本指南涵蓋了模組初始化與清理、處理命令列參數、管理裝置驅動程式、與 `/proc` 和 `sysfs` 檔案系統互動，以及避免核心程式設計中的常見陷阱等重要主題。"
+    ],
+    "commentSummary": [
+      "「Linux 核心模組程式設計指南強調使用 QEMU 進行核心駭客活動，並建議更新 Linux 裝置驅動程式書籍。」",
+      "「Greg KH 確認《Linux Device Drivers》第四版不會出版，這引發了關於替代資源的討論，例如《The Linux Memory Manager》和《Linux Insides》。」",
+      "“用戶分享了使用 QEMU 進行除錯和 WireGuard 測試套件進行核心模組開發的經驗，強調了人工審查在撰寫過程中的重要性。”"
+    ],
+    "points": 268,
+    "commentCount": 25,
+    "retryCount": 0,
+    "time": 1722045875
+  },
+  {
+    "id": 41083286,
+    "title": "「法院關閉了讓聯邦政府在邊境搜查你手機的漏洞」",
+    "originLink": "https://reason.com/2024/07/26/courts-close-the-loophole-letting-the-feds-search-your-phone-at-the-border/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083286",
+    "commentBody": "",
+    "originSummary": [
+      "一位聯邦法官裁定，海關與邊境保護局(CBP)在邊境無法在沒有搜查令的情況下檢查電子設備，這解決了第四修正案中的一個漏洞。",
+      "「法官妮娜·莫里森表示，手機搜索是『非例行性』的，需要有合理的理由和搜查令，並將其與脫衣搜查相比，因為它們對隱私有重大影響。」",
+      "“這項裁決得到了公民自由主義者的支持，被視為對新聞自由和隱私權至關重要，這與其他巡迴法院和地區的類似決定一致。”"
+    ],
+    "commentSummary": [
+      "「紐約的一家地方法院裁定，無令狀的手機搜查在邊境屬於『非例行』，且比其他類型的搜查更具侵入性，類似於脫衣搜查。」",
+      "“此決定並不具約束性先例，且與其他巡迴法院的裁決相矛盾，這表明由於現有的『巡迴法院分歧』，最高法院可能會處理此問題。”",
+      "該裁決反映了關於隱私權和政府權力的持續辯論，特別是在邊境安全和第四修正案的背景下。"
+    ],
+    "points": 260,
+    "commentCount": 106,
+    "retryCount": 0,
+    "time": 1722036981
+  },
+  {
+    "id": 41084795,
+    "title": "「一開始是命令列(1999)」",
+    "originLink": "https://web.stanford.edu/class/cs81n/command.txt",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41084795",
+    "commentBody": "",
+    "originSummary": [
+      "Neal Stephenson 的文章《In the Beginning was the Command Line》探討了作業系統(OS)的演變及其市場動態，重點關注蘋果和微軟。",
+      "微軟透過將作業系統像消費品一樣銷售，強調便利性和易用性，達到了市場主導地位，這與重視簡單勝過複雜的廣泛文化趨勢相呼應。",
+      "「儘管有像 Linux 和 BeOS 這樣優秀且免費的替代方案崛起，大多數消費者仍然偏好微軟熟悉的產品，這突顯了社會對透過圖形使用者介面(GUI)進行中介體驗的偏好。」"
+    ],
+    "commentSummary": [
+      "“尼爾·史蒂芬森的文章《起初是命令行》(1999)強調了命令行介面(CLI)相較於圖形使用者介面(GUI)的優勢，特別是其簡潔性和溝通的便利性。”",
+      "“這篇文章將作業系統的演變比作汽車，強調了儘管圖形使用者介面(GUI)很受歡迎，但命令列介面(CLI)仍提供了穩定性和使用者控制。”",
+      "它還深入探討了科技介面在文化和哲學上的影響，提供了我們如何與科技互動的更廣泛視角。"
+    ],
+    "points": 237,
+    "commentCount": 152,
+    "retryCount": 0,
+    "time": 1722061502
+  },
+  {
+    "id": 41081435,
+    "title": "在我的手腕上使用最智能的愚蠢手錶生成 TOTP 令牌",
+    "originLink": "https://blog.singleton.io/posts/2022-10-17-otp-on-wrist/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41081435",
+    "commentBody": "",
+    "originSummary": [
+      "「Sensor Watch 已經推出了一款新的替換邏輯板，用於經典的 Casio F-91W，將其升級為 ARM Cortex M0+ 處理器，同時保留了原有的 LCD、按鈕和壓電蜂鳴器。」",
+      "升級後的主板是可編程的，允許自訂錶面和實用應用程式，包括像是雙重驗證(2FA)代碼、速率計、世界時鐘等功能。",
+      "這款手錶很容易破解，配有基於 WebAssembly 的模擬器供測試使用，並且提供詳細的文件，適合有興趣修改或製作自己錶面的使用者。"
+    ],
+    "commentSummary": [
+      "在 Hacker News 上的一個討論中，強調了在 Casio 手錶上使用 TOTP(基於時間的一次性密碼)令牌，特別是 F-91W 和 A158W 型號，用於雙重驗證(2FA)。",
+      "“該專案涉及修改手錶的韌體以顯示 TOTP 驗證碼，並且社群貢獻增強了如使用者校準等功能，甚至為手錶創建遊戲。”",
+      "“有人對於在手錶上顯示 TOTP 驗證碼的安全性表示擔憂，有些人建議使用 FIDO2 硬體金鑰作為替代方案，以更好地防範網路釣魚攻擊。”"
+    ],
+    "points": 213,
+    "commentCount": 46,
+    "retryCount": 0,
+    "time": 1722021643
+  },
+  {
+    "id": 41083801,
+    "title": "「Linux 網路效能終極指南」",
+    "originLink": "https://ntk148v.github.io/posts/linux-network-performance-ultimate-guide/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083801",
+    "commentBody": "",
+    "originSummary": [
+      "「本指南深入探討了優化 Linux 網路效能的方法，涵蓋從網路堆疊到進階封包處理技術的各種主題。」",
+      "關鍵的調整步驟包括調整 NIC 環形緩衝區大小、中斷合併、IRQ 親和性，以及使用像 AF_PACKET、DPDK 和 XDP 這樣的工具來進行高效能的封包處理。",
+      "使用 `ethtool`、`sysctl` 和 `netstat` 等工具來監控和調整網路設定，對於維持最佳效能是至關重要的。"
+    ],
+    "commentSummary": [
+      "「《Linux 網路效能終極指南》是一本全面的資源，專門用於使用 Linux 優化網路效能，特別適合從事高速網路工作的人士。」",
+      "“有一位使用者分享了一個成功案例，描述他們使用商用現成硬體(COTS)和 Wireguard 建立了一個具成本效益的 10Gbps 加密網路，成本遠低於商業硬體解決方案。”",
+      "評論中的討論包括實用的技巧，例如調整 TCP 緩衝區大小，以及自動性能調整工具，如 Oracle 的 bpftune。"
+    ],
+    "points": 175,
+    "commentCount": 15,
+    "retryCount": 0,
+    "time": 1722043073
+  },
+  {
+    "id": 41083987,
+    "title": "Windows 恢復環境和可開機 USB 創建工具僅需 200kb",
+    "originLink": "https://github.com/joshuacline/windick",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083987",
+    "commentBody": "",
+    "originSummary": [
+      "Windows 部署映像自訂工具包是一個設計用於自訂和部署 Windows 映像的命令行工具。",
+      "它為 IT 專業人員和系統管理員提供了一個原生解決方案，以簡化部署過程。",
+      "教學影片和其他資訊可以在 YouTube 和 Microsoft 的官方文件上找到。"
+    ],
+    "commentSummary": [
+      "「一款新的基於 Shell 的工具已經發布，用於創建 Windows 恢復環境和可啟動的 USB，僅需 200 KB。」",
+      "這個工具以一個包含3,085行程式碼的大型批次檔撰寫，展示了令人印象深刻的奉獻精神和效率，特別是在有像PowerShell這樣更現代的腳本語言可用的情況下。",
+      "該專案受到 Android 的 clockworkmod recovery 啟發，旨在使用「live-of-the-land」命令，這意味著它沒有任何依賴性，並且僅在 Windows 下運行。"
+    ],
+    "points": 163,
+    "commentCount": 35,
+    "retryCount": 0,
+    "time": 1722046170
+  },
+  {
+    "id": 41082502,
+    "title": "「不法分子繞過 Google 的電子郵件驗證創建 Workspace 帳戶，進行存取」",
+    "originLink": "https://krebsonsecurity.com/2024/07/crooks-bypassed-googles-email-verification-to-create-workspace-accounts-access-3rd-party-services/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41082502",
+    "commentBody": "",
+    "originSummary": [
+      "「Google 修復了一個身份驗證漏洞，該漏洞允許犯罪分子繞過電子郵件驗證來創建 Google Workspace 帳戶並冒充域名持有者。」",
+      "問題在72小時內解決，並實施了額外的檢測措施以防止未來的濫用。",
+      "攻擊者的目的是冒充域名持有者以使用第三方服務，而不是濫用 Google 服務，這些惡意活動涉及數千個未經域名驗證而創建的 Workspace 帳戶。"
+    ],
+    "commentSummary": [
+      "攻擊者繞過了 Google 的電子郵件驗證，創建了未經授權的 Workspace 帳戶，導致潛在的安全漏洞和未註冊網域收到意外的歡迎電子郵件。",
+      "「這些未經授權的帳戶被用來在第三方網站上利用『使用 Google 登入』功能，導致受害者在取回他們的網域時遇到困難。」",
+      "「該事件突顯了 Google 系統中的漏洞以及與社交登入相關的風險，促使人們呼籲改進措施，例如強制 DNS 驗證。」"
+    ],
+    "points": 163,
+    "commentCount": 42,
+    "retryCount": 0,
+    "time": 1722029640
+  },
+  {
+    "id": 41081810,
+    "title": "使用 Cloudflare 和 Cronjob 的免費 DDNS",
+    "originLink": "https://github.com/devrim/cloudflare-noip",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41081810",
+    "commentBody": "",
+    "originSummary": [
+      "此專案透過使用免費帳戶和排程任務(cronjob)自動更新 Cloudflare 上的 DNS 紀錄，提供了一個免費的動態 DNS 服務替代方案。",
+      "“使用者需要複製儲存庫，建立配置檔案(`keys.json` 和 `records.json`)，並設置一個 cronjob 或等效的任務排程器，以定期執行該腳本。”",
+      "「此腳本會使用機器當前的 IP 地址來更新 Cloudflare 上的 DNS 紀錄，這是一個經濟實惠的動態 DNS 解決方案。」"
+    ],
+    "commentSummary": [
+      "「一個 GitHub 專案提供使用 Cloudflare 和 cron 工作排程的免費動態 DNS(DDNS)解決方案，吸引了科技社群的高度關注。」",
+      "“用戶討論使用 Cloudflare 作為 DDNS 的優缺點，包括潛在的誘餌轉換策略以及強制 TLS 終止和上傳限制等限制。”",
+      "提到了替代方案和類似的專案，例如使用 Cloudflare 隧道、Tailscale 和其他 DDNS 客戶端，強調了管理動態 IP 位址的多種解決方案。"
+    ],
+    "points": 151,
+    "commentCount": 94,
+    "retryCount": 0,
+    "time": 1722024472
+  },
+  {
+    "id": 41083534,
+    "title": "機器學習面試指南書",
+    "originLink": "https://huyenchip.com/ml-interviews-book/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083534",
+    "commentBody": "",
+    "originSummary": [
+      "《機器學習面試指南》提供了全面的機器學習面試過程指南，涵蓋了職位、公司類型、面試形式和問題類型。",
+      "它包含超過 200 個知識問題和 30 個開放性問題，旨在幫助候選人和招聘經理了解並準備機器學習面試。",
+      "本書由 Chip Huyen 撰寫，他在大型科技公司和新創公司面試方面擁有豐富的經驗，書中匯集了實用的見解和準備策略。"
+    ],
+    "commentSummary": [
+      "由 Huyen Chip 所著的《Introduction to Machine Learning Interviews》一書正在被討論，對於其在準備機器學習面試方面的效果，意見不一。",
+      "有些使用者認為這本書的問題比實際的機器學習面試要簡單，另一些人則推薦《Deep Learning Interviews》這本書，認為它更具吸引力且更具代表性。",
+      "“關於使用書中的範本問題是否具有相關性存在爭論，有些人主張應該創建個性化的專案。”"
+    ],
+    "points": 145,
+    "commentCount": 9,
+    "retryCount": 0,
+    "time": 1722039572
+  },
+  {
+    "id": 41085856,
+    "title": "「Sqlitefs：將 SQLite 作為檔案系統」",
+    "originLink": "https://github.com/narumatt/sqlitefs",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41085856",
+    "commentBody": "",
+    "originSummary": [
+      "sqlite-fs 讓 Linux 和 MacOS 使用者可以將 SQLite 資料庫檔案掛載為一般檔案系統，透過資料庫來進行檔案操作。",
+      "需要最新的 Rust 程式語言(≥ 1.38)以及 libfuse(Linux)或 osxfuse(MacOS)才能運作。",
+      "支援各種檔案操作，例如建立、讀取、寫入、刪除檔案和目錄、更改屬性以及處理檔案鎖，並具備嚴格的錯誤處理機制。"
+    ],
+    "commentSummary": [
+      "SQLiteFS 是一個使用 SQLite 作為檔案系統的專案，因其獨特的檔案儲存方式而引起了關注。",
+      "這個概念讓人聯想到微軟取消的 WinFS 專案，該專案旨在使用 SQL Server 作為檔案系統。",
+      "「儘管有幽默和理論討論，實際應用如使用 SQLiteFS 進行記憶體內操作或快取正在被考慮。」"
+    ],
+    "points": 128,
+    "commentCount": 37,
+    "retryCount": 0,
+    "time": 1722079756
+  },
+  {
+    "id": 41086060,
+    "title": "「奧斯卡·扎里斯基是現代代數幾何學的奠基人之一」",
+    "originLink": "https://boogiemath.org/meta/meta-9.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41086060",
+    "commentBody": "",
+    "originSummary": [
+      "「奧斯卡·扎里斯基(1899-1986)是現代代數幾何學中的關鍵人物，以其具有影響力的著作《代數曲面》及其對該領域的重要貢獻而聞名。」",
+      "儘管 Zariski 開始學術生涯的時間比一般人晚，但他在八十多歲時仍然活躍，並在全純函數方面有著顯著的研究成果，且在多所著名學府中度過了豐富的學術旅程。",
+      "他生活中一個有趣的軼事是，因為深陷於一個數學問題而差點錯過自己的婚禮，這突顯了他對數學的極度投入。"
+    ],
+    "commentSummary": [
+      "「奧斯卡·扎里斯基被公認為現代代數幾何學的創始人之一。」",
+      "用戶分享了軼事並討論了各種主題，包括數學家卡勒·瓦伊薩拉的幽默事件和「想像力因子」，這個因子衡量了在現實世界與想像世界中花費的時間。",
+      "對話還深入探討了歷史和政治議題，例如俄國革命以及共產主義與資本主義的辯論。"
+    ],
+    "points": 123,
+    "commentCount": 49,
+    "retryCount": 0,
+    "time": 1722082338
+  },
+  {
+    "id": 41084318,
+    "title": "“Bril：用於教學編譯器的中間語言”",
+    "originLink": "https://www.cs.cornell.edu/~asampson/blog/bril.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41084318",
+    "commentBody": "",
+    "originSummary": [
+      "Bril，大紅中間語言，是為了簡化編譯器教學而創建的，優先考慮易用性和簡單性，而非性能和代碼大小。",
+      "Bril 程式是 JSON 文件，使其可以用任何程式語言存取並且容易分享。",
+      "Bril 生態系統已經擴展，包含學生的貢獻，如工具和語言擴展，儘管其 SSA(靜態單一指派)形式需要改進。"
+    ],
+    "commentSummary": [
+      "Bril 是一種中間語言(IL)，由康奈爾大學設計，用於教學編譯器。",
+      "“討論強調了重新設計 Bril 的靜態單一賦值(SSA)形式的必要性，並與其他中間語言(IL)如 A-正常形式(ANF)和續延傳遞風格(CPS)進行比較。”",
+      "有些人認為現有的中間語言(如 LLVM)已足夠用於教育目的，而另一些人則強調 Bril 在教授編譯器概念方面的獨特方法。"
+    ],
+    "points": 112,
+    "commentCount": 13,
+    "retryCount": 0,
+    "time": 1722052249
+  },
+  {
+    "id": 41083077,
+    "title": "驅動編譯器",
+    "originLink": "https://fabiensanglard.net/dc/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41083077",
+    "commentBody": "",
+    "originSummary": [
+      "這個系列旨在填補文學中關於使用工具將程式轉換為可執行檔的空白，重點在於核心概念，而不是教學語言或如何編寫編譯器。",
+      "它提供了使用 bintools 和驅動程式詳細模式(-v)的可重現步驟，幫助讀者在基本範例之外進行探索，假設使用的是搭載 gcc 或 clang 編譯器的 Linux 平台。",
+      "這個系列分為五個部分：Driver、cpp(前處理器)、cc(編譯器)、ld(連結器)和 Loader，提供了一個結構化的方法來理解編譯過程。"
+    ],
+    "commentSummary": [
+      "這篇文章對 C 和 C++ 工具鏈提供了極好的介紹，重點在於 Linux 和基於 ELF 的平台。",
+      "「關鍵澄清包括 C++ 標準庫比 STL 更廣泛，且 ::operator new() 是運行時的一部分，而不僅僅是模板。」",
+      "這篇文章應該更好地區分作業系統核心載入器和使用者空間動態載入器。"
+    ],
+    "points": 106,
+    "commentCount": 5,
+    "retryCount": 0,
+    "time": 1722034644
+  },
+  {
+    "id": 41085713,
+    "title": "了解 PCI-e：驅動程式與 DMA",
+    "originLink": "https://blog.davidv.dev/posts/pcie-driver-dma/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41085713",
+    "commentBody": "",
+    "originSummary": [
+      "「這篇文章詳細介紹了一個基本的 PCI-e(周邊元件互連快速通道)裝置驅動程式的實作，重點在於記憶體映射和 DMA(直接記憶體存取)操作。」",
+      "它解釋了 `struct pci_driver` 的創建、用於使用者空間互動的字元裝置設置，以及使用 MSI(訊息信號中斷)來處理非同步 DMA 傳輸。",
+      "「這篇文章因其關於開發 PCI-e 裝置驅動程式的實用指南而顯得重要，內容包括程式碼片段和內核文件的參考資料，對於新進的軟體工程師來說非常有價值。」"
+    ],
+    "commentSummary": [
+      "討論的重點是使用 FPGA(現場可編程門陣列)來構建顯示適配器，並著重於 PCI-e(周邊元件互聯快速通道)硬 IP(智慧財產)。",
+      "「推薦各種價格實惠的 FPGA 開發板，包括 Spartan 6、Artix、Screamer PCIe Squirrel 和 Litefury，這些開發板支援 PCIe 和數位視訊輸出。」",
+      "「該文章還強調了用於製作視頻卡的資源和設計，並提到可能使用 Displayport Alt 模式和 UVC 類型的 USB3 攝像頭進行視頻輸出。」"
+    ],
+    "points": 104,
+    "commentCount": 8,
+    "retryCount": 0,
+    "time": 1722077743
+  }
+]
