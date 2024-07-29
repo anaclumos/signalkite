@@ -1,0 +1,331 @@
+[
+  {
+    "id": 41095530,
+    "title": "« Analyse technique de l'incident CrowdStrike par Microsoft »",
+    "originLink": "https://www.microsoft.com/en-us/security/blog/2024/07/27/windows-security-best-practices-for-integrating-and-managing-security-tools/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095530",
+    "commentBody": "",
+    "originSummary": [
+      "Windows offre des options de sécurité flexibles, y compris des fonctionnalités intégrées et des outils tiers, pour améliorer la sécurité et la fiabilité des entreprises.",
+      "« Une récente panne de CrowdStrike a été attribuée à un problème de sécurité de la mémoire dans le pilote CSagent, soulignant l'importance d'une gestion robuste des pilotes du noyau. »",
+      "« Microsoft collabore avec des fournisseurs tiers par le biais de l'Initiative Microsoft Virus (MVI) pour garantir la qualité et la fiabilité des produits de sécurité, en mettant l'accent sur la réduction de la dépendance au noyau et l'amélioration des protections en mode utilisateur. »"
+    ],
+    "commentSummary": [
+      "« L'analyse de Microsoft sur l'incident de CrowdStrike souligne la nécessité de moderniser les approches de sécurité et de réduire la dépendance aux pilotes de noyau pour accéder aux données de sécurité critiques. »",
+      "L'incident a conduit à des débats sur les pratiques d'assurance qualité de CrowdStrike et sur la question de savoir si Microsoft devrait limiter l'accès au noyau pour les fournisseurs tiers, une mesure précédemment bloquée par l'UE pour une concurrence équitable.",
+      "« Cette situation met en évidence les avantages potentiels de transférer davantage de fonctions de sécurité en mode utilisateur, dans le but d'améliorer les pratiques de déploiement et la fiabilité. »"
+    ],
+    "points": 372,
+    "commentCount": 372,
+    "retryCount": 0,
+    "time": 1722196542
+  },
+  {
+    "id": 41095790,
+    "title": "« tolower() avec AVX-512 »",
+    "originLink": "https://dotat.at/@/2024-07-28-tolower-avx512.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095790",
+    "commentBody": "",
+    "originSummary": [
+      "« L'article traite de l'utilisation des instructions SIMD (Single Instruction, Multiple Data) pour un traitement efficace des chaînes de caractères, en se concentrant spécifiquement sur la fonction tolower() en Rust. »",
+      "« L'auteur a expérimenté avec AVX-512-BW sur un processeur AMD Zen 4, obtenant des performances élevées pour les chaînes longues et courtes en utilisant des chargements et des stockages masqués. »",
+      "« Les résultats ont montré que l'AVX-512-BW est particulièrement efficace pour gérer les chaînes courtes, offrant des performances fluides et rapides sans les problèmes observés dans le code autovectorisé. »"
+    ],
+    "commentSummary": [
+      "« Le truc \"unsafe read beyond of death\" en Rust et LLVM est considéré comme un comportement indéfini, ce qui conduit à des optimisations potentielles du compilateur qui supposent que cela ne se produit pas, entraînant des résultats inattendus. »",
+      "« L'assemblage en ligne est actuellement la seule solution de contournement, avec des alternatives comme les intrinsics de chargement aligné masqué et les chargements gelés étant suggérées. »",
+      "« Le débat sur la gestion des lectures hors limites se poursuit, certains plaidant pour un comportement défini par l'implémentation, et les opérations masquées de l'AVX-512 sont remarquées pour leurs avantages en termes de performance malgré une adoption limitée en raison de la segmentation du marché par Intel. »"
+    ],
+    "points": 241,
+    "commentCount": 118,
+    "retryCount": 0,
+    "time": 1722199139
+  },
+  {
+    "id": 41097241,
+    "title": "«ps aux écrit en bash sans forking»",
+    "originLink": "https://github.com/izabera/ps",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41097241",
+    "commentBody": "",
+    "originSummary": [
+      "« Une question d'entretien pour un poste en bash/Linux pourrait concerner la gestion d'une situation où tous les identifiants de processus (PID) sont pris, empêchant ainsi la création de nouveaux processus. »",
+      "« Un outil est mentionné qui peut imiter une commande `ps aux` fonctionnelle dans de tels scénarios, prétendant avec humour une compatibilité universelle. »"
+    ],
+    "commentSummary": [
+      "« La discussion sur GitHub tourne autour du défi d'aligner les colonnes en programmation, en mettant l'accent sur l'utilisation des f-strings de Python et du remplissage pour cet objectif. »",
+      "« Les utilisateurs suggèrent des outils et des formats alternatifs, tels que YAML pour une gestion des données plus simple, et mentionnent des utilitaires comme Octopus Deploy et Docker CLI pour la sortie JSON. »",
+      "« Le fil aborde également la gestion de l'épuisement des PID (Process ID) dans bash, avec des recommandations telles que l'utilisation du répertoire /proc/[pid]/ et `exec Python` pour une meilleure gestion des processus. »"
+    ],
+    "points": 214,
+    "commentCount": 81,
+    "retryCount": 0,
+    "time": 1722215457
+  },
+  {
+    "id": 41095839,
+    "title": "Un visualiseur de passes de football/soccer réalisé avec Three.js",
+    "originLink": "https://statsbomb-3d-viz.vercel.app/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095839",
+    "commentBody": "",
+    "originSummary": [
+      "« Un visualiseur de passes de football a été développé en utilisant les données ouvertes de StatsBomb, qui constituent un ensemble de données riche pour l'analyse du football. »",
+      "« L'outil permet aux utilisateurs d'analyser et de visualiser les schémas de passes, avec des filtres pour la distance des passes, l'équipe et les joueurs individuels. »",
+      "« Ce développement met en évidence la tendance croissante à exploiter les données ouvertes pour des analyses sportives avancées et des visualisations. »"
+    ],
+    "commentSummary": [
+      "« Un visualiseur de passes de football utilisant Three.js exploite les données ouvertes de StatsBomb pour analyser et visualiser les schémas de passes, permettant aux utilisateurs de filtrer par distance de passe, équipe et joueurs. »",
+      "« Les retours de la communauté incluent des suggestions pour des outils de visualisation de haut niveau comme deck.gl ou kepler.gl, ainsi que des fonctionnalités telles que des animations basées sur le temps et des cartes de chaleur pour une meilleure analyse. »",
+      "« Les utilisateurs ont signalé des problèmes tels que des erreurs CORS et des difficultés de chargement de fichiers, indiquant des domaines potentiels d'amélioration de l'expérience utilisateur et de la gestion des erreurs. »"
+    ],
+    "points": 176,
+    "commentCount": 34,
+    "retryCount": 0,
+    "time": 1722199517
+  },
+  {
+    "id": 41099901,
+    "title": "« Les CRDTs d'arbres mobiles et l'implémentation de Loro »",
+    "originLink": "https://loro.dev/blog/movable-tree",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41099901",
+    "commentBody": "",
+    "originSummary": [
+      "« L'article traite des défis de la mise en œuvre des CRDTs (types de données répliquées sans conflit) pour les arbres mobiles dans des environnements collaboratifs et de la manière dont Loro aborde ces problèmes, y compris le tri des nœuds enfants. »",
+      "« La mise en œuvre de Loro utilise l'algorithme de \"A highly-available move operation for replicated trees\" et intègre l'algorithme Fractional Index pour le tri, en gérant les conflits avec des PeerIDs uniques et du jitter. »",
+      "« L'approche de Loro soutient la collaboration en temps réel et les vérifications des versions historiques, montrant une haute performance dans divers scénarios, ce qui la rend adaptée à une utilisation en production dans des applications collaboratives. »"
+    ],
+    "commentSummary": [
+      "« Les CRDTs (types de données répliquées sans conflit) pour arbres mobiles et l'implémentation de Loro attirent l'attention pour leur capacité à gérer des opérations d'arbres complexes dans des environnements collaboratifs. »",
+      "Les développeurs discutent des applications pratiques, telles que la bibliothèque React Table pour gérer de grandes structures de données hiérarchiques et l'éditeur multijoueur de Thymer pour les tâches et les notes.",
+      "« La conversation met en lumière les défis et les solutions liés à l'utilisation des CRDT pour divers types de données, y compris le texte, les images et les modèles 3D, en soulignant l'importance de la synchronisation efficace et de la résolution des conflits. »"
+    ],
+    "points": 175,
+    "commentCount": 23,
+    "retryCount": 0,
+    "time": 1722255899
+  },
+  {
+    "id": 41096486,
+    "title": "LeanDojo : Démonstration de théorèmes en Lean utilisant des LLM",
+    "originLink": "https://leandojo.org/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41096486",
+    "commentBody": "",
+    "originSummary": [
+      "« LeanDojo introduit Lean Copilot, permettant aux modèles de langage (LLMs) d'assister dans l'automatisation des preuves Lean en suggérant des tactiques et en recherchant des preuves. »",
+      "Le modèle ReProver, utilisant un Transformer encodeur-décodeur, récupère des prémisses de la bibliothèque mathématique et génère la prochaine tactique, surpassant l'automatisation de preuve intégrée de Lean.",
+      "« Le jeu de données de LeanDojo comprend des benchmarks étendus et des annotations détaillées, garantissant que les modèles peuvent se généraliser aux théorèmes avec des prémisses nouvelles et découvrir de nouvelles preuves. »"
+    ],
+    "commentSummary": [
+      "« LeanDojo est une nouvelle initiative qui intègre Lean, un assistant de preuve, avec des modèles de langage de grande taille (LLM) pour améliorer les capacités de démonstration de théorèmes. »",
+      "« Le projet vise à combler le fossé entre la notation mathématique inexécutable et le code exécutable, pouvant potentiellement aider à résoudre des problèmes mathématiques complexes tels que les équations différentielles stochastiques. »",
+      "« Ce développement est significatif car il pourrait améliorer la fiabilité et l'efficacité de la vérification formelle dans des applications critiques, telles que les systèmes de haute sécurité et la démonstration automatique de théorèmes. »"
+    ],
+    "points": 155,
+    "commentCount": 47,
+    "retryCount": 0,
+    "time": 1722206076
+  },
+  {
+    "id": 41100958,
+    "title": "« Cloudflare nous fait-il payer trop cher pour leur service d'images ? »",
+    "originLink": "http://jpetazzo.github.io/2024/07/26/cloudflare-images-overcharge-billing/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41100958",
+    "commentBody": "",
+    "originSummary": [
+      "Le modèle de facturation mixte de Cloudflare Images, combinant le stockage prépayé et la livraison post-payée, a conduit à des factures inattendues et déroutantes pour EphemeraSearch, dépassant parfois 400 $ au lieu des 110 $ attendus.",
+      "« Malgré de multiples contacts avec le support de Cloudflare pendant huit mois, aucune solution n'a été apportée, ce qui a incité à passer à des solutions plus économiques comme S3 ou des serveurs dédiés. »",
+      "« Cette expérience souligne l'importance de dépenses efficaces pour les projets indépendants à faible revenu, mettant en évidence que bien que Cloudflare Images offre un service de qualité, son modèle de facturation peut ne pas convenir à tous les utilisateurs. »"
+    ],
+    "commentSummary": [
+      "Des préoccupations ont été soulevées concernant la possibilité que Cloudflare facture trop cher pour leur service Images, des utilisateurs signalant des écarts entre les coûts attendus et les coûts réels.",
+      "« Des comparaisons sont faites avec d'autres services comme Amazon S3, Bunny CDN et Cloudflare R2, qui sont perçus comme des alternatives plus rentables. »",
+      "« Les pratiques de facturation et le support client de Cloudflare ont été scrutés de près, certains utilisateurs ayant rencontré des cycles de facturation compliqués et des frais inattendus. »"
+    ],
+    "points": 137,
+    "commentCount": 73,
+    "retryCount": 0,
+    "time": 1722264957
+  },
+  {
+    "id": 41098141,
+    "title": "« Comprendre la conception du système vidéo Super Nintendo »",
+    "originLink": "https://fabiensanglard.net/snes_video/index.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41098141",
+    "commentBody": "",
+    "originSummary": [
+      "« L'exploration du système vidéo Super Nintendo (SNES) par Fabien Sanglard met en lumière les décisions de conception prises par les ingénieurs de Nintendo en 1989 pour garantir la compatibilité avec les téléviseurs CRT et les normes NTSC. »",
+      "« La SNES utilisait une horloge maîtresse de 21,47727 MHz, divisée pour obtenir une horloge de points de 5,3693175 MHz, ce qui donnait 341 points par ligne et un taux de rafraîchissement de 60,098 Hz, avec des périodes de masquage horizontal et vertical pour éviter les artefacts. »",
+      "« La SNES supportait les standards NTSC et PAL, fournissait des sorties composite et S-Video, et pouvait doubler les résolutions verticales et horizontales pour des applications spécifiques, malgré des défis comme le scintillement. »"
+    ],
+    "commentSummary": [
+      "Le post traite de la conception et de l'architecture de la Super Nintendo Entertainment System (SNES), en mettant en avant ses spécifications techniques et son contexte historique.",
+      "Les points clés incluent les options de résolution de la SNES, l'impact des différentes normes TV (NTSC vs. PAL) sur le gameplay, et l'utilisation des CRT (tubes cathodiques) dans les jeux d'arcade et les consoles domestiques.",
+      "« La discussion aborde également l'utilisation des connecteurs SCART dans les téléviseurs européens et les défis de l'émulation précise de la sortie vidéo de la SNES. »"
+    ],
+    "points": 134,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1722231398
+  },
+  {
+    "id": 41095814,
+    "title": "« Ne préférez pas aveuglément `emplace_back` à `push_back` (2021) »",
+    "originLink": "https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095814",
+    "commentBody": "",
+    "originSummary": [
+      "« Les outils comme clang-tidy et PVS-Studio peuvent signaler `push_back` comme étant de \"mauvais style\" et suggérer `emplace_back`, mais ce changement n'est pas toujours bénéfique. »",
+      "« `emplace_back` devrait être utilisé pour éviter de créer des objets temporaires, mais il n'est pas lié aux sémantiques de déplacement et peut toujours entraîner des copies s'il n'est pas utilisé correctement. »",
+      "« Préférez `push_back` pour la simplicité et des temps de compilation plus rapides, en utilisant `emplace_back` uniquement lorsque cela est nécessaire pour des types non déplaçables ou pour éviter des objets temporaires. »"
+    ],
+    "commentSummary": [
+      "« La discussion porte sur l'utilisation de `emplace_back` par rapport à `push_back` en C++ pour ajouter des éléments à des conteneurs comme les vecteurs. »",
+      "« `emplace_back` construit un objet sur place, évitant potentiellement des copies inutiles, tandis que `push_back` ajoute un objet déjà construit au conteneur. »",
+      "« La conversation souligne que bien que `emplace_back` puisse être plus efficace, il est également plus complexe, et `push_back` pourrait être préférable pour une utilisation quotidienne à moins que les avantages spécifiques de `emplace_back` ne soient nécessaires. »"
+    ],
+    "points": 134,
+    "commentCount": 100,
+    "retryCount": 0,
+    "time": 1722199323
+  },
+  {
+    "id": 41096187,
+    "title": "« Polymorphisme borné de genre supérieur en OCaml (2021) »",
+    "originLink": "https://okmij.org/ftp/ML/higher-kind-poly.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41096187",
+    "commentBody": "",
+    "originSummary": [
+      "Higher-kinded polymorphism, qui abstrait les constructeurs de types, est crucial pour les opérations génériques sur les collections et l'intégration des langages spécifiques au domaine (DSL) typés.",
+      "« OCaml ne prend pas en charge nativement le polymorphisme de genre supérieur en raison de problèmes d'aliasing de type, mais il peut être simulé en utilisant des foncteurs, la défunktionalisation et les algèbres initiales. »",
+      "« Diverses méthodes, y compris l'abstraction de foncteurs et la réduction au polymorphisme ordinaire, permettent d'atteindre le polymorphisme de genre supérieur en OCaml, bien que cela puisse parfois ne pas être nécessaire. »"
+    ],
+    "commentSummary": [
+      "« Discussion sur le polymorphisme borné de plus haut niveau en OCaml, en se concentrant sur les alias de type et les problèmes d'égalité de type, qui conduisent à des problèmes d'unification de plus haut ordre. »",
+      "« La praticabilité pratique de ces questions est mise en évidence, avec des références au langage Idris et au tutoriel \"Elaboration Zoo\" d'András Kovács pour un apprentissage complémentaire. »",
+      "« Clarification sur la syntaxe des GADT (Types de Données Abstraits Généralisés) en OCaml, avec des comparaisons à F# qui ne prend actuellement pas en charge les GADT. »"
+    ],
+    "points": 132,
+    "commentCount": 9,
+    "retryCount": 0,
+    "time": 1722202847
+  },
+  {
+    "id": 41098488,
+    "title": "Les enfants devraient être autorisés à s'ennuyer, selon un expert (2013)",
+    "originLink": "https://www.bbc.com/news/education-21895704",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41098488",
+    "commentBody": "",
+    "originSummary": [
+      "« Dr. Teresa Belton, experte en éducation, affirme que permettre aux enfants de s'ennuyer est crucial pour favoriser la créativité, car une activité constante peut entraver l'imagination. »",
+      "Les interviews avec des créatifs comme l'auteure Meera Syal et l'artiste Grayson Perry révèlent que l'ennui a joué un rôle significatif dans leur développement créatif, Perry le décrivant comme un « état créatif ».",
+      "« Le Dr Belton souligne que l'attente de stimulation constante de la société empêche les enfants de développer leur créativité interne, plaidant pour des moments de \"regarder et contempler\" loin des écrans pour stimuler l'imagination. »"
+    ],
+    "commentSummary": [
+      "« Un expert suggère qu'il faudrait permettre aux enfants de ressentir l'ennui, car cela peut favoriser la créativité et l'autonomie. »",
+      "En réfléchissant aux expériences passées de leur enfance, les utilisateurs se souviennent d'avoir participé à des activités risquées mais socialement enrichissantes, contrastant avec la surstimulation basée sur les écrans des enfants modernes.",
+      "« La discussion met l'accent sur l'équilibre entre l'ennui et la sécurité, en préconisant des environnements supervisés où les enfants peuvent explorer et se développer. »"
+    ],
+    "points": 113,
+    "commentCount": 160,
+    "retryCount": 0,
+    "time": 1722237432
+  },
+  {
+    "id": 41100820,
+    "title": "« Yark : Archiviste YouTube avec interface hors ligne »",
+    "originLink": "https://github.com/Owez/yark",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41100820",
+    "commentBody": "",
+    "originSummary": [
+      "« Yark simplifie l'archivage de YouTube avec des commandes d'installation et de gestion faciles, nécessitant Python 3.9+ et éventuellement FFmpeg. »",
+      "Les utilisateurs peuvent créer, actualiser et consulter des archives, qui sont stockées dans une structure basée sur des répertoires avec des métadonnées, des vidéos et des vignettes.",
+      "Cet outil prend en charge la visualisation hors ligne avec des modes clair et sombre et permet de suggérer des fonctionnalités via l'onglet des problèmes du dépôt."
+    ],
+    "commentSummary": [
+      "« Yark est un archiviste YouTube avec une interface utilisateur hors ligne, conçu pour aider les utilisateurs à sauvegarder le contenu YouTube localement. »",
+      "Les utilisateurs discutent d'outils similaires pour Twitch, soulignant des défis tels que le streaming de fichiers MP4 volumineux et la gestion des requêtes de serveur HTTP pour des fichiers avec des caractères spéciaux.",
+      "« La conversation inclut des détails techniques sur le streaming, tels que l'importance des serveurs prenant en charge les requêtes de plage pour éviter les problèmes de mise en mémoire tampon, avec des recommandations pour utiliser VLC ou Nginx pour une utilisation pratique. »"
+    ],
+    "points": 103,
+    "commentCount": 5,
+    "retryCount": 0,
+    "time": 1722263847
+  },
+  {
+    "id": 41098974,
+    "title": "« MeTube : Téléchargeur YouTube auto-hébergé »",
+    "originLink": "https://github.com/alexta69/metube",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41098974",
+    "commentBody": "",
+    "originSummary": [
+      "« Les nouvelles versions de Node ne prennent plus en charge les builds ARM 32 bits ; les utilisateurs doivent migrer vers un système d'exploitation 64 bits pour les mises à jour. »",
+      "« Une interface graphique web pour youtube-dl (fork yt-dlp) est maintenant disponible, prenant en charge les téléchargements de playlists depuis YouTube et d'autres sites, et peut être exécutée en utilisant Docker ou docker-compose. »",
+      "« Les options de configuration incluent des variables d'environnement pour l'ID utilisateur, l'ID de groupe, les répertoires de téléchargement, et plus encore, avec des valeurs par défaut fournies pour faciliter l'installation. »"
+    ],
+    "commentSummary": [
+      "MeTube est un téléchargeur YouTube auto-hébergé qui utilise yt-dlp, un outil en ligne de commande populaire pour télécharger des vidéos depuis YouTube.",
+      "Le projet fournit une interface utilisateur (UI) pour yt-dlp, la rendant accessible aux utilisateurs qui préfèrent une interface graphique à des opérations en ligne de commande.",
+      "« La discussion met en lumière diverses alternatives et outils connexes, tels que Celluloid, Parabolic et Tube Archivist, qui offrent des fonctionnalités similaires pour différentes plateformes et cas d'utilisation. »"
+    ],
+    "points": 93,
+    "commentCount": 37,
+    "retryCount": 0,
+    "time": 1722243581
+  },
+  {
+    "id": 41097228,
+    "title": "« La technologie de l'annihilation planétaire : ChronoCam (2013) »",
+    "originLink": "https://www.forrestthewoods.com/blog/tech_of_planetary_annihilation_chrono_cam/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41097228",
+    "commentBody": "",
+    "originSummary": [
+      "Planetary Annihilation, un jeu de stratégie en temps réel développé par Uber Entertainment, est entré en phase bêta et propose des technologies innovantes telles que la génération procédurale de planètes et des parties à 40 joueurs.",
+      "Le jeu introduit ChronoCam, un système de replay unique qui permet aux joueurs de remonter dans le temps, de jouer en ralenti/accéléré, et de voir le monde du jeu depuis différents points dans le temps, même pendant les parties en direct.",
+      "« En utilisant une architecture client-serveur, ChronoCam minimise l'utilisation de la bande passante en représentant les données de jeu sous forme de courbes et prend en charge des fonctionnalités de relecture robustes, améliorant ainsi les mesures anti-triche et l'engagement de la communauté en ligne. »"
+    ],
+    "commentSummary": [
+      "Planetary Annihilation, un jeu de stratégie en temps réel (RTS), présentait une mécanique unique de révision temporelle appelée ChronoCam, permettant aux joueurs de revoir et d'interagir avec les états de jeu passés.",
+      "« Le jeu a été initialement financé par une campagne Kickstarter très réussie, récoltant 2,2 millions de dollars, mais a rencontré des défis en raison de son design ambitieux, incluant plusieurs champs de bataille sphériques. »",
+      "« Malgré les critiques initiales, la suite du jeu, Planetary Annihilation: Titans, a reçu des avis positifs sur Steam, mettant en avant les réalisations techniques des développeurs et la conception innovante du moteur. »"
+    ],
+    "points": 85,
+    "commentCount": 28,
+    "retryCount": 0,
+    "time": 1722215260
+  },
+  {
+    "id": 41095429,
+    "title": "« Niveaux d'usure et couches de traduction des cartes SD (2014) »",
+    "originLink": "https://msreekan.com/2014/01/15/sdcard/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095429",
+    "commentBody": "",
+    "originSummary": [
+      "Les cartes SD utilisent de la mémoire flash NAND MLC (Multi-Level Cell) ou SLC (Single-Level Cell), en abstraisant des complexités telles que les effacements de blocs et l'équilibrage de l'usure.",
+      "« La carte détecte s'il faut utiliser SPI (Serial Peripheral Interface) ou le bus SD lors de l'alimentation en tension et initie la pile logicielle appropriée, complétant le processus de démarrage lorsque le logiciel entre dans l'état de transfert. »",
+      "Une couche de traduction mappe les adresses virtuelles aux adresses physiques, optimisant les performances d'écriture avec des écritures contiguës et gérant les surcharges pour les écritures aléatoires à travers les unités d'allocation (AUs), généralement de 4 Mo chacune."
+    ],
+    "commentSummary": [
+      "« Lors d'une conférence, une anecdote sur le démantèlement de cartes SD défectueuses a mis en lumière un bug de nivellement d'usure qui a provoqué une réécriture partielle du firmware, suscitant des discussions sur la fiabilité des cartes SD. »",
+      "Les utilisateurs ont partagé leurs expériences de défaillances de cartes SD et de récupération de données, notant que les cartes mémoire plus denses sont plus sujettes aux problèmes, tandis que les cartes de qualité industrielle, bien que plus petites, sont plus durables.",
+      "« Les suggestions pour améliorer la fiabilité des cartes SD incluaient un meilleur logiciel pour l'agrégation d'écriture et le nivellement de l'usure, ainsi que des cartes SD capables de redimensionner automatiquement les partitions pour gérer les blocs usés. »"
+    ],
+    "points": 84,
+    "commentCount": 55,
+    "retryCount": 0,
+    "time": 1722195380
+  }
+]

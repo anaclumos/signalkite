@@ -15,12 +15,207 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 28 Jul 2024 19:10:28 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jul 2024 19:13:07 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/fi.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 28 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[fi]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-29]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/29&#39;</h2>
+<h1>2024-07-29</h1>
+<h2><a href="https://www.microsoft.com/en-us/security/blog/2024/07/27/windows-security-best-practices-for-integrating-and-managing-security-tools/">Microsoftin tekninen erittely CrowdStrike-tapauksesta</a></h2>
+<ul>
+<li>Windows tarjoaa joustavia suojausvaihtoehtoja, mukaan lukien integroidut ominaisuudet ja kolmannen osapuolen työkalut, parantaakseen yritysten turvallisuutta ja luotettavuutta.</li>
+<li>Äskettäinen CrowdStrike-katkos jäljitettiin CSagent-ajurin muistiturvallisuusongelmaan, mikä korostaa vankan ydinajurien hallinnan tärkeyttä.</li>
+<li>Microsoft tekee yhteistyötä kolmansien osapuolten toimittajien kanssa Microsoft Virus Initiative (MVI) -ohjelman kautta varmistaakseen tietoturvatuotteiden laadun ja luotettavuuden, korostaen vähentynyttä ytimen riippuvuutta ja parannettuja käyttäjätilan suojauksia.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095530">Reaktiot</a></h3>
+<ul>
+<li>Microsoftin analyysi CrowdStrike-tapauksesta korostaa tarvetta nykyaikaistaa tietoturvakäytännöt ja vähentää riippuvuutta ytimen ajureista kriittisten tietoturvatietojen saamiseksi.</li>
+<li>Tapaus on johtanut keskusteluihin CrowdStriken laadunvarmistuskäytännöistä ja siitä, pitäisikö Microsoftin rajoittaa kolmansien osapuolten pääsyä ytimeen, mikä EU on aiemmin estänyt reilun kilpailun vuoksi.</li>
+<li>Tämä tilanne korostaa mahdollisia hyötyjä, joita saadaan siirtämällä enemmän turvallisuustoimintoja käyttäjätilaan, tavoitellen parempia käyttöönotto käytäntöjä ja luotettavuutta.</li>
+</ul>
+<h2><a href="https://dotat.at/@/2024-07-28-tolower-avx512.html">tolower() AVX-512:lla</a></h2>
+<ul>
+<li>Artikkeli käsittelee SIMD (Single Instruction, Multiple Data) -ohjeiden käyttöä tehokkaaseen merkkijonojen käsittelyyn, erityisesti keskittyen tolower()-funktioon Rust-kielessä.</li>
+<li>Kirjoittaja kokeili AVX-512-BW:tä AMD Zen 4 -prosessorilla, saavuttaen korkean suorituskyvyn sekä pitkille että lyhyille merkkijonoille käyttäen maskattuja latauksia ja tallennuksia.</li>
+<li>Tulokset osoittivat, että AVX-512-BW on erityisen tehokas lyhyiden merkkijonojen käsittelyssä, tarjoten sujuvaa ja nopeaa suorituskykyä ilman autovektoroidussa koodissa havaittuja ongelmia.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095790">Reaktiot</a></h3>
+<ul>
+<li>Rustin ja LLVM:n &quot;unsafe read beyond of death&quot; -temppu katsotaan määrittelemättömäksi toiminnaksi, mikä voi johtaa mahdollisiin kääntäjän optimointeihin, jotka olettavat, ettei sitä tapahdu, aiheuttaen odottamattomia tuloksia.</li>
+<li>Rinnakkaiskokoonpano on tällä hetkellä ainoa kiertotie, ja vaihtoehtoja, kuten maskatut kohdistetut latausintrinsiikit ja jäädytetyt lataukset, on ehdotettu.</li>
+<li>Keskustelu rajojen ulkopuolisten lukujen käsittelystä jatkuu, ja jotkut kannattavat toteutuksen määrittelemää toimintaa. AVX-512:n maskatut operaatiot tunnetaan suorituskykyeduistaan, vaikka niiden käyttö on rajoitettua Intelin markkinasegmentoinnin vuoksi.</li>
+</ul>
+<h2><a href="https://github.com/izabera/ps">ps aux kirjoitettuna bashissa ilman haarautumista</a></h2>
+<ul>
+<li>Haastattelukysymys bash/Linux-tehtävään saattaa koskea tilannetta, jossa kaikki prosessitunnukset (PID) ovat käytössä, estäen uusien prosessien luomisen.</li>
+<li>Mainitaan työkalu, joka voi jäljitellä toimivaa <code>ps aux</code> -komentoa tällaisissa tilanteissa, humoristisesti väittäen sen olevan yleisesti yhteensopiva.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41097241">Reaktiot</a></h3>
+<ul>
+<li>Keskustelu GitHubissa pyörii ohjelmoinnissa sarakkeiden tasaamisen haasteen ympärillä, keskittyen erityisesti Pythonin f-merkkijonojen ja täytön käyttöön tässä tarkoituksessa.</li>
+<li>Käyttäjät ehdottavat vaihtoehtoisia työkaluja ja formaatteja, kuten YAML yksinkertaisempaan datan käsittelyyn, ja mainitsevat työkaluja kuten Octopus Deploy ja Docker CLI JSON-tulostusta varten.</li>
+<li>Lanka käsittelee myös PID (Process ID) -uupumuksen käsittelyä bashissa, ja suosittelee esimerkiksi /proc/[pid]/-hakemiston käyttöä ja <code>exec Python</code> -komentoa paremman prosessinhallinnan saavuttamiseksi.</li>
+</ul>
+<h2><a href="https://statsbomb-3d-viz.vercel.app/">Jalkapallon syöttöjen visualisointityökalu, joka on tehty Three.js:llä</a></h2>
+<ul>
+<li>Jalkapallon syöttöjen visualisoija on kehitetty käyttäen StatsBombin avointa dataa, joka on rikas tietoaineisto jalkapalloanalytiikkaa varten.</li>
+<li>Työkalu mahdollistaa käyttäjien analysoida ja visualisoida syöttökuvioita, sisältäen suodattimet syöttöetäisyydelle, joukkueelle ja yksittäisille pelaajille.</li>
+<li>Tämä kehitys korostaa kasvavaa suuntausta hyödyntää avointa dataa edistyneessä urheiluanalytiikassa ja visualisoinnissa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095839">Reaktiot</a></h3>
+<ul>
+<li>Jalkapallon syöttöjen visualisoija, joka käyttää Three.js-kirjastoa, hyödyntää StatsBombin avointa dataa analysoidakseen ja visualisoidakseen syöttökuvioita, mahdollistaen käyttäjien suodattaa syöttöjä etäisyyden, joukkueen ja pelaajien mukaan.</li>
+<li>Yhteisön palaute sisältää ehdotuksia korkeamman tason visualisointityökaluista, kuten deck.gl tai kepler.gl, sekä ominaisuuksia, kuten aikaperusteiset animaatiot ja lämpökartat paremman analyysin saavuttamiseksi.</li>
+<li>Useat käyttäjät ovat raportoineet ongelmista, kuten CORS-virheistä ja vaikeuksista tiedostojen lataamisessa, mikä viittaa mahdollisiin parannuskohteisiin käyttäjäkokemuksessa ja virheenkäsittelyssä.</li>
+</ul>
+<h2><a href="https://loro.dev/blog/movable-tree">Siirrettävät puu-CRDT:t ja Loron toteutus</a></h2>
+<ul>
+<li>Artikkeli käsittelee Movable Tree CRDT:iden (Conflict-free Replicated Data Types) käyttöönoton haasteita yhteistyöympäristöissä ja kuinka Loro ratkaisee nämä ongelmat, mukaan lukien lapsisolmujen lajittelun.</li>
+<li>Loron toteutus käyttää algoritmia artikkelista &quot;A highly-available move operation for replicated trees&quot; ja integroi Fractional Index -algoritmin lajitteluun, käsitellen konflikteja ainutlaatuisilla PeerID:illä ja jitterillä.</li>
+<li>Loron lähestymistapa tukee reaaliaikaista yhteistyötä ja historiallisten versioiden tarkistuksia, osoittaen korkeaa suorituskykyä erilaisissa tilanteissa, mikä tekee siitä sopivan tuotantokäyttöön yhteistyösovelluksissa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41099901">Reaktiot</a></h3>
+<ul>
+<li>Siirrettävät puu-CRDT:t (Conflict-free Replicated Data Types) ja Loron toteutus saavat huomiota kyvystään käsitellä monimutkaisia puuoperaatioita yhteistyöympäristöissä.</li>
+<li>Kehittäjät keskustelevat käytännön sovelluksista, kuten React Table Library -kirjastosta suurten hierarkkisten tietorakenteiden hallintaan ja Thymerin moninpelieditorista tehtäville ja muistiinpanoille.</li>
+<li>Keskustelu tuo esiin haasteet ja ratkaisut CRDT:iden käytössä eri tietotyypeille, kuten teksti, kuvat ja 3D-mallit, korostaen tehokkaan synkronoinnin ja konfliktien ratkaisun tärkeyttä.</li>
+</ul>
+<h2><a href="https://leandojo.org/">LeanDojo: Teoreemojen todistaminen Leanilla käyttäen LLM:itä</a></h2>
+<ul>
+<li>LeanDojo esittelee Lean Copilotin, joka mahdollistaa kielimallien (LLM) avustamisen Lean-todistusten automaatiossa ehdottamalla taktiikoita ja etsimällä todistuksia.</li>
+<li>ReProver-malli, joka käyttää enkooderi-dekooderi Transformeria, hakee premissit matematiikkakirjastosta ja tuottaa seuraavan taktiikan, ylittäen Leanin sisäänrakennetun todistusautomaation.</li>
+<li>LeanDojo:n tietoaineisto sisältää laajoja vertailuarvoja ja hienojakoisia merkintöjä, mikä varmistaa, että mallit voivat yleistää teoreemoihin uusilla premisseillä ja löytää uusia todistuksia.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41096486">Reaktiot</a></h3>
+<ul>
+<li>LeanDojo on uusi aloite, joka yhdistää Lean-nimisen todistuksen avustajan ja suuret kielimallit (LLM) parantaakseen teoreemojen todistamisen kykyjä.</li>
+<li>Projektin tavoitteena on kuroa umpeen kuilu suorittamattoman matemaattisen merkinnän ja suoritettavan koodin välillä, mikä voi auttaa monimutkaisissa matemaattisissa ongelmissa, kuten stokastisissa differentiaaliyhtälöissä.</li>
+<li>Tämä kehitys on merkittävä, sillä se voi parantaa muodollisen verifioinnin luotettavuutta ja tehokkuutta kriittisissä sovelluksissa, kuten korkean turvallisuuden järjestelmissä ja automatisoidussa teoreemojen todistamisessa.</li>
+</ul>
+<h2><a href="http://jpetazzo.github.io/2024/07/26/cloudflare-images-overcharge-billing/">Ylilaskuttaako Cloudflare meitä heidän kuvapalvelustaan?</a></h2>
+<ul>
+<li>Cloudflare Imagesin sekamaksumalli, joka yhdistää etukäteen maksetun tallennuksen ja jälkikäteen maksetun toimituksen, johti EphemeraSearchille odottamattoman korkeisiin ja sekaviin laskuihin, jotka joskus ylittivät 400 dollaria odotetun 110 dollarin sijaan.</li>
+<li>Huolimatta useista yhteydenotoista Cloudflaren tukeen kahdeksan kuukauden aikana, ratkaisua ei saatu, mikä johti siirtymiseen kustannustehokkaampiin ratkaisuihin, kuten S3:een tai dedikoituihin palvelimiin.</li>
+<li>Tämä kokemus korostaa tehokkaan kulutuksen merkitystä indie-projekteille, joilla on alhaiset tulot, ja tuo esiin, että vaikka Cloudflare Images tarjoaa laadukasta palvelua, sen laskutusmalli ei välttämättä sovi kaikille käyttäjille.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41100958">Reaktiot</a></h3>
+<ul>
+<li>Huolenaiheita on herännyt siitä, että Cloudflare saattaa veloittaa liikaa Images-palvelustaan, kun käyttäjät ovat raportoineet odotettujen ja todellisten kustannusten välisistä eroista.</li>
+<li>Vertailuja tehdään muihin palveluihin, kuten Amazon S3, Bunny CDN ja Cloudflare R2, joita pidetään kustannustehokkaampina vaihtoehtoina.</li>
+<li>Cloudflaren laskutuskäytännöt ja asiakastuki ovat joutuneet tarkastelun kohteeksi, sillä jotkut käyttäjät ovat kokeneet monimutkaisia laskutusjaksoja ja odottamattomia maksuja.</li>
+</ul>
+<h2><a href="https://fabiensanglard.net/snes_video/index.html">Super Nintendo -videopelijärjestelmän suunnittelun ymmärtäminen</a></h2>
+<ul>
+<li>Fabien Sanglardin tutkimus Super Nintendo (SNES) -videopelijärjestelmästä korostaa Nintendon insinöörien vuonna 1989 tekemiä suunnittelupäätöksiä, joilla varmistettiin yhteensopivuus kuvaputkitelevisioiden ja NTSC-standardien kanssa.</li>
+<li>SNES käytti 21,47727 MHz:n pääkelloa, joka jaettiin saavuttamaan 5,3693175 MHz:n pistekello, mikä johti 341 pisteeseen per rivi ja 60,098 Hz:n virkistystaajuuteen, vaakasuorien ja pystysuorien tyhjennysjaksojen avulla välttäen artefakteja.</li>
+<li>SNES tuki sekä NTSC- että PAL-standardeja, tarjoten komposiitti- ja S-Video-lähtöjä, ja pystyi kaksinkertaistamaan pystysuoran ja vaakasuoran resoluution tietyissä sovelluksissa, huolimatta haasteista kuten välkkymisestä.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098141">Reaktiot</a></h3>
+<ul>
+<li>Kirjoitus käsittelee Super Nintendo Entertainment Systemin (SNES) suunnittelua ja arkkitehtuuria, korostaen sen teknisiä ominaisuuksia ja historiallista taustaa.</li>
+<li>Keskeisiä kohtia ovat SNES:n resoluutioasetukset, erilaisten TV-standardien (NTSC vs. PAL) vaikutus pelattavuuteen sekä CRT-näyttöjen (katodisädeputket) käyttö arcade-peleissä ja kotikonsoleissa.</li>
+<li>Keskustelu koskee myös SCART-liittimien käyttöä eurooppalaisissa televisioissa ja haasteita SNES:n videolähdön tarkassa emuloinnissa.</li>
+</ul>
+<h2><a href="https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/">Älä sokeasti suosi <code>emplace_back</code>-metodia <code>push_back</code>-metodin sijaan (2021)</a></h2>
+<ul>
+<li>Työkalut kuten clang-tidy ja PVS-Studio saattavat merkitä <code>push_back</code>-käytön &quot;huonoksi tyyliksi&quot; ja ehdottaa <code>emplace_back</code>-käyttöä, mutta tämä muutos ei ole aina hyödyllinen.</li>
+<li><code>emplace_back</code>-metodia tulisi käyttää väliaikaisten olioiden luomisen välttämiseksi, mutta se ei liity siirtosemanttiikkaan ja voi silti johtaa kopioihin, jos sitä ei käytetä oikein.</li>
+<li>Suosi <code>push_back</code>-metodia yksinkertaisuuden ja nopeampien käännösaikojen vuoksi, ja käytä <code>emplace_back</code>-metodia vain tarvittaessa ei-siirrettäville tyypeille tai väliaikaisten objektien välttämiseksi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095814">Reaktiot</a></h3>
+<ul>
+<li>Keskustelu pyörii <code>emplace_back</code>- ja <code>push_back</code>-metodien käytön ympärillä C++-kielessä, kun lisätään elementtejä säiliöihin, kuten vektoreihin.</li>
+<li><code>emplace_back</code> rakentaa objektin suoraan paikoilleen, mikä voi välttää tarpeettomia kopioita, kun taas <code>push_back</code> lisää jo rakennetun objektin säiliöön.</li>
+<li>Keskustelu korostaa, että vaikka <code>emplace_back</code> voi olla tehokkaampi, se on myös monimutkaisempi, ja <code>push_back</code> saattaa olla suositeltavampi päivittäisessä käytössä, ellei <code>emplace_back</code>-menetelmän erityisiä etuja tarvita.</li>
+</ul>
+<h2><a href="https://okmij.org/ftp/ML/higher-kind-poly.html">Korkeamman asteen rajoitettu polymorfismi OCamlissa (2021)</a></h2>
+<ul>
+<li>Korkeamman asteen polymorfismi, joka abstrahoi tyyppikonstruktoreita, on ratkaisevan tärkeää geneeristen operaatioiden suorittamisessa kokoelmille ja tyypitettyjen alakohtaisten kielten (DSL) upottamisessa.</li>
+<li>OCaml ei tue natiivisti korkeamman asteen polymorfismia tyyppialiasointiongelmien vuoksi, mutta sitä voidaan simuloida käyttämällä funktoreita, defunktionalisaatiota ja alkuperäisiä algebroja.</li>
+<li>Erilaiset menetelmät, mukaan lukien funktoriabstraktio ja tavalliseen polymorfismiin pelkistäminen, mahdollistavat korkeamman asteen polymorfismin saavuttamisen OCamlissa, vaikka se ei aina olisikaan tarpeellista.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41096187">Reaktiot</a></h3>
+<ul>
+<li>Keskustelu korkeamman asteen rajoitetusta polymorfismista OCamlissa, keskittyen tyyppialiaisiin ja tyyppien yhtäläisyysongelmiin, jotka johtavat korkeamman asteen yhtenäistämisongelmiin.</li>
+<li>Näiden kysymysten käytännön käsiteltävyys korostetaan, viitaten Idris-kieleen ja András Kovácsin &quot;Elaboration Zoo&quot; -oppaaseen lisäoppimista varten.</li>
+<li>Selvennys OCamlin GADT (Generalized Abstract Data Types) syntaksista, vertailuna F#:ään, jolta tällä hetkellä puuttuu GADT-tuki.</li>
+</ul>
+<h2><a href="https://www.bbc.com/news/education-21895704">Lapsille pitäisi sallia tylsistyminen, asiantuntija sanoo (2013)</a></h2>
+<ul>
+<li>Tohtori Teresa Belton, kasvatuksen asiantuntija, väittää, että lasten tylsistymisen salliminen on ratkaisevan tärkeää luovuuden edistämiseksi, sillä jatkuva toiminta voi estää mielikuvitusta.</li>
+<li>Haastattelut luovien henkilöiden, kuten kirjailija Meera Syalin ja taiteilija Grayson Perryn, kanssa paljastavat, että tylsyydellä oli merkittävä rooli heidän luovassa kehityksessään, ja Perry kuvailee sitä &quot;luovaksi tilaksi.&quot;</li>
+<li>Tohtori Belton korostaa, että yhteiskunnan odotus jatkuvasta virikkeellisyydestä estää lapsia kehittämästä sisäistä luovuuttaan, ja hän puoltaa &#39;seisomisen ja tuijottamisen&#39; aikaa pois ruuduilta mielikuvituksen stimuloimiseksi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098488">Reaktiot</a></h3>
+<ul>
+<li>Asiantuntija ehdottaa, että lapsille tulisi sallia tylsyyden kokeminen, sillä se voi edistää luovuutta ja omavaraisuutta.</li>
+<li>Muistellessaan menneitä lapsuuden kokemuksia, käyttäjät muistavat osallistuneensa riskialttiisiin mutta sosiaalisesti rikastuttaviin aktiviteetteihin, mikä on vastakohta nykylasten ruutuihin perustuvaan ylistimulaatioon.</li>
+<li>Keskustelussa korostetaan tylsyyden ja turvallisuuden tasapainottamista, kannattaen valvottuja ympäristöjä, joissa lapset voivat tutkia ja kehittyä.</li>
+</ul>
+<h2><a href="https://github.com/Owez/yark">Yark: YouTube-arkistoija offline-käyttöliittymällä</a></h2>
+<ul>
+<li>Yark yksinkertaistaa YouTube-arkistoinnin helppokäyttöisillä asennus- ja hallintakomennoilla, vaatii Python 3.9+ ja tarvittaessa FFmpeg.</li>
+<li>Kayttäjät voivat luoda, päivittää ja tarkastella arkistoja, jotka tallennetaan hakemistopohjaiseen rakenteeseen sisältäen metatiedot, videot ja pikkukuvat.</li>
+<li>Työkalu tukee offline-katselua sekä vaaleassa että tummassa tilassa ja mahdollistaa ominaisuusehdotusten tekemisen arkiston issues-välilehden kautta.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41100820">Reaktiot</a></h3>
+<ul>
+<li>Yark on YouTube-arkistoija, jossa on offline-käyttöliittymä, ja se on suunniteltu auttamaan käyttäjiä tallentamaan YouTube-sisältöä paikallisesti.</li>
+<li>Käyttäjät keskustelevat vastaavista työkaluista Twitchille, tuoden esiin haasteita, kuten suurten MP4-tiedostojen suoratoistoa ja HTTP-palvelinpyyntöjen käsittelyä tiedostoille, joissa on erikoismerkkejä.</li>
+<li>Keskustelu sisältää teknisiä yksityiskohtia suoratoistosta, kuten palvelimien tärkeydestä tukea aluepyyntöjä puskurointiongelmien välttämiseksi, ja suosituksia VLC:n tai Nginxin käytöstä käytännön sovelluksissa.</li>
+</ul>
+<h2><a href="https://github.com/alexta69/metube">MeTube: Itseisännöity YouTube-latausohjelma</a></h2>
+<ul>
+<li>Uudet Node-versiot eivät enää tue 32-bittisiä ARM-rakennelmia; käyttäjien on siirryttävä 64-bittiseen käyttöjärjestelmään saadakseen päivityksiä.</li>
+<li>Web-käyttöliittymä youtube-dl:lle (yt-dlp-haarukka) on nyt saatavilla, ja se tukee soittolistojen lataamista YouTubesta ja muilta sivustoilta. Sen voi ajaa käyttämällä Dockeria tai docker-composea.</li>
+<li>Konfigurointivaihtoehtoihin kuuluvat ympäristömuuttujat käyttäjätunnukselle, ryhmätunnukselle, lataushakemistoille ja muille, ja oletusasetukset on annettu asennuksen helpottamiseksi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098974">Reaktiot</a></h3>
+<ul>
+<li>MeTube on itseisännöity YouTube-latausohjelma, joka käyttää yt-dlp:ta, suosittua komentorivityökalua videoiden lataamiseen YouTubesta.</li>
+<li>Projekti tarjoaa käyttäjäliittymän (UI) yt-dlp:lle, tehden siitä saavutettavan käyttäjille, jotka suosivat graafista käyttöliittymää komentorivitoimintojen sijaan.</li>
+<li>Keskustelussa tuodaan esiin erilaisia vaihtoehtoja ja niihin liittyviä työkaluja, kuten Celluloid, Parabolic ja Tube Archivist, jotka tarjoavat samanlaisia toimintoja eri alustoille ja käyttötarkoituksiin.</li>
+</ul>
+<h2><a href="https://www.forrestthewoods.com/blog/tech_of_planetary_annihilation_chrono_cam/">Planeetan tuhoamisen teknologia: ChronoCam (2013)</a></h2>
+<ul>
+<li>Planetary Annihilation, Uber Entertainmentin reaaliaikainen strategiapeli, on siirtynyt beta-vaiheeseen ja sisältää innovatiivisia teknologioita, kuten proseduraalisen planeettojen luomisen ja 40 pelaajan pelit.</li>
+<li>Peli esittelee ChronoCamin, ainutlaatuisen toistojärjestelmän, joka mahdollistaa pelaajien hypätä ajassa taaksepäin, pelata hidastettuna/nopeutettuna ja tarkastella pelimaailmaa eri ajankohdista, jopa reaaliaikaisten pelien aikana.</li>
+<li>Hyödyntämällä asiakas-palvelin-arkkitehtuuria, ChronoCam minimoi kaistanleveyden käytön esittämällä pelidatan käyrinä ja tukee vankkoja uudelleentoistoominaisuuksia, parantaen huijausten estotoimenpiteitä ja verkko-yhteisön sitoutumista.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41097228">Reaktiot</a></h3>
+<ul>
+<li>Planetary Annihilation, reaaliaikainen strategiapeli (RTS), sisälsi ainutlaatuisen aikasiirtymämekaniikan nimeltä ChronoCam, jonka avulla pelaajat voivat tarkastella ja olla vuorovaikutuksessa menneiden pelitilanteiden kanssa.</li>
+<li>Peli rahoitettiin alun perin erittäin menestyksekkään Kickstarter-kampanjan kautta, keräten 2,2 miljoonaa dollaria, mutta kohtasi haasteita kunnianhimoisen suunnittelunsa vuoksi, mukaan lukien useat pallomaiset taistelukentät.</li>
+<li>Alkuperäisistä kritiikeistä huolimatta pelin jatko-osa, Planetary Annihilation: Titans, sai positiivisia arvosteluja Steamissa, joissa korostettiin kehittäjien teknisiä saavutuksia ja innovatiivista moottorisuunnittelua.</li>
+</ul>
+<h2><a href="https://msreekan.com/2014/01/15/sdcard/">SD-kortin kulumisen tasoitus ja käännöskerrosten hallinta (2014)</a></h2>
+<ul>
+<li>SD-kortit käyttävät NAND MLC (Multi-Level Cell) tai SLC (Single-Level Cell) flash-muistia, abstrahoiden monimutkaisuuksia kuten lohkojen pyyhintää ja kulumisen tasausta.</li>
+<li>Kortti tunnistaa, käytetäänkö SPI:tä (Serial Peripheral Interface) vai SD-väylää jännitteen syötön yhteydessä ja käynnistää sopivan ohjelmistopinon, viimeistellen käynnistysprosessin, kun ohjelmisto siirtyy siirtotilaan.</li>
+<li>Muunnoskerros kartoittaa virtuaaliset osoitteet fyysisiin osoitteisiin, optimoiden kirjoitussuorituskyvyn yhtenäisillä kirjoituksilla ja halliten satunnaiskirjoitusten ylikuormitusta allokaatioyksiköiden (AU), jotka ovat tyypillisesti 4MB kokoisia, välillä.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095429">Reaktiot</a></h3>
+<ul>
+<li>Konferenssissa anekdootti rikkinäisten SD-korttien purkamisesta toi esiin kulumisen tasausvirheen, joka aiheutti laiteohjelmiston osittaisen ylikirjoittamisen, mikä herätti keskusteluja SD-korttien luotettavuudesta.</li>
+<li>Käyttäjät jakoivat kokemuksiaan SD-korttien vioista ja tietojen palauttamisesta, huomauttaen, että tiheämmät muistikortit ovat alttiimpia ongelmille, kun taas teollisuustason kortit, vaikka ovatkin pienempiä, ovat kestävämpiä.</li>
+<li>Ehdotuksia SD-korttien luotettavuuden parantamiseksi olivat parempi ohjelmisto kirjoitusyhdistelyyn ja kulumisen tasaamiseen sekä itsestään osioita muuttavat SD-kortit kuluneiden lohkojen hallintaan.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Microsoftin tekninen erittely CrowdStrike-tapauksesta" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Microsoftin%20tekninen%20erittely%20CrowdStrike-tapauksesta&subheading=maanantaina%2029.%20hein%C3%A4kuuta%202024%3A%20Hacker%20News%20yhteenveto" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/fi/2024/07/29</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000Z</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-28]]></title>
             <description
@@ -1693,202 +1888,6 @@
             <link>https://hn.cho.sh/fi/2024/07/20</link>
             <guid isPermaLink="false">2024-07-20T00:00:00.000Z</guid>
             <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-19]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/19&#39;</h2>
-<h1>2024-07-19</h1>
-<h2><a href="https://old.reddit.com/r/crowdstrike/comments/1e6vmkf/bsod_error_in_latest_crowdstrike_update/">Uutinen Crowdstrikesta: Windowsin sininen ruutu ja käynnistyssilmukat</a></h2>
-<ul>
-<li>Useat käyttäjät työpaikalla kohtaavat Windowsin sinisiä ruutuja ja käynnistyssilmukoita, jotka saattavat liittyä äskettäiseen Crowd Strike -sovelluspäivitykseen.</li>
-<li>IT-osasto huomasi, että jotkin palvelimet menivät offline-tilaan, ja paikallinen radioasema raportoi samanlaisista kannettavien tietokoneiden ongelmista ja kaatuneesta puhelinjärjestelmästä.</li>
-<li>Nämä tapaukset tapahtuvat Australiassa, mutta niistä ei ole vielä uutisoitu.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002195">Reaktiot</a></h3>
-<ul>
-<li>Viimeisin Crowdstriken päivitys aiheutti merkittäviä ongelmia, kuten Windowsin sinisiä ruutuja ja käynnistyssilmukoita, vaikuttaen eri sektoreihin, mukaan lukien hätäpalvelut ja sairaalat.</li>
-<li>Reddit-käyttäjä raportoi, että heidän ensiapuosastonsa oli poissa käytöstä sydänkohtauksen hoidon aikana, ja myös 911-palvelut olivat vaikuttaneet, mikä johti viivästyksiin potilaiden hoidossa.</li>
-<li>Tapauksen myötä korostuvat yhteenliitettyihin järjestelmiin luottamisen riskit ja mahdollisuus katastrofaalisiin epäonnistumisiin, kun päivityksiä ei testata kunnolla ennen käyttöönottoa.</li>
-</ul>
-<h2><a href="https://www.afr.com/technology/businesses-crippled-by-widespread-it-outage-20240719-p5jv2t">Crowdstrike-katkos aiheuttaa laajalle levinneitä ongelmia</a></h2>
-<ul>
-<li>Maailmanlaajuinen IT-häiriö käynnistyi kyberturvallisuusyritys CrowdStrike Holdingsin virheellisestä ohjelmistopäivityksestä, joka vaikutti lukuisiin Microsoft Windows -järjestelmiin.</li>
-<li>Molemmat Microsoft ja CrowdStrike ovat julkaisseet korjauksia ongelman ratkaisemiseksi, mutta täydellisen toipumisen odotetaan vievän jonkin aikaa.</li>
-<li>Tilanne on hieman parantunut, mutta epäonnistuneen päivityksen vaikutukset tuntuvat yhä maailmanlaajuisesti.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002677">Reaktiot</a></h3>
-<ul>
-<li>Crowdstrike koki käyttökatkon, joka aiheutti laajalle levinneitä ongelmia, kuten Windowsin sinisiä ruutuja ja käynnistyssilmukoita, johtuen viimeaikaisesta päivityksestä.</li>
-<li>Tapauksesta on syntynyt merkittävää keskustelua Hacker Newsissä, mikä korostaa vaikutusta käyttäjiin ja järjestelmiin.</li>
-<li>Tämä tapahtuma korostaa tiukan testauksen ja seurannan kriittistä merkitystä ohjelmistopäivityksissä tällaisten häiriöiden estämiseksi.</li>
-</ul>
-<h2><a href="https://worthrises.org/pressreleases/2024/7/18/fcc-votes-unanimously-to-significantly-lower-phone-and-video-communication-costs-after-decades-of-exploitation-by-prison-telecoms">FCC äänestää rajoittaakseen vankilatelekonimaksuja</a></h2>
-<ul>
-<li>FCC on äänestänyt merkittävästi vähentääkseen vankiloiden ja arestien puhelu- ja videopuheluhintoja, leikkaamalla minuuttikohtaisia hintakattoja yli puolella ja kieltämällä kaikki maksut, mukaan lukien talletusmaksut.</li>
-<li>Tämä muutos vaikuttaa 83 %:iin vangituista henkilöistä, säästäen perheille vähintään 500 miljoonaa dollaria vuosittain ja parantaen vangittujen henkilöiden hyvinvointia ja uudelleensopeutumisen onnistumista.</li>
-<li>Vankilateleviestintäyhtiöille, kuten Aventiv ja ViaPath, odotetaan merkittäviä tulonmenetyksiä, kun taas osavaltiot, kuten Massachusetts, Minnesota ja Colorado, ovat jo ryhtyneet tekemään vankilapuheluista ilmaisia.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41005181">Reaktiot</a></h3>
-<ul>
-<li>FCC on äänestänyt rajoittaakseen vankilatelekonpalveluiden maksuja, pyrkien vähentämään vankien puheluiden korkeita kustannuksia.</li>
-<li>Aiemmin vangeilla oli käytössään vain yksi, vankilan hyväksymä yksityinen puhelinoperaattori, mikä johti kohtuuttomiin hintoihin kilpailun puutteen vuoksi.</li>
-<li>Uusien säädösten tarkoituksena on lieventää vankien ja heidän perheidensä taloudellista taakkaa, edistää parempaa kuntoutusta ja vähentää rikosten uusimista.</li>
-</ul>
-<h2><a href="https://johnfactotum.github.io/foliate/">Foliate: Lue e-kirjoja tyylikkäästi, navigoi vaivattomasti</a></h2>
-<ul>
-<li>Foliate on avoimen lähdekoodin e-kirjojen lukija, joka tukee useita formaatteja, kuten EPUB, Mobipocket, Kindle, FB2, CBZ ja PDF, ja siinä on muokattavat lukemisasetukset.</li>
-<li>Se tarjoaa ominaisuuksia, kuten kosketuslevy- ja kosketusnäytönavigointi, kirjanmerkit, merkinnät ja integroinnin työkaluihin, kuten Wiktionary ja Google Translate.</li>
-<li>Foliate tukee oikealta vasemmalle kirjoitettua tekstiä, pystysuoraa kirjoitusta ja kiinteitä asetteluja, ja se on saatavilla useille Linux-jakeluille tai lähdekoodin kloonauksen kautta.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002273">Reaktiot</a></h3>
-<ul>
-<li>Foliate on e-kirjojen lukija, jota kiitetään sen yksinkertaisuudesta, helppokäyttöisestä navigoinnista, kirjanmerkkien lisäämisestä ja merkintäominaisuuksista.</li>
-<li>Se tallentaa lukemisen edistymisen, kirjanmerkit ja merkinnät yksinkertaisiin JSON-tiedostoihin, mikä helpottaa vientiä ja synkronointia.</li>
-<li>Foliate käyttää tiedostojen tiivisteitä luodakseen kirjoille yksilöllisiä tunnisteita, varmistaen, että PDF-tiedostot pysyvät muuttumattomina, kun niihin lisätään merkintöjä, vaikka jotkut käyttäjät huomauttavat mahdollisista ongelmista, jos tiedostoja muutetaan.</li>
-</ul>
-<h2><a href="https://www.nytimes.com/2024/07/18/us/frontier-flights-grounded-microsoft.html">Useat lentoyhtiöt häiriintyivät Microsoft Azuren katkoksen vuoksi</a></h2>
-<ul>
-<li>Frontier Airlines keskeytti kaikki lennot noin 35 minuutiksi suuren Microsoft Azure -katkoksen vuoksi, mikä vaikutti varauksiin, sisäänkirjautumiseen ja maihinnousukorttien saatavuuteen.</li>
-<li>Katkos, joka alkoi klo 17:56, häiritsi myös Allegiantin ja Sun Country Airlinesin järjestelmiä, vaikuttaen useisiin järjestelmiin Yhdysvaltojen keskiosissa.</li>
-<li>Frontier, joka operoi yli 100 lentokonetta, oli yksi vähintään kolmesta lentoyhtiöstä, joita palvelukatkokset koskivat.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41001959">Reaktiot</a></h3>
-<ul>
-<li>Useat lentoyhtiöt kokivat häiriöitä Microsoft Azuren katkoksen vuoksi, mikä saattaa liittyä vialliseksi Crowdstrike-päivitykseksi, joka aiheutti maailmanlaajuisia Windows-koneiden kaatumisia.</li>
-<li>Katkos on vaikuttanut useisiin sektoreihin, mukaan lukien pankkiautomaatit, supermarketit ja lentokentät Euroopassa ja Uudessa-Seelannissa, mikä viittaa laajalle levinneeseen ongelmaan.</li>
-<li>Tapaus korostaa keskitettyihin pilvipalveluihin liittyviä riskejä ja painottaa parannettujen katastrofipalautussuunnitelmien tarpeellisuutta.</li>
-</ul>
-<h2><a href="https://www.construction-physics.com/p/what-would-it-take-to-recreate-bell">Mitä vaadittaisiin Bell Labsin uudelleen luomiseen?</a></h2>
-<ul>
-<li>AT&amp;T, Bell Labsin kautta, oli keskeisessä asemassa Amerikan puhelininfrastruktuurin kehittämisessä ja tuotti merkittäviä keksintöjä, kuten transistorin, piistä valmistetun aurinkokennon ja UNIX-käyttöjärjestelmän.</li>
-<li>Bell Labsin menestys johtui osittain AT&amp;T:n monopolista, joka tuki pitkäaikaisia tutkimusprojekteja ja johti lukuisiin tunnustuksiin, mukaan lukien 10 Nobelin palkintoa.</li>
-<li>Hajoaminen AT&amp;T johti Bell Labsin jakautumiseen ja laskuun, mikä tekee vaikeaksi luoda uudelleen sellaista instituutiota nykyään ainutlaatuisten historiallisten ja teknologisten olosuhteiden vuoksi, jotka kerran vallitsivat.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40998927">Reaktiot</a></h3>
-<ul>
-<li>Bell Labsin uudelleen luominen edellyttäisi lähes monopoliasemaa, huomattavaa rahoitusta, vähäistä kilpailua ja kulttuuria, joka asettaa pitkäaikaisen innovaation etusijalle lyhyen aikavälin voittojen sijaan.</li>
-<li>Historialliset ja nykyaikaiset esimerkit, kuten Sandia National Laboratories ja teknologiajätit kuten Google ja Microsoft, korostavat johtajuuden, kansallisen kulttuurin ja verorakenteiden merkitystä innovaation edistämisessä.</li>
-<li>Nykyinen painotus välittömiin osakkeenomistajien tuottoihin muodostaa merkittävän esteen pitkäaikaiseen tutkimukseen keskittymiselle.</li>
-</ul>
-<h2><a href="https://hallofshame.design/ryanair-when-every-page-is-a-dark-pattern/">Ryanair – kun jokainen sivu on pimeä kuvio</a></h2>
-<ul>
-<li>Ryanair tunnetaan &quot;dark patterns&quot; -tekniikoiden, manipuloivien suunnittelutekniikoiden, käytöstä lisätäkseen voittoja varausprosessin aikana.</li>
-<li>Taktiikoihin kuuluu &quot;privacy zuckering&quot;, jossa asiakkaat oletusarvoisesti liitetään mainoskampanjoihin, sekä &quot;harhautus&quot;, jossa käytetään näkyviä painikkeita ja ponnahdusikkunoita palveluiden lisämyyntiin.</li>
-<li>Nämä harhaanjohtavat suunnitelmat ovat laajalle levinneitä Ryanairin verkkosivustolla, mikä tekee käyttäjille välttämättömäksi pysyä valppaana välttääkseen tahattomia ostoksia tai jakamasta enemmän tietoja kuin on tarkoitus.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41004039">Reaktiot</a></h3>
-<ul>
-<li>Ryanair käyttää tummia kaavoja, kuten piilotettuja maksuja ja manipuloivia taktiikoita, lisätäkseen voittoja, mikä turhauttaa asiakkaita.</li>
-<li>Esimerkkejä ovat sovellustunnusten skannauksista perittävät maksut, harhaanjohtavat &quot;nopea nousu&quot; -edut ja monimutkaiset matkatavarasäännöt, jotka johtavat lisäkustannuksiin peruspalveluista.</li>
-<li>Huolimatta alhaisista hinnoista ja tehokkaista lennoista, monet asiakkaat haluavat välttää Ryanairia sen asiakasystävällisyyden puutteen vuoksi, ja muita halpalentoyhtiöitä kuten EasyJet ja WizzAir pidetään vähemmän aggressiivisina.</li>
-</ul>
-<h2><a href="https://arstechnica.com/information-technology/2024/07/crowdstrike-fixes-start-at-reboot-up-to-15-times-and-get-more-complex-from-there/">Korjaukset CrowdStrikelle alkavat &quot;uudelleenkäynnistyksellä jopa 15 kertaa&quot;, ja siitä eteenpäin ne muuttuvat monimutkaisemmiksi</a></h2>
-<ul>
-<li>CrowdStriken viimeaikainen päivitys johti Windows-järjestelmien kaatumiseen sinisen kuolemanruudun (BSOD) kanssa, aiheuttaen merkittävää häiriötä.</li>
-<li>Korjaukset vaihtelevat useista uudelleenkäynnistyksistä monimutkaisempiin ratkaisuihin, kuten varmuuskopioiden palauttamiseen tai ongelmallisen ajurin manuaaliseen poistamiseen, ja lisätoimenpiteitä tarvitaan järjestelmissä, jotka käyttävät BitLocker-salausta.</li>
-<li>Päivitys on peruttu, ja CrowdStriken toimitusjohtaja on pyytänyt anteeksi, vakuuttaen käyttäjille, että ongelman ratkaisemiseksi tehdään töitä.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007898">Reaktiot</a></h3>
-<ul>
-<li>Viimeisin CrowdStriken korjaus vaatii jopa 15 uudelleenkäynnistystä, mikä aiheuttaa merkittäviä häiriöitä eri sektoreilla, mukaan lukien CNC-järjestelmät, ilmastointi- ja turvahälytykset, puhelimet, sähköposti ja kirjanpitojärjestelmät.</li>
-<li>Tapauksen myötä korostuvat automaattisiin päivityksiin liittyvät riskit ja tarve parantaa tietoturvakäytäntöjä, ja monet kannattavatkin perusteellisempaa testausta ja asteittaisia käyttöönottoja.</li>
-<li>Järjestelmän käyttäjät kyseenalaistavat internet-yhteydessä olevien, Windows-pohjaisten kriittisten järjestelmien luotettavuuden, mikä korostaa tarvetta arvioida uudelleen nykyisiä IT-infrastrategiastrategioita.</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41007403">Sendune – avoimen lähdekoodin HTML-sähköpostisuunnittelija</a></h2>
-<ul>
-<li>SENDUNE on esitellyt uuden avoimen lähdekoodin HTML-sähköpostisuunnittelijan, jonka tarkoituksena on yksinkertaistaa HTML-sähköpostien luomista, jotka ovat perinteisesti vaikeita kirjoittaa ja ylläpitää.</li>
-<li>Suunnittelija on kevyt, käyttää puhdasta HTML:ää ja välttää hankalia riippuvuuksia, mikä mahdollistaa käyttäjien tallentaa HTML-tulosteen mallina mille tahansa sähköpostipalveluntarjoajalle.</li>
-<li>Käyttäjiä kannustetaan haarauttamaan arkisto, tekemään parannuksia ja lähettämään vetopyyntöjä, edistäen yhteistyöhön perustuvaa kehitysympäristöä.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007403">Reaktiot</a></h3>
-<ul>
-<li>Sendune on avoimen lähdekoodin HTML-sähköpostisuunnittelija, joka korostaa yksinkertaisuutta ja helppokäyttöisyyttä, tuottaen puhdasta HTML:ää yhteensopivuuden takaamiseksi minkä tahansa sähköpostipalveluntarjoajan kanssa.</li>
-<li>Työkalu on kevyt, riippuvuuksista vapaa ja se voidaan helposti upottaa sovelluksiin, jolloin käyttäjät voivat tallentaa HTML-tulosteen malleina.</li>
-<li>Huolimatta joistakin raportoituista ongelmista vedä ja pudota -toiminnallisuuden kanssa Firefoxissa, yhteisön palaute on ollut positiivista, ja panoksia voi tehdä GitHubin kautta.</li>
-</ul>
-<h2><a href="https://www.rfi.fr/en/international-news/20240718-seventh-person-likely-cured-of-hiv-doctors-announce">60-vuotias saksalainen mies on todennäköisesti seitsemäs henkilö, joka on parantunut tehokkaasti HIV:stä</a></h2>
-<ul>
-<li>60-vuotias saksalainen mies on todennäköisesti seitsemäs henkilö, joka on käytännössä parantunut HIV:stä kantasolusiirron jälkeen, mikä myös hoiti hänen aggressiivista leukemiaansa.</li>
-<li>Potilas, jota kutsutaan &quot;seuraavaksi Berliinin potilaaksi&quot;, lopetti antiretroviraalilääkkeiden käytön loppuvuodesta 2018 ja on edelleen HIV- ja syöpävapaa lähes kuusi vuotta myöhemmin.</li>
-<li>Tutkijat ovat varovaisen optimistisia ja huomauttavat, että tämä tapaus viittaa siihen, ettei kaikkia CCR5-geenimutaatioita tarvita onnistuneeseen HIV-hoitoon, mikä antaa toivoa laajemmille HIV-parannusstrategioille.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40999098">Reaktiot</a></h3>
-<ul>
-<li>60-vuotias saksalainen mies on todennäköisesti seitsemäs henkilö, joka on parantunut tehokkaasti HIV:stä, vaikka toimenpide onkin radikaali ja yleensä varattu vakaville leukemiatapauksille.</li>
-<li>On ehdotettu, että tämä kehitettäisiin autologiseksi kantasolusiirroksi, jotta voitaisiin välttää komplikaatioita, kuten käänteishyljintätauti.</li>
-<li>Huolimatta HIV-hoitojen edistysaskeleista, jotka vähentävät viruksen määrän havaitsemattomalle tasolle, Yhdysvalloissa kuolee edelleen vuosittain 10 000 ihmistä aidsiin, usein heikon seksuaalikasvatuksen ja terveydenhuollon saatavuuden vuoksi.</li>
-</ul>
-<h2><a href="https://www.bbc.co.uk/news/live/cnk4jdwp49et">Maailmanlaajuinen IT-katkos vaikuttaa lentoyhtiöihin, mediaan ja pankkeihin</a></h2>
-<ul>
-<li>Crowdstrike, vuonna 2011 perustettu teksasilainen kyberturvallisuusyritys, on erikoistunut päätelaitteiden suojaamiseen yritysverkkojen ja pilvitietojen suojaamiseksi kyberuhkilta.</li>
-<li>Yrityksen perustivat yhdessä George Kurtz ja Dmitri Alperovitch, ja se listautui Nasdaq-pörssiin vuonna 2019.</li>
-<li>Crowdstrike on ollut keskeisessä roolissa suurten kyberhyökkäysten tutkimisessa, erityisesti Yhdysvaltain demokraattisen puolueen kansallisen komitean verkkoon vuonna 2016 kohdistuneen murtautumisen osalta.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002730">Reaktiot</a></h3>
-<ul>
-<li>Maailmanlaajuinen IT-katkos, jonka aiheutti Crowdstriken päivitys, sai Windows-järjestelmät kokemaan sinisiä ruutuja ja käynnistyssilmukoita, vaikuttaen lentoyhtiöihin, mediaan ja pankkeihin.</li>
-<li>Tapauksen seurauksena on käyty keskusteluja päätepisteiden suojausohjelmistojen luotettavuudesta, toimitusketjuhyökkäysten riskeistä ja Windows-infrastruktuuriin kohdistuvasta vahvasta riippuvuudesta.</li>
-<li>Katkos, joka johtuu &quot;tietoturvapäivityksestä&quot;, on herättänyt merkittäviä huolenaiheita IT-infrastruktuurin suvereniteetista ja kestävyydestä.</li>
-</ul>
-<h2><a href="https://www.esa.int/Enabling_Support/Operations/Double_trouble_Gaia_hit_by_micrometeoroid_and_solar_storm">Kaksinkertainen ongelma: ESA:n Gaia osui mikrometeoroidiin ja aurinkomyrskyyn</a></h2>
-<ul>
-<li>ESAn Gaia-avaruusalus, joka laukaistiin joulukuussa 2013 kartoittamaan yli miljardi tähteä Linnunradassa, kohtasi äskettäin merkittäviä haasteita mikrometeoroidin iskun ja aurinkomyrskyn vuoksi.</li>
-<li>Micrometeoroidi vahingoitti Gaian suojakantta, ja aurinkomyrsky aiheutti vian yhteen sen varauskytkettyyn laitteeseen (CCD), mikä johti tuhansiin virheellisiin tähtihavaintoihin.</li>
-<li>ESA:n ja Airbus Defence and Spacen insinöörit onnistuivat säätämään Gaian ohjelmistoa, vähentäen virheellisiä havaintoja ja palauttaen avaruusaluksen rutiinitoimintaan, tuottaen nyt joitakin sen parhaista laatutiedoista.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40999928">Reaktiot</a></h3>
-<ul>
-<li>ESAn Gaia-avaruusalus kärsi äskettäin vaurioita mikrometeoroidista ja aurinkomyrskystä, mutta jatkaa tehtäväänsä, mikä osoittaa avaruuslentojen kestävyyden.</li>
-<li>Historialliset esimerkit, kuten Voyager 1 ja Hubble, osoittavat, että avaruusmissiot ylittävät usein odotetun elinikänsä ohjelmistopäivitysten ja korjausten ansiosta.</li>
-<li>Budjettirajoituksista ja teknisistä haasteista huolimatta insinöörien omistautuminen on mahdollistanut Gaian jatkaa korkealaatuisen datan tuottamista viimeaikaisten säätöjen jälkeen.</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41004103">Mitä tiedostossa C-00000291*.sys on?</a></h2>
-<ul>
-<li>CrowdStriken C-00000291*.sys-tiedosto on aiheuttanut järjestelmän kaatumisia virheellisen muotoilun vuoksi, mikä vaikuttaa CrowdStriken ajuriin.</li>
-<li>Jotkut käyttäjät raportoivat tiedoston eri versioista, ja jotkut spekuloivat, että tiedostot on salattu asiakaskohtaisilla avaimilla, vaikka toiset ovatkin käsitelleet niitä ilman salauksen purkamista.</li>
-<li>Tiedostot ovat omia päivitysformaatteja, eivät DLL-tiedostoja tai korjauksia, mikä herättää huolta CrowdStriken päivitysprosessin turvallisuudesta ja luotettavuudesta.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41004103">Reaktiot</a></h3>
-<ul>
-<li>CrowdStriken C-00000291*.sys-tiedosto on aiheuttanut järjestelmän kaatumisia virheellisen muotoilun vuoksi, mikä vaikuttaa pääasialliseen CrowdStrike-ajuriin.</li>
-<li>Jotkut käyttäjät raportoivat tiedoston eri versioista, ja jotkut spekuloivat, että tiedostot on salattu asiakaskohtaisilla avaimilla, vaikka toiset ovatkin käsitelleet niitä ilman salauksen purkamista.</li>
-<li>Tiedostot ovat omia päivitysformaatteja, eivät DLL-tiedostoja tai tavallisia korjaustiedostoja, mikä herättää huolta CrowdStriken päivitysprosessin turvallisuudesta ja luotettavuudesta.</li>
-</ul>
-<h2><a href="https://www.jpl.nasa.gov/news/nasas-curiosity-rover-discovers-a-surprise-in-a-martian-rock">NASAn Curiosity-mönkijä löytää yllätyksen marsilaisesta kivestä</a></h2>
-<ul>
-<li>NASA:n Curiosity-mönkijä löysi ensimmäistä kertaa alkuaineen rikkiä Marsista, mikä on merkittävä virstanpylväs Marsin tutkimuksessa.</li>
-<li>Löytö tehtiin sulfaattipitoisella alueella, jossa Curiosity löysi kokonaisen kentän kirkkaita kiviä, jotka koostuivat puhtaasta rikistä, mikä herätti tutkijoiden mielenkiinnon.</li>
-<li>Curiosityn tehtävä, joka sisältää Marsin muinaisen maaston tutkimisen mikrobielämän merkkien varalta, jatkuu sen kiivetessä Sharp-vuorelle ja poratessa 41. kallioperänäytettään jatkoanalyysiä varten.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41006552">Reaktiot</a></h3>
-<ul>
-<li>NASAn Curiosity-mönkijä löysi rikkikiteitä marsilaisesta kivestä, mikä johti keskusteluun klikkiotsikoiden käytöstä yleisön kiinnostuksen herättämiseksi.</li>
-<li>Löytö tapahtui, kun Curiosity ajoi kiven yli, paljastaen kiteet ja korostaen julkisen kiinnostuksen ja rahoituksen merkitystä NASA:lle.</li>
-<li>Keskustelussa käsiteltiin myös NASA:n budjettihaasteita ja julkisen sitoutumisen välttämättömyyttä viraston toiminnan jatkumiseksi.</li>
-</ul>
-<h2><a href="https://www.sciencedaily.com/releases/2024/07/240715135713.htm">Hapen väheneminen järvissä ja merissä</a></h2>
-<ul>
-<li>Tutkimus Rensselaer Polytechnic Institutesta korostaa, että hapen väheneminen järvissä ja merissä aiheuttaa merkittävän uhan ekosysteemeille, yhteiskunnalle ja planeetalle.</li>
-<li>Vesistöjen hapen väheneminen, joka liittyy ilmastonmuutokseen, maankäyttöön ja saastumiseen, on johtanut liuenneen hapen nopeaan vähenemiseen. Järvet ja tekojärvet ovat menettäneet 5,5 % ja 18,6 % hapestaan vuodesta 1980 lähtien, ja valtameret ovat menettäneet noin 2 % hapestaan vuodesta 1960 lähtien.</li>
-<li>Tämä hapen väheneminen vaikuttaa lajien fysiologiaan, ravintoverkkoihin ja ekosysteemipalveluihin, luoden &quot;kuolleita vyöhykkeitä&quot; ja haitallisia leväkukintoja, mikä vaatii kiireellisiä toimia ilmaston lämpenemisen ja valumien torjumiseksi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007196">Reaktiot</a></h3>
-<ul>
-<li>Järvet ja tekojärvet ovat kokeneet merkittävää hapen vähenemistä, 5,5 % ja 18,6 % vähennykset vuodesta 1980 lähtien, kun taas valtamerissä on havaittu noin 2 % väheneminen vuodesta 1960 lähtien.</li>
-<li>Keski-Kalifornia on erityisen kärsinyt, sillä happitasot ovat laskeneet 40 %, mikä johtuu pääasiassa kasvihuonekaasupäästöistä, ravinteiden valumisesta ja käsittelemättömästä jätevedestä.</li>
-<li>Ehdotettuja ratkaisuja ovat muun muassa uudistava maatalous ja teollisen lihankulutuksen vähentäminen ilmastonmuutoksen ja saastumisen laajempien ympäristövaikutusten lieventämiseksi.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Uutinen Crowdstrikesta: Windowsin sininen ruutu ja käynnistyssilmukat" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Uutinen%20Crowdstrikesta%3A%20Windowsin%20sininen%20ruutu%20ja%20k%C3%A4ynnistyssilmukat&subheading=perjantaina%2019.%20hein%C3%A4kuuta%202024%3A%20Hacker%20News%20yhteenveto" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/fi/2024/07/19</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000Z</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

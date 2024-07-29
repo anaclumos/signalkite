@@ -15,12 +15,207 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 28 Jul 2024 19:10:28 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jul 2024 19:13:06 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/da.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 28 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[da]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-29]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/29&#39;</h2>
+<h1>2024-07-29</h1>
+<h2><a href="https://www.microsoft.com/en-us/security/blog/2024/07/27/windows-security-best-practices-for-integrating-and-managing-security-tools/">Microsoft teknisk gennemgang af CrowdStrike-hændelse</a></h2>
+<ul>
+<li>Windows tilbyder fleksible sikkerhedsindstillinger, herunder integrerede funktioner og tredjepartsværktøjer, for at forbedre sikkerheden og pålideligheden for virksomheder.</li>
+<li>En nylig CrowdStrike-nedetid blev sporet til et hukommelsessikkerhedsproblem i CSagent-driveren, hvilket understreger vigtigheden af robust styring af kerne-drivere.</li>
+<li>Microsoft samarbejder med tredjepartsleverandører gennem Microsoft Virus Initiative (MVI) for at sikre kvaliteten og pålideligheden af sikkerhedsprodukter, med fokus på reduceret kerneafhængighed og forbedret brugerbeskyttelse.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095530">Reaktioner</a></h3>
+<ul>
+<li>Microsofts analyse af CrowdStrike-hændelsen understreger behovet for at modernisere sikkerhedstilgange og reducere afhængigheden af kerne-drivere til at få adgang til kritiske sikkerhedsdata.</li>
+<li>Den hændelse har ført til debatter om CrowdStrikes kvalitetskontrolpraksis og om Microsoft bør begrænse kerneadgang for tredjepartsleverandører, en foranstaltning tidligere blokeret af EU for fair konkurrence.</li>
+<li>Situationen fremhæver de potentielle fordele ved at flytte flere sikkerhedsfunktioner til brugertilstand med henblik på forbedrede udrulningspraksisser og pålidelighed.</li>
+</ul>
+<h2><a href="https://dotat.at/@/2024-07-28-tolower-avx512.html">tolower() med AVX-512</a></h2>
+<ul>
+<li>Artiklen diskuterer brugen af SIMD (Single Instruction, Multiple Data) instruktioner til effektiv strengbehandling, med særligt fokus på tolower() funktionen i Rust.</li>
+<li>Forfatteren eksperimenterede med AVX-512-BW på en AMD Zen 4-processor og opnåede høj ydeevne for både lange og korte strenge ved hjælp af maskerede indlæsninger og lagringer.</li>
+<li>Resultaterne viste, at AVX-512-BW er særligt effektiv til at håndtere korte strenge, hvilket giver en jævn og hurtig ydeevne uden de problemer, der ses i autovektoriseret kode.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095790">Reaktioner</a></h3>
+<ul>
+<li>Tricket &quot;unsafe read beyond of death&quot; i Rust og LLVM betragtes som udefineret adfærd, hvilket fører til potentielle compiler-optimeringer, der antager, at det ikke forekommer, hvilket forårsager uventede resultater.</li>
+<li>Inline assembly er i øjeblikket den eneste løsning, med alternativer som maskeret justeret load-intrinsics og frysning af loads, der foreslås.</li>
+<li>Debatten om håndtering af out-of-bounds læsninger fortsætter, med nogle der går ind for implementeringsdefineret adfærd, og AVX-512&#39;s maskerede operationer bemærkes for deres ydeevnefordele trods begrænset adoption på grund af Intels markedssegmentering.</li>
+</ul>
+<h2><a href="https://github.com/izabera/ps">ps aux skrevet i bash uden forking</a></h2>
+<ul>
+<li>Et interviewspørgsmål til en bash/Linux-stilling kan involvere håndtering af en situation, hvor alle proces-ID&#39;er (PIDs) er taget, hvilket forhindrer nye processer i at blive oprettet.</li>
+<li>Et værktøj nævnes, der kan efterligne en fungerende <code>ps aux</code>-kommando i sådanne scenarier, humoristisk hævdende universel kompatibilitet.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41097241">Reaktioner</a></h3>
+<ul>
+<li>Diskussionen på GitHub drejer sig om udfordringen ved at justere kolonner i programmering, med fokus på at bruge Pythons f-strenge og polstring til dette formål.</li>
+<li>Brugere foreslår alternative værktøjer og formater, såsom YAML for enklere datahåndtering, og nævner værktøjer som Octopus Deploy og Docker CLI til JSON-output.</li>
+<li>Tråden omhandler også håndtering af PID (Process ID) udmattelse i bash, med anbefalinger som at bruge /proc/[pid]/-mappen og <code>exec Python</code> for bedre processtyring.</li>
+</ul>
+<h2><a href="https://statsbomb-3d-viz.vercel.app/">En fodbold/fodboldafleveringsvisualisator lavet med Three.js</a></h2>
+<ul>
+<li>En visualiseringsværktøj til fodboldafleveringer er blevet udviklet ved hjælp af StatsBombs åbne data, som er et omfattende datasæt til fodboldanalyse.</li>
+<li>Værktøjet giver brugerne mulighed for at analysere og visualisere afleveringsmønstre med filtre for afleveringsafstand, hold og individuelle spillere.</li>
+<li>Denne udvikling fremhæver den voksende tendens til at udnytte åbne data til avanceret sportsanalyse og visualisering.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095839">Reaktioner</a></h3>
+<ul>
+<li>En fodboldpasningsvisualisator ved hjælp af Three.js udnytter åbne data fra StatsBomb til at analysere og visualisere pasningsmønstre, hvilket giver brugerne mulighed for at filtrere efter pasningsafstand, hold og spillere.</li>
+<li>Fællesskabets feedback inkluderer forslag til højere niveau visualiseringsværktøjer som deck.gl eller kepler.gl, og funktioner som tidsbaserede animationer og varmekort for bedre analyse.</li>
+<li>Brugere har rapporteret problemer som CORS-fejl og vanskeligheder med filindlæsning, hvilket indikerer områder med potentiale for forbedring af brugeroplevelsen og fejlhåndteringen.</li>
+</ul>
+<h2><a href="https://loro.dev/blog/movable-tree">Flytbare træ-CRDT&#39;er og Loro&#39;s implementering</a></h2>
+<ul>
+<li>Artiklen diskuterer udfordringerne ved implementering af Movable Tree CRDT&#39;er (Conflict-free Replicated Data Types) i samarbejdsmiljøer og hvordan Loro tackler disse problemer, herunder sortering af børnenoder.</li>
+<li>Loro&#39;s implementering bruger algoritmen fra &quot;A highly-available move operation for replicated trees&quot; og integrerer Fractional Index-algoritmen til sortering, håndtering af konflikter med unikke PeerIDs og jitter.</li>
+<li>Lors tilgang understøtter realtids-samarbejde og historiske versionsudtjekninger, hvilket viser høj ydeevne i forskellige scenarier, hvilket gør det velegnet til produktionsbrug i samarbejdsapplikationer.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41099901">Reaktioner</a></h3>
+<ul>
+<li>Flytbare træ-CRDT&#39;er (Conflict-free Replicated Data Types) og Loro&#39;s implementering får opmærksomhed for deres evne til at håndtere komplekse træoperationer i samarbejdsmiljøer.</li>
+<li>Udviklere diskuterer praktiske anvendelser, såsom React Table Library til håndtering af store hierarkiske datastrukturer og Thymers multiplayer-editor til opgaver og noter.</li>
+<li>Diskussionen fremhæver udfordringerne og løsningerne ved brug af CRDT&#39;er til forskellige datatyper, herunder tekst, billeder og 3D-modeller, og understreger vigtigheden af effektiv synkronisering og konfliktløsning.</li>
+</ul>
+<h2><a href="https://leandojo.org/">LeanDojo: Teorembevisning i Lean ved brug af LLM&#39;er</a></h2>
+<ul>
+<li>LeanDojo introducerer Lean Copilot, som gør det muligt for sprogmodeller (LLMs) at assistere i Lean bevisautomatisering ved at foreslå taktikker og søge efter beviser.</li>
+<li>ReProver-modellen, der bruger en encoder-decoder Transformer, henter præmisser fra matematikbiblioteket og genererer den næste taktik, hvilket overgår Leans indbyggede bevisautomatisering.</li>
+<li>LeanDojo&#39;s datasæt inkluderer omfattende benchmarks og detaljerede annoteringer, hvilket sikrer, at modeller kan generalisere til teoremer med nye forudsætninger og opdage nye beviser.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41096486">Reaktioner</a></h3>
+<ul>
+<li>LeanDojo er et nyt initiativ, der integrerer Lean, en bevisassistent, med store sprogmodeller (LLMs) for at forbedre evnerne til at bevise teoremer.</li>
+<li>Projektet sigter mod at bygge bro mellem ikke-eksekverbar matematisk notation og eksekverbar kode, hvilket potentielt kan hjælpe med komplekse matematiske problemer som stokastiske differentialligninger.</li>
+<li>Denne udvikling er betydningsfuld, da den kan forbedre pålideligheden og effektiviteten af formel verifikation i kritiske applikationer, såsom høj-sikkerhedssystemer og automatiseret teorembevisning.</li>
+</ul>
+<h2><a href="http://jpetazzo.github.io/2024/07/26/cloudflare-images-overcharge-billing/">Overfakturerer Cloudflare os for deres billedtjeneste?</a></h2>
+<ul>
+<li>Cloudflare Images&#39; blandede faktureringsmodel, der kombinerer forudbetalt lagerplads og efterbetalt levering, førte til uventet høje og forvirrende fakturaer for EphemeraSearch, som nogle gange oversteg $400 i stedet for de forventede $110.</li>
+<li>Trods flere kontakter med Cloudflare support over otte måneder blev der ikke fundet en løsning, hvilket førte til et skift til mere omkostningseffektive løsninger som S3 eller dedikerede servere.</li>
+<li>Denne oplevelse understreger vigtigheden af effektivt forbrug for indieprojekter med lav indtjening og fremhæver, at selvom Cloudflare Images tilbyder en kvalitetsservice, er dens faktureringsmodel måske ikke egnet for alle brugere.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41100958">Reaktioner</a></h3>
+<ul>
+<li>Bekymringer er blevet rejst om, at Cloudflare potentielt overopkræver for deres billedtjeneste, med brugere, der rapporterer uoverensstemmelser mellem forventede og faktiske omkostninger.</li>
+<li>Der bliver lavet sammenligninger med andre tjenester som Amazon S3, Bunny CDN og Cloudflare R2, som opfattes som mere omkostningseffektive alternativer.</li>
+<li>Cloudflares faktureringspraksis og kundesupport er blevet gransket, da nogle brugere oplever komplicerede faktureringscyklusser og uventede gebyrer.</li>
+</ul>
+<h2><a href="https://fabiensanglard.net/snes_video/index.html">At forstå designet af Super Nintendo-videosystemet</a></h2>
+<ul>
+<li>Fabien Sanglards udforskning af Super Nintendo (SNES) videosystemet fremhæver de designbeslutninger, som Nintendo-ingeniørerne traf i 1989 for at sikre kompatibilitet med CRT-tv&#39;er og NTSC-standarder.</li>
+<li>SNES brugte en hovedur på 21,47727 MHz, delt for at opnå en dot-ur på 5,3693175 MHz, hvilket resulterede i 341 prikker pr. linje og en opdateringshastighed på 60,098 Hz, med vandrette og lodrette blankingsperioder for at undgå artefakter.</li>
+<li>SNES understøttede både NTSC- og PAL-standarder, leverede komposit- og S-Video-udgange og kunne fordoble vertikale og horisontale opløsninger til specifikke applikationer, på trods af udfordringer som flimmer.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098141">Reaktioner</a></h3>
+<ul>
+<li>Indlægget diskuterer designet og arkitekturen af Super Nintendo Entertainment System (SNES) og fremhæver dets tekniske specifikationer og historiske kontekst.</li>
+<li>Vigtige punkter inkluderer SNES&#39;s opløsningsmuligheder, virkningen af forskellige TV-standarder (NTSC vs. PAL) på gameplay, og brugen af CRT&#39;er (katodestrålerør) i arkadespil og hjemme-konsoller.</li>
+<li>Diskussionen berører også brugen af SCART-stik i europæiske tv&#39;er og udfordringerne ved nøjagtigt at emulere SNES&#39;ens videooutput.</li>
+</ul>
+<h2><a href="https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/">Foretræk ikke blindt <code>emplace_back</code> frem for <code>push_back</code> (2021)</a></h2>
+<ul>
+<li>Værktøjer som clang-tidy og PVS-Studio kan markere <code>push_back</code> som &quot;dårlig stil&quot; og foreslå <code>emplace_back</code>, men denne ændring er ikke altid gavnlig.</li>
+<li>emplace_back bør bruges for at undgå at skabe midlertidige objekter, men det er ikke relateret til flyttesemantik og kan stadig resultere i kopier, hvis det ikke bruges korrekt.</li>
+<li>Foretræk <code>push_back</code> for enkelhed og hurtigere kompileringstider, og brug kun <code>emplace_back</code>, når det er nødvendigt for ikke-flytbare typer eller for at undgå midlertidige objekter.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095814">Reaktioner</a></h3>
+<ul>
+<li>Diskussionen drejer sig om brugen af <code>emplace_back</code> versus <code>push_back</code> i C++ til at tilføje elementer til containere som vektorer.</li>
+<li>emplace_back konstruerer et objekt på stedet, hvilket potentielt undgår unødvendige kopier, mens push_back tilføjer et allerede konstrueret objekt til beholderen.</li>
+<li>Dialogen fremhæver, at selvom <code>emplace_back</code> kan være mere effektiv, er den også mere kompleks, og <code>push_back</code> kan være at foretrække til daglig brug, medmindre de specifikke fordele ved <code>emplace_back</code> er nødvendige.</li>
+</ul>
+<h2><a href="https://okmij.org/ftp/ML/higher-kind-poly.html">Højere-kinded begrænset polymorfisme i OCaml (2021)</a></h2>
+<ul>
+<li>Højere-ordnet polymorfisme, som abstraherer over typekonstruktører, er afgørende for generiske operationer over samlinger og indlejring af typede domænespecifikke sprog (DSL&#39;er).</li>
+<li>OCaml understøtter ikke højere-kinded polymorfisme som standard på grund af problemer med typealiasering, men det kan simuleres ved hjælp af funktorer, defunktionalisering og initiale algebraer.</li>
+<li>Forskellige metoder, herunder funktorabstraktion og reduktion til almindelig polymorfisme, muliggør opnåelse af højere-ordens polymorfisme i OCaml, selvom det nogle gange måske ikke er nødvendigt.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41096187">Reaktioner</a></h3>
+<ul>
+<li>Diskussion om højere-slags begrænset polymorfi i OCaml, med fokus på typealiaser og type lighedsproblemer, som fører til højere-ordens foreningsproblemer.</li>
+<li>Den praktiske håndterbarhed af disse emner fremhæves, med henvisninger til Idris-sproget og András Kovács&#39; &quot;Elaboration Zoo&quot; tutorial for yderligere læring.</li>
+<li>Afklaring af OCaml&#39;s GADT (Generalized Abstract Data Types) syntaks, med sammenligninger til F#, som i øjeblikket mangler GADT-understøttelse.</li>
+</ul>
+<h2><a href="https://www.bbc.com/news/education-21895704">Børn bør have lov til at kede sig, siger ekspert (2013)</a></h2>
+<ul>
+<li>Dr. Teresa Belton, en uddannelsesekspert, hævder, at det er afgørende for at fremme kreativitet at lade børn opleve kedsomhed, da konstant aktivitet kan hæmme fantasien.</li>
+<li>Interviews med kreative som forfatteren Meera Syal og kunstneren Grayson Perry afslører, at kedsomhed spillede en betydelig rolle i deres kreative udvikling, hvor Perry beskriver det som en &quot;kreativ tilstand.&quot;</li>
+<li>Dr. Belton understreger, at samfundets forventning om konstant stimulering forhindrer børn i at udvikle intern kreativitet, og han går ind for &#39;stå-og-stirre&#39; tid væk fra skærme for at stimulere fantasien.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098488">Reaktioner</a></h3>
+<ul>
+<li>En ekspert foreslår, at børn bør have lov til at opleve kedsomhed, da det kan fremme kreativitet og selvstændighed.</li>
+<li>Når de reflekterer over tidligere barndomserfaringer, husker brugerne, at de deltog i risikable, men socialt berigende aktiviteter, i modsætning til nutidens børns skærmbaserede overstimulering.</li>
+<li>Diskussionen understreger balancen mellem kedsomhed og sikkerhed og går ind for overvågede miljøer, hvor børn kan udforske og udvikle sig.</li>
+</ul>
+<h2><a href="https://github.com/Owez/yark">Yark: YouTube-arkiver med offline brugergrænseflade</a></h2>
+<ul>
+<li>Yark forenkler arkivering af YouTube med nem installation og administrationskommandoer, kræver Python 3.9+ og eventuelt FFmpeg.</li>
+<li>Brugere kan oprette, opdatere og se arkiver, som er gemt i en mappebaseret struktur med metadata, videoer og miniaturebilleder.</li>
+<li>Værktøjet understøtter offline visning med lys- og mørketilstande og tillader funktionsforslag via repositoryens issues-fane.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41100820">Reaktioner</a></h3>
+<ul>
+<li>Yark er en YouTube-arkiver med en offline brugergrænseflade, designet til at hjælpe brugere med at gemme YouTube-indhold lokalt.</li>
+<li>Brugere diskuterer lignende værktøjer til Twitch og fremhæver udfordringer som streaming af store MP4-filer og håndtering af HTTP-serveranmodninger for filer med specialtegn.</li>
+<li>Diskussionen indeholder tekniske detaljer om streaming, såsom vigtigheden af, at servere understøtter rækkeforespørgsler for at undgå bufferproblemer, med anbefalinger om at bruge VLC eller Nginx til praktisk brug.</li>
+</ul>
+<h2><a href="https://github.com/alexta69/metube">MeTube: Selvhostet YouTube-downloader</a></h2>
+<ul>
+<li>De nye Node-versioner understøtter ikke længere 32-bit ARM-bygninger; brugere skal migrere til et 64-bit operativsystem for opdateringer.</li>
+<li>En web-GUI til youtube-dl (yt-dlp fork) er nu tilgængelig, understøtter download af playlister fra YouTube og andre sider, og kan køres ved hjælp af Docker eller docker-compose.</li>
+<li>Konfigurationsmuligheder inkluderer miljøvariabler for bruger-ID, gruppe-ID, download-mapper og mere, med standardindstillinger for nem opsætning.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098974">Reaktioner</a></h3>
+<ul>
+<li>MeTube er en selvhostet YouTube-downloader, der bruger yt-dlp, et populært kommandolinjeværktøj til at downloade videoer fra YouTube.</li>
+<li>Projektet leverer en brugergrænseflade (UI) til yt-dlp, hvilket gør det tilgængeligt for brugere, der foretrækker en grafisk front-end frem for kommandolinjeoperationer.</li>
+<li>Diskussionen fremhæver forskellige alternativer og relaterede værktøjer, såsom Celluloid, Parabolic og Tube Archivist, som tilbyder lignende funktionaliteter til forskellige platforme og anvendelsestilfælde.</li>
+</ul>
+<h2><a href="https://www.forrestthewoods.com/blog/tech_of_planetary_annihilation_chrono_cam/">Teknologien bag Planetary Annihilation: ChronoCam (2013)</a></h2>
+<ul>
+<li>Planetary Annihilation, et realtidsstrategispil fra Uber Entertainment, er gået ind i beta og byder på innovative teknologier som proceduremæssig planetgenerering og spil med 40 spillere.</li>
+<li>Spillet introducerer ChronoCam, et unikt replay-system, der giver spillere mulighed for at springe tilbage i tiden, spille i slow/fast motion og se spillets verden fra forskellige tidspunkter, selv under live-spil.</li>
+<li>Ved at anvende en klient-server-arkitektur minimerer ChronoCam båndbreddeforbruget ved at repræsentere spildata som kurver og understøtter robuste replay-funktioner, hvilket forbedrer anti-snyd-foranstaltninger og online fællesskabsengagement.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41097228">Reaktioner</a></h3>
+<ul>
+<li>Planetary Annihilation, et realtidsstrategispil (RTS), indeholdt en unik tidsmanipuleringsmekanik kaldet ChronoCam, som gjorde det muligt for spillere at gennemgå og interagere med tidligere spiltilstande.</li>
+<li>Spillet blev oprindeligt finansieret gennem en meget succesfuld Kickstarter-kampagne, der indsamlede 2,2 millioner dollars, men stod over for udfordringer på grund af dets ambitiøse design, herunder flere sfæriske slagmarker.</li>
+<li>På trods af indledende kritik modtog spillets efterfølger, Planetary Annihilation: Titans, positive anmeldelser på Steam, hvor udviklernes tekniske præstationer og innovative motordesign blev fremhævet.</li>
+</ul>
+<h2><a href="https://msreekan.com/2014/01/15/sdcard/">SD-kort slidudjævning og oversættelseslag (2014)</a></h2>
+<ul>
+<li>SD-kort bruger NAND MLC (Multi-Level Cell) eller SLC (Single-Level Cell) flashhukommelse, som abstraherer kompleksiteter som blok-sletninger og slidudjævning.</li>
+<li>Kortet registrerer, om det skal bruge SPI (Serial Peripheral Interface) eller SD-bus ved spændingsforsyning og initierer den passende softwarestak, hvilket fuldfører opstartsprocessen, når softwaren går ind i overførselstilstanden.</li>
+<li>Et oversættelseslag kortlægger virtuelle til fysiske adresser, optimerer skriveydelsen med sammenhængende skrivninger og håndterer overhead for tilfældige skrivninger på tværs af allokeringsenheder (AUs), typisk 4 MB i størrelse.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095429">Reaktioner</a></h3>
+<ul>
+<li>Ved en konference fremhævede en anekdote om demontering af ødelagte SD-kort en fejl i wear leveling, der forårsagede, at firmwaren delvist blev overskrevet, hvilket udløste diskussioner om SD-kortets pålidelighed.</li>
+<li>Brugere delte erfaringer med SD-kortfejl og datagendannelse og bemærkede, at tættere hukommelseskort er mere tilbøjelige til problemer, mens industrikort, selvom de er mindre, er mere holdbare.</li>
+<li>Forslag til forbedring af SD-kortets pålidelighed omfattede bedre software til skriveaggregering og slidudjævning samt selvpartitionerende SD-kort til at håndtere slidte blokke.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Microsoft teknisk gennemgang af CrowdStrike-hændelse" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Microsoft%20teknisk%20gennemgang%20af%20CrowdStrike-h%C3%A6ndelse&subheading=mandag%20den%2029.%20juli%202024%3A%20Resum%C3%A9%20af%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/da/2024/07/29</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000Z</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-28]]></title>
             <description
@@ -1690,202 +1885,6 @@
             <link>https://hn.cho.sh/da/2024/07/20</link>
             <guid isPermaLink="false">2024-07-20T00:00:00.000Z</guid>
             <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-19]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/19&#39;</h2>
-<h1>2024-07-19</h1>
-<h2><a href="https://old.reddit.com/r/crowdstrike/comments/1e6vmkf/bsod_error_in_latest_crowdstrike_update/">Opdatering fra Crowdstrike: Windows blåskærm og opstartsloops</a></h2>
-<ul>
-<li>Flere brugere på en arbejdsplads oplever Windows blå skærme og opstartsloops, muligvis forbundet med en nylig opdatering af Crowd Strike-applikationen.</li>
-<li>IT-afdelingen bemærkede, at nogle servere gik offline, og en lokal radiostation rapporterede lignende problemer med bærbare computere og et nedbrudt telefonsystem.</li>
-<li>Disse hændelser finder sted i Australien, men der har endnu ikke været nogen nyhedsdækning.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002195">Reaktioner</a></h3>
-<ul>
-<li>Crowdstrikes seneste opdatering forårsagede betydelige problemer, herunder Windows bluescreens og boot loops, hvilket påvirkede forskellige sektorer, herunder nødtjenester og hospitaler.</li>
-<li>En Reddit-bruger rapporterede, at deres akutafdeling var nede under en behandling af et hjerteanfald, og 911-tjenesterne var også påvirket, hvilket førte til forsinkelser i patientplejen.</li>
-<li>Den hændelse understreger risikoen ved at stole på sammenkoblede systemer og potentialet for katastrofale fejl, når opdateringer ikke testes ordentligt før implementering.</li>
-</ul>
-<h2><a href="https://www.afr.com/technology/businesses-crippled-by-widespread-it-outage-20240719-p5jv2t">Strømafbrydelse hos Crowdstrike forårsager udbredte problemer</a></h2>
-<ul>
-<li>En global IT-forstyrrelse blev udløst af en fejlbehæftet softwareopdatering fra cybersikkerhedsfirmaet CrowdStrike Holdings, hvilket påvirkede adskillige Microsoft Windows-systemer.</li>
-<li>Begge Microsoft og CrowdStrike har udgivet rettelser for at løse problemet, men fuldstændig genopretning forventes at tage noget tid.</li>
-<li>Situationen er blevet en smule bedre, men virkningen af den mislykkede opdatering mærkes stadig verden over.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002677">Reaktioner</a></h3>
-<ul>
-<li>Crowdstrike oplevede et nedbrud, der forårsagede udbredte problemer, herunder Windows blåskærme og boot loops, på grund af en nylig opdatering.</li>
-<li>Den hændelse har udløst betydelig diskussion på Hacker News, hvilket fremhæver påvirkningen på brugere og systemer.</li>
-<li>Denne begivenhed understreger den kritiske betydning af grundig testning og overvågning i softwareopdateringer for at forhindre sådanne forstyrrelser.</li>
-</ul>
-<h2><a href="https://worthrises.org/pressreleases/2024/7/18/fcc-votes-unanimously-to-significantly-lower-phone-and-video-communication-costs-after-decades-of-exploitation-by-prison-telecoms">FCC stemmer for at begrænse telekomafgifter i fængsler</a></h2>
-<ul>
-<li>FCC har stemt for at reducere telefon- og videokalderaterne betydeligt for fængsler og arresthuse, ved at skære minutpristagene med mere end halvdelen og forbyde alle gebyrer, inklusive indbetalingsgebyrer.</li>
-<li>Ændringen påvirker 83% af de indsatte, sparer familier mindst 500 millioner dollars årligt og forbedrer de indsattes trivsel og succes ved genindtræden.</li>
-<li>Store indtægtstab forventes for fængselstelekommunikationsselskaber som Aventiv og ViaPath, mens stater som Massachusetts, Minnesota og Colorado allerede har gjort fængselsopkald gratis.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41005181">Reaktioner</a></h3>
-<ul>
-<li>FCC har stemt for at begrænse gebyrer for telekommunikationstjenester i fængsler med det formål at reducere de høje omkostninger ved telefonsamtaler for indsatte.</li>
-<li>Tidligere var indsatte begrænset til at bruge en enkelt, fængselsgodkendt privat telefonoperatør, hvilket resulterede i ublu priser på grund af manglende konkurrence.</li>
-<li>De nye regler har til formål at lette den økonomiske byrde for indsatte og deres familier, fremme bedre rehabilitering og reducere tilbagefald.</li>
-</ul>
-<h2><a href="https://johnfactotum.github.io/foliate/">Foliate: Læs e-bøger med stil, naviger med lethed</a></h2>
-<ul>
-<li>Foliate er en open-source e-bogslæser, der understøtter forskellige formater som EPUB, Mobipocket, Kindle, FB2, CBZ og PDF, med tilpasselige læseindstillinger.</li>
-<li>Den tilbyder funktioner som touchpad- og touchscreen-navigation, bogmærker, annoteringer og integration med værktøjer som Wiktionary og Google Translate.</li>
-<li>Foliate understøtter højre-til-venstre tekst, lodret skrivning og faste layout, og er tilgængelig for flere Linux-distributioner eller via kildekodekloning.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002273">Reaktioner</a></h3>
-<ul>
-<li>Foliate er en e-bogslæser, der er rost for sin enkelhed, nemme navigation, bogmærkning og annoteringsfunktioner.</li>
-<li>Den gemmer læsefremskridt, bogmærker og noter i almindelige JSON-filer, hvilket gør det nemt at eksportere og synkronisere.</li>
-<li>Foliate bruger fil-hashes til at generere unikke identifikatorer for bøger, hvilket sikrer, at PDF&#39;er forbliver uændrede, når de annoteres, selvom nogle brugere bemærker potentielle problemer, hvis filer ændres.</li>
-</ul>
-<h2><a href="https://www.nytimes.com/2024/07/18/us/frontier-flights-grounded-microsoft.html">Flere flyselskaber forstyrret på grund af Microsoft Azure-nedbrud</a></h2>
-<ul>
-<li>Frontier Airlines satte alle flyvninger på jorden i cirka 35 minutter på grund af en større Microsoft Azure-nedbrud, hvilket påvirkede booking, check-in og adgang til boardingkort.</li>
-<li>Strømafbrydelsen, der begyndte kl. 17:56, forstyrrede også systemer for Allegiant og Sun Country Airlines, hvilket påvirkede flere systemer i det centrale USA.</li>
-<li>Frontier, som opererer med over 100 fly, var en af mindst tre flyselskaber, der blev påvirket af serviceforstyrrelserne.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41001959">Reaktioner</a></h3>
-<ul>
-<li>Flere flyselskaber oplevede forstyrrelser på grund af et Microsoft Azure-nedbrud, muligvis forbundet med en defekt Crowdstrike-opdatering, der forårsagede globale nedbrud af Windows-maskiner.</li>
-<li>Strømafbrydelsen har påvirket forskellige sektorer, herunder hæveautomater, supermarkeder og lufthavne i Europa og New Zealand, hvilket indikerer et udbredt problem.</li>
-<li>Den hændelse understreger de risici, der er forbundet med centraliserede cloud-tjenester, og fremhæver nødvendigheden af forbedrede katastrofeberedskabsplaner.</li>
-</ul>
-<h2><a href="https://www.construction-physics.com/p/what-would-it-take-to-recreate-bell">Hvad ville der skulle til for at genskabe Bell Labs?</a></h2>
-<ul>
-<li>AT&amp;T, gennem Bell Labs, var afgørende i udviklingen af Amerikas telefoninfrastruktur og producerede betydelige opfindelser som transistoren, silicium solcelle og UNIX operativsystemet.</li>
-<li>Bell Labs&#39; succes skyldtes delvist AT&amp;T&#39;s monopol, som støttede langsigtede forskningsprojekter, hvilket resulterede i adskillige udmærkelser, herunder 10 Nobelpriser.</li>
-<li>Opdelingen af AT&amp;T førte til splittelsen og nedgangen af Bell Labs, hvilket gør det vanskeligt at genskabe en sådan institution i dag på grund af de unikke historiske og teknologiske forhold, der engang eksisterede.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40998927">Reaktioner</a></h3>
-<ul>
-<li>At genskabe Bell Labs ville kræve et kvasi-monopol, betydelig finansiering, minimal konkurrence og en kultur, der prioriterer langsigtet innovation over kortsigtede gevinster.</li>
-<li>Historiske og moderne eksempler, såsom Sandia National Laboratories og teknologigiganter som Google og Microsoft, fremhæver vigtigheden af lederskab, national kultur og skattesystemer i at fremme innovation.</li>
-<li>Den nuværende vægt på øjeblikkelige aktionærudbytter udgør en betydelig hindring for fokus på langsigtet forskning.</li>
-</ul>
-<h2><a href="https://hallofshame.design/ryanair-when-every-page-is-a-dark-pattern/">Ryanair – når hver side er et mørkt mønster</a></h2>
-<ul>
-<li>Ryanair er kendt for at bruge &quot;dark patterns,&quot; manipulative designteknikker, for at øge profitten under bookingprocessen.</li>
-<li>Taktikker inkluderer &quot;privacy zuckering,&quot; hvor kunder automatisk tilmeldes reklamekampagner, og &quot;misdirection,&quot; som bruger fremtrædende knapper og popups til at sælge ekstra tjenester.</li>
-<li>Disse vildledende design er udbredte på hele Ryanairs hjemmeside, hvilket gør det nødvendigt for brugerne at være årvågne for at undgå utilsigtede køb eller deling af mere information end tiltænkt.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41004039">Reaktioner</a></h3>
-<ul>
-<li>Ryanair bruger mørke mønstre, såsom skjulte gebyrer og manipulerende taktikker, for at øge overskuddet, hvilket frustrerer kunderne.</li>
-<li>Eksempler inkluderer gebyrer for app-ID-scanninger, vildledende &quot;speedy boarding&quot;-fordele og komplekse bagagepolitikker, hvilket fører til ekstra omkostninger for basale tjenester.</li>
-<li>På trods af lave priser og effektive flyvninger foretrækker mange kunder at undgå Ryanair på grund af dets kundeuvenlige praksis, mens andre lavprisflyselskaber som EasyJet og WizzAir anses for at være mindre aggressive.</li>
-</ul>
-<h2><a href="https://arstechnica.com/information-technology/2024/07/crowdstrike-fixes-start-at-reboot-up-to-15-times-and-get-more-complex-from-there/">CrowdStrike-rettelser starter ved &quot;genstart op til 15 gange&quot;, bliver mere komplekse derfra</a></h2>
-<ul>
-<li>CrowdStrikes seneste opdatering førte til, at Windows-systemer crashede med en blå skærm af død (BSOD), hvilket forårsagede betydelige forstyrrelser.</li>
-<li>Rettelser spænder fra flere genstarter til mere komplekse løsninger som at gendanne backups eller manuelt slette den problematiske driver, med yderligere trin nødvendige for systemer, der bruger BitLocker-kryptering.</li>
-<li>Opdateringen er blevet trukket tilbage, og CrowdStrikes administrerende direktør har undskyldt og forsikret brugerne om, at der arbejdes på at løse problemet.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007898">Reaktioner</a></h3>
-<ul>
-<li>Den seneste rettelse fra CrowdStrike kræver op til 15 genstarter, hvilket forårsager betydelige forstyrrelser på tværs af forskellige sektorer, herunder CNC-systemer, AC- og sikkerhedsalarmer, telefoner, e-mail og regnskabssystemer.</li>
-<li>Den hændelse understreger de risici, der er forbundet med automatiske opdateringer og nødvendigheden af forbedrede sikkerhedspraksisser, hvor mange går ind for mere robust testning og gradvise udrulninger.</li>
-<li>Brugere stiller spørgsmålstegn ved afhængigheden af internetforbundne, Windows-baserede kritiske systemer, hvilket fremhæver et behov for en revurdering af de nuværende IT-infrastrukturstrategier.</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41007403">Sendune – open-source HTML email designer</a></h2>
-<ul>
-<li>SENDUNE har introduceret en ny open-source HTML email designer, der har til formål at forenkle oprettelsen af HTML emails, som traditionelt er svære at skrive og vedligeholde.</li>
-<li>Designeren er letvægts, bruger ren HTML og undgår besværlige afhængigheder, hvilket gør det muligt for brugerne at gemme HTML-outputtet som en skabelon til enhver e-mail-tjenesteudbyder.</li>
-<li>Brugere opfordres til at forgrene arkivet, lave forbedringer og indsende pull requests, hvilket fremmer et samarbejdende udviklingsmiljø.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007403">Reaktioner</a></h3>
-<ul>
-<li>Sendune er en open-source HTML email designer, der lægger vægt på enkelhed og brugervenlighed, og som producerer ren HTML for kompatibilitet med enhver email-tjenesteudbyder.</li>
-<li>Værktøjet er letvægts, fri for afhængigheder og kan nemt indlejres i applikationer, hvor brugere kan gemme HTML-output som skabeloner.</li>
-<li>På trods af nogle rapporterede problemer med træk-og-slip-funktionaliteten i Firefox har responsen fra fællesskabet været positiv, og bidrag kan foretages via GitHub.</li>
-</ul>
-<h2><a href="https://www.rfi.fr/en/international-news/20240718-seventh-person-likely-cured-of-hiv-doctors-announce">60-årig tysk mand sandsynligvis den syvende person, der er blevet effektivt helbredt for HIV</a></h2>
-<ul>
-<li>En 60-årig tysk mand er sandsynligvis den syvende person, der er blevet effektivt helbredt for HIV efter en stamcelletransplantation, som også behandlede hans aggressive leukæmi.</li>
-<li>Patienten, omtalt som den &quot;næste Berlin-patient,&quot; stoppede med at tage antiretrovirale lægemidler i slutningen af 2018 og er fortsat HIV- og kræftfri næsten seks år senere.</li>
-<li>Forskere er forsigtigt optimistiske og bemærker, at denne sag antyder, at ikke alle CCR5-genmutationer er nødvendige for en vellykket HIV-behandling, hvilket giver håb om bredere HIV-kurstrategier.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40999098">Reaktioner</a></h3>
-<ul>
-<li>En 60-årig tysk mand er sandsynligvis den syvende person, der er blevet effektivt helbredt for HIV, selvom proceduren er drastisk og normalt forbeholdt alvorlige leukæmitilfælde.</li>
-<li>Der er et forslag om at udvikle dette til en autolog stamcelletransplantation for at undgå komplikationer som graft-versus-host-sygdom.</li>
-<li>På trods af fremskridt inden for HIV-behandlinger, der reducerer virale belastninger til uopdagelige niveauer, dør 10.000 mennesker stadig af AIDS årligt i USA, ofte på grund af dårlig seksualundervisning og adgang til sundhedspleje.</li>
-</ul>
-<h2><a href="https://www.bbc.co.uk/news/live/cnk4jdwp49et">Massivt globalt IT-nedbrud påvirker flyselskaber, medier og banker</a></h2>
-<ul>
-<li>Crowdstrike, et Texas-baseret cybersikkerhedsfirma grundlagt i 2011, specialiserer sig i endpoint-sikkerhed for at beskytte virksomheders netværk og cloud-data mod cybertrusler.</li>
-<li>Medstiftet af George Kurtz og Dmitri Alperovitch, blev virksomheden børsnoteret på Nasdaq i 2019.</li>
-<li>Crowdstrike har været afgørende i efterforskningen af større cyberangreb, især bruddet i 2016 på det amerikanske demokratiske nationalkomités netværk.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002730">Reaktioner</a></h3>
-<ul>
-<li>En global IT-nedbrud, udløst af en Crowdstrike-opdatering, fik Windows-systemer til at opleve blåskærme og opstartsloops, hvilket påvirkede flyselskaber, medier og banker.</li>
-<li>Den hændelse har udløst diskussioner om pålideligheden af endpoint-beskyttelsessoftware, risikoen ved forsyningskædeangreb og den store afhængighed af Windows-infrastruktur.</li>
-<li>Strømafbrydelsen, der stammer fra en &quot;sikkerhedsopdatering,&quot; har rejst betydelige bekymringer om suveræniteten og robustheden af IT-infrastrukturen.</li>
-</ul>
-<h2><a href="https://www.esa.int/Enabling_Support/Operations/Double_trouble_Gaia_hit_by_micrometeoroid_and_solar_storm">En dobbelt udfordring: ESAs Gaia ramt af mikrometeoroid og solstorm</a></h2>
-<ul>
-<li>ESAs Gaia-rumfartøj, der blev opsendt i december 2013 for at kortlægge over en milliard stjerner i Mælkevejen, stod for nylig over for betydelige udfordringer fra et mikrometeoroid-nedslag og en solstorm.</li>
-<li>Micrometeoroiden beskadigede Gaias beskyttelsesdæksel, og solstormen forårsagede en fejl i en af dens charge-coupled devices (CCDs), hvilket førte til tusindvis af falske stjernedetektioner.</li>
-<li>Ingeniører fra ESA og Airbus Defence and Space justerede med succes Gaias software, hvilket reducerede falske detektioner og bragte rumfartøjet tilbage til rutineoperationer, hvor det nu producerer nogle af sine bedste kvalitetsdata.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40999928">Reaktioner</a></h3>
-<ul>
-<li>ESAs Gaia-rumfartøj har for nylig lidt skade fra en mikrometeoroid og en solstorm, men fortsætter sin mission, hvilket viser rummissioners modstandsdygtighed.</li>
-<li>Historiske eksempler som Voyager 1 og Hubble viser, at rummissioner ofte overlever deres forventede levetid gennem softwareopdateringer og reparationer.</li>
-<li>På trods af budgetbegrænsninger og tekniske udfordringer har ingeniørernes dedikation gjort det muligt for Gaia at fortsætte med at producere data af høj kvalitet efter de seneste justeringer.</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41004103">Hvad er der i C-00000291*.sys?</a></h2>
-<ul>
-<li>Filen C-00000291*.sys fra CrowdStrike har forårsaget systemnedbrud på grund af ugyldig formatering, hvilket påvirker CrowdStrike-driveren.</li>
-<li>Brugere rapporterer forskellige versioner af filen, hvor nogle spekulerer i kryptering med kundespecifikke nøgler, mens andre har analyseret dem uden dekryptering.</li>
-<li>Filerne er proprietære opdateringsformater, ikke DLL&#39;er eller patches, hvilket rejser bekymringer om sikkerheden og pålideligheden af CrowdStrikes opdateringsproces.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41004103">Reaktioner</a></h3>
-<ul>
-<li>Filen C-00000291*.sys fra CrowdStrike har forårsaget systemnedbrud på grund af ugyldig formatering, hvilket påvirker den primære CrowdStrike-driver.</li>
-<li>Brugere rapporterer forskellige versioner af filen, hvor nogle spekulerer i kryptering med kundespecifikke nøgler, mens andre har analyseret dem uden dekryptering.</li>
-<li>Filerne er proprietære opdateringsformater, ikke DLL&#39;er eller almindelige patches, hvilket rejser bekymringer om sikkerheden og pålideligheden af CrowdStrikes opdateringsproces.</li>
-</ul>
-<h2><a href="https://www.jpl.nasa.gov/news/nasas-curiosity-rover-discovers-a-surprise-in-a-martian-rock">NASAs Curiosity-rover opdager en overraskelse i en marsklippe</a></h2>
-<ul>
-<li>NASAs Curiosity-rover opdagede grundstofsvovl på Mars for første gang, en betydelig milepæl i udforskningen af Mars.</li>
-<li>Opdagelsen blev gjort i en sulfat-rig region, hvor Curiosity fandt et helt felt af lyse klipper bestående af ren svovl, hvilket fascinerede forskere.</li>
-<li>Curiosity-missionen, som omfatter studiet af Mars&#39; gamle terræn for tegn på mikrobielt liv, fortsætter, mens den bestiger Mount Sharp og borer sin 41. klippeprøve til yderligere analyse.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41006552">Reaktioner</a></h3>
-<ul>
-<li>NASAs Curiosity-rover opdagede svovlkrystaller i en Mars-klippe, hvilket førte til en debat om brugen af clickbait-overskrifter for at engagere offentligheden.</li>
-<li>Opdagelsen fandt sted, da Curiosity kørte over en sten og afslørede krystallerne, hvilket understreger vigtigheden af offentlig interesse og finansiering til NASA.</li>
-<li>Diskussionen omhandlede også NASAs budgetudfordringer og nødvendigheden af offentlig engagement for agenturets fortsatte drift.</li>
-</ul>
-<h2><a href="https://www.sciencedaily.com/releases/2024/07/240715135713.htm">Tab af ilt i søer og oceaner</a></h2>
-<ul>
-<li>Forskning fra Rensselaer Polytechnic Institute fremhæver, at tab af ilt i søer og oceaner udgør en betydelig trussel mod økosystemer, samfundet og planeten.</li>
-<li>Aquatisk deoxygenering, forbundet med klimaforandringer, arealanvendelse og forurening, har ført til et hurtigt fald i opløst ilt, hvor søer og reservoirer har mistet 5,5% og 18,6% af deres ilt siden 1980, og oceaner har mistet omkring 2% siden 1960.</li>
-<li>Dette iltsvind påvirker arters fysiologi, fødenet og økosystemtjenester, hvilket skaber &quot;døde zoner&quot; og skadelige algeopblomstringer, hvilket nødvendiggør hurtig handling for at tackle global opvarmning og afstrømning.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007196">Reaktioner</a></h3>
-<ul>
-<li>Indsøer og reservoirer har oplevet betydelige ilttab med henholdsvis 5,5% og 18,6% reduktioner siden 1980, mens oceanerne har set omkring en 2% nedgang siden 1960.</li>
-<li>Det centrale Californien er særligt påvirket med et fald i iltniveauet på 40%, primært på grund af drivhusgasemissioner, næringsstofafstrømning og rå spildevand.</li>
-<li>Foreslåede løsninger inkluderer regenerativt landbrug og reduktion af industrielt kødforbrug for at afbøde de bredere miljøpåvirkninger af klimaforandringer og forurening.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Opdatering fra Crowdstrike: Windows blåskærm og opstartsloops" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Opdatering%20fra%20Crowdstrike%3A%20Windows%20bl%C3%A5sk%C3%A6rm%20og%20opstartsloops&subheading=fredag%20den%2019.%20juli%202024%3A%20Resum%C3%A9%20af%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/da/2024/07/19</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000Z</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

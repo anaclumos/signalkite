@@ -15,12 +15,207 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 28 Jul 2024 19:10:28 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jul 2024 19:13:07 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/zh-Hant.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 28 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[zh-Hant]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-29]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/29&#39;</h2>
+<h1>2024-07-29</h1>
+<h2><a href="https://www.microsoft.com/en-us/security/blog/2024/07/27/windows-security-best-practices-for-integrating-and-managing-security-tools/">Microsoft 對 CrowdStrike 事件的技術分析</a></h2>
+<ul>
+<li>Windows 提供靈活的安全選項，包括整合的功能和第三方工具，以提升企業的安全性和可靠性。</li>
+<li>“最近的一次 CrowdStrike 當機被追溯到 CSagent 驅動程式中的記憶體安全問題，這突顯了強健的核心驅動程式管理的重要性。”</li>
+<li>Microsoft 透過 Microsoft 病毒計劃 (MVI) 與第三方供應商合作，以確保安全產品的品質和可靠性，強調減少核心依賴性並增強使用者模式保護。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095530">評論</a></h3>
+<ul>
+<li>Microsoft 對 CrowdStrike 事件的分析強調了現代化安全方法的重要性，並減少對內核驅動程式來存取關鍵安全數據的依賴。</li>
+<li>該事件引發了關於CrowdStrike品質保證措施的討論，以及微軟是否應該限制第三方廠商的核心存取權，這一舉措此前曾因公平競爭而被歐盟阻止。</li>
+<li>「這種情況突顯了將更多安全功能轉移到使用者模式的潛在好處，目標是改進部署實踐和可靠性。」</li>
+</ul>
+<h2><a href="https://dotat.at/@/2024-07-28-tolower-avx512.html">tolower() 與 AVX-512</a></h2>
+<ul>
+<li>這篇文章討論了使用 SIMD(單指令多數據)指令來進行高效的字串處理，特別是針對 Rust 中的 tolower() 函數。</li>
+<li>作者在 AMD Zen 4 處理器上試驗了 AVX-512-BW，通過使用遮罩載入和存儲，無論是長字串還是短字串都達到了高效能。</li>
+<li>結果顯示，AVX-512-BW 對於處理短字串特別有效，提供了流暢且快速的效能，沒有自動向量化程式碼中常見的問題。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095790">評論</a></h3>
+<ul>
+<li>在 Rust 和 LLVM 中的「unsafe read beyond of death」技巧被認為是未定義行為，這可能導致編譯器優化假設它不會發生，從而引起意外結果。</li>
+<li>“內嵌組合語言目前是唯一的解決方法，有人建議使用其他選項，如遮罩對齊載入內建函數和凍結載入。”</li>
+<li>關於處理越界讀取的辯論仍在繼續，有些人主張實現定義的行為，而AVX-512的遮罩操作因其性能優勢而受到關注，儘管由於Intel的市場區隔而採用率有限。</li>
+</ul>
+<h2><a href="https://github.com/izabera/ps">在 bash 中執行 ps aux 而不進行分叉</a></h2>
+<ul>
+<li>針對一個 bash/Linux 職位的面試問題可能會涉及處理所有進程 ID(PID)都被佔用，導致無法生成新進程的情況。</li>
+<li>「提到了一個工具，可以在這種情況下模仿 <code>ps aux</code> 命令的運行，幽默地聲稱具有普遍的相容性。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41097241">評論</a></h3>
+<ul>
+<li>「GitHub 上的討論圍繞著在程式設計中對齊欄位的挑戰，重點在於使用 Python 的 f-strings 和填充來達成這個目的。」</li>
+<li>用戶建議使用替代工具和格式，例如 YAML 以簡化資料處理，並提到像 Octopus Deploy 和 Docker CLI 這樣的工具來生成 JSON 輸出。</li>
+<li>該討論串還提到了在 bash 中處理 PID(進程 ID)耗盡的問題，並建議使用 /proc/[pid]/ 目錄和 <code>exec Python</code> 來進行更好的進程管理。</li>
+</ul>
+<h2><a href="https://statsbomb-3d-viz.vercel.app/">使用 Three.js 製作的足球傳球可視化工具</a></h2>
+<ul>
+<li>“使用 StatsBomb 的開放數據開發了一個足球傳球可視化工具，這是一個豐富的足球分析數據集。”</li>
+<li>該工具允許使用者分析和視覺化傳球模式，並提供傳球距離、球隊和個別球員的篩選功能。</li>
+<li>「這一發展突顯了利用開放數據進行高級體育分析和視覺化的增長趨勢。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095839">評論</a></h3>
+<ul>
+<li>使用 Three.js 的足球傳球可視化工具利用 StatsBomb 的開放數據來分析和可視化傳球模式，允許使用者根據傳球距離、球隊和球員進行篩選。</li>
+<li>“社群反饋包括對更高階可視化工具如 deck.gl 或 kepler.gl 的建議，以及基於時間的動畫和熱圖等功能，以便進行更好的分析。”</li>
+<li>用戶反映了像 CORS 錯誤和檔案載入困難等問題，這表明在用戶體驗和錯誤處理方面有潛在的改進空間。</li>
+</ul>
+<h2><a href="https://loro.dev/blog/movable-tree">可移動樹 CRDTs 和 Loro 的實作</a></h2>
+<ul>
+<li>本文探討在協作環境中實現可移動樹 CRDTs(無衝突複製資料類型)的挑戰，以及 Loro 如何解決這些問題，包括排序子節點。</li>
+<li>「Loro 的實作使用了《A highly-available move operation for replicated trees》中的演算法，並整合了分數索引演算法來進行排序，透過唯一的 PeerID 和抖動來處理衝突。」</li>
+<li>「Loro 的方法支持即時協作和歷史版本檢出，在各種情境下顯示出高效能，使其適合用於協作應用中的生產環境。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41099901">評論</a></h3>
+<ul>
+<li>“可移動樹 CRDTs(無衝突複製資料類型)和 Loro 的實作因其在協作環境中處理複雜樹操作的能力而受到關注。”</li>
+<li>開發者正在討論實際應用，例如用於管理大型階層數據結構的 React Table Library 和 Thymer 的多人編輯器，用於任務和筆記。</li>
+<li>這段對話強調了在使用 CRDTs 處理各種數據類型(包括文字、圖片和 3D 模型)時所面臨的挑戰和解決方案，並強調了高效同步和衝突解決的重要性。</li>
+</ul>
+<h2><a href="https://leandojo.org/">LeanDojo：使用大型語言模型進行 Lean 定理證明</a></h2>
+<ul>
+<li>LeanDojo 推出 Lean Copilot，使語言模型(LLMs)能夠通過建議策略和搜尋證明來協助 Lean 證明自動化。</li>
+<li>ReProver 模型使用編碼器-解碼器 Transformer，從數學庫中檢索前提並生成下一個策略，表現優於 Lean 內建的證明自動化。</li>
+<li>“LeanDojo 的數據集包含廣泛的基準測試和細緻的註釋，確保模型能夠泛化到具有新前提的定理並發現新的證明。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41096486">評論</a></h3>
+<ul>
+<li>“LeanDojo 是一個新的計畫，將 Lean(證明輔助工具)與大型語言模型(LLMs)結合，以提升定理證明的能力。”</li>
+<li>該專案旨在彌合不可執行的數學符號與可執行程式碼之間的鴻溝，可能有助於解決如隨機微分方程等複雜的數學問題。</li>
+<li>這項發展意義重大，因為它可能提高在關鍵應用中的形式驗證的可靠性和效率，例如高安全性系統和自動定理證明。</li>
+</ul>
+<h2><a href="http://jpetazzo.github.io/2024/07/26/cloudflare-images-overcharge-billing/">「Cloudflare 是否對我們的圖片服務收費過高？」</a></h2>
+<ul>
+<li>「Cloudflare Images 的混合計費模式，結合了預付存儲和後付交付，導致 EphemeraSearch 收到意外高額且令人困惑的發票，有時超過 $400，而不是預期的 $110。」</li>
+<li>「儘管在八個月內多次聯繫 Cloudflare 支援，仍未獲得解決方案，這促使我們轉向更具成本效益的解決方案，如 S3 或專用伺服器。」</li>
+<li>這次經驗強調了對於收入較低的獨立專案來說，如何有效支出是非常重要的，並指出雖然 Cloudflare Images 提供了高品質的服務，但其計費模式可能並不適合所有使用者。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41100958">評論</a></h3>
+<ul>
+<li>有關 Cloudflare 可能對其 Images 服務收取過高費用的擔憂已經被提出，使用者報告預期成本與實際成本之間存在差異。</li>
+<li>“目前正在將其與其他服務進行比較，例如 Amazon S3、Bunny CDN 和 Cloudflare R2，這些服務被認為是更具成本效益的替代方案。”</li>
+<li>「Cloudflare 的計費方式和客戶支援受到審查，一些用戶遇到複雜的計費週期和意外的收費。」</li>
+</ul>
+<h2><a href="https://fabiensanglard.net/snes_video/index.html">了解超級任天堂遊戲系統的設計</a></h2>
+<ul>
+<li>Fabien Sanglard 對超級任天堂(SNES)視頻系統的探討，突顯了任天堂工程師在1989年所做的設計決策，以確保與CRT電視和NTSC標準的相容性。</li>
+<li>SNES 使用 21.47727MHz 的主時鐘，經過分頻後達到 5.3693175MHz 的點時鐘，產生每行 341 個點和 60.098Hz 的刷新率，並有水平和垂直消影期以避免畫面瑕疵。</li>
+<li>SNES 支援 NTSC 和 PAL 標準，提供複合影像和 S-Video 輸出，並且可以在特定應用中將垂直和水平解析度加倍，儘管會面臨如閃爍等挑戰。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098141">評論</a></h3>
+<ul>
+<li>「這篇文章討論了超級任天堂娛樂系統(SNES)的設計和架構，並強調其技術規格和歷史背景。」</li>
+<li>「重點包括 SNES 的解析度選項、不同電視標準(NTSC 與 PAL)對遊戲體驗的影響，以及在街機遊戲和家用主機中使用的 CRT(陰極射線管)。」</li>
+<li>討論還涉及歐洲電視中使用 SCART 連接器以及準確模擬超任(SNES)視頻輸出的挑戰。</li>
+</ul>
+<h2><a href="https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/">不要盲目偏好使用 <code>emplace_back</code> 而非 <code>push_back</code>(2021)</a></h2>
+<ul>
+<li>“像 clang-tidy 和 PVS-Studio 這樣的工具可能會將 <code>push_back</code> 標記為「不良風格」並建議使用 <code>emplace_back</code>，但這樣的改變並不總是有益的。”</li>
+<li>應該使用 <code>emplace_back</code> 來避免創建臨時物件，但它與移動語意無關，如果使用不當仍可能導致複製。</li>
+<li>為了簡化和加快編譯時間，建議使用 <code>push_back</code>，僅在必要時才使用 <code>emplace_back</code>，例如處理不可移動類型或避免臨時物件。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095814">評論</a></h3>
+<ul>
+<li>「討論圍繞著在 C++ 中使用 <code>emplace_back</code> 與 <code>push_back</code> 來向容器(如 vector)添加元素的問題。」</li>
+<li>emplace_back 在原地構造一個物件，可能避免不必要的複製，而 push_back 則是將已經構造好的物件加入容器。</li>
+<li>這段對話強調，雖然 <code>emplace_back</code> 可能更高效，但它也更複雜，除非需要 <code>emplace_back</code> 的特定優勢，否則在日常使用中 <code>push_back</code> 可能更可取。</li>
+</ul>
+<h2><a href="https://okmij.org/ftp/ML/higher-kind-poly.html">Higher-kinded bounded polymorphism in OCaml (2021)</a></h2>
+<ul>
+<li>「高階多態性，抽象於型別構造器之上，對於集合上的泛型操作以及嵌入型別化的領域專用語言(DSLs)至關重要。」</li>
+<li>“由於型別別名問題，OCaml 原生並不支援高階多態性，但可以透過函子、去函數化和初始代數來模擬。”</li>
+<li>「包括函子抽象和簡化為普通多態性在內的各種方法，允許在 OCaml 中實現高階多態性，儘管有時可能並不需要。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41096187">評論</a></h3>
+<ul>
+<li>討論 OCaml 中的高階有界多態性，重點在於型別別名和型別相等問題，這些問題導致了高階統一問題。</li>
+<li>這些問題的實際可行性得到了強調，並引用了 Idris 語言和 András Kovács 的《Elaboration Zoo》教程以供進一步學習。</li>
+<li>關於 OCaml 的 GADT(廣義抽象資料型別)語法的澄清，並與目前缺乏 GADT 支援的 F# 進行比較。</li>
+</ul>
+<h2><a href="https://www.bbc.com/news/education-21895704">專家表示，應該允許孩子感到無聊(2013)</a></h2>
+<ul>
+<li>教育專家 Teresa Belton 博士主張，讓孩子體驗無聊對於培養創造力至關重要，因為持續的活動可能會阻礙想像力。</li>
+<li>“對作家米拉·賽亞爾和藝術家格雷森·佩里的訪談顯示，無聊在他們的創作發展中扮演了重要角色，佩里更是將其形容為一種『創意狀態』。”</li>
+<li>“貝爾頓博士強調，社會對於不斷刺激的期望阻礙了孩子們發展內在創造力，並提倡遠離螢幕的『靜觀』時間來激發想像力。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098488">評論</a></h3>
+<ul>
+<li>專家建議應該讓孩子體驗無聊，因為這可以培養創造力和自立能力。</li>
+<li>回顧過去的童年經歷，用戶回憶起參與了一些具有風險但社交豐富的活動，這與現代兒童基於螢幕的過度刺激形成了鮮明對比。</li>
+<li>討論強調在無聊與安全之間取得平衡，提倡在有監督的環境中讓孩子們探索和發展。</li>
+</ul>
+<h2><a href="https://github.com/Owez/yark">Yark：具有離線介面的 YouTube 影片存檔工具</a></h2>
+<ul>
+<li>「Yark 透過簡易的安裝和管理指令簡化了 YouTube 的存檔過程，需使用 Python 3.9 以上版本，並可選擇性地使用 FFmpeg。」</li>
+<li>使用者可以建立、刷新和查看存檔，這些存檔會以目錄結構儲存，包含中繼資料、影片和縮圖。</li>
+<li>該工具支援離線瀏覽，並提供淺色和深色模式，使用者可以透過儲存庫的問題標籤提出功能建議。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41100820">評論</a></h3>
+<ul>
+<li>Yark 是一款具有離線使用者介面的 YouTube 存檔工具，旨在幫助使用者將 YouTube 內容儲存到本地。</li>
+<li>“用戶討論了類似的 Twitch 工具，強調了如串流大型 MP4 檔案和處理包含特殊字元檔案的 HTTP 伺服器請求等挑戰。”</li>
+<li>這段對話包含了有關串流的技術細節，例如伺服器支援範圍請求以避免緩衝問題的重要性，並建議實際使用 VLC 或 Nginx。</li>
+</ul>
+<h2><a href="https://github.com/alexta69/metube">MeTube：自架的 YouTube 下載器</a></h2>
+<ul>
+<li>新的 Node 版本不再支援 32 位元 ARM 架構的建置；使用者必須遷移到 64 位元作業系統以進行更新。</li>
+<li>「youtube-dl(yt-dlp 分支)的網頁 GUI 現已推出，支援從 YouTube 及其他網站下載播放清單，並可使用 Docker 或 docker-compose 運行。」</li>
+<li>配置選項包括用戶 ID、群組 ID、下載目錄等環境變數，並提供預設值以便於設置。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098974">評論</a></h3>
+<ul>
+<li>MeTube 是一款自我託管的 YouTube 下載器，使用 yt-dlp 這個受歡迎的命令列工具來下載 YouTube 影片。</li>
+<li>該專案提供了 yt-dlp 的使用者介面(UI)，使得偏好圖形前端而非命令列操作的使用者也能輕鬆使用。</li>
+<li>“討論中強調了各種替代方案和相關工具，例如 Celluloid、Parabolic 和 Tube Archivist，這些工具為不同的平台和使用情境提供了類似的功能。”</li>
+</ul>
+<h2><a href="https://www.forrestthewoods.com/blog/tech_of_planetary_annihilation_chrono_cam/">行星殲滅技術：ChronoCam(2013)</a></h2>
+<ul>
+<li>《行星毀滅》，由 Uber Entertainment 開發的即時戰略遊戲，已進入測試階段，並具備創新的技術，如程序化行星生成和 40 人對戰。</li>
+<li>這款遊戲引入了 ChronoCam，一個獨特的重播系統，讓玩家可以回到過去、以慢速或快速播放遊戲，並從不同的時間點觀看遊戲世界，甚至在實時遊戲中也能使用。</li>
+<li>利用客戶端-伺服器架構，ChronoCam 透過將遊戲數據表示為曲線來最小化頻寬使用，並支援強大的重播功能，增強反作弊措施和線上社群互動。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41097228">評論</a></h3>
+<ul>
+<li>《行星毀滅》，一款即時戰略(RTS)遊戲，具有一個獨特的時間回溯機制稱為ChronoCam，允許玩家回顧並與過去的遊戲狀態互動。</li>
+<li>這款遊戲最初是通過一個非常成功的 Kickstarter 募資活動籌集資金，籌得了 220 萬美元，但由於其雄心勃勃的設計，包括多個球形戰場，面臨了一些挑戰。</li>
+<li>儘管最初受到批評，該遊戲的續作《行星毀滅：泰坦》在 Steam 上獲得了正面評價，突顯了開發者的技術成就和創新的引擎設計。</li>
+</ul>
+<h2><a href="https://msreekan.com/2014/01/15/sdcard/">SD卡磨損均衡和轉換層(2014)</a></h2>
+<ul>
+<li>SD 卡使用 NAND MLC(多層儲存單元)或 SLC(單層儲存單元)快閃記憶體，抽象化了區塊抹除和磨損平衡等複雜性。</li>
+<li>該卡片會在電壓供應時檢測是否使用 SPI(串列周邊介面)或 SD 匯流排，並啟動相應的軟體堆疊，當軟體進入傳輸狀態時完成啟動過程。</li>
+<li>「一個翻譯層將虛擬地址映射到實體地址，通過連續寫入來優化寫入性能，並管理跨配置單元(通常為4MB大小)的隨機寫入開銷。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095429">評論</a></h3>
+<ul>
+<li>在一場會議上，一則關於拆解損壞的 SD 卡的軼事突顯了一個磨損均衡錯誤，這個錯誤導致韌體部分被覆寫，引發了對 SD 卡可靠性的討論。</li>
+<li>「用戶分享了 SD 卡故障和資料恢復的經驗，指出密度較高的記憶卡更容易出現問題，而工業級記憶卡雖然容量較小，但更耐用。」</li>
+<li>“提高 SD 卡可靠性的建議包括更好的寫入聚合和磨損均衡軟體，以及能夠自動調整分區大小以管理損壞區塊的 SD 卡。”</li>
+</ul>
+<head>
+  <meta property="og:title" content="Microsoft 對 CrowdStrike 事件的技術分析" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Microsoft%20%E5%B0%8D%20CrowdStrike%20%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%8A%80%E8%A1%93%E5%88%86%E6%9E%90&subheading=2024%E5%B9%B47%E6%9C%8829%E6%97%A5%20%E6%98%9F%E6%9C%9F%E4%B8%80%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/zh/Hant/2024/07/29</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000Z</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-28]]></title>
             <description
@@ -1690,202 +1885,6 @@
             <link>https://hn.cho.sh/zh/Hant/2024/07/20</link>
             <guid isPermaLink="false">2024-07-20T00:00:00.000Z</guid>
             <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-19]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/19&#39;</h2>
-<h1>2024-07-19</h1>
-<h2><a href="https://old.reddit.com/r/crowdstrike/comments/1e6vmkf/bsod_error_in_latest_crowdstrike_update/">「Crowdstrike 更新：Windows 藍屏和開機循環」</a></h2>
-<ul>
-<li>多位工作場所的使用者遇到 Windows 藍屏和開機循環問題，可能與最近的 Crowd Strike 應用程式更新有關。</li>
-<li>「資訊部門注意到一些伺服器離線，本地一家電台報導了類似的筆記型電腦問題和電話系統故障。」</li>
-<li>「這些事件發生在澳洲，但目前尚未有任何新聞報導。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002195">評論</a></h3>
-<ul>
-<li>「Crowdstrike 最近的更新引發了重大問題，包括 Windows 藍屏和開機循環，影響了各個領域，包括緊急服務和醫院。」</li>
-<li>「一位 Reddit 用戶報告說，他們的急診室在處理心臟病發作時癱瘓了，911 服務也受到了影響，導致病患護理延誤。」</li>
-<li>該事件強調了依賴互聯系統的風險，以及在更新未經適當測試就部署時可能發生災難性故障的潛在風險。</li>
-</ul>
-<h2><a href="https://www.afr.com/technology/businesses-crippled-by-widespread-it-outage-20240719-p5jv2t">「Crowdstrike 異常導致廣泛問題」</a></h2>
-<ul>
-<li>全球 IT 中斷事件是由網路安全公司 CrowdStrike Holdings 的一個有缺陷的軟體更新引發的，影響了許多 Microsoft Windows 系統。</li>
-<li>微軟和CrowdStrike都已經發布了修復程式來解決這個問題，但完全恢復預計需要一些時間。</li>
-<li>情況略有改善，但失敗的更新所帶來的影響仍在全球範圍內持續感受得到。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002677">評論</a></h3>
-<ul>
-<li>「Crowdstrike 因最近的更新經歷了停機，導致廣泛的問題，包括 Windows 藍屏和開機循環。」</li>
-<li>這起事件在 Hacker News 上引發了廣泛討論，突顯了對使用者和系統的影響。</li>
-<li>「此事件強調了在軟體更新中進行嚴格測試和監控的重要性，以防止此類中斷。」</li>
-</ul>
-<h2><a href="https://worthrises.org/pressreleases/2024/7/18/fcc-votes-unanimously-to-significantly-lower-phone-and-video-communication-costs-after-decades-of-exploitation-by-prison-telecoms">FCC 投票限制監獄電信收費</a></h2>
-<ul>
-<li>美國聯邦通信委員會(FCC)已投票決定大幅降低監獄和拘留所的電話和視頻通話費率，將每分鐘費率上限削減超過一半，並禁止所有費用，包括存款費用。</li>
-<li>此變更影響了 83% 的受刑人，每年為家庭節省至少 5 億美元，並提升受刑人的福祉和重返社會的成功率。</li>
-<li>預計像 Aventiv 和 ViaPath 這樣的監獄電信公司將面臨重大收入損失，而馬薩諸塞州、明尼蘇達州和科羅拉多州等州已經開始實行免費監獄通話政策。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41005181">評論</a></h3>
-<ul>
-<li>「美國聯邦通信委員會(FCC)已投票決定限制監獄電信服務的收費，旨在降低囚犯電話通話的高昂費用。」</li>
-<li>以前，囚犯只能使用獲得監獄批准的單一私人電話運營商，因為缺乏競爭，導致價格高昂。</li>
-<li>「新規定旨在減輕囚犯及其家屬的經濟負擔，促進更好的復健並降低再犯率。」</li>
-</ul>
-<h2><a href="https://johnfactotum.github.io/foliate/">Foliate：時尚閱讀電子書，輕鬆導航</a></h2>
-<ul>
-<li>「Foliate 是一款開源的電子書閱讀器，支援多種格式，如 EPUB、Mobipocket、Kindle、FB2、CBZ 和 PDF，並提供可自訂的閱讀設定。」</li>
-<li>它提供觸控板和觸控螢幕導航、書籤、註釋，以及與維基詞典和 Google 翻譯等工具的整合功能。</li>
-<li>“Foliate 支援從右到左的文字、直排書寫和固定版面，並可用於多種 Linux 發行版或透過源代碼複製取得。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002273">評論</a></h3>
-<ul>
-<li>Foliate 是一款電子書閱讀器，以其簡單易用、方便導航、書籤和註釋功能而備受讚譽。</li>
-<li>它將閱讀進度、書籤和註釋儲存在純 JSON 檔案中，方便匯出和同步。</li>
-<li>「Foliate 使用檔案雜湊值來生成書籍的唯一識別碼，確保在註解時 PDF 保持未修改狀態，儘管有些使用者指出如果檔案被更改可能會出現潛在問題。」</li>
-</ul>
-<h2><a href="https://www.nytimes.com/2024/07/18/us/frontier-flights-grounded-microsoft.html">多家航空公司因 Microsoft Azure 當機而受影響</a></h2>
-<ul>
-<li>「由於微軟 Azure 的重大故障，Frontier Airlines 停飛了所有航班約 35 分鐘，影響了訂票、登機報到和登機證的取得。」</li>
-<li>停電從下午 5:56 開始，也中斷了 Allegiant 和 Sun Country Airlines 的系統，影響了美國中部的多個系統。</li>
-<li>「Frontier 航空公司擁有超過 100 架飛機，是至少三家受服務中斷影響的航空公司之一。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41001959">評論</a></h3>
-<ul>
-<li>「多家航空公司因為 Microsoft Azure 當機而遭遇中斷，這可能與一個有問題的 Crowdstrike 更新導致全球 Windows 機器崩潰有關。」</li>
-<li>這次停電影響了各個領域，包括歐洲和紐西蘭的自動提款機、超市和機場，顯示出這是一個廣泛的問題。</li>
-<li>該事件突顯了集中式雲端服務所伴隨的風險，並強調了改進災難復原計畫的必要性。</li>
-</ul>
-<h2><a href="https://www.construction-physics.com/p/what-would-it-take-to-recreate-bell">「要重現貝爾實驗室需要什麼條件？」</a></h2>
-<ul>
-<li>AT&amp;T 透過貝爾實驗室在發展美國電話基礎設施方面扮演了關鍵角色，並且產生了諸如電晶體、矽太陽能光伏電池和 UNIX 作業系統等重要發明。</li>
-<li>貝爾實驗室的成功部分歸功於美國電話電報公司(AT&amp;T)的壟斷地位，這支持了長期的研究項目，並因此獲得了許多榮譽，包括10項諾貝爾獎。</li>
-<li>美國電話電報公司(AT&amp;T)的分拆導致貝爾實驗室的分裂和衰退，這使得在今天重建這樣的機構變得困難，因為當時存在的獨特歷史和技術條件已不復存在。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40998927">評論</a></h3>
-<ul>
-<li>「重現貝爾實驗室將需要一個準壟斷地位、充足的資金、極少的競爭，以及一種優先考慮長期創新而非短期利潤的文化。」</li>
-<li>歷史和現代的例子，如桑迪亞國家實驗室以及像 Google 和 Microsoft 這樣的科技巨頭，突顯了領導力、國家文化和稅制在促進創新中的重要性。</li>
-<li>當前對即時股東回報的重視對於專注於長期研究構成了重大障礙。</li>
-</ul>
-<h2><a href="https://hallofshame.design/ryanair-when-every-page-is-a-dark-pattern/">「Ryanair – 當每一頁都是黑暗模式」</a></h2>
-<ul>
-<li>「Ryanair 以在訂票過程中使用“黑暗模式”而聞名，這是一種操縱性的設計技術，用來增加利潤。」</li>
-<li>“Tactics 包括「隱私扎克化」，即默認讓顧客參加促銷活動，以及「誤導」，利用顯眼的按鈕和彈出窗口來推銷服務。”</li>
-<li>「這些欺騙性的設計遍佈於瑞安航空的網站，使得使用者必須保持警惕，以避免意外購買或分享超出預期的資訊。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41004039">評論</a></h3>
-<ul>
-<li>「Ryanair 使用黑暗模式，例如隱藏費用和操縱性策略，以增加利潤，這讓顧客感到沮喪。」</li>
-<li>例如應用程式 ID 掃描的收費、誤導性的「快速登機」優惠以及複雜的行李政策，這些都導致基本服務的額外費用。</li>
-<li>「儘管價格低廉且航班高效，許多顧客仍然選擇避開瑞安航空，因為其對顧客不友善的做法，而其他低成本航空公司如易捷航空和威茲航空則被認為較不具侵略性。」</li>
-</ul>
-<h2><a href="https://arstechnica.com/information-technology/2024/07/crowdstrike-fixes-start-at-reboot-up-to-15-times-and-get-more-complex-from-there/">「CrowdStrike 修復從『重新啟動最多 15 次』開始，接下來會變得更複雜」</a></h2>
-<ul>
-<li>「CrowdStrike 最近的更新導致 Windows 系統崩潰並出現藍屏死機(BSOD)，造成了嚴重的干擾。」</li>
-<li>「修復方法範圍從多次重新啟動到更複雜的解決方案，如還原備份或手動刪除有問題的驅動程式，對於使用 BitLocker 加密的系統則需要額外的步驟。」</li>
-<li>「更新已被撤回，CrowdStrike 的執行長已經道歉，並向用戶保證正在努力解決這個問題。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007898">評論</a></h3>
-<ul>
-<li>「CrowdStrike 最近的修復需要多達 15 次重啟，導致各個領域出現重大中斷，包括 CNC 系統、空調和安全警報、電話、電子郵件和會計系統。」</li>
-<li>該事件突顯了自動更新所帶來的風險以及改進安全措施的必要性，許多人主張進行更嚴格的測試和逐步推行。</li>
-<li>用戶正在質疑依賴連網的 Windows 系統作為關鍵系統，這突顯了重新評估當前 IT 基礎設施策略的必要性。</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41007403">“Sendune – 開源 HTML 電子郵件設計工具”</a></h2>
-<ul>
-<li>「SENDUNE 推出了一款新的開源 HTML 電子郵件設計工具，旨在簡化 HTML 電子郵件的創建，這些電子郵件傳統上難以編寫和維護。」</li>
-<li>設計工具輕量化，使用純 HTML，避免繁瑣的依賴，讓使用者可以將 HTML 輸出儲存為任何電子郵件服務提供商的範本。</li>
-<li>鼓勵使用者分叉此儲存庫、進行改進並提交拉取請求，以促進協作開發環境。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007403">評論</a></h3>
-<ul>
-<li>「Sendune 是一款開源的 HTML 電子郵件設計工具，強調簡單易用，生成純 HTML 以確保與任何電子郵件服務提供商的相容性。」</li>
-<li>「該工具輕量化、無需依賴其他程式，且可輕鬆嵌入應用程式中，使用者能夠將 HTML 輸出儲存為範本。」</li>
-<li>儘管有報導指出在 Firefox 上的拖放功能存在一些問題，社群反應仍然是正面的，並且可以透過 GitHub 進行貢獻。</li>
-</ul>
-<h2><a href="https://www.rfi.fr/en/international-news/20240718-seventh-person-likely-cured-of-hiv-doctors-announce">60歲德國男子可能成為第七位有效治癒愛滋病的人</a></h2>
-<ul>
-<li>一名60歲的德國男子在接受幹細胞移植後，可能成為第七位有效治癒愛滋病的患者，這次移植同時也治療了他的侵略性白血病。</li>
-<li>這位被稱為「下一位柏林病人」的患者在2018年底停止服用抗逆轉錄病毒藥物，並在近六年後仍然沒有HIV和癌症。</li>
-<li>研究人員持謹慎樂觀態度，指出此案例顯示並非所有CCR5基因突變都是成功治療HIV所必需的，這為更廣泛的HIV治療策略帶來了希望。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40999098">評論</a></h3>
-<ul>
-<li>「一名60歲的德國男子可能是第七位有效治癒愛滋病的患者，儘管這個程序非常激烈，通常只用於嚴重的白血病病例。」</li>
-<li>有建議將此發展為自體幹細胞移植，以避免如移植物抗宿主病等併發症。</li>
-<li>儘管愛滋病治療技術的進步使病毒載量降至不可檢測的水平，但在美國每年仍有一萬人死於愛滋病，這通常是由於性教育不足和醫療資源獲取困難所致。</li>
-</ul>
-<h2><a href="https://www.bbc.co.uk/news/live/cnk4jdwp49et">全球大規模 IT 中斷影響航空公司、媒體和銀行</a></h2>
-<ul>
-<li>「Crowdstrike 是一家成立於 2011 年、總部位於德州的網路安全公司，專門從事端點安全，以保護企業網路和雲端數據免受網路威脅。」</li>
-<li>「由喬治·庫茲(George Kurtz)和德米特里·阿爾佩羅維奇(Dmitri Alperovitch)共同創立的公司於2019年在納斯達克上市。」</li>
-<li>「Crowdstrike 在調查重大網路攻擊事件中扮演了關鍵角色，特別是2016年美國民主黨全國委員會網路遭入侵的事件。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002730">評論</a></h3>
-<ul>
-<li>「由於 Crowdstrike 更新引發的全球 IT 中斷，導致 Windows 系統出現藍屏和重啟循環，影響了航空公司、媒體和銀行。」</li>
-<li>“該事件引發了關於端點保護軟體可靠性、供應鏈攻擊風險以及對 Windows 基礎設施高度依賴的討論。”</li>
-<li>“這次因「安全更新」引發的停電，已經引起了對 IT 基礎設施主權和韌性的重大關切。”</li>
-</ul>
-<h2><a href="https://www.esa.int/Enabling_Support/Operations/Double_trouble_Gaia_hit_by_micrometeoroid_and_solar_storm">雙重麻煩：歐洲太空總署的蓋亞衛星遭微隕石和太陽風暴襲擊</a></h2>
-<ul>
-<li>歐洲太空總署(ESA)的蓋亞(Gaia)太空船於2013年12月發射，旨在繪製超過十億顆銀河系恆星的地圖，最近遭遇了微隕石撞擊和太陽風暴的重大挑戰。</li>
-<li>微流星體損壞了蓋亞的保護罩，而太陽風暴則導致其中一個電荷耦合元件(CCD)故障，進而引發數千次錯誤的恆星偵測。</li>
-<li>“來自歐洲太空總署(ESA)和空中巴士防務與航天公司的工程師成功調整了蓋亞(Gaia)的軟體，減少了誤檢測，並使太空船恢復到例行操作，現在產生了一些最佳品質的數據。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40999928">評論</a></h3>
-<ul>
-<li>歐洲太空總署的蓋亞太空船最近因微隕石和太陽風暴受損，但仍繼續其任務，展現了太空任務的韌性。</li>
-<li>「歷史上的例子如旅行者1號和哈勃望遠鏡顯示，透過軟體更新和維修，太空任務通常能超出其預期壽命。」</li>
-<li>儘管預算限制和技術挑戰，工程師們的奉獻使得蓋亞在最近的調整後仍能繼續產出高品質的數據。</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41004103">「C-00000291*.sys 裡面有什麼？」</a></h2>
-<ul>
-<li>「CrowdStrike 的 C-00000291*.sys 檔案因格式無效導致系統崩潰，影響了 CrowdStrike 驅動程式。」</li>
-<li>“用戶報告了不同版本的檔案，有些人推測使用了客戶專屬的加密金鑰，但也有其他人未經解密就解析了這些檔案。”</li>
-<li>這些檔案是專有的更新格式，而不是 DLL 或補丁，這引發了對 CrowdStrike 更新過程的安全性和可靠性的擔憂。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41004103">評論</a></h3>
-<ul>
-<li>「CrowdStrike 的 C-00000291*.sys 檔案因格式無效導致系統崩潰，影響了主要的 CrowdStrike 驅動程式。」</li>
-<li>「用戶報告了不同版本的檔案，有些人推測這些檔案使用了客戶專屬的加密金鑰，但也有其他人未經解密就解析了這些檔案。」</li>
-<li>這些檔案是專有的更新格式，而不是 DLL 或普通的補丁，這引發了對 CrowdStrike 更新過程的安全性和可靠性的擔憂。</li>
-</ul>
-<h2><a href="https://www.jpl.nasa.gov/news/nasas-curiosity-rover-discovers-a-surprise-in-a-martian-rock">NASA 的好奇號探測車在火星岩石中發現驚喜</a></h2>
-<ul>
-<li>NASA 的好奇號探測車首次在火星上發現了元素硫，這是火星探索的一個重要里程碑。</li>
-<li>“這項發現是在一個富含硫酸鹽的地區進行的，探測車好奇號發現了一整片由純硫組成的明亮岩石，這引起了科學家的興趣。”</li>
-<li>“好奇號的任務包括研究火星古老地形以尋找微生物生命的跡象，隨著它攀登夏普山，已經鑽取了第41個岩石樣本進行進一步分析。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41006552">評論</a></h3>
-<ul>
-<li>NASA 的好奇號探測車在火星岩石中發現了硫磺晶體，這引發了關於使用誘餌標題來吸引公眾關注的討論。</li>
-<li>這項發現發生在好奇號駛過一塊岩石時，顯露出晶體，突顯了公眾興趣和對 NASA 資金支持的重要性。</li>
-<li>討論還涉及 NASA 的預算挑戰以及公眾參與對該機構持續運作的必要性。</li>
-</ul>
-<h2><a href="https://www.sciencedaily.com/releases/2024/07/240715135713.htm">“湖泊和海洋中的氧氣流失”</a></h2>
-<ul>
-<li>“來自倫斯勒理工學院的研究強調，湖泊和海洋中的氧氣流失對生態系統、社會和地球構成了重大威脅。”</li>
-<li>與氣候變遷、土地使用和污染相關的水體脫氧現象，已導致溶解氧迅速下降，自1980年以來，湖泊和水庫的溶解氧分別減少了5.5%和18.6%，而自1960年以來，海洋的溶解氧約減少了2%。</li>
-<li>這種去氧化作用影響了物種的生理機能、食物網和生態系統服務，造成了“死區”和有害藻華，迫切需要採取行動來應對全球暖化和逕流問題。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007196">評論</a></h3>
-<ul>
-<li>“自1980年以來，湖泊和水庫的氧氣含量分別減少了5.5%和18.6%，而自1960年以來，海洋的氧氣含量則減少了約2%。”</li>
-<li>「加州中部受到特別嚴重的影響，氧氣水平下降了40%，主要原因是溫室氣體排放、營養物質流失和未經處理的污水。」</li>
-<li>建議的解決方案包括再生農業和減少工業肉類消費，以減輕氣候變遷和污染對環境的廣泛影響。</li>
-</ul>
-<head>
-  <meta property="og:title" content="「Crowdstrike 更新：Windows 藍屏和開機循環」" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E3%80%8CCrowdstrike%20%E6%9B%B4%E6%96%B0%EF%BC%9AWindows%20%E8%97%8D%E5%B1%8F%E5%92%8C%E9%96%8B%E6%A9%9F%E5%BE%AA%E7%92%B0%E3%80%8D&subheading=2024%E5%B9%B47%E6%9C%8819%E6%97%A5%20%E6%98%9F%E6%9C%9F%E4%BA%94%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/zh/Hant/2024/07/19</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000Z</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

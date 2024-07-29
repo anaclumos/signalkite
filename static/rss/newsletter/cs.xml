@@ -15,12 +15,207 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 28 Jul 2024 19:10:28 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jul 2024 19:13:06 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/cs.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 28 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[cs]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-29]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/29&#39;</h2>
+<h1>2024-07-29</h1>
+<h2><a href="https://www.microsoft.com/en-us/security/blog/2024/07/27/windows-security-best-practices-for-integrating-and-managing-security-tools/">„Technický rozbor incidentu CrowdStrike od společnosti Microsoft“</a></h2>
+<ul>
+<li>„Windows nabízí flexibilní bezpečnostní možnosti, včetně integrovaných funkcí a nástrojů třetích stran, které zvyšují bezpečnost a spolehlivost pro firmy.“</li>
+<li>„Nedávný výpadek CrowdStrike byl vystopován k problému s bezpečností paměti v ovladači CSagent, což zdůrazňuje důležitost robustního řízení ovladačů jádra.“</li>
+<li>„Microsoft spolupracuje s externími dodavateli prostřednictvím iniciativy Microsoft Virus Initiative (MVI) s cílem zajistit kvalitu a spolehlivost bezpečnostních produktů, přičemž klade důraz na snížení závislosti na jádru a zlepšení ochran v uživatelském režimu.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095530">Reakce</a></h3>
+<ul>
+<li>„Analýza incidentu CrowdStrike od společnosti Microsoft zdůrazňuje potřebu modernizovat bezpečnostní přístupy a snížit závislost na ovladačích jádra pro přístup k důležitým bezpečnostním datům.“</li>
+<li>„Incident vedl k debatám o praktikách CrowdStrike v oblasti zajištění kvality a o tom, zda by měl Microsoft omezit přístup k jádru pro dodavatele třetích stran, což byl krok, který dříve zablokovala EU kvůli spravedlivé konkurenci.“</li>
+<li>„Tato situace zdůrazňuje potenciální výhody přesunu více bezpečnostních funkcí do uživatelského režimu, což má za cíl zlepšení postupů zavádění a spolehlivosti.“</li>
+</ul>
+<h2><a href="https://dotat.at/@/2024-07-28-tolower-avx512.html">„tolower() s AVX-512“</a></h2>
+<ul>
+<li>„Článek pojednává o použití SIMD (Single Instruction, Multiple Data) instrukcí pro efektivní zpracování řetězců, konkrétně se zaměřuje na funkci tolower() v jazyce Rust.“</li>
+<li>„Autor experimentoval s AVX-512-BW na procesoru AMD Zen 4, dosáhl vysokého výkonu jak pro dlouhé, tak krátké řetězce pomocí maskovaných načítání a ukládání.“</li>
+<li>„Výsledky ukázaly, že AVX-512-BW je obzvláště účinný při zpracování krátkých řetězců, poskytuje plynulý a rychlý výkon bez problémů, které se vyskytují v automaticky vektorovaném kódu.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095790">Reakce</a></h3>
+<ul>
+<li>„Trik „unsafe read beyond of death“ v jazyce Rust a LLVM je považován za nedefinované chování, což vede k potenciálním optimalizacím kompilátoru, které předpokládají, že k němu nedochází, a způsobují neočekávané výsledky.“</li>
+<li>„V současné době je jediným řešením inline assembler, přičemž jsou navrhovány alternativy jako maskované zarovnané načítání intrinsics a zmrazení načítání.“</li>
+<li>„Debata o řešení čtení mimo povolené hranice pokračuje, někteří se přiklánějí k chování definovanému implementací a maskované operace AVX-512 jsou známé svými výkonnostními výhodami, přestože jsou kvůli segmentaci trhu ze strany Intelu omezeně přijímány.“</li>
+</ul>
+<h2><a href="https://github.com/izabera/ps">„ps aux napsané v bash bez forkování“</a></h2>
+<ul>
+<li>„Dotaz na pohovoru pro pozici zaměřenou na bash/Linux by mohl zahrnovat řešení situace, kdy jsou všechna ID procesů (PID) obsazena, což brání spouštění nových procesů.“</li>
+<li>„Je zmíněn nástroj, který dokáže napodobit fungující příkaz <code>ps aux</code> v takových situacích, humorně tvrdící, že je univerzálně kompatibilní.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41097241">Reakce</a></h3>
+<ul>
+<li>„Diskuse na GitHubu se točí kolem výzvy zarovnání sloupců v programování, se zaměřením na použití f-řetězců a vyplňování v Pythonu za tímto účelem.“</li>
+<li>„Uživatelé navrhují alternativní nástroje a formáty, jako je YAML pro jednodušší práci s daty, a zmiňují nástroje jako Octopus Deploy a Docker CLI pro výstup ve formátu JSON.“</li>
+<li>„Vlákno se také zabývá vyčerpáním PID (identifikátor procesu) v bash, s doporučeními jako použití adresáře /proc/[pid]/ a <code>exec Python</code> pro lepší správu procesů.“</li>
+</ul>
+<h2><a href="https://statsbomb-3d-viz.vercel.app/">„Vizualizér fotbalových přihrávek vytvořený pomocí Three.js“</a></h2>
+<ul>
+<li>„Byl vyvinut vizualizátor fotbalových přihrávek pomocí otevřených dat od StatsBomb, což je bohatá datová sada pro fotbalovou analytiku.“</li>
+<li>„Nástroj umožňuje uživatelům analyzovat a vizualizovat vzory přihrávek s filtry pro vzdálenost přihrávky, tým a jednotlivé hráče.“</li>
+<li>„Tento vývoj zdůrazňuje rostoucí trend využívání otevřených dat pro pokročilou sportovní analytiku a vizualizaci.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095839">Reakce</a></h3>
+<ul>
+<li>„Vizualizátor fotbalových přihrávek využívající Three.js využívá otevřená data od StatsBomb k analýze a vizualizaci vzorců přihrávek, což uživatelům umožňuje filtrovat podle vzdálenosti přihrávek, týmu a hráčů.“</li>
+<li>„Zpětná vazba od komunity zahrnuje návrhy na pokročilejší vizualizační nástroje jako deck.gl nebo kepler.gl a funkce jako časově založené animace a tepelné mapy pro lepší analýzu.“</li>
+<li>„Uživatelé hlásili problémy, jako jsou chyby CORS a potíže s načítáním souborů, což naznačuje oblasti pro potenciální zlepšení uživatelské zkušenosti a zpracování chyb.“</li>
+</ul>
+<h2><a href="https://loro.dev/blog/movable-tree">„Pohyblivé stromové CRDT a implementace Loro“</a></h2>
+<ul>
+<li>„Článek pojednává o výzvách při implementaci Movable Tree CRDTs (Conflict-free Replicated Data Types) v kolaborativních prostředích a o tom, jak Loro tyto problémy řeší, včetně řazení podřízených uzlů.“</li>
+<li>„Loro implementace používá algoritmus z &quot;A highly-available move operation for replicated trees&quot; a integruje algoritmus Fractional Index pro třídění, řešení konfliktů pomocí unikátních PeerID a jitteru.“</li>
+<li>„Loroův přístup podporuje spolupráci v reálném čase a kontrolu historických verzí, což vykazuje vysoký výkon v různých scénářích, díky čemuž je vhodný pro použití v produkčních kolaborativních aplikacích.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41099901">Reakce</a></h3>
+<ul>
+<li>„Pohyblivé stromové CRDTs (Conflict-free Replicated Data Types) a implementace Loro získávají pozornost díky své schopnosti zvládat složité stromové operace v kolaborativních prostředích.“</li>
+<li>„Vývojáři diskutují o praktických aplikacích, jako je knihovna React Table pro správu velkých hierarchických datových struktur a multiplayerový editor Thymer pro úkoly a poznámky.“</li>
+<li>„Konverzace zdůrazňuje výzvy a řešení při používání CRDT pro různé typy dat, včetně textu, obrázků a 3D modelů, s důrazem na důležitost efektivní synchronizace a řešení konfliktů.“</li>
+</ul>
+<h2><a href="https://leandojo.org/">„LeanDojo: Důkaz vět v Lean pomocí LLMs“</a></h2>
+<ul>
+<li>„LeanDojo představuje Lean Copilot, který umožňuje jazykovým modelům (LLM) asistovat při automatizaci důkazů v Lean tím, že navrhují taktiky a vyhledávají důkazy.“</li>
+<li>„Model ReProver, využívající Transformer s enkodérem a dekodérem, získává premisy z matematické knihovny a generuje další taktiku, čímž překonává vestavěnou automatizaci důkazů v Lean.“</li>
+<li>„Datová sada LeanDojo zahrnuje rozsáhlé benchmarky a podrobné anotace, což zajišťuje, že modely mohou zobecňovat na věty s novými premisami a objevovat nové důkazy.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41096486">Reakce</a></h3>
+<ul>
+<li>„LeanDojo je nová iniciativa, která integruje Lean, asistent pro dokazování, s velkými jazykovými modely (LLM) za účelem zlepšení schopností dokazování vět.“</li>
+<li>„Projekt si klade za cíl překlenout propast mezi neproveditelnou matematickou notací a proveditelným kódem, což by mohlo pomoci při řešení složitých matematických problémů, jako jsou stochastické diferenciální rovnice.“</li>
+<li>„Tento vývoj je významný, protože by mohl zlepšit spolehlivost a efektivitu formální verifikace v kritických aplikacích, jako jsou vysoce zabezpečené systémy a automatizované dokazování teorií.“</li>
+</ul>
+<h2><a href="http://jpetazzo.github.io/2024/07/26/cloudflare-images-overcharge-billing/">„Přeúčtovává nám Cloudflare za jejich službu obrázků?“</a></h2>
+<ul>
+<li>„Smíšený model účtování služby Cloudflare Images, který kombinuje předplacené úložiště a dodatečně placené doručení, vedl u EphemeraSearch k neočekávaně vysokým a matoucím fakturám, které někdy přesahovaly 400 dolarů namísto očekávaných 110 dolarů.“</li>
+<li>„Navzdory opakovaným kontaktům s podporou Cloudflare během osmi měsíců nebylo poskytnuto žádné řešení, což vedlo k přechodu na nákladově efektivnější řešení, jako je S3 nebo dedikované servery.“</li>
+<li>„Tato zkušenost zdůrazňuje důležitost efektivního utrácení pro nezávislé projekty s nízkými příjmy a poukazuje na to, že i když Cloudflare Images nabízí kvalitní služby, jeho model účtování nemusí být vhodný pro všechny uživatele.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41100958">Reakce</a></h3>
+<ul>
+<li>„Byly vzneseny obavy ohledně toho, že Cloudflare může účtovat příliš vysoké poplatky za svou službu Images, přičemž uživatelé hlásí nesrovnalosti mezi očekávanými a skutečnými náklady.“</li>
+<li>„Srovnání jsou prováděna s jinými službami, jako jsou Amazon S3, Bunny CDN a Cloudflare R2, které jsou vnímány jako nákladově efektivnější alternativy.“</li>
+<li>„Fakturační praktiky a zákaznická podpora společnosti Cloudflare se dostaly pod drobnohled, protože někteří uživatelé zažívají složité fakturační cykly a neočekávané poplatky.“</li>
+</ul>
+<h2><a href="https://fabiensanglard.net/snes_video/index.html">„Pochopení designu video systému Super Nintendo“</a></h2>
+<ul>
+<li>„Průzkum Fabiena Sanglarda o video systému Super Nintendo (SNES) zdůrazňuje rozhodnutí designérů společnosti Nintendo z roku 1989, která byla učiněna s cílem zajistit kompatibilitu s CRT televizory a standardy NTSC.“</li>
+<li>„SNES používal hlavní takt 21,47727 MHz, který byl dělen, aby dosáhl taktovací frekvence 5,3693175 MHz, což vedlo k 341 bodům na řádek a obnovovací frekvenci 60,098 Hz, s horizontálními a vertikálními prázdnými obdobími, aby se zabránilo artefaktům.“</li>
+<li>„SNES podporoval jak standardy NTSC, tak PAL, poskytoval kompozitní a S-Video výstupy a mohl zdvojnásobit vertikální a horizontální rozlišení pro specifické aplikace, navzdory výzvám, jako je blikání.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098141">Reakce</a></h3>
+<ul>
+<li>„Příspěvek se zabývá designem a architekturou herní konzole Super Nintendo Entertainment System (SNES), zdůrazňuje její technické specifikace a historický kontext.“</li>
+<li>„Klíčové body zahrnují možnosti rozlišení SNES, dopad různých televizních standardů (NTSC vs. PAL) na hratelnost a použití CRT (katodových trubic) v arkádových hrách a domácích konzolích.“</li>
+<li>„Diskuse se také dotýká používání SCART konektorů v evropských televizorech a výzev spojených s přesnou emulací video výstupu SNES.“</li>
+</ul>
+<h2><a href="https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/">„Neupřednostňujte slepě <code>emplace_back</code> před <code>push_back</code> (2021)“</a></h2>
+<ul>
+<li>„Nástroje jako clang-tidy a PVS-Studio mohou označit <code>push_back</code> jako „špatný styl“ a navrhnout <code>emplace_back</code>, ale tato změna není vždy přínosná.“</li>
+<li>„<code>emplace_back</code> by měl být použit, aby se zabránilo vytváření dočasných objektů, ale nesouvisí s přesunovacími sémantikami a může stále vést ke kopírování, pokud není použit správně.“</li>
+<li>„Preferujte <code>push_back</code> pro jednoduchost a rychlejší časy kompilace, používejte <code>emplace_back</code> pouze tehdy, když je to nutné pro nemovitelné typy nebo k vyhnutí se dočasným objektům.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095814">Reakce</a></h3>
+<ul>
+<li>„Diskuse se točí kolem použití <code>emplace_back</code> versus <code>push_back</code> v C++ pro přidávání prvků do kontejnerů, jako jsou vektory.“</li>
+<li>„<code>emplace_back</code> vytvoří objekt na místě, čímž potenciálně zabrání zbytečným kopiím, zatímco <code>push_back</code> přidá již vytvořený objekt do kontejneru.“</li>
+<li>„Rozhovor zdůrazňuje, že zatímco <code>emplace_back</code> může být efektivnější, je také složitější, a <code>push_back</code> může být vhodnější pro každodenní použití, pokud nejsou specifické výhody <code>emplace_back</code> potřebné.“</li>
+</ul>
+<h2><a href="https://okmij.org/ftp/ML/higher-kind-poly.html">„Vyšší druhy omezené polymorfismu v OCaml (2021)“</a></h2>
+<ul>
+<li>„Polymorfismus vyššího řádu, který abstrahuje nad typovými konstruktory, je klíčový pro generické operace nad kolekcemi a vkládání typovaných doménově specifických jazyků (DSL).“</li>
+<li>„OCaml nativně nepodporuje polymorfismus vyššího řádu kvůli problémům s aliasováním typů, ale lze jej simulovat pomocí funktorů, defunkcionalizace a počátečních algeber.“</li>
+<li>„Různé metody, včetně abstrakce funktorů a redukce na běžný polymorfismus, umožňují dosáhnout vyššího druhu polymorfismu v OCaml, i když to někdy nemusí být nutné.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41096187">Reakce</a></h3>
+<ul>
+<li>„Diskuse o vyšší druhové omezené polymorfii v OCaml, zaměřující se na typové aliasy a problémy s rovností typů, které vedou k problémům s vyšším řádem unifikace.“</li>
+<li>„Praktická řešitelnost těchto problémů je zdůrazněna s odkazy na jazyk Idris a tutoriál Andráse Kovácse &quot;Elaboration Zoo&quot; pro další učení.“</li>
+<li>„Objasnění syntaxe GADT (Generalized Abstract Data Types) v OCaml, srovnání s F#, které v současnosti nepodporuje GADT.“</li>
+</ul>
+<h2><a href="https://www.bbc.com/news/education-21895704">„Dětem by mělo být dovoleno se nudit, říká odborník (2013)“</a></h2>
+<ul>
+<li>„Dr. Teresa Belton, odbornice na vzdělávání, tvrdí, že umožnit dětem zažít nudu je klíčové pro podporu kreativity, protože neustálá aktivita může bránit představivosti.“</li>
+<li>„Rozhovory s tvůrčími osobnostmi, jako je autorka Meera Syal a umělec Grayson Perry, odhalují, že nuda hrála významnou roli v jejich tvůrčím rozvoji, přičemž Perry ji popisuje jako „tvůrčí stav“.“</li>
+<li>„Dr. Belton zdůrazňuje, že očekávání společnosti na neustálou stimulaci brání dětem v rozvoji vnitřní kreativity, a proto prosazuje čas na „stání a zírání“ mimo obrazovky, aby se podpořila jejich představivost.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098488">Reakce</a></h3>
+<ul>
+<li>„Odborník navrhuje, aby děti měly možnost zažít nudu, protože to může podpořit jejich kreativitu a samostatnost.“</li>
+<li>„Při vzpomínání na zážitky z dětství si uživatelé vybavují, jak se zapojovali do riskantních, ale společensky obohacujících aktivit, což kontrastuje s dnešní nadměrnou stimulací dětí prostřednictvím obrazovek.“</li>
+<li>„Diskuse zdůrazňuje vyvážení nudy s bezpečností a podporuje dozorované prostředí, kde mohou děti zkoumat a rozvíjet se.“</li>
+</ul>
+<h2><a href="https://github.com/Owez/yark">„Yark: YouTube Archiver s offline uživatelským rozhraním“</a></h2>
+<ul>
+<li>„Yark zjednodušuje archivaci YouTube pomocí snadné instalace a správy příkazů, vyžaduje Python 3.9+ a volitelně FFmpeg.“</li>
+<li>„Uživatelé mohou vytvářet, obnovovat a prohlížet archivy, které jsou uloženy ve struktuře založené na adresářích s metadaty, videi a miniaturami.“</li>
+<li>„Nástroj podporuje offline prohlížení se světlým a tmavým režimem a umožňuje navrhování funkcí prostřednictvím záložky s problémy v repozitáři.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41100820">Reakce</a></h3>
+<ul>
+<li>„Yark je archivátor YouTube s offline uživatelským rozhraním, navržený tak, aby uživatelům pomohl ukládat obsah z YouTube lokálně.“</li>
+<li>„Uživatelé diskutují o podobných nástrojích pro Twitch, zdůrazňují výzvy, jako je streamování velkých souborů MP4 a zpracování požadavků HTTP serveru na soubory se speciálními znaky.“</li>
+<li>„Konverzace zahrnuje technické detaily o streamování, jako je důležitost serverů podporujících požadavky na rozsah, aby se předešlo problémům s ukládáním do vyrovnávací paměti, s doporučeními pro praktické použití VLC nebo Nginx.“</li>
+</ul>
+<h2><a href="https://github.com/alexta69/metube">„MeTube: Samohostovaný stahovač z YouTube“</a></h2>
+<ul>
+<li>„Nové verze Node již nepodporují 32bitové ARM sestavení; uživatelé musí přejít na 64bitový operační systém pro aktualizace.“</li>
+<li>„Webové GUI pro youtube-dl (fork yt-dlp) je nyní k dispozici, podporuje stahování playlistů z YouTube a dalších stránek a lze jej spustit pomocí Dockeru nebo docker-compose.“</li>
+<li>„Možnosti konfigurace zahrnují proměnné prostředí pro ID uživatele, ID skupiny, adresáře pro stahování a další, přičemž jsou pro usnadnění nastavení poskytovány výchozí hodnoty.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098974">Reakce</a></h3>
+<ul>
+<li>„MeTube je samostatně hostovaný stahovač videí z YouTube, který využívá yt-dlp, populární nástroj příkazového řádku pro stahování videí z YouTube.“</li>
+<li>„Projekt poskytuje uživatelské rozhraní (UI) pro yt-dlp, což jej zpřístupňuje uživatelům, kteří dávají přednost grafickému rozhraní před operacemi v příkazovém řádku.“</li>
+<li>„Diskuse zdůrazňuje různé alternativy a související nástroje, jako jsou Celluloid, Parabolic a Tube Archivist, které nabízejí podobné funkce pro různé platformy a případy použití.“</li>
+</ul>
+<h2><a href="https://www.forrestthewoods.com/blog/tech_of_planetary_annihilation_chrono_cam/">„Technologie planetárního zničení: ChronoCam (2013)“</a></h2>
+<ul>
+<li>„Planetary Annihilation, real-time strategická hra od Uber Entertainment, vstoupila do beta verze a obsahuje inovativní technologie jako procedurální generování planet a hry pro 40 hráčů.“</li>
+<li>„Hra představuje ChronoCam, jedinečný systém přehrávání, který hráčům umožňuje vrátit se v čase, hrát ve zpomaleném/zrychleném režimu a prohlížet si herní svět z různých časových bodů, dokonce i během živých her.“</li>
+<li>„Využitím architektury klient-server minimalizuje ChronoCam využití šířky pásma tím, že herní data reprezentuje jako křivky, a podporuje robustní funkce přehrávání, čímž zlepšuje opatření proti podvádění a zapojení online komunity.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41097228">Reakce</a></h3>
+<ul>
+<li>„Planetary Annihilation, real-time strategie (RTS) hra, obsahovala jedinečný mechanismus nazvaný ChronoCam, který hráčům umožňoval prohlížet a interagovat s minulými stavy hry.“</li>
+<li>„Hra byla původně financována prostřednictvím velmi úspěšné kampaně na Kickstarteru, která vybrala 2,2 milionu dolarů, ale čelila výzvám kvůli svému ambicióznímu designu, včetně několika sférických bojišť.“</li>
+<li>„Navzdory počáteční kritice obdrželo pokračování hry, Planetary Annihilation: Titans, pozitivní recenze na Steamu, které vyzdvihovaly technické úspěchy vývojářů a inovativní design enginu.“</li>
+</ul>
+<h2><a href="https://msreekan.com/2014/01/15/sdcard/">„Opotřebení SD karty a překladové vrstvy (2014)“</a></h2>
+<ul>
+<li>„SD karty používají NAND MLC (Multi-Level Cell) nebo SLC (Single-Level Cell) flash paměť, která abstrahuje složitosti jako mazání bloků a vyrovnávání opotřebení.“</li>
+<li>„Karta detekuje, zda má použít SPI (Serial Peripheral Interface) nebo SD sběrnici při napájení napětím a inicializuje odpovídající softwarový zásobník, čímž dokončí proces zavádění, když software vstoupí do přenosového stavu.“</li>
+<li>„Překladová vrstva mapuje virtuální adresy na fyzické, optimalizuje výkon zápisu pomocí souvislých zápisů a spravuje režii pro náhodné zápisy napříč alokačními jednotkami (AUs), obvykle o velikosti 4 MB.“</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095429">Reakce</a></h3>
+<ul>
+<li>„Na konferenci anekdota o rozebírání rozbitých SD karet poukázala na chybu v rozložení opotřebení, která způsobila částečné přepsání firmwaru, což vyvolalo diskuse o spolehlivosti SD karet.“</li>
+<li>„Uživatelé sdíleli zkušenosti s poruchami SD karet a obnovou dat, přičemž poznamenali, že hustší paměťové karty jsou náchylnější k problémům, zatímco průmyslové karty, i když menší, jsou odolnější.“</li>
+<li>„Návrhy na zlepšení spolehlivosti SD karet zahrnovaly lepší software pro agregaci zápisu a vyrovnávání opotřebení a SD karty s automatickým přizpůsobením velikosti oddílů pro správu opotřebovaných bloků.“</li>
+</ul>
+<head>
+  <meta property="og:title" content="„Technický rozbor incidentu CrowdStrike od společnosti Microsoft“" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E2%80%9ETechnick%C3%BD%20rozbor%20incidentu%20CrowdStrike%20od%20spole%C4%8Dnosti%20Microsoft%E2%80%9C&subheading=pond%C4%9Bl%C3%AD%2029.%20%C4%8Dervence%202024%3A%20Hacker%20News%20Shrnut%C3%AD" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/cs/2024/07/29</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000Z</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-28]]></title>
             <description
@@ -1690,202 +1885,6 @@
             <link>https://hn.cho.sh/cs/2024/07/20</link>
             <guid isPermaLink="false">2024-07-20T00:00:00.000Z</guid>
             <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-19]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/19&#39;</h2>
-<h1>2024-07-19</h1>
-<h2><a href="https://old.reddit.com/r/crowdstrike/comments/1e6vmkf/bsod_error_in_latest_crowdstrike_update/">„Aktualizace Crowdstrike: Modrá obrazovka smrti a nekonečné restartování systému Windows“</a></h2>
-<ul>
-<li>„Více uživatelů na pracovišti se setkává s modrými obrazovkami Windows a bootovacími smyčkami, což může souviset s nedávnou aktualizací aplikace Crowd Strike.“</li>
-<li>„IT oddělení zaznamenalo, že některé servery přestaly fungovat, a místní rozhlasová stanice hlásila podobné problémy s notebooky a nefunkční telefonní systém.“</li>
-<li>„Tyto incidenty se odehrávají v Austrálii, ale zatím o nich nebylo žádné zpravodajství.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002195">Reakce</a></h3>
-<ul>
-<li>„Nedávná aktualizace Crowdstrike způsobila významné problémy, včetně modrých obrazovek smrti a bootovacích smyček ve Windows, což ovlivnilo různé sektory, včetně záchranných služeb a nemocnic.“</li>
-<li>„Uživatel Redditu uvedl, že jejich pohotovostní oddělení bylo mimo provoz během léčby srdečního infarktu a služby 911 byly také ovlivněny, což vedlo ke zpožděním v péči o pacienty.“</li>
-<li>„Incident zdůrazňuje rizika spojená se spoléháním na propojené systémy a potenciál katastrofálních selhání, když aktualizace nejsou před nasazením řádně otestovány.“</li>
-</ul>
-<h2><a href="https://www.afr.com/technology/businesses-crippled-by-widespread-it-outage-20240719-p5jv2t">„Výpadek Crowdstrike způsobuje rozsáhlé problémy“</a></h2>
-<ul>
-<li>„Globální narušení IT bylo způsobeno chybnou aktualizací softwaru od společnosti CrowdStrike Holdings, která ovlivnila řadu systémů Microsoft Windows.“</li>
-<li>„Obě společnosti, Microsoft i CrowdStrike, vydaly opravy k řešení tohoto problému, ale úplné zotavení se očekává, že bude trvat nějakou dobu.“</li>
-<li>„Situace se mírně zlepšila, ale dopad nepovedené aktualizace je stále cítit po celém světě.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002677">Reakce</a></h3>
-<ul>
-<li>„Crowdstrike zažil výpadek, který způsobil rozsáhlé problémy, včetně modrých obrazovek smrti a bootovacích smyček na Windows, kvůli nedávné aktualizaci.“</li>
-<li>„Incident vyvolal významnou diskusi na Hacker News, která zdůrazňuje dopad na uživatele a systémy.“</li>
-<li>„Tato událost zdůrazňuje zásadní význam důkladného testování a monitorování při aktualizacích softwaru, aby se předešlo takovým narušením.“</li>
-</ul>
-<h2><a href="https://worthrises.org/pressreleases/2024/7/18/fcc-votes-unanimously-to-significantly-lower-phone-and-video-communication-costs-after-decades-of-exploitation-by-prison-telecoms">„FCC hlasuje o omezení poplatků za telekomunikační služby ve věznicích“</a></h2>
-<ul>
-<li>„FCC hlasovala pro výrazné snížení sazeb za telefonní a videohovory ve věznicích a nápravných zařízeních, snížení maximálních sazeb za minutu o více než polovinu a zákaz všech poplatků, včetně poplatků za vklad.“</li>
-<li>„Tato změna ovlivňuje 83 % uvězněných osob, ušetří rodinám alespoň 500 milionů dolarů ročně a zlepší pohodu a úspěšnost návratu uvězněných osob do společnosti.“</li>
-<li>„Očekávají se významné ztráty příjmů pro telekomunikační společnosti poskytující služby ve věznicích, jako jsou Aventiv a ViaPath, zatímco státy jako Massachusetts, Minnesota a Colorado již přistoupily k tomu, aby byly vězeňské hovory zdarma.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41005181">Reakce</a></h3>
-<ul>
-<li>„FCC hlasovala pro omezení poplatků za telekomunikační služby ve věznicích s cílem snížit vysoké náklady na telefonní hovory vězňů.“</li>
-<li>„Dříve byli vězni omezeni na používání jediného, věznicí schváleného soukromého telefonního operátora, což vedlo k přemrštěným cenám kvůli nedostatku konkurence.“</li>
-<li>„Nové předpisy mají za cíl zmírnit finanční zátěž vězňů a jejich rodin, podpořit lepší rehabilitaci a snížit recidivu.“</li>
-</ul>
-<h2><a href="https://johnfactotum.github.io/foliate/">„Foliate: Čtěte e-knihy stylově, navigujte s lehkostí“</a></h2>
-<ul>
-<li>„Foliate je open-source čtečka elektronických knih podporující různé formáty jako EPUB, Mobipocket, Kindle, FB2, CBZ a PDF, s možností přizpůsobení nastavení čtení.“</li>
-<li>„Nabízí funkce jako navigaci pomocí touchpadu a dotykové obrazovky, záložky, poznámky a integraci s nástroji jako Wiktionary a Google Translate.“</li>
-<li>„Foliate podporuje text zprava doleva, vertikální psaní a pevné rozvržení a je k dispozici pro více distribucí Linuxu nebo prostřednictvím klonování zdrojového kódu.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002273">Reakce</a></h3>
-<ul>
-<li>„Foliate je čtečka elektronických knih, která je chválena pro svou jednoduchost, snadnou navigaci, záložkování a funkce anotací.“</li>
-<li>„Ukládá postup čtení, záložky a poznámky v prostých souborech JSON, což usnadňuje export a synchronizaci.“</li>
-<li>„Foliate používá hashování souborů k vytváření jedinečných identifikátorů pro knihy, což zajišťuje, že PDF zůstanou nezměněné při anotaci, ačkoli někteří uživatelé upozorňují na možné problémy, pokud jsou soubory upraveny.“</li>
-</ul>
-<h2><a href="https://www.nytimes.com/2024/07/18/us/frontier-flights-grounded-microsoft.html">„Několik leteckých společností narušeno kvůli výpadku Microsoft Azure“</a></h2>
-<ul>
-<li>„Frontier Airlines uzemnily všechny lety na přibližně 35 minut kvůli velkému výpadku Microsoft Azure, který ovlivnil rezervace, odbavení a přístup k palubním vstupenkám.“</li>
-<li>„Výpadek, který začal v 17:56, také narušil systémy společností Allegiant a Sun Country Airlines, což ovlivnilo více systémů ve střední části USA.“</li>
-<li>„Frontier, provozující více než 100 letadel, byla jednou z nejméně tří leteckých společností zasažených výpadky služeb.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41001959">Reakce</a></h3>
-<ul>
-<li>„Několik leteckých společností zažilo výpadky kvůli výpadku Microsoft Azure, který mohl být spojen s chybnou aktualizací Crowdstrike způsobující globální pády počítačů s Windows.“</li>
-<li>„Výpadek ovlivnil různé sektory, včetně bankomatů, supermarketů a letišť v Evropě a na Novém Zélandu, což naznačuje rozsáhlý problém.“</li>
-<li>„Incident zdůrazňuje rizika spojená s centralizovanými cloudovými službami a poukazuje na nutnost zlepšení plánů obnovy po havárii.“</li>
-</ul>
-<h2><a href="https://www.construction-physics.com/p/what-would-it-take-to-recreate-bell">„Co by bylo potřeba k znovuvytvoření Bellových laboratoří?“</a></h2>
-<ul>
-<li>„AT&amp;T prostřednictvím Bell Labs sehrála klíčovou roli ve vývoji americké telefonní infrastruktury a vytvořila významné vynálezy, jako je tranzistor, křemíkový solární fotovoltaický článek a operační systém UNIX.“</li>
-<li>„Úspěch Bell Labs byl částečně způsoben monopolem AT&amp;T, který podporoval dlouhodobé výzkumné projekty, což vedlo k mnoha oceněním, včetně 10 Nobelových cen.“</li>
-<li>„Rozpad společnosti AT&amp;T vedl k rozdělení a úpadku Bell Labs, což dnes ztěžuje znovuvytvoření takové instituce kvůli jedinečným historickým a technologickým podmínkám, které tehdy existovaly.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40998927">Reakce</a></h3>
-<ul>
-<li>„Rekonstrukce Bellových laboratoří by vyžadovala kvazi-monopol, značné financování, minimální konkurenci a kulturu upřednostňující dlouhodobé inovace před krátkodobými zisky.“</li>
-<li>„Historické i moderní příklady, jako jsou Sandia National Laboratories a technologičtí giganti jako Google a Microsoft, zdůrazňují význam vedení, národní kultury a daňových struktur při podpoře inovací.“</li>
-<li>„Současný důraz na okamžité výnosy pro akcionáře představuje významnou překážku pro zaměření na dlouhodobý výzkum.“</li>
-</ul>
-<h2><a href="https://hallofshame.design/ryanair-when-every-page-is-a-dark-pattern/">„Ryanair – když je každá stránka temným vzorem“</a></h2>
-<ul>
-<li>„Ryanair je známý používáním „temných vzorců“, manipulačních designových technik, k zvýšení zisků během procesu rezervace.“</li>
-<li>„Taktiky zahrnují „privacy zuckering“, kdy jsou zákazníci automaticky přihlášeni k propagačním nabídkám, a „misdirection“, která používá výrazná tlačítka a vyskakovací okna k prodeji dalších služeb.“</li>
-<li>„Tyto klamavé návrhy jsou rozšířené po celém webu Ryanair, což činí nezbytným, aby uživatelé zůstali ostražití a vyhnuli se nechtěným nákupům nebo sdílení více informací, než zamýšleli.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41004039">Reakce</a></h3>
-<ul>
-<li>„Ryanair používá temné vzory, jako jsou skryté poplatky a manipulativní taktiky, aby zvýšil zisky, což frustruje zákazníky.“</li>
-<li>„Příklady zahrnují poplatky za skenování ID aplikace, zavádějící výhody „rychlého nástupu“ a složité zásady pro zavazadla, což vede k dalším nákladům za základní služby.“</li>
-<li>„Navzdory nízkým cenám a efektivním letům mnoho zákazníků dává přednost vyhnout se Ryanairu kvůli jeho zákaznicky nepřívětivým praktikám, přičemž jiné nízkonákladové aerolinky jako EasyJet a WizzAir jsou považovány za méně agresivní.“</li>
-</ul>
-<h2><a href="https://arstechnica.com/information-technology/2024/07/crowdstrike-fixes-start-at-reboot-up-to-15-times-and-get-more-complex-from-there/">„CrowdStrike opravy začínají na „restartování až 15krát“, odtud se to stává složitějším“</a></h2>
-<ul>
-<li>„Nedávná aktualizace CrowdStrike vedla k pádům systémů Windows s modrou obrazovkou smrti (BSOD), což způsobilo značné narušení.“</li>
-<li>„Opravy sahají od několika restartů až po složitější řešení, jako je obnovení záloh nebo ruční odstranění problematického ovladače, s dalšími kroky potřebnými pro systémy používající šifrování BitLocker.“</li>
-<li>„Aktualizace byla stažena a generální ředitel společnosti CrowdStrike se omluvil, ujistil uživatele, že probíhají snahy o vyřešení problému.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007898">Reakce</a></h3>
-<ul>
-<li>„Nedávná oprava od CrowdStrike vyžaduje až 15 restartů, což způsobuje značné narušení v různých sektorech, včetně CNC systémů, klimatizace a bezpečnostních alarmů, telefonů, e-mailu a účetních systémů.“</li>
-<li>„Incident zdůrazňuje rizika spojená s automatickými aktualizacemi a nutnost zlepšení bezpečnostních postupů, přičemž mnozí se přimlouvají za důkladnější testování a postupné zavádění.“</li>
-<li>„Uživatelé zpochybňují spoléhání se na internetově připojené, na Windows založené kritické systémy, což zdůrazňuje potřebu přehodnocení současných strategií IT infrastruktury.“</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41007403">„Sendune – open-source HTML email designer“</a></h2>
-<ul>
-<li>„SENDUNE představil nový open-source HTML editor e-mailů, který má za cíl zjednodušit tvorbu HTML e-mailů, jež jsou tradičně obtížné na psaní a údržbu.“</li>
-<li>„Návrhář je lehký, používá čisté HTML a vyhýbá se těžkopádným závislostem, což uživatelům umožňuje uložit výstup HTML jako šablonu pro jakéhokoli poskytovatele e-mailových služeb.“</li>
-<li>„Uživatelé jsou vyzýváni, aby si forkovali repozitář, prováděli vylepšení a podávali pull requesty, čímž podporují spolupracující vývojové prostředí.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007403">Reakce</a></h3>
-<ul>
-<li>„Sendune je open-source HTML editor pro návrh e-mailů, který klade důraz na jednoduchost a snadné použití, přičemž vytváří čisté HTML pro kompatibilitu s jakýmkoli poskytovatelem e-mailových služeb.“</li>
-<li>„Nástroj je lehký, bez závislostí a lze jej snadno vložit do aplikací, přičemž uživatelé mohou ukládat výstup HTML jako šablony.“</li>
-<li>„Navzdory některým hlášeným problémům s funkcí přetahování ve Firefoxu byla odezva komunity pozitivní a příspěvky lze zasílat prostřednictvím GitHubu.“</li>
-</ul>
-<h2><a href="https://www.rfi.fr/en/international-news/20240718-seventh-person-likely-cured-of-hiv-doctors-announce">„60letý německý muž je pravděpodobně sedmou osobou, která byla účinně vyléčena z HIV“</a></h2>
-<ul>
-<li>„Šedesátiletý německý muž je pravděpodobně sedmou osobou, která byla účinně vyléčena z HIV po transplantaci kmenových buněk, která také léčila jeho agresivní leukémii.“</li>
-<li>„Pacient, označovaný jako „další berlínský pacient“, přestal užívat antiretrovirové léky koncem roku 2018 a zůstává bez HIV a rakoviny téměř šest let poté.“</li>
-<li>„Výzkumníci jsou opatrně optimističtí a poznamenávají, že tento případ naznačuje, že ne všechny mutace genu CCR5 jsou nezbytné pro úspěšnou léčbu HIV, což nabízí naději na širší strategie léčby HIV.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40999098">Reakce</a></h3>
-<ul>
-<li>„Šedesátiletý německý muž je pravděpodobně sedmou osobou, která byla účinně vyléčena z HIV, ačkoli tento zákrok je drastický a obvykle se používá pouze v případech těžké leukémie.“</li>
-<li>„Existuje návrh vyvinout to do autologní transplantace kmenových buněk, aby se předešlo komplikacím, jako je reakce štěpu proti hostiteli.“</li>
-<li>„Navzdory pokrokům v léčbě HIV, které snižují virovou nálož na nedetekovatelné úrovně, v USA stále ročně umírá 10 000 lidí na AIDS, často kvůli špatné sexuální výchově a nedostatečnému přístupu ke zdravotní péči.“</li>
-</ul>
-<h2><a href="https://www.bbc.co.uk/news/live/cnk4jdwp49et">„Celosvětový výpadek IT ovlivňuje letecké společnosti, média a banky“</a></h2>
-<ul>
-<li>„Crowdstrike, texaská společnost zabývající se kybernetickou bezpečností, založená v roce 2011, se specializuje na zabezpečení koncových bodů, aby chránila firemní sítě a cloudová data před kybernetickými hrozbami.“</li>
-<li>„Společnost, kterou spoluzaložili George Kurtz a Dmitri Alperovitch, vstoupila na burzu Nasdaq v roce 2019.“</li>
-<li>„Crowdstrike sehrál klíčovou roli při vyšetřování významných kybernetických útoků, zejména při průniku do sítě Demokratického národního výboru USA v roce 2016.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002730">Reakce</a></h3>
-<ul>
-<li>„Globální výpadek IT, vyvolaný aktualizací Crowdstrike, způsobil, že systémy Windows zažívaly modré obrazovky a smyčky při spouštění, což ovlivnilo letecké společnosti, média a banky.“</li>
-<li>„Incident vyvolal diskuse o spolehlivosti softwaru pro ochranu koncových bodů, rizicích útoků na dodavatelský řetězec a silné závislosti na infrastruktuře Windows.“</li>
-<li>„Výpadek, vyplývající z „bezpečnostní aktualizace“, vyvolal značné obavy ohledně suverenity a odolnosti IT infrastruktury.“</li>
-</ul>
-<h2><a href="https://www.esa.int/Enabling_Support/Operations/Double_trouble_Gaia_hit_by_micrometeoroid_and_solar_storm">„Dvojitý problém: Gaia od ESA zasažena mikrometeoroidem a sluneční bouří“</a></h2>
-<ul>
-<li>„Vesmírná loď Gaia od ESA, která byla vypuštěna v prosinci 2013 s cílem zmapovat více než miliardu hvězd v Mléčné dráze, nedávno čelila významným výzvám v důsledku nárazu mikrometeoroidu a sluneční bouře.“</li>
-<li>„Mikrometeoroid poškodil ochranný kryt Gaiy a sluneční bouře způsobila poruchu jednoho z jejích zařízení s nábojovou vazbou (CCD), což vedlo k tisícům falešných detekcí hvězd.“</li>
-<li>„Inženýři z ESA a Airbus Defence and Space úspěšně upravili software sondy Gaia, čímž snížili počet falešných detekcí a vrátili sondu k běžnému provozu, nyní produkující některá z nejkvalitnějších dat.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40999928">Reakce</a></h3>
-<ul>
-<li>„Kosmická loď Gaia od ESA nedávno utrpěla poškození způsobené mikrometeoroidem a sluneční bouří, ale pokračuje ve své misi, což ukazuje odolnost vesmírných misí.“</li>
-<li>„Historické příklady jako Voyager 1 a Hubble ukazují, že vesmírné mise často přežijí své očekávané životnosti díky aktualizacím softwaru a opravám.“</li>
-<li>„Navzdory rozpočtovým omezením a technickým výzvám umožnilo odhodlání inženýrů, aby Gaia i po nedávných úpravách nadále produkovala vysoce kvalitní data.“</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41004103">„Co je v C-00000291*.sys?“</a></h2>
-<ul>
-<li>„Soubor CrowdStrike C-00000291*.sys způsobil pády systému kvůli neplatnému formátování, což ovlivnilo ovladač CrowdStrike.“</li>
-<li>„Uživatelé hlásí různé verze souboru, přičemž někteří spekulují o šifrování pomocí klíčů specifických pro zákazníky, zatímco jiní je analyzovali bez dešifrování.“</li>
-<li>„Soubory jsou proprietární formáty aktualizací, nikoli DLL nebo záplaty, což vyvolává obavy o bezpečnost a spolehlivost aktualizačního procesu CrowdStrike.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41004103">Reakce</a></h3>
-<ul>
-<li>„Soubor CrowdStrike C-00000291*.sys způsobil pády systému kvůli neplatnému formátování, což ovlivnilo hlavní ovladač CrowdStrike.“</li>
-<li>„Uživatelé hlásí různé verze souboru, přičemž někteří spekulují o šifrování pomocí klíčů specifických pro zákazníky, zatímco jiní je analyzovali bez dešifrování.“</li>
-<li>„Soubory jsou proprietární formáty aktualizací, nikoli DLL nebo běžné záplaty, což vyvolává obavy o bezpečnost a spolehlivost aktualizačního procesu CrowdStrike.“</li>
-</ul>
-<h2><a href="https://www.jpl.nasa.gov/news/nasas-curiosity-rover-discovers-a-surprise-in-a-martian-rock">„Rover Curiosity od NASA objevil překvapení v marsovské skále“</a></h2>
-<ul>
-<li>„Rover Curiosity od NASA poprvé objevil elementární síru na Marsu, což je významný milník v průzkumu Marsu.“</li>
-<li>„Objev byl učiněn v oblasti bohaté na sírany, kde Curiosity našla celé pole jasných kamenů složených z čisté síry, což vědce zaujalo.“</li>
-<li>„Mise Curiosity, která zahrnuje studium starověkého terénu Marsu pro známky mikrobiálního života, pokračuje, když stoupá na Mount Sharp a vrtá svůj 41. vzorek horniny pro další analýzu.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41006552">Reakce</a></h3>
-<ul>
-<li>„Rover Curiosity od NASA objevil sírové krystaly v marsovské skále, což vedlo k debatě o používání clickbaitových titulků k zapojení veřejnosti.“</li>
-<li>„K objevu došlo, když Curiosity přejel přes kámen, čímž odhalil krystaly, což zdůrazňuje důležitost veřejného zájmu a financování pro NASA.“</li>
-<li>„Diskuse se také zabývala rozpočtovými výzvami NASA a nutností zapojení veřejnosti pro pokračující činnost agentury.“</li>
-</ul>
-<h2><a href="https://www.sciencedaily.com/releases/2024/07/240715135713.htm">„Ztráta kyslíku v jezerech a oceánech“</a></h2>
-<ul>
-<li>„Výzkum z Rensselaer Polytechnic Institute zdůrazňuje, že ztráta kyslíku v jezerech a oceánech představuje významnou hrozbu pro ekosystémy, společnost a planetu.“</li>
-<li>„Odstranění kyslíku z vodních ploch, spojené se změnou klimatu, využíváním půdy a znečištěním, vedlo k rychlému poklesu rozpuštěného kyslíku, přičemž jezera a nádrže ztratily 5,5 % a 18,6 % svého kyslíku od roku 1980 a oceány ztratily přibližně 2 % od roku 1960.“</li>
-<li>„Tato deoxygenace ovlivňuje fyziologii druhů, potravní sítě a ekosystémové služby, vytváří &quot;mrtvé zóny&quot; a škodlivé květy řas, což vyžaduje naléhavá opatření k řešení globálního oteplování a odtoku.“</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007196">Reakce</a></h3>
-<ul>
-<li>„Jezera a nádrže zaznamenaly významný úbytek kyslíku, s poklesem o 5,5 % a 18,6 % od roku 1980, zatímco oceány zaznamenaly přibližně 2% pokles od roku 1960.“</li>
-<li>„Střední Kalifornie je obzvláště postižena, s poklesem hladiny kyslíku o 40 %, především kvůli emisím skleníkových plynů, odtoku živin a surové splaškové vodě.“</li>
-<li>„Navrhovaná řešení zahrnují regenerativní zemědělství a snížení spotřeby průmyslově vyráběného masa, aby se zmírnily širší environmentální dopady změny klimatu a znečištění.“</li>
-</ul>
-<head>
-  <meta property="og:title" content="„Aktualizace Crowdstrike: Modrá obrazovka smrti a nekonečné restartování systému Windows“" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E2%80%9EAktualizace%20Crowdstrike%3A%20Modr%C3%A1%20obrazovka%20smrti%20a%20nekone%C4%8Dn%C3%A9%20restartov%C3%A1n%C3%AD%20syst%C3%A9mu%20Windows%E2%80%9C&subheading=p%C3%A1tek%2019.%20%C4%8Dervence%202024%3A%20Hacker%20News%20Shrnut%C3%AD" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/cs/2024/07/19</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000Z</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

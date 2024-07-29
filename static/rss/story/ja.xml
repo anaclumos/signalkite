@@ -15,11 +15,218 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 28 Jul 2024 19:10:28 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jul 2024 19:13:06 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/story/ja.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 28 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
         <language><![CDATA[ja]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[MicrosoftによるCrowdStrikeインシデントの技術的な内訳]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Windowsは、統合された機能やサードパーティツールを含む柔軟なセキュリティオプションを提供し、企業のセキュリティと信頼性を向上させます。</li>
+<li>最近のCrowdStrikeの障害は、CSagentドライバーのメモリ安全性の問題に起因しており、堅牢なカーネルドライバー管理の重要性を浮き彫りにしました。</li>
+<li>マイクロソフトは、Microsoft Virus Initiative (MVI) を通じてサードパーティのベンダーと協力し、セキュリティ製品の品質と信頼性を確保するために、カーネル依存の削減とユーザーモード保護の強化を重視しています。</li>
+</ul>
+]]></description>
+            <link
+      >https://www.microsoft.com/en-us/security/blog/2024/07/27/windows-security-best-practices-for-integrating-and-managing-security-tools/</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-29T00:00:00.000ZMicrosoftによるCrowdStrikeインシデントの技術的な内訳</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[tolower() with AVX-512]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>この記事では、効率的な文字列処理のためにSIMD(Single Instruction, Multiple Data)命令を使用することについて議論しており、特にRustのtolower()関数に焦点を当てています。</li>
+<li>著者はAMD Zen 4プロセッサでAVX-512-BWを試し、マスク付きロードおよびストアを使用して長い文字列と短い文字列の両方で高いパフォーマンスを達成しました。</li>
+<li>結果は、AVX-512-BWが短い文字列の処理に特に効果的であり、自動ベクトル化されたコードで見られる問題なしにスムーズで高速なパフォーマンスを提供することを示しました。</li>
+</ul>
+]]></description>
+            <link>https://dotat.at/@/2024-07-28-tolower-avx512.html</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000Ztolower() with AVX-512</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[フォークせずにbashで書かれたps aux]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>bash/Linuxのポジションに対する面接の質問には、すべてのプロセスID(PID)が使用されていて新しいプロセスを生成できない状況をどのように対処するかが含まれるかもしれません。</li>
+<li>そのようなシナリオで動作する <code>ps aux</code> コマンドを模倣できるツールが言及されており、ユーモラスに普遍的な互換性を主張しています。</li>
+</ul>
+]]></description>
+            <link>https://github.com/izabera/ps</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000Zフォークせずにbashで書かれたps aux</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Three.jsで作られたフットボール/サッカーパスのビジュアライザー]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>サッカーパスの可視化ツールが、サッカー分析のための豊富なデータセットであるStatsBombのオープンデータを使用して開発されました。</li>
+<li>このツールは、ユーザーがパスパターンを分析および視覚化することを可能にし、パス距離、チーム、および個々の選手のフィルターを提供します。</li>
+<li>この展開は、先進的なスポーツ分析と視覚化のためにオープンデータを活用するという増加傾向を強調しています。</li>
+</ul>
+]]></description>
+            <link>https://statsbomb-3d-viz.vercel.app/</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-29T00:00:00.000ZThree.jsで作られたフットボール/サッカーパスのビジュアライザー</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[可動ツリーCRDTとLoroの実装]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>この記事では、協調環境におけるMovable Tree CRDTs(コンフリクトフリー複製データ型)の実装の課題と、Loroがこれらの問題をどのように解決するか、特に子ノードのソートに関して説明しています。</li>
+<li>ロロの実装は「複製されたツリーのための高可用性移動操作」のアルゴリズムを使用し、ソートのために分数インデックスアルゴリズムを統合し、ユニークなPeerIDとジッターで競合を処理します。</li>
+<li>Loroのアプローチは、リアルタイムのコラボレーションと履歴バージョンのチェックアウトをサポートし、さまざまなシナリオで高いパフォーマンスを示しているため、共同作業アプリケーションでの実用に適しています。</li>
+</ul>
+]]></description>
+            <link>https://loro.dev/blog/movable-tree</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000Z可動ツリーCRDTとLoroの実装</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[LeanDojo: LLMを使用したLeanにおける定理証明]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>LeanDojoはLean Copilotを導入し、言語モデル(LLM)が戦術を提案し、証明を検索することでLean証明の自動化を支援できるようにします。</li>
+<li>ReProverモデルは、エンコーダーデコーダー型のトランスフォーマーを使用して数学ライブラリから前提を取得し、次の戦術を生成します。これにより、Leanの内蔵証明自動化を上回る性能を発揮します。</li>
+<li>LeanDojoのデータセットには、広範なベンチマークと詳細なアノテーションが含まれており、モデルが新しい前提を持つ定理に一般化し、新しい証明を発見できるようにしています。</li>
+</ul>
+]]></description>
+            <link>https://leandojo.org/</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000ZLeanDojo: LLMを使用したLeanにおける定理証明</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Cloudflareは画像サービスに対して私たちに過剰請求しているのですか？]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Cloudflare Imagesの混合請求モデルは、前払いのストレージと後払いの配信を組み合わせており、EphemeraSearchにとって予想外に高額で混乱を招く請求書をもたらしました。時には予想していた$110を超えて$400以上になることもありました。</li>
+<li>8か月にわたるCloudflareサポートとの複数回の連絡にもかかわらず、解決策が提供されなかったため、S3や専用サーバーなどのよりコスト効果の高いソリューションに切り替えることになりました。</li>
+<li>この経験は、収益の少ないインディープロジェクトにとって効率的な支出の重要性を強調しており、Cloudflare Imagesが質の高いサービスを提供している一方で、その課金モデルがすべてのユーザーに適しているわけではないことを示しています。</li>
+</ul>
+]]></description>
+            <link>http://jpetazzo.github.io/2024/07/26/cloudflare-images-overcharge-billing/</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-29T00:00:00.000ZCloudflareは画像サービスに対して私たちに過剰請求しているのですか？</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[スーパーファミコンビデオシステムの設計を理解すること]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>ファビアン・サングラードによるスーパーファミコン(SNES)ビデオシステムの探求は、1989年に任天堂のエンジニアがCRTテレビおよびNTSC規格との互換性を確保するために行った設計上の決定を強調しています。</li>
+<li>SNESは21.47727MHzのマスタークロックを使用し、5.3693175MHzのドットクロックを達成するために分割され、1行あたり341ドットと60.098Hzのリフレッシュレートを実現し、アーティファクトを避けるために水平および垂直のブランキング期間を持っています。</li>
+<li>SNESはNTSCとPALの両方の規格をサポートし、コンポジットおよびS-Video出力を提供し、特定のアプリケーションに対して垂直および水平解像度を倍増させることができましたが、ちらつきなどの課題がありました。</li>
+</ul>
+]]></description>
+            <link>https://fabiensanglard.net/snes_video/index.html</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-29T00:00:00.000Zスーパーファミコンビデオシステムの設計を理解すること</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[盲目的に `emplace_back` を `push_back` よりも好まないでください (2021)]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>clang-tidyやPVS-Studioのようなツールは、<code>push_back</code>を「悪いスタイル」としてフラグを立て、<code>emplace_back</code>を提案するかもしれませんが、この変更が常に有益であるとは限りません。</li>
+<li>emplace_backは一時オブジェクトの作成を避けるために使用されるべきですが、ムーブセマンティクスとは関係がなく、正しく使用しないとコピーが発生する可能性があります。</li>
+<li>シンプルさとコンパイル時間の短縮のために <code>push_back</code> を優先し、非移動可能な型や一時オブジェクトを避けるために必要な場合にのみ <code>emplace_back</code> を使用してください。</li>
+</ul>
+]]></description>
+            <link>https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-29T00:00:00.000Z盲目的に `emplace_back` を `push_back` よりも好まないでください (2021)</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Higher-kinded bounded polymorphism in OCaml (2021)]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>高階多相性は、型コンストラクタを抽象化するものであり、コレクションに対する汎用操作や型付きドメイン固有言語(DSL)の埋め込みにおいて重要です。</li>
+<li>OCamlは型エイリアスの問題のために高階多相性をネイティブにサポートしていませんが、ファンクタ、デファンクショナライゼーション、および初期代数を使用してシミュレートすることができます。</li>
+<li>さまざまな方法、例えばファンクタ抽象や通常の多相性への還元などにより、OCamlで高階多相性を実現することができますが、必ずしもそれが必要でない場合もあります。</li>
+</ul>
+]]></description>
+            <link>https://okmij.org/ftp/ML/higher-kind-poly.html</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000ZHigher-kinded bounded polymorphism in OCaml (2021)</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[子供たちは退屈することを許されるべきだと専門家が言う(2013年)]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>教育専門家のテレサ・ベルトン博士は、子供たちに退屈を経験させることが創造性を育むために重要であり、絶え間ない活動が想像力を妨げる可能性があると主張しています。</li>
+<li>作家のミーラ・サイアルやアーティストのグレイソン・ペリーのようなクリエイティブな人々へのインタビューによると、退屈が彼らの創造的な発展に重要な役割を果たしたことが明らかになっており、ペリーはそれを「創造的な状態」と表現しています。</li>
+<li>ベルトン博士は、社会が常に刺激を求めることが子供たちの内面的な創造性の発展を妨げていると強調し、想像力を刺激するためにスクリーンから離れた「立ち止まって見つめる」時間を推奨しています。</li>
+</ul>
+]]></description>
+            <link>https://www.bbc.com/news/education-21895704</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-29T00:00:00.000Z子供たちは退屈することを許されるべきだと専門家が言う(2013年)</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Yark: オフラインUIを備えたYouTubeアーカイバー]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Yarkは、Python 3.9+とオプションでFFmpegを必要とし、簡単なインストールと管理コマンドでYouTubeのアーカイブを簡素化します。</li>
+<li>ユーザーは、メタデータ、ビデオ、およびサムネイルを含むディレクトリベースの構造に保存されたアーカイブを作成、更新、および表示することができます。</li>
+<li>このツールは、ライトモードとダークモードでのオフライン閲覧をサポートしており、リポジトリのイシュータブを通じて機能の提案が可能です。</li>
+</ul>
+]]></description>
+            <link>https://github.com/Owez/yark</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000ZYark: オフラインUIを備えたYouTubeアーカイバー</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[MeTube: 自己ホスト型のYouTubeダウンローダー]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>新しいNodeバージョンは32ビットARMビルドをサポートしなくなりました。ユーザーは更新のために64ビットOSに移行する必要があります。</li>
+<li>youtube-dl(yt-dlpフォーク)のためのウェブGUIが利用可能になり、YouTubeや他のサイトからのプレイリストのダウンロードをサポートし、Dockerまたはdocker-composeを使用して実行できます。</li>
+<li>設定オプションには、ユーザーID、グループID、ダウンロードディレクトリなどの環境変数が含まれており、セットアップを簡単にするためのデフォルト値が提供されています。</li>
+</ul>
+]]></description>
+            <link>https://github.com/alexta69/metube</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000ZMeTube: 自己ホスト型のYouTubeダウンローダー</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[惑星破壊の技術: クロノカム (2013)]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Uber Entertainmentによるリアルタイムストラテジーゲーム『Planetary Annihilation』がベータ版に突入し、手続き型惑星生成や40人対戦などの革新的な技術を特徴としています。</li>
+<li>このゲームはChronoCamというユニークなリプレイシステムを導入しており、プレイヤーは時間を遡ったり、スロー/高速モーションでプレイしたり、ライブゲーム中でも異なる時間の視点からゲームの世界を見ることができます。</li>
+<li>クライアントサーバーアーキテクチャを利用することで、ChronoCamはゲームデータを曲線として表現し、帯域幅の使用を最小限に抑えます。また、強力なリプレイ機能をサポートし、チート対策とオンラインコミュニティのエンゲージメントを強化します。</li>
+</ul>
+]]></description>
+            <link>https://www.forrestthewoods.com/blog/tech_of_planetary_annihilation_chrono_cam/</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000Z惑星破壊の技術: クロノカム (2013)</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[SDカードのウェアレベリングと変換層 (2014)]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>SDカードはNAND MLC(マルチレベルセル)またはSLC(シングルレベルセル)フラッシュメモリを使用しており、ブロック消去やウェアレベリングなどの複雑さを抽象化しています。</li>
+<li>カードは電圧供給時にSPI(シリアル・ペリフェラル・インターフェース)またはSDバスを使用するかどうかを検出し、適切なソフトウェアスタックを起動します。ソフトウェアが転送状態に入ると、ブートプロセスが完了します。</li>
+<li>翻訳レイヤーは仮想アドレスを物理アドレスにマッピングし、連続書き込みによって書き込み性能を最適化し、通常4MBのサイズである割り当て単位(AU)全体にわたるランダム書き込みのオーバーヘッドを管理します。</li>
+</ul>
+]]></description>
+            <link>https://msreekan.com/2014/01/15/sdcard/</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000ZSDカードのウェアレベリングと変換層 (2014)</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title
       ><![CDATA[Facebookはどのようにして競合他社の暗号化されたモバイルアプリのトラフィックを傍受したのか？]]></title>
@@ -1809,224 +2016,6 @@
             <link>https://www.crowdstrike.com/blog/technical-details-on-todays-outage/</link>
             <guid isPermaLink="false">2024-07-20T00:00:00.000Z本日の障害に関する技術的詳細</guid>
             <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[クラウドストライクの更新: Windowsのブルースクリーンとブートループ]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>職場の複数のユーザーが、最近のCrowd Strikeアプリケーションの更新に関連している可能性のあるWindowsのブルースクリーンやブートループに直面しています。</li>
-<li>IT部門は一部のサーバーがオフラインになったことを確認し、地元のラジオ局も同様のラップトップの問題と電話システムのダウンを報告しました。</li>
-<li>これらの事件はオーストラリアで発生していますが、まだニュース報道はありません。</li>
-</ul>
-]]></description>
-            <link>https://old.reddit.com/r/crowdstrike/comments/1e6vmkf/bsod_error_in_latest_crowdstrike_update/</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000Zクラウドストライクの更新: Windowsのブルースクリーンとブートループ</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[クラウドストライクの障害が広範な問題を引き起こしている]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>サイバーセキュリティ企業CrowdStrike Holdingsによる欠陥のあるソフトウェアアップデートが原因で、世界的なIT障害が発生し、多数のMicrosoft Windowsシステムに影響を及ぼしました。</li>
-<li>マイクロソフトとクラウドストライクの両社が問題に対処するための修正をリリースしましたが、完全な復旧には時間がかかると予想されています。</li>
-<li>状況はわずかに改善しましたが、失敗したアップデートの影響は依然として世界中で感じられています。</li>
-</ul>
-]]></description>
-            <link>https://www.afr.com/technology/businesses-crippled-by-widespread-it-outage-20240719-p5jv2t</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000Zクラウドストライクの障害が広範な問題を引き起こしている</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[FCCが刑務所の通信料金を制限することに投票]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>FCCは、刑務所や拘置所の電話およびビデオ通話料金を大幅に引き下げ、1分あたりの料金上限を半分以上削減し、預金手数料を含むすべての手数料を禁止することに投票しました。</li>
-<li>この変更は収監されている個人の83%に影響を与え、家族に年間少なくとも5億ドルの節約をもたらし、収監されている個人の福祉と再入所の成功を向上させます。</li>
-<li>アベンティブやビアパスのような刑務所通信会社は大幅な収益損失が予想されており、マサチューセッツ州、ミネソタ州、コロラド州などの州はすでに刑務所の通話を無料にする措置を講じています。</li>
-</ul>
-]]></description>
-            <link
-      >https://worthrises.org/pressreleases/2024/7/18/fcc-votes-unanimously-to-significantly-lower-phone-and-video-communication-costs-after-decades-of-exploitation-by-prison-telecoms</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000ZFCCが刑務所の通信料金を制限することに投票</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Foliate: スタイリッシュに電子書籍を読み、簡単にナビゲート]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Foliateは、EPUB、Mobipocket、Kindle、FB2、CBZ、PDFなどのさまざまな形式に対応したオープンソースの電子書籍リーダーで、読み取り設定をカスタマイズできます。</li>
-<li>タッチパッドおよびタッチスクリーンナビゲーション、ブックマーク、注釈、WiktionaryやGoogle翻訳などのツールとの統合といった機能を提供します。</li>
-<li>Foliateは右から左へのテキスト、縦書き、および固定レイアウトをサポートしており、複数のLinuxディストリビューションで利用可能であるか、ソースコードのクローンを通じて利用できます。</li>
-</ul>
-]]></description>
-            <link>https://johnfactotum.github.io/foliate/</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000ZFoliate: スタイリッシュに電子書籍を読み、簡単にナビゲート</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[複数の航空会社がMicrosoft Azureの障害により混乱]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>フロンティア航空は、主要なMicrosoft Azureの障害により、予約、チェックイン、および搭乗券のアクセスに影響が出たため、すべてのフライトを約35分間地上に留め置きました。</li>
-<li>午後5時56分に始まった停電は、アレジアント航空とサンカントリー航空のシステムにも影響を及ぼし、米国中部の複数のシステムに影響を与えました。</li>
-<li>フロンティア航空は100機以上の飛行機を運航しており、サービスの中断の影響を受けた少なくとも3つの航空会社のうちの1つでした。</li>
-</ul>
-]]></description>
-            <link>https://www.nytimes.com/2024/07/18/us/frontier-flights-grounded-microsoft.html</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000Z複数の航空会社がMicrosoft Azureの障害により混乱</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[ベル研究所を再現するには何が必要か？]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>AT&amp;Tは、ベル研究所を通じてアメリカの電話インフラの開発において重要な役割を果たし、トランジスタ、シリコン太陽光発電セル、UNIXオペレーティングシステムなどの重要な発明を生み出しました。</li>
-<li>ベル研究所の成功は部分的にはAT&amp;Tの独占によるものであり、これが長期的な研究プロジェクトを支援し、10のノーベル賞を含む数々の栄誉をもたらしました。</li>
-<li>AT&amp;Tの解体はベル研究所の分割と衰退を招き、かつて存在した独特の歴史的および技術的条件のために、今日そのような機関を再現することが困難になっています。</li>
-</ul>
-]]></description>
-            <link>https://www.construction-physics.com/p/what-would-it-take-to-recreate-bell</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000Zベル研究所を再現するには何が必要か？</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[ライアンエアー – すべてのページがダークパターンのとき]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>ライアンエアは、予約プロセス中に利益を増やすために「ダークパターン」と呼ばれる操作的なデザイン技術を使用することで知られています。</li>
-<li>戦術には、顧客がデフォルトでプロモーションのサインアップに設定される「プライバシーザッカリング」や、目立つボタンやポップアップを使用してサービスをアップセルする「ミスディレクション」が含まれます。</li>
-<li>これらの欺瞞的なデザインはRyanairのウェブサイト全体に広がっており、ユーザーが意図しない購入や情報の共有を避けるために警戒を怠らないことが重要です。</li>
-</ul>
-]]></description>
-            <link>https://hallofshame.design/ryanair-when-every-page-is-a-dark-pattern/</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000Zライアンエアー – すべてのページがダークパターンのとき</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title
-      ><![CDATA[クラウドストライクの修正は「最大15回の再起動」から始まり、そこからさらに複雑になります]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>クラウドストライクの最近のアップデートにより、Windowsシステムがブルースクリーンオブデス(BSOD)でクラッシュし、重大な混乱を引き起こしました。</li>
-<li>修正方法は、複数回の再起動から、バックアップの復元や問題のあるドライバーの手動削除などのより複雑な解決策までさまざまです。BitLocker暗号化を使用しているシステムには追加の手順が必要です。</li>
-<li>アップデートは撤回され、CrowdStrikeのCEOは謝罪し、問題解決に向けた取り組みが進行中であることをユーザーに保証しました。</li>
-</ul>
-]]></description>
-            <link
-      >https://arstechnica.com/information-technology/2024/07/crowdstrike-fixes-start-at-reboot-up-to-15-times-and-get-more-complex-from-there/</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000Zクラウドストライクの修正は「最大15回の再起動」から始まり、そこからさらに複雑になります</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Sendune – オープンソースのHTMLメールデザイナー]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>SENDUNEは、従来作成および維持が困難であったHTMLメールの作成を簡素化することを目的とした、新しいオープンソースのHTMLメールデザイナーを導入しました。</li>
-<li>デザイナーは軽量で、純粋なHTMLを使用し、面倒な依存関係を避けるため、ユーザーはHTML出力を任意のメールサービスプロバイダーのテンプレートとして保存できます。</li>
-<li>ユーザーはリポジトリをフォークし、改善を加え、プルリクエストを提出することが奨励されており、協力的な開発環境を促進しています。</li>
-</ul>
-]]></description>
-            <link>https://news.ycombinator.com/item?id=41007403</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000ZSendune – オープンソースのHTMLメールデザイナー</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[60歳のドイツ人男性がHIVから効果的に治癒した7人目の人物となる可能性が高い]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>60歳のドイツ人男性が、攻撃的な白血病の治療のために行われた幹細胞移植により、HIVが実質的に治癒した7人目の人物となる可能性が高い。</li>
-<li>2018年後半に抗レトロウイルス薬の服用を中止した「次のベルリン患者」と呼ばれる患者は、約6年後の現在もHIVおよび癌がない状態を維持しています。</li>
-<li>研究者たちは慎重ながらも楽観的であり、このケースが示すように、すべてのCCR5遺伝子変異が成功するHIV治療に必要ではないことを示唆しており、より広範なHIV治療戦略に希望を提供しています。</li>
-</ul>
-]]></description>
-            <link
-      >https://www.rfi.fr/en/international-news/20240718-seventh-person-likely-cured-of-hiv-doctors-announce</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000Z60歳のドイツ人男性がHIVから効果的に治癒した7人目の人物となる可能性が高い</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[世界規模のIT障害が航空会社、メディア、銀行に影響を与える]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>2011年に設立されたテキサス州に拠点を置くサイバーセキュリティ企業であるCrowdstrikeは、サイバー脅威から企業ネットワークとクラウドデータを保護するためのエンドポイントセキュリティを専門としています。</li>
-<li>ジョージ・カーツとドミトリー・アルペロヴィッチによって共同設立されたこの会社は、2019年にナスダックで上場しました。</li>
-<li>クラウドストライクは、特に2016年の米国民主党全国委員会のネットワーク侵害など、主要なサイバー攻撃の調査において重要な役割を果たしてきました。</li>
-</ul>
-]]></description>
-            <link>https://www.bbc.co.uk/news/live/cnk4jdwp49et</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000Z世界規模のIT障害が航空会社、メディア、銀行に影響を与える</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[二重のトラブル：ESAのガイアが微小隕石と太陽嵐に見舞われる]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>2013年12月に打ち上げられ、天の川銀河の10億以上の星をマッピングするESAのガイア宇宙船は、最近、微小隕石の衝突と太陽嵐による重大な挑戦に直面しました。</li>
-<li>微小隕石がガイアの保護カバーを損傷し、太陽嵐が電荷結合素子(CCD)の一つに故障を引き起こし、数千の誤った星の検出をもたらしました。</li>
-<li>ESAとエアバス・ディフェンス・アンド・スペースのエンジニアは、ガイアのソフトウェアをうまく調整し、誤検出を減らして宇宙船を通常の運用に戻し、現在では最高品質のデータの一部を生成しています。</li>
-</ul>
-]]></description>
-            <link
-      >https://www.esa.int/Enabling_Support/Operations/Double_trouble_Gaia_hit_by_micrometeoroid_and_solar_storm</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000Z二重のトラブル：ESAのガイアが微小隕石と太陽嵐に見舞われる</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[C-00000291*.sys には何が含まれていますか？]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>クラウドストライクのC-00000291*.sysファイルが無効なフォーマットのためにシステムクラッシュを引き起こし、クラウドストライクドライバーに影響を与えています。</li>
-<li>ユーザーはファイルの異なるバージョンを報告しており、一部は顧客固有のキーで暗号化されていると推測していますが、他のユーザーは復号せずに解析しています。</li>
-<li>ファイルはプロプライエタリな更新形式であり、DLLやパッチではないため、CrowdStrikeの更新プロセスのセキュリティと信頼性に関する懸念が生じています。</li>
-</ul>
-]]></description>
-            <link>https://news.ycombinator.com/item?id=41004103</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000ZC-00000291*.sys には何が含まれていますか？</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[NASAのキュリオシティ・ローバーが火星の岩石で驚きの発見をする]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>NASAのキュリオシティ・ローバーが火星で初めて元素硫黄を発見し、火星探査における重要な節目となった。</li>
-<li>発見は硫酸塩が豊富な地域で行われ、キュリオシティは純粋な硫黄で構成された明るい岩の全体のフィールドを発見し、科学者たちを魅了しました。</li>
-<li>好奇心のミッションは、微生物の生命の兆候を探るために火星の古代の地形を研究することを含み、マウント・シャープを登りながら41番目の岩石サンプルを採取してさらなる分析を行うことを続けています。</li>
-</ul>
-]]></description>
-            <link>https://www.jpl.nasa.gov/news/nasas-curiosity-rover-discovers-a-surprise-in-a-martian-rock</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000ZNASAのキュリオシティ・ローバーが火星の岩石で驚きの発見をする</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[湖や海洋における酸素の減少]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>レンセラー工科大学の研究によると、湖や海の酸素の減少は、生態系、社会、そして地球に重大な脅威をもたらすことが明らかになっています。</li>
-<li>気候変動、土地利用、汚染に関連する水中の脱酸素化により、溶存酸素が急速に減少し、1980年以降、湖や貯水池では酸素がそれぞれ5.5%と18.6%減少し、1960年以降、海洋では約2%減少しています。</li>
-<li>この脱酸素化は種の生理学、食物網、生態系サービスに影響を与え、「デッドゾーン」や有害な藻類の異常発生を引き起こし、地球温暖化と流出に対処するための緊急の行動が必要となります。</li>
-</ul>
-]]></description>
-            <link>https://www.sciencedaily.com/releases/2024/07/240715135713.htm</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000Z湖や海洋における酸素の減少</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

@@ -15,12 +15,207 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 28 Jul 2024 19:10:28 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jul 2024 19:13:07 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/id.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 28 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[id]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-29]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/29&#39;</h2>
+<h1>2024-07-29</h1>
+<h2><a href="https://www.microsoft.com/en-us/security/blog/2024/07/27/windows-security-best-practices-for-integrating-and-managing-security-tools/">Penjelasan teknis Microsoft tentang insiden CrowdStrike</a></h2>
+<ul>
+<li>Windows menawarkan opsi keamanan yang fleksibel, termasuk fitur terintegrasi dan alat pihak ketiga, untuk meningkatkan keamanan dan keandalan bagi bisnis.</li>
+<li>Pemadaman CrowdStrike baru-baru ini dilacak ke masalah keamanan memori di driver CSagent, menyoroti pentingnya manajemen driver kernel yang kuat.</li>
+<li>Microsoft berkolaborasi dengan vendor pihak ketiga melalui Microsoft Virus Initiative (MVI) untuk memastikan kualitas dan keandalan produk keamanan, dengan menekankan pengurangan ketergantungan kernel dan peningkatan perlindungan mode pengguna.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095530">Reaksi</a></h3>
+<ul>
+<li>Analisis Microsoft terhadap insiden CrowdStrike menekankan perlunya memodernisasi pendekatan keamanan dan mengurangi ketergantungan pada driver kernel untuk mengakses data keamanan yang kritis.</li>
+<li>Insiden tersebut telah memicu perdebatan tentang praktik jaminan kualitas CrowdStrike dan apakah Microsoft seharusnya membatasi akses kernel untuk vendor pihak ketiga, sebuah langkah yang sebelumnya diblokir oleh Uni Eropa demi persaingan yang adil.</li>
+<li>Situasi ini menyoroti potensi manfaat dari mengalihkan lebih banyak fungsi keamanan ke mode pengguna, dengan tujuan untuk meningkatkan praktik peluncuran dan keandalan.</li>
+</ul>
+<h2><a href="https://dotat.at/@/2024-07-28-tolower-avx512.html">tolower() dengan AVX-512</a></h2>
+<ul>
+<li>Artikel tersebut membahas penggunaan instruksi SIMD (Single Instruction, Multiple Data) untuk pemrosesan string yang efisien, khususnya dengan fokus pada fungsi tolower() dalam Rust.</li>
+<li>Penulis bereksperimen dengan AVX-512-BW pada prosesor AMD Zen 4, mencapai kinerja tinggi untuk string panjang dan pendek menggunakan masked loads dan stores.</li>
+<li>Hasilnya menunjukkan bahwa AVX-512-BW sangat efektif untuk menangani string pendek, memberikan kinerja yang mulus dan cepat tanpa masalah yang terlihat pada kode autovektorisasi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095790">Reaksi</a></h3>
+<ul>
+<li>Trik &quot;unsafe read beyond of death&quot; dalam Rust dan LLVM dianggap sebagai perilaku yang tidak terdefinisi, yang mengarah pada optimisasi kompilator yang mengasumsikan bahwa hal tersebut tidak terjadi, sehingga menyebabkan hasil yang tidak terduga.</li>
+<li>Assembly inline saat ini adalah satu-satunya solusi sementara, dengan alternatif seperti intrinsics pemuatan sejajar bertopeng dan pemuatan beku yang disarankan.</li>
+<li>Kemungkinan penanganan pembacaan di luar batas terus diperdebatkan, dengan beberapa pihak mendukung perilaku yang ditentukan oleh implementasi, dan operasi bertopeng AVX-512 dicatat memiliki manfaat kinerja meskipun adopsinya terbatas karena segmentasi pasar oleh Intel.</li>
+</ul>
+<h2><a href="https://github.com/izabera/ps">ps aux ditulis dalam bash tanpa forking</a></h2>
+<ul>
+<li>Pertanyaan wawancara untuk posisi bash/Linux mungkin melibatkan penanganan situasi di mana semua ID Proses (PID) telah digunakan, mencegah proses baru untuk dijalankan.</li>
+<li>Alat yang disebutkan dapat meniru perintah <code>ps aux</code> yang berfungsi dalam skenario semacam itu, dengan humor mengklaim kompatibilitas universal.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41097241">Reaksi</a></h3>
+<ul>
+<li>Kajian di GitHub berpusat pada tantangan menyelaraskan kolom dalam pemrograman, dengan fokus pada penggunaan f-string dan padding Python untuk tujuan ini.</li>
+<li>Pengguna menyarankan alat dan format alternatif, seperti YAML untuk penanganan data yang lebih sederhana, dan menyebutkan utilitas seperti Octopus Deploy dan Docker CLI untuk keluaran JSON.</li>
+<li>Kutipan tersebut juga membahas penanganan kehabisan PID (Process ID) di bash, dengan rekomendasi seperti menggunakan direktori /proc/[pid]/ dan <code>exec Python</code> untuk manajemen proses yang lebih baik.</li>
+</ul>
+<h2><a href="https://statsbomb-3d-viz.vercel.app/">Kalkulator umpan sepak bola yang dibuat dengan Three.js</a></h2>
+<ul>
+<li>Kalkulator umpan sepak bola telah dikembangkan menggunakan data terbuka dari StatsBomb, yang merupakan kumpulan data kaya untuk analitik sepak bola.</li>
+<li>Alat ini memungkinkan pengguna untuk menganalisis dan memvisualisasikan pola umpan, dengan filter untuk jarak umpan, tim, dan pemain individu.</li>
+<li>Perkembangan ini menyoroti tren yang semakin meningkat dalam memanfaatkan data terbuka untuk analitik olahraga canggih dan visualisasi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095839">Reaksi</a></h3>
+<ul>
+<li>Kalkulator umpan sepak bola menggunakan Three.js memanfaatkan data terbuka dari StatsBomb untuk menganalisis dan memvisualisasikan pola umpan, memungkinkan pengguna untuk memfilter berdasarkan jarak umpan, tim, dan pemain.</li>
+<li>Komentar dari komunitas mencakup saran untuk alat visualisasi tingkat tinggi seperti deck.gl atau kepler.gl, serta fitur-fitur seperti animasi berbasis waktu dan peta panas untuk analisis yang lebih baik.</li>
+<li>Pengguna telah melaporkan masalah seperti kesalahan CORS dan kesulitan dalam memuat file, yang menunjukkan area untuk peningkatan potensial dalam pengalaman pengguna dan penanganan kesalahan.</li>
+</ul>
+<h2><a href="https://loro.dev/blog/movable-tree">CRDT pohon yang dapat dipindahkan dan implementasi Loro</a></h2>
+<ul>
+<li>Artikel tersebut membahas tantangan dalam menerapkan Movable Tree CRDTs (Conflict-free Replicated Data Types) di lingkungan kolaboratif dan bagaimana Loro mengatasi masalah-masalah ini, termasuk pengurutan node anak.</li>
+<li>Kode implementasi Loro menggunakan algoritma dari &quot;A highly-available move operation for replicated trees&quot; dan mengintegrasikan algoritma Fractional Index untuk pengurutan, menangani konflik dengan PeerID unik dan jitter.</li>
+<li>Loro&#39;s approach mendukung kolaborasi waktu nyata dan pemeriksaan versi historis, menunjukkan kinerja tinggi dalam berbagai skenario, menjadikannya cocok untuk digunakan dalam aplikasi kolaboratif.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41099901">Reaksi</a></h3>
+<ul>
+<li>CRDT pohon yang dapat dipindahkan (Conflict-free Replicated Data Types) dan implementasi Loro semakin mendapat perhatian karena kemampuannya dalam menangani operasi pohon yang kompleks di lingkungan kolaboratif.</li>
+<li>Para pengembang sedang mendiskusikan aplikasi praktis, seperti React Table Library untuk mengelola struktur data hierarkis yang besar dan editor multipemain Thymer untuk tugas dan catatan.</li>
+<li>Kami percakapan menyoroti tantangan dan solusi dalam menggunakan CRDT untuk berbagai jenis data, termasuk teks, gambar, dan model 3D, dengan menekankan pentingnya sinkronisasi yang efisien dan resolusi konflik.</li>
+</ul>
+<h2><a href="https://leandojo.org/">LeanDojo: Pembuktian Teorema di Lean Menggunakan LLMs</a></h2>
+<ul>
+<li>LeanDojo memperkenalkan Lean Copilot, memungkinkan Model Bahasa (LLMs) untuk membantu dalam otomatisasi pembuktian Lean dengan menyarankan taktik dan mencari bukti.</li>
+<li>Model ReProver, menggunakan Transformer encoder-decoder, mengambil premis dari perpustakaan matematika dan menghasilkan taktik berikutnya, melampaui otomatisasi pembuktian bawaan Lean.</li>
+<li>Dataset LeanDojo mencakup tolok ukur yang luas dan anotasi yang terperinci, memastikan model dapat menggeneralisasi ke teorema dengan premis baru dan menemukan bukti baru.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41096486">Reaksi</a></h3>
+<ul>
+<li>LeanDojo adalah inisiatif baru yang mengintegrasikan Lean, sebuah asisten pembuktian, dengan Model Bahasa Besar (LLM) untuk meningkatkan kemampuan pembuktian teorema.</li>
+<li>Proyek ini bertujuan untuk menjembatani kesenjangan antara notasi matematika yang tidak dapat dieksekusi dan kode yang dapat dieksekusi, yang berpotensi membantu dalam masalah matematika kompleks seperti persamaan diferensial stokastik.</li>
+<li>Perkembangan ini signifikan karena dapat meningkatkan keandalan dan efisiensi verifikasi formal dalam aplikasi kritis, seperti sistem keamanan tinggi dan pembuktian teorema otomatis.</li>
+</ul>
+<h2><a href="http://jpetazzo.github.io/2024/07/26/cloudflare-images-overcharge-billing/">Apakah Cloudflare membebankan biaya berlebihan kepada kami untuk layanan gambar mereka?</a></h2>
+<ul>
+<li>Model penagihan campuran Cloudflare Images, yang menggabungkan penyimpanan prabayar dan pengiriman pascabayar, menyebabkan tagihan yang tidak terduga tinggi dan membingungkan bagi EphemeraSearch, kadang-kadang melebihi $400 dibandingkan dengan yang diharapkan $110.</li>
+<li>Meskipun telah melakukan beberapa kali kontak dengan dukungan Cloudflare selama delapan bulan, tidak ada solusi yang diberikan, yang mendorong beralih ke solusi yang lebih hemat biaya seperti S3 atau server khusus.</li>
+<li>Pengalaman ini menekankan pentingnya pengeluaran yang efisien untuk proyek indie dengan pendapatan rendah, menunjukkan bahwa meskipun Cloudflare Images menawarkan layanan berkualitas, model penagihannya mungkin tidak cocok untuk semua pengguna.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41100958">Reaksi</a></h3>
+<ul>
+<li>Kekhawatiran telah muncul tentang kemungkinan Cloudflare mengenakan biaya berlebihan untuk layanan Images mereka, dengan pengguna melaporkan adanya perbedaan antara biaya yang diharapkan dan biaya aktual.</li>
+<li>Perbandingan sedang dilakukan dengan layanan lain seperti Amazon S3, Bunny CDN, dan Cloudflare R2, yang dianggap sebagai alternatif yang lebih hemat biaya.</li>
+<li>Praktik penagihan dan dukungan pelanggan Cloudflare telah menjadi sorotan, dengan beberapa pengguna mengalami siklus penagihan yang rumit dan biaya tak terduga.</li>
+</ul>
+<h2><a href="https://fabiensanglard.net/snes_video/index.html">Memahami desain sistem video Super Nintendo</a></h2>
+<ul>
+<li>Penjelajahan Fabien Sanglard tentang sistem video Super Nintendo (SNES) menyoroti keputusan desain yang dibuat oleh insinyur Nintendo pada tahun 1989 untuk memastikan kompatibilitas dengan TV CRT dan standar NTSC.</li>
+<li>Konsol SNES menggunakan master clock sebesar 21.47727MHz, yang dibagi untuk mencapai dot clock sebesar 5.3693175MHz, menghasilkan 341 titik per baris dan refresh rate sebesar 60.098Hz, dengan periode blanking horizontal dan vertikal untuk menghindari artefak.</li>
+<li>SNES mendukung standar NTSC dan PAL, menyediakan output komposit dan S-Video, dan dapat menggandakan resolusi vertikal dan horizontal untuk aplikasi tertentu, meskipun menghadapi tantangan seperti flickering.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098141">Reaksi</a></h3>
+<ul>
+<li>Kirimannya membahas desain dan arsitektur dari Super Nintendo Entertainment System (SNES), menyoroti spesifikasi teknis dan konteks historisnya.</li>
+<li>Hal-hal penting termasuk opsi resolusi SNES, dampak dari standar TV yang berbeda (NTSC vs. PAL) pada gameplay, dan penggunaan CRT (Cathode Ray Tubes) dalam permainan arcade dan konsol rumah.</li>
+<li>Diskusi tersebut juga menyentuh penggunaan konektor SCART pada TV Eropa dan tantangan dalam meniru keluaran video SNES dengan akurat.</li>
+</ul>
+<h2><a href="https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/">Jangan secara membabi buta lebih memilih <code>emplace_back</code> daripada <code>push_back</code> (2021)</a></h2>
+<ul>
+<li>Alat seperti clang-tidy dan PVS-Studio mungkin menandai <code>push_back</code> sebagai &quot;gaya buruk&quot; dan menyarankan <code>emplace_back</code>, tetapi perubahan ini tidak selalu bermanfaat.</li>
+<li>emplace_back seharusnya digunakan untuk menghindari pembuatan objek sementara, tetapi ini tidak terkait dengan semantik pemindahan dan masih dapat menghasilkan salinan jika tidak digunakan dengan benar.</li>
+<li>Lebih baik menggunakan <code>push_back</code> untuk kesederhanaan dan waktu kompilasi yang lebih cepat, gunakan <code>emplace_back</code> hanya jika diperlukan untuk tipe yang tidak dapat dipindahkan atau untuk menghindari objek sementara.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095814">Reaksi</a></h3>
+<ul>
+<li>Diskusi berpusat pada penggunaan <code>emplace_back</code> versus <code>push_back</code> dalam C++ untuk menambahkan elemen ke kontainer seperti vektor.</li>
+<li>emplace_back membangun sebuah objek di tempat, yang berpotensi menghindari penyalinan yang tidak perlu, sementara push_back menambahkan objek yang sudah dibangun ke dalam wadah.</li>
+<li>Percakapan tersebut menyoroti bahwa meskipun <code>emplace_back</code> bisa lebih efisien, itu juga lebih kompleks, dan <code>push_back</code> mungkin lebih disukai untuk penggunaan sehari-hari kecuali jika manfaat spesifik dari <code>emplace_back</code> diperlukan.</li>
+</ul>
+<h2><a href="https://okmij.org/ftp/ML/higher-kind-poly.html">Keterikatan polimorfisme tingkat lebih tinggi dalam OCaml (2021)</a></h2>
+<ul>
+<li>Kinds polimorfisme yang lebih tinggi, yang mengabstraksi atas konstruktor tipe, sangat penting untuk operasi generik atas koleksi dan penyematan Bahasa Spesifik Domain (DSL) yang bertipe.</li>
+<li>OCaml tidak secara native mendukung polimorfisme berjenis lebih tinggi karena masalah aliasing tipe, tetapi hal ini dapat disimulasikan menggunakan funktor, defungsionalisasi, dan aljabar awal.</li>
+<li>Berbagai metode, termasuk abstraksi functor dan pengurangan ke polimorfisme biasa, memungkinkan pencapaian polimorfisme berjenis lebih tinggi di OCaml, meskipun terkadang hal ini mungkin tidak diperlukan.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41096187">Reaksi</a></h3>
+<ul>
+<li>Diskusi tentang polimorfisme terbatas berjenis lebih tinggi dalam OCaml, dengan fokus pada alias tipe dan masalah kesetaraan tipe, yang mengarah pada masalah unifikasi tingkat lebih tinggi.</li>
+<li>Kepraktisan dari isu-isu ini disorot, dengan referensi ke bahasa Idris dan tutorial &quot;Elaboration Zoo&quot; oleh András Kovács untuk pembelajaran lebih lanjut.</li>
+<li>Klarifikasi tentang sintaks GADT (Generalized Abstract Data Types) dalam OCaml, dengan perbandingan terhadap F# yang saat ini tidak mendukung GADT.</li>
+</ul>
+<h2><a href="https://www.bbc.com/news/education-21895704">Anak-anak seharusnya diizinkan untuk merasa bosan, kata ahli (2013)</a></h2>
+<ul>
+<li>Dr. Teresa Belton, seorang ahli pendidikan, menegaskan bahwa membiarkan anak-anak mengalami kebosanan sangat penting untuk mendorong kreativitas, karena aktivitas yang terus-menerus dapat menghambat imajinasi.</li>
+<li>Interview dengan para kreatif seperti penulis Meera Syal dan seniman Grayson Perry mengungkapkan bahwa kebosanan memainkan peran penting dalam perkembangan kreatif mereka, dengan Perry menggambarkannya sebagai &quot;keadaan kreatif.&quot;</li>
+<li>Dr. Belton menekankan bahwa harapan masyarakat akan rangsangan yang konstan mencegah anak-anak mengembangkan kreativitas internal, dan menganjurkan waktu &#39;berdiri dan menatap&#39; jauh dari layar untuk merangsang imajinasi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098488">Reaksi</a></h3>
+<ul>
+<li>Seorang ahli menyarankan bahwa anak-anak sebaiknya diizinkan untuk mengalami kebosanan, karena hal itu dapat mendorong kreativitas dan kemandirian.</li>
+<li>Refleksi pada pengalaman masa kecil di masa lalu, pengguna mengingat keterlibatan dalam aktivitas yang berisiko tetapi memperkaya secara sosial, yang kontras dengan overstimulasi berbasis layar pada anak-anak modern.</li>
+<li>Diskusi menekankan pentingnya menyeimbangkan kebosanan dengan keselamatan, menganjurkan lingkungan yang diawasi di mana anak-anak dapat menjelajah dan berkembang.</li>
+</ul>
+<h2><a href="https://github.com/Owez/yark">Yark: Pengarsip YouTube dengan Antarmuka Offline</a></h2>
+<ul>
+<li>Yark menyederhanakan pengarsipan YouTube dengan perintah instalasi dan manajemen yang mudah, membutuhkan Python 3.9+ dan opsional FFmpeg.</li>
+<li>Pengguna dapat membuat, memperbarui, dan melihat arsip, yang disimpan dalam struktur berbasis direktori dengan metadata, video, dan gambar mini.</li>
+<li>Alat ini mendukung tampilan offline dengan mode terang dan gelap serta memungkinkan saran fitur melalui tab masalah di repositori.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41100820">Reaksi</a></h3>
+<ul>
+<li>Yark adalah pengarsip YouTube dengan antarmuka pengguna offline, dirancang untuk membantu pengguna menyimpan konten YouTube secara lokal.</li>
+<li>Pengguna mendiskusikan alat serupa untuk Twitch, menyoroti tantangan seperti streaming file MP4 besar dan menangani permintaan server HTTP untuk file dengan karakter khusus.</li>
+<li>Konsultasi tersebut mencakup rincian teknis tentang streaming, seperti pentingnya server yang mendukung permintaan rentang untuk menghindari masalah buffering, dengan rekomendasi menggunakan VLC atau Nginx untuk penggunaan praktis.</li>
+</ul>
+<h2><a href="https://github.com/alexta69/metube">MeTube: Pengunduh YouTube yang di-hosting sendiri</a></h2>
+<ul>
+<li>Versi Node yang baru tidak lagi mendukung build ARM 32-bit; pengguna harus bermigrasi ke OS 64-bit untuk pembaruan.</li>
+<li>Antarmuka web untuk youtube-dl (fork yt-dlp) sekarang tersedia, mendukung unduhan daftar putar dari YouTube dan situs lainnya, dan dapat dijalankan menggunakan Docker atau docker-compose.</li>
+<li>Pilihan konfigurasi mencakup variabel lingkungan untuk ID pengguna, ID grup, direktori unduhan, dan lainnya, dengan pengaturan default yang disediakan untuk memudahkan penyiapan.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098974">Reaksi</a></h3>
+<ul>
+<li>MeTube adalah pengunduh YouTube yang di-hosting sendiri yang menggunakan yt-dlp, sebuah alat baris perintah populer untuk mengunduh video dari YouTube.</li>
+<li>Kegiatan ini menyediakan antarmuka pengguna (UI) untuk yt-dlp, membuatnya dapat diakses bagi pengguna yang lebih memilih antarmuka grafis daripada operasi baris perintah.</li>
+<li>Diskusi ini menyoroti berbagai alternatif dan alat terkait, seperti Celluloid, Parabolic, dan Tube Archivist, yang menawarkan fungsionalitas serupa untuk platform dan kasus penggunaan yang berbeda.</li>
+</ul>
+<h2><a href="https://www.forrestthewoods.com/blog/tech_of_planetary_annihilation_chrono_cam/">Teknologi Pemusnahan Planet: ChronoCam (2013)</a></h2>
+<ul>
+<li>Planetary Annihilation, sebuah permainan strategi waktu nyata oleh Uber Entertainment, telah memasuki tahap beta dan menampilkan teknologi inovatif seperti generasi planet prosedural dan permainan dengan 40 pemain.</li>
+<li>Permainan ini memperkenalkan ChronoCam, sebuah sistem replay unik yang memungkinkan pemain untuk melompat kembali ke masa lalu, bermain dalam gerakan lambat/cepat, dan melihat dunia permainan dari berbagai titik waktu, bahkan selama permainan langsung.</li>
+<li>Memanfaatkan arsitektur klien-server, ChronoCam meminimalkan penggunaan bandwidth dengan merepresentasikan data permainan sebagai kurva dan mendukung fitur replay yang kuat, meningkatkan langkah-langkah anti-cheat dan keterlibatan komunitas online.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41097228">Reaksi</a></h3>
+<ul>
+<li>Planetary Annihilation, sebuah permainan strategi waktu nyata (RTS), menampilkan mekanik pengulangan waktu yang unik yang disebut ChronoCam, memungkinkan pemain untuk meninjau dan berinteraksi dengan keadaan permainan di masa lalu.</li>
+<li>Permainan ini awalnya didanai melalui kampanye Kickstarter yang sangat sukses, mengumpulkan $2,2 juta, tetapi menghadapi tantangan karena desainnya yang ambisius, termasuk beberapa medan pertempuran berbentuk bola.</li>
+<li>Meskipun mendapat kritik awal, sekuel permainan tersebut, Planetary Annihilation: Titans, menerima ulasan positif di Steam, menyoroti pencapaian teknis pengembang dan desain mesin yang inovatif.</li>
+</ul>
+<h2><a href="https://msreekan.com/2014/01/15/sdcard/">Pelapisan keausan dan lapisan terjemahan SDcard (2014)</a></h2>
+<ul>
+<li>SD Card menggunakan memori flash NAND MLC (Multi-Level Cell) atau SLC (Single-Level Cell), yang mengabstraksi kompleksitas seperti penghapusan blok dan wear leveling.</li>
+<li>Kartu mendeteksi apakah akan menggunakan SPI (Serial Peripheral Interface) atau bus SD saat suplai tegangan dan memulai tumpukan perangkat lunak yang sesuai, menyelesaikan proses booting ketika perangkat lunak memasuki keadaan transfer.</li>
+<li>Kompilasi terjemahan memetakan alamat virtual ke alamat fisik, mengoptimalkan kinerja penulisan dengan penulisan berurutan dan mengelola overhead untuk penulisan acak di seluruh Unit Alokasi (AU), biasanya berukuran 4MB.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095429">Reaksi</a></h3>
+<ul>
+<li>Di sebuah konferensi, sebuah anekdot tentang membongkar kartu SD yang rusak menyoroti bug wear leveling yang menyebabkan firmware sebagian tertimpa, memicu diskusi tentang keandalan kartu SD.</li>
+<li>Pengguna berbagi pengalaman tentang kegagalan kartu SD dan pemulihan data, mencatat bahwa kartu memori yang lebih padat lebih rentan terhadap masalah, sementara kartu kelas industri, meskipun lebih kecil, lebih tahan lama.</li>
+<li>Kiat untuk meningkatkan keandalan kartu SD termasuk perangkat lunak yang lebih baik untuk penggabungan penulisan dan perataan keausan, serta kartu SD yang dapat mengubah ukuran partisi sendiri untuk mengelola blok yang aus.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Penjelasan teknis Microsoft tentang insiden CrowdStrike" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Penjelasan%20teknis%20Microsoft%20tentang%20insiden%20CrowdStrike&subheading=Senin%2C%2029%20Juli%202024%3A%20Ringkasan%20Berita%20Peretas" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/id/2024/07/29</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000Z</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-28]]></title>
             <description
@@ -1690,202 +1885,6 @@
             <link>https://hn.cho.sh/id/2024/07/20</link>
             <guid isPermaLink="false">2024-07-20T00:00:00.000Z</guid>
             <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-19]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/19&#39;</h2>
-<h1>2024-07-19</h1>
-<h2><a href="https://old.reddit.com/r/crowdstrike/comments/1e6vmkf/bsod_error_in_latest_crowdstrike_update/">Pembaruan Crowdstrike: Layar Biru Windows dan Boot Loop</a></h2>
-<ul>
-<li>Karyawan di tempat kerja mengalami layar biru Windows dan boot loop, yang mungkin terkait dengan pembaruan aplikasi Crowd Strike terbaru.</li>
-<li>Departemen IT mencatat bahwa beberapa server offline, dan sebuah stasiun radio lokal melaporkan masalah serupa pada laptop serta sistem telepon yang tidak berfungsi.</li>
-<li>Insiden-insiden ini terjadi di Australia, tetapi belum ada liputan berita.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002195">Reaksi</a></h3>
-<ul>
-<li>Kabar terbaru dari Crowdstrike menyebabkan masalah signifikan, termasuk layar biru Windows dan loop booting, yang mempengaruhi berbagai sektor, termasuk layanan darurat dan rumah sakit.</li>
-<li>Kata seorang pengguna Reddit bahwa departemen darurat mereka tidak berfungsi saat penanganan serangan jantung, dan layanan 911 juga terdampak, yang menyebabkan keterlambatan dalam perawatan pasien.</li>
-<li>Insiden tersebut menyoroti risiko mengandalkan sistem yang saling terhubung dan potensi kegagalan yang katastrofik ketika pembaruan tidak diuji dengan benar sebelum diterapkan.</li>
-</ul>
-<h2><a href="https://www.afr.com/technology/businesses-crippled-by-widespread-it-outage-20240719-p5jv2t">Kegagalan Crowdstrike Menyebabkan Masalah yang Meluas</a></h2>
-<ul>
-<li>Kekacauan IT global dipicu oleh pembaruan perangkat lunak yang cacat dari perusahaan keamanan siber CrowdStrike Holdings, yang mempengaruhi banyak sistem Microsoft Windows.</li>
-<li>Kedua perusahaan, Microsoft dan CrowdStrike, telah merilis perbaikan untuk mengatasi masalah tersebut, tetapi pemulihan sepenuhnya diperkirakan akan memakan waktu.</li>
-<li>Situasinya telah sedikit membaik, tetapi dampak dari pembaruan yang gagal masih dirasakan di seluruh dunia.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002677">Reaksi</a></h3>
-<ul>
-<li>Perusahaan Crowdstrike mengalami gangguan yang menyebabkan masalah luas, termasuk layar biru Windows dan loop booting, akibat pembaruan terbaru.</li>
-<li>Insiden tersebut telah memicu diskusi signifikan di Hacker News, menyoroti dampaknya pada pengguna dan sistem.</li>
-<li>Peristiwa ini menekankan pentingnya pengujian dan pemantauan yang ketat dalam pembaruan perangkat lunak untuk mencegah gangguan semacam itu.</li>
-</ul>
-<h2><a href="https://worthrises.org/pressreleases/2024/7/18/fcc-votes-unanimously-to-significantly-lower-phone-and-video-communication-costs-after-decades-of-exploitation-by-prison-telecoms">FCC memilih untuk membatasi biaya telekomunikasi penjara</a></h2>
-<ul>
-<li>FCC telah memutuskan untuk secara signifikan mengurangi tarif panggilan telepon dan video untuk penjara dan rumah tahanan, dengan memangkas batas tarif per menit lebih dari setengah dan melarang semua biaya, termasuk biaya deposit.</li>
-<li>Perubahan ini berdampak pada 83% individu yang dipenjara, menghemat setidaknya $500 juta setiap tahun bagi keluarga dan meningkatkan kesejahteraan serta keberhasilan reintegrasi individu yang dipenjara.</li>
-<li>Kerugian pendapatan besar diharapkan bagi perusahaan telekomunikasi penjara seperti Aventiv dan ViaPath, sementara negara bagian seperti Massachusetts, Minnesota, dan Colorado telah bergerak untuk membuat panggilan penjara gratis.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41005181">Reaksi</a></h3>
-<ul>
-<li>FCC telah memilih untuk membatasi biaya layanan telekomunikasi penjara, dengan tujuan mengurangi biaya tinggi panggilan telepon narapidana.</li>
-<li>Sebelumnya, narapidana dibatasi untuk menggunakan satu operator telepon pribadi yang disetujui penjara, yang mengakibatkan harga yang sangat tinggi karena kurangnya persaingan.</li>
-<li>Kebijakan baru ini dimaksudkan untuk meringankan beban finansial pada narapidana dan keluarga mereka, mempromosikan rehabilitasi yang lebih baik dan mengurangi residivisme.</li>
-</ul>
-<h2><a href="https://johnfactotum.github.io/foliate/">Foliate: Membaca e-book dengan gaya, bernavigasi dengan mudah</a></h2>
-<ul>
-<li>Foliate adalah pembaca e-book sumber terbuka yang mendukung berbagai format seperti EPUB, Mobipocket, Kindle, FB2, CBZ, dan PDF, dengan pengaturan membaca yang dapat disesuaikan.</li>
-<li>Itu menawarkan fitur seperti navigasi touchpad dan layar sentuh, penanda, anotasi, dan integrasi dengan alat seperti Wiktionary dan Google Translate.</li>
-<li>Foliate mendukung teks dari kanan ke kiri, penulisan vertikal, dan tata letak tetap, serta tersedia untuk berbagai distribusi Linux atau melalui penggandaan kode sumber.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002273">Reaksi</a></h3>
-<ul>
-<li>Foliate adalah pembaca e-book yang dipuji karena kesederhanaannya, navigasi yang mudah, fitur penandaan, dan anotasi.</li>
-<li>Itu menyimpan kemajuan membaca, penanda buku, dan anotasi dalam file JSON biasa, memudahkan ekspor dan sinkronisasi.</li>
-<li>Foliate menggunakan hash file untuk menghasilkan pengenal unik bagi buku, memastikan PDF tetap tidak dimodifikasi saat diberi anotasi, meskipun beberapa pengguna mencatat potensi masalah jika file diubah.</li>
-</ul>
-<h2><a href="https://www.nytimes.com/2024/07/18/us/frontier-flights-grounded-microsoft.html">Beberapa maskapai terganggu akibat gangguan Microsoft Azure</a></h2>
-<ul>
-<li>Frontier Airlines menghentikan semua penerbangan selama sekitar 35 menit karena gangguan besar pada Microsoft Azure, yang mempengaruhi pemesanan, check-in, dan akses boarding pass.</li>
-<li>Pemadaman yang dimulai pada pukul 17:56 juga mengganggu sistem untuk Allegiant dan Sun Country Airlines, mempengaruhi beberapa sistem di wilayah tengah AS.</li>
-<li>Frontier, yang mengoperasikan lebih dari 100 pesawat, adalah salah satu dari setidaknya tiga maskapai yang terkena dampak gangguan layanan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41001959">Reaksi</a></h3>
-<ul>
-<li>Beberapa maskapai mengalami gangguan akibat pemadaman Microsoft Azure, yang berpotensi terkait dengan pembaruan Crowdstrike yang rusak sehingga menyebabkan kerusakan mesin Windows secara global.</li>
-<li>Kegagalan ini telah mempengaruhi berbagai sektor, termasuk ATM, supermarket, dan bandara di Eropa dan Selandia Baru, menunjukkan masalah yang meluas.</li>
-<li>Insiden tersebut menyoroti risiko yang terkait dengan layanan cloud terpusat dan menekankan pentingnya rencana pemulihan bencana yang lebih baik.</li>
-</ul>
-<h2><a href="https://www.construction-physics.com/p/what-would-it-take-to-recreate-bell">Apa yang dibutuhkan untuk menciptakan kembali Bell Labs?</a></h2>
-<ul>
-<li>AT&amp;T, melalui Bell Labs, berperan penting dalam mengembangkan infrastruktur telepon Amerika dan menghasilkan penemuan signifikan seperti transistor, sel surya PV silikon, dan sistem operasi UNIX.</li>
-<li>Keberhasilan Bell Labs sebagian disebabkan oleh monopoli AT&amp;T, yang mendukung proyek penelitian jangka panjang, menghasilkan banyak penghargaan, termasuk 10 Hadiah Nobel.</li>
-<li>Keterpecahan AT&amp;T menyebabkan pembagian dan penurunan Bell Labs, membuat sulit untuk menciptakan kembali institusi semacam itu hari ini karena kondisi historis dan teknologi yang unik yang pernah ada.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40998927">Reaksi</a></h3>
-<ul>
-<li>Rekreasi Bell Labs akan memerlukan kuasi-monopoli, pendanaan substansial, persaingan minimal, dan budaya yang memprioritaskan inovasi jangka panjang daripada keuntungan jangka pendek.</li>
-<li>Contoh historis dan modern, seperti Sandia National Laboratories dan raksasa teknologi seperti Google dan Microsoft, menyoroti pentingnya kepemimpinan, budaya nasional, dan struktur pajak dalam mendorong inovasi.</li>
-<li>Penekanan saat ini pada pengembalian pemegang saham yang segera menimbulkan hambatan signifikan terhadap fokus pada penelitian jangka panjang.</li>
-</ul>
-<h2><a href="https://hallofshame.design/ryanair-when-every-page-is-a-dark-pattern/">Ryanair – ketika setiap halaman adalah pola gelap</a></h2>
-<ul>
-<li>Ryanair dikenal menggunakan &quot;pola gelap,&quot; teknik desain manipulatif, untuk meningkatkan keuntungan selama proses pemesanan.</li>
-<li>Taktik termasuk &quot;privacy zuckering,&quot; di mana pelanggan secara default didaftarkan ke dalam promosi, dan &quot;misdirection,&quot; yang menggunakan tombol dan pop-up yang mencolok untuk menjual layanan tambahan.</li>
-<li>Desain yang menipu ini tersebar luas di seluruh situs web Ryanair, sehingga penting bagi pengguna untuk tetap waspada agar tidak melakukan pembelian secara tidak sengaja atau membagikan lebih banyak informasi daripada yang dimaksudkan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41004039">Reaksi</a></h3>
-<ul>
-<li>Ryanair menggunakan pola gelap, seperti biaya tersembunyi dan taktik manipulatif, untuk meningkatkan keuntungan, yang membuat pelanggan frustrasi.</li>
-<li>Contohnya termasuk biaya untuk pemindaian ID aplikasi, keuntungan &quot;boarding cepat&quot; yang menyesatkan, dan kebijakan bagasi yang rumit, yang mengarah pada biaya tambahan untuk layanan dasar.</li>
-<li>Meskipun harga rendah dan penerbangan efisien, banyak pelanggan lebih memilih untuk menghindari Ryanair karena praktik yang tidak ramah pelanggan, dengan maskapai berbiaya rendah lainnya seperti EasyJet dan WizzAir dianggap kurang agresif.</li>
-</ul>
-<h2><a href="https://arstechnica.com/information-technology/2024/07/crowdstrike-fixes-start-at-reboot-up-to-15-times-and-get-more-complex-from-there/">Perbaikan CrowdStrike dimulai dengan &quot;reboot hingga 15 kali&quot;, menjadi lebih kompleks dari sana</a></h2>
-<ul>
-<li>Pembaruan terbaru dari CrowdStrike menyebabkan sistem Windows mengalami crash dengan layar biru kematian (BSOD), yang mengakibatkan gangguan signifikan.</li>
-<li>Perbaikan berkisar dari beberapa kali reboot hingga solusi yang lebih kompleks seperti memulihkan cadangan atau menghapus driver yang bermasalah secara manual, dengan langkah tambahan yang diperlukan untuk sistem yang menggunakan enkripsi BitLocker.</li>
-<li>Kabar pembaruan telah ditarik kembali, dan CEO CrowdStrike telah meminta maaf, meyakinkan pengguna bahwa upaya sedang dilakukan untuk menyelesaikan masalah tersebut.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007898">Reaksi</a></h3>
-<ul>
-<li>Perbaikan terbaru dari CrowdStrike memerlukan hingga 15 kali reboot, menyebabkan gangguan signifikan di berbagai sektor, termasuk sistem CNC, AC dan alarm keamanan, telepon, email, dan sistem akuntansi.</li>
-<li>Insiden tersebut menyoroti risiko yang terkait dengan pembaruan otomatis dan perlunya praktik keamanan yang lebih baik, dengan banyak pihak yang mendukung pengujian yang lebih ketat dan peluncuran bertahap.</li>
-<li>Pengguna mempertanyakan ketergantungan pada sistem kritis berbasis Windows yang terhubung ke internet, menyoroti perlunya evaluasi ulang strategi infrastruktur TI saat ini.</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41007403">Sendune – perancang email HTML sumber terbuka</a></h2>
-<ul>
-<li>SENDUNE telah memperkenalkan perancang email HTML open-source baru yang bertujuan untuk menyederhanakan pembuatan email HTML, yang secara tradisional sulit untuk ditulis dan dipelihara.</li>
-<li>Desainer ini ringan, menggunakan HTML murni, dan menghindari ketergantungan yang rumit, memungkinkan pengguna untuk menyimpan output HTML sebagai template untuk penyedia layanan email apa pun.</li>
-<li>Pengguna didorong untuk me-fork repositori, membuat perbaikan, dan mengajukan pull request, guna mendorong lingkungan pengembangan yang kolaboratif.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007403">Reaksi</a></h3>
-<ul>
-<li>Sendune adalah perancang email HTML sumber terbuka yang menekankan kesederhanaan dan kemudahan penggunaan, menghasilkan HTML murni untuk kompatibilitas dengan penyedia layanan email mana pun.</li>
-<li>Alat ini ringan, bebas dari ketergantungan, dan dapat dengan mudah disematkan dalam aplikasi, dengan pengguna dapat menyimpan output HTML sebagai template.</li>
-<li>Meskipun ada beberapa masalah yang dilaporkan terkait fungsionalitas seret dan lepas di Firefox, tanggapan dari komunitas tetap positif, dan kontribusi dapat dilakukan melalui GitHub.</li>
-</ul>
-<h2><a href="https://www.rfi.fr/en/international-news/20240718-seventh-person-likely-cured-of-hiv-doctors-announce">Pria Jerman berusia 60 tahun kemungkinan menjadi orang ketujuh yang berhasil sembuh dari HIV</a></h2>
-<ul>
-<li>Seorang pria Jerman berusia 60 tahun kemungkinan menjadi orang ketujuh yang berhasil sembuh dari HIV setelah menjalani transplantasi sel punca, yang juga mengobati leukemianya yang agresif.</li>
-<li>Pasien, yang disebut sebagai &quot;pasien Berlin berikutnya,&quot; berhenti mengonsumsi obat anti-retroviral pada akhir 2018 dan tetap bebas HIV dan kanker hampir enam tahun kemudian.</li>
-<li>Para peneliti merasa optimis dengan hati-hati, mencatat bahwa kasus ini menunjukkan bahwa tidak semua mutasi gen CCR5 diperlukan untuk pengobatan HIV yang berhasil, memberikan harapan untuk strategi penyembuhan HIV yang lebih luas.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40999098">Reaksi</a></h3>
-<ul>
-<li>Seorang pria Jerman berusia 60 tahun kemungkinan menjadi orang ketujuh yang berhasil sembuh dari HIV, meskipun prosedurnya drastis dan biasanya diperuntukkan bagi kasus leukemia yang parah.</li>
-<li>Ada saran untuk mengembangkan ini menjadi transplantasi sel punca autologus untuk menghindari komplikasi seperti penyakit graft-versus-host.</li>
-<li>Meskipun ada kemajuan dalam pengobatan HIV yang mengurangi jumlah virus hingga tidak terdeteksi, 10.000 orang masih meninggal karena AIDS setiap tahun di AS, sering kali karena pendidikan seksual dan akses perawatan kesehatan yang buruk.</li>
-</ul>
-<h2><a href="https://www.bbc.co.uk/news/live/cnk4jdwp49et">Pemadaman IT massal di seluruh dunia mempengaruhi maskapai penerbangan, media, dan bank</a></h2>
-<ul>
-<li>Perusahaan keamanan siber berbasis di Texas, Crowdstrike, yang didirikan pada tahun 2011, mengkhususkan diri dalam keamanan titik akhir untuk melindungi jaringan perusahaan dan data cloud dari ancaman siber.</li>
-<li>Koperasi yang didirikan bersama oleh George Kurtz dan Dmitri Alperovitch ini go public di Nasdaq pada tahun 2019.</li>
-<li>Perusahaan Crowdstrike telah berperan penting dalam menyelidiki serangan siber besar, terutama pelanggaran jaringan Komite Nasional Demokrat AS pada tahun 2016.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002730">Reaksi</a></h3>
-<ul>
-<li>Pemadaman IT global, yang dipicu oleh pembaruan Crowdstrike, menyebabkan sistem Windows mengalami layar biru dan loop booting, mempengaruhi maskapai penerbangan, media, dan bank.</li>
-<li>Insiden tersebut telah memicu diskusi tentang keandalan perangkat lunak perlindungan titik akhir, risiko serangan rantai pasokan, dan ketergantungan yang besar pada infrastruktur Windows.</li>
-<li>Pemadaman, yang berasal dari &quot;pembaruan keamanan,&quot; telah menimbulkan kekhawatiran signifikan tentang kedaulatan dan ketahanan infrastruktur TI.</li>
-</ul>
-<h2><a href="https://www.esa.int/Enabling_Support/Operations/Double_trouble_Gaia_hit_by_micrometeoroid_and_solar_storm">Masalah ganda: Gaia milik ESA terkena mikrometeoroid dan badai matahari</a></h2>
-<ul>
-<li>Pesawat luar angkasa Gaia milik ESA, yang diluncurkan pada Desember 2013 untuk memetakan lebih dari satu miliar bintang di Bima Sakti, baru-baru ini menghadapi tantangan signifikan akibat serangan mikrometeoroid dan badai matahari.</li>
-<li>Micrometeoroid merusak penutup pelindung Gaia, dan badai matahari menyebabkan kegagalan pada salah satu perangkat charge-coupled (CCD), yang mengakibatkan ribuan deteksi bintang palsu.</li>
-<li>Para insinyur dari ESA dan Airbus Defence and Space berhasil menyesuaikan perangkat lunak Gaia, mengurangi deteksi palsu dan mengembalikan pesawat luar angkasa tersebut ke operasi rutin, yang sekarang menghasilkan beberapa data berkualitas terbaiknya.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40999928">Reaksi</a></h3>
-<ul>
-<li>Pesawat luar angkasa Gaia milik ESA baru-baru ini mengalami kerusakan akibat mikrometeoroid dan badai matahari tetapi tetap melanjutkan misinya, menunjukkan ketahanan misi luar angkasa.</li>
-<li>Contoh-contoh historis seperti Voyager 1 dan Hubble menunjukkan bahwa misi luar angkasa sering kali melebihi masa hidup yang diharapkan melalui pembaruan perangkat lunak dan perbaikan.</li>
-<li>Meskipun ada keterbatasan anggaran dan tantangan teknis, dedikasi para insinyur telah memungkinkan Gaia untuk terus menghasilkan data berkualitas tinggi setelah penyesuaian terbaru.</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41004103">Apakah yang ada di dalam C-00000291*.sys?</a></h2>
-<ul>
-<li>Kegagalan sistem telah terjadi akibat file CrowdStrike C-00000291*.sys yang memiliki format tidak valid, yang mempengaruhi driver CrowdStrike.</li>
-<li>Pengguna melaporkan berbagai versi file, dengan beberapa berspekulasi tentang enkripsi dengan kunci khusus pelanggan, meskipun yang lain telah memparsenya tanpa dekripsi.</li>
-<li>Kumpulan file tersebut adalah format pembaruan eksklusif, bukan DLL atau patch, yang menimbulkan kekhawatiran tentang keamanan dan keandalan proses pembaruan CrowdStrike.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41004103">Reaksi</a></h3>
-<ul>
-<li>File CrowdStrike C-00000291*.sys telah menyebabkan kerusakan sistem karena format yang tidak valid, mempengaruhi driver utama CrowdStrike.</li>
-<li>Pengguna melaporkan berbagai versi file, dengan beberapa berspekulasi tentang enkripsi dengan kunci khusus pelanggan, meskipun yang lain telah memparsenya tanpa dekripsi.</li>
-<li>File-file tersebut adalah format pembaruan milik, bukan DLL atau patch biasa, yang menimbulkan kekhawatiran tentang keamanan dan keandalan proses pembaruan CrowdStrike.</li>
-</ul>
-<h2><a href="https://www.jpl.nasa.gov/news/nasas-curiosity-rover-discovers-a-surprise-in-a-martian-rock">Rover Curiosity milik NASA menemukan kejutan di sebuah batu Mars</a></h2>
-<ul>
-<li>Rover Curiosity milik NASA menemukan belerang elemental di Mars untuk pertama kalinya, sebuah tonggak penting dalam eksplorasi Mars.</li>
-<li>Penemuan tersebut dilakukan di daerah yang kaya akan sulfat, dengan Curiosity menemukan seluruh lapangan batuan terang yang terdiri dari belerang murni, yang menarik perhatian para ilmuwan.</li>
-<li>Curiosity menjalankan misinya, yang mencakup mempelajari medan kuno Mars untuk mencari tanda-tanda kehidupan mikroba, terus berlanjut saat ia mendaki Gunung Sharp, mengebor sampel batuan ke-41 untuk analisis lebih lanjut.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41006552">Reaksi</a></h3>
-<ul>
-<li>Kendaraan penjelajah Curiosity milik NASA menemukan kristal belerang di sebuah batu Mars, yang memicu perdebatan tentang penggunaan judul clickbait untuk menarik perhatian publik.</li>
-<li>Penemuan tersebut terjadi ketika Curiosity melintasi sebuah batu, memperlihatkan kristal-kristal tersebut, menyoroti pentingnya minat publik dan pendanaan untuk NASA.</li>
-<li>Diskusi tersebut juga membahas tantangan anggaran NASA dan pentingnya keterlibatan publik untuk kelangsungan operasi badan tersebut.</li>
-</ul>
-<h2><a href="https://www.sciencedaily.com/releases/2024/07/240715135713.htm">Kehilangan oksigen di danau dan lautan</a></h2>
-<ul>
-<li>Penelitian dari Rensselaer Polytechnic Institute menyoroti bahwa hilangnya oksigen di danau dan lautan menimbulkan ancaman signifikan bagi ekosistem, masyarakat, dan planet ini.</li>
-<li>Akuatik deoksigenasi, yang terkait dengan perubahan iklim, penggunaan lahan, dan polusi, telah menyebabkan penurunan cepat oksigen terlarut, dengan danau dan waduk kehilangan 5,5% dan 18,6% oksigen mereka sejak tahun 1980, dan lautan kehilangan sekitar 2% sejak tahun 1960.</li>
-<li>Deoksigenasi ini mempengaruhi fisiologi spesies, jaring makanan, dan layanan ekosistem, menciptakan &quot;zona mati&quot; dan ledakan alga berbahaya, sehingga diperlukan tindakan mendesak untuk mengatasi pemanasan global dan limpasan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007196">Reaksi</a></h3>
-<ul>
-<li>Kawasan danau dan waduk telah mengalami penurunan oksigen yang signifikan, dengan pengurangan masing-masing sebesar 5,5% dan 18,6% sejak tahun 1980, sementara lautan telah mengalami penurunan sekitar 2% sejak tahun 1960.</li>
-<li>California Tengah sangat terdampak, dengan penurunan kadar oksigen sebesar 40%, terutama disebabkan oleh emisi gas rumah kaca, limpasan nutrisi, dan limbah mentah.</li>
-<li>Solusi yang disarankan termasuk pertanian regeneratif dan mengurangi konsumsi daging industri untuk mengurangi dampak lingkungan yang lebih luas dari perubahan iklim dan polusi.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Pembaruan Crowdstrike: Layar Biru Windows dan Boot Loop" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Pembaruan%20Crowdstrike%3A%20Layar%20Biru%20Windows%20dan%20Boot%20Loop&subheading=Jumat%2C%2019%20Juli%202024%3A%20Ringkasan%20Berita%20Peretas" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/id/2024/07/19</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000Z</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

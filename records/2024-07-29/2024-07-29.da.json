@@ -1,0 +1,331 @@
+[
+  {
+    "id": 41095530,
+    "title": "Microsoft teknisk gennemgang af CrowdStrike-hændelse",
+    "originLink": "https://www.microsoft.com/en-us/security/blog/2024/07/27/windows-security-best-practices-for-integrating-and-managing-security-tools/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095530",
+    "commentBody": "",
+    "originSummary": [
+      "Windows tilbyder fleksible sikkerhedsindstillinger, herunder integrerede funktioner og tredjepartsværktøjer, for at forbedre sikkerheden og pålideligheden for virksomheder.",
+      "En nylig CrowdStrike-nedetid blev sporet til et hukommelsessikkerhedsproblem i CSagent-driveren, hvilket understreger vigtigheden af robust styring af kerne-drivere.",
+      "Microsoft samarbejder med tredjepartsleverandører gennem Microsoft Virus Initiative (MVI) for at sikre kvaliteten og pålideligheden af sikkerhedsprodukter, med fokus på reduceret kerneafhængighed og forbedret brugerbeskyttelse."
+    ],
+    "commentSummary": [
+      "Microsofts analyse af CrowdStrike-hændelsen understreger behovet for at modernisere sikkerhedstilgange og reducere afhængigheden af kerne-drivere til at få adgang til kritiske sikkerhedsdata.",
+      "Den hændelse har ført til debatter om CrowdStrikes kvalitetskontrolpraksis og om Microsoft bør begrænse kerneadgang for tredjepartsleverandører, en foranstaltning tidligere blokeret af EU for fair konkurrence.",
+      "Situationen fremhæver de potentielle fordele ved at flytte flere sikkerhedsfunktioner til brugertilstand med henblik på forbedrede udrulningspraksisser og pålidelighed."
+    ],
+    "points": 372,
+    "commentCount": 372,
+    "retryCount": 0,
+    "time": 1722196542
+  },
+  {
+    "id": 41095790,
+    "title": "tolower() med AVX-512",
+    "originLink": "https://dotat.at/@/2024-07-28-tolower-avx512.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095790",
+    "commentBody": "",
+    "originSummary": [
+      "Artiklen diskuterer brugen af SIMD (Single Instruction, Multiple Data) instruktioner til effektiv strengbehandling, med særligt fokus på tolower() funktionen i Rust.",
+      "Forfatteren eksperimenterede med AVX-512-BW på en AMD Zen 4-processor og opnåede høj ydeevne for både lange og korte strenge ved hjælp af maskerede indlæsninger og lagringer.",
+      "Resultaterne viste, at AVX-512-BW er særligt effektiv til at håndtere korte strenge, hvilket giver en jævn og hurtig ydeevne uden de problemer, der ses i autovektoriseret kode."
+    ],
+    "commentSummary": [
+      "Tricket \"unsafe read beyond of death\" i Rust og LLVM betragtes som udefineret adfærd, hvilket fører til potentielle compiler-optimeringer, der antager, at det ikke forekommer, hvilket forårsager uventede resultater.",
+      "Inline assembly er i øjeblikket den eneste løsning, med alternativer som maskeret justeret load-intrinsics og frysning af loads, der foreslås.",
+      "Debatten om håndtering af out-of-bounds læsninger fortsætter, med nogle der går ind for implementeringsdefineret adfærd, og AVX-512's maskerede operationer bemærkes for deres ydeevnefordele trods begrænset adoption på grund af Intels markedssegmentering."
+    ],
+    "points": 241,
+    "commentCount": 118,
+    "retryCount": 0,
+    "time": 1722199139
+  },
+  {
+    "id": 41097241,
+    "title": "ps aux skrevet i bash uden forking",
+    "originLink": "https://github.com/izabera/ps",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41097241",
+    "commentBody": "",
+    "originSummary": [
+      "Et interviewspørgsmål til en bash/Linux-stilling kan involvere håndtering af en situation, hvor alle proces-ID'er (PIDs) er taget, hvilket forhindrer nye processer i at blive oprettet.",
+      "Et værktøj nævnes, der kan efterligne en fungerende `ps aux`-kommando i sådanne scenarier, humoristisk hævdende universel kompatibilitet."
+    ],
+    "commentSummary": [
+      "Diskussionen på GitHub drejer sig om udfordringen ved at justere kolonner i programmering, med fokus på at bruge Pythons f-strenge og polstring til dette formål.",
+      "Brugere foreslår alternative værktøjer og formater, såsom YAML for enklere datahåndtering, og nævner værktøjer som Octopus Deploy og Docker CLI til JSON-output.",
+      "Tråden omhandler også håndtering af PID (Process ID) udmattelse i bash, med anbefalinger som at bruge /proc/[pid]/-mappen og `exec Python` for bedre processtyring."
+    ],
+    "points": 214,
+    "commentCount": 81,
+    "retryCount": 0,
+    "time": 1722215457
+  },
+  {
+    "id": 41095839,
+    "title": "En fodbold/fodboldafleveringsvisualisator lavet med Three.js",
+    "originLink": "https://statsbomb-3d-viz.vercel.app/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095839",
+    "commentBody": "",
+    "originSummary": [
+      "En visualiseringsværktøj til fodboldafleveringer er blevet udviklet ved hjælp af StatsBombs åbne data, som er et omfattende datasæt til fodboldanalyse.",
+      "Værktøjet giver brugerne mulighed for at analysere og visualisere afleveringsmønstre med filtre for afleveringsafstand, hold og individuelle spillere.",
+      "Denne udvikling fremhæver den voksende tendens til at udnytte åbne data til avanceret sportsanalyse og visualisering."
+    ],
+    "commentSummary": [
+      "En fodboldpasningsvisualisator ved hjælp af Three.js udnytter åbne data fra StatsBomb til at analysere og visualisere pasningsmønstre, hvilket giver brugerne mulighed for at filtrere efter pasningsafstand, hold og spillere.",
+      "Fællesskabets feedback inkluderer forslag til højere niveau visualiseringsværktøjer som deck.gl eller kepler.gl, og funktioner som tidsbaserede animationer og varmekort for bedre analyse.",
+      "Brugere har rapporteret problemer som CORS-fejl og vanskeligheder med filindlæsning, hvilket indikerer områder med potentiale for forbedring af brugeroplevelsen og fejlhåndteringen."
+    ],
+    "points": 176,
+    "commentCount": 34,
+    "retryCount": 0,
+    "time": 1722199517
+  },
+  {
+    "id": 41099901,
+    "title": "Flytbare træ-CRDT'er og Loro's implementering",
+    "originLink": "https://loro.dev/blog/movable-tree",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41099901",
+    "commentBody": "",
+    "originSummary": [
+      "Artiklen diskuterer udfordringerne ved implementering af Movable Tree CRDT'er (Conflict-free Replicated Data Types) i samarbejdsmiljøer og hvordan Loro tackler disse problemer, herunder sortering af børnenoder.",
+      "Loro's implementering bruger algoritmen fra \"A highly-available move operation for replicated trees\" og integrerer Fractional Index-algoritmen til sortering, håndtering af konflikter med unikke PeerIDs og jitter.",
+      "Lors tilgang understøtter realtids-samarbejde og historiske versionsudtjekninger, hvilket viser høj ydeevne i forskellige scenarier, hvilket gør det velegnet til produktionsbrug i samarbejdsapplikationer."
+    ],
+    "commentSummary": [
+      "Flytbare træ-CRDT'er (Conflict-free Replicated Data Types) og Loro's implementering får opmærksomhed for deres evne til at håndtere komplekse træoperationer i samarbejdsmiljøer.",
+      "Udviklere diskuterer praktiske anvendelser, såsom React Table Library til håndtering af store hierarkiske datastrukturer og Thymers multiplayer-editor til opgaver og noter.",
+      "Diskussionen fremhæver udfordringerne og løsningerne ved brug af CRDT'er til forskellige datatyper, herunder tekst, billeder og 3D-modeller, og understreger vigtigheden af effektiv synkronisering og konfliktløsning."
+    ],
+    "points": 175,
+    "commentCount": 23,
+    "retryCount": 0,
+    "time": 1722255899
+  },
+  {
+    "id": 41096486,
+    "title": "LeanDojo: Teorembevisning i Lean ved brug af LLM'er",
+    "originLink": "https://leandojo.org/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41096486",
+    "commentBody": "",
+    "originSummary": [
+      "LeanDojo introducerer Lean Copilot, som gør det muligt for sprogmodeller (LLMs) at assistere i Lean bevisautomatisering ved at foreslå taktikker og søge efter beviser.",
+      "ReProver-modellen, der bruger en encoder-decoder Transformer, henter præmisser fra matematikbiblioteket og genererer den næste taktik, hvilket overgår Leans indbyggede bevisautomatisering.",
+      "LeanDojo's datasæt inkluderer omfattende benchmarks og detaljerede annoteringer, hvilket sikrer, at modeller kan generalisere til teoremer med nye forudsætninger og opdage nye beviser."
+    ],
+    "commentSummary": [
+      "LeanDojo er et nyt initiativ, der integrerer Lean, en bevisassistent, med store sprogmodeller (LLMs) for at forbedre evnerne til at bevise teoremer.",
+      "Projektet sigter mod at bygge bro mellem ikke-eksekverbar matematisk notation og eksekverbar kode, hvilket potentielt kan hjælpe med komplekse matematiske problemer som stokastiske differentialligninger.",
+      "Denne udvikling er betydningsfuld, da den kan forbedre pålideligheden og effektiviteten af formel verifikation i kritiske applikationer, såsom høj-sikkerhedssystemer og automatiseret teorembevisning."
+    ],
+    "points": 155,
+    "commentCount": 47,
+    "retryCount": 0,
+    "time": 1722206076
+  },
+  {
+    "id": 41100958,
+    "title": "Overfakturerer Cloudflare os for deres billedtjeneste?",
+    "originLink": "http://jpetazzo.github.io/2024/07/26/cloudflare-images-overcharge-billing/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41100958",
+    "commentBody": "",
+    "originSummary": [
+      "Cloudflare Images' blandede faktureringsmodel, der kombinerer forudbetalt lagerplads og efterbetalt levering, førte til uventet høje og forvirrende fakturaer for EphemeraSearch, som nogle gange oversteg $400 i stedet for de forventede $110.",
+      "Trods flere kontakter med Cloudflare support over otte måneder blev der ikke fundet en løsning, hvilket førte til et skift til mere omkostningseffektive løsninger som S3 eller dedikerede servere.",
+      "Denne oplevelse understreger vigtigheden af effektivt forbrug for indieprojekter med lav indtjening og fremhæver, at selvom Cloudflare Images tilbyder en kvalitetsservice, er dens faktureringsmodel måske ikke egnet for alle brugere."
+    ],
+    "commentSummary": [
+      "Bekymringer er blevet rejst om, at Cloudflare potentielt overopkræver for deres billedtjeneste, med brugere, der rapporterer uoverensstemmelser mellem forventede og faktiske omkostninger.",
+      "Der bliver lavet sammenligninger med andre tjenester som Amazon S3, Bunny CDN og Cloudflare R2, som opfattes som mere omkostningseffektive alternativer.",
+      "Cloudflares faktureringspraksis og kundesupport er blevet gransket, da nogle brugere oplever komplicerede faktureringscyklusser og uventede gebyrer."
+    ],
+    "points": 137,
+    "commentCount": 73,
+    "retryCount": 0,
+    "time": 1722264957
+  },
+  {
+    "id": 41098141,
+    "title": "At forstå designet af Super Nintendo-videosystemet",
+    "originLink": "https://fabiensanglard.net/snes_video/index.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41098141",
+    "commentBody": "",
+    "originSummary": [
+      "Fabien Sanglards udforskning af Super Nintendo (SNES) videosystemet fremhæver de designbeslutninger, som Nintendo-ingeniørerne traf i 1989 for at sikre kompatibilitet med CRT-tv'er og NTSC-standarder.",
+      "SNES brugte en hovedur på 21,47727 MHz, delt for at opnå en dot-ur på 5,3693175 MHz, hvilket resulterede i 341 prikker pr. linje og en opdateringshastighed på 60,098 Hz, med vandrette og lodrette blankingsperioder for at undgå artefakter.",
+      "SNES understøttede både NTSC- og PAL-standarder, leverede komposit- og S-Video-udgange og kunne fordoble vertikale og horisontale opløsninger til specifikke applikationer, på trods af udfordringer som flimmer."
+    ],
+    "commentSummary": [
+      "Indlægget diskuterer designet og arkitekturen af Super Nintendo Entertainment System (SNES) og fremhæver dets tekniske specifikationer og historiske kontekst.",
+      "Vigtige punkter inkluderer SNES's opløsningsmuligheder, virkningen af forskellige TV-standarder (NTSC vs. PAL) på gameplay, og brugen af CRT'er (katodestrålerør) i arkadespil og hjemme-konsoller.",
+      "Diskussionen berører også brugen af SCART-stik i europæiske tv'er og udfordringerne ved nøjagtigt at emulere SNES'ens videooutput."
+    ],
+    "points": 134,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1722231398
+  },
+  {
+    "id": 41095814,
+    "title": "Foretræk ikke blindt `emplace_back` frem for `push_back` (2021)",
+    "originLink": "https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095814",
+    "commentBody": "",
+    "originSummary": [
+      "Værktøjer som clang-tidy og PVS-Studio kan markere `push_back` som \"dårlig stil\" og foreslå `emplace_back`, men denne ændring er ikke altid gavnlig.",
+      "emplace_back bør bruges for at undgå at skabe midlertidige objekter, men det er ikke relateret til flyttesemantik og kan stadig resultere i kopier, hvis det ikke bruges korrekt.",
+      "Foretræk `push_back` for enkelhed og hurtigere kompileringstider, og brug kun `emplace_back`, når det er nødvendigt for ikke-flytbare typer eller for at undgå midlertidige objekter."
+    ],
+    "commentSummary": [
+      "Diskussionen drejer sig om brugen af `emplace_back` versus `push_back` i C++ til at tilføje elementer til containere som vektorer.",
+      "emplace_back konstruerer et objekt på stedet, hvilket potentielt undgår unødvendige kopier, mens push_back tilføjer et allerede konstrueret objekt til beholderen.",
+      "Dialogen fremhæver, at selvom `emplace_back` kan være mere effektiv, er den også mere kompleks, og `push_back` kan være at foretrække til daglig brug, medmindre de specifikke fordele ved `emplace_back` er nødvendige."
+    ],
+    "points": 134,
+    "commentCount": 100,
+    "retryCount": 0,
+    "time": 1722199323
+  },
+  {
+    "id": 41096187,
+    "title": "Højere-kinded begrænset polymorfisme i OCaml (2021)",
+    "originLink": "https://okmij.org/ftp/ML/higher-kind-poly.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41096187",
+    "commentBody": "",
+    "originSummary": [
+      "Højere-ordnet polymorfisme, som abstraherer over typekonstruktører, er afgørende for generiske operationer over samlinger og indlejring af typede domænespecifikke sprog (DSL'er).",
+      "OCaml understøtter ikke højere-kinded polymorfisme som standard på grund af problemer med typealiasering, men det kan simuleres ved hjælp af funktorer, defunktionalisering og initiale algebraer.",
+      "Forskellige metoder, herunder funktorabstraktion og reduktion til almindelig polymorfisme, muliggør opnåelse af højere-ordens polymorfisme i OCaml, selvom det nogle gange måske ikke er nødvendigt."
+    ],
+    "commentSummary": [
+      "Diskussion om højere-slags begrænset polymorfi i OCaml, med fokus på typealiaser og type lighedsproblemer, som fører til højere-ordens foreningsproblemer.",
+      "Den praktiske håndterbarhed af disse emner fremhæves, med henvisninger til Idris-sproget og András Kovács' \"Elaboration Zoo\" tutorial for yderligere læring.",
+      "Afklaring af OCaml's GADT (Generalized Abstract Data Types) syntaks, med sammenligninger til F#, som i øjeblikket mangler GADT-understøttelse."
+    ],
+    "points": 132,
+    "commentCount": 9,
+    "retryCount": 0,
+    "time": 1722202847
+  },
+  {
+    "id": 41098488,
+    "title": "Børn bør have lov til at kede sig, siger ekspert (2013)",
+    "originLink": "https://www.bbc.com/news/education-21895704",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41098488",
+    "commentBody": "",
+    "originSummary": [
+      "Dr. Teresa Belton, en uddannelsesekspert, hævder, at det er afgørende for at fremme kreativitet at lade børn opleve kedsomhed, da konstant aktivitet kan hæmme fantasien.",
+      "Interviews med kreative som forfatteren Meera Syal og kunstneren Grayson Perry afslører, at kedsomhed spillede en betydelig rolle i deres kreative udvikling, hvor Perry beskriver det som en \"kreativ tilstand.\"",
+      "Dr. Belton understreger, at samfundets forventning om konstant stimulering forhindrer børn i at udvikle intern kreativitet, og han går ind for 'stå-og-stirre' tid væk fra skærme for at stimulere fantasien."
+    ],
+    "commentSummary": [
+      "En ekspert foreslår, at børn bør have lov til at opleve kedsomhed, da det kan fremme kreativitet og selvstændighed.",
+      "Når de reflekterer over tidligere barndomserfaringer, husker brugerne, at de deltog i risikable, men socialt berigende aktiviteter, i modsætning til nutidens børns skærmbaserede overstimulering.",
+      "Diskussionen understreger balancen mellem kedsomhed og sikkerhed og går ind for overvågede miljøer, hvor børn kan udforske og udvikle sig."
+    ],
+    "points": 113,
+    "commentCount": 160,
+    "retryCount": 0,
+    "time": 1722237432
+  },
+  {
+    "id": 41100820,
+    "title": "Yark: YouTube-arkiver med offline brugergrænseflade",
+    "originLink": "https://github.com/Owez/yark",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41100820",
+    "commentBody": "",
+    "originSummary": [
+      "Yark forenkler arkivering af YouTube med nem installation og administrationskommandoer, kræver Python 3.9+ og eventuelt FFmpeg.",
+      "Brugere kan oprette, opdatere og se arkiver, som er gemt i en mappebaseret struktur med metadata, videoer og miniaturebilleder.",
+      "Værktøjet understøtter offline visning med lys- og mørketilstande og tillader funktionsforslag via repositoryens issues-fane."
+    ],
+    "commentSummary": [
+      "Yark er en YouTube-arkiver med en offline brugergrænseflade, designet til at hjælpe brugere med at gemme YouTube-indhold lokalt.",
+      "Brugere diskuterer lignende værktøjer til Twitch og fremhæver udfordringer som streaming af store MP4-filer og håndtering af HTTP-serveranmodninger for filer med specialtegn.",
+      "Diskussionen indeholder tekniske detaljer om streaming, såsom vigtigheden af, at servere understøtter rækkeforespørgsler for at undgå bufferproblemer, med anbefalinger om at bruge VLC eller Nginx til praktisk brug."
+    ],
+    "points": 103,
+    "commentCount": 5,
+    "retryCount": 0,
+    "time": 1722263847
+  },
+  {
+    "id": 41098974,
+    "title": "MeTube: Selvhostet YouTube-downloader",
+    "originLink": "https://github.com/alexta69/metube",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41098974",
+    "commentBody": "",
+    "originSummary": [
+      "De nye Node-versioner understøtter ikke længere 32-bit ARM-bygninger; brugere skal migrere til et 64-bit operativsystem for opdateringer.",
+      "En web-GUI til youtube-dl (yt-dlp fork) er nu tilgængelig, understøtter download af playlister fra YouTube og andre sider, og kan køres ved hjælp af Docker eller docker-compose.",
+      "Konfigurationsmuligheder inkluderer miljøvariabler for bruger-ID, gruppe-ID, download-mapper og mere, med standardindstillinger for nem opsætning."
+    ],
+    "commentSummary": [
+      "MeTube er en selvhostet YouTube-downloader, der bruger yt-dlp, et populært kommandolinjeværktøj til at downloade videoer fra YouTube.",
+      "Projektet leverer en brugergrænseflade (UI) til yt-dlp, hvilket gør det tilgængeligt for brugere, der foretrækker en grafisk front-end frem for kommandolinjeoperationer.",
+      "Diskussionen fremhæver forskellige alternativer og relaterede værktøjer, såsom Celluloid, Parabolic og Tube Archivist, som tilbyder lignende funktionaliteter til forskellige platforme og anvendelsestilfælde."
+    ],
+    "points": 93,
+    "commentCount": 37,
+    "retryCount": 0,
+    "time": 1722243581
+  },
+  {
+    "id": 41097228,
+    "title": "Teknologien bag Planetary Annihilation: ChronoCam (2013)",
+    "originLink": "https://www.forrestthewoods.com/blog/tech_of_planetary_annihilation_chrono_cam/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41097228",
+    "commentBody": "",
+    "originSummary": [
+      "Planetary Annihilation, et realtidsstrategispil fra Uber Entertainment, er gået ind i beta og byder på innovative teknologier som proceduremæssig planetgenerering og spil med 40 spillere.",
+      "Spillet introducerer ChronoCam, et unikt replay-system, der giver spillere mulighed for at springe tilbage i tiden, spille i slow/fast motion og se spillets verden fra forskellige tidspunkter, selv under live-spil.",
+      "Ved at anvende en klient-server-arkitektur minimerer ChronoCam båndbreddeforbruget ved at repræsentere spildata som kurver og understøtter robuste replay-funktioner, hvilket forbedrer anti-snyd-foranstaltninger og online fællesskabsengagement."
+    ],
+    "commentSummary": [
+      "Planetary Annihilation, et realtidsstrategispil (RTS), indeholdt en unik tidsmanipuleringsmekanik kaldet ChronoCam, som gjorde det muligt for spillere at gennemgå og interagere med tidligere spiltilstande.",
+      "Spillet blev oprindeligt finansieret gennem en meget succesfuld Kickstarter-kampagne, der indsamlede 2,2 millioner dollars, men stod over for udfordringer på grund af dets ambitiøse design, herunder flere sfæriske slagmarker.",
+      "På trods af indledende kritik modtog spillets efterfølger, Planetary Annihilation: Titans, positive anmeldelser på Steam, hvor udviklernes tekniske præstationer og innovative motordesign blev fremhævet."
+    ],
+    "points": 85,
+    "commentCount": 28,
+    "retryCount": 0,
+    "time": 1722215260
+  },
+  {
+    "id": 41095429,
+    "title": "SD-kort slidudjævning og oversættelseslag (2014)",
+    "originLink": "https://msreekan.com/2014/01/15/sdcard/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095429",
+    "commentBody": "",
+    "originSummary": [
+      "SD-kort bruger NAND MLC (Multi-Level Cell) eller SLC (Single-Level Cell) flashhukommelse, som abstraherer kompleksiteter som blok-sletninger og slidudjævning.",
+      "Kortet registrerer, om det skal bruge SPI (Serial Peripheral Interface) eller SD-bus ved spændingsforsyning og initierer den passende softwarestak, hvilket fuldfører opstartsprocessen, når softwaren går ind i overførselstilstanden.",
+      "Et oversættelseslag kortlægger virtuelle til fysiske adresser, optimerer skriveydelsen med sammenhængende skrivninger og håndterer overhead for tilfældige skrivninger på tværs af allokeringsenheder (AUs), typisk 4 MB i størrelse."
+    ],
+    "commentSummary": [
+      "Ved en konference fremhævede en anekdote om demontering af ødelagte SD-kort en fejl i wear leveling, der forårsagede, at firmwaren delvist blev overskrevet, hvilket udløste diskussioner om SD-kortets pålidelighed.",
+      "Brugere delte erfaringer med SD-kortfejl og datagendannelse og bemærkede, at tættere hukommelseskort er mere tilbøjelige til problemer, mens industrikort, selvom de er mindre, er mere holdbare.",
+      "Forslag til forbedring af SD-kortets pålidelighed omfattede bedre software til skriveaggregering og slidudjævning samt selvpartitionerende SD-kort til at håndtere slidte blokke."
+    ],
+    "points": 84,
+    "commentCount": 55,
+    "retryCount": 0,
+    "time": 1722195380
+  }
+]

@@ -1,0 +1,331 @@
+[
+  {
+    "id": 41095530,
+    "title": "Penjelasan teknis Microsoft tentang insiden CrowdStrike",
+    "originLink": "https://www.microsoft.com/en-us/security/blog/2024/07/27/windows-security-best-practices-for-integrating-and-managing-security-tools/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095530",
+    "commentBody": "",
+    "originSummary": [
+      "Windows menawarkan opsi keamanan yang fleksibel, termasuk fitur terintegrasi dan alat pihak ketiga, untuk meningkatkan keamanan dan keandalan bagi bisnis.",
+      "Pemadaman CrowdStrike baru-baru ini dilacak ke masalah keamanan memori di driver CSagent, menyoroti pentingnya manajemen driver kernel yang kuat.",
+      "Microsoft berkolaborasi dengan vendor pihak ketiga melalui Microsoft Virus Initiative (MVI) untuk memastikan kualitas dan keandalan produk keamanan, dengan menekankan pengurangan ketergantungan kernel dan peningkatan perlindungan mode pengguna."
+    ],
+    "commentSummary": [
+      "Analisis Microsoft terhadap insiden CrowdStrike menekankan perlunya memodernisasi pendekatan keamanan dan mengurangi ketergantungan pada driver kernel untuk mengakses data keamanan yang kritis.",
+      "Insiden tersebut telah memicu perdebatan tentang praktik jaminan kualitas CrowdStrike dan apakah Microsoft seharusnya membatasi akses kernel untuk vendor pihak ketiga, sebuah langkah yang sebelumnya diblokir oleh Uni Eropa demi persaingan yang adil.",
+      "Situasi ini menyoroti potensi manfaat dari mengalihkan lebih banyak fungsi keamanan ke mode pengguna, dengan tujuan untuk meningkatkan praktik peluncuran dan keandalan."
+    ],
+    "points": 372,
+    "commentCount": 372,
+    "retryCount": 0,
+    "time": 1722196542
+  },
+  {
+    "id": 41095790,
+    "title": "tolower() dengan AVX-512",
+    "originLink": "https://dotat.at/@/2024-07-28-tolower-avx512.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095790",
+    "commentBody": "",
+    "originSummary": [
+      "Artikel tersebut membahas penggunaan instruksi SIMD (Single Instruction, Multiple Data) untuk pemrosesan string yang efisien, khususnya dengan fokus pada fungsi tolower() dalam Rust.",
+      "Penulis bereksperimen dengan AVX-512-BW pada prosesor AMD Zen 4, mencapai kinerja tinggi untuk string panjang dan pendek menggunakan masked loads dan stores.",
+      "Hasilnya menunjukkan bahwa AVX-512-BW sangat efektif untuk menangani string pendek, memberikan kinerja yang mulus dan cepat tanpa masalah yang terlihat pada kode autovektorisasi."
+    ],
+    "commentSummary": [
+      "Trik \"unsafe read beyond of death\" dalam Rust dan LLVM dianggap sebagai perilaku yang tidak terdefinisi, yang mengarah pada optimisasi kompilator yang mengasumsikan bahwa hal tersebut tidak terjadi, sehingga menyebabkan hasil yang tidak terduga.",
+      "Assembly inline saat ini adalah satu-satunya solusi sementara, dengan alternatif seperti intrinsics pemuatan sejajar bertopeng dan pemuatan beku yang disarankan.",
+      "Kemungkinan penanganan pembacaan di luar batas terus diperdebatkan, dengan beberapa pihak mendukung perilaku yang ditentukan oleh implementasi, dan operasi bertopeng AVX-512 dicatat memiliki manfaat kinerja meskipun adopsinya terbatas karena segmentasi pasar oleh Intel."
+    ],
+    "points": 241,
+    "commentCount": 118,
+    "retryCount": 0,
+    "time": 1722199139
+  },
+  {
+    "id": 41097241,
+    "title": "ps aux ditulis dalam bash tanpa forking",
+    "originLink": "https://github.com/izabera/ps",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41097241",
+    "commentBody": "",
+    "originSummary": [
+      "Pertanyaan wawancara untuk posisi bash/Linux mungkin melibatkan penanganan situasi di mana semua ID Proses (PID) telah digunakan, mencegah proses baru untuk dijalankan.",
+      "Alat yang disebutkan dapat meniru perintah `ps aux` yang berfungsi dalam skenario semacam itu, dengan humor mengklaim kompatibilitas universal."
+    ],
+    "commentSummary": [
+      "Kajian di GitHub berpusat pada tantangan menyelaraskan kolom dalam pemrograman, dengan fokus pada penggunaan f-string dan padding Python untuk tujuan ini.",
+      "Pengguna menyarankan alat dan format alternatif, seperti YAML untuk penanganan data yang lebih sederhana, dan menyebutkan utilitas seperti Octopus Deploy dan Docker CLI untuk keluaran JSON.",
+      "Kutipan tersebut juga membahas penanganan kehabisan PID (Process ID) di bash, dengan rekomendasi seperti menggunakan direktori /proc/[pid]/ dan `exec Python` untuk manajemen proses yang lebih baik."
+    ],
+    "points": 214,
+    "commentCount": 81,
+    "retryCount": 0,
+    "time": 1722215457
+  },
+  {
+    "id": 41095839,
+    "title": "Kalkulator umpan sepak bola yang dibuat dengan Three.js",
+    "originLink": "https://statsbomb-3d-viz.vercel.app/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095839",
+    "commentBody": "",
+    "originSummary": [
+      "Kalkulator umpan sepak bola telah dikembangkan menggunakan data terbuka dari StatsBomb, yang merupakan kumpulan data kaya untuk analitik sepak bola.",
+      "Alat ini memungkinkan pengguna untuk menganalisis dan memvisualisasikan pola umpan, dengan filter untuk jarak umpan, tim, dan pemain individu.",
+      "Perkembangan ini menyoroti tren yang semakin meningkat dalam memanfaatkan data terbuka untuk analitik olahraga canggih dan visualisasi."
+    ],
+    "commentSummary": [
+      "Kalkulator umpan sepak bola menggunakan Three.js memanfaatkan data terbuka dari StatsBomb untuk menganalisis dan memvisualisasikan pola umpan, memungkinkan pengguna untuk memfilter berdasarkan jarak umpan, tim, dan pemain.",
+      "Komentar dari komunitas mencakup saran untuk alat visualisasi tingkat tinggi seperti deck.gl atau kepler.gl, serta fitur-fitur seperti animasi berbasis waktu dan peta panas untuk analisis yang lebih baik.",
+      "Pengguna telah melaporkan masalah seperti kesalahan CORS dan kesulitan dalam memuat file, yang menunjukkan area untuk peningkatan potensial dalam pengalaman pengguna dan penanganan kesalahan."
+    ],
+    "points": 176,
+    "commentCount": 34,
+    "retryCount": 0,
+    "time": 1722199517
+  },
+  {
+    "id": 41099901,
+    "title": "CRDT pohon yang dapat dipindahkan dan implementasi Loro",
+    "originLink": "https://loro.dev/blog/movable-tree",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41099901",
+    "commentBody": "",
+    "originSummary": [
+      "Artikel tersebut membahas tantangan dalam menerapkan Movable Tree CRDTs (Conflict-free Replicated Data Types) di lingkungan kolaboratif dan bagaimana Loro mengatasi masalah-masalah ini, termasuk pengurutan node anak.",
+      "Kode implementasi Loro menggunakan algoritma dari \"A highly-available move operation for replicated trees\" dan mengintegrasikan algoritma Fractional Index untuk pengurutan, menangani konflik dengan PeerID unik dan jitter.",
+      "Loro's approach mendukung kolaborasi waktu nyata dan pemeriksaan versi historis, menunjukkan kinerja tinggi dalam berbagai skenario, menjadikannya cocok untuk digunakan dalam aplikasi kolaboratif."
+    ],
+    "commentSummary": [
+      "CRDT pohon yang dapat dipindahkan (Conflict-free Replicated Data Types) dan implementasi Loro semakin mendapat perhatian karena kemampuannya dalam menangani operasi pohon yang kompleks di lingkungan kolaboratif.",
+      "Para pengembang sedang mendiskusikan aplikasi praktis, seperti React Table Library untuk mengelola struktur data hierarkis yang besar dan editor multipemain Thymer untuk tugas dan catatan.",
+      "Kami percakapan menyoroti tantangan dan solusi dalam menggunakan CRDT untuk berbagai jenis data, termasuk teks, gambar, dan model 3D, dengan menekankan pentingnya sinkronisasi yang efisien dan resolusi konflik."
+    ],
+    "points": 175,
+    "commentCount": 23,
+    "retryCount": 0,
+    "time": 1722255899
+  },
+  {
+    "id": 41096486,
+    "title": "LeanDojo: Pembuktian Teorema di Lean Menggunakan LLMs",
+    "originLink": "https://leandojo.org/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41096486",
+    "commentBody": "",
+    "originSummary": [
+      "LeanDojo memperkenalkan Lean Copilot, memungkinkan Model Bahasa (LLMs) untuk membantu dalam otomatisasi pembuktian Lean dengan menyarankan taktik dan mencari bukti.",
+      "Model ReProver, menggunakan Transformer encoder-decoder, mengambil premis dari perpustakaan matematika dan menghasilkan taktik berikutnya, melampaui otomatisasi pembuktian bawaan Lean.",
+      "Dataset LeanDojo mencakup tolok ukur yang luas dan anotasi yang terperinci, memastikan model dapat menggeneralisasi ke teorema dengan premis baru dan menemukan bukti baru."
+    ],
+    "commentSummary": [
+      "LeanDojo adalah inisiatif baru yang mengintegrasikan Lean, sebuah asisten pembuktian, dengan Model Bahasa Besar (LLM) untuk meningkatkan kemampuan pembuktian teorema.",
+      "Proyek ini bertujuan untuk menjembatani kesenjangan antara notasi matematika yang tidak dapat dieksekusi dan kode yang dapat dieksekusi, yang berpotensi membantu dalam masalah matematika kompleks seperti persamaan diferensial stokastik.",
+      "Perkembangan ini signifikan karena dapat meningkatkan keandalan dan efisiensi verifikasi formal dalam aplikasi kritis, seperti sistem keamanan tinggi dan pembuktian teorema otomatis."
+    ],
+    "points": 155,
+    "commentCount": 47,
+    "retryCount": 0,
+    "time": 1722206076
+  },
+  {
+    "id": 41100958,
+    "title": "Apakah Cloudflare membebankan biaya berlebihan kepada kami untuk layanan gambar mereka?",
+    "originLink": "http://jpetazzo.github.io/2024/07/26/cloudflare-images-overcharge-billing/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41100958",
+    "commentBody": "",
+    "originSummary": [
+      "Model penagihan campuran Cloudflare Images, yang menggabungkan penyimpanan prabayar dan pengiriman pascabayar, menyebabkan tagihan yang tidak terduga tinggi dan membingungkan bagi EphemeraSearch, kadang-kadang melebihi $400 dibandingkan dengan yang diharapkan $110.",
+      "Meskipun telah melakukan beberapa kali kontak dengan dukungan Cloudflare selama delapan bulan, tidak ada solusi yang diberikan, yang mendorong beralih ke solusi yang lebih hemat biaya seperti S3 atau server khusus.",
+      "Pengalaman ini menekankan pentingnya pengeluaran yang efisien untuk proyek indie dengan pendapatan rendah, menunjukkan bahwa meskipun Cloudflare Images menawarkan layanan berkualitas, model penagihannya mungkin tidak cocok untuk semua pengguna."
+    ],
+    "commentSummary": [
+      "Kekhawatiran telah muncul tentang kemungkinan Cloudflare mengenakan biaya berlebihan untuk layanan Images mereka, dengan pengguna melaporkan adanya perbedaan antara biaya yang diharapkan dan biaya aktual.",
+      "Perbandingan sedang dilakukan dengan layanan lain seperti Amazon S3, Bunny CDN, dan Cloudflare R2, yang dianggap sebagai alternatif yang lebih hemat biaya.",
+      "Praktik penagihan dan dukungan pelanggan Cloudflare telah menjadi sorotan, dengan beberapa pengguna mengalami siklus penagihan yang rumit dan biaya tak terduga."
+    ],
+    "points": 137,
+    "commentCount": 73,
+    "retryCount": 0,
+    "time": 1722264957
+  },
+  {
+    "id": 41098141,
+    "title": "Memahami desain sistem video Super Nintendo",
+    "originLink": "https://fabiensanglard.net/snes_video/index.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41098141",
+    "commentBody": "",
+    "originSummary": [
+      "Penjelajahan Fabien Sanglard tentang sistem video Super Nintendo (SNES) menyoroti keputusan desain yang dibuat oleh insinyur Nintendo pada tahun 1989 untuk memastikan kompatibilitas dengan TV CRT dan standar NTSC.",
+      "Konsol SNES menggunakan master clock sebesar 21.47727MHz, yang dibagi untuk mencapai dot clock sebesar 5.3693175MHz, menghasilkan 341 titik per baris dan refresh rate sebesar 60.098Hz, dengan periode blanking horizontal dan vertikal untuk menghindari artefak.",
+      "SNES mendukung standar NTSC dan PAL, menyediakan output komposit dan S-Video, dan dapat menggandakan resolusi vertikal dan horizontal untuk aplikasi tertentu, meskipun menghadapi tantangan seperti flickering."
+    ],
+    "commentSummary": [
+      "Kirimannya membahas desain dan arsitektur dari Super Nintendo Entertainment System (SNES), menyoroti spesifikasi teknis dan konteks historisnya.",
+      "Hal-hal penting termasuk opsi resolusi SNES, dampak dari standar TV yang berbeda (NTSC vs. PAL) pada gameplay, dan penggunaan CRT (Cathode Ray Tubes) dalam permainan arcade dan konsol rumah.",
+      "Diskusi tersebut juga menyentuh penggunaan konektor SCART pada TV Eropa dan tantangan dalam meniru keluaran video SNES dengan akurat."
+    ],
+    "points": 134,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1722231398
+  },
+  {
+    "id": 41095814,
+    "title": "Jangan secara membabi buta lebih memilih `emplace_back` daripada `push_back` (2021)",
+    "originLink": "https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095814",
+    "commentBody": "",
+    "originSummary": [
+      "Alat seperti clang-tidy dan PVS-Studio mungkin menandai `push_back` sebagai \"gaya buruk\" dan menyarankan `emplace_back`, tetapi perubahan ini tidak selalu bermanfaat.",
+      "emplace_back seharusnya digunakan untuk menghindari pembuatan objek sementara, tetapi ini tidak terkait dengan semantik pemindahan dan masih dapat menghasilkan salinan jika tidak digunakan dengan benar.",
+      "Lebih baik menggunakan `push_back` untuk kesederhanaan dan waktu kompilasi yang lebih cepat, gunakan `emplace_back` hanya jika diperlukan untuk tipe yang tidak dapat dipindahkan atau untuk menghindari objek sementara."
+    ],
+    "commentSummary": [
+      "Diskusi berpusat pada penggunaan `emplace_back` versus `push_back` dalam C++ untuk menambahkan elemen ke kontainer seperti vektor.",
+      "emplace_back membangun sebuah objek di tempat, yang berpotensi menghindari penyalinan yang tidak perlu, sementara push_back menambahkan objek yang sudah dibangun ke dalam wadah.",
+      "Percakapan tersebut menyoroti bahwa meskipun `emplace_back` bisa lebih efisien, itu juga lebih kompleks, dan `push_back` mungkin lebih disukai untuk penggunaan sehari-hari kecuali jika manfaat spesifik dari `emplace_back` diperlukan."
+    ],
+    "points": 134,
+    "commentCount": 100,
+    "retryCount": 0,
+    "time": 1722199323
+  },
+  {
+    "id": 41096187,
+    "title": "Keterikatan polimorfisme tingkat lebih tinggi dalam OCaml (2021)",
+    "originLink": "https://okmij.org/ftp/ML/higher-kind-poly.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41096187",
+    "commentBody": "",
+    "originSummary": [
+      "Kinds polimorfisme yang lebih tinggi, yang mengabstraksi atas konstruktor tipe, sangat penting untuk operasi generik atas koleksi dan penyematan Bahasa Spesifik Domain (DSL) yang bertipe.",
+      "OCaml tidak secara native mendukung polimorfisme berjenis lebih tinggi karena masalah aliasing tipe, tetapi hal ini dapat disimulasikan menggunakan funktor, defungsionalisasi, dan aljabar awal.",
+      "Berbagai metode, termasuk abstraksi functor dan pengurangan ke polimorfisme biasa, memungkinkan pencapaian polimorfisme berjenis lebih tinggi di OCaml, meskipun terkadang hal ini mungkin tidak diperlukan."
+    ],
+    "commentSummary": [
+      "Diskusi tentang polimorfisme terbatas berjenis lebih tinggi dalam OCaml, dengan fokus pada alias tipe dan masalah kesetaraan tipe, yang mengarah pada masalah unifikasi tingkat lebih tinggi.",
+      "Kepraktisan dari isu-isu ini disorot, dengan referensi ke bahasa Idris dan tutorial \"Elaboration Zoo\" oleh András Kovács untuk pembelajaran lebih lanjut.",
+      "Klarifikasi tentang sintaks GADT (Generalized Abstract Data Types) dalam OCaml, dengan perbandingan terhadap F# yang saat ini tidak mendukung GADT."
+    ],
+    "points": 132,
+    "commentCount": 9,
+    "retryCount": 0,
+    "time": 1722202847
+  },
+  {
+    "id": 41098488,
+    "title": "Anak-anak seharusnya diizinkan untuk merasa bosan, kata ahli (2013)",
+    "originLink": "https://www.bbc.com/news/education-21895704",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41098488",
+    "commentBody": "",
+    "originSummary": [
+      "Dr. Teresa Belton, seorang ahli pendidikan, menegaskan bahwa membiarkan anak-anak mengalami kebosanan sangat penting untuk mendorong kreativitas, karena aktivitas yang terus-menerus dapat menghambat imajinasi.",
+      "Interview dengan para kreatif seperti penulis Meera Syal dan seniman Grayson Perry mengungkapkan bahwa kebosanan memainkan peran penting dalam perkembangan kreatif mereka, dengan Perry menggambarkannya sebagai \"keadaan kreatif.\"",
+      "Dr. Belton menekankan bahwa harapan masyarakat akan rangsangan yang konstan mencegah anak-anak mengembangkan kreativitas internal, dan menganjurkan waktu 'berdiri dan menatap' jauh dari layar untuk merangsang imajinasi."
+    ],
+    "commentSummary": [
+      "Seorang ahli menyarankan bahwa anak-anak sebaiknya diizinkan untuk mengalami kebosanan, karena hal itu dapat mendorong kreativitas dan kemandirian.",
+      "Refleksi pada pengalaman masa kecil di masa lalu, pengguna mengingat keterlibatan dalam aktivitas yang berisiko tetapi memperkaya secara sosial, yang kontras dengan overstimulasi berbasis layar pada anak-anak modern.",
+      "Diskusi menekankan pentingnya menyeimbangkan kebosanan dengan keselamatan, menganjurkan lingkungan yang diawasi di mana anak-anak dapat menjelajah dan berkembang."
+    ],
+    "points": 113,
+    "commentCount": 160,
+    "retryCount": 0,
+    "time": 1722237432
+  },
+  {
+    "id": 41100820,
+    "title": "Yark: Pengarsip YouTube dengan Antarmuka Offline",
+    "originLink": "https://github.com/Owez/yark",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41100820",
+    "commentBody": "",
+    "originSummary": [
+      "Yark menyederhanakan pengarsipan YouTube dengan perintah instalasi dan manajemen yang mudah, membutuhkan Python 3.9+ dan opsional FFmpeg.",
+      "Pengguna dapat membuat, memperbarui, dan melihat arsip, yang disimpan dalam struktur berbasis direktori dengan metadata, video, dan gambar mini.",
+      "Alat ini mendukung tampilan offline dengan mode terang dan gelap serta memungkinkan saran fitur melalui tab masalah di repositori."
+    ],
+    "commentSummary": [
+      "Yark adalah pengarsip YouTube dengan antarmuka pengguna offline, dirancang untuk membantu pengguna menyimpan konten YouTube secara lokal.",
+      "Pengguna mendiskusikan alat serupa untuk Twitch, menyoroti tantangan seperti streaming file MP4 besar dan menangani permintaan server HTTP untuk file dengan karakter khusus.",
+      "Konsultasi tersebut mencakup rincian teknis tentang streaming, seperti pentingnya server yang mendukung permintaan rentang untuk menghindari masalah buffering, dengan rekomendasi menggunakan VLC atau Nginx untuk penggunaan praktis."
+    ],
+    "points": 103,
+    "commentCount": 5,
+    "retryCount": 0,
+    "time": 1722263847
+  },
+  {
+    "id": 41098974,
+    "title": "MeTube: Pengunduh YouTube yang di-hosting sendiri",
+    "originLink": "https://github.com/alexta69/metube",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41098974",
+    "commentBody": "",
+    "originSummary": [
+      "Versi Node yang baru tidak lagi mendukung build ARM 32-bit; pengguna harus bermigrasi ke OS 64-bit untuk pembaruan.",
+      "Antarmuka web untuk youtube-dl (fork yt-dlp) sekarang tersedia, mendukung unduhan daftar putar dari YouTube dan situs lainnya, dan dapat dijalankan menggunakan Docker atau docker-compose.",
+      "Pilihan konfigurasi mencakup variabel lingkungan untuk ID pengguna, ID grup, direktori unduhan, dan lainnya, dengan pengaturan default yang disediakan untuk memudahkan penyiapan."
+    ],
+    "commentSummary": [
+      "MeTube adalah pengunduh YouTube yang di-hosting sendiri yang menggunakan yt-dlp, sebuah alat baris perintah populer untuk mengunduh video dari YouTube.",
+      "Kegiatan ini menyediakan antarmuka pengguna (UI) untuk yt-dlp, membuatnya dapat diakses bagi pengguna yang lebih memilih antarmuka grafis daripada operasi baris perintah.",
+      "Diskusi ini menyoroti berbagai alternatif dan alat terkait, seperti Celluloid, Parabolic, dan Tube Archivist, yang menawarkan fungsionalitas serupa untuk platform dan kasus penggunaan yang berbeda."
+    ],
+    "points": 93,
+    "commentCount": 37,
+    "retryCount": 0,
+    "time": 1722243581
+  },
+  {
+    "id": 41097228,
+    "title": "Teknologi Pemusnahan Planet: ChronoCam (2013)",
+    "originLink": "https://www.forrestthewoods.com/blog/tech_of_planetary_annihilation_chrono_cam/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41097228",
+    "commentBody": "",
+    "originSummary": [
+      "Planetary Annihilation, sebuah permainan strategi waktu nyata oleh Uber Entertainment, telah memasuki tahap beta dan menampilkan teknologi inovatif seperti generasi planet prosedural dan permainan dengan 40 pemain.",
+      "Permainan ini memperkenalkan ChronoCam, sebuah sistem replay unik yang memungkinkan pemain untuk melompat kembali ke masa lalu, bermain dalam gerakan lambat/cepat, dan melihat dunia permainan dari berbagai titik waktu, bahkan selama permainan langsung.",
+      "Memanfaatkan arsitektur klien-server, ChronoCam meminimalkan penggunaan bandwidth dengan merepresentasikan data permainan sebagai kurva dan mendukung fitur replay yang kuat, meningkatkan langkah-langkah anti-cheat dan keterlibatan komunitas online."
+    ],
+    "commentSummary": [
+      "Planetary Annihilation, sebuah permainan strategi waktu nyata (RTS), menampilkan mekanik pengulangan waktu yang unik yang disebut ChronoCam, memungkinkan pemain untuk meninjau dan berinteraksi dengan keadaan permainan di masa lalu.",
+      "Permainan ini awalnya didanai melalui kampanye Kickstarter yang sangat sukses, mengumpulkan $2,2 juta, tetapi menghadapi tantangan karena desainnya yang ambisius, termasuk beberapa medan pertempuran berbentuk bola.",
+      "Meskipun mendapat kritik awal, sekuel permainan tersebut, Planetary Annihilation: Titans, menerima ulasan positif di Steam, menyoroti pencapaian teknis pengembang dan desain mesin yang inovatif."
+    ],
+    "points": 85,
+    "commentCount": 28,
+    "retryCount": 0,
+    "time": 1722215260
+  },
+  {
+    "id": 41095429,
+    "title": "Pelapisan keausan dan lapisan terjemahan SDcard (2014)",
+    "originLink": "https://msreekan.com/2014/01/15/sdcard/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095429",
+    "commentBody": "",
+    "originSummary": [
+      "SD Card menggunakan memori flash NAND MLC (Multi-Level Cell) atau SLC (Single-Level Cell), yang mengabstraksi kompleksitas seperti penghapusan blok dan wear leveling.",
+      "Kartu mendeteksi apakah akan menggunakan SPI (Serial Peripheral Interface) atau bus SD saat suplai tegangan dan memulai tumpukan perangkat lunak yang sesuai, menyelesaikan proses booting ketika perangkat lunak memasuki keadaan transfer.",
+      "Kompilasi terjemahan memetakan alamat virtual ke alamat fisik, mengoptimalkan kinerja penulisan dengan penulisan berurutan dan mengelola overhead untuk penulisan acak di seluruh Unit Alokasi (AU), biasanya berukuran 4MB."
+    ],
+    "commentSummary": [
+      "Di sebuah konferensi, sebuah anekdot tentang membongkar kartu SD yang rusak menyoroti bug wear leveling yang menyebabkan firmware sebagian tertimpa, memicu diskusi tentang keandalan kartu SD.",
+      "Pengguna berbagi pengalaman tentang kegagalan kartu SD dan pemulihan data, mencatat bahwa kartu memori yang lebih padat lebih rentan terhadap masalah, sementara kartu kelas industri, meskipun lebih kecil, lebih tahan lama.",
+      "Kiat untuk meningkatkan keandalan kartu SD termasuk perangkat lunak yang lebih baik untuk penggabungan penulisan dan perataan keausan, serta kartu SD yang dapat mengubah ukuran partisi sendiri untuk mengelola blok yang aus."
+    ],
+    "points": 84,
+    "commentCount": 55,
+    "retryCount": 0,
+    "time": 1722195380
+  }
+]

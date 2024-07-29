@@ -15,11 +15,224 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 28 Jul 2024 19:10:27 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jul 2024 19:13:06 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/story/fi.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 28 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
         <language><![CDATA[fi]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[Microsoftin tekninen erittely CrowdStrike-tapauksesta]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Windows tarjoaa joustavia suojausvaihtoehtoja, mukaan lukien integroidut ominaisuudet ja kolmannen osapuolen työkalut, parantaakseen yritysten turvallisuutta ja luotettavuutta.</li>
+<li>Äskettäinen CrowdStrike-katkos jäljitettiin CSagent-ajurin muistiturvallisuusongelmaan, mikä korostaa vankan ydinajurien hallinnan tärkeyttä.</li>
+<li>Microsoft tekee yhteistyötä kolmansien osapuolten toimittajien kanssa Microsoft Virus Initiative (MVI) -ohjelman kautta varmistaakseen tietoturvatuotteiden laadun ja luotettavuuden, korostaen vähentynyttä ytimen riippuvuutta ja parannettuja käyttäjätilan suojauksia.</li>
+</ul>
+]]></description>
+            <link
+      >https://www.microsoft.com/en-us/security/blog/2024/07/27/windows-security-best-practices-for-integrating-and-managing-security-tools/</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-29T00:00:00.000ZMicrosoftin tekninen erittely CrowdStrike-tapauksesta</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[tolower() AVX-512:lla]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Artikkeli käsittelee SIMD (Single Instruction, Multiple Data) -ohjeiden käyttöä tehokkaaseen merkkijonojen käsittelyyn, erityisesti keskittyen tolower()-funktioon Rust-kielessä.</li>
+<li>Kirjoittaja kokeili AVX-512-BW:tä AMD Zen 4 -prosessorilla, saavuttaen korkean suorituskyvyn sekä pitkille että lyhyille merkkijonoille käyttäen maskattuja latauksia ja tallennuksia.</li>
+<li>Tulokset osoittivat, että AVX-512-BW on erityisen tehokas lyhyiden merkkijonojen käsittelyssä, tarjoten sujuvaa ja nopeaa suorituskykyä ilman autovektoroidussa koodissa havaittuja ongelmia.</li>
+</ul>
+]]></description>
+            <link>https://dotat.at/@/2024-07-28-tolower-avx512.html</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000Ztolower() AVX-512:lla</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[ps aux kirjoitettuna bashissa ilman haarautumista]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Haastattelukysymys bash/Linux-tehtävään saattaa koskea tilannetta, jossa kaikki prosessitunnukset (PID) ovat käytössä, estäen uusien prosessien luomisen.</li>
+<li>Mainitaan työkalu, joka voi jäljitellä toimivaa <code>ps aux</code> -komentoa tällaisissa tilanteissa, humoristisesti väittäen sen olevan yleisesti yhteensopiva.</li>
+</ul>
+]]></description>
+            <link>https://github.com/izabera/ps</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000Zps aux kirjoitettuna bashissa ilman haarautumista</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Jalkapallon syöttöjen visualisointityökalu, joka on tehty Three.js:llä]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Jalkapallon syöttöjen visualisoija on kehitetty käyttäen StatsBombin avointa dataa, joka on rikas tietoaineisto jalkapalloanalytiikkaa varten.</li>
+<li>Työkalu mahdollistaa käyttäjien analysoida ja visualisoida syöttökuvioita, sisältäen suodattimet syöttöetäisyydelle, joukkueelle ja yksittäisille pelaajille.</li>
+<li>Tämä kehitys korostaa kasvavaa suuntausta hyödyntää avointa dataa edistyneessä urheiluanalytiikassa ja visualisoinnissa.</li>
+</ul>
+]]></description>
+            <link>https://statsbomb-3d-viz.vercel.app/</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-29T00:00:00.000ZJalkapallon syöttöjen visualisointityökalu, joka on tehty Three.js:llä</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Siirrettävät puu-CRDT:t ja Loron toteutus]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Artikkeli käsittelee Movable Tree CRDT:iden (Conflict-free Replicated Data Types) käyttöönoton haasteita yhteistyöympäristöissä ja kuinka Loro ratkaisee nämä ongelmat, mukaan lukien lapsisolmujen lajittelun.</li>
+<li>Loron toteutus käyttää algoritmia artikkelista &quot;A highly-available move operation for replicated trees&quot; ja integroi Fractional Index -algoritmin lajitteluun, käsitellen konflikteja ainutlaatuisilla PeerID:illä ja jitterillä.</li>
+<li>Loron lähestymistapa tukee reaaliaikaista yhteistyötä ja historiallisten versioiden tarkistuksia, osoittaen korkeaa suorituskykyä erilaisissa tilanteissa, mikä tekee siitä sopivan tuotantokäyttöön yhteistyösovelluksissa.</li>
+</ul>
+]]></description>
+            <link>https://loro.dev/blog/movable-tree</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000ZSiirrettävät puu-CRDT:t ja Loron toteutus</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[LeanDojo: Teoreemojen todistaminen Leanilla käyttäen LLM:itä]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>LeanDojo esittelee Lean Copilotin, joka mahdollistaa kielimallien (LLM) avustamisen Lean-todistusten automaatiossa ehdottamalla taktiikoita ja etsimällä todistuksia.</li>
+<li>ReProver-malli, joka käyttää enkooderi-dekooderi Transformeria, hakee premissit matematiikkakirjastosta ja tuottaa seuraavan taktiikan, ylittäen Leanin sisäänrakennetun todistusautomaation.</li>
+<li>LeanDojo:n tietoaineisto sisältää laajoja vertailuarvoja ja hienojakoisia merkintöjä, mikä varmistaa, että mallit voivat yleistää teoreemoihin uusilla premisseillä ja löytää uusia todistuksia.</li>
+</ul>
+]]></description>
+            <link>https://leandojo.org/</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-29T00:00:00.000ZLeanDojo: Teoreemojen todistaminen Leanilla käyttäen LLM:itä</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Ylilaskuttaako Cloudflare meitä heidän kuvapalvelustaan?]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Cloudflare Imagesin sekamaksumalli, joka yhdistää etukäteen maksetun tallennuksen ja jälkikäteen maksetun toimituksen, johti EphemeraSearchille odottamattoman korkeisiin ja sekaviin laskuihin, jotka joskus ylittivät 400 dollaria odotetun 110 dollarin sijaan.</li>
+<li>Huolimatta useista yhteydenotoista Cloudflaren tukeen kahdeksan kuukauden aikana, ratkaisua ei saatu, mikä johti siirtymiseen kustannustehokkaampiin ratkaisuihin, kuten S3:een tai dedikoituihin palvelimiin.</li>
+<li>Tämä kokemus korostaa tehokkaan kulutuksen merkitystä indie-projekteille, joilla on alhaiset tulot, ja tuo esiin, että vaikka Cloudflare Images tarjoaa laadukasta palvelua, sen laskutusmalli ei välttämättä sovi kaikille käyttäjille.</li>
+</ul>
+]]></description>
+            <link>http://jpetazzo.github.io/2024/07/26/cloudflare-images-overcharge-billing/</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-29T00:00:00.000ZYlilaskuttaako Cloudflare meitä heidän kuvapalvelustaan?</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Super Nintendo -videopelijärjestelmän suunnittelun ymmärtäminen]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Fabien Sanglardin tutkimus Super Nintendo (SNES) -videopelijärjestelmästä korostaa Nintendon insinöörien vuonna 1989 tekemiä suunnittelupäätöksiä, joilla varmistettiin yhteensopivuus kuvaputkitelevisioiden ja NTSC-standardien kanssa.</li>
+<li>SNES käytti 21,47727 MHz:n pääkelloa, joka jaettiin saavuttamaan 5,3693175 MHz:n pistekello, mikä johti 341 pisteeseen per rivi ja 60,098 Hz:n virkistystaajuuteen, vaakasuorien ja pystysuorien tyhjennysjaksojen avulla välttäen artefakteja.</li>
+<li>SNES tuki sekä NTSC- että PAL-standardeja, tarjoten komposiitti- ja S-Video-lähtöjä, ja pystyi kaksinkertaistamaan pystysuoran ja vaakasuoran resoluution tietyissä sovelluksissa, huolimatta haasteista kuten välkkymisestä.</li>
+</ul>
+]]></description>
+            <link>https://fabiensanglard.net/snes_video/index.html</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-29T00:00:00.000ZSuper Nintendo -videopelijärjestelmän suunnittelun ymmärtäminen</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Älä sokeasti suosi `emplace_back`-metodia `push_back`-metodin sijaan (2021)]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Työkalut kuten clang-tidy ja PVS-Studio saattavat merkitä <code>push_back</code>-käytön &quot;huonoksi tyyliksi&quot; ja ehdottaa <code>emplace_back</code>-käyttöä, mutta tämä muutos ei ole aina hyödyllinen.</li>
+<li><code>emplace_back</code>-metodia tulisi käyttää väliaikaisten olioiden luomisen välttämiseksi, mutta se ei liity siirtosemanttiikkaan ja voi silti johtaa kopioihin, jos sitä ei käytetä oikein.</li>
+<li>Suosi <code>push_back</code>-metodia yksinkertaisuuden ja nopeampien käännösaikojen vuoksi, ja käytä <code>emplace_back</code>-metodia vain tarvittaessa ei-siirrettäville tyypeille tai väliaikaisten objektien välttämiseksi.</li>
+</ul>
+]]></description>
+            <link>https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-29T00:00:00.000ZÄlä sokeasti suosi `emplace_back`-metodia `push_back`-metodin sijaan (2021)</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Korkeamman asteen rajoitettu polymorfismi OCamlissa (2021)]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Korkeamman asteen polymorfismi, joka abstrahoi tyyppikonstruktoreita, on ratkaisevan tärkeää geneeristen operaatioiden suorittamisessa kokoelmille ja tyypitettyjen alakohtaisten kielten (DSL) upottamisessa.</li>
+<li>OCaml ei tue natiivisti korkeamman asteen polymorfismia tyyppialiasointiongelmien vuoksi, mutta sitä voidaan simuloida käyttämällä funktoreita, defunktionalisaatiota ja alkuperäisiä algebroja.</li>
+<li>Erilaiset menetelmät, mukaan lukien funktoriabstraktio ja tavalliseen polymorfismiin pelkistäminen, mahdollistavat korkeamman asteen polymorfismin saavuttamisen OCamlissa, vaikka se ei aina olisikaan tarpeellista.</li>
+</ul>
+]]></description>
+            <link>https://okmij.org/ftp/ML/higher-kind-poly.html</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-29T00:00:00.000ZKorkeamman asteen rajoitettu polymorfismi OCamlissa (2021)</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Lapsille pitäisi sallia tylsistyminen, asiantuntija sanoo (2013)]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Tohtori Teresa Belton, kasvatuksen asiantuntija, väittää, että lasten tylsistymisen salliminen on ratkaisevan tärkeää luovuuden edistämiseksi, sillä jatkuva toiminta voi estää mielikuvitusta.</li>
+<li>Haastattelut luovien henkilöiden, kuten kirjailija Meera Syalin ja taiteilija Grayson Perryn, kanssa paljastavat, että tylsyydellä oli merkittävä rooli heidän luovassa kehityksessään, ja Perry kuvailee sitä &quot;luovaksi tilaksi.&quot;</li>
+<li>Tohtori Belton korostaa, että yhteiskunnan odotus jatkuvasta virikkeellisyydestä estää lapsia kehittämästä sisäistä luovuuttaan, ja hän puoltaa &#39;seisomisen ja tuijottamisen&#39; aikaa pois ruuduilta mielikuvituksen stimuloimiseksi.</li>
+</ul>
+]]></description>
+            <link>https://www.bbc.com/news/education-21895704</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-29T00:00:00.000ZLapsille pitäisi sallia tylsistyminen, asiantuntija sanoo (2013)</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Yark: YouTube-arkistoija offline-käyttöliittymällä]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Yark yksinkertaistaa YouTube-arkistoinnin helppokäyttöisillä asennus- ja hallintakomennoilla, vaatii Python 3.9+ ja tarvittaessa FFmpeg.</li>
+<li>Kayttäjät voivat luoda, päivittää ja tarkastella arkistoja, jotka tallennetaan hakemistopohjaiseen rakenteeseen sisältäen metatiedot, videot ja pikkukuvat.</li>
+<li>Työkalu tukee offline-katselua sekä vaaleassa että tummassa tilassa ja mahdollistaa ominaisuusehdotusten tekemisen arkiston issues-välilehden kautta.</li>
+</ul>
+]]></description>
+            <link>https://github.com/Owez/yark</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000ZYark: YouTube-arkistoija offline-käyttöliittymällä</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[MeTube: Itseisännöity YouTube-latausohjelma]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Uudet Node-versiot eivät enää tue 32-bittisiä ARM-rakennelmia; käyttäjien on siirryttävä 64-bittiseen käyttöjärjestelmään saadakseen päivityksiä.</li>
+<li>Web-käyttöliittymä youtube-dl:lle (yt-dlp-haarukka) on nyt saatavilla, ja se tukee soittolistojen lataamista YouTubesta ja muilta sivustoilta. Sen voi ajaa käyttämällä Dockeria tai docker-composea.</li>
+<li>Konfigurointivaihtoehtoihin kuuluvat ympäristömuuttujat käyttäjätunnukselle, ryhmätunnukselle, lataushakemistoille ja muille, ja oletusasetukset on annettu asennuksen helpottamiseksi.</li>
+</ul>
+]]></description>
+            <link>https://github.com/alexta69/metube</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000ZMeTube: Itseisännöity YouTube-latausohjelma</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Planeetan tuhoamisen teknologia: ChronoCam (2013)]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Planetary Annihilation, Uber Entertainmentin reaaliaikainen strategiapeli, on siirtynyt beta-vaiheeseen ja sisältää innovatiivisia teknologioita, kuten proseduraalisen planeettojen luomisen ja 40 pelaajan pelit.</li>
+<li>Peli esittelee ChronoCamin, ainutlaatuisen toistojärjestelmän, joka mahdollistaa pelaajien hypätä ajassa taaksepäin, pelata hidastettuna/nopeutettuna ja tarkastella pelimaailmaa eri ajankohdista, jopa reaaliaikaisten pelien aikana.</li>
+<li>Hyödyntämällä asiakas-palvelin-arkkitehtuuria, ChronoCam minimoi kaistanleveyden käytön esittämällä pelidatan käyrinä ja tukee vankkoja uudelleentoistoominaisuuksia, parantaen huijausten estotoimenpiteitä ja verkko-yhteisön sitoutumista.</li>
+</ul>
+]]></description>
+            <link>https://www.forrestthewoods.com/blog/tech_of_planetary_annihilation_chrono_cam/</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000ZPlaneetan tuhoamisen teknologia: ChronoCam (2013)</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[SD-kortin kulumisen tasoitus ja käännöskerrosten hallinta (2014)]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>SD-kortit käyttävät NAND MLC (Multi-Level Cell) tai SLC (Single-Level Cell) flash-muistia, abstrahoiden monimutkaisuuksia kuten lohkojen pyyhintää ja kulumisen tasausta.</li>
+<li>Kortti tunnistaa, käytetäänkö SPI:tä (Serial Peripheral Interface) vai SD-väylää jännitteen syötön yhteydessä ja käynnistää sopivan ohjelmistopinon, viimeistellen käynnistysprosessin, kun ohjelmisto siirtyy siirtotilaan.</li>
+<li>Muunnoskerros kartoittaa virtuaaliset osoitteet fyysisiin osoitteisiin, optimoiden kirjoitussuorituskyvyn yhtenäisillä kirjoituksilla ja halliten satunnaiskirjoitusten ylikuormitusta allokaatioyksiköiden (AU), jotka ovat tyypillisesti 4MB kokoisia, välillä.</li>
+</ul>
+]]></description>
+            <link>https://msreekan.com/2014/01/15/sdcard/</link>
+            <guid
+        isPermaLink="false"
+      >2024-07-29T00:00:00.000ZSD-kortin kulumisen tasoitus ja käännöskerrosten hallinta (2014)</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Miten Facebook sieppasi kilpailijansa salatun mobiilisovelluksen liikenteen?]]></title>
             <description
@@ -1869,227 +2082,6 @@
             <link>https://www.crowdstrike.com/blog/technical-details-on-todays-outage/</link>
             <guid isPermaLink="false">2024-07-20T00:00:00.000ZTämän päivän katkoksen tekniset tiedot</guid>
             <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Uutinen Crowdstrikesta: Windowsin sininen ruutu ja käynnistyssilmukat]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Useat käyttäjät työpaikalla kohtaavat Windowsin sinisiä ruutuja ja käynnistyssilmukoita, jotka saattavat liittyä äskettäiseen Crowd Strike -sovelluspäivitykseen.</li>
-<li>IT-osasto huomasi, että jotkin palvelimet menivät offline-tilaan, ja paikallinen radioasema raportoi samanlaisista kannettavien tietokoneiden ongelmista ja kaatuneesta puhelinjärjestelmästä.</li>
-<li>Nämä tapaukset tapahtuvat Australiassa, mutta niistä ei ole vielä uutisoitu.</li>
-</ul>
-]]></description>
-            <link>https://old.reddit.com/r/crowdstrike/comments/1e6vmkf/bsod_error_in_latest_crowdstrike_update/</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000ZUutinen Crowdstrikesta: Windowsin sininen ruutu ja käynnistyssilmukat</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Crowdstrike-katkos aiheuttaa laajalle levinneitä ongelmia]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Maailmanlaajuinen IT-häiriö käynnistyi kyberturvallisuusyritys CrowdStrike Holdingsin virheellisestä ohjelmistopäivityksestä, joka vaikutti lukuisiin Microsoft Windows -järjestelmiin.</li>
-<li>Molemmat Microsoft ja CrowdStrike ovat julkaisseet korjauksia ongelman ratkaisemiseksi, mutta täydellisen toipumisen odotetaan vievän jonkin aikaa.</li>
-<li>Tilanne on hieman parantunut, mutta epäonnistuneen päivityksen vaikutukset tuntuvat yhä maailmanlaajuisesti.</li>
-</ul>
-]]></description>
-            <link>https://www.afr.com/technology/businesses-crippled-by-widespread-it-outage-20240719-p5jv2t</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000ZCrowdstrike-katkos aiheuttaa laajalle levinneitä ongelmia</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[FCC äänestää rajoittaakseen vankilatelekonimaksuja]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>FCC on äänestänyt merkittävästi vähentääkseen vankiloiden ja arestien puhelu- ja videopuheluhintoja, leikkaamalla minuuttikohtaisia hintakattoja yli puolella ja kieltämällä kaikki maksut, mukaan lukien talletusmaksut.</li>
-<li>Tämä muutos vaikuttaa 83 %:iin vangituista henkilöistä, säästäen perheille vähintään 500 miljoonaa dollaria vuosittain ja parantaen vangittujen henkilöiden hyvinvointia ja uudelleensopeutumisen onnistumista.</li>
-<li>Vankilateleviestintäyhtiöille, kuten Aventiv ja ViaPath, odotetaan merkittäviä tulonmenetyksiä, kun taas osavaltiot, kuten Massachusetts, Minnesota ja Colorado, ovat jo ryhtyneet tekemään vankilapuheluista ilmaisia.</li>
-</ul>
-]]></description>
-            <link
-      >https://worthrises.org/pressreleases/2024/7/18/fcc-votes-unanimously-to-significantly-lower-phone-and-video-communication-costs-after-decades-of-exploitation-by-prison-telecoms</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000ZFCC äänestää rajoittaakseen vankilatelekonimaksuja</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Foliate: Lue e-kirjoja tyylikkäästi, navigoi vaivattomasti]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Foliate on avoimen lähdekoodin e-kirjojen lukija, joka tukee useita formaatteja, kuten EPUB, Mobipocket, Kindle, FB2, CBZ ja PDF, ja siinä on muokattavat lukemisasetukset.</li>
-<li>Se tarjoaa ominaisuuksia, kuten kosketuslevy- ja kosketusnäytönavigointi, kirjanmerkit, merkinnät ja integroinnin työkaluihin, kuten Wiktionary ja Google Translate.</li>
-<li>Foliate tukee oikealta vasemmalle kirjoitettua tekstiä, pystysuoraa kirjoitusta ja kiinteitä asetteluja, ja se on saatavilla useille Linux-jakeluille tai lähdekoodin kloonauksen kautta.</li>
-</ul>
-]]></description>
-            <link>https://johnfactotum.github.io/foliate/</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000ZFoliate: Lue e-kirjoja tyylikkäästi, navigoi vaivattomasti</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Useat lentoyhtiöt häiriintyivät Microsoft Azuren katkoksen vuoksi]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Frontier Airlines keskeytti kaikki lennot noin 35 minuutiksi suuren Microsoft Azure -katkoksen vuoksi, mikä vaikutti varauksiin, sisäänkirjautumiseen ja maihinnousukorttien saatavuuteen.</li>
-<li>Katkos, joka alkoi klo 17:56, häiritsi myös Allegiantin ja Sun Country Airlinesin järjestelmiä, vaikuttaen useisiin järjestelmiin Yhdysvaltojen keskiosissa.</li>
-<li>Frontier, joka operoi yli 100 lentokonetta, oli yksi vähintään kolmesta lentoyhtiöstä, joita palvelukatkokset koskivat.</li>
-</ul>
-]]></description>
-            <link>https://www.nytimes.com/2024/07/18/us/frontier-flights-grounded-microsoft.html</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000ZUseat lentoyhtiöt häiriintyivät Microsoft Azuren katkoksen vuoksi</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Mitä vaadittaisiin Bell Labsin uudelleen luomiseen?]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>AT&amp;T, Bell Labsin kautta, oli keskeisessä asemassa Amerikan puhelininfrastruktuurin kehittämisessä ja tuotti merkittäviä keksintöjä, kuten transistorin, piistä valmistetun aurinkokennon ja UNIX-käyttöjärjestelmän.</li>
-<li>Bell Labsin menestys johtui osittain AT&amp;T:n monopolista, joka tuki pitkäaikaisia tutkimusprojekteja ja johti lukuisiin tunnustuksiin, mukaan lukien 10 Nobelin palkintoa.</li>
-<li>Hajoaminen AT&amp;T johti Bell Labsin jakautumiseen ja laskuun, mikä tekee vaikeaksi luoda uudelleen sellaista instituutiota nykyään ainutlaatuisten historiallisten ja teknologisten olosuhteiden vuoksi, jotka kerran vallitsivat.</li>
-</ul>
-]]></description>
-            <link>https://www.construction-physics.com/p/what-would-it-take-to-recreate-bell</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000ZMitä vaadittaisiin Bell Labsin uudelleen luomiseen?</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Ryanair – kun jokainen sivu on pimeä kuvio]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Ryanair tunnetaan &quot;dark patterns&quot; -tekniikoiden, manipuloivien suunnittelutekniikoiden, käytöstä lisätäkseen voittoja varausprosessin aikana.</li>
-<li>Taktiikoihin kuuluu &quot;privacy zuckering&quot;, jossa asiakkaat oletusarvoisesti liitetään mainoskampanjoihin, sekä &quot;harhautus&quot;, jossa käytetään näkyviä painikkeita ja ponnahdusikkunoita palveluiden lisämyyntiin.</li>
-<li>Nämä harhaanjohtavat suunnitelmat ovat laajalle levinneitä Ryanairin verkkosivustolla, mikä tekee käyttäjille välttämättömäksi pysyä valppaana välttääkseen tahattomia ostoksia tai jakamasta enemmän tietoja kuin on tarkoitus.</li>
-</ul>
-]]></description>
-            <link>https://hallofshame.design/ryanair-when-every-page-is-a-dark-pattern/</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000ZRyanair – kun jokainen sivu on pimeä kuvio</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title
-      ><![CDATA[Korjaukset CrowdStrikelle alkavat "uudelleenkäynnistyksellä jopa 15 kertaa", ja siitä eteenpäin ne muuttuvat monimutkaisemmiksi]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>CrowdStriken viimeaikainen päivitys johti Windows-järjestelmien kaatumiseen sinisen kuolemanruudun (BSOD) kanssa, aiheuttaen merkittävää häiriötä.</li>
-<li>Korjaukset vaihtelevat useista uudelleenkäynnistyksistä monimutkaisempiin ratkaisuihin, kuten varmuuskopioiden palauttamiseen tai ongelmallisen ajurin manuaaliseen poistamiseen, ja lisätoimenpiteitä tarvitaan järjestelmissä, jotka käyttävät BitLocker-salausta.</li>
-<li>Päivitys on peruttu, ja CrowdStriken toimitusjohtaja on pyytänyt anteeksi, vakuuttaen käyttäjille, että ongelman ratkaisemiseksi tehdään töitä.</li>
-</ul>
-]]></description>
-            <link
-      >https://arstechnica.com/information-technology/2024/07/crowdstrike-fixes-start-at-reboot-up-to-15-times-and-get-more-complex-from-there/</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000ZKorjaukset CrowdStrikelle alkavat &quot;uudelleenkäynnistyksellä jopa 15 kertaa&quot;, ja siitä eteenpäin ne muuttuvat monimutkaisemmiksi</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Sendune – avoimen lähdekoodin HTML-sähköpostisuunnittelija]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>SENDUNE on esitellyt uuden avoimen lähdekoodin HTML-sähköpostisuunnittelijan, jonka tarkoituksena on yksinkertaistaa HTML-sähköpostien luomista, jotka ovat perinteisesti vaikeita kirjoittaa ja ylläpitää.</li>
-<li>Suunnittelija on kevyt, käyttää puhdasta HTML:ää ja välttää hankalia riippuvuuksia, mikä mahdollistaa käyttäjien tallentaa HTML-tulosteen mallina mille tahansa sähköpostipalveluntarjoajalle.</li>
-<li>Käyttäjiä kannustetaan haarauttamaan arkisto, tekemään parannuksia ja lähettämään vetopyyntöjä, edistäen yhteistyöhön perustuvaa kehitysympäristöä.</li>
-</ul>
-]]></description>
-            <link>https://news.ycombinator.com/item?id=41007403</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000ZSendune – avoimen lähdekoodin HTML-sähköpostisuunnittelija</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title
-      ><![CDATA[60-vuotias saksalainen mies on todennäköisesti seitsemäs henkilö, joka on parantunut tehokkaasti HIV:stä]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>60-vuotias saksalainen mies on todennäköisesti seitsemäs henkilö, joka on käytännössä parantunut HIV:stä kantasolusiirron jälkeen, mikä myös hoiti hänen aggressiivista leukemiaansa.</li>
-<li>Potilas, jota kutsutaan &quot;seuraavaksi Berliinin potilaaksi&quot;, lopetti antiretroviraalilääkkeiden käytön loppuvuodesta 2018 ja on edelleen HIV- ja syöpävapaa lähes kuusi vuotta myöhemmin.</li>
-<li>Tutkijat ovat varovaisen optimistisia ja huomauttavat, että tämä tapaus viittaa siihen, ettei kaikkia CCR5-geenimutaatioita tarvita onnistuneeseen HIV-hoitoon, mikä antaa toivoa laajemmille HIV-parannusstrategioille.</li>
-</ul>
-]]></description>
-            <link
-      >https://www.rfi.fr/en/international-news/20240718-seventh-person-likely-cured-of-hiv-doctors-announce</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000Z60-vuotias saksalainen mies on todennäköisesti seitsemäs henkilö, joka on parantunut tehokkaasti HIV:stä</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Maailmanlaajuinen IT-katkos vaikuttaa lentoyhtiöihin, mediaan ja pankkeihin]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Crowdstrike, vuonna 2011 perustettu teksasilainen kyberturvallisuusyritys, on erikoistunut päätelaitteiden suojaamiseen yritysverkkojen ja pilvitietojen suojaamiseksi kyberuhkilta.</li>
-<li>Yrityksen perustivat yhdessä George Kurtz ja Dmitri Alperovitch, ja se listautui Nasdaq-pörssiin vuonna 2019.</li>
-<li>Crowdstrike on ollut keskeisessä roolissa suurten kyberhyökkäysten tutkimisessa, erityisesti Yhdysvaltain demokraattisen puolueen kansallisen komitean verkkoon vuonna 2016 kohdistuneen murtautumisen osalta.</li>
-</ul>
-]]></description>
-            <link>https://www.bbc.co.uk/news/live/cnk4jdwp49et</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000ZMaailmanlaajuinen IT-katkos vaikuttaa lentoyhtiöihin, mediaan ja pankkeihin</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Kaksinkertainen ongelma: ESA:n Gaia osui mikrometeoroidiin ja aurinkomyrskyyn]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>ESAn Gaia-avaruusalus, joka laukaistiin joulukuussa 2013 kartoittamaan yli miljardi tähteä Linnunradassa, kohtasi äskettäin merkittäviä haasteita mikrometeoroidin iskun ja aurinkomyrskyn vuoksi.</li>
-<li>Micrometeoroidi vahingoitti Gaian suojakantta, ja aurinkomyrsky aiheutti vian yhteen sen varauskytkettyyn laitteeseen (CCD), mikä johti tuhansiin virheellisiin tähtihavaintoihin.</li>
-<li>ESA:n ja Airbus Defence and Spacen insinöörit onnistuivat säätämään Gaian ohjelmistoa, vähentäen virheellisiä havaintoja ja palauttaen avaruusaluksen rutiinitoimintaan, tuottaen nyt joitakin sen parhaista laatutiedoista.</li>
-</ul>
-]]></description>
-            <link
-      >https://www.esa.int/Enabling_Support/Operations/Double_trouble_Gaia_hit_by_micrometeoroid_and_solar_storm</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000ZKaksinkertainen ongelma: ESA:n Gaia osui mikrometeoroidiin ja aurinkomyrskyyn</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Mitä tiedostossa C-00000291*.sys on?]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>CrowdStriken C-00000291*.sys-tiedosto on aiheuttanut järjestelmän kaatumisia virheellisen muotoilun vuoksi, mikä vaikuttaa CrowdStriken ajuriin.</li>
-<li>Jotkut käyttäjät raportoivat tiedoston eri versioista, ja jotkut spekuloivat, että tiedostot on salattu asiakaskohtaisilla avaimilla, vaikka toiset ovatkin käsitelleet niitä ilman salauksen purkamista.</li>
-<li>Tiedostot ovat omia päivitysformaatteja, eivät DLL-tiedostoja tai korjauksia, mikä herättää huolta CrowdStriken päivitysprosessin turvallisuudesta ja luotettavuudesta.</li>
-</ul>
-]]></description>
-            <link>https://news.ycombinator.com/item?id=41004103</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000ZMitä tiedostossa C-00000291*.sys on?</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[NASAn Curiosity-mönkijä löytää yllätyksen marsilaisesta kivestä]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>NASA:n Curiosity-mönkijä löysi ensimmäistä kertaa alkuaineen rikkiä Marsista, mikä on merkittävä virstanpylväs Marsin tutkimuksessa.</li>
-<li>Löytö tehtiin sulfaattipitoisella alueella, jossa Curiosity löysi kokonaisen kentän kirkkaita kiviä, jotka koostuivat puhtaasta rikistä, mikä herätti tutkijoiden mielenkiinnon.</li>
-<li>Curiosityn tehtävä, joka sisältää Marsin muinaisen maaston tutkimisen mikrobielämän merkkien varalta, jatkuu sen kiivetessä Sharp-vuorelle ja poratessa 41. kallioperänäytettään jatkoanalyysiä varten.</li>
-</ul>
-]]></description>
-            <link>https://www.jpl.nasa.gov/news/nasas-curiosity-rover-discovers-a-surprise-in-a-martian-rock</link>
-            <guid
-        isPermaLink="false"
-      >2024-07-19T00:00:00.000ZNASAn Curiosity-mönkijä löytää yllätyksen marsilaisesta kivestä</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Hapen väheneminen järvissä ja merissä]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Tutkimus Rensselaer Polytechnic Institutesta korostaa, että hapen väheneminen järvissä ja merissä aiheuttaa merkittävän uhan ekosysteemeille, yhteiskunnalle ja planeetalle.</li>
-<li>Vesistöjen hapen väheneminen, joka liittyy ilmastonmuutokseen, maankäyttöön ja saastumiseen, on johtanut liuenneen hapen nopeaan vähenemiseen. Järvet ja tekojärvet ovat menettäneet 5,5 % ja 18,6 % hapestaan vuodesta 1980 lähtien, ja valtameret ovat menettäneet noin 2 % hapestaan vuodesta 1960 lähtien.</li>
-<li>Tämä hapen väheneminen vaikuttaa lajien fysiologiaan, ravintoverkkoihin ja ekosysteemipalveluihin, luoden &quot;kuolleita vyöhykkeitä&quot; ja haitallisia leväkukintoja, mikä vaatii kiireellisiä toimia ilmaston lämpenemisen ja valumien torjumiseksi.</li>
-</ul>
-]]></description>
-            <link>https://www.sciencedaily.com/releases/2024/07/240715135713.htm</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000ZHapen väheneminen järvissä ja merissä</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

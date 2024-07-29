@@ -1,0 +1,331 @@
+[
+  {
+    "id": 41095530,
+    "title": "Phân tích kỹ thuật của Microsoft về sự cố CrowdStrike",
+    "originLink": "https://www.microsoft.com/en-us/security/blog/2024/07/27/windows-security-best-practices-for-integrating-and-managing-security-tools/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095530",
+    "commentBody": "",
+    "originSummary": [
+      "Windows cung cấp các tùy chọn bảo mật linh hoạt, bao gồm các tính năng tích hợp và công cụ của bên thứ ba, nhằm tăng cường bảo mật và độ tin cậy cho doanh nghiệp.",
+      "Vụ gián đoạn gần đây của CrowdStrike được truy nguyên do vấn đề an toàn bộ nhớ trong trình điều khiển CSagent, nhấn mạnh tầm quan trọng của việc quản lý trình điều khiển nhân mạnh mẽ.",
+      "Microsoft hợp tác với các nhà cung cấp bên thứ ba thông qua Sáng kiến Virus Microsoft (MVI) để đảm bảo chất lượng và độ tin cậy của các sản phẩm bảo mật, nhấn mạnh việc giảm phụ thuộc vào kernel và tăng cường bảo vệ ở chế độ người dùng."
+    ],
+    "commentSummary": [
+      "Phân tích của Microsoft về sự cố CrowdStrike nhấn mạnh sự cần thiết phải hiện đại hóa các phương pháp bảo mật và giảm sự phụ thuộc vào các trình điều khiển kernel để truy cập dữ liệu bảo mật quan trọng.",
+      "Vụ việc đã dẫn đến các cuộc tranh luận về các thực hành đảm bảo chất lượng của CrowdStrike và liệu Microsoft có nên hạn chế quyền truy cập kernel cho các nhà cung cấp bên thứ ba hay không, một động thái trước đây đã bị EU chặn vì cạnh tranh công bằng.",
+      "Điều này nhấn mạnh những lợi ích tiềm năng của việc chuyển nhiều chức năng bảo mật hơn sang chế độ người dùng, nhằm cải thiện các thực hành triển khai và độ tin cậy."
+    ],
+    "points": 372,
+    "commentCount": 372,
+    "retryCount": 0,
+    "time": 1722196542
+  },
+  {
+    "id": 41095790,
+    "title": "tolower() với AVX-512",
+    "originLink": "https://dotat.at/@/2024-07-28-tolower-avx512.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095790",
+    "commentBody": "",
+    "originSummary": [
+      "Bài viết thảo luận về việc sử dụng các lệnh SIMD (Single Instruction, Multiple Data) để xử lý chuỗi hiệu quả, đặc biệt tập trung vào hàm tolower() trong Rust.",
+      "Người tác giả đã thử nghiệm với AVX-512-BW trên bộ xử lý AMD Zen 4, đạt được hiệu suất cao cho cả chuỗi dài và ngắn bằng cách sử dụng các tải và lưu trữ có mặt nạ.",
+      "Những kết quả cho thấy rằng AVX-512-BW đặc biệt hiệu quả trong việc xử lý các chuỗi ngắn, cung cấp hiệu suất mượt mà và nhanh chóng mà không gặp phải các vấn đề thường thấy trong mã tự động vector hóa."
+    ],
+    "commentSummary": [
+      "Thủ thuật \"đọc vượt quá giới hạn không an toàn\" trong Rust và LLVM được coi là hành vi không xác định, dẫn đến các tối ưu hóa của trình biên dịch giả định rằng nó không xảy ra, gây ra kết quả không mong muốn.",
+      "Hiện tại, lắp ráp nội tuyến là giải pháp duy nhất, với các lựa chọn thay thế như các hàm nội tại tải căn chỉnh có mặt nạ và tải đóng băng đang được đề xuất.",
+      "Cuộc tranh luận về cách xử lý các lần đọc ngoài giới hạn vẫn tiếp tục, với một số người ủng hộ hành vi được định nghĩa bởi việc triển khai, và các hoạt động được che mặt nạ của AVX-512 được ghi nhận vì lợi ích về hiệu suất mặc dù việc áp dụng hạn chế do sự phân khúc thị trường của Intel."
+    ],
+    "points": 241,
+    "commentCount": 118,
+    "retryCount": 0,
+    "time": 1722199139
+  },
+  {
+    "id": 41097241,
+    "title": "ps aux được viết trong bash mà không sử dụng forking",
+    "originLink": "https://github.com/izabera/ps",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41097241",
+    "commentBody": "",
+    "originSummary": [
+      "Trong một cuộc phỏng vấn cho vị trí bash/Linux, có thể có câu hỏi liên quan đến việc xử lý tình huống khi tất cả các ID tiến trình (PID) đều đã được sử dụng, ngăn cản việc tạo ra các tiến trình mới.",
+      "Người ta đề cập đến một công cụ có thể bắt chước lệnh `ps aux` đang hoạt động trong những tình huống như vậy, hài hước tuyên bố tính tương thích toàn cầu."
+    ],
+    "commentSummary": [
+      "Cuộc thảo luận trên GitHub xoay quanh thách thức trong việc căn chỉnh các cột trong lập trình, tập trung vào việc sử dụng f-strings và padding của Python cho mục đích này.",
+      "Người dùng đề xuất các công cụ và định dạng thay thế, chẳng hạn như YAML để xử lý dữ liệu đơn giản hơn, và đề cập đến các tiện ích như Octopus Deploy và Docker CLI cho đầu ra JSON.",
+      "Chủ đề này cũng đề cập đến việc xử lý tình trạng cạn kiệt PID (Process ID) trong bash, với các khuyến nghị như sử dụng thư mục /proc/[pid]/ và `exec Python` để quản lý quy trình tốt hơn."
+    ],
+    "points": 214,
+    "commentCount": 81,
+    "retryCount": 0,
+    "time": 1722215457
+  },
+  {
+    "id": 41095839,
+    "title": "Một công cụ trực quan hóa đường chuyền bóng đá được tạo bằng Three.js",
+    "originLink": "https://statsbomb-3d-viz.vercel.app/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095839",
+    "commentBody": "",
+    "originSummary": [
+      "Bộ công cụ trực quan hóa đường chuyền bóng đá đã được phát triển sử dụng dữ liệu mở của StatsBomb, đây là một tập dữ liệu phong phú cho phân tích bóng đá.",
+      "Ứng dụng cho phép người dùng phân tích và trực quan hóa các mẫu chuyền bóng, với các bộ lọc cho khoảng cách chuyền, đội bóng và từng cầu thủ.",
+      "Phát triển này nhấn mạnh xu hướng ngày càng tăng của việc tận dụng dữ liệu mở cho phân tích và trực quan hóa thể thao nâng cao."
+    ],
+    "commentSummary": [
+      "Bộ công cụ trực quan hóa đường chuyền bóng đá sử dụng Three.js tận dụng dữ liệu mở từ StatsBomb để phân tích và trực quan hóa các mẫu đường chuyền, cho phép người dùng lọc theo khoảng cách đường chuyền, đội bóng và cầu thủ.",
+      "Phản hồi từ cộng đồng bao gồm các đề xuất về các công cụ trực quan hóa cấp cao hơn như deck.gl hoặc kepler.gl, và các tính năng như hoạt hình theo thời gian và bản đồ nhiệt để phân tích tốt hơn.",
+      "Người dùng đã báo cáo các vấn đề như lỗi CORS và khó khăn trong việc tải tệp, cho thấy các khu vực cần cải thiện tiềm năng trong trải nghiệm người dùng và xử lý lỗi."
+    ],
+    "points": 176,
+    "commentCount": 34,
+    "retryCount": 0,
+    "time": 1722199517
+  },
+  {
+    "id": 41099901,
+    "title": "CRDT cây di động và triển khai của Loro",
+    "originLink": "https://loro.dev/blog/movable-tree",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41099901",
+    "commentBody": "",
+    "originSummary": [
+      "Bài viết thảo luận về những thách thức trong việc triển khai Movable Tree CRDTs (Các loại dữ liệu sao chép không xung đột) trong các môi trường hợp tác và cách Loro giải quyết những vấn đề này, bao gồm việc sắp xếp các nút con.",
+      "Loro sử dụng thuật toán từ \"Một thao tác di chuyển có sẵn cao cho các cây được sao chép\" và tích hợp thuật toán Chỉ số Phân số để sắp xếp, xử lý xung đột với các PeerID duy nhất và jitter.",
+      "Loro's approach hỗ trợ cộng tác thời gian thực và kiểm tra phiên bản lịch sử, cho thấy hiệu suất cao trong nhiều tình huống khác nhau, làm cho nó phù hợp để sử dụng trong các ứng dụng cộng tác."
+    ],
+    "commentSummary": [
+      "CRDTs cây di động (Các loại dữ liệu sao chép không xung đột) và việc triển khai của Loro đang thu hút sự chú ý vì khả năng xử lý các thao tác cây phức tạp trong môi trường cộng tác.",
+      "Nhà phát triển đang thảo luận về các ứng dụng thực tế, chẳng hạn như Thư viện Bảng React để quản lý các cấu trúc dữ liệu phân cấp lớn và trình chỉnh sửa đa người chơi của Thymer cho các nhiệm vụ và ghi chú.",
+      "Cuộc trò chuyện nêu bật những thách thức và giải pháp trong việc sử dụng CRDT cho các loại dữ liệu khác nhau, bao gồm văn bản, hình ảnh và mô hình 3D, nhấn mạnh tầm quan trọng của việc đồng bộ hóa hiệu quả và giải quyết xung đột."
+    ],
+    "points": 175,
+    "commentCount": 23,
+    "retryCount": 0,
+    "time": 1722255899
+  },
+  {
+    "id": 41096486,
+    "title": "LeanDojo: Chứng minh Định lý trong Lean Sử dụng LLMs",
+    "originLink": "https://leandojo.org/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41096486",
+    "commentBody": "",
+    "originSummary": [
+      "LeanDojo giới thiệu Lean Copilot, cho phép các Mô hình Ngôn ngữ (LLMs) hỗ trợ trong việc tự động hóa chứng minh Lean bằng cách đề xuất các chiến thuật và tìm kiếm các chứng minh.",
+      "Model ReProver, sử dụng bộ mã hóa-giải mã Transformer, truy xuất các tiền đề từ thư viện toán học và tạo ra chiến thuật tiếp theo, vượt trội hơn so với tự động hóa chứng minh tích hợp của Lean.",
+      "Dataset của LeanDojo bao gồm các tiêu chuẩn đánh giá rộng rãi và các chú thích chi tiết, đảm bảo các mô hình có thể khái quát hóa đến các định lý với các tiền đề mới và khám phá các chứng minh mới."
+    ],
+    "commentSummary": [
+      "LeanDojo là một sáng kiến mới kết hợp Lean, một trợ lý chứng minh, với các Mô hình Ngôn ngữ Lớn (LLMs) để nâng cao khả năng chứng minh định lý.",
+      "Đề án nhằm thu hẹp khoảng cách giữa ký hiệu toán học không thể thực thi và mã có thể thực thi, có thể hỗ trợ trong các vấn đề toán học phức tạp như phương trình vi phân ngẫu nhiên.",
+      "Phát triển này có ý nghĩa quan trọng vì nó có thể cải thiện độ tin cậy và hiệu quả của việc xác minh hình thức trong các ứng dụng quan trọng, chẳng hạn như hệ thống an ninh cao và chứng minh định lý tự động."
+    ],
+    "points": 155,
+    "commentCount": 47,
+    "retryCount": 0,
+    "time": 1722206076
+  },
+  {
+    "id": 41100958,
+    "title": "Cloudflare có đang tính phí quá cao cho dịch vụ hình ảnh của họ không?",
+    "originLink": "http://jpetazzo.github.io/2024/07/26/cloudflare-images-overcharge-billing/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41100958",
+    "commentBody": "",
+    "originSummary": [
+      "Phương thức thanh toán hỗn hợp của Cloudflare Images, kết hợp giữa lưu trữ trả trước và giao hàng trả sau, đã dẫn đến các hóa đơn cao và khó hiểu một cách bất ngờ cho EphemeraSearch, đôi khi vượt quá $400 thay vì $110 như mong đợi.",
+      "Mặc dù đã liên hệ nhiều lần với bộ phận hỗ trợ của Cloudflare trong suốt tám tháng, nhưng không có giải pháp nào được đưa ra, khiến chúng tôi phải chuyển sang các giải pháp tiết kiệm chi phí hơn như S3 hoặc máy chủ chuyên dụng.",
+      "Trải nghiệm này nhấn mạnh tầm quan trọng của việc chi tiêu hiệu quả cho các dự án độc lập có doanh thu thấp, cho thấy rằng mặc dù Cloudflare Images cung cấp dịch vụ chất lượng, mô hình thanh toán của nó có thể không phù hợp với tất cả người dùng."
+    ],
+    "commentSummary": [
+      "Đã có những lo ngại về việc Cloudflare có thể tính phí quá cao cho dịch vụ Hình ảnh của họ, với người dùng báo cáo sự chênh lệch giữa chi phí dự kiến và chi phí thực tế.",
+      "Người ta đang so sánh với các dịch vụ khác như Amazon S3, Bunny CDN và Cloudflare R2, được coi là những lựa chọn thay thế hiệu quả về chi phí hơn.",
+      "Thực tiễn thanh toán và hỗ trợ khách hàng của Cloudflare đã bị xem xét kỹ lưỡng, với một số người dùng gặp phải các chu kỳ thanh toán phức tạp và các khoản phí không mong đợi."
+    ],
+    "points": 137,
+    "commentCount": 73,
+    "retryCount": 0,
+    "time": 1722264957
+  },
+  {
+    "id": 41098141,
+    "title": "Hiểu về thiết kế của hệ thống video Super Nintendo",
+    "originLink": "https://fabiensanglard.net/snes_video/index.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41098141",
+    "commentBody": "",
+    "originSummary": [
+      "Khám phá của Fabien Sanglard về hệ thống video Super Nintendo (SNES) nêu bật các quyết định thiết kế được các kỹ sư của Nintendo đưa ra vào năm 1989 để đảm bảo tính tương thích với TV CRT và các tiêu chuẩn NTSC.",
+      "SNES sử dụng một xung nhịp chính là 21.47727MHz, được chia để đạt được xung nhịp điểm là 5.3693175MHz, dẫn đến 341 điểm trên mỗi dòng và tần số làm mới là 60.098Hz, với các khoảng trống ngang và dọc để tránh các hiện tượng nhiễu.",
+      "SNES hỗ trợ cả tiêu chuẩn NTSC và PAL, cung cấp đầu ra composite và S-Video, và có thể tăng gấp đôi độ phân giải dọc và ngang cho các ứng dụng cụ thể, mặc dù gặp phải những thách thức như nhấp nháy."
+    ],
+    "commentSummary": [
+      "Đoạn viết thảo luận về thiết kế và kiến trúc của hệ thống giải trí Super Nintendo (SNES), nhấn mạnh các thông số kỹ thuật và bối cảnh lịch sử của nó.",
+      "Những điểm chính bao gồm các tùy chọn độ phân giải của SNES, tác động của các tiêu chuẩn TV khác nhau (NTSC so với PAL) đến trải nghiệm chơi game, và việc sử dụng CRT (ống tia âm cực) trong các trò chơi arcade và máy chơi game tại nhà.",
+      "Cuộc thảo luận cũng đề cập đến việc sử dụng các đầu nối SCART trong các TV châu Âu và những thách thức trong việc mô phỏng chính xác đầu ra video của SNES."
+    ],
+    "points": 134,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1722231398
+  },
+  {
+    "id": 41095814,
+    "title": "Đừng mù quáng ưa chuộng `emplace_back` hơn `push_back` (2021)",
+    "originLink": "https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095814",
+    "commentBody": "",
+    "originSummary": [
+      "Những công cụ như clang-tidy và PVS-Studio có thể đánh dấu `push_back` là \"phong cách xấu\" và đề xuất `emplace_back`, nhưng sự thay đổi này không phải lúc nào cũng có lợi.",
+      "emplace_back nên được sử dụng để tránh tạo ra các đối tượng tạm thời, nhưng nó không liên quan đến ngữ nghĩa di chuyển và vẫn có thể dẫn đến việc sao chép nếu không được sử dụng đúng cách.",
+      "Ưu tiên sử dụng `push_back` để đơn giản và thời gian biên dịch nhanh hơn, chỉ sử dụng `emplace_back` khi cần thiết cho các kiểu không thể di chuyển hoặc để tránh các đối tượng tạm thời."
+    ],
+    "commentSummary": [
+      "Cuộc thảo luận xoay quanh việc sử dụng `emplace_back` so với `push_back` trong C++ để thêm các phần tử vào các container như vector.",
+      "emplace_back xây dựng một đối tượng ngay tại chỗ, có thể tránh được các bản sao không cần thiết, trong khi push_back thêm một đối tượng đã được xây dựng sẵn vào container.",
+      "Cuộc trò chuyện nhấn mạnh rằng mặc dù `emplace_back` có thể hiệu quả hơn, nhưng nó cũng phức tạp hơn, và `push_back` có thể được ưa chuộng hơn cho việc sử dụng hàng ngày trừ khi cần đến những lợi ích cụ thể của `emplace_back`."
+    ],
+    "points": 134,
+    "commentCount": 100,
+    "retryCount": 0,
+    "time": 1722199323
+  },
+  {
+    "id": 41096187,
+    "title": "Hệ đa hình giới hạn bậc cao trong OCaml (2021)",
+    "originLink": "https://okmij.org/ftp/ML/higher-kind-poly.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41096187",
+    "commentBody": "",
+    "originSummary": [
+      "Hình thái đa hình bậc cao, trừu tượng hóa trên các hàm dựng kiểu, là rất quan trọng cho các thao tác tổng quát trên các bộ sưu tập và nhúng các Ngôn ngữ Đặc thù Miền (DSL) có kiểu.",
+      "OCaml không hỗ trợ đa hình bậc cao một cách tự nhiên do các vấn đề liên quan đến aliasing kiểu, nhưng có thể mô phỏng nó bằng cách sử dụng các functor, defunctionalization và các đại số ban đầu.",
+      "Những phương pháp khác nhau, bao gồm trừu tượng hóa functor và giảm xuống đa hình thông thường, cho phép đạt được đa hình bậc cao hơn trong OCaml, mặc dù đôi khi điều này có thể không cần thiết."
+    ],
+    "commentSummary": [
+      "Thảo luận về đa hình giới hạn bậc cao trong OCaml, tập trung vào các bí danh kiểu và các vấn đề về sự bằng nhau của kiểu, dẫn đến các vấn đề hợp nhất bậc cao.",
+      "Khả năng giải quyết thực tế của những vấn đề này được nhấn mạnh, với các tham chiếu đến ngôn ngữ Idris và hướng dẫn \"Elaboration Zoo\" của András Kovács để học thêm.",
+      "Giải thích về cú pháp GADT (Generalized Abstract Data Types) của OCaml, với sự so sánh với F# hiện tại chưa hỗ trợ GADT."
+    ],
+    "points": 132,
+    "commentCount": 9,
+    "retryCount": 0,
+    "time": 1722202847
+  },
+  {
+    "id": 41098488,
+    "title": "Trẻ em nên được phép cảm thấy buồn chán, chuyên gia nói (2013)",
+    "originLink": "https://www.bbc.com/news/education-21895704",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41098488",
+    "commentBody": "",
+    "originSummary": [
+      "Tiến sĩ Teresa Belton, một chuyên gia giáo dục, khẳng định rằng việc để trẻ em trải qua sự buồn chán là rất quan trọng để thúc đẩy sự sáng tạo, vì hoạt động liên tục có thể cản trở trí tưởng tượng.",
+      "Những cuộc phỏng vấn với các nhà sáng tạo như tác giả Meera Syal và nghệ sĩ Grayson Perry tiết lộ rằng sự buồn chán đã đóng một vai trò quan trọng trong sự phát triển sáng tạo của họ, với Perry mô tả nó như một \"trạng thái sáng tạo.\"",
+      "Tiến sĩ Belton nhấn mạnh rằng kỳ vọng của xã hội về sự kích thích liên tục ngăn cản trẻ em phát triển sự sáng tạo nội tại, và khuyến khích thời gian 'đứng và ngắm' xa rời màn hình để kích thích trí tưởng tượng."
+    ],
+    "commentSummary": [
+      "Chuyên gia cho rằng trẻ em nên được phép trải nghiệm sự buồn chán, vì điều này có thể thúc đẩy sự sáng tạo và tự lập.",
+      "Nhìn lại những trải nghiệm thời thơ ấu, người dùng nhớ lại việc tham gia vào các hoạt động mạo hiểm nhưng mang tính xã hội cao, trái ngược với sự kích thích quá mức từ màn hình của trẻ em hiện đại.",
+      "Cuộc thảo luận nhấn mạnh việc cân bằng giữa sự nhàm chán và an toàn, ủng hộ các môi trường có giám sát nơi trẻ em có thể khám phá và phát triển."
+    ],
+    "points": 113,
+    "commentCount": 160,
+    "retryCount": 0,
+    "time": 1722237432
+  },
+  {
+    "id": 41100820,
+    "title": "Yark: Trình lưu trữ YouTube với giao diện ngoại tuyến",
+    "originLink": "https://github.com/Owez/yark",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41100820",
+    "commentBody": "",
+    "originSummary": [
+      "Yark đơn giản hóa việc lưu trữ YouTube với các lệnh cài đặt và quản lý dễ dàng, yêu cầu Python 3.9+ và tùy chọn FFmpeg.",
+      "Người dùng có thể tạo, làm mới và xem các bản lưu trữ, được lưu trữ trong một cấu trúc dựa trên thư mục với siêu dữ liệu, video và hình thu nhỏ.",
+      "Ứng dụng hỗ trợ xem ngoại tuyến với chế độ sáng và tối và cho phép đề xuất tính năng thông qua tab vấn đề của kho lưu trữ."
+    ],
+    "commentSummary": [
+      "Yark là một công cụ lưu trữ YouTube với giao diện người dùng ngoại tuyến, được thiết kế để giúp người dùng lưu nội dung YouTube về máy tính.",
+      "Người dùng thảo luận về các công cụ tương tự cho Twitch, nêu bật những thách thức như phát trực tiếp các tệp MP4 lớn và xử lý các yêu cầu máy chủ HTTP cho các tệp có ký tự đặc biệt.",
+      "Cuộc trò chuyện bao gồm các chi tiết kỹ thuật về phát trực tuyến, chẳng hạn như tầm quan trọng của các máy chủ hỗ trợ yêu cầu phạm vi để tránh các vấn đề về bộ đệm, với các khuyến nghị sử dụng VLC hoặc Nginx cho việc sử dụng thực tế."
+    ],
+    "points": 103,
+    "commentCount": 5,
+    "retryCount": 0,
+    "time": 1722263847
+  },
+  {
+    "id": 41098974,
+    "title": "MeTube: Trình tải xuống YouTube tự lưu trữ",
+    "originLink": "https://github.com/alexta69/metube",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41098974",
+    "commentBody": "",
+    "originSummary": [
+      "Phiên bản Node mới không còn hỗ trợ các bản dựng ARM 32-bit; người dùng phải chuyển sang hệ điều hành 64-bit để nhận các bản cập nhật.",
+      "Đã có sẵn một giao diện web GUI cho youtube-dl (nhánh yt-dlp), hỗ trợ tải danh sách phát từ YouTube và các trang web khác, và có thể chạy bằng Docker hoặc docker-compose.",
+      "Những tùy chọn cấu hình bao gồm các biến môi trường cho ID người dùng, ID nhóm, thư mục tải xuống, và nhiều hơn nữa, với các giá trị mặc định được cung cấp để dễ dàng thiết lập."
+    ],
+    "commentSummary": [
+      "MeTube là một trình tải xuống YouTube tự lưu trữ sử dụng yt-dlp, một công cụ dòng lệnh phổ biến để tải video từ YouTube.",
+      "Đề án cung cấp một giao diện người dùng (UI) cho yt-dlp, giúp nó dễ tiếp cận hơn cho những người dùng ưa thích giao diện đồ họa hơn là các thao tác dòng lệnh.",
+      "Cuộc thảo luận nêu bật các lựa chọn thay thế và công cụ liên quan, chẳng hạn như Celluloid, Parabolic và Tube Archivist, cung cấp các chức năng tương tự cho các nền tảng và trường hợp sử dụng khác nhau."
+    ],
+    "points": 93,
+    "commentCount": 37,
+    "retryCount": 0,
+    "time": 1722243581
+  },
+  {
+    "id": 41097228,
+    "title": "Những Công Nghệ Của Sự Hủy Diệt Hành Tinh: ChronoCam (2013)",
+    "originLink": "https://www.forrestthewoods.com/blog/tech_of_planetary_annihilation_chrono_cam/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41097228",
+    "commentBody": "",
+    "originSummary": [
+      "Planetary Annihilation, một trò chơi chiến lược thời gian thực của Uber Entertainment, đã bước vào giai đoạn beta và có các công nghệ sáng tạo như tạo hành tinh theo thủ tục và trò chơi 40 người chơi.",
+      "Trò chơi giới thiệu ChronoCam, một hệ thống phát lại độc đáo cho phép người chơi quay ngược thời gian, chơi ở chế độ chậm/nhanh và xem thế giới trò chơi từ các thời điểm khác nhau, ngay cả trong các trận đấu trực tiếp.",
+      "Thông qua việc sử dụng kiến trúc client-server, ChronoCam giảm thiểu việc sử dụng băng thông bằng cách biểu diễn dữ liệu trò chơi dưới dạng các đường cong và hỗ trợ các tính năng phát lại mạnh mẽ, tăng cường các biện pháp chống gian lận và sự tham gia của cộng đồng trực tuyến."
+    ],
+    "commentSummary": [
+      "Planetary Annihilation, một trò chơi chiến lược thời gian thực (RTS), có một cơ chế tua thời gian độc đáo gọi là ChronoCam, cho phép người chơi xem lại và tương tác với các trạng thái trò chơi trong quá khứ.",
+      "Trò chơi ban đầu được tài trợ thông qua một chiến dịch Kickstarter rất thành công, huy động được 2,2 triệu đô la, nhưng đã gặp phải những thách thức do thiết kế đầy tham vọng của nó, bao gồm nhiều chiến trường hình cầu.",
+      "Mặc dù ban đầu bị chỉ trích, phần tiếp theo của trò chơi, Planetary Annihilation: Titans, đã nhận được đánh giá tích cực trên Steam, nhấn mạnh những thành tựu kỹ thuật của các nhà phát triển và thiết kế động cơ sáng tạo."
+    ],
+    "points": 85,
+    "commentCount": 28,
+    "retryCount": 0,
+    "time": 1722215260
+  },
+  {
+    "id": 41095429,
+    "title": "Phân tầng và lớp dịch chuyển của thẻ SD (2014)",
+    "originLink": "https://msreekan.com/2014/01/15/sdcard/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41095429",
+    "commentBody": "",
+    "originSummary": [
+      "Thẻ SD sử dụng bộ nhớ flash NAND MLC (Multi-Level Cell) hoặc SLC (Single-Level Cell), trừu tượng hóa các phức tạp như xóa khối và cân bằng độ mòn.",
+      "Thẻ phát hiện xem có sử dụng SPI (Giao diện Ngoại vi Nối tiếp) hay bus SD khi cung cấp điện áp và khởi tạo ngăn xếp phần mềm phù hợp, hoàn tất quá trình khởi động khi phần mềm vào trạng thái truyền.",
+      "Một lớp dịch thuật ánh xạ địa chỉ ảo sang địa chỉ vật lý, tối ưu hóa hiệu suất ghi với các lần ghi liên tiếp và quản lý chi phí cho các lần ghi ngẫu nhiên trên các Đơn vị Phân bổ (AU), thường có kích thước 4MB."
+    ],
+    "commentSummary": [
+      "Trong một hội nghị, một giai thoại về việc tháo dỡ các thẻ SD bị hỏng đã làm nổi bật một lỗi wear leveling khiến firmware bị ghi đè một phần, khơi dậy các cuộc thảo luận về độ tin cậy của thẻ SD.",
+      "Người dùng đã chia sẻ kinh nghiệm về việc thẻ SD bị hỏng và khôi phục dữ liệu, lưu ý rằng thẻ nhớ có mật độ cao dễ gặp sự cố hơn, trong khi thẻ công nghiệp, dù nhỏ hơn, lại bền hơn.",
+      "Những đề xuất để cải thiện độ tin cậy của thẻ SD bao gồm phần mềm tốt hơn cho việc tổng hợp ghi và cân bằng độ mòn, và thẻ SD tự động thay đổi kích thước phân vùng để quản lý các khối bị mòn."
+    ],
+    "points": 84,
+    "commentCount": 55,
+    "retryCount": 0,
+    "time": 1722195380
+  }
+]

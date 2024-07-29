@@ -15,12 +15,207 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 28 Jul 2024 19:10:28 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jul 2024 19:13:07 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/it.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 28 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[it]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-29]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/29&#39;</h2>
+<h1>2024-07-29</h1>
+<h2><a href="https://www.microsoft.com/en-us/security/blog/2024/07/27/windows-security-best-practices-for-integrating-and-managing-security-tools/">Analisi tecnica di Microsoft sull&#39;incidente di CrowdStrike</a></h2>
+<ul>
+<li>Windows offre opzioni di sicurezza flessibili, comprese funzionalità integrate e strumenti di terze parti, per migliorare la sicurezza e l&#39;affidabilità delle aziende.</li>
+<li>Un recente blackout di CrowdStrike è stato ricondotto a un problema di sicurezza della memoria nel driver CSagent, evidenziando l&#39;importanza di una gestione robusta dei driver del kernel.</li>
+<li>Microsoft collabora con fornitori terzi attraverso la Microsoft Virus Initiative (MVI) per garantire la qualità e l&#39;affidabilità dei prodotti di sicurezza, enfatizzando la riduzione della dipendenza dal kernel e il miglioramento delle protezioni in modalità utente.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095530">Reazioni</a></h3>
+<ul>
+<li>Secondo l&#39;analisi di Microsoft sull&#39;incidente di CrowdStrike, è necessario modernizzare gli approcci alla sicurezza e ridurre la dipendenza dai driver del kernel per l&#39;accesso ai dati di sicurezza critici.</li>
+<li>L&#39;incidente ha portato a dibattiti sulle pratiche di assicurazione della qualità di CrowdStrike e se Microsoft dovrebbe limitare l&#39;accesso al kernel per i fornitori terzi, una mossa precedentemente bloccata dall&#39;UE per una concorrenza leale.</li>
+<li>Questa situazione evidenzia i potenziali benefici di spostare più funzioni di sicurezza in modalità utente, puntando a pratiche di implementazione migliorate e maggiore affidabilità.</li>
+</ul>
+<h2><a href="https://dotat.at/@/2024-07-28-tolower-avx512.html">tolower() con AVX-512</a></h2>
+<ul>
+<li>Il articolo discute l&#39;uso delle istruzioni SIMD (Single Instruction, Multiple Data) per un&#39;elaborazione efficiente delle stringhe, concentrandosi in particolare sulla funzione tolower() in Rust.</li>
+<li>Il autore ha sperimentato con AVX-512-BW su un processore AMD Zen 4, ottenendo alte prestazioni sia per stringhe lunghe che corte utilizzando caricamenti e memorizzazioni mascherati.</li>
+<li>Il risultati hanno mostrato che AVX-512-BW è particolarmente efficace nella gestione delle stringhe corte, offrendo prestazioni fluide e veloci senza i problemi riscontrati nel codice autovettorizzato.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095790">Reazioni</a></h3>
+<ul>
+<li>Il trucco del &quot;unsafe read beyond of death&quot; in Rust e LLVM è considerato un comportamento indefinito, portando a potenziali ottimizzazioni del compilatore che presumono che non si verifichi, causando risultati inaspettati.</li>
+<li>In linea di principio, l&#39;assembly inline è attualmente l&#39;unica soluzione alternativa, con alternative come le intrinseche di caricamento allineato mascherato e i caricamenti congelati che vengono suggerite.</li>
+<li>Il dibattito su come gestire le letture fuori dai limiti continua, con alcuni che sostengono un comportamento definito dall&#39;implementazione, e le operazioni mascherate di AVX-512 sono note per i loro benefici in termini di prestazioni nonostante l&#39;adozione limitata a causa della segmentazione del mercato di Intel.</li>
+</ul>
+<h2><a href="https://github.com/izabera/ps">ps aux scritto in bash senza forking</a></h2>
+<ul>
+<li>Una domanda di colloquio per una posizione bash/Linux potrebbe riguardare la gestione di una situazione in cui tutti gli ID di processo (PID) sono occupati, impedendo la creazione di nuovi processi.</li>
+<li>Viene menzionato uno strumento che può imitare un comando <code>ps aux</code> funzionante in tali scenari, affermando scherzosamente una compatibilità universale.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41097241">Reazioni</a></h3>
+<ul>
+<li>Il dibattito su GitHub ruota attorno alla sfida di allineare le colonne nella programmazione, con un&#39;attenzione particolare all&#39;uso delle f-string di Python e del padding a questo scopo.</li>
+<li>Gli utenti suggeriscono strumenti e formati alternativi, come YAML per una gestione dei dati più semplice, e menzionano utility come Octopus Deploy e Docker CLI per l&#39;output JSON.</li>
+<li>Il thread affronta anche la gestione dell&#39;esaurimento dei PID (Process ID) in bash, con raccomandazioni come l&#39;uso della directory /proc/[pid]/ e <code>exec Python</code> per una migliore gestione dei processi.</li>
+</ul>
+<h2><a href="https://statsbomb-3d-viz.vercel.app/">Un visualizzatore di passaggi di calcio realizzato con Three.js</a></h2>
+<ul>
+<li>È stato sviluppato un visualizzatore di passaggi di calcio utilizzando i dati aperti di StatsBomb, che è un ricco set di dati per l&#39;analisi del calcio.</li>
+<li>Lo strumento consente agli utenti di analizzare e visualizzare i modelli di passaggio, con filtri per distanza del passaggio, squadra e singoli giocatori.</li>
+<li>Questo sviluppo evidenzia la crescente tendenza a sfruttare i dati aperti per analisi sportive avanzate e visualizzazione.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095839">Reazioni</a></h3>
+<ul>
+<li>Un visualizzatore di passaggi di calcio utilizzando Three.js sfrutta i dati aperti di StatsBomb per analizzare e visualizzare i modelli di passaggio, consentendo agli utenti di filtrare per distanza del passaggio, squadra e giocatori.</li>
+<li>Il feedback della comunità include suggerimenti per strumenti di visualizzazione di livello superiore come deck.gl o kepler.gl, e funzionalità come animazioni basate sul tempo e mappe di calore per un&#39;analisi migliore.</li>
+<li>Gli utenti hanno segnalato problemi come errori CORS e difficoltà nel caricamento dei file, indicando aree di potenziale miglioramento nell&#39;esperienza utente e nella gestione degli errori.</li>
+</ul>
+<h2><a href="https://loro.dev/blog/movable-tree">Alberi CRDT mobili e l&#39;implementazione di Loro</a></h2>
+<ul>
+<li>L&#39;articolo discute le sfide dell&#39;implementazione dei Movable Tree CRDTs (Conflict-free Replicated Data Types) in ambienti collaborativi e come Loro affronta questi problemi, inclusa l&#39;ordinazione dei nodi figli.</li>
+<li>L&#39;implementazione di Loro utilizza l&#39;algoritmo di &quot;A highly-available move operation for replicated trees&quot; e integra l&#39;algoritmo Fractional Index per l&#39;ordinamento, gestendo i conflitti con PeerID unici e jitter.</li>
+<li>L&#39;approccio di Loro supporta la collaborazione in tempo reale e il controllo delle versioni storiche, mostrando alte prestazioni in vari scenari, rendendolo adatto all&#39;uso in produzione in applicazioni collaborative.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41099901">Reazioni</a></h3>
+<ul>
+<li>Le CRDTs (Conflict-free Replicated Data Types) ad albero mobili e l&#39;implementazione di Loro stanno attirando l&#39;attenzione per la loro capacità di gestire operazioni complesse sugli alberi in ambienti collaborativi.</li>
+<li>Gli sviluppatori stanno discutendo applicazioni pratiche, come la React Table Library per la gestione di grandi strutture dati gerarchiche e l&#39;editor multiplayer di Thymer per compiti e note.</li>
+<li>Il discorso mette in evidenza le sfide e le soluzioni nell&#39;uso dei CRDT per vari tipi di dati, inclusi testi, immagini e modelli 3D, sottolineando l&#39;importanza di una sincronizzazione efficiente e della risoluzione dei conflitti.</li>
+</ul>
+<h2><a href="https://leandojo.org/">LeanDojo: Dimostrazione di teoremi in Lean utilizzando LLMs</a></h2>
+<ul>
+<li>LeanDojo introduce Lean Copilot, permettendo ai Modelli di Linguaggio (LLM) di assistere nell&#39;automazione delle dimostrazioni Lean suggerendo tattiche e cercando dimostrazioni.</li>
+<li>Il modello ReProver, utilizzando un Transformer encoder-decoder, recupera le premesse dalla libreria matematica e genera la prossima tattica, superando l&#39;automazione delle dimostrazioni integrata di Lean.</li>
+<li>Il dataset di LeanDojo include ampi benchmark e annotazioni dettagliate, garantendo che i modelli possano generalizzare ai teoremi con premesse nuove e scoprire nuove dimostrazioni.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41096486">Reazioni</a></h3>
+<ul>
+<li>LeanDojo è una nuova iniziativa che integra Lean, un assistente alla dimostrazione, con i modelli di linguaggio di grandi dimensioni (LLM) per migliorare le capacità di dimostrazione dei teoremi.</li>
+<li>Il progetto mira a colmare il divario tra la notazione matematica non eseguibile e il codice eseguibile, potenzialmente aiutando in problemi matematici complessi come le equazioni differenziali stocastiche.</li>
+<li>Questo sviluppo è significativo in quanto potrebbe migliorare l&#39;affidabilità e l&#39;efficienza della verifica formale in applicazioni critiche, come i sistemi ad alta sicurezza e la dimostrazione automatica di teoremi.</li>
+</ul>
+<h2><a href="http://jpetazzo.github.io/2024/07/26/cloudflare-images-overcharge-billing/">Cloudflare ci sta facendo pagare troppo per il loro servizio di immagini?</a></h2>
+<ul>
+<li>Il modello di fatturazione mista di Cloudflare Images, che combina lo storage prepagato e la consegna post-pagata, ha portato a fatture inaspettatamente alte e confuse per EphemeraSearch, a volte superando i $400 invece dei $110 previsti.</li>
+<li>Nonostante molteplici contatti con il supporto di Cloudflare per oltre otto mesi, non è stata fornita alcuna soluzione, spingendo a passare a soluzioni più economiche come S3 o server dedicati.</li>
+<li>Questa esperienza sottolinea l&#39;importanza di una spesa efficiente per i progetti indipendenti con bassi ricavi, evidenziando che, sebbene Cloudflare Images offra un servizio di qualità, il suo modello di fatturazione potrebbe non essere adatto a tutti gli utenti.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41100958">Reazioni</a></h3>
+<ul>
+<li>Si sono sollevate preoccupazioni riguardo al fatto che Cloudflare potrebbe addebitare eccessivamente per il loro servizio Images, con utenti che segnalano discrepanze tra i costi previsti e quelli effettivi.</li>
+<li>Si stanno facendo confronti con altri servizi come Amazon S3, Bunny CDN e Cloudflare R2, che sono percepiti come alternative più convenienti.</li>
+<li>Le pratiche di fatturazione e il supporto clienti di Cloudflare sono stati oggetto di esame, con alcuni utenti che hanno riscontrato cicli di fatturazione complicati e addebiti imprevisti.</li>
+</ul>
+<h2><a href="https://fabiensanglard.net/snes_video/index.html">Comprendere il design del sistema video del Super Nintendo</a></h2>
+<ul>
+<li>Fabien Sanglard esplora il sistema video del Super Nintendo (SNES) mettendo in luce le decisioni progettuali prese dagli ingegneri Nintendo nel 1989 per garantire la compatibilità con i televisori CRT e gli standard NTSC.</li>
+<li>Il SNES utilizzava un clock principale di 21,47727 MHz, diviso per ottenere un dot clock di 5,3693175 MHz, risultando in 341 punti per linea e una frequenza di aggiornamento di 60,098 Hz, con periodi di blanking orizzontale e verticale per evitare artefatti.</li>
+<li>Il SNES supportava sia gli standard NTSC che PAL, fornendo uscite composite e S-Video, e poteva raddoppiare le risoluzioni verticali e orizzontali per applicazioni specifiche, nonostante le sfide come lo sfarfallio.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098141">Reazioni</a></h3>
+<ul>
+<li>Il post discute il design e l&#39;architettura del Super Nintendo Entertainment System (SNES), evidenziando le sue specifiche tecniche e il contesto storico.</li>
+<li>Elementi chiave includono le opzioni di risoluzione del SNES, l&#39;impatto dei diversi standard TV (NTSC vs. PAL) sul gameplay e l&#39;uso dei CRT (tubi catodici) nei giochi arcade e nelle console domestiche.</li>
+<li>Il dibattito tocca anche l&#39;uso dei connettori SCART nei televisori europei e le sfide di emulare accuratamente l&#39;uscita video del SNES.</li>
+</ul>
+<h2><a href="https://quuxplusone.github.io/blog/2021/03/03/push-back-emplace-back/">Non preferire ciecamente <code>emplace_back</code> a <code>push_back</code> (2021)</a></h2>
+<ul>
+<li>Strumenti come clang-tidy e PVS-Studio possono segnalare <code>push_back</code> come &quot;cattivo stile&quot; e suggerire <code>emplace_back</code>, ma questo cambiamento non è sempre vantaggioso.</li>
+<li>Il metodo <code>emplace_back</code> dovrebbe essere utilizzato per evitare la creazione di oggetti temporanei, ma non è correlato alla semantica di spostamento e può comunque risultare in copie se non usato correttamente.</li>
+<li>Preferisci <code>push_back</code> per semplicità e tempi di compilazione più rapidi, utilizzando <code>emplace_back</code> solo quando necessario per tipi non movibili o per evitare oggetti temporanei.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095814">Reazioni</a></h3>
+<ul>
+<li>Il dibattito ruota attorno all&#39;uso di <code>emplace_back</code> rispetto a <code>push_back</code> in C++ per aggiungere elementi a contenitori come i vettori.</li>
+<li>emplace_back costruisce un oggetto sul posto, potenzialmente evitando copie non necessarie, mentre push_back aggiunge un oggetto già costruito al contenitore.</li>
+<li>Il discorso mette in evidenza che, sebbene <code>emplace_back</code> possa essere più efficiente, è anche più complesso, e <code>push_back</code> potrebbe essere preferibile per l&#39;uso quotidiano a meno che non siano necessari i benefici specifici di <code>emplace_back</code>.</li>
+</ul>
+<h2><a href="https://okmij.org/ftp/ML/higher-kind-poly.html">Higher-kinded bounded polymorphism in OCaml (2021)</a></h2>
+<ul>
+<li>Higher-kinded polymorphism, che astrae sui costruttori di tipo, è cruciale per operazioni generiche su collezioni e per l&#39;incorporazione di linguaggi specifici di dominio (DSL) tipizzati.</li>
+<li>OCaml non supporta nativamente il polimorfismo di ordine superiore a causa di problemi di aliasing dei tipi, ma può essere simulato utilizzando funtori, defunzionalizzazione e algebre iniziali.</li>
+<li>Vari metodi, tra cui l&#39;astrazione dei funtori e la riduzione al polimorfismo ordinario, permettono di ottenere il polimorfismo di ordine superiore in OCaml, anche se a volte potrebbe non essere necessario.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41096187">Reazioni</a></h3>
+<ul>
+<li>Discussione sulla polimorfismo limitato di ordine superiore in OCaml, con un focus sugli alias di tipo e sui problemi di uguaglianza di tipo, che portano a problemi di unificazione di ordine superiore.</li>
+<li>Viene evidenziata la trattabilità pratica di questi problemi, con riferimenti al linguaggio Idris e al tutorial &quot;Elaboration Zoo&quot; di András Kovács per ulteriori approfondimenti.</li>
+<li>Chiarimenti sulla sintassi dei GADT (Generalized Abstract Data Types) in OCaml, con confronti con F# che attualmente non supporta i GADT.</li>
+</ul>
+<h2><a href="https://www.bbc.com/news/education-21895704">Bambini dovrebbero essere lasciati annoiarsi, dice un esperto (2013)</a></h2>
+<ul>
+<li>Dr. Teresa Belton, un&#39;esperta di educazione, afferma che permettere ai bambini di sperimentare la noia è cruciale per favorire la creatività, poiché l&#39;attività costante può ostacolare l&#39;immaginazione.</li>
+<li>Le interviste con creativi come l&#39;autrice Meera Syal e l&#39;artista Grayson Perry rivelano che la noia ha giocato un ruolo significativo nel loro sviluppo creativo, con Perry che la descrive come uno &quot;stato creativo&quot;.</li>
+<li>Il dottor Belton sottolinea che l&#39;aspettativa della società di una stimolazione costante impedisce ai bambini di sviluppare la creatività interna, sostenendo la necessità di momenti di &quot;stand-and-stare&quot; lontano dagli schermi per stimolare l&#39;immaginazione.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098488">Reazioni</a></h3>
+<ul>
+<li>Un esperto suggerisce che i bambini dovrebbero essere lasciati sperimentare la noia, poiché può favorire la creatività e l&#39;autosufficienza.</li>
+<li>Riflettendo sulle esperienze dell&#39;infanzia passata, gli utenti ricordano di aver partecipato ad attività rischiose ma socialmente arricchenti, in contrasto con la sovrastimolazione basata sugli schermi dei bambini moderni.</li>
+<li>Il discorso sottolinea l&#39;importanza di bilanciare la noia con la sicurezza, promuovendo ambienti supervisionati in cui i bambini possano esplorare e svilupparsi.</li>
+</ul>
+<h2><a href="https://github.com/Owez/yark">Yark: Archiviazione di YouTube con interfaccia offline</a></h2>
+<ul>
+<li>Yark semplifica l&#39;archiviazione di YouTube con comandi di installazione e gestione facili, richiedendo Python 3.9+ e opzionalmente FFmpeg.</li>
+<li>Gli utenti possono creare, aggiornare e visualizzare archivi, che sono memorizzati in una struttura basata su directory con metadati, video e miniature.</li>
+<li>Lo strumento supporta la visualizzazione offline con modalità chiara e scura e consente suggerimenti di funzionalità tramite la scheda delle issue del repository.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41100820">Reazioni</a></h3>
+<ul>
+<li>Yark è un archiviatore di YouTube con un&#39;interfaccia utente offline, progettato per aiutare gli utenti a salvare i contenuti di YouTube localmente.</li>
+<li>Gli utenti discutono di strumenti simili per Twitch, evidenziando sfide come lo streaming di file MP4 di grandi dimensioni e la gestione delle richieste del server HTTP per file con caratteri speciali.</li>
+<li>La conversazione include dettagli tecnici sullo streaming, come l&#39;importanza dei server che supportano le richieste di intervallo per evitare problemi di buffering, con raccomandazioni per l&#39;uso pratico di VLC o Nginx.</li>
+</ul>
+<h2><a href="https://github.com/alexta69/metube">MeTube: Downloader di YouTube auto-ospitato</a></h2>
+<ul>
+<li>Le nuove versioni di Node non supportano più le build ARM a 32 bit; gli utenti devono migrare a un sistema operativo a 64 bit per gli aggiornamenti.</li>
+<li>Una GUI web per youtube-dl (fork di yt-dlp) è ora disponibile, supporta il download di playlist da YouTube e altri siti, e può essere eseguita utilizzando Docker o docker-compose.</li>
+<li>Le opzioni di configurazione includono variabili d&#39;ambiente per l&#39;ID utente, l&#39;ID gruppo, le directory di download e altro, con impostazioni predefinite fornite per facilitare la configurazione.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41098974">Reazioni</a></h3>
+<ul>
+<li>MeTube è un downloader di YouTube auto-ospitato che utilizza yt-dlp, un popolare strumento da riga di comando per scaricare video da YouTube.</li>
+<li>Il progetto fornisce un&#39;interfaccia utente (UI) per yt-dlp, rendendolo accessibile agli utenti che preferiscono un&#39;interfaccia grafica rispetto alle operazioni da riga di comando.</li>
+<li>Il dibattito mette in evidenza varie alternative e strumenti correlati, come Celluloid, Parabolic e Tube Archivist, che offrono funzionalità simili per diverse piattaforme e casi d&#39;uso.</li>
+</ul>
+<h2><a href="https://www.forrestthewoods.com/blog/tech_of_planetary_annihilation_chrono_cam/">Il Tech di Planetary Annihilation: ChronoCam (2013)</a></h2>
+<ul>
+<li>Planetary Annihilation, un gioco di strategia in tempo reale di Uber Entertainment, è entrato in fase beta e presenta tecnologie innovative come la generazione procedurale dei pianeti e partite fino a 40 giocatori.</li>
+<li>Il gioco introduce ChronoCam, un sistema di replay unico che permette ai giocatori di tornare indietro nel tempo, giocare in slow/fast motion e visualizzare il mondo di gioco da diversi punti nel tempo, anche durante le partite in diretta.</li>
+<li>Utilizzando un&#39;architettura client-server, ChronoCam minimizza l&#39;uso della larghezza di banda rappresentando i dati di gioco come curve e supporta funzionalità di replay robuste, migliorando le misure anti-cheat e l&#39;engagement della comunità online.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41097228">Reazioni</a></h3>
+<ul>
+<li>Planetary Annihilation, un gioco di strategia in tempo reale (RTS), presentava una meccanica unica di scorrimento temporale chiamata ChronoCam, che permetteva ai giocatori di rivedere e interagire con gli stati di gioco passati.</li>
+<li>Il gioco è stato inizialmente finanziato attraverso una campagna Kickstarter di grande successo, raccogliendo 2,2 milioni di dollari, ma ha affrontato sfide a causa del suo design ambizioso, che includeva molteplici campi di battaglia sferici.</li>
+<li>Nonostante le critiche iniziali, il seguito del gioco, Planetary Annihilation: Titans, ha ricevuto recensioni positive su Steam, evidenziando i successi tecnici degli sviluppatori e il design innovativo del motore.</li>
+</ul>
+<h2><a href="https://msreekan.com/2014/01/15/sdcard/">Livellamento dell&#39;usura e strati di traduzione delle schede SD (2014)</a></h2>
+<ul>
+<li>Le schede SD utilizzano memoria flash NAND MLC (Multi-Level Cell) o SLC (Single-Level Cell), astrattando complessità come cancellazioni di blocchi e livellamento dell&#39;usura.</li>
+<li>Il dispositivo rileva se utilizzare l&#39;interfaccia SPI (Serial Peripheral Interface) o il bus SD all&#39;alimentazione e avvia lo stack software appropriato, completando il processo di avvio quando il software entra nello stato di trasferimento.</li>
+<li>Uno strato di traduzione mappa gli indirizzi virtuali a quelli fisici, ottimizzando le prestazioni di scrittura con scritture contigue e gestendo il sovraccarico per le scritture casuali attraverso le Unità di Allocazione (AU), tipicamente di 4MB di dimensione.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41095429">Reazioni</a></h3>
+<ul>
+<li>Durante una conferenza, un aneddoto sullo smontaggio di schede SD rotte ha evidenziato un bug di wear leveling che causava la parziale sovrascrittura del firmware, suscitando discussioni sull&#39;affidabilità delle schede SD.</li>
+<li>Gli utenti hanno condiviso esperienze di guasti delle schede SD e di recupero dei dati, notando che le schede di memoria più dense sono più soggette a problemi, mentre le schede di grado industriale, sebbene più piccole, sono più durevoli.</li>
+<li>Le proposte per migliorare l&#39;affidabilità delle schede SD includevano un software migliore per l&#39;aggregazione della scrittura e il livellamento dell&#39;usura, e schede SD con auto-ridimensionamento delle partizioni per gestire i blocchi usurati.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Analisi tecnica di Microsoft sull'incidente di CrowdStrike" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Analisi%20tecnica%20di%20Microsoft%20sull'incidente%20di%20CrowdStrike&subheading=luned%C3%AC%2029%20luglio%202024%3A%20Riassunto%20di%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/it/2024/07/29</link>
+            <guid isPermaLink="false">2024-07-29T00:00:00.000Z</guid>
+            <pubDate>Mon, 29 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-28]]></title>
             <description
@@ -1690,202 +1885,6 @@
             <link>https://hn.cho.sh/it/2024/07/20</link>
             <guid isPermaLink="false">2024-07-20T00:00:00.000Z</guid>
             <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-19]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/19&#39;</h2>
-<h1>2024-07-19</h1>
-<h2><a href="https://old.reddit.com/r/crowdstrike/comments/1e6vmkf/bsod_error_in_latest_crowdstrike_update/">Crowdstrike Aggiornamento: Schermata Blu di Windows e Cicli di Avvio</a></h2>
-<ul>
-<li>Molti utenti in un luogo di lavoro stanno riscontrando schermate blu di Windows e cicli di riavvio, potenzialmente collegati a un recente aggiornamento dell&#39;applicazione Crowd Strike.</li>
-<li>Il Dipartimento IT ha notato che alcuni server sono andati offline, e una stazione radio locale ha riportato problemi simili con i laptop e un sistema telefonico fuori uso.</li>
-<li>Questi incidenti stanno avvenendo in Australia, ma non ci sono ancora state notizie al riguardo.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002195">Reazioni</a></h3>
-<ul>
-<li>Crowdstrike ha recentemente rilasciato un aggiornamento che ha causato problemi significativi, tra cui schermate blu di Windows e loop di avvio, colpendo vari settori, inclusi i servizi di emergenza e gli ospedali.</li>
-<li>Un utente di Reddit ha segnalato che il loro pronto soccorso era fuori servizio durante un trattamento per un attacco di cuore, e anche i servizi del 911 sono stati colpiti, causando ritardi nell&#39;assistenza ai pazienti.</li>
-<li>Il incidente sottolinea i rischi di fare affidamento su sistemi interconnessi e il potenziale per fallimenti catastrofici quando gli aggiornamenti non vengono adeguatamente testati prima del loro impiego.</li>
-</ul>
-<h2><a href="https://www.afr.com/technology/businesses-crippled-by-widespread-it-outage-20240719-p5jv2t">Crowdstrike: interruzione causa problemi diffusi</a></h2>
-<ul>
-<li>Un&#39;interruzione globale dell&#39;IT è stata causata da un aggiornamento software difettoso della società di sicurezza informatica CrowdStrike Holdings, che ha colpito numerosi sistemi Microsoft Windows.</li>
-<li>Entrambe Microsoft e CrowdStrike hanno rilasciato correzioni per affrontare il problema, ma il recupero completo è previsto richiedere del tempo.</li>
-<li>La situazione è leggermente migliorata, ma l&#39;impatto dell&#39;aggiornamento fallito si fa ancora sentire in tutto il mondo.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002677">Reazioni</a></h3>
-<ul>
-<li>Crowdstrike ha subito un&#39;interruzione che ha causato problemi diffusi, inclusi schermi blu di Windows e cicli di riavvio, a causa di un recente aggiornamento.</li>
-<li>L&#39;incidente ha suscitato un&#39;importante discussione su Hacker News, mettendo in evidenza l&#39;impatto sugli utenti e sui sistemi.</li>
-<li>Questo evento sottolinea l&#39;importanza cruciale di test rigorosi e monitoraggio negli aggiornamenti software per prevenire tali interruzioni.</li>
-</ul>
-<h2><a href="https://worthrises.org/pressreleases/2024/7/18/fcc-votes-unanimously-to-significantly-lower-phone-and-video-communication-costs-after-decades-of-exploitation-by-prison-telecoms">FCC vota per limitare le tariffe delle telecomunicazioni nelle prigioni</a></h2>
-<ul>
-<li>Il FCC ha votato per ridurre significativamente le tariffe delle chiamate telefoniche e video per le prigioni e le carceri, tagliando i limiti delle tariffe al minuto di oltre la metà e vietando tutte le commissioni, comprese le commissioni di deposito.</li>
-<li>Questo cambiamento influisce sull&#39;83% delle persone incarcerate, facendo risparmiare alle famiglie almeno 500 milioni di dollari all&#39;anno e migliorando il benessere e il successo nel reinserimento delle persone incarcerate.</li>
-<li>Si prevedono perdite di entrate significative per le società di telecomunicazioni carcerarie come Aventiv e ViaPath, mentre stati come Massachusetts, Minnesota e Colorado hanno già deciso di rendere gratuite le chiamate carcerarie.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41005181">Reazioni</a></h3>
-<ul>
-<li>Il FCC ha votato per limitare le tariffe dei servizi di telecomunicazione nelle prigioni, con l&#39;obiettivo di ridurre i costi elevati delle chiamate dei detenuti.</li>
-<li>Precedentemente, i detenuti erano limitati all&#39;uso di un unico operatore telefonico privato approvato dalla prigione, con conseguenti prezzi esorbitanti a causa della mancanza di concorrenza.</li>
-<li>Le nuove normative sono destinate ad alleviare il peso finanziario sui detenuti e le loro famiglie, promuovendo una migliore riabilitazione e riducendo la recidiva.</li>
-</ul>
-<h2><a href="https://johnfactotum.github.io/foliate/">Foliate: Leggi e-book con stile, naviga con facilità</a></h2>
-<ul>
-<li>Foliate è un lettore di e-book open-source che supporta vari formati come EPUB, Mobipocket, Kindle, FB2, CBZ e PDF, con impostazioni di lettura personalizzabili.</li>
-<li>Offre funzionalità come la navigazione tramite touchpad e touchscreen, segnalibri, annotazioni e integrazione con strumenti come Wiktionary e Google Translate.</li>
-<li>Foliate supporta il testo da destra a sinistra, la scrittura verticale e i layout fissi, ed è disponibile per diverse distribuzioni Linux o tramite clonazione del codice sorgente.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002273">Reazioni</a></h3>
-<ul>
-<li>Foliate è un lettore di e-book apprezzato per la sua semplicità, la facile navigazione, le funzionalità di segnalibro e annotazione.</li>
-<li>Memorizza i progressi di lettura, i segnalibri e le annotazioni in semplici file JSON, facilitando l&#39;esportazione e la sincronizzazione.</li>
-<li>Foliate utilizza hash di file per generare identificatori unici per i libri, garantendo che i PDF rimangano non modificati quando annotati, anche se alcuni utenti segnalano potenziali problemi se i file vengono alterati.</li>
-</ul>
-<h2><a href="https://www.nytimes.com/2024/07/18/us/frontier-flights-grounded-microsoft.html">Molte compagnie aeree interrotte a causa di un&#39;interruzione di Microsoft Azure</a></h2>
-<ul>
-<li>Frontier Airlines ha bloccato tutti i voli per circa 35 minuti a causa di un&#39;importante interruzione di Microsoft Azure, che ha influenzato la prenotazione, il check-in e l&#39;accesso alle carte d&#39;imbarco.</li>
-<li>L&#39;interruzione, iniziata alle 17:56, ha anche interrotto i sistemi di Allegiant e Sun Country Airlines, influenzando diversi sistemi nel centro degli Stati Uniti.</li>
-<li>Frontier, che opera con oltre 100 aerei, è stata una delle almeno tre compagnie aeree colpite dalle interruzioni del servizio.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41001959">Reazioni</a></h3>
-<ul>
-<li>Molte compagnie aeree hanno subito interruzioni a causa di un&#39;interruzione di Microsoft Azure, potenzialmente collegata a un aggiornamento difettoso di Crowdstrike che ha causato crash globali delle macchine Windows.</li>
-<li>Il blackout ha colpito vari settori, inclusi bancomat, supermercati e aeroporti in Europa e Nuova Zelanda, indicando un problema diffuso.</li>
-<li>L&#39;incidente sottolinea i rischi associati ai servizi cloud centralizzati e mette in evidenza la necessità di migliorare i piani di recupero in caso di disastro.</li>
-</ul>
-<h2><a href="https://www.construction-physics.com/p/what-would-it-take-to-recreate-bell">Che cosa ci vorrebbe per ricreare i Bell Labs?</a></h2>
-<ul>
-<li>AT&amp;T, attraverso i Bell Labs, è stata fondamentale nello sviluppo dell&#39;infrastruttura telefonica americana e ha prodotto invenzioni significative come il transistor, la cella solare fotovoltaica al silicio e il sistema operativo UNIX.</li>
-<li>Il successo dei Bell Labs fu in parte dovuto al monopolio di AT&amp;T, che supportava progetti di ricerca a lungo termine, portando a numerosi riconoscimenti, tra cui 10 Premi Nobel.</li>
-<li>Lo scioglimento di AT&amp;T ha portato alla divisione e al declino dei Bell Labs, rendendo difficile ricreare un&#39;istituzione simile oggi a causa delle condizioni storiche e tecnologiche uniche che esistevano una volta.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40998927">Reazioni</a></h3>
-<ul>
-<li>Ricreare i Bell Labs richiederebbe un quasi-monopolio, finanziamenti sostanziali, una competizione minima e una cultura che prioritizzi l&#39;innovazione a lungo termine rispetto ai profitti a breve termine.</li>
-<li>Storici e moderni esempi, come i Sandia National Laboratories e giganti tecnologici come Google e Microsoft, evidenziano l&#39;importanza della leadership, della cultura nazionale e delle strutture fiscali nel promuovere l&#39;innovazione.</li>
-<li>Il focus attuale sui rendimenti immediati per gli azionisti rappresenta un ostacolo significativo alla concentrazione sulla ricerca a lungo termine.</li>
-</ul>
-<h2><a href="https://hallofshame.design/ryanair-when-every-page-is-a-dark-pattern/">Ryanair – quando ogni pagina è un dark pattern</a></h2>
-<ul>
-<li>Ryanair è nota per l&#39;uso di &quot;dark patterns&quot;, tecniche di design manipolative, per aumentare i profitti durante il processo di prenotazione.</li>
-<li>Tattiche includono il &quot;privacy zuckering,&quot; dove i clienti sono impostati di default per iscriversi a promozioni, e la &quot;misdirection,&quot; che utilizza pulsanti e popup prominenti per vendere servizi aggiuntivi.</li>
-<li>Questi design ingannevoli sono diffusi in tutto il sito web di Ryanair, rendendo essenziale per gli utenti rimanere vigili per evitare acquisti accidentali o la condivisione di più informazioni del previsto.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41004039">Reazioni</a></h3>
-<ul>
-<li>Ryanair utilizza dark patterns, come costi nascosti e tattiche manipolative, per aumentare i profitti, frustrando i clienti.</li>
-<li>Esempi includono addebiti per scansioni dell&#39;ID dell&#39;app, vantaggi fuorvianti di &quot;imbarco prioritario&quot; e politiche complesse sui bagagli, che portano a costi aggiuntivi per i servizi di base.</li>
-<li>Nonostante i prezzi bassi e i voli efficienti, molti clienti preferiscono evitare Ryanair a causa delle sue pratiche poco amichevoli verso i clienti, mentre altre compagnie aeree low-cost come EasyJet e WizzAir sono considerate meno aggressive.</li>
-</ul>
-<h2><a href="https://arstechnica.com/information-technology/2024/07/crowdstrike-fixes-start-at-reboot-up-to-15-times-and-get-more-complex-from-there/">CrowdStrike risolve a partire da &quot;riavvia fino a 15 volte&quot;, diventa più complesso da lì in poi</a></h2>
-<ul>
-<li>CrowdStrike ha recentemente rilasciato un aggiornamento che ha portato i sistemi Windows a bloccarsi con una schermata blu della morte (BSOD), causando notevoli disagi.</li>
-<li>Le soluzioni variano da più riavvii a soluzioni più complesse come il ripristino dei backup o l&#39;eliminazione manuale del driver problematico, con ulteriori passaggi necessari per i sistemi che utilizzano la crittografia BitLocker.</li>
-<li>È stato ritirato l&#39;aggiornamento e il CEO di CrowdStrike si è scusato, assicurando agli utenti che sono in corso sforzi per risolvere il problema.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007898">Reazioni</a></h3>
-<ul>
-<li>CrowdStrike ha recentemente rilasciato una correzione che richiede fino a 15 riavvii, causando significative interruzioni in vari settori, inclusi sistemi CNC, allarmi di condizionamento e sicurezza, telefoni, email e sistemi contabili.</li>
-<li>L&#39;incidente sottolinea i rischi associati agli aggiornamenti automatici e la necessità di migliorare le pratiche di sicurezza, con molti che sostengono test più rigorosi e distribuzioni graduali.</li>
-<li>Gli utenti stanno mettendo in discussione la dipendenza da sistemi critici basati su Windows e connessi a Internet, evidenziando la necessità di una rivalutazione delle attuali strategie di infrastruttura IT.</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41007403">Sendune – designer di email HTML open-source</a></h2>
-<ul>
-<li>SENDUNE ha introdotto un nuovo designer di email HTML open-source mirato a semplificare la creazione di email HTML, che tradizionalmente sono difficili da scrivere e mantenere.</li>
-<li>Il designer è leggero, utilizza puro HTML ed evita dipendenze ingombranti, permettendo agli utenti di salvare l&#39;output HTML come modello per qualsiasi fornitore di servizi email.</li>
-<li>Si incoraggiano gli utenti a fare un fork del repository, apportare miglioramenti e inviare pull request, promuovendo un ambiente di sviluppo collaborativo.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007403">Reazioni</a></h3>
-<ul>
-<li>Sendune è un designer di email HTML open-source che enfatizza la semplicità e la facilità d&#39;uso, producendo HTML puro per la compatibilità con qualsiasi fornitore di servizi email.</li>
-<li>Lo strumento è leggero, privo di dipendenze e può essere facilmente integrato nelle applicazioni, consentendo agli utenti di salvare l&#39;output HTML come modelli.</li>
-<li>Nonostante alcuni problemi segnalati con la funzionalità di trascinamento e rilascio su Firefox, la risposta della comunità è stata positiva e i contributi possono essere fatti tramite GitHub.</li>
-</ul>
-<h2><a href="https://www.rfi.fr/en/international-news/20240718-seventh-person-likely-cured-of-hiv-doctors-announce">Un uomo tedesco di 60 anni probabilmente è la settima persona a essere effettivamente guarita dall&#39;HIV</a></h2>
-<ul>
-<li>Un uomo tedesco di 60 anni è probabilmente la settima persona effettivamente guarita dall&#39;HIV dopo un trapianto di cellule staminali, che ha anche trattato la sua leucemia aggressiva.</li>
-<li>Il paziente, indicato come il &quot;prossimo paziente di Berlino&quot;, ha smesso di assumere farmaci antiretrovirali alla fine del 2018 e rimane libero da HIV e cancro quasi sei anni dopo.</li>
-<li>Ricercatori sono cautamente ottimisti, notando che questo caso suggerisce che non tutte le mutazioni del gene CCR5 sono necessarie per un trattamento efficace dell&#39;HIV, offrendo speranza per strategie di cura dell&#39;HIV più ampie.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40999098">Reazioni</a></h3>
-<ul>
-<li>Un uomo tedesco di 60 anni è probabilmente la settima persona effettivamente guarita dall&#39;HIV, anche se la procedura è drastica e di solito riservata ai casi gravi di leucemia.</li>
-<li>C&#39;è un suggerimento di evolvere questo in un trapianto di cellule staminali autologhe per evitare complicazioni come la malattia del trapianto contro l&#39;ospite.</li>
-<li>Nonostante i progressi nei trattamenti per l&#39;HIV che riducono i carichi virali a livelli non rilevabili, 10.000 persone muoiono ancora di AIDS ogni anno negli Stati Uniti, spesso a causa di una scarsa educazione sessuale e dell&#39;accesso alle cure sanitarie.</li>
-</ul>
-<h2><a href="https://www.bbc.co.uk/news/live/cnk4jdwp49et">Interruzione IT globale di massa colpisce compagnie aeree, media e banche</a></h2>
-<ul>
-<li>Crowdstrike, una società di cybersecurity con sede in Texas fondata nel 2011, è specializzata nella sicurezza degli endpoint per proteggere le reti aziendali e i dati cloud dalle minacce informatiche.</li>
-<li>Co-fondata da George Kurtz e Dmitri Alperovitch, l&#39;azienda è stata quotata in borsa al Nasdaq nel 2019.</li>
-<li>Crowdstrike è stata fondamentale nell&#39;indagare su importanti attacchi informatici, in particolare la violazione del 2016 della rete del Comitato Nazionale Democratico degli Stati Uniti.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41002730">Reazioni</a></h3>
-<ul>
-<li>Un&#39;interruzione globale dell&#39;IT, innescata da un aggiornamento di Crowdstrike, ha causato bluescreen e loop di avvio nei sistemi Windows, colpendo compagnie aeree, media e banche.</li>
-<li>L&#39;incidente ha scatenato discussioni sull&#39;affidabilità del software di protezione degli endpoint, sui rischi degli attacchi alla catena di fornitura e sulla forte dipendenza dall&#39;infrastruttura Windows.</li>
-<li>Il blackout, derivante da un &quot;aggiornamento di sicurezza&quot;, ha sollevato notevoli preoccupazioni sulla sovranità e la resilienza dell&#39;infrastruttura IT.</li>
-</ul>
-<h2><a href="https://www.esa.int/Enabling_Support/Operations/Double_trouble_Gaia_hit_by_micrometeoroid_and_solar_storm">Doppio problema: Gaia dell&#39;ESA colpita da micrometeoroide e tempesta solare</a></h2>
-<ul>
-<li>Il veicolo spaziale Gaia dell&#39;ESA, lanciato nel dicembre 2013 per mappare oltre un miliardo di stelle nella Via Lattea, ha recentemente affrontato sfide significative a causa di un impatto con un micrometeoroide e di una tempesta solare.</li>
-<li>Il micrometeoroide ha danneggiato la copertura protettiva di Gaia e la tempesta solare ha causato un guasto in uno dei suoi dispositivi a trasferimento di carica (CCD), portando a migliaia di rilevamenti falsi di stelle.</li>
-<li>Ingegneri dell&#39;ESA e di Airbus Defence and Space hanno regolato con successo il software di Gaia, riducendo le false rilevazioni e riportando la navicella alle operazioni di routine, ora producendo alcuni dei suoi dati di migliore qualità.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=40999928">Reazioni</a></h3>
-<ul>
-<li>Di recente, la sonda Gaia dell&#39;ESA ha subito danni a causa di un micrometeoroide e di una tempesta solare, ma continua la sua missione, dimostrando la resilienza delle missioni spaziali.</li>
-<li>Esempi storici come Voyager 1 e Hubble dimostrano che le missioni spaziali spesso superano la loro durata prevista grazie ad aggiornamenti software e riparazioni.</li>
-<li>Nonostante i vincoli di bilancio e le sfide tecniche, la dedizione degli ingegneri ha permesso a Gaia di continuare a produrre dati di alta qualità dopo i recenti aggiustamenti.</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41004103">Che cosa c&#39;è in C-00000291*.sys?</a></h2>
-<ul>
-<li>CrowdStrike&#39;s C-00000291*.sys file ha causato crash di sistema a causa di una formattazione non valida, influenzando il driver di CrowdStrike.</li>
-<li>Gli utenti segnalano diverse versioni del file, con alcuni che ipotizzano la crittografia con chiavi specifiche per il cliente, mentre altri li hanno analizzati senza decrittazione.</li>
-<li>Il formato dei file è proprietario per gli aggiornamenti, non sono DLL o patch, sollevando preoccupazioni sulla sicurezza e l&#39;affidabilità del processo di aggiornamento di CrowdStrike.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41004103">Reazioni</a></h3>
-<ul>
-<li>CrowdStrike&#39;s C-00000291*.sys file ha causato crash di sistema a causa di una formattazione non valida, influenzando il driver principale di CrowdStrike.</li>
-<li>Gli utenti segnalano diverse versioni del file, con alcuni che ipotizzano la crittografia con chiavi specifiche per il cliente, mentre altri li hanno analizzati senza decrittazione.</li>
-<li>I file sono formati di aggiornamento proprietari, non DLL o patch semplici, sollevando preoccupazioni sulla sicurezza e l&#39;affidabilità del processo di aggiornamento di CrowdStrike.</li>
-</ul>
-<h2><a href="https://www.jpl.nasa.gov/news/nasas-curiosity-rover-discovers-a-surprise-in-a-martian-rock">Il rover Curiosity della NASA scopre una sorpresa in una roccia marziana</a></h2>
-<ul>
-<li>Il rover Curiosity della NASA ha scoperto per la prima volta zolfo elementare su Marte, un traguardo significativo nell&#39;esplorazione marziana.</li>
-<li>La scoperta è stata fatta in una regione ricca di solfati, con Curiosity che ha trovato un intero campo di rocce luminose composte di zolfo puro, intrigando gli scienziati.</li>
-<li>La missione di Curiosity, che include lo studio dell&#39;antico terreno marziano alla ricerca di segni di vita microbica, continua mentre ascende il Monte Sharp, perforando il suo 41º campione di roccia per ulteriori analisi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41006552">Reazioni</a></h3>
-<ul>
-<li>Il rover Curiosity della NASA ha scoperto cristalli di zolfo in una roccia marziana, portando a un dibattito sull&#39;uso di titoli acchiappa-click per coinvolgere il pubblico.</li>
-<li>La scoperta è avvenuta quando Curiosity ha attraversato una roccia, rivelando i cristalli, evidenziando l&#39;importanza dell&#39;interesse pubblico e del finanziamento per la NASA.</li>
-<li>Il dibattito ha anche affrontato le sfide di bilancio della NASA e la necessità di coinvolgimento pubblico per le operazioni continuative dell&#39;agenzia.</li>
-</ul>
-<h2><a href="https://www.sciencedaily.com/releases/2024/07/240715135713.htm">Perdita di ossigeno nei laghi e negli oceani</a></h2>
-<ul>
-<li>Le ricerche del Rensselaer Polytechnic Institute evidenziano che la perdita di ossigeno nei laghi e negli oceani rappresenta una minaccia significativa per gli ecosistemi, la società e il pianeta.</li>
-<li>A causa della deossigenazione acquatica, legata ai cambiamenti climatici, all&#39;uso del suolo e all&#39;inquinamento, si è verificato un rapido calo dell&#39;ossigeno disciolto, con laghi e bacini che hanno perso il 5,5% e il 18,6% del loro ossigeno dal 1980, e gli oceani che hanno perso circa il 2% dal 1960.</li>
-<li>Questa deossigenazione impatta la fisiologia delle specie, le reti alimentari e i servizi ecosistemici, creando &quot;zone morte&quot; e fioriture algali nocive, rendendo necessaria un&#39;azione urgente per affrontare il riscaldamento globale e il deflusso.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41007196">Reazioni</a></h3>
-<ul>
-<li>Laghi e bacini idrici hanno subito una significativa perdita di ossigeno, con riduzioni del 5,5% e del 18,6% rispettivamente dal 1980, mentre gli oceani hanno registrato una diminuzione di circa il 2% dal 1960.</li>
-<li>Il centro della California è particolarmente colpito, con una diminuzione del 40% dei livelli di ossigeno, principalmente a causa delle emissioni di gas serra, del deflusso di nutrienti e delle acque reflue non trattate.</li>
-<li>Le soluzioni suggerite includono l&#39;agricoltura rigenerativa e la riduzione del consumo di carne industriale per mitigare i più ampi impatti ambientali del cambiamento climatico e dell&#39;inquinamento.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Crowdstrike Aggiornamento: Schermata Blu di Windows e Cicli di Avvio" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Crowdstrike%20Aggiornamento%3A%20Schermata%20Blu%20di%20Windows%20e%20Cicli%20di%20Avvio&subheading=venerd%C3%AC%2019%20luglio%202024%3A%20Riassunto%20di%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/it/2024/07/19</link>
-            <guid isPermaLink="false">2024-07-19T00:00:00.000Z</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
