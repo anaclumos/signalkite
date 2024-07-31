@@ -15,12 +15,203 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 30 Jul 2024 19:20:28 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 31 Jul 2024 19:17:55 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/fi.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Tue, 30 Jul 2024 00:00:00 GMT</pubDate>
+        <pubDate>Wed, 31 Jul 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[fi]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-07-31]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/07/31&#39;</h2>
+<h1>2024-07-31</h1>
+<h2><a href="https://blog.trailofbits.com/2024/07/30/our-audit-of-homebrew/">Homebrew-auditimme</a></h2>
+<ul>
+<li>Auditointi Homebrew-ohjelmistonhallintajärjestelmästä, joka on kriittinen macOS- ja Linux-järjestelmille, paljasti ei-kriittisiä tietoturvaongelmia, jotka voisivat mahdollistaa odottamattoman koodin suorittamisen ja vaarantaa CI/CD-työnkulut.</li>
+<li>Keskeisiin havaintoihin kuuluivat haavoittuvuudet brew CLI:ssä, kuten hiekkalaatikosta pakenemiset ja oikeuksien korotukset, sekä ongelmat CI/CD-työnkuluissa, kuten shell-injektiohaavoittuvuudet.</li>
+<li>Open Tech Fundin sponsoroiman auditoinnin tavoitteena oli turvata kriittinen internetin infrastruktuuri, korostaen Homebrewin turvallisuuden merkitystä sen laajan käytön vuoksi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41114839">Reaktiot</a></h3>
+<ul>
+<li>Trail of Bits suoritti kattavan turvallisuustarkastuksen Homebrew&#39;lle, suositulle avoimen lähdekoodin pakettienhallinnalle macOS:lle, paljastaen useita turvallisuusongelmia ja parannuskohteita.</li>
+<li>Auditointi on herättänyt keskusteluja avoimen lähdekoodin pakettienhallinta-alustojen luontaisista toimitusketjun turvallisuusongelmista, korostaen parempien tarkastusprosessien ja nopeampien vastausten tarvetta epäluotettaviin lähteisiin.</li>
+<li>Auditointitulokset ovat lisänneet kiinnostusta vaihtoehtoisiin pakettienhallintaohjelmiin, kuten Nixiin, jota jotkut käyttäjät pitävät turvallisempana ja joustavampana, sen monimutkaisuudesta huolimatta.</li>
+</ul>
+<h2><a href="https://github.com/sickcodes/Docker-OSX">macOS QEMU:ssa Dockerissa</a></h2>
+<ul>
+<li>Docker-OSX mahdollistaa macOS:n ajamisen Docker-kontissa lähes alkuperäisellä suorituskyvyllä, tukien versioita High Sierrasta Sonomaan.</li>
+<li>Projektia ylläpitää Sick.Codes ja siihen sisältyy ominaisuuksia kuten X11-välitys, iMessage-turvallisuustutkimus ja iPhonen USB-läpivienti.</li>
+<li>Tämä työkalu on erityisen hyödyllinen suoritettaessa tietoturvatutkimusta macOS:llä käyttäen sekä Linux- että Windows-ympäristöjä.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41116473">Reaktiot</a></h3>
+<ul>
+<li>macOS:n ajaminen QEMU:ssa Dockerin sisällä on mahdollista, mutta siinä on rajoituksia, erityisesti GPU-kiihdytyksen osalta, sillä uudemmat Intelin ja NVIDIA:n GPU:t eivät ole tuettuja.</li>
+<li>Docker-OSX mahdollistaa macOS-virtuaalikoneiden ajamisen Dockerissa, mikä on hyödyllistä iOS-rakennuksissa, joissa käytetään työkaluja kuten Unity tai React Native.</li>
+<li>macOS-kuvien uudelleenjakaminen saattaa rikkoa Applen loppukäyttäjän lisenssisopimusta (EULA), joka rajoittaa macOS:n käytön Apple-laitteisiin, mutta projekti on silti suosittu kehitykseen ja testaukseen.</li>
+</ul>
+<h2><a href="https://ogiekako.vercel.app/blog/find_mkdir_tc">find + mkdir on Turing-täydellinen</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41115941">Reaktiot</a></h3>
+<ul>
+<li>Väite, että <code>find</code>- ja <code>mkdir</code>-komentojen käyttö olisi Turing-täydellistä, on peruttu virheellisen todistuksen vuoksi.</li>
+<li>Keskustelu käsittelee teknisiä yksityiskohtia tiedostojärjestelmistä, hakemisto-merkinnöistä ja Master File Table (MFT) -taulukosta Windowsissa, sekä väittelyitä eri järjestelmien, kuten C:n ja Pythonin, Turing-täydellisyydestä.</li>
+<li>Keskustelu tutkii myös Turingin koneiden, Sääntö 110:n ja funktionaalisen täydellisyyden teoreettisia näkökohtia, ja päivitys luvataan, jos todistus korjataan.</li>
+</ul>
+<h2><a href="https://ai.meta.com/sam2/">Meta esittelee Segment Anything Model 2</a></h2>
+<ul>
+<li>Meta on esitellyt Segment Anything Model 2:n (SAM 2), segmentointimallin, joka mahdollistaa tarkan kohteiden valinnan kuvissa ja videoissa käyttämällä syötteenä klikkauksia, laatikoita tai maskeja.</li>
+<li>SAM 2 loistaa zero-shot-suorituksessa, reaaliaikaisessa vuorovaikutuksessa ja tehokkaassa videonkäsittelyssä, ylittäen nykyiset mallit kohteiden segmentoinnissa.</li>
+<li>Meta julkaisee esikoulutetun SAM 2 -mallin, SA-V-datasarjan, demon ja koodin tutkimusyhteisölle edistäen avointa innovointia ja jatkotutkimusta.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41116635">Reaktiot</a></h3>
+<ul>
+<li>Meta on julkaissut Segment Anything Model 2:n, mikä on herättänyt suurta kiinnostusta sen mahdollisesta vaikutuksesta tekoälytutkimukseen ja teknologiateollisuuteen.</li>
+<li>Jotkut asiantuntijat ehdottavat, että Meta on ohittamassa Googlen tekoälyn edistysaskeleissa ja yhteisöllisissä panoksissa, mikä voisi johtaa uusiin innovaatioihin ja liiketoiminta-arvoon.</li>
+<li>Keskustelu sisältää myös Metan avoimen lähdekoodin ponnistelut ja tekoälyteknologian laajemmat vaikutukset sekä suurten teknologiayritysten välisen kilpailudynamiikan.</li>
+</ul>
+<h2><a href="https://shwin.co/blog/creativity-fundamentally-comes-from-memorization">Luovuus pohjimmiltaan kumpuaa muistamisesta</a></h2>
+<ul>
+<li>Kirjoittajan mukaan järjestelmien soveltaminen luoviin pyrkimyksiin, kuten DJ-siirtymiin ja huumorikuvioihin, lisää luovuutta sisäistämällä tietoa ja malleja.</li>
+<li>He kannattavat oppimismenetelmää, joka sisältää kaavojen ulkoa opettelua ja altistumista erilaisille tapauksille, mikä voidaan soveltaa akateemisen maailman ulkopuolelle, kuten urheiluun ja myyntiin.</li>
+<li>Kirjoittaja ehdottaa, että perusteiden hallitseminen järjestelmien avulla mahdollistaa korkeamman tason innovaation ja luovuuden, kuten nähdään startup-yritysten ja musiikin alojen asiantuntijuudessa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41114825">Reaktiot</a></h3>
+<ul>
+<li>Luovuus yhdistetään usein sisäistettyyn tietoon, joka voi olla seurausta ulkoa oppimisesta.</li>
+<li>On käynnissä keskustelu siitä, onko ulkoa opettelu välttämätöntä luovuudelle, ja jotkut väittävät ymmärryksen ja kontekstin olevan tärkeämpiä kuin pelkkä toisto.</li>
+<li>Konseptien sisäistäminen toistuvan altistumisen kautta voi auttaa kehittämään heuristiikkoja ja malleja, jotka ovat hyödyllisiä luovissa sovelluksissa.</li>
+</ul>
+<h2><a href="https://lock.cmpxchg8b.com/slowterm.html">Vianmääritys: Terminaalin viive</a></h2>
+<ul>
+<li>Windows 11 -koneella xterm-ohjelman avaaminen aiheutti merkittävää viivettä verrattuna Fedora Linux -työasemaan, ja Windowsilla avautuminen kesti aluksi noin 1600 ms.</li>
+<li>Profilointi ja virheenkorjaus paljastivat, että ikkunatehosteiden ja tiettyjen xterm-ominaisuuksien, kuten työkalupalkin ja Tektronix-emuloinnin, poistaminen käytöstä paransi suorituskykyä.</li>
+<li>Palvelintilan toteuttaminen viivästetyllä kartoituksella käyttäen LD_PRELOAD-kirjastoa vähensi käynnistysajan noin 366 millisekuntiin Windowsilla, tehden siitä lähes yhtä nopean kuin Fedorassa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41114569">Reaktiot</a></h3>
+<ul>
+<li>Artikkeli käsittelee terminaalin viiveen vianmääritystä, erityisesti keskittyen Microsoft Console Debuggeriin (cdb) ja sen komentoihin, joilla voidaan muokata funktioiden käyttäytymistä.</li>
+<li>Se korostaa <code>eb win32u!NtUserSetLayeredWindowAttributes c3</code> -komennon käyttöä toiminnon poistamiseksi käytöstä korvaamalla sen ensimmäinen tavu <code>ret</code>-käskyllä, jolloin se palauttaa välittömästi.</li>
+<li>Keskustelu sisältää erilaisia käyttäjäkokemuksia ja menetelmiä terminaalin käynnistysajan mittaamiseen ja vähentämiseen, kuten <code>hyperfine</code>-vertailutyökalun ja erilaisten terminaaliemulaattoreiden käyttöä.</li>
+</ul>
+<h2><a href="https://words.filippo.io/rustgo/">Rustgo: Rustin kutsuminen Go:sta lähes nollakustannuksilla (2017)</a></h2>
+<ul>
+<li>Kirjoitus tutkii Rustin kutsumista Go:sta korvaamaan assembly-koodia, pyrkien lähes nollakustannuksiin ilman syvällistä Rust- tai kääntäjäosaamista.</li>
+<li>Ruostetta valitaan sen korkean optimointikyvyn ja luettavuuden vuoksi verrattuna assemblyyn, ja lähestymistapa osoittaa parempaa suorituskykyä kuin cgo:n käyttö pienissä, kuumissa funktioissa.</li>
+<li>Vertailut osoittavat, että Rustin kutsuminen Go:sta on lähes yhtä nopeaa kuin Go:n natiivi funktiokutsu ja merkittävästi nopeampaa kuin cgo, mikä tekee siitä sopivan suorituskykyä vaativiin tehtäviin.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41116639">Reaktiot</a></h3>
+<ul>
+<li>Rustgo on työkalu, joka mahdollistaa Rust-koodin kutsumisen Go:sta lähes nollakustannuksilla, mikä on merkittävää suorituskykyherkille sovelluksille.</li>
+<li>Keskustelu tuo esiin monimutkaisuudet ja mahdolliset sudenkuopat, jotka liittyvät Foreign Function Interfacen (FFI) käyttöön eri ohjelmointikielten, erityisesti Go:n ja Rustin, välillä.</li>
+<li>Vertailuja tehdään muihin kieliin, kuten C# ja Python, korostaen FFI-suorituskyvyn kompromisseja ja oikean työkalun valinnan tärkeyttä.</li>
+</ul>
+<h2><a href="https://buttondown.email/hillelwayne/archive/why-i-prefer-rst-to-markdown/">Pidän rST:stä enemmän kuin Markdownista</a></h2>
+<ul>
+<li>Kirjoittaja on julkaissut &quot;Logic for Programmers v0.2&quot;, joka sisältää epub-tuen, rajoitteiden ratkaisun ja muodollisen spesifikaation sisältöä.</li>
+<li>Kirjoittaja suosii reStructuredTextiä (rST) Markdownin sijaan sen paremman muokattavuuden ja laajennettavuuden vuoksi, mikä on erityisen hyödyllistä monimutkaisten dokumentointitarpeiden kannalta.</li>
+<li>Kirjaa varten luotiin mukautettu harjoituslaajennus rST:ssä käsittelemään erilaisia renderöintivaatimuksia HTML-, epub- ja PDF-muodoille.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41120254">Reaktiot</a></h3>
+<ul>
+<li>reStructuredText (rST) on suosittu teknisten kirjojen kirjoittamiseen sen laajennettavuuden ja semanttisten ominaisuuksien vuoksi, erityisesti yhdistettynä Sphinxiin.</li>
+<li>Markdown on yksinkertaisempi ja helpommin luettava, mikä tekee siitä ihanteellisen nopeisiin muistiinpanoihin ja jokapäiväiseen dokumentointiin.</li>
+<li>rST:n ominaisuudet, kuten mukautetut tekstiobjektit ja taattu sisäisten linkkien ratkaisu, ovat ratkaisevan tärkeitä monimutkaisissa dokumentointiprojekteissa, mutta Markdownin yksinkertaisuus ja tuki tekevät siitä suositumman yleiskäytössä.</li>
+</ul>
+<h2><a href="https://blog.activision.com/activision/2024/activision-releases-call-of-duty-warzone-caldera-data-set">Call of Duty: Warzone Caldera -aineisto akateemiseen käyttöön</a></h2>
+<ul>
+<li>Activision on julkaissut Call of Duty®: Warzone™ Caldera -datan akateemiseen käyttöön, kuten sivun metatiedoista käy ilmi.</li>
+<li>Julkaisu on merkittävä pelidatan analyysistä kiinnostuneille tutkijoille ja akateemikoille, ja se voi edistää uusia tutkimuksia ja oivalluksia pelialalla.</li>
+<li>Aineisto on saatavilla Activisionin blogin kautta, mikä korostaa yhtiön tukea akateemiselle tutkimukselle ja datan läpinäkyvyydelle.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41115619">Reaktiot</a></h3>
+<ul>
+<li>Activision on julkaissut Call of Duty: Warzone Caldera -datan akateemiseen käyttöön GitHubissa, sisältäen pelitasojen aineistoja ja pelaajien liikkumistietoja.</li>
+<li>Datajoukko on hyödyllinen grafiikkatutkimuksessa, moottorikehityksessä, strategisten sijaintien määrittelyssä ja säteenseuranta-algoritmien testaamisessa, ja sillä on potentiaalisia sovelluksia tekoälyn kehityksessä ja huijausten havaitsemisessa.</li>
+<li>Julkaisua pidetään hyödyllisenä akateemisiin ja tutkimustarkoituksiin, vaikka jotkut näkevät sen rekrytointivälineenä sen ei-kaupallisen lisenssin vuoksi.</li>
+</ul>
+<h2><a href="https://eli.thegreenplace.net/2024/building-static-binaries-with-go-on-linux/">Staattisten binäärien rakentaminen Go:lla Linuxissa</a></h2>
+<ul>
+<li>Go voi tuottaa staattisesti linkitettyjä binäärejä Unix-järjestelmissä, mutta se vaatii tiettyjä build-tageja tai cgo:n poistamista käytöstä.</li>
+<li>Työkalut kuten <code>file</code>, <code>ldd</code> ja <code>nm</code> voivat varmistaa, onko Go-binaari staattisesti linkitetty.</li>
+<li>Zig-kääntäjän käyttäminen C-kääntäjänä yksinkertaistaa prosessia ja tukee ristiinkääntämistä staattista linkitystä varten.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41114601">Reaktiot</a></h3>
+<ul>
+<li>Staattisten binäärien rakentaminen Go:lla Linuxissa vaatii tiettyjä lippuja ja huomioita, kuten <code>-tags sqlite_omit_load_extension</code> käyttö SQLite:lle, jos laajennuksia ei käytetä.</li>
+<li>Keskustelussa korostetaan WebAssemblyn (WASM) käyttöä SQLite-tietokannassa, mikä tarjoaa paremman suorituskyvyn ja ylläpidettävyyden verrattuna perinteisiin menetelmiin, kuten modernc-transpilointiin.</li>
+<li>On olemassa haasteita ja suorituskykyongelmia, jotka liittyvät erilaisten allokaattoreiden ja libc-toteutusten, kuten musl, käyttöön staattisten Go-binaarien rakentamisessa, kuten Tailscale on kokenut.</li>
+</ul>
+<h2><a href="https://spectrum.ieee.org/new-superconductor-microprocessor-yields-a-substantial-boost-in-efficiency">Suprajohteiset mikroprosessorit? Osoittautuvat erittäin energiatehokkaiksi (2021)</a></h2>
+<ul>
+<li>2,5 GHz:n suprajohtava mikroprosessoriprototyyppi on kehitetty, ja se käyttää 80 kertaa vähemmän energiaa kuin perinteiset puolijohdemikroprosessorit, vaikka jäähdytys otettaisiin huomioon.</li>
+<li>MANA-mikroprosessori, joka perustuu adiabaattiseen kvanttivirtaparametroni (AQFP) -teknologiaan, sisältää yli 20 000 suprajohtavaa Josephson-liitosta.</li>
+<li>Tämä on ensimmäinen adiabaattinen suprajohtava mikroprosessori, mikä merkitsee merkittävää edistysaskelta energiatehokkaassa tietotekniikassa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41115591">Reaktiot</a></h3>
+<ul>
+<li>Tutkijat Japanissa kehittävät erittäin tehokkaita suprajohtavia mikroprosessoreita, jotka toimivat adiabaattisesti, teoreettisesti välttäen energian häviön tai lisääntymisen laskennan aikana.</li>
+<li>Tämä teknologia haastaa Landauerin periaatteen, jonka mukaan tiedon poistaminen vaatii energiaa, käyttämällä käänteistä laskentaa erityisillä logiikkaporteilla, kuten Toffoli-portilla, minimoidakseen energiankulutuksen.</li>
+<li>Huolimatta lupaavasta tehokkuudestaan, käytännön toteutus kohtaa merkittäviä haasteita, erityisesti jäähdytyksessä ja skaalauksessa käytännön käyttöä varten, ja se vaatii edelleen energiaa alkuarvojen asettamiseen ja ympäristön melun hallintaan.</li>
+</ul>
+<h2><a href="https://www.bitsaboutmoney.com/archive/crowdstrike-bug-hit-banks-hard/">Miksi CrowdStrike-virhe iski pankkeihin kovaa</a></h2>
+<ul>
+<li>Heinäkuun 19. päivänä CrowdStrike Falcon -ohjelmiston, päätepisteiden valvontaohjelmiston, konfiguraatiovirhe aiheutti katastrofaalisia vikoja Windows-järjestelmissä, mikä vaikutti vakavasti pankkisektoriin ja muihin teollisuudenaloihin.</li>
+<li>Vika johti laajoihin toiminnallisiin häiriöihin, mukaan lukien kassanhoitajien ja pankkiirien joutuminen toimettomiksi, ja aiheutti jopa joidenkin pankkien käteisvarojen loppumisen, mikä korosti rahoitusinfrastruktuurin haavoittuvuuksia.</li>
+<li>Yhdysvaltain pankkivalvojat vaikuttivat epäsuorasti tällaisten turvatyökalujen käyttöönottoon, jotka, vaikka ne on tarkoitettu suojaukseen, voivat tuoda merkittäviä haavoittuvuuksia korkean käyttöoikeustasonsa ja laajan käytön vuoksi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41119874">Reaktiot</a></h3>
+<ul>
+<li>Virhe CrowdStrikessa aiheutti merkittäviä häiriöitä pankeissa automaattisen päivityksen vuoksi, joka ohitti olemassa olevat valvontamekanismit.</li>
+<li>Tapauksen johdosta on syntynyt keskustelua yksittäisiin toimittajiin luottamisen riskeistä ja parempien päivitysstrategioiden tarpeesta.</li>
+<li>Huolimatta laajalle levinneistä ongelmista, jotkut käyttäjät kokivat vain vähäistä vaikutusta, mikä osoittaa tiettyjen järjestelmien kestävyyden.</li>
+</ul>
+<h2><a href="https://coldwar-ct.com/Home_Page_S1DO.html">AT&amp;T Long Lines &quot;Cheshire&quot; maanalaisen kohteen rakentaminen</a></h2>
+<ul>
+<li>Cheshiren ATT-laitos, joka rakennettiin vuonna 1966, on maanalainen kompleksi, joka on suunniteltu kriittisiä sotilasviestintätarkoituksia varten. Se sisältää vahvistetun analogisen L4-kantokaapelin ja AUTOVON 4-johtimisen kytkimen.</li>
+<li>Tilat sisältävät laajan infrastruktuurin ilman suodatukseen, sähkön tuotantoon ja räjähdyssuojaukseen, mikä varmistaa toiminnan jatkuvuuden ydinonnettomuuksien aikana.</li>
+<li>Sivusto toimi myös metropolialueen solmukohtana Hartfordille ja New Havenille, yhdistäen useisiin muihin kriittisiin viestintäreitteihin ja -laitoksiin.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41116253">Reaktiot</a></h3>
+<ul>
+<li>AT&amp;T Long Linesin &quot;Cheshire&quot; maanalainen kohde oli AUTOVON-kytkentäkeskus, joka rakennettiin kestämään ydinsodan käyttäen Western Electricin 1ESS-teknologiaa.</li>
+<li>Nämä keskukset sijaitsivat strategisesti kaukana suurista kaupungeista ja sotilaskohteista, ja niissä oli redundantit yhteydet, vahvistetut rakenteet sekä jäähdytys- ja saastumissuoja työntekijöille.</li>
+<li>Infrastruktuuri, joka kehitettiin kylmän sodan aikana, sisälsi laajoja mikroaaltopisteiden välisiä yhteyksiä ja käytti sekä 1ESS- että Number 5 Crossbar -kytkimiä, mikä korostaa sen kestävyyttä ja monimutkaisuutta.</li>
+</ul>
+<h2><a href="https://eos.org/science-updates/how-great-was-the-great-oxidation-event">Kuinka merkittävä oli suuri hapettumistapahtuma?</a></h2>
+<ul>
+<li>Tutkijat eivät ole varmoja, milloin Maan ilmakehässä oli tarpeeksi happea varhaisen eläinelämän tukemiseen, huolimatta laajasta tutkimuksesta.</li>
+<li>Uudet löydökset Rio Tintosta, Espanjasta, viittaavat siihen, että riittävästi happea eläinten evoluutiolle saattoi olla läsnä lähes 2 miljardia vuotta ennen eläinten ilmestymistä.</li>
+<li>Viimeaikaiset tutkimukset osoittavat, että vaihtelevat valtameren happitasot, ruoan niukkuus tai geneettinen kehitysaika, pikemminkin kuin happitasot, saattavat olla syynä eläinten evoluution viivästymiseen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41119080">Reaktiot</a></h3>
+<ul>
+<li>Suuri hapettumistapahtuma (GOE) merkitsi merkittävää nousua Maan ilmakehän hapessa fotosynteettisten mikrobien ansiosta vähintään 400 miljoonan vuoden ajan.</li>
+<li>Tämä hapen lisääntyminen mahdollisti monimutkaisten elämänmuotojen kehittymisen ja tulen mahdollisuuden, mutta aiheutti anaerobisten eliöiden joukkosukupuuton.</li>
+<li>GOE on ratkaisevan tärkeä astrobiologialle, sillä korkeat happitasot eksoplaneetoilla voivat viitata mahdolliseen biologiseen aktiivisuuteen, ja jatkuva tutkimus tarkentaa jatkuvasti ymmärrystämme.</li>
+</ul>
+<h2><a href="https://github.com/mcastillof/FakeTraveler">FakeTraveler: Väärennä puhelimesi sijainti (Mock location Androidille)</a></h2>
+<ul>
+<li>FakeTraveler on Android-sovellus, joka mahdollistaa käyttäjien puhelimen sijainnin väärentämisen yksityisyyden suojaamiseksi tai sovellusten testaustarkoituksiin.</li>
+<li>Kayttäjät voivat valita sijainnin kartan avulla tai syöttää tietyt leveys- ja pituusasteen koordinaatit, ja sitten soveltaa muutoksia.</li>
+<li>FakeTravelerin käyttämiseksi käyttäjien on otettava käyttöön Kehittäjäasetukset ja asetettava FakeTraveler sijaintihuijaussovellukseksi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41116414">Reaktiot</a></h3>
+<ul>
+<li>FakeTraveler on Android-sovellus, joka mahdollistaa käyttäjien puhelimen sijainnin väärentämisen.</li>
+<li>Sovellus on avoimen lähdekoodin ja saatavilla F-Droidissa, joka on ilmaisia ja avoimen lähdekoodin Android-sovelluksia tarjoava arkisto.</li>
+<li>Huolimatta sen toiminnallisuudesta, jotkut käyttäjät huomauttavat, että se ei välttämättä ohita tiettyjä sovellusrajoituksia, kuten pankkisovelluksissa tai Pokémon Go:ssa, ilman lisätoimenpiteitä, kuten laitteen roottausta.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Homebrew-auditimme" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Homebrew-auditimme&subheading=keskiviikkona%2031.%20hein%C3%A4kuuta%202024%3A%20Hacker%20News%20yhteenveto" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/fi/2024/07/31</link>
+            <guid isPermaLink="false">2024-07-31T00:00:00.000Z</guid>
+            <pubDate>Wed, 31 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-30]]></title>
             <description
@@ -1723,182 +1914,6 @@
             <link>https://hn.cho.sh/fi/2024/07/22</link>
             <guid isPermaLink="false">2024-07-22T00:00:00.000Z</guid>
             <pubDate>Mon, 22 Jul 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-07-21]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/07/21&#39;</h2>
-<h1>2024-07-21</h1>
-<h2><a href="https://docs.buttplug.io/docs/dev-guide/intro/buttplug-ethics/">Empatiaa käyttäjälle, joka harrastaa seksiä ohjelmistosi kanssa</a></h2>
-<ul>
-<li>Intiimiin käyttöön tarkoitetun teknologian, kuten Buttplug-sovellusten, kehittäminen vaatii empatiaa ja käyttäjien ainutlaatuisten tarpeiden ja kontekstien huomioimista, mukaan lukien käytettävyys kiihottumisen aikana ja laitteiston yhteyskatkokset.</li>
-<li>Jakamalla seksiteknologian koodia alustoilla, kuten GitHubissa, voidaan luoda parhaita käytäntöjä, mutta kehittäjien tulisi olla varovaisia eksplisiittisen median kanssa ja harkita arkaluontoisten materiaalien itseisännöintiä.</li>
-<li>Mutta Buttplug-projekti korostaa turvallisuutta, autonomiaa ja ihmisoikeuksia, kannustaen vastuulliseen käyttäytymiseen ja koulutukseen missiolausekkeessaan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41021029">Reaktiot</a></h3>
-<ul>
-<li>Kirjoitus käsittelee buttplug.io:ta, seksilelujen hallintaan tarkoitettua ohjelmistokirjastoa, korostaen sen laajaa laitetukea ja eettisiä näkökohtia.</li>
-<li>Perustaja qdot jakaa näkemyksiä kehityshaasteista, mukaan lukien Bluetooth-kirjaston hallinta ja käyttäjäymmärryksen tärkeys ohjelmistosuunnittelussa.</li>
-<li>Keskustelu sisältää humoristisia ja vakavia vaihtoja ohjelmiston sovelluksista, testausmenetelmistä ja mahdollisista käyttötarkoituksista muilla aloilla, kuten terveydenhuollossa.</li>
-</ul>
-<h2><a href="https://twitter.com/patrickwardle/status/1814343502886477857">Alustavat tiedot siitä, miksi CrowdStriken CSAgent.sys kaatui</a></h2>
-<ul>
-<li>CrowdStriken CSAgent.sys kaatui virheellisen muistiosoitteen aiheuttaman virheellisen käskyn vuoksi.</li>
-<li>Ongelma johtui osoitteesta, jota ei ollut kartoitettu osoitinjoukossa, mikä johti kaatumiseen muistia käytettäessä.</li>
-<li>Virheellinen käsky oli &quot;mov r9d, [r8],&quot; jossa R8 sisälsi virheellisen osoitteen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41021366">Reaktiot</a></h3>
-<ul>
-<li>CSAgent.sys-kaatuminen CrowdStrikella johtui virheellisestä binääritiedosta ja huonosti kirjoitetusta jäsentimestä, joka ei kyennyt käsittelemään virheellistä dataa oikein.</li>
-<li>Tilannetta pahensivat huonosti kirjoitettu ydin koodi, sisäisen testauksen puute, ohitetut päivitysasetukset, samanaikainen maailmanlaajuinen käyttöönotto ja alkuperäinen tietojen korruptoituminen.</li>
-<li>Tämä korostaa vankan virheenkäsittelyn, porrastettujen käyttöönottojen ja perusteellisen testauksen, mukaan lukien fuzz-testaus, tarvetta vastaavien vikojen estämiseksi.</li>
-</ul>
-<h2><a href="https://genealogy.stackexchange.com/questions/3748/what-is-the-significance-of-the-character-j-at-the-end-of-a-roman-numeral">Mikä on merkityksellistä merkissä &quot;j&quot; roomalaisen numeron lopussa? (2013)</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41022653">Reaktiot</a></h3>
-<ul>
-<li>Roomalaisen numeron lopussa oleva merkki &quot;j&quot; käytettiin historiallisesti osoittamaan numeron loppua, mikä varmisti selkeyden ja esti väärentämisen.</li>
-<li>Tämä käytäntö oli olennainen käsinkirjoitetuissa asiakirjoissa väärintulkintojen välttämiseksi, kuten erottamaan &quot;xviij&quot; (18) &quot;xviii&quot; (17) tai &quot;xviiii&quot; (19).</li>
-<li>Samankaltaiset typografiset käytännöt vaikuttivat hollantilaisen digrafi &quot;ij&quot; kehitykseen, korostaen näiden käytäntöjen vaikutusta kielen kehitykseen.</li>
-</ul>
-<h2><a href="https://computer.rip/2024-07-20-minuteman-missile-communications.html">Minuteman-ohjuksen viestintä</a></h2>
-<ul>
-<li>Kirjoittaja aikoo vaihtaa hosting-alustaa, mikä aiheuttaa lisää kuluja, ja hän hakee lukijoiden tukea lahjoitusten kautta, tarjoten tukijoille eksklusiivista sisältöä ja varhaisen pääsyn uusiin YouTube-videoihin.</li>
-<li>Yhdysvalloilla on 400 Minuteman III -mannertenvälistä ballistista ohjusta, joita hallinnoivat ilmavoimien 90., 91. ja 341. ohjussiivet. Kymmentä laukaisulaitosta valvoo yksi ohjusvalvontakeskus.</li>
-<li>Minuteman-viestintäjärjestelmiin kuuluvat ulkoiset järjestelmät, kuten LF-, HF-, UHF- ja SHF-antennit, sekä sisäiset järjestelmät, kuten Hardened Intersite Cable System (HICS), ja tulevaisuudessa suunnitellut päivitykset Sentinel-ohjelman puitteissa.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41019604">Reaktiot</a></h3>
-<ul>
-<li>Kirjoitus käsittelee Minuteman-ohjusten viestintäjärjestelmiä, korostaen siirtymistä vanhemmista teknologioista, kuten DSL HICS-kaapeleiden kautta, nykyaikaisiin valokuitukaapeleihin paremman kapasiteetin ja luotettavuuden saavuttamiseksi.</li>
-<li>Keskustelu sisältää näkemyksiä EMP:n (sähkömagneettinen pulssi) ja salamasuojauksen haasteista näille viestintäjärjestelmille, korostaen johtamattomien valokuitukaapeleiden etuja.</li>
-<li>Julkaisu sisältää myös anekdootteja ja suosituksia historiallisten ohjuskohteiden, kuten Minuteman-ohjuksen laukaisunvalvontakeskuksen Etelä-Dakotassa ja Titan II -ohjussiilon Arizonassa, vierailuun, tarjoten historiallista kontekstia näille teknologioille.</li>
-</ul>
-<h2><a href="https://dgerrells.com/blog/how-not-to-use-box-shadows">Joten luulet tuntevasi laatikkovarjot?</a></h2>
-<ul>
-<li>Artikkeli tutkii luovia ja epätavanomaisia tapoja käyttää laatikkovarjoja CSS:ssä, perinteisten käyttöliittymäparannusten lisäksi.</li>
-<li>Kirjoittaja kokeili laatikkovarjoja minimalistisessa taiteessa, animaatioissa, 3D-efekteissä ja jopa säteenseurannassa, esitellen tämän CSS-ominaisuuden monipuolisuutta.</li>
-<li>Kokeet korostavat modernin laitteiston, kuten M1-kannettavan, suorituskykyä monimutkaisten visuaalisten tehosteiden, kuten laatikkovarjojen, käsittelyssä.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41024664">Reaktiot</a></h3>
-<ul>
-<li>Keskustelu keskittyy siihen, miten läpinäkyvyys grafiikan renderöinnissä vaikuttaa GPU:n eräkäsittelyyn ja päällekkäispiirtoon, jotka ovat kriittisiä suorituskyvyn optimoinnille.</li>
-<li>Käyttäjät jakavat tekniikoita, kuten allekirjoitettujen etäisyyskenttien (SDF) käyttöä tehokkaampaan renderöintiin, huomioiden vaihtelevan suorituskyvyn eri laitteilla ja selaimilla.</li>
-<li>Ymmärrykset sisältävät käytännön kokemuksia ja linkkejä liittyviin resursseihin ja historiallisia artikkeleita lisälukemista varten.</li>
-</ul>
-<h2><a href="https://x.com/">X.com kieltäytyy avautumasta, kun Firefoxin tiukka seurannanesto on käytössä</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41022408">Reaktiot</a></h3>
-<ul>
-<li>X.com ei lataudu, kun Firefoxin tiukka seurannan suojaus on käytössä, mikä estää erilaisia seurantamekanismeja ja skriptejä.</li>
-<li>Käyttäjät spekuloivat, että sivuston olennaiset osat ovat estettyjä tai että X.com havaitsee mainosten estäjän eikä suostu latautumaan.</li>
-<li>Jotkut käyttäjät suosittelevat vaihtoehtoisten selainten tai työkalujen, kuten Nitterin, käyttöä Twitter-sisällön ongelmattomaan selaamiseen.</li>
-</ul>
-<h2><a href="https://www.pcgamer.com/games/something-awful-forumite-achieves-posting-godhood-emerging-from-the-void-after-100000-hour-11-year-ban-to-continue-the-same-argument-from-2013/">Käyttäjä palaa 100 000 tunnin kiellon jälkeen jatkamaan keskustelua, joka johti heidän kieltoonsa</a></h2>
-<ul>
-<li>Eräs käyttäjä nimeltä Etherwind palasi Something Awful -foorumeille 11 vuoden ja 100 000 tunnin kiellon jälkeen jatkamaan pöytäpelikeskustelua, joka johti hänen kieltoonsa vuonna 2013.</li>
-<li>Etherwind alun perin kiellettiin, koska hän vitsaili toivovansa kuolemaa kirjailijalle, ja hänen paluunsa otettiin vastaan huumorilla ja ihmetyksellä muiden foorumin käyttäjien toimesta.</li>
-<li>Pitkästä kiellosta huolimatta Etherwind näki paluunsa koomisen tilaisuutena ja lopulta luopui tilistä jatkettuaan väittelyä.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41024633">Reaktiot</a></h3>
-<ul>
-<li>Käyttäjä palasi 100 000 tunnin kiellon jälkeen, mikä herätti uudelleen keskusteluja foorumeilla, kuten Habbo Hotel ja Stack Overflow, kiellon kokemuksista ja moderaattorien vallasta.</li>
-<li>Keskusteluun sisältyi väittelyitä demokraattisesta maltillisuudesta, moderaattoreiden puolueellisuudesta ja pitkäaikaisten kieltojen vaikutuksesta mielenterveyteen.</li>
-<li>Lanka korosti verkkoyhteisöjen kehittyvää luonnetta ja pitkien kieltojen merkittäviä, pysyviä vaikutuksia.</li>
-</ul>
-<h2><a href="https://rr-project.org/">rr – tallenna ja toista virheenkorjausohjelma C/C++:lle</a></h2>
-<ul>
-<li>rr on Linuxille tarkoitettu C/C++-ohjelmien virheenkorjaustyökalu, joka parantaa gdb:tä mahdollistamalla deterministisen toiston ja tehokkaan käänteisen suorituksen.</li>
-<li>Tukee erilaisten sovellusten tallentamista ja toistamista, käsittelee moniprosessikuormituksia ja integroituu gdb-skriptauksen ja IDE:iden kanssa.</li>
-<li>rr on merkittävä alhaisen ylikuormituksensa, käyttökelpoisuutensa vakiintuneilla Linux-ytimillä ja kyvynsä ansiosta tehdä ajoittaisten virheiden virheenkorjauksesta helpompaa ja nopeampaa.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41023547">Reaktiot</a></h3>
-<ul>
-<li>rr on C/C++:n tallennus- ja toistovirheenkorjaustyökalu, joka auttaa käänteismekaniikassa ja monimutkaisten koodipohjien virheenkorjauksessa sallimalla katkaisupisteet, tarkkailupisteet ja käänteistoiston jäljittääkseen muuttujien muutoksia ja tunnistaakseen virheitä.</li>
-<li>Se käyttää gdb:tä (GNU Debugger) ja tukee useita käännettyjä kieliä, kuten Rust, Go ja Julia Linuxissa, mutta sillä on rajoituksia samanaikaisuusbugin kanssa eikä se tue GPU:ita.</li>
-<li>rr:n kaaostila voi auttaa paljastamaan joitakin rinnakkaisuusongelmia, ja edistyneet työkalut kuten rr:ään perustuva Pernosco tarjoavat kyseltävän tietokannan ohjelman suorituksesta.</li>
-</ul>
-<h2><a href="https://semiengineering.com/intel-vs-samsung-vs-tsmc/">Intel vs. Samsung vs. TSMC</a></h2>
-<ul>
-<li>Intel, Samsung ja TSMC kiristävät kilpailua valimomarkkinoilla perinteisten tasoskalausetujen vähentyessä, keskittyen 3D-transistoreihin, siruihin ja edistyneisiin pakkausteknologioihin.</li>
-<li>Jokainen yritys hyödyntää standardeja, kuten UCIe (Universal Chiplet Interconnect Express) ja BoW (Bridge of Wires) sirupalojen liitettävyyteen, Intelin käyttäessä EMIBiä (Embedded Multi-die Interconnect Bridge) ja Samsungin ja TSMC:n tutkiessa 2.5D- ja 3D-IC (Integrated Circuit) -lähestymistapoja.</li>
-<li>Valimot etenevät prosessisolmuissa angström-mittakaavalle ja innovoivat alueilla, kuten takapuolen virransyötössä ja lasialustoissa, pyrkien tarjoamaan räätälöityjä, suorituskykyisiä ratkaisuja tehokkaasti.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41019561">Reaktiot</a></h3>
-<ul>
-<li>Keskustelu korostaa sirujen valmistuksen kriittistä roolia, ja Intel, Samsung ja TSMC ovat alan keskeisiä toimijoita.</li>
-<li>Modernin sirutuotannon monimutkaisuus ja tarkkuus, mukaan lukien edistynyt pakkaus ja mikrofluidiikka, korostetaan merkittävinä teknologisina saavutuksina.</li>
-<li>Keskustelussa käsitellään mahdollisia seurauksia, jos suuri toimija, kuten TSMC, poistuisi markkinoilta, mikä voisi johtaa monopolistisiin olosuhteisiin ja vaikuttaa maailmanlaajuiseen puolijohteiden tarjontaan.</li>
-</ul>
-<h2><a href="https://twitter.com/JoeBiden/status/1815080881981190320">Joe Biden luopuu demokraattien ehdokkuudesta</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41026741">Reaktiot</a></h3>
-<ul>
-<li>Joe Biden on ilmoittanut päätöksestään luopua demokraattien ehdokkuudesta tulevissa vaaleissa.</li>
-<li>Tämä päätös on herättänyt laajan kirjon reaktioita, aina kiitoksista hänen presidenttiyttään kohtaan huoliin hänen iästään ja henkisestä kapasiteetistaan.</li>
-<li>Demokraattinen puolue kohtaa nyt haasteen valita uusi ehdokas, keskustelujen käydessä mahdollisista seuraajista ja tulevien vaalien vaikutuksista.</li>
-</ul>
-<h2><a href="https://cloud.google.com/blog/topics/hybrid-cloud/google-distributed-cloud-air-gapped-appliance-is-ga">Google Distributed Cloud -ilmatiiviisti eristetty laite</a></h2>
-<ul>
-<li>Google Distributed Cloud -ilmaeristetty laite, joka lanseerataan 17. heinäkuuta 2024, tuo pilvi- ja tekoälyominaisuudet taktisiin reuna-ympäristöihin, kuten katastrofialueille ja etäisiin tutkimusasemille.</li>
-<li>Laite tukee reaaliaikaista paikallista datankäsittelyä tekoälyn käyttötapauksissa, kuten esineiden tunnistuksessa ja lääketieteellisessä kuvantamisessa, tarjoten täydellisen eristyksen julkisesta internetistä turvallisuuden ja vaatimustenmukaisuuden takaamiseksi.</li>
-<li>Se tarjoaa puolustusministeriön Impact Level 5 -akkreditoinnin, mikä tekee siitä sopivan katastrofivasteeseen, teollisuusautomaatioon, kuljetukseen, logistiikkaan sekä rajoitettuihin liittovaltion ja puolustuksen työkuormiin.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41019777">Reaktiot</a></h3>
-<ul>
-<li>Google on esitellyt Distributed Cloud -ilmarakoisen laitteen, joka on suunniteltu toimimaan ilman yhteyttä Google Cloudiin tai julkiseen internetiin, ja se on ensisijaisesti suunnattu sotilas- ja muihin korkean turvallisuuden sovelluksiin.</li>
-<li>Tämä laite on osa laajempaa trendiä suurten pilvipalveluntarjoajien (AWS, Azure) keskuudessa tarjota kestäviä, kannettavia ja turvallisia paikallisia ratkaisuja ympäristöihin, joissa on tiukat turvallisuus- ja toiminnalliset vaatimukset.</li>
-<li>Laitteen suunnitteluun sisältyy ominaisuuksia, kuten tekoälykyvyt, kestävä kannettavuus ja sotilasstandardien noudattaminen, joiden tavoitteena on vastata eristyneiden ja vaativien reunaympäristöjen tarpeisiin.</li>
-</ul>
-<h2><a href="https://twitter.com/leighhoneywell/status/1814278230704111792">Riittävän huono ohjelmistopäivitys on erottamaton kyberhyökkäyksestä</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41023086">Reaktiot</a></h3>
-<ul>
-<li>Keskustelu keskittyy etäjuuripääsyn antamisen riskeihin ja seurauksiin kolmannen osapuolen tietoturvaohjelmistolle, vertaamalla sitä haittaohjelmiin sen väärinkäytön ja järjestelmän hallinnan potentiaalin vuoksi.</li>
-<li>On käynnissä keskustelu siitä, pitäisikö luottaa pelkästään ensisijaisiin tietoturvaratkaisuihin (kuten Microsoftin) vai kolmannen osapuolen ratkaisuihin, ja jotkut kannattavat Linuxin käyttöä tällaisten riskien välttämiseksi.</li>
-<li>Keskustelu korostaa vaiheittain toteutettavien ohjelmistopäivitysten tärkeyttä häiriöiden minimoimiseksi ja kolmannen osapuolen ohjelmistojen ydin-tason pääsyn mahdollisia vaaroja.</li>
-</ul>
-<h2><a href="https://lapcatsoftware.com/articles/2024/7/1.html">Väärennettyjen Mac App Store -arvostelujen tulva</a></h2>
-<ul>
-<li>Jeff Johnson raportoi väärennettyjen arvostelujen lisääntymisestä Yhdysvaltain Mac App Storessa suosituimpien maksullisten sovellusten osalta, mikä vaikutti 8:aan 40:stä suosituimmasta maksullisesta sovelluksesta 11. kesäkuuta ja 19. heinäkuuta 2024 välisenä aikana.</li>
-<li>Väärennetyt arvostelut, usein 5 tähden arvosanoilla ja yleisluontoisella tai järjettömällä tekstillä, oli todennäköisesti tarkoitettu nostamaan sovelluksen arvosanoja, ja epäilykset viittaavat siihen, että yksi kehittäjä saattaa olla niiden takana peittääkseen oman sovelluksensa väärennetyt arvostelut.</li>
-<li>Huolimatta raporteista Applelle, ongelma on edelleen ratkaisematta, ja BetterSnapToolin ja Vinegarin kehittäjät ovat tunnustaneet ja raportoineet ongelman Applelle.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41021472">Reaktiot</a></h3>
-<ul>
-<li>Mac App Store kokee väärennettyjen arvostelujen tulvan, ja kehittäjät, kuten BetterSnapToolin luoja, raportoivat asiasta Applelle.</li>
-<li>Apple tutkii ja poistaa joitakin väärennettyjä arvosteluja, mutta niiden lähde ja motiivi ovat edelleen epäselviä, mahdollisesti kilpailijoiden tai arvostelufarmien aiheuttamia.</li>
-<li>Väärien arvostelujen yleisyys sekä Mac- että iOS-sovelluskaupoissa heikentää niiden luotettavuutta ohjelmistojen löytämisessä, mikä saa käyttäjät etsimään sovellussuosituksia mieluummin Googlesta tai Redditistä.</li>
-</ul>
-<h2><a href="https://text.npr.org/g-s1-9028">Kaivantojen sortumat ovat tappaneet satoja työntekijöitä Yhdysvalloissa viimeisen vuosikymmenen aikana</a></h2>
-<ul>
-<li>Viimeisen vuosikymmenen aikana kaivantojen sortumat ovat johtaneet yli 250 työntekijän kuolemaan Yhdysvalloissa, joista monet olisi voitu estää noudattamalla perus turvallisuusmääräyksiä.</li>
-<li>Huolimatta OSHA:n (Occupational Safety and Health Administration) säädöksistä ja sakoista, monet yritykset jatkavat turvallisuusstandardien rikkomista vähäisin seurauksin, sillä rikossyytteet ovat harvinaisia ja sakkoja usein alennetaan tai jätetään huomiotta.</li>
-<li>Tutkimus, jonka tekivät NPR, Texas Public Radio ja 1A, korostaa kiireellistä tarvetta tiukemmalle valvonnalle ja vastuullisuudelle tulevien tragedioiden estämiseksi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41024559">Reaktiot</a></h3>
-<ul>
-<li>Kaivantojen sortumiset ovat johtaneet satoihin estettävissä oleviin työntekijöiden kuolemiin Yhdysvalloissa viimeisen vuosikymmenen aikana, pääasiassa turvallisuusmääräysten noudattamatta jättämisen vuoksi.</li>
-<li>OSHA (Occupational Safety and Health Administration) -säädökset ovat välttämättömiä, mutta niitä ei usein noudateta tiukasti, mikä johtaa turvattomiin työolosuhteisiin.</li>
-<li>Yrityksen käytännöt ja työntekijöiden asenteet, kuten turvavarusteiden laiminlyönti ryhmäpaineen vuoksi, vaikuttavat vahvan turvallisuuskulttuurin puutteeseen, joka vaatii ylhäältä alaspäin suuntautuvaa valvontaa ja vastuullisuutta.</li>
-</ul>
-<h2><a href="https://eclecticlight.co/2024/07/20/managing-classic-mac-os-resources-in-resedit/">Classic Mac OS -resurssien hallinta ResEdit-ohjelmassa</a></h2>
-<ul>
-<li>Macintosh-tiedostojärjestelmässä oli kaksi haaraa: datahaara ja resurssihaara, joista jälkimmäinen tallensi jäsenneltyä dataa, kuten kuvakkeita, dialogeja ja koodinpätkiä.</li>
-<li>Applen ResEdit, resurssieditori, jota päivitettiin viimeksi vuonna 1994, antoi käyttäjille mahdollisuuden mukauttaa järjestelmätiedostoja, valintaikkunoita ja näppäimistöasetteluja, mutta aiheutti turvallisuusriskejä, koska haittaohjelmat hyödynsivät usein resurssihaaroita.</li>
-<li>Mac OS X:ssä resurssihakemistot siirtyivät laajennettuihin attribuutteihin, ja sovellusten resurssit on nyt järjestetty paketeiksi. Modernit sovellukset on lukittu allekirjoituksilla, mikä estää laajat mukautukset, jotka olivat aiemmin mahdollisia ResEditillä.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41019829">Reaktiot</a></h3>
-<ul>
-<li>Kirjoitus käsittelee ResEditin, Classic Mac OS:n resurssieditorin, käyttämisen nostalgiaa ja teknisiä yksityiskohtia, jonka avulla käyttäjät pystyivät muokkaamaan ohjelmistoja ja järjestelmäresursseja.</li>
-<li>Kayttäjät jakavat kokemuksiaan erilaisista virheenkorjaustyökaluista, kuten MacsBug, TMON ja The Debugger, korostaen niiden merkitystä varhaisessa ohjelmistokehityksessä ja hakkeroinnissa.</li>
-<li>Keskustelu heijastaa, kuinka nämä työkalut vaikuttivat heidän uraansa ja resurssien muokkauksen laajempaan vaikutukseen ohjelmistojen räätälöinnissä ja kehityksessä.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Empatiaa käyttäjälle, joka harrastaa seksiä ohjelmistosi kanssa" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Empatiaa%20k%C3%A4ytt%C3%A4j%C3%A4lle%2C%20joka%20harrastaa%20seksi%C3%A4%20ohjelmistosi%20kanssa&subheading=sunnuntaina%2021.%20hein%C3%A4kuuta%202024%3A%20Hacker%20News%20yhteenveto" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/fi/2024/07/21</link>
-            <guid isPermaLink="false">2024-07-21T00:00:00.000Z</guid>
-            <pubDate>Sun, 21 Jul 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
