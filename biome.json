@@ -2,11 +2,26 @@
   "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
   "files": {
     "ignore": [
-      "**/.next/**",
-      "**/node_modules/**",
-      "**/.turbo/**",
       "**/dist/**",
-      "**/storybook-static/**"
+      "dist/*",
+      "**/node_modules",
+      "**/.cache",
+      "**/.turbo/**",
+      "**/*.esm.js",
+      "**/cache",
+      "**/.server",
+      "**/public",
+      "**/.yarn",
+      "**/package.json",
+      "**/storybook-static",
+      "**/node_modules/**",
+      "**/storybook-static/**",
+      "**/package-lock.json",
+      "**/.contentlayer",
+      "**/dist",
+      "**/build",
+      "**/.client",
+      "**/CHANGELOG.md"
     ]
   },
   "formatter": {
@@ -16,34 +31,11 @@
     "indentWidth": 2,
     "lineEnding": "lf",
     "lineWidth": 80,
-    "attributePosition": "auto",
-    "ignore": [
-      "**/cache",
-      "**/.cache",
-      "**/package.json",
-      "**/package-lock.json",
-      "**/public",
-      "**/CHANGELOG.md",
-      "**/.yarn",
-      "**/dist",
-      "**/node_modules",
-      "**/.next",
-      "**/build",
-      "**/.contentlayer"
-    ]
+    "attributePosition": "auto"
   },
   "organizeImports": { "enabled": true },
   "linter": {
     "enabled": true,
-    "ignore": [
-      "dist/*",
-      "**/.cache",
-      "**/public",
-      "**/node_modules",
-      "**/*.esm.js",
-      "**/.server",
-      "**/.client"
-    ],
     "rules": {
       "style": {
         "noParameterAssign": "off"
@@ -120,9 +112,5 @@
       "attributePosition": "auto"
     },
     "globals": ["React"]
-  },
-  "overrides": [
-    { "include": ["**/*.{js,jsx,ts,tsx}"] },
-    { "include": ["**/*.{ts,tsx}"] }
-  ]
+  }
 }

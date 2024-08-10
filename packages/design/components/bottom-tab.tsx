@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { Link } from "@remix-run/react"
 
 import { MoreTabButton } from "@signalkite/design/components/more-tab-button"
 import type { Item } from "@signalkite/design/components/type"
@@ -14,9 +14,8 @@ export function BottomTabBar({ items }: { items: Item[] }) {
           .map((item) => (
             <Link
               key={item.title}
-              href={item.href}
+              to={item.href}
               className="flex flex-col items-center text-muted-foreground transition-colors hover:text-foreground"
-              prefetch={false}
             >
               {getIcon({ icon: item.icon, className: "size-5" })}
               <span className="text-xs">{item.title}</span>

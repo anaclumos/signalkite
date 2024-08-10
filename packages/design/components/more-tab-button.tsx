@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
+import { Link } from "@remix-run/react"
 
 import { getIcon, Icons } from "@signalkite/design/components/icons"
 import type { Item } from "@signalkite/design/components/type"
@@ -40,7 +40,7 @@ export function MoreTabButton({ items }: MoreTabButtonProps) {
             .map((item) => (
               <Link
                 key={item.title}
-                href={item.href}
+                to={item.href}
                 className="flex flex-col items-center text-muted-foreground transition-colors hover:text-foreground"
                 onClick={handleLinkClick}
               >
@@ -49,7 +49,7 @@ export function MoreTabButton({ items }: MoreTabButtonProps) {
               </Link>
             ))}
           <Link
-            href="/profile"
+            to="/profile"
             className="flex flex-col items-center text-muted-foreground transition-colors hover:text-foreground"
             onClick={handleLinkClick}
           >
@@ -57,7 +57,7 @@ export function MoreTabButton({ items }: MoreTabButtonProps) {
             <span className="text-sm">Profile</span>
           </Link>
           <Link
-            href="/settings"
+            to="/settings"
             className="flex flex-col items-center text-muted-foreground transition-colors hover:text-foreground"
             onClick={handleLinkClick}
           >

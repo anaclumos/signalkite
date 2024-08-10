@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { Link } from "@remix-run/react"
 
 import {
   Tooltip,
@@ -18,9 +18,8 @@ export function Sidebar({ items }: { items: Item[] }) {
             <Tooltip key={item.title}>
               <TooltipTrigger asChild>
                 <Link
-                  href={item.href}
+                  to={item.href}
                   className="flex size-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground"
-                  prefetch={false}
                 >
                   {getIcon({ icon: item.icon, className: "size-5" })}
                 </Link>
@@ -35,9 +34,8 @@ export function Sidebar({ items }: { items: Item[] }) {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                href="/profile"
+                to="/profile"
                 className="flex size-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground"
-                prefetch={false}
               >
                 <Icons.user className="size-5" />
               </Link>
@@ -47,9 +45,8 @@ export function Sidebar({ items }: { items: Item[] }) {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                href="/settings"
+                to="/settings"
                 className="flex size-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground"
-                prefetch={false}
               >
                 <Icons.settings className="size-5" />
               </Link>
