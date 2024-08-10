@@ -5,9 +5,12 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "bunx biome format --write .",
+    "lint:check": "bunx biome lint --error-on-warnings .",
+    "format:check": "bunx biome format ."
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.3",
     "prettier": "^3.2.5",
     "turbo": "^2.0.12",
     "typescript": "^5.4.5"
@@ -19,5 +22,8 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "lefthook": "^1.7.12"
+  }
 }
