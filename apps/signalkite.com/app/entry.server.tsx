@@ -71,7 +71,6 @@ function handleBotRequest(
           reject(error)
         },
         onError(error: unknown) {
-          // biome-ignore lint: Remix Server Conventions
           responseStatusCode = 500
           if (shellRendered) {
             console.error(error)
@@ -119,7 +118,6 @@ function handleBrowserRequest(
           reject(error)
         },
         onError(error: unknown) {
-          // biome-ignore lint: Remix Server Conventions
           responseStatusCode = 500
           if (shellRendered) {
             console.error(error)
