@@ -1,5 +1,3 @@
-"use client"
-
 import { Input } from "@/components/input"
 import { Listbox, ListboxLabel, ListboxOption } from "@/components/listbox"
 import { useState } from "react"
