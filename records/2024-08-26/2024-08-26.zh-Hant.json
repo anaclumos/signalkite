@@ -1,0 +1,327 @@
+[
+  {
+    "id": 41350530,
+    "title": "「Telegram 真的是一款加密的通訊應用程式嗎？」",
+    "originLink": "https://blog.cryptographyengineering.com/2024/08/25/telegram-is-not-really-an-encrypted-messaging-app/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41350530",
+    "commentBody": "",
+    "originSummary": [
+      "「Telegram 的執行長 Pavel Durov 最近因內容審查不足被法國當局逮捕，這突顯了人們對該平台安全措施的擔憂。」",
+      "「Telegram 常被標籤為“加密訊息應用程式”，但它並未提供預設的端對端加密，使用者需要手動啟用“秘密對話”來進行私人對話，而這項功能在群組聊天中無法使用。」",
+      "「儘管 Telegram 的用戶數量有所增長，但其加密功能的可用性並未改善，且其作為安全通訊軟體的行銷宣傳具有誤導性，對於相信其對話是私密的用戶來說存在風險。」"
+    ],
+    "commentSummary": [
+      "討論的問題在於 Telegram 是否真的是一個加密的通訊應用程式，重點在於其端對端加密(E2EE)功能。",
+      "提到的「泥濘水坑測試」暗示，如果你能在新裝置上恢復舊訊息，執法機關也可能會存取它們，這顯示出潛在的安全漏洞。",
+      "Telegram 的隱私政策及其遵守執法機構請求的能力備受爭議，有些人認為它是一個基於信任的應用程式，而非一個加密安全的應用程式。"
+    ],
+    "points": 554,
+    "commentCount": 532,
+    "retryCount": 0,
+    "time": 1724614493
+  },
+  {
+    "id": 41352681,
+    "title": "澳洲員工現在有權在下班後忽略工作郵件和電話",
+    "originLink": "https://www.reuters.com/world/asia-pacific/australian-employees-now-have-right-ignore-work-emails-calls-after-hours-2024-08-25/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41352681",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "澳洲員工現在擁有在下班後忽略工作電子郵件和電話的合法權利，旨在保護他們免受在工作時間外回應的壓力。",
+      "該法律為員工提供了拒絕下班後通訊的法律依據，無需擔心會有不良後果，促進更好的工作與生活平衡。",
+      "「此變革被視為防止員工剝削並確保更健康工作環境的一步。」"
+    ],
+    "points": 443,
+    "commentCount": 349,
+    "retryCount": 0,
+    "time": 1724630887
+  },
+  {
+    "id": 41353328,
+    "title": "移除東西從來不是顯而易見的，但通常更好",
+    "originLink": "https://www.gkogan.co/removing-stuff/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41353328",
+    "commentBody": "",
+    "originSummary": [
+      "「來自 Pinecone 的 Greg Kogan 分享了一個故事，講述他們網站上的一個基於使用量的定價計算器，由於混亂且誇大的成本估算，嚇退了潛在用戶。」",
+      "「在多次嘗試修復計算器失敗後，A/B 測試顯示移除計算器使註冊人數增加了 16%，詢問量增加了 90%，且客服工單並未增加。」",
+      "「這個案例強調了透過移除非必要元素來簡化的重要性，展示了簡化可以帶來更好的參與度、更可靠的系統以及更快速的成長。」"
+    ],
+    "commentSummary": [
+      "移除複雜的功能，例如令人困惑的價格計算器，可以增加用戶註冊數量並減少客服請求。",
+      "在定價模型中，平衡簡單性、透明度和可用性是至關重要的，而 A/B 測試可以幫助評估這些變更的影響。",
+      "簡化系統並專注於核心功能可以產生更高效且更易於使用的產品。"
+    ],
+    "points": 421,
+    "commentCount": 179,
+    "retryCount": 0,
+    "time": 1724637553
+  },
+  {
+    "id": 41351446,
+    "title": "用 C 語言編寫 Rust 編譯器",
+    "originLink": "https://notgull.net/announcing-dozer/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41351446",
+    "commentBody": "",
+    "originSummary": [
+      "「John Nunley 正在用純 C 語言開發一個名為 Dozer 的 Rust 編譯器，以解決 Rust 主要編譯器 rustc 的引導問題，因為 rustc 是用 Rust 編寫的。」",
+      "該專案旨在從 C 語言啟動一個 Rust 編譯器，首先使用像 TinyCC 這樣的最小工具，並逐步編譯關鍵組件如 libc、libcore，最終實現 rustc 的 Cranelift 後端。",
+      "“Nunley 已經完成了詞法分析器和部分語法分析器，並具備基本的型別檢查和程式碼生成功能，計劃創建一個類似 cargo 的工具並建立一個編譯 rustc 和 cargo 的流程。”"
+    ],
+    "commentSummary": [
+      "「討論用 C 語言編寫 Rust 編譯器，探索在 C 語言中創建簡化的 'proto-rust' 以啟動完整的 Rust 編譯器的想法。」",
+      "「這段對話強調了現有的努力，例如 mrustc，一個非 Rust 的 Rust 編譯器，雖然缺乏借用檢查器，但被用來編譯 rustc，這是主要的 Rust 編譯器。」",
+      "這場辯論包含了對於在不同程式語言中編寫編譯器的複雜性和實用性的各種觀點，強調了簡單性與功能完整性之間的取捨。"
+    ],
+    "points": 370,
+    "commentCount": 195,
+    "retryCount": 0,
+    "time": 1724620086
+  },
+  {
+    "id": 41355303,
+    "title": "「作為首次貢獻者修復 Google Chrome 的錯誤」",
+    "originLink": "https://cprimozic.net/blog/fixing-a-bug-in-google-chrome/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41355303",
+    "commentBody": "",
+    "originSummary": [
+      "「Chromium/Google Chrome 開發者工具中的一個錯誤，該錯誤忽略了由 worklets 發出的網路請求以及“禁用快取”選項，經過多年因其影響範圍較小而未被修復，現已修復。」",
+      "修正過程包括為 worklet 目標創建一個 InspectorNetworkAgent，瀏覽 Chromium 廣泛的代碼庫，並使用 Chromium 的 Gerrit 系統進行全面的測試和代碼審查。",
+      "該修正迅速整合到 Chrome Canary 中，並將包含在 Chrome 130 版本中，這標誌著該貢獻者在大型開源專案中的首次重大成就。"
+    ],
+    "commentSummary": [
+      "「一位首次貢獻者成功修復了 Google Chrome 的一個錯誤，這突顯了在處理 Chromium 程式碼庫時所面臨的挑戰和學習經驗。」",
+      "這篇文章討論了導航和構建 Chromium 的複雜性，包括使用像 VS Code 和 Sublime Text 這樣的 IDE(整合開發環境)時遇到的問題，以及對高效能硬體的需求。",
+      "對話中還提到了維護 Chromium 分支的困難，例如硬編碼的瀏覽器名稱以及持續維護和安全更新所需的大量資源。"
+    ],
+    "points": 364,
+    "commentCount": 100,
+    "retryCount": 0,
+    "time": 1724663456
+  },
+  {
+    "id": 41350225,
+    "title": "「今天學到：UUID 的版本及其使用時機」",
+    "originLink": "https://ntietz.com/blog/til-uses-for-the-different-uuid-versions/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41350225",
+    "commentBody": "",
+    "originSummary": [
+      "UUID(通用唯一識別碼)有8個版本，每個版本都有特定的使用情境。",
+      "常用的版本包括用於隨機 ID 的 UUID v4 和用於可排序 ID(如資料庫鍵)的 UUID v7。",
+      "較新的版本如 UUID v5 和 v8 允許包含特定數據，而較舊的版本如 v1 和 v6 通常被 v7 取代。"
+    ],
+    "commentSummary": [
+      "「這篇文章討論了各種版本的 UUID(通用唯一識別碼)及其特定的使用情境，特別強調了經常被忽視的 UUID 版本 2(v2)及其詳細資訊。」",
+      "值得一提的是 UUID 版本 7(v7)，它包含時間戳，這使其在需要基於時間排序的操作中具有優勢，例如在 AWS S3 上的元數據文件定位。",
+      "對話中還提到了對更短、更易於人類閱讀的 UUID 替代方案的渴望，例如 ULID(通用唯一字典排序標識符)和自訂的 base64 編碼 UUID。"
+    ],
+    "points": 295,
+    "commentCount": 108,
+    "retryCount": 0,
+    "time": 1724612720
+  },
+  {
+    "id": 41358020,
+    "title": "「Dokku：我最喜愛的個人無伺服器平台」",
+    "originLink": "https://hamel.dev/blog/posts/dokku/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41358020",
+    "commentBody": "",
+    "originSummary": [
+      "「Dokku 是一個開源的平臺即服務(PaaS)，允許在單一伺服器上自我託管，類似於 Heroku，但更具成本效益。」",
+      "主要特點包括易於使用、透過 Let’s Encrypt 自動取得 SSL、支援基本身份驗證、簡單的擴展能力，以及適用於各種應用的靈活性。",
+      "這篇文章提供了使用 Dokku 部署應用程式和靜態網站的實際範例，包括 Dockerfile 設定、SSH 存取以及 GitHub Actions 整合。"
+    ],
+    "commentSummary": [
+      "“Dokku 因其簡單性和最少的配置而被強調為首選的自託管平台，經常被拿來與 Heroku 比較。”",
+      "用戶討論了各種優點和缺點，包括使用 Let's Encrypt 設置 HTTPS 的便利性，以及使用 Docker/Compose 進行部署的能力。",
+      "這篇文章包含了與其他技術如 Kubernetes (K8s) 和 Docker Swarm 的比較，並指出 Dokku 適合較小型的單伺服器部署。"
+    ],
+    "points": 294,
+    "commentCount": 106,
+    "retryCount": 0,
+    "time": 1724685716
+  },
+  {
+    "id": 41355021,
+    "title": "「荷蘭數據保護局因Uber將司機數據轉移至美國而對其罰款2.9億歐元」",
+    "originLink": "https://www.autoriteitpersoonsgegevens.nl/en/current/dutch-dpa-imposes-a-fine-of-290-million-euro-on-uber-because-of-transfers-of-drivers-data-to-the-us",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41355021",
+    "commentBody": "",
+    "originSummary": [
+      "荷蘭數據保護局(DPA)因 Uber 將歐洲計程車司機的數據在未有適當保障措施的情況下轉移至美國，違反了《通用數據保護條例》(GDPR)，對其處以 2.9 億歐元的罰款。",
+      "傳輸的數據包括帳戶詳情、位置數據以及犯罪和醫療記錄等敏感信息，且未經適當保護。",
+      "「此問題在2020年歐盟-美國隱私盾失效後出現，並且Uber自2021年8月以來未使用標準合約條款；Uber計劃對罰款提出異議。」"
+    ],
+    "commentSummary": [
+      "「荷蘭數據保護局(DPA)因應法國司機的投訴，對Uber將司機數據轉移至美國一事處以2.9億歐元的罰款。」",
+      "這起事件突顯了資料隱私法的複雜性和挑戰，特別是歐盟相比美國所實施的更嚴格的規範。",
+      "此案例強調了美國需要更強的數據保護法律，以防止全球第三方訪問個人數據。"
+    ],
+    "points": 286,
+    "commentCount": 365,
+    "retryCount": 0,
+    "time": 1724660155
+  },
+  {
+    "id": 41356528,
+    "title": "NSA 發布 1982 年 Grace Hopper 演講",
+    "originLink": "https://www.nsa.gov/helpful-links/nsa-foia/declassification-transparency-initiatives/historical-releases/view/article/3880193/capt-grace-hopper-on-future-possibilities-data-hardware-software-and-people-1982/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41356528",
+    "commentBody": "",
+    "originSummary": [
+      "「美國國家安全局於2024年8月26日發布了一份1982年由葛麗絲·霍普少將所講授的數位講座，內容聚焦於技術原則、領導力以及電腦科學和數學領域的挑戰。」",
+      "“這次發佈強調了霍普的持久遺產以及她在激勵女性投身於STEM(科學、技術、工程和數學)領域中的角色。”"
+    ],
+    "commentSummary": [
+      "美國國家安全局(NSA)發布了一段由葛麗絲·霍普(Grace Hopper)於1982年所做的演講，這段演講是透過國家檔案館的協助，從舊的AMPEX磁帶數位化而來的。",
+      "這場講座涵蓋了網路安全、程式語言標準化等主題，並包括霍普(Hopper)著名的奈秒/微秒模型展示。",
+      "此版本被認為是計算機歷史上的重要保存，突顯了霍普在該領域的貢獻。"
+    ],
+    "points": 284,
+    "commentCount": 45,
+    "retryCount": 0,
+    "time": 1724675852
+  },
+  {
+    "id": 41351219,
+    "title": "「資料庫“分片”來自《創世紀Online》？(2009)」",
+    "originLink": "https://www.raphkoster.com/2009/01/08/database-sharding-came-from-uo/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41351219",
+    "commentBody": "",
+    "originSummary": [
+      "“資料庫擴展性中的術語「分片」，涉及運行平行資料庫，可能起源於大型多人線上遊戲《創世紀Online (UO)》。”",
+      "「在《UO》中，“shards”指的是平行伺服器，這個概念是基於遊戲的背景故事而發展出來的，用來解釋遊戲世界的多個副本。」",
+      "UO 的「碎片」與資料庫「分片」之間的關聯仍然是推測性的，但這突顯了遊戲術語與資料庫技術之間有趣的交集。"
+    ],
+    "commentSummary": [
+      "“在資料庫上下文中，‘分片’這個術語可能源自遊戲《創世紀Online》，該遊戲使用‘碎片’來描述其多個遊戲世界。”",
+      "用戶討論了遊戲對科技創新的影響，分享了關於早期大型多人線上遊戲(MMO)技術及其對現代應用程式如 Flickr 和 Slack 的影響的軼事。",
+      "對話中還討論了分片和水平分區之間的差異，以及分片技術在可擴展性方面的優勢。"
+    ],
+    "points": 277,
+    "commentCount": 116,
+    "retryCount": 0,
+    "time": 1724618522
+  },
+  {
+    "id": 41353835,
+    "title": "Avante.nvim：像使用 Cursor AI IDE 一樣使用你的 Neovim",
+    "originLink": "https://github.com/yetone/avante.nvim",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41353835",
+    "commentBody": "",
+    "originSummary": [
+      "**avante.nvim** 是一個 Neovim 插件，模擬 Cursor AI IDE，提供由 AI 驅動的程式碼建議並輕鬆應用這些建議。",
+      "這個專案正在迅速發展，頻繁新增新功能，使其成為開發者的動態工具。",
+      "主要功能包括由 AI 驅動的程式碼輔助以及一鍵應用 AI 建議，提升編碼效率和生產力。"
+    ],
+    "commentSummary": [
+      "Avante.nvim 是一個新的 Neovim 插件，旨在提供類似於 Cursor 的 AI 驅動功能，Cursor 是一個內嵌 AI 功能的 VSCode 分支。",
+      "討論強調了對開源替代專有 AI 工具的興趣日益增加，幾位使用者提到了其他插件，如 dingllm.nvim 和 codecompanion.nvim。",
+      "「關於在程式碼編輯器中整合 AI 模型的有效性和整合性存在爭論，一些使用者強調需要更好的本地語言伺服器協定(LSP)整合，以避免生成無效的程式碼。」"
+    ],
+    "points": 208,
+    "commentCount": 64,
+    "retryCount": 0,
+    "time": 1724643888
+  },
+  {
+    "id": 41351993,
+    "title": "警察局長表示警察有權根據第五修正案關閉隨身攝影機",
+    "originLink": "https://reason.com/2024/08/23/albuquerques-police-chief-thinks-cops-have-a-5th-amendment-right-to-leave-their-body-cameras-off/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41351993",
+    "commentBody": "",
+    "originSummary": [
+      "“阿布奎基警察局長哈羅德·梅迪納以第五修正案權利為由，辯解在內部調查他引發的車禍時未使用隨身攝影機。”",
+      "「儘管有魯莽駕駛的證據，阿爾伯克基警察局的車隊事故審查委員會認定該事故為『不可預防』，這與內部事務部門的調查結果相矛盾。」",
+      "梅迪納因政策違規而受到譴責，而其他在類似情況下的警官則面臨解雇，這突顯了紀律處分可能存在的不一致性。"
+    ],
+    "commentSummary": [
+      "「一位警察局長聲稱，根據第五修正案，警察可以關閉隨身攝影機，該修正案保護個人免於自證其罪，儘管法院通常將這種保護限制於證詞證據，而非錄影記錄。」",
+      "批評者認為這種立場削弱了問責制，因為隨身攝影機的影像不被視為證詞證據。",
+      "這場辯論突顯了警察問責制與個人權利之間持續存在的緊張關係。"
+    ],
+    "points": 207,
+    "commentCount": 128,
+    "retryCount": 0,
+    "time": 1724624282
+  },
+  {
+    "id": 41353284,
+    "title": "「自我託管的伺服器設置基礎」",
+    "originLink": "https://becomesovran.com/blog/server-setup-basics.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41353284",
+    "commentBody": "",
+    "originSummary": [
+      "本指南提供了設置自我託管伺服器的基本步驟，涵蓋了 SSH 登入、用戶管理、NGINX 設置、日誌管理、網路安全以及實用工具。",
+      "關鍵的安全措施包括使用 SSH 金鑰、禁用 root 登入，以及配置像 UFW 和 Fail2Ban 這樣的工具來增強網路安全。",
+      "該指南還強調了日誌管理、備份以及使用生活品質工具來有效監控和管理伺服器資源的重要性。"
+    ],
+    "commentSummary": [
+      "「對於初學者來說，建議在命令中使用長格式的標誌(例如，`sudo usermod --append --groups sudo newuser`)，這樣比使用短格式的標誌更清晰。」",
+      "「建議使用像 Caddy(取代 Nginx 和 Certbot)、Tailscale(保護 SSH 存取)和 Userify(管理 SSH 金鑰)這樣的工具來簡化伺服器的設置和管理。」",
+      "安全提示包括禁用密碼驗證、使用 `AllowGroups` 進行登入控制，以及避免代理或 X11 轉發，以防止對手的橫向移動。"
+    ],
+    "points": 161,
+    "commentCount": 69,
+    "retryCount": 0,
+    "time": 1724637043
+  },
+  {
+    "id": 41357557,
+    "title": "司法部對RealPage提起反壟斷訴訟",
+    "originLink": "https://www.propublica.org/article/realpage-lawsuit-doj-antitrustdoj-files-antitrust-suit-against-maker-of-rent-setting-algorithm",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41357557",
+    "commentBody": "",
+    "originSummary": [
+      "美國司法部(DOJ)和八個州已對位於德州的科技公司RealPage提起訴訟，指控其涉嫌非法操縱價格，以減少房東之間的競爭並提高租金和利潤。",
+      "「這起訴訟緊隨著ProPublica的調查以及近兩年的司法部調查，揭示了RealPage的租金設定軟體允許房東共享機密數據並設定相似的租金，壟斷市場。」",
+      "「此案件是拜登政府下司法部更廣泛反壟斷執法努力的一部分，並突顯了將《謝爾曼反壟斷法》應用於現代科技所面臨的挑戰。」"
+    ],
+    "commentSummary": [
+      "美國司法部(DOJ)已對RealPage提起反壟斷訴訟，指控該公司的算法定價方案損害租戶利益。",
+      "“該訴訟聲稱，RealPage 的定價算法人為地抬高租金價格，對租戶的負擔能力產生負面影響。”",
+      "這項法律行動突顯了對於使用演算法設定價格及其在房地產市場中可能產生反競爭效果的日益關注。"
+    ],
+    "points": 156,
+    "commentCount": 3,
+    "retryCount": 0,
+    "time": 1724682990
+  },
+  {
+    "id": 41353079,
+    "title": "「我們在申請資料中發現了北韓工程師」",
+    "originLink": "https://www.cinder.co/blog-posts/north-korean-engineers-in-our-application-pile",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41353079",
+    "commentBody": "",
+    "originSummary": [
+      "「Cinder，一家位於美國的科技公司，發現其應徵者中有北韓工程師，懷疑他們將資金匯回北韓政府。」",
+      "「共同創辦人具有CIA背景，他們注意到一些不尋常的趨勢，例如虛構的工作歷史、缺乏線上存在感以及經過排練的面試回答。」",
+      "「Cinder 與安全合作夥伴分享了他們的發現，並鼓勵其他公司尋求相關建議和預防策略，以應對類似問題。」"
+    ],
+    "commentSummary": [
+      "在 Cinder.co 的求職申請中發現了北韓工程師，這引起了對就業詐欺的懷疑。",
+      "“在面試過程中，工作經歷不一致、缺乏 LinkedIn 個人檔案以及名字不匹配都是警示信號。”",
+      "作者懷疑申請者是否真的是北韓人，並指出就業詐欺是一個更廣泛的問題，並不限於任何單一國籍。"
+    ],
+    "points": 152,
+    "commentCount": 120,
+    "retryCount": 0,
+    "time": 1724635134
+  }
+]
