@@ -15,12 +15,197 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 26 Aug 2024 19:12:52 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 27 Aug 2024 19:12:28 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/fi.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Mon, 26 Aug 2024 00:00:00 GMT</pubDate>
+        <pubDate>Tue, 27 Aug 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[fi]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-08-27]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/08/27&#39;</h2>
+<h1>2024-08-27</h1>
+<h2><a href="https://box86.org/2024/08/box64-and-risc-v-in-2024/">Box64 ja RISC-V vuonna 2024: Mitä vaaditaan Witcher 3:n ajamiseen RISC-V:llä</a></h2>
+<ul>
+<li>The Witcher 3 on onnistuneesti toiminut RISC-V PC:llä, mikä tekee siitä ensimmäisen AAA-pelin, joka on tehnyt niin, kiitos Box64:n, Winen ja DXVK:n edistysaskeleiden.</li>
+<li>Merkittävää edistystä on saavutettu RISC-V backendissä, mukaan lukien RV64 DynaRec -virheiden korjaaminen ja uusien x86-käskyjen lisääminen, jota ovat edesauttaneet uudet laitteistot, kuten Milk-V Pioneer ja VisionFive 2.</li>
+<li>Haasteista huolimatta, kuten 16-tavun atomisten käskyjen puute ja alhaisempi käännöstehokkuus verrattuna muihin arkkitehtuureihin, The Witcher 3 pyörii jopa 15 fps:n nopeudella pelissä RISC-V:llä.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41364549">Reaktiot</a></h3>
+<ul>
+<li>Box64 on emulaattori, joka mahdollistaa x86-64-sovellusten ajamisen muilla kuin x86-64-arkkitehtuureilla, kuten RISC-V:llä, käyttämällä järjestelmän omia kirjastoja paremman suorituskyvyn saavuttamiseksi.</li>
+<li>Pyörittäessä The Witcher 3:a RISC-V:llä, x86-64-käskyt täytyy kääntää RISC-V:lle, mikä on haastavaa johtuen käskykantojen eroista ja tarpeesta tehokkaaseen GPU-käännökseen.</li>
+<li>RISC-V:n avoin ja joustava luonne, vaikka siitä puuttuu joitakin ominaisuuksia kuten SIMD-optimoinnit, tekee siitä lupaavan vaihtoehdon suljetuille arkkitehtuureille kuten x86-64 ja ARM, ja sen suorituskyvyn ja yhteensopivuuden parantamiseksi tehdään jatkuvasti töitä.</li>
+</ul>
+<h2><a href="https://www.politico.com/news/2024/08/26/zuckerberg-meta-white-house-pressure-00176399">Zuckerberg väittää katuvansa antautumista Valkoisen talon painostukselle sisällön suhteen</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41365868">Reaktiot</a></h3>
+<ul>
+<li>Zuckerberg myönsi katuvansa antautumista Valkoisen talon painostukselle sisällön moderoinnissa, mikä korostaa merkittävää ongelmaa alustahallinnossa.</li>
+<li>Käyttäjät kritisoivat Facebookin uutisvirtaa liiallisesta tekoälyn tuottamasta sisällöstä ja klikkiotsikoista, pitäen vanhemmasta versiosta enemmän, ja samanlaisia valituksia esitettiin myös Twitteristä.</li>
+<li>Huolta herätti poliittisen ja sopimattoman sisällön lisääntyminen Facebookissa, mikä johti siihen, että jotkut käyttäjät hylkäsivät alustan. Lisäksi keskusteltiin laajemmasta ongelmasta, jossa sosiaalinen media asettaa sitoutumisen käyttäjäkokemuksen edelle.</li>
+</ul>
+<h2><a href="https://transactional.blog/blog/2024-erasure-coding">Poistokoodaus hajautetuille järjestelmille</a></h2>
+<ul>
+<li>Poistokoodaus parantaa tallennustehokkuutta ja vikasietoisuutta jakamalla tiedot osiin ja lisäämällä pariteettiosia, mikä mahdollistaa tietojen rekonstruoinnin, vaikka osa osista katoaisi.</li>
+<li>Keskeisiä sovelluksia ovat tallennusjärjestelmät (kustannusten vähentäminen ja kestävyyden lisääminen) ja kvorumijärjestelmät (lukusuorituskyvyn parantaminen tietyin kirjoitusrajoituksin).</li>
+<li>Suosittuja kirjastoja hävityskoodien toteuttamiseen ovat Jerasure ja Intel ISA-L, ja adaptiiviset järjestelmät, kuten HRaft, mukautuvat saatavilla olevien replikoiden perusteella.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41361281">Reaktiot</a></h3>
+<ul>
+<li>Keskustelu keskittyy erasure-koodaukseen, menetelmään, joka suojaa dataa hajautetuissa järjestelmissä, korostaen sen käyttöä erilaisissa teknologioissa, kuten Ceph ja RaptorQ.</li>
+<li>Poistokoodaus saa kiitosta tehokkuudestaan datan palautuksessa ja vikasietoisuudessa, mutta siihen liittyy myös monimutkaisuuksia ja rajoituksia, kuten koodausparametrien päivittämisen joustamattomuus ja laskennallinen intensiivisyys.</li>
+<li>Keskustelu sisältää viittauksia tiettyihin toteutuksiin ja algoritmeihin, kuten Luby Transform Code, RaptorQ ja Wirehair, ja käsittelee mahdollisia patenttiongelmia sekä käytännön sovelluksia reaalimaailman järjestelmissä.</li>
+</ul>
+<h2><a href="https://techcrunch.com/2024/08/26/anthropic-publishes-the-system-prompt-that-makes-claude-tick/">Anthropic julkaisee &#39;järjestelmäkehotteet&#39;, jotka saavat Clauden toimimaan</a></h2>
+<ul>
+<li>Anthropic on julkaissut uusimpien AI-malliensa (Claude 3 Opus, Claude 3.5 Sonnet ja Claude 3 Haiku) järjestelmäkehotteet parantaakseen läpinäkyvyyttä.</li>
+<li>Nämä kehotteet ohjeistavat tekoälyä hyväksyttävistä käyttäytymismalleista, mukaan lukien kasvojentunnistuksen välttäminen ja puolueettomuuden säilyttäminen kiistanalaisissa asioissa.</li>
+<li>Tämä aloite saattaa vaikuttaa muihin tekoälytoimittajiin, jotta he ottaisivat käyttöön samanlaisia läpinäkyvyyskäytäntöjä, sillä Anthropic sitoutuu säännöllisiin päivityksiin ja tiedonantoihin.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41364637">Reaktiot</a></h3>
+<ul>
+<li>Anthropic on julkaissut Claude-nimisen tekoälymallinsa järjestelmäkehotteet, jotka nyt tunnustavat &quot;hallusinaatioiden&quot; esiintymisen ja neuvovat käyttäjiä tarkistamaan viittaukset epäselvissä aiheissa.</li>
+<li>Jotkut käyttäjät ovat havainneet, että Claude on määrätietoisempi ja vähemmän anteeksipyytelevä verrattuna muihin tekoälymalleihin, ja jotkut pitävät sitä luotettavampana kuin GPT-4 tietyissä tehtävissä, kuten käsikirjoittamisessa.</li>
+<li>Yksityiskohtaiset järjestelmäkehotteet on suunniteltu ohjaamaan Clauden käyttäytymistä, vaikka jotkut käyttäjät kokevat, että näitä kehotteita joskus sivuutetaan; ne ovat saatavilla Anthropicin dokumentaatiosivustolla.</li>
+</ul>
+<h2><a href="https://www.classcentral.com/report/2u-edx-bankruptcy/">2U:n, EdX:n ja Aximin kolmoisepäonnistuminen</a></h2>
+<ul>
+<li>Vuonna 2021 2U osti edX:n 800 miljoonalla dollarilla, mikä johti taloudellisiin vaikeuksiin ja lopulta konkurssiin vuoteen 2024 mennessä.</li>
+<li>Yritysosto lisäsi vuosittaisia korkokuluja 42 miljoonalla dollarilla, ja pyrkimykset vähentää kustannuksia ja yhtenäistää toimintoja edX-brändin alla epäonnistuivat.</li>
+<li>Axim Collaborative, voittoa tavoittelematon järjestö, joka hallinnoi myynnistä saatuja 800 miljoonaa dollaria, on osoittanut vain vähäistä vaikutusta edtech-alaan ja on pääasiassa muuttunut apurahoja jakavaksi organisaatioksi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41363549">Reaktiot</a></h3>
+<ul>
+<li>Kirjoitus käsittelee Courseran, EdX:n ja Udacityn kaltaisten alustojen MOOC-kurssien (Massive Open Online Courses) koettua laadun ja tehokkuuden heikkenemistä.</li>
+<li>Keskeisiä esiin nostettuja asioita ovat yksinkertaistetut tehtävät, palautteen puute ja kurssien vähemmän vaativa luonne verrattuna perinteisiin yliopistotarjontoihin.</li>
+<li>Huolimatta joistakin positiivisista kokemuksista, yleinen suuntaus nähdään negatiivisena, sillä uusia korkealaatuisia kursseja lisätään vähemmän ja monia vanhempia, arvokkaita kursseja arkistoidaan.</li>
+</ul>
+<h2><a href="https://www.theartnewspaper.com/2024/08/27/sainsbury-wing-contractors-find-1990-letter-from-donor-anticipating-their-demolition-of-false-columns">Urakoitsijat löytävät Sainsbury Wingistä vuonna 1990 kirjoitetun lahjoittajan kirjeen</a></h2>
+<ul>
+<li>Urakoitsijat, jotka remontoivat Lontoon National Galleryn Sainsbury Wingiä, löysivät vuodelta 1990 peräisin olevan lahjoittaja John Sainsburyn kirjeen, jossa hän kritisoi eteisaulaan sisällytettyjä valetolppia, joita hän piti arkkitehtien virheenä.</li>
+<li>Kirje, joka löydettiin äskettäisten remonttien aikana, ilmaisi Sainsburyn toiveen, että tulevat sukupolvet poistaisivat tarpeettomat pylväät.</li>
+<li>Sainsbury Wing, joka käy läpi 85 miljoonan punnan päivityksen avoimemman aulan luomiseksi, avataan uudelleen ensi vuoden toukokuussa merkittävien Sainsburyn perheen lahjoitusten ansiosta.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41368866">Reaktiot</a></h3>
+<ul>
+<li>Urakoitsijat löysivät vuoden 1990 kirjeen lahjoittajalta Sainsbury Wingin pohjakerroksen ei-rakenteellisesta pylväästä.</li>
+<li>Löytö on herättänyt keskusteluja pylväiden tarkoituksesta, suunnittelusta ja tehdyistä arkkitehtonisista valinnoista.</li>
+<li>Kirje on johtanut pohdintoihin arkkitehdin ja lahjoittajan aikeista, joidenkin löytäessä siitä huumoria ja toisten keskustellessa siihen liittyvistä arkkitehtonisista teorioista.</li>
+</ul>
+<h2><a href="https://twitter.com/realgeorgehotz/status/1828197925874463166">Pikkulaatikoissa on vihdoin osta nyt -painike</a></h2>
+<ul>
+<li>Tinyboxes, George Hotzin tuote, sisältää nyt &quot;osta heti&quot; -painikkeen 18 kuukauden kehitystyön jälkeen.</li>
+<li>Tällä hetkellä ostettavissa on 13 yksikköä, joista 15 000 dollarin tinybox red tarjoaa parhaan suorituskyvyn per dollari koneoppimiseen (ML) ja on täysin verkotettavissa.</li>
+<li>Kiinnostuneet ostajat voivat vierailla annetussa linkissä @<strong>tinygrad</strong> Twitter-tilillä tehdäkseen ostoksen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41365637">Reaktiot</a></h3>
+<ul>
+<li>Tinyboxes, korkean suorituskyvyn laskentalaite, sisältää nyt &quot;osta heti&quot; -painikkeen, mikä tekee niiden ostamisesta helpompaa.</li>
+<li>Laite, jonka hinta on 15 000 dollaria Radeonille ja 25 000 dollaria Nvidialle, vaatii merkittävästi tehoa (3200W) ja saattaa tarvita kaksi erillistä virtapiiriä asuinympäristössä.</li>
+<li>Huolenaiheita on herännyt sen verkkokapasiteetista (64GB/s PCIe:n kautta) ja soveltuvuudesta suurten koneoppimismallien, kuten LLama 3.1 / 70B, hienosäätöön VRAM-rajoitusten ja liitäntäkaistanleveyden vuoksi.</li>
+</ul>
+<h2><a href="https://blog.colinbreck.com/predicting-the-future-of-distributed-systems/">Ennustaminen hajautettujen järjestelmien tulevaisuudesta</a></h2>
+<ul>
+<li>Merkittäviä muutoksia hajautetuissa järjestelmissä ovat objektitallennuksen keskeinen rooli, transaktio- ja analyysityökalujen yhdistäminen sekä uudet ohjelmointimallit.</li>
+<li>Jeff Bezosin käsite yksisuuntaisista (peruuttamattomista) ja kaksisuuntaisista (peruutettavista) päätöksistä on ratkaisevan tärkeä uusien teknologioiden käyttöönottoon liittyvien riskien hallinnassa.</li>
+<li>Objektitallennus kasvattaa suosiotaan sen luotettavuuden, joustavuuden ja ominaisuuksien, kuten alueiden välisen replikoinnin ja salauksen, ansiosta, ja tulevaisuudessa odotetaan parannuksia suorituskyvyssä ja yhteensopivuudessa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41363499">Reaktiot</a></h3>
+<ul>
+<li>Keskustelussa korostetaan tarvetta parantaa innovatiivisten työkalujen, kuten mgmt configin, markkinointia ja siirtymistä kohti muuttumattomia järjestelmiä.</li>
+<li>Keskeisiä aiheita ovat paikallisten kehitysympäristöjen merkitys, API:en rooli sekä tallennuksen ja tietokantojen kehittyvä maisema hajautetuissa järjestelmissä.</li>
+<li>Keskustelu heijastaa sekoitusta optimismia ja skeptisyyttä hajautettujen järjestelmien tulevaisuudesta, pohtien nykyisten työkalujen tehokkuutta ja älykkäämpien tallennusratkaisujen potentiaalia.</li>
+</ul>
+<h2><a href="https://krebsonsecurity.com/2024/08/new-0-day-attacks-linked-to-chinas-volt-typhoon/">Uudet 0-päivän hyökkäykset yhdistetty Kiinan &#39;Volt Typhoon&#39; -ryhmään</a></h2>
+<ul>
+<li>Pahantahtoiset hakkerit hyödyntävät nollapäivähaavoittuvuutta (CVE-2024-39717) Versa Director -ohjelmistossa, jota monet Internet- ja IT-palveluntarjoajat käyttävät.</li>
+<li>Kybervakoiluryhmä Volt Typhoon, jolla on yhteyksiä Kiinaan, epäillään kohdistaneen hyökkäyksiä kriittisiin Yhdysvaltain verkkoihin tämän haavoittuvuuden kautta, joka mahdollistaa hyökkääjien tiedostojen lataamisen haavoittuviin järjestelmiin.</li>
+<li>Versa on kehottanut asiakkaita korjaamaan haavoittuvuuden Versa Director 22.1.4:llä tai uudemmalla versiolla, kun taas Black Lotus Labsin tutkijat ovat tunnistaneet useilla järjestelmillä verkkopohjaisen takaoven ja liittäneet toiminnan Volt Typhooniin keskitasoisella varmuudella.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41367964">Reaktiot</a></h3>
+<ul>
+<li>Uudet 0-päivän hyökkäykset on yhdistetty Kiinan valtion tukemaan &#39;Volt Typhoon&#39; -ryhmään, viimeisimmän neuvonannon mukaan.</li>
+<li>Neuvonanto arvosteli Versa-asiakkaita järjestelmän koventamisen ja palomuuriohjeiden toteuttamatta jättämisestä, mikä jätti hallintaportit alttiiksi internetille.</li>
+<li>Hyökkäykset korostavat kyberhygienian tärkeyttä ja mahdollisia riskejä, jotka liittyvät hallintaporttien avoimeksi jättämiseen, mikä katsotaan perusjärjestelmänhallinnan käytännöksi.</li>
+</ul>
+<h2><a href="https://freebsdfoundation.org/blog/sovereign-tech-fund-to-invest-e686400-in-freebsd-infrastructure-modernization/">Suvereeni teknologiarahasto sijoittaa 686 000 euroa FreeBSD-infrastruktuurin modernisointiin</a></h2>
+<ul>
+<li>Saksan Sovereign Tech Fund (STF) sijoittaa 686 400 euroa FreeBSD-projektiin sen infrastruktuurin, turvallisuuden ja kehittäjäkokemuksen modernisoimiseksi.</li>
+<li>Investointi keskittyy zero trust -rakenteisiin, CI/CD-automaatioon, teknisen velan vähentämiseen, tietoturvakontrollien parantamiseen ja SBOM (Software Bill of Materials) -prosessien kehittämiseen.</li>
+<li>Tämä aloite on linjassa Yhdysvaltain kansallisen kyberjohtajan toimiston prioriteettien kanssa ja pyrkii vahvistamaan avoimen lähdekoodin ekosysteemiä, hyödyttäen globaalia julkista, tutkimus- ja kaupallista sektoria.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41364776">Reaktiot</a></h3>
+<ul>
+<li>Sovereign Tech Fund sijoittaa 686 000 euroa FreeBSD-infrastruktuurin modernisointiin, tavoitteena vähentää teknistä velkaa ja parantaa järjestelmää.</li>
+<li>Tällä saksalaisella rahastolla on historia merkittävien avoimen lähdekoodin projektien, kuten curl, ffmpeg, GNOME ja PHP, tukemisessa.</li>
+<li>FreeBSD:tä käyttävät laajasti yritykset kuten Juniper, Sony ja Netflix, mikä korostaa sen merkitystä verkkoinfrastruktuurissa ja laajemmassa avoimen lähdekoodin yhteisössä.</li>
+</ul>
+<h2><a href="https://salesforcedevops.net/index.php/2024/08/19/ai-apocalypse/">80 % tekoälyprojekteista epäonnistuu, miljardeja hukkaan, sanoo Rand-raportti</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41368935">Reaktiot</a></h3>
+<ul>
+<li>RAND-raportti osoittaa, että 80 % tekoälyprojekteista epäonnistuu väärinkäsitysten vuoksi siitä, mihin ongelmiin tekoälyn tulisi puuttua, riittämättömän datan ja huonon infrastruktuurin takia.</li>
+<li>Onnistuneet tekoälyprojektit edellyttävät datatieteilijöiden ja koneoppimisinsinöörien varhaista osallistumista, jotta voidaan varmistaa merkittävä vaikutus ja kuroa umpeen teknisten ja alakohtaisten asiantuntijoiden välinen kuilu.</li>
+<li>Monia tekoälyhankkeita ohjaa hype todellisten tarpeiden sijaan, mikä johtaa kalliisiin epäonnistumisiin, kun johtamisongelmat ja epärealistiset odotukset estävät tekoälyn potentiaalin.</li>
+</ul>
+<h2><a href="https://twitter.com/Snowden/status/1827695836832334169">Snowden: Durovin pidätys on hyökkäys perusoikeuksia vastaan</a></h2>
+<ul>
+<li>Edward Snowden kritisoi Pavel Durovin pidätystä, pitäen sitä hyökkäyksenä sananvapautta ja yhdistymisvapautta vastaan.</li>
+<li>Snowden ilmaisi pettymyksensä Ranskan presidentti Emmanuel Macroniin, koska tämä käyttää taktiikoita päästäkseen käsiksi yksityisiin viestintöihin, mikä hänen mielestään heikentää Ranskaa ja maailmanlaajuisia standardeja.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41360808">Reaktiot</a></h3>
+<ul>
+<li>Edward Snowden on nimennyt Telegramin perustajan Pavel Durovin pidätyksen hyökkäykseksi perusoikeuksia vastaan.</li>
+<li>Keskustelu keskittyy viestisovellusten lainmukaisten määräysten ja haasteiden noudattamiseen, vertaillen Telegramin kieltäytymistä yhteistyöstä Signalin vähäiseen tietojen luovuttamiseen.</li>
+<li>Durov kohtaa useita syytteitä, mukaan lukien osallisuus lapsipornografisen materiaalin levittämiseen ja kieltäytyminen antamasta viranomaisille tarvittavia tietoja, mikä herättää merkittäviä oikeudellisia ja eettisiä huolenaiheita.</li>
+</ul>
+<h2><a href="https://www.finalemusic.com/blog/end-of-finale-new-journey-dorico-letter-from-president/">Loppuhuipennuksen loppu</a></h2>
+<ul>
+<li>Coda Music Technologies (nykyisin MakeMusic) on ilmoittanut lopettavansa Finale-nuotinnusohjelmiston kehittämisen johtuen teknologian kehittymisestä ja ylläpidon monimutkaisuudesta.</li>
+<li>Voimassa heti, päivityksiä ei enää tehdä, ja Finalea ei voi enää ostaa tai päivittää; elokuusta 2025 alkaen sitä ei voi valtuuttaa uusille laitteille tai valtuuttaa uudelleen, ja tekninen tuki päättyy.</li>
+<li>MakeMusic on tehnyt yhteistyötä Steinbergin kanssa tarjotakseen Finale-käyttäjille eksklusiivisen alennuksen Dorico Pro -ohjelmistosta, joka on uusi alan standardin mukainen nuotinnusohjelmisto, saatavilla hintaan 149 dollaria (vähittäishinta 579 dollaria).</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41363231">Reaktiot</a></h3>
+<ul>
+<li>MakeMusic, Finale-ohjelmiston takana oleva yritys, ei enää valtuuta uusia ohjelmiston asennuksia vuoden kuluttua, mikä käytännössä lopettaa sen käytettävyyden uusilla laitteilla.</li>
+<li>MakeMusic on tehnyt yhteistyötä Steinbergin kanssa tarjotakseen alennuksen Dorico Pro -ohjelmistosta, ehdottaen siirtymäsuunnitelmaa nykyisille Finale-käyttäjille.</li>
+<li>Suosittelemme käyttäjiä muuntamaan Finale-tiedostonsa MusicXML-muotoon, joka on avoin formaatti, sillä tulevat asennukset ja aktivoinnit eivät ole mahdollisia.</li>
+</ul>
+<h2><a href="https://newatlas.com/energy/underground-nuclear-reactors/">Ydinreaktorit mailin syvyydessä maan alla lupaavat turvallista ja edullista energiaa</a></h2>
+<ul>
+<li>Startup Deep Fission ehdottaa 30 tuumaa leveää ydinreaktoria sijoitettavaksi mailin syvyyteen maan alle ratkaistakseen ydinvoiman taloudelliset ja turvallisuuskysymykset.</li>
+<li>Reaktori, joka perustuu tavanomaiseen painevesireaktoriin (PWR), toimii 160 ilmakehän paineessa ja 315 °C:ssa (600 °F), käyttäen passiivista jäähdytysjärjestelmää ja vesipatsaan painoa paineistukseen.</li>
+<li>Tämä suunnittelu poistaa tarpeen kalliille rakennustekniikalle ja suojarakenteille, ja reaktori voidaan ottaa tarkastettavaksi tai huollettavaksi muutamassa tunnissa; tällä hetkellä Deep Fission on esihakemuksen tarkistusprosessissa energiaministeriön kanssa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41366436">Reaktiot</a></h3>
+<ul>
+<li>Uusi konsepti ehdottaa ydinreaktoreiden rakentamista mailin syvyyteen maan alle turvallisuuden parantamiseksi ja kustannusten vähentämiseksi.</li>
+<li>Vaikka olemassa olevat ydinreaktorit ovat äärimmäisen turvallisia, yleisön turvallisuushuolenaiheet jatkavat niiden rakentamisen estämistä.</li>
+<li>Ajatus reaktoreiden hautaamisesta syvälle maan alle saattaa tahattomasti vahvistaa käsitystä ydinvoimasta erittäin vaarallisena.</li>
+</ul>
+<h2><a href="https://mainichi.jp/english/articles/20240823/p2a/00m/0bu/024000c">Miksi Japaniin on iskenyt riisipula, vaikka sadot ovat olleet normaalit?</a></h2>
+<ul>
+<li>Japani kohtaa riisipulaa ja nousevia hintoja huolimatta normaalista sadosta, johtuen pitkäaikaisesta viljelyalan vähentämispolitiikasta, jonka tarkoituksena on ollut hallita markkinahintoja.</li>
+<li>Tämä yli 50 vuotta voimassa ollut politiikka kannustaa viljelijöitä siirtymään muihin viljelykasveihin, mikä johtaa tiukasti hallittuun riisin tuotantoon ja altistaa kysynnän vaihteluille.</li>
+<li>Asiantuntijat ehdottavat politiikan lakkauttamista, riisintuotannon lisäämistä ja viennin kasvattamista ruokaturvan parantamiseksi ja kuluttajien hyödyttämiseksi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41366304">Reaktiot</a></h3>
+<ul>
+<li>Japani kokee riisipulaa huolimatta normaalista sadosta, koska hallituksen politiikka kannustaa viljelijöitä vähentämään tuotantoa korkeiden hintojen ylläpitämiseksi.</li>
+<li>Tämä 60 vuotta vanha politiikka rajoittaa tarjontaa, mikä aiheuttaa jopa pienten kysynnän lisääntymisten, kuten turismin, johtavan puutteisiin ja korkeampiin hintoihin.</li>
+<li>Kriitikot ehdottavat, että Japanin tulisi luopua tästä politiikasta lisätäkseen tuotantoa, mikä voisi tehdä siitä merkittävän riisin viejän ja parantaa ruokaturvaa.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Box64 ja RISC-V vuonna 2024: Mitä vaaditaan Witcher 3:n ajamiseen RISC-V:llä" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Box64%20ja%20RISC-V%20vuonna%202024%3A%20Mit%C3%A4%20vaaditaan%20Witcher%203%3An%20ajamiseen%20RISC-V%3All%C3%A4&subheading=tiistaina%2027.%20elokuuta%202024%3A%20Hacker%20News%20yhteenveto" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/fi/2024/08/27</link>
+            <guid isPermaLink="false">2024-08-27T00:00:00.000Z</guid>
+            <pubDate>Tue, 27 Aug 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-26]]></title>
             <description
@@ -1710,187 +1895,6 @@
             <link>https://hn.cho.sh/fi/2024/08/18</link>
             <guid isPermaLink="false">2024-08-18T00:00:00.000Z</guid>
             <pubDate>Sun, 18 Aug 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-17]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/08/17&#39;</h2>
-<h1>2024-08-17</h1>
-<h2><a href="https://twitter.com/organicmapsapp/status/1824727403580596260">Google poisti Organic Mapsin Play-kaupasta</a></h2>
-<ul>
-<li>Organic Maps poistettiin yllättäen Play Storesta, koska sen väitettiin olevan ristiriidassa perheohjelman vaatimusten kanssa.</li>
-<li>Toisin kuin muut 3+ luokitellut sovellukset, kuten Google Maps, Organic Maps ei sisällä mainoksia tai sovelluksen sisäisiä ostoja.</li>
-<li>Poistaminen on herättänyt kiinnostusta sovelluksen mainos- ja ostovapaan luonteen vuoksi, mikä on vastakohta muille vastaaville sovelluksille.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41272925">Reaktiot</a></h3>
-<ul>
-<li>Google poisti Organic Mapsin Play Storesta, mikä johti keskusteluihin sovelluskauppojen monopoleista ja kehittäjien haasteista.</li>
-<li>Organic Mapsia arvostetaan sen offline-ominaisuuksien ja OpenStreetMap (OSM) -datan käytön vuoksi, erityisesti ulkoilma-aktiviteeteissa kuten patikoinnissa ja pyöräilyssä.</li>
-<li>Tapaus herättää huolta Googlen tarkistusprosessista ja mahdollisesta kilpailunvastaisesta toiminnasta, ja ehdotetaan vaihtoehtoisten sovelluskauppojen, kuten F-Droidin, käyttöä.</li>
-</ul>
-<h2><a href="https://fortune.com/europe/2024/08/14/x-ordered-to-pay-550000-to-irish-employee-fired-for-not-replying-to-elon-musk-yes-or-resign-extremely-hardcore-ultimatum/">X määrättiin maksamaan 550 000 € irlantilaiselle työntekijälle, joka irtisanottiin kyllä-tai-eroa-ultimatumilla</a></h2>
-<ul>
-<li>Elon Muskin X (entinen Twitter) on määrätty maksamaan yli 550 000 euroa (602 640 dollaria) entiselle irlantilaiselle työntekijälle Gary Rooneylle perusteettomasta irtisanomisesta.</li>
-<li>Rooney sai potkut joulukuussa 2022, koska hän ei vastannut Muskin sähköpostiin, jossa vaadittiin työntekijöitä sitoutumaan uusiin, intensiivisiin työoloihin tai eroamaan. Irlannin työpaikkasuhdekomissio katsoi, että tämä ei ollut irtisanoutuminen.</li>
-<li>Tämä tapaus on osa riitojen sarjaa, jotka ovat seuranneet Muskin alustan hankintaa, ja X:llä on 42 päivää aikaa valittaa päätöksestä.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41272861">Reaktiot</a></h3>
-<ul>
-<li>X määrättiin maksamaan 550 000 euroa irlantilaiselle työntekijälle, joka irtisanottiin saatuaan kyllä-tai-eroa-ultimatiivin, mikä korostaa vahvempia työoikeuksia Euroopassa.</li>
-<li>Tapaus korostaa eroja työlaeissa ja eduissa Yhdysvaltojen ja Euroopan välillä, kuten äitiysloman ja lomakäytäntöjen osalta.</li>
-<li>Käyttäjät huomasivat, että Yhdysvaltojen korkeampien palkkojen ja Euroopan paremman työturvallisuuden ja etujen välillä on vaihtokauppa.</li>
-</ul>
-<h2><a href="https://old.reddit.com/r/LegalAdviceUK/comments/1etko9h/family_poisoned_after_using_aigenerated_mushroom/">Perhe myrkytetty käytettyään tekoälyn luomaa sienitunnistuskirjaa</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41269514">Reaktiot</a></h3>
-<ul>
-<li>Perhe myrkytettiin käytettyään tekoälyn luomaa sienitunnistuskirjaa, joka väitti virheellisesti, että kirjoittajalla oli tutkinto olemattomasta yliopistosta.</li>
-<li>Tämä tapaus on herättänyt keskusteluja tiukempien säädösten tarpeesta AI-julkaisemisen ympärillä, korostaen AI:n tuottaman sisällön mahdollisia vaaroja kriittisillä alueilla, kuten elintarviketurvallisuudessa.</li>
-<li>Kriitikot väittävät, että nykyisten lakien pitäisi jo käsitellä tällaista huolimattomuutta, mutta keskustelu jatkuu siitä, tarvitsevatko tekoälytyökalut erityisiä säädöksiä niiden nopean väärän tiedon levittämisen vuoksi.</li>
-</ul>
-<h2><a href="https://mccue.dev/pages/8-16-24-just-use-postgres">Kannattaa käyttää vain Postgresia</a></h2>
-<ul>
-<li>Artikkeli puoltaa Postgresin käyttämistä oletusvalintana pysyvän datan tallennukseen uusissa sovelluksissa.</li>
-<li>Se vertaa Postgresta muihin tietokantoihin, kuten SQLite, DynamoDB, Cassandra, MongoDB, Redis, Datomic, XTDB, Kafka, ElasticSearch, MSSQL, Oracle DB, MySQL ja AI vektorikantoihin, korostaen niiden rajoituksia ja erityisiä käyttötapauksia.</li>
-<li>Keskeinen argumentti on, että Postgres tarjoaa tasapainoisen yhdistelmän joustavuutta, luotettavuutta ja ominaisuuksia, mikä tekee siitä sopivan laajaan valikoimaan sovelluksia ilman muiden erikoistuneiden tietokantojen haittoja.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41272854">Reaktiot</a></h3>
-<ul>
-<li>Keskustelu keskittyy PostgreSQL:n ja MongoDB:n käyttöön, erityisesti korkeakouluopiskelijoiden ja vastavalmistuneiden osalta.</li>
-<li>Kriitikot väittävät, että MongoDB valitaan usein välttääkseen taulukoiden skeemojen tai SQL:n käsittelyn, mutta tämä voi johtaa monimutkaisempiin ongelmiin sovelluskehityksessä.</li>
-<li>Keskustelu korostaa tietokantaskeemojen ja -suhteiden ymmärtämisen tärkeyttä sekä mahdollisia sudenkuoppia, jotka liittyvät MongoDB:n käyttöön ilman asianmukaista tietämystä.</li>
-</ul>
-<h2><a href="https://files.eric.ed.gov/fulltext/ED505647.pdf">Lisää oppimisen säilymistä lisäämättä opiskeluaikaa [pdf]</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41274602">Reaktiot</a></h3>
-<ul>
-<li>Opettaminen muille siitä, mitä itse opit, on tehokas strategia pitkäaikaiseen muistamiseen, hyödyttäen sekä opettajaa että tulevia tiimin jäseniä dokumentoinnin kautta.</li>
-<li>Uudet tiimin jäsenet tuovat mukanaan tuoreita näkökulmia, jotka voivat paljastaa tehottomuuksia ennen kuin he sopeutuvat, mikä tekee tästä ajasta arvokkaan heidän näkemystensä hyödyntämiseksi.</li>
-<li>Tehokkaat oppimisstrategiat, kuten aikavälein toistaminen ja aktiivinen palauttaminen, yhdessä motivaation ja käytännön sovellusten kanssa parantavat merkittävästi tiedon säilymistä.</li>
-</ul>
-<h2><a href="https://arstechnica.com/gadgets/2024/08/epic-games-store-and-fortnite-arrive-on-eu-iphones/">Epic Games Store ja Fortnite saapuvat EU:n iPhoneille</a></h2>
-<ul>
-<li>Epic Games Store ja Fortnite ovat palanneet EU:n iPhoneihin neljän vuoden tauon jälkeen, kiitos Digitaalisten markkinoiden säädöksen (DMA), joka vaatii Applea sallimaan kolmannen osapuolen sovelluskaupat.</li>
-<li>Epic Games Store, joka on nyt saatavilla Androidilla maailmanlaajuisesti ja iOS:llä Euroopassa, sisältää pelejä kuten Fortnite, Rocket League Sideswipe ja Fall Guys.</li>
-<li>Tämä kehitys seuraa pitkää oikeudellista ja julkisuustaistelua Epicin ja Applen välillä sovelluskaupan käytännöistä, mikä korostaa jatkuvia jännitteitä huolimatta joistakin kehittäjien voitoista.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41272771">Reaktiot</a></h3>
-<ul>
-<li>Epic Games Store ja Fortnite ovat nyt saatavilla EU:n iPhoneissa, mikä merkitsee merkittävää askelta digitaalisen vapauden kannalta ja saattaa luoda ennakkotapauksen muille alueille.</li>
-<li>Siirto on herättänyt keskusteluja Applen rajoittavasta ekosysteemistä, mahdollisista sääntelytoimista ja laajemmista vaikutuksista digitaalisiin markkinapaikkoihin.</li>
-<li>Yhteisön reaktiot sisältävät sekoituksen optimismia, skeptisyyttä ja teknisiä näkemyksiä, keskusteluja iOS-päivityksistä ja mahdollisuudesta kolmannen osapuolen selaimiin.</li>
-</ul>
-<h2><a href="https://neel04.github.io/my-website/blog/pytorch_rant/">Tulevaisuus syväoppimisen kehyksille</a></h2>
-<ul>
-<li>Kirjoituksessa väitetään, että vaikka PyTorch on hyvä nopeaan prototyyppien luomiseen, se on ollut tehoton laajamittaisessa, hajautetussa laskennassa, mikä on johtanut tuottavuuden menetykseen.</li>
-<li>JAX, jonka on kehittänyt DeepMind, korostuu parempana vaihtoehtona sen kääntäjäpohjaisen lähestymistavan, tehokkaan rinnakkaistamisen ja funktionaalisen API:n ansiosta, jotka parantavat suorituskykyä ja skaalautuvuutta.</li>
-<li>JAX:n keskeisiä etuja ovat parempi toistettavuus, saumaton siirrettävyys eri laitteistojen välillä ja vakaampi ekosysteemi, vaikka sillä onkin joitakin hallinto- ja API-suunnitteluhaasteita.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41270043">Reaktiot</a></h3>
-<ul>
-<li>PyTorchia kiitetään sen helppokäyttöisyydestä ja siitä, että se vastaa tutkijoiden oppimistapoja, mikä tekee siitä sukupolven kannalta tärkeän projektin, jolla on vahva tuki Metalta.</li>
-<li>Googlen kehittämä JAX tunnetaan vahvoista abstraktioistaan ja rinnakkaistamiskyvyistään, mutta sitä pidetään vähemmän intuitiivisena ja sen ekosysteemiä hajanaisempana verrattuna PyTorchiin.</li>
-<li>Keskustelu tuo esiin huolenaiheita JAX:n tulevaisuudesta sen Google-yksinomaisen kehityksen vuoksi sekä mahdolliset hyödyt itsenäisestä hallintorakenteesta sen kestävyyden kannalta.</li>
-</ul>
-<h2><a href="https://team-atlanta.github.io/blog/post-atl/">LLM ja virheiden löytäminen: Oivalluksia Valkoisen talon AIxCC-kilpailun 2 miljoonan dollarin voittajajoukkueelta</a></h2>
-<ul>
-<li>Team Atlanta, joka koostuu Georgian teknillisen korkeakoulun, GTRI:n, Samsung Researchin, KAIST:n ja POSTECH:n jäsenistä, kilpailee DARPA:n AIxCC-kilpailussa tekoälypohjaisella kyberturvallisuusratkaisullaan, Atlantiksella.</li>
-<li>Tiimi on hyödyntänyt kokemustaan DARPA Cyber Grand Challenge -kilpailusta kehittääkseen Skynetin, kyberpäättelyjärjestelmän (CRS), joka käyttää staattista analyysiä ja hienosäädettyjä suuria kielimalleja (LLM).</li>
-<li>Huolimatta alkuperäisistä väärinkäsityksistä ja haasteista, Team Atlanta ansaitsi kuusi saavutustunnusta välierissä ja etenee AIxCC-finaaleihin, mikä viittaa parannuksiin tulevia kilpailuja varten.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41269791">Reaktiot</a></h3>
-<ul>
-<li>Valkoisen talon AIxCC-tiimi käytti suuria kielimalleja (LLM), kuten GPT-4:ää, virheiden löytämiseen ja korjaamiseen, ja pääsi kilpailun finaaliin.</li>
-<li>He löysivät nollapäivähaavoittuvuuden SQLite3:ssa, mikä korostaa LLM:ien potentiaalia kyberturvallisuudessa.</li>
-<li>Tiimi aikoo jakaa lisää näkemyksiä finaalien jälkeen, ja keskusteluissa käsiteltiin bugipalkkioiden taloutta ja tekoälyn tulevaa roolia kyberturvallisuudessa.</li>
-</ul>
-<h2><a href="https://www.theverge.com/2024/8/14/24220658/google-eric-schmidt-stanford-talk-ai-startups-openai">Entinen Googlen toimitusjohtaja: AI-startupit voivat varastaa immateriaalioikeuksia ja palkata lakimiehiä &#39;siivoamaan sotkun&#39;</a></h2>
-<ul>
-<li>Entinen Googlen toimitusjohtaja Eric Schmidt ehdotti, että menestyvät tekoälystartupit voisivat varastaa immateriaalioikeuksia ja palkata lakimiehiä hoitamaan seuraukset, mikä herätti kiistaa.</li>
-<li>Schmidt katsoi, että Googlen hidas reagointi ChatGPT:hen johtui työntekijöiden etätyön priorisoinnista, mikä johti hänen puheensa poistamiseen Stanfordin YouTube-kanavalta.</li>
-<li>Schmidt keskusteli myös sijoituksistaan tekoäly-startupeihin ja yhteyksistään merkittäviin teknologia-alan henkilöihin, kuten Sam Altmaniin ja Elon Muskiin, korostaen jatkuvaa vaikutusvaltaansa Piilaaksossa.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41275073">Reaktiot</a></h3>
-<ul>
-<li>Entinen Googlen toimitusjohtaja Eric Schmidt ehdotti, että tekoälystartupit saattaisivat harkita immateriaalioikeuksien varastamista ja käsitellä oikeudellisia kysymyksiä myöhemmin, asettaen tekniset haasteet etusijalle.</li>
-<li>Schmidtin kommentit ovat herättäneet keskustelua, jossa jotkut pitävät sitä pragmaattisena strategiana ja toiset epäeettisenä, vetäen yhtäläisyyksiä yrityksiin kuten Uber ja Airbnb, jotka toimivat laillisuuden harmailla alueilla.</li>
-<li>Kriitikot väittävät, että tämä lähestymistapa heikentää oikeudenmukaisuutta ja oikeusvaltioperiaatetta, herättäen huolta teknologiateollisuuden eettisistä vaikutuksista.</li>
-</ul>
-<h2><a href="https://hkalbasi.github.io/zngur/">Zngur: C++/Rust-yhteensopivuustyökalu</a></h2>
-<ul>
-<li>Zngur on työkalu, joka helpottaa yhteensopivuutta C++:n ja Rustin välillä, mahdollistaen Rust-tyyppien, -metodien ja -funktioiden käytön C++-koodissa säilyttäen niiden alkuperäisen semantiikan ja ergonomian.</li>
-<li>Se mahdollistaa Rust-kirjastojen käytön C++-kielessä ja idiomaattisten Rust-rajapintojen luomisen C++-kirjastoille, käsitellen keskeisiä eroja kielten välillä, kuten muistiturvallisuutta ja tyyppitarkistusmekanismeja.</li>
-<li>Zngur mahdollistaa Rust-tyyppien tallentamisen arvona C++:ssa, Rust-metodien ja -funktioiden kutsumisen sekä Rust-kääreiden kirjoittamisen C++-kirjastoille, mutta se ei yhdistä C++-tyyppejä Rustiin.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41271273">Reaktiot</a></h3>
-<ul>
-<li>Zngur on uusi työkalu, joka on suunniteltu C++:n ja Rustin väliseen yhteentoimivuuteen, ja sen tavoitteena on helpottaa Foreign Function Interface (FFI) -rajapintaa näiden kahden kielen välillä.</li>
-<li>Rust-yhteisö on perinteisesti osoittanut rajallista sitoutumista C++-yhteensopivuuteen, mikä tekee Zngurista merkittävän askeleen kohti Rustin asteittaista käyttöönottoa ilman, että olemassa olevaa C++-koodia tarvitsee kirjoittaa kokonaan uudelleen.</li>
-<li>Zngur mahdollistaa C++-koodin suorittamisen Rustista ja funktioiden kirjoittamisen Rust-tyypeille C++:ssa, vaikka se ei siltikään tuo C++-tyyppejä Rustiin, mikä joidenkin käyttäjien mielestä on vähemmän ergonomista.</li>
-</ul>
-<h2><a href="https://www.reuters.com/technology/x-close-operations-brazil-effective-immediately-2024-08-17/">X sanoo lopettavansa toimintansa Brasiliassa tuomarin sisältömääräysten vuoksi</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41275600">Reaktiot</a></h3>
-<ul>
-<li>X (entinen Twitter) lopettaa toimintansa Brasiliassa &quot;sensuurimääräysten&quot; vuoksi, jotka ovat peräisin brasilialaiselta tuomarilta Alexandre de Moraesilta, jolla on historia sosiaalisen median julkaisujen poistomääräyksistä ja yksilöiden vangitsemisesta heidän sisältönsä vuoksi.</li>
-<li>Brasilian oikeuslaitosta, erityisesti korkeinta oikeutta, on syytetty valtuuksiensa ylittämisestä ja merkittävän vallan käyttämisestä, mikä on johtanut väitteisiin &quot;oikeudellisesta diktatuurista.&quot;</li>
-<li>Tämä X:n toimenpide on ristiriidassa sen kanssa, että se on noudattanut vastaavia määräyksiä muissa maissa, mikä herättää kysymyksiä Brasilian oikeuslaitoksen toimien läpinäkyvyydestä ja asianmukaisesta menettelystä.</li>
-</ul>
-<h2><a href="https://xapian.org/">Xapian: Avoimen lähdekoodin hakukonekirjasto</a></h2>
-<ul>
-<li>Xapian on avoimen lähdekoodin hakukonekirjasto, joka on lisensoitu GPL v2+ -lisenssillä. Se on kirjoitettu C++-kielellä ja siinä on sidokset kielille kuten Perl, Python, PHP ja Java.</li>
-<li>Se mahdollistaa kehittäjien integroida edistyneitä indeksointi- ja hakutoimintoja sovelluksiinsa, tukien useita painotusmalleja ja boolen hakuehtoja.</li>
-<li>Uusin vakaa versio Xapianista on 1.4.26, julkaistu 18. heinäkuuta 2024.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41273415">Reaktiot</a></h3>
-<ul>
-<li>Xapian on avoimen lähdekoodin hakukonekirjasto, jota kehutaan sen yksinkertaisuudesta ja suorituskyvystä, erityisesti asiakirjojen indeksoinnissa ja sähköpostihakusovelluksissa.</li>
-<li>Se on ylläpidetty yli vuosikymmenen ajan, sillä on pieni jalanjälki ja hyvä nopeus, mutta sen GPL v2 -lisenssi voi olla este joillekin kaupallisille käyttötarkoituksille.</li>
-<li>Sen käyttäjät arvostavat sen vaivatonta toimintaa ja integrointia työkalujen, kuten Notmuchin (sähköposti) ja Recollin (dokumenttien indeksointi), kanssa, korostaen sen hyödyllisyyttä erilaisissa hakutehtävissä.</li>
-</ul>
-<h2><a href="https://github.com/LiciaHe/threadPlotter">ThreadPlotter – työkalupakki punch needle -kirjontaan X-Y-piirtureilla (2020)</a></h2>
-<ul>
-<li>ThreadPlotter on työkalupakki, joka on suunniteltu punch needle -kirjonnan luomiseen X-Y-piirturin avulla, täydentäen Shiqing Hen ja Eytan Adarin palkittua artikkelia &quot;Plotting with Thread&quot;.</li>
-<li>Työkalupakki sisältää ohjeita juonilaitteen muuntamiseksi punch needle -koneeksi, tarvittavien komponenttien hankkimiseksi ja mallien suunnittelemiseksi, mikä tekee siitä helposti lähestyttävän uusille käyttäjille.</li>
-<li>Kehittänyt Licia, työkalupakki on saatavilla MIT-lisenssillä ja kannustaa käyttäjiä jakamaan luomuksiaan sosiaalisessa mediassa tunnisteella #plotterembroidery.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41270596">Reaktiot</a></h3>
-<ul>
-<li>ThreadPlotter on Licia Hen luoma työkalupakki, joka on suunniteltu punch needle -kirjontaan käyttäen X-Y-piirtureita.</li>
-<li>Työkalupakki on herättänyt kiinnostusta vähäisen tarvikelistansa ja luovien sovellustensa, kuten mittatilausmattojen ja algoritmisten suunnitelmien, ansiosta.</li>
-<li>Licia He tunnetaan innovatiivisesta työstään plottereiden parissa, mukaan lukien vesivärikokeilut, ja hän tarjoaa ilmaisen kurssin aiheesta, vaikka hänen sivustonsa on tällä hetkellä poissa käytöstä ja saatavilla archive.orgin kautta.</li>
-</ul>
-<h2><a href="https://hollisbrown.github.io/blendershortcuts/">Opettele Blender-pikanäppäimiä monien pienten videoiden avulla</a></h2>
-<ul>
-<li>Pitkäaikainen Blenderin käyttäjä on luonut video/teksti-hybridisivuston opettaakseen Blenderiä, keskittyen tehokkaasti pienten tietojen, kuten pikanäppäinten, välittämiseen.</li>
-<li>Luoja hakee palautetta Blenderin käyttäjiltä ja opettajakokemusta omaavilta sekä neuvoja ammattimaisilta web-kehittäjiltä mahdollisista verkkosivusto-ongelmista.</li>
-<li>Projekti on isännöity GitHubissa, ja se kutsuu yhteisöä yhteistyöhön ja antamaan ehdotuksia.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41271014">Reaktiot</a></h3>
-<ul>
-<li>Uusi video/teksti-hybridi verkkosivusto on luotu opettamaan Blender-pikanäppäimiä, tavoitteena tarjota käyttäjille nopeaa ja tehokasta oppimista.</li>
-<li>Sivusto on saanut positiivista palautetta, mutta myös parannusehdotuksia, kuten toistopainikkeiden lisäämistä videoille ja laiskan latauksen harkitsemista paremman suorituskyvyn saavuttamiseksi.</li>
-<li>Luoja, hollisbrown, keskittyy parantamaan sivustoa käyttäjäpalautteen perusteella eikä suunnittele laajentavansa muihin ohjelmistoihin, koska hänen asiantuntemuksensa rajoittuu Blenderit-ohjelmaan.</li>
-</ul>
-<h2><a href="https://github.com/rusq/slackdump">Slackdump</a></h2>
-<ul>
-<li>Slack Dumper mahdollistaa käyttäjien arkistoida Slack-viestejä, käyttäjiä, kanavia, tiedostoja ja emojeita ilman ylläpitäjän oikeuksia.</li>
-<li>Se tukee erilaisia tiloja, mukaan lukien käyttäjien/kanavien luettelointi, viestien ja ketjujen purkaminen, Slack-vientien luominen ja emojien lataaminen.</li>
-<li>Työkalu on hyödyllinen yksityisten keskustelujen arkistointiin, tietojen viemiseen ilmaisista &quot;ei arkistointia&quot; -tilauksista ja siirtymiseen Discordiin käyttämällä Slackord2:ta.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41272213">Reaktiot</a></h3>
-<ul>
-<li>Slackdump on työkalu, joka vie Slack-keskustelut ja tiedostot ilmaisista työtiloista, mukaan lukien liitteet, ilman ylläpitäjän oikeuksia.</li>
-<li>Slack poistaa keskustelut ja tiedostot ilmaisista työtiloista elokuun lopussa, mikä saa käyttäjät etsimään vaihtoehtoja ja tapoja tallentaa tietonsa.</li>
-<li>Kayttäjät keskustelevat vaihtoehdoista kuten Linen.dev ja Slack-export-viewer, ja jotkut suosittelevat Go-ohjelmointikielen käyttöä tällaisissa projekteissa sen suorituskyvyn ja siirrettävyyden vuoksi.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Google poisti Organic Mapsin Play-kaupasta" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Google%20poisti%20Organic%20Mapsin%20Play-kaupasta&subheading=lauantaina%2017.%20elokuuta%202024%3A%20Hacker%20News%20yhteenveto" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/fi/2024/08/17</link>
-            <guid isPermaLink="false">2024-08-17T00:00:00.000Z</guid>
-            <pubDate>Sat, 17 Aug 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

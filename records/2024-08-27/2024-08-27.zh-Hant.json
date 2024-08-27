@@ -1,0 +1,323 @@
+[
+  {
+    "id": 41364549,
+    "title": "「Box64 和 RISC-V 在 2024 年：在 RISC-V 上運行《巫師3》需要什麼」",
+    "originLink": "https://box86.org/2024/08/box64-and-risc-v-in-2024/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41364549",
+    "commentBody": "",
+    "originSummary": [
+      "「《巫師3》成功在 RISC-V 電腦上運行，成為首款在該平台上運行的 AAA 遊戲，這要歸功於 Box64、Wine 和 DXVK 的進步。」",
+      "「RISC-V 後端已取得顯著進展，包括修復 RV64 DynaRec 錯誤並新增 x86 指令，這些進展得益於像 Milk-V Pioneer 和 VisionFive 2 這樣的新硬體。」",
+      "「儘管面臨如缺乏16位元組原子指令和相較於其他架構較低的翻譯效率等挑戰，《巫師3》在RISC-V架構上遊戲內的運行速度可達到每秒15幀。」"
+    ],
+    "commentSummary": [
+      "「Box64 是一款模擬器，能夠讓 x86-64 應用程式在非 x86-64 架構(例如 RISC-V)上運行，並通過使用本地系統庫來提升性能。」",
+      "在 RISC-V 上運行《巫師3》涉及將 x86-64 指令轉換為 RISC-V，這具有挑戰性，因為指令集的差異以及需要高效的 GPU 轉換。",
+      "儘管缺乏一些像 SIMD 優化這樣的功能，RISC-V 的開放和靈活特性使其成為 x86-64 和 ARM 等專有架構的有前途替代方案，並且目前正在努力提升其性能和相容性。"
+    ],
+    "points": 324,
+    "commentCount": 121,
+    "retryCount": 0,
+    "time": 1724732607
+  },
+  {
+    "id": 41365868,
+    "title": "「祖克柏聲稱對屈服於白宮壓力而修改內容感到後悔」",
+    "originLink": "https://www.politico.com/news/2024/08/26/zuckerberg-meta-white-house-pressure-00176399",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41365868",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "「祖克柏承認因屈服於白宮對內容審查的壓力而感到遺憾，這突顯了平台治理中的一個重大問題。」",
+      "“用戶批評 Facebook 的動態消息充斥過多 AI 生成的內容和誘餌點擊，偏好舊版，對 Twitter 也有類似的抱怨。”",
+      "“有關 Facebook 上政治和不當內容增加的擔憂引起了一些用戶放棄該平台的行為，並且也討論了社群媒體優先考量互動性而非用戶體驗的更廣泛問題。”"
+    ],
+    "points": 288,
+    "commentCount": 570,
+    "retryCount": 0,
+    "time": 1724752215
+  },
+  {
+    "id": 41361281,
+    "title": "分散式系統的抹除編碼",
+    "originLink": "https://transactional.blog/blog/2024-erasure-coding",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41361281",
+    "commentBody": "",
+    "originSummary": [
+      "糾刪編碼通過將數據分割成多個區塊並添加校驗區塊來增強存儲效率和容錯能力，即使部分區塊丟失也能重建數據。",
+      "主要應用包括儲存系統(降低成本並提高耐用性)和仲裁系統(在某些寫入限制下改善讀取性能)。",
+      "實現糾刪碼的常用程式庫有 Jerasure 和 Intel ISA-L，並且像 HRaft 這樣的自適應方案會根據可用的副本進行調整。"
+    ],
+    "commentSummary": [
+      "討論的重點是消除編碼，一種用於分散式系統中的資料保護方法，並強調其在各種技術中的應用，如 Ceph 和 RaptorQ。",
+      "糾刪編碼因其在資料恢復和容錯方面的效率而受到讚譽，但它也有一些複雜性和限制，例如在更新編碼參數時的非彈性和計算強度。",
+      "對話中提到了具體的實現和演算法，例如 Luby Transform Code、RaptorQ 和 Wirehair，並涉及潛在的專利問題及在實際系統中的應用。"
+    ],
+    "points": 268,
+    "commentCount": 51,
+    "retryCount": 0,
+    "time": 1724702625
+  },
+  {
+    "id": 41364637,
+    "title": "「Anthropic 公布了讓 Claude 運作的『系統提示』」",
+    "originLink": "https://techcrunch.com/2024/08/26/anthropic-publishes-the-system-prompt-that-makes-claude-tick/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41364637",
+    "commentBody": "",
+    "originSummary": [
+      "Anthropic 已經發布了其最新 AI 模型(Claude 3 Opus、Claude 3.5 Sonnet 和 Claude 3 Haiku)的系統提示，以提升透明度。",
+      "這些提示指導 AI 關於可接受的行為，包括避免面部識別和在爭議性問題上保持中立。",
+      "“這項倡議可能會影響其他 AI 供應商採取類似的透明度措施，Anthropic 承諾定期更新和披露。”"
+    ],
+    "commentSummary": [
+      "「Anthropic 已經發布了他們的 AI 模型 Claude 的系統提示，該模型現在承認了“幻覺”的發生，並建議使用者在涉及冷門話題時驗證引用資料。」",
+      "使用者觀察到，Claude 比其他 AI 模型更為果斷且較少道歉，有些人認為它在特定任務如劇本寫作方面比 GPT-4 更可靠。",
+      "詳細的系統提示旨在引導Claude的行為，儘管有些使用者覺得這些提示有時會被忽略；這些提示可以在Anthropic的文件網站上找到。"
+    ],
+    "points": 238,
+    "commentCount": 150,
+    "retryCount": 0,
+    "time": 1724733946
+  },
+  {
+    "id": 41363549,
+    "title": "2U、EdX 和 Axim 的三重失敗",
+    "originLink": "https://www.classcentral.com/report/2u-edx-bankruptcy/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41363549",
+    "commentBody": "",
+    "originSummary": [
+      "「2021年，2U以8億美元收購edX，導致財務壓力並最終在2024年破產。」",
+      "此次收購增加了每年 4200 萬美元的利息支出，並且在edX品牌下減少成本和統一運營的努力也未能成功。",
+      "「Axim Collaborative，這家持有出售所得8億美元的非營利組織，在教育科技領域的影響力微乎其微，主要成為一個提供補助金的機構。」"
+    ],
+    "commentSummary": [
+      "「這篇文章討論了來自 Coursera、EdX 和 Udacity 等平台的大規模開放線上課程(MOOCs)在質量和效果上的感知下降。」",
+      "重點問題包括作業簡化、缺乏反饋，以及課程相較於傳統大學課程不夠嚴謹。",
+      "「儘管有一些正面的經驗，但整體趨勢被視為負面，新增的高品質課程減少，且許多舊有的有價值課程被歸檔。」"
+    ],
+    "points": 219,
+    "commentCount": 155,
+    "retryCount": 0,
+    "time": 1724718845
+  },
+  {
+    "id": 41368866,
+    "title": "「Sainsbury 翼樓的承包商發現了捐贈者於1990年的信件」",
+    "originLink": "https://www.theartnewspaper.com/2024/08/27/sainsbury-wing-contractors-find-1990-letter-from-donor-anticipating-their-demolition-of-false-columns",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41368866",
+    "commentBody": "",
+    "originSummary": [
+      "“承包商在翻修倫敦國家美術館的桑斯伯里翼時，發現了一封1990年的信件，這封信是捐贈者約翰·桑斯伯里寫的，信中批評了在大廳中加入假柱子的設計，他認為這是建築師的錯誤。”",
+      "「這封信是在最近的翻修過程中發現的，信中表達了 Sainsbury 希望未來的世代能移除不必要的柱子。」",
+      "「正在進行8500萬英鎊升級以打造更開放大廳的Sainsbury翼樓，預計將於明年五月重新開放，並獲得Sainsbury家族的重大貢獻。」"
+    ],
+    "commentSummary": [
+      "「承包商在賽恩斯伯里翼樓一樓的一根非結構柱中發現了一封1990年的捐贈者信件。」",
+      "這項發現引發了關於這些柱子的用途、設計以及建築選擇的討論。",
+      "「這封信引發了對建築師和捐贈者意圖的反思，有些人覺得有趣，而另一些人則在討論相關的建築理論。」"
+    ],
+    "points": 172,
+    "commentCount": 37,
+    "retryCount": 0,
+    "time": 1724773767
+  },
+  {
+    "id": 41365637,
+    "title": "「Tinyboxes 終於有立即購買按鈕了」",
+    "originLink": "https://twitter.com/realgeorgehotz/status/1828197925874463166",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41365637",
+    "commentBody": "",
+    "originSummary": [
+      "「Tinyboxes，由 George Hotz 開發的產品，經過 18 個月的開發後，現在新增了“立即購買”按鈕。」",
+      "目前有 13 個單位可供購買，其中售價 1.5 萬美元的 tinybox red 在機器學習(ML)方面提供了最佳的性價比，並且完全可連網。",
+      "「有興趣的買家可以訪問 @__tinygrad__ Twitter 帳號上提供的連結進行購買。」"
+    ],
+    "commentSummary": [
+      "「Tinyboxes，一款高效能運算裝置，現在新增了“立即購買”按鈕，使其購買更加便捷。」",
+      "「該設備，Radeon 價格為 1.5 萬美元，Nvidia 價格為 2.5 萬美元，需要大量電力(3200 瓦)，在住宅環境中可能需要兩個獨立電路。」",
+      "由於 VRAM 限制和互連頻寬，對其網路能力(PCIe 上 64GB/s)以及微調大型機器學習模型(如 LLama 3.1 / 70B)的適用性提出了擔憂。"
+    ],
+    "points": 171,
+    "commentCount": 111,
+    "retryCount": 0,
+    "time": 1724748884
+  },
+  {
+    "id": 41363499,
+    "title": "預測分散式系統的未來",
+    "originLink": "https://blog.colinbreck.com/predicting-the-future-of-distributed-systems/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41363499",
+    "commentBody": "",
+    "originSummary": [
+      "分散式系統的重大變革包括物件儲存的核心角色、交易和分析工具的合併，以及新的程式設計模型。",
+      "Jeff Bezos 所提出的單向門(不可逆)和雙向門(可逆)決策概念，對於管理採用新技術所伴隨的風險至關重要。",
+      "物件儲存因其可靠性、靈活性以及跨區域複製和加密等功能而日益受到歡迎，未來在性能和互操作性方面預計會有進一步的改進。"
+    ],
+    "commentSummary": [
+      "討論強調了需要更好地行銷創新工具，如 mgmt config，以及向不可變系統轉變的必要性。",
+      "「主要議題包括本地開發環境的重要性、API 的角色，以及分散式系統中儲存和資料庫的演變趨勢。」",
+      "“這段對話反映了對分散式系統未來的樂觀與懷疑並存，討論了現有工具的有效性以及更智能儲存解決方案的潛力。”"
+    ],
+    "points": 156,
+    "commentCount": 38,
+    "retryCount": 0,
+    "time": 1724718397
+  },
+  {
+    "id": 41367964,
+    "title": "新的零日攻擊與中國的『Volt Typhoon』有關",
+    "originLink": "https://krebsonsecurity.com/2024/08/new-0-day-attacks-linked-to-chinas-volt-typhoon/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41367964",
+    "commentBody": "",
+    "originSummary": [
+      "惡意駭客正在利用 Versa Director 中的一個零日漏洞(CVE-2024-39717)，這是一款被許多網際網路和 IT 服務提供商使用的軟體。",
+      "「與中國有關的網路間諜組織 Volt Typhoon 被懷疑利用這個漏洞針對美國的關鍵網路，該漏洞允許攻擊者將檔案上傳到易受攻擊的系統。」",
+      "「Versa 已敦促客戶更新至 Versa Director 22.1.4 或更高版本以修補該漏洞，同時 Black Lotus Labs 的研究人員在多個系統上發現了一個基於網頁的後門，並以中等信心將此活動歸因於 Volt Typhoon。」"
+    ],
+    "commentSummary": [
+      "根據最近的公告，新型 0-day 攻擊已被連結到中國的『Volt Typhoon』，這是一個國家支持的組織。",
+      "該建議批評了Versa的客戶未能實施系統強化和防火牆指南，導致管理端口暴露在互聯網上。",
+      "這些攻擊突顯了網路衛生的重要性以及開放管理端口的潛在風險，這被認為是基本的系統管理實踐。"
+    ],
+    "points": 154,
+    "commentCount": 31,
+    "retryCount": 0,
+    "time": 1724769110
+  },
+  {
+    "id": 41364776,
+    "title": "主權科技基金將投資68.6萬歐元於FreeBSD基礎設施現代化",
+    "originLink": "https://freebsdfoundation.org/blog/sovereign-tech-fund-to-invest-e686400-in-freebsd-infrastructure-modernization/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41364776",
+    "commentBody": "",
+    "originSummary": [
+      "“德國的主權科技基金(STF)將投資68萬6,400歐元於FreeBSD專案，以現代化其基礎設施、安全性和開發者體驗。”",
+      "投資將專注於零信任構建、CI/CD 自動化、減少技術債務、加強安全控制以及改進 SBOM(軟體物料清單)流程。",
+      "此項倡議與美國國家網路總監辦公室的優先事項一致，旨在強化開源生態系統，惠及全球公眾、研究和商業部門。"
+    ],
+    "commentSummary": [
+      "「主權科技基金正在投資68.6萬歐元以現代化 FreeBSD 基礎設施，旨在減少技術債務並改進系統。」",
+      "「這個德國基金會有支持重要開源專案的歷史，例如 curl、ffmpeg、GNOME 和 PHP。」",
+      "「FreeBSD 被廣泛應用於 Juniper、Sony 和 Netflix 等公司，這突顯了它在網路基礎設施和更廣泛的開源社群中的重要性。」"
+    ],
+    "points": 154,
+    "commentCount": 71,
+    "retryCount": 0,
+    "time": 1724736229
+  },
+  {
+    "id": 41368935,
+    "title": "「80% 的 AI 專案失敗，數十億資金浪費，Rand 報告指出」",
+    "originLink": "https://salesforcedevops.net/index.php/2024/08/19/ai-apocalypse/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41368935",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "一份蘭德公司報告指出，80%的人工智慧專案因對人工智慧應解決的問題存在誤解、數據不足以及基礎設施不完善而失敗。",
+      "成功的 AI 專案需要數據科學家和機器學習(ML)工程師的早期參與，以確保產生有意義的影響並彌合技術專家與領域專家的差距。",
+      "許多人工智慧計畫是由炒作而非實際需求所推動，導致昂貴的失敗，管理問題和不切實際的期望阻礙了人工智慧的潛力。"
+    ],
+    "points": 131,
+    "commentCount": 128,
+    "retryCount": 0,
+    "time": 1724774156
+  },
+  {
+    "id": 41360808,
+    "title": "「斯諾登：逮捕杜羅夫是對基本人權的侵犯」",
+    "originLink": "https://twitter.com/Snowden/status/1827695836832334169",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41360808",
+    "commentBody": "",
+    "originSummary": [
+      "「愛德華·史諾登批評帕維爾·杜羅夫的逮捕，認為這是對言論自由和結社自由的攻擊。」",
+      "「斯諾登對法國總統艾曼紐·馬克宏使用手段來獲取私人通訊表示失望，他認為這破壞了法國及全球標準。」"
+    ],
+    "commentSummary": [
+      "「愛德華·史諾登將 Telegram 創辦人帕維爾·杜羅夫的逮捕稱為對基本人權的攻擊。」",
+      "「辯論的焦點在於即時通訊應用程式是否遵守法律傳票和搜查令，並比較 Telegram 拒絕合作與 Signal 提供最少數據的做法。」",
+      "「杜羅夫面臨多項指控，包括共謀散佈兒童色情材料以及拒絕向當局提供必要資訊，這引發了重大的法律和倫理問題。」"
+    ],
+    "points": 130,
+    "commentCount": 249,
+    "retryCount": 0,
+    "time": 1724700256
+  },
+  {
+    "id": 41363231,
+    "title": "終章的結束",
+    "originLink": "https://www.finalemusic.com/blog/end-of-finale-new-journey-dorico-letter-from-president/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41363231",
+    "commentBody": "",
+    "originSummary": [
+      "「Coda Music Technologies(現為 MakeMusic)已宣布，由於技術的演進和維護的複雜性，將終止領先的樂譜軟體 Finale 的開發。」",
+      "即日起，將不再進行任何更新，且無法再購買或升級 Finale；自 2025 年 8 月起，無法在新設備上授權或重新授權，技術支援也將終止。",
+      "MakeMusic 與 Steinberg 合作，為 Finale 用戶提供 Dorico Pro 的獨家折扣，這款新的業界標準樂譜軟體現以 $149(原價 $579)發售。"
+    ],
+    "commentSummary": [
+      "MakeMusic，Finale 背後的公司，將在一年後不再授權新的軟體安裝，這實際上終結了該軟體在新裝置上的可用性。",
+      "MakeMusic 與 Steinberg 合作，提供 Dorico Pro 的折扣，並建議現有的 Finale 用戶轉換計劃。",
+      "建議使用者將他們的Finale檔案轉換為MusicXML這種開放格式，因為未來的安裝和啟用將變得不可能。"
+    ],
+    "points": 125,
+    "commentCount": 117,
+    "retryCount": 0,
+    "time": 1724715261
+  },
+  {
+    "id": 41366436,
+    "title": "地下一英里的核反應爐承諾提供安全且廉價的電力",
+    "originLink": "https://newatlas.com/energy/underground-nuclear-reactors/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41366436",
+    "commentBody": "",
+    "originSummary": [
+      "「新創公司 Deep Fission 提議將一個直徑 30 英吋的核反應爐放置在地下一英里處，以解決核能的經濟和安全問題。」",
+      "該反應爐基於傳統的加壓水反應爐(PWR)，在160個大氣壓和315 °C(600 °F)下運行，使用被動冷卻系統和水柱的重量進行加壓。",
+      "此設計消除了對昂貴的土木工程和圍堵結構的需求，並且反應爐可以在數小時內取回進行檢查或維修；目前，Deep Fission 正在與能源部進行申請前的審查過程。"
+    ],
+    "commentSummary": [
+      "一個新的概念提出在地下一英里處建造核反應爐，以增強安全性並降低成本。",
+      "「儘管現有的核反應爐非常安全，公眾對安全的擔憂仍然阻礙了它們的建設。」",
+      "將反應爐深埋地下的想法可能會無意中強化核能極度危險的觀感。"
+    ],
+    "points": 124,
+    "commentCount": 250,
+    "retryCount": 0,
+    "time": 1724758585
+  },
+  {
+    "id": 41366304,
+    "title": "「為什麼日本在稻米收成正常的情況下仍然面臨稻米短缺？」",
+    "originLink": "https://mainichi.jp/english/articles/20240823/p2a/00m/0bu/024000c",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41366304",
+    "commentBody": "",
+    "originSummary": [
+      "儘管日本的稻米產量正常，但由於長期實施的減少耕地面積政策以控制市場價格，該國正面臨稻米短缺和價格上漲的問題。",
+      "「這項政策已實施超過50年，鼓勵農民改種其他作物，導致稻米生產受到嚴格管理，並對需求波動產生脆弱性。」",
+      "專家建議廢除該政策、增加稻米生產並提升出口，以增強糧食安全並造福消費者。"
+    ],
+    "commentSummary": [
+      "儘管日本的稻米產量正常，但由於政府政策鼓勵農民減少生產以維持高價，導致稻米短缺。",
+      "這項已有60年歷史的政策限制了供應，導致即使是來自旅遊業等小幅度的需求增加，也會引發短缺和價格上漲。",
+      "批評者建議日本應該放棄這項政策以增加生產，這樣有可能成為主要的稻米出口國並改善糧食安全。"
+    ],
+    "points": 119,
+    "commentCount": 151,
+    "retryCount": 0,
+    "time": 1724757582
+  }
+]

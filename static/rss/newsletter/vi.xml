@@ -15,12 +15,197 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 26 Aug 2024 19:12:52 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 27 Aug 2024 19:12:29 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/vi.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Mon, 26 Aug 2024 00:00:00 GMT</pubDate>
+        <pubDate>Tue, 27 Aug 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[vi]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-08-27]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/08/27&#39;</h2>
+<h1>2024-08-27</h1>
+<h2><a href="https://box86.org/2024/08/box64-and-risc-v-in-2024/">Box64 và RISC-V vào năm 2024: Điều gì cần thiết để chạy Witcher 3 trên RISC-V</a></h2>
+<ul>
+<li>Trò chơi The Witcher 3 đã chạy thành công trên một máy tính RISC-V, đánh dấu trò chơi AAA đầu tiên làm được điều này, nhờ vào những tiến bộ trong Box64, Wine và DXVK.</li>
+<li>Đã có tiến bộ đáng kể trong backend RISC-V, bao gồm việc sửa lỗi RV64 DynaRec và thêm các lệnh x86 mới, được hỗ trợ bởi phần cứng mới như Milk-V Pioneer và VisionFive 2.</li>
+<li>Mặc dù có những thách thức như thiếu các lệnh nguyên tử 16 byte và hiệu suất dịch thấp hơn so với các kiến trúc khác, The Witcher 3 vẫn chạy được lên đến 15 fps trong trò chơi trên RISC-V.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41364549">phản ứng</a></h3>
+<ul>
+<li>Box64 là một trình giả lập cho phép các ứng dụng x86-64 chạy trên các kiến trúc không phải x86-64, chẳng hạn như RISC-V, bằng cách sử dụng các thư viện hệ thống gốc để có hiệu suất tốt hơn.</li>
+<li>Chạy The Witcher 3 trên RISC-V liên quan đến việc dịch các lệnh x86-64 sang RISC-V, điều này thách thức do sự khác biệt trong các tập lệnh và nhu cầu dịch GPU hiệu quả.</li>
+<li>Với tính chất mở và linh hoạt, mặc dù thiếu một số tính năng như tối ưu hóa SIMD, RISC-V trở thành một lựa chọn thay thế đầy hứa hẹn cho các kiến trúc độc quyền như x86-64 và ARM, với những nỗ lực không ngừng để nâng cao hiệu suất và khả năng tương thích của nó.</li>
+</ul>
+<h2><a href="https://www.politico.com/news/2024/08/26/zuckerberg-meta-white-house-pressure-00176399">Zuckerberg tuyên bố hối tiếc vì đã nhượng bộ trước áp lực của Nhà Trắng về nội dung</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41365868">phản ứng</a></h3>
+<ul>
+<li>Zuckerberg thừa nhận hối tiếc vì đã nhượng bộ trước áp lực từ Nhà Trắng về việc kiểm duyệt nội dung, nêu bật một vấn đề quan trọng trong quản lý nền tảng.</li>
+<li>Người dùng chỉ trích nguồn tin của Facebook vì nội dung do AI tạo ra quá nhiều và các tiêu đề câu view, họ ưa thích phiên bản cũ hơn, với những phàn nàn tương tự về Twitter.</li>
+<li>Những lo ngại đã được nêu ra về sự gia tăng nội dung chính trị và không phù hợp trên Facebook, dẫn đến việc một số người dùng từ bỏ nền tảng này, và vấn đề rộng hơn về việc mạng xã hội ưu tiên sự tương tác hơn trải nghiệm người dùng đã được thảo luận.</li>
+</ul>
+<h2><a href="https://transactional.blog/blog/2024-erasure-coding">Phân Mã Xóa cho Hệ Thống Phân Tán</a></h2>
+<ul>
+<li>Erasure coding tăng cường hiệu quả lưu trữ và khả năng chịu lỗi bằng cách chia dữ liệu thành các khối và thêm các khối chẵn lẻ, cho phép tái tạo dữ liệu ngay cả khi một số khối bị mất.</li>
+<li>Những ứng dụng chính bao gồm các hệ thống lưu trữ (giảm chi phí và tăng độ bền) và các hệ thống biểu quyết (cải thiện hiệu suất đọc với một số hạn chế về ghi).</li>
+<li>Thư viện phổ biến để triển khai mã xóa là Jerasure và Intel ISA-L, với các sơ đồ thích ứng như HRaft điều chỉnh dựa trên các bản sao có sẵn.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41361281">phản ứng</a></h3>
+<ul>
+<li>Cuộc thảo luận xoay quanh mã hóa xóa, một phương pháp bảo vệ dữ liệu trong các hệ thống phân tán, nhấn mạnh việc sử dụng nó trong các công nghệ khác nhau như Ceph và RaptorQ.</li>
+<li>Erasure coding được ca ngợi vì hiệu quả trong việc khôi phục dữ liệu và khả năng chịu lỗi, nhưng nó cũng có những phức tạp và hạn chế, chẳng hạn như tính không linh hoạt trong việc cập nhật các tham số mã hóa và cường độ tính toán cao.</li>
+<li>Cuộc trò chuyện bao gồm các tham chiếu đến các triển khai và thuật toán cụ thể, chẳng hạn như Mã Luby Transform, RaptorQ và Wirehair, và đề cập đến các vấn đề tiềm năng về bằng sáng chế và các ứng dụng thực tế trong các hệ thống thực tế.</li>
+</ul>
+<h2><a href="https://techcrunch.com/2024/08/26/anthropic-publishes-the-system-prompt-that-makes-claude-tick/">Anthropic công bố các &#39;lời nhắc hệ thống&#39; giúp Claude hoạt động</a></h2>
+<ul>
+<li>Anthropic đã phát hành các lời nhắc hệ thống cho các mô hình AI mới nhất của mình (Claude 3 Opus, Claude 3.5 Sonnet và Claude 3 Haiku) để tăng cường tính minh bạch.</li>
+<li>Những lời nhắc này hướng dẫn AI về các hành vi chấp nhận được, bao gồm tránh nhận diện khuôn mặt và duy trì tính trung lập đối với các vấn đề gây tranh cãi.</li>
+<li>Động thái này có thể ảnh hưởng đến các nhà cung cấp AI khác để áp dụng các thực hành minh bạch tương tự, với Anthropic cam kết cập nhật và công bố thường xuyên.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41364637">phản ứng</a></h3>
+<ul>
+<li>Anthropic đã phát hành các lời nhắc hệ thống cho Claude, mô hình AI của họ, hiện nay đã thừa nhận sự xuất hiện của &quot;ảo giác&quot; và khuyên người dùng kiểm tra các trích dẫn về các chủ đề ít được biết đến.</li>
+<li>Người dùng đã nhận thấy rằng Claude quyết đoán hơn và ít xin lỗi hơn so với các mô hình AI khác, và một số người cho rằng nó đáng tin cậy hơn GPT-4 cho các nhiệm vụ cụ thể như viết kịch bản.</li>
+<li>Những lời nhắc hệ thống chi tiết được thiết kế để hướng dẫn hành vi của Claude, mặc dù một số người dùng cảm thấy những lời nhắc này đôi khi bị bỏ qua; chúng có sẵn trên trang tài liệu của Anthropic.</li>
+</ul>
+<h2><a href="https://www.classcentral.com/report/2u-edx-bankruptcy/">Ba Thất Bại Của 2U, EdX, và Axim</a></h2>
+<ul>
+<li>Vào năm 2021, 2U đã mua lại edX với giá 800 triệu đô la, dẫn đến căng thẳng tài chính và cuối cùng là phá sản vào năm 2024.</li>
+<li>Việc mua lại đã làm tăng thêm 42 triệu đô la chi phí lãi suất hàng năm, và các nỗ lực giảm chi phí cũng như hợp nhất hoạt động dưới thương hiệu edX đã thất bại.</li>
+<li>Axim Collaborative, tổ chức phi lợi nhuận nắm giữ 800 triệu đô la từ việc bán, đã cho thấy tác động tối thiểu lên lĩnh vực công nghệ giáo dục, trở thành chủ yếu là một tổ chức cấp phát tài trợ.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41363549">phản ứng</a></h3>
+<ul>
+<li>Đoạn viết thảo luận về sự suy giảm chất lượng và hiệu quả được cho là của các khóa học trực tuyến mở đại trà (MOOCs) từ các nền tảng như Coursera, EdX và Udacity.</li>
+<li>Những vấn đề chính được nêu bật bao gồm bài tập đơn giản hóa, thiếu phản hồi, và các khóa học ít khắt khe hơn so với các chương trình đào tạo truyền thống của đại học.</li>
+<li>Mặc dù có một số trải nghiệm tích cực, xu hướng tổng thể được xem là tiêu cực, với ít khóa học mới chất lượng cao được thêm vào và nhiều khóa học cũ, có giá trị bị lưu trữ.</li>
+</ul>
+<h2><a href="https://www.theartnewspaper.com/2024/08/27/sainsbury-wing-contractors-find-1990-letter-from-donor-anticipating-their-demolition-of-false-columns">Nhà thầu cánh Sainsbury tìm thấy lá thư từ năm 1990 của nhà tài trợ</a></h2>
+<ul>
+<li>Nhà thầu đang cải tạo Cánh Sainsbury của Phòng trưng bày Quốc gia London đã tìm thấy một bức thư năm 1990 từ nhà tài trợ John Sainsbury chỉ trích việc bao gồm các cột giả trong sảnh, mà ông cho là một sai lầm của các kiến trúc sư.</li>
+<li>Trong quá trình cải tạo gần đây, bức thư được phát hiện bày tỏ hy vọng của Sainsbury rằng các thế hệ tương lai sẽ loại bỏ những cột không cần thiết.</li>
+<li>Phòng trưng bày Sainsbury, đang trải qua một nâng cấp trị giá 85 triệu bảng để tạo ra một sảnh đón khách mở hơn, dự kiến sẽ mở cửa trở lại vào tháng Năm năm sau, với những đóng góp đáng kể từ gia đình Sainsbury.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41368866">phản ứng</a></h3>
+<ul>
+<li>Nhà thầu đã phát hiện một bức thư từ năm 1990 của một nhà tài trợ trong một cột không kết cấu ở tầng trệt của Cánh Sainsbury.</li>
+<li>Phát hiện này đã khơi dậy các cuộc thảo luận về mục đích, thiết kế và các lựa chọn kiến trúc được thực hiện đối với các cột.</li>
+<li>Thư đã dẫn đến những suy ngẫm về ý định của kiến trúc sư và nhà tài trợ, với một số người tìm thấy sự hài hước và những người khác tranh luận về các lý thuyết kiến trúc liên quan.</li>
+</ul>
+<h2><a href="https://twitter.com/realgeorgehotz/status/1828197925874463166">Tinyboxes cuối cùng đã có nút mua ngay</a></h2>
+<ul>
+<li>Những hộp nhỏ, một sản phẩm của George Hotz, hiện đã có nút &quot;mua ngay&quot; sau 18 tháng phát triển.</li>
+<li>Hiện tại, có 13 đơn vị có sẵn để mua, với tinybox đỏ giá $15k cung cấp hiệu suất tốt nhất cho mỗi đô la cho học máy (ML) và có khả năng kết nối mạng hoàn toàn.</li>
+<li>Những người mua quan tâm có thể truy cập liên kết được cung cấp trên tài khoản Twitter @<strong>tinygrad</strong> để thực hiện mua hàng.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41365637">phản ứng</a></h3>
+<ul>
+<li>Tinyboxes, một thiết bị tính toán hiệu suất cao, hiện có nút &quot;mua ngay&quot;, giúp việc mua sắm trở nên dễ dàng hơn.</li>
+<li>Thiết bị, có giá 15.000 đô la cho Radeon và 25.000 đô la cho Nvidia, yêu cầu công suất đáng kể (3200W) và có thể cần hai mạch riêng biệt trong các thiết lập dân cư.</li>
+<li>Những lo ngại đã được nêu ra về khả năng kết nối mạng của nó (64GB/s qua PCIe) và sự phù hợp cho việc tinh chỉnh các mô hình học máy lớn, chẳng hạn như LLama 3.1 / 70B, do hạn chế về VRAM và băng thông kết nối.</li>
+</ul>
+<h2><a href="https://blog.colinbreck.com/predicting-the-future-of-distributed-systems/">Dự đoán Tương lai của Hệ thống Phân tán</a></h2>
+<ul>
+<li>Những thay đổi đáng kể trong hệ thống phân tán bao gồm vai trò trung tâm của lưu trữ đối tượng, sự hợp nhất của các công cụ giao dịch và phân tích, và các mô hình lập trình mới.</li>
+<li>Khái niệm của Jeff Bezos về quyết định cửa một chiều (không thể đảo ngược) và cửa hai chiều (có thể đảo ngược) là rất quan trọng trong việc quản lý các rủi ro liên quan đến việc áp dụng các công nghệ mới.</li>
+<li>Kho lưu trữ đối tượng đang ngày càng phổ biến nhờ vào độ tin cậy, tính linh hoạt và các tính năng như sao chép chéo vùng và mã hóa, với những cải tiến trong tương lai được kỳ vọng về hiệu suất và khả năng tương tác.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41363499">phản ứng</a></h3>
+<ul>
+<li>Cuộc thảo luận nhấn mạnh sự cần thiết của việc tiếp thị tốt hơn các công cụ sáng tạo như cấu hình mgmt và sự chuyển đổi sang các hệ thống bất biến.</li>
+<li>Những chủ đề chính bao gồm tầm quan trọng của môi trường phát triển địa phương, vai trò của các API, và bối cảnh đang phát triển của lưu trữ và cơ sở dữ liệu trong các hệ thống phân tán.</li>
+<li>Cuộc trò chuyện phản ánh sự pha trộn giữa lạc quan và hoài nghi về tương lai của các hệ thống phân tán, tranh luận về hiệu quả của các công cụ hiện tại và tiềm năng cho các giải pháp lưu trữ thông minh hơn.</li>
+</ul>
+<h2><a href="https://krebsonsecurity.com/2024/08/new-0-day-attacks-linked-to-chinas-volt-typhoon/">Những cuộc tấn công 0-Day mới liên quan đến &#39;Volt Typhoon&#39; của Trung Quốc</a></h2>
+<ul>
+<li>Những tin tặc độc hại đang khai thác một lỗ hổng zero-day (CVE-2024-39717) trong Versa Director, một phần mềm được nhiều nhà cung cấp dịch vụ Internet và IT sử dụng.</li>
+<li>Nhóm gián điệp mạng Volt Typhoon, có liên quan đến Trung Quốc, bị nghi ngờ nhắm vào các mạng lưới quan trọng của Hoa Kỳ thông qua lỗ hổng này, cho phép kẻ tấn công tải lên các tệp tin vào các hệ thống dễ bị tổn thương.</li>
+<li>Versa đã kêu gọi khách hàng vá lỗ hổng bằng Versa Director 22.1.4 hoặc phiên bản mới hơn, trong khi các nhà nghiên cứu từ Black Lotus Labs đã phát hiện một cửa hậu dựa trên web trên một số hệ thống và quy kết hoạt động này cho Volt Typhoon với mức độ tin cậy trung bình.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41367964">phản ứng</a></h3>
+<ul>
+<li>Những cuộc tấn công 0-day mới đã được liên kết với &#39;Volt Typhoon&#39; của Trung Quốc, một nhóm được nhà nước tài trợ, theo một khuyến cáo gần đây.</li>
+<li>Khuyến cáo đã chỉ trích khách hàng của Versa vì không thực hiện các hướng dẫn về củng cố hệ thống và tường lửa, để các cổng quản lý lộ ra ngoài internet.</li>
+<li>Những cuộc tấn công này nhấn mạnh tầm quan trọng của vệ sinh mạng và các rủi ro tiềm ẩn khi để các cổng quản lý mở, điều này được coi là thực hành quản trị hệ thống cơ bản.</li>
+</ul>
+<h2><a href="https://freebsdfoundation.org/blog/sovereign-tech-fund-to-invest-e686400-in-freebsd-infrastructure-modernization/">Sovereign Tech Fund đầu tư 686.000 € vào hiện đại hóa cơ sở hạ tầng FreeBSD</a></h2>
+<ul>
+<li>Quỹ Công nghệ Chủ quyền của Đức (STF) sẽ đầu tư 686.400 € vào dự án FreeBSD để hiện đại hóa cơ sở hạ tầng, bảo mật và trải nghiệm của nhà phát triển.</li>
+<li>Khoản đầu tư sẽ tập trung vào xây dựng zero trust, tự động hóa CI/CD, giảm nợ kỹ thuật, tăng cường kiểm soát an ninh, và cải thiện quy trình SBOM (Danh mục Vật liệu Phần mềm).</li>
+<li>Đây là sáng kiến phù hợp với các ưu tiên của Văn phòng Giám đốc An ninh mạng Quốc gia Hoa Kỳ và nhằm củng cố hệ sinh thái mã nguồn mở, mang lại lợi ích cho các lĩnh vực công cộng, nghiên cứu và thương mại toàn cầu.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41364776">phản ứng</a></h3>
+<ul>
+<li>Quỹ Công nghệ Chủ quyền đang đầu tư 686 nghìn euro vào việc hiện đại hóa cơ sở hạ tầng FreeBSD, nhằm giảm nợ kỹ thuật và cải thiện hệ thống.</li>
+<li>Quỹ Đức này có lịch sử hỗ trợ các dự án mã nguồn mở quan trọng như curl, ffmpeg, GNOME và PHP.</li>
+<li>FreeBSD được sử dụng rộng rãi bởi các công ty như Juniper, Sony và Netflix, nhấn mạnh tầm quan trọng của nó trong cơ sở hạ tầng mạng và cộng đồng mã nguồn mở rộng lớn hơn.</li>
+</ul>
+<h2><a href="https://salesforcedevops.net/index.php/2024/08/19/ai-apocalypse/">80% các dự án AI thất bại, hàng tỷ đô la bị lãng phí theo báo cáo của Rand</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41368935">phản ứng</a></h3>
+<ul>
+<li>Báo cáo của RAND chỉ ra rằng 80% các dự án AI thất bại do hiểu lầm về các vấn đề mà AI cần giải quyết, dữ liệu không đầy đủ và cơ sở hạ tầng kém.</li>
+<li>Những dự án AI thành công đòi hỏi sự tham gia sớm của các nhà khoa học dữ liệu và kỹ sư học máy (ML) để đảm bảo tác động có ý nghĩa và thu hẹp khoảng cách giữa các chuyên gia kỹ thuật và chuyên gia lĩnh vực.</li>
+<li>Rất nhiều sáng kiến AI được thúc đẩy bởi sự thổi phồng hơn là nhu cầu thực tế, dẫn đến những thất bại tốn kém, với các vấn đề quản lý và kỳ vọng không thực tế cản trở tiềm năng của AI.</li>
+</ul>
+<h2><a href="https://twitter.com/Snowden/status/1827695836832334169">Snowden: Việc bắt giữ Durov là một cuộc tấn công vào các quyền cơ bản của con người</a></h2>
+<ul>
+<li>Edward Snowden chỉ trích việc bắt giữ Pavel Durov, coi đó là một cuộc tấn công vào quyền tự do ngôn luận và hội họp.</li>
+<li>Snowden bày tỏ sự thất vọng với Tổng thống Pháp Emmanuel Macron vì sử dụng các chiến thuật để truy cập vào các thông tin liên lạc cá nhân, điều mà ông tin rằng làm suy yếu nước Pháp và các tiêu chuẩn toàn cầu.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41360808">phản ứng</a></h3>
+<ul>
+<li>Edward Snowden đã gọi việc bắt giữ người sáng lập Telegram, Pavel Durov, là một cuộc tấn công vào các quyền cơ bản của con người.</li>
+<li>Cuộc tranh luận xoay quanh việc tuân thủ các lệnh khám xét và trát đòi hầu tòa của các ứng dụng nhắn tin, so sánh việc Telegram từ chối hợp tác với việc cung cấp dữ liệu tối thiểu của Signal.</li>
+<li>Durov đối mặt với nhiều cáo buộc, bao gồm đồng lõa trong việc phát tán tài liệu khiêu dâm trẻ em và từ chối cung cấp thông tin cần thiết cho các cơ quan chức năng, gây ra những lo ngại lớn về pháp lý và đạo đức.</li>
+</ul>
+<h2><a href="https://www.finalemusic.com/blog/end-of-finale-new-journey-dorico-letter-from-president/">Chấm Dứt Hồi Kết</a></h2>
+<ul>
+<li>Công ty Coda Music Technologies (nay là MakeMusic) đã thông báo ngừng phát triển Finale, một phần mềm ký âm nhạc hàng đầu, do công nghệ phát triển và sự phức tạp trong việc bảo trì.</li>
+<li>Hiệu lực ngay lập tức, sẽ không có thêm bất kỳ cập nhật nào nữa, và Finale không còn có thể được mua hoặc nâng cấp; bắt đầu từ tháng 8 năm 2025, nó không thể được cấp phép trên các thiết bị mới hoặc cấp phép lại, và hỗ trợ kỹ thuật sẽ kết thúc.</li>
+<li>MakeMusic đã hợp tác với Steinberg để cung cấp cho người dùng Finale một mức giảm giá độc quyền cho Dorico Pro, phần mềm ký âm tiêu chuẩn mới của ngành, với giá $149 (giá bán lẻ $579).</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41363231">phản ứng</a></h3>
+<ul>
+<li>MakeMusic, công ty đứng sau Finale, sẽ không còn cấp phép cài đặt mới phần mềm này sau một năm, điều này sẽ chấm dứt hiệu quả khả năng sử dụng của nó trên các thiết bị mới.</li>
+<li>MakeMusic đã hợp tác với Steinberg để cung cấp giảm giá cho Dorico Pro, đề xuất một kế hoạch chuyển đổi cho người dùng Finale hiện tại.</li>
+<li>Người dùng được khuyên nên chuyển đổi các tệp Finale của họ sang MusicXML, một định dạng mở, vì các cài đặt và kích hoạt trong tương lai sẽ không thể thực hiện được.</li>
+</ul>
+<h2><a href="https://newatlas.com/energy/underground-nuclear-reactors/">Những lò phản ứng hạt nhân dưới lòng đất một dặm hứa hẹn cung cấp năng lượng an toàn và rẻ</a></h2>
+<ul>
+<li>Startup Deep Fission đề xuất một lò phản ứng hạt nhân rộng 30 inch được đặt ở độ sâu một dặm dưới lòng đất để giải quyết các vấn đề kinh tế và an toàn trong năng lượng hạt nhân.</li>
+<li>Reactor, dựa trên lò phản ứng nước áp lực thông thường (PWR), hoạt động ở áp suất 160 atmospheres và nhiệt độ 315 °C (600 °F), sử dụng hệ thống làm mát thụ động và trọng lượng của cột nước để tạo áp lực.</li>
+<li>Thiết kế này loại bỏ nhu cầu về các công trình kỹ thuật dân dụng và cấu trúc chứa đắt đỏ, và lò phản ứng có thể được thu hồi để kiểm tra hoặc bảo dưỡng trong vòng vài giờ; hiện tại, Deep Fission đang trong quá trình xem xét trước khi nộp đơn với Bộ Năng lượng.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41366436">phản ứng</a></h3>
+<ul>
+<li>Một khái niệm mới đề xuất xây dựng các lò phản ứng hạt nhân ở độ sâu một dặm dưới lòng đất để tăng cường an toàn và giảm chi phí.</li>
+<li>Mặc dù các lò phản ứng hạt nhân hiện có cực kỳ an toàn, nhưng những lo ngại về an toàn công cộng vẫn tiếp tục cản trở việc xây dựng chúng.</li>
+<li>Ý tưởng chôn lò phản ứng sâu dưới lòng đất có thể vô tình củng cố nhận thức về năng lượng hạt nhân là cực kỳ nguy hiểm.</li>
+</ul>
+<h2><a href="https://mainichi.jp/english/articles/20240823/p2a/00m/0bu/024000c">Vì sao Nhật Bản lại gặp phải tình trạng thiếu hụt gạo mặc dù mùa màng bình thường?</a></h2>
+<ul>
+<li>Nhật Bản đang đối mặt với tình trạng thiếu hụt gạo và giá cả tăng cao mặc dù sản lượng thu hoạch bình thường do chính sách giảm diện tích trồng kéo dài nhằm kiểm soát giá thị trường.</li>
+<li>Chính sách này, đã được thực hiện hơn 50 năm, khuyến khích nông dân chuyển sang các loại cây trồng khác, dẫn đến việc sản xuất lúa gạo được quản lý chặt chẽ và dễ bị ảnh hưởng bởi biến động nhu cầu.</li>
+<li>Chuyên gia đề xuất bãi bỏ chính sách, tăng cường sản xuất lúa gạo và thúc đẩy xuất khẩu để nâng cao an ninh lương thực và mang lại lợi ích cho người tiêu dùng.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41366304">phản ứng</a></h3>
+<ul>
+<li>Nhật Bản đang trải qua tình trạng thiếu hụt gạo mặc dù sản lượng mùa vụ bình thường do các chính sách của chính phủ khuyến khích nông dân giảm sản xuất để duy trì giá cao.</li>
+<li>Chính sách 60 năm tuổi này hạn chế nguồn cung, khiến ngay cả những gia tăng nhu cầu nhỏ, chẳng hạn như từ du lịch, cũng dẫn đến tình trạng thiếu hụt và giá cả tăng cao.</li>
+<li>Những nhà phê bình cho rằng Nhật Bản nên từ bỏ chính sách này để tăng sản lượng, có thể trở thành một nước xuất khẩu gạo lớn và cải thiện an ninh lương thực.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Box64 và RISC-V vào năm 2024: Điều gì cần thiết để chạy Witcher 3 trên RISC-V" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Box64%20v%C3%A0%20RISC-V%20v%C3%A0o%20n%C4%83m%202024%3A%20%C4%90i%E1%BB%81u%20g%C3%AC%20c%E1%BA%A7n%20thi%E1%BA%BFt%20%C4%91%E1%BB%83%20ch%E1%BA%A1y%20Witcher%203%20tr%C3%AAn%20RISC-V&subheading=Th%E1%BB%A9%20Ba%2C%2027%20th%C3%A1ng%208%2C%202024%3A%20T%C3%B3m%20t%E1%BA%AFt%20tin%20t%E1%BB%A9c%20v%E1%BB%81%20hacker" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/vi/2024/08/27</link>
+            <guid isPermaLink="false">2024-08-27T00:00:00.000Z</guid>
+            <pubDate>Tue, 27 Aug 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-26]]></title>
             <description
@@ -1710,187 +1895,6 @@
             <link>https://hn.cho.sh/vi/2024/08/18</link>
             <guid isPermaLink="false">2024-08-18T00:00:00.000Z</guid>
             <pubDate>Sun, 18 Aug 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-17]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/08/17&#39;</h2>
-<h1>2024-08-17</h1>
-<h2><a href="https://twitter.com/organicmapsapp/status/1824727403580596260">Google đã gỡ bỏ Organic Maps khỏi Play Store</a></h2>
-<ul>
-<li>Ứng dụng Organic Maps đã bị gỡ bỏ bất ngờ khỏi Play Store vì bị cáo buộc không đáp ứng các yêu cầu của Chương trình Gia đình.</li>
-<li>Không giống như các ứng dụng được đánh giá 3+ khác như Google Maps, Organic Maps không chứa quảng cáo hoặc mua hàng trong ứng dụng.</li>
-<li>Việc gỡ bỏ đã gây ra sự quan tâm do tính chất không có quảng cáo và không có mua hàng trong ứng dụng, trái ngược với các ứng dụng tương tự khác.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41272925">phản ứng</a></h3>
-<ul>
-<li>Google đã gỡ bỏ Organic Maps khỏi Play Store, dẫn đến các cuộc thảo luận về độc quyền cửa hàng ứng dụng và những thách thức của nhà phát triển.</li>
-<li>Organic Maps được đánh giá cao nhờ khả năng sử dụng ngoại tuyến và dữ liệu từ OpenStreetMap (OSM), đặc biệt hữu ích cho các hoạt động ngoài trời như đi bộ đường dài và đạp xe.</li>
-<li>Vụ việc này làm dấy lên lo ngại về quy trình đánh giá của Google và hành vi cạnh tranh không lành mạnh tiềm ẩn, với các đề xuất sử dụng các cửa hàng ứng dụng thay thế như F-Droid.</li>
-</ul>
-<h2><a href="https://fortune.com/europe/2024/08/14/x-ordered-to-pay-550000-to-irish-employee-fired-for-not-replying-to-elon-musk-yes-or-resign-extremely-hardcore-ultimatum/">X bị yêu cầu trả €550k cho nhân viên người Ireland bị sa thải sau tối hậu thư đồng ý hoặc từ chức</a></h2>
-<ul>
-<li>X của Elon Musk (trước đây là Twitter) đã bị yêu cầu phải trả hơn 550.000 € (602.640 USD) cho cựu nhân viên người Ireland Gary Rooney vì sa thải không công bằng.</li>
-<li>Rooney đã bị sa thải vào tháng 12 năm 2022 vì không phản hồi email của Musk yêu cầu nhân viên cam kết với các điều kiện làm việc mới, khắc nghiệt hoặc từ chức, mà Ủy ban Quan hệ Lao động Ireland đã phán quyết không cấu thành việc từ chức.</li>
-<li>Vụ việc này là một phần của loạt tranh chấp sau khi Musk mua lại nền tảng, và X có 42 ngày để kháng cáo quyết định này.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41272861">phản ứng</a></h3>
-<ul>
-<li>X bị buộc phải trả €550k cho một nhân viên người Ireland bị sa thải sau khi nhận được tối hậu thư &#39;đồng ý hoặc từ chức&#39;, nhấn mạnh sự bảo vệ lao động mạnh mẽ hơn ở châu Âu.</li>
-<li>Vụ việc này nhấn mạnh sự khác biệt trong luật lao động và các chế độ phúc lợi giữa Mỹ và châu Âu, chẳng hạn như chế độ nghỉ thai sản và chính sách nghỉ phép.</li>
-<li>Người dùng đã lưu ý đến sự đánh đổi giữa mức lương cao hơn ở Mỹ và an ninh công việc cùng các phúc lợi tốt hơn ở châu Âu.</li>
-</ul>
-<h2><a href="https://old.reddit.com/r/LegalAdviceUK/comments/1etko9h/family_poisoned_after_using_aigenerated_mushroom/">Gia đình bị ngộ độc sau khi sử dụng sách nhận dạng nấm do AI tạo ra</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41269514">phản ứng</a></h3>
-<ul>
-<li>Bốn người trong một gia đình đã bị ngộ độc sau khi sử dụng một cuốn sách nhận dạng nấm do AI tạo ra, cuốn sách này sai lầm khi tuyên bố tác giả có bằng cấp từ một trường đại học không tồn tại.</li>
-<li>Vụ việc này đã khơi dậy các cuộc thảo luận về sự cần thiết của các quy định nghiêm ngặt hơn xung quanh việc xuất bản AI, nhấn mạnh những nguy cơ tiềm ẩn của nội dung do AI tạo ra trong các lĩnh vực quan trọng như an toàn thực phẩm.</li>
-<li>Những người chỉ trích cho rằng các luật hiện hành đã đủ để giải quyết sự cẩu thả như vậy, nhưng cuộc tranh luận vẫn tiếp tục về việc liệu các công cụ AI có cần các quy định cụ thể do sự lan truyền nhanh chóng của thông tin sai lệch hay không.</li>
-</ul>
-<h2><a href="https://mccue.dev/pages/8-16-24-just-use-postgres">Chỉ cần sử dụng Postgres</a></h2>
-<ul>
-<li>Bài viết ủng hộ việc sử dụng Postgres làm lựa chọn mặc định cho lưu trữ dữ liệu bền vững trong các ứng dụng mới.</li>
-<li>Đoạn văn so sánh Postgres với các cơ sở dữ liệu khác như SQLite, DynamoDB, Cassandra, MongoDB, Redis, Datomic, XTDB, Kafka, ElasticSearch, MSSQL, Oracle DB, MySQL và các cơ sở dữ liệu vector AI, nêu bật những hạn chế và các trường hợp sử dụng cụ thể của chúng.</li>
-<li>Luận điểm chính là Postgres cung cấp một sự kết hợp cân bằng giữa tính linh hoạt, độ tin cậy và các tính năng, làm cho nó phù hợp với nhiều loại ứng dụng mà không có những nhược điểm của các cơ sở dữ liệu chuyên dụng khác.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41272854">phản ứng</a></h3>
-<ul>
-<li>Cuộc thảo luận xoay quanh việc sử dụng PostgreSQL so với MongoDB, đặc biệt là đối với sinh viên đại học và những người mới tốt nghiệp.</li>
-<li>Những người chỉ trích cho rằng MongoDB thường được chọn để tránh phải xử lý các bảng lược đồ hoặc SQL, nhưng điều này có thể dẫn đến các vấn đề phức tạp hơn trong phát triển ứng dụng.</li>
-<li>Cuộc tranh luận nêu bật tầm quan trọng của việc hiểu các lược đồ cơ sở dữ liệu và mối quan hệ, cũng như những cạm bẫy tiềm ẩn khi sử dụng MongoDB mà không có kiến thức đầy đủ.</li>
-</ul>
-<h2><a href="https://files.eric.ed.gov/fulltext/ED505647.pdf">Gia tăng khả năng ghi nhớ mà không cần tăng thời gian học [pdf]</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41274602">phản ứng</a></h3>
-<ul>
-<li>Việc dạy người khác những gì bạn đang học là một chiến lược hiệu quả để ghi nhớ lâu dài, mang lại lợi ích cho cả người dạy và các thành viên trong nhóm tương lai thông qua tài liệu.</li>
-<li>Thành viên mới trong nhóm mang đến những góc nhìn mới mẻ có thể làm nổi bật những điểm không hiệu quả trước khi họ quen thuộc, tạo nên một thời điểm quý giá để nắm bắt những ý kiến của họ.</li>
-<li>Những chiến lược học tập hiệu quả, chẳng hạn như lặp lại cách quãng và hồi tưởng chủ động, cùng với động lực và ứng dụng thực tế, tăng cường đáng kể khả năng ghi nhớ kiến thức.</li>
-</ul>
-<h2><a href="https://arstechnica.com/gadgets/2024/08/epic-games-store-and-fortnite-arrive-on-eu-iphones/">Epic Games Store và Fortnite có mặt trên iPhone ở EU</a></h2>
-<ul>
-<li>Epic Games Store và Fortnite đã trở lại trên iPhone ở EU sau bốn năm gián đoạn, nhờ Đạo luật Thị trường Kỹ thuật số (DMA) yêu cầu Apple cho phép các cửa hàng ứng dụng của bên thứ ba.</li>
-<li>Epic Games Store, hiện có sẵn trên Android toàn cầu và iOS ở châu Âu, có các trò chơi như Fortnite, Rocket League Sideswipe và Fall Guys.</li>
-<li>Diễn biến này theo sau một cuộc chiến pháp lý và quan hệ công chúng kéo dài giữa Epic và Apple về các chính sách của cửa hàng ứng dụng, làm nổi bật những căng thẳng đang diễn ra mặc dù có một số chiến thắng cho các nhà phát triển.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41272771">phản ứng</a></h3>
-<ul>
-<li>Epic Games Store và Fortnite hiện đã có thể truy cập trên iPhone ở EU, đánh dấu một bước tiến quan trọng cho tự do kỹ thuật số và có thể tạo tiền lệ cho các khu vực khác.</li>
-<li>Động thái này đã khơi dậy các cuộc thảo luận về hệ sinh thái hạn chế của Apple, các can thiệp tiềm năng từ cơ quan quản lý, và những tác động rộng hơn đối với các thị trường kỹ thuật số.</li>
-<li>Phản ứng của cộng đồng bao gồm sự lạc quan, hoài nghi và những hiểu biết kỹ thuật, với các cuộc tranh luận về các bản cập nhật iOS và khả năng của các trình duyệt bên thứ ba.</li>
-</ul>
-<h2><a href="https://neel04.github.io/my-website/blog/pytorch_rant/">Tiền đồ của các khung học sâu</a></h2>
-<ul>
-<li>Đoạn bài viết cho rằng PyTorch, mặc dù tốt cho việc tạo mẫu nhanh, nhưng lại không hiệu quả cho tính toán phân tán quy mô lớn, dẫn đến mất năng suất.</li>
-<li>JAX, được phát triển bởi DeepMind, được nhấn mạnh như một sự thay thế vượt trội nhờ vào cách tiếp cận dựa trên trình biên dịch, khả năng song song hóa hiệu quả và API chức năng, giúp cải thiện hiệu suất và khả năng mở rộng.</li>
-<li>Những lợi thế chính của JAX bao gồm khả năng tái tạo tốt hơn, khả năng di chuyển liền mạch trên các phần cứng, và một hệ sinh thái ổn định hơn, mặc dù nó có một số thách thức về quản trị và thiết kế API.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41270043">phản ứng</a></h3>
-<ul>
-<li>PyTorch được khen ngợi vì dễ sử dụng và phù hợp với cách các nhà nghiên cứu học tập, khiến nó trở thành một dự án quan trọng qua nhiều thế hệ với sự hỗ trợ mạnh mẽ từ Meta.</li>
-<li>JAX, được phát triển tại Google, nổi bật với các trừu tượng mạnh mẽ và khả năng song song hóa nhưng được xem là kém trực quan và có hệ sinh thái phân mảnh hơn so với PyTorch.</li>
-<li>Cuộc tranh luận nêu bật những lo ngại về tương lai của JAX do chỉ phát triển bởi Google và những lợi ích tiềm năng của một cấu trúc quản lý độc lập cho sự bền vững của nó.</li>
-</ul>
-<h2><a href="https://team-atlanta.github.io/blog/post-atl/">LLM và Tìm lỗi: Những hiểu biết từ đội chiến thắng $2M trong cuộc thi AIxCC của Nhà Trắng</a></h2>
-<ul>
-<li>Đội Atlanta, bao gồm các thành viên từ Georgia Tech, GTRI, Samsung Research, KAIST, và POSTECH, đang tham gia cuộc thi AIxCC của DARPA với giải pháp an ninh mạng dựa trên AI của họ, Atlantis.</li>
-<li>Nhóm đã tận dụng kinh nghiệm từ Cuộc thi Cyber Grand của DARPA để phát triển Skynet, một Hệ thống Lý luận Mạng (CRS) sử dụng phân tích tĩnh và các Mô hình Ngôn ngữ Lớn (LLM) được tinh chỉnh.</li>
-<li>Mặc dù có những hiểu lầm và thách thức ban đầu, Đội Atlanta đã giành được sáu huy hiệu thành tích trong vòng bán kết và đang tiến vào chung kết AIxCC, gợi ý những cải tiến cho các cuộc thi trong tương lai.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41269791">phản ứng</a></h3>
-<ul>
-<li>Đội ngũ từ AIxCC của Nhà Trắng đã sử dụng các tác nhân Mô hình Ngôn ngữ Lớn (LLM), như GPT-4, để tìm và vá lỗi, và đã lọt vào vòng chung kết của một cuộc thi.</li>
-<li>Họ đã phát hiện ra một lỗ hổng zero-day trong SQLite3, nhấn mạnh tiềm năng của các mô hình ngôn ngữ lớn (LLMs) trong an ninh mạng.</li>
-<li>Đội ngũ dự định chia sẻ thêm những hiểu biết sau khi kết thúc vòng chung kết, và các cuộc thảo luận bao gồm kinh tế của việc săn lỗi và vai trò tương lai của AI trong an ninh mạng.</li>
-</ul>
-<h2><a href="https://www.theverge.com/2024/8/14/24220658/google-eric-schmidt-stanford-talk-ai-startups-openai">Nguyên CEO của Google: Các công ty khởi nghiệp AI có thể đánh cắp tài sản trí tuệ và thuê luật sư để &#39;dọn dẹp mớ hỗn độn&#39;</a></h2>
-<ul>
-<li>Ông Eric Schmidt, cựu CEO của Google, đã gợi ý rằng các startup AI thành công có thể đánh cắp tài sản trí tuệ và thuê luật sư để xử lý hậu quả, gây ra tranh cãi.</li>
-<li>Schmidt cho rằng phản ứng chậm của Google đối với ChatGPT là do nhân viên ưu tiên làm việc từ xa, một bình luận đã dẫn đến việc bài nói chuyện của ông bị gỡ khỏi kênh YouTube của Stanford.</li>
-<li>Schmidt cũng đã thảo luận về các khoản đầu tư của mình vào các công ty khởi nghiệp AI và mối quan hệ của ông với những nhân vật công nghệ nổi tiếng như Sam Altman và Elon Musk, nhấn mạnh tầm ảnh hưởng liên tục của ông ở Thung lũng Silicon.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41275073">phản ứng</a></h3>
-<ul>
-<li>Ông Eric Schmidt, cựu CEO của Google, đã gợi ý rằng các công ty khởi nghiệp về AI có thể cân nhắc việc đánh cắp tài sản trí tuệ và giải quyết các vấn đề pháp lý sau, ưu tiên giải quyết các thách thức kỹ thuật trước.</li>
-<li>Những bình luận của Schmidt đã gây ra một cuộc tranh luận, với một số người coi đó là một chiến lược thực dụng và những người khác cho rằng nó không đạo đức, so sánh với các công ty như Uber và Airbnb hoạt động trong các khu vực pháp lý mơ hồ.</li>
-<li>Những người chỉ trích cho rằng cách tiếp cận này làm suy yếu sự công bằng và nguyên tắc pháp luật, gây ra lo ngại về các tác động đạo đức đối với ngành công nghệ.</li>
-</ul>
-<h2><a href="https://hkalbasi.github.io/zngur/">Zngur: Một công cụ tương tác C++/Rust</a></h2>
-<ul>
-<li>Zngur là một công cụ giúp tương tác giữa C++ và Rust, cho phép các kiểu dữ liệu, phương thức và hàm của Rust được sử dụng trong mã C++ mà vẫn giữ nguyên ngữ nghĩa và tính tiện dụng ban đầu của chúng.</li>
-<li>Điều này cho phép sử dụng các crate của Rust trong C++ và tạo ra các API Rust theo phong cách idiomatic cho các thư viện C++, giải quyết các khác biệt chính giữa hai ngôn ngữ, chẳng hạn như an toàn bộ nhớ và cơ chế kiểm tra kiểu.</li>
-<li>Zngur cho phép các kiểu dữ liệu của Rust được lưu trữ theo giá trị trong C++, gọi các phương thức và hàm của Rust, và viết các lớp bao bọc Rusty cho các thư viện C++, nhưng nó không kết nối các kiểu dữ liệu của C++ vào Rust.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41271273">phản ứng</a></h3>
-<ul>
-<li>Zngur là một công cụ mới được thiết kế để tương tác giữa C++ và Rust, nhằm tạo điều kiện thuận lợi cho Giao diện Hàm Ngoại (FFI) giữa hai ngôn ngữ này.</li>
-<li>Trong lịch sử, cộng đồng Rust đã thể hiện cam kết hạn chế đối với việc tương tác với C++, khiến Zngur trở thành một bước tiến quan trọng hướng tới việc áp dụng dần dần Rust mà không cần phải viết lại hoàn toàn mã C++ hiện có.</li>
-<li>Zngur cho phép thực thi C++ từ Rust và viết các hàm cho các kiểu Rust trong C++, mặc dù nó không kết nối các kiểu C++ vào Rust, điều mà một số người dùng cho là kém tiện lợi hơn.</li>
-</ul>
-<h2><a href="https://www.reuters.com/technology/x-close-operations-brazil-effective-immediately-2024-08-17/">X cho biết đang đóng cửa hoạt động tại Brazil do các lệnh nội dung của thẩm phán</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41275600">phản ứng</a></h3>
-<ul>
-<li>X (trước đây là Twitter) đang đóng cửa hoạt động tại Brazil do &quot;lệnh kiểm duyệt&quot; từ thẩm phán Brazil Alexandre de Moraes, người có tiền sử ra lệnh gỡ bỏ các bài đăng trên mạng xã hội và bỏ tù các cá nhân vì nội dung của họ.</li>
-<li>Ngành tư pháp Brazil, đặc biệt là Tòa án Tối cao, đã bị cáo buộc vượt quá giới hạn và sử dụng quyền lực đáng kể, dẫn đến các tuyên bố về một &#39;chế độ độc tài tư pháp.&#39;</li>
-<li>Động thái này của X trái ngược với việc tuân thủ các lệnh tương tự ở các quốc gia khác, đặt ra câu hỏi về tính minh bạch và quy trình hợp pháp của các hành động của tư pháp Brazil.</li>
-</ul>
-<h2><a href="https://xapian.org/">Xapian: Thư viện công cụ tìm kiếm mã nguồn mở</a></h2>
-<ul>
-<li>Xapian là một Thư viện Công cụ Tìm kiếm Mã nguồn Mở theo giấy phép GPL v2+, được viết bằng C++ với các liên kết cho các ngôn ngữ như Perl, Python, PHP và Java.</li>
-<li>Điều này cho phép các nhà phát triển tích hợp các chức năng lập chỉ mục và tìm kiếm nâng cao vào ứng dụng của họ, hỗ trợ nhiều mô hình trọng số và các toán tử truy vấn boolean.</li>
-<li>Phiên bản ổn định mới nhất của Xapian là 1.4.26, được phát hành vào ngày 18 tháng 7 năm 2024.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41273415">phản ứng</a></h3>
-<ul>
-<li>Xapian là một thư viện công cụ tìm kiếm mã nguồn mở, được khen ngợi vì tính đơn giản và hiệu suất, đặc biệt trong việc lập chỉ mục tài liệu và ứng dụng tìm kiếm email.</li>
-<li>Đã được duy trì hơn một thập kỷ, với dung lượng nhỏ và tốc độ tốt, nhưng giấy phép GPL v2 của nó có thể là một rào cản cho một số mục đích thương mại.</li>
-<li>Người dùng đánh giá cao sự vận hành không gặp trục trặc và tích hợp với các công cụ như Notmuch (email) và Recoll (lập chỉ mục tài liệu), nhấn mạnh tính hữu ích của nó trong các nhiệm vụ liên quan đến tìm kiếm.</li>
-</ul>
-<h2><a href="https://github.com/LiciaHe/threadPlotter">ThreadPlotter – bộ công cụ cho thêu kim đột với máy vẽ X-Y (2020)</a></h2>
-<ul>
-<li>ThreadPlotter là một bộ công cụ được thiết kế để tạo ra thêu kim đột lỗ bằng cách sử dụng máy vẽ X-Y, bổ sung cho bài báo đoạt giải &quot;Plotting with Thread&quot; của Shiqing He và Eytan Adar.</li>
-<li>Trong bộ công cụ có các hướng dẫn chuyển đổi máy vẽ thành máy thêu đục lỗ, thu thập các thành phần cần thiết và thiết kế mẫu, giúp người dùng mới dễ dàng tiếp cận.</li>
-<li>Được phát triển bởi Licia, bộ công cụ này có sẵn theo Giấy phép MIT và khuyến khích người dùng chia sẻ các tác phẩm của họ trên mạng xã hội với thẻ #plotterembroidery.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41270596">phản ứng</a></h3>
-<ul>
-<li>ThreadPlotter là một bộ công cụ được thiết kế cho thêu kim đột lỗ sử dụng máy vẽ X-Y, được tạo ra bởi Licia He.</li>
-<li>Chiếc hộp công cụ đã thu hút sự quan tâm nhờ vào danh sách vật liệu tối thiểu và tiềm năng cho các ứng dụng sáng tạo, chẳng hạn như thảm tùy chỉnh và thiết kế thuật toán.</li>
-<li>Licia He được biết đến với công việc sáng tạo của mình với các máy vẽ, bao gồm các thí nghiệm với màu nước, và cô ấy cung cấp một khóa học miễn phí về chủ đề này, mặc dù trang web của cô hiện đang không hoạt động và có thể truy cập qua archive.org.</li>
-</ul>
-<h2><a href="https://hollisbrown.github.io/blendershortcuts/">Học các phím tắt Blender với nhiều video ngắn</a></h2>
-<ul>
-<li>Người dùng Blender lâu năm đã tạo ra một trang web kết hợp video và văn bản để dạy Blender, tập trung vào việc truyền đạt hiệu quả những thông tin nhỏ như phím tắt.</li>
-<li>Người sáng tạo đang tìm kiếm phản hồi từ người dùng Blender và những người có kinh nghiệm giảng dạy, cũng như lời khuyên từ các nhà phát triển web chuyên nghiệp về các vấn đề tiềm năng của trang web.</li>
-<li>Đề án được lưu trữ trên GitHub, mời gọi sự hợp tác và đề xuất từ cộng đồng.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41271014">phản ứng</a></h3>
-<ul>
-<li>Một trang web kết hợp video và văn bản mới đã được tạo ra để dạy các phím tắt Blender, nhằm cung cấp việc học nhanh chóng và hiệu quả cho người dùng.</li>
-<li>Trang web đã nhận được phản hồi tích cực nhưng cũng có những đề xuất cải tiến, chẳng hạn như thêm nút phát cho video và xem xét sử dụng lazy loading để cải thiện hiệu suất.</li>
-<li>Người sáng tạo, hollisbrown, đang tập trung vào việc cải thiện trang web dựa trên phản hồi của người dùng và không có kế hoạch mở rộng sang phần mềm khác do chuyên môn của họ chỉ giới hạn ở Blender.</li>
-</ul>
-<h2><a href="https://github.com/rusq/slackdump">Slackdump</a></h2>
-<ul>
-<li>Slack Dumper cho phép người dùng lưu trữ tin nhắn Slack, người dùng, kênh, tệp và biểu tượng cảm xúc mà không cần quyền quản trị viên.</li>
-<li>Chương trình hỗ trợ nhiều chế độ khác nhau, bao gồm liệt kê người dùng/kênh, trích xuất tin nhắn và chuỗi, tạo xuất khẩu Slack, và tải xuống biểu tượng cảm xúc.</li>
-<li>Đây là công cụ hữu ích để lưu trữ các cuộc trò chuyện riêng tư, xuất dữ liệu từ các gói miễn phí &quot;không lưu trữ&quot;, và di chuyển sang Discord bằng cách sử dụng Slackord2.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41272213">phản ứng</a></h3>
-<ul>
-<li>Slackdump là một công cụ xuất các cuộc trò chuyện và tệp tin từ các không gian làm việc miễn phí trên Slack, bao gồm cả các tệp đính kèm, mà không cần quyền truy cập quản trị viên.</li>
-<li>Slack sẽ xóa các cuộc trò chuyện và tệp tin từ các không gian làm việc miễn phí vào cuối tháng Tám, khiến người dùng phải tìm kiếm các phương án thay thế và phương pháp để lưu trữ dữ liệu của họ.</li>
-<li>Người dùng đang thảo luận về các lựa chọn thay thế như Linen.dev và Slack-export-viewer, và một số người khuyên nên sử dụng ngôn ngữ lập trình Go cho các dự án như vậy do hiệu suất và tính di động của nó.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Google đã gỡ bỏ Organic Maps khỏi Play Store" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Google%20%C4%91%C3%A3%20g%E1%BB%A1%20b%E1%BB%8F%20Organic%20Maps%20kh%E1%BB%8Fi%20Play%20Store&subheading=Th%E1%BB%A9%20B%E1%BA%A3y%2C%2017%20th%C3%A1ng%208%2C%202024%3A%20T%C3%B3m%20t%E1%BA%AFt%20tin%20t%E1%BB%A9c%20v%E1%BB%81%20hacker" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/vi/2024/08/17</link>
-            <guid isPermaLink="false">2024-08-17T00:00:00.000Z</guid>
-            <pubDate>Sat, 17 Aug 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
