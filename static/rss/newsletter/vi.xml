@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 27 Aug 2024 19:12:29 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 28 Aug 2024 19:15:18 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/vi.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Tue, 27 Aug 2024 00:00:00 GMT</pubDate>
+        <pubDate>Wed, 28 Aug 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[vi]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-08-28]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/08/28&#39;</h2>
+<h1>2024-08-28</h1>
+<h2><a href="https://gamengen.github.io">Những mô hình khuếch tán là các công cụ trò chơi thời gian thực</a></h2>
+<ul>
+<li>Nhà nghiên cứu đã giới thiệu GameNGen, một công cụ trò chơi được hỗ trợ bởi mô hình thần kinh có khả năng tương tác thời gian thực, được minh họa bằng việc mô phỏng trò chơi DOOM với tốc độ hơn 20 khung hình mỗi giây trên một TPU duy nhất.</li>
+<li>GameNGen sử dụng quy trình huấn luyện hai giai đoạn bao gồm một RL-agent để thu thập dữ liệu và một mô hình khuếch tán để dự đoán khung hình tiếp theo, đạt được PSNR là 29.4, tương đương với nén JPEG mất dữ liệu.</li>
+<li>Kiến trúc của mô hình bao gồm các tăng cường điều kiện và tinh chỉnh một bộ mã hóa tự động đã được huấn luyện trước để đảm bảo sự ổn định trong việc tạo ra dài hạn và cải thiện chất lượng hình ảnh, khiến cho người đánh giá khó phân biệt giữa các đoạn clip trò chơi thực và mô phỏng.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41375548">phản ứng</a></h3>
+<ul>
+<li>Những mô hình khuếch tán tạo ra các khung hình dựa trên các khung hình trước đó và hành động của người dùng nhưng không hỗ trợ đầu vào thời gian thực của người dùng để điều chỉnh động.</li>
+<li>Được huấn luyện trên một tập dữ liệu lớn về lối chơi DOOM, các mô hình này tạo ra các khung hình dựa trên các khung hình hiện tại và hành động của người dùng, giống như một bản ghi thần kinh hơn là một mô phỏng tương tác.</li>
+<li>Trong khi công nghệ này ấn tượng, nó gặp phải những hạn chế như việc duy trì trạng thái nội bộ của trò chơi không nhất quán, điều này làm nổi bật cả tiềm năng và thách thức của nó đối với mô phỏng trò chơi.</li>
+</ul>
+<h2><a href="https://josephg.com/blog/crdts-go-brrr/">Hệ thống CRDT nhanh hơn (2021)</a></h2>
+<ul>
+<li>Ban đầu, tác giả cảm thấy thất vọng vì việc triển khai không hiệu quả thuật toán của họ trong một bài báo học thuật, dẫn đến những tuyên bố sai lệch về hiệu suất.</li>
+<li>Điều này dẫn đến việc khám phá và tối ưu hóa CRDTs (Các Loại Dữ Liệu Nhân Bản Không Xung Đột), cho phép chỉnh sửa cộng tác theo thời gian thực mà không cần máy chủ trung tâm.</li>
+<li>Việc triển khai CRDT tối ưu hóa của tác giả, Diamond, vượt trội hơn đáng kể so với các CRDT phổ biến như Automerge bằng cách sử dụng các cấu trúc dữ liệu đơn giản hơn và các kỹ thuật lập chỉ mục tiên tiến, đạt được cải thiện tốc độ hơn 5000 lần.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41372833">phản ứng</a></h3>
+<ul>
+<li>Đoạn bài viết thảo luận về hiệu suất của các Loại Dữ liệu Sao chép Không Xung đột (CRDTs) và các ứng dụng thực tế của chúng trong phần mềm thực tế, nhấn mạnh những lợi ích và thách thức của chúng.</li>
+<li>CRDTs được sử dụng trong các ứng dụng khác nhau như Thymer, Notion và Apple Notes, cung cấp các tính năng như cộng tác thời gian thực và chức năng ngoại tuyến, nhưng chúng đi kèm với các đánh đổi như thỏa hiệp về hiệu suất và giải quyết xung đột phức tạp.</li>
+<li>Cuộc thảo luận bao gồm những hiểu biết từ các nhà phát triển và người dùng về việc triển khai thực tế của CRDT, so sánh chúng với các phương pháp đồng bộ hóa khác như Biến đổi Hoạt động (OT) và khám phá sự phù hợp của chúng cho các trường hợp sử dụng khác nhau.</li>
+</ul>
+<h2><a href="https://chartdb.io/">ChartDB – Trình chỉnh sửa thiết kế cơ sở dữ liệu miễn phí và mã nguồn mở</a></h2>
+<ul>
+<li>ChartDB cung cấp một trình chỉnh sửa thiết kế cơ sở dữ liệu miễn phí và mã nguồn mở, cho phép người dùng hình dung cơ sở dữ liệu của họ chỉ với một truy vấn, mà không cần phải đăng ký.</li>
+<li>Hỗ trợ nhiều hệ quản trị cơ sở dữ liệu (DBMS) bao gồm PostgreSQL, MySQL, SQL Server, SQLite và MariaDB, và cung cấp các tính năng như nhập lược đồ tức thì và DDL (Ngôn ngữ Định nghĩa Dữ liệu) được tạo bởi AI.</li>
+<li>Người dùng có thể nhanh chóng nhập/xuất cơ sở dữ liệu, tạo các tập lệnh SQL hoặc hình ảnh, và sử dụng các công cụ chỉnh sửa truy vấn nâng cao, làm cho nó trở thành một công cụ đa năng cho quản lý và thiết kế cơ sở dữ liệu.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41374009">phản ứng</a></h3>
+<ul>
+<li>ChartDB là một trình chỉnh sửa thiết kế cơ sở dữ liệu miễn phí và mã nguồn mở, đang thu hút sự chú ý nhờ tính hữu ích trong việc tạo sơ đồ cơ sở dữ liệu.</li>
+<li>Cuộc thảo luận nhấn mạnh tầm quan trọng của các sơ đồ cơ sở dữ liệu trong việc hiểu và truyền đạt các cấu trúc dữ liệu phức tạp, đặc biệt là trong các dự án đã trưởng thành.</li>
+<li>Người dùng so sánh ChartDB với các công cụ khác như dbdiagram.io, ERWin và PlatUML, lưu ý đến tiềm năng của nó trong việc tạo sơ đồ tự động và dễ sử dụng trong các môi trường hợp tác.</li>
+</ul>
+<h2><a href="https://blog.system76.com/post/cosmic-alpha-released-heres-what-people-are-saying/">COSMIC Alpha Được Phát Hành</a></h2>
+<ul>
+<li>Phiên bản alpha của COSMIC, một môi trường desktop mới cho Pop!_OS và các bản phân phối Linux khác, đã được phát hành, mang đến các tính năng mới, khả năng tùy chỉnh, hiệu suất, độ ổn định và bảo mật.</li>
+<li>COSMIC chưa được khuyến nghị sử dụng cho sản xuất, nhưng phản hồi đã rất tích cực, nhấn mạnh tốc độ, nền tảng vững chắc và thiết kế thân thiện với người dùng của nó.</li>
+<li>Phiên bản này cũng đóng vai trò như một bản alpha cho Pop!_OS 24.04 LTS, với các tính năng mới như cài đặt ngày &amp; giờ, chụp màn hình, mặc định bàn di chuột, và chia sẻ màn hình trong các ứng dụng hội nghị video.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41376590">phản ứng</a></h3>
+<ul>
+<li>Hệ thống 76 đã phát hành phiên bản alpha của COSMIC, một môi trường desktop mới, đã thu hút sự quan tâm đáng kể trong cộng đồng công nghệ.</li>
+<li>COSMIC được xây dựng bằng Iced, một khung giao diện người dùng đa nền tảng dựa trên Rust, vẫn đang trong giai đoạn thử nghiệm nhưng cho thấy tiềm năng cho sự phát triển trong tương lai.</li>
+<li>Người dùng đã báo cáo cả những khía cạnh tích cực, như không gian làm việc độc lập trên mỗi màn hình và các phím tắt hợp lý, cũng như những khía cạnh tiêu cực, như thiếu tính năng và lỗi, cho thấy rằng mặc dù đầy hứa hẹn, COSMIC vẫn chưa sẵn sàng cho việc sử dụng hàng ngày.</li>
+</ul>
+<h2><a href="https://old.reddit.com/r/youtube/comments/1f30ku4/youtube_sabotaging_on_firefox/">Bắt đầu từ hôm nay, YouTube gần như không thể sử dụng được trên Firefox</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41379517">phản ứng</a></h3>
+<ul>
+<li>YouTube đã trở nên gần như không thể sử dụng trên Firefox, với các chỉ số hiệu suất cho thấy sự chậm lại đáng kể và giao diện người dùng bị đóng băng hoàn toàn.</li>
+<li>Vấn đề dường như liên quan đến một bản cập nhật Polymer ảnh hưởng đến các thành phần web tùy chỉnh, gây ra suy đoán về việc liệu đây có phải là một cơ chế chống chặn quảng cáo hay là một lỗi.</li>
+<li>Đã xuất hiện các cuộc thảo luận về ảnh hưởng của Google đối với khả năng tương thích của trình duyệt, với một số người đề xuất rằng EU nên tài trợ cho một trình duyệt tập trung vào quyền riêng tư hoặc phân nhánh Chromium để giải quyết những lo ngại này.</li>
+</ul>
+<h2><a href="https://news.griffith.edu.au/2024/08/27/game-changing-needle-free-covid-19-intranasal-vaccine/">Vắc-xin Covid-19 dạng xịt mũi</a></h2>
+<ul>
+<li>Nhóm nghiên cứu của Đại học Griffith, do Giáo sư Suresh Mahalingam dẫn đầu, đang phát triển một loại vắc-xin COVID-19 niêm mạc thế hệ tiếp theo, CDO-7N-1, được công bố trên tạp chí Nature Communications.</li>
+<li>Vắc-xin sống giảm độc lực qua đường mũi này nhằm kích thích cả miễn dịch niêm mạc và miễn dịch toàn thân chỉ với một liều duy nhất, mang lại sự bảo vệ lâu dài và là một lựa chọn thay thế không cần kim tiêm.</li>
+<li>Vắc-xin cung cấp sự bảo vệ chéo chống lại tất cả các biến thể đáng lo ngại, duy trì ổn định ở 4°C trong bảy tháng, và được cấp phép cho Indian Immunologicals Ltd để tiến hành các thử nghiệm lâm sàng sắp tới, làm cho nó phù hợp với các quốc gia có thu nhập thấp và trung bình.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41375746">phản ứng</a></h3>
+<ul>
+<li>Vắc-xin Covid-19 mới dạng xịt mũi, CDO-7N-1, tuyên bố cung cấp sự bảo vệ mạnh mẽ chống lại sự lây truyền, tái nhiễm và sự lan truyền của virus, đồng thời giảm thiểu sự hình thành các biến thể mới.</li>
+<li>Không giống như vắc-xin mRNA, CDO-7N-1 tạo ra miễn dịch đối với tất cả các protein chính của SARS-CoV-2 và duy trì ổn định ở 4°C trong bảy tháng, làm cho nó phù hợp với các quốc gia có thu nhập thấp và trung bình.</li>
+<li>Phương pháp đưa thuốc qua đường mũi có thể trung hòa virus dọc theo niêm mạc mũi, mang lại một cách tiếp cận mới trong việc phòng ngừa Covid-19, mặc dù hiệu quả và sự đón nhận của công chúng vẫn chưa được xác định.</li>
+</ul>
+<h2><a href="https://taskwarrior.org/">Taskwarrior – Quản lý Công việc qua Giao diện Dòng lệnh (CLI)</a></h2>
+<ul>
+<li>Taskwarrior 3.0.2 đã được phát hành, giải quyết các vấn đề nhỏ từ phiên bản 3.0.0, bao gồm cải tiến trong tin tức nhiệm vụ, xử lý lỗi, tài liệu và tương tác hook.</li>
+<li>Taskwarrior 3.0 đã giới thiệu hỗ trợ lưu trữ và đồng bộ hóa nhiệm vụ mới, đáng tin cậy dựa trên TaskChampion, đánh dấu một nâng cấp đáng kể.</li>
+<li>Phiên bản ổn định mới nhất hiện có là Taskwarrior 3.0.2, Taskshell 1.2.0 và Timewarrior 1.7.1, với các phiên bản phát triển cũng có sẵn.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41372482">phản ứng</a></h3>
+<ul>
+<li>Một nhà phát triển đang tạo ra một giao diện đồ họa (GUI) tối giản cho Taskwarrior, một công cụ quản lý tác vụ giao diện dòng lệnh (CLI), nhằm cải thiện việc điều hướng bằng bàn phím và hỗ trợ người dùng mắc ADHD.</li>
+<li>Nhà phát triển dự định tích hợp Timewarrior, một công cụ theo dõi thời gian, vào giao diện người dùng trong tương lai, mặc dù hiện tại các nỗ lực đang tập trung vào việc sử dụng cục bộ thay vì truy cập từ xa hoặc đồng bộ hóa di động.</li>
+<li>Nhóm cộng đồng đang thảo luận về các khía cạnh khác nhau của Taskwarrior, bao gồm các thách thức khi đồng bộ, khả năng hỗ trợ trên di động, và những lợi ích của các tính năng như phụ thuộc nhiệm vụ và sắp xếp theo mức độ khẩn cấp.</li>
+</ul>
+<h2><a href="https://github.com/seekbytes/IPA">IPA, một giao diện đồ họa để khám phá chi tiết bên trong của các tệp PDF</a></h2>
+<ul>
+<li>Phân tích PDF Tương tác (IPA) là một công cụ được thiết kế để giúp các nhà nghiên cứu khám phá và phân tích các tệp PDF, đặc biệt là những tệp có thể chứa tải trọng độc hại hoặc được sử dụng trong các chiến dịch lừa đảo.</li>
+<li>IPA cung cấp một giao diện đồ họa để trích xuất các payload, hiểu các mối quan hệ đối tượng và trực quan hóa các tham chiếu trong tệp, làm cho nó thân thiện với người dùng hơn so với các công cụ dòng lệnh.</li>
+<li>Công cụ này tương thích với pdf-rs và Rust, không yêu cầu phần mềm bổ sung, và có thể được biên dịch bằng Rust và cargo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41377960">phản ứng</a></h3>
+<ul>
+<li>IPA là một công cụ GUI mới để khám phá chi tiết PDF, được tạo ra bởi Nicolodev, nhằm mục đích phân tích PDF nhanh chóng.</li>
+<li>Những công cụ tương tự khác bao gồm pdf.hyzyla.dev, iText RUPS (Java), PDFSyntax (Python), Polyfile, ReportMill PDFViewer, PDFInspector, và PDFXplorer.</li>
+<li>Người tạo ra PDFSyntax đã giới thiệu một lệnh CLI mới để tóm tắt cấu trúc, và người dùng đã thảo luận về các công cụ và tính năng khác nhau, chia sẻ kinh nghiệm và vấn đề với các công cụ PDF.</li>
+</ul>
+<h2><a href="https://areweanticheatyet.com/">Chúng ta đã chống gian lận chưa?</a></h2>
+<ul>
+<li>&quot;Chúng ta đã chống gian lận chưa?&quot; là một danh sách do cộng đồng đóng góp, chi tiết về khả năng tương thích của các trò chơi sử dụng phần mềm chống gian lận với GNU/Linux hoặc Wine/Proton.</li>
+<li>Thống kê hiện tại: 37% được hỗ trợ, 17% đang chạy, 1% được lên kế hoạch, 38% bị hỏng, và 7% bị từ chối.</li>
+<li>Halo nổi bật: Bộ sưu tập Master Chief (được hỗ trợ với một số hạn chế nhỏ), Fortnite (bị từ chối, hoạt động trên Xbox-Cloud), và Apex Legends (được hỗ trợ).</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41376044">phản ứng</a></h3>
+<ul>
+<li>Trang web &quot;Are We Anti-Cheat Yet?&quot; (areweanticheatyet.com) đã thu hút sự chú ý đáng kể trên Hacker News, với 158 điểm và 176 bình luận, nhấn mạnh tầm quan trọng của nó trong cộng đồng game.</li>
+<li>Trang web, được phát triển bởi Starz0r trong 2-3 năm, ban đầu theo dõi các trò chơi hỗ trợ Linux cho Steam Deck nhưng kể từ đó đã mở rộng và trải qua một cuộc thiết kế lại.</li>
+<li>Những thảo luận chính bao gồm hiệu quả của phần mềm chống gian lận, cuộc chạy đua vũ trang giữa các nhà phát triển gian lận và các biện pháp chống gian lận, cũng như tiềm năng của AI và các giải pháp phía máy chủ để cải thiện việc phát hiện gian lận.</li>
+</ul>
+<h2><a href="https://chipsandcheese.com/2024/08/27/teslas-ttpoe-at-hot-chips-2024-replacing-tcp-for-low-latency-applications/">Tesla’s TTPoE tại Hot Chips 2024: Thay thế TCP cho các ứng dụng độ trễ thấp</a></h2>
+<ul>
+<li>Tesla đã giới thiệu TTPoE (Giao thức Vận chuyển Tesla qua Ethernet) tại Hot Chips 2024, nhằm thay thế TCP cho các ứng dụng độ trễ thấp trong siêu máy tính Dojo của họ.</li>
+<li>TTPoE cung cấp độ trễ ở mức micro giây và giảm tải phần cứng, đơn giản hóa máy trạng thái của TCP để giảm độ trễ và cải thiện thông lượng dữ liệu cho các tác vụ băng thông IO cao như huấn luyện video.</li>
+<li>TTPoE sử dụng phương pháp brute force để kiểm soát tắc nghẽn, với bộ đệm SRAM truyền 1 MB và một &quot;Dumb-NIC&quot; tiết kiệm chi phí gọi là Mojo, được thiết kế để nâng cao hiệu suất của siêu máy tính Dojo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41374663">phản ứng</a></h3>
+<ul>
+<li>Tesla đã giới thiệu TTPoE (Giao thức Vận chuyển Tesla qua Ethernet) tại Hot Chips 2024, nhằm thay thế TCP cho các ứng dụng yêu cầu độ trễ thấp.</li>
+<li>Quy trình mới được thiết kế để tối ưu hóa hiệu suất cho các trường hợp sử dụng cụ thể của Tesla, tận dụng phần cứng hiện có và giảm chi phí bằng cách tránh nhu cầu sử dụng các giải pháp mạng đắt tiền hơn như Infiniband.</li>
+<li>Động thái này đã gây ra tranh luận, với một số người cho rằng nó không cần thiết do đã có các công nghệ hiện có như TCP Offload Engines (TOE) và RoCE (RDMA over Converged Ethernet), trong khi những người khác lại coi đây là một quyết định chiến lược để kiểm soát tốt hơn và hiệu quả chi phí.</li>
+</ul>
+<h2><a href="https://www.developer-tech.com/news/judge-dismisses-majority-github-copilot-copyright-claims/">Thẩm phán bác bỏ phần lớn các khiếu nại về bản quyền của GitHub Copilot</a></h2>
+<ul>
+<li>Thẩm phán đã bác bỏ hầu hết các khiếu nại trong vụ kiện bản quyền chống lại GitHub, Microsoft và OpenAI liên quan đến trợ lý lập trình GitHub Copilot được hỗ trợ bởi AI.</li>
+<li>Vụ kiện, được khởi xướng bởi các nhà phát triển vào năm 2022, ban đầu có 22 khiếu nại, nhưng chỉ còn lại hai: một về vi phạm giấy phép mã nguồn mở và một về vi phạm hợp đồng.</li>
+<li>Toà án nhận thấy các lập luận rằng Copilot vi phạm DMCA bằng cách gợi ý mã mà không có sự ghi nhận thích hợp là không thuyết phục và đã bác bỏ các yêu cầu về bồi thường thiệt hại và bồi thường tài chính.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41378806">phản ứng</a></h3>
+<ul>
+<li>Thẩm phán đã bác bỏ hầu hết các khiếu nại về bản quyền đối với GitHub Copilot, khơi mào các cuộc tranh luận về mã do AI tạo ra và các vấn đề bản quyền.</li>
+<li>Người dùng đã báo cáo các trường hợp AI tạo ra mã giống hệt với các ví dụ hiện có, làm dấy lên lo ngại pháp lý về vi phạm bản quyền.</li>
+<li>Cuộc tranh luận đang diễn ra tập trung vào việc luật bản quyền nên phát triển như thế nào để giải quyết các khả năng của AI và trách nhiệm của các nhà vận hành AI.</li>
+</ul>
+<h2><a href="https://elixir-lang.org/blog/2024/08/28/typing-lists-and-tuples/">Đánh máy danh sách và bộ trong Elixir</a></h2>
+<ul>
+<li>Elixir đang phát triển một hệ thống kiểu để đảm bảo việc gõ dần dần một cách an toàn, cho phép giao tiếp an toàn giữa mã tĩnh và mã động, nhằm ngăn chặn lỗi kiểu trong thời gian chạy.</li>
+<li>Loại hệ thống mới sẽ hỗ trợ các kiểu tuple, chỉ định kích thước tối thiểu và các loại phần tử, và cung cấp cảnh báo thời gian biên dịch để ngăn chặn lỗi thời gian chạy.</li>
+<li>Elixir v1.17 đã được phát hành, và các sự kiện sắp tới được lên lịch từ ngày 27-30 tháng 8, 2024, tại Orlando, FL.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41378478">phản ứng</a></h3>
+<ul>
+<li>Phương pháp gõ dần của Elixir ưu tiên tính nhất quán của hệ thống hơn là cú pháp, với trình biên dịch được cải thiện để phát hiện nhiều lỗi hơn trong mỗi phiên bản.</li>
+<li>Elixir 1.17 đã giới thiệu một hệ thống kiểu dần dần, hiện tại chỉ hỗ trợ một vài kiểu, với kế hoạch mở rộng trong các bản cập nhật tương lai.</li>
+<li>Những so sánh với F# và MyPy của Python làm nổi bật sự phức tạp trong việc xử lý các danh sách không rỗng và hệ thống kiểu, nhưng cách tiếp cận của Elixir được xem là có lợi cho phát triển lâu dài.</li>
+</ul>
+<h2><a href="https://github.com/queer/boxxy">Boxxy đặt các ứng dụng Linux tệ vào một hộp chỉ chứa các tệp của chúng</a></h2>
+<ul>
+<li>Boxxy là một công cụ Linux được thiết kế để tổ chức các tệp và thư mục ứng dụng bằng cách chuyển hướng chúng mà không sử dụng symlink, sử dụng các namespace của Linux.</li>
+<li>Giúp duy trì thư mục $HOME gọn gàng bằng cách chuyển hướng dữ liệu ứng dụng đến các vị trí được chỉ định và hỗ trợ các tính năng như quy tắc phụ thuộc ngữ cảnh, chi phí tối thiểu và tiêm biến môi trường.</li>
+<li>Vì là một dự án mới, Boxxy có thể gặp các vấn đề và hạn chế tiềm ẩn, chẳng hạn như không thể sử dụng sudo bên trong container.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41376558">phản ứng</a></h3>
+<ul>
+<li>Boxxy là một công cụ được thiết kế để cô lập các ứng dụng Linux có vấn đề bằng cách chứa các tệp của chúng.</li>
+<li>Một công cụ liên quan, &quot;xdg-ninja,&quot; quét thư mục $HOME để tìm các tệp bị đặt sai chỗ và đề xuất các vị trí thích hợp.</li>
+<li>Người dùng thảo luận về các phương pháp sandboxing khác nhau như symlinks, Firejail, Bubblewrap và Docker, và nêu lên mối lo ngại về việc sử dụng Discord cho giao tiếp dự án, ưa chuộng các diễn đàn mở hơn.</li>
+</ul>
+<h2><a href="https://prestonbyrne.com/2024/08/24/thoughts-on-the-durov-arrest/">Những suy nghĩ về vụ bắt giữ Durov</a></h2>
+<ul>
+<li>Pavel Durov, người sáng lập Telegram, đã bị bắt tại Pháp vì bị cáo buộc không tuân thủ các luật về kiểm duyệt nội dung và tiết lộ dữ liệu, đặt ra những câu hỏi pháp lý quan trọng.</li>
+<li>Việc bắt giữ nhấn mạnh các luật quy định nội dung nghiêm ngặt hơn ở châu Âu, chẳng hạn như Luật Chống Thù Hận Trên Internet của Pháp và NetzDG của Đức, so với Mục 230 của Đạo luật Về Sự Đứng Đắn Trên Truyền Thông của Hoa Kỳ.</li>
+<li>Những cáo buộc chống lại Durov, bao gồm đồng phạm trong các tội như rửa tiền và buôn bán ma túy, nhấn mạnh những rủi ro ngày càng tăng đối với các doanh nhân công nghệ có trụ sở tại Hoa Kỳ hoạt động ở châu Âu.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41375902">phản ứng</a></h3>
+<ul>
+<li>Người sáng lập Telegram, Pavel Durov, đang ở trong tình huống tương tự như Ladar Levison của Lavabit, đối mặt với áp lực pháp lý để cung cấp tài liệu cho chính phủ Pháp, nơi ông có quốc tịch.</li>
+<li>Không giống như các dịch vụ mã hóa đầu cuối (E2EE), các lựa chọn thiết kế của Telegram cho phép nó truy cập dữ liệu người dùng, điều này đã dẫn đến các rắc rối pháp lý và tiềm ẩn trách nhiệm cho Durov.</li>
+<li>Cuộc thảo luận nhấn mạnh tầm quan trọng của E2EE trong việc bảo vệ cả dữ liệu người dùng và các nhà cung cấp dịch vụ khỏi áp lực pháp lý và cưỡng chế, so sánh cách tiếp cận của Telegram với các lựa chọn thay thế an toàn hơn.</li>
+</ul>
+<h2><a href="https://apnews.com/article/france-telegram-pavel-durov-arrest-6e213d227458f330ed16e7fe221a696c">Các công tố viên Pháp cho biết Giám đốc điều hành Telegram đã được thả khỏi nơi giam giữ, sẽ ra hầu tòa</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41380450">phản ứng</a></h3>
+<ul>
+<li>Viện công tố Pháp đã thả Giám đốc điều hành Telegram, Pavel Durov, khỏi giam giữ ban đầu, nhưng ông vẫn sẽ phải ra hầu tòa, nhấn mạnh các vấn đề pháp lý đang diễn ra.</li>
+<li>Vấn đề cốt lõi là việc Telegram từ chối chia sẻ thông tin với các nhà điều tra, điều này đã gây ra các cuộc tranh luận về việc tuân thủ luật pháp địa phương so với mã hóa và quyền riêng tư.</li>
+<li>Vụ việc này đã thu hút sự chú ý đáng kể do những tác động của nó đối với các công ty công nghệ toàn cầu hoạt động dưới các quyền tài phán quốc gia khác nhau và sự cân bằng giữa quyền riêng tư của người dùng và nghĩa vụ pháp lý.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Những mô hình khuếch tán là các công cụ trò chơi thời gian thực" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Nh%E1%BB%AFng%20m%C3%B4%20h%C3%ACnh%20khu%E1%BA%BFch%20t%C3%A1n%20l%C3%A0%20c%C3%A1c%20c%C3%B4ng%20c%E1%BB%A5%20tr%C3%B2%20ch%C6%A1i%20th%E1%BB%9Di%20gian%20th%E1%BB%B1c&subheading=Th%E1%BB%A9%20T%C6%B0%2C%2028%20th%C3%A1ng%208%2C%202024%3A%20T%C3%B3m%20t%E1%BA%AFt%20tin%20t%E1%BB%A9c%20v%E1%BB%81%20hacker" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/vi/2024/08/28</link>
+            <guid isPermaLink="false">2024-08-28T00:00:00.000Z</guid>
+            <pubDate>Wed, 28 Aug 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-27]]></title>
             <description
@@ -1715,186 +1901,6 @@
             <link>https://hn.cho.sh/vi/2024/08/19</link>
             <guid isPermaLink="false">2024-08-19T00:00:00.000Z</guid>
             <pubDate>Mon, 19 Aug 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-18]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/08/18&#39;</h2>
-<h1>2024-08-18</h1>
-<h2><a href="https://reason.com/2024/08/16/police-cannot-seize-property-indefinitely-after-an-arrest-federal-court-rules/">Toà án Liên bang phán quyết rằng Cảnh sát không thể tịch thu tài sản vô thời hạn sau khi bắt giữ</a></h2>
-<ul>
-<li>Toà án liên bang đã phán quyết rằng cảnh sát không thể giữ vô thời hạn tài sản bị tịch thu trong quá trình bắt giữ, nhấn mạnh sự bảo vệ của Tu chính án thứ tư chống lại việc tịch thu vô lý.</li>
-<li>Thẩm phán Gregory Katsas của Tòa Phúc thẩm Hoa Kỳ cho Đặc khu Columbia tuyên bố rằng việc tiếp tục sở hữu tài sản bị tịch thu phải hợp lý, thách thức các quyết định trước đây của tòa án cấp khu vực.</li>
-<li>Vụ án liên quan đến các nguyên đơn có điện thoại bị tịch thu trong một cuộc biểu tình Black Lives Matter và bị giữ trong hơn một năm mà không có cáo buộc, có thể thiết lập một tiền lệ quốc gia và thúc đẩy Tòa án Tối cao xem xét.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41283310">phản ứng</a></h3>
-<ul>
-<li>Toà án liên bang đã phán quyết rằng cảnh sát không thể tịch thu tài sản vô thời hạn sau khi bắt giữ, nhưng không quy định thời gian tối đa để giữ tài sản.</li>
-<li>Những người chỉ trích cho rằng việc thiếu một giới hạn thời gian cụ thể làm cho quy định này không hiệu quả và dễ bị lạm dụng bởi cảnh sát, đề xuất một giới hạn cứng như 14 hoặc 30 ngày.</li>
-<li>Phán quyết yêu cầu trả lại tài sản khi lý do ban đầu không còn, nhưng cho phép trì hoãn hợp lý, gây lo ngại về các luật mơ hồ và ảnh hưởng của chúng đến công lý.</li>
-</ul>
-<h2><a href="https://loyaltylobby.com/2024/08/16/flightaware-leaks-customer-data-name-email-addresses-passwords/">FlightAware rò rỉ dữ liệu khách hàng (Tên, Địa chỉ Email và Mật khẩu)</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41277429">phản ứng</a></h3>
-<ul>
-<li>FlightAware đã trải qua một vụ rò rỉ dữ liệu nghiêm trọng, làm lộ thông tin khách hàng rộng rãi như tên, địa chỉ email, mật khẩu và chi tiết thẻ tín dụng.</li>
-<li>Người dùng cảm thấy thất vọng vì thiếu sự giao tiếp từ FlightAware, vì công ty không cung cấp các cập nhật trên trang web hoặc mạng xã hội của họ.</li>
-<li>Việc vi phạm đã làm dấy lên lo ngại về các biện pháp bảo mật dữ liệu của FlightAware và phản ứng của họ đối với sự cố, với một số người dùng chỉ nhận được thông báo qua email chậm để đặt lại mật khẩu của họ.</li>
-</ul>
-<h2><a href="https://joel.tools/smarter/">Bạn có giỏi hơn một mô hình ngôn ngữ trong việc dự đoán từ tiếp theo không?</a></h2>
-<ul>
-<li>Rất nhiều tiêu chuẩn đánh giá các mô hình ngôn ngữ dựa trên các nhiệm vụ của con người, nhưng một nhiệm vụ quan trọng đối với các mô hình này là dự đoán từ tiếp theo.</li>
-<li>Đoạn viết đặt ra câu hỏi liệu con người có thể vượt trội hơn các mô hình ngôn ngữ trong nhiệm vụ cụ thể này hay không.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41277179">phản ứng</a></h3>
-<ul>
-<li>JoelEinbinder đã phát triển một trò chơi nơi người chơi dự đoán từ tiếp theo trong các bình luận trên Hacker News, cạnh tranh với các mô hình ngôn ngữ như llama2.</li>
-<li>Người dùng đề xuất các cải tiến như hiển thị từng câu hỏi một với phản hồi tức thì và lưu ý đến độ dài của bài kiểm tra cũng như hiệu quả của nó trong việc đo lường &#39;sự thông minh&#39;.</li>
-<li>Trò chơi nhấn mạnh sự khác biệt trong xử lý ngôn ngữ giữa con người và AI, khơi dậy các cuộc thảo luận về khả năng của AI và trí thông minh của con người, với việc con người đôi khi vượt trội hơn các mô hình.</li>
-</ul>
-<h2><a href="https://tinystruggles.com/posts/google_postmortem/">Khám nghiệm hành trình 9 năm của tôi tại Google</a></h2>
-<ul>
-<li>Người tác giả suy ngẫm về sự nghiệp 9 năm tại Google, nêu bật cả những thành tựu và thách thức, bao gồm công việc trên Bigtable, Persistent Disk và GCE VMs.</li>
-<li>Những điểm chính bao gồm việc đạt được kỹ năng kỹ thuật và lãnh đạo, sự ổn định tài chính và một cộng đồng mạnh mẽ, nhưng cũng phải đối mặt với căng thẳng, tải trọng nhận thức và cơ hội phát triển hạn chế.</li>
-<li>Người tác giả dự định nghỉ phép để khám phá những cơ hội và thách thức mới, nhằm tìm kiếm những mục tiêu mới và sự phát triển cá nhân.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278907">phản ứng</a></h3>
-<ul>
-<li>Một cựu kỹ sư của Google hồi tưởng về 9 năm làm việc của mình, nhấn mạnh sự phát triển từ những thực hành hỗn loạn ban đầu đến các công cụ và quy trình được chuẩn hóa hơn.</li>
-<li>Đoạn viết so sánh sự căng thẳng cao và tình trạng kiệt sức trong các vai trò Kỹ sư Đảm bảo Độ tin cậy của Hệ thống (SRE) với Kỹ sư Phần mềm (SWE), nêu rõ những thách thức và phần thưởng độc đáo của từng vai trò.</li>
-<li>Những cựu nhân viên Google cung cấp những hiểu biết về sự thay đổi văn hóa của Google, các vấn đề quản lý và ảnh hưởng của mô hình kinh doanh dựa trên quảng cáo của công ty.</li>
-</ul>
-<h2><a href="https://github.com/TomWright/dasel">TomWright/dasel: Chọn, đặt và xóa dữ liệu từ JSON, TOML, YAML, XML và CSV</a></h2>
-<ul>
-<li>Dasel là một công cụ đa năng để truy vấn và chỉnh sửa các cấu trúc dữ liệu trên nhiều định dạng (JSON, YAML, TOML, XML, CSV) với cú pháp chọn thống nhất và không có phụ thuộc thời gian chạy.</li>
-<li>Phần mềm này hỗ trợ cài đặt thông qua nhiều trình quản lý gói khác nhau và cung cấp các lệnh để chọn, chuyển đổi, cập nhật và xóa dữ liệu.</li>
-<li>Dasel được ghi nhận về tốc độ, nhanh gấp 3 lần so với jq và nhanh gấp 15 lần so với yq, và bao gồm các tính năng như pre-commit hooks và tương thích với Linux, Mac, và Windows.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41282495">phản ứng</a></h3>
-<ul>
-<li>Cuộc thảo luận tập trung vào tiềm năng sử dụng cú pháp kiểu SQL để truy vấn các định dạng dữ liệu phi quan hệ khác nhau như JSON, TOML, YAML, XML và CSV.</li>
-<li>Trong khi SQL về mặt lý thuyết có khả năng truy vấn bất kỳ dữ liệu nào nhờ tính hoàn chỉnh Turing của nó, hiệu quả thực tế và sự tiện lợi lại khác nhau tùy theo định dạng.</li>
-<li>Cuộc trò chuyện nhấn mạnh sự cần thiết của một ngôn ngữ truy vấn chuẩn hóa cho các định dạng dữ liệu có cấu trúc, xem xét các tính năng độc đáo của từng định dạng lưu trữ và lợi ích của các công cụ như jq và yq cho việc thao tác dữ liệu trên dòng lệnh.</li>
-</ul>
-<h2><a href="https://blog.sylver.dev/build-your-own-sqlite-part-1-listing-tables">Xây dựng SQLite của riêng bạn, Phần 1: Liệt kê các bảng</a></h2>
-<ul>
-<li>Đây là bài viết đầu tiên trong loạt bài về việc xây dựng một cơ sở dữ liệu tương thích với SQLite từ đầu, với các ví dụ bằng Rust.</li>
-<li>Bao gồm việc tạo một cơ sở dữ liệu thử nghiệm tối thiểu, hiểu định dạng tệp SQLite, và triển khai một lệnh để liệt kê tất cả các tên bảng trong cơ sở dữ liệu.</li>
-<li>Bản dự án bao gồm việc định nghĩa các cấu trúc chính như <code>Pager</code>, <code>Page</code>, và <code>Db</code>, và thiết lập một REPL (Vòng lặp Đọc-Đánh giá-In) cơ bản để hỗ trợ các lệnh như <code>.tables</code> và <code>.exit</code>.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278807">phản ứng</a></h3>
-<ul>
-<li>Đoạn bài viết thảo luận về việc xây dựng một triển khai SQLite tùy chỉnh, tập trung vào việc liệt kê các bảng, và là một phần của loạt bài.</li>
-<li>Ý tưởng đáng chú ý là sử dụng macro của Rust để định nghĩa các truy vấn SQL, cho phép liên kết trực tiếp từ SQL đến API cơ sở dữ liệu nội bộ tại thời điểm biên dịch, bỏ qua nhu cầu phân tích cú pháp và lập kế hoạch truy vấn tại thời gian chạy cho các truy vấn tĩnh.</li>
-<li>Người ta so sánh với SQLx, một công cụ xác minh các truy vấn SQL tại thời điểm biên dịch bằng cách sử dụng macro, đảm bảo tính hợp lệ của SQL và tối ưu hóa hiệu suất.</li>
-</ul>
-<h2><a href="https://okmij.org/ftp/ML/generalization.html">Hoạt động của bộ kiểm tra kiểu OCaml (2022)</a></h2>
-<ul>
-<li>Thuật toán của Didier Rémy năm 1988 về tổng quát hóa kiểu trong OCaml cải thiện tốc độ suy luận kiểu bằng cách tránh quét môi trường không hiệu quả, sử dụng các mức để theo dõi sự phụ thuộc kiểu.</li>
-<li>Phương pháp của Rémy, tương tự như thu gom rác thế hệ, đảm bảo rằng các biến kiểu chỉ được định lượng khi vùng xác định của chúng không hoạt động, ngăn chặn sự tổng quát hóa không hợp lý.</li>
-<li>Trình kiểm tra kiểu của OCaml triển khai thuật toán này, sử dụng các mức để quản lý các biến kiểu và thực thi kỷ luật phạm vi, cải thiện đáng kể hiệu quả suy luận kiểu.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41281555">phản ứng</a></h3>
-<ul>
-<li>Trong bài viết về bộ kiểm tra kiểu của OCaml, được cập nhật vào năm 2022, người ta khám phá vượt ra ngoài suy luận kiểu Hindley-Milner và Thuật toán W, nhấn mạnh các kỹ thuật hiện đại như union-find để tăng hiệu quả.</li>
-<li>It là rất quan trọng đối với các nhà phát triển khi sửa đổi bộ kiểm tra kiểu của OCaml và bao gồm các cuộc thảo luận về việc kiểm tra kiểu của Rust, sự gia tăng phổ biến của OCaml, và so sánh với các ngôn ngữ như Gleam và Go.</li>
-<li>Được đánh giá cao trong cộng đồng OCaml, bài viết này thường được trích dẫn trong tài liệu, phản ánh tầm quan trọng và ảnh hưởng của nó.</li>
-</ul>
-<h2><a href="https://legendofworlds.com/blog/4">Trong 2 năm, tôi đã tự xây dựng công cụ game của riêng mình (Rust, WASM, WebGPU)</a></h2>
-<ul>
-<li>Hai năm qua, nhà phát triển đã tạo ra &quot;Toxoid,&quot; một công cụ game mã nguồn mở sử dụng Rust, WebAssembly (WASM), và WebGPU cho một trò chơi trực tuyến nhiều người chơi với đồ họa pixel 2D có tên là Legend of Worlds.</li>
-<li>Toxoid sử dụng Flecs cho hệ thống thành phần thực thể (ECS), Sokol cho việc kết xuất, và Emscripten để tương thích với web, nhằm đạt hiệu suất cao, lặp lại nhanh chóng, và khả năng sử dụng lâu dài mà không bị ràng buộc bởi nhà cung cấp.</li>
-<li>Động cơ hiện đã có sẵn công khai, và các kế hoạch trong tương lai bao gồm một trang web chuyên dụng, các mẫu, ví dụ, bài kiểm tra và tài liệu để hỗ trợ cộng đồng phát triển.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278862">phản ứng</a></h3>
-<ul>
-<li>Nhà phát triển đã dành 2 năm để tạo ra một công cụ game tùy chỉnh sử dụng Rust, WASM (WebAssembly) và WebGPU, và hiện đang phát triển một trò chơi giống Minecraft với nó.</li>
-<li>Đề án, mặc dù không nhằm mục đích thành công thương mại, đã thu hút sự quan tâm từ các nhà tuyển dụng tiềm năng và đóng vai trò như một trải nghiệm học tập.</li>
-<li>Ngăn xếp Rust+WASM+WebGPU được nhấn mạnh là đầy hứa hẹn, bao gồm nhiều khái niệm quan trọng trong khoa học máy tính.</li>
-</ul>
-<h2><a href="https://kevinboone.me/cpm-c.html">Quay trở lại lập trình C cho CP/M</a></h2>
-<ul>
-<li>Kevin Boone đã khơi lại niềm đam mê lập trình CP/M sau 40 năm, tạo ra các tiện ích mới như KCalc-CPM, cpmbox và cpmlife bằng cách sử dụng một máy CP/M dựa trên Z80.</li>
-<li>Bài báo thảo luận về việc sử dụng trình biên dịch Aztec C năm 1982 cho CP/M, nhấn mạnh kích thước nhỏ, cú pháp cổ xưa và sự cần thiết phải tối ưu hóa thủ công do tài nguyên hạn chế.</li>
-<li>Boone nhấn mạnh tầm quan trọng của việc thử nghiệm trên phần cứng thực, vì các trình giả lập có thể che giấu những điểm không hiệu quả, và nhận thấy quá trình viết mã hiệu quả cho phần cứng thập niên 80 vừa thách thức vừa đáng giá.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41281665">phản ứng</a></h3>
-<ul>
-<li>Một nhà phát triển đã tạo ra một trình giả lập CP/M đơn giản và một bộ sưu tập các tệp nhị phân CP/M, bao gồm cả trình biên dịch Aztec C, để hỗ trợ việc biên dịch mã cho các hệ thống CP/M.</li>
-<li>Đoạn viết nêu bật sự hoài niệm và những thách thức của việc lập trình bằng ngôn ngữ C cho hệ điều hành CP/M, so sánh với các phương pháp và công cụ phát triển hiện đại.</li>
-<li>Cuộc thảo luận bao gồm bối cảnh lịch sử về trình biên dịch Aztec C, nguồn gốc của nó và sự phát triển của các tiêu chuẩn lập trình C từ những năm 1980 đến ngày nay.</li>
-</ul>
-<h2><a href="https://newatlas.com/health-wellbeing/nutrient-dna-damage/">Liên kết giữa mức độ Magiê thấp và tổn thương DNA gây bệnh</a></h2>
-<ul>
-<li>Nghiên cứu của Đại học Nam Úc liên kết mức magiê thấp với tổn thương DNA, có thể dẫn đến các bệnh như ung thư, tiểu đường và Alzheimer.</li>
-<li>Những nhà nghiên cứu phát hiện rằng mức magiê thấp có tương quan với mức homocysteine cao, một axit amin gây độc gen, trong khi mức magiê cao có liên quan tích cực với folate và vitamin B12.</li>
-<li>FDA khuyến nghị 420 mg magiê hàng ngày cho người lớn, và nghiên cứu nhấn mạnh tầm quan trọng của các thực phẩm giàu magiê như các loại hạt, hạt giống, rau lá xanh đậm và sô cô la đen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278636">phản ứng</a></h3>
-<ul>
-<li>Thiếu magiê có liên quan đến tổn thương DNA, nhấn mạnh tầm quan trọng của việc cung cấp đủ magiê.</li>
-<li>Những dạng bổ sung magiê khác nhau phục vụ cho các mục đích sức khỏe khác nhau: Magiê L-Threonate cho sức khỏe não bộ, Magiê Taurate cho các vấn đề chuyển hóa, Magiê Glycinate cho lo âu và mất ngủ, và Magiê Citrate như một lựa chọn tiết kiệm chi phí.</li>
-<li>Những nguồn thực phẩm chứa magiê bao gồm đậu, hạt, hạt giống, và rau lá xanh, nhưng các phương pháp canh tác hiện đại có thể làm giảm hàm lượng magiê trong chúng.</li>
-</ul>
-<h2><a href="https://build-your-own.org/blog/20240813_css_vertical_center/">CSS thêm tính năng căn giữa theo chiều dọc vào năm 2024</a></h2>
-<ul>
-<li>Vào năm 2024, CSS sẽ giới thiệu <code>align-content</code> để căn giữa theo chiều dọc trong bố cục mặc định, loại bỏ nhu cầu sử dụng flexbox hoặc grid.</li>
-<li>Việc cập nhật này sẽ được hỗ trợ trong Chrome 123, Firefox 125 và Safari 17.4, đơn giản hóa việc căn chỉnh dọc với một thuộc tính duy nhất.</li>
-<li>Trước đây, việc căn giữa theo chiều dọc đòi hỏi các phương pháp phức tạp như ô bảng, định vị tuyệt đối và flexbox, nhưng phương pháp mới đã đơn giản hóa quá trình này.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41282889">phản ứng</a></h3>
-<ul>
-<li>CSS sẽ giới thiệu một tính năng mới cho việc căn giữa theo chiều dọc vào năm 2024, đơn giản hóa một nhiệm vụ mà trước đây có thể thực hiện được với flexbox và grid nhưng không dễ dàng trong bố cục dòng chảy.</li>
-<li>Việc bổ sung này nhằm làm cho việc căn giữa theo chiều dọc trở nên dễ tiếp cận hơn, đặc biệt là đối với những người mới sử dụng CSS, những người thấy các phương pháp hiện tại như <code>align-content</code> và flexbox không trực quan.</li>
-<li>Phản ứng của cộng đồng là tích cực, lưu ý rằng mặc dù việc căn giữa theo chiều dọc đã có thể thực hiện được qua nhiều phương pháp khác nhau, tính năng mới này sẽ tăng cường sự tiện lợi và dễ sử dụng.</li>
-</ul>
-<h2><a href="https://www.surveillancewatch.io">Giám sát Đồng hồ – những kết nối ẩn trong ngành công nghiệp giám sát</a></h2>
-<ul>
-<li>Surveillance Watch là một bản đồ tương tác tiết lộ mối quan hệ giữa các công ty giám sát, nguồn tài trợ của họ và các liên kết.</li>
-<li>Công cụ này nhằm cung cấp sự minh bạch và nhận thức về các thực thể tham gia vào các hoạt động giám sát.</li>
-<li>Đây là một sáng kiến quan trọng vì nó giúp người dùng hiểu về mạng lưới và tầm ảnh hưởng của các công ty giám sát.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41283149">phản ứng</a></h3>
-<ul>
-<li>Surveillance Watch (surveillancewatch.io) tiết lộ các mối liên hệ ẩn trong ngành công nghiệp giám sát, tập trung vào các nhà cung cấp được sử dụng bởi cơ quan thực thi pháp luật và chính phủ để giám sát và theo dõi mục tiêu.</li>
-<li>Thảo luận nêu bật vai trò của các công ty công nghệ lớn như Meta và Alphabet trong việc cung cấp siêu dữ liệu cho các cơ quan chức năng, thường theo lệnh của tòa án, và sự tuân thủ của họ với các chương trình giám sát của chính phủ.</li>
-<li>Những tính năng và khả năng sử dụng của trang web đang được tranh luận, với các đề xuất cải tiến như làm cho quả địa cầu trở thành tùy chọn trên thiết bị di động và thêm các yếu tố tương tác.</li>
-</ul>
-<h2><a href="https://nitter.lucabased.xyz/x">X đã ngừng yêu cầu xác thực, nitter hoạt động trở lại</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41283209">phản ứng</a></h3>
-<ul>
-<li>X đã ngừng yêu cầu xác thực, cho phép Nitter hoạt động trở lại, khơi dậy các cuộc thảo luận về độ tin cậy của nền tảng này.</li>
-<li>Người dùng bày tỏ sự thất vọng với các vấn đề của X, chẳng hạn như giới hạn tốc độ và hạn chế nội dung, và đề xuất các lựa chọn thay thế như Mastodon hoặc Threads.</li>
-<li>Cuộc trò chuyện nhấn mạnh những thách thức đang diễn ra và sự không hài lòng với nền tảng của X dưới quyền sở hữu của Elon Musk.</li>
-</ul>
-<h2><a href="https://github.com/PatrickJS/everyone-ssn-usa">Phát hành số an sinh xã hội của mọi người và các phương pháp hack được sử dụng để thu thập chúng</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41277058">phản ứng</a></h3>
-<ul>
-<li>Kho lưu trữ GitHub hài hước tuyên bố phát hành Số An Sinh Xã Hội (SSN) của mọi người và các phương pháp được sử dụng để thu thập chúng, gây ra sự lo ngại và những trò đùa trong cộng đồng người dùng.</li>
-<li>Cuộc thảo luận nêu bật những thiếu sót của việc sử dụng số an sinh xã hội (SSN) như các định danh an toàn và tiềm năng cho gian lận danh tính, nhấn mạnh sự cần thiết của các biện pháp bảo mật tốt hơn.</li>
-<li>Người dùng cũng thảo luận về cấu trúc và việc tái sử dụng số an sinh xã hội (SSN), chỉ ra những hạn chế của hệ thống hiện tại.</li>
-</ul>
-<h2><a href="https://www.theguardian.com/film/article/2024/aug/18/french-screen-star-alain-delon-dies-aged-88">Alain Delon đã qua đời</a></h2>
-<ul>
-<li>Alain Delon, một diễn viên nổi tiếng người Pháp được biết đến qua các vai diễn trong &quot;Plein Soleil&quot; và &quot;Le Samouraï,&quot; đã qua đời ở tuổi 88, theo thông báo từ các con của ông.</li>
-<li>Delon là một nhân vật quan trọng trong sự hồi sinh của điện ảnh Pháp vào những năm 1960, hợp tác với các đạo diễn nổi tiếng như Jean-Pierre Melville và Luchino Visconti.</li>
-<li>Chủ tịch Pháp Emmanuel Macron và nữ diễn viên Brigitte Bardot đã tỏ lòng kính trọng đối với Delon, nhấn mạnh ảnh hưởng của ông đối với điện ảnh và tình yêu của ông dành cho động vật.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41280792">phản ứng</a></h3>
-<ul>
-<li>Nam diễn viên người Pháp Alain Delon đã qua đời, gợi lên những suy ngẫm về ảnh hưởng to lớn của ông đối với điện ảnh, đặc biệt là trong các bộ phim như &quot;Le Samouraï&quot; và &quot;Le Cercle Rouge.&quot;</li>
-<li>Delon được biết đến với vẻ ngoài nổi bật và tài năng diễn xuất, điều này đã khiến anh trở thành một nhân vật nổi bật trong điện ảnh châu Âu và một biểu tượng văn hóa ở nhiều khu vực, bao gồm cả Liên Xô.</li>
-<li>Việc ông qua đời đã khơi dậy các cuộc thảo luận về di sản của ông, bao gồm cả ảnh hưởng của ông đối với các tác phẩm khác và những giai thoại cá nhân độc đáo của ông, chẳng hạn như bộ sưu tập súng rộng lớn được phát hiện vào năm 2024.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Toà án Liên bang phán quyết rằng Cảnh sát không thể tịch thu tài sản vô thời hạn sau khi bắt giữ" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=To%C3%A0%20%C3%A1n%20Li%C3%AAn%20bang%20ph%C3%A1n%20quy%E1%BA%BFt%20r%E1%BA%B1ng%20C%E1%BA%A3nh%20s%C3%A1t%20kh%C3%B4ng%20th%E1%BB%83%20t%E1%BB%8Bch%20thu%20t%C3%A0i%20s%E1%BA%A3n%20v%C3%B4%20th%E1%BB%9Di%20h%E1%BA%A1n%20sau%20khi%20b%E1%BA%AFt%20gi%E1%BB%AF&subheading=Ch%E1%BB%A7%20Nh%E1%BA%ADt%2C%2018%20th%C3%A1ng%208%2C%202024%3A%20T%C3%B3m%20t%E1%BA%AFt%20tin%20t%E1%BB%A9c%20v%E1%BB%81%20hacker" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/vi/2024/08/18</link>
-            <guid isPermaLink="false">2024-08-18T00:00:00.000Z</guid>
-            <pubDate>Sun, 18 Aug 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

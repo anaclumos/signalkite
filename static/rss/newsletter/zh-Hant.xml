@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 27 Aug 2024 19:12:29 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 28 Aug 2024 19:15:18 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/zh-Hant.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Tue, 27 Aug 2024 00:00:00 GMT</pubDate>
+        <pubDate>Wed, 28 Aug 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[zh-Hant]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-08-28]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/08/28&#39;</h2>
+<h1>2024-08-28</h1>
+<h2><a href="https://gamengen.github.io">擴散模型是即時遊戲引擎</a></h2>
+<ul>
+<li>研究人員推出了 GameNGen，一款由神經模型驅動的遊戲引擎，能夠進行即時互動，並展示了在單個 TPU 上模擬遊戲《毀滅戰士》時每秒超過 20 幀的性能。</li>
+<li>GameNGen 使用兩階段訓練過程，涉及一個用於數據收集的強化學習代理和一個用於下一幀預測的擴散模型，達到 29.4 的峰值信噪比，與有損 JPEG 壓縮相當。</li>
+<li>該模型的架構包括條件增強和預訓練自編碼器的微調，以確保穩定的長期生成和改進的圖像質量，使得人類評估者難以區分真實和模擬的遊戲片段。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41375548">評論</a></h3>
+<ul>
+<li>擴散模型根據過去的幀和使用者操作生成幀，但不支援即時使用者輸入進行動態調整。</li>
+<li>這些模型基於大量的《毀滅戰士》遊戲數據集進行訓練，生成的畫面是根據當前畫面和使用者操作來決定的，更像是一種神經記錄，而非互動模擬。</li>
+<li>「雖然這項技術令人印象深刻，但它面臨著內部遊戲狀態維護不一致的限制，這突顯了其潛力和遊戲模擬的挑戰。」</li>
+</ul>
+<h2><a href="https://josephg.com/blog/crdts-go-brrr/">更快的 CRDTs(2021)</a></h2>
+<ul>
+<li>作者最初因一篇學術論文中其演算法的低效實現而感到沮喪，這導致了錯誤的性能聲明。</li>
+<li>這種挫折促使人們探索並優化 CRDTs(無衝突複製資料類型)，使得在沒有中央伺服器的情況下進行即時協作編輯成為可能。</li>
+<li>作者優化的 CRDT 實作 Diamond，透過使用更簡單的資料結構和先進的索引技術，顯著超越了像 Automerge 這樣的熱門 CRDT，達到超過 5000 倍的速度提升。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41372833">評論</a></h3>
+<ul>
+<li>這篇文章討論了無衝突複製資料類型(CRDTs)的性能及其在實際軟體中的應用，強調了其優點和挑戰。</li>
+<li>CRDTs 被應用於各種應用程式，如 Thymer、Notion 和 Apple Notes，提供即時協作和離線功能等特性，但它們也伴隨著性能妥協和複雜的衝突解決等取捨。</li>
+<li>討論包括開發者和使用者對於 CRDTs 實際應用的見解，並將其與其他同步方法如操作轉換(OT)進行比較，探討其在不同使用情境中的適用性。</li>
+</ul>
+<h2><a href="https://chartdb.io/">ChartDB – 免費且開源的資料庫設計編輯器</a></h2>
+<ul>
+<li>ChartDB 提供一個免費的開源資料庫設計編輯器，讓使用者可以透過單一查詢視覺化他們的資料庫，且無需註冊。</li>
+<li>支援多種資料庫管理系統(DBMS)，包括 PostgreSQL、MySQL、SQL Server、SQLite 和 MariaDB，並提供即時架構匯入和 AI 生成的 DDL(資料定義語言)等功能。</li>
+<li>使用者可以快速匯入/匯出資料庫、生成 SQL 腳本或圖像，並利用進階查詢編輯工具，使其成為資料庫管理和設計的多功能工具。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41374009">評論</a></h3>
+<ul>
+<li>ChartDB 是一款免費且開源的資料庫設計編輯器，因其在創建資料庫圖表方面的實用性而受到關注。</li>
+<li>討論強調了資料庫圖表在理解和溝通複雜資料結構方面的重要性，特別是在成熟的專案中。</li>
+<li>用戶將 ChartDB 與其他工具如 dbdiagram.io、ERWin 和 PlatUML 進行比較，指出其在自動生成圖表和在協作環境中易於使用的潛力。</li>
+</ul>
+<h2><a href="https://blog.system76.com/post/cosmic-alpha-released-heres-what-people-are-saying/">「COSMIC Alpha 發佈」</a></h2>
+<ul>
+<li>針對 Pop!_OS 及其他 Linux 發行版的新桌面環境 COSMIC 的 alpha 版本已經釋出，提供了新功能、自訂選項、效能、穩定性和安全性。</li>
+<li>COSMIC 尚不建議用於生產環境，但反饋是正面的，強調其速度、穩固的基礎和使用者友好的設計。</li>
+<li>此版本同時作為 Pop!_OS 24.04 LTS 的 alpha 版本，新增了日期和時間設定、螢幕截圖、觸控板預設值以及視訊會議應用程式中的螢幕共享等新功能。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41376590">評論</a></h3>
+<ul>
+<li>「System76 已經發布了 COSMIC 的 alpha 版本，這是一個新的桌面環境，並在科技社群中引起了極大的關注。」</li>
+<li>COSMIC 是使用 Iced 建構的，這是一個基於 Rust 的跨平台 UI 框架，目前仍處於實驗階段，但在未來開發中顯示出潛力。</li>
+<li>用戶報告了正面和負面的方面，例如每個螢幕的獨立工作區和合理的鍵盤快捷鍵是正面的，而缺少功能和錯誤則是負面的，這表明雖然有潛力，但 COSMIC 尚未準備好日常使用。</li>
+</ul>
+<h2><a href="https://old.reddit.com/r/youtube/comments/1f30ku4/youtube_sabotaging_on_firefox/">「從今天開始，YouTube 在 Firefox 上幾乎無法使用」</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41379517">評論</a></h3>
+<ul>
+<li>「YouTube 在 Firefox 上幾乎變得無法使用，性能基準顯示出顯著的速度減慢和完全的使用者介面凍結。」</li>
+<li>這個問題似乎與一個影響自訂網頁元件的 Polymer 更新有關，這引發了關於這是否是一種反廣告攔截機制還是錯誤的猜測。</li>
+<li>關於 Google 對瀏覽器相容性的影響，討論已經出現，有些人建議歐盟應該資助一個注重隱私的瀏覽器或分支 Chromium 來解決這些問題。</li>
+</ul>
+<h2><a href="https://news.griffith.edu.au/2024/08/27/game-changing-needle-free-covid-19-intranasal-vaccine/">「Covid-19 鼻腔疫苗」</a></h2>
+<ul>
+<li>由Suresh Mahalingam教授領導的格里菲斯大學研究人員正在開發下一代COVID-19黏膜疫苗CDO-7N-1，該研究已發表在《自然通訊》期刊上。</li>
+<li>這款活性減毒鼻內疫苗旨在通過單劑量誘導黏膜和全身免疫，提供長期保護並且不需要注射針頭。</li>
+<li>該疫苗對所有關注的變異株提供交叉保護，在4°C下可穩定保存七個月，並已授權給印度免疫學有限公司進行即將到來的臨床試驗，使其適合低收入和中等收入國家。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41375746">評論</a></h3>
+<ul>
+<li>一種新的鼻腔內 Covid-19 疫苗 CDO-7N-1 宣稱能夠提供強大的保護，防止病毒傳播、再感染和擴散，同時減少新變種的產生。</li>
+<li>與 mRNA 疫苗不同，CDO-7N-1 可對所有主要的 SARS-CoV-2 蛋白產生免疫反應，並且在 4°C 下可穩定保存七個月，這使其適合低收入和中等收入國家。</li>
+<li>鼻腔給藥方法可以在鼻黏膜上中和病毒，提供一種新穎的 Covid-19 預防方式，儘管其效果和公眾接受度尚待確定。</li>
+</ul>
+<h2><a href="https://taskwarrior.org/">Taskwarrior – 命令列介面任務管理</a></h2>
+<ul>
+<li>Taskwarrior 3.0.2 已經發布，解決了 3.0.0 版本中的一些小問題，包括任務新聞、錯誤處理、文件和掛鉤互動方面的改進。</li>
+<li>“Taskwarrior 3.0 引入了基於 TaskChampion 的新穩定任務儲存和同步支援，標誌著一次重要的升級。”</li>
+<li>目前可用的最新穩定版本有 Taskwarrior 3.0.2、Taskshell 1.2.0 和 Timewarrior 1.7.1，開發版本也可供使用。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41372482">評論</a></h3>
+<ul>
+<li>一位開發者正在為 Taskwarrior(一個命令列介面任務管理工具)創建一個簡約的圖形使用者介面，以增強鍵盤導航並幫助注意力不足過動症(ADHD)使用者。</li>
+<li>開發者計劃在未來將 Timewarrior 這個時間追蹤工具整合到圖形使用者介面中，儘管目前的工作重點是本地使用，而非遠端存取或行動裝置同步。</li>
+<li>社群正在討論 Taskwarrior 的各個方面，包括同步挑戰、潛在的行動裝置支援，以及其功能如任務依賴性和緊急排序的優點。</li>
+</ul>
+<h2><a href="https://github.com/seekbytes/IPA">IPA，一個用於探索 PDF 內部細節的圖形使用者介面</a></h2>
+<ul>
+<li>互動式 PDF 分析 (IPA) 是一種工具，旨在幫助研究人員探索和分析 PDF 檔案，特別是那些可能包含惡意載荷或用於網路釣魚攻擊的檔案。</li>
+<li>IPA 提供了一個圖形介面，用於提取有效載荷、理解物件關係以及可視化檔案內的引用，使其比命令列工具更具使用者友好性。</li>
+<li>該工具與 pdf-rs 和 Rust 相容，不需要額外的軟體，並且可以使用 Rust 和 cargo 進行編譯。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41377960">評論</a></h3>
+<ul>
+<li>IPA 是一款由 Nicolodev 創建的新 GUI 工具，用於探索 PDF 詳細資訊，旨在快速進行 PDF 分析。</li>
+<li>其他類似的工具包括 pdf.hyzyla.dev、iText RUPS(Java)、PDFSyntax(Python)、Polyfile、ReportMill PDFViewer、PDFInspector 和 PDFXplorer。</li>
+<li>PDFSyntax 的作者引入了一個新的 CLI 指令用於結構摘要，使用者們討論了各種工具和功能，分享了使用 PDF 工具的經驗和問題。</li>
+</ul>
+<h2><a href="https://areweanticheatyet.com/">我們已經防作弊了嗎？</a></h2>
+<ul>
+<li>「我們已經反作弊了嗎？」是一份由群眾提供的清單，詳細說明使用反作弊軟體的遊戲與 GNU/Linux 或 Wine/Proton 的相容性。</li>
+<li>目前統計數據：37% 支持，17% 運行中，1% 計劃中，38% 故障，7% 拒絕。</li>
+<li>著名例子：《光環：士官長合輯》(支援，但有些許限制)、《要塞英雄》(不支援，但可在 Xbox-Cloud 上運行)和《Apex 英雄》(支援)。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41376044">評論</a></h3>
+<ul>
+<li>《Are We Anti-Cheat Yet?》(areweanticheatyet.com)在 Hacker News 上獲得了極大的關注，得到了 158 點和 176 則評論，突顯了其在遊戲社群中的重要性。</li>
+<li>該網站由 Starz0r 開發，歷時 2-3 年，最初是追蹤 Steam Deck 上支援 Linux 的遊戲，但自此之後已擴展並進行了重新設計。</li>
+<li>主要討論包括反作弊軟體的有效性、作弊開發者與反作弊措施之間的軍備競賽，以及人工智慧和伺服器端解決方案在改進作弊檢測方面的潛力。</li>
+</ul>
+<h2><a href="https://chipsandcheese.com/2024/08/27/teslas-ttpoe-at-hot-chips-2024-replacing-tcp-for-low-latency-applications/">Tesla 在 Hot Chips 2024 上的 TTPoE：取代 TCP 以應用於低延遲應用程式</a></h2>
+<ul>
+<li>特斯拉在 Hot Chips 2024 大會上介紹了 TTPoE(Tesla Transport Protocol over Ethernet)，旨在取代 TCP 用於其 Dojo 超級電腦中的低延遲應用。</li>
+<li>TTPoE 提供微秒級延遲和硬體卸載，簡化 TCP 的狀態機以降低延遲並提高數據吞吐量，適用於像視頻訓練這樣的高 IO 帶寬任務。</li>
+<li>TTPoE 使用暴力破解法進行擁塞控制，配備 1 MB 傳輸 SRAM 緩衝區和一個名為 Mojo 的成本效益高的「Dumb-NIC」，旨在提升 Dojo 超級電腦的性能。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41374663">評論</a></h3>
+<ul>
+<li>特斯拉在 Hot Chips 2024 大會上介紹了 TTPoE(Tesla Transport Protocol over Ethernet)，旨在取代 TCP 用於低延遲應用。</li>
+<li>新協議旨在針對特斯拉的特定使用情境優化性能，利用現有硬體並通過避免使用像 Infiniband 這樣更昂貴的網路解決方案來降低成本。</li>
+<li>此舉引發了爭論，有些人認為在已有技術如 TCP 卸載引擎(TOE)和 RoCE(融合乙太網上的 RDMA)的情況下，這是多此一舉，而另一些人則認為這是一個為了更好控制和成本效益的策略性決定。</li>
+</ul>
+<h2><a href="https://www.developer-tech.com/news/judge-dismisses-majority-github-copilot-copyright-claims/">“法官駁回大部分針對 GitHub Copilot 的版權主張”</a></h2>
+<ul>
+<li>一名法官駁回了針對 GitHub、微軟和 OpenAI 的版權訴訟中的大部分指控，該訴訟涉及 AI 驅動的 GitHub Copilot 程式碼助手。</li>
+<li>這起由開發者於2022年提起的訴訟，最初包含22項指控，但目前僅剩兩項：一項是開源許可證違規，另一項是違反合約。</li>
+<li>法院認為關於 Copilot 在未適當標註的情況下建議程式碼而違反《數位千禧年著作權法》的論點缺乏說服力，並駁回了懲罰性賠償和金錢補償的請求。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41378806">評論</a></h3>
+<ul>
+<li>“法官駁回了針對 GitHub Copilot 的大部分版權訴訟，引發了關於 AI 生成程式碼和版權問題的討論。”</li>
+<li>用戶報告了 AI 生成的程式碼與現有範例完全相同的情況，這引發了對版權侵權的法律擔憂。</li>
+<li>目前的辯論集中在版權法應如何演變以應對人工智慧的能力以及人工智慧操作員的責任。</li>
+</ul>
+<h2><a href="https://elixir-lang.org/blog/2024/08/28/typing-lists-and-tuples/">在 Elixir 中輸入列表和元組</a></h2>
+<ul>
+<li>「Elixir 正在開發一種型別系統，以確保穩健的漸進式型別檢查，允許靜態和動態程式碼之間的安全介面，旨在防止執行期間的型別錯誤。」</li>
+<li>新的型別系統將支援元組型別，指定最小大小和元素型別，並提供編譯時警告以防止執行時錯誤。</li>
+<li>「Elixir v1.17 已經發布，接下來的活動將於 2024 年 8 月 27 日至 30 日在佛羅里達州奧蘭多舉行。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41378478">評論</a></h3>
+<ul>
+<li>Elixir 的漸進式型別系統方法優先考慮系統的健全性而非語法，隨著編譯器的改進，每個版本都能捕捉到更多的錯誤。</li>
+<li>Elixir 1.17 引入了一個漸進式的型別系統，目前僅支援少數幾種型別，並計劃在未來的更新中擴展。</li>
+<li>與 F# 和 Python 的 MyPy 相比，處理非空列表和型別系統的複雜性顯而易見，但 Elixir 的方法被認為對長期開發有利。</li>
+</ul>
+<h2><a href="https://github.com/queer/boxxy">「Boxxy 將不良的 Linux 應用程式放入一個只包含它們檔案的盒子中」</a></h2>
+<ul>
+<li>「Boxxy 是一款 Linux 工具，旨在透過使用 Linux 命名空間來重新導向應用程式檔案和目錄，而不使用符號連結。」</li>
+<li>它透過將應用程式數據重定向到指定位置來幫助維持整潔的 $HOME 目錄，並支援上下文相關規則、最小開銷和環境變數注入等功能。</li>
+<li>「作為一個新專案，Boxxy 可能會有潛在的問題和限制，例如無法在容器內使用 sudo。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41376558">評論</a></h3>
+<ul>
+<li>「Boxxy 是一個設計用來隔離有問題的 Linux 應用程式的工具，透過包含它們的檔案來達成。」</li>
+<li>「一個相關的工具，&#39;xdg-ninja&#39;，會掃描 $HOME 目錄中的錯置檔案並建議適當的位置。」</li>
+<li>用戶討論了各種沙盒方法，如符號連結、Firejail、Bubblewrap 和 Docker，並對使用 Discord 進行項目溝通表示擔憂，更偏好使用更開放的論壇。</li>
+</ul>
+<h2><a href="https://prestonbyrne.com/2024/08/24/thoughts-on-the-durov-arrest/">關於杜羅夫被捕的思考</a></h2>
+<ul>
+<li>「Telegram 創辦人 Pavel Durov 因涉嫌未遵守內容審查和數據披露法律在法國被捕，引發了重大法律問題。」</li>
+<li>這次逮捕突顯了歐洲更嚴格的內容管制法律，例如法國的《反網路仇恨法》和德國的《網路執法法》，相較於美國的《通訊端正法》第230條。</li>
+<li>對杜羅夫的指控，包括共謀參與洗錢和毒品販運等犯罪行為，突顯了在歐洲經營的美國科技企業家面臨的風險不斷升高。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41375902">評論</a></h3>
+<ul>
+<li>「Telegram 創辦人 Pavel Durov 與 Lavabit 的 Ladar Levison 處境相似，面臨提供文件給他擁有公民身份的法國政府的法律壓力。」</li>
+<li>與端到端加密(E2EE)服務不同，Telegram 的設計選擇使其能夠訪問用戶數據，這導致了法律上的複雜性和杜羅夫可能面臨的責任問題。</li>
+<li>討論強調了端到端加密(E2EE)在保護用戶數據和服務提供者免受法律和強制壓力方面的重要性，並對比了 Telegram 的方法與更安全的替代方案。</li>
+</ul>
+<h2><a href="https://apnews.com/article/france-telegram-pavel-durov-arrest-6e213d227458f330ed16e7fe221a696c">法國檢察官表示，Telegram 執行長已獲釋，將出庭應訊</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41380450">評論</a></h3>
+<ul>
+<li>法國檢察官已釋放 Telegram 執行長帕維爾·杜羅夫，但他仍需出庭，這突顯了持續的法律問題。</li>
+<li>核心問題在於 Telegram 拒絕與調查人員分享資訊，這引發了關於遵守當地法律與加密和隱私之間的辯論。</li>
+<li>由於此案對於在不同國家司法管轄區運營的全球科技公司以及用戶隱私與法律義務之間的平衡具有重要影響，因此引起了廣泛關注。</li>
+</ul>
+<head>
+  <meta property="og:title" content="擴散模型是即時遊戲引擎" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E6%93%B4%E6%95%A3%E6%A8%A1%E5%9E%8B%E6%98%AF%E5%8D%B3%E6%99%82%E9%81%8A%E6%88%B2%E5%BC%95%E6%93%8E&subheading=2024%E5%B9%B48%E6%9C%8828%E6%97%A5%20%E6%98%9F%E6%9C%9F%E4%B8%89%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/zh/Hant/2024/08/28</link>
+            <guid isPermaLink="false">2024-08-28T00:00:00.000Z</guid>
+            <pubDate>Wed, 28 Aug 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-27]]></title>
             <description
@@ -1715,186 +1901,6 @@
             <link>https://hn.cho.sh/zh/Hant/2024/08/19</link>
             <guid isPermaLink="false">2024-08-19T00:00:00.000Z</guid>
             <pubDate>Mon, 19 Aug 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-18]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/08/18&#39;</h2>
-<h1>2024-08-18</h1>
-<h2><a href="https://reason.com/2024/08/16/police-cannot-seize-property-indefinitely-after-an-arrest-federal-court-rules/">聯邦法院裁定警方不得在逮捕後無限期扣押財產</a></h2>
-<ul>
-<li>聯邦法院裁定，警方不得無限期保留在逮捕過程中扣押的財物，強調第四修正案對抗不合理扣押的保護。</li>
-<li>美國哥倫比亞特區上訴法院的葛瑞格·卡薩斯法官表示，繼續持有被扣押的財產必須是合理的，這對之前的巡迴法院判決提出了挑戰。</li>
-<li>此案件涉及原告在黑人的命也是命抗議活動中手機被扣押超過一年且未被起訴，這可能會設定全國性的先例並促使最高法院審查。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41283310">評論</a></h3>
-<ul>
-<li>聯邦法院裁定警方在逮捕後不能無限期扣押財產，但未明確規定扣押財產的最長期限。</li>
-<li>批評者認為，缺乏具體的時間限制使得該裁決無效且容易導致警方濫用，建議設置一個如14天或30天的硬性上限。</li>
-<li>該裁決規定，一旦最初的理由消失，必須歸還財產，但允許合理的延遲，這引發了對法律模糊性及其對正義影響的擔憂。</li>
-</ul>
-<h2><a href="https://loyaltylobby.com/2024/08/16/flightaware-leaks-customer-data-name-email-addresses-passwords/">「FlightAware洩漏客戶資料(姓名、電子郵件地址和密碼)」</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41277429">評論</a></h3>
-<ul>
-<li>「FlightAware 遭遇重大資料外洩事件，洩露了大量客戶資訊，包括姓名、電子郵件地址、密碼和信用卡詳細資料。」</li>
-<li>用戶對於FlightAware缺乏溝通感到沮喪，因為該公司未在其網站或社交媒體上提供更新。</li>
-<li>「這次資料外洩事件引發了對FlightAware資料安全措施及其應對事件的擔憂，一些用戶僅收到緩慢的電子郵件通知來重設密碼。」</li>
-</ul>
-<h2><a href="https://joel.tools/smarter/">你比語言模型更擅長預測下一個詞嗎？</a></h2>
-<ul>
-<li>許多基準測試評估語言模型在人類任務上的表現，但對這些模型來說，一個關鍵的任務是預測下一個詞。</li>
-<li>「這篇文章提出了一個問題：人類是否能在這項特定任務中超越語言模型。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41277179">評論</a></h3>
-<ul>
-<li>「JoelEinbinder 開發了一款遊戲，玩家需要預測 Hacker News 評論中的下一個詞，並與像 llama2 這樣的語言模型競爭。」</li>
-<li>「用戶建議改進，例如一次顯示一個問題並立即反饋，並指出測驗的長度及其在衡量“聰明程度”方面的有效性。」</li>
-<li>這款遊戲強調了人類與人工智慧在語言處理上的差異，激發了對人工智慧能力和人類智慧的討論，有時人類的表現甚至超越了這些模型。</li>
-</ul>
-<h2><a href="https://tinystruggles.com/posts/google_postmortem/">我在 Google 九年旅程的事後檢討</a></h2>
-<ul>
-<li>作者回顧了在 Google 長達 9 年的職業生涯，強調了成就與挑戰，包括參與 Bigtable、Persistent Disk 和 GCE VMs 的工作。</li>
-<li>主要收穫包括獲得工程和領導技能、財務穩定以及強大的社群，但也面臨壓力、認知負荷和有限的成長機會。</li>
-<li>作者計劃休假一段時間，以探索新的機會和挑戰，目的是尋找新的目標和個人成長。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278907">評論</a></h3>
-<ul>
-<li>「一位前 Google 工程師回顧了他們九年的任期，強調從早期混亂的做法到更標準化的工具和流程的演變。」</li>
-<li>這篇文章對比了網站可靠性工程(SRE)職位與軟體工程(SWE)職位中的高壓和倦怠，並指出了每個職位的獨特挑戰和獎勵。</li>
-<li>「多位前 Google 員工提供了對 Google 文化變遷、管理問題及其廣告驅動商業模式影響的見解。」</li>
-</ul>
-<h2><a href="https://github.com/TomWright/dasel">TomWright/dasel：從 JSON、TOML、YAML、XML 和 CSV 中選取、放置和刪除資料</a></h2>
-<ul>
-<li>Dasel 是一個多功能工具，能夠使用統一的選擇器語法，對多種格式(JSON、YAML、TOML、XML、CSV)的資料結構進行查詢和修改，且無需任何運行時依賴。</li>
-<li>它支援透過各種套件管理器進行安裝，並提供選擇、轉換、更新和刪除資料的指令。</li>
-<li>Dasel 以其速度著稱，比 jq 快 3 倍，比 yq 快 15 倍，並且包含 pre-commit hooks 等功能，且兼容 Linux、Mac 和 Windows。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41282495">評論</a></h3>
-<ul>
-<li>討論的重點在於使用 SQL 風格語法來查詢各種非關聯數據格式，如 JSON、TOML、YAML、XML 和 CSV 的潛力。</li>
-<li>雖然 SQL 理論上因其圖靈完備性而能查詢任何數據，但實際的效率和便利性在不同格式之間有所差異。</li>
-<li>「這段對話強調了需要一種標準化的查詢語言來處理結構化數據格式，考慮到每種存儲格式的獨特特性以及像 jq 和 yq 這樣的工具在命令列數據操作中的優勢。」</li>
-</ul>
-<h2><a href="https://blog.sylver.dev/build-your-own-sqlite-part-1-listing-tables">建立自己的 SQLite，第 1 部分：列出資料表</a></h2>
-<ul>
-<li>「這篇文章是從零開始構建一個與 SQLite 相容的資料庫系列的第一部分，並附有 Rust 語言的範例。」</li>
-<li>它涵蓋了建立一個最小的測試資料庫、了解 SQLite 檔案格式，以及實作一個列出資料庫中所有資料表名稱的指令。</li>
-<li>該專案涉及定義關鍵結構如 <code>Pager</code>、<code>Page</code> 和 <code>Db</code>，並設置一個基本的 REPL(讀取-求值-輸出循環)以支援 <code>.tables</code> 和 <code>.exit</code> 等指令。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278807">評論</a></h3>
-<ul>
-<li>「這篇文章討論了如何建立自訂的 SQLite 實作，重點在於列出資料表，並且是系列文章的一部分。」</li>
-<li>一個值得注意的想法是使用 Rust 巨集來定義 SQL 查詢，允許在編譯時將 SQL 直接綁定到內部資料庫 API，從而繞過靜態查詢的運行時解析和查詢規劃的需求。</li>
-<li>進行比較的是 SQLx，它使用巨集在編譯時驗證 SQL 查詢，確保 SQL 的有效性並優化性能。</li>
-</ul>
-<h2><a href="https://okmij.org/ftp/ML/generalization.html">OCaml 型別檢查器的運作方式(2022)</a></h2>
-<ul>
-<li>「Didier Rémy 在 1988 年提出的 OCaml 類型泛化演算法通過使用層級來追蹤類型依賴性，避免了低效的環境掃描，從而提升了類型推斷的速度。」</li>
-<li>Rémy 的方法類似於世代垃圾回收，確保僅在定義區域不活躍時才對型別變數進行量化，從而防止不健全的泛化。</li>
-<li>OCaml 的型別檢查器實現了這個演算法，使用層級來管理型別變數並強制範疇紀律，顯著提升了型別推斷的效率。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41281555">評論</a></h3>
-<ul>
-<li>這篇關於 OCaml 型別檢查器的文章，更新於 2022 年，探討了超越 Hindley-Milner 型別推斷和 Algorithm W 的現代技術，並強調了如 union-find 這樣的高效方法。</li>
-<li>這對於修改 OCaml 型別檢查器的開發者來說至關重要，並且包含了關於 Rust 型別檢查、OCaml 日益普及的討論，以及與 Gleam 和 Go 等語言的比較。</li>
-<li>這篇文章在 OCaml 社群中備受推崇，經常在文件中被引用，反映出其重要性和影響力。</li>
-</ul>
-<h2><a href="https://legendofworlds.com/blog/4">「我花了兩年時間打造自己的遊戲引擎(Rust、WASM、WebGPU)」</a></h2>
-<ul>
-<li>「開發者花了兩年時間創建了 &#39;Toxoid&#39;，這是一個使用 Rust、WebAssembly (WASM) 和 WebGPU 的開源遊戲引擎，用於一款名為《世界傳奇》的 2D 像素藝術線上沙盒多人遊戲。」</li>
-<li>毒素利用 Flecs 作為其實體元件系統(ECS)，使用 Sokol 進行渲染，並使用 Emscripten 來實現網頁相容性，目標是達到高效能、快速迭代和長期可用性，且不受供應商鎖定的限制。</li>
-<li>引擎現在已公開提供，未來計畫包括專屬網站、範例、示例、測試和文件，以支援開發社群。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278862">評論</a></h3>
-<ul>
-<li>一位開發者花了兩年時間使用 Rust、WASM(WebAssembly)和 WebGPU 創建了一個自訂的遊戲引擎，現在正在使用該引擎開發一款類似 Minecraft 的遊戲。</li>
-<li>「這個專案雖然並非以商業成功為目標，但已經引起潛在雇主的興趣，並且作為一個學習經驗。」</li>
-<li>「Rust+WASM+WebGPU 堆疊被強調為具有前景，涵蓋了許多重要的計算機科學概念。」</li>
-</ul>
-<h2><a href="https://kevinboone.me/cpm-c.html">重新開始為 CP/M 進行 C 語言程式設計</a></h2>
-<ul>
-<li>「Kevin Boone 在 40 年後重新燃起了對 CP/M 程式設計的興趣，使用基於 Z80 的 CP/M 機器創建了新的工具，如 KCalc-CPM、cpmbox 和 cpmlife。」</li>
-<li>「文章討論了在 CP/M 系統上使用 1982 年的 Aztec C 編譯器，強調其小巧的體積、古老的語法，以及由於資源有限而需要手動優化的必要性。」</li>
-<li>“Boone 強調在真實硬體上進行測試的重要性，因為模擬器可能會掩蓋效能低下的問題，他認為為 80 年代的硬體撰寫高效能程式碼的過程既具挑戰性又令人滿足。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41281665">評論</a></h3>
-<ul>
-<li>「一位開發者創建了一個簡單的 CP/M 模擬器和一系列 CP/M 二進位檔案，包括 Aztec C 編譯器，以便於為 CP/M 系統編譯程式碼。」</li>
-<li>「這篇文章強調了在 CP/M 上使用 C 語言編程的懷舊感和挑戰，並將其與現代開發實踐和工具進行對比。」</li>
-<li>討論包括有關 Aztec C 編譯器的歷史背景、其起源，以及從1980年代到今天 C 程式設計標準的演變。</li>
-</ul>
-<h2><a href="https://newatlas.com/health-wellbeing/nutrient-dna-damage/">低水平的鎂與致病性DNA損傷有關</a></h2>
-<ul>
-<li>「南澳大學的一項研究將低鎂水平與DNA損傷聯繫起來，這可能導致癌症、糖尿病和阿茲海默症等疾病。」</li>
-<li>研究人員發現，低鎂水平與高同型半胱氨酸(一種基因毒性氨基酸)水平相關，而高鎂水平則與葉酸和維生素B12呈正相關。</li>
-<li>美國食品藥品監督管理局(FDA)建議成人每日攝取 420 毫克的鎂，該研究強調了富含鎂的食物如堅果、種子、深色葉菜和黑巧克力的重要性。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278636">評論</a></h3>
-<ul>
-<li>低鎂水平與 DNA 損傷有關，這突顯了攝取足夠鎂的重要性。</li>
-<li>「不同形式的鎂補充劑有各種健康用途：鎂蘆丁酸鹽有助於腦部健康，鎂牛磺酸鹽有助於代謝問題，鎂甘胺酸鹽有助於緩解焦慮和失眠，而檸檬酸鎂則是一種經濟實惠的選擇。」</li>
-<li>「鎂的食物來源包括豆類、堅果、種子和綠葉蔬菜，但現代農業做法可能會降低它們的鎂含量。」</li>
-</ul>
-<h2><a href="https://build-your-own.org/blog/20240813_css_vertical_center/">CSS 在 2024 年新增垂直置中功能</a></h2>
-<ul>
-<li>在2024年，CSS將引入<code>align-content</code>來進行預設佈局中的垂直置中，從而不再需要使用flexbox或grid。</li>
-<li>「此更新將在 Chrome 123、Firefox 125 和 Safari 17.4 中獲得支援，透過單一屬性簡化垂直對齊。」</li>
-<li>歷史上，垂直置中需要使用複雜的方法，如表格單元格、絕對定位和彈性盒子，但新的方法簡化了這個過程。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41282889">評論</a></h3>
-<ul>
-<li>「CSS 將在 2024 年引入一個新的垂直置中功能，簡化了在流佈局中不如在 flexbox 和 grid 中那麼直觀的任務。」</li>
-<li>此新增功能旨在使垂直置中更易於使用，特別是針對那些覺得目前方法如 <code>align-content</code> 和 flexbox 不直觀的新手 CSS 使用者。</li>
-<li>社群反應正面，指出雖然透過各種方法已經可以實現垂直置中，但這項新功能將提升便利性和易用性。</li>
-</ul>
-<h2><a href="https://www.surveillancewatch.io">「監控觀察——監控產業中的隱秘連結」</a></h2>
-<ul>
-<li>「監控觀察是一個互動地圖，揭露監控公司、其資金來源和聯繫之間的關係。」</li>
-<li>該工具旨在提供有關參與監控活動的實體的透明度和認知。</li>
-<li>「這項倡議具有重要意義，因為它幫助使用者了解監控公司的網絡和影響力。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41283149">評論</a></h3>
-<ul>
-<li>「Surveillance Watch(surveillancewatch.io)揭示了監控產業中的隱藏連結，專注於執法機構和政府用來監控和追蹤目標的供應商。」</li>
-<li>討論強調了像 Meta 和 Alphabet 這樣的大型科技公司在向當局提供元數據時所扮演的角色，通常是在法院命令下進行的，以及它們對政府監控計劃的遵守情況。</li>
-<li>網站的功能和可用性引起了討論，有人建議改進，例如在行動裝置上將地球儀設為可選項，並增加互動元素。</li>
-</ul>
-<h2><a href="https://nitter.lucabased.xyz/x">「X 停止要求身份驗證，nitter 又能使用了」</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41283209">評論</a></h3>
-<ul>
-<li>「X 已停止要求身份驗證，使 Nitter 再次能夠運作，這引發了關於該平台可靠性的討論。」</li>
-<li>用戶對於 X 的問題感到沮喪，例如速率限制和內容限制，並建議使用 Mastodon 或 Threads 等替代方案。</li>
-<li>「這段對話強調了在伊隆·馬斯克擁有 X 平台期間持續存在的挑戰和不滿。」</li>
-</ul>
-<h2><a href="https://github.com/PatrickJS/everyone-ssn-usa">公開所有人的社會安全號碼(SSN)以及用來獲取這些號碼的駭客手法</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41277058">評論</a></h3>
-<ul>
-<li>「一個 GitHub 儲存庫幽默地聲稱釋出所有人的社會安全號碼(SSNs)及其獲取方法，引發用戶間的擔憂與玩笑交織。」</li>
-<li>討論強調了使用社會安全號碼(SSNs)作為安全識別碼的缺陷以及身份欺詐的潛在風險，並強調需要更好的安全措施。</li>
-<li>用戶也討論了社會安全號碼(SSN)的結構和重複使用，指出了現行系統的局限性。</li>
-</ul>
-<h2><a href="https://www.theguardian.com/film/article/2024/aug/18/french-screen-star-alain-delon-dies-aged-88">「阿蘭·德倫去世了」</a></h2>
-<ul>
-<li>「法國著名演員阿蘭·德倫(Alain Delon)，以在《怒海沉屍》(Plein Soleil)和《武士》(Le Samouraï)中的角色聞名，已於88歲辭世，其子女宣布了這一消息。」</li>
-<li>德隆是1960年代法國電影復興中的重要人物，與讓-皮埃爾·梅爾維爾和盧奇諾·維斯康提等知名導演合作。</li>
-<li>法國總統艾曼紐·馬克宏和女演員碧姬·芭杜向德隆致敬，強調他對電影的影響以及他對動物的熱愛。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41280792">評論</a></h3>
-<ul>
-<li>法國演員阿蘭·德倫逝世，引發了人們對他在電影界重大影響的反思，特別是在《武士》和《紅圈》這些電影中的表現。</li>
-<li>德隆以其出眾的外貌和演技聞名，這使他成為歐洲電影界的知名人物以及包括蘇聯在內的多個地區的文化偶像。</li>
-<li>他的逝世引發了關於他遺產的討論，包括他對其他作品的影響以及他獨特的個人軼事，例如在2024年發現的他龐大的槍械收藏。</li>
-</ul>
-<head>
-  <meta property="og:title" content="聯邦法院裁定警方不得在逮捕後無限期扣押財產" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E8%81%AF%E9%82%A6%E6%B3%95%E9%99%A2%E8%A3%81%E5%AE%9A%E8%AD%A6%E6%96%B9%E4%B8%8D%E5%BE%97%E5%9C%A8%E9%80%AE%E6%8D%95%E5%BE%8C%E7%84%A1%E9%99%90%E6%9C%9F%E6%89%A3%E6%8A%BC%E8%B2%A1%E7%94%A2&subheading=2024%E5%B9%B48%E6%9C%8818%E6%97%A5%20%E6%98%9F%E6%9C%9F%E6%97%A5%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/zh/Hant/2024/08/18</link>
-            <guid isPermaLink="false">2024-08-18T00:00:00.000Z</guid>
-            <pubDate>Sun, 18 Aug 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

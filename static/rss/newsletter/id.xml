@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 27 Aug 2024 19:12:28 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 28 Aug 2024 19:15:17 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/id.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Tue, 27 Aug 2024 00:00:00 GMT</pubDate>
+        <pubDate>Wed, 28 Aug 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[id]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-08-28]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/08/28&#39;</h2>
+<h1>2024-08-28</h1>
+<h2><a href="https://gamengen.github.io">Model difusi adalah mesin permainan waktu nyata</a></h2>
+<ul>
+<li>Para peneliti memperkenalkan GameNGen, sebuah mesin permainan bertenaga model neural yang mampu berinteraksi secara real-time, yang ditunjukkan dengan mensimulasikan permainan DOOM pada lebih dari 20 frame per detik pada satu TPU.</li>
+<li>GameNGen menggunakan proses pelatihan dua fase yang melibatkan agen RL untuk pengumpulan data dan model difusi untuk prediksi frame berikutnya, mencapai PSNR sebesar 29,4, sebanding dengan kompresi JPEG lossy.</li>
+<li>Arsitektur model mencakup augmentasi kondisional dan penyempurnaan auto-encoder yang telah dilatih sebelumnya untuk memastikan generasi jangka panjang yang stabil dan peningkatan kualitas gambar, sehingga sulit bagi penilai manusia untuk membedakan antara klip permainan nyata dan yang disimulasikan.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41375548">Reaksi</a></h3>
+<ul>
+<li>Kombinasi model difusi menghasilkan bingkai berdasarkan bingkai sebelumnya dan tindakan pengguna tetapi tidak mendukung masukan pengguna secara real-time untuk penyesuaian dinamis.</li>
+<li>Terlatih pada dataset besar dari gameplay DOOM, model-model ini menghasilkan frame yang dikondisikan pada frame saat ini dan tindakan pengguna, menyerupai rekaman neural daripada simulasi interaktif.</li>
+<li>Walaupun teknologinya mengesankan, teknologi ini menghadapi keterbatasan seperti pemeliharaan keadaan internal permainan yang tidak konsisten, yang menyoroti baik potensinya maupun tantangannya untuk simulasi permainan.</li>
+</ul>
+<h2><a href="https://josephg.com/blog/crdts-go-brrr/">CRDT yang Lebih Cepat (2021)</a></h2>
+<ul>
+<li>Kepenulisan awalnya merasa frustrasi oleh implementasi yang tidak efisien dari algoritma mereka dalam sebuah makalah akademis, yang mengarah pada klaim kinerja yang salah.</li>
+<li>Frustrasi ini mendorong eksplorasi dan optimalisasi CRDT (Conflict-Free Replicated Data Types), yang memungkinkan pengeditan kolaboratif secara real-time tanpa server pusat.</li>
+<li>Implementasi CRDT yang dioptimalkan oleh penulis, Diamond, secara signifikan mengungguli CRDT populer seperti Automerge dengan menggunakan struktur data yang lebih sederhana dan teknik pengindeksan canggih, mencapai peningkatan kecepatan lebih dari 5000 kali lipat.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41372833">Reaksi</a></h3>
+<ul>
+<li>Postingan tersebut membahas kinerja Conflict-free Replicated Data Types (CRDTs) dan aplikasi praktisnya dalam perangkat lunak dunia nyata, menyoroti manfaat dan tantangannya.</li>
+<li>CRDT digunakan dalam berbagai aplikasi seperti Thymer, Notion, dan Apple Notes, menyediakan fitur seperti kolaborasi waktu nyata dan fungsionalitas offline, tetapi mereka datang dengan kompromi seperti penurunan kinerja dan resolusi konflik yang kompleks.</li>
+<li>Diskusi tersebut mencakup wawasan dari pengembang dan pengguna tentang implementasi praktis CRDT, membandingkannya dengan metode sinkronisasi lain seperti Operational Transforms (OT) dan mengeksplorasi kesesuaiannya untuk berbagai kasus penggunaan.</li>
+</ul>
+<h2><a href="https://chartdb.io/">ChartDB – Gratis dan sumber terbuka, editor desain basis data</a></h2>
+<ul>
+<li>ChartDB menawarkan editor desain basis data gratis dan sumber terbuka yang memungkinkan pengguna untuk memvisualisasikan basis data mereka dengan satu kueri, tanpa perlu mendaftar.</li>
+<li>Menunjang berbagai sistem manajemen basis data (DBMS) termasuk PostgreSQL, MySQL, SQL Server, SQLite, dan MariaDB, serta menyediakan fitur seperti impor skema instan dan DDL (Data Definition Language) yang dihasilkan oleh AI.</li>
+<li>Pengguna dapat dengan cepat mengimpor/mengekspor basis data, menghasilkan skrip SQL atau gambar, dan menggunakan alat pengeditan kueri lanjutan, menjadikannya alat yang serbaguna untuk manajemen dan desain basis data.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41374009">Reaksi</a></h3>
+<ul>
+<li>ChartDB adalah editor desain basis data yang gratis dan sumber terbuka, yang mendapatkan perhatian karena kegunaannya dalam membuat diagram basis data.</li>
+<li>Diskusi tersebut menyoroti pentingnya diagram basis data untuk memahami dan mengkomunikasikan struktur data yang kompleks, terutama dalam proyek yang sudah matang.</li>
+<li>Pengguna membandingkan ChartDB dengan alat lain seperti dbdiagram.io, ERWin, dan PlatUML, mencatat potensinya untuk pembuatan diagram otomatis dan kemudahan penggunaan dalam lingkungan kolaboratif.</li>
+</ul>
+<h2><a href="https://blog.system76.com/post/cosmic-alpha-released-heres-what-people-are-saying/">KOSMIK Alpha Dirilis</a></h2>
+<ul>
+<li>Versi alpha dari COSMIC, sebuah lingkungan desktop baru untuk Pop!_OS dan distribusi Linux lainnya, telah dirilis, menawarkan fitur-fitur baru, kustomisasi, kinerja, stabilitas, dan keamanan.</li>
+<li>COSMIC belum direkomendasikan untuk penggunaan produksi, tetapi umpan balik yang diterima positif, menyoroti kecepatannya, fondasi yang solid, dan desain yang ramah pengguna.</li>
+<li>Rilis ini juga berfungsi sebagai alpha untuk Pop!_OS 24.04 LTS, dengan fitur-fitur baru seperti pengaturan tanggal &amp; waktu, tangkapan layar, pengaturan default touchpad, dan berbagi layar dalam aplikasi konferensi video.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41376590">Reaksi</a></h3>
+<ul>
+<li>Sistem76 telah merilis versi alpha dari COSMIC, sebuah lingkungan desktop baru, yang telah menarik minat signifikan di komunitas teknologi.</li>
+<li>COSMIC dibangun menggunakan Iced, sebuah kerangka kerja UI lintas platform berbasis Rust, yang masih eksperimental tetapi menunjukkan potensi untuk pengembangan di masa depan.</li>
+<li>Pengguna telah melaporkan aspek positif, seperti ruang kerja independen per monitor dan pintasan keyboard yang masuk akal, serta aspek negatif, seperti fitur yang hilang dan bug, yang menunjukkan bahwa meskipun menjanjikan, COSMIC belum siap untuk penggunaan sehari-hari.</li>
+</ul>
+<h2><a href="https://old.reddit.com/r/youtube/comments/1f30ku4/youtube_sabotaging_on_firefox/">Mulai hari ini, YouTube hampir tidak dapat digunakan di Firefox</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41379517">Reaksi</a></h3>
+<ul>
+<li>Kinerja YouTube di Firefox hampir tidak dapat digunakan, dengan tolok ukur kinerja menunjukkan penurunan signifikan dan pembekuan antarmuka pengguna secara total.</li>
+<li>Kendala ini tampaknya terkait dengan pembaruan Polymer yang mempengaruhi komponen web kustom, memicu spekulasi apakah ini adalah mekanisme anti-adblocker atau sebuah bug.</li>
+<li>Diskusi telah muncul tentang pengaruh Google terhadap kompatibilitas peramban, dengan beberapa pihak menyarankan agar Uni Eropa mendanai peramban yang berfokus pada privasi atau memodifikasi Chromium untuk mengatasi kekhawatiran ini.</li>
+</ul>
+<h2><a href="https://news.griffith.edu.au/2024/08/27/game-changing-needle-free-covid-19-intranasal-vaccine/">Vaksin Intranasal Covid-19</a></h2>
+<ul>
+<li>Para peneliti dari Griffith University, yang dipimpin oleh Profesor Suresh Mahalingam, sedang mengembangkan vaksin mukosal COVID-19 generasi berikutnya, CDO-7N-1, yang dipublikasikan di Nature Communications.</li>
+<li>Vaksin intranasal hidup yang dilemahkan ini bertujuan untuk menginduksi kekebalan mukosa dan sistemik dengan satu dosis, menawarkan perlindungan jangka panjang dan alternatif tanpa jarum suntik.</li>
+<li>Vaksin ini memberikan perlindungan silang terhadap semua varian yang menjadi perhatian, tetap stabil pada suhu 4°C selama tujuh bulan, dan telah dilisensikan kepada Indian Immunologicals Ltd untuk uji klinis mendatang, menjadikannya cocok untuk negara-negara berpenghasilan rendah dan menengah.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41375746">Reaksi</a></h3>
+<ul>
+<li>Vaksin Covid-19 intranasal baru, CDO-7N-1, mengklaim memberikan perlindungan kuat terhadap penularan, reinfeksi, dan penyebaran virus, serta mengurangi pembentukan varian baru.</li>
+<li>Berbeda dengan vaksin mRNA, CDO-7N-1 menginduksi kekebalan terhadap semua protein utama SARS-CoV-2 dan tetap stabil pada suhu 4°C selama tujuh bulan, menjadikannya cocok untuk negara-negara berpenghasilan rendah dan menengah.</li>
+<li>Metode pengiriman melalui hidung dapat menetralkan virus di sepanjang mukosa hidung, menawarkan pendekatan baru untuk pencegahan Covid-19, meskipun efektivitas dan penerimaan publiknya masih harus ditentukan.</li>
+</ul>
+<h2><a href="https://taskwarrior.org/">Taswarrior – Manajemen Tugas CLI</a></h2>
+<ul>
+<li>Taswarrior 3.0.2 telah dirilis, mengatasi masalah kecil dari versi 3.0.0, termasuk perbaikan dalam berita tugas, penanganan kesalahan, dokumentasi, dan interaksi hook.</li>
+<li>Tugaswarrior 3.0 memperkenalkan dukungan penyimpanan dan sinkronisasi tugas yang baru dan andal berdasarkan TaskChampion, menandai peningkatan yang signifikan.</li>
+<li>Keluaran stabil terbaru yang tersedia adalah Taskwarrior 3.0.2, Taskshell 1.2.0, dan Timewarrior 1.7.1, dengan versi pengembangan juga dapat diakses.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41372482">Reaksi</a></h3>
+<ul>
+<li>Seorang pengembang sedang membuat GUI (Graphical User Interface) minimal untuk Taskwarrior, sebuah alat manajemen tugas berbasis CLI (Command Line Interface), untuk meningkatkan navigasi keyboard dan membantu pengguna dengan ADHD.</li>
+<li>Pengembang berencana untuk mengintegrasikan Timewarrior, sebuah alat pelacak waktu, ke dalam GUI di masa depan, meskipun upaya saat ini difokuskan pada penggunaan lokal daripada akses jarak jauh atau sinkronisasi seluler.</li>
+<li>Kami sedang mendiskusikan berbagai aspek dari Taskwarrior, termasuk tantangan sinkronisasi, potensi dukungan untuk perangkat mobile, dan manfaat dari fitur-fiturnya seperti ketergantungan tugas dan pengurutan urgensi.</li>
+</ul>
+<h2><a href="https://github.com/seekbytes/IPA">IPA, sebuah GUI untuk menjelajahi detail internal dari PDF</a></h2>
+<ul>
+<li>Analisis PDF Interaktif (IPA) adalah alat yang dirancang untuk membantu peneliti mengeksplorasi dan menganalisis file PDF, terutama yang mungkin mengandung muatan berbahaya atau digunakan dalam kampanye phishing.</li>
+<li>IPA menawarkan antarmuka grafis untuk mengekstrak payload, memahami hubungan objek, dan memvisualisasikan referensi dalam file, membuatnya lebih ramah pengguna dibandingkan dengan alat baris perintah.</li>
+<li>Alat ini kompatibel dengan pdf-rs dan Rust, tidak memerlukan perangkat lunak tambahan, dan dapat dikompilasi menggunakan Rust dan cargo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41377960">Reaksi</a></h3>
+<ul>
+<li>IPA adalah alat GUI baru untuk menjelajahi detail PDF, dibuat oleh Nicolodev, yang ditujukan untuk analisis PDF cepat.</li>
+<li>Alat serupa lainnya termasuk pdf.hyzyla.dev, iText RUPS (Java), PDFSyntax (Python), Polyfile, ReportMill PDFViewer, PDFInspector, dan PDFXplorer.</li>
+<li>Penulis PDFSyntax memperkenalkan perintah CLI baru untuk ringkasan struktur, dan pengguna mendiskusikan berbagai alat dan fitur, berbagi pengalaman dan masalah dengan alat PDF.</li>
+</ul>
+<h2><a href="https://areweanticheatyet.com/">Kita Sudah Anti-Cheat Belum?</a></h2>
+<ul>
+<li>&quot;Apakah Kita Sudah Anti-Cheat?&quot; adalah daftar yang bersumber dari kerumunan yang merinci kompatibilitas permainan yang menggunakan perangkat lunak anti-cheat dengan GNU/Linux atau Wine/Proton.</li>
+<li>Kondisi saat ini: 37% didukung, 17% berjalan, 1% direncanakan, 38% rusak, dan 7% ditolak.</li>
+<li>Contoh yang menonjol: Halo: The Master Chief Collection (didukung dengan beberapa pengecualian kecil), Fortnite (ditolak, berfungsi di Xbox-Cloud), dan Apex Legends (didukung).</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41376044">Reaksi</a></h3>
+<ul>
+<li>Apakah Kita Sudah Anti-Cheat?&quot; (areweanticheatyet.com) mendapatkan perhatian signifikan di Hacker News, dengan 158 poin dan 176 komentar, menyoroti relevansinya dalam komunitas gaming.</li>
+<li>Website ini, yang dikembangkan oleh Starz0r selama 2-3 tahun, awalnya melacak game yang didukung Linux untuk Steam Deck tetapi sejak itu telah berkembang dan mengalami desain ulang.</li>
+<li>Diskusi utama mencakup efektivitas perangkat lunak anti-cheat, perlombaan senjata antara pengembang cheat dan langkah-langkah anti-cheat, serta potensi AI dan solusi sisi server untuk meningkatkan deteksi cheat.</li>
+</ul>
+<h2><a href="https://chipsandcheese.com/2024/08/27/teslas-ttpoe-at-hot-chips-2024-replacing-tcp-for-low-latency-applications/">TTPoE Tesla di Hot Chips 2024: Menggantikan TCP untuk Aplikasi Latensi Rendah</a></h2>
+<ul>
+<li>Tesla memperkenalkan TTPoE (Tesla Transport Protocol over Ethernet) di Hot Chips 2024, dengan tujuan menggantikan TCP untuk aplikasi latensi rendah di superkomputer Dojo mereka.</li>
+<li>TTPoE menawarkan latensi skala mikrodetik dan offload perangkat keras, menyederhanakan mesin status TCP untuk mengurangi latensi dan meningkatkan throughput data untuk tugas bandwidth IO tinggi seperti pelatihan video.</li>
+<li>TTPoE menggunakan pendekatan brute force untuk pengendalian kemacetan, dengan buffer SRAM transmisi 1 MB dan &quot;Dumb-NIC&quot; yang hemat biaya bernama Mojo, yang dirancang untuk meningkatkan kinerja superkomputer Dojo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41374663">Reaksi</a></h3>
+<ul>
+<li>Tesla memperkenalkan TTPoE (Tesla Transport Protocol over Ethernet) di Hot Chips 2024, dengan tujuan menggantikan TCP untuk aplikasi berlatensi rendah.</li>
+<li>Protokol baru ini dirancang untuk mengoptimalkan kinerja untuk kasus penggunaan spesifik Tesla, memanfaatkan perangkat keras yang ada dan mengurangi biaya dengan menghindari kebutuhan akan solusi jaringan yang lebih mahal seperti Infiniband.</li>
+<li>Kebijakan tersebut telah memicu perdebatan, dengan beberapa pihak berargumen bahwa hal itu tidak perlu mengingat adanya teknologi yang sudah ada seperti TCP Offload Engines (TOE) dan RoCE (RDMA over Converged Ethernet), sementara yang lain melihatnya sebagai keputusan strategis untuk kontrol yang lebih baik dan efisiensi biaya.</li>
+</ul>
+<h2><a href="https://www.developer-tech.com/news/judge-dismisses-majority-github-copilot-copyright-claims/">Pengadilan menolak sebagian besar klaim hak cipta terhadap GitHub Copilot</a></h2>
+<ul>
+<li>Seorang hakim telah menolak sebagian besar klaim dalam gugatan hak cipta terhadap GitHub, Microsoft, dan OpenAI terkait asisten pengkodean GitHub Copilot yang didukung AI.</li>
+<li>Klaim hukum, yang diajukan oleh para pengembang pada tahun 2022, awalnya memiliki 22 klaim, tetapi hanya dua yang tersisa: satu untuk pelanggaran lisensi sumber terbuka dan satu lagi untuk pelanggaran kontrak.</li>
+<li>Kejaksaan menemukan bahwa argumen yang menyatakan Copilot melanggar DMCA dengan menyarankan kode tanpa atribusi yang tepat tidak meyakinkan dan menolak permintaan ganti rugi hukuman dan kompensasi finansial.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41378806">Reaksi</a></h3>
+<ul>
+<li>Kebanyakan klaim hak cipta terhadap GitHub Copilot ditolak oleh seorang hakim, memicu perdebatan tentang kode yang dihasilkan AI dan masalah hak cipta.</li>
+<li>Pengguna melaporkan kasus di mana AI menghasilkan kode yang identik dengan contoh yang sudah ada, menimbulkan kekhawatiran hukum tentang pelanggaran hak cipta.</li>
+<li>Kajian yang sedang berlangsung berfokus pada bagaimana undang-undang hak cipta harus berkembang untuk mengatasi kemampuan AI dan tanggung jawab operator AI.</li>
+</ul>
+<h2><a href="https://elixir-lang.org/blog/2024/08/28/typing-lists-and-tuples/">Ketik daftar dan tuple di Elixir</a></h2>
+<ul>
+<li>Elixir sedang mengembangkan sistem tipe untuk memastikan pengetikan bertahap yang aman, memungkinkan antarmuka yang aman antara kode statis dan dinamis, dengan tujuan mencegah kesalahan tipe saat runtime.</li>
+<li>Jenis sistem baru akan mendukung tipe tuple, menentukan ukuran minimum dan tipe elemen, serta memberikan peringatan saat kompilasi untuk mencegah kesalahan saat runtime.</li>
+<li>Elixir v1.17 telah dirilis, dan acara mendatang dijadwalkan pada 27-30 Agustus 2024, di Orlando, FL.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41378478">Reaksi</a></h3>
+<ul>
+<li>Pendekatan pengetikan bertahap Elixir memprioritaskan ketepatan sistem daripada sintaksis, dengan kompilator yang terus ditingkatkan untuk menangkap lebih banyak bug di setiap versinya.</li>
+<li>Elixir 1.17 memperkenalkan sistem tipe bertahap, yang saat ini hanya mendukung beberapa tipe, dengan rencana untuk pengembangan lebih lanjut di pembaruan mendatang.</li>
+<li>Perbandingan dengan F# dan MyPy dari Python menyoroti kompleksitas dalam menangani daftar yang tidak kosong dan sistem tipe, tetapi pendekatan Elixir dipandang bermanfaat untuk pengembangan jangka panjang.</li>
+</ul>
+<h2><a href="https://github.com/queer/boxxy">Kotak Boxxy menempatkan aplikasi Linux yang buruk dalam sebuah kotak hanya dengan file-file mereka</a></h2>
+<ul>
+<li>Boxxy adalah alat Linux yang dirancang untuk mengatur file dan direktori aplikasi dengan mengarahkan ulang mereka tanpa menggunakan symlink, memanfaatkan namespace Linux.</li>
+<li>Itu membantu menjaga direktori $HOME tetap rapi dengan mengarahkan data aplikasi ke lokasi yang ditentukan dan mendukung fitur-fitur seperti aturan yang bergantung pada konteks, overhead minimal, dan injeksi variabel lingkungan.</li>
+<li>Kotak Boxxy sebagai proyek baru mungkin memiliki masalah dan keterbatasan potensial, seperti ketidakmampuan untuk menggunakan sudo di dalam kontainer.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41376558">Reaksi</a></h3>
+<ul>
+<li>Boxxy adalah alat yang dirancang untuk mengisolasi aplikasi Linux yang bermasalah dengan menampung file-file mereka.</li>
+<li>Alat terkait, &quot;xdg-ninja,&quot; memindai direktori $HOME untuk mencari file yang salah tempat dan menyarankan lokasi yang sesuai.</li>
+<li>Pengguna membahas berbagai metode sandboxing seperti symlink, Firejail, Bubblewrap, dan Docker, serta mengemukakan kekhawatiran tentang penggunaan Discord untuk komunikasi proyek, lebih memilih forum yang lebih terbuka.</li>
+</ul>
+<h2><a href="https://prestonbyrne.com/2024/08/24/thoughts-on-the-durov-arrest/">Pemikiran tentang Penangkapan Durov</a></h2>
+<ul>
+<li>Pavel Durov, pendiri Telegram, ditangkap di Prancis karena diduga tidak mematuhi undang-undang moderasi konten dan pengungkapan data, yang menimbulkan pertanyaan hukum yang signifikan.</li>
+<li>Penangkapan tersebut menyoroti undang-undang regulasi konten yang lebih ketat di Eropa, seperti Loi Lutte Contra la Haine sur Internet di Prancis dan NetzDG di Jerman, dibandingkan dengan Section 230 dari Communications Decency Act di AS.</li>
+<li>Biaya yang dikenakan terhadap Durov, termasuk keterlibatan dalam kejahatan seperti pencucian uang dan perdagangan narkotika, menyoroti meningkatnya risiko bagi pengusaha teknologi yang berbasis di AS yang beroperasi di Eropa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41375902">Reaksi</a></h3>
+<ul>
+<li>Pavel Durov, pendiri Telegram, berada dalam posisi yang mirip dengan Ladar Levison dari Lavabit, menghadapi tekanan hukum untuk menyediakan dokumen kepada pemerintah Prancis, di mana ia memegang kewarganegaraan.</li>
+<li>Berbeda dengan layanan yang dienkripsi ujung-ke-ujung (E2EE), pilihan desain Telegram memungkinkan mereka mengakses data pengguna, yang telah menyebabkan komplikasi hukum dan potensi tanggung jawab bagi Durov.</li>
+<li>Diskusi ini menyoroti pentingnya E2EE dalam melindungi data pengguna dan penyedia layanan dari tekanan hukum dan paksaan, dengan membandingkan pendekatan Telegram dengan alternatif yang lebih aman.</li>
+</ul>
+<h2><a href="https://apnews.com/article/france-telegram-pavel-durov-arrest-6e213d227458f330ed16e7fe221a696c">Jaksa Prancis mengatakan CEO Telegram dibebaskan dari tahanan, akan hadir di pengadilan</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41380450">Reaksi</a></h3>
+<ul>
+<li>Jaksa Prancis telah membebaskan CEO Telegram Pavel Durov dari tahanan awal, tetapi dia masih akan hadir di pengadilan, menyoroti masalah hukum yang sedang berlangsung.</li>
+<li>Masalah utamanya adalah penolakan Telegram untuk berbagi informasi dengan penyelidik, yang telah memicu perdebatan tentang kepatuhan terhadap hukum lokal versus enkripsi dan privasi.</li>
+<li>Kasus ini telah menarik perhatian signifikan karena implikasinya bagi perusahaan teknologi global yang beroperasi di bawah yurisdiksi nasional yang berbeda dan keseimbangan antara privasi pengguna dan kewajiban hukum.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Model difusi adalah mesin permainan waktu nyata" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Model%20difusi%20adalah%20mesin%20permainan%20waktu%20nyata&subheading=Rabu%2C%2028%20Agustus%202024%3A%20Ringkasan%20Berita%20Peretas" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/id/2024/08/28</link>
+            <guid isPermaLink="false">2024-08-28T00:00:00.000Z</guid>
+            <pubDate>Wed, 28 Aug 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-27]]></title>
             <description
@@ -1715,186 +1901,6 @@
             <link>https://hn.cho.sh/id/2024/08/19</link>
             <guid isPermaLink="false">2024-08-19T00:00:00.000Z</guid>
             <pubDate>Mon, 19 Aug 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-18]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/08/18&#39;</h2>
-<h1>2024-08-18</h1>
-<h2><a href="https://reason.com/2024/08/16/police-cannot-seize-property-indefinitely-after-an-arrest-federal-court-rules/">Pengadilan Federal Memutuskan Polisi Tidak Dapat Menyita Properti Secara Tidak Terbatas Setelah Penangkapan</a></h2>
-<ul>
-<li>Pengadilan federal memutuskan bahwa polisi tidak dapat menyimpan properti yang disita selama penangkapan tanpa batas waktu, menekankan perlindungan Amandemen Keempat terhadap penyitaan yang tidak masuk akal.</li>
-<li>Judge Gregory Katsas dari Pengadilan Banding Amerika Serikat untuk Distrik Columbia menyatakan bahwa kepemilikan berkelanjutan atas properti yang disita haruslah masuk akal, menantang keputusan-keputusan sebelumnya dari pengadilan sirkuit.</li>
-<li>Kasus ini melibatkan para penggugat yang ponselnya disita selama protes Black Lives Matter dan ditahan selama lebih dari setahun tanpa dakwaan, yang berpotensi menetapkan preseden nasional dan mendorong tinjauan Mahkamah Agung.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41283310">Reaksi</a></h3>
-<ul>
-<li>Pengadilan federal memutuskan bahwa polisi tidak dapat menyita properti tanpa batas waktu setelah penangkapan, tetapi tidak menentukan durasi maksimum untuk menahan properti tersebut.</li>
-<li>Kritikus berpendapat bahwa ketiadaan batas waktu tertentu membuat keputusan tersebut tidak efektif dan rentan terhadap potensi penyalahgunaan oleh polisi, dengan menyarankan batas waktu yang ketat seperti 14 atau 30 hari.</li>
-<li>Kepurusan tersebut mewajibkan pengembalian properti setelah alasan awal menghilang tetapi mengizinkan penundaan yang wajar, menimbulkan kekhawatiran tentang undang-undang yang tidak jelas dan dampaknya terhadap keadilan.</li>
-</ul>
-<h2><a href="https://loyaltylobby.com/2024/08/16/flightaware-leaks-customer-data-name-email-addresses-passwords/">FlightAware Membocorkan Data Pelanggan (Nama, Alamat Email, dan Kata Sandi)</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41277429">Reaksi</a></h3>
-<ul>
-<li>FlightAware telah mengalami pelanggaran data yang signifikan, membocorkan informasi pelanggan yang luas seperti nama, alamat email, kata sandi, dan detail kartu kredit.</li>
-<li>Pengguna merasa frustrasi karena kurangnya komunikasi dari FlightAware, karena perusahaan tersebut tidak memberikan pembaruan di situs web atau media sosial mereka.</li>
-<li>Kebocoran tersebut telah menimbulkan kekhawatiran tentang praktik keamanan data FlightAware dan respons mereka terhadap insiden tersebut, dengan beberapa pengguna hanya menerima pemberitahuan email yang lambat untuk mereset kata sandi mereka.</li>
-</ul>
-<h2><a href="https://joel.tools/smarter/">Kamu lebih baik daripada model bahasa dalam memprediksi kata berikutnya?</a></h2>
-<ul>
-<li>Banyak tolok ukur mengevaluasi model bahasa pada tugas manusia, tetapi tugas penting bagi model-model ini adalah memprediksi kata berikutnya.</li>
-<li>Postingan tersebut mengajukan pertanyaan apakah manusia dapat mengungguli model bahasa dalam tugas spesifik ini.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41277179">Reaksi</a></h3>
-<ul>
-<li>JoelEinbinder mengembangkan sebuah permainan di mana pemain memprediksi kata berikutnya dalam komentar Hacker News, bersaing dengan model bahasa seperti llama2.</li>
-<li>Pengguna menyarankan perbaikan seperti menampilkan satu pertanyaan pada satu waktu dengan umpan balik instan dan mencatat panjang kuis serta efektivitasnya dalam mengukur &#39;kecerdasan.&#39;</li>
-<li>Kegiatan ini menyoroti perbedaan dalam pemrosesan bahasa antara manusia dan AI, memicu diskusi tentang kemampuan AI dan kecerdasan manusia, dengan manusia sesekali mengungguli model-model tersebut.</li>
-</ul>
-<h2><a href="https://tinystruggles.com/posts/google_postmortem/">Kilas balik perjalanan 9 tahun saya di Google</a></h2>
-<ul>
-<li>Penulis merenungkan karier selama 9 tahun di Google, menyoroti baik pencapaian maupun tantangan, termasuk pekerjaan pada Bigtable, Persistent Disk, dan GCE VMs.</li>
-<li>Hal-hal penting yang dapat diambil termasuk memperoleh keterampilan teknik dan kepemimpinan, stabilitas keuangan, dan komunitas yang kuat, tetapi juga menghadapi stres, beban kognitif, dan peluang pertumbuhan yang terbatas.</li>
-<li>Penulis berencana mengambil cuti panjang untuk menjelajahi peluang dan tantangan baru, dengan tujuan menemukan tujuan baru dan pertumbuhan pribadi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278907">Reaksi</a></h3>
-<ul>
-<li>Karyawan Google yang dulu merenungkan masa kerja mereka selama 9 tahun, menyoroti evolusi dari praktik awal yang kacau menjadi alat dan proses yang lebih terstandarisasi.</li>
-<li>Postingan tersebut membandingkan tingkat stres tinggi dan kelelahan dalam peran Site Reliability Engineering (SRE) dengan Software Engineering (SWE), mencatat tantangan dan penghargaan unik dari masing-masing.</li>
-<li>Berbagai mantan karyawan Google memberikan wawasan tentang perubahan budaya di Google, masalah manajemen, dan pengaruh model bisnis yang didorong oleh iklan.</li>
-</ul>
-<h2><a href="https://github.com/TomWright/dasel">TomWright/dasel: Memilih, menempatkan, dan menghapus data dari JSON, TOML, YAML, XML, dan CSV</a></h2>
-<ul>
-<li>Dasel adalah alat serbaguna untuk melakukan kueri dan memodifikasi struktur data dalam berbagai format (JSON, YAML, TOML, XML, CSV) dengan sintaks pemilih yang terpadu dan tanpa ketergantungan runtime.</li>
-<li>Ini mendukung instalasi melalui berbagai pengelola paket dan menawarkan perintah untuk memilih, mengonversi, memperbarui, dan menghapus data.</li>
-<li>Dasel dikenal karena kecepatannya, hingga 3x lebih cepat daripada jq dan 15x lebih cepat daripada yq, serta mencakup fitur-fitur seperti pre-commit hooks dan kompatibilitas dengan Linux, Mac, dan Windows.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41282495">Reaksi</a></h3>
-<ul>
-<li>Diskusi berpusat pada potensi penggunaan sintaks gaya SQL untuk menanyakan berbagai format data non-relasional seperti JSON, TOML, YAML, XML, dan CSV.</li>
-<li>Walaupun SQL secara teoretis mampu melakukan query pada data apa pun karena kelengkapannya menurut Turing, efisiensi praktis dan kenyamanan berbeda-beda tergantung pada formatnya.</li>
-<li>Konsultasi tersebut menyoroti kebutuhan akan bahasa kueri standar untuk format data terstruktur, dengan mempertimbangkan fitur unik dari setiap format penyimpanan dan manfaat alat seperti jq dan yq untuk manipulasi data di baris perintah.</li>
-</ul>
-<h2><a href="https://blog.sylver.dev/build-your-own-sqlite-part-1-listing-tables">Bangun SQLite Anda Sendiri, Bagian 1: Daftar Tabel</a></h2>
-<ul>
-<li>Kirim ini adalah bagian pertama dari seri tentang membangun database yang kompatibel dengan SQLite dari awal, dengan contoh-contoh dalam Rust.</li>
-<li>Itu mencakup pembuatan basis data uji minimal, pemahaman format file SQLite, dan penerapan perintah untuk mencantumkan semua nama tabel dalam basis data.</li>
-<li>Proyek ini melibatkan pendefinisian struktur kunci seperti <code>Pager</code>, <code>Page</code>, dan <code>Db</code>, serta menyiapkan REPL (Read-Eval-Print Loop) dasar untuk mendukung perintah seperti <code>.tables</code> dan <code>.exit</code>.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278807">Reaksi</a></h3>
-<ul>
-<li>Kirimannya membahas tentang membangun implementasi SQLite kustom, dengan fokus pada daftar tabel, dan merupakan bagian dari sebuah seri.</li>
-<li>Suatu ide yang patut diperhatikan adalah menggunakan makro Rust untuk mendefinisikan kueri SQL, memungkinkan pengikatan langsung dari SQL ke API basis data internal pada waktu kompilasi, sehingga menghindari kebutuhan untuk parsing dan perencanaan kueri pada waktu runtime untuk kueri statis.</li>
-<li>Perbandingan dibuat dengan SQLx, yang memverifikasi kueri SQL pada waktu kompilasi menggunakan makro, memastikan validitas SQL dan mengoptimalkan kinerja.</li>
-</ul>
-<h2><a href="https://okmij.org/ftp/ML/generalization.html">Bagaimana pemeriksa tipe OCaml bekerja (2022)</a></h2>
-<ul>
-<li>Algoritma Didier Rémy tahun 1988 untuk generalisasi tipe di OCaml meningkatkan kecepatan inferensi tipe dengan menghindari pemindaian lingkungan yang tidak efisien, menggunakan level untuk melacak ketergantungan tipe.</li>
-<li>Metode Rémy, mirip dengan pengumpulan sampah generasional, memastikan variabel tipe hanya dikuantifikasi ketika wilayah yang mendefinisikannya tidak aktif, mencegah generalisasi yang tidak valid.</li>
-<li>Checker tipe OCaml mengimplementasikan algoritma ini, menggunakan level untuk mengelola variabel tipe dan menegakkan disiplin lingkup, secara signifikan meningkatkan efisiensi inferensi tipe.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41281555">Reaksi</a></h3>
-<ul>
-<li>Artikel tentang pemeriksa tipe OCaml, yang diperbarui pada tahun 2022, mengeksplorasi lebih dari sekadar inferensi tipe Hindley-Milner dan Algoritma W, menyoroti teknik-teknik modern seperti union-find untuk efisiensi.</li>
-<li>Itu sangat penting bagi pengembang yang memodifikasi pemeriksa tipe OCaml dan mencakup diskusi tentang pemeriksaan tipe Rust, meningkatnya popularitas OCaml, dan perbandingan dengan bahasa seperti Gleam dan Go.</li>
-<li>Artikel tersebut sangat dihormati dalam komunitas OCaml dan sering dirujuk dalam dokumentasi, mencerminkan signifikansi dan pengaruhnya.</li>
-</ul>
-<h2><a href="https://legendofworlds.com/blog/4">Saya menghabiskan 2 tahun membangun mesin game saya sendiri (Rust, WASM, WebGPU)</a></h2>
-<ul>
-<li>Kembangkan menghabiskan dua tahun menciptakan &#39;Toxoid,&#39; sebuah mesin permainan sumber terbuka menggunakan Rust, WebAssembly (WASM), dan WebGPU untuk permainan multipemain kotak pasir online seni piksel 2D yang disebut Legend of Worlds.</li>
-<li>Toxoid memanfaatkan Flecs untuk sistem komponen entitasnya (ECS), Sokol untuk rendering, dan Emscripten untuk kompatibilitas web, dengan tujuan mencapai kinerja tinggi, iterasi cepat, dan kegunaan seumur hidup tanpa terikat pada vendor tertentu.</li>
-<li>Mesin ini sekarang tersedia untuk umum, dan rencana masa depan mencakup situs web khusus, sampel, contoh, tes, dan dokumentasi untuk mendukung komunitas pengembang.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278862">Reaksi</a></h3>
-<ul>
-<li>Seorang pengembang menghabiskan 2 tahun untuk membuat mesin permainan kustom menggunakan Rust, WASM (WebAssembly), dan WebGPU, dan sekarang sedang mengembangkan permainan mirip Minecraft dengan mesin tersebut.</li>
-<li>Proyek ini, meskipun tidak ditujukan untuk kesuksesan komersial, telah menarik minat dari calon pemberi kerja dan berfungsi sebagai pengalaman belajar.</li>
-<li>Stack Rust+WASM+WebGPU disorot sebagai menjanjikan, mencakup banyak konsep penting dalam ilmu komputer.</li>
-</ul>
-<h2><a href="https://kevinboone.me/cpm-c.html">Memulai kembali pemrograman C untuk CP/M</a></h2>
-<ul>
-<li>Kevin Boone telah menghidupkan kembali minatnya dalam pemrograman CP/M setelah 40 tahun, dengan menciptakan utilitas baru seperti KCalc-CPM, cpmbox, dan cpmlife menggunakan mesin CP/M berbasis Z80.</li>
-<li>Artikel tersebut membahas penggunaan kompiler Aztec C tahun 1982 untuk CP/M, menyoroti ukurannya yang kecil, sintaksis kuno, dan kebutuhan untuk optimasi manual karena sumber daya yang terbatas.</li>
-<li>Boone menekankan pentingnya pengujian pada perangkat keras nyata, karena emulator dapat menyembunyikan ketidakefisienan, dan menemukan proses penulisan kode yang efisien untuk perangkat keras tahun 80-an baik menantang maupun memuaskan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41281665">Reaksi</a></h3>
-<ul>
-<li>Seorang pengembang telah membuat emulator CP/M sederhana dan kumpulan biner CP/M, termasuk kompiler Aztec C, untuk memfasilitasi kompilasi kode untuk sistem CP/M.</li>
-<li>Kirimannya menyoroti nostalgia dan tantangan pemrograman dalam bahasa C untuk CP/M, membandingkannya dengan praktik dan alat pengembangan modern.</li>
-<li>Kajian ini mencakup konteks historis tentang kompiler Aztec C, asal-usulnya, dan evolusi standar pemrograman C dari tahun 1980-an hingga saat ini.</li>
-</ul>
-<h2><a href="https://newatlas.com/health-wellbeing/nutrient-dna-damage/">Kadar Magnesium yang Rendah Terkait dengan Kerusakan DNA Penyebab Penyakit</a></h2>
-<ul>
-<li>Kajian dari University of South Australia mengaitkan kadar magnesium yang rendah dengan kerusakan DNA, yang berpotensi menyebabkan penyakit seperti kanker, diabetes, dan Alzheimer.</li>
-<li>Para peneliti menemukan bahwa magnesium rendah berkorelasi dengan tingginya kadar homosistein, sebuah asam amino genotoksik, sementara kadar magnesium yang tinggi secara positif terkait dengan folat dan vitamin B12.</li>
-<li>FDA merekomendasikan 420 mg magnesium setiap hari untuk orang dewasa, dan studi ini menekankan pentingnya makanan yang kaya magnesium seperti kacang-kacangan, biji-bijian, sayuran berdaun gelap, dan cokelat hitam.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278636">Reaksi</a></h3>
-<ul>
-<li>Rendahnya kadar magnesium dikaitkan dengan kerusakan DNA, menyoroti pentingnya asupan magnesium yang cukup.</li>
-<li>Berbagai bentuk suplemen magnesium melayani berbagai tujuan kesehatan: Magnesium L-Threonate untuk kesehatan otak, Magnesium Taurate untuk masalah metabolisme, Magnesium Glycinate untuk kecemasan dan insomnia, dan Magnesium Citrate sebagai pilihan yang hemat biaya.</li>
-<li>Makanan yang mengandung magnesium meliputi kacang-kacangan, biji-bijian, dan sayuran berdaun hijau, tetapi praktik pertanian modern dapat mengurangi kandungan magnesiumnya.</li>
-</ul>
-<h2><a href="https://build-your-own.org/blog/20240813_css_vertical_center/">CSS menambahkan perataan vertikal pada tahun 2024</a></h2>
-<ul>
-<li>Pada tahun 2024, CSS akan memperkenalkan <code>align-content</code> untuk perataan vertikal dalam tata letak default, menghilangkan kebutuhan akan flexbox atau grid.</li>
-<li>Pembaruan ini akan didukung di Chrome 123, Firefox 125, dan Safari 17.4, menyederhanakan penyelarasan vertikal dengan satu properti.</li>
-<li>Secara historis, perataan vertikal memerlukan metode kompleks seperti sel tabel, posisi absolut, dan flexbox, tetapi metode baru menyederhanakan proses ini.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41282889">Reaksi</a></h3>
-<ul>
-<li>CSS akan memperkenalkan fitur baru untuk perataan vertikal pada tahun 2024, menyederhanakan tugas yang telah dapat dicapai dengan flexbox dan grid tetapi tidak semudah itu dalam tata letak aliran.</li>
-<li>Penambahan ini bertujuan untuk membuat perataan vertikal lebih mudah diakses, terutama bagi pengguna CSS baru yang merasa metode saat ini seperti <code>align-content</code> dan flexbox tidak intuitif.</li>
-<li>Komunitas bereaksi positif, mencatat bahwa meskipun penyelarasan vertikal telah dimungkinkan melalui berbagai metode, fitur baru ini akan meningkatkan kenyamanan dan kemudahan penggunaan.</li>
-</ul>
-<h2><a href="https://www.surveillancewatch.io">Surveillance Watch – hubungan tersembunyi dalam industri pengawasan</a></h2>
-<ul>
-<li>Surveillance Watch adalah peta interaktif yang mengungkap hubungan antara perusahaan pengawasan, sumber pendanaan mereka, dan afiliasi.</li>
-<li>Alat ini bertujuan untuk memberikan transparansi dan kesadaran tentang entitas yang terlibat dalam kegiatan pengawasan.</li>
-<li>Inisiatif ini penting karena membantu pengguna memahami jaringan dan pengaruh perusahaan pengawasan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41283149">Reaksi</a></h3>
-<ul>
-<li>Surveillance Watch (surveillancewatch.io) mengungkapkan koneksi tersembunyi dalam industri pengawasan, dengan fokus pada vendor yang digunakan oleh penegak hukum dan pemerintah untuk memantau dan melacak target.</li>
-<li>Kajian menyoroti peran perusahaan teknologi besar seperti Meta dan Alphabet dalam menyediakan metadata kepada otoritas, sering kali di bawah perintah pengadilan, dan kepatuhan mereka terhadap program pengawasan pemerintah.</li>
-<li>Kemampuan dan kegunaan situs web tersebut diperdebatkan, dengan saran untuk perbaikan seperti membuat globe opsional pada perangkat seluler dan menambahkan elemen interaktif.</li>
-</ul>
-<h2><a href="https://nitter.lucabased.xyz/x">Kini X tidak lagi memerlukan autentikasi, nitter berfungsi kembali</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41283209">Reaksi</a></h3>
-<ul>
-<li>X telah berhenti memerlukan autentikasi, memungkinkan Nitter berfungsi kembali, memicu diskusi tentang keandalan platform tersebut.</li>
-<li>Pengguna mengungkapkan frustrasi dengan masalah X, seperti batasan tingkat dan pembatasan konten, dan menyarankan alternatif seperti Mastodon atau Threads.</li>
-<li>Percakapan tersebut menyoroti tantangan yang terus berlanjut dan ketidakpuasan terhadap platform X di bawah kepemilikan Elon Musk.</li>
-</ul>
-<h2><a href="https://github.com/PatrickJS/everyone-ssn-usa">Merilis SSN semua orang dan peretasan yang digunakan untuk memperolehnya</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41277058">Reaksi</a></h3>
-<ul>
-<li>Kumpulan repositori GitHub dengan humor mengklaim merilis Nomor Jaminan Sosial (SSN) semua orang dan metode yang digunakan untuk memperolehnya, memicu campuran kekhawatiran dan lelucon di antara pengguna.</li>
-<li>Diskusi tersebut menyoroti kelemahan penggunaan SSN sebagai pengidentifikasi yang aman dan potensi penipuan identitas, menekankan perlunya praktik keamanan yang lebih baik.</li>
-<li>Pengguna juga membahas struktur dan penggunaan kembali SSN, menunjukkan keterbatasan sistem saat ini.</li>
-</ul>
-<h2><a href="https://www.theguardian.com/film/article/2024/aug/18/french-screen-star-alain-delon-dies-aged-88">Alain Delon telah meninggal</a></h2>
-<ul>
-<li>Alain Delon, seorang aktor Prancis terkemuka yang dikenal karena perannya dalam &quot;Plein Soleil&quot; dan &quot;Le Samouraï,&quot; telah meninggal dunia pada usia 88 tahun, seperti yang diumumkan oleh anak-anaknya.</li>
-<li>Delon adalah sosok penting dalam kebangkitan sinema Prancis pada tahun 1960-an, bekerja sama dengan sutradara terkenal seperti Jean-Pierre Melville dan Luchino Visconti.</li>
-<li>Presiden Prancis Emmanuel Macron dan aktris Brigitte Bardot memberikan penghormatan kepada Delon, menekankan dampaknya pada dunia perfilman dan kecintaannya terhadap hewan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41280792">Reaksi</a></h3>
-<ul>
-<li>Actor Prancis Alain Delon telah meninggal dunia, memicu refleksi tentang dampak signifikan yang ia berikan pada dunia perfilman, terutama dalam film-film seperti &#39;Le Samouraï&#39; dan &#39;Le Cercle Rouge.&#39;</li>
-<li>Delon dikenal karena penampilannya yang mencolok dan bakat aktingnya, yang membuatnya menjadi sosok terkemuka dalam sinema Eropa dan ikon budaya di berbagai wilayah, termasuk Uni Soviet.</li>
-<li>Kematian beliau telah memicu diskusi tentang warisannya, termasuk pengaruhnya terhadap karya-karya lain dan anekdot pribadi uniknya, seperti koleksi senjata api yang luas yang ditemukan pada tahun 2024.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Pengadilan Federal Memutuskan Polisi Tidak Dapat Menyita Properti Secara Tidak Terbatas Setelah Penangkapan" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Pengadilan%20Federal%20Memutuskan%20Polisi%20Tidak%20Dapat%20Menyita%20Properti%20Secara%20Tidak%20Terbatas%20Setelah%20Penangkapan&subheading=Minggu%2C%2018%20Agustus%202024%3A%20Ringkasan%20Berita%20Peretas" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/id/2024/08/18</link>
-            <guid isPermaLink="false">2024-08-18T00:00:00.000Z</guid>
-            <pubDate>Sun, 18 Aug 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

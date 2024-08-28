@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 27 Aug 2024 19:12:29 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 28 Aug 2024 19:15:17 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/pt.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Tue, 27 Aug 2024 00:00:00 GMT</pubDate>
+        <pubDate>Wed, 28 Aug 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[pt]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-08-28]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/08/28&#39;</h2>
+<h1>2024-08-28</h1>
+<h2><a href="https://gamengen.github.io">Os modelos de difusão são motores de jogo em tempo real</a></h2>
+<ul>
+<li>Pesquisadores introduziram o GameNGen, um motor de jogo alimentado por um modelo neural capaz de interação em tempo real, demonstrado ao simular o jogo DOOM a mais de 20 quadros por segundo em uma única TPU.</li>
+<li>GameNGen usa um processo de treinamento em duas fases envolvendo um agente de RL para coleta de dados e um modelo de difusão para previsão do próximo quadro, alcançando um PSNR de 29,4, comparável à compressão JPEG com perdas.</li>
+<li>A arquitetura do modelo inclui aumentos de condicionamento e ajuste fino de um autoencoder pré-treinado para garantir uma geração estável a longo prazo e melhorar a qualidade da imagem, tornando difícil para os avaliadores humanos distinguirem entre clipes de jogos reais e simulados.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41375548">Reações</a></h3>
+<ul>
+<li>Os modelos de difusão geram quadros com base em quadros anteriores e ações do usuário, mas não suportam entrada do usuário em tempo real para ajustes dinâmicos.</li>
+<li>Treinados em um grande conjunto de dados de gameplay de DOOM, esses modelos produzem quadros condicionados aos quadros atuais e às ações do usuário, assemelhando-se a uma gravação neural em vez de uma simulação interativa.</li>
+<li>Embora a tecnologia seja impressionante, ela enfrenta limitações como a manutenção inconsistente do estado interno do jogo, destacando tanto seu potencial quanto os desafios para a simulação de jogos.</li>
+</ul>
+<h2><a href="https://josephg.com/blog/crdts-go-brrr/">CRDTs mais rápidos (2021)</a></h2>
+<ul>
+<li>A autora ficou inicialmente frustrada com a implementação ineficiente de seu algoritmo em um artigo acadêmico, o que levou a alegações de desempenho incorretas.</li>
+<li>Essa frustração levou à exploração e otimização dos CRDTs (Tipos de Dados Replicados Sem Conflito), que permitem a edição colaborativa em tempo real sem um servidor central.</li>
+<li>A implementação otimizada de CRDT do autor, Diamond, supera significativamente CRDTs populares como Automerge ao usar estruturas de dados mais simples e técnicas avançadas de indexação, alcançando melhorias de velocidade superiores a 5000x.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41372833">Reações</a></h3>
+<ul>
+<li>As postagens discutem o desempenho dos Tipos de Dados Replicados sem Conflito (CRDTs) e suas aplicações práticas em softwares do mundo real, destacando seus benefícios e desafios.</li>
+<li>CRDTs são usados em várias aplicações como Thymer, Notion e Apple Notes, oferecendo recursos como colaboração em tempo real e funcionalidade offline, mas vêm com trade-offs como compromissos de desempenho e resolução de conflitos complexa.</li>
+<li>As discussões incluem insights de desenvolvedores e usuários sobre a implementação prática de CRDTs, comparando-os com outros métodos de sincronização como Transformações Operacionais (OT) e explorando sua adequação para diferentes casos de uso.</li>
+</ul>
+<h2><a href="https://chartdb.io/">ChartDB – Gratuito e de código aberto, editor de design de banco de dados</a></h2>
+<ul>
+<li>ChartDB oferece um editor de design de banco de dados gratuito e de código aberto que permite aos usuários visualizar seu banco de dados com uma única consulta, sem necessidade de cadastro.</li>
+<li>Suporta múltiplos sistemas de gerenciamento de banco de dados (SGBD), incluindo PostgreSQL, MySQL, SQL Server, SQLite e MariaDB, e oferece recursos como importação instantânea de esquema e DDL (Linguagem de Definição de Dados) gerada por IA.</li>
+<li>Os usuários podem importar/exportar bancos de dados rapidamente, gerar scripts SQL ou imagens, e utilizar ferramentas avançadas de edição de consultas, tornando-o uma ferramenta versátil para gerenciamento e design de bancos de dados.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41374009">Reações</a></h3>
+<ul>
+<li>ChartDB é um editor de design de banco de dados gratuito e de código aberto, ganhando atenção por sua utilidade na criação de diagramas de banco de dados.</li>
+<li>A discussão destaca a importância dos diagramas de banco de dados para entender e comunicar estruturas de dados complexas, especialmente em projetos maduros.</li>
+<li>Os usuários comparam o ChartDB com outras ferramentas como dbdiagram.io, ERWin e PlatUML, destacando seu potencial para geração automática de diagramas e facilidade de uso em ambientes colaborativos.</li>
+</ul>
+<h2><a href="https://blog.system76.com/post/cosmic-alpha-released-heres-what-people-are-saying/">COSMIC Alpha Lançado</a></h2>
+<ul>
+<li>Tornou-se disponível a versão alfa do COSMIC, um novo ambiente de desktop para Pop!_OS e outras distribuições Linux, oferecendo novos recursos, personalização, desempenho, estabilidade e segurança.</li>
+<li>COSMIC ainda não é recomendado para uso em produção, mas o feedback tem sido positivo, destacando sua velocidade, base sólida e design amigável.</li>
+<li>A versão também serve como um alfa para o Pop!_OS 24.04 LTS, com novos recursos como configurações de data e hora, captura de tela, padrões do touchpad e compartilhamento de tela em aplicativos de videoconferência.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41376590">Reações</a></h3>
+<ul>
+<li>System76 lançou a versão alfa do COSMIC, um novo ambiente de desktop, que gerou um interesse significativo na comunidade tecnológica.</li>
+<li>COSMIC é construído usando Iced, uma estrutura de interface de usuário multiplataforma baseada em Rust, que ainda é experimental, mas mostra potencial para desenvolvimento futuro.</li>
+<li>Usuários relataram tanto aspectos positivos, como espaços de trabalho independentes por monitor e atalhos de teclado sensatos, quanto aspectos negativos, como falta de recursos e bugs, indicando que, embora promissor, o COSMIC ainda não está pronto para uso diário.</li>
+</ul>
+<h2><a href="https://old.reddit.com/r/youtube/comments/1f30ku4/youtube_sabotaging_on_firefox/">Começando hoje, o YouTube é quase inutilizável no Firefox</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41379517">Reações</a></h3>
+<ul>
+<li>VocêTube se tornou quase inutilizável no Firefox, com benchmarks de desempenho mostrando desacelerações significativas e congelamentos completos da interface do usuário.</li>
+<li>A questão parece estar relacionada a uma atualização do Polymer que afeta componentes web personalizados, gerando especulações sobre se isso é um mecanismo anti-bloqueador de anúncios ou um bug.</li>
+<li>Discussões surgiram sobre a influência do Google na compatibilidade de navegadores, com alguns sugerindo que a UE deveria financiar um navegador focado em privacidade ou criar um fork do Chromium para abordar essas preocupações.</li>
+</ul>
+<h2><a href="https://news.griffith.edu.au/2024/08/27/game-changing-needle-free-covid-19-intranasal-vaccine/">Covid-19 Vacina Intranasal</a></h2>
+<ul>
+<li>Pesquisadores da Griffith University, liderados pelo Professor Suresh Mahalingam, estão desenvolvendo uma vacina mucosal de próxima geração contra a COVID-19, a CDO-7N-1, publicada na Nature Communications.</li>
+<li>Esta vacina intranasal viva atenuada visa induzir tanto a imunidade mucosal quanto a sistêmica com uma única dose, oferecendo proteção de longo prazo e uma alternativa sem agulha.</li>
+<li>A vacina oferece proteção cruzada contra todas as variantes de preocupação, permanece estável a 4°C por sete meses e está licenciada para a Indian Immunologicals Ltd para os próximos ensaios clínicos, tornando-a adequada para países de baixa e média renda.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41375746">Reações</a></h3>
+<ul>
+<li>Uma nova vacina intranasal contra a Covid-19, CDO-7N-1, afirma fornecer forte proteção contra a transmissão, reinfecção e disseminação do vírus, além de reduzir a geração de novas variantes.</li>
+<li>Ao contrário das vacinas de mRNA, a CDO-7N-1 induz imunidade a todas as principais proteínas do SARS-CoV-2 e permanece estável a 4°C por sete meses, tornando-a adequada para países de baixa e média renda.</li>
+<li>A administração nasal poderia neutralizar o vírus ao longo da mucosa nasal, oferecendo uma abordagem inovadora para a prevenção da Covid-19, embora sua eficácia e aceitação pública ainda precisem ser determinadas.</li>
+</ul>
+<h2><a href="https://taskwarrior.org/">Taskwarrior – Gerenciamento de Tarefas via CLI</a></h2>
+<ul>
+<li>Taskwarrior 3.0.2 foi lançado, abordando problemas menores da versão 3.0.0, incluindo melhorias nas notícias de tarefas, tratamento de erros, documentação e interações de ganchos.</li>
+<li>Taskwarrior 3.0 introduziu um novo e confiável suporte para armazenamento e sincronização de tarefas baseado no TaskChampion, marcando uma atualização significativa.</li>
+<li>As versões estáveis mais recentes disponíveis são Taskwarrior 3.0.2, Taskshell 1.2.0 e Timewarrior 1.7.1, com versões de desenvolvimento também acessíveis.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41372482">Reações</a></h3>
+<ul>
+<li>A desenvolvedora está criando uma GUI (Interface Gráfica de Usuário) mínima para o Taskwarrior, uma ferramenta de gerenciamento de tarefas em CLI (Interface de Linha de Comando), para melhorar a navegação por teclado e ajudar usuários com TDAH.</li>
+<li>As desenvolvedores planejam integrar o Timewarrior, uma ferramenta de rastreamento de tempo, na interface gráfica no futuro, embora os esforços atuais estejam focados no uso local em vez de acesso remoto ou sincronização móvel.</li>
+<li>A comunidade está discutindo vários aspectos do Taskwarrior, incluindo desafios de sincronização, suporte potencial para dispositivos móveis e os benefícios de suas funcionalidades, como dependências de tarefas e ordenação por urgência.</li>
+</ul>
+<h2><a href="https://github.com/seekbytes/IPA">IPA, uma GUI para explorar detalhes internos de PDFs</a></h2>
+<ul>
+<li>Análise de PDF Interativo (IPA) é uma ferramenta projetada para ajudar pesquisadores a explorar e analisar arquivos PDF, particularmente aqueles que podem conter cargas maliciosas ou ser usados em campanhas de phishing.</li>
+<li>IPA oferece uma interface gráfica para extrair payloads, entender relações de objetos e visualizar referências dentro do arquivo, tornando-o mais amigável em comparação com ferramentas de linha de comando.</li>
+<li>Essa ferramenta é compatível com pdf-rs e Rust, não requer software adicional e pode ser compilada usando Rust e cargo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41377960">Reações</a></h3>
+<ul>
+<li>IPA é uma nova ferramenta GUI para explorar detalhes de PDF, criada por Nicolodev, destinada à análise rápida de PDFs.</li>
+<li>Outras ferramentas semelhantes incluem pdf.hyzyla.dev, iText RUPS (Java), PDFSyntax (Python), Polyfile, ReportMill PDFViewer, PDFInspector e PDFXplorer.</li>
+<li>Os autores do PDFSyntax introduziram um novo comando CLI para resumo de estrutura, e os usuários discutiram várias ferramentas e recursos, compartilhando experiências e problemas com ferramentas de PDF.</li>
+</ul>
+<h2><a href="https://areweanticheatyet.com/">Já Somos Anti-Cheat?</a></h2>
+<ul>
+<li>&quot;Já Somos Anti-Cheat?&quot; é uma lista colaborativa que detalha a compatibilidade de jogos que utilizam software anti-cheat com GNU/Linux ou Wine/Proton.</li>
+<li>Estatísticas atuais: 37% suportado, 17% em execução, 1% planejado, 38% quebrado e 7% negado.</li>
+<li>Exemplos notáveis: Halo: The Master Chief Collection (suportado com pequenas ressalvas), Fortnite (negado, funciona no Xbox-Cloud) e Apex Legends (suportado).</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41376044">Reações</a></h3>
+<ul>
+<li>Já Somos Anti-Cheat?&quot; (areweanticheatyet.com) ganhou atenção significativa no Hacker News, com 158 pontos e 176 comentários, destacando sua relevância na comunidade de jogos.</li>
+<li>Desenvolvido por Starz0r ao longo de 2-3 anos, o site inicialmente rastreava jogos compatíveis com Linux para o Steam Deck, mas desde então foi expandido e passou por uma reformulação.</li>
+<li>Discussões importantes incluem a eficácia do software anti-cheat, a corrida armamentista entre desenvolvedores de cheats e medidas anti-cheat, e o potencial da IA e soluções do lado do servidor para melhorar a detecção de cheats.</li>
+</ul>
+<h2><a href="https://chipsandcheese.com/2024/08/27/teslas-ttpoe-at-hot-chips-2024-replacing-tcp-for-low-latency-applications/">TTPoE da Tesla no Hot Chips 2024: Substituindo TCP para Aplicações de Baixa Latência</a></h2>
+<ul>
+<li>Tesla introduziu o TTPoE (Protocolo de Transporte Tesla sobre Ethernet) na Hot Chips 2024, com o objetivo de substituir o TCP para aplicações de baixa latência em seu supercomputador Dojo.</li>
+<li>TTPoE oferece latência em escala de microssegundos e descarregamento de hardware, simplificando a máquina de estados do TCP para reduzir a latência e melhorar a taxa de transferência de dados para tarefas de alta largura de banda de IO, como treinamento de vídeo.</li>
+<li>TTPoE usa uma abordagem de força bruta para controle de congestionamento, com um buffer de transmissão SRAM de 1 MB e um &quot;Dumb-NIC&quot; econômico chamado Mojo, projetado para melhorar o desempenho do supercomputador Dojo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41374663">Reações</a></h3>
+<ul>
+<li>Telsa introduziu o TTPoE (Protocolo de Transporte Tesla sobre Ethernet) no Hot Chips 2024, com o objetivo de substituir o TCP para aplicações de baixa latência.</li>
+<li>O novo protocolo foi projetado para otimizar o desempenho para os casos de uso específicos da Tesla, aproveitando o hardware existente e reduzindo custos ao evitar a necessidade de soluções de rede mais caras, como o Infiniband.</li>
+<li>A medida gerou debate, com alguns argumentando que é desnecessária, dado as tecnologias existentes como TCP Offload Engines (TOE) e RoCE (RDMA over Converged Ethernet), enquanto outros a veem como uma decisão estratégica para melhor controle e eficiência de custos.</li>
+</ul>
+<h2><a href="https://www.developer-tech.com/news/judge-dismisses-majority-github-copilot-copyright-claims/">Juiz rejeita a maioria das reivindicações de direitos autorais contra o GitHub Copilot</a></h2>
+<ul>
+<li>Um juiz rejeitou a maioria das reivindicações em um processo de direitos autorais contra o GitHub, a Microsoft e a OpenAI, relacionado ao assistente de codificação GitHub Copilot, que é alimentado por IA.</li>
+<li>As ações judiciais, iniciadas por desenvolvedores em 2022, originalmente tinham 22 reivindicações, mas apenas duas permanecem: uma por violação de licença de código aberto e outra por quebra de contrato.</li>
+<li>A corte considerou os argumentos de que o Copilot violou a DMCA ao sugerir código sem a devida atribuição não convincentes e rejeitou os pedidos de danos punitivos e compensação monetária.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41378806">Reações</a></h3>
+<ul>
+<li>Um juiz rejeitou a maioria das reivindicações de direitos autorais contra o GitHub Copilot, provocando debates sobre código gerado por IA e questões de direitos autorais.</li>
+<li>Usuários relataram casos em que a IA produziu código idêntico a exemplos existentes, levantando preocupações legais sobre violação de direitos autorais.</li>
+<li>O debate em curso foca em como as leis de direitos autorais devem evoluir para abordar as capacidades da IA e as responsabilidades dos operadores de IA.</li>
+</ul>
+<h2><a href="https://elixir-lang.org/blog/2024/08/28/typing-lists-and-tuples/">Digitando listas e tuplas em Elixir</a></h2>
+<ul>
+<li>Elixir está desenvolvendo um sistema de tipos para garantir uma tipagem gradual sólida, permitindo uma interface segura entre código estático e dinâmico, com o objetivo de prevenir erros de tipo em tempo de execução.</li>
+<li>O novo sistema de tipos suportará tipos de tupla, especificando tamanhos mínimos e tipos de elementos, e fornecerá avisos em tempo de compilação para prevenir erros em tempo de execução.</li>
+<li>Elixir v1.17 foi lançado, e eventos futuros estão programados para os dias 27 a 30 de agosto de 2024, em Orlando, FL.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41378478">Reações</a></h3>
+<ul>
+<li>Elixir adota uma abordagem de tipagem gradual que prioriza a solidez do sistema em vez da sintaxe, com o compilador melhorando para detectar mais bugs em cada versão.</li>
+<li>Elixir 1.17 introduziu um sistema de tipos gradual, atualmente suportando apenas alguns tipos, com planos de expansão em futuras atualizações.</li>
+<li>Comparações com F# e MyPy do Python destacam a complexidade de lidar com listas não vazias e sistemas de tipos, mas a abordagem do Elixir é vista como benéfica para o desenvolvimento a longo prazo.</li>
+</ul>
+<h2><a href="https://github.com/queer/boxxy">Boxxy coloca aplicativos ruins do Linux em uma caixa com apenas seus arquivos</a></h2>
+<ul>
+<li>Boxxy é uma ferramenta Linux projetada para organizar arquivos e diretórios de aplicativos redirecionando-os sem usar links simbólicos, utilizando namespaces do Linux.</li>
+<li>Ajuda a manter um diretório $HOME organizado redirecionando os dados das aplicações para locais especificados e suporta recursos como regras dependentes de contexto, sobrecarga mínima e injeção de variáveis de ambiente.</li>
+<li>As um novo projeto, Boxxy pode ter problemas e limitações potenciais, como a incapacidade de usar sudo dentro do contêiner.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41376558">Reações</a></h3>
+<ul>
+<li>Boxxy é uma ferramenta projetada para isolar aplicações problemáticas do Linux, contendo seus arquivos.</li>
+<li>Uma ferramenta relacionada, &#39;xdg-ninja&#39;, verifica o diretório $HOME em busca de arquivos fora do lugar e sugere locais apropriados.</li>
+<li>Os usuários discutem vários métodos de sandboxing como symlinks, Firejail, Bubblewrap e Docker, e levantam preocupações sobre o uso do Discord para comunicação de projetos, preferindo fóruns mais abertos.</li>
+</ul>
+<h2><a href="https://prestonbyrne.com/2024/08/24/thoughts-on-the-durov-arrest/">Reflexões sobre a Prisão de Durov</a></h2>
+<ul>
+<li>Pavel Durov, fundador do Telegram, foi preso na França por suposta não conformidade com as leis de moderação de conteúdo e divulgação de dados, levantando questões legais significativas.</li>
+<li>A prisão destaca as leis mais rigorosas de regulamentação de conteúdo na Europa, como a Lei Lutte Contra la Haine sur Internet da França e a NetzDG da Alemanha, em comparação com a Seção 230 do Communications Decency Act dos EUA.</li>
+<li>As acusações contra Durov, incluindo cumplicidade em crimes como lavagem de dinheiro e tráfico de entorpecentes, destacam os riscos crescentes para empreendedores de tecnologia baseados nos EUA que operam na Europa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41375902">Reações</a></h3>
+<ul>
+<li>Pavel Durov, fundador do Telegram, está em uma posição semelhante à de Ladar Levison, do Lavabit, enfrentando pressão legal para fornecer documentos ao governo francês, onde ele possui cidadania.</li>
+<li>Ao contrário dos serviços com criptografia de ponta a ponta (E2EE), as escolhas de design do Telegram permitem que ele acesse os dados dos usuários, o que levou a complicações legais e potencial responsabilidade para Durov.</li>
+<li>A discussão destaca a importância da E2EE na proteção tanto dos dados dos usuários quanto dos provedores de serviços contra pressões legais e coercitivas, contrastando a abordagem do Telegram com alternativas mais seguras.</li>
+</ul>
+<h2><a href="https://apnews.com/article/france-telegram-pavel-durov-arrest-6e213d227458f330ed16e7fe221a696c">Promotores franceses dizem que CEO do Telegram foi libertado da custódia e comparecerá ao tribunal</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41380450">Reações</a></h3>
+<ul>
+<li>Os promotores franceses liberaram o CEO do Telegram, Pavel Durov, da custódia inicial, mas ele ainda comparecerá ao tribunal, destacando questões legais em andamento.</li>
+<li>Questão central é a recusa do Telegram em compartilhar informações com os investigadores, o que gerou debates sobre a conformidade com as leis locais versus criptografia e privacidade.</li>
+<li>Este caso atraiu atenção significativa devido às suas implicações para empresas de tecnologia globais que operam sob diferentes jurisdições nacionais e ao equilíbrio entre a privacidade do usuário e as obrigações legais.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Os modelos de difusão são motores de jogo em tempo real" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Os%20modelos%20de%20difus%C3%A3o%20s%C3%A3o%20motores%20de%20jogo%20em%20tempo%20real&subheading=quarta-feira%2C%2028%20de%20agosto%20de%202024%3A%20Resumo%20do%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/pt/2024/08/28</link>
+            <guid isPermaLink="false">2024-08-28T00:00:00.000Z</guid>
+            <pubDate>Wed, 28 Aug 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-27]]></title>
             <description
@@ -1715,186 +1901,6 @@
             <link>https://hn.cho.sh/pt/2024/08/19</link>
             <guid isPermaLink="false">2024-08-19T00:00:00.000Z</guid>
             <pubDate>Mon, 19 Aug 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-18]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/08/18&#39;</h2>
-<h1>2024-08-18</h1>
-<h2><a href="https://reason.com/2024/08/16/police-cannot-seize-property-indefinitely-after-an-arrest-federal-court-rules/">Polícia não pode apreender propriedade indefinidamente após uma prisão, decide tribunal federal</a></h2>
-<ul>
-<li>Um tribunal federal decidiu que a polícia não pode reter indefinidamente bens apreendidos durante uma prisão, enfatizando a proteção da Quarta Emenda contra apreensões irracionais.</li>
-<li>Juiz Gregory Katsas, do Tribunal de Apelações dos EUA para o Distrito de Columbia, afirmou que a posse contínua de propriedade apreendida deve ser razoável, desafiando decisões anteriores do tribunal de circuito.</li>
-<li>A ação envolveu demandantes cujos telefones foram apreendidos durante um protesto do Black Lives Matter e mantidos por mais de um ano sem acusações, potencialmente estabelecendo um precedente nacional e levando a uma revisão pela Suprema Corte.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41283310">Reações</a></h3>
-<ul>
-<li>A corte federal decidiu que a polícia não pode apreender propriedade indefinidamente após uma prisão, mas não especificou uma duração máxima para a retenção da propriedade.</li>
-<li>Céticos argumentam que a ausência de um limite de tempo específico torna a decisão ineficaz e suscetível a possíveis abusos policiais, sugerindo um limite rígido como 14 ou 30 dias.</li>
-<li>Tendo em vista que a decisão judicial exige a devolução da propriedade uma vez que a justificativa inicial se dissipe, mas permite atrasos razoáveis, surgem preocupações sobre leis vagas e seu impacto na justiça.</li>
-</ul>
-<h2><a href="https://loyaltylobby.com/2024/08/16/flightaware-leaks-customer-data-name-email-addresses-passwords/">FlightAware vaza dados de clientes (nome, endereços de e-mail e senhas)</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41277429">Reações</a></h3>
-<ul>
-<li>FlightAware sofreu uma violação significativa de dados, vazando informações extensas de clientes, como nomes, endereços de e-mail, senhas e detalhes de cartões de crédito.</li>
-<li>Os usuários estão frustrados com a falta de comunicação da FlightAware, pois a empresa não forneceu atualizações em seu site ou nas redes sociais.</li>
-<li>A violação levantou preocupações sobre as práticas de segurança de dados da FlightAware e sua resposta ao incidente, com alguns usuários recebendo apenas notificações lentas por e-mail para redefinir suas senhas.</li>
-</ul>
-<h2><a href="https://joel.tools/smarter/">Você é melhor do que um modelo de linguagem em prever a próxima palavra?</a></h2>
-<ul>
-<li>Vários benchmarks avaliam modelos de linguagem em tarefas humanas, mas uma tarefa crucial para esses modelos é prever a próxima palavra.</li>
-<li>A postagem levanta a questão de se os humanos podem superar os modelos de linguagem nesta tarefa específica.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41277179">Reações</a></h3>
-<ul>
-<li>JoelEinbinder desenvolveu um jogo onde os jogadores preveem a próxima palavra nos comentários do Hacker News, competindo contra modelos de linguagem como o llama2.</li>
-<li>Os usuários sugeriram melhorias, como mostrar uma pergunta de cada vez com feedback instantâneo, e observaram o comprimento do quiz e sua eficácia em medir a &#39;inteligência&#39;.</li>
-<li>O jogo destaca as diferenças no processamento de linguagem entre humanos e IA, provocando discussões sobre as capacidades da IA e a inteligência humana, com os humanos ocasionalmente superando os modelos.</li>
-</ul>
-<h2><a href="https://tinystruggles.com/posts/google_postmortem/">Post-mortem da minha jornada de 9 anos no Google</a></h2>
-<ul>
-<li>O autor reflete sobre uma carreira de 9 anos no Google, destacando tanto as conquistas quanto os desafios, incluindo o trabalho no Bigtable, Persistent Disk e GCE VMs.</li>
-<li>Os principais pontos incluem adquirir habilidades de engenharia e liderança, estabilidade financeira e uma comunidade forte, mas também enfrentar estresse, carga cognitiva e oportunidades de crescimento limitadas.</li>
-<li>A autora planeja tirar um sabático para explorar novas oportunidades e desafios, com o objetivo de encontrar novos objetivos e crescimento pessoal.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278907">Reações</a></h3>
-<ul>
-<li>Um ex-engenheiro do Google reflete sobre seus 9 anos de trabalho, destacando a evolução das práticas caóticas iniciais para ferramentas e processos mais padronizados.</li>
-<li>As postagens contrastam o alto estresse e esgotamento nas funções de Engenharia de Confiabilidade de Sites (SRE) com a Engenharia de Software (SWE), destacando os desafios e recompensas únicos de cada uma.</li>
-<li>Vários ex-Googlers fornecem insights sobre a cultura em mudança do Google, problemas de gestão e a influência de seu modelo de negócios baseado em publicidade.</li>
-</ul>
-<h2><a href="https://github.com/TomWright/dasel">TomWright/dasel: Selecionar, inserir e deletar dados de JSON, TOML, YAML, XML e CSV</a></h2>
-<ul>
-<li>Dasel é uma ferramenta versátil para consultar e modificar estruturas de dados em vários formatos (JSON, YAML, TOML, XML, CSV) com uma sintaxe de seletor unificada e zero dependências em tempo de execução.</li>
-<li>Ele suporta a instalação através de vários gerenciadores de pacotes e oferece comandos para selecionar, converter, atualizar e excluir dados.</li>
-<li>Dasel é conhecido por sua velocidade, sendo até 3x mais rápido que o jq e 15x mais rápido que o yq, e inclui recursos como hooks de pré-commit e compatibilidade com Linux, Mac e Windows.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41282495">Reações</a></h3>
-<ul>
-<li>A discussão centra-se no potencial de usar a sintaxe estilo SQL para consultar vários formatos de dados não relacionais como JSON, TOML, YAML, XML e CSV.</li>
-<li>Embora o SQL seja teoricamente capaz de consultar qualquer dado devido à sua completude de Turing, a eficiência prática e a conveniência variam entre os formatos.</li>
-<li>As conversas destacam a necessidade de uma linguagem de consulta padronizada para formatos de dados estruturados, considerando as características únicas de cada formato de armazenamento e os benefícios de ferramentas como jq e yq para manipulação de dados na linha de comando.</li>
-</ul>
-<h2><a href="https://blog.sylver.dev/build-your-own-sqlite-part-1-listing-tables">Construa seu próprio SQLite, Parte 1: Listando tabelas</a></h2>
-<ul>
-<li>Esta postagem é a primeira parte de uma série sobre como construir um banco de dados compatível com SQLite do zero, com exemplos em Rust.</li>
-<li>Ele abrange a criação de um banco de dados de teste mínimo, a compreensão do formato de arquivo SQLite e a implementação de um comando para listar todos os nomes de tabelas em um banco de dados.</li>
-<li>O projeto envolve definir estruturas-chave como <code>Pager</code>, <code>Page</code> e <code>Db</code>, e configurar um REPL (Read-Eval-Print Loop) básico para suportar comandos como <code>.tables</code> e <code>.exit</code>.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278807">Reações</a></h3>
-<ul>
-<li>Esta postagem discute a construção de uma implementação personalizada do SQLite, com foco na listagem de tabelas, e faz parte de uma série.</li>
-<li>Uma ideia notável é usar macros do Rust para definir consultas SQL, permitindo ligações diretas do SQL para a API interna do banco de dados em tempo de compilação, evitando a necessidade de análise e planejamento de consultas em tempo de execução para consultas estáticas.</li>
-<li>Fazem-se comparações com o SQLx, que verifica consultas SQL em tempo de compilação usando macros, garantindo a validade do SQL e otimizando o desempenho.</li>
-</ul>
-<h2><a href="https://okmij.org/ftp/ML/generalization.html">Como funciona o verificador de tipos do OCaml (2022)</a></h2>
-<ul>
-<li>Algoritmo de 1988 de Didier Rémy para generalização de tipos em OCaml melhora a velocidade de inferência de tipos ao evitar varreduras ineficientes do ambiente, utilizando níveis para rastrear dependências de tipos.</li>
-<li>O método de Rémy, semelhante à coleta de lixo geracional, garante que as variáveis de tipo sejam quantificadas apenas quando sua região definidora estiver inativa, prevenindo a generalização incorreta.</li>
-<li>OCaml&#39;s type checker implementa este algoritmo, usando níveis para gerenciar variáveis de tipo e impor disciplina de escopo, melhorando significativamente a eficiência da inferência de tipos.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41281555">Reações</a></h3>
-<ul>
-<li>O artigo sobre o verificador de tipos OCaml, atualizado em 2022, explora além da inferência de tipos Hindley-Milner e do Algoritmo W, destacando técnicas modernas como union-find para eficiência.</li>
-<li>É crucial para desenvolvedores que modificam o verificador de tipos do OCaml e inclui discussões sobre a verificação de tipos do Rust, a crescente popularidade do OCaml e comparações com linguagens como Gleam e Go.</li>
-<li>Ao artigo é altamente estimado na comunidade OCaml e é frequentemente referenciado na documentação, refletindo sua importância e influência.</li>
-</ul>
-<h2><a href="https://legendofworlds.com/blog/4">Passei 2 anos construindo meu próprio motor de jogo (Rust, WASM, WebGPU)</a></h2>
-<ul>
-<li>A desenvolvedora passou dois anos criando o &quot;Toxoid&quot;, um motor de jogo de código aberto usando Rust, WebAssembly (WASM) e WebGPU para um jogo multiplayer online de arte em pixel 2D chamado Legend of Worlds.</li>
-<li>Toxoid utiliza Flecs para seu sistema de componentes de entidade (ECS), Sokol para renderização e Emscripten para compatibilidade com a web, visando alto desempenho, iteração rápida e usabilidade ao longo da vida sem dependência de fornecedores.</li>
-<li>A engine agora está disponível publicamente, e os planos futuros incluem um site dedicado, amostras, exemplos, testes e documentação para apoiar a comunidade de desenvolvimento.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278862">Reações</a></h3>
-<ul>
-<li>Um desenvolvedor passou 2 anos criando um motor de jogo personalizado usando Rust, WASM (WebAssembly) e WebGPU, e agora está desenvolvendo um jogo semelhante ao Minecraft com ele.</li>
-<li>Embora o projeto não tenha como objetivo o sucesso comercial, ele despertou o interesse de potenciais empregadores e serve como uma experiência de aprendizado.</li>
-<li>A pilha Rust+WASM+WebGPU é destacada como promissora, abrangendo muitos conceitos importantes da ciência da computação.</li>
-</ul>
-<h2><a href="https://kevinboone.me/cpm-c.html">Voltando à programação em C para CP/M</a></h2>
-<ul>
-<li>Kevin Boone reacendeu seu interesse pela programação em CP/M após 40 anos, criando novas utilidades como KCalc-CPM, cpmbox e cpmlife usando uma máquina CP/M baseada em Z80.</li>
-<li>A matéria discute o uso do compilador Aztec C de 1982 para CP/M, destacando seu pequeno tamanho, sintaxe arcaica e a necessidade de otimização manual devido aos recursos limitados.</li>
-<li>Boone enfatiza a importância de testar em hardware real, pois os emuladores podem mascarar ineficiências, e considera o processo de escrever código eficiente para o hardware dos anos 80 tanto desafiador quanto gratificante.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41281665">Reações</a></h3>
-<ul>
-<li>Um desenvolvedor criou um emulador simples de CP/M e uma coleção de binários de CP/M, incluindo o compilador Aztec C, para facilitar a compilação de código para sistemas CP/M.</li>
-<li>A postagem destaca a nostalgia e os desafios de programar em C para CP/M, contrastando isso com as práticas e ferramentas de desenvolvimento modernas.</li>
-<li>A discussão inclui o contexto histórico sobre o compilador Aztec C, suas origens e a evolução dos padrões de programação em C desde a década de 1980 até hoje.</li>
-</ul>
-<h2><a href="https://newatlas.com/health-wellbeing/nutrient-dna-damage/">Baixo nível de magnésio ligado a danos no DNA que causam doenças</a></h2>
-<ul>
-<li>Um estudo da Universidade da Austrália do Sul liga baixos níveis de magnésio a danos no DNA, potencialmente levando a doenças como câncer, diabetes e Alzheimer.</li>
-<li>Pesquisadores descobriram que baixos níveis de magnésio correlacionam-se com altos níveis de homocisteína, um aminoácido genotóxico, enquanto altos níveis de magnésio estão positivamente ligados ao folato e à vitamina B12.</li>
-<li>FDA recomenda 420 mg de magnésio diariamente para adultos, e o estudo enfatiza a importância de alimentos ricos em magnésio, como nozes, sementes, vegetais de folhas escuras e chocolate amargo.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278636">Reações</a></h3>
-<ul>
-<li>Baixos níveis de magnésio estão ligados a danos no DNA, destacando a importância de uma ingestão adequada de magnésio.</li>
-<li>Formas diferentes de suplementos de magnésio servem a vários propósitos de saúde: Magnésio L-Treonato para a saúde cerebral, Magnésio Taurato para problemas metabólicos, Magnésio Glicinato para ansiedade e insônia, e Magnésio Citrato como uma opção econômica.</li>
-<li>Fontes alimentares de magnésio incluem feijões, nozes, sementes e vegetais de folhas verdes, mas as práticas agrícolas modernas podem reduzir seu teor de magnésio.</li>
-</ul>
-<h2><a href="https://build-your-own.org/blog/20240813_css_vertical_center/">CSS adiciona centralização vertical em 2024</a></h2>
-<ul>
-<li>Em 2024, o CSS introduzirá <code>align-content</code> para centralização vertical no layout padrão, eliminando a necessidade de flexbox ou grid.</li>
-<li>Esta atualização será compatível com o Chrome 123, Firefox 125 e Safari 17.4, simplificando o alinhamento vertical com uma única propriedade.</li>
-<li>Tecnicamente, o centramento vertical exigia métodos complexos como células de tabela, posicionamento absoluto e flexbox, mas o novo método simplifica esse processo.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41282889">Reações</a></h3>
-<ul>
-<li>CSS introduzirá um novo recurso para centralização vertical em 2024, simplificando uma tarefa que tem sido possível com flexbox e grid, mas não tão direta no layout de fluxo.</li>
-<li>Esta adição visa tornar o centramento vertical mais acessível, especialmente para novos usuários de CSS que acham os métodos atuais como <code>align-content</code> e flexbox pouco intuitivos.</li>
-<li>A comunidade está reagindo positivamente, observando que, embora o alinhamento vertical já fosse possível por meio de vários métodos, esse novo recurso aumentará a conveniência e a facilidade de uso.</li>
-</ul>
-<h2><a href="https://www.surveillancewatch.io">Surveillance Watch – as conexões ocultas dentro da indústria de vigilância</a></h2>
-<ul>
-<li>Surveillance Watch é um mapa interativo que expõe as relações entre empresas de vigilância, suas fontes de financiamento e afiliações.</li>
-<li>A ferramenta visa proporcionar transparência e conscientização sobre as entidades envolvidas em atividades de vigilância.</li>
-<li>Esta iniciativa é significativa, pois ajuda os usuários a entender a rede e a influência das empresas de vigilância.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41283149">Reações</a></h3>
-<ul>
-<li>Surveillance Watch (surveillancewatch.io) revela conexões ocultas dentro da indústria de vigilância, com foco nos fornecedores utilizados por forças de segurança e governos para monitorar e rastrear alvos.</li>
-<li>Discussões destacam o papel de grandes empresas de tecnologia como Meta e Alphabet em fornecer metadados às autoridades, muitas vezes sob ordens judiciais, e sua conformidade com programas de vigilância governamental.</li>
-<li>Os recursos e a usabilidade do site são debatidos, com sugestões de melhorias, como tornar o globo opcional em dispositivos móveis e adicionar elementos interativos.</li>
-</ul>
-<h2><a href="https://nitter.lucabased.xyz/x">X parou de exigir autenticação, nitter funciona novamente</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41283209">Reações</a></h3>
-<ul>
-<li>X parou de exigir autenticação, permitindo que o Nitter volte a funcionar, o que gerou discussões sobre a confiabilidade da plataforma.</li>
-<li>Os usuários expressam frustração com os problemas do X, como limites de taxa e restrições de conteúdo, e sugerem alternativas como Mastodon ou Threads.</li>
-<li>A conversa destaca os desafios contínuos e a insatisfação com a plataforma X sob a propriedade de Elon Musk.</li>
-</ul>
-<h2><a href="https://github.com/PatrickJS/everyone-ssn-usa">Divulgar o SSN de todos e os hacks usados para adquiri-los</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41277058">Reações</a></h3>
-<ul>
-<li>Alegadamente, um repositório no GitHub afirma de forma humorística liberar os Números de Segurança Social (SSNs) de todos e os métodos usados para adquiri-los, gerando uma mistura de preocupação e piadas entre os usuários.</li>
-<li>As discussões destacam as falhas do uso de SSNs como identificadores seguros e o potencial para fraude de identidade, enfatizando a necessidade de melhores práticas de segurança.</li>
-<li>Os usuários também discutem a estrutura e a reutilização dos SSNs, apontando as limitações do sistema atual.</li>
-</ul>
-<h2><a href="https://www.theguardian.com/film/article/2024/aug/18/french-screen-star-alain-delon-dies-aged-88">Alain Delon morreu</a></h2>
-<ul>
-<li>Alain Delon, um proeminente ator francês conhecido por seus papéis em &#39;Plein Soleil&#39; e &#39;Le Samouraï&#39;, faleceu aos 88 anos, conforme anunciado por seus filhos.</li>
-<li>Delon foi uma figura significativa no ressurgimento do cinema francês durante a década de 1960, colaborando com renomados diretores como Jean-Pierre Melville e Luchino Visconti.</li>
-<li>Presidente francês Emmanuel Macron e a atriz Brigitte Bardot prestaram homenagem a Delon, enfatizando seu impacto no cinema e seu amor pelos animais.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41280792">Reações</a></h3>
-<ul>
-<li>Ator francês Alain Delon faleceu, provocando reflexões sobre seu impacto significativo no cinema, particularmente em filmes como &#39;O Samurai&#39; e &#39;O Círculo Vermelho.&#39;</li>
-<li>Delon era conhecido por sua aparência marcante e talento para a atuação, o que o tornou uma figura proeminente no cinema europeu e um ícone cultural em várias regiões, incluindo a União Soviética.</li>
-<li>Sua morte provocou discussões sobre seu legado, incluindo sua influência em outras obras e suas anedotas pessoais únicas, como sua extensa coleção de armas descoberta em 2024.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Polícia não pode apreender propriedade indefinidamente após uma prisão, decide tribunal federal" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Pol%C3%ADcia%20n%C3%A3o%20pode%20apreender%20propriedade%20indefinidamente%20ap%C3%B3s%20uma%20pris%C3%A3o%2C%20decide%20tribunal%20federal&subheading=domingo%2C%2018%20de%20agosto%20de%202024%3A%20Resumo%20do%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/pt/2024/08/18</link>
-            <guid isPermaLink="false">2024-08-18T00:00:00.000Z</guid>
-            <pubDate>Sun, 18 Aug 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

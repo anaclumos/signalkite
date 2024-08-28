@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 27 Aug 2024 19:12:29 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 28 Aug 2024 19:15:17 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/nl.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Tue, 27 Aug 2024 00:00:00 GMT</pubDate>
+        <pubDate>Wed, 28 Aug 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[nl]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-08-28]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/08/28&#39;</h2>
+<h1>2024-08-28</h1>
+<h2><a href="https://gamengen.github.io">Diffusjonsmodeller er sanntidsspillmotorer</a></h2>
+<ul>
+<li>Forskere introduserte GameNGen, en spillmotor drevet av en nevrale modell som er i stand til sanntidsinteraksjon, demonstrert ved å simulere spillet DOOM med over 20 bilder per sekund på en enkelt TPU.</li>
+<li>GameNGen bruker en to-fase treningsprosess som involverer en RL-agent for datainnsamling og en diffusjonsmodell for prediksjon av neste ramme, og oppnår en PSNR på 29,4, sammenlignbar med lossy JPEG-komprimering.</li>
+<li>Modellens arkitektur inkluderer kondisjoneringsforsterkninger og finjustering av en forhåndstrent auto-encoder for å sikre stabil langtidsgenerering og forbedret bildekvalitet, noe som gjør det vanskelig for menneskelige vurderere å skille mellom ekte og simulerte spillklipp.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41375548">Reacties</a></h3>
+<ul>
+<li>Diffusjonsmodeller genererer rammer basert på tidligere rammer og brukerhandlinger, men støtter ikke sanntidsbrukerinndata for dynamiske justeringer.</li>
+<li>Trent på et stort datasett av DOOM-spill, produserer disse modellene rammer betinget av nåværende rammer og brukerhandlinger, og ligner mer på en nevrale opptak enn en interaktiv simulering.</li>
+<li>Selv om teknologien er imponerende, står den overfor begrensninger som inkonsekvent vedlikehold av intern spilltilstand, noe som fremhever både potensialet og utfordringene for spillsimulering.</li>
+</ul>
+<h2><a href="https://josephg.com/blog/crdts-go-brrr/">Raskere CRDT-er (2021)</a></h2>
+<ul>
+<li>Opprinnelig var forfatteren frustrert over en akademisk artikkels ineffektive implementering av deres algoritme, noe som førte til feilaktige påstander om ytelse.</li>
+<li>Denne frustrasjonen førte til utforskning og optimalisering av CRDT-er (Conflict-Free Replicated Data Types), som muliggjør sanntids samarbeidende redigering uten en sentral server.</li>
+<li>Den optimaliserte CRDT-implementeringen til forfatteren, Diamond, overgår betydelig populære CRDT-er som Automerge ved å bruke enklere datastrukturer og avanserte indekseringsteknikker, og oppnår over 5000x hastighetsforbedringer.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41372833">Reacties</a></h3>
+<ul>
+<li>Innlegget diskuterer ytelsen til konfliktfrie replikerte datatyper (CRDT-er) og deres praktiske anvendelser i programvare i den virkelige verden, og fremhever deres fordeler og utfordringer.</li>
+<li>CRDT-er brukes i ulike applikasjoner som Thymer, Notion og Apple Notes, og gir funksjoner som sanntidssamarbeid og offline-funksjonalitet, men de har også ulemper som ytelseskompromisser og kompleks konfliktløsning.</li>
+<li>Diskusjonen inkluderer innsikt fra utviklere og brukere om den praktiske implementeringen av CRDT-er, sammenligner dem med andre synkroniseringsmetoder som Operational Transforms (OT) og utforsker deres egnethet for forskjellige bruksområder.</li>
+</ul>
+<h2><a href="https://chartdb.io/">ChartDB – Gratis og åpen kildekode, database design editor</a></h2>
+<ul>
+<li>ChartDB tilbyr en gratis, åpen kildekode database design editor som lar brukere visualisere databasen sin med en enkelt forespørsel, uten å måtte registrere seg.</li>
+<li>Støtter flere databasesystemer (DBMS) inkludert PostgreSQL, MySQL, SQL Server, SQLite og MariaDB, og tilbyr funksjoner som øyeblikkelig skjemaimport og AI-generert DDL (Data Definition Language).</li>
+<li>Brukere kan raskt importere/eksportere databaser, generere SQL-skript eller bilder, og bruke avanserte spørringsredigeringsverktøy, noe som gjør det til et allsidig verktøy for databaseadministrasjon og design.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41374009">Reacties</a></h3>
+<ul>
+<li>ChartDB er en gratis og åpen kildekode database design editor, som får oppmerksomhet for sin nytteverdi i å lage databasediagrammer.</li>
+<li>Diskusjonen fremhever viktigheten av databasediagrammer for å forstå og kommunisere komplekse datastrukturer, spesielt i modne prosjekter.</li>
+<li>Brukere sammenligner ChartDB med andre verktøy som dbdiagram.io, ERWin og PlatUML, og bemerker dets potensial for automatisk diagramgenerering og brukervennlighet i samarbeidsmiljøer.</li>
+</ul>
+<h2><a href="https://blog.system76.com/post/cosmic-alpha-released-heres-what-people-are-saying/">COSMIC Alpha Utgitt</a></h2>
+<ul>
+<li>Alpha-versjonen av COSMIC, et nytt skrivebordsmiljø for Pop!_OS og andre Linux-distribusjoner, har blitt utgitt, og tilbyr nye funksjoner, tilpasning, ytelse, stabilitet og sikkerhet.</li>
+<li>COSMIC anbefales ikke for produksjonsbruk ennå, men tilbakemeldingene har vært positive og fremhever dens hastighet, solide grunnlag og brukervennlige design.</li>
+<li>Utgivelsen fungerer også som en alfa for Pop!_OS 24.04 LTS, med nye funksjoner som dato- og klokkeslettinnstillinger, skjermopptak, standardinnstillinger for touchpad og skjermdeling i videokonferanseapper.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41376590">Reacties</a></h3>
+<ul>
+<li>System76 har gitt ut alpha-versjonen av COSMIC, et nytt skrivebordsmiljø, som har skapt betydelig interesse i teknologisamfunnet.</li>
+<li>COSMIC er bygget ved hjelp av Iced, et kryssplattform UI-rammeverk basert på Rust, som fortsatt er eksperimentelt, men viser lovende tegn for fremtidig utvikling.</li>
+<li>Brukere har rapportert både positive aspekter, som uavhengige arbeidsområder per skjerm og fornuftige hurtigtaster, og negative aspekter, som manglende funksjoner og feil, noe som indikerer at selv om det er lovende, er COSMIC ennå ikke klar for daglig bruk.</li>
+</ul>
+<h2><a href="https://old.reddit.com/r/youtube/comments/1f30ku4/youtube_sabotaging_on_firefox/">Fra og med i dag er YouTube nesten ubrukelig på Firefox</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41379517">Reacties</a></h3>
+<ul>
+<li>Youtube har blitt nesten ubrukelig på Firefox, med ytelsesmålinger som viser betydelige nedganger og fullstendige UI-frysninger.</li>
+<li>Problemet ser ut til å være relatert til en Polymer-oppdatering som påvirker tilpassede webkomponenter, noe som har utløst spekulasjoner om hvorvidt dette er en anti-adblocker-mekanisme eller en feil.</li>
+<li>Diskusjoner har oppstått om Googles innflytelse over nettleserkompatibilitet, med noen som foreslår at EU bør finansiere en personvernfokusert nettleser eller forgrene Chromium for å adressere disse bekymringene.</li>
+</ul>
+<h2><a href="https://news.griffith.edu.au/2024/08/27/game-changing-needle-free-covid-19-intranasal-vaccine/">Covid-19 intranasalvaksine</a></h2>
+<ul>
+<li>Forskere ved Griffith University, ledet av professor Suresh Mahalingam, utvikler en neste generasjons COVID-19 slimhinnevaksine, CDO-7N-1, publisert i Nature Communications.</li>
+<li>Denne levende svekkede intranasale vaksinen har som mål å indusere både mukosal og systemisk immunitet med en enkelt dose, og tilbyr langvarig beskyttelse og et nålfritt alternativ.</li>
+<li>Vaksinen gir kryssbeskyttelse mot alle varianter av bekymring, forblir stabil ved 4°C i syv måneder, og er lisensiert til Indian Immunologicals Ltd for kommende kliniske studier, noe som gjør den egnet for lav- og mellominntektsland.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41375746">Reacties</a></h3>
+<ul>
+<li>En ny intranasal Covid-19-vaksine, CDO-7N-1, hevder å gi sterk beskyttelse mot overføring, reinfeksjon og spredning av viruset, samtidig som den reduserer genereringen av nye varianter.</li>
+<li>Til forskjell fra mRNA-vaksiner, induserer CDO-7N-1 immunitet mot alle større SARS-CoV-2-proteiner og forblir stabil ved 4°C i syv måneder, noe som gjør den egnet for lav- og mellominntektsland.</li>
+<li>Den nasale leveringsmetoden kan nøytralisere viruset langs neseslimhinnen, og tilbyr en ny tilnærming til forebygging av Covid-19, selv om dens effektivitet og offentlig mottakelse ennå ikke er fastslått.</li>
+</ul>
+<h2><a href="https://taskwarrior.org/">Taskwarrior – CLI Task Management</a></h2>
+<ul>
+<li>Taskwarrior 3.0.2 har blitt utgitt, og adresserer mindre problemer fra versjon 3.0.0, inkludert forbedringer i oppgavenyheter, feilhåndtering, dokumentasjon og hook-interaksjoner.</li>
+<li>Taskwarrior 3.0 introduserte ny, pålitelig oppgave-lagring og synkroniseringsstøtte basert på TaskChampion, noe som markerer en betydelig oppgradering.</li>
+<li>De nyeste stabile versjonene som er tilgjengelige er Taskwarrior 3.0.2, Taskshell 1.2.0 og Timewarrior 1.7.1, med utviklingsversjoner også tilgjengelige.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41372482">Reacties</a></h3>
+<ul>
+<li>En utvikler lager en minimal GUI (Graphical User Interface) for Taskwarrior, et CLI (Command Line Interface) oppgavehåndteringsverktøy, for å forbedre tastaturnavigasjon og hjelpe brukere med ADHD.</li>
+<li>Utvikleren planlegger å integrere Timewarrior, et verktøy for tidsregistrering, i GUI-en i fremtiden, selv om nåværende innsats er fokusert på lokal bruk i stedet for ekstern tilgang eller mobil synkronisering.</li>
+<li>Samfunnet diskuterer ulike aspekter ved Taskwarrior, inkludert synkroniseringsutfordringer, potensiell mobilstøtte og fordelene med funksjoner som oppgaveavhengigheter og hasterangering.</li>
+</ul>
+<h2><a href="https://github.com/seekbytes/IPA">IPA, en GUI for å utforske indre detaljer i PDF-er</a></h2>
+<ul>
+<li>Interaktiv PDF-analyse (IPA) er et verktøy designet for å hjelpe forskere med å utforske og analysere PDF-filer, spesielt de som kan inneholde ondsinnede nyttelaster eller brukes i phishing-kampanjer.</li>
+<li>IPA tilbyr et grafisk grensesnitt for å trekke ut nyttelaster, forstå objektforhold og visualisere referanser i filen, noe som gjør det mer brukervennlig sammenlignet med kommandolinjeverktøy.</li>
+<li>Verktøyet er kompatibelt med pdf-rs og Rust, krever ingen ekstra programvare, og kan kompileres ved hjelp av Rust og cargo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41377960">Reacties</a></h3>
+<ul>
+<li>IPA er et nytt GUI-verktøy for å utforske PDF-detaljer, laget av Nicolodev, rettet mot rask PDF-analyse.</li>
+<li>Andre lignende verktøy inkluderer pdf.hyzyla.dev, iText RUPS (Java), PDFSyntax (Python), Polyfile, ReportMill PDFViewer, PDFInspector og PDFXplorer.</li>
+<li>PDFSyntax-forfatteren introduserte en ny CLI-kommando for strukturoppsummering, og brukerne diskuterte ulike verktøy og funksjoner, delte erfaringer og problemer med PDF-verktøy.</li>
+</ul>
+<h2><a href="https://areweanticheatyet.com/">Er vi anti-juks ennå?</a></h2>
+<ul>
+<li>&quot;Er vi anti-juks ennå?&quot; er en folkefinansiert liste som beskriver kompatibiliteten til spill som bruker anti-juks programvare med GNU/Linux eller Wine/Proton.</li>
+<li>Gjeldende statistikk: 37 % støttet, 17 % kjører, 1 % planlagt, 38 % ødelagt, og 7 % avvist.</li>
+<li>Merkbare eksempler: Halo: The Master Chief Collection (støttet med mindre forbehold), Fortnite (avslått, fungerer på Xbox-Cloud), og Apex Legends (støttet).</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41376044">Reacties</a></h3>
+<ul>
+<li>&quot;Er vi anti-juks ennå?&quot; (areweanticheatyet.com) fikk betydelig oppmerksomhet på Hacker News, med 158 poeng og 176 kommentarer, noe som fremhever dens relevans i spillmiljøet.</li>
+<li>Nettsiden, utviklet av Starz0r over 2-3 år, sporet opprinnelig Linux-støttede spill for Steam Deck, men har siden utvidet seg og gjennomgått en redesign.</li>
+<li>Viktige diskusjoner inkluderer effektiviteten av anti-juks programvare, kappløpet mellom juksutviklere og anti-juks tiltak, og potensialet til AI og server-side løsninger for å forbedre juksdeteksjon.</li>
+</ul>
+<h2><a href="https://chipsandcheese.com/2024/08/27/teslas-ttpoe-at-hot-chips-2024-replacing-tcp-for-low-latency-applications/">Teslas TTPoE på Hot Chips 2024: Erstatte TCP for lav latens applikasjoner</a></h2>
+<ul>
+<li>Tesla introduserte TTPoE (Tesla Transport Protocol over Ethernet) på Hot Chips 2024, med mål om å erstatte TCP for lav latens applikasjoner i deres Dojo superdatamaskin.</li>
+<li>TTPoE tilbyr latens på mikrosekundskala og maskinvareavlastning, og forenkler TCPs tilstandsmaskin for å redusere latens og forbedre datagjennomstrømningen for oppgaver med høy IO-båndbredde som videoutdanning.</li>
+<li>TTPoE bruker en brute force-tilnærming for overbelastningskontroll, med en 1 MB sendings-SRAM-buffer og en kostnadseffektiv &quot;Dumb-NIC&quot; kalt Mojo, designet for å forbedre Dojo-superdatamaskinens ytelse.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41374663">Reacties</a></h3>
+<ul>
+<li>Tesla introduserte TTPoE (Tesla Transport Protocol over Ethernet) på Hot Chips 2024, med mål om å erstatte TCP for lav latens applikasjoner.</li>
+<li>Den nye protokollen er designet for å optimalisere ytelsen for Teslas spesifikke bruksområder, ved å utnytte eksisterende maskinvare og redusere kostnadene ved å unngå behovet for dyrere nettverksløsninger som Infiniband.</li>
+<li>Trekket har utløst debatt, med noen som argumenterer for at det er unødvendig gitt eksisterende teknologier som TCP Offload Engines (TOE) og RoCE (RDMA over Converged Ethernet), mens andre ser det som en strategisk beslutning for bedre kontroll og kostnadseffektivitet.</li>
+</ul>
+<h2><a href="https://www.developer-tech.com/news/judge-dismisses-majority-github-copilot-copyright-claims/">Dommer avviser flertallet av GitHub Copilot opphavsrettskrav</a></h2>
+<ul>
+<li>En dommer har avvist de fleste kravene i en opphavsrettssøksmål mot GitHub, Microsoft og OpenAI angående den AI-drevne GitHub Copilot-kodingsassistenten.</li>
+<li>Rettsaken, initiert av utviklere i 2022, hadde opprinnelig 22 krav, men bare to gjenstår: ett for brudd på åpen kildekode-lisens og ett for kontraktsbrudd.</li>
+<li>Retten fant argumentene om at Copilot brøt DMCA ved å foreslå kode uten riktig attribusjon, lite overbevisende og avviste krav om straffeskadeerstatning og økonomisk kompensasjon.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41378806">Reacties</a></h3>
+<ul>
+<li>En dommer avviste de fleste opphavsrettskravene mot GitHub Copilot, noe som utløste debatter om AI-generert kode og opphavsrettsspørsmål.</li>
+<li>Brukere rapporterte tilfeller der AI produserte kode identisk med eksisterende eksempler, noe som reiste juridiske bekymringer om brudd på opphavsretten.</li>
+<li>Den pågående debatten fokuserer på hvordan opphavsrettslovene bør utvikles for å adressere AI&#39;s kapabiliteter og ansvaret til AI-operatører.</li>
+</ul>
+<h2><a href="https://elixir-lang.org/blog/2024/08/28/typing-lists-and-tuples/">Å skrive lister og tupler i Elixir</a></h2>
+<ul>
+<li>Elixir utvikler et typesystem for å sikre lyd gradvis typing, som tillater trygg grensesnitt mellom statisk og dynamisk kode, med mål om å forhindre typefeil ved kjøring.</li>
+<li>Det nye typesystemet vil støtte tuppeltyper, spesifisere minimumsstørrelser og elementtyper, og gi advarsler ved kompilering for å forhindre kjøretidsfeil.</li>
+<li>Elixir v1.17 har blitt utgitt, og kommende arrangementer er planlagt for 27.-30. august 2024 i Orlando, FL.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41378478">Reacties</a></h3>
+<ul>
+<li>Elixirs gradvise typetilnærming prioriterer systemets lydhet over syntaks, med kompilatoren som forbedres for å fange flere feil i hver versjon.</li>
+<li>Elixir 1.17 introduserte et gradvis typesystem, som for øyeblikket bare støtter noen få typer, med planer om utvidelse i fremtidige oppdateringer.</li>
+<li>Jämförelser med F# och Pythons MyPy belyser komplexiteten i att hantera icke-tomma listor och typsystem, men Elixirs tillvägagångssätt ses som fördelaktigt för långsiktig utveckling.</li>
+</ul>
+<h2><a href="https://github.com/queer/boxxy">Boxxy setter dårlige Linux-applikasjoner i en boks med bare filene deres</a></h2>
+<ul>
+<li>Boxxy er et Linux-verktøy designet for å organisere applikasjonsfiler og -mapper ved å omdirigere dem uten å bruke symbolske lenker, ved å bruke Linux-navnerom.</li>
+<li>Det hjelper med å opprettholde en ryddig $HOME-katalog ved å omdirigere applikasjonsdata til spesifiserte steder og støtter funksjoner som kontekstavhengige regler, minimalt overhead og injeksjon av miljøvariabler.</li>
+<li>Som et nytt prosjekt kan Boxxy ha potensielle problemer og begrensninger, som manglende evne til å bruke sudo inne i containeren.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41376558">Reacties</a></h3>
+<ul>
+<li>Boxxy er et verktøy designet for å isolere problematiske Linux-applikasjoner ved å inneholde filene deres.</li>
+<li>Et relatert verktøy, &quot;xdg-ninja,&quot; skanner $HOME-katalogen for feilplasserte filer og foreslår passende plasseringer.</li>
+<li>Brukere diskuterer ulike sandkassingsmetoder som symlinks, Firejail, Bubblewrap og Docker, og uttrykker bekymring for å bruke Discord til prosjektkommunikasjon, og foretrekker mer åpne fora.</li>
+</ul>
+<h2><a href="https://prestonbyrne.com/2024/08/24/thoughts-on-the-durov-arrest/">Tankar om Durov-arrestasjonen</a></h2>
+<ul>
+<li>Grunnleggeren av Telegram, Pavel Durov, ble arrestert i Frankrike for angivelig manglende overholdelse av lover om innholdsmoderering og datadeling, noe som reiser betydelige juridiske spørsmål.</li>
+<li>Arrestasjonen understreker de strengere innholdsreguleringslovene i Europa, som Frankrikes Loi Lutte Contra la Haine sur Internet og Tysklands NetzDG, sammenlignet med USAs Section 230 i Communications Decency Act.</li>
+<li>Anklagene mot Durov, inkludert medvirkning til forbrytelser som hvitvasking av penger og narkotikahandel, fremhever de økende risikoene for USA-baserte teknologigründere som opererer i Europa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41375902">Reacties</a></h3>
+<ul>
+<li>Grunnleggeren av Telegram, Pavel Durov, er i en lignende posisjon som Ladar Levison fra Lavabit, og står overfor juridisk press for å levere dokumenter til den franske regjeringen, hvor han er statsborger.</li>
+<li>Til forskjell fra ende-til-ende krypterte (E2EE) tjenester, tillater Telegrams designvalg at de kan få tilgang til brukerdata, noe som har ført til juridiske komplikasjoner og potensiell ansvarlighet for Durov.</li>
+<li>Diskusjonen fremhever viktigheten av E2EE i å beskytte både brukerdata og tjenesteleverandører fra juridiske og tvangsmessige press, og kontrasterer Telegrams tilnærming med mer sikre alternativer.</li>
+</ul>
+<h2><a href="https://apnews.com/article/france-telegram-pavel-durov-arrest-6e213d227458f330ed16e7fe221a696c">Franske påtalemyndigheter sier at Telegram-sjefen er løslatt fra varetekt, vil møte i retten</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41380450">Reacties</a></h3>
+<ul>
+<li>Franske påtalemyndigheter har løslatt Telegram-sjef Pavel Durov fra den første varetektsfengslingen, men han må fortsatt møte i retten, noe som understreker pågående juridiske problemer.</li>
+<li>Det grunnleggende problemet er Telegrams nektelse av å dele informasjon med etterforskere, noe som har utløst debatter om overholdelse av lokale lover versus kryptering og personvern.</li>
+<li>Dette tilfellet har fått betydelig oppmerksomhet på grunn av dets implikasjoner for globale teknologiselskaper som opererer under forskjellige nasjonale jurisdiksjoner og balansen mellom brukernes personvern og juridiske forpliktelser.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Diffusjonsmodeller er sanntidsspillmotorer" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Diffusjonsmodeller%20er%20sanntidsspillmotorer&subheading=woensdag%2028%20augustus%202024%3A%20Samenvatting%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/nl/2024/08/28</link>
+            <guid isPermaLink="false">2024-08-28T00:00:00.000Z</guid>
+            <pubDate>Wed, 28 Aug 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-27]]></title>
             <description
@@ -1715,186 +1901,6 @@
             <link>https://hn.cho.sh/nl/2024/08/19</link>
             <guid isPermaLink="false">2024-08-19T00:00:00.000Z</guid>
             <pubDate>Mon, 19 Aug 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-18]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/08/18&#39;</h2>
-<h1>2024-08-18</h1>
-<h2><a href="https://reason.com/2024/08/16/police-cannot-seize-property-indefinitely-after-an-arrest-federal-court-rules/">Politiet kan ikke beslaglegge eiendom på ubestemt tid etter en arrestasjon, fastslår føderal domstol</a></h2>
-<ul>
-<li>En føderal domstol avgjorde at politiet ikke kan beholde eiendom beslaglagt under en arrestasjon på ubestemt tid, og understreket det fjerde grunnlovstilleggets beskyttelse mot urimelige beslag.</li>
-<li>Dommer Gregory Katsas ved U.S. Court of Appeals for the District of Columbia uttalte at fortsatt besittelse av beslaglagt eiendom må være rimelig, og utfordret tidligere avgjørelser fra lagmannsretten.</li>
-<li>Tilfellet involverte saksøkere hvis telefoner ble beslaglagt under en Black Lives Matter-protest og holdt i over et år uten siktelser, noe som potensielt kan sette en nasjonal presedens og føre til en gjennomgang i Høyesterett.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41283310">Reacties</a></h3>
-<ul>
-<li>En føderal domstol avgjorde at politiet ikke kan beslaglegge eiendom på ubestemt tid etter en arrestasjon, men spesifiserte ikke en maksimal varighet for å holde eiendommen.</li>
-<li>Critics argue that the lack of a specific time limit makes the ruling ineffective and prone to potential police abuse, suggesting a hard cap like 14 or 30 days.</li>
-<li>Avgjørelsen pålegger tilbakelevering av eiendom når den opprinnelige begrunnelsen forsvinner, men tillater rimelige forsinkelser, noe som vekker bekymring for vage lover og deres innvirkning på rettferdighet.</li>
-</ul>
-<h2><a href="https://loyaltylobby.com/2024/08/16/flightaware-leaks-customer-data-name-email-addresses-passwords/">FlightAware lekker kundedata (navn, e-postadresser og passord)</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41277429">Reacties</a></h3>
-<ul>
-<li>FlightAware har opplevd et betydelig datainnbrudd, som har lekket omfattende kundeinformasjon som navn, e-postadresser, passord og kredittkortdetaljer.</li>
-<li>Brukere er frustrerte over mangelen på kommunikasjon fra FlightAware, ettersom selskapet ikke har gitt oppdateringer på nettstedet eller sosiale medier.</li>
-<li>Bruddet har skapt bekymringer om FlightAware sine datasikkerhetspraksiser og deres respons på hendelsen, med noen brukere som bare mottar trege e-postvarsler for å tilbakestille passordene sine.</li>
-</ul>
-<h2><a href="https://joel.tools/smarter/">Er du bedre enn en språkmodell til å forutsi det neste ordet?</a></h2>
-<ul>
-<li>Det er mange målestokker som evaluerer språkmodeller på menneskelige oppgaver, men en avgjørende oppgave for disse modellene er å forutsi det neste ordet.</li>
-<li>Innlegget reiser spørsmålet om mennesker kan overgå språkmodeller i denne spesifikke oppgaven.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41277179">Reacties</a></h3>
-<ul>
-<li>JoelEinbinder utviklet et spill der spillere forutsier det neste ordet i Hacker News-kommentarer, og konkurrerer mot språkmodeller som llama2.</li>
-<li>Brukere foreslo forbedringer som å vise ett spørsmål om gangen med umiddelbar tilbakemelding og bemerket quizens lengde og dens effektivitet i å måle &quot;smartness.&quot;</li>
-<li>Spillet understreker forskjeller i menneskelig og AI-språkbehandling, og utløser diskusjoner om AI-evner og menneskelig intelligens, der mennesker av og til overgår modellene.</li>
-</ul>
-<h2><a href="https://tinystruggles.com/posts/google_postmortem/">Postmortem av min 9 år lange reise hos Google</a></h2>
-<ul>
-<li>Forfatteren reflekterer over en 9-årig karriere hos Google, og fremhever både prestasjoner og utfordringer, inkludert arbeid med Bigtable, Persistent Disk og GCE VMs.</li>
-<li>Viktige punkter inkluderer å oppnå ingeniør- og lederegenskaper, økonomisk stabilitet og et sterkt fellesskap, men også å møte stress, kognitiv belastning og begrensede vekstmuligheter.</li>
-<li>Forfatteren planlegger å ta et sabbatsår for å utforske nye muligheter og utfordringer, med mål om å finne nye mål og personlig vekst.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278907">Reacties</a></h3>
-<ul>
-<li>En tidligere Google-ingeniør reflekterer over sin 9-årige periode, og fremhever utviklingen fra kaotiske tidlige praksiser til mer standardiserte verktøy og prosesser.</li>
-<li>Innlegget kontrasterer den høye stressen og utbrentheten i Site Reliability Engineering (SRE)-roller med Software Engineering (SWE), og bemerker de unike utfordringene og belønningene ved hver av dem.</li>
-<li>Ulike tidligere Google-ansatte gir innsikt i Googles skiftende kultur, ledelsesproblemer og innflytelsen fra dens reklamedrevne forretningsmodell.</li>
-</ul>
-<h2><a href="https://github.com/TomWright/dasel">TomWright/dasel: Velg, sett inn og slett data fra JSON, TOML, YAML, XML og CSV</a></h2>
-<ul>
-<li>Dasel er et allsidig verktøy for å søke i og endre datastrukturer på tvers av flere formater (JSON, YAML, TOML, XML, CSV) med en enhetlig selektorsyntaks og ingen runtime-avhengigheter.</li>
-<li>Den støtter installasjon via ulike pakkebehandlere og tilbyr kommandoer for å velge, konvertere, oppdatere og slette data.</li>
-<li>Dasel er kjent for sin hastighet, opptil 3 ganger raskere enn jq og 15 ganger raskere enn yq, og inkluderer funksjoner som pre-commit hooks og kompatibilitet med Linux, Mac og Windows.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41282495">Reacties</a></h3>
-<ul>
-<li>Diskusjonen dreier seg om potensialet for å bruke SQL-lignende syntaks for å søke i ulike ikke-relasjonelle dataformater som JSON, TOML, YAML, XML og CSV.</li>
-<li>Selv om SQL teoretisk sett er i stand til å forespørre alle data på grunn av sin Turing-fullstendighet, varierer praktisk effektivitet og bekvemmelighet mellom formater.</li>
-<li>Diskusjonen fremhever behovet for et standardisert spørringsspråk for strukturerte dataformater, med tanke på de unike egenskapene til hvert lagringsformat og fordelene med verktøy som jq og yq for kommandolinjedatamanipulering.</li>
-</ul>
-<h2><a href="https://blog.sylver.dev/build-your-own-sqlite-part-1-listing-tables">Bygg din egen SQLite, Del 1: Liste opp tabeller</a></h2>
-<ul>
-<li>Dette innlegget er den første delen av en serie om å bygge en SQLite-kompatibel database fra bunnen av, med eksempler i Rust.</li>
-<li>Det dekker opprettelse av en minimal testdatabase, forståelse av SQLite-filformatet, og implementering av en kommando for å liste opp alle tabellnavn i en database.</li>
-<li>Prosjektet innebærer å definere nøkkelstrukturer som <code>Pager</code>, <code>Page</code> og <code>Db</code>, og sette opp en grunnleggende REPL (Read-Eval-Print Loop) for å støtte kommandoer som <code>.tables</code> og <code>.exit</code>.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278807">Reacties</a></h3>
-<ul>
-<li>Innlegget diskuterer bygging av en tilpasset SQLite-implementering, med fokus på å liste opp tabeller, og er en del av en serie.</li>
-<li>En bemerkelsesverdig idé er å bruke Rust-makroer til å definere SQL-spørringer, slik at man kan opprette direkte bindinger fra SQL til den interne database-API-en ved kompileringstidspunktet, og dermed unngå behovet for kjøringstidsparsing og spørringsplanlegging for statiske spørringer.</li>
-<li>Det gjøres sammenligninger med SQLx, som verifiserer SQL-spørringer ved kompileringstid ved hjelp av makroer, og sikrer SQL-gyldighet og optimaliserer ytelsen.</li>
-</ul>
-<h2><a href="https://okmij.org/ftp/ML/generalization.html">Hvordan OCaml-typekontrollen fungerer (2022)</a></h2>
-<ul>
-<li>Didier Rémy&#39;s 1988-algoritme for typegeneralisering i OCaml forbedrer typeinferenshastigheten ved å unngå ineffektive miljøskanninger, ved å bruke nivåer for å spore typedependenser.</li>
-<li>Rémy&#39;s metode, som ligner på generasjonsavfallssamling, sikrer at typevariabler kun kvantifiseres når deres definerende region er inaktiv, og forhindrer dermed usikker generalisering.</li>
-<li>OCamls typekontrollør implementerer denne algoritmen, ved å bruke nivåer for å håndtere typevariabler og håndheve omfangsdisiplin, noe som betydelig forbedrer effektiviteten av typeinferenz.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41281555">Reacties</a></h3>
-<ul>
-<li>Artikkelen om OCaml-typekontrollen, oppdatert i 2022, utforsker utover Hindley-Milner-typeinferens og Algoritme W, og fremhever moderne teknikker som union-find for effektivitet.</li>
-<li>Det er avgjørende for utviklere som endrer OCaml-typekontrollen og inkluderer diskusjoner om Rusts typekontroll, OCaml&#39;s økende popularitet, og sammenligninger med språk som Gleam og Go.</li>
-<li>Artikkelen er høyt ansett i OCaml-samfunnet og blir ofte referert til i dokumentasjon, noe som gjenspeiler dens betydning og innflytelse.</li>
-</ul>
-<h2><a href="https://legendofworlds.com/blog/4">Jeg brukte 2 år på å bygge min egen spillmotor (Rust, WASM, WebGPU)</a></h2>
-<ul>
-<li>Utvikleren brukte to år på å lage &quot;Toxoid,&quot; en åpen kildekode spillmotor ved hjelp av Rust, WebAssembly (WASM) og WebGPU for et 2D pikselkunst online sandkasse flerspillerspill kalt Legend of Worlds.</li>
-<li>Toxoid bruker Flecs for sitt entity component system (ECS), Sokol for rendering, og Emscripten for webkompatibilitet, med mål om høy ytelse, rask iterasjon og livslang brukervennlighet uten leverandørlåsing.</li>
-<li>Motoren er nå offentlig tilgjengelig, og fremtidige planer inkluderer en dedikert nettside, prøver, eksempler, tester og dokumentasjon for å støtte utviklingssamfunnet.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278862">Reacties</a></h3>
-<ul>
-<li>En utvikler brukte 2 år på å lage en tilpasset spillmotor ved hjelp av Rust, WASM (WebAssembly) og WebGPU, og utvikler nå et Minecraft-lignende spill med den.</li>
-<li>Prosjektet, selv om det ikke er rettet mot kommersiell suksess, har vekket interesse fra potensielle arbeidsgivere og fungerer som en læringsopplevelse.</li>
-<li>Rust+WASM+WebGPU-stakken fremheves som lovende, og dekker mange viktige konsepter innen informatikk.</li>
-</ul>
-<h2><a href="https://kevinboone.me/cpm-c.html">Å komme tilbake til C-programmering for CP/M</a></h2>
-<ul>
-<li>Kevin Boone har gjenopplivet sin interesse for CP/M-programmering etter 40 år, og har laget nye verktøy som KCalc-CPM, cpmbox og cpmlife ved å bruke en Z80-basert CP/M-maskin.</li>
-<li>Artikkelen diskuterer bruken av 1982 Aztec C-kompilatoren for CP/M, og fremhever dens lille størrelse, arkaiske syntaks og behovet for manuell optimalisering på grunn av begrensede ressurser.</li>
-<li>Boone understreker viktigheten av å teste på ekte maskinvare, da emulatorer kan skjule ineffektivitet, og finner prosessen med å skrive effektiv kode for 80-tallsmaskinvare både utfordrende og givende.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41281665">Reacties</a></h3>
-<ul>
-<li>En utvikler har laget en enkel CP/M-emulator og en samling av CP/M-binærfiler, inkludert Aztec C-kompilatoren, for å lette kompilering av kode for CP/M-systemer.</li>
-<li>Innlegget fremhever nostalgien og utfordringene ved å programmere i C for CP/M, i kontrast til moderne utviklingspraksis og verktøy.</li>
-<li>Diskusjonen inkluderer historisk kontekst om Aztec C-kompilatoren, dens opprinnelse og utviklingen av C-programmeringsstandarder fra 1980-tallet til i dag.</li>
-</ul>
-<h2><a href="https://newatlas.com/health-wellbeing/nutrient-dna-damage/">Lite nivå av magnesium knyttet til sykdomsfremkallende DNA-skade</a></h2>
-<ul>
-<li>En studie fra University of South Australia knytter lave magnesiumnivåer til DNA-skader, noe som potensielt kan føre til sykdommer som kreft, diabetes og Alzheimers.</li>
-<li>Forskere fant at lavt magnesium korrelerer med høye nivåer av homocystein, en genotoksisk aminosyre, mens høye magnesiumnivåer er positivt knyttet til folat og vitamin B12.</li>
-<li>FDA anbefaler 420 mg magnesium daglig for voksne, og studien understreker viktigheten av magnesiumrike matvarer som nøtter, frø, mørke bladgrønnsaker og mørk sjokolade.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41278636">Reacties</a></h3>
-<ul>
-<li>Lite magnesium i kroppen er knyttet til DNA-skader, noe som understreker viktigheten av tilstrekkelig magnesiuminntak.</li>
-<li>Ulike former for magnesiumtilskudd tjener forskjellige helseformål: Magnesium L-Threonate for hjernehelse, Magnesium Taurate for metabolske problemer, Magnesium Glycinate for angst og søvnløshet, og Magnesium Citrate som et kostnadseffektivt alternativ.</li>
-<li>Matkilder til magnesium inkluderer bønner, nøtter, frø og bladgrønnsaker, men moderne jordbruksmetoder kan redusere magnesiuminnholdet.</li>
-</ul>
-<h2><a href="https://build-your-own.org/blog/20240813_css_vertical_center/">CSS legger til vertikal sentrering i 2024</a></h2>
-<ul>
-<li>Fra 2024 vil CSS introdusere <code>align-content</code> for vertikal sentrering i standardoppsettet, noe som eliminerer behovet for flexbox eller grid.</li>
-<li>Denne oppdateringen vil bli støttet i Chrome 123, Firefox 125 og Safari 17.4, og forenkler vertikal justering med en enkelt egenskap.</li>
-<li>Historisk sett krevde vertikal sentrering komplekse metoder som tabellceller, absolutt posisjonering og flexbox, men den nye metoden forenkler denne prosessen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41282889">Reacties</a></h3>
-<ul>
-<li>CSS vil introdusere en ny funksjon for vertikal sentrering i 2024, noe som vil forenkle en oppgave som har vært oppnåelig med flexbox og grid, men ikke like rett frem i flytoppsett.</li>
-<li>Dette tillegget har som mål å gjøre vertikal sentrering mer tilgjengelig, spesielt for nye CSS-brukere som synes nåværende metoder som <code>align-content</code> og flexbox er lite intuitive.</li>
-<li>Samfunnet reagerer positivt, og bemerker at selv om vertikal sentrering har vært mulig gjennom ulike metoder, vil denne nye funksjonen forbedre bekvemmelighet og brukervennlighet.</li>
-</ul>
-<h2><a href="https://www.surveillancewatch.io">Overvåkningsklokke – de skjulte forbindelsene innen overvåkningsindustrien</a></h2>
-<ul>
-<li>Surveillance Watch er et interaktivt kart som avslører forholdene mellom overvåkningsselskaper, deres finansieringskilder og tilknytninger.</li>
-<li>Verktøyet har som mål å gi åpenhet og bevissthet om enhetene som er involvert i overvåkningsaktiviteter.</li>
-<li>Dette initiativet er betydningsfullt da det hjelper brukere med å forstå nettverket og innflytelsen til overvåkningsselskaper.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41283149">Reacties</a></h3>
-<ul>
-<li>Surveillance Watch (surveillancewatch.io) avslører skjulte forbindelser innen overvåkningsindustrien, med fokus på leverandører brukt av rettshåndhevelse og myndigheter for å overvåke og spore mål.</li>
-<li>Diskusjoner fremhever rollen til store teknologiselskaper som Meta og Alphabet i å gi metadata til myndighetene, ofte under rettskjennelser, og deres overholdelse av statlige overvåkingsprogrammer.</li>
-<li>Funksjonene og brukervennligheten til nettstedet diskuteres, med forslag til forbedringer som å gjøre globusen valgfri på mobil og legge til interaktive elementer.</li>
-</ul>
-<h2><a href="https://nitter.lucabased.xyz/x">X sluttet å kreve autentisering, nitter fungerer igjen</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41283209">Reacties</a></h3>
-<ul>
-<li>X har sluttet å kreve autentisering, noe som gjør at Nitter fungerer igjen, og utløser diskusjoner om plattformens pålitelighet.</li>
-<li>Brukere uttrykker frustrasjon over Xs problemer, som hastighetsbegrensninger og innholdsrestriksjoner, og foreslår alternativer som Mastodon eller Threads.</li>
-<li>Diskusjonen understreker de pågående utfordringene og misnøyen med Xs plattform under Elon Musks eierskap.</li>
-</ul>
-<h2><a href="https://github.com/PatrickJS/everyone-ssn-usa">Frigjøre alles personnummer og hackene som ble brukt for å skaffe dem</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41277058">Reacties</a></h3>
-<ul>
-<li>Et GitHub-repositorium hevder humoristisk å frigi alles personnummer (SSN) og metodene som ble brukt for å skaffe dem, noe som vekker en blanding av bekymring og vitser blant brukerne.</li>
-<li>Diskusjonen fremhever svakhetene ved å bruke personnummer som sikre identifikatorer og potensialet for identitetssvindel, og understreker behovet for bedre sikkerhetspraksis.</li>
-<li>Brukere diskuterer også strukturen og gjenbruk av SSN-er, og peker på begrensningene i det nåværende systemet.</li>
-</ul>
-<h2><a href="https://www.theguardian.com/film/article/2024/aug/18/french-screen-star-alain-delon-dies-aged-88">Alain Delon har dødd</a></h2>
-<ul>
-<li>Alain Delon, en fremtredende fransk skuespiller kjent for sine roller i &quot;Plein Soleil&quot; og &quot;Le Samouraï,&quot; har gått bort i en alder av 88 år, som kunngjort av hans barn.</li>
-<li>Delon var en betydningsfull skikkelse i gjenoppblomstringen av fransk kino på 1960-tallet, og samarbeidet med anerkjente regissører som Jean-Pierre Melville og Luchino Visconti.</li>
-<li>Frankrikes president Emmanuel Macron og skuespillerinnen Brigitte Bardot hyllet Delon, og understreket hans innvirkning på kino og hans kjærlighet til dyr.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41280792">Reacties</a></h3>
-<ul>
-<li>Den franske skuespilleren Alain Delon har gått bort, noe som har ført til refleksjoner over hans betydelige innvirkning på kino, spesielt i filmer som &quot;Le Samouraï&quot; og &quot;Le Cercle Rouge.&quot;</li>
-<li>Delon var kjent for sitt slående utseende og skuespillertalent, noe som gjorde ham til en fremtredende skikkelse i europeisk kino og et kulturelt ikon i ulike regioner, inkludert Sovjetunionen.</li>
-<li>Han død har utløst diskusjoner om hans arv, inkludert hans innflytelse på andre verk og hans unike personlige anekdoter, som hans omfattende våpensamling oppdaget i 2024.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Politiet kan ikke beslaglegge eiendom på ubestemt tid etter en arrestasjon, fastslår føderal domstol" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Politiet%20kan%20ikke%20beslaglegge%20eiendom%20p%C3%A5%20ubestemt%20tid%20etter%20en%20arrestasjon%2C%20fastsl%C3%A5r%20f%C3%B8deral%20domstol&subheading=zondag%2018%20augustus%202024%3A%20Samenvatting%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/nl/2024/08/18</link>
-            <guid isPermaLink="false">2024-08-18T00:00:00.000Z</guid>
-            <pubDate>Sun, 18 Aug 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
