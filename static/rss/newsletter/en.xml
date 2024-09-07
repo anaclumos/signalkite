@@ -15,12 +15,188 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 06 Sep 2024 19:11:03 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 07 Sep 2024 19:08:35 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/en.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Fri, 06 Sep 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sat, 07 Sep 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[en]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-09-07]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/09/07&#39;</h2>
+<h1>2024-09-07</h1>
+<h2><a href="https://massgrave.dev/blog/keyhole">Keyhole – Forge own Windows Store licenses</a></h2>
+<ul>
+<li>Researchers discovered a method called &quot;Keyhole&quot; to bypass Windows licensing checks, allowing easy licensing of any Microsoft Store app or modern Windows edition.</li>
+<li>The exploit involves manipulating the Client Licensing Platform (CLiP) components, particularly clipup.exe, to create and install unauthorized licenses.</li>
+<li>Cisco TALOS reported the vulnerability (CVE-2024-38184) as a &quot;privilege escalation,&quot; leading to a patch that prevents the exploit by fixing the processing of license blocks.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41472643">Reactions</a></h3>
+<ul>
+<li>A new exploit called &quot;Keyhole&quot; allows users to forge their own Windows Store licenses, potentially enabling free downloads of Xbox games from the Microsoft Store.</li>
+<li>This exploit is particularly notable because it bypasses Microsoft&#39;s digital rights management (DRM) system, similar to previous hacks on other gaming consoles like the PS Vita.</li>
+<li>The exploit&#39;s effectiveness is limited for users who have enabled auto-updates on their Xbox, as the latest system software includes a higher kernel version that patches the vulnerability.</li>
+</ul>
+<h2><a href="https://thesun.my/local-news/mcmc-addresses-misinformation-on-dns-redirection-internet-access-restrictions-BN12972452">Malaysia started mandating ISPs to redirect DNS queries to local servers</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41471510">Reactions</a></h3>
+<ul>
+<li>Malaysia has required ISPs to redirect DNS queries to local servers, citing protection against harmful online content.</li>
+<li>Critics suggest this move could be a pretext for censorship, raising concerns about internet freedom and access to diverse information.</li>
+<li>Users are exploring workarounds such as VPNs and alternative DNS methods to bypass these restrictions.</li>
+</ul>
+<h2><a href="https://arxiv.org/abs/2409.03384">Hardware Acceleration of LLMs: A comprehensive survey and comparison</a></h2>
+<ul>
+<li>The paper surveys research on accelerating Large Language Models (LLMs) using various hardware accelerators, such as FPGA, ASIC, In-Memory, and GPU.</li>
+<li>It compares frameworks based on speedup, energy efficiency, performance (GOPs), and energy efficiency (GOPs/W), addressing the challenge of different process technologies.</li>
+<li>The study extrapolates performance and energy efficiency results to the same technology for fair comparison, implementing parts of LLMs on various FPGA chips.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41470074">Reactions</a></h3>
+<ul>
+<li>The paper highlights the increasing need for hardware acceleration in large language models (LLMs) due to the memory bandwidth bottleneck over CPU speed.</li>
+<li>Technologies like Compute-in-memory (CIM) and processing-in-memory (PIM) are discussed for their ability to perform operations directly on data in memory, enhancing latency and power consumption.</li>
+<li>The paper compares ASIC (Application-Specific Integrated Circuit) and FPGA (Field-Programmable Gate Array) hardware, using a polynomial to extrapolate performance to a common 16nm technology, but does not do so for CIM/PIM due to their performance not being solely based on process technology.</li>
+</ul>
+<h2><a href="https://wiki.qt.io/QtCS2024_Compile_once._Run_everywhere">QtCS2024: Compile once, Run everywhere</a></h2>
+<ul>
+<li>Cosmopolitan Libc enables &quot;compile once, run everywhere&quot; for C++ applications by detecting the host machine at runtime, simplifying cross-platform deployment.</li>
+<li>Cristian Adam demonstrated running Qt Creator with Cosmopolitan Libc on macOS and Linux, though faced challenges on Windows, particularly with native platform integration and WebSockets support.</li>
+<li>The Cosmopolitan Qt Creator binary is approximately 230 megabytes, and Adam encourages further contributions and issue reporting to enhance support.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41470571">Reactions</a></h3>
+<ul>
+<li>QtCS2024 introduces the concept of &quot;Compile once, Run everywhere,&quot; leveraging Cosmopolitan Libc to enable cross-platform compatibility for Qt applications.</li>
+<li>The initiative aims to simplify software distribution by creating binaries that can run on multiple platforms without needing separate builds for each.</li>
+<li>This approach, while innovative, raises concerns about potential security risks and the practicality of porting existing applications to this new system.</li>
+</ul>
+<h2><a href="https://www.motortrend.com/news/ford-in-vehicle-advertising-patent/">Ford patents in-car system that eavesdrops so it can play you ads</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41471417">Reactions</a></h3>
+<ul>
+<li>Ford has patented an in-car system designed to listen to conversations and play targeted ads, raising concerns about privacy and intrusiveness.</li>
+<li>Critics argue that this trend of ad-based monetization could spread to other devices, making it increasingly difficult for consumers to avoid ads.</li>
+<li>There are also safety concerns, as unexpected audio or visual ads could distract drivers, potentially compromising road safety.</li>
+</ul>
+<h2><a href="https://yorickpeterse.com/articles/asynchronous-io-the-next-billion-dollar-mistake/">Asynchronous IO: the next billion-dollar mistake?</a></h2>
+<ul>
+<li>Asynchronous IO (non-blocking IO) allows applications to handle many IO operations without blocking the calling OS thread or creating multiple threads, addressing the C10K problem of handling increasing internet traffic.</li>
+<li>Despite its benefits, asynchronous IO introduces complexity, especially for operations like file IO on Linux, which always blocks, requiring alternative strategies like io_uring.</li>
+<li>The author questions if the focus on asynchronous IO over the past 20 years was a mistake, suggesting that improving OS thread efficiency might have been a better approach, potentially eliminating the need for complex asynchronous IO techniques.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41471707">Reactions</a></h3>
+<ul>
+<li>The discussion centers on the efficiency and practicality of asynchronous I/O (Input/Output) versus improving OS (Operating System) thread performance.</li>
+<li>Asynchronous I/O is argued to be more efficient because it minimizes the overhead associated with managing multiple threads, which each require their own stack and can lead to cache inefficiencies.</li>
+<li>The debate highlights that while asynchronous I/O is naturally suited for networking and other inherently asynchronous operations, improving OS thread performance could theoretically handle high concurrency but faces significant technical challenges.</li>
+</ul>
+<h2><a href="https://fourthievesvinegar.org/">&#39;Right to Repair for Your Body&#39;: The Rise of DIY, Pirated Medicine</a></h2>
+<ul>
+<li>The Four Thieves Vinegar Collective is an anarchist group dedicated to making medicines and medical technologies accessible through DIY solutions.</li>
+<li>Their notable projects include the MicroLab Suite (a DIY automated chemical reactor), the Emergency Room Suite (featuring lifesaving technologies like the EpiPencil autoinjector), and Tooth Seal (a DIY cavity-repair solution).</li>
+<li>The collective has gained media attention and provides opportunities for public involvement via their contact page.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41474080">Reactions</a></h3>
+<ul>
+<li>The rise of DIY and pirated medicine, highlighted on fourthievesvinegar.org, has ignited a debate about self-ownership in healthcare versus safety and regulation concerns.</li>
+<li>The movement is compared to the &quot;Right to Repair&quot; but faces criticism for potentially minimizing safety issues, with discussions including personal stories and regulatory challenges.</li>
+<li>Opinions are divided: some view it as empowering, while others believe it emphasizes the need for systemic healthcare reform.</li>
+</ul>
+<h2><a href="https://mariusbancila.ro/blog/2024/09/06/whats-new-in-c26-part-1/">What&#39;s new in C++26 (part 1)</a></h2>
+<ul>
+<li>C++26 introduces the ability to specify a reason for deleting a function, providing more informative compiler error messages.</li>
+<li>The new placeholder variable feature allows the use of a single underscore (_) to define unnamed variables, implicitly adding the [[maybe_unused]] attribute.</li>
+<li>Structured binding declarations can now be used as conditions in if, while, or for statements, simplifying code that handles multiple return values.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41471488">Reactions</a></h3>
+<ul>
+<li>C++26 introduces new features such as specifying reasons for deleting functions and placeholder variables without names.</li>
+<li>There is a growing concern among developers that C++ is becoming overly complex, making maintenance and understanding more difficult.</li>
+<li>Despite the complexity, new features are added to address long-standing issues, though some developers argue that the language is becoming excessively feature-rich, complicating compilers and development.</li>
+</ul>
+<h2><a href="https://graydon2.dreamwidth.org/313862.html">The PERQ Computer</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41472855">Reactions</a></h3>
+<ul>
+<li>The PERQ Computer article explores its historical significance and unique features, such as using AMD bitslice chips and microcode to support various operating systems.</li>
+<li>Commenters provide personal anecdotes and discuss the PERQ&#39;s position between the Alto and Lisa, as well as its influence on subsequent systems.</li>
+<li>The discussion includes debates on the PERQ&#39;s CPU and microcode, references to P-code, and the broader context of computing advancements and tech innovation&#39;s geographical spread.</li>
+</ul>
+<h2><a href="https://longnow.org/essays/richard-feynman-and-connection-machine/">Richard Feynman and the Connection Machine (1989)</a></h2>
+<ul>
+<li>The essay recounts Danny Hillis&#39;s experience working with Richard Feynman on the development of the Connection Machine, a parallel computer with a million processors.</li>
+<li>Feynman initially dismissed the idea as &quot;dopey&quot; but became deeply involved, contributing significantly to the project&#39;s technical and organizational aspects.</li>
+<li>Feynman&#39;s unique approach, including his analysis of the router and his work on algorithms, showcased his ability to simplify complex problems and make groundbreaking contributions to computer science.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41472135">Reactions</a></h3>
+<ul>
+<li>Richard Feynman critiqued the technical presentations for the Connection Machine CM-1, advocating for simpler and more accessible language.</li>
+<li>The Connection Machine CM-1, notable for its design, appeared in &quot;Jurassic Park&quot; and was influenced by the WOPR from &quot;War Games.&quot;</li>
+<li>Discussions about Feynman and the Connection Machine are popular on Hacker News, highlighting the importance of clear communication in technical fields.</li>
+</ul>
+<h2><a href="https://hnterm.ggerganov.com/">Browsing Hacker News in the Terminal</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41471157">Reactions</a></h3>
+<ul>
+<li>A new terminal-based application, hnterm, allows users to browse Hacker News directly from the terminal, providing a minimalist and efficient interface.</li>
+<li>The project, created by Georgi Gerganov, is gaining attention for its simplicity and potential to replace more bloated web browsers for specific tasks.</li>
+<li>Users can install hnterm using package managers like Snap or Homebrew, making it accessible for various operating systems.</li>
+</ul>
+<h2><a href="https://wingolog.org/archives/2024/09/07/conservative-gc-can-be-faster-than-precise-gc">Conservative GC can be faster than precise GC</a></h2>
+<ul>
+<li>The debate between precise and conservative garbage collection (GC) centers on efficiency and performance, with conservative GC sometimes resulting in faster systems despite common beliefs favoring precise GC.</li>
+<li>Conservative GC can avoid run-time overhead, reduce stack frame sizes, and eliminate the need for stack maps, potentially leading to better compiler performance and smaller binaries.</li>
+<li>Anecdotal evidence, such as the Conservative Immix paper and practices by Apple’s JavaScriptCore and V8, suggests that conservative stack scanning can outperform precise scanning in certain scenarios.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41473061">Reactions</a></h3>
+<ul>
+<li>Conservative garbage collection (GC) can be faster than precise GC, but it may cause memory leaks by misinterpreting data as pointers.</li>
+<li>Go&#39;s switch from conservative to precise GC led to more allocations and potential performance hits, but optimizations have minimized latency and pauses.</li>
+<li>Amortized GC, which frees memory incrementally, might address issues of frequent allocations and deallocations that reduce throughput in precise GC.</li>
+</ul>
+<h2><a href="https://adafrobinson.wordpress.com/2017/02/22/keeping-score/">Dance Choreography Notation (2017)</a></h2>
+<ul>
+<li>The post discusses the evolution and significance of various dance notation systems, highlighting their role in documenting complex dance performances.</li>
+<li>Four major dance notation systems are detailed: Beauchamp-Feuillet, Stepanov, Labanotation, and Benesh, each with unique historical and functional attributes.</li>
+<li>The author plans to explore dance notation computer systems and visit notable archives, indicating future insights into the preservation and study of dance.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41470688">Reactions</a></h3>
+<ul>
+<li>Dance choreography notation systems, such as Labanotation, are historically significant but have become less relevant with the advent of video.</li>
+<li>These notations are primarily used by historians or for coaching copyrighted works from deceased choreographers, and are not widely adopted in the dance community.</li>
+<li>There is a discussion on how notation might help choreographers create copyrightable artifacts, with comparisons to other notation systems like SignWriting and gymnastics notation.</li>
+</ul>
+<h2><a href="https://www.mux.com/blog/php-is-the-new-javascript">PHP is the new JavaScript?</a></h2>
+<ul>
+<li>Guillermo Rauch, a notable figure in the tech community, expressed that React is a revolutionary idea with long-term potential for exploration and application.</li>
+<li>This statement highlights the enduring relevance and impact of React, a popular JavaScript library for building user interfaces, in the tech industry.</li>
+<li>The tweet underscores the anticipation of continuous innovation and development within the React ecosystem over the coming years.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41469040">Reactions</a></h3>
+<ul>
+<li>The article compares PHP frameworks Symfony and Laravel, highlighting Symfony&#39;s flexibility and Laravel&#39;s ease of use.</li>
+<li>Laravel&#39;s recent $57 million investment is noted, sparking debates on its complexity, performance, and robust ecosystem.</li>
+<li>The discussion reflects diverse preferences in web development, mentioning other frameworks and languages.</li>
+</ul>
+<h2><a href="https://purplesyringa.moe/blog/webp-the-webpage-compression-format/">WebP: The WebPage Compression Format</a></h2>
+<ul>
+<li>The author focuses on accessibility and functionality without JavaScript, emphasizing the importance of page load time and HTML minification.</li>
+<li>The main challenge is reducing traffic and latency through compression, with Brotli being more efficient but slower than gzip; however, GitHub Pages does not support Brotli.</li>
+<li>A potential solution involves using brotli-dec-wasm (200 KB) or tiny-brotli-dec-wasm (71 KiB) for client-side decompression, balancing between gzip (92 KiB) and Brotli (37 + 71 KiB).</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41475124">Reactions</a></h3>
+<ul>
+<li>The discussion revolves around using WebP as a web page compression format, comparing its efficiency to other methods like GZIP and Brotli.</li>
+<li>Some users report negligible performance improvements with WebP, while others suggest alternative approaches like self-extracting HTML/WebP polyglot files to reduce latency.</li>
+<li>The conversation includes various opinions on the practicality and impact of WebP, with some users highlighting issues like increased latency and minimal size savings.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Keyhole – Forge own Windows Store licenses" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Keyhole%20%E2%80%93%20Forge%20own%20Windows%20Store%20licenses&subheading=Saturday%2C%20September%207%2C%202024%3A%20Hacker%20News%20Summary" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/2024/09/07</link>
+            <guid isPermaLink="false">2024-09-07T00:00:00.000Z</guid>
+            <pubDate>Sat, 07 Sep 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-06]]></title>
             <description
@@ -1688,192 +1864,6 @@
             <link>https://hn.cho.sh/2024/08/29</link>
             <guid isPermaLink="false">2024-08-29T00:00:00.000Z</guid>
             <pubDate>Thu, 29 Aug 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-28]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/08/28&#39;</h2>
-<h1>2024-08-28</h1>
-<h2><a href="https://gamengen.github.io">Diffusion models are real-time game engines</a></h2>
-<ul>
-<li>Researchers introduced GameNGen, a neural model-powered game engine capable of real-time interaction, demonstrated by simulating the game DOOM at over 20 frames per second on a single TPU.</li>
-<li>GameNGen uses a two-phase training process involving an RL-agent for data collection and a diffusion model for next frame prediction, achieving a PSNR of 29.4, comparable to lossy JPEG compression.</li>
-<li>The model&#39;s architecture includes conditioning augmentations and fine-tuning of a pre-trained auto-encoder to ensure stable long-term generation and improved image quality, making it difficult for human raters to distinguish between real and simulated game clips.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41375548">Reactions</a></h3>
-<ul>
-<li>Diffusion models generate frames based on past frames and user actions but do not support real-time user input for dynamic adjustments.</li>
-<li>Trained on a large dataset of DOOM gameplay, these models produce frames conditioned on current frames and user actions, resembling a neural recording rather than an interactive simulation.</li>
-<li>While the technology is impressive, it faces limitations like inconsistent maintenance of internal game state, highlighting both its potential and challenges for game simulation.</li>
-</ul>
-<h2><a href="https://josephg.com/blog/crdts-go-brrr/">Faster CRDTs (2021)</a></h2>
-<ul>
-<li>The author was initially frustrated by an academic paper&#39;s inefficient implementation of their algorithm, leading to incorrect performance claims.</li>
-<li>This frustration led to the exploration and optimization of CRDTs (Conflict-Free Replicated Data Types), which enable real-time collaborative editing without a central server.</li>
-<li>The author&#39;s optimized CRDT implementation, Diamond, significantly outperforms popular CRDTs like Automerge by using simpler data structures and advanced indexing techniques, achieving over 5000x speed improvements.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41372833">Reactions</a></h3>
-<ul>
-<li>The post discusses the performance of Conflict-free Replicated Data Types (CRDTs) and their practical applications in real-world software, highlighting their benefits and challenges.</li>
-<li>CRDTs are used in various applications like Thymer, Notion, and Apple Notes, providing features like real-time collaboration and offline functionality, but they come with trade-offs such as performance compromises and complex conflict resolution.</li>
-<li>The discussion includes insights from developers and users about the practical implementation of CRDTs, comparing them with other synchronization methods like Operational Transforms (OT) and exploring their suitability for different use cases.</li>
-</ul>
-<h2><a href="https://chartdb.io/">ChartDB – Free and open source, database design editor</a></h2>
-<ul>
-<li>ChartDB offers a free, open-source database design editor that allows users to visualize their database with a single query, without needing to sign up.</li>
-<li>Supports multiple database management systems (DBMS) including PostgreSQL, MySQL, SQL Server, SQLite, and MariaDB, and provides features like instant schema import and AI-generated DDL (Data Definition Language).</li>
-<li>Users can quickly import/export databases, generate SQL scripts or images, and utilize advanced query editing tools, making it a versatile tool for database management and design.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41374009">Reactions</a></h3>
-<ul>
-<li>ChartDB is a free and open-source database design editor, gaining attention for its utility in creating database diagrams.</li>
-<li>The discussion highlights the importance of database diagrams for understanding and communicating complex data structures, especially in mature projects.</li>
-<li>Users compare ChartDB with other tools like dbdiagram.io, ERWin, and PlatUML, noting its potential for automatic diagram generation and ease of use in collaborative environments.</li>
-</ul>
-<h2><a href="https://blog.system76.com/post/cosmic-alpha-released-heres-what-people-are-saying/">COSMIC Alpha Released</a></h2>
-<ul>
-<li>The alpha version of COSMIC, a new desktop environment for Pop!_OS and other Linux distributions, has been released, offering new features, customization, performance, stability, and security.</li>
-<li>COSMIC is not recommended for production use yet, but feedback has been positive, highlighting its speed, solid foundation, and user-friendly design.</li>
-<li>The release also serves as an alpha for Pop!_OS 24.04 LTS, with new features like date &amp; time settings, screen capture, touchpad defaults, and screen-sharing in video conferencing apps.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41376590">Reactions</a></h3>
-<ul>
-<li>System76 has released the alpha version of COSMIC, a new desktop environment, which has generated significant interest in the tech community.</li>
-<li>COSMIC is built using Iced, a Rust-based cross-platform UI framework, which is still experimental but shows promise for future development.</li>
-<li>Users have reported both positive aspects, such as independent workspaces per monitor and sane keyboard shortcuts, and negative aspects, like missing features and bugs, indicating that while promising, COSMIC is not yet ready for daily use.</li>
-</ul>
-<h2><a href="https://old.reddit.com/r/youtube/comments/1f30ku4/youtube_sabotaging_on_firefox/">Starting today, YouTube is almost unusable on Firefox</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41379517">Reactions</a></h3>
-<ul>
-<li>YouTube has become nearly unusable on Firefox, with performance benchmarks showing significant slowdowns and complete UI freezes.</li>
-<li>The issue appears to be related to a Polymer update affecting custom web components, sparking speculation about whether this is an anti-adblocker mechanism or a bug.</li>
-<li>Discussions have emerged about Google&#39;s influence over browser compatibility, with some suggesting the EU should fund a privacy-focused browser or fork Chromium to address these concerns.</li>
-</ul>
-<h2><a href="https://news.griffith.edu.au/2024/08/27/game-changing-needle-free-covid-19-intranasal-vaccine/">Covid-19 Intranasal Vaccine</a></h2>
-<ul>
-<li>Griffith University researchers, led by Professor Suresh Mahalingam, are developing a next-generation COVID-19 mucosal vaccine, CDO-7N-1, published in Nature Communications.</li>
-<li>This live attenuated intranasal vaccine aims to induce both mucosal and systemic immunity with a single dose, offering long-term protection and a needle-free alternative.</li>
-<li>The vaccine provides cross-protection against all variants of concern, remains stable at 4°C for seven months, and is licensed to Indian Immunologicals Ltd for upcoming clinical trials, making it suitable for low- and middle-income countries.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41375746">Reactions</a></h3>
-<ul>
-<li>A new intranasal Covid-19 vaccine, CDO-7N-1, claims to provide strong protection against transmission, reinfection, and the spread of the virus, while also reducing the generation of new variants.</li>
-<li>Unlike mRNA vaccines, CDO-7N-1 induces immunity to all major SARS-CoV-2 proteins and remains stable at 4°C for seven months, making it suitable for low- and middle-income countries.</li>
-<li>The nasal delivery method could neutralize the virus along the nasal mucosa, offering a novel approach to Covid-19 prevention, though its effectiveness and public reception are yet to be determined.</li>
-</ul>
-<h2><a href="https://taskwarrior.org/">Taskwarrior – CLI Task Management</a></h2>
-<ul>
-<li>Taskwarrior 3.0.2 has been released, addressing minor issues from version 3.0.0, including improvements in task news, error handling, documentation, and hook interactions.</li>
-<li>Taskwarrior 3.0 introduced new, reliable task-storage and synchronization support based on TaskChampion, marking a significant upgrade.</li>
-<li>The latest stable versions available are Taskwarrior 3.0.2, Taskshell 1.2.0, and Timewarrior 1.7.1, with development versions also accessible.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41372482">Reactions</a></h3>
-<ul>
-<li>A developer is creating a minimal GUI (Graphical User Interface) for Taskwarrior, a CLI (Command Line Interface) task management tool, to enhance keyboard navigation and assist users with ADHD.</li>
-<li>The developer plans to integrate Timewarrior, a time-tracking tool, into the GUI in the future, although current efforts are focused on local usage rather than remote access or mobile syncing.</li>
-<li>The community is discussing various aspects of Taskwarrior, including syncing challenges, potential mobile support, and the benefits of its features like task dependencies and urgency ordering.</li>
-</ul>
-<h2><a href="https://github.com/seekbytes/IPA">IPA, a GUI for exploring inner details of PDFs</a></h2>
-<ul>
-<li>Interactive PDF Analysis (IPA) is a tool designed to help researchers explore and analyze PDF files, particularly those that may contain malicious payloads or be used in phishing campaigns.</li>
-<li>IPA offers a graphical interface for extracting payloads, understanding object relationships, and visualizing references within the file, making it more user-friendly compared to command-line tools.</li>
-<li>The tool is compatible with pdf-rs and Rust, requires no additional software, and can be compiled using Rust and cargo.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41377960">Reactions</a></h3>
-<ul>
-<li>IPA is a new GUI tool for exploring PDF details, created by Nicolodev, aimed at quick PDF analysis.</li>
-<li>Other similar tools include pdf.hyzyla.dev, iText RUPS (Java), PDFSyntax (Python), Polyfile, ReportMill PDFViewer, PDFInspector, and PDFXplorer.</li>
-<li>The PDFSyntax author introduced a new CLI command for structure summary, and users discussed various tools and features, sharing experiences and issues with PDF tools.</li>
-</ul>
-<h2><a href="https://areweanticheatyet.com/">Are We Anti-Cheat Yet?</a></h2>
-<ul>
-<li>&quot;Are We Anti-Cheat Yet?&quot; is a crowd-sourced list detailing the compatibility of games using anti-cheat software with GNU/Linux or Wine/Proton.</li>
-<li>Current statistics: 37% supported, 17% running, 1% planned, 38% broken, and 7% denied.</li>
-<li>Notable examples: Halo: The Master Chief Collection (supported with minor caveats), Fortnite (denied, works on Xbox-Cloud), and Apex Legends (supported).</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41376044">Reactions</a></h3>
-<ul>
-<li>&quot;Are We Anti-Cheat Yet?&quot; (areweanticheatyet.com) gained significant attention on Hacker News, with 158 points and 176 comments, highlighting its relevance in the gaming community.</li>
-<li>The site, developed by Starz0r over 2-3 years, initially tracked Linux-supported games for the Steam Deck but has since expanded and undergone a redesign.</li>
-<li>Key discussions include the effectiveness of anti-cheat software, the arms race between cheat developers and anti-cheat measures, and the potential of AI and server-side solutions to improve cheat detection.</li>
-</ul>
-<h2><a href="https://chipsandcheese.com/2024/08/27/teslas-ttpoe-at-hot-chips-2024-replacing-tcp-for-low-latency-applications/">Tesla’s TTPoE at Hot Chips 2024: Replacing TCP for Low Latency Applications</a></h2>
-<ul>
-<li>Tesla introduced TTPoE (Tesla Transport Protocol over Ethernet) at Hot Chips 2024, aiming to replace TCP for low latency applications in their Dojo supercomputer.</li>
-<li>TTPoE offers microsecond-scale latency and hardware offload, simplifying TCP’s state machine to reduce latency and improve data throughput for high IO bandwidth tasks like video training.</li>
-<li>TTPoE uses a brute force approach for congestion control, with a 1 MB transmit SRAM buffer and a cost-efficient &quot;Dumb-NIC&quot; called Mojo, designed to enhance the Dojo supercomputer&#39;s performance.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41374663">Reactions</a></h3>
-<ul>
-<li>Tesla introduced TTPoE (Tesla Transport Protocol over Ethernet) at Hot Chips 2024, aiming to replace TCP for low latency applications.</li>
-<li>The new protocol is designed to optimize performance for Tesla&#39;s specific use cases, leveraging existing hardware and reducing costs by avoiding the need for more expensive networking solutions like Infiniband.</li>
-<li>The move has sparked debate, with some arguing it&#39;s unnecessary given existing technologies like TCP Offload Engines (TOE) and RoCE (RDMA over Converged Ethernet), while others see it as a strategic decision for better control and cost efficiency.</li>
-</ul>
-<h2><a href="https://www.developer-tech.com/news/judge-dismisses-majority-github-copilot-copyright-claims/">Judge dismisses majority of GitHub Copilot copyright claims</a></h2>
-<ul>
-<li>A judge has dismissed most claims in a copyright lawsuit against GitHub, Microsoft, and OpenAI concerning the AI-powered GitHub Copilot coding assistant.</li>
-<li>The lawsuit, initiated by developers in 2022, originally had 22 claims, but only two remain: one for open-source license violation and another for breach of contract.</li>
-<li>The court found the arguments that Copilot violated the DMCA by suggesting code without proper attribution unconvincing and dismissed requests for punitive damages and monetary relief.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41378806">Reactions</a></h3>
-<ul>
-<li>A judge dismissed most copyright claims against GitHub Copilot, igniting debates on AI-generated code and copyright issues.</li>
-<li>Users reported instances of AI producing code identical to existing examples, raising legal concerns about copyright infringement.</li>
-<li>The ongoing debate focuses on how copyright laws should evolve to address AI&#39;s capabilities and the responsibilities of AI operators.</li>
-</ul>
-<h2><a href="https://elixir-lang.org/blog/2024/08/28/typing-lists-and-tuples/">Typing lists and tuples in Elixir</a></h2>
-<ul>
-<li>Elixir is developing a type system to ensure sound gradual typing, allowing safe interfacing between static and dynamic code, aiming to prevent type errors at runtime.</li>
-<li>The new type system will support tuple types, specifying minimum sizes and element types, and provide compile-time warnings to prevent runtime errors.</li>
-<li>Elixir v1.17 has been released, and upcoming events are scheduled for August 27-30, 2024, in Orlando, FL.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41378478">Reactions</a></h3>
-<ul>
-<li>Elixir&#39;s gradual typing approach prioritizes system soundness over syntax, with the compiler improving to catch more bugs in each version.</li>
-<li>Elixir 1.17 introduced a gradual type system, currently supporting only a few types, with plans for expansion in future updates.</li>
-<li>Comparisons with F# and Python&#39;s MyPy highlight the complexity of handling non-empty lists and type systems, but Elixir&#39;s approach is viewed as beneficial for long-term development.</li>
-</ul>
-<h2><a href="https://github.com/queer/boxxy">Boxxy puts bad Linux applications in a box with only their files</a></h2>
-<ul>
-<li>Boxxy is a Linux tool designed to organize application files and directories by redirecting them without using symlinks, utilizing Linux namespaces.</li>
-<li>It helps maintain a tidy $HOME directory by redirecting application data to specified locations and supports features like context-dependent rules, minimal overhead, and environment variable injection.</li>
-<li>As a new project, Boxxy may have potential issues and limitations, such as the inability to use sudo inside the container.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41376558">Reactions</a></h3>
-<ul>
-<li>Boxxy is a tool designed to isolate problematic Linux applications by containing their files.</li>
-<li>A related tool, &quot;xdg-ninja,&quot; scans the $HOME directory for misplaced files and suggests appropriate locations.</li>
-<li>Users discuss various sandboxing methods like symlinks, Firejail, Bubblewrap, and Docker, and raise concerns about using Discord for project communication, preferring more open forums.</li>
-</ul>
-<h2><a href="https://prestonbyrne.com/2024/08/24/thoughts-on-the-durov-arrest/">Thoughts on the Durov Arrest</a></h2>
-<ul>
-<li>Pavel Durov, founder of Telegram, was arrested in France for alleged noncompliance with content moderation and data disclosure laws, raising significant legal questions.</li>
-<li>The arrest underscores the stricter content regulation laws in Europe, such as France&#39;s Loi Lutte Contra la Haine sur Internet and Germany&#39;s NetzDG, compared to the U.S.&#39;s Section 230 of the Communications Decency Act.</li>
-<li>The charges against Durov, including complicity in crimes like money laundering and narcotics trafficking, highlight the escalating risks for U.S.-based tech entrepreneurs operating in Europe.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41375902">Reactions</a></h3>
-<ul>
-<li>Pavel Durov, founder of Telegram, is in a similar position to Ladar Levison of Lavabit, facing legal pressure to provide documents to the French government, where he holds citizenship.</li>
-<li>Unlike end-to-end encrypted (E2EE) services, Telegram&#39;s design choices allow it to access user data, which has led to legal complications and potential liability for Durov.</li>
-<li>The discussion highlights the importance of E2EE in protecting both user data and service providers from legal and coercive pressures, contrasting Telegram&#39;s approach with more secure alternatives.</li>
-</ul>
-<h2><a href="https://apnews.com/article/france-telegram-pavel-durov-arrest-6e213d227458f330ed16e7fe221a696c">French prosecutors say Telegram CEO freed from custody, will appear in court</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41380450">Reactions</a></h3>
-<ul>
-<li>French prosecutors have released Telegram CEO Pavel Durov from initial custody, but he will still appear in court, highlighting ongoing legal issues.</li>
-<li>The core issue is Telegram&#39;s refusal to share information with investigators, which has sparked debates about compliance with local laws versus encryption and privacy.</li>
-<li>This case has drawn significant attention due to its implications for global tech companies operating under different national jurisdictions and the balance between user privacy and legal obligations.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Diffusion models are real-time game engines" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Diffusion%20models%20are%20real-time%20game%20engines&subheading=Wednesday%2C%20August%2028%2C%202024%3A%20Hacker%20News%20Summary" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/2024/08/28</link>
-            <guid isPermaLink="false">2024-08-28T00:00:00.000Z</guid>
-            <pubDate>Wed, 28 Aug 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
