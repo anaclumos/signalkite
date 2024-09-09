@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 08 Sep 2024 20:58:51 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Sep 2024 19:13:24 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/fi.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 08 Sep 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 09 Sep 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[fi]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-09-09]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/09/09&#39;</h2>
+<h1>2024-09-09</h1>
+<h2><a href="https://dl.acm.org/doi/10.1145/3589334.3645323">QUIC ei ole tarpeeksi nopea nopean internetin yli</a></h2>
+<ul>
+<li>Äskettäinen tutkimus paljastaa, että QUIC, protokolla, joka on suunniteltu parantamaan internetin suorituskykyä, osoittaa jopa 45,2 %:n datanopeuden vähennyksen verrattuna perinteiseen TCP+TLS+HTTP/2:een nopeissa verkoissa.</li>
+<li>Suorituskyvyn ero johtuu suuresta vastaanottimen puolen käsittelykuormasta, erityisesti liiallisten datapakettien ja QUIC:n käyttäjätilan kuittausten (ACK) vuoksi.</li>
+<li>Löydökset ovat merkittäviä sovelluksille, kuten tiedostojen siirto, videon suoratoisto ja verkkoselaus, ja suosituksia on annettu näiden ongelmien lieventämiseksi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41484991">Reaktiot</a></h3>
+<ul>
+<li>QUIC kohtaa suorituskykyongelmia nopeassa internetissä tehottomien järjestelmäkutsujen rajapintojen, spectre-mitigaation aiheuttamien korkeiden järjestelmäkustannusten, pienten oletus-UDP-puskureiden ja monimutkaisten UDP-pinojen optimointien vuoksi.</li>
+<li>GSO (Generic Segmentation Offload) voi parantaa suorituskykyä, mutta ei ole optimaalinen suurille palvelimille, mikä viittaa tarpeeseen paremmille API:lle korvaamaan BSD-socketit/POSIX.</li>
+<li>Keskusteluissa korostetaan io_uringin integroinnin monimutkaisuutta ja mahdollisten korkeantason API:en hyötyjä, jotka on rakennettu sen päälle, tuoden esiin tasapainon käyttäjätilan joustavuuden ja ydinalueen tehokkuuden välillä.</li>
+</ul>
+<h2><a href="https://reclaim-the-stack.com">Valloita pino uudelleen</a></h2>
+<ul>
+<li>Mynewsdesk.com kehitti Kubernetes-pohjaisen alustan korvaamaan Herokun, mikä johti 90% kustannusten alenemiseen ja 30% suorituskyvyn parantumiseen heidän SaaS-tuotteessaan.</li>
+<li>Uusi alusta paransi kehittäjäkokemusta nopeammilla käyttöönottoajoilla ja parannetuilla työkaluilla.</li>
+<li>Stack on avattu avoimeen lähdekoodiin, mikä mahdollistaa muiden toistaa heidän menestyksensä nopeasti seuraamalla annettua dokumentaatiota ja liittymällä heidän Discord-palvelimelleen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483675">Reaktiot</a></h3>
+<ul>
+<li>Reclaim the Stack raportoi 90 %:n kustannussäästöt ja 30 %:n suorituskyvyn parannuksen siirtymällä Herokusta Kubernetesiin.</li>
+<li>Kayttäjät väittävät, että nämä säästöt tuovat mukanaan lisääntyneen monimutkaisuuden, mikä vaatii enemmän ylläpitoa, valvontaa ja erikoisosaamista Kubernetesin ja siihen liittyvien järjestelmien hallinnassa.</li>
+<li>Kriitikot ehdottavat harkitsemaan yksinkertaisempia VM-asetuksia, hallinnoituja palveluita tai muita PaaS-palveluntarjoajia, kuten Render tai Fly.io, korostaen kustannusten, monimutkaisuuden ja infrastruktuurin hallinnan tietämyksen välisiä kompromisseja.</li>
+</ul>
+<h2><a href="https://www.ic3.gov/Media/Y2022/PSA221221">FBI suosittelee mainosten eston käyttöä (2022)</a></h2>
+<ul>
+<li>FBI on antanut varoituksen kyberrikollisista, jotka käyttävät hakukoneiden mainoksia esiintyäkseen brändeinä, johtaen käyttäjiä haitallisille sivustoille, jotka isännöivät kiristysohjelmia ja varastavat arkaluonteista tietoa.</li>
+<li>Kyberrikolliset ostavat mainoksia, jotka jäljittelevät laillisia yrityksiä ja näkyvät hakutulosten kärjessä, huijaten käyttäjiä vierailemaan väärennetyillä verkkosivustoilla ja lataamaan haittaohjelmia.</li>
+<li>Varotoimenpiteisiin kuuluu URL-osoitteiden tarkistaminen, mainosten esto-ohjelmien käyttö sekä yritysten käyttäjien kouluttaminen väärennetyistä verkkosivustoista ja oikeista URL-osoitteista.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483581">Reaktiot</a></h3>
+<ul>
+<li>FBI on suositellut mainosten estäjien käyttöä parantaakseen verkkoturvallisuutta ja käyttäjäkokemusta estämällä tunkeilevat ja mahdollisesti haitalliset mainokset.</li>
+<li>Hyödyistä huolimatta jotkut väittävät, että mainosten estäjät heikentävät monien verkkosivustojen tulomallia, joka perustuu mainostuloihin.</li>
+<li>Tekniikasta perillä olevien käyttäjien keskuudessa vallitsee yksimielisyys siitä, että mainosten estäjien käytön edut ylittävät mahdolliset haitat.</li>
+</ul>
+<h2><a href="https://bmjpublichealth.bmj.com/content/bmjph/2/1/e001000.full.pdf">Unen kesto, kronotyyppi, terveys ja elämäntapatekijät vaikuttavat kognitioon [pdf]</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41483434">Reaktiot</a></h3>
+<ul>
+<li>Tutkimus osoittaa, että normaali unen kesto (7-9 tuntia) liittyy parempaan kognitiiviseen suorituskykyyn, kun taas pidempi uni voi vaikuttaa negatiivisesti.</li>
+<li>Alkoholin kulutuksella on monimutkainen suhde kognitioon; absolutistit saavat yleensä alhaisempia pisteitä kognitiivisissa testeissä verrattuna kohtuukäyttäjiin.</li>
+<li>Keskustelussa tarkastellaan myös, miten ikä, terveys ja henkilökohtaiset kokemukset vaikuttavat alkoholin aineenvaihduntaan ja kognitiiviseen toimintaan.</li>
+</ul>
+<h2><a href="https://www.eurekalert.org/news-releases/1056171">Lithiumioniakkujen lataaminen suurilla virroilla lisää ensin käyttöikää 50 %.</a></h2>
+<ul>
+<li>Tutkijat SLAC-Stanfordin akkukeskuksessa havaitsivat, että litiumioniakkujen lataaminen suurilla virroilla ennen niiden lähtöä tehtaalta on 30 kertaa nopeampaa ja pidentää niiden käyttöikää 50%.</li>
+<li>Tutkimus, joka on julkaistu Joule-lehdessä, korostaa, että muodostuslataus, eli akun ensimmäinen lataus, on ratkaisevan tärkeä sen suorituskyvyn ja pitkäikäisyyden kannalta.</li>
+<li>Tutkimuksessa tunnistettiin tieteellisen koneoppimisen avulla lämpötila ja virta keskeisiksi tekijöiksi, joilla on merkittäviä vaikutuksia akun valmistuksen tehokkuuden ja suorituskyvyn parantamiseen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483654">Reaktiot</a></h3>
+<ul>
+<li>Lithiumioniakkujen lataaminen aluksi suurilla virroilla saattaa pidentää niiden käyttöikää 50 %, vaikka tämä väite onkin kiistanalainen alan asiantuntijoiden keskuudessa.</li>
+<li>Huolenaiheisiin kuuluvat vaikutukset akun impedanssiin, kapasiteettiin ja lämpöhallinnan tehokkuuteen eri sähköautomerkeissä.</li>
+<li>Keskustelussa tarkastellaan myös korkeamman jännitearkkitehtuurin mahdollisia etuja sekä akun keston ja latausnopeuden välisiä kompromisseja.</li>
+</ul>
+<h2><a href="https://old.reddit.com/r/LocalLLaMA/s/4Ly2yj78aM">Vahvistettu: Reflection 70B:n virallinen API on Sonnet 3.5:n kääre</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41484981">Reaktiot</a></h3>
+<ul>
+<li>Reflection 70B:n virallinen API on pelkästään olemassa olevan Sonnet 3.5 -mallin kääre, ei uusi tekoälymalli.</li>
+<li>Julkaisu oli sekava, sisältäen väärin merkittyjä painoja, epäjohdonmukaisia arviointeja ja lopulta Sonnet 3.5:n ja myöhemmin GPT-4o:n käyttöä.</li>
+<li>Se, että Sahil Chaudhary ja Matt Shumer ovat olleet mukana, ja että Shumer on edistänyt mallia sen ongelmista huolimatta, on aiheuttanut sekaannusta ja ajanhukkaa tekoäly-yhteisössä.</li>
+</ul>
+<h2><a href="https://fennel-lang.org/">Fennel-ohjelmointikieli</a></h2>
+<ul>
+<li>Fennel on ohjelmointikieli, joka yhdistää Luan yksinkertaisuuden ja nopeuden Lispiin syntaksiin ja makrojärjestelmään, tarjoten täyden Lua-yhteensopivuuden ja nollaylikuorman.</li>
+<li>Se on monipuolinen, sopii sovelluksiin kuten videopelit, verkkopalvelimet ja mikrokontrollerit, ja tukee käännösaikaisia makroja.</li>
+<li>Yksityiskohtainen dokumentaatio ja yhteisön resurssit ovat saatavilla, mukaan lukien asennusoppaat, tutoriaalit ja käytännesäännöt, versioilla v0.1.0:sta v1.5.1:een.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483216">Reaktiot</a></h3>
+<ul>
+<li>Fennel-ohjelmointikieli tunnetaan teknisistä edistysaskeleistaan ja parannuksistaan verrattuna Luaan, erityisesti suurissa projekteissa.</li>
+<li>Fenkoli tuo mukanaan ominaisuuksia, kuten mallintunnistuksen ja tehokkaan makrojärjestelmän, mikä parantaa joustavuutta ja helppokäyttöisyyttä erityisesti vanhoissa koodikannoissa.</li>
+<li>Sen integrointi Luan moduulilataajaan mahdollistaa taulukoiden ja funktioiden saumattoman yhdistämisen, ja sen Lisp-syntaksi, jossa on minimaalinen oppimiskäyrä, tekee siitä suositun kehittäjien keskuudessa.</li>
+</ul>
+<h2><a href="https://awfulannouncing.com/espn/alex-morgan-ai-generated-recap-mention.html">ESPN:n tekoälyn luoma yhteenveto eläköityvän pelaajan viimeisestä ottelusta ei mainitse heitä</a></h2>
+<ul>
+<li>ESPN:n tekoälyn tuottama yhteenveto Alex Morganin viimeisestä ammattilaisottelusta ei aluksi maininnut häntä, vaan keskittyi sen sijaan joukkuetoveri Kennedy Wesleyyn.</li>
+<li>Poisjättäminen korostaa tekoälyn rajoituksia merkittävien tapahtumien täyden emotionaalisen ja historialllisen kontekstin vangitsemisessa.</li>
+<li>ESPN päivitti myöhemmin yhteenvedon sisällyttämään Morganin ja julkaisi erillisen, vähemmän näkyvän artikkelin hänen viimeisestä pelistään.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41489167">Reaktiot</a></h3>
+<ul>
+<li>ESPN:n tekoälyn tuottama yhteenveto eläköityvän pelaajan viimeisestä ottelusta epäonnistui mainitsemasta pelaajaa, mikä johti kritiikkiin ja toi esiin tekoälyn tuottaman sisällön puutteet.</li>
+<li>Tämä tapaus korostaa, että vaikka tekoäly voi tuottaa sisältöä nopeasti, se usein jättää huomiotta kontekstin ja tunnepitoisuuden, jonka ihmiskirjoittajat tuovat mukanaan.</li>
+<li>Tilanne korostaa ihmisen valvonnan tarpeellisuutta laadun ja tarkkuuden ylläpitämiseksi tekoälyn tuottamissa artikkeleissa.</li>
+</ul>
+<h2><a href="https://blog.gitbutler.com/why-github-actually-won/">Miksi GitHub voitti</a></h2>
+<ul>
+<li>GitHubin menestys johtuu sen oikea-aikaisesta lanseerauksesta hajautettujen versionhallintatyökalujen nousun aikana ja sen keskittymisestä kehittäjäkokemuksen parantamiseen kaupallisten etujen sijaan.</li>
+<li>GitHubin käyttäjäkeskeinen lähestymistapa, painotus pull requesteihin ja esteettinen vetovoima erottivat sen kilpailijoista, kuten Google Codesta ja BitBucketista.</li>
+<li>Gitin omaksuminen Linux-yhteisön toimesta ja varhainen tuki Ruby-yhteisöltä olivat ratkaisevia GitHubin suosioon nousussa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41490161">Reaktiot</a></h3>
+<ul>
+<li>Google Code luotiin estämään SourceForgea monopolisoimasta markkinoita, ei hallitsemaan niitä.</li>
+<li>Saavutettuaan tavoitteensa kilpailun edistämisestä, Google Code suljettiin, mikä avasi tien GitHubin kaltaisille alustoille kukoistaa.</li>
+<li>Keskustelu korostaa huolia Googlen tuotteiden pitkäikäisyydestä sekä ajoituksen ja käyttäjäkokemuksen merkitystä GitHubin menestyksessä.</li>
+</ul>
+<h2><a href="https://atproto.com/articles/atproto-for-distsys-engineers">ATProto hajautettujen järjestelmien insinööreille</a></h2>
+<ul>
+<li>AT-protokolla, jonka on kehittänyt Bluesky, on suunniteltu avoimeen sosiaaliseen verkostoitumiseen, keskittyen hajautettuun taustajärjestelmien suunnitteluun.</li>
+<li>Perinteiset verkkotaustajärjestelmät kohtaavat skaalautuvuusongelmia SQL-tietokantojen kanssa, mikä on johtanut NoSQL-klustereiden ja virrankäsittelyarkkitehtuurien käyttöönottoon.</li>
+<li>AT-protokolla hajauttaa suurimittaiset taustajärjestelmät käyttämällä julkisia API-rajapintoja sisäisille palveluille ja luomalla jaetun tietomallin nimeltä &quot;käyttäjätietovarasto&quot;, joka sisältää kryptografisesti allekirjoitettuja JSON-dokumentteja.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41484337">Reaktiot</a></h3>
+<ul>
+<li>ATProto on kattava, alhaalta ylöspäin etenevä määrittely hajautetuille järjestelmille, toisin kuin ActivityPub, joka jättää monia näkökohtia toteutuksen varaan.</li>
+<li>ATProto käyttää omaa tietomalliaan JSON-LD:n sijaan, mikä voi olla esteenä joillekin kehittäjille.</li>
+<li>Uusi opas minimalististen sovellusten luomiseen ATProton avulla on julkaistu, ja se korostaa sen kasvavaa ekosysteemiä ja käytännön sovelluksia.</li>
+</ul>
+<h2><a href="https://tookmund.com/2024/09/hibernation-preparation">Linuxin iltarutiini</a></h2>
+<ul>
+<li>Artikkeli selittää hibernointiprosessin Linuxissa, keskittyen versioon 6.9.9, hibernoinnin aloittamisesta tiedostojärjestelmien synkronointiin levylle.</li>
+<li>Keskeiset sisäänmenopisteet unen ja horrostilan hallintaan ovat <code>/sys/power/state</code> ja <code>/sys/power/disk</code>, joihin kirjoitetaan tiettyjä arvoja unen tilojen käynnistämiseksi.</li>
+<li>Horrostusprosessi sisältää useita vaiheita, kuten ytimen konfiguroinnin, saatavuustarkistukset, pakkaustarkistukset, lukituksen hankinnan, konsolin valmistelun, virranhallinnan ilmoitukset ja tiedostojärjestelmän synkronoinnin.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483789">Reaktiot</a></h3>
+<ul>
+<li>Linuxin virranhallintaongelmia tutkittiin, erityisesti keskittyen horrostila- ja lepotilamekanismeihin, jotka seuraavat eri koodipolkuja.</li>
+<li>Kaatuminen havaittiin johtuen riittämättömästä vapaasta järjestelmän RAM-muistista, joka ei riittänyt pitämään kaikkea VRAM-muistia, mikä johti epäonnistuneeseen muistinvaraukseen lepotilan tai jatkamisen aikana, aiheuttaen määrittelemättömiä järjestelmätiloja.</li>
+<li>Keskustelu tuo esiin Linuxin virranhallinnan monimutkaisuudet ja mahdolliset ongelmat, mukaan lukien VRAMin käsittelyn ja systemdin roolin näiden prosessien hallinnassa.</li>
+</ul>
+<h2><a href="https://rakujourney.wordpress.com/2024/09/08/htmx-raku-and-pico-css/">Htmx, Raku ja Pico CSS</a></h2>
+<ul>
+<li>Tämä julkaisu on osa sarjaa, joka keskittyy kognitiivisen kuormituksen vähentämiseen verkkoprojekteissa käyttämällä yksinkertaisempia web-kehityskäytäntöjä, erityisesti HTMX:ää, Rakua ja Crota backendin HTML-kokoamiseen ja RESTful-rajapintoihin, jolloin JavaScriptiä ei tarvita dynaamisessa sisällössä.</li>
+<li>HTMX on monipuolinen useimmissa projekteissa, mutta ei sovellu monimutkaisiin verkkosovelluksiin; Pico CSS:ää suositellaan tyylittelyyn sen painotuksen vuoksi semanttiseen HTML:ään, mikä yksinkertaistaa kehitysprosessia.</li>
+<li>Viesti sisältää koodiesimerkkejä Pico CSS:n käytöstä HTMX-esimerkkien uudelleenrakentamiseen Raku/Cro:lle, ja lopullinen koodi on saatavilla GitHubissa. Lisäksi siinä korostetaan Pico CSS:n sisäänrakennettua pimeää tilaa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41482679">Reaktiot</a></h3>
+<ul>
+<li>HTMX korostuu kyvyllään yksinkertaistaa verkkosovelluksia pitämällä tilanhallinnan palvelinpuolella, mikä vähentää laajan asiakaspuolen JavaScriptin (JS) tarvetta.</li>
+<li>Käyttäjät keskustelevat HTMX:n ja modernien frontend-kehysten, kuten Reactin, välisistä kompromisseista, huomauttaen, että HTMX voi olla tehokkaampi yksinkertaisemmissa liiketoimintasovelluksissa, mutta saattaa puuttua joitakin käyttöliittymätoimintoja.</li>
+<li>Keskustelussa verrataan muita teknologioita, kuten Next.js, Blazor ja Phoenix LiveView, korostaen, että HTMX tarjoaa erilaisen lähestymistavan, joka voi olla hyödyllinen tietyissä käyttötapauksissa, erityisesti fullstack-kehittäjille, jotka suosivat backend-logiikkaa.</li>
+</ul>
+<h2><a href="https://github.com/josephburnett/jd">Jd – JSON Diff ja Patch</a></h2>
+<ul>
+<li>JSON diff ja patch (jd) on komentorivityökalu ja Go-kirjasto JSON- ja YAML-arvojen vertailuun ja muokkaamiseen, tukien useita formaatteja kuten jd, JSON Merge Patch (RFC 7386) ja osajoukko JSON Patchista (RFC 6902).</li>
+<li>Asennusvaihtoehtoihin kuuluvat Homebrew, Go install, GitHub-julkaisut ja Docker, ja verkkokäyttöliittymä on saatavilla osoitteessa jd-tool.io tai paikallisesti komennolla <code>jd -port 8080</code>.</li>
+<li>Keskeisiä ominaisuuksia ovat väridiffi, paikkatiedostojen soveltaminen, ulostulon uudelleenohjaus, taulukkojen käsittely joukkoina tai monijoukkoina, YAML-tuki ja muodon käännös.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41482661">Reaktiot</a></h3>
+<ul>
+<li>Jd on Joseph Burnettin luoma työkalu JSON-tiedostojen vertailuun ja korjaamiseen, ja sen tavoitteena on täydentää <code>jq</code>-työkalua käsittelemällä JSON-taulukoiden järjestystä.</li>
+<li>Työkalua on päivitetty korjaamaan ongelmia suurten JSON-tiedostojen puuttuvien elementtien havaitsemisessa, ja uusi v2 API laskee kahden taulukon pisimmän yhteisen alijonon.</li>
+<li>Jd on osoittautunut käyttäjille hyödylliseksi tehtävissä, kuten manuaalisessa tilannekuvatestauksessa, API-vastausten virheenkorjauksessa ja massiivisten JSON-tiedostojen vertailussa. Parannusehdotuksia ovat muun muassa jq-kyselysyntaksin lisääminen ja VSCode-laajennuksen luominen.</li>
+</ul>
+<h2><a href="https://worksinprogress.co/issue/lab-grown-diamonds/">Synteettiset timantit ovat nyt puhtaampia, kauniimpia ja halvempia kuin kaivetut</a></h2>
+<ul>
+<li>Laboratoriossa kasvatetut timantit, jotka syntetisoitiin ensimmäisen kerran 1950-luvulla, ovat nyt halvempia, puhtaampia ja hallitsevat teollisuusmarkkinoita tarjoten kustannustehokkaan ja korkealaatuisen vaihtoehdon kaivetuille timanteille.</li>
+<li>Kemiallinen höyrystyskasvatus (CVD) on 1950-luvulla kehitetty menetelmä timanttien valmistukseen, joka mahdollistaa timanttien ominaisuuksien tarkan hallinnan ja räätälöinnin, tehden niistä sopivia erilaisiin teollisiin sovelluksiin.</li>
+<li>Timanttien valmistuksen edistysaskeleet avaavat jatkuvasti uusia käyttötarkoituksia ja parantavat olemassa olevia sovelluksia, osoittaen ihmisen kekseliäisyyttä luonnollisten prosessien parantamisessa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41488353">Reaktiot</a></h3>
+<ul>
+<li>Synteettisistä timanteista on tullut puhtaampia, esteettisesti miellyttävämpiä ja edullisempia kuin luonnontimanteista teknologisten edistysaskeleiden ansiosta.</li>
+<li>Koneita synteettisten timanttien valmistukseen on nyt saatavilla noin 200 000 dollarilla, ja yritykset kuten De Beersin Element Six myyvät niitä teollisiin tarkoituksiin.</li>
+<li>Laboratoriossa kasvatetut timantit ja moissaniitit ovat huomattavasti edullisempia, sillä laboratoriotimanttien hinta on alle 200 dollaria karaatilta ja moissaniittien alle 5 dollaria karaatilta, mikä tekee timanteista helpommin saatavilla olevia ja laajentaa niiden teollisia sovelluksia.</li>
+</ul>
+<h2><a href="https://www.apple.com/newsroom/2024/05/apple-hearing-study-shares-preliminary-insights-on-tinnitus/">Apple Hearing Study jakaa alustavia näkemyksiä tinnituksesta</a></h2>
+<ul>
+<li>Tutkijat Michiganin yliopistosta julkaisivat tietoja laajasta tinnituskyselystä, johon osallistui yli 160 000 henkilöä, pyrkien parantamaan tilan ymmärtämistä ja hallintaa.</li>
+<li>Keskeiset havainnot osoittavat, että 77,6 % osallistujista on kokenut tinnitusta, joista 15 % kokee sitä päivittäin, ja esiintyvyys kasvaa iän myötä, erityisesti 55-vuotiaiden ja sitä vanhempien keskuudessa.</li>
+<li>Tutkimus, joka on osa Applen Research-sovellusta, korostaa yleisiä hallintamenetelmiä ja syitä sekä pyrkii edistämään ymmärrystä äänen altistumisesta ja sen vaikutuksesta kuulon terveyteen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41491121">Reaktiot</a></h3>
+<ul>
+<li>Applen kuuloa koskeva tutkimus tarjoaa alustavia näkemyksiä tinnituksesta, korostaen käyttäjien psykologisia näkökohtia ja henkilökohtaisia kokemuksia.</li>
+<li>Keskeisiä neuvoja ovat liiallisen ajattelun välttäminen, häiriötekijöiden käyttäminen sekä stressin ja lihasjännityksen hallinta. Jotkut käyttäjät löytävät helpotusta kuulolaitteiden avulla tai terveysongelmien käsittelemisen kautta.</li>
+<li>Tutkimus tarkastelee myös modernien äänilaitteiden, kuten AirPodien, mahdollisia vaikutuksia tinnitukseen, ja käyttäjien mielipiteet ovat vaihtelevia.</li>
+</ul>
+<head>
+  <meta property="og:title" content="QUIC ei ole tarpeeksi nopea nopean internetin yli" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=QUIC%20ei%20ole%20tarpeeksi%20nopea%20nopean%20internetin%20yli&subheading=maanantaina%209.%20syyskuuta%202024%3A%20Hacker%20News%20yhteenveto" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/fi/2024/09/09</link>
+            <guid isPermaLink="false">2024-09-09T00:00:00.000Z</guid>
+            <pubDate>Mon, 09 Sep 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-08]]></title>
             <description
@@ -1658,197 +1844,6 @@
             <link>https://hn.cho.sh/fi/2024/08/31</link>
             <guid isPermaLink="false">2024-08-31T00:00:00.000Z</guid>
             <pubDate>Sat, 31 Aug 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-30]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/08/30&#39;</h2>
-<h1>2024-08-30</h1>
-<h2><a href="https://eieio.games/essays/the-secret-in-one-million-checkboxes/">Salaisuus miljoonan valintaruudun sisällä</a></h2>
-<ul>
-<li>Verkkosivusto &quot;One Million Checkboxes&quot; (OMCB) lanseerattiin 26. kesäkuuta 2024, ja se houkutteli odottamatta 500 000 pelaajaa, jotka rastittivat yli 650 000 000 ruutua kahdessa viikossa.</li>
-<li>Käyttäjät käyttivät luovasti valintaruutuja kirjoittaakseen binääriviestejä, mikä johti Discord-palvelimelle, jossa he keskustelivat sivuston bottauksesta ja loivat monimutkaisia piirroksia ja animaatioita.</li>
-<li>Huolimatta joistakin valituksista boteista, luoja piti yhteisön luovuutta inspiroivana ja dokumentoi kokemuksen YouTube-videolla jakaakseen tunteellisen vaikutuksen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395413">Reaktiot</a></h3>
-<ul>
-<li>Kirjoitus käsittelee tunteikasta matkaa ja luovaa prosessia &quot;One Million Checkboxes&quot; (OMCB) -verkkosivuston takana, korostaen rajoitusten ja luovuuden tasapainoa internetissä.</li>
-<li>Kirjoittaja jakaa päätöksensä sulkea sivusto, mainiten syiksi muun muassa luonnollisen kiinnostuksen loppumisen, nousevat kustannukset ja halun välttää ylläpitotaakkaa.</li>
-<li>Tarina on koskettanut monia lukijoita, herättäen nostalgiaa ja uudistunutta iloa ohjelmistotekniikassa, mikä on vastakohtana usein ylivoimaiselle ja kaupallistuneelle teknologiamaisemalle.</li>
-</ul>
-<h2><a href="https://www.anandtech.com/show/21542/end-of-the-road-an-anandtech-farewell">AnandTech hyvästi</a></h2>
-<ul>
-<li>MediaTek aikoo lisätä NVIDIA G-Sync -tuen näyttöjen skaalaimiin, tavoitteenaan tehdä G-Sync-näytöistä helpommin saatavilla laajemmalle yleisölle.</li>
-<li>Qualcomm esittelee Snapdragon 7s Gen 3:n, joka parantaa sen keskitason valikoimaa Cortex-A720-arkkitehtuurilla.</li>
-<li>Intel on myynyt osakkeensa Armissa ja vähentänyt omistuksiaan muissa yhtiöissä, mikä viittaa strategiseen muutokseen sen sijoitussalkussa.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41399872">Reaktiot</a></h3>
-<ul>
-<li>AnandTech, tunnettu teknologia-arvostelusivusto, suljetaan, mikä merkitsee aikakauden loppua syvällisille, teknisille arvosteluille ja artikkeleille.</li>
-<li>Sivusto tunnettiin yksityiskohtaisesta ja rehellisyyslähtöisestä sisällöstään, joka vaikutti merkittävästi moniin tekniikan harrastajiin ja ammattilaisiin.</li>
-<li>Lehtien lakkauttaminen on herättänyt nostalgiaa ja keskustelua teknologiajournalismin muuttuvasta maisemasta, ja monet surevat näin ainutlaatuisen ja luotettavan resurssin menetystä.</li>
-</ul>
-<h2><a href="https://www.elastic.co/blog/elasticsearch-is-open-source-again">Elasticsearch on jälleen avoimen lähdekoodin ohjelmisto</a></h2>
-<ul>
-<li>Elasticsearch ja Kibana ovat nyt jälleen avoimen lähdekoodin ohjelmistoja, ja AGPL on lisätty lisenssivaihtoehdoksi ELv2:n ja SSPL:n rinnalle.</li>
-<li>Tämä muutos vahvistaa Elasticin sitoutumisen avoimeen lähdekoodiin, käsitellen aiempia ongelmia AWS:n kanssa ja markkinoiden sekaannusta, joka johti Elasticsearchin haarautumiseen.</li>
-<li>Siirron tavoitteena on yksinkertaistaa käyttäjäkokemusta tarjoamalla useita lisensointivaihtoehtoja ja se on linjassa Elasticin tavoitteen kanssa tukea avoimen lähdekoodin lisensointia.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41394797">Reaktiot</a></h3>
-<ul>
-<li>Elasticsearch on palannut avoimeksi lähdekoodiksi, nyt AGPL-lisenssin alaisena, mikä vaatii käyttäjiä palauttamaan kaikki tekemänsä muutokset.</li>
-<li>AWS loi OpenSearchin sen jälkeen, kun Elastic hylkäsi AWS:n tarjouksen osallistua tietoturvaominaisuuksien kehittämiseen, mikä johti yhteisön jakautumiseen.</li>
-<li>Elasticin uusi lisensointi pyrkii tasapainottamaan avoimen lähdekoodin edut ja liiketoiminnan tarpeet estäen kilpailijoita käyttämästä heidän koodiaan ilman panostusta.</li>
-</ul>
-<h2><a href="https://github.com/anthropics/courses/tree/master/prompt_engineering_interactive_tutorial">Anthropicin kehotetekniikan interaktiivinen opetusohjelma</a></h2>
-<ul>
-<li>Anthropic on julkaissut interaktiivisen opetusohjelman Claudea varten, jonka tarkoituksena on opettaa käyttäjiä luomaan optimaalisia kehotteita.</li>
-<li>Kurssi kattaa aloittelijasta edistyneisiin aiheisiin, mukaan lukien kehotteiden rakenne, yleisten ongelmien käsittely ja monimutkaisten kehotteiden rakentaminen, käytännön harjoituksilla ja &quot;Esimerkkileikkikentällä&quot; kokeilua varten.</li>
-<li>Opetusohjelma käyttää Claude 3 Haiku -mallia ja sisältää Google Sheets -version helppokäyttöisyyden vuoksi, mikä tekee siitä helposti lähestyttävän uusille käyttäjille, jotta he voivat ymmärtää ja soveltaa prompt engineering -tekniikoita tehokkaasti.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395921">Reaktiot</a></h3>
-<ul>
-<li>Anthropic on julkaissut vuorovaikutteisen kehotteiden suunnittelun opetusohjelman, joka on herättänyt merkittävää huomiota teknologiayhteisössä.</li>
-<li>Opetusohjelman tavoitteena on opettaa käyttäjiä kommunikoimaan tehokkaasti suurten kielimallien (LLM) kanssa saavuttaakseen halutut tulokset, taito, joka tunnetaan nimellä kehotteiden suunnittelu.</li>
-<li>Tämä julkaisu on merkittävä, koska se tarjoaa jäsenneltyä ohjeistusta kehotteiden optimointiin, mikä on ratkaisevan tärkeää tekoälypohjaisten sovellusten suorituskyvyn ja luotettavuuden parantamiseksi.</li>
-</ul>
-<h2><a href="https://github.com/libsdl-org/SDL/pull/9312">SDL3 uusi GPU API yhdistetty</a></h2>
-<ul>
-<li>GPU API MkII #9312 on yhdistetty libsdl-orgin päähaaraan, tuoden merkittäviä päivityksiä, kuten Refresh-grafiikkakomponentin, joka tukee moderneja rajapintoja, kuten Vulkan ja PS5-grafiikkarajapinta.</li>
-<li>Päivitys sisältää offline-varjostinkääntöjärjestelmän, jonka tavoitteena on virtaviivaistaa GPU API:a, parantaa suorituskykyä ja lisätä resurssien turvallisuutta.</li>
-<li>Pääasiallinen avustaja on @thatcosmonaut, FNA-ydintiimin tuella ja eri yhteistyökumppaneiden palautteella, mikä osoittaa yhteisöllistä pyrkimystä API:n hienosäätöön ja optimointiin.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396260">Reaktiot</a></h3>
-<ul>
-<li>SDL3:n uusi GPU-rajapinta on yhdistetty päähaaraan, vaikka SDL3 on edelleen esikatseluvaiheessa. Tavoitteena on yksinkertaistaa monialustaisen grafiikkakehityksen, mukaan lukien konsoleilla, toteuttamista.</li>
-<li>Tämä uusi API on suunniteltu olemaan tehokkaampi kuin vanha SDL 2D API, tukien moderneja GPU-ominaisuuksia ja kohdistuen sekä 2D- että joihinkin 3D-tarpeisiin.</li>
-<li>Vaikka samankaltaisia pyrkimyksiä kuten WebGPU/WGSL on olemassa, niiltä puuttuvat konsolitaustajärjestelmät, ja uusi SDL3 GPU API ei vielä tue WebGPU:ta taustajärjestelmänä.</li>
-</ul>
-<h2><a href="https://rattvisan.blog/2024/07/28/yes-i-was-poisoned-by-my-wife-a-software-engineer-of-top3-us-company/">Verisairaus: Myrkytykseni mysteerin paljastaminen Ruotsissa</a></h2>
-<ul>
-<li>Kirjoittaja kertoo tapahtumista, jotka alkoivat 24. heinäkuuta 2021, kun hänen vaimonsa Kim pidätettiin löydettyään epäilyttävän pullon, mikä johti hänen vesipullonsa peukaloinnin paljastumiseen.</li>
-<li>Kirjoittaja on kärsinyt hyperkalsemiasta ja D-vitamiinin myrkytyksestä vuodesta 2019 lähtien, ja hänen terveytensä on vaihdellut lukuisista lääketieteellisistä testeistä ja hoidoista huolimatta, mukaan lukien MRI- ja PET-CT-skannaukset.</li>
-<li>Lähde liialliselle D-vitamiinille ja kalsiumille pysyi tuntemattomana, kunnes kirjoittaja huomasi Kimin lisäävän ruskeaa nestettä veteensä, jonka hän väitti olevan kaliumia.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395893">Reaktiot</a></h3>
-<ul>
-<li>Rattvisan.blog-sivustolla julkaistussa blogikirjoituksessa käsitellään epäiltyä myrkytystapausta Ruotsissa, jossa kirjoittaja väittää vaimonsa myrkyttäneen hänet D-vitamiinilla.</li>
-<li>Huolimatta sairauskertomuksista ja videomateriaalista, ruotsalainen syyttäjä päätti olla nostamatta syytteitä todisteiden riittämättömyyden vuoksi, mikä herätti keskustelua oikeusjärjestelmästä.</li>
-<li>Kommentoijat ilmaisevat epäuskoaan päätöksestä, keskustelevat yksityisen syytteen mahdollisuudesta ja spekuloivat vaimon motiiveilla ja mielentilalla.</li>
-</ul>
-<h2><a href="https://www.haskellforall.com/2024/08/firewall-rules-not-as-secure-as-you.html">Palomuurisäännöt: eivät niin turvallisia kuin luulet</a></h2>
-<ul>
-<li>Kirjoitus käsittelee tekniikoita yritysten palomuurien ohittamiseksi, mahdollistaen mielivaltaiset sisään- ja ulospäin suuntautuvat pyynnöt minkä tahansa protokollan kautta, mikä on hyödyllistä ohjelmistojen käyttöönotossa rajoitetuissa verkko-ympäristöissä.</li>
-<li>Se esittelee &quot;holepunch&quot; -nimisen tietovaraston, joka sisältää NixOS-moduuleja, jotka automatisoivat nämä palomuurin ohitustemput, mukaan lukien saapuvien SSH-yhteyksien tunnelointi lähtevien HTTPS-pyyntöjen sisällä.</li>
-<li>Tekniikat ottavat hallinnan verkon pyynnön molemmissa päissä olevista isännistä ja hyödyntävät työkaluja, kuten etäprokseja, TLS-päättäviä käänteisiä prokseja, käänteisiä tunneleita ja Corkscrew-ohjelmaa liikenteen naamioimiseen ja tunnelointiin.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396206">Reaktiot</a></h3>
-<ul>
-<li>Kirjoitus käsittelee palomuurisääntöjen rajoituksia ja mahdollisia haavoittuvuuksia, korostaen, että ne eivät välttämättä ole niin turvallisia kuin yleisesti uskotaan.</li>
-<li>Se jakaa tosielämän anekdootteja ja teknisiä näkemyksiä siitä, kuinka myyjät ja yksityishenkilöt voivat kiertää palomuurirajoituksia käyttämällä työkaluja, kuten SSH ja netcat, herättäen huolta tietoturvakäytännöistä.</li>
-<li>Keskustelu korostaa jännitteitä turvallisuuspolitiikan ja käytännön tarpeiden välillä, painottaen läpinäkyvän viestinnän ja asianmukaisten turvatoimien merkitystä luvattoman pääsyn estämiseksi.</li>
-</ul>
-<h2><a href="http://consulting.m3047.net/dubai-letters/balkanized-internet.html">Estän yhteydet AWS:stä paikallisiin palveluihini</a></h2>
-<ul>
-<li>Suuret pilvipalveluntarjoajat johtavat pirstoutuneeseen tai &quot;balkanisoituneeseen&quot; internetiin, jossa yhteensopivuus yleisen internetin kanssa on rajoitettua.</li>
-<li>Historiallinen konteksti: Internet siirtyi hallituksen ja koulutuksen työkalusta kaupalliseksi tilaksi, jota hallitsevat mainonta ja käyttäjätietojen kaupallistaminen.</li>
-<li>Huolenaiheita ovat tietovarkaudet ja liiallinen liikenne pilvipalveluista, mikä on saanut jotkut estämään pääsyn suurilta palveluntarjoajilta, kuten AWS:ltä, suojellakseen paikallisia resursseja.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396641">Reaktiot</a></h3>
-<ul>
-<li>Kirjoittaja estää AWS-yhteydet paikallisiin palveluihinsa väärinkäytösten ja hyökkäysten pelossa.</li>
-<li>Amazonin laajan IP-alueen estäminen on haastavaa, mutta kirjoittaja on valmis uhraamaan osan laillisesta liikenteestä vähentääkseen ei-toivottua liikennettä.</li>
-<li>On käynnissä keskustelu siitä, voisiko pilvipalveluntarjoajien IP-osoitteiden estäminen johtaa internetin pirstoutumiseen (balkanisaatioon), mutta kirjoittaja asettaa turvallisuuden tämän huolen edelle.</li>
-</ul>
-<h2><a href="https://github.com/google/closure-library">Google Closure Library on arkistoitu</a></h2>
-<ul>
-<li>Closure Library on arkistoitu, koska se ei enää vastaa nykyaikaisen JavaScript-kehityksen vaatimuksia.</li>
-<li>Käyttäjiä kehotetaan etsimään vaihtoehtoisia kirjastoja kehitystarpeidensa täyttämiseksi.</li>
-<li>Lisätietoja on saatavilla numerossa #1214.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395925">Reaktiot</a></h3>
-<ul>
-<li>Google Closure Library on arkistoitu, mikä merkitsee sen ylläpidon loppua huolimatta sen historiallisesta merkityksestä vankkojen sähköpostiohjelmien, kuten Gmailin editorin, rakentamisessa.</li>
-<li>Closure Compiler saa edelleen tukea, vaikka JavaScript-ekosysteemi on kehittynyt vähentämään tällaisten kattavien kirjastojen tarvetta.</li>
-<li>Closure Libraryn insinööritaidon perintö on edelleen vaikuttava kehittäjäyhteisössä.</li>
-</ul>
-<h2><a href="http://ciel-lang.org/">CIEL on laajennettu Lisp</a></h2>
-<ul>
-<li>CIEL on laajennettu Lisp-kieli, joka on täysin yhteensopiva Common Lispin kanssa ja sisältää lisäominaisuuksia (&quot;paristot mukana&quot;).</li>
-<li>GitHub-repositorio CIEL:lle tarjoaa resursseja ja dokumentaatiota käyttäjille, jotka ovat kiinnostuneita tutkimaan tai osallistumaan projektiin.</li>
-<li>Esimerkkiskripti havainnollistaa JSON-datan hakemista ja tulostamista web-rajapinnasta käyttämällä CIELiä, korostaen sen käytännön sovelluksia.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41401415">Reaktiot</a></h3>
-<ul>
-<li>CIEL on laajennettu versio Lispistä, ja keskusteluissa korostetaan sen hyvin dokumentoituja työkaluja sekä mahdollisuutta maskotin tai logon luomiseen.</li>
-<li>Keskeisiä ominaisuuksia, joista keskusteltiin, ovat shell-läpivienti REPL:ssä, binäärien helppo kääntäminen ja CIEL:n REPL:n interaktiivinen luonne verrattuna Pythonin vastaavaan.</li>
-<li>Kayttäjät huomioivat nimen &quot;Ciel&quot; (ranskaa, tarkoittaa &quot;taivasta&quot;) merkityksen, asennuksen helppouden ja vertailut muihin kieliin, kuten Clojureen ja Nimiin, korostaen CIELin potentiaalia standardoida Common Lisp -ekosysteemi.</li>
-</ul>
-<h2><a href="https://github.com/duckduckgo/macos-browser">DuckDuckGo for Mac on nyt avoimen lähdekoodin ohjelmisto</a></h2>
-<ul>
-<li>DuckDuckGo laajentaa tiimiään ja palkkaa vanhempia ohjelmistoinsinöörejä parantamaan verkkoluottamusstandardeja.</li>
-<li>macOS-projekti käyttää Swift Package Manageria riippuvuuksien hallintaan ja SwiftLintiä koodityylin valvontaan.</li>
-<li>Terminologiapäivityksiä on tehty poistamaan ongelmallisia rodullisia konnotaatioita, ottamalla käyttöön termejä kuten päähaarat, sallittujen luettelot ja estoluettelot.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396487">Reaktiot</a></h3>
-<ul>
-<li>DuckDuckGo on tehnyt Mac-selaimestaan avoimen lähdekoodin, saatavilla GitHubissa, ja se perustuu WebKitiin, samaan moottoriin kuin Safari.</li>
-<li>Useat käyttäjät ovat raportoineet DuckDuckGo-hakukoneen hakutulosten laadun heikkenemisestä, mainiten syiksi tekoälyroskapostin ja epäolennaiset paikallisten yritysten linkit, mikä on saanut osan siirtymään vaihtoehtoisiin hakukoneisiin, kuten Brave Search ja Kagi.</li>
-<li>Rohkeat insinöörit työskentelevät aktiivisesti captcha-ongelmien ratkaisemiseksi, korostaen jatkuvia parannuksia vaihtoehtoisissa hakukoneissa.</li>
-</ul>
-<h2><a href="https://bletchleypark.org.uk/">Käy Bletchley Parkissa</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41396501">Reaktiot</a></h3>
-<ul>
-<li>Bletchley Park tarjoaa historiallisia näyttelyitä toisen maailmansodan elämästä ja koodinmurtamisesta, keskittyen ihmisiin ja prosesseihin.</li>
-<li>Kansallinen tietokonemuseo, joka sijaitsee samalla alueella, esittelee laajoja kokoelmia, mukaan lukien Bombe- ja Colossus-tietokoneiden replikoita.</li>
-<li>Liput Bletchley Parkiin ovat voimassa 12 kuukautta, mikä mahdollistaa useita vierailuja.</li>
-</ul>
-<h2><a href="https://matklad.github.io/2023/01/26/rusts-ugly-syntax.html">Rustin ruma syntaksi (2023)</a></h2>
-<ul>
-<li>Kirjoitus käsittelee yleistä väärinkäsitystä, että Rustin syntaksi olisi suurin ongelma, vaikka todellinen haaste piilee sen semantiikassa.</li>
-<li>Se tarjoaa erilaisia syntaksityylejä (Rs++, Rhodes, RhodesScript, Rattlesnake, CrabML) havainnollistaakseen, kuinka Rustin semantiikkaa voidaan yksinkertaistaa.</li>
-<li>Viesti ehdottaa useita muutoksia Rustin standardikirjaston funktioon, jotta siitä tulisi käyttäjäystävällisempi, mukaan lukien sisäkkäisten funktioiden poistaminen, rajoitusten poistaminen ja virheenkäsittelyn yksinkertaistaminen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41397679">Reaktiot</a></h3>
-<ul>
-<li>Artikkeli käsittelee Rustin syntaksin monimutkaisuutta ja luettavuusongelmia, erityisesti kun käsitellään geneerisiä tyyppejä ja elinaikamerkkejä.</li>
-<li>Esimerkkeihin sisältyy asynkronisten funktioiden käyttö traitteissa, mikä voi johtaa monimutkaiseen koodiin elinaikojen ja tyyppirajojen yhdistelmän vuoksi.</li>
-<li>Keskustelussa tuodaan esiin erilaisia mielipiteitä Rustin syntaksivalinnoista, kuten yksittäisen heittomerkin (&#39;) käytöstä elinaikojen merkitsemiseen, ja pohditaan, parantaisivatko pidemmät avainsanat koodin luettavuutta.</li>
-</ul>
-<h2><a href="https://github.com/algora-io/tv">Avoimen lähdekoodin Twitch kehittäjille</a></h2>
-<ul>
-<li>Algora TV esittelee uuden ominaisuuden nimeltä Livestream Billboards, jonka avulla kehittäjät voivat ansaita rahaa videon sisäisillä mainoksilla suoratoiston aikana.</li>
-<li>Järjestely vaatii Elixirin, Erlang/OTP:n, PostgreSQL:n, FFmpeg:n ja OBS Studion, ja yksityiskohtaiset ohjeet projektin alustamiseen ja tietokannan konfigurointiin on annettu.</li>
-<li>Arkkitehtuuriin kuuluu Fly (Elixir-sovellus) ja RTMP-palvelimet, joita striimaajat käyttävät, ja median tallennus ja toimitus hoidetaan Tigrisillä. Palvelu on jaettu AGPLv3-lisenssin alaisuudessa.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41397498">Reaktiot</a></h3>
-<ul>
-<li>Algora on avoimen lähdekoodin suoratoistoalusta kehittäjille, joka tukee monisuoratoistoa alustoille kuten Twitch, YouTube ja X, ja kokoaa yhteen livekommentit.</li>
-<li>Rakennettu käyttäen Elixiriä tuottavuuden ja vikasietoisuuden vuoksi, Algora hyödyntää Phoenix LiveView&#39;ta ja OTP:tä monimutkaisten suoratoistoputkien käsittelyyn ja BEAM-klusterointia matalan viiveen saavuttamiseksi.</li>
-<li>Projektia ylläpitää yksittäinen kehittäjä, joka etsii panostuksia ja palautetta, ja tietyille priorisoiduille ongelmille on tarjolla palkkioita.</li>
-</ul>
-<h2><a href="https://bivens.plaintip.com/index.php/google-incognito/">Oletko koskaan käyttänyt Google Chromea incognito-tilassa? Voit olla oikeutettu jopa 5000 dollarin korvaukseen.</a></h2>
-<ul>
-<li>Googlea vastaan on esitetty syytöksiä käyttäjien harhaanjohtamisesta sen Incognito-tilan yksityisyydestä, mikä saattaa oikeuttaa käyttäjät jopa 5 000 dollarin korvauksiin yksityisyyden loukkauksista.</li>
-<li>Haaste väittää, että Google seurasi toimintaa, myi henkilötietoja ja harhautti käyttäjiä Incognito-tilan yksityisyydestä vuosina 2016-2023.</li>
-<li>Kelpoisuuskriteerit sisältävät Incognito-tilan käytön määrätyn ajanjakson aikana, yksityisyyden odottamisen, seurannan hyväksymättä jättämisen, vähintään 18 vuoden iän ja Yhdysvaltain asukkaana olemisen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395591">Reaktiot</a></h3>
-<ul>
-<li>Käyttäjät, jotka käyttävät Google Chromen incognito-tilaa, saattavat olla oikeutettuja jopa 5 000 dollariin, mutta sopimusta ei ole vielä saavutettu.</li>
-<li>Oikeusjuttu väittää, että incognito-tilan nimi ja kuvake ovat harhaanjohtavia, sillä ne viittaavat täydelliseen anonymiteettiin, vaikka varoitukset kertovat, ettei tila piilota toimintaa verkkosivustoilta, työnantajilta tai internet-palveluntarjoajilta.</li>
-<li>Tapaus on herättänyt keskusteluja teknisestä lukutaidosta ja käyttäjien odotuksista, ja siihen liittyy mahdollisia riskejä niille, jotka liittyvät kanteeseen, mukaan lukien mahdolliset kustannukset, jos tapaus hävitään.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Salaisuus miljoonan valintaruudun sisällä" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Salaisuus%20miljoonan%20valintaruudun%20sis%C3%A4ll%C3%A4&subheading=perjantaina%2030.%20elokuuta%202024%3A%20Hacker%20News%20yhteenveto" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/fi/2024/08/30</link>
-            <guid isPermaLink="false">2024-08-30T00:00:00.000Z</guid>
-            <pubDate>Fri, 30 Aug 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

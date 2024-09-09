@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 08 Sep 2024 20:58:51 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Sep 2024 19:13:24 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/da.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 08 Sep 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 09 Sep 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[da]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-09-09]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/09/09&#39;</h2>
+<h1>2024-09-09</h1>
+<h2><a href="https://dl.acm.org/doi/10.1145/3589334.3645323">QUIC er ikke hurtigt nok over hurtig internetforbindelse</a></h2>
+<ul>
+<li>En nylig undersøgelse afslører, at QUIC, en protokol designet til at forbedre internetydelsen, viser en reduktion i datahastigheden på op til 45,2% sammenlignet med traditionel TCP+TLS+HTTP/2 over højhastighedsnetværk.</li>
+<li>Ydelsesforskellen tilskrives høj behandlingsomkostning på modtagersiden, især på grund af overdrevne datapakker og QUIC&#39;s brugerplads-bekræftelser (ACKs).</li>
+<li>Resultaterne er betydningsfulde for applikationer som filoverførsler, videostreaming og web-browsing, med anbefalinger givet for at afbøde disse problemer.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41484991">Reaktioner</a></h3>
+<ul>
+<li>QUIC står over for ydeevneproblemer på hurtig internetforbindelse på grund af ineffektive syscall-grænseflader, høje syscall-omkostninger fra spectre-afbødning, små standard UDP-buffere og komplekse UDP-stakoptimeringer.</li>
+<li>GSO (Generic Segmentation Offload) kan forbedre ydeevnen, men er ikke optimal for storskala servere, hvilket indikerer et behov for bedre API&#39;er til at erstatte BSD-sockets/POSIX.</li>
+<li>Diskussioner fremhæver kompleksiteten ved at integrere io_uring og de potentielle fordele ved høj-niveau API&#39;er bygget på det, hvilket understreger balancen mellem fleksibilitet i brugerområdet og effektivitet på kerne-niveau.</li>
+</ul>
+<h2><a href="https://reclaim-the-stack.com">Generobr stakken</a></h2>
+<ul>
+<li>Mynewsdesk.com udviklede en Kubernetes-baseret platform til at erstatte Heroku, hvilket resulterede i en omkostningsreduktion på 90% og en forbedring af ydeevnen på 30% for deres SaaS-produkt.</li>
+<li>Den nye platform forbedrede udvikleroplevelsen med hurtigere implementeringstider og forbedrede værktøjer.</li>
+<li>Stakken er blevet open-source, hvilket gør det muligt for andre hurtigt at replikere deres succes ved at følge den medfølgende dokumentation og tilslutte sig deres Discord-server.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483675">Reaktioner</a></h3>
+<ul>
+<li>Reclaim the Stack rapporterer om en 90% omkostningsreduktion og en 30% forbedring i ydeevne ved at skifte fra Heroku til Kubernetes.</li>
+<li>Brugere hævder, at disse besparelser medfører øget kompleksitet, hvilket kræver mere vedligeholdelse, overvågning og specialiseret ekspertise i at administrere Kubernetes og tilknyttede systemer.</li>
+<li>Kritikere foreslår at overveje enklere VM-opsætninger, administrerede tjenester eller andre PaaS-udbydere som Render eller Fly.io, og fremhæver afvejningen mellem omkostninger, kompleksitet og viden om infrastrukturstyring.</li>
+</ul>
+<h2><a href="https://www.ic3.gov/Media/Y2022/PSA221221">FBI anbefaler at bruge en annonceblokering (2022)</a></h2>
+<ul>
+<li>FBI har udsendt en advarsel om, at cyberkriminelle bruger søgemaskineannoncer til at udgive sig for at være mærker, hvilket fører brugere til ondsindede sider, der indeholder ransomware og stjæler følsomme oplysninger.</li>
+<li>Cyberkriminelle køber annoncer, der efterligner legitime virksomheder, som vises øverst i søgeresultaterne, og narre brugere til at besøge falske hjemmesider og downloade malware.</li>
+<li>Forsigtighedsforanstaltninger omfatter at verificere URL&#39;er, bruge annonceblokkere og virksomheder, der uddanner brugere om falske websites og korrekte URL&#39;er.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483581">Reaktioner</a></h3>
+<ul>
+<li>FBI har anbefalet at bruge annonceblokkere for at forbedre online sikkerhed og forbedre brugeroplevelsen ved at forhindre påtrængende og potentielt skadelige annoncer.</li>
+<li>På trods af fordelene hævder nogle, at annonceblokkere undergraver indtægtsmodellen for mange hjemmesider, som er afhængige af annonceindtægter.</li>
+<li>Den generelle opfattelse blandt teknologikyndige brugere er, at fordelene ved at bruge annonceblokkere opvejer de potentielle ulemper.</li>
+</ul>
+<h2><a href="https://bmjpublichealth.bmj.com/content/bmjph/2/1/e001000.full.pdf">Varighed af søvn, kronotype, sundheds- og livsstilsfaktorer påvirker kognition [pdf]</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41483434">Reaktioner</a></h3>
+<ul>
+<li>En undersøgelse viser, at normal søvnvarighed (7-9 timer) er forbundet med bedre kognitiv præstation, mens forlænget søvn kan have negative effekter.</li>
+<li>Alkoholforbrug har en kompleks relation til kognition; afholdende personer har en tendens til at score lavere på kognitive tests sammenlignet med moderate drikkere.</li>
+<li>Diskussionen udforsker også, hvordan alder, helbred og personlige oplevelser påvirker alkoholmetabolisme og kognitiv funktion.</li>
+</ul>
+<h2><a href="https://www.eurekalert.org/news-releases/1056171">At oplade lithium-ion batterier med høje strømme øger først levetiden med 50%</a></h2>
+<ul>
+<li>Forskere ved SLAC-Stanford Battery Center fandt ud af, at opladning af lithium-ion-batterier med høje strømstyrker, inden de forlader fabrikken, er 30 gange hurtigere og forlænger deres levetid med 50%.</li>
+<li>Undersøgelsen, offentliggjort i Joule, fremhæver, at dannelsesladningen, den første opladning et batteri modtager, er afgørende for dets ydeevne og levetid.</li>
+<li>Ved hjælp af videnskabelig maskinlæring identificerede forskningen temperatur og strøm som nøglefaktorer, med betydelige implikationer for forbedring af batteriproduktionens effektivitet og ydeevne.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483654">Reaktioner</a></h3>
+<ul>
+<li>At oplade lithium-ion-batterier med høje strømme i starten kan muligvis øge deres levetid med 50%, selvom denne påstand er omdiskuteret blandt brancheeksperter.</li>
+<li>Bekymringer omfatter påvirkningen på batteriimpedans, kapacitet og effektiviteten af termisk styring i forskellige elbilsmærker.</li>
+<li>Diskussionen udforsker også de potentielle fordele ved højere spændingsarkitekturer og afvejningen mellem batteriets levetid og opladningshastighed.</li>
+</ul>
+<h2><a href="https://old.reddit.com/r/LocalLLaMA/s/4Ly2yj78aM">Bekræftet: Reflection 70B&#39;s officielle API er en wrapper til Sonnet 3.5</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41484981">Reaktioner</a></h3>
+<ul>
+<li>Reflection 70B&#39;s officielle API er blot en wrapper til den eksisterende Sonnet 3.5-model, ikke en ny AI-model.</li>
+<li>Udgivelsen var uorganiseret, med forkert mærkede vægte, inkonsekvente evalueringer og til sidst brug af Sonnet 3.5 og senere GPT-4o.</li>
+<li>Inddragelsen af Sahil Chaudhary og Matt Shumer, hvor Shumer promoverer modellen trods dens problemer, har skabt forvirring og spildt tid i AI-fællesskabet.</li>
+</ul>
+<h2><a href="https://fennel-lang.org/">Fennel-programmeringssproget</a></h2>
+<ul>
+<li>Fennel er et programmeringssprog, der forener Lua&#39;s enkelhed og hastighed med Lisp&#39;s syntaks og makrosystem, og tilbyder fuld Lua-kompatibilitet og nul overhead.</li>
+<li>Det er alsidigt, velegnet til applikationer som videospil, webservere og mikrokontrollere, og understøtter compile-time makroer.</li>
+<li>Omfattende dokumentation og fællesskabsressourcer er tilgængelige, herunder opsætningsvejledninger, tutorials og en adfærdskodeks, med versioner fra v0.1.0 til v1.5.1.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483216">Reaktioner</a></h3>
+<ul>
+<li>Programmeringssproget Fennel er anerkendt for sine tekniske fremskridt og forbedringer i forhold til Lua, især til store projekter.</li>
+<li>Fennel introducerer funktioner som mønstergenkendelse og et kraftfuldt makrosystem, hvilket øger fleksibiliteten og brugervenligheden, især i ældre kodebaser.</li>
+<li>Dets integration med Luas modulindlæser muliggør problemfri blanding af tabeller og funktioner, og dets Lisp-syntaks med en minimal indlæringskurve gør det populært blandt udviklere.</li>
+</ul>
+<h2><a href="https://awfulannouncing.com/espn/alex-morgan-ai-generated-recap-mention.html">ESPN&#39;s AI-genererede opsummering af den pensionerende spillers sidste kamp undlader at nævne dem</a></h2>
+<ul>
+<li>ESPN&#39;s AI-genererede opsummering af Alex Morgans sidste professionelle kamp undlod i første omgang at nævne hende og fokuserede i stedet på holdkammeraten Kennedy Wesley.</li>
+<li>Udeladelsen understreger begrænsningerne ved AI i at fange den fulde følelsesmæssige og historiske kontekst af betydningsfulde begivenheder.</li>
+<li>ESPN opdaterede senere opsummeringen til at inkludere Morgan og udgav en separat, mindre fremtrædende artikel om hendes sidste kamp.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41489167">Reaktioner</a></h3>
+<ul>
+<li>ESPN&#39;s AI-genererede opsummering af en afgående spillers sidste kamp undlod at nævne spilleren, hvilket førte til kritik og fremhævede mangler i AI-genereret indhold.</li>
+<li>Denne hændelse understreger, at selvom AI kan producere indhold hurtigt, mangler det ofte den kontekst og følelsesmæssige dybde, som menneskelige forfattere leverer.</li>
+<li>Situationen understreger nødvendigheden af menneskelig overvågning for at opretholde kvalitet og nøjagtighed i AI-genererede artikler.</li>
+</ul>
+<h2><a href="https://blog.gitbutler.com/why-github-actually-won/">Derfor vandt GitHub</a></h2>
+<ul>
+<li>GitHubs succes tilskrives dens rettidige lancering under fremkomsten af distribuerede versionskontrolværktøjer og dens fokus på at forbedre udvikleroplevelsen frem for kommercielle interesser.</li>
+<li>GitHubs brugercentrerede tilgang, vægt på pull requests og æstetiske appel adskilte det fra konkurrenter som Google Code og BitBucket.</li>
+<li>Adoptionen af Git af Linux-fællesskabet og tidlig støtte fra Ruby-fællesskabet var afgørende for at popularisere GitHub.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41490161">Reaktioner</a></h3>
+<ul>
+<li>Google Code blev oprettet for at forhindre SourceForge i at monopolisere markedet, ikke for at dominere det.</li>
+<li>Efter at have opnået sit mål om at fremme konkurrence, blev Google Code lukket, hvilket banede vejen for platforme som GitHub til at blomstre.</li>
+<li>Diskussionen understreger bekymringerne om levetiden for Googles produkter og vigtigheden af timing og brugeroplevelse i GitHubs succes.</li>
+</ul>
+<h2><a href="https://atproto.com/articles/atproto-for-distsys-engineers">ATProto for distribuerede systemingeniører</a></h2>
+<ul>
+<li>AT-protokollen, udviklet af Bluesky, er designet til åbne sociale netværk med fokus på decentraliseret backend-ingeniørarbejde.</li>
+<li>Traditionelle web-backends står over for skalerbarhedsproblemer med SQL-databaser, hvilket fører til anvendelsen af NoSQL-klynger og stream-behandlingsarkitekturer.</li>
+<li>AT-protokollen decentraliserer højskala-backends ved at bruge offentlige API&#39;er til interne tjenester og etablere en delt datamodel kaldet &quot;brugerdata-repositoriet,&quot; som indeholder kryptografisk signerede JSON-dokumenter.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41484337">Reaktioner</a></h3>
+<ul>
+<li>ATProto er en omfattende, bottom-up specifikation for decentraliserede systemer, i modsætning til ActivityPub, som overlader mange aspekter til implementering.</li>
+<li>ATProto bruger sin egen datamodel i stedet for JSON-LD, hvilket kan være en hindring for nogle udviklere.</li>
+<li>En ny guide om at skabe minimalistiske apps med ATProto er blevet udgivet, hvilket fremhæver dets voksende økosystem og praktiske anvendelser.</li>
+</ul>
+<h2><a href="https://tookmund.com/2024/09/hibernation-preparation">Linux&#39; sengetidsrutine</a></h2>
+<ul>
+<li>Artiklen forklarer dvaletilstanden i Linux med fokus på version 6.9.9, fra initiering af dvaletilstand til synkronisering af filsystemer til disk.</li>
+<li>Vigtige indgangspunkter for at kontrollere søvn- og dvaletilstande er <code>/sys/power/state</code> og <code>/sys/power/disk</code>, hvor specifikke værdier skrives til disse filer for at igangsætte søvntilstande.</li>
+<li>Vinterdvalens proces involverer flere trin, herunder kernekonfiguration, tilgængelighedskontroller, kompressionskontroller, låseanskaffelse, konsolforberedelse, strømstyringsmeddelelser og filsystemsynkronisering.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483789">Reaktioner</a></h3>
+<ul>
+<li>Linux-strømstyringsproblemer blev undersøgt, med særlig fokus på dvaletilstand og suspenderingsmekanismer, som følger forskellige kodeveje.</li>
+<li>Et nedbrud blev identificeret på grund af utilstrækkelig fri system-RAM til at rumme al VRAM, hvilket førte til mislykket hukommelsesallokering under dvale eller genoptagelse, hvilket forårsagede udefinerede systemtilstande.</li>
+<li>Diskussionen fremhæver kompleksiteterne og de potentielle problemer med Linux&#39;s strømstyring, herunder håndteringen af VRAM og systemd&#39;s rolle i at administrere disse processer.</li>
+</ul>
+<h2><a href="https://rakujourney.wordpress.com/2024/09/08/htmx-raku-and-pico-css/">Htmx, Raku og Pico CSS</a></h2>
+<ul>
+<li>Dette indlæg er en del af en serie, der fokuserer på at reducere den kognitive belastning i webprojekter ved at bruge enklere webudviklingspraksis, specifikt HTMX, Raku og Cro til backend HTML-samling og RESTful APIs, hvilket eliminerer behovet for JavaScript i dynamisk indhold.</li>
+<li>HTMX er alsidig til de fleste projekter, men ikke egnet til komplekse webapps; Pico CSS anbefales til styling på grund af dets vægt på semantisk HTML, hvilket forenkler udviklingsprocessen.</li>
+<li>Indlægget indeholder kodeeksempler, der bruger Pico CSS til at genopbygge HTMX-eksempler for Raku/Cro, med den endelige kode tilgængelig på GitHub, og fremhæver Pico CSS&#39;s indbyggede mørke tilstand.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41482679">Reaktioner</a></h3>
+<ul>
+<li>HTMX fremhæves for sin evne til at forenkle webapplikationer ved at holde tilstandsadministration server-side, hvilket reducerer behovet for omfattende klient-side JavaScript (JS).</li>
+<li>Brugere diskuterer afvejningerne mellem HTMX og moderne frontend-rammer som React, og bemærker, at HTMX kan være mere effektivt til enklere forretningsapplikationer, men kan mangle nogle UI-funktionaliteter.</li>
+<li>Diskussionen inkluderer sammenligninger med andre teknologier som Next.js, Blazor og Phoenix LiveView, og understreger, at HTMX tilbyder en anderledes tilgang, der kan være gavnlig for specifikke anvendelsestilfælde, især for fullstack-udviklere, der foretrækker backend-logik.</li>
+</ul>
+<h2><a href="https://github.com/josephburnett/jd">Jd – JSON Diff and Patch</a></h2>
+<ul>
+<li>JSON diff og patch (jd) er et kommandolinjeværktøj og Go-bibliotek til at sammenligne og ændre JSON- og YAML-værdier, der understøtter flere formater som jd, JSON Merge Patch (RFC 7386) og et undersæt af JSON Patch (RFC 6902).</li>
+<li>Installationsmuligheder inkluderer Homebrew, Go install, GitHub releases og Docker, med en web-UI tilgængelig på jd-tool.io eller lokalt via <code>jd -port 8080</code>.</li>
+<li>Vigtige funktioner inkluderer farve-diff, patch-anvendelse, output-omdirigering, array-håndtering som sæt eller multisæt, YAML-understøttelse og formatoversættelse.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41482661">Reaktioner</a></h3>
+<ul>
+<li>Jd er et værktøj til at sammenligne og opdatere JSON-filer, skabt af Joseph Burnett, og har til formål at supplere <code>jq</code> ved at håndtere rækkefølgen af JSON-arrays.</li>
+<li>Værktøjet er blevet opdateret for at løse problemer med at opdage manglende elementer i store JSON-filer, med en ny v2 API, der beregner den længste fælles delsekvens af to arrays.</li>
+<li>Brugere har fundet Jd nyttig til opgaver som manuel snapshot-testning, fejlfinding af API-svar og sammenligning af massive JSON-filer, med forslag til yderligere forbedringer som tilføjelse af jq-forespørgselssyntaks og oprettelse af en VSCode-udvidelse.</li>
+</ul>
+<h2><a href="https://worksinprogress.co/issue/lab-grown-diamonds/">Syntetiske diamanter er nu renere, smukkere og billigere end minediamanter</a></h2>
+<ul>
+<li>Laboratoriedyrkede diamanter, først syntetiseret i 1950&#39;erne, er nu billigere, renere og dominerer det industrielle marked, hvilket tilbyder et omkostningseffektivt og høj-kvalitets alternativ til minediamanter.</li>
+<li>Chemical vapor deposition (CVD) er en metode udviklet i 1950&#39;erne til at producere diamanter, hvilket muliggør præcis kontrol og tilpasning af diamantens egenskaber, hvilket gør dem egnede til forskellige industrielle anvendelser.</li>
+<li>Fremskridt inden for diamantfremstilling fortsætter med at åbne nye anvendelser og forbedre eksisterende applikationer, hvilket demonstrerer menneskelig opfindsomhed i at forbedre naturlige processer.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41488353">Reaktioner</a></h3>
+<ul>
+<li>Syntetiske diamanter er blevet renere, mere æstetisk tiltalende og mere overkommelige end naturlige diamanter på grund af teknologiske fremskridt.</li>
+<li>Maskiner til at producere syntetiske diamanter er nu tilgængelige for omkring $200.000, og virksomheder som De Beers&#39; Element Six sælger dem til industrielle formål.</li>
+<li>Laboratoriedyrkede diamanter og moissanitter er betydeligt billigere, med laboratoriediamanter, der koster mindre end $200 pr. karat og moissanitter under $5 pr. karat, hvilket gør diamanter mere tilgængelige og udvider deres industrielle anvendelser.</li>
+</ul>
+<h2><a href="https://www.apple.com/newsroom/2024/05/apple-hearing-study-shares-preliminary-insights-on-tinnitus/">Apple Hearing Study deler foreløbige indsigter om tinnitus</a></h2>
+<ul>
+<li>Forskere fra University of Michigan offentliggjorde data fra en stor tinnitusundersøgelse, der involverede over 160.000 deltagere, med det formål at forbedre forståelsen og håndteringen af tilstanden.</li>
+<li>Vigtige fund inkluderer, at 77,6% af deltagerne har oplevet tinnitus, hvoraf 15% oplever det dagligt, og forekomsten stiger med alderen, især blandt dem på 55 år og ældre.</li>
+<li>Undersøgelsen, en del af Apples Research-app, fremhæver almindelige håndteringsmetoder og årsager og sigter mod at fremme forståelsen af lydeksponering og dens indvirkning på hørelsen.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41491121">Reaktioner</a></h3>
+<ul>
+<li>Apples høreundersøgelse giver foreløbige indsigter i tinnitus og fremhæver de psykologiske aspekter og personlige oplevelser hos brugerne.</li>
+<li>Vigtige råd inkluderer at undgå overtænkning, bruge distraktioner og håndtere stress og muskelspændinger, hvor nogle brugere finder lindring gennem høreapparater eller ved at tage hånd om sundhedsproblemer.</li>
+<li>Undersøgelsen udforsker også de potentielle virkninger af moderne lydenheder som AirPods på tinnitus, med blandede meninger fra brugerne.</li>
+</ul>
+<head>
+  <meta property="og:title" content="QUIC er ikke hurtigt nok over hurtig internetforbindelse" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=QUIC%20er%20ikke%20hurtigt%20nok%20over%20hurtig%20internetforbindelse&subheading=mandag%20den%209.%20september%202024%3A%20Resum%C3%A9%20af%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/da/2024/09/09</link>
+            <guid isPermaLink="false">2024-09-09T00:00:00.000Z</guid>
+            <pubDate>Mon, 09 Sep 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-08]]></title>
             <description
@@ -1658,197 +1844,6 @@
             <link>https://hn.cho.sh/da/2024/08/31</link>
             <guid isPermaLink="false">2024-08-31T00:00:00.000Z</guid>
             <pubDate>Sat, 31 Aug 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-30]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/08/30&#39;</h2>
-<h1>2024-08-30</h1>
-<h2><a href="https://eieio.games/essays/the-secret-in-one-million-checkboxes/">Den hemmelighed, der gemmer sig i en million afkrydsningsfelter</a></h2>
-<ul>
-<li>Websitet &quot;One Million Checkboxes&quot; (OMCB) blev lanceret den 26. juni 2024 og tiltrak uventet 500.000 spillere, som afkrydsede over 650.000.000 bokse på to uger.</li>
-<li>Brugere brugte kreativt afkrydsningsfelterne til at skrive binære beskeder, hvilket førte til en Discord-server, hvor de diskuterede at botte siden og lavede komplekse tegninger og animationer.</li>
-<li>På trods af nogle klager over bots fandt skaberen fællesskabets kreativitet inspirerende og dokumenterede oplevelsen i en YouTube-video for at dele den følelsesmæssige påvirkning.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395413">Reaktioner</a></h3>
-<ul>
-<li>Indlægget diskuterer den følelsesmæssige rejse og den kreative proces bag hjemmesiden &#39;One Million Checkboxes&#39; (OMCB), og fremhæver balancen mellem begrænsninger og kreativitet på internettet.</li>
-<li>Forfatteren deler deres beslutning om at lukke siden ned og nævner årsager som den naturlige afslutning af interesse, stigende omkostninger og ønsket om at undgå vedligeholdelsesbyrder.</li>
-<li>Historien har resoneret med mange læsere, vækket nostalgi og en fornyet følelse af glæde ved softwareudvikling, i kontrast til det ofte overvældende og kommercialiserede teknologilandskab.</li>
-</ul>
-<h2><a href="https://www.anandtech.com/show/21542/end-of-the-road-an-anandtech-farewell">AnandTech Farvel</a></h2>
-<ul>
-<li>MediaTek er klar til at tilføje NVIDIA G-Sync support til monitorskalere, med det formål at gøre G-Sync skærme mere tilgængelige for et bredere publikum.</li>
-<li>Qualcomm introducerer Snapdragon 7s Gen 3, som forbedrer deres mellemklasse-serie med Cortex-A720-arkitekturen.</li>
-<li>Intel har solgt sine aktier i Arm og reduceret sine andele i andre virksomheder, hvilket indikerer et strategisk skift i deres investeringsportefølje.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41399872">Reaktioner</a></h3>
-<ul>
-<li>AnandTech, en anerkendt teknologianmeldelsesside, lukker ned, hvilket markerer afslutningen på en æra for dybdegående, tekniske anmeldelser og artikler.</li>
-<li>Webstedet var kendt for sit detaljerede og integritetsdrevne indhold, hvilket i høj grad påvirkede mange tech-entusiaster og fagfolk.</li>
-<li>Den lukning har vækket nostalgi og diskussioner om det skiftende landskab inden for teknologijournalistik, hvor mange beklager tabet af en så unik og pålidelig ressource.</li>
-</ul>
-<h2><a href="https://www.elastic.co/blog/elasticsearch-is-open-source-again">Elasticsearch er open source igen</a></h2>
-<ul>
-<li>Elasticsearch og Kibana er nu open source igen, med AGPL tilføjet som en licensmulighed sammen med ELv2 og SSPL.</li>
-<li>Ændringen bekræfter Elastics engagement i open source, idet den adresserer tidligere problemer med AWS og markedsforvirring, der førte til en forgrening af Elasticsearch.</li>
-<li>Flytningen sigter mod at forenkle brugeroplevelsen ved at tilbyde flere licensmuligheder og er i tråd med Elastics mål om at støtte mere open-source licensering.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41394797">Reaktioner</a></h3>
-<ul>
-<li>Elasticsearch er vendt tilbage til at være open source, nu under AGPL-licensen, som kræver, at brugerne bidrager med eventuelle ændringer.</li>
-<li>Amazon Web Services (AWS) skabte OpenSearch, efter at Elastic afviste AWS&#39;s tilbud om at bidrage med sikkerhedsfunktioner, hvilket førte til en splittelse i fællesskabet.</li>
-<li>Elastics nye licensiering sigter mod at balancere open source-fordele med forretningsbehov og forhindre konkurrenter i at bruge deres kode uden at bidrage.</li>
-</ul>
-<h2><a href="https://github.com/anthropics/courses/tree/master/prompt_engineering_interactive_tutorial">Anthropic&#39;s interaktive vejledning i prompt engineering</a></h2>
-<ul>
-<li>Anthropic har lanceret en interaktiv vejledning i prompt engineering i Claude, der har til formål at lære brugerne at skabe optimale prompts.</li>
-<li>Kurset dækker emner fra begynder til avanceret niveau, herunder promptstruktur, håndtering af almindelige problemer og opbygning af komplekse prompts, med praktiske øvelser og en &quot;Eksempel Legeplads&quot; til eksperimentering.</li>
-<li>Vejledningen bruger Claude 3 Haiku og inkluderer en Google Sheets-version for nem brug, hvilket gør det tilgængeligt for nye brugere at forstå og anvende prompt engineering-teknikker effektivt.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395921">Reaktioner</a></h3>
-<ul>
-<li>Anthropic har udgivet en interaktiv vejledning i prompt engineering, som har fået stor opmærksomhed fra tech-fællesskabet.</li>
-<li>Vejledningen har til formål at lære brugerne, hvordan man effektivt kommunikerer med store sprogmodeller (LLM&#39;er) for at opnå ønskede resultater, en færdighed kendt som prompt engineering.</li>
-<li>Denne udgivelse er bemærkelsesværdig, fordi den giver struktureret vejledning i at optimere prompts, hvilket er afgørende for at forbedre ydeevnen og pålideligheden af AI-drevne applikationer.</li>
-</ul>
-<h2><a href="https://github.com/libsdl-org/SDL/pull/9312">SDL3 ny GPU API sammenlagt</a></h2>
-<ul>
-<li>GPU API MkII #9312 er blevet flettet ind i hovedgrenen af libsdl-org, hvilket introducerer betydelige opdateringer som Refresh-grafikkomponenten, der understøtter moderne API&#39;er som Vulkan og PS5-grafik-API&#39;en.</li>
-<li>Opdateringen inkluderer et offline shader-kompilationssystem, der sigter mod at strømline GPU API&#39;en, forbedre ydeevnen og øge ressourcernes sikkerhed.</li>
-<li>Den primære bidragyder er @thatcosmonaut, med støtte fra FNA kerneholdet og feedback fra forskellige samarbejdspartnere, hvilket indikerer en fælles indsats for at forfine og optimere API&#39;en.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396260">Reaktioner</a></h3>
-<ul>
-<li>SDL3&#39;s nye GPU API er blevet integreret i hovedgrenen, selvom SDL3 stadig er i forhåndsvisning, med det formål at forenkle udviklingen af platformuafhængig grafik, herunder på konsoller.</li>
-<li>Dette nye API er designet til at være mere kraftfuldt end det gamle SDL 2D API, understøtter moderne GPU-funktioner og retter sig mod både 2D og nogle 3D-behov.</li>
-<li>Selvom lignende initiativer som WebGPU/WGSL eksisterer, mangler de konsol-backends, og den nye SDL3 GPU API understøtter endnu ikke WebGPU som en backend.</li>
-</ul>
-<h2><a href="https://rattvisan.blog/2024/07/28/yes-i-was-poisoned-by-my-wife-a-software-engineer-of-top3-us-company/">Blodsygdom: Afsløring af mysteriet om min forgiftning i Sverige</a></h2>
-<ul>
-<li>Forfatteren fortæller om en række begivenheder, der starter den 24. juli 2021, da hans kone, Kim, blev arresteret efter at være blevet fundet med en mistænkelig flaske, hvilket førte til opdagelsen af, at hun havde manipuleret med hans vandflaske.</li>
-<li>Forfatteren har lidt af hypercalcæmi og vitamin D-forgiftning siden 2019, med svingende helbred trods adskillige medicinske tests og behandlinger, herunder MRI- og PET-CT-scanninger.</li>
-<li>Årsagen til den overdrevne mængde vitamin D og calcium forblev ukendt, indtil forfatteren opdagede, at Kim tilføjede en brun væske til sit vand, som hun hævdede var kalium.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395893">Reaktioner</a></h3>
-<ul>
-<li>Et blogindlæg på rattvisan.blog diskuterer en mistænkt forgiftningssag i Sverige, hvor forfatteren hævder, at hans kone forgiftede ham med D-vitamin.</li>
-<li>På trods af medicinske journaler og videooptagelser valgte den svenske anklager ikke at rejse sigtelse på grund af utilstrækkelige beviser, hvilket udløste debat om retssystemet.</li>
-<li>Kommentatorer udtrykker vantro over beslutningen, diskuterer muligheden for privat retsforfølgelse og spekulerer over hustruens motiver og mentale tilstand.</li>
-</ul>
-<h2><a href="https://www.haskellforall.com/2024/08/firewall-rules-not-as-secure-as-you.html">Firewall-regler: ikke så sikre som du tror</a></h2>
-<ul>
-<li>Indlægget diskuterer teknikker til at omgå virksomheds-firewalls, hvilket muliggør vilkårlige indgående og udgående forespørgsler over enhver protokol, hvilket er nyttigt til at implementere software i begrænsede netværksmiljøer.</li>
-<li>Den introducerer et arkiv ved navn &quot;holepunch&quot;, der indeholder NixOS-moduler, som automatiserer disse firewall-omgåelsestricks, herunder tunneling af indgående SSH-forbindelser inde i udgående HTTPS-anmodninger.</li>
-<li>Teknikkerne antager kontrol over værter i begge ender af netværksanmodningen og anvender værktøjer som forward proxies, TLS-terminerende reverse proxies, reverse tunnels og Corkscrew til at maskere og tunnelere trafik.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396206">Reaktioner</a></h3>
-<ul>
-<li>Indlægget diskuterer begrænsningerne og de potentielle sårbarheder ved firewall-regler og fremhæver, at de måske ikke er så sikre, som man almindeligvis tror.</li>
-<li>Den deler virkelige anekdoter og tekniske indsigter om, hvordan leverandører og enkeltpersoner kan omgå firewall-restriktioner ved hjælp af værktøjer som SSH og netcat, hvilket rejser bekymringer om sikkerhedspraksis.</li>
-<li>Diskussionen understreger spændingen mellem sikkerhedspolitikker og praktiske behov, og fremhæver vigtigheden af gennemsigtig kommunikation og passende sikkerhedsforanstaltninger for at forhindre uautoriseret adgang.</li>
-</ul>
-<h2><a href="http://consulting.m3047.net/dubai-letters/balkanized-internet.html">Jeg blokerer forbindelser fra AWS til mine on-premises tjenester</a></h2>
-<ul>
-<li>Fremkomsten af store cloud-udbydere fører til en fragmenteret eller &quot;balkaniseret&quot; internet, hvor interoperabilitet med det generelle internet er begrænset.</li>
-<li>Historisk kontekst: Internettet gik fra at være et værktøj for regeringen og uddannelsessektoren til at blive et kommercialiseret rum domineret af reklamer og monetarisering af brugerdata.</li>
-<li>Bekymringer omfatter datatyveri og overdreven trafik fra cloud-tjenester, hvilket får nogle til at blokere adgang fra store udbydere som AWS for at beskytte lokale ressourcer.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396641">Reaktioner</a></h3>
-<ul>
-<li>Forfatteren blokerer AWS-forbindelser til deres lokale tjenester på grund af bekymringer om misbrug og angreb.</li>
-<li>At blokere Amazons omfattende IP-område er udfordrende, men forfatteren er villig til at ofre noget legitim trafik for at reducere uønsket trafik.</li>
-<li>Der er en debat om, hvorvidt blokering af cloud-udbyderes IP-adresser kan føre til fragmentering (balkanisering) af internettet, men forfatteren prioriterer sikkerhed over denne bekymring.</li>
-</ul>
-<h2><a href="https://github.com/google/closure-library">Google Closure Library er blevet arkiveret</a></h2>
-<ul>
-<li>Closure Library er blevet arkiveret, fordi det ikke længere stemmer overens med moderne JavaScript-udviklingskrav.</li>
-<li>Brugere opfordres til at finde alternative biblioteker for at imødekomme deres udviklingsbehov.</li>
-<li>Yderligere information er tilgængelig i udgave nr. 1214.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395925">Reaktioner</a></h3>
-<ul>
-<li>Google Closure Library er blevet arkiveret, hvilket markerer afslutningen på dens vedligeholdelse trods dens historiske betydning i opbygningen af robuste e-mail-klienter som Gmails editor.</li>
-<li>Closure Compiler vil fortsat modtage support, selvom JavaScript-økosystemet har udviklet sig til at reducere behovet for sådanne omfattende biblioteker.</li>
-<li>Closure Librarys arv af ingeniørmæssig ekspertise forbliver indflydelsesrig i udviklingssamfundet.</li>
-</ul>
-<h2><a href="http://ciel-lang.org/">CIEL er en udvidet Lisp</a></h2>
-<ul>
-<li>CIEL er et udvidet Lisp-sprog, fuldt kompatibelt med Common Lisp, og inkluderer yderligere funktioner (&quot;batterier inkluderet&quot;).</li>
-<li>GitHub-repositoriet for CIEL indeholder ressourcer og dokumentation for brugere, der er interesserede i at udforske eller bidrage til projektet.</li>
-<li>Et eksempelscript demonstrerer hentning og udskrivning af JSON-data fra en web-API ved hjælp af CIEL, hvilket fremhæver dets praktiske anvendelser.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41401415">Reaktioner</a></h3>
-<ul>
-<li>CIEL er en udvidet version af Lisp, med diskussioner der fremhæver dets veldokumenterede værktøjer og potentialet for en maskot eller et logo.</li>
-<li>Vigtige funktioner, der blev diskuteret, inkluderer shell pass-through i REPL, letheden ved at kompilere binære filer og den interaktive natur af CIEL&#39;s REPL sammenlignet med Pythons.</li>
-<li>Brugere bemærkede betydningen af navnet &quot;Ciel&quot; (fransk for &quot;himmel&quot;), nem installation og sammenligninger med andre sprog som Clojure og Nim, hvilket understreger potentialet for CIEL til at standardisere Common Lisp-økosystemet.</li>
-</ul>
-<h2><a href="https://github.com/duckduckgo/macos-browser">DuckDuckGo for Mac er nu open source</a></h2>
-<ul>
-<li>DuckDuckGo udvider sit team og ansætter senior softwareingeniører for at forbedre standarderne for online tillid.</li>
-<li>macOS-projektet bruger Swift Package Manager til afhængigheder og SwiftLint til håndhævelse af kodestil.</li>
-<li>Terminologiopdateringer er blevet foretaget for at fjerne problematiske racemæssige konnotationer, ved at anvende termer som hovedgrene, tilladelseslister og bloklister.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396487">Reaktioner</a></h3>
-<ul>
-<li>DuckDuckGo har gjort sin Mac-browser open source, tilgængelig på GitHub, og den er baseret på WebKit, samme motor som Safari.</li>
-<li>Brugere har rapporteret et fald i DuckDuckGo&#39;s søgekvalitet, med henvisning til AI-spam og irrelevante lokale virksomhedslinks, hvilket har fået nogle til at skifte til alternativer som Brave Search og Kagi.</li>
-<li>Modige ingeniører arbejder aktivt på at løse captcha-problemer og fremhæver løbende forbedringer i alternative søgemaskiner.</li>
-</ul>
-<h2><a href="https://bletchleypark.org.uk/">Besøg Bletchley Park</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41396501">Reaktioner</a></h3>
-<ul>
-<li>Bletchley Park tilbyder historiske udstillinger om livet under Anden Verdenskrig og kodebrydning, med fokus på menneskelige og procesmæssige aspekter.</li>
-<li>Nationalmuseet for Computing, som ligger på samme sted, har omfattende samlinger, herunder replikaer af Bombe- og Colossus-computerne.</li>
-<li>Billetter til Bletchley Park er gyldige i 12 måneder, hvilket giver mulighed for flere besøg.</li>
-</ul>
-<h2><a href="https://matklad.github.io/2023/01/26/rusts-ugly-syntax.html">Rusts grimme syntaks (2023)</a></h2>
-<ul>
-<li>Indlægget diskuterer den almindelige misforståelse, at Rusts syntaks er det største problem, mens den reelle udfordring ligger i dets semantik.</li>
-<li>Det tilbyder forskellige syntaksstile (Rs++, Rhodes, RhodesScript, Rattlesnake, CrabML) for at illustrere, hvordan Rusts semantik kan forenkles.</li>
-<li>Indlægget foreslår flere ændringer til Rusts standardbiblioteksfunktion for at gøre den mere brugervenlig, herunder fjernelse af indlejrede funktioner, begrænsninger og forenkling af fejlhåndtering.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41397679">Reaktioner</a></h3>
-<ul>
-<li>Artiklen diskuterer kompleksiteten og læsbarhedsproblemerne i Rusts syntaks, især når det drejer sig om generiske typer og levetidsmarkører.</li>
-<li>Eksemplerne inkluderer brugen af asynkrone funktioner i traits, hvilket kan resultere i indviklet kode på grund af kombinationen af levetider og typegrænser.</li>
-<li>Diskussionen fremhæver forskellige meninger om Rusts syntaksvalg, såsom brugen af enkelt anførselstegn (&#39;) for levetider, og om mere udførlige nøgleord ville forbedre kodelæsbarheden.</li>
-</ul>
-<h2><a href="https://github.com/algora-io/tv">Open Source Twitch for Developers</a></h2>
-<ul>
-<li>Algora TV introducerer en ny funktion kaldet Livestream Billboards, som giver udviklere mulighed for at tjene penge gennem in-video annoncer, mens de livestreamer.</li>
-<li>Opsætningen kræver Elixir, Erlang/OTP, PostgreSQL, FFmpeg og OBS Studio, med detaljerede trin for projektinitialisering og databasekonfiguration.</li>
-<li>Arkitekturen involverer streamere, der bruger Fly (en Elixir-app) og RTMP-servere, med medielagring og -levering håndteret af Tigris, og tjenesten distribueres under AGPLv3-licensen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41397498">Reaktioner</a></h3>
-<ul>
-<li>Algora er en open-source livestreaming platform for udviklere, der understøtter multistreaming til platforme som Twitch, YouTube og X, og som samler live kommentarer.</li>
-<li>Bygget ved hjælp af Elixir for produktivitet og fejltolerance, udnytter Algora Phoenix LiveView og OTP til at håndtere komplekse streaming-pipelines og BEAM-klyngedannelse for lav latenstid.</li>
-<li>Projektet vedligeholdes af en enkelt udvikler, som søger bidrag og feedback, med dusører tilgængelige for prioriterede problemer.</li>
-</ul>
-<h2><a href="https://bivens.plaintip.com/index.php/google-incognito/">Har du nogensinde brugt Google Chrome i inkognitotilstand? Du kan være berettiget til op til 5.000 USD</a></h2>
-<ul>
-<li>Google står over for anklager om at vildlede brugere om privatlivets fred i sin Incognito-tilstand, hvilket potentielt kan berettige brugere til op til $5.000 i erstatning for brud på privatlivets fred.</li>
-<li>Retssagen hævder, at Google sporede aktivitet, solgte personlige data og vildledte brugere om privatlivets fred i Incognito-tilstand mellem 2016-2023.</li>
-<li>Berettigelseskriterierne omfatter brug af inkognitotilstand i den angivne periode, forventning om privatliv, ikke altid samtykke til sporing, være 18+ og være bosiddende i USA.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395591">Reaktioner</a></h3>
-<ul>
-<li>Brugere af Google Chromes inkognitotilstand kan være berettiget til op til $5.000, men der er endnu ikke indgået nogen forlig.</li>
-<li>Retssagen hævder, at inkognitotilstandens navn og ikon er vildledende, da de antyder fuld anonymitet, på trods af advarsler om, at den ikke skjuler aktivitet fra hjemmesider, arbejdsgivere eller internetudbydere (ISP&#39;er).</li>
-<li>Retssagen har sat gang i diskussioner om teknologisk kunnen og brugerforventninger, med potentielle risici for dem, der deltager i retssagen, herunder mulige omkostninger, hvis sagen tabes.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Den hemmelighed, der gemmer sig i en million afkrydsningsfelter" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Den%20hemmelighed%2C%20der%20gemmer%20sig%20i%20en%20million%20afkrydsningsfelter&subheading=fredag%20den%2030.%20august%202024%3A%20Resum%C3%A9%20af%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/da/2024/08/30</link>
-            <guid isPermaLink="false">2024-08-30T00:00:00.000Z</guid>
-            <pubDate>Fri, 30 Aug 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

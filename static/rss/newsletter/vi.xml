@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 08 Sep 2024 20:58:51 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Sep 2024 19:13:24 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/vi.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 08 Sep 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 09 Sep 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[vi]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-09-09]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/09/09&#39;</h2>
+<h1>2024-09-09</h1>
+<h2><a href="https://dl.acm.org/doi/10.1145/3589334.3645323">QUIC không đủ nhanh trên mạng internet tốc độ cao</a></h2>
+<ul>
+<li>Một nghiên cứu gần đây tiết lộ rằng QUIC, một giao thức được thiết kế để cải thiện hiệu suất internet, cho thấy mức giảm tốc độ dữ liệu lên đến 45,2% so với TCP+TLS+HTTP/2 truyền thống trên các mạng tốc độ cao.</li>
+<li>Khoảng cách hiệu suất được cho là do chi phí xử lý cao ở phía nhận, đặc biệt là do gói dữ liệu quá nhiều và các xác nhận (ACKs) trong không gian người dùng của QUIC.</li>
+<li>Những phát hiện này có ý nghĩa quan trọng đối với các ứng dụng như chuyển tập tin, phát trực tuyến video và duyệt web, với các khuyến nghị được đưa ra để giảm thiểu những vấn đề này.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41484991">phản ứng</a></h3>
+<ul>
+<li>QUIC gặp phải các vấn đề về hiệu suất trên internet nhanh do giao diện syscall không hiệu quả, chi phí syscall cao từ việc giảm thiểu spectre, bộ đệm UDP mặc định nhỏ và tối ưu hóa ngăn xếp UDP phức tạp.</li>
+<li>GSO (Generic Segmentation Offload) có thể cải thiện hiệu suất nhưng không tối ưu cho các máy chủ quy mô lớn, cho thấy cần có các API tốt hơn để thay thế BSD sockets/POSIX.</li>
+<li>Thảo luận nhấn mạnh sự phức tạp của việc tích hợp io_uring và những lợi ích tiềm năng của các API cấp cao được xây dựng trên nó, làm nổi bật sự cân bằng giữa tính linh hoạt của không gian người dùng và hiệu quả ở mức nhân.</li>
+</ul>
+<h2><a href="https://reclaim-the-stack.com">Đòi lại Ngăn xếp</a></h2>
+<ul>
+<li>Trang web Mynewsdesk.com đã phát triển một nền tảng dựa trên Kubernetes để thay thế Heroku, dẫn đến giảm 90% chi phí và cải thiện 30% hiệu suất cho sản phẩm SaaS của họ.</li>
+<li>Những nền tảng mới đã nâng cao trải nghiệm của nhà phát triển với thời gian triển khai nhanh hơn và công cụ cải tiến.</li>
+<li>Ngăn xếp đã được mã nguồn mở, cho phép người khác nhanh chóng tái tạo thành công của họ bằng cách làm theo tài liệu được cung cấp và tham gia vào máy chủ Discord của họ.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483675">phản ứng</a></h3>
+<ul>
+<li>Reclaim the Stack báo cáo giảm 90% chi phí và tăng 30% hiệu suất bằng cách chuyển từ Heroku sang Kubernetes.</li>
+<li>Người dùng cho rằng những khoản tiết kiệm này đi kèm với sự phức tạp gia tăng, đòi hỏi nhiều bảo trì, giám sát và chuyên môn đặc biệt hơn trong việc quản lý Kubernetes và các hệ thống liên quan.</li>
+<li>Những người phê bình đề xuất xem xét các thiết lập VM đơn giản hơn, các dịch vụ được quản lý, hoặc các nhà cung cấp PaaS khác như Render hoặc Fly.io, nhấn mạnh sự đánh đổi giữa chi phí, độ phức tạp và kiến thức quản lý hạ tầng.</li>
+</ul>
+<h2><a href="https://www.ic3.gov/Media/Y2022/PSA221221">FBI khuyến nghị sử dụng trình chặn quảng cáo (2022)</a></h2>
+<ul>
+<li>FBI đã đưa ra cảnh báo về việc tội phạm mạng sử dụng quảng cáo trên công cụ tìm kiếm để giả mạo các thương hiệu, dẫn người dùng đến các trang web độc hại chứa ransomware và đánh cắp thông tin nhạy cảm.</li>
+<li>Tin tặc mua quảng cáo giả mạo các doanh nghiệp hợp pháp, xuất hiện ở đầu kết quả tìm kiếm, lừa người dùng truy cập vào các trang web giả và tải xuống phần mềm độc hại.</li>
+<li>Biện pháp phòng ngừa bao gồm xác minh URL, sử dụng trình chặn quảng cáo, và các doanh nghiệp giáo dục người dùng về các trang web giả mạo và URL chính xác.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483581">phản ứng</a></h3>
+<ul>
+<li>FBI đã khuyến nghị sử dụng các trình chặn quảng cáo để tăng cường bảo mật trực tuyến và cải thiện trải nghiệm người dùng bằng cách ngăn chặn các quảng cáo xâm nhập và có thể gây hại.</li>
+<li>Mặc dù có những lợi ích, một số người cho rằng các trình chặn quảng cáo làm suy yếu mô hình doanh thu của nhiều trang web, vốn phụ thuộc vào thu nhập từ quảng cáo.</li>
+<li>Những người dùng am hiểu công nghệ đồng ý rằng lợi ích của việc sử dụng trình chặn quảng cáo vượt trội hơn so với những nhược điểm tiềm ẩn.</li>
+</ul>
+<h2><a href="https://bmjpublichealth.bmj.com/content/bmjph/2/1/e001000.full.pdf">Thời lượng giấc ngủ, kiểu giấc ngủ, các yếu tố sức khỏe và lối sống ảnh hưởng đến nhận thức [pdf]</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41483434">phản ứng</a></h3>
+<ul>
+<li>Một nghiên cứu chỉ ra rằng thời gian ngủ bình thường (7-9 giờ) có liên quan đến hiệu suất nhận thức tốt hơn, trong khi ngủ quá nhiều có thể gây ra các tác động tiêu cực.</li>
+<li>Việc tiêu thụ rượu có mối quan hệ phức tạp với nhận thức; những người kiêng rượu thường có điểm số thấp hơn trong các bài kiểm tra nhận thức so với những người uống rượu vừa phải.</li>
+<li>Cuộc thảo luận cũng khám phá cách tuổi tác, sức khỏe và trải nghiệm cá nhân ảnh hưởng đến quá trình chuyển hóa rượu và chức năng nhận thức.</li>
+</ul>
+<h2><a href="https://www.eurekalert.org/news-releases/1056171">Việc sạc pin lithium-ion với dòng điện cao trước tiên làm tăng tuổi thọ lên 50%</a></h2>
+<ul>
+<li>Những nhà nghiên cứu tại Trung tâm Pin SLAC-Stanford đã phát hiện rằng sạc pin lithium-ion với dòng điện cao trước khi chúng rời khỏi nhà máy nhanh hơn 30 lần và tăng tuổi thọ của chúng lên 50%.</li>
+<li>Cuộc nghiên cứu, được công bố trên tạp chí Joule, nhấn mạnh rằng quá trình sạc hình thành, lần sạc đầu tiên mà pin nhận được, là rất quan trọng đối với hiệu suất và tuổi thọ của nó.</li>
+<li>Bằng cách sử dụng học máy khoa học, nghiên cứu đã xác định nhiệt độ và dòng điện là những yếu tố then chốt, với những tác động đáng kể đến việc nâng cao hiệu quả và hiệu suất sản xuất pin.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483654">phản ứng</a></h3>
+<ul>
+<li>Việc sạc pin lithium-ion với dòng điện cao ban đầu có thể tăng tuổi thọ của chúng lên 50%, mặc dù tuyên bố này đang được tranh luận giữa các chuyên gia trong ngành.</li>
+<li>Những mối quan ngại bao gồm tác động đến trở kháng của pin, dung lượng và hiệu quả của quản lý nhiệt trong các thương hiệu xe điện khác nhau.</li>
+<li>Cuộc thảo luận cũng khám phá những lợi ích tiềm năng của các kiến trúc điện áp cao hơn và sự đánh đổi giữa tuổi thọ pin và tốc độ sạc.</li>
+</ul>
+<h2><a href="https://old.reddit.com/r/LocalLLaMA/s/4Ly2yj78aM">Đã xác nhận: API chính thức của Reflection 70B là một lớp bao bọc cho Sonnet 3.5</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41484981">phản ứng</a></h3>
+<ul>
+<li>API chính thức của Reflection 70B chỉ là một lớp bao bọc cho mô hình Sonnet 3.5 hiện có, không phải là một mô hình AI mới.</li>
+<li>Việc phát hành đã không có tổ chức, với các trọng lượng bị dán nhãn sai, các đánh giá không nhất quán, và cuối cùng sử dụng Sonnet 3.5 và sau đó là GPT-4o.</li>
+<li>Việc Sahil Chaudhary và Matt Shumer tham gia, với Shumer quảng bá mô hình mặc dù có vấn đề, đã gây ra sự nhầm lẫn và lãng phí thời gian trong cộng đồng AI.</li>
+</ul>
+<h2><a href="https://fennel-lang.org/">Ngôn ngữ lập trình Fennel</a></h2>
+<ul>
+<li>Fennel là một ngôn ngữ lập trình kết hợp sự đơn giản và tốc độ của Lua với cú pháp và hệ thống macro của Lisp, cung cấp khả năng tương thích hoàn toàn với Lua và không có chi phí phụ trội.</li>
+<li>Đa năng, phù hợp cho các ứng dụng như trò chơi điện tử, máy chủ web và vi điều khiển, và hỗ trợ các macro thời gian biên dịch.</li>
+<li>Đã có sẵn tài liệu toàn diện và các nguồn tài nguyên cộng đồng, bao gồm hướng dẫn cài đặt, hướng dẫn sử dụng và quy tắc ứng xử, với các phiên bản từ v0.1.0 đến v1.5.1.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483216">phản ứng</a></h3>
+<ul>
+<li>Ngôn ngữ lập trình Fennel được công nhận vì những tiến bộ kỹ thuật và cải tiến so với Lua, đặc biệt là đối với các dự án lớn.</li>
+<li>Fennel giới thiệu các tính năng như khớp mẫu và hệ thống macro mạnh mẽ, tăng cường tính linh hoạt và dễ sử dụng, đặc biệt trong các cơ sở mã cũ.</li>
+<li>Its integration with Lua&#39;s module loader allows seamless mixing of tables and functions, and its Lisp syntax with a minimal learning curve makes it popular among developers.</li>
+</ul>
+<h2><a href="https://awfulannouncing.com/espn/alex-morgan-ai-generated-recap-mention.html">ESPN tóm tắt trận đấu cuối cùng của cầu thủ giải nghệ do AI tạo ra không đề cập đến họ</a></h2>
+<ul>
+<li>ESPN đã tạo ra một bản tóm tắt bằng AI về trận đấu chuyên nghiệp cuối cùng của Alex Morgan nhưng ban đầu lại không đề cập đến cô, thay vào đó tập trung vào đồng đội Kennedy Wesley.</li>
+<li>Việc bỏ sót nhấn mạnh những hạn chế của AI trong việc nắm bắt đầy đủ bối cảnh cảm xúc và lịch sử của các sự kiện quan trọng.</li>
+<li>ESPN sau đó đã cập nhật bản tóm tắt để bao gồm Morgan và đăng một bài viết riêng, ít nổi bật hơn về trận đấu cuối cùng của cô ấy.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41489167">phản ứng</a></h3>
+<ul>
+<li>Phần tóm tắt trận đấu cuối cùng của một cầu thủ sắp giải nghệ do AI của ESPN tạo ra đã không đề cập đến cầu thủ này, dẫn đến sự chỉ trích và làm nổi bật những thiếu sót trong nội dung do AI tạo ra.</li>
+<li>Vụ việc này nhấn mạnh rằng mặc dù AI có thể tạo ra nội dung nhanh chóng, nhưng nó thường thiếu bối cảnh và chiều sâu cảm xúc mà các nhà văn con người mang lại.</li>
+<li>Việc này nhấn mạnh sự cần thiết của sự giám sát của con người để duy trì chất lượng và độ chính xác trong các bài viết do AI tạo ra.</li>
+</ul>
+<h2><a href="https://blog.gitbutler.com/why-github-actually-won/">Vì sao GitHub chiến thắng</a></h2>
+<ul>
+<li>Thành công của GitHub được cho là nhờ vào việc ra mắt kịp thời trong thời kỳ phát triển của các công cụ kiểm soát phiên bản phân tán và tập trung vào việc nâng cao trải nghiệm của nhà phát triển hơn là lợi ích thương mại.</li>
+<li>Phương pháp tiếp cận người dùng của GitHub, nhấn mạnh vào các yêu cầu kéo và sự hấp dẫn về mặt thẩm mỹ đã làm cho nó khác biệt so với các đối thủ cạnh tranh như Google Code và BitBucket.</li>
+<li>Việc cộng đồng Linux chấp nhận Git và sự hỗ trợ sớm từ cộng đồng Ruby đã đóng vai trò quan trọng trong việc phổ biến GitHub.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41490161">phản ứng</a></h3>
+<ul>
+<li>Google Code được tạo ra để ngăn chặn SourceForge độc quyền thị trường, không phải để thống trị nó.</li>
+<li>Google Code đã bị đóng cửa sau khi đạt được mục tiêu thúc đẩy cạnh tranh, mở đường cho các nền tảng như GitHub phát triển mạnh mẽ.</li>
+<li>Cuộc thảo luận nhấn mạnh những lo ngại về tuổi thọ của các sản phẩm của Google và tầm quan trọng của thời gian và trải nghiệm người dùng trong sự thành công của GitHub.</li>
+</ul>
+<h2><a href="https://atproto.com/articles/atproto-for-distsys-engineers">ATProto cho các kỹ sư hệ thống phân tán</a></h2>
+<ul>
+<li>AT Protocol, được phát triển bởi Bluesky, được thiết kế cho mạng xã hội mở, tập trung vào kỹ thuật backend phi tập trung.</li>
+<li>Những backend web truyền thống gặp phải vấn đề về khả năng mở rộng với các cơ sở dữ liệu SQL, dẫn đến việc áp dụng các cụm NoSQL và kiến trúc xử lý luồng.</li>
+<li>AT Protocol phi tập trung hóa các backend quy mô lớn bằng cách sử dụng các API công khai cho các dịch vụ nội bộ và thiết lập một mô hình dữ liệu chia sẻ gọi là &quot;kho dữ liệu người dùng,&quot; chứa các tài liệu JSON được ký mã hóa.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41484337">phản ứng</a></h3>
+<ul>
+<li>ATProto là một đặc tả toàn diện, từ dưới lên cho các hệ thống phi tập trung, trái ngược với ActivityPub, vốn để lại nhiều khía cạnh cho việc triển khai.</li>
+<li>ATProto sử dụng mô hình dữ liệu riêng thay vì JSON-LD, điều này có thể là một trở ngại đối với một số nhà phát triển.</li>
+<li>Đã phát hành một hướng dẫn mới về việc tạo ứng dụng tối giản với ATProto, nêu bật hệ sinh thái đang phát triển và các ứng dụng thực tiễn của nó.</li>
+</ul>
+<h2><a href="https://tookmund.com/2024/09/hibernation-preparation">Thói Quen Trước Khi Ngủ Của Linux</a></h2>
+<ul>
+<li>Bài viết giải thích quá trình ngủ đông trong Linux, tập trung vào phiên bản 6.9.9, từ việc khởi động chế độ ngủ đông đến việc đồng bộ hóa hệ thống tệp vào đĩa.</li>
+<li>Những điểm nhập chính để kiểm soát chế độ ngủ và chế độ ngủ đông là <code>/sys/power/state</code> và <code>/sys/power/disk</code>, với các giá trị cụ thể được ghi vào các tệp này để khởi tạo các trạng thái ngủ.</li>
+<li>Hệ thống ngủ đông bao gồm nhiều bước, bao gồm cấu hình nhân, kiểm tra tính khả dụng, kiểm tra nén, thu nhận khóa, chuẩn bị bảng điều khiển, thông báo quản lý năng lượng, và đồng bộ hóa hệ thống tệp.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483789">phản ứng</a></h3>
+<ul>
+<li>Những vấn đề quản lý năng lượng của Linux đã được khám phá, đặc biệt tập trung vào các cơ chế ngủ đông và tạm dừng, theo các đường dẫn mã khác nhau.</li>
+<li>Đã xác định một sự cố do không đủ RAM hệ thống trống để chứa toàn bộ VRAM, dẫn đến việc phân bổ bộ nhớ thất bại trong quá trình ngủ hoặc tiếp tục, gây ra các trạng thái hệ thống không xác định.</li>
+<li>Bài thảo luận nêu bật những phức tạp và các vấn đề tiềm ẩn với quản lý năng lượng của Linux, bao gồm việc xử lý VRAM và vai trò của systemd trong việc quản lý các quy trình này.</li>
+</ul>
+<h2><a href="https://rakujourney.wordpress.com/2024/09/08/htmx-raku-and-pico-css/">Htmx, Raku và Pico CSS</a></h2>
+<ul>
+<li>Đây là một phần của loạt bài tập trung vào việc giảm tải nhận thức trong các dự án web bằng cách sử dụng các phương pháp phát triển web đơn giản hơn, cụ thể là HTMX, Raku và Cro cho việc lắp ráp HTML backend và các API RESTful, loại bỏ nhu cầu sử dụng JavaScript trong nội dung động.</li>
+<li>HTMX rất linh hoạt cho hầu hết các dự án nhưng không phù hợp cho các ứng dụng web phức tạp; Pico CSS được khuyến nghị cho việc tạo kiểu do nhấn mạnh vào HTML ngữ nghĩa, điều này đơn giản hóa quá trình phát triển.</li>
+<li>Đoạn bài viết bao gồm các ví dụ mã sử dụng Pico CSS để tái tạo các ví dụ HTMX cho Raku/Cro, với mã cuối cùng có sẵn trên GitHub, và nhấn mạnh chế độ tối tích hợp sẵn của Pico CSS.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41482679">phản ứng</a></h3>
+<ul>
+<li>HTMX được nhấn mạnh vì khả năng đơn giản hóa các ứng dụng web bằng cách giữ quản lý trạng thái ở phía máy chủ, giảm nhu cầu sử dụng JavaScript (JS) phía khách hàng một cách rộng rãi.</li>
+<li>Người dùng thảo luận về những đánh đổi giữa HTMX và các framework frontend hiện đại như React, lưu ý rằng HTMX có thể hiệu quả hơn cho các ứng dụng kinh doanh đơn giản nhưng có thể thiếu một số chức năng giao diện người dùng.</li>
+<li>Cuộc trò chuyện bao gồm các so sánh với các công nghệ khác như Next.js, Blazor và Phoenix LiveView, nhấn mạnh rằng HTMX cung cấp một cách tiếp cận khác có thể có lợi cho các trường hợp sử dụng cụ thể, đặc biệt là đối với các nhà phát triển fullstack ưa thích logic backend.</li>
+</ul>
+<h2><a href="https://github.com/josephburnett/jd">Jd – So sánh và vá JSON</a></h2>
+<ul>
+<li>JSON diff and patch (jd) là một tiện ích dòng lệnh và thư viện Go để so sánh và chỉnh sửa các giá trị JSON và YAML, hỗ trợ nhiều định dạng như jd, JSON Merge Patch (RFC 7386), và một phần của JSON Patch (RFC 6902).</li>
+<li>Tuỳ chọn cài đặt bao gồm Homebrew, Go install, GitHub releases, và Docker, với giao diện web có sẵn tại jd-tool.io hoặc cục bộ qua <code>jd -port 8080</code>.</li>
+<li>Những tính năng chính bao gồm so sánh màu, áp dụng bản vá, chuyển hướng đầu ra, xử lý mảng dưới dạng tập hợp hoặc đa tập hợp, hỗ trợ YAML và dịch định dạng.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41482661">phản ứng</a></h3>
+<ul>
+<li>Jd là một công cụ để so sánh và vá các tệp JSON, được tạo ra bởi Joseph Burnett, và nhằm bổ sung cho <code>jq</code> bằng cách xử lý thứ tự của các mảng JSON.</li>
+<li>Đã cập nhật công cụ để giải quyết các vấn đề liên quan đến việc phát hiện các phần tử bị thiếu trong các tệp JSON lớn, với API v2 mới tính toán dãy con chung dài nhất của hai mảng.</li>
+<li>Người dùng đã thấy Jd hữu ích cho các nhiệm vụ như kiểm tra snapshot thủ công, gỡ lỗi phản hồi API, và so sánh các tệp JSON lớn, với các đề xuất cải tiến thêm như thêm cú pháp truy vấn jq và tạo một tiện ích mở rộng cho VSCode.</li>
+</ul>
+<h2><a href="https://worksinprogress.co/issue/lab-grown-diamonds/">Kim cương tổng hợp hiện nay tinh khiết hơn, đẹp hơn và rẻ hơn so với kim cương khai thác</a></h2>
+<ul>
+<li>Kim cương nhân tạo, lần đầu tiên được tổng hợp vào những năm 1950, hiện nay rẻ hơn, tinh khiết hơn và chiếm lĩnh thị trường công nghiệp, mang lại một sự thay thế hiệu quả về chi phí và chất lượng cao so với kim cương khai thác.</li>
+<li>Hóa hơi lắng đọng hóa học (CVD) là một phương pháp được phát triển vào những năm 1950 để sản xuất kim cương, cho phép kiểm soát chính xác và tùy chỉnh các tính chất của kim cương, làm cho chúng phù hợp với nhiều ứng dụng công nghiệp khác nhau.</li>
+<li>Những tiến bộ trong sản xuất kim cương tiếp tục mở ra những ứng dụng mới và cải thiện các ứng dụng hiện có, thể hiện sự sáng tạo của con người trong việc nâng cao các quá trình tự nhiên.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41488353">phản ứng</a></h3>
+<ul>
+<li>Sự phát triển công nghệ đã làm cho kim cương tổng hợp trở nên tinh khiết hơn, đẹp mắt hơn và có giá cả phải chăng hơn so với kim cương tự nhiên.</li>
+<li>Máy móc để sản xuất kim cương tổng hợp hiện có giá khoảng 200.000 đô la, và các công ty như Element Six của De Beers đang bán chúng cho các mục đích công nghiệp.</li>
+<li>Kim cương nhân tạo và moissanite có giá rẻ hơn đáng kể, với kim cương nhân tạo có giá dưới $200 mỗi carat và moissanite dưới $5 mỗi carat, làm cho kim cương trở nên dễ tiếp cận hơn và mở rộng các ứng dụng công nghiệp của chúng.</li>
+</ul>
+<h2><a href="https://www.apple.com/newsroom/2024/05/apple-hearing-study-shares-preliminary-insights-on-tinnitus/">Apple Hearing Study chia sẻ những hiểu biết sơ bộ về chứng ù tai</a></h2>
+<ul>
+<li>Nhà nghiên cứu từ Đại học Michigan đã công bố dữ liệu từ một cuộc khảo sát lớn về chứng ù tai với sự tham gia của hơn 160.000 người, nhằm cải thiện sự hiểu biết và quản lý tình trạng này.</li>
+<li>Những phát hiện chính bao gồm 77,6% người tham gia đã trải qua chứng ù tai, với 15% trải qua hàng ngày, và tỷ lệ phổ biến tăng theo tuổi, đặc biệt là ở những người từ 55 tuổi trở lên.</li>
+<li>Cuộc nghiên cứu, một phần của ứng dụng Nghiên cứu của Apple, nêu bật các phương pháp quản lý phổ biến và nguyên nhân, và nhằm mục đích nâng cao hiểu biết về tiếp xúc âm thanh và tác động của nó đến sức khỏe thính giác.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41491121">phản ứng</a></h3>
+<ul>
+<li>Cuộc nghiên cứu về thính giác của Apple cung cấp những hiểu biết sơ bộ về chứng ù tai, nhấn mạnh các khía cạnh tâm lý và trải nghiệm cá nhân của người dùng.</li>
+<li>Những lời khuyên quan trọng bao gồm tránh suy nghĩ quá nhiều, sử dụng các biện pháp phân tâm, và quản lý căng thẳng và căng cơ, với một số người dùng tìm thấy sự nhẹ nhõm thông qua máy trợ thính hoặc giải quyết các vấn đề sức khỏe.</li>
+<li>Cuộc nghiên cứu cũng khám phá các tác động tiềm năng của các thiết bị âm thanh hiện đại như AirPods đối với chứng ù tai, với những ý kiến trái chiều từ người dùng.</li>
+</ul>
+<head>
+  <meta property="og:title" content="QUIC không đủ nhanh trên mạng internet tốc độ cao" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=QUIC%20kh%C3%B4ng%20%C4%91%E1%BB%A7%20nhanh%20tr%C3%AAn%20m%E1%BA%A1ng%20internet%20t%E1%BB%91c%20%C4%91%E1%BB%99%20cao&subheading=Th%E1%BB%A9%20Hai%2C%209%20th%C3%A1ng%209%2C%202024%3A%20T%C3%B3m%20t%E1%BA%AFt%20tin%20t%E1%BB%A9c%20v%E1%BB%81%20hacker" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/vi/2024/09/09</link>
+            <guid isPermaLink="false">2024-09-09T00:00:00.000Z</guid>
+            <pubDate>Mon, 09 Sep 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-08]]></title>
             <description
@@ -1658,197 +1844,6 @@
             <link>https://hn.cho.sh/vi/2024/08/31</link>
             <guid isPermaLink="false">2024-08-31T00:00:00.000Z</guid>
             <pubDate>Sat, 31 Aug 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-30]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/08/30&#39;</h2>
-<h1>2024-08-30</h1>
-<h2><a href="https://eieio.games/essays/the-secret-in-one-million-checkboxes/">Bí mật bên trong Một Triệu Ô Đánh Dấu</a></h2>
-<ul>
-<li>Trang web &quot;One Million Checkboxes&quot; (OMCB) ra mắt vào ngày 26 tháng 6 năm 2024 và bất ngờ thu hút 500.000 người chơi, những người đã đánh dấu hơn 650.000.000 ô trong hai tuần.</li>
-<li>Người dùng đã sáng tạo sử dụng các hộp kiểm để viết các thông điệp nhị phân, dẫn đến một máy chủ Discord nơi họ thảo luận về việc sử dụng bot trên trang web và tạo ra các bản vẽ và hoạt hình phức tạp.</li>
-<li>Mặc dù có một số phàn nàn về bot, người sáng tạo thấy sự sáng tạo của cộng đồng rất truyền cảm hứng và đã ghi lại trải nghiệm này trong một video trên YouTube để chia sẻ tác động cảm xúc.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395413">phản ứng</a></h3>
-<ul>
-<li>Đoạn bài viết thảo luận về hành trình cảm xúc và quá trình sáng tạo đằng sau trang web &quot;One Million Checkboxes&quot; (OMCB), nhấn mạnh sự cân bằng giữa các giới hạn và sự sáng tạo trên internet.</li>
-<li>Người tác giả chia sẻ quyết định đóng cửa trang web, nêu ra các lý do như sự kết thúc tự nhiên của sự quan tâm, chi phí tăng cao và mong muốn tránh gánh nặng bảo trì.</li>
-<li>Truyện đã gây tiếng vang với nhiều độc giả, gợi lên cảm giác hoài niệm và niềm vui mới mẻ trong lĩnh vực kỹ thuật phần mềm, đối lập với bối cảnh công nghệ thường xuyên áp đảo và thương mại hóa.</li>
-</ul>
-<h2><a href="https://www.anandtech.com/show/21542/end-of-the-road-an-anandtech-farewell">AnandTech tạm biệt</a></h2>
-<ul>
-<li>MediaTek sẽ thêm hỗ trợ NVIDIA G-Sync vào các bộ điều chỉnh màn hình, nhằm làm cho các màn hình G-Sync trở nên dễ tiếp cận hơn với nhiều người dùng hơn.</li>
-<li>Qualcomm giới thiệu Snapdragon 7s Gen 3, nâng cấp dòng sản phẩm tầm trung của mình với kiến trúc Cortex-A720.</li>
-<li>Intel đã bán cổ phần của mình trong Arm và giảm cổ phần trong các công ty khác, cho thấy một sự thay đổi chiến lược trong danh mục đầu tư của mình.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41399872">phản ứng</a></h3>
-<ul>
-<li>AnandTech, một trang web đánh giá công nghệ nổi tiếng, đang đóng cửa, đánh dấu sự kết thúc của một kỷ nguyên cho các bài đánh giá và bài viết kỹ thuật chuyên sâu.</li>
-<li>Trang web này được biết đến với nội dung chi tiết và dựa trên sự liêm chính, điều này đã ảnh hưởng đáng kể đến nhiều người đam mê công nghệ và các chuyên gia.</li>
-<li>Việc đóng cửa đã khơi dậy nỗi nhớ và các cuộc thảo luận về sự thay đổi của bối cảnh báo chí công nghệ, với nhiều người tiếc nuối sự mất mát của một nguồn tài nguyên độc đáo và đáng tin cậy như vậy.</li>
-</ul>
-<h2><a href="https://www.elastic.co/blog/elasticsearch-is-open-source-again">Elasticsearch lại là mã nguồn mở</a></h2>
-<ul>
-<li>Elasticsearch và Kibana hiện đã trở lại mã nguồn mở, với AGPL được thêm vào như một tùy chọn giấy phép bên cạnh ELv2 và SSPL.</li>
-<li>Thay đổi này tái khẳng định cam kết của Elastic đối với mã nguồn mở, giải quyết các vấn đề trước đây với AWS và sự nhầm lẫn trên thị trường dẫn đến việc phân nhánh Elasticsearch.</li>
-<li>Động thái này nhằm đơn giản hóa trải nghiệm người dùng bằng cách cung cấp nhiều tùy chọn cấp phép và phù hợp với mục tiêu của Elastic là hỗ trợ nhiều giấy phép nguồn mở hơn.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41394797">phản ứng</a></h3>
-<ul>
-<li>Elasticsearch đã quay trở lại là mã nguồn mở, hiện nay dưới giấy phép AGPL, yêu cầu người dùng phải đóng góp lại bất kỳ thay đổi nào.</li>
-<li>AWS đã tạo ra OpenSearch sau khi Elastic từ chối đề nghị của AWS về việc đóng góp các tính năng bảo mật, dẫn đến sự chia rẽ trong cộng đồng.</li>
-<li>Giấy phép mới của Elastic nhằm cân bằng lợi ích của mã nguồn mở với nhu cầu kinh doanh, ngăn chặn các đối thủ cạnh tranh sử dụng mã của họ mà không đóng góp.</li>
-</ul>
-<h2><a href="https://github.com/anthropics/courses/tree/master/prompt_engineering_interactive_tutorial">Khóa Học Tương Tác Về Kỹ Thuật Đề Xuất Của Anthropic</a></h2>
-<ul>
-<li>Anthropic đã ra mắt một hướng dẫn tương tác về kỹ thuật tạo lời nhắc trong Claude, nhằm dạy người dùng cách tạo ra các lời nhắc tối ưu.</li>
-<li>Khóa học bao gồm các chủ đề từ cơ bản đến nâng cao, bao gồm cấu trúc gợi ý, giải quyết các vấn đề thường gặp, và xây dựng các gợi ý phức tạp, với các bài tập thực hành và một &quot;Sân chơi Ví dụ&quot; để thử nghiệm.</li>
-<li>Buổi hướng dẫn sử dụng Claude 3 Haiku và bao gồm một phiên bản Google Sheets để dễ dàng sử dụng, giúp người dùng mới dễ dàng hiểu và áp dụng các kỹ thuật thiết kế gợi ý một cách hiệu quả.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395921">phản ứng</a></h3>
-<ul>
-<li>Anthropic đã phát hành một Hướng dẫn Tương tác về Kỹ thuật Đề xuất, thu hút sự chú ý đáng kể từ cộng đồng công nghệ.</li>
-<li>Khóa hướng dẫn nhằm dạy người dùng cách giao tiếp hiệu quả với các Mô hình Ngôn ngữ Lớn (LLMs) để đạt được kết quả mong muốn, một kỹ năng được gọi là kỹ thuật gợi ý.</li>
-<li>Phiên bản này đáng chú ý vì nó cung cấp hướng dẫn có cấu trúc về tối ưu hóa các lời nhắc, điều này rất quan trọng để cải thiện hiệu suất và độ tin cậy của các ứng dụng dựa trên AI.</li>
-</ul>
-<h2><a href="https://github.com/libsdl-org/SDL/pull/9312">API GPU mới của SDL3 đã được hợp nhất</a></h2>
-<ul>
-<li>API GPU MkII #9312 đã được hợp nhất vào nhánh chính của libsdl-org, giới thiệu các cập nhật quan trọng như thành phần đồ họa Refresh, hỗ trợ các API hiện đại như Vulkan và API đồ họa của PS5.</li>
-<li>Phần cập nhật bao gồm một hệ thống biên dịch shader ngoại tuyến, nhằm mục đích hợp lý hóa API GPU, nâng cao hiệu suất và cải thiện an toàn tài nguyên.</li>
-<li>Người đóng góp chính là @thatcosmonaut, với sự hỗ trợ từ đội ngũ cốt lõi của FNA và phản hồi từ nhiều cộng tác viên khác nhau, cho thấy một nỗ lực hợp tác để tinh chỉnh và tối ưu hóa API.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396260">phản ứng</a></h3>
-<ul>
-<li>API GPU mới của SDL3 đã được hợp nhất vào nhánh chính, mặc dù SDL3 vẫn đang trong giai đoạn xem trước, nhằm đơn giản hóa việc phát triển đồ họa đa nền tảng, bao gồm cả trên các máy chơi game.</li>
-<li>API mới này được thiết kế để mạnh mẽ hơn so với API SDL 2D cũ, hỗ trợ các tính năng GPU hiện đại và nhắm đến cả nhu cầu 2D và một số nhu cầu 3D.</li>
-<li>Trong khi các nỗ lực tương tự như WebGPU/WGSL tồn tại, chúng thiếu các backend cho console, và API GPU SDL3 mới vẫn chưa hỗ trợ WebGPU như một backend.</li>
-</ul>
-<h2><a href="https://rattvisan.blog/2024/07/28/yes-i-was-poisoned-by-my-wife-a-software-engineer-of-top3-us-company/">Huyết Rối Loạn: Vén Màn Bí Ẩn Về Việc Tôi Bị Đầu Độc Ở Thụy Điển</a></h2>
-<ul>
-<li>Người tác giả kể lại một loạt sự kiện bắt đầu từ ngày 24 tháng 7 năm 2021, khi vợ anh, Kim, bị bắt sau khi bị phát hiện với một chai đáng ngờ, dẫn đến việc phát hiện cô đã can thiệp vào chai nước của anh.</li>
-<li>Người tác giả đã bị mắc chứng tăng canxi máu và ngộ độc vitamin D từ năm 2019, với tình trạng sức khỏe dao động mặc dù đã trải qua nhiều xét nghiệm và điều trị y tế, bao gồm cả chụp MRI và PET-CT.</li>
-<li>Nguyên nhân của việc dư thừa vitamin D và canxi vẫn chưa được biết cho đến khi tác giả phát hiện Kim thêm một chất lỏng màu nâu vào nước của anh ta, mà cô ấy cho rằng đó là kali.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395893">phản ứng</a></h3>
-<ul>
-<li>Trong một bài đăng trên rattvisan.blog, có một cuộc thảo luận về một trường hợp nghi ngờ bị đầu độc ở Thụy Điển, nơi tác giả cáo buộc rằng vợ của ông đã đầu độc ông bằng vitamin D.</li>
-<li>Cho dù có hồ sơ y tế và đoạn phim, công tố viên Thụy Điển đã chọn không truy tố do thiếu bằng chứng, gây ra cuộc tranh luận về hệ thống tư pháp.</li>
-<li>Những người bình luận bày tỏ sự không tin vào quyết định này, thảo luận về khả năng truy tố tư nhân, và suy đoán về động cơ và trạng thái tinh thần của người vợ.</li>
-</ul>
-<h2><a href="https://www.haskellforall.com/2024/08/firewall-rules-not-as-secure-as-you.html">Quy tắc tường lửa: không an toàn như bạn nghĩ</a></h2>
-<ul>
-<li>Đoạn bài viết thảo luận về các kỹ thuật để vượt qua tường lửa doanh nghiệp, cho phép các yêu cầu vào và ra tùy ý qua bất kỳ giao thức nào, điều này hữu ích cho việc triển khai phần mềm trong các môi trường mạng bị hạn chế.</li>
-<li>Giới thiệu một kho lưu trữ có tên &quot;holepunch&quot; chứa các module NixOS tự động hóa các thủ thuật vượt tường lửa này, bao gồm cả việc đường hầm các kết nối SSH đầu vào bên trong các yêu cầu HTTPS đầu ra.</li>
-<li>Những kỹ thuật này giả định việc kiểm soát các máy chủ ở cả hai đầu của yêu cầu mạng và sử dụng các công cụ như proxy chuyển tiếp, proxy ngược kết thúc TLS, đường hầm ngược, và Corkscrew để ngụy trang và tạo đường hầm cho lưu lượng.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396206">phản ứng</a></h3>
-<ul>
-<li>Đoạn viết thảo luận về những hạn chế và các lỗ hổng tiềm ẩn của các quy tắc tường lửa, nhấn mạnh rằng chúng có thể không an toàn như thường được tin tưởng.</li>
-<li>Chia sẻ những câu chuyện thực tế và những hiểu biết kỹ thuật về cách các nhà cung cấp và cá nhân có thể vượt qua các hạn chế của tường lửa bằng cách sử dụng các công cụ như SSH và netcat, làm dấy lên lo ngại về các thực hành bảo mật.</li>
-<li>Cuộc trò chuyện nhấn mạnh sự căng thẳng giữa các chính sách an ninh và nhu cầu thực tế, đồng thời nhấn mạnh tầm quan trọng của việc giao tiếp minh bạch và các biện pháp an ninh thích hợp để ngăn chặn truy cập trái phép.</li>
-</ul>
-<h2><a href="http://consulting.m3047.net/dubai-letters/balkanized-internet.html">Đang chặn các kết nối từ AWS đến các dịch vụ tại chỗ của tôi</a></h2>
-<ul>
-<li>Việc gia tăng các nhà cung cấp dịch vụ đám mây lớn đang dẫn đến một internet phân mảnh hoặc &quot;balkan hóa&quot;, nơi khả năng tương tác với internet chung bị hạn chế.</li>
-<li>Ngữ cảnh lịch sử: Internet đã chuyển từ một công cụ của chính phủ và giáo dục sang một không gian thương mại hóa, bị chi phối bởi quảng cáo và việc kiếm tiền từ dữ liệu người dùng.</li>
-<li>Những mối lo ngại bao gồm việc đánh cắp dữ liệu và lưu lượng truy cập quá mức từ các dịch vụ đám mây, khiến một số người chặn truy cập từ các nhà cung cấp lớn như AWS để bảo vệ tài nguyên địa phương.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396641">phản ứng</a></h3>
-<ul>
-<li>Người tác giả đang chặn các kết nối AWS đến các dịch vụ tại chỗ của họ do lo ngại về lạm dụng và tấn công.</li>
-<li>Chặn dải IP rộng lớn của Amazon là một thách thức, nhưng tác giả sẵn sàng hy sinh một số lưu lượng hợp pháp để giảm lưu lượng không mong muốn.</li>
-<li>Đang có một cuộc tranh luận về việc liệu chặn các địa chỉ IP của các nhà cung cấp dịch vụ đám mây có thể dẫn đến sự phân mảnh (balkanization) của internet hay không, nhưng tác giả ưu tiên vấn đề an ninh hơn mối quan tâm này.</li>
-</ul>
-<h2><a href="https://github.com/google/closure-library">Thư viện Google Closure đã được lưu trữ</a></h2>
-<ul>
-<li>Thư viện Closure đã được lưu trữ vì nó không còn phù hợp với các yêu cầu phát triển JavaScript hiện đại.</li>
-<li>Người dùng được khuyến khích tìm các thư viện thay thế để đáp ứng nhu cầu phát triển của họ.</li>
-<li>Thông tin chi tiết có sẵn trong số báo #1214.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395925">phản ứng</a></h3>
-<ul>
-<li>Thư viện Google Closure đã được lưu trữ, đánh dấu sự kết thúc của việc bảo trì mặc dù có ý nghĩa lịch sử trong việc xây dựng các ứng dụng email mạnh mẽ như trình soạn thảo của Gmail.</li>
-<li>Trình biên dịch Closure sẽ tiếp tục nhận được hỗ trợ, ngay cả khi hệ sinh thái JavaScript đã phát triển để giảm nhu cầu đối với các thư viện toàn diện như vậy.</li>
-<li>Di sản xuất sắc về kỹ thuật của Closure Library vẫn có ảnh hưởng lớn trong cộng đồng phát triển.</li>
-</ul>
-<h2><a href="http://ciel-lang.org/">CIEL là một ngôn ngữ Lisp mở rộng</a></h2>
-<ul>
-<li>CIEL là một ngôn ngữ Lisp mở rộng, hoàn toàn tương thích với Common Lisp, và bao gồm các tính năng bổ sung (&quot;đầy đủ tiện ích&quot;).</li>
-<li>Kho lưu trữ GitHub cho CIEL cung cấp tài nguyên và tài liệu cho người dùng quan tâm đến việc khám phá hoặc đóng góp cho dự án.</li>
-<li>Đoạn mã mẫu minh họa việc lấy và in dữ liệu JSON từ một API web bằng CIEL, làm nổi bật các ứng dụng thực tiễn của nó.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41401415">phản ứng</a></h3>
-<ul>
-<li>CIEL là một phiên bản mở rộng của Lisp, với các cuộc thảo luận nhấn mạnh các công cụ được tài liệu hóa tốt và tiềm năng cho một linh vật hoặc logo.</li>
-<li>Những tính năng chính được thảo luận bao gồm khả năng truyền lệnh shell trong REPL, sự dễ dàng trong việc biên dịch các tệp nhị phân, và tính tương tác của REPL của CIEL so với Python.</li>
-<li>Người dùng đã lưu ý tầm quan trọng của tên gọi &quot;Ciel&quot; (tiếng Pháp có nghĩa là &quot;bầu trời&quot;), sự dễ dàng trong việc cài đặt, và so sánh với các ngôn ngữ khác như Clojure và Nim, nhấn mạnh tiềm năng của CIEL trong việc chuẩn hóa hệ sinh thái Common Lisp.</li>
-</ul>
-<h2><a href="https://github.com/duckduckgo/macos-browser">DuckDuckGo cho Mac hiện đã là mã nguồn mở</a></h2>
-<ul>
-<li>DuckDuckGo đang mở rộng đội ngũ và tuyển dụng các kỹ sư phần mềm cao cấp để nâng cao tiêu chuẩn tin cậy trực tuyến.</li>
-<li>Đề án macOS sử dụng Swift Package Manager để quản lý các phụ thuộc và SwiftLint để thực thi phong cách mã.</li>
-<li>Đã cập nhật thuật ngữ để loại bỏ các ý nghĩa phân biệt chủng tộc, sử dụng các thuật ngữ như nhánh chính, danh sách cho phép và danh sách chặn.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396487">phản ứng</a></h3>
-<ul>
-<li>DuckDuckGo đã làm cho trình duyệt Mac của mình trở thành mã nguồn mở, có sẵn trên GitHub, và nó dựa trên WebKit, cùng một công cụ với Safari.</li>
-<li>Người dùng đã báo cáo sự suy giảm chất lượng tìm kiếm của DuckDuckGo, cho rằng có spam AI và các liên kết doanh nghiệp địa phương không liên quan, khiến một số người chuyển sang các lựa chọn thay thế như Brave Search và Kagi.</li>
-<li>Những kỹ sư dũng cảm đang tích cực làm việc để giải quyết các vấn đề captcha, nhấn mạnh những cải tiến liên tục trong các công cụ tìm kiếm thay thế.</li>
-</ul>
-<h2><a href="https://bletchleypark.org.uk/">Thăm Bletchley Park</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41396501">phản ứng</a></h3>
-<ul>
-<li>Bletchley Park cung cấp các triển lãm lịch sử về cuộc sống và giải mã trong Thế chiến II, tập trung vào các khía cạnh con người và quy trình.</li>
-<li>Viện Bảo tàng Quốc gia về Máy tính, nằm trên cùng một địa điểm, có các bộ sưu tập phong phú, bao gồm các bản sao của máy tính Bombe và Colossus.</li>
-<li>Vé vào cửa Bletchley Park có giá trị trong 12 tháng, cho phép nhiều lần tham quan.</li>
-</ul>
-<h2><a href="https://matklad.github.io/2023/01/26/rusts-ugly-syntax.html">Ngữ pháp xấu xí của Rust (2023)</a></h2>
-<ul>
-<li>Đoạn viết thảo luận về sự hiểu lầm phổ biến rằng cú pháp của Rust là vấn đề chính, trong khi thách thức thực sự nằm ở ngữ nghĩa của nó.</li>
-<li>Điều này cung cấp nhiều kiểu cú pháp khác nhau (Rs++, Rhodes, RhodesScript, Rattlesnake, CrabML) để minh họa cách ngữ nghĩa của Rust có thể được đơn giản hóa.</li>
-<li>Đoạn bài viết đề xuất một số thay đổi đối với hàm thư viện chuẩn của Rust để làm cho nó thân thiện hơn với người dùng, bao gồm việc loại bỏ các hàm lồng nhau, các ràng buộc và đơn giản hóa việc xử lý lỗi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41397679">phản ứng</a></h3>
-<ul>
-<li>Bài viết thảo luận về sự phức tạp và các vấn đề về khả năng đọc trong cú pháp của Rust, đặc biệt là khi xử lý các kiểu tổng quát và các dấu hiệu thời gian sống.</li>
-<li>Ví dụ được cung cấp bao gồm việc sử dụng các hàm bất đồng bộ trong các đặc điểm, điều này có thể dẫn đến mã phức tạp do sự kết hợp của thời gian sống và giới hạn kiểu.</li>
-<li>Cuộc thảo luận nêu bật các ý kiến khác nhau về lựa chọn cú pháp của Rust, chẳng hạn như việc sử dụng dấu nháy đơn (&#39;) cho thời gian sống, và liệu các từ khóa dài dòng hơn có cải thiện khả năng đọc mã hay không.</li>
-</ul>
-<h2><a href="https://github.com/algora-io/tv">Mã nguồn mở Twitch cho các nhà phát triển</a></h2>
-<ul>
-<li>Algora TV giới thiệu một tính năng mới gọi là Bảng quảng cáo Livestream, cho phép các nhà phát triển kiếm tiền thông qua quảng cáo trong video khi phát trực tiếp.</li>
-<li>Thiết lập yêu cầu Elixir, Erlang/OTP, PostgreSQL, FFmpeg và OBS Studio, với các bước chi tiết được cung cấp cho việc khởi tạo dự án và cấu hình cơ sở dữ liệu.</li>
-<li>Kiến trúc bao gồm các streamer sử dụng Fly (một ứng dụng Elixir) và các máy chủ RTMP, với việc lưu trữ và phân phối phương tiện được xử lý bởi Tigris, và dịch vụ được phân phối theo Giấy phép AGPLv3.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41397498">phản ứng</a></h3>
-<ul>
-<li>Algora là một nền tảng livestream mã nguồn mở dành cho các nhà phát triển, hỗ trợ phát trực tiếp đa nền tảng đến các nền tảng như Twitch, YouTube và X, và tổng hợp các bình luận trực tiếp.</li>
-<li>Được xây dựng bằng Elixir để tăng năng suất và khả năng chịu lỗi, Algora tận dụng Phoenix LiveView và OTP để xử lý các luồng phức tạp và BEAM clustering để giảm độ trễ.</li>
-<li>Đề án được duy trì bởi một nhà phát triển độc lập đang tìm kiếm sự đóng góp và phản hồi, với các phần thưởng có sẵn cho các vấn đề được ưu tiên.</li>
-</ul>
-<h2><a href="https://bivens.plaintip.com/index.php/google-incognito/">Đã từng sử dụng Google Chrome ở chế độ ẩn danh? Bạn có thể được nhận lên đến 5.000 đô la</a></h2>
-<ul>
-<li>Google đang đối mặt với cáo buộc lừa dối người dùng về tính riêng tư của chế độ Ẩn danh, có thể khiến người dùng được bồi thường lên đến 5.000 đô la cho các vi phạm về quyền riêng tư.</li>
-<li>Đơn kiện cáo buộc Google theo dõi hoạt động, bán dữ liệu cá nhân và lừa dối người dùng về tính riêng tư của chế độ Ẩn danh từ năm 2016-2023.</li>
-<li>Tiêu chí đủ điều kiện bao gồm sử dụng chế độ Ẩn danh trong khoảng thời gian quy định, mong đợi sự riêng tư, không luôn đồng ý theo dõi, trên 18 tuổi và là cư dân Hoa Kỳ.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395591">phản ứng</a></h3>
-<ul>
-<li>Người dùng chế độ ẩn danh của Google Chrome có thể đủ điều kiện nhận tới 5.000 đô la, nhưng chưa có thỏa thuận nào được đạt được.</li>
-<li>Đơn kiện cho rằng tên và biểu tượng của chế độ ẩn danh gây hiểu lầm, gợi ý về sự ẩn danh hoàn toàn, mặc dù có cảnh báo rằng nó không che giấu hoạt động khỏi các trang web, nhà tuyển dụng hoặc các nhà cung cấp dịch vụ Internet (ISP).</li>
-<li>Vụ việc đã khơi dậy các cuộc thảo luận về hiểu biết công nghệ và kỳ vọng của người dùng, với những rủi ro tiềm ẩn cho những người tham gia vụ kiện, bao gồm cả chi phí có thể phát sinh nếu vụ kiện bị thua.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Bí mật bên trong Một Triệu Ô Đánh Dấu" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=B%C3%AD%20m%E1%BA%ADt%20b%C3%AAn%20trong%20M%E1%BB%99t%20Tri%E1%BB%87u%20%C3%94%20%C4%90%C3%A1nh%20D%E1%BA%A5u&subheading=Th%E1%BB%A9%20S%C3%A1u%2C%2030%20th%C3%A1ng%208%2C%202024%3A%20T%C3%B3m%20t%E1%BA%AFt%20tin%20t%E1%BB%A9c%20v%E1%BB%81%20hacker" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/vi/2024/08/30</link>
-            <guid isPermaLink="false">2024-08-30T00:00:00.000Z</guid>
-            <pubDate>Fri, 30 Aug 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 08 Sep 2024 20:58:51 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Sep 2024 19:13:24 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/id.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 08 Sep 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 09 Sep 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[id]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-09-09]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/09/09&#39;</h2>
+<h1>2024-09-09</h1>
+<h2><a href="https://dl.acm.org/doi/10.1145/3589334.3645323">QUIC tidak cukup cepat di internet yang cepat</a></h2>
+<ul>
+<li>Studi terbaru mengungkapkan bahwa QUIC, sebuah protokol yang dirancang untuk meningkatkan kinerja internet, menunjukkan pengurangan tingkat data hingga 45,2% dibandingkan dengan TCP+TLS+HTTP/2 tradisional pada jaringan berkecepatan tinggi.</li>
+<li>Kesenjangan kinerja disebabkan oleh overhead pemrosesan di sisi penerima yang tinggi, terutama karena paket data yang berlebihan dan pengakuan (ACK) di ruang pengguna QUIC.</li>
+<li>Temuan ini signifikan untuk aplikasi seperti transfer file, streaming video, dan penjelajahan web, dengan rekomendasi yang diberikan untuk mengurangi masalah ini.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41484991">Reaksi</a></h3>
+<ul>
+<li>QUIC menghadapi masalah kinerja pada internet cepat karena antarmuka syscall yang tidak efisien, biaya syscall yang tinggi akibat mitigasi spectre, buffer UDP default yang kecil, dan optimasi tumpukan UDP yang kompleks.</li>
+<li>GSO (Generic Segmentation Offload) dapat meningkatkan kinerja tetapi tidak optimal untuk server skala besar, menunjukkan perlunya API yang lebih baik untuk menggantikan soket BSD/POSIX.</li>
+<li>Diskusi menekankan kompleksitas integrasi io_uring dan potensi manfaat dari API tingkat tinggi yang dibangun di atasnya, menyoroti keseimbangan antara fleksibilitas ruang pengguna dan efisiensi tingkat kernel.</li>
+</ul>
+<h2><a href="https://reclaim-the-stack.com">Rebut Kembali Tumpukan</a></h2>
+<ul>
+<li>mynewsdesk.com mengembangkan platform berbasis Kubernetes untuk menggantikan Heroku, yang menghasilkan pengurangan biaya sebesar 90% dan peningkatan kinerja sebesar 30% untuk produk SaaS mereka.</li>
+<li>Kehadiran platform baru meningkatkan pengalaman pengembang dengan waktu penerapan yang lebih cepat dan alat yang lebih baik.</li>
+<li>Stack tersebut telah dibuka sumbernya, memungkinkan orang lain untuk mereplikasi kesuksesan mereka dengan cepat dengan mengikuti dokumentasi yang disediakan dan bergabung dengan server Discord mereka.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483675">Reaksi</a></h3>
+<ul>
+<li>Reclaim the Stack melaporkan pengurangan biaya sebesar 90% dan peningkatan kinerja sebesar 30% dengan beralih dari Heroku ke Kubernetes.</li>
+<li>Pengguna berpendapat bahwa penghematan ini disertai dengan peningkatan kompleksitas, yang memerlukan lebih banyak pemeliharaan, pemantauan, dan keahlian khusus dalam mengelola Kubernetes dan sistem terkait.</li>
+<li>Kritikus menyarankan untuk mempertimbangkan pengaturan VM yang lebih sederhana, layanan terkelola, atau penyedia PaaS lainnya seperti Render atau Fly.io, dengan menyoroti pertukaran antara biaya, kompleksitas, dan pengetahuan manajemen infrastruktur.</li>
+</ul>
+<h2><a href="https://www.ic3.gov/Media/Y2022/PSA221221">FBI merekomendasikan penggunaan pemblokir iklan (2022)</a></h2>
+<ul>
+<li>FBI telah mengeluarkan peringatan tentang penjahat siber yang menggunakan iklan mesin pencari untuk menyamar sebagai merek, yang mengarahkan pengguna ke situs berbahaya yang mengandung ransomware dan mencuri informasi sensitif.</li>
+<li>Penjahat siber membeli iklan yang meniru bisnis yang sah, yang muncul di bagian atas hasil pencarian, menipu pengguna untuk mengunjungi situs web palsu dan mengunduh malware.</li>
+<li>Kewaspadaan termasuk memverifikasi URL, menggunakan pemblokir iklan, dan bisnis mendidik pengguna tentang situs web palsu dan URL yang benar.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483581">Reaksi</a></h3>
+<ul>
+<li>FBI telah merekomendasikan penggunaan pemblokir iklan untuk meningkatkan keamanan online dan memperbaiki pengalaman pengguna dengan mencegah iklan yang mengganggu dan berpotensi berbahaya.</li>
+<li>Meskipun ada manfaatnya, beberapa orang berpendapat bahwa pemblokir iklan merusak model pendapatan banyak situs web yang bergantung pada pendapatan iklan.</li>
+<li>Konsensus di antara pengguna yang paham teknologi adalah bahwa keuntungan menggunakan pemblokir iklan lebih besar daripada potensi kerugiannya.</li>
+</ul>
+<h2><a href="https://bmjpublichealth.bmj.com/content/bmjph/2/1/e001000.full.pdf">Kualitas tidur, tipe kronotipe, faktor kesehatan dan gaya hidup mempengaruhi kognisi [pdf]</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41483434">Reaksi</a></h3>
+<ul>
+<li>Kajian menunjukkan bahwa durasi tidur normal (7-9 jam) terkait dengan kinerja kognitif yang lebih baik, sementara tidur yang berlebihan dapat memiliki efek negatif.</li>
+<li>Penggunaan alkohol memiliki hubungan yang kompleks dengan kognisi; orang yang tidak mengonsumsi alkohol cenderung mendapatkan skor lebih rendah pada tes kognitif dibandingkan dengan peminum moderat.</li>
+<li>Diskusi tersebut juga mengeksplorasi bagaimana usia, kesehatan, dan pengalaman pribadi mempengaruhi metabolisme alkohol dan fungsi kognitif.</li>
+</ul>
+<h2><a href="https://www.eurekalert.org/news-releases/1056171">Pengisian baterai lithium-ion dengan arus tinggi pertama kali meningkatkan masa pakai sebesar 50%</a></h2>
+<ul>
+<li>Para peneliti di Pusat Baterai SLAC-Stanford menemukan bahwa mengisi daya baterai lithium-ion dengan arus tinggi sebelum meninggalkan pabrik 30 kali lebih cepat dan meningkatkan masa pakainya sebesar 50%.</li>
+<li>Studi yang diterbitkan di Joule menyoroti bahwa pengisian formasi, pengisian pertama yang diterima baterai, sangat penting untuk kinerja dan umur panjangnya.</li>
+<li>Melalui pembelajaran mesin ilmiah, penelitian ini mengidentifikasi suhu dan arus sebagai faktor kunci, dengan implikasi signifikan untuk meningkatkan efisiensi dan kinerja pembuatan baterai.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483654">Reaksi</a></h3>
+<ul>
+<li>Klaim bahwa mengisi daya baterai lithium-ion dengan arus tinggi pada awalnya dapat meningkatkan masa pakainya hingga 50% masih diperdebatkan di kalangan pakar industri.</li>
+<li>Kekhawatiran meliputi dampak pada impedansi baterai, kapasitas, dan efektivitas manajemen termal pada berbagai merek kendaraan listrik.</li>
+<li>Diskusi tersebut juga mengeksplorasi potensi manfaat dari arsitektur tegangan yang lebih tinggi dan pertukaran antara umur panjang baterai dan kecepatan pengisian.</li>
+</ul>
+<h2><a href="https://old.reddit.com/r/LocalLLaMA/s/4Ly2yj78aM">Dikonfirmasi: API resmi Reflection 70B adalah pembungkus untuk Sonnet 3.5</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41484981">Reaksi</a></h3>
+<ul>
+<li>API resmi Reflection 70B hanyalah pembungkus untuk model Sonnet 3.5 yang sudah ada, bukan model AI baru.</li>
+<li>Rilis tersebut tidak teratur, dengan bobot yang salah label, evaluasi yang tidak konsisten, dan akhirnya penggunaan Sonnet 3.5 dan kemudian GPT-4o.</li>
+<li>Keterlibatan Sahil Chaudhary dan Matt Shumer, dengan Shumer mempromosikan model tersebut meskipun ada masalah, telah menyebabkan kebingungan dan membuang-buang waktu di komunitas AI.</li>
+</ul>
+<h2><a href="https://fennel-lang.org/">Bahasa Pemrograman Fennel</a></h2>
+<ul>
+<li>Fennel adalah bahasa pemrograman yang menggabungkan kesederhanaan dan kecepatan Lua dengan sintaks dan sistem makro Lisp, menawarkan kompatibilitas penuh dengan Lua dan tanpa overhead.</li>
+<li>Itu serbaguna, cocok untuk aplikasi seperti video game, server web, dan mikrokontroler, serta mendukung makro waktu kompilasi.</li>
+<li>Dokumentasi komprehensif dan sumber daya komunitas tersedia, termasuk panduan pengaturan, tutorial, dan kode etik, dengan versi yang berkisar dari v0.1.0 hingga v1.5.1.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483216">Reaksi</a></h3>
+<ul>
+<li>Bahasa Pemrograman Fennel diakui karena kemajuan teknis dan perbaikannya dibandingkan dengan Lua, terutama untuk proyek-proyek besar.</li>
+<li>Kembang adas memperkenalkan fitur-fitur seperti pencocokan pola dan sistem makro yang kuat, meningkatkan fleksibilitas dan kemudahan penggunaan, terutama dalam basis kode warisan.</li>
+<li>Its integrasi dengan pemuat modul Lua memungkinkan pencampuran tabel dan fungsi yang mulus, dan sintaks Lisp dengan kurva pembelajaran minimal membuatnya populer di kalangan pengembang.</li>
+</ul>
+<h2><a href="https://awfulannouncing.com/espn/alex-morgan-ai-generated-recap-mention.html">Rekap pertandingan terakhir pemain yang pensiun yang dihasilkan oleh AI ESPN gagal menyebutkan mereka</a></h2>
+<ul>
+<li>Rekap yang dihasilkan oleh AI dari ESPN tentang pertandingan profesional terakhir Alex Morgan awalnya gagal menyebutkan namanya, malah berfokus pada rekan setimnya, Kennedy Wesley.</li>
+<li>Omission tersebut menyoroti keterbatasan AI dalam menangkap konteks emosional dan historis secara penuh dari peristiwa-peristiwa penting.</li>
+<li>ESPN kemudian memperbarui rekap untuk memasukkan Morgan dan menerbitkan artikel terpisah yang kurang menonjol tentang pertandingan terakhirnya.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41489167">Reaksi</a></h3>
+<ul>
+<li>Rekap pertandingan terakhir seorang pemain yang pensiun yang dihasilkan oleh AI ESPN gagal menyebutkan pemain tersebut, yang memicu kritik dan menyoroti kekurangan dalam konten yang dihasilkan oleh AI.</li>
+<li>Insiden ini menekankan bahwa meskipun AI dapat menghasilkan konten dengan cepat, sering kali AI melewatkan konteks dan kedalaman emosional yang disediakan oleh penulis manusia.</li>
+<li>Situasi ini menekankan pentingnya pengawasan manusia untuk menjaga kualitas dan akurasi dalam artikel yang dihasilkan oleh AI.</li>
+</ul>
+<h2><a href="https://blog.gitbutler.com/why-github-actually-won/">Kenapa GitHub Menang</a></h2>
+<ul>
+<li>Keberhasilan GitHub dikaitkan dengan peluncurannya yang tepat waktu selama peningkatan alat kontrol versi terdistribusi dan fokusnya pada peningkatan pengalaman pengembang dibandingkan kepentingan komersial.</li>
+<li>Pendekatan yang berpusat pada pengguna GitHub, penekanan pada pull request, dan daya tarik estetika membedakannya dari pesaing seperti Google Code dan BitBucket.</li>
+<li>Adopsi Git oleh komunitas Linux dan dukungan awal dari komunitas Ruby sangat penting dalam mempopulerkan GitHub.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41490161">Reaksi</a></h3>
+<ul>
+<li>Google Code dibuat untuk mencegah SourceForge memonopoli pasar, bukan untuk mendominasinya.</li>
+<li>Kemudian setelah mencapai tujuannya untuk mendorong persaingan, Google Code ditutup, membuka jalan bagi platform seperti GitHub untuk berkembang.</li>
+<li>Kajian tersebut menyoroti kekhawatiran tentang umur panjang produk-produk Google dan pentingnya waktu serta pengalaman pengguna dalam kesuksesan GitHub.</li>
+</ul>
+<h2><a href="https://atproto.com/articles/atproto-for-distsys-engineers">ATProto untuk insinyur sistem terdistribusi</a></h2>
+<ul>
+<li>AT Protocol, yang dikembangkan oleh Bluesky, dirancang untuk jejaring sosial terbuka, dengan fokus pada rekayasa backend terdesentralisasi.</li>
+<li>Backend web tradisional menghadapi masalah skalabilitas dengan basis data SQL, yang mengarah pada adopsi klaster NoSQL dan arsitektur pemrosesan aliran.</li>
+<li>AT Protocol mendesentralisasi backend skala besar dengan menggunakan API publik untuk layanan internal dan membentuk model data bersama yang disebut &quot;repositori data pengguna,&quot; yang berisi dokumen JSON yang ditandatangani secara kriptografis.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41484337">Reaksi</a></h3>
+<ul>
+<li>ATProto adalah spesifikasi komprehensif dari bawah ke atas untuk sistem terdesentralisasi, berbeda dengan ActivityPub yang meninggalkan banyak aspek untuk diimplementasikan.</li>
+<li>ATProto menggunakan model data sendiri alih-alih JSON-LD, yang bisa menjadi penghalang bagi beberapa pengembang.</li>
+<li>Kumpulan panduan baru tentang cara membuat aplikasi minimal dengan ATProto telah dirilis, menyoroti ekosistemnya yang berkembang dan aplikasi praktisnya.</li>
+</ul>
+<h2><a href="https://tookmund.com/2024/09/hibernation-preparation">Tata Cara Tidur Linux</a></h2>
+<ul>
+<li>Artikel tersebut menjelaskan proses hibernasi di Linux, dengan fokus pada versi 6.9.9, mulai dari inisiasi hibernasi hingga sinkronisasi sistem berkas ke disk.</li>
+<li>Titik masuk utama untuk mengontrol mode tidur dan hibernasi adalah <code>/sys/power/state</code> dan <code>/sys/power/disk</code>, dengan nilai-nilai spesifik yang ditulis ke file-file ini untuk memulai keadaan tidur.</li>
+<li>Kegiatan hibernasi melibatkan beberapa langkah, termasuk konfigurasi kernel, pemeriksaan ketersediaan, pemeriksaan kompresi, akuisisi kunci, persiapan konsol, pemberitahuan manajemen daya, dan sinkronisasi sistem berkas.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483789">Reaksi</a></h3>
+<ul>
+<li>Masalah manajemen daya Linux dieksplorasi, terutama dengan fokus pada mekanisme hibernasi dan suspend, yang mengikuti jalur kode yang berbeda.</li>
+<li>Kecelakaan teridentifikasi karena RAM sistem yang tidak mencukupi untuk menampung semua VRAM, yang menyebabkan kegagalan alokasi memori selama tidur atau melanjutkan, mengakibatkan keadaan sistem yang tidak terdefinisi.</li>
+<li>Kajian ini menyoroti kompleksitas dan potensi masalah dengan manajemen daya Linux, termasuk penanganan VRAM dan peran systemd dalam mengelola proses-proses ini.</li>
+</ul>
+<h2><a href="https://rakujourney.wordpress.com/2024/09/08/htmx-raku-and-pico-css/">HTMX, Raku, dan Pico CSS</a></h2>
+<ul>
+<li>Postingan ini adalah bagian dari seri yang berfokus pada pengurangan beban kognitif dalam proyek web dengan menggunakan praktik pengembangan web yang lebih sederhana, khususnya HTMX, Raku, dan Cro untuk perakitan HTML backend dan API RESTful, menghilangkan kebutuhan akan JavaScript dalam konten dinamis.</li>
+<li>HTMX serbaguna untuk sebagian besar proyek tetapi tidak cocok untuk aplikasi web yang kompleks; Pico CSS direkomendasikan untuk styling karena menekankan pada HTML semantik, yang menyederhanakan proses pengembangan.</li>
+<li>Postingan tersebut mencakup contoh kode menggunakan Pico CSS untuk membangun ulang contoh HTMX untuk Raku/Cro, dengan kode akhir tersedia di GitHub, dan menyoroti mode gelap bawaan Pico CSS.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41482679">Reaksi</a></h3>
+<ul>
+<li>HTMX disorot karena kemampuannya menyederhanakan aplikasi web dengan menjaga manajemen status di sisi server, mengurangi kebutuhan untuk JavaScript (JS) sisi klien yang ekstensif.</li>
+<li>Pengguna membahas kompromi antara HTMX dan kerangka kerja frontend modern seperti React, mencatat bahwa HTMX bisa lebih efisien untuk aplikasi bisnis yang lebih sederhana tetapi mungkin kurang dalam beberapa fungsionalitas UI.</li>
+<li>Percakapan tersebut mencakup perbandingan dengan teknologi lain seperti Next.js, Blazor, dan Phoenix LiveView, menekankan bahwa HTMX menawarkan pendekatan yang berbeda yang dapat bermanfaat untuk kasus penggunaan tertentu, terutama bagi pengembang fullstack yang lebih menyukai logika backend.</li>
+</ul>
+<h2><a href="https://github.com/josephburnett/jd">Jd – JSON Diff and Patch</a></h2>
+<ul>
+<li>JSON diff and patch (jd) adalah utilitas baris perintah dan pustaka Go untuk membandingkan dan memodifikasi nilai JSON dan YAML, mendukung berbagai format seperti jd, JSON Merge Patch (RFC 7386), dan sebagian dari JSON Patch (RFC 6902).</li>
+<li>Kemungkinan instalasi mencakup Homebrew, Go install, GitHub releases, dan Docker, dengan antarmuka web yang tersedia di jd-tool.io atau secara lokal melalui <code>jd -port 8080</code>.</li>
+<li>Fitur utama meliputi perbedaan warna, penerapan patch, pengalihan output, penanganan array sebagai set atau multiset, dukungan YAML, dan terjemahan format.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41482661">Reaksi</a></h3>
+<ul>
+<li>Jd adalah alat untuk membandingkan dan menambal file JSON, dibuat oleh Joseph Burnett, dan bertujuan untuk melengkapi <code>jq</code> dengan menangani urutan array JSON.</li>
+<li>Alat ini telah diperbarui untuk mengatasi masalah dalam mendeteksi elemen yang hilang pada file JSON besar, dengan API v2 baru yang menghitung subsekuensi umum terpanjang dari dua array.</li>
+<li>Pengguna telah menemukan Jd berguna untuk tugas-tugas seperti pengujian snapshot manual, debugging respons API, dan membandingkan file JSON besar, dengan saran untuk perbaikan lebih lanjut seperti menambahkan sintaks kueri jq dan membuat ekstensi VSCode.</li>
+</ul>
+<h2><a href="https://worksinprogress.co/issue/lab-grown-diamonds/">Intan sintetis sekarang lebih murni, lebih indah, dan lebih murah daripada yang ditambang</a></h2>
+<ul>
+<li>Intan yang ditumbuhkan di laboratorium, pertama kali disintesis pada tahun 1950-an, sekarang lebih murah, lebih murni, dan mendominasi pasar industri, menawarkan alternatif yang hemat biaya dan berkualitas tinggi dibandingkan dengan intan yang ditambang.</li>
+<li>Deposisi uap kimia (CVD) adalah metode yang dikembangkan pada tahun 1950-an untuk memproduksi berlian, memungkinkan kontrol dan kustomisasi yang tepat atas sifat berlian, sehingga cocok untuk berbagai aplikasi industri.</li>
+<li>Perkembangan dalam pembuatan berlian terus membuka penggunaan baru dan meningkatkan aplikasi yang sudah ada, menunjukkan kecerdikan manusia dalam meningkatkan proses alami.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41488353">Reaksi</a></h3>
+<ul>
+<li>Kemajuan teknologi telah membuat berlian sintetis menjadi lebih murni, lebih menarik secara estetika, dan lebih terjangkau dibandingkan berlian alami.</li>
+<li>Mesin untuk memproduksi berlian sintetis sekarang tersedia dengan harga sekitar $200.000, dan perusahaan seperti Element Six milik De Beers menjualnya untuk keperluan industri.</li>
+<li>Intan buatan laboratorium dan moissanit jauh lebih murah, dengan intan laboratorium berharga kurang dari $200 per karat dan moissanit di bawah $5 per karat, membuat intan lebih terjangkau dan memperluas aplikasi industri mereka.</li>
+</ul>
+<h2><a href="https://www.apple.com/newsroom/2024/05/apple-hearing-study-shares-preliminary-insights-on-tinnitus/">Studi Pendengaran Apple membagikan wawasan awal tentang tinnitus</a></h2>
+<ul>
+<li>Para peneliti dari Universitas Michigan merilis data dari survei tinnitus besar yang melibatkan lebih dari 160.000 peserta, dengan tujuan untuk meningkatkan pemahaman dan penanganan kondisi tersebut.</li>
+<li>Temuan utama termasuk bahwa 77,6% peserta telah mengalami tinnitus, dengan 15% mengalaminya setiap hari, dan prevalensinya meningkat seiring bertambahnya usia, terutama di antara mereka yang berusia 55 tahun ke atas.</li>
+<li>Studi ini, yang merupakan bagian dari aplikasi Penelitian Apple, menyoroti metode manajemen umum dan penyebabnya, serta bertujuan untuk meningkatkan pemahaman tentang paparan suara dan dampaknya terhadap kesehatan pendengaran.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41491121">Reaksi</a></h3>
+<ul>
+<li>Studi Pendengaran Apple memberikan wawasan awal tentang tinnitus, menyoroti aspek psikologis dan pengalaman pribadi pengguna.</li>
+<li>Nasihat utama termasuk menghindari berpikir berlebihan, menggunakan pengalih perhatian, dan mengelola stres serta ketegangan otot, dengan beberapa pengguna menemukan kelegaan melalui alat bantu dengar atau menangani masalah kesehatan.</li>
+<li>Studi ini juga mengeksplorasi potensi efek dari perangkat audio modern seperti AirPods terhadap tinnitus, dengan pendapat yang beragam dari pengguna.</li>
+</ul>
+<head>
+  <meta property="og:title" content="QUIC tidak cukup cepat di internet yang cepat" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=QUIC%20tidak%20cukup%20cepat%20di%20internet%20yang%20cepat&subheading=Senin%2C%209%20September%202024%3A%20Ringkasan%20Berita%20Peretas" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/id/2024/09/09</link>
+            <guid isPermaLink="false">2024-09-09T00:00:00.000Z</guid>
+            <pubDate>Mon, 09 Sep 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-08]]></title>
             <description
@@ -1658,197 +1844,6 @@
             <link>https://hn.cho.sh/id/2024/08/31</link>
             <guid isPermaLink="false">2024-08-31T00:00:00.000Z</guid>
             <pubDate>Sat, 31 Aug 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-30]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/08/30&#39;</h2>
-<h1>2024-08-30</h1>
-<h2><a href="https://eieio.games/essays/the-secret-in-one-million-checkboxes/">Rahasia di Dalam Satu Juta Kotak Centang</a></h2>
-<ul>
-<li>Website &quot;One Million Checkboxes&quot; (OMCB) diluncurkan pada 26 Juni 2024, dan secara tak terduga menarik 500.000 pemain yang mencentang lebih dari 650.000.000 kotak dalam dua minggu.</li>
-<li>Pengguna secara kreatif menggunakan kotak centang untuk menulis pesan biner, yang mengarah ke server Discord di mana mereka mendiskusikan botting situs dan membuat gambar serta animasi yang kompleks.</li>
-<li>Meskipun ada beberapa keluhan tentang bot, sang pencipta menemukan kreativitas komunitas yang menginspirasi dan mendokumentasikan pengalaman tersebut dalam sebuah video YouTube untuk membagikan dampak emosionalnya.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395413">Reaksi</a></h3>
-<ul>
-<li>Postingan tersebut membahas perjalanan emosional dan proses kreatif di balik situs web &#39;One Million Checkboxes&#39; (OMCB), menyoroti keseimbangan antara batasan dan kreativitas di internet.</li>
-<li>Penulis membagikan keputusan mereka untuk menutup situs tersebut, dengan alasan seperti berakhirnya minat secara alami, meningkatnya biaya, dan keinginan untuk menghindari beban pemeliharaan.</li>
-<li>Kisah tersebut telah menggema di kalangan banyak pembaca, membangkitkan nostalgia dan rasa kegembiraan yang baru dalam rekayasa perangkat lunak, yang kontras dengan lanskap teknologi yang sering kali membebani dan dikomersialkan.</li>
-</ul>
-<h2><a href="https://www.anandtech.com/show/21542/end-of-the-road-an-anandtech-farewell">Selamat Tinggal AnandTech</a></h2>
-<ul>
-<li>MediaTek akan menambahkan dukungan NVIDIA G-Sync ke pengukur monitor, dengan tujuan membuat tampilan G-Sync lebih mudah diakses oleh khalayak yang lebih luas.</li>
-<li>Kualkom memperkenalkan Snapdragon 7s Gen 3, meningkatkan jajaran kelas menengahnya dengan arsitektur Cortex-A720.</li>
-<li>Intel telah menjual sahamnya di Arm dan mengurangi kepemilikannya di perusahaan lain, menunjukkan perubahan strategis dalam portofolio investasinya.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41399872">Reaksi</a></h3>
-<ul>
-<li>AnandTech, sebuah situs ulasan teknologi terkenal, akan ditutup, menandai akhir dari sebuah era untuk ulasan dan artikel teknis yang mendalam.</li>
-<li>Site tersebut dikenal karena kontennya yang mendetail dan berintegritas tinggi, yang secara signifikan mempengaruhi banyak penggemar teknologi dan profesional.</li>
-<li>Kabar penutupan ini telah memicu nostalgia dan diskusi tentang perubahan lanskap jurnalisme teknologi, dengan banyak yang meratapi hilangnya sumber daya yang begitu unik dan dapat diandalkan.</li>
-</ul>
-<h2><a href="https://www.elastic.co/blog/elasticsearch-is-open-source-again">Elasticsearch adalah sumber terbuka, lagi</a></h2>
-<ul>
-<li>Elasticsearch dan Kibana sekarang kembali menjadi sumber terbuka, dengan AGPL ditambahkan sebagai opsi lisensi di samping ELv2 dan SSPL.</li>
-<li>Perubahan ini menegaskan kembali komitmen Elastic terhadap sumber terbuka, mengatasi masalah sebelumnya dengan AWS dan kebingungan pasar yang menyebabkan terjadinya fork Elasticsearch.</li>
-<li>Langkah ini bertujuan untuk menyederhanakan pengalaman pengguna dengan menawarkan berbagai opsi lisensi dan sejalan dengan tujuan Elastic untuk mendukung lebih banyak lisensi sumber terbuka.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41394797">Reaksi</a></h3>
-<ul>
-<li>Elasticsearch telah kembali menjadi sumber terbuka, sekarang di bawah lisensi AGPL, yang mengharuskan pengguna untuk memberikan kontribusi kembali atas setiap perubahan.</li>
-<li>AWS menciptakan OpenSearch setelah Elastic menolak tawaran AWS untuk berkontribusi pada fitur keamanan, yang menyebabkan perpecahan dalam komunitas.</li>
-<li>Lisensi baru Elastic bertujuan untuk menyeimbangkan manfaat sumber terbuka dengan kebutuhan bisnis, mencegah pesaing menggunakan kode mereka tanpa berkontribusi.</li>
-</ul>
-<h2><a href="https://github.com/anthropics/courses/tree/master/prompt_engineering_interactive_tutorial">Tutorial Interaktif Rekayasa Prompt dari Anthropic</a></h2>
-<ul>
-<li>Anthropic telah meluncurkan tutorial interaktif untuk rekayasa prompt di Claude, yang bertujuan untuk mengajarkan pengguna membuat prompt yang optimal.</li>
-<li>Kursus ini mencakup topik dari pemula hingga lanjutan, termasuk struktur prompt, mengatasi masalah umum, dan membangun prompt yang kompleks, dengan latihan praktis dan &#39;Example Playground&#39; untuk eksperimen.</li>
-<li>Tutorial ini menggunakan Claude 3 Haiku dan menyertakan versi Google Sheets untuk kemudahan penggunaan, sehingga memudahkan pengguna baru untuk memahami dan menerapkan teknik rekayasa prompt secara efektif.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395921">Reaksi</a></h3>
-<ul>
-<li>Anthropic telah merilis Tutorial Interaktif Rekayasa Prompt, yang telah menarik perhatian signifikan dari komunitas teknologi.</li>
-<li>Tutorial ini bertujuan untuk mengajarkan pengguna cara berkomunikasi secara efektif dengan Model Bahasa Besar (LLM) untuk mencapai hasil yang diinginkan, sebuah keterampilan yang dikenal sebagai rekayasa prompt.</li>
-<li>Rilis ini penting karena memberikan panduan terstruktur tentang mengoptimalkan prompt, yang sangat penting untuk meningkatkan kinerja dan keandalan aplikasi yang didorong oleh AI.</li>
-</ul>
-<h2><a href="https://github.com/libsdl-org/SDL/pull/9312">API GPU baru SDL3 telah digabungkan</a></h2>
-<ul>
-<li>GPU API MkII #9312 telah digabungkan ke dalam cabang utama libsdl-org, memperkenalkan pembaruan signifikan seperti komponen grafis Refresh, yang mendukung API modern seperti Vulkan dan API grafis PS5.</li>
-<li>Pembaharuan ini mencakup sistem kompilasi shader offline, yang bertujuan untuk merampingkan API GPU, meningkatkan kinerja, dan memperbaiki keamanan sumber daya.</li>
-<li>Kontributor utama adalah @thatcosmonaut, dengan dukungan dari tim inti FNA dan masukan dari berbagai kolaborator, yang menunjukkan upaya kolaboratif untuk menyempurnakan dan mengoptimalkan API.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396260">Reaksi</a></h3>
-<ul>
-<li>API GPU baru SDL3 telah digabungkan ke dalam cabang utama, meskipun SDL3 masih dalam tahap pratinjau, dengan tujuan untuk menyederhanakan pengembangan grafis lintas platform, termasuk di konsol.</li>
-<li>API baru ini dirancang untuk lebih kuat daripada API SDL 2D yang lama, mendukung fitur GPU modern dan menargetkan kebutuhan 2D serta beberapa kebutuhan 3D.</li>
-<li>Walaupun upaya serupa seperti WebGPU/WGSL ada, mereka tidak memiliki backend konsol, dan API GPU SDL3 yang baru belum mendukung WebGPU sebagai backend.</li>
-</ul>
-<h2><a href="https://rattvisan.blog/2024/07/28/yes-i-was-poisoned-by-my-wife-a-software-engineer-of-top3-us-company/">Kelainan Darah: Mengungkap Misteri Keracunan Saya di Swedia</a></h2>
-<ul>
-<li>Penulis menceritakan serangkaian peristiwa yang dimulai dari 24 Juli 2021, ketika istrinya, Kim, ditangkap setelah ditemukan dengan botol mencurigakan, yang mengarah pada penemuan bahwa dia telah merusak botol air minumnya.</li>
-<li>Penulis telah menderita hiperkalsemia dan toksisitas vitamin D sejak tahun 2019, dengan kesehatan yang berfluktuasi meskipun telah menjalani berbagai tes dan perawatan medis, termasuk pemindaian MRI dan PET-CT.</li>
-<li>Kandungan vitamin D dan kalsium yang berlebihan tetap tidak diketahui sumbernya sampai penulis menemukan Kim menambahkan cairan coklat ke dalam airnya, yang dia klaim sebagai kalium.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395893">Reaksi</a></h3>
-<ul>
-<li>Kutipan blog di rattvisan.blog membahas kasus dugaan keracunan di Swedia, di mana penulis menuduh istrinya meracuninya dengan vitamin D.</li>
-<li>Meskipun ada catatan medis dan rekaman video, jaksa Swedia memilih untuk tidak mengajukan tuntutan karena bukti yang tidak mencukupi, memicu perdebatan tentang sistem peradilan.</li>
-<li>Para komentator menyatakan ketidakpercayaan terhadap keputusan tersebut, membahas kemungkinan penuntutan pribadi, dan berspekulasi tentang motivasi serta kondisi mental sang istri.</li>
-</ul>
-<h2><a href="https://www.haskellforall.com/2024/08/firewall-rules-not-as-secure-as-you.html">Aturan firewall: tidak seaman yang Anda kira</a></h2>
-<ul>
-<li>Postingan tersebut membahas teknik untuk melewati firewall perusahaan, memungkinkan permintaan masuk dan keluar secara sembarang melalui protokol apa pun, yang berguna untuk menerapkan perangkat lunak di lingkungan jaringan yang terbatas.</li>
-<li>Itu memperkenalkan sebuah repositori bernama &quot;holepunch&quot; yang berisi modul-modul NixOS yang mengotomatisasi trik-trik untuk melewati firewall ini, termasuk menyalurkan koneksi SSH masuk di dalam permintaan HTTPS keluar.</li>
-<li>Teknik-teknik ini mengasumsikan kontrol atas host di kedua ujung permintaan jaringan dan memanfaatkan alat seperti proxy penerus, proxy terbalik yang mengakhiri TLS, terowongan terbalik, dan Corkscrew untuk menyamarkan dan menyalurkan lalu lintas.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396206">Reaksi</a></h3>
-<ul>
-<li>Kirimannya membahas keterbatasan dan potensi kerentanan aturan firewall, menyoroti bahwa aturan tersebut mungkin tidak seaman yang umumnya diyakini.</li>
-<li>Kisah nyata dan wawasan teknis tentang bagaimana vendor dan individu dapat melewati pembatasan firewall menggunakan alat seperti SSH dan netcat, menimbulkan kekhawatiran tentang praktik keamanan.</li>
-<li>Percakapan tersebut menyoroti ketegangan antara kebijakan keamanan dan kebutuhan praktis, menekankan pentingnya komunikasi yang transparan dan langkah-langkah keamanan yang tepat untuk mencegah akses yang tidak sah.</li>
-</ul>
-<h2><a href="http://consulting.m3047.net/dubai-letters/balkanized-internet.html">Kami memblokir koneksi dari AWS ke layanan on-prem kami</a></h2>
-<ul>
-<li>Kebangkitan penyedia cloud besar menyebabkan internet yang terfragmentasi atau &#39;balkanisasi&#39;, di mana interoperabilitas dengan internet umum menjadi terbatas.</li>
-<li>Konteks sejarah: Internet beralih dari alat pemerintah dan pendidikan menjadi ruang komersial yang didominasi oleh iklan dan monetisasi data pengguna.</li>
-<li>Kekhawatiran termasuk pencurian data dan lalu lintas berlebihan dari layanan cloud, mendorong beberapa pihak untuk memblokir akses dari penyedia utama seperti AWS guna melindungi sumber daya lokal.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396641">Reaksi</a></h3>
-<ul>
-<li>Penulis memblokir koneksi AWS ke layanan on-premises mereka karena kekhawatiran tentang penyalahgunaan dan serangan.</li>
-<li>Memblokir rentang IP Amazon yang luas adalah tantangan, tetapi penulis bersedia mengorbankan beberapa lalu lintas yang sah untuk mengurangi lalu lintas yang tidak diinginkan.</li>
-<li>Ada perdebatan tentang apakah memblokir IP penyedia layanan cloud dapat menyebabkan fragmentasi (balkanisasi) internet, tetapi penulis lebih mengutamakan keamanan daripada kekhawatiran ini.</li>
-</ul>
-<h2><a href="https://github.com/google/closure-library">Google Closure Library telah diarsipkan</a></h2>
-<ul>
-<li>Closure Library telah diarsipkan karena tidak lagi sejalan dengan persyaratan pengembangan JavaScript modern.</li>
-<li>Pengguna didorong untuk mencari perpustakaan alternatif guna memenuhi kebutuhan pengembangan mereka.</li>
-<li>Informasi lebih lanjut tersedia di edisi #1214.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395925">Reaksi</a></h3>
-<ul>
-<li>Google Closure Library telah diarsipkan, menandai berakhirnya pemeliharaannya meskipun memiliki signifikansi historis dalam membangun klien email yang tangguh seperti editor Gmail.</li>
-<li>Kompiler Closure akan terus menerima dukungan, meskipun ekosistem JavaScript telah berkembang untuk mengurangi kebutuhan akan perpustakaan yang begitu komprehensif.</li>
-<li>Warisan keunggulan rekayasa Closure Library tetap berpengaruh di komunitas pengembang.</li>
-</ul>
-<h2><a href="http://ciel-lang.org/">CIEL adalah sebuah Lisp yang Diperluas</a></h2>
-<ul>
-<li>CIEL adalah bahasa Lisp yang diperluas, sepenuhnya kompatibel dengan Common Lisp, dan mencakup fitur tambahan (&quot;baterai termasuk&quot;).</li>
-<li>Repositori GitHub untuk CIEL menyediakan sumber daya dan dokumentasi bagi pengguna yang tertarik untuk menjelajahi atau berkontribusi pada proyek tersebut.</li>
-<li>Kode contoh menunjukkan cara mengambil dan mencetak data JSON dari API web menggunakan CIEL, menyoroti aplikasi praktisnya.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41401415">Reaksi</a></h3>
-<ul>
-<li>CIEL adalah versi diperluas dari Lisp, dengan diskusi yang menyoroti alat-alatnya yang terdokumentasi dengan baik dan potensi untuk memiliki maskot atau logo.</li>
-<li>Fitur utama yang dibahas meliputi shell pass-through di REPL, kemudahan dalam mengompilasi biner, dan sifat interaktif dari REPL CIEL dibandingkan dengan Python.</li>
-<li>Konsumen mencatat pentingnya nama &quot;Ciel&quot; (bahasa Prancis untuk &quot;langit&quot;), kemudahan instalasi, dan perbandingan dengan bahasa lain seperti Clojure dan Nim, menekankan potensi CIEL untuk menstandarisasi ekosistem Common Lisp.</li>
-</ul>
-<h2><a href="https://github.com/duckduckgo/macos-browser">DuckDuckGo untuk Mac sekarang bersifat sumber terbuka</a></h2>
-<ul>
-<li>DuckDuckGo sedang memperluas timnya dan merekrut insinyur perangkat lunak senior untuk meningkatkan standar kepercayaan online.</li>
-<li>Proyek macOS menggunakan Swift Package Manager untuk dependensi dan SwiftLint untuk penegakan gaya kode.</li>
-<li>Pembaruan terminologi telah dilakukan untuk menghilangkan konotasi rasial yang bermasalah, dengan mengadopsi istilah seperti cabang utama, daftar izin, dan daftar blokir.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396487">Reaksi</a></h3>
-<ul>
-<li>DuckDuckGo telah membuat peramban Mac-nya menjadi open source, tersedia di GitHub, dan berbasis pada WebKit, mesin yang sama dengan Safari.</li>
-<li>Pengguna melaporkan penurunan kualitas pencarian DuckDuckGo, dengan alasan spam AI dan tautan bisnis lokal yang tidak relevan, mendorong beberapa untuk beralih ke alternatif seperti Brave Search dan Kagi.</li>
-<li>Para insinyur pemberani sedang aktif bekerja untuk menyelesaikan masalah captcha, menyoroti perbaikan yang sedang berlangsung dalam mesin pencari alternatif.</li>
-</ul>
-<h2><a href="https://bletchleypark.org.uk/">Kunjungi Bletchley Park</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41396501">Reaksi</a></h3>
-<ul>
-<li>Bletchley Park menawarkan pameran sejarah tentang kehidupan dan pemecahan kode pada masa Perang Dunia II, dengan fokus pada aspek manusia dan proses.</li>
-<li>National Museum of Computing, yang terletak di lokasi yang sama, menampilkan koleksi yang luas, termasuk replika komputer Bombe dan Colossus.</li>
-<li>Tiket untuk Bletchley Park berlaku selama 12 bulan, memungkinkan untuk kunjungan berkali-kali.</li>
-</ul>
-<h2><a href="https://matklad.github.io/2023/01/26/rusts-ugly-syntax.html">Syntax Jelek Rust (2023)</a></h2>
-<ul>
-<li>Kirimannya membahas kesalahpahaman umum bahwa sintaks Rust adalah masalah utamanya, padahal tantangan sebenarnya terletak pada semantiknya.</li>
-<li>Itu menyediakan berbagai gaya sintaksis (Rs++, Rhodes, RhodesScript, Rattlesnake, CrabML) untuk menggambarkan bagaimana semantik Rust dapat disederhanakan.</li>
-<li>Kirimannya menyarankan beberapa perubahan pada fungsi pustaka standar Rust untuk membuatnya lebih ramah pengguna, termasuk menghapus fungsi bersarang, batasan, dan menyederhanakan penanganan kesalahan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41397679">Reaksi</a></h3>
-<ul>
-<li>Artikel tersebut membahas kompleksitas dan masalah keterbacaan dalam sintaks Rust, terutama saat berurusan dengan tipe generik dan penanda masa hidup.</li>
-<li>Contoh yang diberikan termasuk penggunaan fungsi async dalam traits, yang dapat menghasilkan kode yang rumit karena kombinasi dari lifetimes dan batasan tipe.</li>
-<li>Diskusi tersebut menyoroti perbedaan pendapat tentang pilihan sintaks Rust, seperti penggunaan tanda kutip tunggal (&#39;) untuk lifetimes, dan apakah penggunaan kata kunci yang lebih panjang akan meningkatkan keterbacaan kode.</li>
-</ul>
-<h2><a href="https://github.com/algora-io/tv">Open Source Twitch untuk Pengembang</a></h2>
-<ul>
-<li>Algora TV memperkenalkan fitur baru yang disebut Livestream Billboards, memungkinkan pengembang untuk menghasilkan uang melalui iklan dalam video saat melakukan siaran langsung.</li>
-<li>Pengaturan memerlukan Elixir, Erlang/OTP, PostgreSQL, FFmpeg, dan OBS Studio, dengan langkah-langkah terperinci yang disediakan untuk inisialisasi proyek dan konfigurasi basis data.</li>
-<li>Arsitektur ini melibatkan streamer yang menggunakan Fly (aplikasi Elixir) dan server RTMP, dengan penyimpanan dan pengiriman media yang ditangani oleh Tigris, dan layanan ini didistribusikan di bawah Lisensi AGPLv3.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41397498">Reaksi</a></h3>
-<ul>
-<li>Algora adalah platform livestreaming sumber terbuka untuk pengembang, mendukung multistreaming ke platform seperti Twitch, YouTube, dan X, serta mengumpulkan komentar langsung.</li>
-<li>Dirancang menggunakan Elixir untuk produktivitas dan toleransi kesalahan, Algora memanfaatkan Phoenix LiveView dan OTP untuk menangani alur streaming yang kompleks serta BEAM clustering untuk latensi rendah.</li>
-<li>Proyek ini dikelola oleh seorang pengembang tunggal yang mencari kontribusi dan umpan balik, dengan hadiah tersedia untuk masalah yang diprioritaskan.</li>
-</ul>
-<h2><a href="https://bivens.plaintip.com/index.php/google-incognito/">Apakah Anda pernah menggunakan Google Chrome dalam mode penyamaran? Anda mungkin berhak mendapatkan hingga $5 ribu.</a></h2>
-<ul>
-<li>Google menghadapi tuduhan menyesatkan pengguna tentang privasi mode Incognito-nya, yang berpotensi memberikan hak kepada pengguna untuk mendapatkan kompensasi hingga $5,000 atas pelanggaran privasi.</li>
-<li>Klaim gugatan menyatakan bahwa Google melacak aktivitas, menjual data pribadi, dan menyesatkan pengguna tentang privasi mode Incognito antara tahun 2016-2023.</li>
-<li>Kriteria kelayakan termasuk menggunakan mode Incognito selama periode yang ditentukan, mengharapkan privasi, tidak selalu menyetujui pelacakan, berusia 18+, dan merupakan penduduk AS.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395591">Reaksi</a></h3>
-<ul>
-<li>Pengguna mode penyamaran Google Chrome mungkin berhak mendapatkan hingga $5.000, tetapi belum ada penyelesaian yang dicapai.</li>
-<li>Klaim gugatan tersebut menyatakan bahwa nama dan ikon mode penyamaran menyesatkan, menyiratkan anonimitas penuh, meskipun ada peringatan bahwa mode tersebut tidak menyembunyikan aktivitas dari situs web, pemberi kerja, atau ISP (Penyedia Layanan Internet).</li>
-<li>Kasus ini telah memicu diskusi tentang literasi teknologi dan harapan pengguna, dengan potensi risiko bagi mereka yang bergabung dalam gugatan, termasuk kemungkinan biaya jika kasus tersebut kalah.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Rahasia di Dalam Satu Juta Kotak Centang" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Rahasia%20di%20Dalam%20Satu%20Juta%20Kotak%20Centang&subheading=Jumat%2C%2030%20Agustus%202024%3A%20Ringkasan%20Berita%20Peretas" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/id/2024/08/30</link>
-            <guid isPermaLink="false">2024-08-30T00:00:00.000Z</guid>
-            <pubDate>Fri, 30 Aug 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

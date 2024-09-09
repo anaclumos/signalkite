@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 08 Sep 2024 20:58:51 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Sep 2024 19:13:24 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/en.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 08 Sep 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 09 Sep 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[en]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-09-09]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/09/09&#39;</h2>
+<h1>2024-09-09</h1>
+<h2><a href="https://dl.acm.org/doi/10.1145/3589334.3645323">QUIC is not quick enough over fast internet</a></h2>
+<ul>
+<li>A recent study reveals that QUIC, a protocol designed to improve internet performance, shows up to a 45.2% data rate reduction compared to traditional TCP+TLS+HTTP/2 over high-speed networks.</li>
+<li>The performance gap is attributed to high receiver-side processing overhead, particularly due to excessive data packets and QUIC&#39;s user-space acknowledgments (ACKs).</li>
+<li>The findings are significant for applications like file transfers, video streaming, and web browsing, with recommendations provided to mitigate these issues.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41484991">Reactions</a></h3>
+<ul>
+<li>QUIC faces performance issues on fast internet due to inefficient syscall interfaces, high syscall costs from spectre mitigation, small default UDP buffers, and complex UDP stack optimizations.</li>
+<li>GSO (Generic Segmentation Offload) can enhance performance but is not optimal for large-scale servers, indicating a need for better APIs to replace BSD sockets/POSIX.</li>
+<li>Discussions emphasize the complexity of integrating io_uring and the potential benefits of high-level APIs built on it, highlighting the balance between user-space flexibility and kernel-level efficiency.</li>
+</ul>
+<h2><a href="https://reclaim-the-stack.com">Reclaim the Stack</a></h2>
+<ul>
+<li>Mynewsdesk.com developed a Kubernetes-based platform to replace Heroku, resulting in a 90% cost reduction and a 30% performance improvement for their SaaS product.</li>
+<li>The new platform enhanced the developer experience with faster deployment times and improved tooling.</li>
+<li>The stack has been open-sourced, enabling others to replicate their success quickly by following the provided documentation and joining their Discord server.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483675">Reactions</a></h3>
+<ul>
+<li>Reclaim the Stack reports a 90% cost reduction and 30% performance boost by transitioning from Heroku to Kubernetes.</li>
+<li>Users argue that these savings come with increased complexity, requiring more maintenance, monitoring, and specialized expertise in managing Kubernetes and associated systems.</li>
+<li>Critics suggest considering simpler VM setups, managed services, or other PaaS providers like Render or Fly.io, highlighting the trade-offs between cost, complexity, and infrastructure management knowledge.</li>
+</ul>
+<h2><a href="https://www.ic3.gov/Media/Y2022/PSA221221">FBI recommends using an ad blocker (2022)</a></h2>
+<ul>
+<li>The FBI has issued a warning about cyber criminals using search engine ads to impersonate brands, leading users to malicious sites that host ransomware and steal sensitive information.</li>
+<li>Cyber criminals purchase ads that mimic legitimate businesses, which appear at the top of search results, tricking users into visiting fake websites and downloading malware.</li>
+<li>Precautions include verifying URLs, using ad-blockers, and businesses educating users about spoofed websites and correct URLs.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483581">Reactions</a></h3>
+<ul>
+<li>The FBI has recommended using ad blockers to enhance online security and improve user experience by preventing intrusive and potentially malicious ads.</li>
+<li>Despite the benefits, some argue that ad blockers undermine the revenue model of many websites, which rely on ad income.</li>
+<li>The consensus among tech-savvy users is that the advantages of using ad blockers outweigh the potential drawbacks.</li>
+</ul>
+<h2><a href="https://bmjpublichealth.bmj.com/content/bmjph/2/1/e001000.full.pdf">Sleep duration, chronotype, health and lifestyle factors affect cognition [pdf]</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41483434">Reactions</a></h3>
+<ul>
+<li>A study indicates that normal sleep duration (7-9 hours) is linked to better cognitive performance, while extended sleep can have negative effects.</li>
+<li>Alcohol consumption has a complex relationship with cognition; abstainers tend to score lower on cognitive tests compared to moderate drinkers.</li>
+<li>The discussion also explores how age, health, and personal experiences influence alcohol metabolism and cognitive function.</li>
+</ul>
+<h2><a href="https://www.eurekalert.org/news-releases/1056171">Charging lithium-ion batteries at high currents first increases lifespan by 50%</a></h2>
+<ul>
+<li>Researchers at the SLAC-Stanford Battery Center found that charging lithium-ion batteries at high currents before they leave the factory is 30 times faster and increases their lifespans by 50%.</li>
+<li>The study, published in Joule, highlights that the formation charge, the first charge a battery receives, is crucial for its performance and longevity.</li>
+<li>Using scientific machine learning, the research identified temperature and current as key factors, with significant implications for enhancing battery manufacturing efficiency and performance.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483654">Reactions</a></h3>
+<ul>
+<li>Charging lithium-ion batteries at high currents initially may increase their lifespan by 50%, though this claim is debated among industry experts.</li>
+<li>Concerns include the impact on battery impedance, capacity, and the effectiveness of thermal management in different electric vehicle brands.</li>
+<li>The discussion also explores the potential benefits of higher voltage architectures and the trade-offs between battery longevity and charging speed.</li>
+</ul>
+<h2><a href="https://old.reddit.com/r/LocalLLaMA/s/4Ly2yj78aM">Confirmed: Reflection 70B&#39;s official API is a wrapper for Sonnet 3.5</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41484981">Reactions</a></h3>
+<ul>
+<li>Reflection 70B&#39;s official API is merely a wrapper for the existing Sonnet 3.5 model, not a new AI model.</li>
+<li>The release was disorganized, with mislabeled weights, inconsistent evaluations, and eventual use of Sonnet 3.5 and later GPT-4o.</li>
+<li>The involvement of Sahil Chaudhary and Matt Shumer, with Shumer promoting the model despite its issues, has caused confusion and wasted time in the AI community.</li>
+</ul>
+<h2><a href="https://fennel-lang.org/">The Fennel Programming Language</a></h2>
+<ul>
+<li>Fennel is a programming language that merges Lua&#39;s simplicity and speed with Lisp&#39;s syntax and macro system, offering full Lua compatibility and zero overhead.</li>
+<li>It is versatile, suitable for applications such as video games, web servers, and microcontrollers, and supports compile-time macros.</li>
+<li>Comprehensive documentation and community resources are available, including setup guides, tutorials, and a code of conduct, with versions ranging from v0.1.0 to v1.5.1.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483216">Reactions</a></h3>
+<ul>
+<li>The Fennel Programming Language is recognized for its technical advancements and improvements over Lua, particularly for large projects.</li>
+<li>Fennel introduces features like pattern matching and a powerful macro system, enhancing flexibility and ease of use, especially in legacy codebases.</li>
+<li>Its integration with Lua&#39;s module loader allows seamless mixing of tables and functions, and its Lisp syntax with a minimal learning curve makes it popular among developers.</li>
+</ul>
+<h2><a href="https://awfulannouncing.com/espn/alex-morgan-ai-generated-recap-mention.html">ESPN AI-generated recap of retiring player&#39;s final match fails to mention them</a></h2>
+<ul>
+<li>ESPN&#39;s AI-generated recap of Alex Morgan’s final professional match initially failed to mention her, focusing on teammate Kennedy Wesley instead.</li>
+<li>The omission underscores the limitations of AI in capturing the full emotional and historical context of significant events.</li>
+<li>ESPN later updated the recap to include Morgan and published a separate, less prominent article about her final game.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41489167">Reactions</a></h3>
+<ul>
+<li>ESPN&#39;s AI-generated recap of a retiring player&#39;s final match failed to mention the player, leading to criticism and highlighting flaws in AI-generated content.</li>
+<li>This incident emphasizes that while AI can produce content rapidly, it often misses the context and emotional depth that human writers provide.</li>
+<li>The situation underscores the necessity for human oversight to maintain quality and accuracy in AI-generated articles.</li>
+</ul>
+<h2><a href="https://blog.gitbutler.com/why-github-actually-won/">Why GitHub Won</a></h2>
+<ul>
+<li>GitHub&#39;s success is attributed to its timely launch during the rise of distributed version control tools and its focus on enhancing the developer experience over commercial interests.</li>
+<li>GitHub&#39;s user-centric approach, emphasis on pull requests, and aesthetic appeal distinguished it from competitors like Google Code and BitBucket.</li>
+<li>The adoption of Git by the Linux community and early support from the Ruby community were crucial in popularizing GitHub.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41490161">Reactions</a></h3>
+<ul>
+<li>Google Code was created to prevent SourceForge from monopolizing the market, not to dominate it.</li>
+<li>After achieving its goal of fostering competition, Google Code was shut down, paving the way for platforms like GitHub to flourish.</li>
+<li>The discussion underscores concerns about the longevity of Google&#39;s products and the importance of timing and user experience in GitHub&#39;s success.</li>
+</ul>
+<h2><a href="https://atproto.com/articles/atproto-for-distsys-engineers">ATProto for distributed system engineers</a></h2>
+<ul>
+<li>AT Protocol, developed by Bluesky, is designed for open social networking, focusing on decentralized backend engineering.</li>
+<li>Traditional web backends face scalability issues with SQL databases, leading to the adoption of NoSQL clusters and stream processing architectures.</li>
+<li>AT Protocol decentralizes high-scale backends by using public APIs for internal services and establishing a shared data model called the &quot;user data repository,&quot; which contains cryptographically signed JSON documents.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41484337">Reactions</a></h3>
+<ul>
+<li>ATProto is a comprehensive, bottom-up specification for decentralized systems, contrasting with ActivityPub, which leaves many aspects to implementation.</li>
+<li>ATProto uses its own data model instead of JSON-LD, which can be a deterrent for some developers.</li>
+<li>A new guide on creating minimal apps with ATProto has been released, highlighting its growing ecosystem and practical applications.</li>
+</ul>
+<h2><a href="https://tookmund.com/2024/09/hibernation-preparation">Linux&#39;s Bedtime Routine</a></h2>
+<ul>
+<li>The article explains the hibernation process in Linux, focusing on version 6.9.9, from initiating hibernation to synchronizing filesystems to disk.</li>
+<li>Key entry points for controlling sleep and hibernation modes are <code>/sys/power/state</code> and <code>/sys/power/disk</code>, with specific values written to these files to initiate sleep states.</li>
+<li>The hibernation process involves several steps, including kernel configuration, availability checks, compression checks, lock acquisition, console preparation, power management notifications, and filesystem synchronization.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483789">Reactions</a></h3>
+<ul>
+<li>Linux power management issues were explored, particularly focusing on hibernation and suspend mechanisms, which follow different code paths.</li>
+<li>A crash was identified due to insufficient free system RAM to hold all VRAM, leading to failed memory allocation during sleep or resume, causing undefined system states.</li>
+<li>The discussion highlights the complexities and potential issues with Linux&#39;s power management, including the handling of VRAM and the role of systemd in managing these processes.</li>
+</ul>
+<h2><a href="https://rakujourney.wordpress.com/2024/09/08/htmx-raku-and-pico-css/">Htmx, Raku and Pico CSS</a></h2>
+<ul>
+<li>This post is part of a series focused on reducing cognitive load in web projects by using simpler web development practices, specifically HTMX, Raku, and Cro for backend HTML assembly and RESTful APIs, eliminating the need for JavaScript in dynamic content.</li>
+<li>HTMX is versatile for most projects but not suitable for complex web apps; Pico CSS is recommended for styling due to its emphasis on semantic HTML, which simplifies the development process.</li>
+<li>The post includes code examples using Pico CSS to rebuild HTMX examples for Raku/Cro, with the final code available on GitHub, and highlights Pico CSS&#39;s built-in dark mode.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41482679">Reactions</a></h3>
+<ul>
+<li>HTMX is highlighted for its ability to simplify web applications by keeping state management server-side, reducing the need for extensive client-side JavaScript (JS).</li>
+<li>Users discuss the trade-offs between HTMX and modern frontend frameworks like React, noting that HTMX can be more efficient for simpler business applications but may lack some UI functionalities.</li>
+<li>The conversation includes comparisons with other technologies like Next.js, Blazor, and Phoenix LiveView, emphasizing that HTMX offers a different approach that can be beneficial for specific use cases, particularly for fullstack developers who prefer backend logic.</li>
+</ul>
+<h2><a href="https://github.com/josephburnett/jd">Jd – JSON Diff and Patch</a></h2>
+<ul>
+<li>JSON diff and patch (jd) is a command-line utility and Go library for comparing and modifying JSON and YAML values, supporting multiple formats like jd, JSON Merge Patch (RFC 7386), and a subset of JSON Patch (RFC 6902).</li>
+<li>Installation options include Homebrew, Go install, GitHub releases, and Docker, with a web UI available at jd-tool.io or locally via <code>jd -port 8080</code>.</li>
+<li>Key features include color diff, patch application, output redirection, array handling as sets or multisets, YAML support, and format translation.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41482661">Reactions</a></h3>
+<ul>
+<li>Jd is a tool for diffing and patching JSON files, created by Joseph Burnett, and aims to complement <code>jq</code> by handling JSON arrays&#39; ordering.</li>
+<li>The tool has been updated to address issues with detecting missing elements in large JSON files, with a new v2 API that computes the longest common subsequence of two arrays.</li>
+<li>Users have found Jd useful for tasks such as manual snapshot testing, debugging API responses, and comparing massive JSON files, with suggestions for further improvements like adding jq query syntax and creating a VSCode extension.</li>
+</ul>
+<h2><a href="https://worksinprogress.co/issue/lab-grown-diamonds/">Synthetic diamonds are now purer, more beautiful, and cheaper than mined</a></h2>
+<ul>
+<li>Lab-grown diamonds, first synthesized in the 1950s, are now cheaper, purer, and dominate the industrial market, offering a cost-effective and high-quality alternative to mined diamonds.</li>
+<li>Chemical vapor deposition (CVD) is a method developed in the 1950s for producing diamonds, allowing precise control and customization of diamond properties, making them suitable for various industrial applications.</li>
+<li>Advances in diamond manufacturing continue to unlock new uses and improve existing applications, demonstrating human ingenuity in enhancing natural processes.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41488353">Reactions</a></h3>
+<ul>
+<li>Synthetic diamonds have become purer, more aesthetically pleasing, and more affordable than natural diamonds due to technological advancements.</li>
+<li>Machines to produce synthetic diamonds are now available for around $200,000, and companies like De Beers&#39; Element Six are selling them for industrial purposes.</li>
+<li>Lab-grown diamonds and moissanites are significantly cheaper, with lab diamonds costing less than $200 per carat and moissanites under $5 per carat, making diamonds more accessible and expanding their industrial applications.</li>
+</ul>
+<h2><a href="https://www.apple.com/newsroom/2024/05/apple-hearing-study-shares-preliminary-insights-on-tinnitus/">Apple Hearing Study shares preliminary insights on tinnitus</a></h2>
+<ul>
+<li>Researchers from the University of Michigan released data from a large tinnitus survey involving over 160,000 participants, aiming to improve understanding and management of the condition.</li>
+<li>Key findings include that 77.6% of participants have experienced tinnitus, with 15% experiencing it daily, and prevalence increases with age, especially among those 55 and older.</li>
+<li>The study, part of Apple&#39;s Research app, highlights common management methods and causes, and aims to advance understanding of sound exposure and its impact on hearing health.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41491121">Reactions</a></h3>
+<ul>
+<li>Apple&#39;s Hearing Study provides preliminary insights into tinnitus, highlighting the psychological aspects and personal experiences of users.</li>
+<li>Key advice includes avoiding overthinking, using distractions, and managing stress and muscle tension, with some users finding relief through hearing aids or addressing health issues.</li>
+<li>The study also explores the potential effects of modern audio devices like AirPods on tinnitus, with mixed opinions from users.</li>
+</ul>
+<head>
+  <meta property="og:title" content="QUIC is not quick enough over fast internet" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=QUIC%20is%20not%20quick%20enough%20over%20fast%20internet&subheading=Monday%2C%20September%209%2C%202024%3A%20Hacker%20News%20Summary" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/2024/09/09</link>
+            <guid isPermaLink="false">2024-09-09T00:00:00.000Z</guid>
+            <pubDate>Mon, 09 Sep 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-08]]></title>
             <description
@@ -1658,197 +1844,6 @@
             <link>https://hn.cho.sh/2024/08/31</link>
             <guid isPermaLink="false">2024-08-31T00:00:00.000Z</guid>
             <pubDate>Sat, 31 Aug 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-30]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/08/30&#39;</h2>
-<h1>2024-08-30</h1>
-<h2><a href="https://eieio.games/essays/the-secret-in-one-million-checkboxes/">The secret inside One Million Checkboxes</a></h2>
-<ul>
-<li>The website &quot;One Million Checkboxes&quot; (OMCB) launched on June 26, 2024, and unexpectedly attracted 500,000 players who checked over 650,000,000 boxes in two weeks.</li>
-<li>Users creatively used the checkboxes to write binary messages, leading to a Discord server where they discussed botting the site and created complex drawings and animations.</li>
-<li>Despite some complaints about bots, the creator found the community&#39;s creativity inspiring and documented the experience in a YouTube video to share the emotional impact.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395413">Reactions</a></h3>
-<ul>
-<li>The post discusses the emotional journey and creative process behind the website &quot;One Million Checkboxes&quot; (OMCB), highlighting the balance between constraints and creativity on the internet.</li>
-<li>The author shares their decision to shut down the site, citing reasons such as the natural end of interest, rising costs, and the desire to avoid maintenance burdens.</li>
-<li>The story has resonated with many readers, evoking nostalgia and a renewed sense of joy in software engineering, contrasting with the often overwhelming and commercialized tech landscape.</li>
-</ul>
-<h2><a href="https://www.anandtech.com/show/21542/end-of-the-road-an-anandtech-farewell">AnandTech Farewell</a></h2>
-<ul>
-<li>MediaTek is set to add NVIDIA G-Sync support to monitor scalers, aiming to make G-Sync displays more accessible to a broader audience.</li>
-<li>Qualcomm introduces the Snapdragon 7s Gen 3, enhancing its mid-tier lineup with the Cortex-A720 architecture.</li>
-<li>Intel has sold its shares in Arm and reduced its stakes in other companies, indicating a strategic shift in its investment portfolio.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41399872">Reactions</a></h3>
-<ul>
-<li>AnandTech, a renowned tech review site, is shutting down, marking the end of an era for in-depth, technical reviews and articles.</li>
-<li>The site was known for its detailed and integrity-driven content, which significantly influenced many tech enthusiasts and professionals.</li>
-<li>The closure has sparked nostalgia and discussions about the changing landscape of tech journalism, with many lamenting the loss of such a unique and reliable resource.</li>
-</ul>
-<h2><a href="https://www.elastic.co/blog/elasticsearch-is-open-source-again">Elasticsearch is open source, again</a></h2>
-<ul>
-<li>Elasticsearch and Kibana are now open source again, with AGPL being added as a license option alongside ELv2 and SSPL.</li>
-<li>This change reaffirms Elastic&#39;s commitment to open source, addressing previous issues with AWS and market confusion that led to a fork of Elasticsearch.</li>
-<li>The move aims to simplify user experience by offering multiple licensing options and aligns with Elastic&#39;s goal to support more open-source licensing.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41394797">Reactions</a></h3>
-<ul>
-<li>Elasticsearch has reverted to being open source, now under the AGPL license, which requires users to contribute back any changes.</li>
-<li>AWS created OpenSearch after Elastic rejected AWS&#39;s offer to contribute security features, leading to a split in the community.</li>
-<li>Elastic&#39;s new licensing aims to balance open-source benefits with business needs, preventing competitors from using their code without contributing.</li>
-</ul>
-<h2><a href="https://github.com/anthropics/courses/tree/master/prompt_engineering_interactive_tutorial">Anthropic&#39;s Prompt Engineering Interactive Tutorial</a></h2>
-<ul>
-<li>Anthropic has launched an interactive tutorial for prompt engineering in Claude, aimed at teaching users to create optimal prompts.</li>
-<li>The course covers beginner to advanced topics, including prompt structure, addressing common issues, and building complex prompts, with practical exercises and an &quot;Example Playground&quot; for experimentation.</li>
-<li>The tutorial uses Claude 3 Haiku and includes a Google Sheets version for ease of use, making it accessible for new users to understand and apply prompt engineering techniques effectively.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395921">Reactions</a></h3>
-<ul>
-<li>Anthropic has released a Prompt Engineering Interactive Tutorial, which has garnered significant attention from the tech community.</li>
-<li>The tutorial aims to teach users how to effectively communicate with Large Language Models (LLMs) to achieve desired outcomes, a skill known as prompt engineering.</li>
-<li>This release is notable because it provides structured guidance on optimizing prompts, which is crucial for improving the performance and reliability of AI-driven applications.</li>
-</ul>
-<h2><a href="https://github.com/libsdl-org/SDL/pull/9312">SDL3 new GPU API merged</a></h2>
-<ul>
-<li>The GPU API MkII #9312 has been merged into the main branch of libsdl-org, introducing significant updates like the Refresh graphics component, which supports modern APIs such as Vulkan and the PS5 graphics API.</li>
-<li>The update includes an offline shader compilation system, aiming to streamline the GPU API, enhance performance, and improve resource safety.</li>
-<li>The main contributor is @thatcosmonaut, with support from the FNA core team and feedback from various collaborators, indicating a collaborative effort to refine and optimize the API.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396260">Reactions</a></h3>
-<ul>
-<li>SDL3&#39;s new GPU API has been merged into the main branch, despite SDL3 still being in preview, aiming to simplify cross-platform graphics development, including on consoles.</li>
-<li>This new API is designed to be more powerful than the old SDL 2D API, supporting modern GPU features and targeting both 2D and some 3D needs.</li>
-<li>While similar efforts like WebGPU/WGSL exist, they lack console backends, and the new SDL3 GPU API does not yet support WebGPU as a backend.</li>
-</ul>
-<h2><a href="https://rattvisan.blog/2024/07/28/yes-i-was-poisoned-by-my-wife-a-software-engineer-of-top3-us-company/">Blood Disorder: Unveiling the Mystery of My Poisoning in Sweden</a></h2>
-<ul>
-<li>The author recounts a series of events starting from July 24, 2021, when his wife, Kim, was arrested after being found with a suspicious bottle, leading to the discovery of her tampering with his water bottle.</li>
-<li>The author had been suffering from hypercalcemia and vitamin D toxicity since 2019, with fluctuating health despite numerous medical tests and treatments, including MRI and PET-CT scans.</li>
-<li>The source of the excessive vitamin D and calcium remained unknown until the author discovered Kim adding a brown liquid to his water, which she claimed was potassium.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395893">Reactions</a></h3>
-<ul>
-<li>A blog post on rattvisan.blog discusses a suspected poisoning case in Sweden, where the author alleges his wife poisoned him with vitamin D.</li>
-<li>Despite medical records and video footage, the Swedish prosecutor chose not to press charges due to insufficient evidence, sparking debate about the justice system.</li>
-<li>Commenters express disbelief at the decision, discuss the possibility of private prosecution, and speculate on the wife&#39;s motivations and mental state.</li>
-</ul>
-<h2><a href="https://www.haskellforall.com/2024/08/firewall-rules-not-as-secure-as-you.html">Firewall rules: not as secure as you think</a></h2>
-<ul>
-<li>The post discusses techniques to bypass enterprise firewalls, enabling arbitrary inbound and outbound requests over any protocol, which is useful for deploying software in restricted network environments.</li>
-<li>It introduces a repository named &quot;holepunch&quot; containing NixOS modules that automate these firewall bypassing tricks, including tunneling inbound SSH connections inside outbound HTTPS requests.</li>
-<li>The techniques assume control over hosts on both ends of the network request and utilize tools like forward proxies, TLS-terminating reverse proxies, reverse tunnels, and Corkscrew to disguise and tunnel traffic.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396206">Reactions</a></h3>
-<ul>
-<li>The post discusses the limitations and potential vulnerabilities of firewall rules, highlighting that they may not be as secure as commonly believed.</li>
-<li>It shares real-world anecdotes and technical insights on how vendors and individuals can bypass firewall restrictions using tools like SSH and netcat, raising concerns about security practices.</li>
-<li>The conversation underscores the tension between security policies and practical needs, emphasizing the importance of transparent communication and proper security measures to prevent unauthorized access.</li>
-</ul>
-<h2><a href="http://consulting.m3047.net/dubai-letters/balkanized-internet.html">I&#39;m blocking connections from AWS to my on-prem services</a></h2>
-<ul>
-<li>The rise of large cloud providers is leading to a fragmented or &quot;balkanized&quot; internet, where interoperability with the general internet is limited.</li>
-<li>Historical context: The internet transitioned from a government and educational tool to a commercialized space dominated by advertising and user data monetization.</li>
-<li>Concerns include data theft and excessive traffic from cloud services, prompting some to block access from major providers like AWS to protect local resources.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396641">Reactions</a></h3>
-<ul>
-<li>The author is blocking AWS connections to their on-premises services due to concerns about abuse and attacks.</li>
-<li>Blocking Amazon&#39;s extensive IP range is challenging, but the author is willing to sacrifice some legitimate traffic to reduce unwanted traffic.</li>
-<li>There is a debate about whether blocking cloud providers&#39; IPs could lead to the fragmentation (balkanization) of the internet, but the author prioritizes security over this concern.</li>
-</ul>
-<h2><a href="https://github.com/google/closure-library">Google Closure Library has been archived</a></h2>
-<ul>
-<li>Closure Library has been archived because it no longer aligns with modern JavaScript development requirements.</li>
-<li>Users are encouraged to find alternative libraries to meet their development needs.</li>
-<li>Further information is available in issue #1214.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395925">Reactions</a></h3>
-<ul>
-<li>Google Closure Library has been archived, marking the end of its maintenance despite its historical significance in building robust email clients like Gmail&#39;s editor.</li>
-<li>The Closure Compiler will continue to receive support, even as the JavaScript ecosystem has evolved to reduce the need for such comprehensive libraries.</li>
-<li>Closure Library&#39;s legacy of engineering excellence remains influential in the development community.</li>
-</ul>
-<h2><a href="http://ciel-lang.org/">CIEL Is an Extended Lisp</a></h2>
-<ul>
-<li>CIEL is an Extended Lisp language, fully compatible with Common Lisp, and includes additional features (&quot;batteries included&quot;).</li>
-<li>The GitHub repository for CIEL provides resources and documentation for users interested in exploring or contributing to the project.</li>
-<li>A sample script demonstrates fetching and printing JSON data from a web API using CIEL, highlighting its practical applications.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41401415">Reactions</a></h3>
-<ul>
-<li>CIEL is an extended version of Lisp, with discussions highlighting its well-documented tools and the potential for a mascot or logo.</li>
-<li>Key features discussed include shell pass-through in the REPL, ease of compiling binaries, and the interactive nature of CIEL&#39;s REPL compared to Python&#39;s.</li>
-<li>Users noted the significance of the name &quot;Ciel&quot; (French for &quot;sky&quot;), ease of installation, and comparisons to other languages like Clojure and Nim, emphasizing the potential for CIEL to standardize the Common Lisp ecosystem.</li>
-</ul>
-<h2><a href="https://github.com/duckduckgo/macos-browser">DuckDuckGo for Mac is now open source</a></h2>
-<ul>
-<li>DuckDuckGo is expanding its team and hiring senior software engineers to enhance online trust standards.</li>
-<li>The macOS project uses Swift Package Manager for dependencies and SwiftLint for code style enforcement.</li>
-<li>Terminology updates have been made to remove problematic racial connotations, adopting terms like main branches, allow lists, and blocklists.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396487">Reactions</a></h3>
-<ul>
-<li>DuckDuckGo has made its Mac browser open source, available on GitHub, and it is based on WebKit, the same engine as Safari.</li>
-<li>Users have reported a decline in DuckDuckGo&#39;s search quality, citing AI spam and irrelevant local business links, prompting some to switch to alternatives like Brave Search and Kagi.</li>
-<li>Brave engineers are actively working on resolving captcha issues, highlighting ongoing improvements in alternative search engines.</li>
-</ul>
-<h2><a href="https://bletchleypark.org.uk/">Visit Bletchley Park</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41396501">Reactions</a></h3>
-<ul>
-<li>Bletchley Park offers historical exhibits on WWII life and codebreaking, focusing on human and process aspects.</li>
-<li>The National Museum of Computing, located on the same site, features extensive collections, including replicas of the Bombe and Colossus computers.</li>
-<li>Tickets for Bletchley Park are valid for 12 months, allowing for multiple visits.</li>
-</ul>
-<h2><a href="https://matklad.github.io/2023/01/26/rusts-ugly-syntax.html">Rust&#39;s Ugly Syntax (2023)</a></h2>
-<ul>
-<li>The post discusses the common misconception that Rust&#39;s syntax is the main issue, while the real challenge lies in its semantics.</li>
-<li>It provides various syntax styles (Rs++, Rhodes, RhodesScript, Rattlesnake, CrabML) to illustrate how Rust&#39;s semantics can be simplified.</li>
-<li>The post suggests several changes to Rust&#39;s standard library function to make it more user-friendly, including removing nested functions, constraints, and simplifying error handling.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41397679">Reactions</a></h3>
-<ul>
-<li>The article discusses the complexity and readability issues in Rust&#39;s syntax, particularly when dealing with generic types and lifetime markers.</li>
-<li>Examples provided include the use of async functions in traits, which can result in convoluted code due to the combination of lifetimes and type bounds.</li>
-<li>The discussion highlights differing opinions on Rust&#39;s syntax choices, such as the use of the single quote (&#39;) for lifetimes, and whether more verbose keywords would improve code readability.</li>
-</ul>
-<h2><a href="https://github.com/algora-io/tv">Open Source Twitch for Developers</a></h2>
-<ul>
-<li>Algora TV introduces a new feature called Livestream Billboards, allowing developers to earn money through in-video ads while livestreaming.</li>
-<li>The setup requires Elixir, Erlang/OTP, PostgreSQL, FFmpeg, and OBS Studio, with detailed steps provided for project initialization and database configuration.</li>
-<li>The architecture involves streamers using Fly (an Elixir app) and RTMP servers, with media storage and delivery handled by Tigris, and the service is distributed under the AGPLv3 License.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41397498">Reactions</a></h3>
-<ul>
-<li>Algora is an open-source livestreaming platform for developers, supporting multistreaming to platforms like Twitch, YouTube, and X, and aggregating live comments.</li>
-<li>Built using Elixir for productivity and fault tolerance, Algora leverages Phoenix LiveView and OTP for handling complex streaming pipelines and BEAM clustering for low latency.</li>
-<li>The project is maintained by a solo developer who is seeking contributions and feedback, with bounties available for prioritized issues.</li>
-</ul>
-<h2><a href="https://bivens.plaintip.com/index.php/google-incognito/">Ever used Google Chrome in incognito mode? You could be entitled to up to $5k</a></h2>
-<ul>
-<li>Google is facing allegations of misleading users about the privacy of its Incognito mode, potentially entitling users to up to $5,000 in compensation for privacy violations.</li>
-<li>The lawsuit claims Google tracked activity, sold personal data, and misled users about the privacy of Incognito mode between 2016-2023.</li>
-<li>Eligibility criteria include using Incognito mode during the specified period, expecting privacy, not always consenting to tracking, being 18+, and a US resident.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395591">Reactions</a></h3>
-<ul>
-<li>Users of Google Chrome&#39;s incognito mode might be eligible for up to $5,000, but no settlement has been reached yet.</li>
-<li>The lawsuit claims that incognito mode&#39;s name and icon are misleading, suggesting full anonymity, despite warnings that it doesn&#39;t hide activity from websites, employers, or ISPs (Internet Service Providers).</li>
-<li>The case has ignited discussions about tech literacy and user expectations, with potential risks for those joining the lawsuit, including possible costs if the case is lost.</li>
-</ul>
-<head>
-  <meta property="og:title" content="The secret inside One Million Checkboxes" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=The%20secret%20inside%20One%20Million%20Checkboxes&subheading=Friday%2C%20August%2030%2C%202024%3A%20Hacker%20News%20Summary" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/2024/08/30</link>
-            <guid isPermaLink="false">2024-08-30T00:00:00.000Z</guid>
-            <pubDate>Fri, 30 Aug 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

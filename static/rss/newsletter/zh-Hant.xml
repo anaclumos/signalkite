@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 08 Sep 2024 20:58:51 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Sep 2024 19:13:24 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/zh-Hant.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 08 Sep 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 09 Sep 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[zh-Hant]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-09-09]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/09/09&#39;</h2>
+<h1>2024-09-09</h1>
+<h2><a href="https://dl.acm.org/doi/10.1145/3589334.3645323">QUIC 在快速網路上並不夠快</a></h2>
+<ul>
+<li>「最近的一項研究顯示，QUIC(一種旨在提升網路效能的協定)在高速網路環境下，相較於傳統的 TCP+TLS+HTTP/2，數據傳輸速率最多可減少 45.2%。」</li>
+<li>性能差距歸因於接收端處理開銷過高，特別是由於過多的數據包和 QUIC 的用戶空間確認(ACKs)。</li>
+<li>這些發現對於檔案傳輸、視頻串流和網頁瀏覽等應用具有重要意義，並提供了減輕這些問題的建議。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41484991">評論</a></h3>
+<ul>
+<li>QUIC 在快速網路上面臨效能問題，原因包括低效的系統調用介面、由於幽靈漏洞緩解措施導致的高系統調用成本、小的預設 UDP 緩衝區，以及複雜的 UDP 堆疊優化。</li>
+<li>GSO(通用分段卸載)可以提升效能，但對於大型伺服器來說並不理想，這顯示出需要更好的 API 來取代 BSD 套接字/POSIX。</li>
+<li>討論強調了整合 io_uring 的複雜性及其潛在的高階 API 所帶來的好處，並突顯了使用者空間靈活性與核心層效率之間的平衡。</li>
+</ul>
+<h2><a href="https://reclaim-the-stack.com">重奪技術堆疊</a></h2>
+<ul>
+<li>「Mynewsdesk.com 開發了一個基於 Kubernetes 的平台來取代 Heroku，為他們的 SaaS 產品帶來了 90% 的成本降低和 30% 的性能提升。」</li>
+<li>新平台透過更快的部署時間和改進的工具提升了開發者的體驗。</li>
+<li>這個技術棧已經開源，讓其他人可以透過遵循提供的文件並加入他們的 Discord 伺服器，快速複製他們的成功。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483675">評論</a></h3>
+<ul>
+<li>Reclaim the Stack 報告指出，從 Heroku 遷移到 Kubernetes 後，成本降低了 90%，性能提升了 30%。</li>
+<li>用戶認為這些節省伴隨著更高的複雜性，需更多的維護、監控以及在管理 Kubernetes 和相關系統方面的專業知識。</li>
+<li>評論者建議考慮更簡單的虛擬機設置、託管服務或其他平台即服務(PaaS)提供商，如 Render 或 Fly.io，強調成本、複雜性和基礎設施管理知識之間的權衡。</li>
+</ul>
+<h2><a href="https://www.ic3.gov/Media/Y2022/PSA221221">FBI 建議使用廣告攔截器(2022)</a></h2>
+<ul>
+<li>FBI 發出警告，指出網路犯罪分子利用搜尋引擎廣告冒充品牌，將使用者引導至惡意網站，這些網站會託管勒索軟體並竊取敏感資訊。</li>
+<li>“網路犯罪分子購買模仿合法企業的廣告，這些廣告會出現在搜尋結果的頂端，誘騙使用者訪問假網站並下載惡意軟體。”</li>
+<li>預防措施包括驗證網址、使用廣告攔截器，以及企業教育用戶關於仿冒網站和正確網址的知識。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483581">評論</a></h3>
+<ul>
+<li>FBI 建議使用廣告攔截器來增強線上安全性並改善使用者體驗，防止侵入性和潛在惡意的廣告。</li>
+<li>「儘管有其好處，但有些人認為廣告攔截器削弱了許多依賴廣告收入的網站的營收模式。」</li>
+<li>技術精通的使用者普遍認為，使用廣告攔截器的優點超過了潛在的缺點。</li>
+</ul>
+<h2><a href="https://bmjpublichealth.bmj.com/content/bmjph/2/1/e001000.full.pdf">睡眠時長、晝夜型態、健康和生活方式因素影響認知 [pdf]</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41483434">評論</a></h3>
+<ul>
+<li>一項研究顯示，正常的睡眠時間(7-9小時)與較好的認知表現有關，而過長的睡眠可能會產生負面影響。</li>
+<li>酒精消費與認知之間有著複雜的關係；禁酒者在認知測試中的得分往往低於適量飲酒者。</li>
+<li>討論還探討了年齡、健康狀況和個人經歷如何影響酒精代謝和認知功能。</li>
+</ul>
+<h2><a href="https://www.eurekalert.org/news-releases/1056171">以高電流充電鋰離子電池首先可使壽命增加50%</a></h2>
+<ul>
+<li>SLAC-Stanford 電池中心的研究人員發現，在鋰離子電池出廠前以高電流充電，其速度快 30 倍，且壽命增加 50%。</li>
+<li>“這項研究發表於《Joule》期刊，強調了形成充電，即電池首次充電，對其性能和壽命至關重要。”</li>
+<li>利用科學機器學習，研究確定了溫度和電流是關鍵因素，對提升電池製造效率和性能具有重要意義。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483654">評論</a></h3>
+<ul>
+<li>以高電流初始充電鋰離子電池可能會使其壽命延長50%，儘管這一說法在業界專家中存在爭議。</li>
+<li>關注點包括對電池阻抗、容量的影響，以及在不同電動車品牌中熱管理的有效性。</li>
+<li>討論還探討了高電壓架構的潛在好處，以及電池壽命與充電速度之間的權衡。</li>
+</ul>
+<h2><a href="https://old.reddit.com/r/LocalLLaMA/s/4Ly2yj78aM">確認：Reflection 70B 的官方 API 是 Sonnet 3.5 的包裝器</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41484981">評論</a></h3>
+<ul>
+<li>「Reflection 70B 的官方 API 只是現有 Sonnet 3.5 模型的包裝，而不是一個新的 AI 模型。」</li>
+<li>這次發布非常混亂，重量標籤錯誤、評估不一致，最終使用了 Sonnet 3.5 和後來的 GPT-4o。</li>
+<li>由於 Sahil Chaudhary 和 Matt Shumer 的參與，特別是 Shumer 在模型存在問題的情況下仍然推廣它，這已經在 AI 社群中引起了混亂並浪費了時間。</li>
+</ul>
+<h2><a href="https://fennel-lang.org/">茴香程式語言</a></h2>
+<ul>
+<li>「Fennel 是一種程式語言，結合了 Lua 的簡單性和速度與 Lisp 的語法和巨集系統，提供完全的 Lua 相容性且無額外負擔。」</li>
+<li>它用途廣泛，適用於視頻遊戲、網頁伺服器和微控制器等應用，並支援編譯時宏指令。</li>
+<li>提供了全面的文件和社群資源，包括設定指南、教學課程和行為準則，版本範圍從 v0.1.0 到 v1.5.1。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483216">評論</a></h3>
+<ul>
+<li>「茴香程式語言因其技術進步和對 Lua 的改進而受到認可，特別適用於大型專案。」</li>
+<li>茴香引入了模式匹配和強大的巨集系統等功能，提升了靈活性和易用性，特別是在舊有的代碼庫中。</li>
+<li>其與 Lua 模組加載器的整合允許無縫混合表格和函數，而其 Lisp 語法具有最小的學習曲線，使其在開發者中頗受歡迎。</li>
+</ul>
+<h2><a href="https://awfulannouncing.com/espn/alex-morgan-ai-generated-recap-mention.html">ESPN AI 生成的退休球員最後一場比賽回顧未提及他們</a></h2>
+<ul>
+<li>“ESPN 的 AI 生成摘要在描述 Alex Morgan 最後一場職業比賽時，最初未提及她，反而集中在她的隊友 Kennedy Wesley 身上。”</li>
+<li>這一遺漏突顯了人工智慧在捕捉重大事件的完整情感和歷史背景方面的局限性。</li>
+<li>ESPN 後來更新了回顧報導，將摩根納入其中，並發布了一篇較不顯眼的獨立文章，介紹她的最後一場比賽。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41489167">評論</a></h3>
+<ul>
+<li>ESPN 的 AI 生成的退役球員最後一場比賽的回顧未能提及該球員，導致批評並突顯了 AI 生成內容的缺陷。</li>
+<li>這起事件強調了雖然 AI 可以快速生成內容，但它經常缺乏人類作家所提供的上下文和情感深度。</li>
+<li>這種情況強調了人類監督在維持 AI 生成文章的品質和準確性方面的必要性。</li>
+</ul>
+<h2><a href="https://blog.gitbutler.com/why-github-actually-won/">為什麼 GitHub 會成功</a></h2>
+<ul>
+<li>GitHub 的成功歸因於其在分散式版本控制工具興起時的適時推出，以及其專注於提升開發者體驗而非商業利益。</li>
+<li>GitHub 以使用者為中心的方式、對 pull request 的重視以及美觀的設計，使其在競爭對手如 Google Code 和 BitBucket 中脫穎而出。</li>
+<li>Linux 社群採用 Git 以及 Ruby 社群的早期支持對於 GitHub 的普及化至關重要。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41490161">評論</a></h3>
+<ul>
+<li>Google Code 的創立是為了防止 SourceForge 壟斷市場，而不是為了主導市場。</li>
+<li>在達成促進競爭的目標後，Google Code 被關閉，為 GitHub 等平台的蓬勃發展鋪平了道路。</li>
+<li>這次討論強調了對 Google 產品壽命的擔憂，以及 GitHub 成功中時機和使用者體驗的重要性。</li>
+</ul>
+<h2><a href="https://atproto.com/articles/atproto-for-distsys-engineers">ATProto 給分散式系統工程師</a></h2>
+<ul>
+<li>AT Protocol，由 Bluesky 開發，旨在開放社交網絡，專注於去中心化的後端工程。</li>
+<li>傳統的網頁後端面臨 SQL 資料庫的擴展性問題，導致採用 NoSQL 叢集和流處理架構。</li>
+<li>AT Protocol 透過使用公共 API 來處理內部服務，並建立一個稱為「使用者資料庫」的共享數據模型，將高規模的後端去中心化，該資料庫包含經過加密簽名的 JSON 文件。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41484337">評論</a></h3>
+<ul>
+<li>ATProto 是一個全面的、自下而上的去中心化系統規範，與 ActivityPub 相比，後者在許多方面留給實作來決定。</li>
+<li>ATProto 使用其自有的資料模型而非 JSON-LD，這對某些開發者來說可能是一個障礙。</li>
+<li>「一份關於使用 ATProto 創建極簡應用程式的新指南已經發布，強調了其不斷增長的生態系統和實際應用。」</li>
+</ul>
+<h2><a href="https://tookmund.com/2024/09/hibernation-preparation">「Linux 的睡前例行公事」</a></h2>
+<ul>
+<li>本文解釋了 Linux 中的休眠過程，重點介紹了 6.9.9 版本，從啟動休眠到將檔案系統同步到磁碟的整個過程。</li>
+<li>控制睡眠和休眠模式的關鍵入口點是 <code>/sys/power/state</code> 和 <code>/sys/power/disk</code>，通過向這些文件寫入特定值來啟動睡眠狀態。</li>
+<li>休眠過程涉及多個步驟，包括核心配置、可用性檢查、壓縮檢查、鎖定獲取、控制台準備、電源管理通知和檔案系統同步。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41483789">評論</a></h3>
+<ul>
+<li>「探討了 Linux 的電源管理問題，特別是針對休眠和暫停機制，這兩者遵循不同的程式碼路徑。」</li>
+<li>由於系統可用 RAM 不足以容納所有 VRAM，導致在休眠或恢復期間記憶體分配失敗，進而引發未定義的系統狀態，識別出崩潰問題。</li>
+<li>討論強調了 Linux 電源管理的複雜性和潛在問題，包括 VRAM 的處理以及 systemd 在管理這些過程中的角色。</li>
+</ul>
+<h2><a href="https://rakujourney.wordpress.com/2024/09/08/htmx-raku-and-pico-css/">HTMX、Raku 和 Pico CSS</a></h2>
+<ul>
+<li>這篇文章是系列文章的一部分，專注於通過使用更簡單的網頁開發實踐來減少網頁專案中的認知負荷，特別是使用 HTMX、Raku 和 Cro 來進行後端 HTML 組裝和 RESTful API，從而消除在動態內容中使用 JavaScript 的需求。</li>
+<li>HTMX 適用於大多數專案，但不適合複雜的網頁應用程式；建議使用 Pico CSS 進行樣式設計，因為它強調語義化 HTML，這能簡化開發過程。</li>
+<li>這篇文章包含使用 Pico CSS 重建 HTMX 範例的程式碼範例，適用於 Raku/Cro，最終的程式碼可在 GitHub 上找到，並強調了 Pico CSS 內建的深色模式。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41482679">評論</a></h3>
+<ul>
+<li>HTMX 因其能夠通過將狀態管理保持在伺服器端來簡化網頁應用程式而受到矚目，從而減少對大量客戶端 JavaScript (JS) 的需求。</li>
+<li>用戶討論了 HTMX 與現代前端框架如 React 之間的取捨，指出 HTMX 對於較簡單的商業應用可能更有效率，但可能缺乏一些使用者介面功能。</li>
+<li>這段對話包含了與其他技術如 Next.js、Blazor 和 Phoenix LiveView 的比較，強調 HTMX 提供了一種不同的方法，這對於特定的使用情境可能是有益的，特別是對於偏好後端邏輯的全端開發者來說。</li>
+</ul>
+<h2><a href="https://github.com/josephburnett/jd">Jd – JSON 差異與修補</a></h2>
+<ul>
+<li>JSON diff 和 patch (jd) 是一個命令列工具和 Go 函式庫，用於比較和修改 JSON 和 YAML 值，支援多種格式如 jd、JSON Merge Patch(RFC 7386)以及部分的 JSON Patch(RFC 6902)。</li>
+<li>安裝選項包括 Homebrew、Go install、GitHub releases 和 Docker，並且可以在 jd-tool.io 上使用網頁介面，或通過 <code>jd -port 8080</code> 在本地使用。</li>
+<li>主要功能包括顏色差異、補丁應用、輸出重定向、將陣列處理為集合或多重集合、支援 YAML 以及格式轉換。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41482661">評論</a></h3>
+<ul>
+<li>Jd 是一個用於比較和修補 JSON 檔案的工具，由 Joseph Burnett 創建，旨在通過處理 JSON 陣列的順序來補充 <code>jq</code>。</li>
+<li>該工具已更新，以解決在大型 JSON 檔案中檢測缺失元素的問題，並新增了 v2 API，用於計算兩個陣列的最長共同子序列。</li>
+<li>用戶發現 Jd 在手動快照測試、調試 API 回應和比較大量 JSON 檔案等任務中非常有用，並提出了進一步改進的建議，例如添加 jq 查詢語法和創建 VSCode 擴充功能。</li>
+</ul>
+<h2><a href="https://worksinprogress.co/issue/lab-grown-diamonds/">合成鑽石現在比開採的鑽石更純淨、更美麗且更便宜</a></h2>
+<ul>
+<li>實驗室培育鑽石，最早於1950年代合成，如今價格更便宜、更純淨，並在工業市場中佔據主導地位，提供了一種經濟實惠且高品質的天然鑽石替代品。</li>
+<li>「化學氣相沉積(CVD)是一種在1950年代開發出來的生產鑽石的方法，允許精確控制和定制鑽石的特性，使其適用於各種工業應用。」</li>
+<li>&quot;鑽石製造技術的進步不斷開發出新的用途並改進現有的應用，展現了人類在提升自然過程中的創意。&quot;</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41488353">評論</a></h3>
+<ul>
+<li>由於技術進步，合成鑽石變得比天然鑽石更純淨、更具美感且更為經濟實惠。</li>
+<li>生產合成鑽石的機器現在約售 200,000 美元，像 De Beers 的 Element Six 這樣的公司正在將它們用於工業用途。</li>
+<li>實驗室培育的鑽石和莫桑石價格顯著較低，其中實驗室鑽石每克拉價格低於200美元，莫桑石每克拉價格低於5美元，這使得鑽石更易於取得並擴大其在工業上的應用。</li>
+</ul>
+<h2><a href="https://www.apple.com/newsroom/2024/05/apple-hearing-study-shares-preliminary-insights-on-tinnitus/">Apple 聽力研究分享耳鳴的初步見解</a></h2>
+<ul>
+<li>密西根大學的研究人員發布了一項涉及超過16萬名參與者的大規模耳鳴調查數據，旨在提升對該病症的理解和管理。</li>
+<li>「主要發現包括77.6%的參與者曾經歷耳鳴，其中15%每天都會經歷，且隨著年齡增長，尤其是55歲及以上的人群，耳鳴的發生率會增加。」</li>
+<li>這項研究是 Apple Research 應用程式的一部分，重點介紹了常見的管理方法和原因，並旨在促進對聲音暴露及其對聽力健康影響的理解。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41491121">評論</a></h3>
+<ul>
+<li>Apple 的聽力研究提供了關於耳鳴的初步見解，強調了心理層面和使用者的個人經驗。</li>
+<li>關鍵建議包括避免過度思考、使用分心技巧、管理壓力和肌肉緊張，有些使用者透過助聽器或解決健康問題找到緩解的方法。</li>
+<li>該研究還探討了現代音頻設備如 AirPods 對耳鳴的潛在影響，使用者的意見不一。</li>
+</ul>
+<head>
+  <meta property="og:title" content="QUIC 在快速網路上並不夠快" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=QUIC%20%E5%9C%A8%E5%BF%AB%E9%80%9F%E7%B6%B2%E8%B7%AF%E4%B8%8A%E4%B8%A6%E4%B8%8D%E5%A4%A0%E5%BF%AB&subheading=2024%E5%B9%B49%E6%9C%889%E6%97%A5%20%E6%98%9F%E6%9C%9F%E4%B8%80%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/zh/Hant/2024/09/09</link>
+            <guid isPermaLink="false">2024-09-09T00:00:00.000Z</guid>
+            <pubDate>Mon, 09 Sep 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-08]]></title>
             <description
@@ -1658,197 +1844,6 @@
             <link>https://hn.cho.sh/zh/Hant/2024/08/31</link>
             <guid isPermaLink="false">2024-08-31T00:00:00.000Z</guid>
             <pubDate>Sat, 31 Aug 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-30]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/08/30&#39;</h2>
-<h1>2024-08-30</h1>
-<h2><a href="https://eieio.games/essays/the-secret-in-one-million-checkboxes/">一百萬個核取方塊中的秘密</a></h2>
-<ul>
-<li>「網站『One Million Checkboxes』(OMCB)於2024年6月26日上線，並在兩週內意外吸引了50萬名玩家，這些玩家共勾選了超過6億5千萬個方框。」</li>
-<li>用戶創意地使用複選框來撰寫二進位訊息，進而引導至一個 Discord 伺服器，在那裡他們討論如何自動化該網站，並創作出複雜的圖畫和動畫。</li>
-<li>儘管有些人抱怨機器人，創作者發現社群的創意令人振奮，並在 YouTube 影片中記錄了這段經歷，以分享其情感影響。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395413">評論</a></h3>
-<ul>
-<li>「這篇文章討論了網站『一百萬個核取方塊』(One Million Checkboxes，簡稱 OMCB)背後的情感旅程和創作過程，強調了在網際網路上限制與創意之間的平衡。」</li>
-<li>作者分享了他們關閉網站的決定，理由包括自然興趣的結束、成本上升以及避免維護負擔的願望。</li>
-<li>這個故事引起了許多讀者的共鳴，喚起了對軟體工程的懷舊情感和重新燃起的喜悅，與通常令人不堪重負且商業化的科技環境形成了鮮明對比。</li>
-</ul>
-<h2><a href="https://www.anandtech.com/show/21542/end-of-the-road-an-anandtech-farewell">AnandTech 告別</a></h2>
-<ul>
-<li>聯發科將為顯示器縮放器新增 NVIDIA G-Sync 支援，旨在讓 G-Sync 顯示器更廣泛地普及。</li>
-<li>「Qualcomm 推出 Snapdragon 7s Gen 3，使用 Cortex-A720 架構來提升其中階產品線。」</li>
-<li>「英特爾已經出售其在安謀的股份，並減少在其他公司的持股，顯示其投資組合的策略性轉變。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41399872">評論</a></h3>
-<ul>
-<li>AnandTech，一個知名的科技評測網站，即將關閉，標誌著深入技術評測和文章時代的結束。</li>
-<li>「該網站以其詳盡且誠信為本的內容而聞名，對許多科技愛好者和專業人士產生了重大影響。」</li>
-<li>這次的關閉引發了懷舊情緒和對科技新聞變遷的討論，許多人感嘆失去這樣一個獨特且可靠的資源。</li>
-</ul>
-<h2><a href="https://www.elastic.co/blog/elasticsearch-is-open-source-again">“Elasticsearch 再次成為開源軟體”</a></h2>
-<ul>
-<li>Elasticsearch 和 Kibana 現在再次成為開源軟體，並新增 AGPL 作為與 ELv2 和 SSPL 並列的授權選項。</li>
-<li>此變更重申了 Elastic 對開源的承諾，解決了先前與 AWS 的問題以及導致 Elasticsearch 分叉的市場混淆。</li>
-<li>此舉旨在透過提供多種授權選項來簡化使用者體驗，並與 Elastic 支持更多開源授權的目標一致。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41394797">評論</a></h3>
-<ul>
-<li>「Elasticsearch 已經恢復為開源軟體，現在採用 AGPL 授權，這要求使用者必須回饋任何修改。」</li>
-<li>AWS 在 Elastic 拒絕 AWS 提供的安全功能貢獻提議後，創建了 OpenSearch，導致社群分裂。</li>
-<li>Elastic 的新授權目標在於平衡開源的好處與商業需求，防止競爭對手在不做出貢獻的情況下使用他們的代碼。</li>
-</ul>
-<h2><a href="https://github.com/anthropics/courses/tree/master/prompt_engineering_interactive_tutorial">Anthropic 的提示工程互動教程</a></h2>
-<ul>
-<li>Anthropic 已經推出了一個針對 Claude 的互動式提示工程教學，旨在教導使用者如何創建最佳提示。</li>
-<li>「本課程涵蓋從初學到高階的主題，包括提示結構、解決常見問題以及構建複雜提示，並提供實際練習和一個“範例遊樂場”供實驗使用。」</li>
-<li>本教學使用了Claude 3 Haiku，並包含一個Google Sheets版本以便使用，讓新手用戶能夠輕鬆理解和應用提示工程技術。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395921">評論</a></h3>
-<ul>
-<li>「Anthropic 已經發布了一個提示工程互動教程，這在科技社群中引起了廣泛關注。」</li>
-<li>本教程旨在教導使用者如何有效地與大型語言模型(LLMs)進行溝通，以達成預期的結果，這項技能被稱為提示工程。</li>
-<li>此版本值得注意，因為它提供了有關優化提示的結構化指導，這對於提升人工智慧驅動應用程式的性能和可靠性至關重要。</li>
-</ul>
-<h2><a href="https://github.com/libsdl-org/SDL/pull/9312">「SDL3 新的 GPU API 已合併」</a></h2>
-<ul>
-<li>GPU API MkII #9312 已經合併到 libsdl-org 的主分支中，帶來了重大更新，例如支援現代 API 的 Refresh 圖形元件，包括 Vulkan 和 PS5 圖形 API。</li>
-<li>此次更新包含一個離線著色器編譯系統，旨在簡化 GPU API、提升效能並改善資源安全性。</li>
-<li>主要貢獻者是 @thatcosmonaut，並獲得 FNA 核心團隊的支持以及各位合作者的反饋，這表明這是一個共同努力以改進和優化 API 的過程。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396260">評論</a></h3>
-<ul>
-<li>「SDL3 的新 GPU API 已經合併到主分支中，儘管 SDL3 仍處於預覽階段，目的是簡化跨平台圖形開發，包括在遊戲主機上。」</li>
-<li>這個新的 API 設計得比舊的 SDL 2D API 更強大，支援現代 GPU 功能，並針對 2D 和部分 3D 需求。</li>
-<li>雖然類似的努力如 WebGPU/WGSL 存在，但它們缺乏主機後端，而新的 SDL3 GPU API 尚未支援 WebGPU 作為後端。</li>
-</ul>
-<h2><a href="https://rattvisan.blog/2024/07/28/yes-i-was-poisoned-by-my-wife-a-software-engineer-of-top3-us-company/">血液疾病：揭開我在瑞典中毒之謎</a></h2>
-<ul>
-<li>作者回憶了一系列事件，從2021年7月24日開始，他的妻子Kim因被發現持有可疑瓶子而被逮捕，進而發現她曾經動過他的水瓶。</li>
-<li>作者自2019年以來一直飽受高鈣血症和維生素D中毒之苦，儘管進行了無數次醫學檢查和治療，包括MRI和PET-CT掃描，健康狀況仍然起伏不定。</li>
-<li>過量維生素D和鈣的來源一直不明，直到作者發現Kim在他的水中添加了一種棕色液體，她聲稱那是鉀。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395893">評論</a></h3>
-<ul>
-<li>rattvisan.blog 的一篇部落格文章討論了一起在瑞典的疑似中毒案件，作者聲稱他的妻子用維生素 D 毒害了他。</li>
-<li>「儘管有醫療記錄和影片證據，瑞典檢察官因證據不足而選擇不提起訴訟，這引發了對司法系統的討論。」</li>
-<li>「評論者對這個決定表示難以置信，討論私人起訴的可能性，並推測妻子的動機和心理狀態。」</li>
-</ul>
-<h2><a href="https://www.haskellforall.com/2024/08/firewall-rules-not-as-secure-as-you.html">防火牆規則：沒有你想的那麼安全</a></h2>
-<ul>
-<li>「這篇文章討論了繞過企業防火牆的技術，允許通過任何協議進行任意的入站和出站請求，這對於在受限的網路環境中部署軟體非常有用。」</li>
-<li>它介紹了一個名為「holepunch」的儲存庫，包含自動化這些防火牆繞過技巧的 NixOS 模組，包括將入站的 SSH 連線隧道化到出站的 HTTPS 請求中。</li>
-<li>這些技術假設對網路請求兩端的主機進行控制，並利用像是正向代理、TLS終止的反向代理、反向隧道和Corkscrew等工具來偽裝和隧道化流量。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396206">評論</a></h3>
-<ul>
-<li>「這篇文章討論了防火牆規則的限制和潛在漏洞，強調它們可能不像普遍認為的那麼安全。」</li>
-<li>它分享了真實世界的軼事和技術見解，說明供應商和個人如何使用像 SSH 和 netcat 這樣的工具繞過防火牆限制，這引發了對安全實踐的擔憂。</li>
-<li>這段對話強調了安全政策與實際需求之間的緊張關係，並強調透明溝通和適當安全措施的重要性，以防止未經授權的存取。</li>
-</ul>
-<h2><a href="http://consulting.m3047.net/dubai-letters/balkanized-internet.html">我正在阻止來自 AWS 的連線到我的內部服務</a></h2>
-<ul>
-<li>「大型雲端服務提供商的崛起正在導致互聯網的碎片化或所謂的『巴爾幹化』，使得與一般互聯網的互操作性受到限制。」</li>
-<li>歷史背景：網際網路從政府和教育工具轉變為由廣告和用戶數據貨幣化主導的商業化空間。</li>
-<li>擔憂包括資料竊取和來自雲端服務的過多流量，這促使一些人封鎖來自主要供應商如 AWS 的訪問，以保護本地資源。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396641">評論</a></h3>
-<ul>
-<li>由於擔心濫用和攻擊，作者正在阻止 AWS 連接到其內部部署服務。</li>
-<li>封鎖亞馬遜的廣泛 IP 範圍是具有挑戰性的，但作者願意犧牲一些合法流量來減少不必要的流量。</li>
-<li>「有關封鎖雲端服務提供商的 IP 是否會導致網際網路的碎片化(巴爾幹化)的爭論，但作者優先考慮的是安全性而非這個問題。」</li>
-</ul>
-<h2><a href="https://github.com/google/closure-library">Google Closure Library 已被封存</a></h2>
-<ul>
-<li>Closure Library 已被存檔，因為它不再符合現代 JavaScript 開發需求。</li>
-<li>鼓勵使用者尋找其他圖書館以滿足其開發需求。</li>
-<li>「更多資訊請參閱第 1214 期。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395925">評論</a></h3>
-<ul>
-<li>「Google Closure Library 已被存檔，儘管它在構建如 Gmail 編輯器這樣的強大電子郵件客戶端方面具有歷史意義，但其維護工作已經結束。」</li>
-<li>「Closure Compiler 將繼續獲得支援，即使 JavaScript 生態系統已經演變，減少了對此類全面性函式庫的需求。」</li>
-<li>Closure Library 的卓越工程傳統在開發社群中依然具有影響力。</li>
-</ul>
-<h2><a href="http://ciel-lang.org/">「CIEL 是一種擴展的 Lisp」</a></h2>
-<ul>
-<li>「CIEL 是一種擴展的 Lisp 語言，完全兼容 Common Lisp，並包含額外的功能(“內建電池”)。」</li>
-<li>CIEL 的 GitHub 儲存庫提供了資源和文件，供有興趣探索或貢獻該專案的使用者使用。</li>
-<li>“範例腳本展示了如何使用 CIEL 從網路 API 獲取並列印 JSON 資料，突顯其實際應用。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41401415">評論</a></h3>
-<ul>
-<li>「CIEL 是 Lisp 的擴展版本，討論中強調了其完善的工具文件以及可能設計吉祥物或標誌的潛力。」</li>
-<li>討論的主要特點包括在 REPL 中的 shell 傳遞、編譯二進位檔的便利性，以及 CIEL 的 REPL 與 Python 的互動性比較。</li>
-<li>用戶指出了名稱「Ciel」(法語中意為「天空」)的重要性、安裝的便利性，以及與其他語言如 Clojure 和 Nim 的比較，強調了 CIEL 在標準化 Common Lisp 生態系統方面的潛力。</li>
-</ul>
-<h2><a href="https://github.com/duckduckgo/macos-browser">「DuckDuckGo for Mac 現在已開放原始碼」</a></h2>
-<ul>
-<li>「DuckDuckGo 正在擴大其團隊，並招聘資深軟體工程師以提升線上信任標準。」</li>
-<li>macOS 專案使用 Swift Package Manager 來管理相依性，並使用 SwiftLint 來強制執行程式碼風格。</li>
-<li>已進行術語更新以移除有問題的種族含義，採用像是主要分支、允許清單和封鎖清單等術語。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41396487">評論</a></h3>
-<ul>
-<li>“DuckDuckGo 已將其 Mac 瀏覽器開源，並在 GitHub 上提供，該瀏覽器基於與 Safari 相同的 WebKit 引擎。”</li>
-<li>用戶反映 DuckDuckGo 的搜尋品質下降，指出 AI 垃圾訊息和不相關的本地商家連結，促使一些人轉而使用 Brave Search 和 Kagi 等替代方案。</li>
-<li>勇敢的工程師們正積極解決驗證碼問題，並強調替代搜尋引擎的持續改進。</li>
-</ul>
-<h2><a href="https://bletchleypark.org.uk/">參觀布萊切利園</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41396501">評論</a></h3>
-<ul>
-<li>「布萊切利園區提供關於二戰生活和破譯密碼的歷史展覽，重點展示人員和過程的各個方面。」</li>
-<li>位於同一地點的國家計算機博物館展示了豐富的收藏品，包括 Bombe 和 Colossus 計算機的複製品。</li>
-<li>布萊切利園區的門票有效期為 12 個月，允許多次參觀。</li>
-</ul>
-<h2><a href="https://matklad.github.io/2023/01/26/rusts-ugly-syntax.html">Rust 的醜陋語法 (2023)</a></h2>
-<ul>
-<li>「這篇文章討論了一個常見的誤解，即認為 Rust 的語法是主要問題，而實際的挑戰在於其語義。」</li>
-<li>它提供了各種語法風格(Rs++、Rhodes、RhodesScript、Rattlesnake、CrabML)來說明如何簡化 Rust 的語義。</li>
-<li>「該文章建議對 Rust 的標準函式庫進行多項更改，以使其更具使用者友好性，包括移除巢狀函式、約束條件，並簡化錯誤處理。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41397679">評論</a></h3>
-<ul>
-<li>這篇文章討論了 Rust 語法中的複雜性和可讀性問題，特別是在處理泛型類型和生命週期標記時。</li>
-<li>提供的範例包括在特徵中使用非同步函數，這可能會因為生命週期和型別界限的組合而導致代碼複雜化。</li>
-<li>討論中強調了對 Rust 語法選擇的不同意見，例如使用單引號(&#39;)來表示生命週期，以及是否使用更詳細的關鍵字會提高程式碼的可讀性。</li>
-</ul>
-<h2><a href="https://github.com/algora-io/tv">「開源 Twitch 給開發者」</a></h2>
-<ul>
-<li>“Algora TV 推出了一項名為直播廣告牌的新功能，允許開發者在直播過程中通過視頻廣告賺取收入。”</li>
-<li>設置過程需要 Elixir、Erlang/OTP、PostgreSQL、FFmpeg 和 OBS Studio，並提供了詳細的步驟來進行專案初始化和資料庫配置。</li>
-<li>「該架構涉及使用 Fly(Elixir 應用程式)和 RTMP 伺服器的串流主，媒體存儲和傳輸由 Tigris 處理，且該服務依據 AGPLv3 授權條款分發。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41397498">評論</a></h3>
-<ul>
-<li>Algora 是一個開源的直播平台，專為開發者設計，支持多平台直播到 Twitch、YouTube 和 X 等平台，並匯集即時評論。</li>
-<li>Algora 使用 Elixir 來提升生產力和容錯性，並利用 Phoenix LiveView 和 OTP 來處理複雜的串流管線，以及使用 BEAM 叢集來實現低延遲。</li>
-<li>該專案由一位獨立開發者維護，現正尋求貢獻和反饋，並對優先處理的問題提供獎勵。</li>
-</ul>
-<h2><a href="https://bivens.plaintip.com/index.php/google-incognito/">曾經使用過 Google Chrome 的無痕模式嗎？你可能有資格獲得高達 5 千美元的賠償。</a></h2>
-<ul>
-<li>「Google 面臨有關其無痕模式誤導用戶隱私的指控，這可能使用戶有資格獲得高達 5,000 美元的隱私侵權賠償。」</li>
-<li>「該訴訟聲稱，Google 在 2016 至 2023 年間追蹤活動、出售個人資料，並誤導用戶關於無痕模式的隱私。」</li>
-<li>資格標準包括在指定期間使用無痕模式、期望隱私、不總是同意被追蹤、年滿18歲以及為美國居民。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41395591">評論</a></h3>
-<ul>
-<li>「使用 Google Chrome 無痕模式的用戶可能有資格獲得高達 5,000 美元的賠償，但尚未達成任何和解。」</li>
-<li>該訴訟聲稱，無痕模式的名稱和圖示具有誤導性，暗示完全匿名，儘管有警告指出它無法隱藏使用者的活動於網站、雇主或網際網路服務提供商(ISP)面前。</li>
-<li>此案件引發了關於科技素養和使用者期望的討論，對於參與訴訟的人來說，可能面臨的風險包括如果案件敗訴可能需要承擔的費用。</li>
-</ul>
-<head>
-  <meta property="og:title" content="一百萬個核取方塊中的秘密" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E4%B8%80%E7%99%BE%E8%90%AC%E5%80%8B%E6%A0%B8%E5%8F%96%E6%96%B9%E5%A1%8A%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86&subheading=2024%E5%B9%B48%E6%9C%8830%E6%97%A5%20%E6%98%9F%E6%9C%9F%E4%BA%94%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/zh/Hant/2024/08/30</link>
-            <guid isPermaLink="false">2024-08-30T00:00:00.000Z</guid>
-            <pubDate>Fri, 30 Aug 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
