@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 24 Sep 2024 19:31:57 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 25 Sep 2024 19:15:14 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/sv.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Tue, 24 Sep 2024 00:00:00 GMT</pubDate>
+        <pubDate>Wed, 25 Sep 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[sv]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-09-25]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/09/25&#39;</h2>
+<h1>2024-09-25</h1>
+<h2><a href="https://www.seroundtable.com/google-cache-dead-38112.html">Google Cache är helt död</a></h2>
+<ul>
+<li>Google har helt inaktiverat Google Cache, en funktion som tidigare användes för att komma åt sidor när de misslyckades med att laddas.</li>
+<li>Användare omdirigeras nu till att använda Wayback Machine eller URL-inspektion i Google Search Console som alternativ.</li>
+<li>Googles Search Liaison, Danny Sullivan, bekräftade borttagningen och uppdaterade dokumentationen för att återspegla denna förändring.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41640845">Reaktioner</a></h3>
+<ul>
+<li>Google Cache har helt avvecklats, vilket väcker oro över att kunna komma åt gammalt eller ändrat webbinnehåll.</li>
+<li>Användare hoppas att Google kommer att stödja Internet Archive, som nu fyller en liknande funktion.</li>
+<li>Avvecklingen speglar en bredare trend där Google avslutar tjänster, vilket leder till en minskning av användarnas förtroende.</li>
+</ul>
+<h2><a href="https://github.com/cozis/blogtech">Att vara värd för min webbplats med min C-webbserver</a></h2>
+<ul>
+<li>En minimal webbserver byggdes från grunden för att vara robust för det offentliga internet utan att använda omvända proxyservrar, vilket visar skaparnas glädje i att utveckla anpassade verktyg och utmana konventionell visdom.</li>
+<li>Servern stöder HTTP/1.1, pipelining, keep-alive-anslutningar och HTTPS (upp till TLS 1.2 med BearSSL), med minimala beroenden och konfigurerbara inställningar.</li>
+<li>Benchmarkresultat visar att servern presterar konkurrenskraftigt, hanterar 76974,24 förfrågningar/sek jämfört med nginx:s 44227,78 förfrågningar/sek, trots att den saknar vissa funktioner som statisk filcaching och Transfer-Encoding: Chunked.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41642151">Reaktioner</a></h3>
+<ul>
+<li>En användare delade med sig av sin erfarenhet av att vara värd för en webbplats med en anpassad C-webbserver, vilket väckte en diskussion om nödvändigheten och fördelarna med omvända proxyservrar.</li>
+<li>Viktiga debattpunkter inkluderar huruvida omvända proxyservrar är nödvändiga för säkerhet, prestanda och operativ flexibilitet, med vissa som argumenterar att de ofta används utan tydlig motivering.</li>
+<li>Blogginlägget belyser olika perspektiv på omvända proxyservrar, inklusive deras roller i TLS-terminering, lastbalansering, URL-omskrivningar och isolering av ursprungsservern från direkt exponering mot internet.</li>
+</ul>
+<h2><a href="https://arstechnica.com/security/2024/09/false-memories-planted-in-chatgpt-give-hacker-persistent-exfiltration-channel/">En hacker planterar falska minnen i ChatGPT för att stjäla användardata i all evighet</a></h2>
+<ul>
+<li>Datasäkerhetsforskaren Johann Rehberger upptäckte en sårbarhet i ChatGPT:s långtidsminnesfunktion, vilket gör det möjligt för angripare att plantera falsk information och skadliga instruktioner.</li>
+<li>Rehbergers proof-of-concept-exploit demonstrerade kontinuerlig dataexfiltrering, vilket fick OpenAI att utfärda en delvis lösning för att förhindra minnesmissbruk.</li>
+<li>Användare rekommenderas att regelbundet övervaka och granska lagrade minnen, eftersom snabba injektioner fortfarande kan lagra långsiktig skadlig information trots åtgärden.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41641522">Reaktioner</a></h3>
+<ul>
+<li>En hacker har lyckats plantera falska minnen i ChatGPT, vilket möjliggjort stöld av användardata under en längre tid.</li>
+<li>Denna incident belyser sårbarheterna hos stora språkmodeller (LLM) som ChatGPT, vilka kan utnyttjas för att visa vilseledande information, förtala individer eller främja falska citat.</li>
+<li>Diskussionen understryker det bredare problemet med allmänhetens överdrivna beroende av LLM:er för korrekt information, trots deras benägenhet att generera trovärdiga men felaktiga eller skadliga resultat.</li>
+</ul>
+<h2><a href="https://mastodon.social/@LukaszOlejnik/113193089731407165">Förbud mot krav på specifik teckensammansättning i lösenord från NIST</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41643700">Reaktioner</a></h3>
+<ul>
+<li>NIST (National Institute of Standards and Technology) har uppdaterat sina riktlinjer för att uttryckligen förbjuda specifika krav på lösenordssammansättning, såsom att kräva blandningar av olika teckentyper eller att förbjuda på varandra följande upprepade tecken.</li>
+<li>De uppdaterade riktlinjerna anger nu att verifierare och CSP:er (Credential Service Providers) &quot;SKALL INTE&quot; införa dessa sammansättningsregler, vilket innebär en övergång från tidigare råd till ett fast krav.</li>
+<li>Denna förändring är betydande eftersom den syftar till att förenkla lösenordspolicys och minska bördan för användarna, även om NIST:s riktlinjer inte är obligatoriska och inte fastställer policy direkt.</li>
+</ul>
+<h2><a href="https://github.com/okhat/blog/blob/main/2024.09.impact.md">Om inflytelserik AI-forskning</a></h2>
+<ul>
+<li>Doktorander uppmuntras att fokusera på långsiktiga projekt och betydelsefulla forskningsresultat som modeller eller riktmärken, snarare än att bara öka antalet publikationer.</li>
+<li>Att välja aktuella problem med betydande potentiell påverkan och snabbt iterera för att lösa svåra problem är nyckelstrategier för inflytelserik AI-forskning.</li>
+<li>Att engagera sig med samhället, göra open-source-utgåvor användbara och integrera ny forskning med pågående projekt är avgörande för att bygga och upprätthålla betydelsefull AI-forskning.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41640812">Reaktioner</a></h3>
+<ul>
+<li>Seniorforskare råder att fokusera på betydelsefulla projekt snarare än frekventa publikationer, men juniorforskare känner ofta press att publicera för att avancera i sina karriärer.</li>
+<li>Det nuvarande akademiska systemet prioriterar kvantitet över kvalitet, vilket resulterar i många triviala artiklar, vilket kan hindra erkännandet av betydande arbete.</li>
+<li>Samverkan och effektiv kommunikation är avgörande för en framgångsrik forskarkarriär, även om forskare i början av karriären kan finna det utmanande att balansera betydelsefulla projekt med behovet av frekventa publikationer.</li>
+</ul>
+<h2><a href="https://www.jonashietala.se/blog/2024/09/25/why_i_still_blog_after_15_years/">Varför jag fortfarande bloggar efter 15 år</a></h2>
+<ul>
+<li>Författaren reflekterar över att ha upprätthållit en blogg i 15 år, som ursprungligen startades för att dokumentera utvecklingen av spelprototyper och utvecklades till en bredare dagbok för programmering och personliga projekt.</li>
+<li>Viktiga motivationer för att fortsätta blogga inkluderar glädjen i att skriva, tankeklarhet, ansvarstagande, dokumentation, självförbättring och färdighetsutveckling.</li>
+<li>Bloggens tekniska stack har utvecklats avsevärt, från att börja med PHP och övergå genom Perl, Jekyll, Hakyll och Rust, vilket visar författarens resa och tillväxt inom programmering.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41646531">Reaktioner</a></h3>
+<ul>
+<li>Jonas Hietala fortsätter att blogga efter 15 år, främst för personlig tillfredsställelse snarare än för en publik.</li>
+<li>Detta står i kontrast till den nyare generationens fokus på att tjäna pengar på innehåll, vilket belyser en skillnad i attityder gentemot bloggande.</li>
+<li>Kommentatorer betonar fördelarna med bloggande för personlig njutning, färdighetsförbättring och kunskapsbevarande, trots ökningen av kommersialiserat innehåll.</li>
+</ul>
+<h2><a href="https://about.fb.com/news/2024/09/introducing-orion-our-first-true-augmented-reality-glasses/">Orion, våra första riktiga augmented reality-glasögon</a></h2>
+<ul>
+<li>Orion, de senaste AR-glasögonen, integrerar stora holografiska displayer, kontextuell AI och en lätt design för daglig användning, vilket överbryggar fysiska och virtuella världar.</li>
+<li>Den har det största synfältet i den minsta formen, och stöder Meta AI för handsfree-assistans och kommunikation, även om den fortfarande är en prototyp under utveckling.</li>
+<li>Orion syftar till att förbättra användarens närvaro i den fysiska världen samtidigt som de får tillgång till digitala fördelar, med framtida versioner som fokuserar på skarpare bilder, mindre storlekar och överkomliga priser.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41650047">Reaktioner</a></h3>
+<ul>
+<li>Meta har lanserat Orion, deras första riktiga augmented reality (AR) glasögon, som ännu inte finns till försäljning.</li>
+<li>Orion har avancerad teknik, inklusive en trådlös beräkningsenhet, ett 70-graders synfält (FoV) och tillräckligt hög upplösning för att läsa text, samt ett armband som upptäcker handgester.</li>
+<li>Den höga tillverkningskostnaden, särskilt på grund av kiselkarbidlinsarna, är en betydande utmaning, där varje enhet kostar omkring 10 000 dollar att producera.</li>
+</ul>
+<h2><a href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124">Varför de flesta publicerade forskningsresultat är falska (2005)</a></h2>
+<ul>
+<li>John P. A. Ioannidis&#39; essä &quot;Varför de flesta publicerade forskningsresultat är falska&quot; argumenterar för att en betydande del av publicerade forskningsresultat är falska på grund av olika faktorer som studiens styrka, bias och flexibilitet i studiedesign.</li>
+<li>Små studier, mindre effektstorlekar, ekonomiska intressen och flera forskarteam ökar sannolikheten för felaktiga resultat, vilket understryker behovet av bättre underbyggda studier och förbättrade forskningsstandarder.</li>
+<li>Ioannidis betonar vikten av kritiskt tänkande och att känna igen fördomar vid tolkning av forskningsresultat för att förbättra tillförlitligheten hos vetenskapliga fynd.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41641274">Reaktioner</a></h3>
+<ul>
+<li>Den 2005 publicerade artikeln &quot;Why Most Published Research Findings Are False&quot; av John Ioannidis hävdar att många forskningsresultat sannolikt är felaktiga på grund av bias, små urvalsstorlekar och andra problem.</li>
+<li>Diskussionen belyser artikelns konsekvenser inom olika områden, peer review-processens påverkan och forskarnas press att publicera.</li>
+<li>Debatten understryker behovet av bättre forskningsmetoder och skepsis mot enskilda studier, särskilt med tanke på Ioannidis&#39; kontroversiella ståndpunkt under COVID-19-pandemin.</li>
+</ul>
+<h2><a href="https://hack-gpon.org/">Hacka GPON – hur man får åtkomst till, ändrar och redigerar fiber-ONTs</a></h2>
+<ul>
+<li>Detta inlägg erbjuder en omfattande guide om hur man får tillgång till, modifierar och felsöker optiska nätverksterminaler (ONT), som är enheter som används i fiberoptiska nätverk.</li>
+<li>Det belyser utmaningarna med att byta mellan externa ONT:er och Small Form-factor Pluggable (SFP) moduler på grund av leverantörs- och ISP-specifik firmware och inställningar.</li>
+<li>Det inlägget innehåller varningar om potentiella risker, såsom skador på enheter och tjänsteförbud, och betonar att informationen underhålls av en gemenskap av entusiaster, inte officiella leverantörer.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41642487">Reaktioner</a></h3>
+<ul>
+<li>Diskussionen kretsar kring för- och nackdelarna med att använda ISP-tillhandahållna optiska nätverksterminaler (ONT) jämfört med kundägda enheter, och belyser avvägningen mellan enkelhet vid uppgraderingar och anpassningsmöjligheter.</li>
+<li>Exempel från olika länder illustrerar olika regleringsmetoder och kundupplevelser, vilket betonar debattens globala natur.</li>
+<li>Tekniska aspekter som ONT-integration med routrar, nätverkspåverkan och säkerhetsfrågor diskuteras också, där användare delar med sig av personliga erfarenheter av att modifiera ONT:er för bättre prestanda.</li>
+</ul>
+<h2><a href="https://new.mta.info/article/beyond-route-introducing-granular-mta-bus-speed-data">Utöver rutten: Introduktion av detaljerad MTA-bussfartsdata</a></h2>
+<ul>
+<li>SL har lanserat datasetet Bus Route Segment Speeds på Open Data, vilket ger detaljerad information om busshastigheter över hela nätverket.</li>
+<li>Denna datamängd, hämtad från GPS-system, inkluderar faktorer som stopp och trafik, vilket hjälper till att analysera och identifiera långsamma områden för att förbättra busstjänster.</li>
+<li>Data uppdateras månadsvis och finns tillgänglig på NYS Open Data-portalen, där MTA uppmuntrar allmänheten att utforska och ge feedback.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41640005">Reaktioner</a></h3>
+<ul>
+<li>New Yorks busslinjer följer ofta gamla spårvagnslinjer, med många spår fortfarande kvar under asfalten.</li>
+<li>Diskussioner tyder på att spårvagnar, om de separeras från trafiken, kan vara mer effektiva än bussar, trots högre kostnader och politiska utmaningar.</li>
+<li>MTAs nya detaljerade data om busshastigheter och New Yorks initiativ för öppen data hyllas, med förhoppningar om att dataanalys kommer att leda till förbättrade lösningar för kollektivtrafiken.</li>
+</ul>
+<h2><a href="https://lwn.net/SubscriberLink/991062/b0df468b40b21f5d/">Cirka Rust i kärnan</a></h2>
+<ul>
+<li>Vid 2024 års Maintainers Summit diskuterade Miguel Ojeda framstegen och framtiden för att integrera Rust i Linux-kärnan, med betoning på behovet av flexibilitet från subsystemansvariga.</li>
+<li>Viktiga diskussioner inkluderade behovet av bättre verktygsstöd, stabila kompilatorer och omfattande dokumentation för att skriva filsystemskod i Rust.</li>
+<li>Linus Torvalds uppmuntrade utvecklare att fortsätta integrera Rust, och noterade att den första riktiga drivrutinsammanslagningen kommer att vara en betydande milstolpe, samt betonade den samarbetsvilliga stämningen på toppmötet.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41642313">Reaktioner</a></h3>
+<ul>
+<li>Linus Torvalds nämnde att det inte är nödvändigt att förstå Rust för att integrera det i ett delsystem, på samma sätt som att inte alla förstår minneshanteringssystemet men ändå kan arbeta med det.</li>
+<li>Rust integreras i Linux-kärnan, särskilt i drivrutiner, med stöd från stora företag som Google, med målet att förbättra säkerhet och tillförlitlighet.</li>
+<li>Det finns oro kring kompatibilitet och säkerhet mellan Rust och C, vilket kräver betydande kunskaper i Rust, och vissa kärnutvecklare har uttryckt skepsis på grund av problem med API-semantik och behovet av bättre dokumentation.</li>
+</ul>
+<h2><a href="https://wafris.org/blog/rearchitecting-for-sqlite">Omstrukturering: Redis till SQLite</a></h2>
+<ul>
+<li>Wafris, ett företag som utvecklar en öppen källkods web application firewall, övergår sin Rails-middlewareklient från Redis till SQLite för att lösa distributionsproblem och förbättra prestandan.</li>
+<li>SQLite valdes för sin minskade nätverkslatens och bättre prestanda vid läsintensiva operationer, vilket visade en 3x hastighetsförbättring jämfört med Redis i lokala benchmarktester.</li>
+<li>Den nya arkitekturen förenklar distribution, förbättrar användarupplevelsen och skalar bättre genom att synkronisera databaser till varje beräkningsinstans, samtidigt som den hanterar skrivningar asynkront för att mildra SQLite:s begränsningar vid skrivintensiva uppgifter.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41645173">Reaktioner</a></h3>
+<ul>
+<li>På RailsWorld 2023 diskuterades nödvändigheten av Redis för Rails-applikationer, där vissa ifrågasatte om det fortfarande är nödvändigt på grund av licensändringar eller om det är en &quot;You Aren&#39;t Gonna Need It&quot; (YAGNI) situation.</li>
+<li>Blogginlägget utforskar idén att använda SQLite istället för Redis för vissa användningsområden, såsom asynkrona jobb och funktionsflaggsinställningar, och framhäver SQLite:s effektivitet och enkelhet.</li>
+<li>Olika bidragsgivare delade med sig av sina erfarenheter och modeller, inklusive användning av SQLite för regler i webbapplikationsbrandväggar, funktionsflaggor och konfigurationsdata, och betonade dess prestanda och användarvänlighet jämfört med traditionella databaser som Redis.</li>
+</ul>
+<h2><a href="https://github.com/ben-n93/SQL-tips-and-tricks">SQL-tips och tricks</a></h2>
+<ul>
+<li>Blogginlägget erbjuder en omfattande lista med SQL-tips och tricks riktade till dataanalytiker, och betonar att vissa tips kanske inte gäller för alla relationsdatabashanteringssystem (RDBMS).</li>
+<li>Viktiga områden som täcks inkluderar formatering/läslighet, användbara funktioner och vanliga fallgropar att undvika, vilket hjälper användare att skriva mer effektiva, läsbara och underhållbara SQL-frågor.</li>
+<li>Viktiga punkter inkluderar att använda ledande kommatecken för läsbarhet, använda Common Table Expressions (CTEs) för komplexa frågor, och förstå beteendet hos <code>NOT IN</code> med NULL-värden.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41643651">Reaktioner</a></h3>
+<ul>
+<li>Blogginlägget delar olika SQL-tips och tricks, med betoning på prestandaoptimering och bästa praxis för att skriva effektiva frågor.</li>
+<li>Viktiga förslag inkluderar att använda EXISTS istället för IN, lägga till index för GROUP BY-klausuler och utnyttja subfrågor för bättre prestanda.</li>
+<li>Diskussionen belyser vikten av att förstå de specifika egenheterna och funktionerna hos olika databashanteringssystem (DBMS) som Postgres och SQL Server.</li>
+</ul>
+<h2><a href="https://www.youtube.com/watch?v=YSgTQzHYeLU">Insikter efter 11 år med Datomic [video]</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41642969">Reaktioner</a></h3>
+<ul>
+<li>Datomic, en databas känd för sin oföränderlighet och tidsresande frågefunktion, har blivit gratis men förblir proprietär, vilket har väckt förnyat intresse och debatt inom teknikgemenskapen.</li>
+<li>Trots sina innovativa funktioner möter Datomic kritik för sin komplexa installation, begränsade integration med icke-JVM-språk och beroendet av ett litet företag för support.</li>
+<li>Jämförelser med andra databaser som PostgreSQL och XTDB belyser kompromisser, såsom obekanta frågespråk och prestandaproblem, vilket gör Datomic till ett nischval för specifika användningsområden.</li>
+</ul>
+<h2><a href="https://www.nytimes.com/2024/09/24/technology/caroline-ellison-ftx-sentence.html">Caroline Ellison dömd till 2 års fängelse</a></h2>
+<ul>
+<li>Caroline Ellison, en tidigare rådgivare till FTX-grundaren Sam Bankman-Fried, dömdes till två års fängelse för sin inblandning i den bedrägeri på 8 miljarder dollar som ledde till FTX:s kollaps.</li>
+<li>Trots hennes samarbete med åklagare och vittnesmål mot Bankman-Fried, som avtjänar ett 25-årigt straff, betonade domare Lewis A. Kaplan allvaret i bedrägeriet.</li>
+<li>Ellison, som uttryckte djup ånger, kommer att anmäla sig till ett fängelse med minimal säkerhet i Boston senast den 7 november och har haft svårt att hitta arbete sedan hon erkände sig skyldig.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41640789">Reaktioner</a></h3>
+<ul>
+<li>Caroline Ellison fick ett 2-årigt fängelsestraff för sin inblandning i FTX-bedrägeriet, vilket väckte allmänhetens ilska över den upplevda mildheten.</li>
+<li>Att hon samarbetade med åklagarna i fallet mot Sam Bankman-Fried var en nyckelfaktor för hennes reducerade straff.</li>
+<li>Fallet har återupplivat debatter om rättvisa i det amerikanska rättssystemet, särskilt skillnaden i straff mellan ekonomiska brott och mindre förseelser, som ofta påverkar marginaliserade samhällen.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Google Cache är helt död" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Google%20Cache%20%C3%A4r%20helt%20d%C3%B6d&subheading=onsdag%2025%20september%202024%3A%20Sammanfattning%20av%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/sv/2024/09/25</link>
+            <guid isPermaLink="false">2024-09-25T00:00:00.000Z</guid>
+            <pubDate>Wed, 25 Sep 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-24]]></title>
             <description
@@ -1657,177 +1843,6 @@
             <link>https://hn.cho.sh/sv/2024/09/16</link>
             <guid isPermaLink="false">2024-09-16T00:00:00.000Z</guid>
             <pubDate>Mon, 16 Sep 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-09-15]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/09/15&#39;</h2>
-<h1>2024-09-15</h1>
-<h2><a href="https://openscad.org/">OpenSCAD: Programmerarens solida 3D CAD-modellerare</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41543386">Reaktioner</a></h3>
-<ul>
-<li>OpenSCAD är en solid 3D CAD-modellerare som föredras av programmerare för sin enkelhet och textbaserade modellering men har begränsningar i funktioner som avfasningar, filéer och export av STEP-filer.</li>
-<li>Alternativ som CadQuery, Build123D, Replicad, PythonSCAD, Fornjot, ImplicitCAD och BRL-CAD rekommenderas för mer komplexa projekt och för dem som föredrar annan syntax eller ytterligare funktioner.</li>
-<li>Trots sina begränsningar är OpenSCAD:s community och bibliotek som NopSCADlib och BOSL2 högt värderade och erbjuder betydande resurser för användare.</li>
-</ul>
-<h2><a href="https://github.com/dleemiller/WordLlama">Wordllama – Saker du kan göra med tokeninbäddningar från en LLM</a></h2>
-<ul>
-<li>Ett nytt lättviktsverktygsbibliotek har släppts för att förbereda indata, lokalisera information och skapa utvärderare, med fokus på CPU-användning och att vara snabbt och enkelt att installera.</li>
-<li>Biblioteket använder genomsnittliga poolade token-embeddingar från stora språkmodeller (LLM) och inkluderar verktyg för rankning, filtrering, klustring, deduplicering och likhet, med vissa cython-implementationer för effektivitet.</li>
-<li>Det stöder Linux och Mac men inte Windows, och erbjuder binariserade modeller som använder hammingavstånd för snabbare likhetsberäkningar med reducerad minnesanvändning.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41544969">Reaktioner</a></h3>
-<ul>
-<li>Wordllama är ett lättviktigt verktyg för att arbeta med stora språkmodeller (LLMs), och erbjuder verktyg för uppgifter som inmatningsförberedelse och utvärdering, utan att kräva djupinlärningsmiljöer.</li>
-<li>Biblioteket inkluderar en liten modell (4MB) som använder genomsnittligt poolade token-embeddingar, tränad med flera negativa rankningsförluster och matryoshka-representationsinlärning, och stöder olika verktyg som rankning, filtrering, klustring och deduplicering.</li>
-<li>För närvarande stöder det Linux och Mac, med planer för Windows-versioner, och har binariserade modeller som använder hammingavstånd för effektiva likhetsberäkningar.</li>
-</ul>
-<h2><a href="https://zachxbt.mirror.xyz/B0-UJtxN41cJhpPtKv0v2LZ8u-0PwZ4ecMPEdX4l8vE">Lazarus Group tvättade 200 miljoner dollar från 25 kryptohack till fiatvaluta</a></h2>
-<ul>
-<li>Lazarus Group, kopplad till Nordkorea, tvättade 200 miljoner dollar från över 25 kryptovalutahack mellan 2020 och 2023, genom att använda P2P-marknadsplatser och mixningstjänster som Tornado Cash och ChipMixer.</li>
-<li>Viktiga hack inkluderar CoinBerry, Unibright, CoinMetro, Nexus Mutual, EasyFi, Bondly, MGNR, PolyPlay, bZx, Steadefi och CoinShift, där stulna medel ofta omvandlas till fiat över tid.</li>
-<li>Utredningar ledde till att $374K USDT svartlistades av Tether och $3,4M frystes av stablecoin-utgivare, med pågående insatser för att spåra och frysa ytterligare stulna medel.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41544364">Reaktioner</a></h3>
-<ul>
-<li>Gruppen Lazarus tvättade 200 miljoner dollar från 25 kryptovalutahack till fiatvaluta, vilket belyser betydande sårbarheter i kryptosäkerhet.</li>
-<li>USA:s justitiedepartement (DoJ) upptäckte 650 miljoner dollar som tvättats från amerikanska fentanylförsäljningar för kinesiska brottsgrupper, vilket betonar den globala omfattningen av penningtvätt.</li>
-<li>Trots strikta regler misslyckas ofta lagar mot penningtvätt, där brottslingar använder legitima fasader och oskyldiga människor hamnar i skottlinjen, särskilt i länder som Australien som saknar robusta skydd.</li>
-</ul>
-<h2><a href="https://www.bullshitremover.com/">Skitsnacksborttagare</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41545335">Reaktioner</a></h3>
-<ul>
-<li>Bullshit Remover är ett verktyg som översätter komplex eller jargongfylld text till enkel, ofta sarkastisk, engelska med hjälp av Claude, en AI-modell från Anthropic.</li>
-<li>Verktyget har fått beröm för sin effektivitet och humor, med användare som testar det på företagsuttalanden, akademisk prosa och politiska tal.</li>
-<li>Användare har föreslagit ytterligare funktioner såsom en webbläsartillägg eller ljudinmatning för översättning i realtid.</li>
-</ul>
-<h2><a href="https://gizmodo.com/google-has-officially-killed-cache-links-1851220408">Google har officiellt avskaffat cache-länkar</a></h2>
-<ul>
-<li>Google har officiellt tagit bort cachelänkar, en funktion som introducerades för 25 år sedan för att komma åt sparade versioner av webbsidor.</li>
-<li>Avlägsnandet bekräftades av Googles Search Liaison Danny Sullivan, som angav förbättrad webbplatsstabilitet som orsaken.</li>
-<li>Även om användare fortfarande kan se cachade sidor genom att skriva &quot;cache:&quot; före URL:en, kommer denna funktion också att fasas ut, med en potentiell framtida samverkan med Internet Archives Wayback Machine som ett alternativ.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41545670">Reaktioner</a></h3>
-<h2><a href="https://rethinkingsoftware.substack.com/p/why-scrum-is-stressing-you-out">Varför Scrum stressar dig</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41543805">Reaktioner</a></h3>
-<ul>
-<li>Artikeln diskuterar stressen orsakad av Scrum, ett populärt ramverk inom Agile, och kritiserar dess implementering i många organisationer.</li>
-<li>Viktiga tvistepunkter inkluderar det överdrivna fokuset på möten och ceremonier, vilket vissa hävdar främst tjänar till att hålla chefer informerade snarare än att hjälpa utvecklare.</li>
-<li>Debatten belyser en vanlig missuppfattning att Agile och Scrum är synonyma, med många som hävdar att verkliga Agile-principer fokuserar på att ge utvecklare befogenheter utan den överbyggnad som Scrum introducerar.</li>
-</ul>
-<h2><a href="https://old.reddit.com/r/SaaS/comments/1fgv248/fuck_founder_mode_work_in_fuck_off_mode/">Skippa grundarläget. Arbeta i &#39;Sköt dig själv-läget&#39;</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41545495">Reaktioner</a></h3>
-<ul>
-<li>Artikeln hävdar att blivande entreprenörer bör fokusera på att förbättra befintliga idéer snarare än att vara besatta av innovation, och föreslår att ansträngning och genomförande är viktigare än originalitet.</li>
-<li>Det framhäver att även små förändringar kan vara betydelsefulla och att kopiera framgångsrika produkter kan vara en genomförbar strategi för egenfinansierade företag, som bör innovera senare baserat på feedback.</li>
-<li>Diskussionen inkluderar olika åsikter om balansen mellan innovation och praktikalitet, där vissa betonar vikten av marknadstiming, kundkontakt och de potentiella fallgroparna med att överbetona nya idéer.</li>
-</ul>
-<h2><a href="https://lwn.net/Articles/990307/">Linux 6.11 släppt</a></h2>
-<ul>
-<li>Kernel 6.11 har officiellt släppts, meddelade Linus Torvalds från Wien.</li>
-<li>Viktiga uppdateringar inkluderar nya io_uring-operationer, inbäddade bottom-half-låsningspatchar, stöd för Rust-blockdrivrutiner och atomära skrivoperationer i blocklagret.</li>
-<li>Ytterligare funktioner är en dedikerad bucket slab-allokerare och en vDSO-implementation av getrandom().</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41548474">Reaktioner</a></h3>
-<ul>
-<li>Linux 6.11 har släppts, efter den problematiska versionen 6.10 som hade flera problem, särskilt med AMD GPU:er och viloläge.</li>
-<li>Viktiga nya funktioner i Linux 6.11 inkluderar stöd för att skriva blockdrivrutiner i Rust och atomära skrivoperationer i blocklagret.</li>
-<li>Utgivningen fortsätter att övervakas av Linus Torvalds, som förblir aktivt involverad i utvecklingsprocessen.</li>
-</ul>
-<h2><a href="https://www.justice.gov/opa/pr/twelve-defendants-sentenced-violent-home-invasion-robberies-steal-cryptocurrency">Tolv dömda för våldsamma heminvasioner för att stjäla kryptovaluta</a></h2>
-<ul>
-<li>Tolv åtalade, inklusive Remy Ra St Felix och Jarod Gabriel Seemungal, dömdes för våldsamma rån vid heminvasioner som riktade sig mot kryptovaluta, och stal över 3,5 miljoner dollar.</li>
-<li>St Felix fick ett 47-årigt fängelsestraff, medan Seemungal dömdes till 20 år och beordrades att betala över 4 miljoner dollar i skadestånd; andra straff varierade från 5 till 25 år.</li>
-<li>Fallet utreddes av FBI och åtalades av National Cryptocurrency Enforcement Team (NCET) och U.S. Attorney’s Office för Middle District of North Carolina.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41544059">Reaktioner</a></h3>
-<ul>
-<li>Tolv individer har dömts för våldsamma rån i hemmet med syfte att stjäla kryptovaluta, vilket belyser de fysiska riskerna förknippade med digitala tillgångar.</li>
-<li>Den ledande brottslingen hade en historia av våldsbrott, inklusive en tidigare anklagelse för mordförsök, vilket understryker allvaret och faran med dessa brott.</li>
-<li>Incidenterna involverade extremt våld och hot, såsom att hota med att stympa och våldta offer, för att tvinga dem att överlämna sina kryptovalutainnehav.</li>
-</ul>
-<h2><a href="https://emilygorcenski.com/post/to-forget-is-an-ethical-act/">Att glömma är en etisk handling</a></h2>
-<ul>
-<li>Emily F. Gorcenski har kurerat och raderat en betydande del av sina 40 000 livstids-tweets, inspirerad av den etiska idén om att glömma och kontrollera sitt digitala arv.</li>
-<li>Processen innebar att koda ett skript för att påskynda raderingar, manuellt bevara tweets av historiskt värde och hantera den emotionella och fysiska påfrestningen av att återbesöka tidigare interaktioner.</li>
-<li>Gorcenski har gått vidare från Twitter till plattformar som Bluesky, som erbjuder en mer lovande miljö med öppna API:er och bättre modereringsverktyg, samtidigt som hen har dragit sig tillbaka från aktivism för att fokusera på personlig utveckling och hälsa.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41543139">Reaktioner</a></h3>
-<ul>
-<li>Människor i slutet av 20- och 30-årsåldern diskuterar hur andra lyckas engagera sig i online-dramer trots hektiska liv, och föreslår att det kan vara eskapism, beroende eller social aktivism.</li>
-<li>Diskussionen inkluderar att balansera arbete och personlig tid, påverkan av sociala medier och de etiska konsekvenserna av att glömma tidigare onlinehandlingar.</li>
-<li>Åsikterna varierar om huruvida det är skadligt att tillbringa för mycket tid online, med jämförelser till TV-beroende, medan andra hävdar att tillfredsställelse är subjektiv.</li>
-</ul>
-<h2><a href="https://cs.pomona.edu/classes/cs181g/">CSCI 181G PO: Spelmotorprogrammering</a></h2>
-<ul>
-<li>CSCI 181G PO: Kursen i spelmotorsprogrammering täcker ämnen som Rust-programmering, spelinteraktivitet och olika spelmotorer som Unity, Godot och Bevy.</li>
-<li>Viktiga leveranser inkluderar ett simuleringsspel som ska vara klart den 4 februari och en demodag för spelprojekt den 30 april, med flera ämnen och uppgifter planerade varje vecka.</li>
-<li>Resurser inkluderar långformiga anteckningar om grafikpipelines, Rust-uppsättning, 3D-programmering och valfria böcker om spel-AI, procedurgenerering av innehåll och spel-fysik.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41544386">Reaktioner</a></h3>
-<ul>
-<li>CSCI 181G PO: Game Engine Programming är en kurs på Pomona College som täcker ett brett spektrum av ämnen inom spelmotorsutveckling, inklusive rendering, tillgångshantering, fysik, användargränssnitt, skriptning och mer.</li>
-<li>Denna kurs ger en översikt och en grundlig genomgång av spelmotorer, med projekt som att modifiera ett befintligt WebGPU-program.</li>
-<li>Diskussioner lyfter fram användningen av Rust och Unity, och noterar en övergång från traditionell C++ i undervisningen av spelmotorsutveckling, samt kursens teoretiska tillvägagångssätt om studenterna redan är bekanta med Rust.</li>
-</ul>
-<h2><a href="https://www.implicitcad.org/">Stark, öppen källkod, programmatisk CAD</a></h2>
-<ul>
-<li>ImplicitCAD är ett kraftfullt, öppen källkod, programmatisk CAD-verktyg designat för komplex 3D-design och parametriserad objektframställning.</li>
-<li>Det stöder domänspecifika språk (DSL) och enhetstestning, vilket gör det idealiskt för att automatisera repetitiva designuppgifter och underlätta samarbete.</li>
-<li>Användare kan börja använda ImplicitCAD direkt i sin webbläsare utan långa installationer, vilket gör det tillgängligt och enkelt att prova.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41545100">Reaktioner</a></h3>
-<ul>
-<li>ImplicitCAD, ett öppen källkodsbaserat program för programmatisk CAD, fick förnyad uppmärksamhet trots att det övergavs för flera år sedan och aldrig blev färdigställt.</li>
-<li>Författaren tror inte längre att ImplicitCAD var rätt tillvägagångssätt och hänvisar till problem med dess variant av f-rep (funktionsrepresentation).</li>
-<li>Kommentarer från communityn föreslår alternativ som Blender för design och OpenSCAD för CAD, med vissa som rekommenderar build123d över både OpenSCAD och ImplicitCAD.</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41545633">Obligatoriska böcker för startups?</a></h2>
-<ul>
-<li>’The Mom Test’ betonar vikten av att validera affärsidéer genom att prata med potentiella kunder innan man investerar tid och resurser.</li>
-<li>Författaren delar med sig av en personlig erfarenhet av att inte validera en idé i 20-årsåldern, och betonar värdet av kundfeedback.</li>
-<li>Detta inlägg söker rekommendationer för andra viktiga böcker eller resurser som ger viktiga affärslektioner.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41545633">Reaktioner</a></h3>
-<ul>
-<li>’The Mom Test’ rekommenderas starkt för startups att validera idéer med potentiella kunder innan de investerar, med fokus på kundens användningsfall och frustrationer.</li>
-<li>Övriga viktiga läsningar inkluderar &quot;The Lean Startup&quot; av Eric Ries, &quot;Four Steps to the Epiphany&quot; av Steve Blank och &quot;Running Lean&quot; av Ash Maurya, som alla betonar kundförståelse och kontinuerlig innovation.</li>
-<li>Böcker som &quot;Deep Work&quot; av Cal Newport, &quot;The Hard Thing About Hard Things&quot; av Ben Horowitz och &quot;Zero to One&quot; av Peter Thiel erbjuder värdefulla insikter om produktivitet, att övervinna utmaningar och att bygga unika företag.</li>
-</ul>
-<h2><a href="https://github.com/lets-all-be-stupid-forever/circuit-artist">Jag gjorde ett spel för ritning och simulering av digitala kretsar</a></h2>
-<ul>
-<li>Inspirerad av spel som Turing Complete och Logic World, tillåter ett nytt verktyg användare att bygga digitala kretsar med hjälp av pixelkonst, som kombinerar aseprite och trådbunden logik.</li>
-<li>Verktyget har en enhetsfördröjd händelsedriven simuleringsalgoritm, Lua-skriptning för extern systemkommunikation och ett sandlådeläge med olika pussel.</li>
-<li>Utvecklad i C med raylib och Lua/luajit-skriptning, är spelet tillgängligt på Steam och GitHub, med en webbdemo på itch.io.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41543642">Reaktioner</a></h3>
-<ul>
-<li>En ny digital kretsritnings- och simuleringsspel inspirerat av Turing Complete, Virtual Circuit Board och Logic World har släppts.</li>
-<li>Användare kan bygga kretsar med en pixelkonst-arbetsflöde, interagera med ledningar under simulering, och få tillgång till ett sandlådeläge och olika utmaningsnivåer.</li>
-<li>Utvecklad i C med raylib och lua/luajit, spelet finns tillgängligt på Steam och GitHub under GPLv3, med en webbdemo på itch.io.</li>
-</ul>
-<h2><a href="https://github.com/TzuHuanTai/RaspberryPi_WebRTC">Öppen källkod säkerhetskamera på Raspberry Pi</a></h2>
-<ul>
-<li>Förvandla din Raspberry Pi till en låg-latens hemövervakningskamera med hjälp av v4l2 DMA hårdvaruencoder och WebRTC, som stöder flera användare för liveströmning utan en medieserver.</li>
-<li>Observera: Raspberry Pi 5 och andra enkortsdatorer (SBC) stöder inte v4l2 hårdvarukodning; använd istället mjukvarukodningsläge.</li>
-<li>Detaljerade installationsinstruktioner inkluderar nedladdning av binärfiler, installation av nödvändiga bibliotek, konfiguration av hårdvara och körning av applikationen, med alternativ att köra som en Linux-tjänst för kontinuerlig drift.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41547405">Reaktioner</a></h3>
-<ul>
-<li>En öppen källkods säkerhetskameraprojekt med Raspberry Pi diskuteras, där olika användare delar med sig av sina erfarenheter och preferenser för liknande projekt.</li>
-<li>Vissa användare föredrar kommersiella alternativ för bättre finish, medan andra siktar på full lokal kontroll med hjälp av teknologier som Tor och WebRTC för säkra, privata anslutningar.</li>
-<li>Diskussioner täcker också tekniska aspekter som hårdvarukodningsstöd på Raspberry Pi 5, prestandaoptimering för AI-uppgifter och användning av C++ för realtidsdetektering av personer.</li>
-</ul>
-<head>
-  <meta property="og:title" content="OpenSCAD: Programmerarens solida 3D CAD-modellerare" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=OpenSCAD%3A%20Programmerarens%20solida%203D%20CAD-modellerare&subheading=s%C3%B6ndag%2015%20september%202024%3A%20Sammanfattning%20av%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/sv/2024/09/15</link>
-            <guid isPermaLink="false">2024-09-15T00:00:00.000Z</guid>
-            <pubDate>Sun, 15 Sep 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
