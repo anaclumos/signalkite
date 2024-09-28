@@ -15,12 +15,193 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 27 Sep 2024 19:17:26 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 28 Sep 2024 19:08:48 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/zh-Hant.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Fri, 27 Sep 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sat, 28 Sep 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[zh-Hant]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-09-28]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/09/28&#39;</h2>
+<h1>2024-09-28</h1>
+<h2><a href="https://github.com/2Retr0/GodotOceanWaves">基於 FFT 的海浪渲染，實現在 Godot 中</a></h2>
+<ul>
+<li><strong>GodotOceanWaves</strong> 是一個在 Godot 引擎中進行的開放海洋渲染實驗，利用逆傅立葉變換來生成波浪，允許即時修改波浪屬性。</li>
+<li>該專案使用快速傅立葉變換(FFT)演算法在 GPU 上進行高效計算，並使用具有 GGX 分佈的 BSDF 照明模型來實現逼真的海洋陰影效果。</li>
+<li>功能包括海浪泡沫和噴濺模擬、波浪級聯以解決平鋪瑕疵，以及負載平衡以最小化 GPU 工作負荷，使其成為模擬各種海洋環境的綜合工具。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41678412">評論</a></h3>
+<ul>
+<li>基於 FFT 的海浪渲染在 Godot 中因其逼真的波浪模擬而受到關注，儘管存在一些限制，例如缺乏破浪和陡峭的波峰。</li>
+<li>討論包括渲染技術的演變以及模擬真實水體互動的挑戰，使用者對該專案的潛在應用表示讚賞。</li>
+<li>用戶們也推測作者的學術背景，並分享相關資源和影片的連結，突顯出對作者其他 Godot 專案的廣泛興趣。</li>
+</ul>
+<h2><a href="https://otpok.com/2014/01/03/amusing-ourselves-to-death/">娛樂至死 (2014)</a></h2>
+<ul>
+<li>Talha Ghannam 的文章評論了尼爾·波茲曼的書《娛樂至死》，該書對比了喬治·歐威爾和阿道司·赫胥黎的反烏托邦願景。</li>
+<li>「波斯特曼認為赫胥黎的願景，即社會通過快樂和分心而被征服，在今天更具相關性，強調了瑣碎娛樂和無關信息的影響。」</li>
+<li>這篇文章強調了認識並解決現代人容易被無關緊要的內容淹沒的傾向的重要性。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41678208">評論</a></h3>
+<ul>
+<li>「尼爾·波茲曼的《娛樂至死》分析了各種媒體類型對社會的影響，包括書籍、報紙、電視和廣播。」</li>
+<li>儘管在社群媒體出現之前就已經寫成，波斯特曼的見解依然具有相關性，強調不同媒體以不同方式影響行為和社會。</li>
+<li>這本書強調了理解媒介本身如何塑造我們的行為和社會規範的重要性。</li>
+</ul>
+<h2><a href="https://drew.silcock.dev/blog/everything-you-need-to-know-about-python-3-13/">你需要知道的所有關於 Python 3.13 的資訊——JIT 和 GIL 上了山丘</a></h2>
+<ul>
+<li>2024 年 10 月 7 日，Python 核心開發者將發布 CPython v3.13.0，該版本將包含一個允許禁用全域直譯器鎖(GIL)的「自由執行緒」版本，並支援實驗性的即時編譯(JIT)功能。</li>
+<li>由於 GIL 對單執行緒程式的效能影響一直是長期爭論的話題，其移除旨在提升多執行緒的效率，特別是在多核心處理器興起的情況下。</li>
+<li>Python 3.13 中的 JIT 編譯器在執行時即時將位元組碼編譯成機器碼，可能提升效能，並使用更簡單的「複製與修補」技術。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41677131">評論</a></h3>
+<ul>
+<li>「Python 3.13 引入了重大變更，包括即時編譯(Just-In-Time，JIT)和移除全域直譯器鎖(Global Interpreter Lock，GIL)，旨在提升多執行緒的能力。」</li>
+<li>社群對於這些變更存在分歧，原因包括潛在的效能影響、增加的複雜性，以及用戶需要從源碼編譯即時編譯版本，這可能會限制採用和回饋。</li>
+<li>「儘管有性能上的優勢，由於與 Python C API 的相容性問題以及缺乏推廣，PyPy 的採用速度一直很慢。」</li>
+</ul>
+<h2><a href="https://community.amd.com/t5/ai/amd-unveils-its-first-small-language-model-amd-135m/ba-p/711368">AMD 發表其首款小型語言模型 AMD-135M</a></h2>
+<ul>
+<li>AMD 已經推出其首款小型語言模型(SLM)，AMD-135M，包含兩個變體：AMD-Llama-135M 和 AMD-Llama-135M-code，這些模型是在 AMD Instinct MI250 加速器上訓練的。</li>
+<li>該模型採用推測解碼來提升推理速度和記憶體效率，這相較於傳統的自回歸方法有顯著的改進。</li>
+<li>AMD 已經開源了訓練代碼、數據集和權重，鼓勵開發者重現並創新該模型，促進協作的 AI 社群。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41674382">評論</a></h3>
+<ul>
+<li>AMD 推出了其首個小型語言模型 AMD-135M，該模型完全開源，包括訓練代碼、數據集和權重。</li>
+<li>此版本值得注意，因為它允許開發者重現該模型並訓練其他小型語言模型(SLM)和大型語言模型(LLM)，促進創新和競爭。</li>
+<li>「與僅提供權重和推理代碼的典型“開放推理”模型不同，AMD 的模型提供了一個全面的開源套件，這在 AI 硬體和軟體產業中是一個重要的舉措。」</li>
+</ul>
+<h2><a href="https://joshcollinsworth.com/blog/fire-matt">如果 WordPress 要生存，Matt Mullenweg 必須被移除</a></h2>
+<ul>
+<li>「WordPress 共同創辦人 Matt Mullenweg 被指控濫用職權，透過對 WP Engine 的行動對 WordPress 社群造成傷害。」</li>
+<li>指控包括勒索企圖、反競爭行為、要求授權費用，以及阻止 WP Engine 網站訪問插件庫，這些行為已使用戶暴露於安全風險之中。</li>
+<li>要求穆倫維格(Mullenweg)從 WordPress 領導職位上卸任的呼聲，基於他被認為濫用權力和存在利益衝突，這些行為被視為對社群福祉有害。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41676653">評論</a></h3>
+<ul>
+<li>批評者認為，Matt Mullenweg 糟糕的溝通能力和反覆無常的行為正在損害 WordPress 的聲譽和社群信任。</li>
+<li>有人擔心 Mullenweg 要求 WP Engine 向他的營利公司 Automattic 支付授權費，這可能會模糊 WordPress 非營利和營利實體之間的界線。</li>
+<li>有些人認為，移除 Mullenweg 可能會恢復穩定性並解決 WordPress 生態系統中的潛在法律問題。</li>
+</ul>
+<h2><a href="https://www.reuters.com/legal/litigation/us-trademark-office-cancels-marvel-dcs-super-hero-marks-2024-09-26/">美國商標局取消漫威、DC的『超級英雄』商標</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41676297">評論</a></h3>
+<ul>
+<li>美國商標局已經取消了漫威和 DC 於1980年共同註冊的『超級英雄』商標。</li>
+<li>商標法禁止對通用術語的所有權以及競爭對手之間的共同所有權，導致在 Marvel 和 DC 未對 Superbabies 的請求進行辯護後被取消。</li>
+<li>這項決定強調了商標法的局限性以及在維持常用術語商標方面的困難。</li>
+</ul>
+<h2><a href="https://hannahilea.com/blog/cuttle-obsession/">迷戀 Cuttle：用於原型設計、生產和拖延的參數化 CAD</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41674677">評論</a></h3>
+<ul>
+<li>「Cuttle 是一款參數化 CAD 工具，專為原型設計和生產而設計，特別適合小型企業進行雷射切割，結合了向量編輯、可編程參數和 JavaScript 程式碼。」</li>
+<li>用戶讚賞其易用性及邊緣吸附、自訂圓角和布林選項等功能，並建議增加 STL 和 STEP 輸出以支援 3D 列印。</li>
+<li>創建 Cuttle 的小型但盈利的團隊因開發出具有潛在應用於各種領域(包括 3D 列印和皮革製作)的靈活工具而受到認可。</li>
+</ul>
+<h2><a href="https://www.engadget.com/big-tech/meta-fined-102-million-for-storing-passwords-in-plain-text-110049679.html">Meta 因以純文字儲存密碼被罰款 1.02 億美元</a></h2>
+<ul>
+<li>Meta 因將用戶密碼以純文字形式儲存，違反 GDPR 規定，被愛爾蘭數據保護委員會(DPC)罰款 1.02 億美元。</li>
+<li>調查發現，數百萬個 Instagram 密碼以易於閱讀的格式存儲，超過 20,000 名 Facebook 員工可以訪問，但外部人士無法訪問。</li>
+<li>愛爾蘭數據保護委員會(DPC)批評 Meta 未能及時通知他們資料外洩事件，且未採取適當的安全措施，並對其發出譴責，進一步的細節將在稍後公佈。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41678840">評論</a></h3>
+<ul>
+<li>Meta 因延遲向監管機構通報一個以純文字儲存密碼的漏洞而被罰款1.02億美元，違反了GDPR規定。</li>
+<li>自2012年以來，該事件涉及多達6億個密碼可供超過2萬名員工訪問。</li>
+<li>「這項罰款強調了及時披露和妥善處理敏感數據的關鍵重要性。」</li>
+</ul>
+<h2><a href="https://lists.archlinux.org/archives/list/arch-dev-public@lists.archlinux.org/thread/RIZSKIBDSLY4S5J2E2STNP5DH4XZGJMR/">Arch Linux 與 Valve 合作</a></h2>
+<ul>
+<li>Arch Linux 正在與 Valve 合作開發一個建置服務基礎設施和一個安全簽名區域，解決重大挑戰而不僅僅依賴志願者。</li>
+<li>這次合作旨在加速進展並啟動新專案，開發將遵循標準工作流程，並通過 RFC、郵件列表和 GitLab 進行透明的溝通。</li>
+<li>這項合作預計將對 Arch Linux 帶來顯著的好處，進一步的更新將通過郵件列表提供。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41676646">評論</a></h3>
+<ul>
+<li>Valve 正在支持 Arch Linux 的兩個關鍵項目：一個構建服務基礎設施和一個安全簽名區域，以提升安全性。</li>
+<li>「由於對目前去中心化方法的安全性擔憂，用戶之間正在討論是否採用類似 Debian 的集中化構建模式。」</li>
+<li>Valve 的參與旨在解決可重現構建的問題，特別是針對核心，以及安全啟動的複雜性。</li>
+</ul>
+<h2><a href="https://www.theatlantic.com/health/archive/2024/09/23andme-dna-data-privacy-sale/680057/">還記得你給 23andMe 的 DNA 嗎？</a></h2>
+<ul>
+<li>23andMe 正面臨嚴峻挑戰，包括可能被摘牌、關閉其藥物開發部門以及董事會大規模辭職。</li>
+<li>執行長 Anne Wojcicki 正在考慮出售公司，這可能會因隱私政策漏洞而危及 1500 萬名顧客的 DNA 資料。</li>
+<li>由於 23andMe 不受 HIPAA 規範，且該公司有安全漏洞的歷史，人們對新所有者可能濫用基因數據的擔憂正在增加。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41679994">評論</a></h3>
+<ul>
+<li>人們對 23andMe 的數據收集提出了擔憂，特別是基因數據可能被濫用的問題，例如克隆或保險公司未經授權的使用。</li>
+<li>23andMe 主要使用「基因分型」而非完整的 DNA 定序，除非用戶選擇高級服務。</li>
+<li>討論包括 GDPR 在資料刪除和更廣泛隱私問題上的有效性，強調了需要更嚴格的法規。</li>
+</ul>
+<h2><a href="https://repositories.lib.utexas.edu/server/api/core/bitstreams/c8cc4a4f-e641-462b-9a72-654e60f71485/content">刻意練習在創造力發展中的角色(2014)</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41680156">評論</a></h3>
+<ul>
+<li>2014 年德州大學廣告系的一篇論文探討了刻意練習在培養創造力中的作用，並比較了精英和中等水平表現者。</li>
+<li>關鍵發現強調了努力和享受對成功的重要性，而評論者則強調了多樣化經驗和思想交流的重要性。</li>
+<li>討論還考慮了此類研究的科學嚴謹性、環境和指導的影響，以及人工智慧在創作過程中的潛在角色。</li>
+</ul>
+<h2><a href="https://chipsandcheese.com/2024/09/27/lion-cove-intels-p-core-roars/">「獅子灣：Intel 的 P 核心咆哮」</a></h2>
+<ul>
+<li>Intel 在 Lunar Lake 處理器中採用的新款 Lion Cove 架構專注於每執行緒的效能，無論在效能還是能源效率方面，都比其前代 Redwood Cove 有顯著提升。</li>
+<li>主要的改進包括簡化的環狀匯流排互連、改進的 L3 和 DRAM 延遲、新的中階快取(L1.5)，以及增強的亂序執行引擎，這些都帶來了顯著的性能提升。</li>
+<li>「Lion Cove 在 SPEC CPU2017 的整數和浮點套件中分別實現了 23.2% 和 15.8% 的性能提升，使其成為 AMD 的 Strix Point 甚至桌上型 CPU 如 Ryzen 9 7950X3D 的強勁競爭對手。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41675637">評論</a></h3>
+<ul>
+<li>“Intel 的新款 Core Ultra 7 258V 處理器，屬於 Lunar Lake 系列，顯示出 94.9 GB/s 的 DRAM 頻寬，這顯著低於 Apple 的 M1 Pro、Max 和 Ultra 晶片。”</li>
+<li>AMD 即將於 2025 年初推出的 Strix Halo，將配備 256 位元記憶體介面以支援 LPDDR5x，性能有望匹敵或超越 M1 Pro，但功耗較高。</li>
+<li>討論強調了記憶體頻寬與電源效率之間的取捨，Intel 的 Lunar Lake 專注於較低的功耗，相較於 Apple 的高頻寬解決方案。</li>
+</ul>
+<h2><a href="https://thelondonmagazine.org/archive-the-architecture-of-london-pubs-by-stephen-gardiner/">倫敦酒吧的建築風格(1966)</a></h2>
+<ul>
+<li>「在1966年的一篇文章中，建築師史蒂芬·加德納批評了傳統英國酒吧的現代化，哀嘆像橡木長椅和精緻玻璃工藝這樣的獨特特色的消失。」</li>
+<li>“Gardiner 主張酒吧應保留其歷史魅力，並在設計上應考慮其建築背景，強調如中央吧台、低天花板和隔間等元素。”</li>
+<li>他總結道，保存真實細節和聘用技術精湛的建築師對於維持英式酒吧傳統至關重要。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41674379">評論</a></h3>
+<ul>
+<li>「這篇文章討論了倫敦酒吧的建築和演變，強調了傳統佈局以及現代翻修的影響。」</li>
+<li>它提到英國酒吧行業面臨的挑戰，包括經濟壓力、消費者偏好的變化以及像禁菸令這樣的法規影響。</li>
+<li>「這篇文章強調了酒吧的文化意義，並提到像CAMRA(真實艾爾運動)這樣的組織為了保護傳統酒吧及其社區所做的努力。」</li>
+</ul>
+<h2><a href="https://www.warmplace.ru/soft/sunvox/">「SunVox：強大的模組化合成器和數位音樂工作站」</a></h2>
+<ul>
+<li>「SunVox 是一款多功能的模組化合成器，配有基於模式的音序器，適合在多個平台上進行音樂創作，包括 Windows、macOS、Linux、iOS、Android 和 Windows CE。」</li>
+<li>主要特點包括優化的合成算法、靈活的架構、多軌 WAV 匯出、MIDI 支援、即時樣本錄音以及生成音樂功能。</li>
+<li>「SunVox 在大多數系統上是免費的，除了 Android 和 iOS，開發者可以將 SunVox 引擎整合到他們的應用程式中。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41679972">評論</a></h3>
+<ul>
+<li>「SunVox 是一款強大的模組化合成器和數位音訊工作站(DAW)，可在多種平台上運行，包括平板電腦，非常適合用於音樂創作。」</li>
+<li>「本月初，SunVox 的新測試版發布，引起了用戶和開發者的重新關注。」</li>
+<li>「SunVox 具有模組化介面和“MetaModules”功能，用於創意音頻合成和處理，甚至達到圖靈完備，使其成為初學者和進階使用者皆適用的多功能工具。」</li>
+</ul>
+<h2><a href="https://www.marktyler.org/ced/">MtCellEdit – 輕量級試算表程式</a></h2>
+<ul>
+<li>mtCellEdit 是一款輕量級的試算表程式，專為簡單的日常任務設計，避免了大型程式的速度緩慢和複雜介面。</li>
+<li>它使用 Qt5 作為圖形用戶界面，並使用共享的 C/C++ 函式庫來實現核心功能，源代碼中包括範例程式和用於 API 存取的命令列工具。</li>
+<li>預設格式為包含 TSV 文字檔案的 ZIP 壓縮檔，確保與現代試算表程式的相容性，並設計用於 x86_32、x86_64 和 ARM_32 平台上的 GNU/Linux，遵循 GNU 通用公共授權條款第 3 版或更高版本。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41679471">評論</a></h3>
+<ul>
+<li>MtCellEdit 是一款輕量級的試算表程式，因其簡單和高效而受到關注。</li>
+<li>用戶正在討論替代方案和類似的輕量級工具，例如 Nebu 和 sc-im，這突顯了對極簡軟體解決方案的需求。</li>
+<li>對話中還提到了適用於 macOS 的輕量級文字處理器，並推薦了 Apple 的 Pages 和 Mellel，這表明人們對精簡的生產力工具有更廣泛的興趣。</li>
+</ul>
+<head>
+  <meta property="og:title" content="基於 FFT 的海浪渲染，實現在 Godot 中" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E5%9F%BA%E6%96%BC%20FFT%20%E7%9A%84%E6%B5%B7%E6%B5%AA%E6%B8%B2%E6%9F%93%EF%BC%8C%E5%AF%A6%E7%8F%BE%E5%9C%A8%20Godot%20%E4%B8%AD&subheading=2024%E5%B9%B49%E6%9C%8828%E6%97%A5%20%E6%98%9F%E6%9C%9F%E5%85%AD%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/zh/Hant/2024/09/28</link>
+            <guid isPermaLink="false">2024-09-28T00:00:00.000Z</guid>
+            <pubDate>Sat, 28 Sep 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-27]]></title>
             <description
@@ -1668,172 +1849,6 @@
             <link>https://hn.cho.sh/zh/Hant/2024/09/19</link>
             <guid isPermaLink="false">2024-09-19T00:00:00.000Z</guid>
             <pubDate>Thu, 19 Sep 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-09-18]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/09/18&#39;</h2>
-<h1>2024-09-18</h1>
-<h2><a href="https://timculpan.substack.com/p/apple-mobile-processors-are-now-made">蘋果的行動處理器現在由台積電在美國製造</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41574844">評論</a></h3>
-<ul>
-<li>蘋果的行動處理器現在由台積電在美國製造，這標誌著美國製造業和國家安全的一個重大勝利。</li>
-<li>此舉將台積電的寶貴知識轉移到美國勞動力，儘管對於政府干預措施如《晶片法案》的有效性存在爭議。</li>
-<li>批評者認為，儘管美國製造業有所增長，但由於自動化和高價值產品，其在國內生產總值(GDP)和勞動力中的佔比已經下降，這使得人們對關稅和補貼的長期影響產生質疑。</li>
-</ul>
-<h2><a href="https://github.com/rspeer/wordfreq/blob/master/SUNSET.md">為什麼 wordfreq 不會更新</a></h2>
-<ul>
-<li>由於幾個主要原因，wordfreq 數據——來自各種線上來源截至 2021 年的語言快照——將不會更新。</li>
-<li>「2021年後的語言數據因為大量 AI 生成內容的湧入而變得不可靠，這會扭曲詞頻，例如 ChatGPT 過度使用某些詞彙。」</li>
-<li>以前免費的來源如 Twitter 和 Reddit 現在需要支付高額費用，自然語言處理(NLP)領域已轉向生成式 AI，這引發了倫理問題並減少了對傳統文本數據收集的興趣。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41578483">評論</a></h3>
-<ul>
-<li>“由於 AI 生成的內容已經污染了網路，使其在分析人類語言方面變得不可靠，Wordfreq 將不再更新。”</li>
-<li>AI 生成內容的問題加劇了由 SEO 實踐引起的現有問題，影響了語言模型訓練數據的質量，並導致詞頻偏差。</li>
-<li>這次討論強調了區分人類撰寫的內容與人工智慧生成文本的挑戰及其對語言和溝通的更廣泛影響。</li>
-</ul>
-<h2><a href="https://investors.23andme.com/news-releases/news-release-details/independent-directors-23andme-resign-board/">23andMe 的獨立董事辭去董事會職務</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41573034">評論</a></h3>
-<ul>
-<li>“在兩款抗癌藥物的第二期臨床試驗結果呈現正面後，23andMe 的獨立董事辭職。”</li>
-<li>執行長 Anne Wojcicki 以每股 0.40 美元的價格將公司私有化的嘗試，這一價格相比公司去特殊目的收購公司(deSPAC)時的價格大幅下降，引發了對她的管理和公司治理的擔憂。</li>
-<li>23andMe 的市值為 1.72 億美元，與競爭對手 Ancestry.com 被以 47 億美元收購形成鮮明對比。</li>
-</ul>
-<h2><a href="https://www.obdev.at/blog/warning-macos-sequoia-15-may-bypass-dns-encryption/">macOS Sequoia 15 可能會繞過 DNS 加密</a></h2>
-<ul>
-<li>「Little Snitch 6.1 有一個 DNS 加密問題，某些 DNS 請求繞過了加密代理並以未加密的形式發送，影響了低層次的舊版 API。」</li>
-<li>「此問題特定於 macOS 15 Sequoia 並影響了像 Firefox 這樣的瀏覽器，但不影響 Safari 或 Chrome；該問題已在 Little Snitch 版本 6.1.1 中修復。」</li>
-<li>這個錯誤至少從 macOS 14.5 Sonoma 開始就存在，使用者可以透過在 Little Snitch 中啟用 DNS 加密並使用 Wireshark 捕捉 53 埠的流量來重現它。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41571862">評論</a></h3>
-<ul>
-<li>最初對 macOS Sequoia 15 迴避 DNS 加密的擔憂被發現是特定於 Little Snitch 6.1 的問題，而不是一般的 macOS 問題。</li>
-<li>這個問題將在 Little Snitch 的更新中解決，強調了針對特定軟體進行故障排除的重要性。</li>
-<li>這次討論強調了 DNS 解析 API 的複雜性，以及 Apple 偏好使用高階框架而非傳統的 POSIX 函數如 <code>getaddrinfo()</code>。</li>
-</ul>
-<h2><a href="https://www.swift.org/blog/announcing-swift-6/">Swift 6</a></h2>
-<ul>
-<li>Swift 6 已經發布，擴展了其在更多平台和領域的使用，包括函式庫、網際網路規模的服務以及性能關鍵的程式碼。</li>
-<li>主要特點包括新的並發工具、類型化的拋出、對不可複製類型的支援、增強的 C++ 互操作性，以及嵌入式 Swift 用於微控制器的預覽。</li>
-<li>平台支援已擴展，包括針對 Linux 的靜態 SDK、新的 Linux 發行版的官方支援，以及 Windows 的構建效能改進。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41571606">評論</a></h3>
-<ul>
-<li>Swift 正在經歷 Swift Working Group™ 開源社群與 Apple 之間的緊張關係，導致技術債務和像結果構建器這樣的不完整功能。</li>
-<li>儘管該語言具有跨平台功能和即將在 Swift 6 中進行的改進等優勢，其複雜性和版本特定問題仍在阻礙新用戶的加入。</li>
-<li>對於 Swift 的演變存在不同的看法，有些人讚揚其功能，而另一些人則批評其日益增加的複雜性和治理挑戰。</li>
-</ul>
-<h2><a href="https://github.com/zlwaterfield/scramble">「Scramble：Grammarly 的開源替代方案」</a></h2>
-<ul>
-<li>“Scramble 是一款開源的 Chrome 擴充功能，作為 Grammarly 的隱私保護替代方案，使用 AI 直接在瀏覽器中提升寫作品質。”</li>
-<li>用戶需要克隆/下載源代碼並手動將其加載到 Chrome 中，因為它正在 Chrome 線上應用程式商店中等待審核。</li>
-<li>此擴充功能需要 OpenAI API 金鑰，並提供各種文字增強選項，未來計劃增加更多功能和支援其他語言模型。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41575323">評論</a></h3>
-<ul>
-<li>「Scramble 是一款開源的 Chrome 擴充功能，設計為一個尊重隱私的 Grammarly 替代方案，使用 OpenAI API 金鑰來進行寫作增強。」</li>
-<li>作者計劃增加對本地 AI 模型的支援，以解決隱私問題，因為目前的實作會將按鍵記錄發送給 OpenAI。</li>
-<li>主要功能包括預定義提示、建議的文字高亮顯示，以及未來計劃提供可自訂提示和大型語言模型(LLM)供應商選擇。</li>
-</ul>
-<h2><a href="https://www.youtube.com/watch?v=dLTUqPue9sQ">「Krazam：高自主性個人貢獻者 [影片]」</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41571454">評論</a></h3>
-<ul>
-<li>「Krazam 發布了一部名為《高自主性個人貢獻者》的新影片，這在科技社群中引起了廣泛的關注和討論。」</li>
-<li>這部影片因其詳細的製作而受到讚譽，包括在白板上創作的壁畫，這花費了數小時的時間，還有其對科技專業人士來說幽默且有共鳴的內容。</li>
-<li>觀眾分享了影片中各種喜愛的時刻和引用，這表明影片具有廣泛的吸引力和內容的深度，能夠引起業界許多人的共鳴。</li>
-</ul>
-<h2><a href="https://shikaan.github.io/assembly/x86/guide/2024/09/08/x86-64-introduction-hello.html">給高階程式設計師的友善組合語言入門</a></h2>
-<ul>
-<li>這篇文章向高階程式設計師介紹組合語言，旨在解開其神秘面紗並使其變得易於理解。</li>
-<li>它提供了一個使用 Intel 語法的 x86-64 組合語言的「Hello World」範例，解釋了指令、暫存器和系統呼叫等關鍵概念。</li>
-<li>本內容旨在幫助有經驗的程式設計師理解並撰寫簡單的組合語言程式，並承諾在未來的文章中提供更複雜的範例。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41571971">評論</a></h3>
-<ul>
-<li>「這篇文章向高階程式設計師介紹組合語言，提供一個適合初學者的教學。」</li>
-<li>討論中強調了各種組合語言，如 MIPS、6502、ARM 和 RISC-V，使用者分享了他們的學習經驗和偏好。</li>
-<li>該教學的可及性和清晰度受到讚揚，並提出了改進建議和額外的資源以學習現代指令集。</li>
-</ul>
-<h2><a href="https://conversableeconomist.com/2024/09/12/the-double-irish-dutch-sandwich-end-of-a-tax-evasion-strategy/">雙層愛爾蘭荷蘭三明治：稅務逃避策略的終結</a></h2>
-<ul>
-<li>雙層愛爾蘭荷蘭三明治，一種避稅策略，由於稅務協議和改革的變化，已經大多消失了。</li>
-<li>“2015 年愛爾蘭稅制改革和 2017 年美國《減稅與就業法案》使這一策略失效，導致愛爾蘭公司向美國母公司支付的權利金大幅增加。”</li>
-<li>版稅支付的變化突顯了稅務策略的不斷演變，並強調了其成本，包括政府收入的損失和人才轉向逃稅的現象。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41571911">評論</a></h3>
-<ul>
-<li>「雙愛爾蘭荷蘭三明治」，一種避稅策略，正在逐步淘汰，這將影響企業稅務規劃和政府收入。</li>
-<li>美國公民擁有外國公司面臨複雜的稅務申報要求，包括需要填寫帶有複雜問題的表格以及潛在的雙重課稅問題。</li>
-<li>放棄美國國籍以避稅涉及重大挑戰，例如退出稅和可能永久無法入境美國。</li>
-</ul>
-<h2><a href="http://pscbc.blogspot.com/2013/03/cuny-first-computer-system-to-aid.html">「CUNY 在 2013 年支付了 Oracle 6 億美元購買其人力資源軟體」</a></h2>
-<ul>
-<li>「CUNYFirst 的設計目的是將所有大學的業務流程統一到一個系統中，旨在節省成本並改善資訊存取。」</li>
-<li>紐約市立大學中央的主要目標是掌控大學活動，包括課程和自由支配資金，而不是專注於效率。</li>
-<li>由於資金不足，Oracle-PeopleSoft 只配置了系統，導致效率低下、成本增加、員工工作量增加、介面過時以及安全性不足。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41581687">評論</a></h3>
-<ul>
-<li>「CUNY 在 2013 年以 6 億美元購買 Oracle 人力資源軟體，引發了關於將業務流程適應現成工具與定制軟體之間成本和效能的辯論。」</li>
-<li>「批評者認為，Oracle 的『僅限配置』限制導致功能損失，並迫使員工、教職員和學生進行調整，這引發了對效率和適應性的擔憂。」</li>
-<li>大型軟體交易的高成本和潛在的低效率，特別是在學術環境中，仍然具有爭議性，並突顯了客製化與標準化之間的持續辯論。</li>
-</ul>
-<h2><a href="https://old.reddit.com/r/CharteredAccountants/comments/1fj08v9/ey_employee_died_of_work_pressure">26歲安永員工加入四個月後因『工作壓力』去世</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41575908">評論</a></h3>
-<ul>
-<li>一名26歲的安永員工在加入公司僅四個月後因『工作壓力』去世，突顯出許多印度公司中存在的巨大壓力和有害的工作文化。</li>
-<li>印度教育體系的競爭性質從年幼時期就開始，並延伸到職業生涯，導致嚴重的壓力，有時甚至引發悲劇性後果。</li>
-<li>「類似的問題也出現在其他國家，如美國和日本，那裡的高度競爭環境和不良的管理實踐也導致員工壓力水平高。」</li>
-</ul>
-<h2><a href="https://knhash.in/gentle-guide-to-self-hosting/">「自我託管溫和指南」</a></h2>
-<ul>
-<li>這篇文章鼓勵重新審視自我託管軟體，作為對抗壟斷的一種反叛形式，並為了獲得智力上的滿足，這與雲端運算的便利性形成對比。</li>
-<li>它推薦 Uberspace 作為共享網頁託管服務，提供 SSH 存取、10GB 儲存空間和 1.5GB 記憶體，但指出由於記憶體限制，不支援 Docker。</li>
-<li>建議的自託管軟體包括用於財務管理的 Actual Budget 和用於 RSS 訂閱閱讀的 Miniflux，並提供有關獲取個人網域以展示服務的額外建議。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41577156">評論</a></h3>
-<ul>
-<li>“在 Hacker News 的討論中，探討了「自我託管」的定義演變及其影響，並辯論共享託管或管理服務是否符合資格。”</li>
-<li>重點包括自我託管的好處，例如數據所有權和避免供應商鎖定，以及技術方面如設置家庭伺服器和安全問題。</li>
-<li>像 Tailscale 和 WireGuard 這樣的工具被提及用於安全訪問，用戶分享個人設置和經驗，強調了自我托管的樂趣和學習。</li>
-</ul>
-<h2><a href="https://www.mcgill.ca/oss/article/medical-critical-thinking-technology/reports-death-dental-cavities-are-greatly-exaggerated">關於蛀牙消失的報導被大大誇大了</a></h2>
-<ul>
-<li>「Lumina，一種基因改造的細菌，旨在預防齲齒，但尚未經過全面的安全性和有效性測試。」</li>
-<li>齲齒是由口腔細菌失衡引起的，而不僅僅是變形鏈球菌(S. mutans)。</li>
-<li>預防蛀牙的有效方法包括減少糖分攝取和使用含氟牙膏。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41573550">評論</a></h3>
-<ul>
-<li>「Lumina，一款旨在減少蛀牙的產品，無法保證完全預防，但可能顯著降低蛀牙率。」</li>
-<li>批評者承認，即使蛀牙減少50%也會是一個顯著的改善，儘管對有害的單一文化和需要更多研究的擔憂依然存在。</li>
-<li>這場辯論突顯了一個更廣泛的趨勢，即儘管新解決方案具有潛在的好處，但因其不完美而被忽視，並指出 FDA 的法規阻礙了測試和開發。</li>
-</ul>
-<h2><a href="https://www.cbc.ca/news/health/ai-health-care-1.7322671">加拿大研究發現，人工智慧工具將醫院中意外死亡率降低了26%</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41579355">評論</a></h3>
-<ul>
-<li>「一項加拿大研究顯示，一種人工智慧工具將意外住院死亡率降低了26%，但絕對風險降低僅為0.69%，受益者為每156名病患中的1人。」</li>
-<li>該人工智慧工具的誤報率很高，可能導致不必要的干預，這引發了對其整體效能的討論。</li>
-<li>支持者認為，人工智慧的早期警示可以幫助護理人員優先處理危急病例，突顯其在醫療保健中的潛在效用。</li>
-</ul>
-<h2><a href="https://www.reuters.com/world/hezbollah-pager-explosions-live-2024-09-17/">「真主黨手持無線電爆炸，造成三人死亡，前一天尋呼機爆炸」</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41580853">評論</a></h3>
-<ul>
-<li>「真主黨的手持無線電爆炸，導致三人死亡，這與前一天尋呼機爆炸事件相似。」</li>
-<li>這起事件引發了一場關於其是否構成恐怖主義的辯論，意見分歧在於它是否針對合法的軍事目標，還是對平民造成無差別的傷害。</li>
-<li>討論延伸至此類策略的更廣泛影響以及恐怖主義的定義。</li>
-</ul>
-<head>
-  <meta property="og:title" content="蘋果的行動處理器現在由台積電在美國製造" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E8%98%8B%E6%9E%9C%E7%9A%84%E8%A1%8C%E5%8B%95%E8%99%95%E7%90%86%E5%99%A8%E7%8F%BE%E5%9C%A8%E7%94%B1%E5%8F%B0%E7%A9%8D%E9%9B%BB%E5%9C%A8%E7%BE%8E%E5%9C%8B%E8%A3%BD%E9%80%A0&subheading=2024%E5%B9%B49%E6%9C%8818%E6%97%A5%20%E6%98%9F%E6%9C%9F%E4%B8%89%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/zh/Hant/2024/09/18</link>
-            <guid isPermaLink="false">2024-09-18T00:00:00.000Z</guid>
-            <pubDate>Wed, 18 Sep 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
