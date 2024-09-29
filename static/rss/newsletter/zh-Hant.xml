@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 28 Sep 2024 19:08:48 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 29 Sep 2024 19:13:52 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/zh-Hant.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 28 Sep 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sun, 29 Sep 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[zh-Hant]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-09-29]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/09/29&#39;</h2>
+<h1>2024-09-29</h1>
+<h2><a href="https://sohl-dickstein.github.io/2022/11/06/strong-Goodhart.html">過度的效率讓一切變得更糟 (2022)</a></h2>
+<ul>
+<li>「古德哈特定律的強版本指出，過度優化代理指標可能會導致實際目標的結果變差，這在標準化測試和機器學習過擬合中可以看到。」</li>
+<li>這個概念適用於各個領域，包括政治、經濟和健康，顯示出這一現象的廣泛相關性。</li>
+<li>來自機器學習的緩解策略，例如將代理目標與期望結果對齊、添加正則化懲罰、注入噪音以及使用提前停止，可以幫助管理這些問題。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41684082">評論</a></h3>
+<ul>
+<li>“機器學習及其他領域中的過度優化可能會導致負面結果，正如機器學習研究員 Jascha Sohl-Dickstein 所指出的。”</li>
+<li>這個概念與古德哈特定律一致，該定律指出，當一個衡量標準成為目標時，它就不再是一個好的衡量標準。</li>
+<li>過度優化所帶來的負面結果包括 COVID-19 供應鏈中斷以及瑞典醫療和鐵路系統中的低效率，這突顯了系統需要保留一些餘裕以維持穩健性和適應性的必要性。</li>
+</ul>
+<h2><a href="https://discord.com/blog/how-discord-stores-trillions-of-messages">「Discord 如何儲存數兆條訊息(2023)」</a></h2>
+<ul>
+<li>Discord 最初使用 MongoDB 來存儲訊息，但為了更好的擴展性和容錯性，改用了 Cassandra，這後來導致了性能和維護問題。</li>
+<li>「2022 年，Discord 從 Cassandra 遷移到 ScyllaDB，一個更高效的、基於 C++ 的、與 Cassandra 相容的資料庫，將節點數量從 177 減少到 72，並顯著提升了延遲和效能。」</li>
+<li>遷移過程包括雙重寫入新數據並使用基於 Rust 的遷移工具處理歷史數據，這樣在世界盃等重大事件期間能更好地應對流量增加，並減少問題發生。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683293">評論</a></h3>
+<ul>
+<li>「Discord 從 Cassandra 遷移到 ScyllaDB，以解決性能問題，特別是刪除操作和垃圾回收(GC)方面的問題。」</li>
+<li>“ScyllaDB 提供更好的壓縮策略和性能，儘管仍然使用墓碑標記來進行刪除。”</li>
+<li>Discord 在遷移過程中維持了現有的架構和分區策略，強調了良好預設配置的重要性。</li>
+</ul>
+<h2><a href="https://apnews.com/article/spacex-launch-boeing-nasa-stuck-astronauts-e179d0dc6c77d224278fd0430148ff8b">「SpaceX 為困在國際太空站的兩名 NASA 太空人發射任務」</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41683306">評論</a></h3>
+<ul>
+<li>「由於波音的星際客機出現問題，SpaceX 發射了一次任務，將兩名 NASA 太空人從國際太空站送回地球。」</li>
+<li>在獵鷹9號火箭第二級脫軌燃燒期間發生異常，促使發射暫停以進行調查。</li>
+<li>太空人將使用 SpaceX 的 Crew Dragon 返回，並提供了新款太空服，這引發了關於這是否是「救援」任務還是例行的乘員輪換的討論。</li>
+</ul>
+<h2><a href="https://www.gov.uk/service-manual/technology/using-progressive-enhancement">使用漸進增強構建穩健的前端</a></h2>
+<ul>
+<li>漸進式增強從 HTML 開始，然後添加 CSS 和 JavaScript，確保所有使用者，包括那些有設備或連接限制的使用者，都能獲得基本功能和可及性。</li>
+<li>JavaScript 應該是增強，而不是取代 HTML 和 CSS 的功能；使用功能檢測、填充程式碼和轉譯來確保相容性。</li>
+<li>避免使用單頁應用程式(SPAs)，因為它們可能會妨礙無障礙使用和導航；確保您的服務在可能的 CSS/JavaScript 失效情況下仍然能夠正常運作。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41686715">評論</a></h3>
+<ul>
+<li>這篇文章討論了使用漸進增強來構建前端的好處，重點在於使用 HTML 和 CSS 並盡量減少 JavaScript，正如 gov.uk 所示範的那樣。</li>
+<li>許多開發者對於單頁應用程式(SPAs)和現代 JavaScript 框架所引入的不必要複雜性感到沮喪，並提倡更簡單、更易於維護的解決方案。</li>
+<li>這段對話強調了一個日益增長的趨勢，即重新考慮更簡單的基於 HTML 的解決方案，像 htmx 這樣的工具因其能夠減少前端複雜性而受到關注。</li>
+</ul>
+<h2><a href="https://www.jjinux.com/2024/09/notions-mid-life-crisis.html">「Notion 的中年危機」</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41683577">評論</a></h3>
+<ul>
+<li>Notion 最初因其可自訂和多功能的特點而受歡迎，但現在正面臨批評，因為它變得雜亂且效率降低，類似於其他過度使用的工具如 Jira。</li>
+<li>“用戶對過時且難以找到的文件感到沮喪，建議使用像 Google Docs 這樣更簡單的工具可能會更具生產力。”</li>
+<li>儘管存在一些問題，Notion 的資料庫功能和靈活性仍使其在組織和分類筆記方面具有強大的競爭力，儘管有些使用者正在考慮像 Obsidian 這樣的替代方案。</li>
+</ul>
+<h2><a href="https://ukdefencejournal.org.uk/britain-buys-semiconductor-factory-for-defence-purposes/">“英國為國防目的購買半導體工廠”</a></h2>
+<ul>
+<li>英國政府已經收購了位於達勒姆郡紐頓艾克里夫的一家半導體工廠，現名為 Octric Semiconductors UK，以支持國防供應鏈和武裝部隊。</li>
+<li>「這個設施是英國唯一能夠製造砷化鎵半導體的安全場所，這對於像戰鬥機這樣的軍事平台至關重要，並確保多達100個技術工作機會。」</li>
+<li>此次收購確保了關鍵半導體的持續生產，這些半導體用於軍事應用，穩定了工廠並增強了英國的國防能力和工業產能。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683098">評論</a></h3>
+<ul>
+<li>「英國已購買一座半導體工廠用於國防目的，這突顯了國內半導體生產的戰略重要性。」</li>
+<li>這家工廠先前由 Coherent 擁有，專門生產砷化鎵半導體，這對於戰鬥機和高頻雷達等軍事應用至關重要。</li>
+<li>這項收購確保了最多 100 個技術職位，並確保英國在全球半導體需求上升的情況下，維持其國防基礎設施的重要部分。</li>
+</ul>
+<h2><a href="https://cepa.org/article/floating-megabomb-heaves-to-near-the-english-coast/">漂浮的巨型炸彈靠近英國海岸</a></h2>
+<ul>
+<li>馬耳他註冊的船隻 MV Ruby 載有 20,000 噸爆炸性硝酸銨，現已受損並在英國肯特海岸尋求港口，構成重大安全隱患。</li>
+<li>由於其貨物的危險性可能造成相當於三分之一廣島原子彈的破壞，該船已被拒絕進入包括挪威和立陶宛在內的多個歐洲港口。</li>
+<li>該事件突顯了俄羅斯的混合戰爭戰術，並強調了需要強大的情報共享、監視和海上安全協議，以有效應對此類威脅。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685917">評論</a></h3>
+<ul>
+<li>一艘載有20,000噸高爆炸性物質硝酸銨的受損船隻正接近英國海岸，這引發了重大安全擔憂。</li>
+<li>「這艘船被多個歐洲港口拒絕入境，並被懷疑被俄羅斯用來騷擾北約國家，導致地緣政治緊張局勢升高。」</li>
+<li>由於潛在威脅和俄羅斯過去的低強度敵對行為，當局高度戒備，質疑該船從挪威前往立陶宛，現在接近英國的意圖。</li>
+</ul>
+<h2><a href="https://jvns.ca/blog/2024/09/27/some-go-web-dev-notes/">一些 Go 網頁開發筆記</a></h2>
+<ul>
+<li>Go 1.22 引入了改進的標準函式庫路由支援，簡化了路由處理並通過中介軟體增強了安全性。</li>
+<li>sqlc 工具從 SQL 查詢生成 Go 程式碼，減少樣板代碼並簡化資料庫互動。</li>
+<li>在 Go 1.19 中設置 GC 記憶體限制有助於防止在低記憶體環境中發生記憶體不足(OOM)情況，從而提升應用程式的穩定性。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41687707">評論</a></h3>
+<ul>
+<li>Go 的簡單性和穩定性受到開發者的讚賞，使得在長時間中斷後重新開始專案變得容易。</li>
+<li>初始設定可能會具有挑戰性，因為需要選擇各種日誌記錄庫、資料庫驅動程式等。</li>
+<li>在 Go 語言中缺乏一個主導框架被視為一種限制，同時也是一種優勢，因為這提供了使用標準函式庫的靈活性。</li>
+</ul>
+<h2><a href="https://wiki.alopex.li/CrystalNotes">水晶語言筆記</a></h2>
+<ul>
+<li>Crystal，一種於2014年開始的程式語言，旨在成為具有類型推斷的強類型 Ruby，並通過 LLVM 編譯為原生可執行檔。</li>
+<li>它具有去中心化的函式庫生態系統、可選的型別註解，以及類似於 TypeScript 的型別系統，支援泛型和其他物件導向功能。</li>
+<li>儘管在臨時檔案處理和目錄迭代方面存在一些問題，Crystal 提供了許多實用的內建函數和函式庫，對於尋求具有動態感覺的靜態型別系統的人來說，這是一個不錯的選擇。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683815">評論</a></h3>
+<ul>
+<li>目前正在討論 Crystal 語言的潛力及其現有的限制，使用者對其可靠性和成熟度的經驗反應不一。</li>
+<li>有些使用者強調 Crystal 在後端 API 伺服器和背景任務中的高效能和生產力，而另一些人則指出像是垃圾回收(GC)速度慢和程式錯誤等問題。</li>
+<li>這段對話包括與其他語言如 Ruby、Clojure 和 Rust 的比較，並提到 Crystal 使用 LLVM 進行優化代碼生成，使其在性能上可與 Go、Rust 或 C 相媲美。</li>
+</ul>
+<h2><a href="https://nolanlawson.com/2024/09/28/web-components-are-okay/">「Web 元件還不錯」</a></h2>
+<ul>
+<li>「Nolan Lawson 回應了由 Ryan Carniato 的文章〈Web Components Are Not the Future〉和 Cory LaViska 的反駁〈Web Components Are Not the Future — They’re the Present〉所引發的關於網頁元件的辯論。」</li>
+<li>Lawson 熟悉網頁元件，雖然他承認這些元件在效能上有負擔，但他強調了可維護性、安全性、可用性和無障礙性等權衡。</li>
+<li>他總結道，儘管網頁元件有其限制，但它們提供了獨特的創意機會，是多樣化網頁開發領域中眾多工具之一。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41686722">評論</a></h3>
+<ul>
+<li>討論的重點在於現代前端框架與 Web 元件的複雜性和可用性，一些開發者對於像 React 這樣的框架中的『魔法』表示沮喪。</li>
+<li>“網頁元件因其簡單性和更接近網頁標準而受到重視，提供了如 Shadow DOM 這樣的功能來實現隔離，而不需要複雜的框架。”</li>
+<li>一位開發者分享了他們從 Vue 過渡到 Web 元件的正面經驗，顯著減少了依賴性和維護負擔，這對於資源有限的專案特別有利。</li>
+</ul>
+<h2><a href="https://htmgo.dev">htmgo - 使用 golang + htmx 建構簡單且可擴展的系統</a></h2>
+<ul>
+<li>一位開發者正在使用 Golang 和 htmx 結合來開發一個最小化的堆疊，以增強元件等功能並改進複雜 JavaScript 的語法。</li>
+<li>該專案旨在提供一個較輕量的替代方案，以取代繁重的框架，同時解決 htmx 的低層次特性問題。</li>
+<li>「這項倡議對於其他尋求精簡且高效開發堆疊的開發者來說可能是有益的。」</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683144">評論</a></h3>
+<ul>
+<li>「一位開發者推出了 &#39;htmgo&#39;，這是一個結合 Golang 和 HTMX 的簡約技術棧，旨在簡化可重用元件的創建並改進語法。」</li>
+<li>這個專案引發了開發者之間關於將後端語言與 HTMX 整合的優點以及使用 Golang 進行輕量級網頁開發的好處的討論。</li>
+<li>社群正在將「htmgo」與其他工具和框架如 Hotwire、Gomponents 以及各種模板引擎進行比較，這突顯了對高效的伺服器端網頁開發解決方案日益增長的興趣。</li>
+</ul>
+<h2><a href="https://spectrum.ieee.org/flexible-risc-v">靈活的 RISC-V 處理器：成本可能低於一美元</a></h2>
+<ul>
+<li>一款基於 RISC-V 架構的新型 6 毫瓦開源塑膠晶片，不僅能執行機器學習任務，還具有足夠的柔韌性，可以彎曲繞在鉛筆上。</li>
+<li>該晶片在彎曲時僅損失約4%的性能，展示了其堅固性及在柔性電子應用中的潛力。</li>
+<li>這一發展突顯了在柔性半導體和開源硬體領域的重大進步。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41687739">評論</a></h3>
+<ul>
+<li>“最近一篇 IEEE 文章強調了一款基於 SERV 設計的靈活 RISC-V 處理器，其成本可能低於一美元。”</li>
+<li>「Pragmatic Semiconductor聲稱他們可以在48小時內生產這些晶片，速度顯著快於傳統的矽製造工藝。」</li>
+<li>「雖然該處理器運行頻率為60 kHz，且消耗6毫瓦的功率，但它在電子紡織品和柔性電子等利基應用中可能具有價值。」</li>
+</ul>
+<h2><a href="https://www.economist.com/science-and-technology/2024/09/25/nasa-is-selling-a-brand-new-moon-rover">「NASA 正在出售一輛全新的月球探測車：從未使用過，僅有一位前任擁有者」</a></h2>
+<ul>
+<li>NASA 目標在本世紀末將人類送回月球，首先將探測器送往月球南極以尋找冰，這具有科學和實際的重要性。</li>
+<li>最近的進展包括針對氣喘、心臟病和老化的免疫療法、新的水管漏水檢測技術，以及在中國發現的古代乳酪。</li>
+<li>人工智慧和電動車電池回收的創新也值得注意，展示了各種科技領域的持續進展。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685326">評論</a></h3>
+<ul>
+<li>「NASA 正在出售一輛全新、未使用過的月球車，在論壇上引發了關於其價值和歷史背景的討論。」</li>
+<li>用戶們討論其價值、分享技術細節並幽默地評論這個話題，同時有些人對於離題內容表示擔憂。</li>
+<li>這段對話還強調了 NASA 承包商投標過程中潛在的腐敗問題以及在 COVID 期間建設的挑戰。</li>
+</ul>
+<h2><a href="https://github.com/feldera/feldera">Feldera 增量計算引擎</a></h2>
+<ul>
+<li>“Feldera 是一款高效能的查詢引擎，專為增量計算而設計，允許持續處理變更而無需重新計算舊數據。”</li>
+<li>它支援完整的 SQL 語法並能連接到各種資料來源，使使用者能夠管理資料管道並即時檢查結果，即使資料集大於記憶體也不受影響。</li>
+<li>Feldera 可以使用 Docker Compose 或從源碼開始，並需要依賴 Rust、Java、Maven 和 Typescript 等，且提供一個用戶互動的網頁控制台。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685689">評論</a></h3>
+<ul>
+<li>Feldera 增量計算引擎是一個開源工具，專為增量計算設計，可顯著減少流處理時間。</li>
+<li>它基於 Z-Sets，一種關係代數的推廣，允許許多 SQL 操作以增量方式實現。</li>
+<li>Feldera 支援多種 SQL 運算子、自動垃圾回收，並且可以在儲存裝置上建立資料索引，使其適用於複雜的 SQL 程式和歷史資料倉儲。</li>
+</ul>
+<h2><a href="https://sadilkhan.github.io/text2cad-project/">Text2CAD 從文字提示生成連續的 CAD 設計</a></h2>
+<ul>
+<li>Text2CAD 是首個設計用於從多層次文本描述生成參數化 CAD(電腦輔助設計)模型的 AI 框架，這在該領域中是一項重要的進步。</li>
+<li>該框架包括一個新穎的數據標註流程，使用開源的 LLMs(大型語言模型)和 VLMs(視覺語言模型)來標註 DeepCAD 數據集，並使用多樣化的文本提示。</li>
+<li>Text2CAD Transformer 使用預訓練的 BeRT 編碼器和自適應層，將自然語言描述轉換為 3D CAD 模型，並通過質性和量化結果展示其能力。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685642">評論</a></h3>
+<ul>
+<li>Text2CAD 是一款工具，能夠從文字提示生成 CAD(電腦輔助設計)模型，旨在簡化不熟悉傳統 CAD 軟體的使用者的設計過程。</li>
+<li>這個工具對於不常設計物件的使用者特別有利，因為它減少了對廣泛 CAD 訓練的需求，儘管在處理複雜設計時可能不如其他工具高效。</li>
+<li>討論強調了使用自然語言來創建精確3D模型的潛力和限制，一些專家建議傳統的CAD工作流程在詳細和精確設計方面仍然更有效。</li>
+</ul>
+<head>
+  <meta property="og:title" content="過度的效率讓一切變得更糟 (2022)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E9%81%8E%E5%BA%A6%E7%9A%84%E6%95%88%E7%8E%87%E8%AE%93%E4%B8%80%E5%88%87%E8%AE%8A%E5%BE%97%E6%9B%B4%E7%B3%9F%20(2022)&subheading=2024%E5%B9%B49%E6%9C%8829%E6%97%A5%20%E6%98%9F%E6%9C%9F%E6%97%A5%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/zh/Hant/2024/09/29</link>
+            <guid isPermaLink="false">2024-09-29T00:00:00.000Z</guid>
+            <pubDate>Sun, 29 Sep 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-28]]></title>
             <description
@@ -1664,191 +1850,6 @@
             <link>https://hn.cho.sh/zh/Hant/2024/09/20</link>
             <guid isPermaLink="false">2024-09-20T00:00:00.000Z</guid>
             <pubDate>Fri, 20 Sep 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-09-19]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/09/19&#39;</h2>
-<h1>2024-09-19</h1>
-<h2><a href="https://dtinth.github.io/comic-mono-font/">Comic Mono</a></h2>
-<ul>
-<li>Comic Mono 是一款新的等寬字體，源自 Shannon Miwa 的 Comic Shanns(版本 1)，所有字形都具有相同的寬度，並調整了度量以獲得更好的顯示效果。</li>
-<li>「該字體是使用 Python 腳本和 FontForge 創建的，粗體版本則是通過 FontForge 的加粗操作生成的。」</li>
-<li>Comic Mono 可供下載並在 MIT 授權下使用，並可通過 CDN、npm 和 Linux 套件進行額外分發。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41585156">評論</a></h3>
-<ul>
-<li>Comic Mono，一款受 Comic Sans 啟發的等寬字體，因其讓編碼變得更有趣且更易於閱讀而受到關注。</li>
-<li>使用者正在將 Comic Mono 與其他字體如 Comic Code 進行比較，注意到在可讀性和美觀上的差異，有些人更喜歡 Comic Code 因為它看起來更精緻。</li>
-<li>討論強調了使用 Comic Sans 風格字體來減少眼睛疲勞和幫助閱讀障礙，展示了這些經常被嘲笑的字體的實用性。</li>
-</ul>
-<h2><a href="https://twitter.com/RachelTobac/status/1836471586624540705">「LinkedIn 現在正在使用所有人的內容來訓練他們的 AI 工具」</a></h2>
-<ul>
-<li>LinkedIn 正在預設利用用戶生成的內容來訓練其 AI 工具，這引發了隱私問題。</li>
-<li>建議使用者透過導航至設定與隱私 &gt; 資料隱私 &gt; 生成式 AI 改進資料，並將其關閉來選擇退出。</li>
-<li>“該建議延伸至各組織，要求停止自動選擇加入，以保護用戶數據隱私。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41584486">評論</a></h3>
-<ul>
-<li>LinkedIn 正在利用用戶內容來訓練其 AI 工具，這導致了對內容質量和真實性的反應不一。</li>
-<li>由於用戶在未經明確同意的情況下被自動註冊，隱私問題隨之而來，不過歐盟用戶因 GDPR 規定而豁免。</li>
-<li>“批評者認為 LinkedIn 應優先提升核心功能，而非發展 AI，有些用戶考慮退出或離開該平台。”</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41588200">「我的兒子可能失明了——如何提供最佳支持」</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41588200">評論</a></h3>
-<ul>
-<li>擔心孩子可能失明的父母正在尋求資源和建議以獲得支持。</li>
-<li>建議包括培養獨立性、與同儕融合，以及利用像布萊葉學院和美國盲人基金會等組織的資源。</li>
-<li>個人故事突顯了成功的策略，例如回聲定位和將盲童融入日常活動。</li>
-</ul>
-<h2><a href="https://www.nintendo.co.jp/corporate/release/en/2024/240919.html">「任天堂對 Pocketpair, Inc 提起專利侵權訴訟」</a></h2>
-<ul>
-<li>「任天堂和寶可夢公司已在東京地方法院對Pocketpair, Inc.提起專利侵權訴訟。」</li>
-<li>該訴訟聲稱 Pocketpair 的遊戲《Palworld》侵犯了多項專利權，並尋求禁制令和損害賠償。</li>
-<li>「任天堂強調其致力於保護其智慧財產權，包括任天堂品牌，並將通過必要的法律行動來實現這一目標。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41587214">評論</a></h3>
-<ul>
-<li>「任天堂已對 Pocketpair, Inc. 提起專利侵權訴訟，訴訟內容涉及其遊戲《Palworld》的遊戲機制，而非角色相似性。」</li>
-<li>Pocketpair 已經聘請法律代表來對抗這些指控，強調了遊戲產業中軟體專利的複雜性和爭議。</li>
-<li>此案例引起了對於軟體專利在遊戲開發和創新上的範圍及影響的持續辯論。</li>
-</ul>
-<h2><a href="https://www.pivotaltracker.com/blog/2024-09-18-end-of-life">Pivotal Tracker 將關閉</a></h2>
-<ul>
-<li>VMware Tanzu 宣佈 Pivotal Tracker 將於 2025 年 4 月 30 日終止服務(EOL)，並在此日期前提供支援。</li>
-<li>所有帳戶(免費、贊助、付費、企業)都會受到影響，使用者應在服務結束前匯出他們的資料；說明可在說明中心找到。</li>
-<li>無法進行新的註冊，但現有帳戶仍可在協作者限制內邀請新用戶。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41591622">評論</a></h3>
-<ul>
-<li>「Pivotal Tracker 即將關閉，這為開發者提供了一個使用現代技術克隆這款受喜愛產品的機會。」</li>
-<li>此次關閉是 VMware 被博通收購後更廣泛策略的一部分，建議用戶在服務結束前遷移他們的數據。</li>
-<li>「像 Linear 和 Shortcut 這樣的替代方案也存在，但 Pivotal Tracker 的簡單性和專注度深受其用戶的重視。」</li>
-</ul>
-<h2><a href="https://gitlab.com/gitlab-com/gl-infra/production/-/issues/8121#note_1237201726">「Cloudflare 錯誤地將 Hetzner 的 IP 認定為位於伊朗」</a></h2>
-<ul>
-<li>在 GitLab 上的 CI(持續整合)建置工作中，高失敗率被報告，特別是由於從 registry.gitlab.com 拉取 Docker 映像時，Hetzner.de VPSes 出現間歇性超時。</li>
-<li>錯誤訊息顯示在等待標頭時發生客戶端逾時，雖然重新啟動管線有時有幫助，但最近多次重試都未能解決此問題。</li>
-<li>問題似乎特定於 registry.gitlab.com，因為從各種 GitLab 儲存庫進行 git clone 並未遇到類似的失敗，這表明 Docker 映像檔註冊服務存在問題。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41585249">評論</a></h3>
-<ul>
-<li>「Cloudflare 錯誤地將 Hetzner 的 IP 位址識別為位於伊朗，導致使用者存取問題。」</li>
-<li>“這個誤判問題並非僅限於 Cloudflare；Google 也曾面臨類似的問題。”</li>
-<li>討論強調了國籍和一個國家的聲譽如何影響獲取服務、旅行和機會，並且對制裁的更廣泛影響是對普通公民的影響大於政府官員。</li>
-</ul>
-<h2><a href="https://spectrum.ieee.org/5g-antenna-transparent-window">玻璃天線將窗戶變成 5G 基站</a></h2>
-<ul>
-<li>研究人員已經開發出玻璃天線，可以將窗戶變成 5G 基站，在不顯眼的情況下增強手機信號覆蓋。</li>
-<li>這些天線使用透明導電層，使窗戶在保持透明度的同時，能夠作為 5G 行動天線運作。</li>
-<li>這項創新可以通過利用現有的窗戶表面顯著改善都市地區的 5G 網路覆蓋。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41592552">評論</a></h3>
-<ul>
-<li>玻璃天線可以將窗戶轉變為 5G 基站，有可能降低安裝成本並提升覆蓋範圍。</li>
-<li>這項技術使用透明天線通過低輻射玻璃傳輸 5G 信號，這種玻璃通常會阻擋這些頻率，從而允許在室內放置天線。</li>
-<li>關於這項創新在透明度、外觀、安全性、功率水平以及全面採用的可行性方面，存在一些擔憂。</li>
-</ul>
-<h2><a href="https://github.com/MightyMoud/sidekick">我製作了一個 CLI 工具，可以在 VPS 上用兩個指令自我託管任何應用程式</a></h2>
-<ul>
-<li>Sidekick 透過一鍵設置、零停機部署和高可用性等功能，簡化了 VPS(虛擬私人伺服器)託管。</li>
-<li>“它旨在使主機託管變得簡單且負擔得起，針對那些厭倦了複雜設置的副業專案使用者。”</li>
-<li>主要功能包括從 Dockerfiles 部署應用程式、安全地管理環境機密，以及使用零配置的 SSL 憑證連接多個網域。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41591018">評論</a></h3>
-<ul>
-<li>「一款名為 Sidekick 的新 CLI 工具已經發布，允許使用者只需兩個指令即可在 VPS 上自我託管任何應用程式。」</li>
-<li>這個工具旨在簡化部署，處理設置 TLS/SSL 憑證和管理 Docker 容器等任務。</li>
-<li>未來的更新預計將包括資料庫託管和對 docker-compose 的支援，使其成為開發者尋求簡易部署解決方案的多功能選擇。</li>
-</ul>
-<h2><a href="https://mastodon.social/@stevetex/113162099798398758">Mozilla 在其首席產品官被診斷出癌症後將其解雇</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41588667">評論</a></h3>
-<ul>
-<li>Mozilla 在其首席產品官被診斷出癌症後終止了他的職務，引發了廣泛的爭議和批評。</li>
-<li>用戶表達了失望，並將 Mozilla 與不道德的新創公司和對沖基金進行比較，有些人建議使用 Ladybird、LibreWolf 或 Brave 等替代瀏覽器。</li>
-<li>這起事件引發了關於職場倫理、多元、平等與包容(DEI)政策，以及沒有 Mozilla 的 Firefox 未來的討論。</li>
-</ul>
-<h2><a href="https://github.com/dragostis/chili">Chili。Spice 的 Rust 移植版，一個低開銷的並行化函式庫</a></h2>
-<ul>
-<li>「Chili 是 Spice 的 Rust 移植版，一個低開銷的並行化函式庫，設計用於在任何計算分叉點並行運行兩個閉包，類似於 rayon::join。」</li>
-<li>它在小型計算中特別有效，因為估算剩餘任務的成本較高，這在二元樹節點求和的性能中得到了證明。</li>
-<li>基準測試顯示，在較大的數據集上性能有顯著提升，特別是在 AMD Ryzen 7 4800HS 和 Apple M1 處理器上，突顯其在平行處理方面的效率。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41591449">評論</a></h3>
-<ul>
-<li>Chili 是 Spice 的 Rust 移植版本，Spice 是一個低開銷的並行化庫，因其在小型操作中的效率而受到青睞，相較於 Rayon 更具優勢。</li>
-<li>討論包括與其他並行化庫如 OpenMP 的比較以及涉及的開銷。</li>
-<li>「有關詳細的實作資訊，請使用者參閱 GitHub 上的 Spice README。」</li>
-</ul>
-<h2><a href="https://ssoready.com/blog/engineering/ruby-saml-pwned-by-xml-signature-wrapping-attacks/">「Ruby-SAML 被 XML 簽名包裝攻擊入侵」</a></h2>
-<ul>
-<li>「Ruby-SAML 已受到 XML 簽名包裝攻擊的影響，波及 GitLab 等平台。」</li>
-<li>「CVE-2024-45409，於 2024 年 9 月 10 日發布，揭示了此漏洞，使攻擊者能夠以任何用戶身份登入。」</li>
-<li>核心問題在於 SAML 和 XML 簽章規範，建議工程師採用超越這些有缺陷規範的安全實踐。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41586031">評論</a></h3>
-<ul>
-<li>「Ruby-SAML 易受到 XML 簽名包裝攻擊，這突顯了其實作中的安全性問題。」</li>
-<li>「儘管 SAML 複雜且實施具有挑戰性，但它仍然在企業和學術環境中被廣泛使用。」</li>
-<li>「目前越來越多的人推動採用像 OpenID Connect (OIDC) 這樣的簡單替代方案。」</li>
-</ul>
-<h2><a href="https://github.com/denys-olleik/accounting">我已建立一個會計系統</a></h2>
-<ul>
-<li>該工具可以生成發票並處理付款，但尚未準備好投入生產使用。</li>
-<li>目前，它需要 PostgreSQL 才能運作，並計劃在 SQLite 原生支援地理類型後，新增對 SQLite 的支援。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41585468">評論</a></h3>
-<ul>
-<li>已開發出一個會計系統，可以生成發票並接收付款，但尚未達到生產就緒狀態，目前需要使用 PostgreSQL。</li>
-<li>“反饋強調了需要增加一些功能，例如採購訂單管理、資本支出、審批工作流程以及多公司/多貨幣支持，並將其與 QuickBooks 進行比較。”</li>
-<li>該專案顯示出潛力，但需要更多功能、測試和持續更新，以保持相關性並滿足企業，特別是大型組織的需求。</li>
-</ul>
-<h2><a href="https://www.theguardian.com/us-news/2024/sep/18/american-health-system-ranks-last">報告指出，美國醫療系統在同類國家中排名墊底</a></h2>
-<ul>
-<li>根據一份聯邦基金會的報告，美國的醫療系統在10個同類國家中排名最後，儘管美國人為醫療支付的費用幾乎是其他國家的兩倍。</li>
-<li>該系統在健康公平性、醫療可及性和結果方面表現不佳，建議包括擴大保險覆蓋範圍和減少患者費用。</li>
-<li>儘管選民優先考慮醫療費用問題，但兩位主要的總統候選人都沒有提出重大醫療改革方案，而美國人每年在醫療上的花費達到4.5兆美元。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41588717">評論</a></h3>
-<ul>
-<li>“有報告指出，美國的醫療系統在同類國家中排名最後，這在論壇上引發了關於全球醫療經驗的討論。”</li>
-<li>用戶將美國系統的緩慢和低效率與印度等國家更快速、更便宜的醫療服務以及愛沙尼亞的數位健康記錄的優點進行了比較。</li>
-<li>對話中還強調了美國的高成本和低效率，儘管有良好的保險，仍對長時間等待和缺乏及時的醫療感到沮喪。</li>
-</ul>
-<h2><a href="https://lichess.org/@/Lichess/blog/post-mortem-of-our-longest-downtime/XAgG7jbd">「Lichess：我們最長停機時間的事後檢討」</a></h2>
-<ul>
-<li>「Lichess 經歷了有史以來最長的停機時間，從 9 月 12 日到 13 日持續了 10 小時，原因是 OVH 資料中心的硬體問題。」</li>
-<li>「儘管網站停機，Lichess 的內容團隊仍然使用私人沙盒版本的網站繼續進行國際象棋奧林匹克賽的評論。」</li>
-<li>「Lichess 計劃進一步調查此問題並實施額外的安全措施，儘管這些措施耗時且資源密集。」</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41586579">評論</a></h3>
-<ul>
-<li>「Lichess 因主要伺服器的硬體問題經歷了最長的停機時間，該伺服器每天處理約 500 萬場遊戲。」</li>
-<li>這起事件引發了對 Lichess 依賴單一實體伺服器及其故障轉移計劃的擔憂，儘管他們每月的運營成本高達約 4 萬美元。</li>
-<li>這份事後報告因其透明度而受到讚揚，突顯了創辦人 Thibault Duplessis 的奉獻精神，並鼓勵用戶捐款以支持這項服務。</li>
-</ul>
-<h2><a href="https://larslofgren.com/forbes-marketplace/">「Forbes 市場：試圖吞噬其宿主的寄生 SEO 公司」</a></h2>
-<ul>
-<li>「Forbes Marketplace 是一個獨立於 Forbes 的實體，使用積極的 SEO 策略來主導健康、家居改善和體育博彩等各類別的搜尋結果。」</li>
-<li>這種方法使《富比士》每月獲得超過 2700 萬次訪問，並產生可觀的收入，估計每年達數億美元。</li>
-<li>核心問題在於 Google 的演算法，它優先顯示 Forbes 的內容，而非較小型、更專業的出版商，這引發了對搜尋結果排名公平性和準確性的擔憂。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41590466">評論</a></h3>
-<ul>
-<li>這篇文章討論了「寄生 SEO」公司的普遍現象，這些公司利用像 Forbes 這樣受信任的網域來在搜尋結果中獲得高排名，儘管其內容品質低劣。</li>
-<li>Google 因允許這些行為而受到批評，因為它優先考量廣告收入和受信任的網域，而非內容品質，這需要手動干預來解決問題。</li>
-<li>這種現象並不新鮮，且在其他網站如 HowStuffWorks 和 LiveStrong 上也有觀察到，這突顯了搜尋引擎優化和內容相關性的一個更廣泛的問題。</li>
-</ul>
-<head>
-  <meta property="og:title" content="Comic Mono" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Comic%20Mono&subheading=2024%E5%B9%B49%E6%9C%8819%E6%97%A5%20%E6%98%9F%E6%9C%9F%E5%9B%9B%3A%20Hacker%20News%20%E6%91%98%E8%A6%81" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/zh/Hant/2024/09/19</link>
-            <guid isPermaLink="false">2024-09-19T00:00:00.000Z</guid>
-            <pubDate>Thu, 19 Sep 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

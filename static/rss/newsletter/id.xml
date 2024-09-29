@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 28 Sep 2024 19:08:48 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 29 Sep 2024 19:13:52 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/id.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 28 Sep 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sun, 29 Sep 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[id]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-09-29]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/09/29&#39;</h2>
+<h1>2024-09-29</h1>
+<h2><a href="https://sohl-dickstein.github.io/2022/11/06/strong-Goodhart.html">Efisiensi yang berlebihan membuat segalanya menjadi lebih buruk (2022)</a></h2>
+<ul>
+<li>Versi kuat dari hukum Goodhart menyarankan bahwa mengoptimalkan secara berlebihan ukuran proxy dapat menyebabkan hasil yang lebih buruk dalam tujuan sebenarnya, seperti yang terlihat dalam pengujian standar dan overfitting pembelajaran mesin.</li>
+<li>Konsep ini berlaku di berbagai bidang, termasuk politik, ekonomi, dan kesehatan, menunjukkan relevansi luas dari fenomena tersebut.</li>
+<li>Strategi mitigasi dari pembelajaran mesin, seperti menyelaraskan tujuan proxy dengan hasil yang diinginkan, menambahkan penalti regularisasi, menyuntikkan noise, dan menggunakan penghentian dini, dapat membantu mengelola masalah ini.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41684082">Reaksi</a></h3>
+<ul>
+<li>Optimalisasi berlebihan dalam pembelajaran mesin dan bidang lainnya dapat menyebabkan hasil negatif, seperti yang disarankan oleh peneliti ML Jascha Sohl-Dickstein.</li>
+<li>Konsep ini sejalan dengan hukum Goodhart, yang menyatakan bahwa ketika suatu ukuran menjadi target, ukuran tersebut berhenti menjadi ukuran yang baik.</li>
+<li>Contoh hasil negatif dari over-optimisasi termasuk gangguan rantai pasokan COVID-19 dan ketidakefisienan dalam perawatan kesehatan dan perkeretaapian di Swedia, yang menyoroti kebutuhan sistem untuk mempertahankan beberapa kelonggaran demi ketahanan dan kemampuan beradaptasi.</li>
+</ul>
+<h2><a href="https://discord.com/blog/how-discord-stores-trillions-of-messages">Bagaimana Discord menyimpan triliunan pesan (2023)</a></h2>
+<ul>
+<li>Discord awalnya menggunakan MongoDB untuk penyimpanan pesan tetapi beralih ke Cassandra untuk skalabilitas dan toleransi kesalahan yang lebih baik, yang kemudian menyebabkan masalah kinerja dan pemeliharaan.</li>
+<li>Dalam tahun 2022, Discord bermigrasi dari Cassandra ke ScyllaDB, sebuah basis data yang lebih efisien, berbasis C++, dan kompatibel dengan Cassandra, mengurangi jumlah node dari 177 menjadi 72 dan secara signifikan meningkatkan latensi dan kinerja.</li>
+<li>Proses migrasi melibatkan penulisan ganda data baru dan menggunakan migrator berbasis Rust untuk data historis, yang menghasilkan lebih sedikit masalah dan penanganan yang lebih baik terhadap peningkatan lalu lintas selama acara besar seperti Piala Dunia.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683293">Reaksi</a></h3>
+<ul>
+<li>Discord beralih dari Cassandra ke ScyllaDB untuk mengatasi masalah kinerja, terutama dengan penghapusan dan pengumpulan sampah (GC).</li>
+<li>ScyllaDB menyediakan strategi pemadatan dan kinerja yang lebih baik, meskipun masih menggunakan tombstone untuk penghapusan.</li>
+<li>Discord mempertahankan skema dan strategi partisi yang ada selama migrasi, menekankan pentingnya konfigurasi default yang baik.</li>
+</ul>
+<h2><a href="https://apnews.com/article/spacex-launch-boeing-nasa-stuck-astronauts-e179d0dc6c77d224278fd0430148ff8b">SpaceX meluncurkan misi untuk 2 astronot NASA yang terjebak di ISS</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41683306">Reaksi</a></h3>
+<ul>
+<li>SpaceX meluncurkan misi untuk mengembalikan dua astronot NASA dari ISS karena masalah dengan Starliner milik Boeing.</li>
+<li>Terjadi anomali selama pembakaran deorbit tahap kedua roket Falcon 9, yang menyebabkan penundaan peluncuran untuk investigasi.</li>
+<li>Para astronot akan kembali menggunakan Crew Dragon milik SpaceX, dengan setelan baru yang disediakan, memicu perdebatan apakah ini adalah misi &#39;penyelamatan&#39; atau rotasi kru rutin.</li>
+</ul>
+<h2><a href="https://www.gov.uk/service-manual/technology/using-progressive-enhancement">Bangun frontend yang kuat menggunakan peningkatan progresif</a></h2>
+<ul>
+<li>Pengembangan progresif dimulai dengan HTML, kemudian menambahkan CSS dan JavaScript, memastikan fungsionalitas dasar dan aksesibilitas untuk semua pengguna, termasuk mereka yang memiliki keterbatasan perangkat atau konektivitas.</li>
+<li>JavaScript seharusnya meningkatkan, bukan menggantikan, fungsionalitas HTML dan CSS; gunakan deteksi fitur, polyfill, dan transpiling untuk memastikan kompatibilitas.</li>
+<li>Hindari Aplikasi Halaman Tunggal (SPA) karena dapat menghambat aksesibilitas dan navigasi; pastikan layanan Anda tetap berfungsi meskipun terjadi kegagalan CSS/JavaScript.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41686715">Reaksi</a></h3>
+<ul>
+<li>Postingan tersebut membahas manfaat membangun frontend menggunakan peningkatan progresif, dengan fokus pada HTML dan CSS dengan sedikit JavaScript, seperti yang dicontohkan oleh gov.uk.</li>
+<li>Banyak pengembang mengungkapkan frustrasi dengan kompleksitas yang tidak perlu yang diperkenalkan oleh Aplikasi Halaman Tunggal (SPA) dan kerangka kerja JavaScript modern, serta menganjurkan solusi yang lebih sederhana dan lebih mudah dipelihara.</li>
+<li>Percakapan tersebut menyoroti tren yang semakin berkembang untuk mempertimbangkan kembali solusi berbasis HTML yang lebih sederhana, dengan alat seperti htmx mendapatkan perhatian karena kemampuannya mengurangi kompleksitas frontend.</li>
+</ul>
+<h2><a href="https://www.jjinux.com/2024/09/notions-mid-life-crisis.html">Notion mengalami krisis paruh baya</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41683577">Reaksi</a></h3>
+<ul>
+<li>Notion, yang awalnya populer karena fitur-fiturnya yang dapat disesuaikan dan serbaguna, menghadapi kritik karena menjadi berantakan dan kurang efektif, mirip dengan alat lain yang terlalu sering digunakan seperti Jira.</li>
+<li>Pengguna mengungkapkan frustrasi dengan dokumen yang usang dan sulit ditemukan, menyarankan bahwa alat yang lebih sederhana seperti Google Docs mungkin lebih produktif.</li>
+<li>Meskipun memiliki beberapa masalah, kemampuan database dan fleksibilitas Notion masih menjadikannya pesaing kuat untuk mengatur dan mengkategorikan catatan, meskipun beberapa pengguna sedang mempertimbangkan alternatif seperti Obsidian.</li>
+</ul>
+<h2><a href="https://ukdefencejournal.org.uk/britain-buys-semiconductor-factory-for-defence-purposes/">Inggris membeli pabrik semikonduktor untuk keperluan pertahanan</a></h2>
+<ul>
+<li>Pemerintah Inggris telah mengakuisisi sebuah pabrik semikonduktor di Newton Aycliffe, County Durham, yang sekarang bernama Octric Semiconductors UK, untuk mendukung rantai pasokan pertahanan dan Angkatan Bersenjata.</li>
+<li>Fasilitas ini adalah satu-satunya situs aman di Inggris yang mampu memproduksi semikonduktor gallium arsenide, yang penting untuk platform militer seperti jet tempur, dan mengamankan hingga 100 pekerjaan terampil.</li>
+<li>Pengakuisisian ini memastikan kelanjutan produksi semikonduktor penting untuk aplikasi militer, menstabilkan pabrik dan meningkatkan kemampuan pertahanan serta kapasitas industri Inggris.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683098">Reaksi</a></h3>
+<ul>
+<li>Inggris telah membeli sebuah pabrik semikonduktor untuk keperluan pertahanan, menyoroti pentingnya produksi semikonduktor domestik secara strategis.</li>
+<li>Kilang tersebut, yang sebelumnya dimiliki oleh Coherent, mengkhususkan diri dalam semikonduktor gallium arsenide, yang penting untuk aplikasi militer seperti jet tempur dan radar frekuensi tinggi.</li>
+<li>Pengambilalihan ini mengamankan hingga 100 pekerjaan terampil dan memastikan Inggris mempertahankan bagian penting dari infrastruktur pertahanannya, terutama saat permintaan semikonduktor global meningkat.</li>
+</ul>
+<h2><a href="https://cepa.org/article/floating-megabomb-heaves-to-near-the-english-coast/">Kapal megabom terapung mendekati pantai Inggris</a></h2>
+<ul>
+<li>MV Ruby, sebuah kapal berbendera Malta yang membawa 20.000 ton amonium nitrat yang mudah meledak, mengalami kerusakan dan mencari pelabuhan di lepas pantai Kent, Inggris, menimbulkan kekhawatiran keamanan yang signifikan.</li>
+<li>Kapal tersebut telah ditolak masuk ke beberapa pelabuhan Eropa, termasuk Norwegia dan Lituania, karena sifat berbahaya dari muatannya, yang dapat menyebabkan kehancuran sebanding dengan sepertiga bom Hiroshima.</li>
+<li>Insiden tersebut menyoroti taktik perang hibrida Rusia dan menggarisbawahi perlunya berbagi intelijen yang kuat, pengawasan, dan protokol keamanan maritim untuk mengelola ancaman semacam itu secara efektif.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685917">Reaksi</a></h3>
+<ul>
+<li>Sebuat kapal yang rusak membawa 20.000 ton amonium nitrat, bahan yang sangat mudah meledak, sedang mendekati pantai Inggris, menyebabkan kekhawatiran besar terkait keselamatan.</li>
+<li>Kapal tersebut telah ditolak masuk ke beberapa pelabuhan Eropa dan diduga digunakan oleh Rusia untuk mengganggu negara-negara NATO, meningkatkan ketegangan geopolitik.</li>
+<li>Otoritas berada dalam siaga tinggi karena potensi ancaman dan sejarah permusuhan tingkat rendah Rusia, mempertanyakan niat kapal tersebut saat berlayar dari Norwegia ke Lituania dan sekarang mendekati Inggris.</li>
+</ul>
+<h2><a href="https://jvns.ca/blog/2024/09/27/some-go-web-dev-notes/">Beberapa catatan pengembangan web Go</a></h2>
+<ul>
+<li>Go 1.22 memperkenalkan dukungan routing yang ditingkatkan dalam pustaka standar, menyederhanakan penanganan rute dan meningkatkan keamanan dengan middleware.</li>
+<li>Alat sqlc menghasilkan kode Go dari kueri SQL, mengurangi kode boilerplate dan memperlancar interaksi dengan basis data.</li>
+<li>Menetapkan batas memori GC di Go 1.19 membantu mencegah pembunuhan out-of-memory (OOM) di lingkungan dengan memori rendah, meningkatkan stabilitas aplikasi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41687707">Reaksi</a></h3>
+<ul>
+<li>Kesederhanaan dan stabilitas Go dihargai oleh para pengembang, membuatnya mudah untuk melanjutkan proyek setelah jeda yang lama.</li>
+<li>Pengaturan awal bisa menjadi tantangan karena perlu memilih berbagai pustaka untuk pencatatan, driver basis data, dll.</li>
+<li>Ketiadaan kerangka kerja dominan dalam Go dianggap sebagai keterbatasan sekaligus keuntungan, menawarkan fleksibilitas dengan pustaka standar.</li>
+</ul>
+<h2><a href="https://wiki.alopex.li/CrystalNotes">Catatan tentang Bahasa Kristal</a></h2>
+<ul>
+<li>Crystal, sebuah bahasa yang dimulai pada tahun 2014, bertujuan untuk menjadi Ruby yang bertipe kuat dengan inferensi tipe dan dikompilasi menjadi eksekusi asli melalui LLVM.</li>
+<li>Itu menampilkan ekosistem terdesentralisasi dari perpustakaan, anotasi tipe opsional, dan sistem tipe yang mirip dengan TypeScript, mendukung generik dan fitur berorientasi objek lainnya.</li>
+<li>Meskipun ada beberapa masalah dengan penanganan tempfile dan iterasi direktori, Crystal menawarkan banyak fungsi dan pustaka bawaan yang berguna, menjadikannya pilihan yang solid bagi mereka yang mencari sistem tipe statis yang terasa dinamis.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683815">Reaksi</a></h3>
+<ul>
+<li>Bahasa Crystal sedang dibahas mengenai potensinya dan keterbatasan saat ini, dengan pengguna berbagi pengalaman yang beragam mengenai keandalan dan kematangannya.</li>
+<li>Beberapa pengguna menyoroti kinerja tinggi dan produktivitas Crystal untuk server API backend dan tugas latar belakang, sementara yang lain menunjukkan masalah seperti pengumpulan sampah (GC) yang lambat dan bug.</li>
+<li>Percakapan tersebut mencakup perbandingan dengan bahasa lain seperti Ruby, Clojure, dan Rust, serta menyebutkan penggunaan LLVM oleh Crystal untuk menghasilkan kode yang dioptimalkan, membuatnya sebanding dengan Go, Rust, atau C dalam hal kinerja.</li>
+</ul>
+<h2><a href="https://nolanlawson.com/2024/09/28/web-components-are-okay/">Komponen web baik-baik saja</a></h2>
+<ul>
+<li>Nolan Lawson membahas perdebatan tentang komponen web, yang dipicu oleh postingan Ryan Carniato &quot;Web Components Are Not the Future&quot; dan tanggapan Cory LaViska &quot;Web Components Are Not the Future — They’re the Present.&quot;</li>
+<li>Lawson, yang berpengalaman dengan komponen web, mengakui adanya beban kinerja mereka tetapi menyoroti pertukaran seperti pemeliharaan, keamanan, kegunaan, dan aksesibilitas.</li>
+<li>Dia menyimpulkan bahwa komponen web, meskipun memiliki keterbatasan, menawarkan peluang kreatif yang unik dan merupakan salah satu dari banyak alat yang tersedia dalam lanskap pengembangan web yang beragam.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41686722">Reaksi</a></h3>
+<ul>
+<li>Kajian ini berpusat pada kompleksitas dan kegunaan kerangka kerja front-end modern dibandingkan dengan komponen web, dengan beberapa pengembang menyatakan frustrasi terhadap &#39;keajaiban&#39; dalam kerangka kerja seperti React.</li>
+<li>Komponen web disorot karena kesederhanaannya dan keselarasan yang lebih dekat dengan standar web, menawarkan fitur seperti Shadow DOM untuk isolasi tanpa memerlukan kerangka kerja yang kompleks.</li>
+<li>Seorang pengembang berbagi pengalaman positif mereka beralih dari Vue ke komponen web, yang secara signifikan mengurangi ketergantungan dan beban pemeliharaan, yang sangat bermanfaat untuk proyek dengan sumber daya terbatas.</li>
+</ul>
+<h2><a href="https://htmgo.dev">htmgo - bangun sistem yang sederhana dan skalabel dengan golang + htmx</a></h2>
+<ul>
+<li>Seorang pengembang sedang mengerjakan tumpukan minimal yang menggabungkan Golang dan htmx untuk meningkatkan fitur seperti komponen dan memperbaiki sintaks untuk JavaScript yang kompleks.</li>
+<li>Kami bertujuan untuk menyediakan alternatif yang lebih ringan dibandingkan dengan kerangka kerja yang berat sambil mengatasi sifat tingkat rendah dari htmx.</li>
+<li>Inisiatif ini bisa bermanfaat bagi pengembang lain yang mencari tumpukan pengembangan yang efisien dan terstruktur.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683144">Reaksi</a></h3>
+<ul>
+<li>Seorang pengembang memperkenalkan &quot;htmgo,&quot; sebuah stack minimal yang menggabungkan Golang dan HTMX, yang bertujuan untuk menyederhanakan pembuatan komponen yang dapat digunakan kembali dan meningkatkan sintaks.</li>
+<li>Proyek ini telah memicu diskusi di antara para pengembang tentang kelebihan mengintegrasikan bahasa backend dengan HTMX dan manfaat menggunakan Golang untuk pengembangan web yang ringan.</li>
+<li>Komunitas sedang membandingkan &quot;htmgo&quot; dengan alat dan kerangka kerja lain seperti Hotwire, Gomponents, dan berbagai mesin templating, yang menyoroti minat yang semakin besar dalam solusi pengembangan web sisi server yang efisien.</li>
+</ul>
+<h2><a href="https://spectrum.ieee.org/flexible-risc-v">Kombinasi RISC-V yang Fleksibel: Bisa Berharga Kurang dari Satu Dolar</a></h2>
+<ul>
+<li>Keping plastik open-source baru berdaya 6-mW berbasis arsitektur RISC-V dapat melakukan tugas pembelajaran mesin sambil cukup fleksibel untuk melengkung di sekitar pensil.</li>
+<li>Chip tersebut hanya kehilangan sekitar 4 persen dari kinerjanya ketika dibengkokkan, menunjukkan ketangguhannya dan potensinya untuk aplikasi elektronik fleksibel.</li>
+<li>Perkembangan ini menyoroti kemajuan signifikan di bidang semikonduktor fleksibel dan perangkat keras sumber terbuka.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41687739">Reaksi</a></h3>
+<ul>
+<li>Artikel IEEE terbaru menyoroti prosesor RISC-V fleksibel yang bisa berharga kurang dari satu dolar, berdasarkan desain SERV.</li>
+<li>Pragmatic Semiconductor mengklaim bahwa mereka dapat memproduksi chip ini dalam waktu 48 jam, jauh lebih cepat daripada proses fabrikasi silikon tradisional.</li>
+<li>Meskipun prosesor berjalan pada 60 kHz dan mengonsumsi daya sebesar 6 miliwatt, prosesor ini bisa bernilai untuk aplikasi khusus seperti e-tekstil dan elektronik fleksibel.</li>
+</ul>
+<h2><a href="https://www.economist.com/science-and-technology/2024/09/25/nasa-is-selling-a-brand-new-moon-rover">NASA menjual rover Bulan yang benar-benar baru: Belum pernah digunakan, satu pemilik sebelumnya</a></h2>
+<ul>
+<li>NASA bertujuan untuk mengembalikan manusia ke Bulan pada akhir dekade ini, dimulai dengan pengiriman probe ke kutub selatan bulan untuk mencari es, yang memiliki kepentingan ilmiah dan praktis.</li>
+<li>Perkembangan terbaru meliputi terapi imun untuk asma, penyakit jantung, dan penuaan, teknologi baru untuk mendeteksi kebocoran pipa air, serta penemuan keju kuno di China.</li>
+<li>Inovasi dalam AI dan daur ulang baterai mobil listrik juga patut diperhatikan, menunjukkan kemajuan yang berkelanjutan di berbagai bidang teknologi.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685326">Reaksi</a></h3>
+<ul>
+<li>Kepala NASA menjual rover Bulan yang baru dan belum pernah digunakan, memicu diskusi tentang nilainya dan konteks historisnya di sebuah forum.</li>
+<li>Pengguna memperdebatkan nilainya, berbagi detail teknis, dan berkomentar dengan humor tentang topik tersebut, sementara beberapa menyatakan kekhawatiran tentang konten yang tidak relevan.</li>
+<li>Konsultasi tersebut juga menyoroti potensi korupsi dalam proses penawaran kontraktor NASA dan tantangan pembangunan selama COVID.</li>
+</ul>
+<h2><a href="https://github.com/feldera/feldera">Mesin Komputasi Inkremental Feldera</a></h2>
+<ul>
+<li>Feldera adalah mesin kueri berkinerja tinggi yang dirancang untuk komputasi inkremental, memungkinkan pemrosesan perubahan secara terus-menerus tanpa menghitung ulang data yang lebih lama.</li>
+<li>Itu mendukung sintaks SQL penuh dan terhubung ke berbagai sumber data, memungkinkan pengguna untuk mengelola pipeline dan memeriksa hasil secara real-time, bahkan dengan dataset yang lebih besar dari RAM.</li>
+<li>Feldera dapat dimulai menggunakan Docker Compose atau dari sumber dengan dependensi seperti Rust, Java, Maven, dan Typescript, serta menawarkan konsol web untuk interaksi pengguna.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685689">Reaksi</a></h3>
+<ul>
+<li>Feldera Incremental Compute Engine adalah alat sumber terbuka yang dirancang untuk komputasi inkremental, yang secara signifikan mengurangi waktu pemrosesan aliran.</li>
+<li>Itu didasarkan pada Z-Sets, sebuah generalisasi dari aljabar relasional, yang memungkinkan banyak operasi SQL diimplementasikan secara bertahap.</li>
+<li>Feldera mendukung berbagai operator SQL, pengumpulan sampah otomatis, dan dapat mengindeks data pada penyimpanan, menjadikannya cocok untuk program SQL yang canggih dan gudang data historis.</li>
+</ul>
+<h2><a href="https://sadilkhan.github.io/text2cad-project/">Teks2CAD Menghasilkan Desain CAD Berurutan dari Prompt Teks</a></h2>
+<ul>
+<li>Text2CAD adalah kerangka kerja AI pertama yang dirancang untuk menghasilkan model CAD (Computer-Aided Design) parametrik dari deskripsi tekstual multi-level, menjadikannya kemajuan signifikan di bidang ini.</li>
+<li>Kerangka kerja ini mencakup jalur anotasi data baru menggunakan LLM (Model Bahasa Besar) dan VLM (Model Bahasa-Visi) sumber terbuka untuk memberi anotasi pada dataset DeepCAD dengan berbagai petunjuk teks.</li>
+<li>Teks2CAD Transformer menggunakan BeRT Encoder yang telah dilatih sebelumnya dan lapisan Adaptif untuk mengubah deskripsi bahasa alami menjadi model CAD 3D, menunjukkan kemampuannya melalui hasil kualitatif dan kuantitatif.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685642">Reaksi</a></h3>
+<ul>
+<li>Teks2CAD adalah alat yang menghasilkan model CAD (Desain Berbantuan Komputer) dari perintah teks, bertujuan untuk menyederhanakan proses desain bagi pengguna yang tidak terbiasa dengan perangkat lunak CAD tradisional.</li>
+<li>Alat ini sangat bermanfaat bagi pengguna yang mungkin tidak sering merancang objek, karena mengurangi kebutuhan untuk pelatihan CAD yang ekstensif, meskipun mungkin tidak seefisien untuk desain yang kompleks.</li>
+<li>Diskusi tersebut menyoroti potensi dan keterbatasan penggunaan bahasa alami untuk membuat model 3D yang presisi, dengan beberapa ahli menyarankan bahwa alur kerja CAD tradisional masih lebih efektif untuk desain yang rinci dan akurat.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Efisiensi yang berlebihan membuat segalanya menjadi lebih buruk (2022)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Efisiensi%20yang%20berlebihan%20membuat%20segalanya%20menjadi%20lebih%20buruk%20(2022)&subheading=Minggu%2C%2029%20September%202024%3A%20Ringkasan%20Berita%20Peretas" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/id/2024/09/29</link>
+            <guid isPermaLink="false">2024-09-29T00:00:00.000Z</guid>
+            <pubDate>Sun, 29 Sep 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-28]]></title>
             <description
@@ -1664,191 +1850,6 @@
             <link>https://hn.cho.sh/id/2024/09/20</link>
             <guid isPermaLink="false">2024-09-20T00:00:00.000Z</guid>
             <pubDate>Fri, 20 Sep 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-09-19]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/09/19&#39;</h2>
-<h1>2024-09-19</h1>
-<h2><a href="https://dtinth.github.io/comic-mono-font/">Komik Mono</a></h2>
-<ul>
-<li>Comic Mono adalah font monospace baru yang berasal dari Comic Shanns (versi 1) karya Shannon Miwa, dengan semua glif memiliki lebar yang sama dan metrik yang disesuaikan untuk tampilan yang lebih baik.</li>
-<li>Font tersebut dibuat menggunakan skrip Python dan FontForge, dengan versi tebal yang dihasilkan melalui operasi Embolden dari FontForge.</li>
-<li>Comic Mono tersedia untuk diunduh dan digunakan di bawah Lisensi MIT, dengan opsi distribusi tambahan melalui CDN, npm, dan paket Linux.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41585156">Reaksi</a></h3>
-<ul>
-<li>Comic Mono, sebuah font monospasi yang terinspirasi oleh Comic Sans, telah menarik perhatian karena membuat pemrograman lebih menyenangkan dan lebih nyaman di mata.</li>
-<li>Pengguna membandingkan Comic Mono dengan font lain seperti Comic Code, mencatat perbedaan dalam keterbacaan dan estetika, dengan beberapa lebih memilih Comic Code karena tampilannya yang lebih rapi.</li>
-<li>Kajian ini menyoroti penggunaan font bergaya Comic Sans untuk mengurangi ketegangan mata dan membantu disleksia, menunjukkan sisi praktis dari font yang sering diejek ini.</li>
-</ul>
-<h2><a href="https://twitter.com/RachelTobac/status/1836471586624540705">LinkedIn sekarang menggunakan konten semua orang untuk melatih alat AI mereka</a></h2>
-<ul>
-<li>LinkedIn menggunakan konten yang dihasilkan pengguna untuk melatih alat AI-nya secara default, menimbulkan kekhawatiran privasi.</li>
-<li>Pengguna disarankan untuk keluar dengan menavigasi ke Pengaturan dan Privasi &gt; Privasi Data &gt; Data untuk Peningkatan AI Generatif dan mematikannya.</li>
-<li>Rekomendasi tersebut diperluas kepada organisasi untuk menghentikan auto opt-in guna melindungi privasi data pengguna.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41584486">Reaksi</a></h3>
-<ul>
-<li>LinkedIn menggunakan konten pengguna untuk melatih alat AI-nya, yang mengarah pada reaksi beragam terkait kualitas dan keaslian konten tersebut.</li>
-<li>Masalah privasi telah muncul karena pengguna secara otomatis didaftarkan tanpa persetujuan eksplisit, meskipun pengguna di Uni Eropa dikecualikan karena peraturan GDPR.</li>
-<li>Kritikus berpendapat LinkedIn seharusnya memprioritaskan peningkatan fitur inti daripada pengembangan AI, dengan beberapa pengguna mempertimbangkan untuk keluar atau meninggalkan platform tersebut.</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41588200">Anak saya mungkin buta – bagaimana cara terbaik untuk mendukung</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41588200">Reaksi</a></h3>
-<ul>
-<li>Orang tua yang khawatir tentang potensi kebutaan anak mereka sedang mencari sumber daya dan saran untuk dukungan.</li>
-<li>Beberapa saran termasuk mendorong kemandirian, berintegrasi dengan teman sebaya, dan memanfaatkan sumber daya dari organisasi seperti Braille Institute dan American Foundation for the Blind.</li>
-<li>Pengalaman pribadi menyoroti strategi sukses seperti ekolokasi dan mengintegrasikan anak-anak tunanetra ke dalam kegiatan reguler.</li>
-</ul>
-<h2><a href="https://www.nintendo.co.jp/corporate/release/en/2024/240919.html">Nintendo Mengajukan Gugatan atas Pelanggaran Hak Paten Terhadap Pocketpair, Inc</a></h2>
-<ul>
-<li>Nintendo dan The Pokémon Company telah mengajukan gugatan pelanggaran paten terhadap Pocketpair, Inc. di Pengadilan Distrik Tokyo.</li>
-<li>Klaim gugatan menyatakan bahwa permainan Pocketpair, Palworld, melanggar beberapa hak paten, meminta perintah penghentian dan kompensasi atas kerugian.</li>
-<li>Nintendo menekankan komitmennya untuk melindungi hak kekayaan intelektualnya, termasuk merek Nintendo, melalui tindakan hukum yang diperlukan.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41587214">Reaksi</a></h3>
-<ul>
-<li>Nintendo telah mengajukan gugatan pelanggaran paten terhadap Pocketpair, Inc. terkait dengan game mereka, Palworld, dengan fokus pada mekanisme permainan daripada kemiripan karakter.</li>
-<li>Pocketpair telah melibatkan perwakilan hukum untuk menentang klaim tersebut, menyoroti kompleksitas dan kontroversi paten perangkat lunak dalam industri game.</li>
-<li>Kasus ini menarik perhatian pada perdebatan yang sedang berlangsung mengenai cakupan dan dampak paten perangkat lunak terhadap pengembangan dan inovasi permainan.</li>
-</ul>
-<h2><a href="https://www.pivotaltracker.com/blog/2024-09-18-end-of-life">Pivotal Tracker akan ditutup</a></h2>
-<ul>
-<li>VMware Tanzu telah mengumumkan akhir masa pakai (EOL) untuk Pivotal Tracker, efektif mulai 30 April 2025, dengan dukungan diberikan hingga tanggal tersebut.</li>
-<li>Semua akun (gratis, disponsori, berbayar, Enterprise) terpengaruh, dan pengguna harus mengekspor data mereka sebelum layanan berakhir; petunjuk tersedia di Pusat Bantuan.</li>
-<li>Registrasi baru tidak memungkinkan, tetapi akun yang sudah ada masih dapat mengundang pengguna baru dalam batas kolaborator.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41591622">Reaksi</a></h3>
-<ul>
-<li>Pivotal Tracker akan ditutup, menciptakan peluang bagi para pengembang untuk mengkloning produk yang dicintai ini menggunakan teknologi modern.</li>
-<li>Penutupan ini adalah bagian dari strategi yang lebih luas dari VMware setelah diakuisisi oleh Broadcom, dan pengguna disarankan untuk memigrasikan data mereka sebelum layanan berakhir.</li>
-<li>Alternatif seperti Linear dan Shortcut ada, tetapi kesederhanaan dan fokus Pivotal Tracker sangat dihargai oleh penggunanya.</li>
-</ul>
-<h2><a href="https://gitlab.com/gitlab-com/gl-infra/production/-/issues/8121#note_1237201726">Cloudflare salah mengidentifikasi IP Hetzner sebagai berada di Iran</a></h2>
-<ul>
-<li>Angka kegagalan yang tinggi dalam pekerjaan build CI (Continuous Integration) di GitLab sedang dilaporkan, terutama disebabkan oleh timeout yang terjadi secara sporadis dari VPS Hetzner.de saat menarik gambar Docker dari registry.gitlab.com.</li>
-<li>Pesan kesalahan menunjukkan adanya batas waktu klien saat menunggu header, dan meskipun memulai ulang pipeline kadang-kadang membantu, beberapa kali percobaan ulang baru-baru ini gagal menyelesaikan masalah tersebut.</li>
-<li>Masalah ini tampaknya spesifik untuk registry.gitlab.com, karena kloning git dari berbagai repositori GitLab tidak mengalami kegagalan serupa, yang menunjukkan adanya masalah dengan layanan registri gambar Docker.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41585249">Reaksi</a></h3>
-<ul>
-<li>Cloudflare secara keliru mengidentifikasi alamat IP Hetzner sebagai berada di Iran, yang menyebabkan masalah akses pengguna.</li>
-<li>Masalah salah identifikasi ini tidak eksklusif untuk Cloudflare; Google juga menghadapi masalah serupa.</li>
-<li>Diskusi ini menyoroti bagaimana kebangsaan dan reputasi suatu negara dapat mempengaruhi akses ke layanan, perjalanan, dan peluang, dengan implikasi yang lebih luas bahwa sanksi lebih berdampak pada warga biasa daripada pejabat pemerintah.</li>
-</ul>
-<h2><a href="https://spectrum.ieee.org/5g-antenna-transparent-window">Kaca Antena Mengubah Jendela Menjadi Stasiun Basis 5G</a></h2>
-<ul>
-<li>Para peneliti telah mengembangkan antena kaca yang dapat mengubah jendela menjadi stasiun basis 5G, meningkatkan cakupan seluler tanpa terlihat mencolok.</li>
-<li>Antena-antena ini menggunakan lapisan konduktif transparan, memungkinkan jendela berfungsi sebagai antena seluler 5G sambil mempertahankan transparansinya.</li>
-<li>Kemajuan ini dapat secara signifikan meningkatkan cakupan jaringan 5G di daerah perkotaan dengan memanfaatkan permukaan jendela yang ada.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41592552">Reaksi</a></h3>
-<ul>
-<li>Kaca antena dapat mengubah jendela menjadi stasiun basis 5G, yang berpotensi mengurangi biaya instalasi dan meningkatkan cakupan.</li>
-<li>Teknologi ini menggunakan antena transparan untuk mengirimkan sinyal 5G melalui kaca rendah-E, yang biasanya menghalangi frekuensi ini, memungkinkan penempatan antena di dalam ruangan.</li>
-<li>Kekhawatiran ada mengenai transparansi, penampilan, keamanan, tingkat daya, dan kelayakan keseluruhan adopsi luas dari inovasi ini.</li>
-</ul>
-<h2><a href="https://github.com/MightyMoud/sidekick">Alat CLI yang saya buat untuk meng-host sendiri aplikasi apa pun dengan dua perintah di VPS</a></h2>
-<ul>
-<li>Sidekick menyederhanakan hosting VPS (Virtual Private Server) dengan fitur seperti pengaturan satu perintah, penerapan tanpa waktu henti, dan ketersediaan tinggi.</li>
-<li>Ini bertujuan untuk membuat hosting menjadi sederhana dan terjangkau, menargetkan pengguna yang lelah dengan pengaturan yang rumit untuk proyek sampingan.</li>
-<li>Fungsi utama termasuk menerapkan aplikasi dari Dockerfile, mengelola rahasia lingkungan dengan aman, dan menghubungkan beberapa domain dengan sertifikat SSL tanpa konfigurasi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41591018">Reaksi</a></h3>
-<ul>
-<li>Alat CLI baru bernama Sidekick telah dirilis, memungkinkan pengguna untuk meng-host sendiri aplikasi apa pun di VPS hanya dengan dua perintah.</li>
-<li>Alat ini dirancang untuk menyederhanakan penerapan, menangani tugas-tugas seperti mengatur sertifikat TLS/SSL dan mengelola kontainer Docker.</li>
-<li>Pembaruan di masa depan diharapkan mencakup hosting basis data dan dukungan untuk docker-compose, menjadikannya opsi yang serbaguna bagi pengembang yang mencari solusi penerapan yang mudah.</li>
-</ul>
-<h2><a href="https://mastodon.social/@stevetex/113162099798398758">Mozilla telah memecat Chief Product Officer mereka setelah diagnosis kanker</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41588667">Reaksi</a></h3>
-<ul>
-<li>Mozilla telah memberhentikan Chief Product Officer mereka setelah diagnosis kanker, yang menyebabkan kontroversi dan kritik luas.</li>
-<li>Pengguna menyatakan kekecewaan dan membandingkan Mozilla dengan startup dan hedge fund yang tidak etis, dengan beberapa menyarankan alternatif peramban seperti Ladybird, LibreWolf, atau Brave.</li>
-<li>Insiden tersebut telah memicu diskusi tentang etika di tempat kerja, kebijakan DEI (Keragaman, Kesetaraan, dan Inklusi), dan masa depan Firefox tanpa Mozilla.</li>
-</ul>
-<h2><a href="https://github.com/dragostis/chili">Chili. Rust port of Spice, sebuah perpustakaan paralelisasi dengan overhead rendah</a></h2>
-<ul>
-<li>Chili adalah port Rust dari Spice, sebuah perpustakaan paralelisasi dengan overhead rendah, yang dirancang untuk menjalankan dua penutupan secara paralel pada titik percabangan komputasi mana pun, mirip dengan rayon::join.</li>
-<li>Itu sangat efektif untuk perhitungan kecil di mana memperkirakan tugas yang tersisa mahal, seperti yang ditunjukkan oleh kinerjanya dalam menjumlahkan node di pohon biner.</li>
-<li>Benchmark menunjukkan peningkatan kinerja yang signifikan dengan dataset yang lebih besar, terutama pada prosesor AMD Ryzen 7 4800HS dan Apple M1, yang menyoroti efisiensinya dalam pemrosesan paralel.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41591449">Reaksi</a></h3>
-<ul>
-<li>Chili adalah port Rust dari Spice, sebuah perpustakaan paralelisasi dengan overhead rendah, yang disukai karena efisiensinya dalam operasi kecil dibandingkan dengan Rayon.</li>
-<li>Kajian mencakup perbandingan dengan pustaka paralelisasi lainnya seperti OpenMP dan overhead yang terlibat.</li>
-<li>Untuk informasi implementasi yang lebih rinci, pengguna diarahkan ke Spice README di GitHub.</li>
-</ul>
-<h2><a href="https://ssoready.com/blog/engineering/ruby-saml-pwned-by-xml-signature-wrapping-attacks/">Ruby-SAML diretas oleh serangan pembungkusan tanda tangan XML</a></h2>
-<ul>
-<li>Ruby-SAML telah disusupi oleh serangan pembungkusan tanda tangan XML, yang mempengaruhi platform seperti GitLab.</li>
-<li>CVE-2024-45409, diterbitkan pada 10 September 2024, mengungkapkan kerentanan ini, memungkinkan penyerang untuk masuk sebagai pengguna mana pun.</li>
-<li>Kunci permasalahan terletak pada spesifikasi SAML dan Tanda Tangan XML, dan para insinyur disarankan untuk mengadopsi praktik keamanan di luar spesifikasi yang cacat tersebut.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41586031">Reaksi</a></h3>
-<ul>
-<li>Ruby-SAML rentan terhadap serangan pembungkusan tanda tangan XML, yang menyoroti kekhawatiran keamanan dalam implementasinya.</li>
-<li>Kendati kompleksitas dan tantangan implementasinya, SAML tetap banyak digunakan di lingkungan perusahaan dan akademik.</li>
-<li>Ada dorongan yang semakin meningkat untuk mengadopsi alternatif yang lebih sederhana seperti OpenID Connect (OIDC).</li>
-</ul>
-<h2><a href="https://github.com/denys-olleik/accounting">Saya Telah Membangun Sistem Akuntansi</a></h2>
-<ul>
-<li>Alat ini dapat menghasilkan faktur dan memproses pembayaran, tetapi belum siap untuk digunakan dalam produksi.</li>
-<li>Kini, ini memerlukan PostgreSQL untuk berfungsi, dengan rencana untuk menambahkan dukungan SQLite setelah SQLite mendukung tipe geografi secara native.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41585468">Reaksi</a></h3>
-<ul>
-<li>Kami telah mengembangkan sebuah sistem akuntansi yang dapat membuat faktur dan menerima pembayaran, namun sistem ini belum siap untuk produksi dan saat ini memerlukan PostgreSQL.</li>
-<li>Umpan balik menyoroti kebutuhan akan fitur tambahan seperti manajemen pesanan pembelian, capex, alur kerja persetujuan, dan dukungan multi-perusahaan/mata uang, membandingkannya dengan QuickBooks.</li>
-<li>Proyek ini menunjukkan potensi tetapi memerlukan lebih banyak fitur, pengujian, dan pembaruan berkelanjutan untuk tetap relevan dan memenuhi kebutuhan bisnis, terutama organisasi yang lebih besar.</li>
-</ul>
-<h2><a href="https://www.theguardian.com/us-news/2024/sep/18/american-health-system-ranks-last">Menurut laporan, sistem kesehatan AS menempati peringkat terakhir dibandingkan dengan negara-negara sejenis.</a></h2>
-<ul>
-<li>Menurut laporan Commonwealth Fund, sistem kesehatan AS menempati peringkat terakhir di antara 10 negara sebanding, meskipun orang Amerika membayar hampir dua kali lipat untuk perawatan kesehatan.</li>
-<li>Sistem ini berkinerja buruk dalam hal kesetaraan kesehatan, akses ke perawatan, dan hasil, dengan rekomendasi termasuk memperluas cakupan asuransi dan mengurangi biaya pasien.</li>
-<li>Kedua calon presiden utama tidak mengusulkan reformasi kesehatan yang signifikan, meskipun pemilih memprioritaskan biaya perawatan kesehatan, dengan orang Amerika menghabiskan $4,5 triliun setiap tahun.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41588717">Reaksi</a></h3>
-<ul>
-<li>Laporan menunjukkan bahwa sistem kesehatan AS berada di peringkat terakhir di antara negara-negara sejenis, memicu diskusi di forum tentang pengalaman perawatan kesehatan global.</li>
-<li>Pengguna membandingkan kelambatan dan ketidakefisienan sistem AS dengan layanan medis yang lebih cepat dan lebih murah di negara-negara seperti India serta manfaat catatan kesehatan digital di Estonia.</li>
-<li>Percakapan tersebut juga menyoroti biaya tinggi dan ketidakefisienan di AS, dengan kekecewaan atas waktu tunggu yang lama dan kurangnya perawatan tepat waktu meskipun memiliki asuransi yang baik.</li>
-</ul>
-<h2><a href="https://lichess.org/@/Lichess/blog/post-mortem-of-our-longest-downtime/XAgG7jbd">Kisah Lichess: Analisis Mendalam dari Waktu Henti Terpanjang Kami</a></h2>
-<ul>
-<li>Lichess mengalami waktu henti terpanjangnya, berlangsung selama 10 jam dari tanggal 12 hingga 13 September, karena masalah perangkat keras di pusat data OVH.</li>
-<li>Meskipun ada waktu henti, tim konten Lichess tetap melanjutkan komentar Olimpiade Catur mereka menggunakan versi sandbox pribadi dari situs tersebut.</li>
-<li>Lichess berencana untuk menyelidiki masalah ini lebih lanjut dan menerapkan langkah-langkah pengaman tambahan, meskipun langkah-langkah ini memakan waktu dan sumber daya yang besar.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41586579">Reaksi</a></h3>
-<ul>
-<li>Kemarin, Lichess mengalami waktu henti terpanjangnya karena masalah perangkat keras pada server utama mereka, yang menangani sekitar 5 juta permainan setiap hari.</li>
-<li>Insiden tersebut menimbulkan kekhawatiran tentang ketergantungan Lichess pada satu server fisik dan rencana failover mereka, meskipun biaya operasional bulanan mereka yang signifikan sekitar $40k.</li>
-<li>Post-mortem tersebut dipuji karena transparansinya, menyoroti dedikasi pendiri Thibault Duplessis dan mendorong pengguna untuk berdonasi guna mendukung layanan tersebut.</li>
-</ul>
-<h2><a href="https://larslofgren.com/forbes-marketplace/">Pasar Forbes: Perusahaan SEO Parasit yang Mencoba Memakan Inangnya</a></h2>
-<ul>
-<li>Forbes Marketplace, sebuah entitas terpisah dari Forbes, menggunakan strategi SEO agresif untuk mendominasi hasil pencarian dalam berbagai kategori, termasuk kesehatan, perbaikan rumah, dan taruhan olahraga.</li>
-<li>Pendekatan ini telah menghasilkan Forbes menerima lebih dari 27 juta kunjungan per bulan dan menghasilkan pendapatan yang signifikan, diperkirakan mencapai ratusan juta setiap tahunnya.</li>
-<li>Masalah utamanya adalah algoritma Google, yang memprioritaskan konten Forbes dibandingkan penerbit yang lebih kecil dan lebih khusus, menimbulkan kekhawatiran tentang keadilan dan akurasi peringkat hasil pencarian.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41590466">Reaksi</a></h3>
-<ul>
-<li>Artikel tersebut membahas prevalensi perusahaan &quot;parasite SEO&quot;, yang memanfaatkan domain terpercaya seperti Forbes untuk mendapatkan peringkat tinggi dalam hasil pencarian meskipun kontennya berkualitas rendah.</li>
-<li>Google dikritik karena mengizinkan praktik-praktik ini, karena lebih memprioritaskan pendapatan iklan dan domain tepercaya daripada kualitas konten, sehingga memerlukan intervensi manual untuk mengatasi masalah tersebut.</li>
-<li>Fenomena ini bukanlah hal baru dan telah diamati pada situs-situs lain seperti HowStuffWorks dan LiveStrong, yang menyoroti masalah yang lebih luas dengan optimisasi mesin pencari dan relevansi konten.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Komik Mono" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Komik%20Mono&subheading=Kamis%2C%2019%20September%202024%3A%20Ringkasan%20Berita%20Peretas" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/id/2024/09/19</link>
-            <guid isPermaLink="false">2024-09-19T00:00:00.000Z</guid>
-            <pubDate>Thu, 19 Sep 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

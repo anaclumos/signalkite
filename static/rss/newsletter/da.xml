@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 28 Sep 2024 19:08:48 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 29 Sep 2024 19:13:52 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/da.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 28 Sep 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sun, 29 Sep 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[da]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-09-29]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/09/29&#39;</h2>
+<h1>2024-09-29</h1>
+<h2><a href="https://sohl-dickstein.github.io/2022/11/06/strong-Goodhart.html">Alt for meget effektivitet gør alting værre (2022)</a></h2>
+<ul>
+<li>Den stærke version af Goodharts lov antyder, at overoptimering af en proxy-måling kan føre til dårligere resultater i det faktiske mål, som set i standardiserede tests og overtilpasning i maskinlæring.</li>
+<li>Dette koncept er anvendeligt på tværs af forskellige områder, herunder politik, økonomi og sundhed, hvilket indikerer fænomenets brede relevans.</li>
+<li>Afhjælpningsstrategier fra maskinlæring, såsom at tilpasse proxy-mål med ønskede resultater, tilføje regulariseringsstraffe, injicere støj og bruge tidlig stopning, kan hjælpe med at håndtere disse problemer.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41684082">Reaktioner</a></h3>
+<ul>
+<li>Overoptimering inden for maskinlæring og andre områder kan føre til negative resultater, som foreslået af ML-forsker Jascha Sohl-Dickstein.</li>
+<li>Dette koncept stemmer overens med Goodharts lov, som siger, at når en måling bliver et mål, ophører den med at være en god måling.</li>
+<li>Eksempler på negative resultater af overoptimering inkluderer COVID-19 forsyningskædeforstyrrelser og ineffektivitet i sundhedssektoren og jernbanerne i Sverige, hvilket understreger behovet for, at systemer opretholder en vis fleksibilitet for robusthed og tilpasningsevne.</li>
+</ul>
+<h2><a href="https://discord.com/blog/how-discord-stores-trillions-of-messages">Sådan gemmer Discord billioner af beskeder (2023)</a></h2>
+<ul>
+<li>Discord brugte oprindeligt MongoDB til lagring af beskeder, men skiftede til Cassandra for bedre skalerbarhed og fejltolerance, hvilket senere førte til ydeevne- og vedligeholdelsesproblemer.</li>
+<li>I 2022 migrerede Discord fra Cassandra til ScyllaDB, en mere effektiv, C++-baseret, Cassandra-kompatibel database, hvilket reducerede antallet af noder fra 177 til 72 og forbedrede latency og ydeevne betydeligt.</li>
+<li>Migrationen involverede dobbelt-skrivning af nye data og brug af en Rust-baseret migrator til historiske data, hvilket resulterede i færre problemer og bedre håndtering af øget trafik under store begivenheder som VM.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683293">Reaktioner</a></h3>
+<ul>
+<li>Discord skiftede fra Cassandra til ScyllaDB for at løse ydelsesproblemer, især med sletninger og affaldsindsamling (GC).</li>
+<li>ScyllaDB tilbyder bedre kompakteringsstrategier og ydeevne, på trods af at den stadig bruger gravsten til sletninger.</li>
+<li>Discord bevarede deres eksisterende skema og partitionsstrategi under migreringen, hvilket understregede vigtigheden af gode standardkonfigurationer.</li>
+</ul>
+<h2><a href="https://apnews.com/article/spacex-launch-boeing-nasa-stuck-astronauts-e179d0dc6c77d224278fd0430148ff8b">SpaceX sender mission afsted for 2 NASA-astronauter, der sidder fast på ISS</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41683306">Reaktioner</a></h3>
+<ul>
+<li>SpaceX opsendte en mission for at returnere to NASA-astronauter fra ISS på grund af problemer med Boeings Starliner.</li>
+<li>En afvigelse opstod under Falcon 9-rakettens anden fases deorbit-brænding, hvilket medførte en pause i opsendelserne for undersøgelse.</li>
+<li>Astroanauterne vil vende tilbage med SpaceX&#39;s Crew Dragon, med nye dragter leveret, hvilket har udløst en debat om, hvorvidt dette er en &quot;redningsmission&quot; eller en rutinemæssig besætningsrotation.</li>
+</ul>
+<h2><a href="https://www.gov.uk/service-manual/technology/using-progressive-enhancement">Bygning af en robust frontend ved hjælp af progressiv forbedring</a></h2>
+<ul>
+<li>Progressiv forbedring starter med HTML, tilføjer derefter CSS og JavaScript, hvilket sikrer grundlæggende funktionalitet og tilgængelighed for alle brugere, inklusive dem med enheder eller forbindelsesbegrænsninger.</li>
+<li>JavaScript bør forbedre, ikke erstatte, HTML- og CSS-funktionalitet; brug funktionsdetektion, polyfills og transpiling for at sikre kompatibilitet.</li>
+<li>Undgå Single Page Applications (SPAs), da de kan hæmme tilgængelighed og navigation; sørg for, at din tjeneste forbliver funktionel på trods af potentielle CSS/JavaScript-fejl.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41686715">Reaktioner</a></h3>
+<ul>
+<li>Indlægget diskuterer fordelene ved at bygge frontends ved hjælp af progressiv forbedring, med fokus på HTML og CSS med minimal JavaScript, som eksemplificeret af gov.uk.</li>
+<li>Mange udviklere udtrykker frustration over den unødvendige kompleksitet, der introduceres af Single Page Applications (SPAs) og moderne JavaScript-rammeværk, og de går ind for enklere, mere vedligeholdelsesvenlige løsninger.</li>
+<li>Diskussionen fremhæver en voksende tendens til at genoverveje enklere, HTML-baserede løsninger, hvor værktøjer som htmx får opmærksomhed for deres evne til at reducere frontend-kompleksitet.</li>
+</ul>
+<h2><a href="https://www.jjinux.com/2024/09/notions-mid-life-crisis.html">Notions midtvejskrise</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41683577">Reaktioner</a></h3>
+<ul>
+<li>Notion, der oprindeligt var populær for sine tilpasselige og alsidige funktioner, møder kritik for at blive rodet og mindre effektiv, ligesom andre overbrugte værktøjer som Jira.</li>
+<li>Brugere udtrykker frustration over forældede og svære at finde dokumenter og foreslår, at enklere værktøjer som Google Docs måske ville være mere produktive.</li>
+<li>På trods af sine problemer gør Notions databasekapaciteter og fleksibilitet det stadig til en stærk kandidat til at organisere og kategorisere noter, selvom nogle brugere overvejer alternativer som Obsidian.</li>
+</ul>
+<h2><a href="https://ukdefencejournal.org.uk/britain-buys-semiconductor-factory-for-defence-purposes/">Storbritannien køber halvlederfabrik til forsvarsformål</a></h2>
+<ul>
+<li>Den britiske regering har erhvervet en halvlederfabrik i Newton Aycliffe, County Durham, nu kaldet Octric Semiconductors UK, for at støtte forsyningskæden og de væbnede styrker.</li>
+<li>Dette anlæg er det eneste sikre sted i Storbritannien, der er i stand til at fremstille galliumarsenid-halvledere, som er essentielle for militære platforme som jagerfly, og sikrer op til 100 kvalificerede job.</li>
+<li>Opkøbet sikrer den fortsatte produktion af kritiske halvledere til militære anvendelser, stabiliserer fabrikken og styrker Storbritanniens forsvarskapaciteter og industrielle kapacitet.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683098">Reaktioner</a></h3>
+<ul>
+<li>Storbritannien har købt en halvlederfabrik til forsvarsformål, hvilket understreger den strategiske betydning af indenlandsk halvlederproduktion.</li>
+<li>Fabrikken, tidligere ejet af Coherent, specialiserer sig i galliumarsenid-halvledere, som er afgørende for militære anvendelser som jagerfly og højfrekvensradarer.</li>
+<li>Dette opkøb sikrer op til 100 kvalificerede job og sikrer, at Storbritannien opretholder en kritisk del af sin forsvarsinfrastruktur, især da den globale efterspørgsel efter halvledere stiger.</li>
+</ul>
+<h2><a href="https://cepa.org/article/floating-megabomb-heaves-to-near-the-english-coast/">Flydende megabombe driver nær den engelske kyst</a></h2>
+<ul>
+<li>Skibet MV Ruby, et maltesisk-registreret skib med 20.000 tons eksplosivt ammoniumnitrat, er beskadiget og søger en havn ud for kysten af Kent, Storbritannien, hvilket udgør en betydelig sikkerhedsrisiko.</li>
+<li>Skibet er blevet nægtet adgang til flere europæiske havne, herunder Norge og Litauen, på grund af dets farlige last, som kunne forårsage ødelæggelse svarende til en tredjedel af Hiroshima-bomben.</li>
+<li>Den hændelse fremhæver Ruslands hybride krigsførselstaktikker og understreger behovet for robuste efterretningsdelings-, overvågnings- og maritime sikkerhedsprotokoller for effektivt at håndtere sådanne trusler.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685917">Reaktioner</a></h3>
+<ul>
+<li>Et beskadiget skib, der transporterer 20.000 tons ammoniumnitrat, et meget eksplosivt materiale, nærmer sig den engelske kyst og forårsager betydelige sikkerhedsproblemer.</li>
+<li>Skibet er blevet nægtet adgang til flere europæiske havne og mistænkes for at blive brugt af Rusland til at chikanere NATO-lande, hvilket øger de geopolitiske spændinger.</li>
+<li>Autoriteterne er i høj beredskab på grund af den potentielle trussel og Ruslands historie med lavintensitetsfjendtligheder, hvilket rejser spørgsmål om skibets intentioner, da det rejser fra Norge til Litauen og nu nærmer sig Storbritannien.</li>
+</ul>
+<h2><a href="https://jvns.ca/blog/2024/09/27/some-go-web-dev-notes/">Noget Go webudviklingsnoter</a></h2>
+<ul>
+<li>Go 1.22 introducerer forbedret routing-understøttelse i standardbiblioteket, hvilket forenkler rutehåndtering og forbedrer sikkerheden med middleware.</li>
+<li>sqlc-værktøjet genererer Go-kode fra SQL-forespørgsler, hvilket reducerer gentagelseskode og strømliner databaseinteraktioner.</li>
+<li>Indstilling af en GC-hukommelsesgrænse i Go 1.19 hjælper med at forhindre out-of-memory (OOM) drab i miljøer med lav hukommelse, hvilket forbedrer applikationsstabiliteten.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41687707">Reaktioner</a></h3>
+<ul>
+<li>Go&#39;s enkelhed og stabilitet værdsættes af udviklere, hvilket gør det nemt at genoptage projekter efter lange pauser.</li>
+<li>Den indledende opsætning kan være udfordrende på grund af behovet for at vælge forskellige biblioteker til logning, database-drivere osv.</li>
+<li>Fraværet af en dominerende ramme i Go betragtes både som en begrænsning og en fordel, da det giver fleksibilitet med standardbiblioteker.</li>
+</ul>
+<h2><a href="https://wiki.alopex.li/CrystalNotes">Noter om Krystalsproget</a></h2>
+<ul>
+<li>Crystal, et sprog startet i 2014, sigter mod at være en stærkt typet Ruby med typeinferens og kompilerer til native eksekverbare filer via LLVM.</li>
+<li>Det har et decentraliseret økosystem af biblioteker, valgfrie typeannoteringer og et typesystem, der ligner TypeScripts, og understøtter generics og andre objektorienterede funktioner.</li>
+<li>På trods af nogle problemer med håndtering af midlertidige filer og mappeiteration, tilbyder Crystal mange nyttige indbyggede funktioner og biblioteker, hvilket gør det til et solidt valg for dem, der søger et dynamisk-følt statisk typesystem.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683815">Reaktioner</a></h3>
+<ul>
+<li>Krystal-sprog bliver diskuteret for dets potentiale og nuværende begrænsninger, hvor brugere deler blandede oplevelser vedrørende dets pålidelighed og modenhed.</li>
+<li>Enkelte brugere fremhæver Crystals høje ydeevne og produktivitet til backend API-servere og baggrundsopgaver, mens andre påpeger problemer som langsom garbage collection (GC) og fejl.</li>
+<li>Diskussionen inkluderer sammenligninger med andre sprog som Ruby, Clojure og Rust, og nævner Crystals brug af LLVM til optimeret kodegenerering, hvilket gør det sammenligneligt med Go, Rust eller C i ydeevne.</li>
+</ul>
+<h2><a href="https://nolanlawson.com/2024/09/28/web-components-are-okay/">Webkomponenter er okay</a></h2>
+<ul>
+<li>Debatten om webkomponenter, som blev startet af Ryan Carniatos indlæg &quot;Web Components Are Not the Future&quot; og Cory LaViskas modsvar &quot;Web Components Are Not the Future — They’re the Present,&quot; bliver adresseret af Nolan Lawson.</li>
+<li>Lawson, erfaren med webkomponenter, anerkender deres ydeevneoverhead, men fremhæver afvejninger som vedligeholdelse, sikkerhed, brugervenlighed og tilgængelighed.</li>
+<li>Han konkluderer, at webkomponenter, på trods af deres begrænsninger, tilbyder unikke kreative muligheder og er et af mange værktøjer, der er tilgængelige i det mangfoldige webudviklingslandskab.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41686722">Reaktioner</a></h3>
+<ul>
+<li>Diskussionen drejer sig om kompleksiteten og anvendeligheden af moderne front-end frameworks versus webkomponenter, hvor nogle udviklere udtrykker frustration over &quot;magien&quot; i frameworks som React.</li>
+<li>Webkomponenter fremhæves for deres enkelhed og tættere tilpasning til webstandarder, og de tilbyder funktioner som Shadow DOM for isolation uden behov for komplekse frameworks.</li>
+<li>En udvikler delte deres positive oplevelse med at skifte fra Vue til webkomponenter, hvilket markant reducerede afhængigheder og vedligeholdelsesbyrde, hvilket er særligt gavnligt for projekter med begrænsede ressourcer.</li>
+</ul>
+<h2><a href="https://htmgo.dev">htmgo - byg simple og skalerbare systemer med golang + htmx</a></h2>
+<ul>
+<li>En udvikler arbejder på en minimal stack, der kombinerer Golang og htmx for at forbedre funktioner som komponenter og forbedre syntaksen for kompleks JavaScript.</li>
+<li>Projektet sigter mod at tilbyde et lettere alternativ til tunge frameworks, samtidig med at det tager højde for htmx&#39;s lavniveau-natur.</li>
+<li>Dette initiativ kunne være gavnligt for andre udviklere, der søger en strømlinet og effektiv udviklingsstak.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683144">Reaktioner</a></h3>
+<ul>
+<li>En udvikler introducerede &quot;htmgo,&quot; en minimal stack, der kombinerer Golang og HTMX, med det formål at forenkle oprettelsen af genanvendelige komponenter og forbedre syntaksen.</li>
+<li>Projektet har sat gang i diskussioner blandt udviklere om fordelene ved at integrere backend-sprog med HTMX og fordelene ved at bruge Golang til letvægts webudvikling.</li>
+<li>Fællesskabet sammenligner &quot;htmgo&quot; med andre værktøjer og rammer som Hotwire, Gomponents og forskellige skabelonmotorer, hvilket fremhæver en voksende interesse for effektive, server-side webudviklingsløsninger.</li>
+</ul>
+<h2><a href="https://spectrum.ieee.org/flexible-risc-v">Fleksibel RISC-V-processor: Kan koste mindre end en dollar</a></h2>
+<ul>
+<li>En ny 6-mW open-source plastchip baseret på RISC-V-arkitekturen kan udføre maskinlæringsopgaver, mens den er fleksibel nok til at bøje sig rundt om en blyant.</li>
+<li>Chippen mister kun omkring 4 procent af sin ydeevne, når den bøjes, hvilket viser dens robusthed og potentiale for anvendelse i fleksibel elektronik.</li>
+<li>Dette udvikling fremhæver betydelige fremskridt inden for fleksible halvledere og open-source hardware.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41687739">Reaktioner</a></h3>
+<ul>
+<li>En nylig IEEE-artikel fremhæver en fleksibel RISC-V-processor, der kunne koste mindre end en dollar, baseret på SERV-designet.</li>
+<li>Pragmatic Semiconductor hævder, at de kan producere disse chips inden for 48 timer, hvilket er betydeligt hurtigere end traditionelle siliciumfremstillingsprocesser.</li>
+<li>Selvom processoren kører ved 60 kHz og forbruger 6 milliwatt strøm, kan den være værdifuld for nicheapplikationer såsom e-tekstiler og fleksibel elektronik.</li>
+</ul>
+<h2><a href="https://www.economist.com/science-and-technology/2024/09/25/nasa-is-selling-a-brand-new-moon-rover">NASA sælger en helt ny Måne-rover: Aldrig brugt, én tidligere ejer</a></h2>
+<ul>
+<li>NASA sigter mod at returnere mennesker til Månen inden udgangen af årtiet, begyndende med sonder til Månens sydpol for at lede efter is, som har videnskabelig og praktisk betydning.</li>
+<li>Seneste fremskridt inkluderer immunterapier for astma, hjertesygdomme og aldring, ny teknologi til at opdage lækager i vandrør og opdagelsen af gammel ost i Kina.</li>
+<li>Innovationer inden for AI og genbrug af elbilbatterier er også bemærkelsesværdige og viser løbende fremskridt inden for forskellige teknologiske områder.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685326">Reaktioner</a></h3>
+<ul>
+<li>NASA sælger en ny, ubrugt månebil, hvilket har udløst diskussioner om dens værdi og historiske kontekst på et forum.</li>
+<li>Brugere debatterer dets værdi, deler tekniske detaljer og kommenterer humoristisk på emnet, mens nogle udtrykker bekymring over off-topic indhold.</li>
+<li>Konversationen fremhæver også potentiel korruption i NASAs budgivningsproces for entreprenører og udfordringerne ved at bygge under COVID.</li>
+</ul>
+<h2><a href="https://github.com/feldera/feldera">Feldera Inkrementel Compute Engine</a></h2>
+<ul>
+<li>Feldera er en højtydende forespørgselsmotor designet til inkrementel beregning, hvilket muliggør kontinuerlig behandling af ændringer uden at genberegne ældre data.</li>
+<li>Det understøtter fuld SQL-syntaks og forbinder til forskellige datakilder, hvilket gør det muligt for brugere at administrere pipelines og inspicere resultater i realtid, selv med datasæt større end RAM.</li>
+<li>Feldera kan startes ved hjælp af Docker Compose eller fra kilden med afhængigheder som Rust, Java, Maven og Typescript, og tilbyder en webkonsol til brugerinteraktion.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685689">Reaktioner</a></h3>
+<ul>
+<li>Feldera Incremental Compute Engine er et open-source værktøj designet til inkrementel beregning, hvilket reducerer behandlingstider for datastreams betydeligt.</li>
+<li>Det er baseret på Z-Sets, en generalisering af relationel algebra, der tillader mange SQL-operationer at blive implementeret inkrementelt.</li>
+<li>Feldera understøtter en bred vifte af SQL-operatører, automatisk affaldsindsamling og kan indeksere data på lager, hvilket gør det velegnet til sofistikerede SQL-programmer og historiske datalagre.</li>
+</ul>
+<h2><a href="https://sadilkhan.github.io/text2cad-project/">Text2CAD Genererer Sekventielle CAD-designs fra Tekstprompter</a></h2>
+<ul>
+<li>Text2CAD er den første AI-ramme designet til at generere parametriske CAD (Computer-Aided Design) modeller fra flerniveaubeskrivelser, hvilket gør det til et betydeligt fremskridt inden for området.</li>
+<li>Rammeværket inkluderer en ny dataannoteringspipeline, der bruger open-source LLM&#39;er (Large Language Models) og VLM&#39;er (Vision-Language Models) til at annotere DeepCAD-datasættet med forskellige tekstprompter.</li>
+<li>Text2CAD Transformer anvender en forudtrænet BeRT Encoder og et adaptivt lag til at omdanne naturlige sprog beskrivelser til 3D CAD-modeller, hvilket demonstrerer dens kapacitet gennem både kvalitative og kvantitative resultater.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685642">Reaktioner</a></h3>
+<ul>
+<li>Text2CAD er et værktøj, der genererer CAD (Computer-Aided Design) modeller fra tekstprompter, med det formål at forenkle designprocessen for brugere, der ikke er fortrolige med traditionel CAD-software.</li>
+<li>Værktøjet er særligt gavnligt for brugere, der måske ikke ofte designer objekter, da det reducerer behovet for omfattende CAD-træning, selvom det måske ikke er lige så effektivt til komplekse designs.</li>
+<li>Diskussionen fremhæver potentialet og begrænsningerne ved at bruge naturligt sprog til at skabe præcise 3D-modeller, hvor nogle eksperter foreslår, at traditionelle CAD-arbejdsgange stadig er mere effektive til detaljerede og nøjagtige designs.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Alt for meget effektivitet gør alting værre (2022)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Alt%20for%20meget%20effektivitet%20g%C3%B8r%20alting%20v%C3%A6rre%20(2022)&subheading=s%C3%B8ndag%20den%2029.%20september%202024%3A%20Resum%C3%A9%20af%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/da/2024/09/29</link>
+            <guid isPermaLink="false">2024-09-29T00:00:00.000Z</guid>
+            <pubDate>Sun, 29 Sep 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-28]]></title>
             <description
@@ -1664,191 +1850,6 @@
             <link>https://hn.cho.sh/da/2024/09/20</link>
             <guid isPermaLink="false">2024-09-20T00:00:00.000Z</guid>
             <pubDate>Fri, 20 Sep 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-09-19]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/09/19&#39;</h2>
-<h1>2024-09-19</h1>
-<h2><a href="https://dtinth.github.io/comic-mono-font/">Comic Mono</a></h2>
-<ul>
-<li>Comic Mono er en ny monospace-skrifttype, der er afledt af Shannon Miwas Comic Shanns (version 1), hvor alle tegn har samme bredde og justerede metrikker for bedre visning.</li>
-<li>Fonten blev skabt ved hjælp af et Python-script og FontForge, med en fed version genereret gennem FontForges Embolden-operation.</li>
-<li>Comic Mono er tilgængelig for download og brug under MIT-licensen, med yderligere distributionsmuligheder via CDN, npm og Linux-pakker.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41585156">Reaktioner</a></h3>
-<ul>
-<li>Comic Mono, en monospatieret skrifttype inspireret af Comic Sans, har fået opmærksomhed for at gøre kodning mere fornøjelig og lettere for øjnene.</li>
-<li>Brugere sammenligner Comic Mono med andre skrifttyper som Comic Code og bemærker forskelle i læsbarhed og æstetik, hvor nogle foretrækker Comic Code for dets polerede udseende.</li>
-<li>Diskussionen fremhæver brugen af skrifttyper i Comic Sans-stil til at reducere øjenbelastning og hjælpe ved dysleksi, hvilket viser en praktisk side af disse ofte latterliggjorte skrifttyper.</li>
-</ul>
-<h2><a href="https://twitter.com/RachelTobac/status/1836471586624540705">LinkedIn bruger nu alles indhold til at træne deres AI-værktøj</a></h2>
-<ul>
-<li>LinkedIn bruger som standard bruger-genereret indhold til at træne sit AI-værktøj, hvilket rejser bekymringer om privatlivets fred.</li>
-<li>Brugere rådes til at fravælge ved at navigere til Indstillinger og Privatliv &gt; Databeskyttelse &gt; Data til Forbedring af Generativ AI og slå det fra.</li>
-<li>Anbefalingen gælder også for organisationer om at stoppe automatisk tilmelding for at beskytte brugernes databeskyttelse.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41584486">Reaktioner</a></h3>
-<ul>
-<li>LinkedIn bruger brugerindhold til at træne sit AI-værktøj, hvilket fører til blandede reaktioner vedrørende kvaliteten og ægtheden af indholdet.</li>
-<li>Bekymringer om privatlivets fred er opstået, da brugere blev automatisk tilmeldt uden udtrykkeligt samtykke, selvom EU-brugere er undtaget på grund af GDPR-reglerne.</li>
-<li>Critikere hævder, at LinkedIn bør prioritere forbedring af kernefunktioner frem for AI-udvikling, og nogle brugere overvejer at fravælge eller forlade platformen.</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41588200">Min søn kan være blind – hvordan støtter man bedst</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41588200">Reaktioner</a></h3>
-<ul>
-<li>Forældre, der er bekymrede for deres barns potentielle blindhed, søger ressourcer og rådgivning for støtte.</li>
-<li>Forslagene omfatter at fremme selvstændighed, integrere med jævnaldrende og udnytte ressourcer fra organisationer som Braille Institute og American Foundation for the Blind.</li>
-<li>Personlige historier fremhæver succesfulde strategier som ekkolokation og integration af blinde børn i almindelige aktiviteter.</li>
-</ul>
-<h2><a href="https://www.nintendo.co.jp/corporate/release/en/2024/240919.html">Nintendo anlægger sag for krænkelse af patentrettigheder mod Pocketpair, Inc</a></h2>
-<ul>
-<li>Nintendo og The Pokémon Company har indgivet en patentkrænkelsessag mod Pocketpair, Inc. ved Tokyos distriktsdomstol.</li>
-<li>Retssagen hævder, at Pocketpairs spil, Palworld, krænker flere patentrettigheder og søger et påbud samt erstatning for skader.</li>
-<li>Nintendo understreger sit engagement i at beskytte sine intellektuelle ejendomsrettigheder, herunder Nintendo-mærket, gennem nødvendige juridiske handlinger.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41587214">Reaktioner</a></h3>
-<ul>
-<li>Nintendo har indledt en patentkrænkelsessag mod Pocketpair, Inc. vedrørende deres spil Palworld, med fokus på spilmekanikker snarere end karakterernes ligheder.</li>
-<li>Pocketpair har engageret juridisk repræsentation for at bestride kravene, hvilket understreger kompleksiteten og kontroverserne ved softwarepatenter i spilindustrien.</li>
-<li>Dette tilfælde henleder opmærksomheden på den igangværende debat om omfanget og virkningen af softwarepatenter på spiludvikling og innovation.</li>
-</ul>
-<h2><a href="https://www.pivotaltracker.com/blog/2024-09-18-end-of-life">Vigtig Tracker vil lukke ned</a></h2>
-<ul>
-<li>VMware Tanzu har annonceret, at Pivotal Tracker udfases (EOL) med virkning fra den 30. april 2025, med support indtil denne dato.</li>
-<li>Alle konti (gratis, sponsoreret, betalt, Enterprise) er berørt, og brugere bør eksportere deres data, før tjenesten ophører; instruktioner er tilgængelige i Hjælpecenteret.</li>
-<li>Nytilmeldinger er ikke mulige, men eksisterende konti kan stadig invitere nye brugere inden for samarbejdsgrænserne.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41591622">Reaktioner</a></h3>
-<ul>
-<li>Pivotal Tracker lukker ned, hvilket skaber en mulighed for udviklere til at klone det elskede produkt ved hjælp af moderne teknologier.</li>
-<li>Shutdownen er en del af VMwares bredere strategi efter opkøbet af Broadcom, og brugere rådes til at migrere deres data, inden tjenesten ophører.</li>
-<li>Alternativer som Linear og Shortcut findes, men Pivotal Trackers enkelhed og fokus er højt værdsat af dets brugere.</li>
-</ul>
-<h2><a href="https://gitlab.com/gitlab-com/gl-infra/production/-/issues/8121#note_1237201726">Cloudflare fejlagtigt identificerer Hetzner IP-adresser som værende placeret i Iran</a></h2>
-<ul>
-<li>Der rapporteres om høje fejlrater i CI (Continuous Integration) build-jobs på GitLab, især på grund af intermitterende timeouts fra Hetzner.de VPS&#39;er, når der hentes Docker-billeder fra registry.gitlab.com.</li>
-<li>Fejlmeddelelsen angiver en klient-timeout, mens der ventes på headers, og selvom genstart af pipelinen nogle gange hjælper, har flere forsøg for nylig ikke løst problemet.</li>
-<li>Problemet synes at være specifikt for registry.gitlab.com, da git-kloninger fra forskellige GitLab-repositorier ikke oplever lignende fejl, hvilket tyder på et problem med Docker-billedregistertjenesten.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41585249">Reaktioner</a></h3>
-<ul>
-<li>Cloudflare identificerer fejlagtigt Hetzner IP-adresser som værende placeret i Iran, hvilket fører til brugeradgangsproblemer.</li>
-<li>Dette problem med fejlagtig identifikation er ikke eksklusivt for Cloudflare; Google har stået over for lignende problemer.</li>
-<li>Diskussionen fremhæver, hvordan nationalitet og et lands omdømme kan påvirke adgangen til tjenester, rejser og muligheder, med bredere implikationer for sanktioner, der påvirker almindelige borgere mere end regeringsembedsmænd.</li>
-</ul>
-<h2><a href="https://spectrum.ieee.org/5g-antenna-transparent-window">Glasantennen forvandler vinduer til 5G-basestationer</a></h2>
-<ul>
-<li>Forskere har udviklet glasantenner, der kan forvandle vinduer til 5G-basestationer, hvilket forbedrer mobildækningen uden at være synlige.</li>
-<li>Disse antenner bruger gennemsigtige ledende lag, hvilket gør det muligt for vinduer at fungere som 5G-mobilantenner, samtidig med at de bevarer deres gennemsigtighed.</li>
-<li>Denne innovation kunne markant forbedre 5G-netværksdækningen i byområder ved at udnytte eksisterende vinduesoverflader.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41592552">Reaktioner</a></h3>
-<ul>
-<li>Glasantenner kan forvandle vinduer til 5G-basestationer, hvilket potentielt kan reducere installationsomkostningerne og forbedre dækningen.</li>
-<li>Teknologien anvender gennemsigtige antenner til at transmittere 5G-signaler gennem lav-E glas, som normalt blokerer disse frekvenser, hvilket muliggør placering af antenner indendørs.</li>
-<li>Der er bekymringer vedrørende gennemsigtigheden, udseendet, sikkerheden, effekt-niveauerne og den overordnede gennemførlighed af en udbredt anvendelse af denne innovation.</li>
-</ul>
-<h2><a href="https://github.com/MightyMoud/sidekick">Et CLI-værktøj, jeg lavede, til at selvhoste enhver app med to kommandoer på en VPS</a></h2>
-<ul>
-<li>Sidekick forenkler VPS (Virtual Private Server) hosting med funktioner som opsætning med én kommando, nul nedetid ved implementering og høj tilgængelighed.</li>
-<li>Det sigter mod at gøre hosting ligetil og overkommelig, rettet mod brugere, der er trætte af komplekse opsætninger til sideprojekter.</li>
-<li>Vigtige funktioner inkluderer udrulning af applikationer fra Dockerfiles, sikker håndtering af miljøhemmeligheder og tilslutning af flere domæner med SSL-certifikater uden konfiguration.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41591018">Reaktioner</a></h3>
-<ul>
-<li>Et nyt CLI-værktøj kaldet Sidekick er blevet udgivet, hvilket giver brugerne mulighed for at selv-hoste enhver app på en VPS med kun to kommandoer.</li>
-<li>Værktøjet er designet til at forenkle implementeringen, håndtere opgaver som opsætning af TLS/SSL-certifikater og administration af Docker-containere.</li>
-<li>Fremtidige opdateringer forventes at inkludere databasehosting og support til docker-compose, hvilket gør det til en alsidig mulighed for udviklere, der søger en nem udrulningsløsning.</li>
-</ul>
-<h2><a href="https://mastodon.social/@stevetex/113162099798398758">Mozilla har fyret deres Chief Product Officer efter kræftdiagnose</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41588667">Reaktioner</a></h3>
-<ul>
-<li>Mozilla har opsagt deres Chief Product Officer efter en kræftdiagnose, hvilket har ført til udbredt kontrovers og kritik.</li>
-<li>Brugere udtrykker skuffelse og sammenligner Mozilla med uetiske startups og hedgefonde, hvor nogle foreslår alternative browsere som Ladybird, LibreWolf eller Brave.</li>
-<li>Begivenheden har sat gang i diskussioner om arbejdspladsetik, DEI (Diversitet, Ligestilling og Inklusion) politikker og fremtiden for Firefox uden Mozilla.</li>
-</ul>
-<h2><a href="https://github.com/dragostis/chili">Chili. Rust port of Spice, et lav-overhead paralleliseringsbibliotek</a></h2>
-<ul>
-<li>Chili er en Rust-port af Spice, et lav-overhead paralleliseringsbibliotek, designet til at køre to closures parallelt ved ethvert beregningsforgreningspunkt, ligesom rayon::join.</li>
-<li>Det er særligt effektivt til små beregninger, hvor det er omkostningsfuldt at estimere de resterende opgaver, som demonstreret ved dets ydeevne i summering af noder i et binært træ.</li>
-<li>Benchmarktests viser betydelige ydeevneforbedringer med større datasæt, især på AMD Ryzen 7 4800HS og Apple M1 processorer, hvilket fremhæver dens effektivitet i parallel behandling.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41591449">Reaktioner</a></h3>
-<ul>
-<li>Chili er en Rust-port af Spice, et lav-overhead paralleliseringsbibliotek, foretrukket for dets effektivitet i små operationer sammenlignet med Rayon.</li>
-<li>Diskussioner inkluderer sammenligninger med andre paralleliseringsbiblioteker som OpenMP og den involverede overhead.</li>
-<li>For detaljeret implementeringsinformation henvises brugerne til Spice README på GitHub.</li>
-</ul>
-<h2><a href="https://ssoready.com/blog/engineering/ruby-saml-pwned-by-xml-signature-wrapping-attacks/">Ruby-SAML kompromitteret af XML-signaturindpakningsangreb</a></h2>
-<ul>
-<li>Ruby-SAML er blevet kompromitteret af XML-signaturindpakningsangreb, hvilket påvirker platforme som GitLab.</li>
-<li>CVE-2024-45409, offentliggjort den 10. september 2024, afslører denne sårbarhed, der gør det muligt for angribere at logge ind som enhver bruger.</li>
-<li>Det centrale problem ligger i SAML- og XML-signaturspecifikationerne, og ingeniører rådes til at anvende sikre praksisser ud over de fejlbehæftede specifikationer.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41586031">Reaktioner</a></h3>
-<ul>
-<li>Ruby-SAML er sårbar over for XML-signaturindpakningsangreb, hvilket fremhæver sikkerhedsproblemer i dens implementering.</li>
-<li>SAML, på trods af dets kompleksitet og implementeringsudfordringer, forbliver bredt anvendt i erhvervs- og akademiske miljøer.</li>
-<li>Der er et stigende pres for at vedtage enklere alternativer som OpenID Connect (OIDC).</li>
-</ul>
-<h2><a href="https://github.com/denys-olleik/accounting">Jeg har bygget et regnskabssystem</a></h2>
-<ul>
-<li>Værktøjet kan generere fakturaer og behandle betalinger, men det er endnu ikke klar til produktionsbrug.</li>
-<li>På nuværende tidspunkt kræver det PostgreSQL for at fungere, med planer om at tilføje SQLite-understøttelse, når det nativt understøtter geografityper.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41585468">Reaktioner</a></h3>
-<ul>
-<li>Et regnskabssystem er blevet udviklet, som kan oprette fakturaer og modtage betalinger, men det er endnu ikke klar til produktion og kræver i øjeblikket PostgreSQL.</li>
-<li>Feedback fremhæver behovet for yderligere funktioner såsom indkøbsordrestyring, capex, godkendelsesarbejdsgange og understøttelse af flere virksomheder/valutaer, sammenlignet med QuickBooks.</li>
-<li>Projektet viser lovende takter, men kræver flere funktioner, testning og løbende opdateringer for at forblive relevant og imødekomme behovene hos virksomheder, især større organisationer.</li>
-</ul>
-<h2><a href="https://www.theguardian.com/us-news/2024/sep/18/american-health-system-ranks-last">Det amerikanske sundhedssystem rangerer sidst sammenlignet med jævnbyrdige nationer – rapport</a></h2>
-<ul>
-<li>Det amerikanske sundhedssystem rangerer sidst blandt 10 sammenlignelige nationer, selvom amerikanerne betaler næsten det dobbelte for sundhedspleje, ifølge en rapport fra Commonwealth Fund.</li>
-<li>Systemet klarede sig dårligt med hensyn til sundhedslighed, adgang til pleje og resultater, med anbefalinger, der inkluderer udvidelse af forsikringsdækning og reduktion af patientudgifter.</li>
-<li>Begge store præsidentkandidater har ikke foreslået betydelige sundhedsreformer, på trods af at vælgerne prioriterer sundhedsudgifter, hvor amerikanerne bruger 4,5 billioner dollars årligt.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41588717">Reaktioner</a></h3>
-<ul>
-<li>En rapport viser, at det amerikanske sundhedssystem rangerer sidst blandt ligestillede nationer, hvilket har udløst diskussioner på et forum om globale sundhedsoplevelser.</li>
-<li>Brugere sammenlignede det amerikanske systems langsomhed og ineffektivitet med hurtigere, billigere medicinske tjenester i lande som Indien og fordelene ved digitale sundhedsregistre i Estland.</li>
-<li>Diskussionen fremhævede også høje omkostninger og ineffektivitet i USA, med frustrationer over lange ventetider og mangel på rettidig pleje på trods af god forsikring.</li>
-</ul>
-<h2><a href="https://lichess.org/@/Lichess/blog/post-mortem-of-our-longest-downtime/XAgG7jbd">Lichess: Post-Mortem af vores længste nedetid</a></h2>
-<ul>
-<li>Lichess oplevede sin længste nedetid nogensinde, der varede 10 timer fra den 12. til den 13. september, på grund af et hardwareproblem i OVH&#39;s datacenter.</li>
-<li>På trods af nedetiden fortsatte Lichess&#39;s indholdsteam deres kommentering af Skakolympiaden ved at bruge en privat sandbox-version af siden.</li>
-<li>Lichess planlægger at undersøge problemet nærmere og implementere yderligere sikkerhedsforanstaltninger, selvom disse tiltag er tidskrævende og ressourcekrævende.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41586579">Reaktioner</a></h3>
-<ul>
-<li>Lichess oplevede sin længste nedetid på grund af et hardwareproblem på deres hovedserver, som håndterer cirka 5 millioner spil dagligt.</li>
-<li>Den hændelse rejste bekymringer om Lichess&#39; afhængighed af en enkelt fysisk server og deres failover-planer, på trods af deres betydelige månedlige driftsomkostninger på omkring $40k.</li>
-<li>Obduktionen blev rost for sin gennemsigtighed, fremhævede grundlægger Thibault Duplessis&#39; dedikation og opfordrede brugerne til at donere for at støtte tjenesten.</li>
-</ul>
-<h2><a href="https://larslofgren.com/forbes-marketplace/">Forbes Marketplace: Parasitselskabet SEO, der forsøger at fortære sin vært</a></h2>
-<ul>
-<li>Forbes Marketplace, en separat enhed fra Forbes, bruger aggressive SEO-strategier til at dominere søgeresultater i forskellige kategorier, herunder sundhed, boligforbedring og sportsvæddemål.</li>
-<li>Denne tilgang har resulteret i, at Forbes modtager over 27 millioner besøg om måneden og genererer betydelige indtægter, anslået til hundreder af millioner årligt.</li>
-<li>Det centrale problem er Googles algoritme, som prioriterer Forbes&#39; indhold over mindre, mere specialiserede udgivere, hvilket rejser bekymringer om retfærdigheden og nøjagtigheden af søgeresultatplaceringer.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41590466">Reaktioner</a></h3>
-<ul>
-<li>Artiklen diskuterer forekomsten af &quot;parasite SEO&quot;-virksomheder, som udnytter betroede domæner som Forbes til at rangere højt i søgeresultaterne på trods af indhold af lav kvalitet.</li>
-<li>Google kritiseres for at tillade disse praksisser, da det prioriterer annonceindtægter og betroede domæner over indholdskvalitet, hvilket kræver manuel indgriben for at løse problemet.</li>
-<li>Fænomenet er ikke nyt og er blevet observeret med andre sider som HowStuffWorks og LiveStrong, hvilket fremhæver et bredere problem med søgemaskineoptimering og indholdsrelevans.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Comic Mono" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Comic%20Mono&subheading=torsdag%20den%2019.%20september%202024%3A%20Resum%C3%A9%20af%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/da/2024/09/19</link>
-            <guid isPermaLink="false">2024-09-19T00:00:00.000Z</guid>
-            <pubDate>Thu, 19 Sep 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

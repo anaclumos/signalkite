@@ -1,0 +1,324 @@
+[
+  {
+    "id": 41684082,
+    "title": "Efisiensi yang berlebihan membuat segalanya menjadi lebih buruk (2022)",
+    "originLink": "https://sohl-dickstein.github.io/2022/11/06/strong-Goodhart.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41684082",
+    "commentBody": "",
+    "originSummary": [
+      "Versi kuat dari hukum Goodhart menyarankan bahwa mengoptimalkan secara berlebihan ukuran proxy dapat menyebabkan hasil yang lebih buruk dalam tujuan sebenarnya, seperti yang terlihat dalam pengujian standar dan overfitting pembelajaran mesin.",
+      "Konsep ini berlaku di berbagai bidang, termasuk politik, ekonomi, dan kesehatan, menunjukkan relevansi luas dari fenomena tersebut.",
+      "Strategi mitigasi dari pembelajaran mesin, seperti menyelaraskan tujuan proxy dengan hasil yang diinginkan, menambahkan penalti regularisasi, menyuntikkan noise, dan menggunakan penghentian dini, dapat membantu mengelola masalah ini."
+    ],
+    "commentSummary": [
+      "Optimalisasi berlebihan dalam pembelajaran mesin dan bidang lainnya dapat menyebabkan hasil negatif, seperti yang disarankan oleh peneliti ML Jascha Sohl-Dickstein.",
+      "Konsep ini sejalan dengan hukum Goodhart, yang menyatakan bahwa ketika suatu ukuran menjadi target, ukuran tersebut berhenti menjadi ukuran yang baik.",
+      "Contoh hasil negatif dari over-optimisasi termasuk gangguan rantai pasokan COVID-19 dan ketidakefisienan dalam perawatan kesehatan dan perkeretaapian di Swedia, yang menyoroti kebutuhan sistem untuk mempertahankan beberapa kelonggaran demi ketahanan dan kemampuan beradaptasi."
+    ],
+    "points": 701,
+    "commentCount": 295,
+    "retryCount": 0,
+    "time": 1727572784
+  },
+  {
+    "id": 41683293,
+    "title": "Bagaimana Discord menyimpan triliunan pesan (2023)",
+    "originLink": "https://discord.com/blog/how-discord-stores-trillions-of-messages",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41683293",
+    "commentBody": "",
+    "originSummary": [
+      "Discord awalnya menggunakan MongoDB untuk penyimpanan pesan tetapi beralih ke Cassandra untuk skalabilitas dan toleransi kesalahan yang lebih baik, yang kemudian menyebabkan masalah kinerja dan pemeliharaan.",
+      "Dalam tahun 2022, Discord bermigrasi dari Cassandra ke ScyllaDB, sebuah basis data yang lebih efisien, berbasis C++, dan kompatibel dengan Cassandra, mengurangi jumlah node dari 177 menjadi 72 dan secara signifikan meningkatkan latensi dan kinerja.",
+      "Proses migrasi melibatkan penulisan ganda data baru dan menggunakan migrator berbasis Rust untuk data historis, yang menghasilkan lebih sedikit masalah dan penanganan yang lebih baik terhadap peningkatan lalu lintas selama acara besar seperti Piala Dunia."
+    ],
+    "commentSummary": [
+      "Discord beralih dari Cassandra ke ScyllaDB untuk mengatasi masalah kinerja, terutama dengan penghapusan dan pengumpulan sampah (GC).",
+      "ScyllaDB menyediakan strategi pemadatan dan kinerja yang lebih baik, meskipun masih menggunakan tombstone untuk penghapusan.",
+      "Discord mempertahankan skema dan strategi partisi yang ada selama migrasi, menekankan pentingnya konfigurasi default yang baik."
+    ],
+    "points": 379,
+    "commentCount": 209,
+    "retryCount": 0,
+    "time": 1727561263
+  },
+  {
+    "id": 41683306,
+    "title": "SpaceX meluncurkan misi untuk 2 astronot NASA yang terjebak di ISS",
+    "originLink": "https://apnews.com/article/spacex-launch-boeing-nasa-stuck-astronauts-e179d0dc6c77d224278fd0430148ff8b",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41683306",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "SpaceX meluncurkan misi untuk mengembalikan dua astronot NASA dari ISS karena masalah dengan Starliner milik Boeing.",
+      "Terjadi anomali selama pembakaran deorbit tahap kedua roket Falcon 9, yang menyebabkan penundaan peluncuran untuk investigasi.",
+      "Para astronot akan kembali menggunakan Crew Dragon milik SpaceX, dengan setelan baru yang disediakan, memicu perdebatan apakah ini adalah misi 'penyelamatan' atau rotasi kru rutin."
+    ],
+    "points": 334,
+    "commentCount": 309,
+    "retryCount": 0,
+    "time": 1727561465
+  },
+  {
+    "id": 41686715,
+    "title": "Bangun frontend yang kuat menggunakan peningkatan progresif",
+    "originLink": "https://www.gov.uk/service-manual/technology/using-progressive-enhancement",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41686715",
+    "commentBody": "",
+    "originSummary": [
+      "Pengembangan progresif dimulai dengan HTML, kemudian menambahkan CSS dan JavaScript, memastikan fungsionalitas dasar dan aksesibilitas untuk semua pengguna, termasuk mereka yang memiliki keterbatasan perangkat atau konektivitas.",
+      "JavaScript seharusnya meningkatkan, bukan menggantikan, fungsionalitas HTML dan CSS; gunakan deteksi fitur, polyfill, dan transpiling untuk memastikan kompatibilitas.",
+      "Hindari Aplikasi Halaman Tunggal (SPA) karena dapat menghambat aksesibilitas dan navigasi; pastikan layanan Anda tetap berfungsi meskipun terjadi kegagalan CSS/JavaScript."
+    ],
+    "commentSummary": [
+      "Postingan tersebut membahas manfaat membangun frontend menggunakan peningkatan progresif, dengan fokus pada HTML dan CSS dengan sedikit JavaScript, seperti yang dicontohkan oleh gov.uk.",
+      "Banyak pengembang mengungkapkan frustrasi dengan kompleksitas yang tidak perlu yang diperkenalkan oleh Aplikasi Halaman Tunggal (SPA) dan kerangka kerja JavaScript modern, serta menganjurkan solusi yang lebih sederhana dan lebih mudah dipelihara.",
+      "Percakapan tersebut menyoroti tren yang semakin berkembang untuk mempertimbangkan kembali solusi berbasis HTML yang lebih sederhana, dengan alat seperti htmx mendapatkan perhatian karena kemampuannya mengurangi kompleksitas frontend."
+    ],
+    "points": 208,
+    "commentCount": 141,
+    "retryCount": 0,
+    "time": 1727610895
+  },
+  {
+    "id": 41683577,
+    "title": "Notion mengalami krisis paruh baya",
+    "originLink": "https://www.jjinux.com/2024/09/notions-mid-life-crisis.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41683577",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Notion, yang awalnya populer karena fitur-fiturnya yang dapat disesuaikan dan serbaguna, menghadapi kritik karena menjadi berantakan dan kurang efektif, mirip dengan alat lain yang terlalu sering digunakan seperti Jira.",
+      "Pengguna mengungkapkan frustrasi dengan dokumen yang usang dan sulit ditemukan, menyarankan bahwa alat yang lebih sederhana seperti Google Docs mungkin lebih produktif.",
+      "Meskipun memiliki beberapa masalah, kemampuan database dan fleksibilitas Notion masih menjadikannya pesaing kuat untuk mengatur dan mengkategorikan catatan, meskipun beberapa pengguna sedang mempertimbangkan alternatif seperti Obsidian."
+    ],
+    "points": 201,
+    "commentCount": 140,
+    "retryCount": 0,
+    "time": 1727565276
+  },
+  {
+    "id": 41683098,
+    "title": "Inggris membeli pabrik semikonduktor untuk keperluan pertahanan",
+    "originLink": "https://ukdefencejournal.org.uk/britain-buys-semiconductor-factory-for-defence-purposes/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41683098",
+    "commentBody": "",
+    "originSummary": [
+      "Pemerintah Inggris telah mengakuisisi sebuah pabrik semikonduktor di Newton Aycliffe, County Durham, yang sekarang bernama Octric Semiconductors UK, untuk mendukung rantai pasokan pertahanan dan Angkatan Bersenjata.",
+      "Fasilitas ini adalah satu-satunya situs aman di Inggris yang mampu memproduksi semikonduktor gallium arsenide, yang penting untuk platform militer seperti jet tempur, dan mengamankan hingga 100 pekerjaan terampil.",
+      "Pengakuisisian ini memastikan kelanjutan produksi semikonduktor penting untuk aplikasi militer, menstabilkan pabrik dan meningkatkan kemampuan pertahanan serta kapasitas industri Inggris."
+    ],
+    "commentSummary": [
+      "Inggris telah membeli sebuah pabrik semikonduktor untuk keperluan pertahanan, menyoroti pentingnya produksi semikonduktor domestik secara strategis.",
+      "Kilang tersebut, yang sebelumnya dimiliki oleh Coherent, mengkhususkan diri dalam semikonduktor gallium arsenide, yang penting untuk aplikasi militer seperti jet tempur dan radar frekuensi tinggi.",
+      "Pengambilalihan ini mengamankan hingga 100 pekerjaan terampil dan memastikan Inggris mempertahankan bagian penting dari infrastruktur pertahanannya, terutama saat permintaan semikonduktor global meningkat."
+    ],
+    "points": 199,
+    "commentCount": 102,
+    "retryCount": 0,
+    "time": 1727558614
+  },
+  {
+    "id": 41685917,
+    "title": "Kapal megabom terapung mendekati pantai Inggris",
+    "originLink": "https://cepa.org/article/floating-megabomb-heaves-to-near-the-english-coast/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41685917",
+    "commentBody": "",
+    "originSummary": [
+      "MV Ruby, sebuah kapal berbendera Malta yang membawa 20.000 ton amonium nitrat yang mudah meledak, mengalami kerusakan dan mencari pelabuhan di lepas pantai Kent, Inggris, menimbulkan kekhawatiran keamanan yang signifikan.",
+      "Kapal tersebut telah ditolak masuk ke beberapa pelabuhan Eropa, termasuk Norwegia dan Lituania, karena sifat berbahaya dari muatannya, yang dapat menyebabkan kehancuran sebanding dengan sepertiga bom Hiroshima.",
+      "Insiden tersebut menyoroti taktik perang hibrida Rusia dan menggarisbawahi perlunya berbagi intelijen yang kuat, pengawasan, dan protokol keamanan maritim untuk mengelola ancaman semacam itu secara efektif."
+    ],
+    "commentSummary": [
+      "Sebuat kapal yang rusak membawa 20.000 ton amonium nitrat, bahan yang sangat mudah meledak, sedang mendekati pantai Inggris, menyebabkan kekhawatiran besar terkait keselamatan.",
+      "Kapal tersebut telah ditolak masuk ke beberapa pelabuhan Eropa dan diduga digunakan oleh Rusia untuk mengganggu negara-negara NATO, meningkatkan ketegangan geopolitik.",
+      "Otoritas berada dalam siaga tinggi karena potensi ancaman dan sejarah permusuhan tingkat rendah Rusia, mempertanyakan niat kapal tersebut saat berlayar dari Norwegia ke Lituania dan sekarang mendekati Inggris."
+    ],
+    "points": 187,
+    "commentCount": 199,
+    "retryCount": 0,
+    "time": 1727600343
+  },
+  {
+    "id": 41687707,
+    "title": "Beberapa catatan pengembangan web Go",
+    "originLink": "https://jvns.ca/blog/2024/09/27/some-go-web-dev-notes/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41687707",
+    "commentBody": "",
+    "originSummary": [
+      "Go 1.22 memperkenalkan dukungan routing yang ditingkatkan dalam pustaka standar, menyederhanakan penanganan rute dan meningkatkan keamanan dengan middleware.",
+      "Alat sqlc menghasilkan kode Go dari kueri SQL, mengurangi kode boilerplate dan memperlancar interaksi dengan basis data.",
+      "Menetapkan batas memori GC di Go 1.19 membantu mencegah pembunuhan out-of-memory (OOM) di lingkungan dengan memori rendah, meningkatkan stabilitas aplikasi."
+    ],
+    "commentSummary": [
+      "Kesederhanaan dan stabilitas Go dihargai oleh para pengembang, membuatnya mudah untuk melanjutkan proyek setelah jeda yang lama.",
+      "Pengaturan awal bisa menjadi tantangan karena perlu memilih berbagai pustaka untuk pencatatan, driver basis data, dll.",
+      "Ketiadaan kerangka kerja dominan dalam Go dianggap sebagai keterbatasan sekaligus keuntungan, menawarkan fleksibilitas dengan pustaka standar."
+    ],
+    "points": 159,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1727620583
+  },
+  {
+    "id": 41683815,
+    "title": "Catatan tentang Bahasa Kristal",
+    "originLink": "https://wiki.alopex.li/CrystalNotes",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41683815",
+    "commentBody": "",
+    "originSummary": [
+      "Crystal, sebuah bahasa yang dimulai pada tahun 2014, bertujuan untuk menjadi Ruby yang bertipe kuat dengan inferensi tipe dan dikompilasi menjadi eksekusi asli melalui LLVM.",
+      "Itu menampilkan ekosistem terdesentralisasi dari perpustakaan, anotasi tipe opsional, dan sistem tipe yang mirip dengan TypeScript, mendukung generik dan fitur berorientasi objek lainnya.",
+      "Meskipun ada beberapa masalah dengan penanganan tempfile dan iterasi direktori, Crystal menawarkan banyak fungsi dan pustaka bawaan yang berguna, menjadikannya pilihan yang solid bagi mereka yang mencari sistem tipe statis yang terasa dinamis."
+    ],
+    "commentSummary": [
+      "Bahasa Crystal sedang dibahas mengenai potensinya dan keterbatasan saat ini, dengan pengguna berbagi pengalaman yang beragam mengenai keandalan dan kematangannya.",
+      "Beberapa pengguna menyoroti kinerja tinggi dan produktivitas Crystal untuk server API backend dan tugas latar belakang, sementara yang lain menunjukkan masalah seperti pengumpulan sampah (GC) yang lambat dan bug.",
+      "Percakapan tersebut mencakup perbandingan dengan bahasa lain seperti Ruby, Clojure, dan Rust, serta menyebutkan penggunaan LLVM oleh Crystal untuk menghasilkan kode yang dioptimalkan, membuatnya sebanding dengan Go, Rust, atau C dalam hal kinerja."
+    ],
+    "points": 149,
+    "commentCount": 50,
+    "retryCount": 0,
+    "time": 1727568986
+  },
+  {
+    "id": 41686722,
+    "title": "Komponen web baik-baik saja",
+    "originLink": "https://nolanlawson.com/2024/09/28/web-components-are-okay/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41686722",
+    "commentBody": "",
+    "originSummary": [
+      "Nolan Lawson membahas perdebatan tentang komponen web, yang dipicu oleh postingan Ryan Carniato \"Web Components Are Not the Future\" dan tanggapan Cory LaViska \"Web Components Are Not the Future — They’re the Present.\"",
+      "Lawson, yang berpengalaman dengan komponen web, mengakui adanya beban kinerja mereka tetapi menyoroti pertukaran seperti pemeliharaan, keamanan, kegunaan, dan aksesibilitas.",
+      "Dia menyimpulkan bahwa komponen web, meskipun memiliki keterbatasan, menawarkan peluang kreatif yang unik dan merupakan salah satu dari banyak alat yang tersedia dalam lanskap pengembangan web yang beragam."
+    ],
+    "commentSummary": [
+      "Kajian ini berpusat pada kompleksitas dan kegunaan kerangka kerja front-end modern dibandingkan dengan komponen web, dengan beberapa pengembang menyatakan frustrasi terhadap 'keajaiban' dalam kerangka kerja seperti React.",
+      "Komponen web disorot karena kesederhanaannya dan keselarasan yang lebih dekat dengan standar web, menawarkan fitur seperti Shadow DOM untuk isolasi tanpa memerlukan kerangka kerja yang kompleks.",
+      "Seorang pengembang berbagi pengalaman positif mereka beralih dari Vue ke komponen web, yang secara signifikan mengurangi ketergantungan dan beban pemeliharaan, yang sangat bermanfaat untuk proyek dengan sumber daya terbatas."
+    ],
+    "points": 147,
+    "commentCount": 157,
+    "retryCount": 0,
+    "time": 1727611020
+  },
+  {
+    "id": 41683144,
+    "title": "htmgo - bangun sistem yang sederhana dan skalabel dengan golang + htmx",
+    "originLink": "https://htmgo.dev",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41683144",
+    "commentBody": "",
+    "originSummary": [
+      "Seorang pengembang sedang mengerjakan tumpukan minimal yang menggabungkan Golang dan htmx untuk meningkatkan fitur seperti komponen dan memperbaiki sintaks untuk JavaScript yang kompleks.",
+      "Kami bertujuan untuk menyediakan alternatif yang lebih ringan dibandingkan dengan kerangka kerja yang berat sambil mengatasi sifat tingkat rendah dari htmx.",
+      "Inisiatif ini bisa bermanfaat bagi pengembang lain yang mencari tumpukan pengembangan yang efisien dan terstruktur."
+    ],
+    "commentSummary": [
+      "Seorang pengembang memperkenalkan \"htmgo,\" sebuah stack minimal yang menggabungkan Golang dan HTMX, yang bertujuan untuk menyederhanakan pembuatan komponen yang dapat digunakan kembali dan meningkatkan sintaks.",
+      "Proyek ini telah memicu diskusi di antara para pengembang tentang kelebihan mengintegrasikan bahasa backend dengan HTMX dan manfaat menggunakan Golang untuk pengembangan web yang ringan.",
+      "Komunitas sedang membandingkan \"htmgo\" dengan alat dan kerangka kerja lain seperti Hotwire, Gomponents, dan berbagai mesin templating, yang menyoroti minat yang semakin besar dalam solusi pengembangan web sisi server yang efisien."
+    ],
+    "points": 144,
+    "commentCount": 60,
+    "retryCount": 0,
+    "time": 1727559258
+  },
+  {
+    "id": 41687739,
+    "title": "Kombinasi RISC-V yang Fleksibel: Bisa Berharga Kurang dari Satu Dolar",
+    "originLink": "https://spectrum.ieee.org/flexible-risc-v",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41687739",
+    "commentBody": "",
+    "originSummary": [
+      "Keping plastik open-source baru berdaya 6-mW berbasis arsitektur RISC-V dapat melakukan tugas pembelajaran mesin sambil cukup fleksibel untuk melengkung di sekitar pensil.",
+      "Chip tersebut hanya kehilangan sekitar 4 persen dari kinerjanya ketika dibengkokkan, menunjukkan ketangguhannya dan potensinya untuk aplikasi elektronik fleksibel.",
+      "Perkembangan ini menyoroti kemajuan signifikan di bidang semikonduktor fleksibel dan perangkat keras sumber terbuka."
+    ],
+    "commentSummary": [
+      "Artikel IEEE terbaru menyoroti prosesor RISC-V fleksibel yang bisa berharga kurang dari satu dolar, berdasarkan desain SERV.",
+      "Pragmatic Semiconductor mengklaim bahwa mereka dapat memproduksi chip ini dalam waktu 48 jam, jauh lebih cepat daripada proses fabrikasi silikon tradisional.",
+      "Meskipun prosesor berjalan pada 60 kHz dan mengonsumsi daya sebesar 6 miliwatt, prosesor ini bisa bernilai untuk aplikasi khusus seperti e-tekstil dan elektronik fleksibel."
+    ],
+    "points": 132,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1727620927
+  },
+  {
+    "id": 41685326,
+    "title": "NASA menjual rover Bulan yang benar-benar baru: Belum pernah digunakan, satu pemilik sebelumnya",
+    "originLink": "https://www.economist.com/science-and-technology/2024/09/25/nasa-is-selling-a-brand-new-moon-rover",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41685326",
+    "commentBody": "",
+    "originSummary": [
+      "NASA bertujuan untuk mengembalikan manusia ke Bulan pada akhir dekade ini, dimulai dengan pengiriman probe ke kutub selatan bulan untuk mencari es, yang memiliki kepentingan ilmiah dan praktis.",
+      "Perkembangan terbaru meliputi terapi imun untuk asma, penyakit jantung, dan penuaan, teknologi baru untuk mendeteksi kebocoran pipa air, serta penemuan keju kuno di China.",
+      "Inovasi dalam AI dan daur ulang baterai mobil listrik juga patut diperhatikan, menunjukkan kemajuan yang berkelanjutan di berbagai bidang teknologi."
+    ],
+    "commentSummary": [
+      "Kepala NASA menjual rover Bulan yang baru dan belum pernah digunakan, memicu diskusi tentang nilainya dan konteks historisnya di sebuah forum.",
+      "Pengguna memperdebatkan nilainya, berbagi detail teknis, dan berkomentar dengan humor tentang topik tersebut, sementara beberapa menyatakan kekhawatiran tentang konten yang tidak relevan.",
+      "Konsultasi tersebut juga menyoroti potensi korupsi dalam proses penawaran kontraktor NASA dan tantangan pembangunan selama COVID."
+    ],
+    "points": 106,
+    "commentCount": 52,
+    "retryCount": 0,
+    "time": 1727591414
+  },
+  {
+    "id": 41685689,
+    "title": "Mesin Komputasi Inkremental Feldera",
+    "originLink": "https://github.com/feldera/feldera",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41685689",
+    "commentBody": "",
+    "originSummary": [
+      "Feldera adalah mesin kueri berkinerja tinggi yang dirancang untuk komputasi inkremental, memungkinkan pemrosesan perubahan secara terus-menerus tanpa menghitung ulang data yang lebih lama.",
+      "Itu mendukung sintaks SQL penuh dan terhubung ke berbagai sumber data, memungkinkan pengguna untuk mengelola pipeline dan memeriksa hasil secara real-time, bahkan dengan dataset yang lebih besar dari RAM.",
+      "Feldera dapat dimulai menggunakan Docker Compose atau dari sumber dengan dependensi seperti Rust, Java, Maven, dan Typescript, serta menawarkan konsol web untuk interaksi pengguna."
+    ],
+    "commentSummary": [
+      "Feldera Incremental Compute Engine adalah alat sumber terbuka yang dirancang untuk komputasi inkremental, yang secara signifikan mengurangi waktu pemrosesan aliran.",
+      "Itu didasarkan pada Z-Sets, sebuah generalisasi dari aljabar relasional, yang memungkinkan banyak operasi SQL diimplementasikan secara bertahap.",
+      "Feldera mendukung berbagai operator SQL, pengumpulan sampah otomatis, dan dapat mengindeks data pada penyimpanan, menjadikannya cocok untuk program SQL yang canggih dan gudang data historis."
+    ],
+    "points": 104,
+    "commentCount": 34,
+    "retryCount": 0,
+    "time": 1727597025
+  },
+  {
+    "id": 41685642,
+    "title": "Teks2CAD Menghasilkan Desain CAD Berurutan dari Prompt Teks",
+    "originLink": "https://sadilkhan.github.io/text2cad-project/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41685642",
+    "commentBody": "",
+    "originSummary": [
+      "Text2CAD adalah kerangka kerja AI pertama yang dirancang untuk menghasilkan model CAD (Computer-Aided Design) parametrik dari deskripsi tekstual multi-level, menjadikannya kemajuan signifikan di bidang ini.",
+      "Kerangka kerja ini mencakup jalur anotasi data baru menggunakan LLM (Model Bahasa Besar) dan VLM (Model Bahasa-Visi) sumber terbuka untuk memberi anotasi pada dataset DeepCAD dengan berbagai petunjuk teks.",
+      "Teks2CAD Transformer menggunakan BeRT Encoder yang telah dilatih sebelumnya dan lapisan Adaptif untuk mengubah deskripsi bahasa alami menjadi model CAD 3D, menunjukkan kemampuannya melalui hasil kualitatif dan kuantitatif."
+    ],
+    "commentSummary": [
+      "Teks2CAD adalah alat yang menghasilkan model CAD (Desain Berbantuan Komputer) dari perintah teks, bertujuan untuk menyederhanakan proses desain bagi pengguna yang tidak terbiasa dengan perangkat lunak CAD tradisional.",
+      "Alat ini sangat bermanfaat bagi pengguna yang mungkin tidak sering merancang objek, karena mengurangi kebutuhan untuk pelatihan CAD yang ekstensif, meskipun mungkin tidak seefisien untuk desain yang kompleks.",
+      "Diskusi tersebut menyoroti potensi dan keterbatasan penggunaan bahasa alami untuk membuat model 3D yang presisi, dengan beberapa ahli menyarankan bahwa alur kerja CAD tradisional masih lebih efektif untuk desain yang rinci dan akurat."
+    ],
+    "points": 103,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1727596379
+  }
+]

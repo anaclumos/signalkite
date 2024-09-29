@@ -15,12 +15,198 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 28 Sep 2024 19:08:48 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 29 Sep 2024 19:13:52 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/pt.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 28 Sep 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sun, 29 Sep 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[pt]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-09-29]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/09/29&#39;</h2>
+<h1>2024-09-29</h1>
+<h2><a href="https://sohl-dickstein.github.io/2022/11/06/strong-Goodhart.html">Eficiência demais piora tudo (2022)</a></h2>
+<ul>
+<li>A versão forte da lei de Goodhart sugere que a superotimização de uma medida proxy pode levar a piores resultados no objetivo real, como visto em testes padronizados e overfitting em aprendizado de máquina.</li>
+<li>Este conceito é aplicável em diversos campos, incluindo política, economia e saúde, indicando a ampla relevância do fenômeno.</li>
+<li>Estratégias de mitigação do aprendizado de máquina, como alinhar objetivos intermediários com resultados desejados, adicionar penalidades de regularização, injetar ruído e usar parada antecipada, podem ajudar a gerenciar esses problemas.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41684082">Reações</a></h3>
+<ul>
+<li>Excesso de otimização em aprendizado de máquina e outros campos pode levar a resultados negativos, conforme sugerido pelo pesquisador de ML Jascha Sohl-Dickstein.</li>
+<li>Esse conceito está alinhado com a lei de Goodhart, que afirma que quando uma medida se torna um alvo, ela deixa de ser uma boa medida.</li>
+<li>Exemplos de resultados negativos da superotimização incluem as interrupções na cadeia de suprimentos durante a COVID-19 e as ineficiências nos setores de saúde e ferrovias na Suécia, destacando a necessidade de os sistemas manterem alguma folga para robustez e adaptabilidade.</li>
+</ul>
+<h2><a href="https://discord.com/blog/how-discord-stores-trillions-of-messages">Como o Discord armazena trilhões de mensagens (2023)</a></h2>
+<ul>
+<li>Inicialmente, o Discord usava o MongoDB para armazenamento de mensagens, mas mudou para o Cassandra para melhor escalabilidade e tolerância a falhas, o que posteriormente levou a problemas de desempenho e manutenção.</li>
+<li>In 2022, o Discord migrou do Cassandra para o ScyllaDB, um banco de dados mais eficiente, baseado em C++ e compatível com Cassandra, reduzindo os nós de 177 para 72 e melhorando significativamente a latência e o desempenho.</li>
+<li>A migração envolveu a escrita dupla de novos dados e o uso de um migrador baseado em Rust para dados históricos, resultando em menos problemas e melhor manejo do aumento de tráfego durante grandes eventos como a Copa do Mundo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683293">Reações</a></h3>
+<ul>
+<li>Discord mudou de Cassandra para ScyllaDB para resolver problemas de desempenho, especialmente com exclusões e coleta de lixo (GC).</li>
+<li>ScyllaDB oferece melhores estratégias de compactação e desempenho, apesar de ainda usar tombstones para exclusões.</li>
+<li>Discord manteve seu esquema e estratégia de particionamento existentes durante a migração, enfatizando a importância de boas configurações padrão.</li>
+</ul>
+<h2><a href="https://apnews.com/article/spacex-launch-boeing-nasa-stuck-astronauts-e179d0dc6c77d224278fd0430148ff8b">SpaceX lança missão para 2 astronautas da NASA que estão presos na ISS</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41683306">Reações</a></h3>
+<ul>
+<li>SpaceX lançou uma missão para retornar dois astronautas da NASA da ISS devido a problemas com o Starliner da Boeing.</li>
+<li>Uma anomalia ocorreu durante a queima de desorbitação do segundo estágio do foguete Falcon 9, levando a uma pausa nos lançamentos para investigação.</li>
+<li>As astronautas retornarão usando a Crew Dragon da SpaceX, com novos trajes fornecidos, gerando debate sobre se esta é uma missão de &#39;resgate&#39; ou uma rotação de tripulação de rotina.</li>
+</ul>
+<h2><a href="https://www.gov.uk/service-manual/technology/using-progressive-enhancement">Construindo um frontend robusto usando aprimoramento progressivo</a></h2>
+<ul>
+<li>Melhoria progressiva começa com HTML, depois adiciona CSS e JavaScript, garantindo funcionalidade básica e acessibilidade para todos os usuários, incluindo aqueles com limitações de dispositivo ou conectividade.</li>
+<li>JavaScript deve aprimorar, não substituir, a funcionalidade de HTML e CSS; use detecção de recursos, polyfills e transpiling para garantir compatibilidade.</li>
+<li>Avoidar Aplicações de Página Única (SPAs) pois elas podem prejudicar a acessibilidade e a navegação; garanta que seu serviço permaneça funcional apesar de possíveis falhas de CSS/JavaScript.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41686715">Reações</a></h3>
+<ul>
+<li>As postagens discutem os benefícios de construir frontends usando aprimoramento progressivo, focando em HTML e CSS com JavaScript mínimo, como exemplificado pelo gov.uk.</li>
+<li>Muitos desenvolvedores expressam frustração com a complexidade desnecessária introduzida pelas Aplicações de Página Única (SPAs) e pelos frameworks modernos de JavaScript, defendendo soluções mais simples e mais fáceis de manter.</li>
+<li>A conversa destaca uma tendência crescente em reconsiderar soluções mais simples baseadas em HTML, com ferramentas como htmx ganhando atenção por sua capacidade de reduzir a complexidade do frontend.</li>
+</ul>
+<h2><a href="https://www.jjinux.com/2024/09/notions-mid-life-crisis.html">Crise de meia-idade do Notion</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41683577">Reações</a></h3>
+<ul>
+<li>Notion, inicialmente popular por seus recursos personalizáveis e versáteis, está enfrentando críticas por se tornar desorganizado e menos eficaz, semelhante a outras ferramentas excessivamente utilizadas como o Jira.</li>
+<li>Os usuários expressam frustração com documentos desatualizados e difíceis de encontrar, sugerindo que ferramentas mais simples como o Google Docs podem ser mais produtivas.</li>
+<li>Apesar de seus problemas, as capacidades de banco de dados e a flexibilidade do Notion ainda o tornam um forte concorrente para organizar e categorizar notas, embora alguns usuários estejam considerando alternativas como o Obsidian.</li>
+</ul>
+<h2><a href="https://ukdefencejournal.org.uk/britain-buys-semiconductor-factory-for-defence-purposes/">Grã-Bretanha compra fábrica de semicondutores para fins de defesa</a></h2>
+<ul>
+<li>Ao governo do Reino Unido adquiriu uma fábrica de semicondutores em Newton Aycliffe, County Durham, agora chamada Octric Semiconductors UK, para apoiar a cadeia de suprimentos de defesa e as Forças Armadas.</li>
+<li>Esta instalação é o único local seguro no Reino Unido capaz de fabricar semicondutores de arseneto de gálio, essenciais para plataformas militares como jatos de combate, garantindo até 100 empregos qualificados.</li>
+<li>A aquisição garante a produção contínua de semicondutores críticos para aplicações militares, estabilizando a planta e aprimorando as capacidades de defesa e a capacidade industrial do Reino Unido.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683098">Reações</a></h3>
+<ul>
+<li>As autoridades do Reino Unido compraram uma fábrica de semicondutores para fins de defesa, destacando a importância estratégica da produção doméstica de semicondutores.</li>
+<li>A fábrica, anteriormente de propriedade da Coherent, é especializada em semicondutores de arseneto de gálio, cruciais para aplicações militares como caças e radares de alta frequência.</li>
+<li>Esta aquisição garante até 100 empregos qualificados e assegura que o Reino Unido mantenha uma parte crítica de sua infraestrutura de defesa, especialmente à medida que a demanda global por semicondutores aumenta.</li>
+</ul>
+<h2><a href="https://cepa.org/article/floating-megabomb-heaves-to-near-the-english-coast/">Uma megabomba flutuante se aproxima da costa inglesa</a></h2>
+<ul>
+<li>A MV Ruby, um navio registrado em Malta transportando 20.000 toneladas de nitrato de amônio explosivo, está danificado e buscando um porto na costa de Kent, Reino Unido, representando uma preocupação significativa de segurança.</li>
+<li>A embarcação foi negada a entrada em vários portos europeus, incluindo Noruega e Lituânia, devido à natureza perigosa de sua carga, que poderia causar uma devastação comparável a um terço da bomba de Hiroshima.</li>
+<li>A ocorrência destaca as táticas de guerra híbrida da Rússia e sublinha a necessidade de protocolos robustos de compartilhamento de inteligência, vigilância e segurança marítima para gerenciar tais ameaças de forma eficaz.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685917">Reações</a></h3>
+<ul>
+<li>Aproxima-se da costa inglesa um navio danificado que transporta 20.000 toneladas de nitrato de amônio, um material altamente explosivo, causando preocupações significativas de segurança.</li>
+<li>A entrada do navio foi negada em vários portos europeus e suspeita-se que esteja sendo usado pela Rússia para assediar países da OTAN, aumentando as tensões geopolíticas.</li>
+<li>Atenção máxima das autoridades devido à ameaça potencial e ao histórico de hostilidades de baixo nível da Rússia, questionando as intenções do navio enquanto viaja da Noruega para a Lituânia e agora próximo ao Reino Unido.</li>
+</ul>
+<h2><a href="https://jvns.ca/blog/2024/09/27/some-go-web-dev-notes/">Algumas anotações sobre desenvolvimento web em Go</a></h2>
+<ul>
+<li>Go 1.22 introduz suporte de roteamento aprimorado na biblioteca padrão, simplificando o manuseio de rotas e melhorando a segurança com middleware.</li>
+<li>sqlc gera código Go a partir de consultas SQL, reduzindo código repetitivo e simplificando interações com o banco de dados.</li>
+<li>Definir um limite de memória GC no Go 1.19 ajuda a prevenir encerramentos por falta de memória (OOM) em ambientes com pouca memória, melhorando a estabilidade da aplicação.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41687707">Reações</a></h3>
+<ul>
+<li>Os desenvolvedores apreciam a simplicidade e a estabilidade do Go, o que torna fácil retomar projetos após longas pausas.</li>
+<li>Inicialmente, a configuração pode ser desafiadora devido à necessidade de selecionar várias bibliotecas para registro, drivers de banco de dados, etc.</li>
+<li>A falta de um framework dominante em Go é vista tanto como uma limitação quanto como um benefício, oferecendo flexibilidade com bibliotecas padrão.</li>
+</ul>
+<h2><a href="https://wiki.alopex.li/CrystalNotes">Notas sobre a Linguagem de Cristal</a></h2>
+<ul>
+<li>Crystal, uma linguagem iniciada em 2014, tem como objetivo ser um Ruby fortemente tipado com inferência de tipos e compila para executáveis nativos via LLVM.</li>
+<li>Ele apresenta um ecossistema descentralizado de bibliotecas, anotações de tipo opcionais e um sistema de tipos semelhante ao do TypeScript, suportando genéricos e outros recursos orientados a objetos.</li>
+<li>Apesar de alguns problemas com o manuseio de arquivos temporários e a iteração de diretórios, Crystal oferece muitas funções e bibliotecas integradas úteis, tornando-o uma escolha sólida para aqueles que procuram um sistema de tipos estático com uma sensação dinâmica.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683815">Reações</a></h3>
+<ul>
+<li>Está sendo discutida a linguagem Crystal por seu potencial e limitações atuais, com usuários compartilhando experiências mistas em relação à sua confiabilidade e maturidade.</li>
+<li>Alguns usuários destacam o alto desempenho e a produtividade do Crystal para servidores de API de backend e tarefas em segundo plano, enquanto outros apontam problemas como a coleta de lixo (GC) lenta e bugs.</li>
+<li>As conversas incluem comparações com outras linguagens como Ruby, Clojure e Rust, e mencionam o uso do LLVM pelo Crystal para geração de código otimizado, tornando-o comparável ao Go, Rust ou C em termos de desempenho.</li>
+</ul>
+<h2><a href="https://nolanlawson.com/2024/09/28/web-components-are-okay/">Os componentes da web estão bem</a></h2>
+<ul>
+<li>Nolan Lawson aborda o debate sobre componentes web, desencadeado pelo post de Ryan Carniato &#39;Web Components Are Not the Future&#39; e a réplica de Cory LaViska &#39;Web Components Are Not the Future — They’re the Present.&#39;</li>
+<li>Lawson, experiente com componentes web, reconhece a sobrecarga de desempenho deles, mas destaca compensações como manutenibilidade, segurança, usabilidade e acessibilidade.</li>
+<li>Ele conclui que os componentes da web, apesar de suas limitações, oferecem oportunidades criativas únicas e são uma das muitas ferramentas disponíveis no diversificado cenário do desenvolvimento web.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41686722">Reações</a></h3>
+<ul>
+<li>A discussão gira em torno da complexidade e usabilidade dos frameworks modernos de front-end em comparação com os componentes web, com alguns desenvolvedores expressando frustração com a &#39;mágica&#39; em frameworks como o React.</li>
+<li>Os componentes da web são destacados por sua simplicidade e alinhamento mais próximo com os padrões da web, oferecendo recursos como Shadow DOM para isolamento sem a necessidade de frameworks complexos.</li>
+<li>A desenvolvedora compartilhou sua experiência positiva ao fazer a transição de Vue para componentes web, reduzindo significativamente as dependências e a sobrecarga de manutenção, o que é particularmente benéfico para projetos com recursos limitados.</li>
+</ul>
+<h2><a href="https://htmgo.dev">htmgo - construa sistemas simples e escaláveis com golang + htmx</a></h2>
+<ul>
+<li>A desenvolvedora está trabalhando em uma pilha mínima combinando Golang e htmx para aprimorar recursos como componentes e melhorar a sintaxe para JavaScript complexo.</li>
+<li>A proposta do projeto é oferecer uma alternativa mais leve aos frameworks pesados, ao mesmo tempo em que aborda a natureza de baixo nível do htmx.</li>
+<li>Esta iniciativa pode ser benéfica para outros desenvolvedores que buscam uma pilha de desenvolvimento simplificada e eficiente.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41683144">Reações</a></h3>
+<ul>
+<li>Um desenvolvedor introduziu o &#39;htmgo&#39;, uma stack minimalista que combina Golang e HTMX, com o objetivo de simplificar a criação de componentes reutilizáveis e melhorar a sintaxe.</li>
+<li>As discussões entre os desenvolvedores foram estimuladas pelo projeto sobre os méritos de integrar linguagens de backend com HTMX e os benefícios de usar Golang para desenvolvimento web leve.</li>
+<li>A comunidade está comparando &#39;htmgo&#39; com outras ferramentas e frameworks como Hotwire, Gomponents e vários motores de template, destacando um crescente interesse em soluções eficientes de desenvolvimento web no lado do servidor.</li>
+</ul>
+<h2><a href="https://spectrum.ieee.org/flexible-risc-v">Processador RISC-V Flexível: Pode Custar Menos de Um Dólar</a></h2>
+<ul>
+<li>A nova pastilha plástica de código aberto de 6 mW baseada na arquitetura RISC-V pode realizar tarefas de aprendizado de máquina enquanto é flexível o suficiente para se dobrar em torno de um lápis.</li>
+<li>A pastilha perde apenas cerca de 4 por cento de seu desempenho quando dobrada, demonstrando sua robustez e potencial para aplicações em eletrônicos flexíveis.</li>
+<li>Este desenvolvimento destaca avanços significativos no campo dos semicondutores flexíveis e do hardware de código aberto.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41687739">Reações</a></h3>
+<ul>
+<li>A IEEE recente destaca um processador RISC-V flexível que pode custar menos de um dólar, baseado no design SERV.</li>
+<li>Pragmatic Semiconductor afirma que pode produzir esses chips em 48 horas, significativamente mais rápido do que os processos tradicionais de fabricação de silício.</li>
+<li>Embora o processador funcione a 60 kHz e consuma 6 miliwatts de energia, ele pode ser valioso para aplicações de nicho, como e-têxteis e eletrônicos flexíveis.</li>
+</ul>
+<h2><a href="https://www.economist.com/science-and-technology/2024/09/25/nasa-is-selling-a-brand-new-moon-rover">NASA está vendendo um novo rover lunar: Nunca usado, um único dono anterior</a></h2>
+<ul>
+<li>NASA pretende retornar humanos à Lua até o final da década, começando com sondas para o polo sul lunar para buscar gelo, que possui importância científica e prática.</li>
+<li>Avanços recentes incluem terapias imunológicas para asma, doenças cardíacas e envelhecimento, novas tecnologias para detectar vazamentos em tubulações de água e a descoberta de queijo antigo na China.</li>
+<li>Inovações em IA e reciclagem de baterias de carros elétricos também são notáveis, demonstrando o progresso contínuo em diversos campos tecnológicos.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685326">Reações</a></h3>
+<ul>
+<li>NASA está vendendo um novo rover lunar não utilizado, gerando discussões sobre seu valor e contexto histórico em um fórum.</li>
+<li>Os usuários debatem seu valor, compartilham detalhes técnicos e comentam humoristicamente sobre o tópico, enquanto alguns expressam preocupações sobre conteúdo fora do tema.</li>
+<li>As conversas também destacam a potencial corrupção no processo de licitação de contratantes da NASA e os desafios de construção durante a COVID.</li>
+</ul>
+<h2><a href="https://github.com/feldera/feldera">Motor de Cálculo Incremental Feldera</a></h2>
+<ul>
+<li>Feldera é um mecanismo de consulta de alto desempenho projetado para computação incremental, permitindo o processamento contínuo de mudanças sem recalcular dados antigos.</li>
+<li>Ele suporta a sintaxe SQL completa e se conecta a várias fontes de dados, permitindo que os usuários gerenciem pipelines e inspecionem resultados em tempo real, mesmo com conjuntos de dados maiores que a RAM.</li>
+<li>Feldera pode ser iniciado usando Docker Compose ou a partir do código-fonte com dependências como Rust, Java, Maven e Typescript, e oferece um console web para interação do usuário.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685689">Reações</a></h3>
+<ul>
+<li>Feldera Incremental Compute Engine é uma ferramenta de código aberto projetada para computação incremental, reduzindo significativamente os tempos de processamento de fluxo.</li>
+<li>Baseia-se em Z-Sets, uma generalização da álgebra relacional, permitindo que muitas operações SQL sejam implementadas de forma incremental.</li>
+<li>Feldera suporta uma ampla gama de operadores SQL, coleta automática de lixo e pode indexar dados no armazenamento, tornando-o adequado para programas SQL sofisticados e armazéns de dados históricos.</li>
+</ul>
+<h2><a href="https://sadilkhan.github.io/text2cad-project/">Text2CAD Gerando Designs CAD Sequenciais a partir de Comandos de Texto</a></h2>
+<ul>
+<li>Text2CAD é a primeira estrutura de IA projetada para gerar modelos CAD (Desenho Assistido por Computador) paramétricos a partir de descrições textuais de múltiplos níveis, representando um avanço significativo na área.</li>
+<li>A estrutura inclui um novo pipeline de anotação de dados usando LLMs (Modelos de Linguagem de Grande Escala) e VLMs (Modelos de Visão-Linguagem) de código aberto para anotar o conjunto de dados DeepCAD com diversos prompts de texto.</li>
+<li>Text2CAD Transformer emprega um Codificador BeRT pré-treinado e uma camada Adaptativa para transformar descrições em linguagem natural em modelos CAD 3D, demonstrando sua capacidade por meio de resultados qualitativos e quantitativos.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41685642">Reações</a></h3>
+<ul>
+<li>Text2CAD é uma ferramenta que gera modelos CAD (Desenho Assistido por Computador) a partir de comandos de texto, com o objetivo de simplificar o processo de design para usuários não familiarizados com softwares CAD tradicionais.</li>
+<li>A ferramenta é particularmente benéfica para usuários que podem não projetar objetos com frequência, pois reduz a necessidade de um treinamento extensivo em CAD, embora possa não ser tão eficiente para designs complexos.</li>
+<li>A discussão destaca o potencial e as limitações do uso da linguagem natural para criar modelos 3D precisos, com alguns especialistas sugerindo que os fluxos de trabalho tradicionais de CAD ainda são mais eficazes para designs detalhados e precisos.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Eficiência demais piora tudo (2022)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Efici%C3%AAncia%20demais%20piora%20tudo%20(2022)&subheading=domingo%2C%2029%20de%20setembro%20de%202024%3A%20Resumo%20do%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/pt/2024/09/29</link>
+            <guid isPermaLink="false">2024-09-29T00:00:00.000Z</guid>
+            <pubDate>Sun, 29 Sep 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-28]]></title>
             <description
@@ -1664,191 +1850,6 @@
             <link>https://hn.cho.sh/pt/2024/09/20</link>
             <guid isPermaLink="false">2024-09-20T00:00:00.000Z</guid>
             <pubDate>Fri, 20 Sep 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-09-19]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/09/19&#39;</h2>
-<h1>2024-09-19</h1>
-<h2><a href="https://dtinth.github.io/comic-mono-font/">Comic Mono</a></h2>
-<ul>
-<li>Comic Mono é uma nova fonte monoespaçada derivada do Comic Shanns (versão 1) de Shannon Miwa, com todos os glifos tendo a mesma largura e métricas ajustadas para melhor exibição.</li>
-<li>A fonte foi criada usando um script em Python e o FontForge, com uma versão em negrito gerada através da operação Embolden do FontForge.</li>
-<li>Comic Mono está disponível para download e uso sob a Licença MIT, com opções adicionais de distribuição via CDN, npm e pacotes Linux.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41585156">Reações</a></h3>
-<ul>
-<li>Comic Mono, uma fonte monoespaçada inspirada na Comic Sans, tem ganhado atenção por tornar a programação mais agradável e menos cansativa para os olhos.</li>
-<li>Os usuários estão comparando Comic Mono com outras fontes como Comic Code, observando diferenças na legibilidade e na estética, com alguns preferindo Comic Code por seu visual mais refinado.</li>
-<li>As discussões destacam o uso de fontes no estilo Comic Sans para reduzir a fadiga ocular e ajudar na dislexia, mostrando um lado prático dessas fontes frequentemente ridicularizadas.</li>
-</ul>
-<h2><a href="https://twitter.com/RachelTobac/status/1836471586624540705">LinkedIn está agora usando o conteúdo de todos para treinar sua ferramenta de IA</a></h2>
-<ul>
-<li>LinkedIn está utilizando conteúdo gerado pelos usuários para treinar sua ferramenta de IA por padrão, levantando preocupações sobre privacidade.</li>
-<li>Os usuários são aconselhados a desativar a opção navegando para Configurações e Privacidade &gt; Privacidade de Dados &gt; Dados para Melhoria de IA Generativa e desligando-a.</li>
-<li>Recomenda-se que as organizações cessem as inscrições automáticas para proteger a privacidade dos dados dos usuários.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41584486">Reações</a></h3>
-<ul>
-<li>LinkedIn está utilizando o conteúdo dos usuários para treinar sua ferramenta de IA, levando a reações mistas em relação à qualidade e autenticidade do conteúdo.</li>
-<li>Preocupações com a privacidade surgiram à medida que os usuários foram inscritos automaticamente sem consentimento explícito, embora os usuários da UE estejam isentos devido às regulamentações do GDPR.</li>
-<li>Céticos argumentam que o LinkedIn deveria priorizar a melhoria das funcionalidades principais em vez do desenvolvimento de IA, com alguns usuários considerando optar por sair ou deixar a plataforma.</li>
-</ul>
-<h2><a href="https://news.ycombinator.com/item?id=41588200">Meu filho pode ser cego – como oferecer o melhor suporte</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41588200">Reações</a></h3>
-<ul>
-<li>Pais preocupados com a possível cegueira de seu filho estão buscando recursos e conselhos para apoio.</li>
-<li>Algumas sugestões incluem promover a independência, integrar-se com os colegas e utilizar recursos de organizações como o Instituto Braille e a Fundação Americana para Cegos.</li>
-<li>Histórias pessoais destacam estratégias bem-sucedidas como a ecolocalização e a integração de crianças cegas em atividades regulares.</li>
-</ul>
-<h2><a href="https://www.nintendo.co.jp/corporate/release/en/2024/240919.html">Nintendo entra com ação por violação de direitos de patente contra a Pocketpair, Inc</a></h2>
-<ul>
-<li>Nintendo e The Pokémon Company entraram com uma ação judicial por violação de patente contra a Pocketpair, Inc. no Tribunal Distrital de Tóquio.</li>
-<li>Processo alega que o jogo da Pocketpair, Palworld, infringe múltiplos direitos de patente, buscando uma liminar e compensação por danos.</li>
-<li>Nintendo enfatiza seu compromisso em proteger seus direitos de propriedade intelectual, incluindo a marca Nintendo, por meio de ações legais necessárias.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41587214">Reações</a></h3>
-<ul>
-<li>Nintendo iniciou um processo por violação de patente contra a Pocketpair, Inc. em relação ao jogo Palworld, focando nas mecânicas de jogo em vez das semelhanças de personagens.</li>
-<li>Pocketpair contratou representação legal para contestar as reivindicações, destacando as complexidades e controvérsias das patentes de software na indústria de jogos.</li>
-<li>Este caso chama a atenção para o debate contínuo sobre o alcance e o impacto das patentes de software no desenvolvimento de jogos e na inovação.</li>
-</ul>
-<h2><a href="https://www.pivotaltracker.com/blog/2024-09-18-end-of-life">Pivotal Tracker será encerrado</a></h2>
-<ul>
-<li>VMware Tanzu anunciou o fim de vida (EOL) do Pivotal Tracker, com efeito a partir de 30 de abril de 2025, com suporte fornecido até essa data.</li>
-<li>Todas as contas (gratuitas, patrocinadas, pagas, Enterprise) são afetadas, e os usuários devem exportar seus dados antes que o serviço termine; as instruções estão disponíveis no Centro de Ajuda.</li>
-<li>Novos cadastros não são possíveis, mas contas existentes ainda podem convidar novos usuários dentro dos limites de colaboradores.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41591622">Reações</a></h3>
-<ul>
-<li>Pivotal Tracker está sendo desativado, criando uma oportunidade para os desenvolvedores clonarem o produto amado usando tecnologias modernas.</li>
-<li>A paralisação faz parte da estratégia mais ampla da VMware após sua aquisição pela Broadcom, e os usuários são aconselhados a migrar seus dados antes que o serviço termine.</li>
-<li>Alternativas como Linear e Shortcut existem, mas a simplicidade e o foco do Pivotal Tracker são altamente valorizados por seus usuários.</li>
-</ul>
-<h2><a href="https://gitlab.com/gitlab-com/gl-infra/production/-/issues/8121#note_1237201726">Cloudflare identifica erroneamente IPs da Hetzner como localizados no Irã</a></h2>
-<ul>
-<li>Altas taxas de falha em trabalhos de build de CI (Integração Contínua) no GitLab estão sendo relatadas, particularmente devido a timeouts intermitentes dos VPSes da Hetzner.de ao puxar imagens Docker do registry.gitlab.com.</li>
-<li>A mensagem de erro indica um tempo limite do cliente enquanto aguardava os cabeçalhos, e embora reiniciar o pipeline às vezes ajude, várias tentativas recentes falharam em resolver o problema.</li>
-<li>O problema parece específico do registry.gitlab.com, pois clones git de vários repositórios do GitLab não apresentam falhas semelhantes, sugerindo um problema com o serviço de registro de imagens Docker.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41585249">Reações</a></h3>
-<ul>
-<li>Cloudflare está identificando incorretamente os endereços IP da Hetzner como sendo localizados no Irã, o que está causando problemas de acesso para os usuários.</li>
-<li>Esse problema de identificação errônea não é exclusivo da Cloudflare; o Google também enfrentou questões semelhantes.</li>
-<li>Tópico: A discussão destaca como a nacionalidade e a reputação de um país podem impactar o acesso a serviços, viagens e oportunidades, com implicações mais amplas para sanções que afetam mais os cidadãos comuns do que os funcionários do governo.</li>
-</ul>
-<h2><a href="https://spectrum.ieee.org/5g-antenna-transparent-window">Antena de Vidro Transforma Janelas em Estações Base 5G</a></h2>
-<ul>
-<li>Pesquisadores desenvolveram antenas de vidro que podem transformar janelas em estações base 5G, melhorando a cobertura celular sem serem perceptíveis.</li>
-<li>Essas antenas utilizam camadas condutivas transparentes, permitindo que as janelas funcionem como antenas celulares 5G enquanto mantêm sua transparência.</li>
-<li>Essa inovação pode melhorar significativamente a cobertura da rede 5G em áreas urbanas ao utilizar superfícies de janelas existentes.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41592552">Reações</a></h3>
-<ul>
-<li>Antenas de vidro podem transformar janelas em estações base 5G, potencialmente reduzindo os custos de instalação e melhorando a cobertura.</li>
-<li>As antenas transparentes empregadas pela tecnologia transmitem sinais 5G através de vidro de baixa emissividade, que normalmente bloqueia essas frequências, permitindo a colocação de antenas internas.</li>
-<li>Existem preocupações em relação à transparência, aparência, segurança, níveis de potência e viabilidade geral da adoção generalizada dessa inovação.</li>
-</ul>
-<h2><a href="https://github.com/MightyMoud/sidekick">Uma ferramenta de linha de comando que criei para hospedar qualquer aplicativo com dois comandos em um VPS</a></h2>
-<ul>
-<li>Sidekick simplifica a hospedagem de VPS (Servidor Virtual Privado) com recursos como configuração com um comando, implantação sem tempo de inatividade e alta disponibilidade.</li>
-<li>Visa tornar a hospedagem simples e acessível, direcionando-se a usuários cansados de configurações complexas para projetos paralelos.</li>
-<li>Funcionalidades principais incluem a implantação de aplicações a partir de Dockerfiles, gerenciamento seguro de segredos de ambiente e conexão de múltiplos domínios com certificados SSL de configuração zero.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41591018">Reações</a></h3>
-<ul>
-<li>Uma nova ferramenta de CLI chamada Sidekick foi lançada, permitindo que os usuários hospedem qualquer aplicativo em um VPS com apenas dois comandos.</li>
-<li>A ferramenta é projetada para simplificar a implantação, lidando com tarefas como a configuração de certificados TLS/SSL e o gerenciamento de contêineres Docker.</li>
-<li>Espera-se que futuras atualizações incluam hospedagem de banco de dados e suporte para docker-compose, tornando-o uma opção versátil para desenvolvedores que buscam uma solução de implantação fácil.</li>
-</ul>
-<h2><a href="https://mastodon.social/@stevetex/113162099798398758">Mozilla demitiu seu Diretor de Produto após diagnóstico de câncer</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41588667">Reações</a></h3>
-<ul>
-<li>Mozilla demitiu seu Diretor de Produtos após um diagnóstico de câncer, levando a uma ampla controvérsia e críticas.</li>
-<li>Usuários estão expressando decepção e comparando a Mozilla a startups e fundos de hedge antiéticos, com alguns sugerindo navegadores alternativos como Ladybird, LibreWolf ou Brave.</li>
-<li>A ocorrência gerou discussões sobre ética no local de trabalho, políticas de DEI (Diversidade, Equidade e Inclusão) e o futuro do Firefox sem a Mozilla.</li>
-</ul>
-<h2><a href="https://github.com/dragostis/chili">Chili. Porta Rust do Spice, uma biblioteca de paralelização de baixo overhead</a></h2>
-<ul>
-<li>Chili é uma adaptação de Spice para Rust, uma biblioteca de paralelização de baixo custo, projetada para executar duas closures em paralelo em qualquer ponto de bifurcação de computação, semelhante ao rayon::join.</li>
-<li>É particularmente eficaz para pequenas computações onde estimar as tarefas restantes é custoso, como demonstrado por seu desempenho na soma de nós em uma árvore binária.</li>
-<li>Os benchmarks mostram melhorias significativas de desempenho com conjuntos de dados maiores, especialmente nos processadores AMD Ryzen 7 4800HS e Apple M1, destacando sua eficiência no processamento paralelo.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41591449">Reações</a></h3>
-<ul>
-<li>Chili é uma versão em Rust do Spice, uma biblioteca de paralelização de baixo overhead, preferida por sua eficiência em pequenas operações em comparação com o Rayon.</li>
-<li>Discussões incluem comparações com outras bibliotecas de paralelização como OpenMP e o overhead envolvido.</li>
-<li>Para obter informações detalhadas sobre a implementação, os usuários são direcionados ao README do Spice no GitHub.</li>
-</ul>
-<h2><a href="https://ssoready.com/blog/engineering/ruby-saml-pwned-by-xml-signature-wrapping-attacks/">Ruby-SAML comprometido por ataques de encapsulamento de assinatura XML</a></h2>
-<ul>
-<li>Ruby-SAML foi comprometido por ataques de encapsulamento de assinatura XML, impactando plataformas como o GitLab.</li>
-<li>CVE-2024-45409, publicado em 10 de setembro de 2024, revela essa vulnerabilidade, permitindo que atacantes façam login como qualquer usuário.</li>
-<li>As questões centrais residem nas especificações SAML e XML Signatures, e os engenheiros são aconselhados a adotar práticas seguras além das especificações falhas.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41586031">Reações</a></h3>
-<ul>
-<li>Ruby-SAML é vulnerável a ataques de encapsulamento de assinatura XML, destacando preocupações de segurança em sua implementação.</li>
-<li>SAML, apesar de sua complexidade e desafios de implementação, continua sendo amplamente utilizado em ambientes empresariais e acadêmicos.</li>
-<li>Há um movimento crescente em direção à adoção de alternativas mais simples, como o OpenID Connect (OIDC).</li>
-</ul>
-<h2><a href="https://github.com/denys-olleik/accounting">Eu Construí um Sistema de Contabilidade</a></h2>
-<ul>
-<li>A ferramenta pode gerar faturas e processar pagamentos, mas ainda não está pronta para uso em produção.</li>
-<li>Atualmente, ele requer PostgreSQL para funcionar, com planos de adicionar suporte ao SQLite assim que ele suportar nativamente tipos de geografia.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41585468">Reações</a></h3>
-<ul>
-<li>Um sistema de contabilidade foi desenvolvido que pode criar faturas e receber pagamentos, mas ainda não está pronto para produção e atualmente requer PostgreSQL.</li>
-<li>Os comentários destacam a necessidade de recursos adicionais, como gestão de pedidos de compra, capex, fluxos de trabalho de aprovação e suporte a múltiplas empresas/moedas, comparando-o ao QuickBooks.</li>
-<li>O projeto mostra potencial, mas requer mais recursos, testes e atualizações contínuas para se manter relevante e atender às necessidades das empresas, especialmente das organizações maiores.</li>
-</ul>
-<h2><a href="https://www.theguardian.com/us-news/2024/sep/18/american-health-system-ranks-last">Sistema de saúde dos EUA é classificado em último lugar em comparação com nações pares – relatório</a></h2>
-<ul>
-<li>A saúde dos EUA ocupa o último lugar entre 10 nações pares, apesar dos americanos pagarem quase o dobro pela assistência médica, de acordo com um relatório da Commonwealth Fund.</li>
-<li>Os resultados do sistema foram insatisfatórios em termos de equidade na saúde, acesso aos cuidados e desfechos, com recomendações incluindo a expansão da cobertura de seguro e a redução das despesas dos pacientes.</li>
-<li>Ambos os principais candidatos à presidência não propuseram reformas significativas na área da saúde, apesar de os eleitores priorizarem os custos com saúde, com os americanos gastando US$ 4,5 trilhões anualmente.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41588717">Reações</a></h3>
-<ul>
-<li>Um relatório indica que o sistema de saúde dos EUA está em último lugar entre as nações pares, provocando discussões em um fórum sobre experiências de saúde global.</li>
-<li>Usuários compararam a lentidão e ineficiências do sistema dos EUA com serviços médicos mais rápidos e baratos em países como a Índia e os benefícios dos registros de saúde digitais na Estônia.</li>
-<li>Na conversa também foram destacados os altos custos e ineficiências nos EUA, com frustrações devido a longos tempos de espera e falta de atendimento oportuno, apesar de um bom seguro.</li>
-</ul>
-<h2><a href="https://lichess.org/@/Lichess/blog/post-mortem-of-our-longest-downtime/XAgG7jbd">Lichess: Pós-Morte do Nosso Maior Tempo de Inatividade</a></h2>
-<ul>
-<li>Lichess experimentou seu maior tempo de inatividade de todos os tempos, durando 10 horas de 12 a 13 de setembro, devido a um problema de hardware no data center da OVH.</li>
-<li>Apesar do tempo de inatividade, a equipe de conteúdo do Lichess continuou seus comentários sobre a Olimpíada de Xadrez usando uma versão sandbox privada do site.</li>
-<li>Lichess planeja investigar o problema mais a fundo e implementar medidas adicionais de segurança, embora essas ações sejam demoradas e exijam muitos recursos.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41586579">Reações</a></h3>
-<ul>
-<li>Em razão de um problema de hardware em seu servidor principal, que lida com aproximadamente 5 milhões de partidas diárias, o Lichess enfrentou seu maior período de inatividade.</li>
-<li>A ocorrência levantou preocupações sobre a dependência do Lichess em um único servidor físico e seus planos de contingência, apesar dos seus custos operacionais mensais significativos de cerca de $40 mil.</li>
-<li>Tanto a autópsia foi elogiada por sua transparência, destacando a dedicação do fundador Thibault Duplessis e incentivando os usuários a doar para apoiar o serviço.</li>
-</ul>
-<h2><a href="https://larslofgren.com/forbes-marketplace/">Mercado Forbes: A Empresa de SEO Parasita Tentando Devorar Seu Hospedeiro</a></h2>
-<ul>
-<li>Forbes Marketplace, uma entidade separada da Forbes, utiliza estratégias agressivas de SEO para dominar os resultados de busca em várias categorias, incluindo saúde, melhorias domésticas e apostas esportivas.</li>
-<li>Essa abordagem resultou em mais de 27 milhões de visitas mensais para a Forbes e na geração de uma receita significativa, estimada em centenas de milhões anualmente.</li>
-<li>As questões centrais são o algoritmo do Google, que prioriza o conteúdo da Forbes em detrimento de publicações menores e mais especializadas, levantando preocupações sobre a justiça e a precisão das classificações dos resultados de busca.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41590466">Reações</a></h3>
-<ul>
-<li>O artigo discute a prevalência de empresas de &#39;SEO parasita&#39;, que exploram domínios confiáveis como o Forbes para obter altas classificações nos resultados de busca, apesar do conteúdo de baixa qualidade.</li>
-<li>Google é criticado por permitir essas práticas, pois prioriza a receita de anúncios e domínios confiáveis em detrimento da qualidade do conteúdo, exigindo intervenção manual para resolver o problema.</li>
-<li>As fenômeno não é novo e tem sido observado com outros sites como HowStuffWorks e LiveStrong, destacando uma questão mais ampla com a otimização de mecanismos de busca e a relevância do conteúdo.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Comic Mono" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Comic%20Mono&subheading=quinta-feira%2C%2019%20de%20setembro%20de%202024%3A%20Resumo%20do%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/pt/2024/09/19</link>
-            <guid isPermaLink="false">2024-09-19T00:00:00.000Z</guid>
-            <pubDate>Thu, 19 Sep 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

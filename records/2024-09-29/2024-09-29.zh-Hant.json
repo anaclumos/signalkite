@@ -1,0 +1,324 @@
+[
+  {
+    "id": 41684082,
+    "title": "過度的效率讓一切變得更糟 (2022)",
+    "originLink": "https://sohl-dickstein.github.io/2022/11/06/strong-Goodhart.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41684082",
+    "commentBody": "",
+    "originSummary": [
+      "「古德哈特定律的強版本指出，過度優化代理指標可能會導致實際目標的結果變差，這在標準化測試和機器學習過擬合中可以看到。」",
+      "這個概念適用於各個領域，包括政治、經濟和健康，顯示出這一現象的廣泛相關性。",
+      "來自機器學習的緩解策略，例如將代理目標與期望結果對齊、添加正則化懲罰、注入噪音以及使用提前停止，可以幫助管理這些問題。"
+    ],
+    "commentSummary": [
+      "“機器學習及其他領域中的過度優化可能會導致負面結果，正如機器學習研究員 Jascha Sohl-Dickstein 所指出的。”",
+      "這個概念與古德哈特定律一致，該定律指出，當一個衡量標準成為目標時，它就不再是一個好的衡量標準。",
+      "過度優化所帶來的負面結果包括 COVID-19 供應鏈中斷以及瑞典醫療和鐵路系統中的低效率，這突顯了系統需要保留一些餘裕以維持穩健性和適應性的必要性。"
+    ],
+    "points": 701,
+    "commentCount": 295,
+    "retryCount": 0,
+    "time": 1727572784
+  },
+  {
+    "id": 41683293,
+    "title": "「Discord 如何儲存數兆條訊息(2023)」",
+    "originLink": "https://discord.com/blog/how-discord-stores-trillions-of-messages",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41683293",
+    "commentBody": "",
+    "originSummary": [
+      "Discord 最初使用 MongoDB 來存儲訊息，但為了更好的擴展性和容錯性，改用了 Cassandra，這後來導致了性能和維護問題。",
+      "「2022 年，Discord 從 Cassandra 遷移到 ScyllaDB，一個更高效的、基於 C++ 的、與 Cassandra 相容的資料庫，將節點數量從 177 減少到 72，並顯著提升了延遲和效能。」",
+      "遷移過程包括雙重寫入新數據並使用基於 Rust 的遷移工具處理歷史數據，這樣在世界盃等重大事件期間能更好地應對流量增加，並減少問題發生。"
+    ],
+    "commentSummary": [
+      "「Discord 從 Cassandra 遷移到 ScyllaDB，以解決性能問題，特別是刪除操作和垃圾回收(GC)方面的問題。」",
+      "“ScyllaDB 提供更好的壓縮策略和性能，儘管仍然使用墓碑標記來進行刪除。”",
+      "Discord 在遷移過程中維持了現有的架構和分區策略，強調了良好預設配置的重要性。"
+    ],
+    "points": 379,
+    "commentCount": 209,
+    "retryCount": 0,
+    "time": 1727561263
+  },
+  {
+    "id": 41683306,
+    "title": "「SpaceX 為困在國際太空站的兩名 NASA 太空人發射任務」",
+    "originLink": "https://apnews.com/article/spacex-launch-boeing-nasa-stuck-astronauts-e179d0dc6c77d224278fd0430148ff8b",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41683306",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "「由於波音的星際客機出現問題，SpaceX 發射了一次任務，將兩名 NASA 太空人從國際太空站送回地球。」",
+      "在獵鷹9號火箭第二級脫軌燃燒期間發生異常，促使發射暫停以進行調查。",
+      "太空人將使用 SpaceX 的 Crew Dragon 返回，並提供了新款太空服，這引發了關於這是否是「救援」任務還是例行的乘員輪換的討論。"
+    ],
+    "points": 334,
+    "commentCount": 309,
+    "retryCount": 0,
+    "time": 1727561465
+  },
+  {
+    "id": 41686715,
+    "title": "使用漸進增強構建穩健的前端",
+    "originLink": "https://www.gov.uk/service-manual/technology/using-progressive-enhancement",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41686715",
+    "commentBody": "",
+    "originSummary": [
+      "漸進式增強從 HTML 開始，然後添加 CSS 和 JavaScript，確保所有使用者，包括那些有設備或連接限制的使用者，都能獲得基本功能和可及性。",
+      "JavaScript 應該是增強，而不是取代 HTML 和 CSS 的功能；使用功能檢測、填充程式碼和轉譯來確保相容性。",
+      "避免使用單頁應用程式(SPAs)，因為它們可能會妨礙無障礙使用和導航；確保您的服務在可能的 CSS/JavaScript 失效情況下仍然能夠正常運作。"
+    ],
+    "commentSummary": [
+      "這篇文章討論了使用漸進增強來構建前端的好處，重點在於使用 HTML 和 CSS 並盡量減少 JavaScript，正如 gov.uk 所示範的那樣。",
+      "許多開發者對於單頁應用程式(SPAs)和現代 JavaScript 框架所引入的不必要複雜性感到沮喪，並提倡更簡單、更易於維護的解決方案。",
+      "這段對話強調了一個日益增長的趨勢，即重新考慮更簡單的基於 HTML 的解決方案，像 htmx 這樣的工具因其能夠減少前端複雜性而受到關注。"
+    ],
+    "points": 208,
+    "commentCount": 141,
+    "retryCount": 0,
+    "time": 1727610895
+  },
+  {
+    "id": 41683577,
+    "title": "「Notion 的中年危機」",
+    "originLink": "https://www.jjinux.com/2024/09/notions-mid-life-crisis.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41683577",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "Notion 最初因其可自訂和多功能的特點而受歡迎，但現在正面臨批評，因為它變得雜亂且效率降低，類似於其他過度使用的工具如 Jira。",
+      "“用戶對過時且難以找到的文件感到沮喪，建議使用像 Google Docs 這樣更簡單的工具可能會更具生產力。”",
+      "儘管存在一些問題，Notion 的資料庫功能和靈活性仍使其在組織和分類筆記方面具有強大的競爭力，儘管有些使用者正在考慮像 Obsidian 這樣的替代方案。"
+    ],
+    "points": 201,
+    "commentCount": 140,
+    "retryCount": 0,
+    "time": 1727565276
+  },
+  {
+    "id": 41683098,
+    "title": "“英國為國防目的購買半導體工廠”",
+    "originLink": "https://ukdefencejournal.org.uk/britain-buys-semiconductor-factory-for-defence-purposes/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41683098",
+    "commentBody": "",
+    "originSummary": [
+      "英國政府已經收購了位於達勒姆郡紐頓艾克里夫的一家半導體工廠，現名為 Octric Semiconductors UK，以支持國防供應鏈和武裝部隊。",
+      "「這個設施是英國唯一能夠製造砷化鎵半導體的安全場所，這對於像戰鬥機這樣的軍事平台至關重要，並確保多達100個技術工作機會。」",
+      "此次收購確保了關鍵半導體的持續生產，這些半導體用於軍事應用，穩定了工廠並增強了英國的國防能力和工業產能。"
+    ],
+    "commentSummary": [
+      "「英國已購買一座半導體工廠用於國防目的，這突顯了國內半導體生產的戰略重要性。」",
+      "這家工廠先前由 Coherent 擁有，專門生產砷化鎵半導體，這對於戰鬥機和高頻雷達等軍事應用至關重要。",
+      "這項收購確保了最多 100 個技術職位，並確保英國在全球半導體需求上升的情況下，維持其國防基礎設施的重要部分。"
+    ],
+    "points": 199,
+    "commentCount": 102,
+    "retryCount": 0,
+    "time": 1727558614
+  },
+  {
+    "id": 41685917,
+    "title": "漂浮的巨型炸彈靠近英國海岸",
+    "originLink": "https://cepa.org/article/floating-megabomb-heaves-to-near-the-english-coast/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41685917",
+    "commentBody": "",
+    "originSummary": [
+      "馬耳他註冊的船隻 MV Ruby 載有 20,000 噸爆炸性硝酸銨，現已受損並在英國肯特海岸尋求港口，構成重大安全隱患。",
+      "由於其貨物的危險性可能造成相當於三分之一廣島原子彈的破壞，該船已被拒絕進入包括挪威和立陶宛在內的多個歐洲港口。",
+      "該事件突顯了俄羅斯的混合戰爭戰術，並強調了需要強大的情報共享、監視和海上安全協議，以有效應對此類威脅。"
+    ],
+    "commentSummary": [
+      "一艘載有20,000噸高爆炸性物質硝酸銨的受損船隻正接近英國海岸，這引發了重大安全擔憂。",
+      "「這艘船被多個歐洲港口拒絕入境，並被懷疑被俄羅斯用來騷擾北約國家，導致地緣政治緊張局勢升高。」",
+      "由於潛在威脅和俄羅斯過去的低強度敵對行為，當局高度戒備，質疑該船從挪威前往立陶宛，現在接近英國的意圖。"
+    ],
+    "points": 187,
+    "commentCount": 199,
+    "retryCount": 0,
+    "time": 1727600343
+  },
+  {
+    "id": 41687707,
+    "title": "一些 Go 網頁開發筆記",
+    "originLink": "https://jvns.ca/blog/2024/09/27/some-go-web-dev-notes/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41687707",
+    "commentBody": "",
+    "originSummary": [
+      "Go 1.22 引入了改進的標準函式庫路由支援，簡化了路由處理並通過中介軟體增強了安全性。",
+      "sqlc 工具從 SQL 查詢生成 Go 程式碼，減少樣板代碼並簡化資料庫互動。",
+      "在 Go 1.19 中設置 GC 記憶體限制有助於防止在低記憶體環境中發生記憶體不足(OOM)情況，從而提升應用程式的穩定性。"
+    ],
+    "commentSummary": [
+      "Go 的簡單性和穩定性受到開發者的讚賞，使得在長時間中斷後重新開始專案變得容易。",
+      "初始設定可能會具有挑戰性，因為需要選擇各種日誌記錄庫、資料庫驅動程式等。",
+      "在 Go 語言中缺乏一個主導框架被視為一種限制，同時也是一種優勢，因為這提供了使用標準函式庫的靈活性。"
+    ],
+    "points": 159,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1727620583
+  },
+  {
+    "id": 41683815,
+    "title": "水晶語言筆記",
+    "originLink": "https://wiki.alopex.li/CrystalNotes",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41683815",
+    "commentBody": "",
+    "originSummary": [
+      "Crystal，一種於2014年開始的程式語言，旨在成為具有類型推斷的強類型 Ruby，並通過 LLVM 編譯為原生可執行檔。",
+      "它具有去中心化的函式庫生態系統、可選的型別註解，以及類似於 TypeScript 的型別系統，支援泛型和其他物件導向功能。",
+      "儘管在臨時檔案處理和目錄迭代方面存在一些問題，Crystal 提供了許多實用的內建函數和函式庫，對於尋求具有動態感覺的靜態型別系統的人來說，這是一個不錯的選擇。"
+    ],
+    "commentSummary": [
+      "目前正在討論 Crystal 語言的潛力及其現有的限制，使用者對其可靠性和成熟度的經驗反應不一。",
+      "有些使用者強調 Crystal 在後端 API 伺服器和背景任務中的高效能和生產力，而另一些人則指出像是垃圾回收(GC)速度慢和程式錯誤等問題。",
+      "這段對話包括與其他語言如 Ruby、Clojure 和 Rust 的比較，並提到 Crystal 使用 LLVM 進行優化代碼生成，使其在性能上可與 Go、Rust 或 C 相媲美。"
+    ],
+    "points": 149,
+    "commentCount": 50,
+    "retryCount": 0,
+    "time": 1727568986
+  },
+  {
+    "id": 41686722,
+    "title": "「Web 元件還不錯」",
+    "originLink": "https://nolanlawson.com/2024/09/28/web-components-are-okay/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41686722",
+    "commentBody": "",
+    "originSummary": [
+      "「Nolan Lawson 回應了由 Ryan Carniato 的文章〈Web Components Are Not the Future〉和 Cory LaViska 的反駁〈Web Components Are Not the Future — They’re the Present〉所引發的關於網頁元件的辯論。」",
+      "Lawson 熟悉網頁元件，雖然他承認這些元件在效能上有負擔，但他強調了可維護性、安全性、可用性和無障礙性等權衡。",
+      "他總結道，儘管網頁元件有其限制，但它們提供了獨特的創意機會，是多樣化網頁開發領域中眾多工具之一。"
+    ],
+    "commentSummary": [
+      "討論的重點在於現代前端框架與 Web 元件的複雜性和可用性，一些開發者對於像 React 這樣的框架中的『魔法』表示沮喪。",
+      "“網頁元件因其簡單性和更接近網頁標準而受到重視，提供了如 Shadow DOM 這樣的功能來實現隔離，而不需要複雜的框架。”",
+      "一位開發者分享了他們從 Vue 過渡到 Web 元件的正面經驗，顯著減少了依賴性和維護負擔，這對於資源有限的專案特別有利。"
+    ],
+    "points": 147,
+    "commentCount": 157,
+    "retryCount": 0,
+    "time": 1727611020
+  },
+  {
+    "id": 41683144,
+    "title": "htmgo - 使用 golang + htmx 建構簡單且可擴展的系統",
+    "originLink": "https://htmgo.dev",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41683144",
+    "commentBody": "",
+    "originSummary": [
+      "一位開發者正在使用 Golang 和 htmx 結合來開發一個最小化的堆疊，以增強元件等功能並改進複雜 JavaScript 的語法。",
+      "該專案旨在提供一個較輕量的替代方案，以取代繁重的框架，同時解決 htmx 的低層次特性問題。",
+      "「這項倡議對於其他尋求精簡且高效開發堆疊的開發者來說可能是有益的。」"
+    ],
+    "commentSummary": [
+      "「一位開發者推出了 'htmgo'，這是一個結合 Golang 和 HTMX 的簡約技術棧，旨在簡化可重用元件的創建並改進語法。」",
+      "這個專案引發了開發者之間關於將後端語言與 HTMX 整合的優點以及使用 Golang 進行輕量級網頁開發的好處的討論。",
+      "社群正在將「htmgo」與其他工具和框架如 Hotwire、Gomponents 以及各種模板引擎進行比較，這突顯了對高效的伺服器端網頁開發解決方案日益增長的興趣。"
+    ],
+    "points": 144,
+    "commentCount": 60,
+    "retryCount": 0,
+    "time": 1727559258
+  },
+  {
+    "id": 41687739,
+    "title": "靈活的 RISC-V 處理器：成本可能低於一美元",
+    "originLink": "https://spectrum.ieee.org/flexible-risc-v",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41687739",
+    "commentBody": "",
+    "originSummary": [
+      "一款基於 RISC-V 架構的新型 6 毫瓦開源塑膠晶片，不僅能執行機器學習任務，還具有足夠的柔韌性，可以彎曲繞在鉛筆上。",
+      "該晶片在彎曲時僅損失約4%的性能，展示了其堅固性及在柔性電子應用中的潛力。",
+      "這一發展突顯了在柔性半導體和開源硬體領域的重大進步。"
+    ],
+    "commentSummary": [
+      "“最近一篇 IEEE 文章強調了一款基於 SERV 設計的靈活 RISC-V 處理器，其成本可能低於一美元。”",
+      "「Pragmatic Semiconductor聲稱他們可以在48小時內生產這些晶片，速度顯著快於傳統的矽製造工藝。」",
+      "「雖然該處理器運行頻率為60 kHz，且消耗6毫瓦的功率，但它在電子紡織品和柔性電子等利基應用中可能具有價值。」"
+    ],
+    "points": 132,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1727620927
+  },
+  {
+    "id": 41685326,
+    "title": "「NASA 正在出售一輛全新的月球探測車：從未使用過，僅有一位前任擁有者」",
+    "originLink": "https://www.economist.com/science-and-technology/2024/09/25/nasa-is-selling-a-brand-new-moon-rover",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41685326",
+    "commentBody": "",
+    "originSummary": [
+      "NASA 目標在本世紀末將人類送回月球，首先將探測器送往月球南極以尋找冰，這具有科學和實際的重要性。",
+      "最近的進展包括針對氣喘、心臟病和老化的免疫療法、新的水管漏水檢測技術，以及在中國發現的古代乳酪。",
+      "人工智慧和電動車電池回收的創新也值得注意，展示了各種科技領域的持續進展。"
+    ],
+    "commentSummary": [
+      "「NASA 正在出售一輛全新、未使用過的月球車，在論壇上引發了關於其價值和歷史背景的討論。」",
+      "用戶們討論其價值、分享技術細節並幽默地評論這個話題，同時有些人對於離題內容表示擔憂。",
+      "這段對話還強調了 NASA 承包商投標過程中潛在的腐敗問題以及在 COVID 期間建設的挑戰。"
+    ],
+    "points": 106,
+    "commentCount": 52,
+    "retryCount": 0,
+    "time": 1727591414
+  },
+  {
+    "id": 41685689,
+    "title": "Feldera 增量計算引擎",
+    "originLink": "https://github.com/feldera/feldera",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41685689",
+    "commentBody": "",
+    "originSummary": [
+      "“Feldera 是一款高效能的查詢引擎，專為增量計算而設計，允許持續處理變更而無需重新計算舊數據。”",
+      "它支援完整的 SQL 語法並能連接到各種資料來源，使使用者能夠管理資料管道並即時檢查結果，即使資料集大於記憶體也不受影響。",
+      "Feldera 可以使用 Docker Compose 或從源碼開始，並需要依賴 Rust、Java、Maven 和 Typescript 等，且提供一個用戶互動的網頁控制台。"
+    ],
+    "commentSummary": [
+      "Feldera 增量計算引擎是一個開源工具，專為增量計算設計，可顯著減少流處理時間。",
+      "它基於 Z-Sets，一種關係代數的推廣，允許許多 SQL 操作以增量方式實現。",
+      "Feldera 支援多種 SQL 運算子、自動垃圾回收，並且可以在儲存裝置上建立資料索引，使其適用於複雜的 SQL 程式和歷史資料倉儲。"
+    ],
+    "points": 104,
+    "commentCount": 34,
+    "retryCount": 0,
+    "time": 1727597025
+  },
+  {
+    "id": 41685642,
+    "title": "Text2CAD 從文字提示生成連續的 CAD 設計",
+    "originLink": "https://sadilkhan.github.io/text2cad-project/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41685642",
+    "commentBody": "",
+    "originSummary": [
+      "Text2CAD 是首個設計用於從多層次文本描述生成參數化 CAD(電腦輔助設計)模型的 AI 框架，這在該領域中是一項重要的進步。",
+      "該框架包括一個新穎的數據標註流程，使用開源的 LLMs(大型語言模型)和 VLMs(視覺語言模型)來標註 DeepCAD 數據集，並使用多樣化的文本提示。",
+      "Text2CAD Transformer 使用預訓練的 BeRT 編碼器和自適應層，將自然語言描述轉換為 3D CAD 模型，並通過質性和量化結果展示其能力。"
+    ],
+    "commentSummary": [
+      "Text2CAD 是一款工具，能夠從文字提示生成 CAD(電腦輔助設計)模型，旨在簡化不熟悉傳統 CAD 軟體的使用者的設計過程。",
+      "這個工具對於不常設計物件的使用者特別有利，因為它減少了對廣泛 CAD 訓練的需求，儘管在處理複雜設計時可能不如其他工具高效。",
+      "討論強調了使用自然語言來創建精確3D模型的潛力和限制，一些專家建議傳統的CAD工作流程在詳細和精確設計方面仍然更有效。"
+    ],
+    "points": 103,
+    "commentCount": 59,
+    "retryCount": 0,
+    "time": 1727596379
+  }
+]
