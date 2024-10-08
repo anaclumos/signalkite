@@ -1,0 +1,296 @@
+[
+  {
+    "id": 41775463,
+    "title": "「諾貝爾物理學獎頒給約翰·霍普菲爾德和傑佛瑞·辛頓 [pdf]」",
+    "originLink": "https://www.nobelprize.org/uploads/2024/09/advanced-physicsprize2024.pdf",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41775463",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "諾貝爾物理學獎頒發給約翰·霍普菲爾德和傑佛瑞·辛頓，以表彰他們在神經網路和機器學習方面的貢獻，這引發了驚訝和討論。",
+      "批評者認為，他們的工作不符合傳統物理學，這暗示著要麼是突破性物理發現的稀缺，要麼是試圖利用人工智慧目前的流行趨勢。",
+      "這項決定引發了關於現有諾貝爾獎類別相關性的討論，以及是否需要設立一個專門針對計算機科學的獎項的潛在需求。"
+    ],
+    "points": 632,
+    "commentCount": 586,
+    "retryCount": 0,
+    "time": 1728381166
+  },
+  {
+    "id": 41776324,
+    "title": "Differential Transformer",
+    "originLink": "https://arxiv.org/abs/2410.05258",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41776324",
+    "commentBody": "",
+    "originSummary": [
+      "差分變壓器引入了一種新穎的注意力機制，透過使用差分注意力方法來增強對相關上下文的關注，同時減少噪音。這種方法通過減去兩個 softmax 注意力圖來促進稀疏的注意力模式。",
+      "實驗結果顯示，Diff Transformer 在語言建模方面超越了傳統的 Transformer，特別是在長上下文建模、關鍵資訊檢索和減少幻覺方面表現出色，從而提升了上下文學習的準確性和穩健性。",
+      "此項發展使 Diff Transformer 成為推進大型語言模型的有前景架構，具有在計算與語言以及機器學習中的潛在應用。"
+    ],
+    "commentSummary": [
+      "「差分變壓器引入了一種創新的架構，使用差分注意力，通過減去兩個 softmax 注意力函數來減少噪音，使得模型尺寸更小但性能可與較大的變壓器相媲美。6.8 億參數的 DIFF 變壓器在驗證損失上達到了與 11 億參數的變壓器相似的效果，僅使用 62.2% 的參數，這是通過每層使用一半數量的注意力頭實現的。這種架構在減少如問答和文本摘要等任務中的幻覺現象方面顯示出潛力，但需要重新訓練模型以採用新的注意力機制。」"
+    ],
+    "points": 332,
+    "commentCount": 127,
+    "retryCount": 0,
+    "time": 1728388470
+  },
+  {
+    "id": 41770921,
+    "title": "uBlock Origin 的 CNAME 解鎖現在支援依據 IP 位址進行過濾",
+    "originLink": "https://github.com/gorhill/uBlock/commit/6acf97bf51",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41770921",
+    "commentBody": "",
+    "originSummary": [
+      "「此更新增強了 uBlock 的 DNS 解析代碼，提升了其依據 CNAME(規範名稱)和 IP 位址進行過濾的能力。」",
+      "「一項新功能允許使用 `ipaddress=` 選項來阻止根文件，如果在第一次請求之前提取了 IP，儘管它使用的是 DNS 列表中的第一個 IP，這可能與瀏覽器的選擇不同。」",
+      "此次提交涉及多個檔案的變更，新增了 153 行程式碼並移除了 96 行，顯示出一次重要的程式碼更新。"
+    ],
+    "commentSummary": [
+      "uBlock Origin 已更新其 CNAME 解密功能，現在包含 IP 位址過濾，這項功能之前僅限於 Firefox。",
+      "「此更新透過允許在請求發出之前進行基於 IP 的封鎖來增強現有功能，儘管在擁有多個 IP 的網域上可能會面臨挑戰。」",
+      "目前的討論集中在瀏覽器對 uBlock Origin 的支援，特別是因為 Chrome 的 Manifest V3 變更，這促使使用者探索像 Firefox 和 Brave 這樣的替代方案，以獲得更好的廣告攔截功能。"
+    ],
+    "points": 272,
+    "commentCount": 122,
+    "retryCount": 0,
+    "time": 1728334328
+  },
+  {
+    "id": 41776878,
+    "title": "Kotlin Money",
+    "originLink": "https://blog.eriksen.com.br/en/introducing-kotlin-money",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41776878",
+    "commentBody": "",
+    "originSummary": [
+      "Kotlin Money 是一個新的程式庫，專為精確的貨幣計算和分配而設計，旨在解決金融操作中常見的四捨五入誤差問題。",
+      "該程式庫支援多種貨幣，包括306種傳統貨幣和2283種加密貨幣，並計劃擴展至Android開發和序列化。",
+      "它確保金額的準確分配，防止財務差異如損失或多收費用，並支援各種數學和百分比運算。"
+    ],
+    "commentSummary": [
+      "Kotlin Money 是一個用於簡化 Kotlin 程式語言中貨幣計算的函式庫，旨在解決金融操作中常見的四捨五入問題。",
+      "該程式庫的靈感來自於 N26 Brasil 所遇到的挑戰，並支援貨幣轉換和四捨五入規則，類似於 Java 的 JSR 354 和其他貨幣程式庫。",
+      "它使用 BigDecimal 進行精確計算，並提供使用者友好的 API，強調在程式設計中準確處理金錢的重要性。"
+    ],
+    "points": 256,
+    "commentCount": 150,
+    "retryCount": 0,
+    "time": 1728392392
+  },
+  {
+    "id": 41772624,
+    "title": "CAP 定理的圖解證明(2018)",
+    "originLink": "https://mwhittaker.github.io/blog/an_illustrated_proof_of_the_cap_theorem/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41772624",
+    "commentBody": "",
+    "originSummary": [
+      "「在分散式系統中，CAP 定理指出一個系統只能實現三個屬性中的兩個：一致性、可用性和分區容錯性。- 一致性確保在寫入後的任何讀取都返回最新的值，可用性保證來自未失效節點的回應，而分區容錯性允許系統在網路訊息丟失的情況下仍能運作。- 由 Gilbert 和 Lynch 證明的該定理顯示，系統無法同時維持這三個屬性，因為網路分區可能導致不一致性。」"
+    ],
+    "commentSummary": [
+      "「CAP 定理解釋了在分散式系統中，僅能同時實現一致性、可用性和分區容錯性三者中的兩者。PACELC 定理則在 CAP 的基礎上指出，在沒有分區的情況下，必須在延遲和一致性之間做出選擇。像 Google Spanner 這樣的系統使用先進的協議和精確的時鐘來維持一致性，這說明了系統設計中的取捨。」"
+    ],
+    "points": 239,
+    "commentCount": 78,
+    "retryCount": 0,
+    "time": 1728347538
+  },
+  {
+    "id": 41772551,
+    "title": "「使用 YOLO+llava 的視頻監控」",
+    "originLink": "https://github.com/PsyChip/machina",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41772551",
+    "commentBody": "",
+    "originSummary": [
+      "MACHINA CCTV Viewer 是一個正在開發中的專案，利用 LLAVA YOLO 11 和 OpenCV 從高解析度 RTSP 串流中進行即時物件標記。",
+      "「系統使用 YOLO 11 小型模型在 GTX 1060 上處理具有 20 毫秒干擾時間的幀，並具備處理串流延遲和閒置檢測的機制。」",
+      "該專案旨在開發一個無頭安全系統，利用現代視覺和物件檢測模型，並邀請社群的貢獻。"
+    ],
+    "commentSummary": [
+      "由 psychip 開發的 GitHub 專案「Video Surveillance with YOLO+llava」因其在 DIY 安全和人工智慧方面的應用而受到關注，引發了對 Frigate NVR、Scrypted 和 Viseron 等替代監控解決方案的討論。- Frigate NVR 以其可靠性著稱，但學習曲線陡峭，硬體建議包括使用 Geforce GTX 1060 或 Coral USB 加速器以提高處理效率。- 該專案也引發了隱私問題，強調負責任地使用監控技術，並就使用 YOLO 與 llava 進行詳細物件描述以及 Florence-2 和 MobileNetV3 等替代方案展開辯論。"
+    ],
+    "points": 223,
+    "commentCount": 54,
+    "retryCount": 0,
+    "time": 1728346863
+  },
+  {
+    "id": 41769971,
+    "title": "「攻擊直升機是否已經過時？」",
+    "originLink": "https://hushkit.net/2024/10/07/is-the-attack-helicopter-dead/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41769971",
+    "commentBody": "",
+    "originSummary": [
+      "「在俄羅斯入侵烏克蘭的背景下，攻擊直升機的相關性受到質疑，因為小型無人機已經有效地瞄準裝甲部隊。」",
+      "這場衝突暴露了直升機和重型裝甲的脆弱性，精確火炮和無人機構成了重大威脅。",
+      "攻擊直升機的未來可能取決於整合先進的情報、監視和偵察系統，以及開發針對無人機和導彈的反制措施，這突顯了情報和通訊在現代戰爭中的日益重要性。"
+    ],
+    "commentSummary": [
+      "「辯論的焦點在於，隨著無人機和先進技術的興起，攻擊直升機在現代戰爭中是否仍具相關性。」",
+      "「支持者主張直升機在特定作戰情境中的敏捷性和效能，而批評者則指出更便宜的無人替代方案。」",
+      "「這場討論是評估昂貴軍事系統與更具成本效益選擇之間的較廣泛趨勢的一部分，特別是在近似對等的衝突中。」"
+    ],
+    "points": 189,
+    "commentCount": 568,
+    "retryCount": 0,
+    "time": 1728329290
+  },
+  {
+    "id": 41775449,
+    "title": "「John Hopfield 和 Geoff Hinton 獲得諾貝爾物理學獎 [pdf]」",
+    "originLink": "https://www.nobelprize.org/uploads/2024/10/press-physicsprize2024.pdf",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41775449",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [],
+    "points": 147,
+    "commentCount": 2,
+    "retryCount": 0,
+    "time": 1728381078
+  },
+  {
+    "id": 41770249,
+    "title": "Sam Altman 全面掌控大局",
+    "originLink": "https://nonzero.substack.com/p/sam-altman-goes-full-emperor",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41770249",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "討論的焦點是 OpenAI 的執行長 Sam Altman 及其雄心勃勃的計畫，例如 Worldcoin，這些計畫引起了對其潛在風險和進步必要性的不同反應。",
+      "這段對話包含了關於野心的哲學辯論，提到尼采和現代批評，強調了在科技進步中野心角色的不同觀點。",
+      "關於科技公司對社會議題的政治影響存在著辯論，同時也有關於付費牆內容影響社群討論的可及性和包容性的擔憂。"
+    ],
+    "points": 116,
+    "commentCount": 98,
+    "retryCount": 0,
+    "time": 1728330853
+  },
+  {
+    "id": 41771272,
+    "title": "銹蝕正在從 Volvo 組裝線上消除",
+    "originLink": "https://tweedegolf.nl/en/blog/137/rust-is-rolling-off-the-volvo-assembly-line",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41771272",
+    "commentBody": "",
+    "originSummary": [
+      "由於 Rust 程式語言在可靠性和減少記憶體相關錯誤方面優於 C 和 C++，Volvo 已將其整合到裝配線中，特別是用於電動車的低功耗處理器 ECU。Julius Gustavsson 是 Volvo 的軟體架構師，自 2019 年以來在這項整合中扮演了關鍵角色，並帶來了成功的成果和高品質的產品。儘管面臨初期挑戰，Volvo 計劃擴大 Rust 的使用，將其視為需要嚴格可靠性的專案中的寶貴資產，儘管工具方面的改進仍然需要。"
+    ],
+    "commentSummary": [
+      "Volvo 已成功在生產中實施 Rust 程式語言，從概念到生產的過程僅用了幾年時間，這突顯了其在汽車產業中日益增長的採用率。",
+      "Ferrocene 提供符合 ISO 26262 標準的認證 Rust 工具鏈，這對於安全關鍵的汽車系統至關重要。",
+      "與 C/C++ 相比，Rust 因其安全性特點而受到青睞，每六週會有定期的穩定更新，儘管對於 Zig 或 Ada 等其他語言在類似應用中的適用性仍存在持續的討論。"
+    ],
+    "points": 113,
+    "commentCount": 86,
+    "retryCount": 0,
+    "time": 1728336641
+  },
+  {
+    "id": 41773559,
+    "title": "從 i386 升級到 x86-64 的成本",
+    "originLink": "https://blogsystem5.substack.com/p/x86-64-programming-models",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41773559",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "i386 到 x86-64 升級的討論強調了在各種作業系統中程式設計模型和資料型別的複雜性，指出 Windows 並未採用 LP64 模型，不同於 Linux 和 FreeBSD。- 該對話建議在 C 語言中使用像 int32_t 這樣的特定大小型別以實現跨平台相容性，考慮到歷史背景和效能。- 討論還涉及傳統資料型別的持續存在以及在文章中使用 AI 生成圖像的相關挑戰。"
+    ],
+    "points": 100,
+    "commentCount": 61,
+    "retryCount": 0,
+    "time": 1728357841
+  },
+  {
+    "id": 41770383,
+    "title": "私人情報公司如何成為新的間諜大師",
+    "originLink": "https://engelsbergideas.com/essays/private-intelligence/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41770383",
+    "commentBody": "",
+    "originSummary": [
+      "私人情報公司越來越多地與國家機構競爭，透過利用龐大的數位數據，將間諜活動轉變為一場以科技為驅動的軍備競賽。",
+      "與國家機構不同，這些公司公開運作，分享研究結果並促進學習社群的發展，但在資料收集方面面臨法律和倫理挑戰。",
+      "私人情報的興起強調了政府與私營部門之間合作以保護國家利益的必要性，並重塑了間諜活動的未來。"
+    ],
+    "commentSummary": [
+      "私人情報公司正崛起為情報領域的新領導者，提供比有時在法律界限之外運作的國家機構更多的問責性。",
+      "由於審查不夠充分，軟體產業和其他部門面臨著被駭客和情報機構利用的漏洞。",
+      "像 Palantir 和 OpenAI 這樣的公司正在承擔傳統上由政府機構擔任的角色，這是由於更好的薪酬和工作文化所驅動，這引發了對私人和國家實體之間權力平衡的擔憂。"
+    ],
+    "points": 98,
+    "commentCount": 32,
+    "retryCount": 0,
+    "time": 1728331570
+  },
+  {
+    "id": 41770941,
+    "title": "「智慧電視就像是人們家中的『數位特洛伊木馬』」",
+    "originLink": "https://arstechnica.com/gadgets/2024/10/streaming-industry-has-unprecedented-surveillance-manipulation-capabilities/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41770941",
+    "commentBody": "",
+    "originSummary": [
+      "「數位民主中心(CDD)已敦促聯邦貿易委員會(FTC)和聯邦通信委員會(FCC)調查連網電視產業的數據收集行為，並將智慧電視形容為因其侵入性追蹤而成為“數位特洛伊木馬”。」",
+      "報告提出了隱私問題，強調串流服務和設備收集敏感數據，這可能影響消費者隱私並影響政治活動。",
+      "CDD 呼籲加強法規以保護消費者，特別是少數族群社區，免受歧視性數據行為的影響，並建議對主要行業參與者進行反壟斷調查。"
+    ],
+    "commentSummary": [
+      "智慧電視因可能錄製音頻並使用觀眾數據來定制廣告而受到批評，這引發了隱私問題的擔憂。",
+      "由於缺乏非智慧型電視，使用者有時會選擇大型顯示器，或避免將智慧型電視連接到 Wi-Fi，儘管像 Amazon Sidewalk 這樣的連接仍可能發生。",
+      "建議使用 Nvidia Shield 或電腦進行串流，以增強隱私性，但智慧電視的便利性常常導致用戶連接它們，從而延續隱私問題。"
+    ],
+    "points": 93,
+    "commentCount": 35,
+    "retryCount": 0,
+    "time": 1728334505
+  },
+  {
+    "id": 41773212,
+    "title": "FTX 債權人在破產中將獲利",
+    "originLink": "https://www.cnbc.com/2024/10/07/ftx-bankruptcy-judge-approves-more-than-14-billion-payback-plan.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41773212",
+    "commentBody": "",
+    "originSummary": [
+      "「德拉瓦州破產法官已批准 FTX 的重組計畫，允許債權人每申請一美元可獲得 1.19 美元，顯示出所收集資金有盈餘。」",
+      "「FTX 已經籌集了介於 147 億美元至 165 億美元之間的資金用於分配，超過了所欠的 112 億美元，確保 98% 的債權人將獲利。」",
+      "「資金是透過資產出售籌集的，包括出售 AI 新創公司 Anthropic 的股份，並且支付計畫的開始日期將在稍後公佈。」"
+    ],
+    "commentSummary": [
+      "FTX 債權人預計將獲得其破產索賠的 100% 加上利息，但這是基於 FTX 在 2022 年崩潰時的加密貨幣價值，而非其當前較高的價值。",
+      "批評者認為，儘管債權人未能收到其原始加密貨幣持有的全部價值，媒體卻將此描繪為一個正面的結果。",
+      "有些人推測，這個敘述旨在提升與 FTX 相關人士的聲譽，包括其創辦人 Sam Bankman-Fried(SBF)。"
+    ],
+    "points": 92,
+    "commentCount": 126,
+    "retryCount": 0,
+    "time": 1728353782
+  },
+  {
+    "id": 41770111,
+    "title": "「AWS S3 是否發生故障？」",
+    "originLink": "https://news.ycombinator.com/item?id=41770111",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41770111",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "「AWS S3 遭遇了停機，主要影響到 us-east-2 區域，使用者遇到了內部伺服器錯誤。」",
+      "儘管 AWS 的狀態頁面顯示運作正常，但 Downdetector 顯示故障報告顯著增加，並在 CloudFront、Elastic Beanstalk 和 Lambda 中注意到其他問題。",
+      "該事件突顯了 AWS 狀態更新中時區不一致的挑戰，儘管情況最終穩定下來。"
+    ],
+    "points": 91,
+    "commentCount": 43,
+    "retryCount": 0,
+    "time": 1728330114
+  }
+]
