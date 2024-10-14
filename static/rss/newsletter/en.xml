@@ -15,12 +15,195 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 13 Oct 2024 19:07:11 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 14 Oct 2024 19:08:15 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/en.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 13 Oct 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[en]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-10-14]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/10/14&#39;</h2>
+<h1>2024-10-14</h1>
+<h2><a href="https://github.com/hcengineering/platform">Huly – Open-source project management platform</a></h2>
+<ul>
+<li>Huly Platform is a comprehensive framework designed to accelerate the development of business applications, including CRM, HRM, and ATS systems.</li>
+<li>The platform supports self-hosting using Docker and requires Node.js, Docker, and Docker Compose for setup, with Microsoft&#39;s Rush facilitating installation.</li>
+<li>It supports development on amd64 and arm64 architectures for Linux and macOS, and includes unit and UI tests, though local installations lack email functionalities.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41833902">Reactions</a></h3>
+<ul>
+<li>Huly is an open-source project management platform designed to replace tools like Linear, Jira, Slack, and Notion, but requires running multiple servers and services for self-hosting.</li>
+<li>The platform&#39;s complexity and need for various system expertise may deter users, particularly smaller organizations or those lacking dedicated IT resources.</li>
+<li>Despite the challenges, Huly&#39;s open-source nature and potential cost savings compared to Software as a Service (SaaS) solutions make it an attractive option for some users.</li>
+</ul>
+<h2><a href="https://fossil-scm.org/home/ext/crlf-harmful.md">CRLF is obsolete and should be abolished</a></h2>
+<ul>
+<li>CRLF (Carriage Return Line Feed) line endings are considered outdated, originating from mechanical teletypes, and are seen as unnecessary in modern systems where a single NL (New Line, U+000a) is preferred.</li>
+<li>Although a proposal to eliminate CRLF was withdrawn, the initiative highlighted and resolved various software issues, emphasizing the need for systems to adapt to using only NL.</li>
+<li>The post advocates for the cessation of CRLF usage, encouraging developers to update software that still requires CR before NL and to adopt the term &quot;newline&quot; for U+000a.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41830717">Reactions</a></h3>
+<ul>
+<li>CRLF (Carriage Return Line Feed) is considered outdated by some, but updating legacy protocols like HTTP, SMTP, and CSV to use only NL (New Line) could lead to bugs.- While newer protocols might avoid using CRLF, changing existing ones is not deemed advantageous due to potential compatibility issues.- The discussion underscores the tension between simplifying protocols and ensuring adherence to standards to prevent security vulnerabilities.</li>
+</ul>
+<h2><a href="https://busy.bar/?hn">Busy Status Bar from Flipper Devices</a></h2>
+<ul>
+<li>The Busy Status Bar is a productivity tool featuring an LED pixel screen for displaying custom busy messages and includes a Pomodoro timer.- It is open-source and developer-friendly, supporting multiple programming languages like Python, JavaScript, and Go, and integrates with popular apps such as Zoom and Discord.- Designed by Flipper Devices Inc., it offers cloud control via API and MQTT, supports IoT integrations, and is compatible with Windows, macOS, and Linux.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41838337">Reactions</a></h3>
+<ul>
+<li>Flipper Devices&#39; Busy Status Bar is an upcoming product, confirmed by CEO Pavel Zhovner, currently in development and not yet officially announced.</li>
+<li>The device aims to indicate user status and may integrate with smart home protocols, sparking debates on its necessity and pricing.</li>
+<li>While some view it as a niche, hacker-friendly gadget, others appreciate its design and potential functionality, leading to discussions on its practicality and target audience.</li>
+</ul>
+<h2><a href="https://tahnok.github.io/colmi_r02_client/colmi_r02_client.html">Python client for the $20 Colmi R02 smart ring</a></h2>
+<ul>
+<li>Colmi R02 Client is an open-source Python tool designed for accessing data from Colmi R02 Smart Rings, which are budget-friendly fitness wearables.</li>
+<li>The tool operates offline, enabling users to interact with the smart ring via Bluetooth for features like real-time heart rate monitoring and step logging.</li>
+<li>Users can install the client using pipx, a Python package manager, and utilize various commands for data retrieval and device settings through Bluetooth Low Energy (BLE) communication.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41833200">Reactions</a></h3>
+<ul>
+<li>A Python client has been developed for the Colmi R02 smart ring, enabling users to access data without needing a subscription.</li>
+<li>The Colmi R02 is gaining attention on platforms like GitHub and Hacker News for its affordability and potential for hacking and reverse engineering, compared to pricier options like the Oura ring.</li>
+<li>Users express concerns about subscription models and device accuracy, with interest in alternatives that offer open-source compatibility and offline functionality.</li>
+</ul>
+<h2><a href="https://simonwillison.net/2024/Oct/13/zero-latency-sqlite-storage-in-every-durable-object/">Zero-latency SQLite storage in every Durable Object</a></h2>
+<ul>
+<li>Cloudflare&#39;s Durable Object platform now incorporates a full relational system using SQLite, optimizing it for real-time collaborative applications by colocating application logic with data for enhanced performance.</li>
+<li>The platform operates each Durable Object on a single thread, with the ability to create more objects to manage increased traffic, exemplified by a flight booking system assigning each flight a dedicated Durable Object with its own SQLite database.</li>
+<li>A Storage Relay Service ensures durability by streaming Write-Ahead Logging (WAL) entries to object storage and replicating writes across data centers, with a JavaScript API designed for fast, single-threaded operations.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41832547">Reactions</a></h3>
+<ul>
+<li>Zero-latency SQLite storage in Durable Objects offers efficient data handling with features like auto-batching writes and no read transactions, but is limited to 128MB RAM per runtime instance.</li>
+<li>Durable Objects are globally unique, ensuring consistency by operating on a single instance, making them suitable for multiplayer applications but potentially unsuitable for high-traffic or complex analysis needs.</li>
+<li>Key concerns include handling schema migrations and the reliance on a single cloud provider, with additional features like auto RPC for communication and hibernating Websockets without cost.</li>
+</ul>
+<h2><a href="https://people.eecs.berkeley.edu/~jrs/highd/">Counterintuitive Properties of High Dimensional Space (2018)</a></h2>
+<ul>
+<li>In higher dimensions, objects like cubes and spheres exhibit properties that defy our three-dimensional intuition, such as the inner sphere&#39;s radius extending beyond the cube.</li>
+<li>The volume of a unit 𝑑-sphere decreases with increasing dimensions, and most of the sphere&#39;s surface area is concentrated near the equator.</li>
+<li>The &quot;kissing number,&quot; or the maximum number of spheres that can touch another without overlapping, is precisely known in only a few dimensions, with solutions in eight and twenty-four dimensions using special lattice structures.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41831617">Reactions</a></h3>
+<ul>
+<li>High-dimensional spaces exhibit counterintuitive properties, such as the decreasing volume of a unit sphere as dimensions increase, which challenges our understanding due to differing units across dimensions.</li>
+<li>In high dimensions, the volume of a sphere relative to its bounding cube decreases, which aligns with the concept of adding dimensions and is significant for understanding spatial relationships.</li>
+<li>High-dimensional spaces enable near-orthogonality, a critical concept in machine learning, allowing many directions to be sufficiently orthogonal, which is essential for algorithms and data analysis.</li>
+</ul>
+<h2><a href="https://www.johndcook.com/blog/2024/10/13/why-does-fm-sound-better-than-am/">Why does FM sound better than AM?</a></h2>
+<ul>
+<li>FM radio is superior to AM radio in terms of sound quality because it is less susceptible to noise interference.- FM operates by varying frequency, whereas AM varies amplitude, making FM less affected by noise, which primarily impacts amplitude.- Edwin Howard Armstrong, the inventor of FM, anticipated that FM would reduce noise, a significant advantage over AM systems that struggle to eliminate noise without message loss.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41832302">Reactions</a></h3>
+<ul>
+<li>FM radio offers superior audio fidelity compared to AM due to its higher bandwidth, with channels spaced 200 kHz apart versus AM&#39;s 9 kHz.</li>
+<li>FM is less prone to noise interference because it encodes information through frequency variations, making it more resistant to static and amplitude-based noise.</li>
+<li>The higher frequency band of FM avoids low-frequency noise, such as that from thunderstorms, resulting in clearer sound quality, particularly for music.</li>
+</ul>
+<h2><a href="https://github.com/urin/vscode-web-visual-editor">A VSCode Extension to edit HTML visually in real-time</a></h2>
+<ul>
+<li>Web Visual Editor is a tool for real-time visual editing of HTML files, offering features like direct HTML element editing and instant preview of changes.</li>
+<li>It integrates seamlessly with Visual Studio Code, allowing synchronized selection of HTML elements and text, along with functionalities like zoom, element movement, alignment, and script management.</li>
+<li>The tool is similar to microsoft/vscode-livepreview but emphasizes synchronized code and visual selection, with minimal functionality for easy expansion, and is available under the MIT License.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41833198">Reactions</a></h3>
+<ul>
+<li>A new Visual Studio Code (VSCode) extension offers real-time visual editing of HTML, prompting comparisons with Microsoft&#39;s existing Live Preview tool.</li>
+<li>The extension is noted for its real-time preview and element selection capabilities, which could enhance web development workflows.</li>
+<li>Discussions arise around the evolution of web development tools, with some users expressing nostalgia for older tools like Dreamweaver and FrontPage, while others debate the benefits of modern frameworks versus traditional HTML/CSS/JS.</li>
+</ul>
+<h2><a href="https://blog.minetest.net/2024/10/13/Introducing-Our-New-Name/">Introducing Our New Name</a></h2>
+<ul>
+<li>Minetest has rebranded to &quot;Luanti,&quot; a name inspired by the Finnish word for &quot;creation&quot; and the Lua programming language, highlighting its focus on content creation.</li>
+<li>Luanti aims to differentiate itself from its origins as a Minecraft clone by offering an approachable API, easy scripting, and support for community-created games and mods.</li>
+<li>The rebranding involves changes to repositories and community hubs, while the core engine remains unchanged, positioning Luanti as a growing platform for creativity.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41832215">Reactions</a></h3>
+<ul>
+<li>Minetest has been renamed to &quot;Luanti,&quot; eliciting mixed reactions due to its pronunciation and spelling, though some appreciate its originality.</li>
+<li>The community values Minetest/Luanti for its modularity and ease of modding, suggesting further differentiation from Minecraft through changes in art style and physics.</li>
+<li>Discussions include comparisons with Minecraft&#39;s Bedrock and Java editions, focusing on modding capabilities and multiplayer features, while Minetest/Luanti continues to be a popular open-source platform.</li>
+</ul>
+<h2><a href="https://www.uber.com/en-JO/blog/upgrading-ubers-mysql-fleet/">Upgrading Uber&#39;s MySQL Fleet</a></h2>
+<ul>
+<li>Uber upgraded its MySQL database from version 5.7 to 8.0, addressing end-of-life concerns and enhancing performance and features.</li>
+<li>The upgrade involved over 2,100 clusters and 16,000 nodes, using a side-by-side approach to minimize downtime and risk.</li>
+<li>The transition improved performance, reduced database lock time, and enhanced query efficiency, highlighting Uber&#39;s focus on innovation and reliability.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41836748">Reactions</a></h3>
+<ul>
+<li>Uber&#39;s upgrade to MySQL version 8.0 has initiated discussions regarding their database strategy, particularly the efficiency of their setup with many nodes for low queries per second.</li>
+<li>The choice of MySQL over alternatives like PostgreSQL or MariaDB is debated, with some citing past performance issues with PostgreSQL&#39;s VACUUM process.</li>
+<li>Uber&#39;s collaboration with Percona and their strategic upgrade approach underscore their dedication to enhancing database performance.</li>
+</ul>
+<h2><a href="https://blog.lohr.dev/embedded-rust">Embedded Rust in Production?</a></h2>
+<ul>
+<li>Michael Lohr from STABL Energy discusses using Rust for embedded systems on the ESP32 platform, highlighting its reliability over C for connecting battery storage systems to the cloud.</li>
+<li>The transition to Rust began in 2022 due to reliability issues with C, and despite longer development times, Rust required minimal debugging and has been bug-free in production for over a year.</li>
+<li>A challenge remains in finding developers skilled in both Rust and C, but Rust is considered a viable choice for embedded projects, with Lohr favoring it over C.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41834662">Reactions</a></h3>
+<ul>
+<li>A developer recounted their experience of transitioning tools from Python to Rust in a large game development company, resulting in faster but unmaintainable tools due to limited Rust expertise.</li>
+<li>The decision to adopt Rust was based on personal interest rather than business needs, leading to technical debt and highlighting the challenges of integrating new languages.</li>
+<li>Despite Rust&#39;s advantages in safety and performance, its adoption in production is often impeded by the scarcity of experienced developers and the language&#39;s complexity.</li>
+</ul>
+<h2><a href="https://github.com/splitbrain/clipscreen">X11 tool to share a screen area in any video meeting</a></h2>
+<ul>
+<li>Clipscreen is an app that creates a virtual monitor to mirror a specific part of your screen, useful for sharing in video conferencing tools like Google Meet or Microsoft Teams.</li>
+<li>It requires X11 development libraries, the Cairo graphics library, and a C++ compiler to compile, and it operates on Linux with xorg.</li>
+<li>The app is licensed under a permissive free software license, allowing for broad usage and modification.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41837204">Reactions</a></h3>
+<ul>
+<li>A developer has created a tool using the X11 xrandr extension to allow sharing of specific screen areas in video meetings, addressing limitations in platforms like Google Meet.</li>
+<li>The tool mirrors a selected screen region to a virtual monitor, enabling more precise sharing options, and is implemented in approximately 100 lines of C++ code, though it lacks error handling.</li>
+<li>Users appreciate the tool&#39;s simplicity and effectiveness, particularly for those with large monitors, but discuss concerns about potential high CPU usage and comparisons with Wayland&#39;s different screen-sharing approach.</li>
+</ul>
+<h2><a href="https://help.kagi.com/kagi/why-kagi/why-pay-for-search.html">Why pay for a search engine</a></h2>
+<ul>
+<li>Search advertising is increasingly aggressive, making it difficult to differentiate from organic results, with spending projected to grow significantly from $185.35 billion in 2022 to $261 billion by 2028.</li>
+<li>Kagi presents an alternative search engine model by charging users a fee, offering faster, more accurate, and privacy-focused search results without ads or invasive tracking.</li>
+<li>Unlike ad-supported search engines like Google, which earns approximately $277 per user annually from ads, Kagi&#39;s subscription model aligns its incentives with user privacy and experience, starting at $5 per month.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41833833">Reactions</a></h3>
+<ul>
+<li>Kagi.com is a paid search engine favored by some users for its ability to filter out SEO spam and deliver more relevant search results compared to Google.</li>
+<li>The search engine is appreciated for its privacy features and customization options, though concerns about its cost and sign-in requirement persist.</li>
+<li>The ongoing debate questions the value of paying for a search engine amidst the prevalence of SEO and AI-generated content on the web.</li>
+</ul>
+<h2><a href="https://sihyun.me/REPA/">Faster convergence for diffusion models</a></h2>
+<ul>
+<li>Generative models, particularly diffusion models, are effective for creating complex visual data, but training them is challenging due to the need for high-quality internal representations.- The study introduces REPresentation Alignment (REPA), a regularization technique that aligns diffusion model representations with high-quality external representations, improving training efficiency and generation quality.- REPA enhances performance by reducing the semantic gap in representations, allowing diffusion transformers to focus on high-frequency details, and demonstrates scalability and efficiency, outperforming traditional models in speed and quality.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41832579">Reactions</a></h3>
+<ul>
+<li>The technique discussed involves using a pre-trained model to guide the training of a second model, specifically a visual encoder, to adapt to a new architecture.</li>
+<li>This method focuses on aligning internal representations rather than direct distillation, distinguishing it from other pre-training strategies.</li>
+<li>The approach raises questions about its efficiency and applicability across various datasets, highlighting its potential benefits and limitations.</li>
+</ul>
+<h2><a href="https://superuser.com/questions/1773208/how-can-i-block-the-sign-in-with-google-prompt-on-websites">Blocking the &quot;Sign in with Google&quot; Prompt (2023)</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41835217">Reactions</a></h3>
+<ul>
+<li>Users can block the &quot;Sign in with Google&quot; prompt using ad-filtering syntax, such as <code>||accounts.google.com/gsi/*$xhr,3p</code>, to avoid functionality issues on certain websites.</li>
+<li>The discussion emphasizes privacy concerns and the widespread use of popups to collect emails for marketing, prompting users to consider ad blockers like uBlock Origin or alternative browsers like Firefox on Android.</li>
+<li>This highlights the ongoing debate over privacy and the push by major tech companies for single-sign-on systems, which streamline login processes but may raise privacy issues.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Huly – Open-source project management platform" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Huly%20%E2%80%93%20Open-source%20project%20management%20platform&subheading=Monday%2C%20October%2014%2C%202024%3A%20Hacker%20News%20Summary" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/2024/10/14</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000Z</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-10-13]]></title>
             <description
@@ -1476,185 +1659,6 @@
             <link>https://hn.cho.sh/2024/10/05</link>
             <guid isPermaLink="false">2024-10-05T00:00:00.000Z</guid>
             <pubDate>Sat, 05 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-10-04]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/10/04&#39;</h2>
-<h1>2024-10-04</h1>
-<h2><a href="https://unix.stackexchange.com/questions/405783/why-does-man-print-gimme-gimme-gimme-at-0030">Why does man print &quot;gimme gimme gimme&quot; at 00:30? (2017)</a></h2>
-<ul>
-<li>A user discovered an easter egg in the &quot;man&quot; command, which referenced an ABBA song and was triggered at 00:30, causing tests to fail.</li>
-<li>This easter egg was removed in man-db version 2.8.0 after some users found it disruptive to their workflow.</li>
-<li>The easter egg was originally added for entertainment but was removed to maintain workflow efficiency.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41736903">Reactions</a></h3>
-<ul>
-<li>A developer recounted an incident where a humorous debug statement was unintentionally left in a telemedicine app, discovered by a patient, sparking a discussion on the importance of clear and non-offensive debug markers.</li>
-<li>Developers shared strategies to prevent such oversights, including using specific strings or automation tools to identify debug statements before code submission.</li>
-<li>The conversation underscored the balance between professionalism and the inclusion of Easter eggs in software, with differing opinions on their appropriateness.</li>
-</ul>
-<h2><a href="https://ai.meta.com/research/movie-gen/?_fb_noscript=1">Meta Movie Gen</a></h2>
-<ul>
-<li>Meta AI has introduced Movie Gen, a new media foundation AI model that enables users to create and edit videos using simple text inputs.</li>
-<li>Movie Gen offers features such as generating high-definition videos, transforming personal images into videos, and creating sound effects or soundtracks.</li>
-<li>This innovation highlights Meta AI&#39;s advancements in AI-driven content creation, providing precise video editing and customization capabilities.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41740965">Reactions</a></h3>
-<ul>
-<li>Meta has introduced Meta Movie Gen, an AI tool designed to create videos from text prompts, showcasing significant advancements in AI technology.</li>
-<li>Despite its potential, there are concerns about misuse, particularly in creating deepfakes, and the tool currently faces challenges with consistency and accuracy.</li>
-<li>The tool is not publicly available yet, but its release could significantly affect industries such as visual effects (VFX) and stock footage, while sparking debates on the impact of AI-generated content on human creativity.</li>
-</ul>
-<h2><a href="https://szymonkaliski.com/projects/cartographist/">Experimental web browser optimized for rabbit-holing</a></h2>
-<ul>
-<li>Cartographist is an experimental web browser aimed at facilitating in-depth research and exploration through unique features like horizontally scrollable panes and a tree-structured browsing history.</li>
-<li>It allows users to save and load &quot;trails&quot; for ongoing research, emphasizing the synthesis of information over retaining a complete browsing history.</li>
-<li>The project is open-sourced, encouraging community feedback, and is inspired by the layouts of Andy Matuschak and Nate Parrot, focusing on detail-in-context browsing.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41738502">Reactions</a></h3>
-<ul>
-<li>An experimental web browser designed for deep exploration, or &quot;rabbit-holing,&quot; was a topic of discussion on Hacker News, highlighting user interest in advanced browsing features.</li>
-<li>Users compared the browser to existing tools like Tree Style Tabs and Sideberry for Firefox, focusing on features such as parallel browsing and hierarchical tab management.</li>
-<li>The discussion included the potential for the browser to support research and sensemaking, with suggestions for collaboration with researchers to enhance its development.</li>
-</ul>
-<h2><a href="https://spectrum.ieee.org/in-memoriam-oct-2024">Robert Dennard, DRAM Pioneer, has died</a></h2>
-<ul>
-<li>Robert Dennard, the inventor of Dynamic RAM (DRAM), has passed away at the age of 91, marking the end of an era for a key figure in computer memory technology.</li>
-<li>The Institute of Electrical and Electronics Engineers (IEEE) is also recognizing the lives and contributions of other notable members, highlighting the impact of their work on the tech industry.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41735544">Reactions</a></h3>
-<ul>
-<li>Robert Dennard, a key figure in the development of DRAM (Dynamic Random-Access Memory) and known for Dennard Scaling, has passed away.</li>
-<li>Dennard Scaling was instrumental in chip development, impacting the industry similarly to Moore&#39;s Law, and its decline affected technologies such as the Pentium 4 and Cell processors.</li>
-<li>Despite his major contributions to technology, Dennard&#39;s passing received limited public attention, though he was remembered for his kindness and humility.</li>
-</ul>
-<h2><a href="https://aschmelyun.com/blog/getting-my-daily-news-from-a-dot-matrix-printer/">Getting my daily news from a dot matrix printer</a></h2>
-<ul>
-<li>The author created a custom &quot;front page&quot; using a dot matrix printer to reduce screen time while staying informed on news, weather, stocks, and Reddit posts.</li>
-<li>The project involved using a Raspberry Pi, a serial to USB adapter, and PHP scripting to pull data from free APIs and format it for the printer.</li>
-<li>The author shares the full source code on GitHub, inviting others to explore or contribute to the project.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41742210">Reactions</a></h3>
-<ul>
-<li>A user shared their experience of using a dot matrix printer for daily news, prompting discussions on the nostalgia and functionality of vintage printers.- Participants reminisced about the simplicity of older printing methods and explored modern compatibility with these methods, including projects using receipt printers for notifications.- The conversation highlighted challenges with modern printing across various operating systems and the lasting appeal of vintage technology.</li>
-</ul>
-<h2><a href="https://www.entrepreneur.com/business-news/google-recommits-to-hybrid-work-schedule-unlike-amazon/480683">Google won&#39;t be mandating a strict return-to-office plan</a></h2>
-<ul>
-<li>Google has decided not to enforce a strict return-to-office policy, maintaining a hybrid work model that requires employees to be in the office at least three days a week.</li>
-<li>This approach contrasts with companies like Amazon and Salesforce, which have implemented more rigid office attendance requirements.</li>
-<li>Google CEO Sundar Pichai highlighted that the flexible policy will continue as long as employee productivity remains high.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41734046">Reactions</a></h3>
-<ul>
-<li>Google is adopting a flexible approach to return-to-office (RTO) policies, contrasting with Amazon&#39;s full RTO mandate.</li>
-<li>The ongoing debate highlights the frustration among tech employees over RTO mandates, citing long commutes and effective remote work capabilities.</li>
-<li>Google&#39;s lenient RTO stance could potentially attract talent from companies with stricter in-office requirements.</li>
-</ul>
-<h2><a href="https://arstechnica.com/tech-policy/2020/06/cox-slows-internet-speeds-in-entire-neighborhoods-to-punish-any-heavy-users/">Cox slows Internet speeds in entire neighborhoods to punish any heavy users (2020)</a></h2>
-<ul>
-<li>Cox Communications is reducing upload speeds in certain neighborhoods to manage what it considers &quot;excessive usage,&quot; impacting both heavy users and their neighbors.- A customer in Gainesville, Florida, experienced a reduction in upload speed from 35Mbps to 10Mbps after using 8TB to 12TB monthly, despite having an unlimited data plan.- Cox claims the network is generally performing well, with only a few neighborhoods affected, and defends the reduced speed as adequate for most users, while providing temporary unlimited data during the pandemic.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41736215">Reactions</a></h3>
-<ul>
-<li>Cox has faced criticism for throttling internet speeds in neighborhoods to penalize heavy users, despite offering &quot;unlimited&quot; data plans, as reported in 2020.</li>
-<li>This practice highlights issues of deceptive advertising and oversubscription in the Internet Service Provider (ISP) industry, where users feel misled by unfulfilled promises of high-speed internet.</li>
-<li>The situation emphasizes the lack of competition and regulatory oversight in the U.S. internet market, resulting in customer dissatisfaction and demands for greater transparency and fair practices.</li>
-</ul>
-<h2><a href="https://techcrunch.com/2024/10/04/159-employees-are-leaving-automattic-as-ceos-fight-with-wp-engine-escalates/">Some Automattic employees accept severance package offer</a></h2>
-<ul>
-<li>Automattic CEO Matt Mullenweg announced that 159 employees, approximately 8.4% of the workforce, accepted a severance package due to disagreements over the company&#39;s direction and a conflict with WP Engine.</li>
-<li>The severance package, termed an &quot;Alignment Offer,&quot; included $30,000 or six months&#39; salary, with the condition that those who accepted cannot be re-hired.</li>
-<li>The conflict with WP Engine involves trademark disputes, leading to legal actions, with WP Engine suing Automattic for alleged abuse of power, claims which Mullenweg and Automattic have dismissed as meritless.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41738914">Reactions</a></h3>
-<ul>
-<li>A number of Automattic employees, primarily from the WordPress division, have accepted a severance package, which included $30,000 or six months&#39; salary, whichever was greater.</li>
-<li>This development comes amid tensions and legal disputes between Automattic and WP Engine regarding trademark issues and contributions to WordPress.</li>
-<li>The situation has led to discussions about Automattic&#39;s financial stability and the decision-making of its leadership.</li>
-</ul>
-<h2><a href="https://stuffmatic.com/chebyshev/">Chebyshev approximation calculator</a></h2>
-<ul>
-<li>A new web app has been developed to generate code for efficiently approximating mathematical functions, focusing on performance over perfect accuracy.</li>
-<li>The app utilizes Chebyshev expansions, a mathematical technique, to create compact and readable code, making it accessible without requiring deep theoretical knowledge.</li>
-<li>This tool is particularly useful for embedded systems where performance is critical.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41740568">Reactions</a></h3>
-<ul>
-<li>A web app by Stuffmatic generates efficient code for approximating mathematical functions using Chebyshev expansions, beneficial for performance-critical applications such as embedded systems.- The app simplifies complex mathematical theory into compact, readable code, making it accessible without requiring deep mathematical understanding.- The source code is available on GitHub, and users are actively discussing experiences, sharing resources, and suggesting improvements, highlighting the app&#39;s utility and educational potential.</li>
-</ul>
-<h2><a href="https://onestack.dev">One – A new React framework unifying web, native and local-first</a></h2>
-<ul>
-<li>Tamagui.One is a new React framework designed to simplify web and app development by unifying React Native and React web, allowing for easier code sharing across platforms.</li>
-<li>The framework partners with Zero to enhance local-first development, enabling seamless server/client interactions without performance issues, inspired by frameworks like Rails and Meteor.</li>
-<li>The creator, Nate, developed Tamagui.One to address challenges faced in cross-platform app development, offering a fast and opinionated solution without the complexity of previous frameworks.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41742278">Reactions</a></h3>
-<ul>
-<li>One&quot; is a new React framework developed by Nate, known for Tamagui, designed to unify React Native and React web with typed file system routing, facilitating easier code sharing across platforms.</li>
-<li>It integrates with Zero to support efficient local-first development, aiming to streamline the development process by drawing inspiration from frameworks like Rails and Meteor.&quot;</li>
-<li>Currently in beta, &quot;One&quot; is undergoing continuous improvements based on feedback from early users, despite some concerns about potential added complexity.&quot;</li>
-</ul>
-<h2><a href="https://isaak.net/mandarin/">12 Months of Mandarin</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41742432">Reactions</a></h3>
-<ul>
-<li>A user successfully learned 2,000 Mandarin words in 4-5 months using Comprehensible Input (CI) and Anki flashcards, suggesting these methods for effective language acquisition.</li>
-<li>The CI community has developed resources like plusonechinese.com, which provides Mandarin audio stories tailored to different proficiency levels.</li>
-<li>Users shared strategies for sustaining interest in language learning, such as using Spaced Repetition Systems (SRS), engaging with familiar content, and incorporating the language into daily activities, with some advocating for immersive experiences like hitchhiking or teaching abroad.</li>
-</ul>
-<h2><a href="https://www.independent.co.uk/life-style/blue-zones-netflix-ignobel-prize-b2622952.html">New research says &quot;blue zones&quot; can be explained by flawed data</a></h2>
-<ul>
-<li>Dr. Saul Newman from the Oxford Institute of Population Ageing has debunked the &quot;Blue Zones&quot; concept, which claims certain regions have unusually high numbers of centenarians.</li>
-<li>Newman&#39;s research highlights data inaccuracies and administrative errors, such as unreported deaths and pension fraud, rather than true longevity.</li>
-<li>The study questions lifestyle factors like diet and social networks as contributors to longevity, noting the inconsistency of promoting alcohol consumption in regions like Loma Linda, home to the non-drinking Seventh Day Adventist community.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41738434">Reactions</a></h3>
-<ul>
-<li>New research indicates that the concept of &quot;blue zones,&quot; regions where people are believed to live longer, may be based on inaccurate data due to poor record-keeping and potential fraud.</li>
-<li>The study highlights that the introduction of birth certificates in the U.S. resulted in a decrease in reported supercentenarians, suggesting previous overestimations.</li>
-<li>The findings cast doubt on the validity of blue zones and imply that lifestyle recommendations derived from these areas may not be dependable.</li>
-</ul>
-<h2><a href="https://www.ycombinator.com/blog/correcting-the-record/">Correcting the record for Continue and PearAI</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41737326">Reactions</a></h3>
-<ul>
-<li>PearAI, a Y Combinator-backed startup, faced criticism for using Microsoft&#39;s VSCode marketplace without following licensing terms and allegedly forking another YC startup&#39;s work.</li>
-<li>The company was accused of using AI to generate a license, which was perceived as dismissive of legal and ethical standards, leading to backlash.</li>
-<li>The incident has sparked discussions about Y Combinator&#39;s vetting process and the startup culture&#39;s approach to ethical behavior and shortcuts.</li>
-</ul>
-<h2><a href="https://www.upi.com/Top_News/US/2024/10/03/energy-department-electric-grid-investment/3631727969828/">US Dept of Energy announces $1.5B in electric grid improvements</a></h2>
-<ul>
-<li>The U.S. Department of Energy is investing $1.5 billion to improve electric grid reliability, funded by the Bipartisan Infrastructure Law.</li>
-<li>This investment will support four transmission projects, adding nearly 1,000 miles of new transmission lines and 7,100 megawatts of capacity across several states, creating 9,000 jobs.</li>
-<li>A National Transmission Planning study indicates that expanding the transmission system could result in savings of $270 billion to $490 billion by 2050.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41734119">Reactions</a></h3>
-<ul>
-<li>The US Department of Energy is investing $1.5 billion in electric grid improvements, focusing on enhancing reliability and supporting renewable energy integration in Texas and other states.</li>
-<li>This investment is part of a larger initiative to modernize the grid and combat climate change, though some argue it is insufficient compared to the grid&#39;s overall needs.</li>
-<li>Discussions emphasize Texas&#39;s potential to export power and the necessity of grid resilience against events such as solar storms.</li>
-</ul>
-<h2><a href="https://nv1t.github.io/blog/kekz-headphones/">Reverse engineering and dismantling Kekz headphones</a></h2>
-<ul>
-<li>The Kekz Headphones use chips called &quot;Kekz&quot; or &quot;Cookies&quot; to play audio stories without requiring an internet connection.</li>
-<li>A reverse-engineering effort revealed that the headphones contain a Jieli chip, NFC reader, and an SD card with encrypted files, allowing for the cloning of cookies and decryption of content.</li>
-<li>The accompanying app collects user data, including geolocation, without transparent disclosure, and the company has not responded to security concerns raised by the researcher.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41738552">Reactions</a></h3>
-<ul>
-<li>The discussion on reverse engineering Kekz headphones highlights the technical challenge and enjoyment of deciphering encryption and obfuscation methods.</li>
-<li>Concerns are raised about privacy issues, including geolocation data collection, which may conflict with GDPR (General Data Protection Regulation) standards.</li>
-<li>Participants explore the potential for creating child-friendly music players using NFC (Near Field Communication) tags and discuss the benefits and drawbacks of companies permitting reverse engineering for marketing and security purposes.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Why does man print 'gimme gimme gimme' at 00:30? (2017)" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Why%20does%20man%20print%20%22gimme%20gimme%20gimme%22%20at%2000%3A30%3F%20(2017)&subheading=Friday%2C%20October%204%2C%202024%3A%20Hacker%20News%20Summary" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/2024/10/04</link>
-            <guid isPermaLink="false">2024-10-04T00:00:00.000Z</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

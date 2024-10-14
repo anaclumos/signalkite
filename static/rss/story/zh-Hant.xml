@@ -15,11 +15,196 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 13 Oct 2024 19:07:11 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 14 Oct 2024 19:08:15 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/story/zh-Hant.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sun, 13 Oct 2024 00:00:00 GMT</pubDate>
+        <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
         <language><![CDATA[zh-Hant]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[「Huly – 開源專案管理平台」]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Huly 平台是一個綜合框架，旨在加速開發商業應用程式，包括 CRM、HRM 和 ATS 系統。</li>
+<li>「該平台支援使用 Docker 進行自我託管，並需要 Node.js、Docker 和 Docker Compose 來進行設置，安裝過程由 Microsoft 的 Rush 協助完成。」</li>
+<li>它支援在 Linux 和 macOS 上的 amd64 和 arm64 架構開發，並包含單元測試和 UI 測試，但本地安裝缺乏電子郵件功能。</li>
+</ul>
+]]></description>
+            <link>https://github.com/hcengineering/platform</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000Z「Huly – 開源專案管理平台」</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[「CRLF 已經過時，應該被廢除」]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>「CRLF(Carriage Return Line Feed)行結尾被認為是過時的，源自於機械電傳打字機，而在現代系統中被視為不必要，因為單一的 NL(New Line, U+000a)更受青睞。」</li>
+<li>雖然消除 CRLF 的提案被撤回，但該倡議突顯並解決了各種軟體問題，強調了系統需要適應僅使用 NL 的重要性。</li>
+<li>該文章主張停止使用 CRLF，鼓勵開發者更新仍需在 NL 前使用 CR 的軟體，並採用「newline」來表示 U+000a。</li>
+</ul>
+]]></description>
+            <link>https://fossil-scm.org/home/ext/crlf-harmful.md</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000Z「CRLF 已經過時，應該被廢除」</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Flipper 裝置的忙碌狀態列]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>忙碌狀態欄是一款生產力工具，具有 LED 像素螢幕，可顯示自訂的忙碌訊息，並包含番茄鐘計時器。- 它是開源且對開發者友好的，支援多種程式語言如 Python、JavaScript 和 Go，並可與 Zoom 和 Discord 等熱門應用程式整合。- 由 Flipper Devices Inc. 設計，提供透過 API 和 MQTT 的雲端控制，支援物聯網整合，並與 Windows、macOS 和 Linux 相容。</li>
+</ul>
+]]></description>
+            <link>https://busy.bar/?hn</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000ZFlipper 裝置的忙碌狀態列</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[用於 $20 Colmi R02 智能戒指的 Python 客戶端]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Colmi R02 Client 是一款開源的 Python 工具，專為存取 Colmi R02 智慧戒指的數據而設計，這些智慧戒指是經濟實惠的健身穿戴裝置。</li>
+<li>該工具可在離線狀態下運行，讓使用者透過藍牙與智慧戒指互動，以實現即時心率監測和步數記錄等功能。</li>
+<li>使用者可以透過 pipx(一個 Python 套件管理工具)安裝客戶端，並透過藍牙低功耗(BLE)通訊使用各種命令進行資料檢索和裝置設定。</li>
+</ul>
+]]></description>
+            <link>https://tahnok.github.io/colmi_r02_client/colmi_r02_client.html</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000Z用於 $20 Colmi R02 智能戒指的 Python 客戶端</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[每個 Durable Object 中的零延遲 SQLite 儲存]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>「Cloudflare 的 Durable Object 平台現在整合了一個完整的關聯系統，使用 SQLite，通過將應用程式邏輯與資料放置在同一位置來優化即時協作應用程式的效能。」</li>
+<li>「該平台在單一執行緒上運行每個 Durable Object，並能夠創建更多物件以管理增加的流量，例如航班預訂系統為每個航班分配一個專屬的 Durable Object，並配有自己的 SQLite 資料庫。」</li>
+<li>「儲存中繼服務透過將預寫日誌(WAL)條目串流至物件儲存並在資料中心間複製寫入操作來確保耐久性，並設計了一個用於快速、單執行緒操作的 JavaScript API。」</li>
+</ul>
+]]></description>
+            <link>https://simonwillison.net/2024/Oct/13/zero-latency-sqlite-storage-in-every-durable-object/</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000Z每個 Durable Object 中的零延遲 SQLite 儲存</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[高維空間的反直覺性質 (2018)]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>「在更高維度中，像立方體和球體這樣的物體展現出違背我們三維直覺的特性，例如內球的半徑超出立方體的範圍。」</li>
+<li>隨著維度的增加，單位𝑑-球的體積會減少，而球體的大部分表面積集中在赤道附近。</li>
+<li>「接觸數」，或指能夠接觸另一個球而不重疊的最大球數量，目前僅在少數幾個維度中有精確的解答，其中在八維和二十四維中使用特殊的晶格結構得出了解決方案。</li>
+</ul>
+]]></description>
+            <link>https://people.eecs.berkeley.edu/~jrs/highd/</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000Z高維空間的反直覺性質 (2018)</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[為什麼 FM 聽起來比 AM 更好？]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>在音質方面，FM 廣播優於 AM 廣播，因為它較不易受到噪音干擾。FM 是透過改變頻率來運作，而 AM 則是改變振幅，這使得 FM 較不受噪音影響，因為噪音主要影響振幅。FM 的發明者 Edwin Howard Armstrong 預期 FM 能夠減少噪音，這是相較於 AM 系統的一大優勢，因為 AM 系統在消除噪音時常會導致訊息損失。</li>
+</ul>
+]]></description>
+            <link>https://www.johndcook.com/blog/2024/10/13/why-does-fm-sound-better-than-am/</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000Z為什麼 FM 聽起來比 AM 更好？</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[一個可以即時視覺化編輯 HTML 的 VSCode 擴充功能]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Web Visual Editor 是一個用於即時視覺編輯 HTML 檔案的工具，提供直接編輯 HTML 元素和即時預覽變更等功能。</li>
+<li>它無縫整合至 Visual Studio Code，允許同步選擇 HTML 元素和文字，並具備縮放、元素移動、對齊和腳本管理等功能。</li>
+<li>該工具類似於 microsoft/vscode-livepreview，但強調同步的程式碼和視覺選擇，具有簡單的功能以便於擴展，並以 MIT 許可證提供。</li>
+</ul>
+]]></description>
+            <link>https://github.com/urin/vscode-web-visual-editor</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000Z一個可以即時視覺化編輯 HTML 的 VSCode 擴充功能</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[介紹我們的新名稱]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Minetest 已重新命名為「Luanti」，這個名字的靈感來自芬蘭語中的「創造」一詞以及 Lua 程式語言，突顯其對內容創作的重視。</li>
+<li>「Luanti 旨在透過提供易於使用的 API、簡單的腳本編寫，以及對社群創建的遊戲和模組的支持，來區別於其作為 Minecraft 克隆的起源。」</li>
+<li>「重新品牌化涉及對資料庫和社群中心的更改，而核心引擎保持不變，將 Luanti 定位為一個不斷成長的創意平台。」</li>
+</ul>
+]]></description>
+            <link>https://blog.minetest.net/2024/10/13/Introducing-Our-New-Name/</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000Z介紹我們的新名稱</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[「升級 Uber 的 MySQL 伺服器群」]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Uber 將其 MySQL 資料庫從版本 5.7 升級到 8.0，以解決終止支援的問題並提升效能和功能。</li>
+<li>升級涉及超過 2,100 個叢集和 16,000 個節點，採用並行方式以將停機時間和風險降至最低。</li>
+<li>「此轉變提升了效能，減少了資料庫鎖定時間，並增強了查詢效率，突顯了 Uber 對創新和可靠性的重視。」</li>
+</ul>
+]]></description>
+            <link>https://www.uber.com/en-JO/blog/upgrading-ubers-mysql-fleet/</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000Z「升級 Uber 的 MySQL 伺服器群」</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[「在生產環境中使用嵌入式 Rust？」]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>「來自 STABL Energy 的 Michael Lohr 討論在 ESP32 平台上使用 Rust 用於嵌入式系統，強調其在將電池儲存系統連接到雲端時比 C 語言更具可靠性。」</li>
+<li>由於 C 語言的可靠性問題，轉向 Rust 的過程始於 2022 年，儘管開發時間較長，但 Rust 需要的除錯工作極少，並且在生產環境中已經超過一年沒有出現錯誤。</li>
+<li>在尋找同時精通 Rust 和 C 的開發人員方面仍然存在挑戰，但 Rust 被認為是嵌入式專案的可行選擇，Lohr 更偏好使用 Rust 而非 C。</li>
+</ul>
+]]></description>
+            <link>https://blog.lohr.dev/embedded-rust</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000Z「在生產環境中使用嵌入式 Rust？」</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[X11 工具可在任何視訊會議中共享螢幕區域]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>Clipscreen 是一款應用程式，可以創建虛擬螢幕來鏡像您螢幕的特定部分，這對於在 Google Meet 或 Microsoft Teams 等視訊會議工具中分享非常有用。</li>
+<li>它需要 X11 開發庫、Cairo 圖形庫和 C++ 編譯器來編譯，並在使用 xorg 的 Linux 上運行。</li>
+<li>「該應用程式採用寬鬆的自由軟體授權，允許廣泛使用和修改。」</li>
+</ul>
+]]></description>
+            <link>https://github.com/splitbrain/clipscreen</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000ZX11 工具可在任何視訊會議中共享螢幕區域</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[為什麼要為搜尋引擎付費]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>搜尋廣告日益激進，使得與自然搜尋結果的區分變得困難，預計支出將從 2022 年的 1853.5 億美元顯著增長至 2028 年的 2610 億美元。</li>
+<li>Kagi 提供了一種替代的搜尋引擎模式，透過向用戶收取費用，提供更快速、更準確且注重隱私的搜尋結果，沒有廣告或侵入性追蹤。</li>
+<li>與像 Google 這樣依賴廣告支持的搜尋引擎不同，Google 每年從每位用戶的廣告中賺取約 277 美元，而 Kagi 的訂閱模式則將其激勵與用戶隱私和體驗對齊，訂閱費用從每月 5 美元起。</li>
+</ul>
+]]></description>
+            <link>https://help.kagi.com/kagi/why-kagi/why-pay-for-search.html</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000Z為什麼要為搜尋引擎付費</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[「擴散模型的更快速收斂」]]></title>
+            <description
+      ><![CDATA[<ul>
+<li>「生成模型，特別是擴散模型，在創建複雜的視覺數據方面非常有效，但由於需要高品質的內部表示，訓練它們具有挑戰性。該研究介紹了表示對齊(REPA)，這是一種正則化技術，將擴散模型的表示與高品質的外部表示對齊，提高了訓練效率和生成質量。REPA 通過減少表示中的語義差距來提升性能，使擴散變壓器能夠專注於高頻細節，並展示了可擴展性和效率，在速度和質量上超越了傳統模型。」</li>
+</ul>
+]]></description>
+            <link>https://sihyun.me/REPA/</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000Z「擴散模型的更快速收斂」</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[阻擋「使用 Google 登入」提示(2023)]]></title>
+            <description><![CDATA[<p>- </p>
+]]></description>
+            <link
+      >https://superuser.com/questions/1773208/how-can-i-block-the-sign-in-with-google-prompt-on-websites</link>
+            <guid isPermaLink="false">2024-10-14T00:00:00.000Z阻擋「使用 Google 登入」提示(2023)</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[星艦第5次飛行：發射與助推器捕捉 [影片]]]></title>
             <description><![CDATA[<p>- </p>
@@ -1640,194 +1825,6 @@
         isPermaLink="false"
       >2024-10-05T00:00:00.000Z「青少年駭客因攻擊公司而成為傳奇，隨後他的對手們對他發起攻擊」</guid>
             <pubDate>Sat, 05 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[為什麼這個人在 00:30 打印出「gimme gimme gimme」？(2017)]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>「一位使用者在 &#39;man&#39; 指令中發現了一個彩蛋，這個彩蛋引用了一首 ABBA 的歌曲，並在 00:30 觸發，導致測試失敗。」</li>
-<li>「這個彩蛋在 man-db 版本 2.8.0 中被移除，因為有些使用者發現它對他們的工作流程造成干擾。」</li>
-<li>最初加入的彩蛋是為了娛樂，但為了維持工作流程的效率而被移除。</li>
-</ul>
-]]></description>
-            <link>https://unix.stackexchange.com/questions/405783/why-does-man-print-gimme-gimme-gimme-at-0030</link>
-            <guid
-        isPermaLink="false"
-      >2024-10-04T00:00:00.000Z為什麼這個人在 00:30 打印出「gimme gimme gimme」？(2017)</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Meta 電影生成器]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Meta AI 推出了 Movie Gen，一款新的媒體基礎 AI 模型，讓使用者能夠透過簡單的文字輸入來創建和編輯影片。</li>
-<li>Movie Gen 提供的功能包括生成高畫質影片、將個人影像轉換成影片，以及創建音效或配樂。</li>
-<li>這項創新突顯了 Meta AI 在人工智慧驅動的內容創作方面的進步，提供精確的影片編輯和客製化功能。</li>
-</ul>
-]]></description>
-            <link>https://ai.meta.com/research/movie-gen/?_fb_noscript=1</link>
-            <guid isPermaLink="false">2024-10-04T00:00:00.000ZMeta 電影生成器</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[實驗性網頁瀏覽器，專為深入探索而優化]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Cartographist 是一款實驗性網頁瀏覽器，旨在透過獨特功能如橫向可捲動的窗格和樹狀結構的瀏覽歷史，促進深入的研究和探索。</li>
-<li>它允許使用者儲存和載入「軌跡」以進行持續的研究，強調資訊的綜合而非保留完整的瀏覽歷史。</li>
-<li>該專案是開源的，鼓勵社群回饋，並受到 Andy Matuschak 和 Nate Parrot 的版面設計啟發，專注於細節上下文瀏覽。</li>
-</ul>
-]]></description>
-            <link>https://szymonkaliski.com/projects/cartographist/</link>
-            <guid isPermaLink="false">2024-10-04T00:00:00.000Z實驗性網頁瀏覽器，專為深入探索而優化</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[「DRAM 先驅 Robert Dennard 逝世」]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>「動態隨機存取記憶體(DRAM)的發明者羅伯特·丹納德(Robert Dennard)辭世，享壽91歲，這標誌著電腦記憶體技術中一位重要人物時代的結束。」</li>
-<li>電機電子工程師學會(IEEE)也在表彰其他傑出成員的生活和貢獻，強調他們的工作對科技產業的影響。</li>
-</ul>
-]]></description>
-            <link>https://spectrum.ieee.org/in-memoriam-oct-2024</link>
-            <guid isPermaLink="false">2024-10-04T00:00:00.000Z「DRAM 先驅 Robert Dennard 逝世」</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[從點陣列印表機獲取我的每日新聞]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>作者使用點陣列印機創建了一個自訂的「首頁」，以減少螢幕時間，同時保持對新聞、天氣、股票和 Reddit 貼文的了解。</li>
-<li>該專案涉及使用 Raspberry Pi、串口轉 USB 轉接器和 PHP 腳本來從免費 API 獲取資料並將其格式化以供印表機使用。</li>
-<li>作者在 GitHub 上分享了完整的源代碼，邀請其他人探索或為該專案做出貢獻。</li>
-</ul>
-]]></description>
-            <link>https://aschmelyun.com/blog/getting-my-daily-news-from-a-dot-matrix-printer/</link>
-            <guid isPermaLink="false">2024-10-04T00:00:00.000Z從點陣列印表機獲取我的每日新聞</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Google 不會強制執行嚴格的返回辦公室計劃]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Google 決定不強制執行嚴格的返回辦公室政策，維持混合工作模式，要求員工每週至少有三天在辦公室工作。</li>
-<li>這種做法與像亞馬遜和 Salesforce 這樣的公司形成對比，這些公司已經實施了更嚴格的辦公室出勤要求。</li>
-<li>Google 執行長 Sundar Pichai 強調，只要員工的生產力保持高水準，彈性政策將會持續下去。</li>
-</ul>
-]]></description>
-            <link
-      >https://www.entrepreneur.com/business-news/google-recommits-to-hybrid-work-schedule-unlike-amazon/480683</link>
-            <guid isPermaLink="false">2024-10-04T00:00:00.000ZGoogle 不會強制執行嚴格的返回辦公室計劃</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Cox 降低整個社區的網速以懲罰任何重度使用者(2020)]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>「Cox Communications 正在某些社區降低上傳速度，以管理其認為的“過度使用”，這影響了重度使用者及其鄰居。- 佛羅里達州蓋恩斯維爾的一位客戶在每月使用 8TB 至 12TB 的情況下，儘管擁有無限數據計畫，上傳速度仍從 35Mbps 降至 10Mbps。- Cox 聲稱網路整體運行良好，只有少數社區受到影響，並辯稱降低的速度對大多數使用者來說已經足夠，同時在疫情期間提供臨時的無限數據。」</li>
-</ul>
-]]></description>
-            <link
-      >https://arstechnica.com/tech-policy/2020/06/cox-slows-internet-speeds-in-entire-neighborhoods-to-punish-any-heavy-users/</link>
-            <guid isPermaLink="false">2024-10-04T00:00:00.000ZCox 降低整個社區的網速以懲罰任何重度使用者(2020)</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[部分 Automattic 員工接受資遣方案提議]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>「Automattic 執行長 Matt Mullenweg 宣布，由於對公司方向的分歧以及與 WP Engine 的衝突，159 名員工，即約 8.4% 的員工，接受了遣散方案。」</li>
-<li>「遣散方案，被稱為“對齊提議”，包括30,000美元或六個月的薪水，條件是接受者不能再被重新聘用。」</li>
-<li>與 WP Engine 的衝突涉及商標爭議，導致法律訴訟，WP Engine 控告 Automattic 濫用權力，這些指控已被 Mullenweg 和 Automattic 駁斥為毫無根據。</li>
-</ul>
-]]></description>
-            <link
-      >https://techcrunch.com/2024/10/04/159-employees-are-leaving-automattic-as-ceos-fight-with-wp-engine-escalates/</link>
-            <guid isPermaLink="false">2024-10-04T00:00:00.000Z部分 Automattic 員工接受資遣方案提議</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[切比雪夫近似計算器]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>「一款新的網頁應用程式已被開發出來，用於生成高效近似數學函數的程式碼，著重於性能而非完美的準確性。」</li>
-<li>該應用程式利用切比雪夫展開法，一種數學技術，來創建緊湊且易讀的程式碼，使其在不需要深入理論知識的情況下即可使用。</li>
-<li>此工具對於性能至關重要的嵌入式系統特別有用。</li>
-</ul>
-]]></description>
-            <link>https://stuffmatic.com/chebyshev/</link>
-            <guid isPermaLink="false">2024-10-04T00:00:00.000Z切比雪夫近似計算器</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[One – 一個統一網頁、原生和本地優先的新 React 框架]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>Tamagui.One 是一個新的 React 框架，旨在透過統一 React Native 和 React 網頁來簡化網頁和應用程式的開發，從而更輕鬆地在不同平台間共享程式碼。</li>
-<li>該框架與 Zero 合作以增強本地優先開發，實現無縫的伺服器/客戶端互動而不會有性能問題，靈感來自於 Rails 和 Meteor 等框架。</li>
-<li>創作者 Nate 開發了 Tamagui.One，以解決跨平台應用程式開發中面臨的挑戰，提供了一個快速且具主見的解決方案，而不具備先前框架的複雜性。</li>
-</ul>
-]]></description>
-            <link>https://onestack.dev</link>
-            <guid isPermaLink="false">2024-10-04T00:00:00.000ZOne – 一個統一網頁、原生和本地優先的新 React 框架</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[12 個月的中文學習]]></title>
-            <description><![CDATA[<p>- </p>
-]]></description>
-            <link>https://isaak.net/mandarin/</link>
-            <guid isPermaLink="false">2024-10-04T00:00:00.000Z12 個月的中文學習</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[新的研究指出，「藍色地帶」可以用有缺陷的數據來解釋]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>「牛津大學人口老化研究所的 Saul Newman 博士已經駁斥了“藍色地帶”概念，該概念聲稱某些地區擁有異常高數量的百歲人瑞。」</li>
-<li>紐曼的研究強調了數據不準確和行政錯誤，例如未報告的死亡和退休金詐騙，而非真正的長壽。</li>
-<li>該研究質疑飲食和社交網絡等生活方式因素對長壽的影響，並指出在像羅馬琳達這樣的地區推廣飲酒的矛盾性，該地是非飲酒的基督復臨安息日會社區的所在地。</li>
-</ul>
-]]></description>
-            <link>https://www.independent.co.uk/life-style/blue-zones-netflix-ignobel-prize-b2622952.html</link>
-            <guid isPermaLink="false">2024-10-04T00:00:00.000Z新的研究指出，「藍色地帶」可以用有缺陷的數據來解釋</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[更正有關 Continue 和 PearAI 的記錄]]></title>
-            <description><![CDATA[<p>- </p>
-]]></description>
-            <link>https://www.ycombinator.com/blog/correcting-the-record/</link>
-            <guid isPermaLink="false">2024-10-04T00:00:00.000Z更正有關 Continue 和 PearAI 的記錄</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[美國能源部宣布投入15億美元進行電網改善]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>美國能源部正在投資15億美元以改善電網的可靠性，這筆資金由《兩黨基礎設施法案》提供。</li>
-<li>「這項投資將支持四個輸電專案，新增近 1,000 英里的新輸電線路和 7,100 兆瓦的容量，橫跨多個州，創造 9,000 個就業機會。」</li>
-<li>一項全國傳輸規劃研究顯示，擴展傳輸系統到2050年可能節省2,700億至4,900億美元。</li>
-</ul>
-]]></description>
-            <link
-      >https://www.upi.com/Top_News/US/2024/10/03/energy-department-electric-grid-investment/3631727969828/</link>
-            <guid isPermaLink="false">2024-10-04T00:00:00.000Z美國能源部宣布投入15億美元進行電網改善</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[逆向工程與拆解 Kekz 耳機]]></title>
-            <description
-      ><![CDATA[<ul>
-<li>這款 Kekz 耳機使用名為「Kekz」或「Cookies」的晶片來播放音頻故事，無需網路連線。</li>
-<li>「一項逆向工程的研究顯示，這款耳機內含有一顆傑理(Jieli)晶片、NFC 讀卡器，以及一張存有加密檔案的 SD 卡，這使得複製 Cookie 和解密內容成為可能。」</li>
-<li>隨附的應用程式收集用戶數據，包括地理位置，但未透明披露，且公司尚未回應研究人員提出的安全疑慮。</li>
-</ul>
-]]></description>
-            <link>https://nv1t.github.io/blog/kekz-headphones/</link>
-            <guid isPermaLink="false">2024-10-04T00:00:00.000Z逆向工程與拆解 Kekz 耳機</guid>
-            <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
