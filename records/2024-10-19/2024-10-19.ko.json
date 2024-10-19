@@ -1,0 +1,106 @@
+[
+  {
+    "id": 41886256,
+    "title": "Linux CPU 스케줄러에서 게으른 선점으로 가는 긴 여정",
+    "originLink": "https://lwn.net/SubscriberLink/994322/45aa5211a50bc63a/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41886256",
+    "commentBody": "",
+    "originSummary": [
+      "리눅스 커널의 CPU 스케줄러는 스케줄링을 단순화하고 시스템 성능을 향상시키기 위해 '지연 선점'이라는 새로운 개념을 도입하고 있습니다.",
+      "Lazy preemption은 기존의 PREEMPT_NONE 및 PREEMPT_VOLUNTARY 모드를 PREEMPT_LAZY로 대체하는 것을 목표로 하며, 새로운 플래그인 TIF_NEED_RESCHED_LAZY를 사용하여 즉각적인 선점이 필요하지 않은 한 작업이 더 오래 실행될 수 있도록 합니다.",
+      "이 변경은 커널을 더 작고 단순하게 만들고, 더 예측 가능한 지연 시간을 제공하려고 하지만, 완전한 구현 전에 광범위한 테스트와 조정이 필요합니다."
+    ],
+    "commentSummary": [
+      "리눅스 CPU 스케줄러는 커널을 단순화하고 EEVDF(가장 빠른 적격 가상 마감 시간 우선) 모델과 유사하게 보다 예측 가능한 지연 시간을 달성하기 위해 게으른 선점(lazy preemption)을 탐색하고 있습니다.",
+      "시스템이 이벤트에 신속하게 대응할 수 있도록 하는 선점은 전체 처리량에 부정적인 영향을 미치고 잠금 경합을 증가시킬 수 있으며, 다양한 작업 부하에 대해 서로 다른 선점 모드 간의 균형을 필요로 합니다.",
+      "초기 테스트에 따르면, 게으른 선점은 기존의 PREEMPT_VOLUNTARY 모드에 비해 처리량을 약간 감소시키며, 이는 커널에서 이벤트 우선순위와 선점 수준을 관리하는 복잡성을 부각시킵니다."
+    ],
+    "points": 182,
+    "commentCount": 47,
+    "retryCount": 0,
+    "time": 1729322996
+  },
+  {
+    "id": 41884740,
+    "title": "미국, 치명적인 사고 후 240만 대의 차량에 탑재된 테슬라의 완전 자율 주행 소프트웨어 조사",
+    "originLink": "https://www.reuters.com/business/autos-transportation/nhtsa-opens-probe-into-24-mln-tesla-vehicles-over-full-self-driving-collisions-2024-10-18/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41884740",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "미국은 치명적인 사고로 인해 240만 대의 차량에 설치된 테슬라의 완전 자율 주행(FSD) 소프트웨어에 대한 조사를 진행하고 있습니다.",
+      "이 조사는 자율 주행 기술의 안전성과 신뢰성에 대한 지속적인 우려를 강조합니다.",
+      "테슬라의 FSD 소프트웨어에 대한 면밀한 검토는 자율주행차 규제 및 개발의 미래에 중대한 영향을 미칠 수 있습니다."
+    ],
+    "points": 139,
+    "commentCount": 7,
+    "retryCount": 0,
+    "time": 1729298775
+  },
+  {
+    "id": 41882955,
+    "title": "Express v5",
+    "originLink": "https://expressjs.com/2024/10/15/v5-release.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41882955",
+    "commentBody": "",
+    "originSummary": [
+      "Express v5가 출시되어 Node.js 프레임워크의 중요한 업데이트를 나타내며, 안정성, 보안 및 유지 관리의 단순화에 중점을 두고 있습니다.",
+      "주요 업데이트에는 오래된 Node.js 버전에 대한 지원 중단, 경로 매칭 개선, 보안 강화, 프로미스 지원, 그리고 본문 파서의 변경 사항이 포함됩니다.",
+      "일관된 API를 위해 사용되지 않는 메서드 서명이 제거되었으며, v4에서 업그레이드하는 사용자들을 위한 자세한 마이그레이션 가이드가 제공됩니다."
+    ],
+    "commentSummary": [
+      "Express v5가 10년 만에 주요 업데이트와 함께 출시되었습니다. 이번 업데이트에는 보안 강화와 비동기 핸들러 지원이 포함되어 있습니다. 보안 감사 우선과 안정적인 버전 보장을 위해 출시가 지연되었으며, 이는 팀의 신뢰성에 대한 의지를 반영합니다. 일부 사용자가 업그레이드에 어려움을 겪고 있지만, Express 팀의 노력은 칭찬받고 있으며, Fastify 및 Koa와 같은 다른 프레임워크와 비교되고 있습니다."
+    ],
+    "points": 137,
+    "commentCount": 37,
+    "retryCount": 0,
+    "time": 1729281731
+  },
+  {
+    "id": 41888061,
+    "title": "맥킨지와 그 경쟁 컨설팅 회사들이 너무 커진 것일까?",
+    "originLink": "https://www.economist.com/business/2024/03/25/have-mckinsey-and-its-consulting-rivals-got-too-big",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41888061",
+    "commentBody": "",
+    "originSummary": [
+      "전직 맥킨지 파트너들이 작성한 익명의 메모는 컨설팅 회사의 급속한 성장과 전략적 초점 부족을 비판하며, 이로 인해 회사의 명성이 위험에 처할 수 있음을 시사하고 있다.",
+      "이 메모는 맥킨지와 같은 주요 컨설팅 회사들이 너무 많이 확장했는지에 대한 더 넓은 산업의 우려를 강조합니다.",
+      "다른 인기 있는 비즈니스 주제로는 나이키의 마케팅 성공, 빅 테크의 인공지능 전략, 그리고 고객 서비스에서의 인공지능 사용 증가가 포함됩니다."
+    ],
+    "commentSummary": [
+      "이 논의는 맥킨지와 같은 대형 컨설팅 회사들이 단기 이익을 우선시하고, 유독한 근무 환경을 조성하며, 의심스러운 윤리적 관행에 참여하는 것을 비판합니다.",
+      "이들 기업이 기업 의사 결정에 미치는 상당한 영향력에 대한 우려가 제기되고 있으며, 이는 종종 경영진에 대한 책임 방패 역할을 하고 전략적 가치보다는 정치적 보호를 제공하는 것으로 나타납니다.",
+      "비판은 논란이 되는 프로젝트에 대한 그들의 참여로 확장되며, 그들의 규모와 영향력이 책임 부족에 기여한다는 제안이 있다."
+    ],
+    "points": 114,
+    "commentCount": 105,
+    "retryCount": 0,
+    "time": 1729349208
+  },
+  {
+    "id": 41885231,
+    "title": "Claude의 기능을 대화형 시각화와 함께 활용하는 방법",
+    "originLink": "https://github.com/anthropics/anthropic-quickstarts/tree/main/financial-data-analyst",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41885231",
+    "commentBody": "",
+    "originSummary": [
+      "Claude Financial Data Analyst는 Claude의 AI를 활용하여 채팅을 통해 상호작용하는 금융 데이터 분석을 제공하는 Next.js 애플리케이션으로, 지능형 데이터 분석과 다중 형식 파일 지원 기능을 갖추고 있습니다.",
+      "이 앱은 선형, 막대, 영역, 누적 영역, 원형 차트를 포함한 다양한 데이터 시각화를 지원하며, 설정을 위해 Node.js 18+와 Anthropic API 키가 필요합니다.",
+      "이 기술 스택은 프론트엔드에 Next.js, React, TailwindCSS, Recharts를 포함하고, 백엔드에 Next.js API Routes와 Anthropic SDK를 사용하여 구축되었으며, 환경 데이터 및 소셜 미디어 분석과 같은 다양한 분야에서 사용 사례를 제공합니다."
+    ],
+    "commentSummary": [
+      "한 회사가 Claude의 응답에서 예기치 않은 변화로 인해 LLM(대형 언어 모델) 백엔드를 Claude에서 ChatGPT로 전환했으며, 이는 일관된 API 출력의 중요성을 강조합니다.",
+      "Claude를 사용하여 애플리케이션을 개발하는 데 있어 도전과 잠재력에 대한 논의가 일어나고 있으며, 일부는 그 위에 최소한의 레이어를 만드는 것의 가치를 의문시하는 반면, 다른 사람들은 틈새 기회를 보고 있습니다.",
+      "대화는 신뢰할 수 있는 API 응답의 필요성, 오픈 소스 프로젝트에 대한 관심, 그리고 Claude에서 더 강력한 기본 기능에 대한 수요를 강조합니다."
+    ],
+    "points": 98,
+    "commentCount": 26,
+    "retryCount": 0,
+    "time": 1729305569
+  }
+]

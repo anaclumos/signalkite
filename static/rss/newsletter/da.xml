@@ -15,12 +15,81 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 18 Oct 2024 19:08:07 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 19 Oct 2024 19:05:05 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/da.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Fri, 18 Oct 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sat, 19 Oct 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[da]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-10-19]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/10/19&#39;</h2>
+<h1>2024-10-19</h1>
+<h2><a href="https://lwn.net/SubscriberLink/994322/45aa5211a50bc63a/">Den lange vej til doven præemption i Linux CPU-planlæggeren</a></h2>
+<ul>
+<li>Linux-kernens CPU-planlægger introducerer &quot;doven fortrængning,&quot; et nyt koncept designet til at forenkle planlægning og forbedre systemets ydeevne.</li>
+<li>Lazy preemption sigter mod at erstatte de eksisterende tilstande PREEMPT_NONE og PREEMPT_VOLUNTARY med PREEMPT_LAZY ved at bruge et nyt flag, TIF_NEED_RESCHED_LAZY, for at tillade opgaver at køre længere, medmindre øjeblikkelig preemption er nødvendig.</li>
+<li>Ændringen søger at gøre kernen mindre og enklere med mere forudsigelige latenstider, selvom det kræver omfattende test og justeringer, før den fulde implementering.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41886256">Reaktioner</a></h3>
+<ul>
+<li>Linux CPU-planlæggeren undersøger doven præemption for at forenkle kernen og opnå mere forudsigelige latenstider, svarende til EEVDF-modellen (Earliest Eligible Virtual Deadline First).</li>
+<li>Præemption, som gør det muligt for systemer hurtigt at reagere på hændelser, kan negativt påvirke den samlede gennemstrømning og øge låsekonkurrence, hvilket nødvendiggør en balance mellem forskellige præemptionsmodi for forskellige arbejdsbelastninger.</li>
+<li>Indledende test viser, at doven præemption let reducerer gennemløb sammenlignet med den eksisterende PREEMPT_VOLUNTARY-tilstand, hvilket fremhæver kompleksiteten ved at håndtere begivenhedsprioritet og præemptionsniveauer i kernen.</li>
+</ul>
+<h2><a href="https://www.reuters.com/business/autos-transportation/nhtsa-opens-probe-into-24-mln-tesla-vehicles-over-full-self-driving-collisions-2024-10-18/">USA undersøger Teslas Full Self-Driving-software i 2,4 millioner biler efter dødsulykke</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41884740">Reaktioner</a></h3>
+<ul>
+<li>USA gennemfører en undersøgelse af Teslas Full Self-Driving (FSD) software, som er installeret i 2,4 millioner køretøjer, på grund af en dødsulykke.</li>
+<li>Undersøgelsen fremhæver de vedvarende bekymringer om sikkerheden og pålideligheden af autonome køreteknologier.</li>
+<li>Granskningen af Teslas FSD-software kan have betydelige konsekvenser for fremtiden for regulering og udvikling af selvkørende biler.</li>
+</ul>
+<h2><a href="https://expressjs.com/2024/10/15/v5-release.html">Express v5</a></h2>
+<ul>
+<li>Express v5 er blevet udgivet, hvilket markerer en betydelig opdatering for Node.js-rammeværket med fokus på stabilitet, sikkerhed og forenkling af vedligeholdelse.</li>
+<li>Vigtige opdateringer inkluderer ophør af support til ældre Node.js-versioner, forbedret stivejssammenligning, øget sikkerhed, løftesupport og ændringer i body parseren.</li>
+<li>Udfasede metodesignaturer er blevet fjernet for at opnå en ensartet API, og en detaljeret migrationsvejledning er tilgængelig for dem, der opgraderer fra v4.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41882955">Reaktioner</a></h3>
+<ul>
+<li>Express v5 er blevet udgivet efter et årti og indeholder store opdateringer som forbedret sikkerhed og understøttelse af asynkrone handlers. Udgivelsen blev forsinket for at prioritere sikkerhedsaudits og sikre en stabil version, hvilket afspejler teamets engagement i pålidelighed. Mens nogle brugere står over for udfordringer med opgraderingen, bliver Express-teamet rost for deres indsats, og der foretages sammenligninger med andre frameworks som Fastify og Koa.</li>
+</ul>
+<h2><a href="https://www.economist.com/business/2024/03/25/have-mckinsey-and-its-consulting-rivals-got-too-big">Er McKinsey og dets konsulentkonkurrenter blevet for store?</a></h2>
+<ul>
+<li>Et anonymt notat fra tidligere McKinsey-partnere kritiserer konsulentfirmaet for dets hurtige vækst og manglende strategiske fokus, hvilket antyder, at dets omdømme er i fare.</li>
+<li>Dette notat fremhæver bredere bekymringer i branchen om, hvorvidt store konsulentfirmaer som McKinsey har udvidet sig for meget.</li>
+<li>Andre aktuelle forretningsemner inkluderer Nikes markedsføringssucces, de store teknologivirksomheders kunstige intelligensstrategier og den stigende brug af AI i kundeservice.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41888061">Reaktioner</a></h3>
+<ul>
+<li>Diskussionen kritiserer store konsulentfirmaer som McKinsey for at prioritere kortsigtede gevinster, fremme giftige arbejdsmiljøer og deltage i tvivlsomme etiske praksisser.</li>
+<li>Bekymringer rejses om disse virksomheders betydelige indflydelse på beslutningstagning i virksomheder, hvor de ofte fungerer som et ansvarsskjold for ledere og giver politisk dækning snarere end strategisk værdi.</li>
+<li>Der rettes kritik mod deres involvering i kontroversielle projekter, med forslag om, at deres størrelse og indflydelse bidrager til en mangel på ansvarlighed.</li>
+</ul>
+<h2><a href="https://github.com/anthropics/anthropic-quickstarts/tree/main/financial-data-analyst">Sådan udnyttes Claudes kapaciteter med interaktiv visualisering</a></h2>
+<ul>
+<li>Claude Financial Data Analyst er en Next.js-applikation, der udnytter Claudes AI til interaktiv finansiel dataanalyse gennem chat, med funktioner som intelligent dataanalyse og understøttelse af flere filformater.</li>
+<li>Appen understøtter forskellige datavisualiseringer, herunder linje-, søjle-, område-, stablet område- og cirkeldiagrammer, og kræver Node.js 18+ samt en Anthropic API-nøgle for opsætning.</li>
+<li>Det er bygget med en teknologistak bestående af Next.js, React, TailwindCSS og Recharts til frontend, og Next.js API Routes og Anthropic SDK til backend, hvilket tilbyder anvendelsesmuligheder inden for forskellige områder som miljødata og sociale medieanalyser.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41885231">Reaktioner</a></h3>
+<ul>
+<li>En virksomhed skiftede sin Large Language Model (LLM) backend fra Claude til ChatGPT på grund af uforudsete ændringer i Claudes svar, hvilket understreger vigtigheden af konsistente API-udgange.</li>
+<li>Der opstår diskussioner omkring udfordringerne og potentialet ved at udvikle applikationer med Claude, hvor nogle stiller spørgsmålstegn ved værdien af at skabe minimale lag over det, mens andre ser nichemuligheder.</li>
+<li>Dialogen understreger behovet for pålidelige API-svar, interesse i open source-projekter og efterspørgslen efter mere robuste grundlæggende funktioner i Claude.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Den lange vej til doven præemption i Linux CPU-planlæggeren" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Den%20lange%20vej%20til%20doven%20pr%C3%A6emption%20i%20Linux%20CPU-planl%C3%A6ggeren&subheading=l%C3%B8rdag%20den%2019.%20oktober%202024%3A%20Resum%C3%A9%20af%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/da/2024/10/19</link>
+            <guid isPermaLink="false">2024-10-19T00:00:00.000Z</guid>
+            <pubDate>Sat, 19 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-10-18]]></title>
             <description
@@ -1470,161 +1539,6 @@
             <link>https://hn.cho.sh/da/2024/10/10</link>
             <guid isPermaLink="false">2024-10-10T00:00:00.000Z</guid>
             <pubDate>Thu, 10 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-10-09]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/10/09&#39;</h2>
-<h1>2024-10-09</h1>
-<h2><a href="https://www.nobelprize.org/prizes/chemistry/2024/press-release/">Chemistry Nobel: Beregning af proteindesign og forudsigelse af proteinstruktur</a></h2>
-<ul>
-<li>2024 Nobelprisen i kemi blev tildelt David Baker for hans arbejde inden for computergenereret proteindesign og til Demis Hassabis og John M. Jumper for deres udvikling af AlphaFold2, en AI-model til forudsigelse af proteinstrukturer. Disse fremskridt har betydelige videnskabelige implikationer, såsom at hjælpe med forståelsen af antibiotikaresistens og udviklingen af enzymer til nedbrydning af plastik. Prisen er delt, hvor Baker modtager halvdelen, mens Hassabis og Jumper deler den resterende halvdel.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41786101">Reaktioner</a></h3>
-<ul>
-<li>Chemiprisen blev tildelt for fremskridt inden for beregningsmæssig proteindesign og proteinstrukturforudsigelse, hvilket fremhæver AlphaFolds indflydelse. AlphaFolds hurtige forudsigelse af proteinstrukturer sammenlignes med tidligere gennembrud som CRISPR, selvom det har begrænsninger, såsom ikke fuldt ud at løse proteinfoldning. Prisen anerkender også David Bakers bidrag med Rosetta, hvilket understreger den udviklende natur af videnskabelig anerkendelse og AI&#39;s rolle i forskning.</li>
-</ul>
-<h2><a href="https://www.siliconvalley.com/2024/10/07/h-1b-visa-company-supplying-thousands-of-tech-workers-to-silicon-valley-discriminated-against-non-indians-jury-finds/">Cognizant fundet skyldig i at diskriminere mod ikke-indiske medarbejdere</a></h2>
-<ul>
-<li>En jury fastslog, at Cognizant diskriminerede mod ikke-indiske medarbejdere ved at favorisere indiske arbejdere på H-1B visa, hvilket førte til påstande om uretfærdig behandling og opsigelse.</li>
-<li>Cognizant agter at appellere dommen og hævder sin forpligtelse til mangfoldighed og ikke-diskrimination, på trods af juryens anbefaling om strafskader.</li>
-<li>Den sag understreger bekymringer ved H-1B visumprocessen, herunder påstande om at sikre visa til ikke-eksisterende job, hvilket potentielt kan stille amerikanske arbejdere dårligere.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41785265">Reaktioner</a></h3>
-<ul>
-<li>Cognizant blev fundet skyldig i at diskriminere mod ikke-indiske medarbejdere, hvilket rejser bekymringer om kulturelle fordomme og dynamikker på arbejdspladsen.</li>
-<li>Diskussionen undersøger, hvordan kulturelle forskelle, såsom kollektivisme versus individualisme, kan påvirke ledelsesmæssige beslutninger og føre til bias.</li>
-<li>Denne situation har sat gang i en bredere samtale om virkningen af outsourcing, behovet for inklusivitet og udfordringerne ved at integrere forskellige kulturelle indstillinger i globale arbejdsstyrker.</li>
-</ul>
-<h2><a href="https://writings.stephenwolfram.com/2024/10/on-the-nature-of-time/">Om tidens natur</a></h2>
-<ul>
-<li>Indlægget udforsker den beregningsmæssige opfattelse af tid og antyder, at tid er universets igangværende beregning, og på grund af beregningsmæssig irreducibilitet kan vi ikke forudsige fremtiden eller &quot;springe frem&quot; i tiden.</li>
-<li>Det diskuterer, hvordan vores opfattelse af tid som lineær skyldes vores beregningsmæssige begrænsninger, mens tid fundamentalt set kan være multitrådet, og vores oplevelse formes af vores begrænsede udforskning af ruliaden, et koncept der repræsenterer den sammenfiltrede grænse for alle beregninger.</li>
-<li>Konklusionen udfordrer traditionelle begreber som tidsrejser ved at tilpasse det computationale syn på tid med termodynamikkens anden lov, som siger, at entropi, eller uorden, har en tendens til at stige over tid.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41782534">Reaktioner</a></h3>
-<ul>
-<li>Stephen Wolfram og Julian Barbour foreslår, at tid er en emergent egenskab, hvilket antyder et univers, der grundlæggende er tidløst og indeholder alle mulige tilstande.</li>
-<li>Barbours perspektiv er, at tid opstår fra statiske geometriske relationer, mens Wolfram tilskriver det vores beregningsmæssige begrænsninger inden for en tidløs beregningsmæssig ramme.</li>
-<li>Mens begge teoretikere er enige om et tidløst fundament for virkeligheden, betragtes Wolframs ideer ofte som spekulative og filosofiske, uden empirisk støtte, og de relaterer sig til begreber som eternalism og blokunivers-teorier.</li>
-</ul>
-<h2><a href="https://chrisdone.com/posts/htmx-critique/">En beskeden kritik af Htmx</a></h2>
-<ul>
-<li>En kritik af Htmx identificerer flere problemer, herunder problematisk egenskabsarv, som er implicit og inkonsekvent, hvilket fører til forvirring og nødvendiggør eksplicitte erklæringer. Htmx står over for udfordringer med udskiftning af DOM-elementer, tilstandsopbevaring og køtilstand, hvilket kan resultere i tab af browser-lokal tilstand, fejlbehæftet tilstandsopbevaring og uintuitiv forespørgselshåndtering. På trods af integrationsproblemer med React tilbyder Htmx fordele, når det bruges med server-side sprog, hvilket potentielt kan eliminere behovet for TypeScript, serialisering og GraphQL, med et forslag om at genimplementere Htmx i React for at imødegå disse bekymringer.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41781457">Reaktioner</a></h3>
-<ul>
-<li>Kritikken af Htmx fokuserer på udfordringer som konflikter med klient-side tilstand og kompleksitet i hændelser, hvilket kan være problematisk i større projekter.</li>
-<li>Diskussionen inkluderer sammenligninger med React, der fremhæver den igangværende debat om frontend-kompleksitet og egnetheden af forskellige værktøjer.</li>
-<li>På trods af kritik værdsættes Htmx for sin enkelhed og effektivitet i specifikke opgaver, hvilket understreger vigtigheden af at vælge det passende værktøj til hvert projekt.</li>
-</ul>
-<h2><a href="https://arxiv.org/abs/2410.00907">Addition er alt, hvad du behøver for energieffektive sprogmodeller</a></h2>
-<ul>
-<li>Papiret &quot;Addition is All You Need for Energy-efficient Language Models&quot; præsenterer L-Mul-algoritmen, som bruger heltalsaddition til at tilnærme flydende punktmultiplikation, hvilket reducerer beregnings- og energikostnader. L-Mul opnår højere præcision end 8-bit flydende punktmultiplikation og kan reducere energikostnader med op til 95% for elementvise tensor-multiplikationer og 80% for prikprodukter. Test på forskellige opgaver viste, at L-Mul opretholder præcision sammenlignelig med traditionelle metoder, hvilket gør det til en levedygtig erstatning i transformer-modeller.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41784591">Reaktioner</a></h3>
-<ul>
-<li>Diskussionen fokuserer på at forbedre energieffektiviteten i sprogmodeller ved at anvende fastpunktaritmetik og heltalsoperationer, som er mere effektive end flydende punktberegninger, især i systemer, der mangler flydende punkt-enheder.</li>
-<li>Der er interesse for arkitekturer baseret på addition til neurale netværk for yderligere at reducere energiforbruget, selvom der stadig er bekymringer om praktikalitet og nøjagtighed sammenlignet med IEEE 754 flydende kommastandarder.</li>
-<li>Debatten omfatter afvejninger mellem præcision og ydeevne i forskellige computermiljøer, med spekulationer om, hvordan store virksomheder som Nvidia muligvis kan påvirke AI-forskningsretninger, potentielt begrænse udforskningen af effektive beregningsmetoder.</li>
-</ul>
-<h2><a href="https://entropicthoughts.com/practices-of-reliable-software-design">Praksis for pålidelig softwaredesign</a></h2>
-<ul>
-<li>“Practices of Reliable Software Design” af kqr præsenterer otte essentielle praksisser for udvikling af pålidelig software, med fokus på at skabe en hurtig, in-memory cache. - Nøglepraksisser inkluderer brug af standardløsninger som Redis, prioritering af omkostninger og pålidelighed over funktioner, og hurtig implementering af minimale funktioner for at lære, hvad der er nødvendigt. - Yderligere praksisser involverer brug af simple datastrukturer, tidlig reservation af ressourcer, fastsættelse af maksimumsgrænser for at forhindre ydeevneproblemer, gøre testning let, og indlejring af performance-tællere for at spore systemadfærd.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41781777">Reaktioner</a></h3>
-<ul>
-<li>Redundans, eller at have flere uafhængige veje til succes, er afgørende for at opbygge pålidelige softwaresystemer, som demonstreret af systemer som Google Search og RAID 5. Mens redundans øger pålideligheden, kan det også introducere kompleksitet og ineffektivitet, især i moderne systemer, hvor fejl ofte skyldes interaktioner mellem komponenter snarere end individuelle komponentfejl. At balancere effektivitet og pålidelighed er essentielt, med virkelige eksempler der viser, at overoptimering kan føre til systemskrøbelighed; derfor er brugen af velkendte, enkle delsystemer og regelmæssig vedligeholdelse nøglen til at opnå pålidelighed.</li>
-</ul>
-<h2><a href="https://roman.pt/posts/dont-let-dicts-spoil-your-code/">Tillad ikke, at dicts ødelægger din kode</a></h2>
-<ul>
-<li>Dictionaries (dicts) i Python er mutable og uigennemsigtige, hvilket kan komplicere vedligeholdelse og udvidelse af koden. Det anbefales at konvertere dicts til strukturerede datamodeller ved hjælp af værktøjer som dataclasses eller Pydantic for bedre kodestyring. For ældre kode kan TypedDicts bruges til at tilføje struktur, og Mapping-annoteringer foreslås til nøgle-værdi-lagre for at forhindre teknisk gæld.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41781855">Reaktioner</a></h3>
-<ul>
-<li>Indlægget fremhæver brugen af værdiobjekter, såsom dataklasser, til at håndtere data tidligt i udviklingsprocessen for at sikre klare datadefinitioner og undgå valgfrie felter. Det foreslår, at selvom ordbøger er nyttige til dynamiske data, kan overforbrug af dem føre til rodet kode, og strukturerede typer bør bruges til kendte data for at forbedre kodeklarhed og reducere fejl. Python tilbyder værktøjer som dataklasser, TypedDict og Pydantic for at lette bedre datahåndtering, hvilket fremmer ren og effektiv kode.</li>
-</ul>
-<h2><a href="https://www.ft.com/content/f6e84608-e0e5-48c5-a0eb-dde7675fb608">USA overvejer at opdele Google i en skelsættende antitrust-sag</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41784287">Reaktioner</a></h3>
-<ul>
-<li>USA overvejer en skelsættende antitrust-sag for potentielt at opdele Google, med fokus på virksomhedens dominans inden for søge- og reklamesektorerne.</li>
-<li>Dette tilfælde kunne skabe en præcedens for fremtidige reguleringshandlinger mod store teknologivirksomheder, hvilket afspejler bekymringer om hæmmet konkurrence og innovation.</li>
-<li>Debatten understreger spændingen mellem at fremme markedskonkurrence og bevare de fordele, som store teknologivirksomheder som Google tilbyder, herunder tjenester som Android og YouTube.</li>
-</ul>
-<h2><a href="https://github.com/alebeck/boring">Jeg lavede en SSH-tunnelmanager for at lære Go</a></h2>
-<ul>
-<li>Den kedelige tunnelmanager er et letvægts kommandolinjeværktøj til at administrere SSH (Secure Shell) tunneler, der understøtter både lokale og eksterne forbindelser.</li>
-<li>Brugere konfigurerer tunneler ved hjælp af en TOML-fil (Tom&#39;s Obvious, Minimal Language), med muligheder for at angive detaljer som vært, bruger og port.</li>
-<li>Værktøjet er kompatibelt med macOS og Linux og tilbyder funktioner som automatisk genforbindelse og integration med ssh-agent for sikker godkendelse.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41785511">Reaktioner</a></h3>
-<ul>
-<li>En ny SSH-tunnelmanager er blevet udviklet ved hjælp af programmeringssproget Go og er tilgængelig på GitHub, hvilket viser, hvor nemt det er at indlejre SSH-servere i applikationer med Go&#39;s biblioteker.</li>
-<li>På trods af den brugervenlige karakter af Go&#39;s SSH-biblioteker har uløste problemer ført til brugen af tredjepartsløsninger, som dette projekt har til formål at løse.</li>
-<li>Fremtidige forbedringer kan omfatte Windows-support og SSH-multiplexing, med projektet, der allerede modtager positiv feedback og er åbent for forslag til yderligere forbedringer.</li>
-</ul>
-<h2><a href="https://www.theguardian.com/world/2024/oct/07/germany-influence-of-english-idiots-apostrophe">Germanere kritiserer indflydelsen fra engelsk, da &#39;idiotens apostrof&#39; får godkendelse</a></h2>
-<ul>
-<li>Tyskland har lempet sine regler for brugen af apostroffer til ejefald, hvilket tillader former som &quot;Rosi&#39;s Bar,&quot; som traditionelt ikke var korrekt på tysk. Rådet for tysk ortografi tillader nu brugen af apostrof til at adskille genitiv &#39;s&#39; i egennavne, hvilket har udløst debat om engelsk indflydelse på det tyske sprog. Denne ændring har ført til diskussioner om internationale påvirkninger på tysk, hvor nogle går ind for tyske alternativer til engelske termer.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41787647">Reaktioner</a></h3>
-<ul>
-<li>Der er en debat i Tyskland om indflydelsen af engelsk på deres sprog, med fokus på godkendelsen af &quot;idiotens apostrof&quot; i specifikke sammenhænge, såsom firmanavne, men ikke personlige genstande.</li>
-<li>Denne diskussion understreger spændingen mellem sprogudvikling og bevarelse, med forskellige meninger om, hvorvidt sprog bør tilpasse sig organisk eller bevare kulturel identitet.</li>
-<li>Debatten afspejler også den bredere globale indflydelse af engelsk og udfordringerne ved at opretholde sproglige standarder.</li>
-</ul>
-<h2><a href="https://forum.makemkv.com/forum/viewtopic.php?t=18856">Hvad er LibreDrive (2019)</a></h2>
-<ul>
-<li>LibreDrive er en tilstand for optiske drev, der tillader direkte dataadgang uden firmwarebegrænsninger, hvilket muliggør læsning af UHD-diske og omgåelse af AACS-værtsophævelse.</li>
-<li>Den bruger en firmwareudvidelse, der er lagret i flygtig hukommelse, hvilket sikrer, at der ikke efterlades nogen spor efter slukning, og den understøttes af det open source-bibliotek LibDriveIO.</li>
-<li>Denne tilgang muliggør universelle værktøjer, der ikke er afhængige af specifikke drevmodeller eller firmwareversioner, hvilket forbedrer kompatibiliteten med software som MakeMKV.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41784069">Reaktioner</a></h3>
-<ul>
-<li>LibreDrive, en del af LibDriveIO-biblioteket, blev annonceret i 2019, men dets kildekode er ikke blevet frigivet, hvilket har ført til spekulationer om en fremtidig udgivelse ved skaberens pensionering.</li>
-<li>MakeMKV er et relateret værktøj, der konverterer Blu-ray Discs (BD) og DVD&#39;er til MKV-filer, og tilbyder en kommandolinjegrænseflade (CLI) til automatisering, selvom nogle brugere foretrækker MP4 for bredere kompatibilitet.</li>
-<li>Diskussioner omkring LibreDrive og MakeMKV omfatter udfordringer med Digital Rights Management (DRM) og regionsbegrænsninger, hvor brugere finder løsninger, mens juridiske bekymringer om overtrædelser af DMCA fortsætter.</li>
-</ul>
-<h2><a href="https://discuss.python.org/t/pep-760-no-more-bare-excepts/67182">PEP 760: Ikke flere bare undtagelser</a></h2>
-<ul>
-<li>PEP 760, foreslået af Pablo Galindo Salgado og Brett Cannon, foreslår at forbyde bare <code>except:</code>-klasser i Python for at forbedre præcisionen i fejlhåndtering. Forslaget har til formål at forhindre bred fejlhåndtering, der kan skjule væsentlige fejl, ved at kræve eksplicitte undtagelsestyper. PEP&#39;en opfordrer udviklere til at anvende mere præcise fejlhåndteringspraksisser, med yderligere detaljer tilgængelige om udfasning, værktøjer og afviste idéer.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41788026">Reaktioner</a></h3>
-<ul>
-<li>PEP 760 foreslår at forbyde bare <code>except:</code>-klausuler i Python, som i øjeblikket fanger alle undtagelser, inklusive kritiske som systemafslutninger og tastaturafbrydelser.</li>
-<li>Kritikere hævder, at denne ændring kan bryde eksisterende kode, hvilket kræver, at brugere opgraderer eller retter afhængigheder, hvilket kan være byrdefuldt for lejlighedsvise Python-brugere.</li>
-<li>Forslaget har udløst debat om bagudkompatibilitet og dets indvirkning på Pythons økosystem, hvor nogle foreslår, at det burde være en linter-regel frem for en ændring i sproget.</li>
-</ul>
-<h2><a href="https://chipsandcheese.com/p/lunar-lakes-igpu-debut-of-intels">iGPU&#39;en i Lunar Lake: Debut af Intels Xe2-arkitektur</a></h2>
-<ul>
-<li>Intels Lunar Lake introducerer Xe2-grafikarkitekturen, som markant forbedrer effektiviteten og ydeevnen for integrerede GPU&#39;er i tynde og lette bærbare computere. Xe2-arkitekturen har otte Xe-kerner opdelt i to Render Slices, med forbedringer i caching, Vector Engines og raytracing-evner, hvilket viser betydelige ydeevneforbedringer i forhold til dens forgænger, Meteor Lake. Intels strategi lægger vægt på effektivitet og strømoptimering ved at bruge mere cache for at reducere DRAM-adgang og giver et forvarsel om de kommende Battlemage-diskrete GPU&#39;er, hvilket indikerer et stærkt fokus på at fremme GPU-ydeevnen.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41780929">Reaktioner</a></h3>
-<ul>
-<li>Intels Xe2-arkitektur debuterer med Lunar Lakes integrerede GPU (iGPU), med det formål at forene grafik på tværs af deres produktlinje og træde ind på markedet for diskrete GPU&#39;er.</li>
-<li>Linux-understøttelse og strømstyring for Xe2 er stadig under udvikling, mens open source-fællesskabet fortsætter med at forbedre Xe1 SR-IOV grafikvirtualisering.</li>
-<li>Diskussionerne understreger Intels fokus på ny hardware og driverarkitektur med bidrag fra fællesskabet og berører videoindkodning/-afkodning, hvor der sammenlignes hardware- og softwareindkodningskvalitet og -hastighed.</li>
-</ul>
-<h2><a href="https://www.arnaldur.be/writing/about/an-n-ball-between-n-balls">En n-kugle mellem n-kugler</a></h2>
-<ul>
-<li>Artiklen præsenterer et geometrisk tankeeksperiment, der illustrerer de overraskende egenskaber ved højdimensionelle former, startende med en 2D-firkant og udvidet til højere dimensioner. Den afslører, at i højere dimensioner kan den centrale kugle (eller n-bold) strække sig ud over den omgivende form, hvilket udfordrer intuitive forventninger om rum og volumen. Diskussionen inkluderer matematiske egenskaber ved n-bolde, der viser, at efterhånden som dimensionerne øges, vokser rummet omkring dem hurtigere end n-boldene selv, understøttet af interaktive visualiseringer og yderligere analyse.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41789242">Reaktioner</a></h3>
-<ul>
-<li>Indlægget udforsker højdimensionel geometri med fokus på, hvordan n-kugler (kugler i n-dimensionelt rum) forbliver symmetriske, mens n-kuber (kuber i n-dimensionelt rum) bliver &quot;spidse&quot;, når dimensionerne øges.</li>
-<li>Det fremhæver, at i dimensioner n≥10 kan den centrale n-kugle strække sig ud over grænserne for n-kuben, hvilket illustrerer kompleksiteten i højere dimensioner.</li>
-<li>Diskussionen inkluderer brugerkommentarer og referencer til &quot;dimensionalitetens forbandelse,&quot; hvor brugerne udtrykker fascination over de geometriske animationer og tankeeksperimenter.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Chemistry Nobel: Beregning af proteindesign og forudsigelse af proteinstruktur" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Chemistry%20Nobel%3A%20Beregning%20af%20proteindesign%20og%20forudsigelse%20af%20proteinstruktur&subheading=onsdag%20den%209.%20oktober%202024%3A%20Resum%C3%A9%20af%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/da/2024/10/09</link>
-            <guid isPermaLink="false">2024-10-09T00:00:00.000Z</guid>
-            <pubDate>Wed, 09 Oct 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

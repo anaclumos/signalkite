@@ -15,12 +15,81 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 18 Oct 2024 19:08:08 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 19 Oct 2024 19:05:05 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/id.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Fri, 18 Oct 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sat, 19 Oct 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[id]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-10-19]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/10/19&#39;</h2>
+<h1>2024-10-19</h1>
+<h2><a href="https://lwn.net/SubscriberLink/994322/45aa5211a50bc63a/">Jalan panjang menuju preemption malas dalam penjadwal CPU Linux</a></h2>
+<ul>
+<li>Penjadwal CPU kernel Linux memperkenalkan &quot;lazy preemption,&quot; sebuah konsep baru yang dirancang untuk menyederhanakan penjadwalan dan meningkatkan kinerja sistem.</li>
+<li>Lazy preemption bertujuan untuk menggantikan mode yang ada, yaitu PREEMPT_NONE dan PREEMPT_VOLUNTARY, dengan PREEMPT_LAZY, menggunakan bendera baru, TIF_NEED_RESCHED_LAZY, untuk memungkinkan tugas berjalan lebih lama kecuali jika preemption segera diperlukan.</li>
+<li>Perubahan ini bertujuan untuk membuat kernel lebih kecil dan lebih sederhana, dengan latensi yang lebih dapat diprediksi, meskipun memerlukan pengujian dan penyesuaian yang ekstensif sebelum implementasi penuh.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41886256">Reaksi</a></h3>
+<ul>
+<li>Penjadwal CPU Linux sedang menjajaki preemption malas untuk menyederhanakan kernel dan mencapai latensi yang lebih dapat diprediksi, mirip dengan model EEVDF (Earliest Eligible Virtual Deadline First).</li>
+<li>Preemption, yang memungkinkan sistem merespons peristiwa dengan cepat, dapat berdampak negatif pada throughput keseluruhan dan meningkatkan persaingan kunci, sehingga diperlukan keseimbangan antara mode preemption yang berbeda untuk berbagai beban kerja.</li>
+<li>Pengujian awal menunjukkan bahwa preemption malas sedikit mengurangi throughput dibandingkan dengan mode PREEMPT_VOLUNTARY yang ada, menyoroti kompleksitas dalam mengelola prioritas acara dan tingkat preemption di kernel.</li>
+</ul>
+<h2><a href="https://www.reuters.com/business/autos-transportation/nhtsa-opens-probe-into-24-mln-tesla-vehicles-over-full-self-driving-collisions-2024-10-18/">AS menyelidiki perangkat lunak Full Self-Driving Tesla pada 2,4 juta mobil setelah kecelakaan fatal</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41884740">Reaksi</a></h3>
+<ul>
+<li>The United States sedang melakukan penyelidikan terhadap perangkat lunak Full Self-Driving (FSD) Tesla, yang terpasang di 2,4 juta kendaraan, akibat kecelakaan fatal.</li>
+<li>Penelitian ini menyoroti kekhawatiran yang terus berlanjut mengenai keamanan dan keandalan teknologi mengemudi otonom.</li>
+<li>Telaah terhadap perangkat lunak FSD Tesla dapat memiliki implikasi signifikan bagi masa depan regulasi dan pengembangan mobil otonom.</li>
+</ul>
+<h2><a href="https://expressjs.com/2024/10/15/v5-release.html">Express v5</a></h2>
+<ul>
+<li>Express v5 telah dirilis, menandai pembaruan signifikan untuk kerangka kerja Node.js, dengan fokus pada stabilitas, keamanan, dan penyederhanaan pemeliharaan.</li>
+<li>Perubahan utama mencakup penghentian dukungan untuk versi Node.js yang lebih lama, peningkatan pencocokan jalur, peningkatan keamanan, dukungan promise, dan perubahan pada body parser.</li>
+<li>Penandatanganan metode yang tidak lagi digunakan telah dihapus untuk API yang konsisten, dan panduan migrasi yang terperinci tersedia bagi mereka yang meningkatkan dari v4.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41882955">Reaksi</a></h3>
+<ul>
+<li>Express v5 telah dirilis setelah satu dekade, menampilkan pembaruan besar seperti peningkatan keamanan dan dukungan untuk penangan asinkron. Rilis ini ditunda untuk memprioritaskan audit keamanan dan memastikan versi yang stabil, mencerminkan komitmen tim terhadap keandalan. Meskipun beberapa pengguna menghadapi tantangan dalam peningkatan, tim Express dipuji atas upaya mereka, dan perbandingan dibuat dengan kerangka kerja lain seperti Fastify dan Koa.</li>
+</ul>
+<h2><a href="https://www.economist.com/business/2024/03/25/have-mckinsey-and-its-consulting-rivals-got-too-big">Apakah McKinsey dan pesaing konsultan lainnya sudah terlalu besar?</a></h2>
+<ul>
+<li>Memo anonim dari mantan mitra McKinsey mengkritik konsultan tersebut karena pertumbuhannya yang cepat dan kurangnya fokus strategis, menunjukkan bahwa reputasinya berisiko.</li>
+<li>Memo ini menyoroti kekhawatiran industri yang lebih luas tentang apakah perusahaan konsultan besar, seperti McKinsey, telah berkembang terlalu banyak.</li>
+<li>Topik bisnis yang sedang tren lainnya termasuk kesuksesan pemasaran Nike, strategi kecerdasan buatan dari perusahaan teknologi besar, dan peningkatan penggunaan AI dalam layanan pelanggan.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41888061">Reaksi</a></h3>
+<ul>
+<li>Diskusi tersebut mengkritik perusahaan konsultan besar seperti McKinsey karena memprioritaskan keuntungan jangka pendek, mendorong lingkungan kerja yang beracun, dan terlibat dalam praktik etika yang dipertanyakan.</li>
+<li>Keprihatinan muncul mengenai pengaruh signifikan perusahaan-perusahaan ini dalam pengambilan keputusan korporat, yang sering kali bertindak sebagai pelindung tanggung jawab bagi eksekutif dan memberikan perlindungan politik daripada nilai strategis.</li>
+<li>Kritik meluas pada keterlibatan mereka dalam proyek-proyek kontroversial, dengan saran bahwa ukuran dan pengaruh mereka berkontribusi pada kurangnya akuntabilitas.</li>
+</ul>
+<h2><a href="https://github.com/anthropics/anthropic-quickstarts/tree/main/financial-data-analyst">Bagaimana memanfaatkan kemampuan Claude dengan visualisasi interaktif</a></h2>
+<ul>
+<li>Claude Financial Data Analyst adalah aplikasi Next.js yang memanfaatkan AI Claude untuk analisis data keuangan interaktif melalui obrolan, menampilkan analisis data yang cerdas dan dukungan file multi-format.</li>
+<li>App ini mendukung berbagai visualisasi data, termasuk grafik garis, batang, area, area bertumpuk, dan lingkaran, serta memerlukan Node.js 18+ dan kunci API Anthropic untuk pengaturan.</li>
+<li>Ini dibangun dengan tumpukan teknologi yang terdiri dari Next.js, React, TailwindCSS, dan Recharts untuk frontend, serta Next.js API Routes dan Anthropic SDK untuk backend, menawarkan kasus penggunaan di berbagai bidang seperti data lingkungan dan analitik media sosial.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41885231">Reaksi</a></h3>
+<ul>
+<li>Perusahaan tersebut beralih dari Claude ke ChatGPT untuk backend Model Bahasa Besar (LLM) mereka karena perubahan tak terduga dalam respons Claude, menyoroti pentingnya keluaran API yang konsisten.</li>
+<li>Diskusi muncul seputar tantangan dan potensi pengembangan aplikasi dengan Claude, dengan beberapa orang mempertanyakan nilai dari menciptakan lapisan minimal di atasnya dan yang lain melihat peluang khusus.</li>
+<li>Percakapan tersebut menekankan perlunya respons API yang andal, minat pada proyek open-source, dan permintaan untuk fitur dasar yang lebih kuat di Claude.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Jalan panjang menuju preemption malas dalam penjadwal CPU Linux" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Jalan%20panjang%20menuju%20preemption%20malas%20dalam%20penjadwal%20CPU%20Linux&subheading=Sabtu%2C%2019%20Oktober%202024%3A%20Ringkasan%20Berita%20Peretas" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/id/2024/10/19</link>
+            <guid isPermaLink="false">2024-10-19T00:00:00.000Z</guid>
+            <pubDate>Sat, 19 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-10-18]]></title>
             <description
@@ -1470,161 +1539,6 @@
             <link>https://hn.cho.sh/id/2024/10/10</link>
             <guid isPermaLink="false">2024-10-10T00:00:00.000Z</guid>
             <pubDate>Thu, 10 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-10-09]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/10/09&#39;</h2>
-<h1>2024-10-09</h1>
-<h2><a href="https://www.nobelprize.org/prizes/chemistry/2024/press-release/">Kimia Nobel: Desain protein komputasional dan prediksi struktur protein</a></h2>
-<ul>
-<li>Tahun 2024, Hadiah Nobel Kimia diberikan kepada David Baker atas karyanya dalam desain protein komputasional dan kepada Demis Hassabis serta John M. Jumper atas pengembangan AlphaFold2, sebuah model AI untuk prediksi struktur protein. Kemajuan ini memiliki implikasi ilmiah yang signifikan, seperti membantu pemahaman tentang resistensi antibiotik dan pengembangan enzim untuk memecah plastik. Hadiah ini dibagi, dengan Baker menerima setengahnya, sementara Hassabis dan Jumper berbagi setengah sisanya.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41786101">Reaksi</a></h3>
-<ul>
-<li>The Chemistry Nobel Prize diberikan untuk kemajuan dalam desain protein komputasional dan prediksi struktur protein, menyoroti dampak dari AlphaFold. Prediksi struktur protein yang cepat oleh AlphaFold dibandingkan dengan terobosan masa lalu seperti CRISPR, meskipun memiliki keterbatasan, seperti belum sepenuhnya menyelesaikan pelipatan protein. Penghargaan ini juga mengakui kontribusi David Baker dengan Rosetta, menekankan sifat evolusioner dari pengakuan ilmiah dan peran AI dalam penelitian.</li>
-</ul>
-<h2><a href="https://www.siliconvalley.com/2024/10/07/h-1b-visa-company-supplying-thousands-of-tech-workers-to-silicon-valley-discriminated-against-non-indians-jury-finds/">Cognizant dinyatakan bersalah mendiskriminasi karyawan non-India</a></h2>
-<ul>
-<li>Juri memutuskan bahwa Cognizant mendiskriminasi karyawan non-India, dengan lebih memfavoritkan pekerja India yang memiliki visa H-1B, yang mengarah pada klaim perlakuan tidak adil dan pemutusan hubungan kerja.</li>
-<li>Cognizant bermaksud untuk mengajukan banding atas putusan tersebut, menegaskan komitmennya terhadap keragaman dan non-diskriminasi, meskipun juri merekomendasikan ganti rugi hukuman.</li>
-<li>Teks tersebut menyoroti kekhawatiran terkait proses visa H-1B, termasuk tuduhan mendapatkan visa untuk pekerjaan yang tidak ada, yang berpotensi merugikan pekerja AS.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41785265">Reaksi</a></h3>
-<ul>
-<li>Cognizant dinyatakan bersalah karena mendiskriminasi karyawan non-India, menimbulkan kekhawatiran tentang bias budaya dan dinamika tempat kerja.</li>
-<li>Teks tersebut membahas bagaimana perbedaan budaya, seperti kolektivisme versus individualisme, dapat mempengaruhi keputusan manajerial dan menyebabkan bias.</li>
-<li>Situasi ini telah memicu percakapan yang lebih luas tentang dampak outsourcing, kebutuhan akan inklusivitas, dan tantangan dalam mengintegrasikan lingkungan budaya yang beragam dalam tenaga kerja global.</li>
-</ul>
-<h2><a href="https://writings.stephenwolfram.com/2024/10/on-the-nature-of-time/">Pada Hakikat Waktu</a></h2>
-<ul>
-<li>Tulisan tersebut mengeksplorasi pandangan komputasional tentang waktu, yang menyarankan bahwa waktu adalah perhitungan yang sedang berlangsung dari alam semesta, dan karena ketidakreducibilitas komputasional, kita tidak dapat memprediksi masa depan atau &#39;melompat ke depan&#39; dalam waktu.</li>
-<li>Ini membahas bagaimana persepsi kita tentang waktu sebagai linier disebabkan oleh batasan komputasi kita, sementara pada dasarnya, waktu mungkin bersifat multithreaded, dan pengalaman kita dibentuk oleh eksplorasi terbatas kita terhadap ruliad, sebuah konsep yang mewakili batas terjalin dari semua komputasi.</li>
-<li>Teks tersebut menantang konsep tradisional seperti perjalanan waktu, dengan menyelaraskan pandangan komputasional tentang waktu dengan Hukum Kedua termodinamika, yang menyatakan bahwa entropi, atau ketidakteraturan, cenderung meningkat seiring waktu.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41782534">Reaksi</a></h3>
-<ul>
-<li>Stephen Wolfram dan Julian Barbour mengusulkan bahwa waktu adalah sifat yang muncul, menunjukkan alam semesta yang pada dasarnya tidak memiliki waktu dan mengandung semua kemungkinan keadaan.</li>
-<li>Pandangan Barbour adalah bahwa waktu muncul dari hubungan geometris statis, sedangkan Wolfram mengaitkannya dengan keterbatasan komputasi kita dalam kerangka komputasi yang tanpa waktu.</li>
-<li>Walaupun kedua ahli teori sepakat tentang dasar yang abadi untuk realitas, ide-ide Wolfram sering kali dianggap spekulatif dan filosofis, kurang didukung oleh bukti empiris, dan berkaitan dengan konsep seperti eternalisme dan teori alam semesta blok.</li>
-</ul>
-<h2><a href="https://chrisdone.com/posts/htmx-critique/">Tinjauan sederhana tentang Htmx</a></h2>
-<ul>
-<li>Htmx menghadapi beberapa kritik, termasuk masalah pewarisan properti yang bermasalah, yang bersifat implisit dan tidak konsisten, sehingga menyebabkan kebingungan dan memerlukan deklarasi eksplisit. Htmx menghadapi tantangan dengan penggantian elemen DOM, penyimpanan status, dan mode antrian, yang dapat mengakibatkan hilangnya status lokal browser, penyimpanan status yang cacat, dan penanganan permintaan yang tidak intuitif. Meskipun ada masalah integrasi dengan React, Htmx menawarkan manfaat ketika digunakan dengan bahasa sisi server, yang berpotensi menghilangkan kebutuhan untuk TypeScript, serialisasi, dan GraphQL, dengan saran untuk mengimplementasikan ulang Htmx dalam React untuk mengatasi masalah ini.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41781457">Reaksi</a></h3>
-<ul>
-<li>Kritik terhadap Htmx berfokus pada tantangan seperti konflik status di sisi klien dan kompleksitas acara, yang dapat menjadi masalah dalam proyek yang lebih besar.</li>
-<li>Diskusi tersebut mencakup perbandingan dengan React, menyoroti perdebatan yang sedang berlangsung tentang kompleksitas frontend dan kesesuaian berbagai alat.</li>
-<li>Meskipun ada kritik, Htmx dihargai karena kesederhanaan dan efektivitasnya dalam tugas-tugas tertentu, menekankan pentingnya memilih alat yang tepat untuk setiap proyek.</li>
-</ul>
-<h2><a href="https://arxiv.org/abs/2410.00907">Penambahan Adalah Semua yang Anda Butuhkan untuk Model Bahasa Hemat Energi</a></h2>
-<ul>
-<li>The paper &quot;Addition is All You Need for Energy-efficient Language Models&quot; memperkenalkan algoritma L-Mul, yang menggunakan penjumlahan bilangan bulat untuk mendekati perkalian titik mengambang, mengurangi biaya komputasi dan energi. L-Mul mencapai presisi lebih tinggi daripada perkalian titik mengambang 8-bit dan dapat mengurangi biaya energi hingga 95% untuk perkalian tensor elemen-demi-elemen dan 80% untuk produk titik. Pengujian pada berbagai tugas menunjukkan bahwa L-Mul mempertahankan presisi yang sebanding dengan metode tradisional, menjadikannya pengganti yang layak dalam model transformer.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41784591">Reaksi</a></h3>
-<ul>
-<li>Diskusi berfokus pada peningkatan efisiensi energi dalam model bahasa dengan menggunakan aritmetika titik tetap dan operasi bilangan bulat, yang lebih efisien daripada perhitungan titik mengambang, terutama dalam sistem yang tidak memiliki unit titik mengambang.</li>
-<li>Terdapat minat terhadap arsitektur berbasis penjumlahan untuk jaringan saraf guna lebih mengurangi biaya energi, meskipun masih ada kekhawatiran tentang kepraktisan dan akurasi dibandingkan dengan standar floating-point IEEE 754.</li>
-<li>Perdebatan ini mencakup pertukaran antara presisi dan kinerja dalam berbagai lingkungan komputasi, dengan spekulasi tentang bagaimana perusahaan besar seperti Nvidia mungkin mempengaruhi arah penelitian AI, yang berpotensi membatasi eksplorasi metode komputasi yang efisien.</li>
-</ul>
-<h2><a href="https://entropicthoughts.com/practices-of-reliable-software-design">Praktik Desain Perangkat Lunak yang Andal</a></h2>
-<ul>
-<li>&quot;Praktik Desain Perangkat Lunak yang Andal&quot; oleh kqr menyajikan delapan praktik penting untuk mengembangkan perangkat lunak yang andal, dengan fokus pada pembuatan cache dalam memori yang cepat. - Praktik utama meliputi penggunaan solusi siap pakai seperti Redis, memprioritaskan biaya dan keandalan daripada fitur, dan menerapkan fitur minimal dengan cepat untuk mempelajari apa yang diperlukan. - Praktik tambahan melibatkan penggunaan struktur data sederhana, memesan sumber daya lebih awal, menetapkan batas maksimum untuk mencegah masalah kinerja, mempermudah pengujian, dan menyematkan penghitung kinerja untuk melacak perilaku sistem.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41781777">Reaksi</a></h3>
-<ul>
-<li>Redundansi, atau memiliki beberapa jalur independen menuju keberhasilan, sangat penting untuk membangun sistem perangkat lunak yang andal, seperti yang ditunjukkan oleh sistem seperti Google Search dan RAID 5. Meskipun redundansi meningkatkan keandalan, hal ini juga dapat memperkenalkan kompleksitas dan ketidakefisienan, terutama dalam sistem modern di mana kegagalan sering kali disebabkan oleh interaksi antara komponen daripada kegagalan komponen individu. Menyeimbangkan efisiensi dan keandalan sangat penting, dengan contoh dunia nyata menunjukkan bahwa optimasi berlebihan dapat menyebabkan kerapuhan sistem; oleh karena itu, menggunakan subsistem yang sederhana dan dipahami dengan baik serta pemeliharaan rutin adalah kunci untuk mencapai keandalan.</li>
-</ul>
-<h2><a href="https://roman.pt/posts/dont-let-dicts-spoil-your-code/">Tidak biarkan kamus merusak kode Anda</a></h2>
-<ul>
-<li>Dalam Python, kamus (dicts) bersifat mutable dan tidak transparan, yang dapat mempersulit pemeliharaan dan pengembangan kode. Disarankan untuk mengonversi dicts menjadi model data terstruktur menggunakan alat seperti dataclasses atau Pydantic untuk manajemen kode yang lebih baik. Untuk kode warisan, TypedDicts dapat digunakan untuk menambahkan struktur, dan anotasi Mapping disarankan untuk penyimpanan kunci-nilai guna mencegah utang teknis.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41781855">Reaksi</a></h3>
-<ul>
-<li>Postingan tersebut menekankan penggunaan objek nilai, seperti dataclass, untuk menangani data sejak awal dalam proses pengembangan guna memastikan definisi data yang jelas dan menghindari bidang opsional. Ini menyarankan bahwa meskipun kamus berguna untuk data dinamis, penggunaan berlebihan dapat menyebabkan kode yang berantakan, dan tipe terstruktur harus digunakan untuk data yang diketahui guna meningkatkan kejelasan kode dan mengurangi bug. Python menyediakan alat seperti dataclass, TypedDict, dan Pydantic untuk memfasilitasi penanganan data yang lebih baik, mempromosikan kode yang bersih dan efisien.</li>
-</ul>
-<h2><a href="https://www.ft.com/content/f6e84608-e0e5-48c5-a0eb-dde7675fb608">AS mempertimbangkan pemecahan Google dalam kasus antitrust bersejarah</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41784287">Reaksi</a></h3>
-<ul>
-<li>The US sedang mempertimbangkan kasus antitrust bersejarah untuk berpotensi memecah Google, menargetkan dominasinya di sektor pencarian dan periklanan.</li>
-<li>Kasus ini dapat menetapkan preseden untuk tindakan regulasi di masa depan terhadap perusahaan teknologi besar, mencerminkan kekhawatiran tentang persaingan dan inovasi yang terhambat.</li>
-<li>Teks tersebut menyoroti ketegangan antara mendorong persaingan pasar dan mempertahankan manfaat yang diberikan oleh perusahaan teknologi berskala besar seperti Google, yang mencakup layanan seperti Android dan YouTube.</li>
-</ul>
-<h2><a href="https://github.com/alebeck/boring">Saya membuat pengelola terowongan SSH untuk belajar Go</a></h2>
-<ul>
-<li>Boring Tunnel Manager adalah alat baris perintah ringan untuk mengelola terowongan SSH (Secure Shell), mendukung koneksi lokal dan jarak jauh.</li>
-<li>Pengguna mengonfigurasi terowongan menggunakan file TOML (Tom&#39;s Obvious, Minimal Language), dengan opsi untuk menentukan detail seperti host, pengguna, dan port.</li>
-<li>Alat ini kompatibel dengan macOS dan Linux, serta menawarkan fitur seperti penyambungan ulang otomatis dan integrasi dengan ssh-agent untuk autentikasi yang aman.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41785511">Reaksi</a></h3>
-<ul>
-<li>Sebuah manajer terowongan SSH baru telah dikembangkan menggunakan bahasa pemrograman Go dan tersedia di GitHub, menampilkan kemudahan dalam menyematkan server SSH ke dalam aplikasi dengan pustaka Go.</li>
-<li>Meskipun perpustakaan SSH Go bersifat ramah pengguna, masalah yang belum terselesaikan telah menyebabkan penggunaan solusi pihak ketiga, yang ingin diatasi oleh proyek ini.</li>
-<li>Perbaikan di masa depan mungkin mencakup dukungan Windows dan multipleksing SSH, dengan proyek ini sudah menerima umpan balik positif dan terbuka untuk saran perbaikan lebih lanjut.</li>
-</ul>
-<h2><a href="https://www.theguardian.com/world/2024/oct/07/germany-influence-of-english-idiots-apostrophe">Germans mengecam pengaruh bahasa Inggris saat &#39;apostrof idiot&#39; mendapat persetujuan</a></h2>
-<ul>
-<li>Jerman telah melonggarkan aturannya tentang penggunaan apostrof untuk kepemilikan, memungkinkan bentuk seperti &quot;Rosi&#39;s Bar,&quot; yang secara tradisional tidak benar dalam bahasa Jerman. Dewan Ortografi Jerman sekarang mengizinkan penggunaan apostrof untuk memisahkan &#39;s&#39; genitif dalam nama-nama khusus, memicu perdebatan tentang pengaruh bahasa Inggris terhadap bahasa Jerman. Perubahan ini telah memicu diskusi tentang pengaruh internasional terhadap bahasa Jerman, dengan beberapa pihak menganjurkan alternatif Jerman untuk istilah-istilah bahasa Inggris.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41787647">Reaksi</a></h3>
-<ul>
-<li>Germans sedang memperdebatkan pengaruh bahasa Inggris terhadap bahasa mereka, dengan fokus pada persetujuan penggunaan &#39;apostrof idiot&#39; dalam konteks tertentu, seperti nama bisnis tetapi tidak untuk barang pribadi.</li>
-<li>Diskusi ini menyoroti ketegangan antara evolusi bahasa dan pelestarian, dengan pendapat yang berbeda tentang apakah bahasa harus beradaptasi secara organik atau mempertahankan identitas budaya.</li>
-<li>Teks tersebut juga mencerminkan pengaruh global bahasa Inggris yang lebih luas dan tantangan dalam mempertahankan standar linguistik.</li>
-</ul>
-<h2><a href="https://forum.makemkv.com/forum/viewtopic.php?t=18856">Apakah LibreDrive (2019)</a></h2>
-<ul>
-<li>LibreDrive adalah mode untuk drive cakram optik yang memungkinkan akses data langsung tanpa batasan firmware, memungkinkan pembacaan cakram UHD dan melewati pencabutan host AACS.</li>
-<li>Itu menggunakan ekstensi firmware yang disimpan dalam memori volatil, memastikan tidak ada jejak yang tertinggal setelah dimatikan, dan didukung oleh pustaka open-source LibDriveIO.</li>
-<li>Pendekatan ini memungkinkan alat universal yang tidak bergantung pada model drive atau versi firmware tertentu, sehingga meningkatkan kompatibilitas dengan perangkat lunak seperti MakeMKV.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41784069">Reaksi</a></h3>
-<ul>
-<li>LibreDrive, bagian dari perpustakaan LibDriveIO, diumumkan pada tahun 2019, tetapi kode sumbernya belum dirilis, yang memicu spekulasi tentang kemungkinan rilis di masa depan setelah penciptanya pensiun.</li>
-<li>MakeMKV adalah alat terkait yang mengonversi Blu-ray Discs (BD) dan DVD ke file MKV, menawarkan antarmuka baris perintah (CLI) untuk otomatisasi, meskipun beberapa pengguna lebih memilih MP4 untuk kompatibilitas yang lebih luas.</li>
-<li>Diskusi seputar LibreDrive dan MakeMKV mencakup tantangan dengan Manajemen Hak Digital (DRM) dan pembatasan wilayah, dengan pengguna menemukan solusi alternatif, sementara kekhawatiran hukum tentang pelanggaran DMCA tetap ada.</li>
-</ul>
-<h2><a href="https://discuss.python.org/t/pep-760-no-more-bare-excepts/67182">PEP 760: Tidak ada lagi pengecualian tanpa penanganan</a></h2>
-<ul>
-<li>PEP 760, yang diusulkan oleh Pablo Galindo Salgado dan Brett Cannon, menyarankan untuk melarang penggunaan klausa <code>except:</code> tanpa spesifikasi dalam Python guna meningkatkan ketepatan penanganan kesalahan. Usulan ini bertujuan untuk mencegah penanganan pengecualian yang terlalu luas yang dapat menyembunyikan kesalahan signifikan dengan mewajibkan jenis pengecualian yang eksplisit. PEP ini mendorong pengembang untuk mengadopsi praktik penanganan kesalahan yang lebih tepat, dengan rincian lebih lanjut tersedia mengenai deprecasi, alat bantu, dan ide-ide yang ditolak.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41788026">Reaksi</a></h3>
-<ul>
-<li>PEP 760 mengusulkan untuk tidak mengizinkan klausa <code>except:</code> tanpa argumen dalam Python, yang saat ini menangkap semua pengecualian, termasuk yang kritis seperti keluar sistem dan interupsi keyboard.</li>
-<li>Kritikus berpendapat bahwa perubahan ini dapat merusak kode yang sudah ada, mengharuskan pengguna untuk meningkatkan atau menambal dependensi, yang mungkin memberatkan bagi pengguna Python yang tidak sengaja.</li>
-<li>Proposal tersebut telah memicu perdebatan tentang kompatibilitas mundur dan dampaknya terhadap ekosistem Python, dengan beberapa orang menyarankan bahwa seharusnya menjadi aturan linter daripada perubahan bahasa.</li>
-</ul>
-<h2><a href="https://chipsandcheese.com/p/lunar-lakes-igpu-debut-of-intels">Lunar Lake&#39;s iGPU: Debut Arsitektur Xe2 Intel</a></h2>
-<ul>
-<li>Intel&#39;s Lunar Lake memperkenalkan arsitektur grafis Xe2, yang secara signifikan meningkatkan efisiensi dan kinerja untuk GPU terintegrasi pada laptop tipis dan ringan. Arsitektur Xe2 ini memiliki delapan Xe Cores yang dibagi menjadi dua Render Slices, dengan peningkatan dalam caching, Vector Engines, dan kemampuan raytracing, menunjukkan peningkatan kinerja yang signifikan dibandingkan pendahulunya, Meteor Lake. Strategi Intel menekankan efisiensi dan optimalisasi daya, menggunakan lebih banyak cache untuk mengurangi akses DRAM, dan memberikan pratinjau GPU diskrit Battlemage yang akan datang, menunjukkan fokus kuat pada peningkatan kinerja GPU.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41780929">Reaksi</a></h3>
-<ul>
-<li>Arsitektur Xe2 Intel memulai debutnya dengan GPU terintegrasi (iGPU) Lunar Lake, bertujuan untuk menyatukan grafis di seluruh lini produk mereka dan memasuki pasar GPU diskrit.</li>
-<li>Linux support dan manajemen daya untuk Xe2 masih dalam pengembangan, sementara komunitas open-source terus meningkatkan virtualisasi grafis Xe1 SR-IOV.</li>
-<li>Diskusi menekankan fokus Intel pada perangkat keras baru dan arsitektur driver, dengan kontribusi dari komunitas, serta membahas pengkodean/penguraian video, membandingkan kualitas dan kecepatan pengkodean perangkat keras dan perangkat lunak.</li>
-</ul>
-<h2><a href="https://www.arnaldur.be/writing/about/an-n-ball-between-n-balls">Suatu n-bola Di Antara n-bola</a></h2>
-<ul>
-<li>The article presents a geometric thought experiment illustrating the surprising properties of high-dimensional shapes, starting with a 2D square and extending to higher dimensions. Ini mengungkapkan bahwa dalam dimensi yang lebih tinggi, bola pusat (atau n-bola) dapat melampaui bentuk sekitarnya, menantang ekspektasi intuitif tentang ruang dan volume. Diskusi ini mencakup sifat matematika dari n-bola, menunjukkan bahwa seiring bertambahnya dimensi, ruang di sekitarnya tumbuh lebih cepat daripada n-bola itu sendiri, didukung oleh visualisasi interaktif dan analisis lebih lanjut.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41789242">Reaksi</a></h3>
-<ul>
-<li>Tulisan tersebut mengeksplorasi geometri berdimensi tinggi, dengan fokus pada bagaimana bola-n (bola dalam ruang berdimensi-n) tetap simetris, sementara kubus-n (kubus dalam ruang berdimensi-n) menjadi &quot;berduri&quot; seiring bertambahnya dimensi.</li>
-<li>Ini menyoroti bahwa dalam dimensi n≥10, bola pusat n dapat melampaui batas-batas n-kubus, menggambarkan kompleksitas dimensi yang lebih tinggi.</li>
-<li>Diskusi tersebut mencakup komentar pengguna dan referensi terhadap &quot;kutukan dimensi,&quot; dengan pengguna yang menyatakan ketertarikan mereka terhadap animasi geometris dan eksperimen pemikiran.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Kimia Nobel: Desain protein komputasional dan prediksi struktur protein" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Kimia%20Nobel%3A%20Desain%20protein%20komputasional%20dan%20prediksi%20struktur%20protein&subheading=Rabu%2C%209%20Oktober%202024%3A%20Ringkasan%20Berita%20Peretas" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/id/2024/10/09</link>
-            <guid isPermaLink="false">2024-10-09T00:00:00.000Z</guid>
-            <pubDate>Wed, 09 Oct 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

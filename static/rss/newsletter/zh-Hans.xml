@@ -15,12 +15,81 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 18 Oct 2024 19:08:08 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 19 Oct 2024 19:05:05 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/zh-Hans.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Fri, 18 Oct 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sat, 19 Oct 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[zh-Hans]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-10-19]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/10/19&#39;</h2>
+<h1>2024-10-19</h1>
+<h2><a href="https://lwn.net/SubscriberLink/994322/45aa5211a50bc63a/">“Linux CPU调度器中实现惰性抢占的漫长道路”</a></h2>
+<ul>
+<li>“Linux内核的CPU调度器正在引入“惰性抢占”，这一新概念旨在简化调度并提高系统性能。”</li>
+<li>“惰性抢占旨在用PREEMPT_LAZY替换现有的PREEMPT_NONE和PREEMPT_VOLUNTARY模式，使用一个新标志TIF_NEED_RESCHED_LAZY，允许任务运行更长时间，除非需要立即抢占。”</li>
+<li>“此更改旨在使内核更小、更简单，并具有更可预测的延迟，尽管在全面实施之前需要进行广泛的测试和调整。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41886256">反应</a></h3>
+<ul>
+<li>“Linux CPU调度程序正在探索惰性抢占，以简化内核并实现更可预测的延迟，类似于EEVDF(最早合格虚拟截止时间优先)模型。”</li>
+<li>“抢占机制可以让系统快速响应事件，但可能会对整体吞吐量产生负面影响，并增加锁争用，因此需要在不同的抢占模式之间为各种工作负载找到平衡。”</li>
+<li>“初步测试表明，与现有的PREEMPT_VOLUNTARY模式相比，惰性抢占略微降低了吞吐量，这突显了在内核中管理事件优先级和抢占级别的复杂性。”</li>
+</ul>
+<h2><a href="https://www.reuters.com/business/autos-transportation/nhtsa-opens-probe-into-24-mln-tesla-vehicles-over-full-self-driving-collisions-2024-10-18/">“美国在致命车祸后调查特斯拉240万辆汽车的全自动驾驶软件”</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41884740">反应</a></h3>
+<ul>
+<li>“美国正在对特斯拉的全自动驾驶(FSD)软件进行调查，该软件安装在240万辆汽车中，原因是一场致命事故。”</li>
+<li>“这项调查突显了对自动驾驶技术的安全性和可靠性的持续关注。”</li>
+<li>“对特斯拉FSD软件的审查可能对未来自动驾驶汽车的法规和发展产生重大影响。”</li>
+</ul>
+<h2><a href="https://expressjs.com/2024/10/15/v5-release.html">“Express 第5版”</a></h2>
+<ul>
+<li>“Express v5 已经发布，这标志着 Node.js 框架的一个重要更新，重点在于稳定性、安全性和维护简化。”</li>
+<li>“关键更新包括放弃对旧版 Node.js 的支持、改进路径匹配、增强安全性、支持 Promise，以及对 body parser 的更改。”</li>
+<li>“已弃用的方法签名已被移除，以实现一致的API，并为从v4升级的用户提供了详细的迁移指南。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41882955">反应</a></h3>
+<ul>
+<li>“Express v5 已在十年后发布，具有重大更新，如增强的安全性和对异步处理程序的支持。- 发布被推迟以优先进行安全审计并确保稳定版本，反映了团队对可靠性的承诺。- 尽管一些用户在升级时面临挑战，但Express团队的努力得到了赞扬，并与Fastify和Koa等其他框架进行了比较。”</li>
+</ul>
+<h2><a href="https://www.economist.com/business/2024/03/25/have-mckinsey-and-its-consulting-rivals-got-too-big">“麦肯锡及其咨询竞争对手是否变得过于庞大？”</a></h2>
+<ul>
+<li>“来自前麦肯锡合伙人的一份匿名备忘录批评该咨询公司增长过快且缺乏战略重点，暗示其声誉面临风险。”</li>
+<li>“这份备忘录强调了整个行业对主要咨询公司(如麦肯锡)是否扩张过度的广泛关注。”</li>
+<li>“其他热门商业话题包括耐克的营销成功、大型科技公司的人工智能战略以及人工智能在客户服务中的日益使用。”</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41888061">反应</a></h3>
+<ul>
+<li>“讨论批评了像麦肯锡这样的大型咨询公司，因其优先考虑短期收益、助长有害的工作环境以及参与可疑的道德行为。”</li>
+<li>“人们对这些公司在企业决策中具有重大影响力表示担忧，它们通常充当高管的责任屏障，并提供政治掩护，而不是战略价值。”</li>
+<li>“批评延伸到他们参与有争议的项目，有人建议他们的规模和影响力导致缺乏问责。”</li>
+</ul>
+<h2><a href="https://github.com/anthropics/anthropic-quickstarts/tree/main/financial-data-analyst">“如何利用Claude的功能进行交互式可视化”</a></h2>
+<ul>
+<li>“Claude Financial Data Analyst 是一个 Next.js 应用程序，利用 Claude 的 AI 通过聊天进行交互式财务数据分析，具有智能数据分析和多格式文件支持的功能。”</li>
+<li>“该应用程序支持多种数据可视化，包括折线图、条形图、面积图、堆积面积图和饼图，并且需要 Node.js 18+ 和 Anthropic API 密钥进行设置。”</li>
+<li>它是使用包括 Next.js、React、TailwindCSS 和 Recharts 的技术栈构建的，前端使用这些技术，而后端则使用 Next.js API Routes 和 Anthropic SDK，提供在环境数据和社交媒体分析等多种领域的应用案例。</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41885231">反应</a></h3>
+<ul>
+<li>“由于Claude的响应发生了意外变化，一家公司将其大型语言模型(LLM)后端从Claude转移到了ChatGPT，这突显了一致的API输出的重要性。”</li>
+<li>“围绕使用Claude开发应用程序的挑战和潜力展开了讨论，有些人质疑在其上创建最小层的价值，而另一些人则看到了利基机会。”</li>
+<li>“对话强调了对可靠API响应的需求、对开源项目的兴趣以及对Claude中更强大基本功能的需求。”</li>
+</ul>
+<head>
+  <meta property="og:title" content="“Linux CPU调度器中实现惰性抢占的漫长道路”" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E2%80%9CLinux%20CPU%E8%B0%83%E5%BA%A6%E5%99%A8%E4%B8%AD%E5%AE%9E%E7%8E%B0%E6%83%B0%E6%80%A7%E6%8A%A2%E5%8D%A0%E7%9A%84%E6%BC%AB%E9%95%BF%E9%81%93%E8%B7%AF%E2%80%9D&subheading=2024%E5%B9%B410%E6%9C%8819%E6%97%A5%E6%98%9F%E6%9C%9F%E5%85%AD%3A%20%E9%BB%91%E5%AE%A2%E6%96%B0%E9%97%BB%E6%91%98%E8%A6%81" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/zh/Hans/2024/10/19</link>
+            <guid isPermaLink="false">2024-10-19T00:00:00.000Z</guid>
+            <pubDate>Sat, 19 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-10-18]]></title>
             <description
@@ -1470,161 +1539,6 @@
             <link>https://hn.cho.sh/zh/Hans/2024/10/10</link>
             <guid isPermaLink="false">2024-10-10T00:00:00.000Z</guid>
             <pubDate>Thu, 10 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-10-09]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/10/09&#39;</h2>
-<h1>2024-10-09</h1>
-<h2><a href="https://www.nobelprize.org/prizes/chemistry/2024/press-release/">“化学诺贝尔奖：计算蛋白质设计和蛋白质结构预测”</a></h2>
-<ul>
-<li>“2024年诺贝尔化学奖授予大卫·贝克，以表彰他在计算蛋白质设计方面的工作，以及授予德米斯·哈萨比斯和约翰·M·琼珀，以表彰他们开发的用于蛋白质结构预测的AI模型AlphaFold2。这些进展具有重要的科学意义，例如帮助理解抗生素耐药性和开发分解塑料的酶。奖项分为两部分，贝克获得一半，而哈萨比斯和琼珀分享剩下的一半。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41786101">反应</a></h3>
-<ul>
-<li>“化学诺贝尔奖因在计算蛋白质设计和蛋白质结构预测方面的进展而被授予，突显了AlphaFold的影响。- AlphaFold的快速蛋白质结构预测被比作过去的突破性技术如CRISPR，尽管它有局限性，比如未能完全解决蛋白质折叠问题。- 该奖项还认可了David Baker在Rosetta方面的贡献，强调了科学认可的不断演变以及人工智能在研究中的作用。”</li>
-</ul>
-<h2><a href="https://www.siliconvalley.com/2024/10/07/h-1b-visa-company-supplying-thousands-of-tech-workers-to-silicon-valley-discriminated-against-non-indians-jury-finds/">“Cognizant被判歧视非印度籍员工”</a></h2>
-<ul>
-<li>“一个陪审团认定，Cognizant 歧视非印度员工，偏袒持有 H-1B 签证的印度工人，导致不公平待遇和解雇的指控。”</li>
-<li>“Cognizant打算对判决提出上诉，尽管陪审团建议惩罚性赔偿，但公司仍然坚持其对多样性和反歧视的承诺。”</li>
-<li>“此案件突显了对H-1B签证流程的担忧，包括有关为不存在的工作获取签证的指控，这可能使美国工人处于不利地位。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41785265">反应</a></h3>
-<ul>
-<li>“Cognizant被判定歧视非印度籍员工，引发了对文化偏见和职场动态的担忧。”</li>
-<li>“讨论探讨了文化差异，如集体主义与个人主义，如何影响管理决策并导致偏见。”</li>
-<li>“这种情况引发了关于外包影响、包容性需求以及在全球劳动力中整合多元文化环境的挑战的更广泛讨论。”</li>
-</ul>
-<h2><a href="https://writings.stephenwolfram.com/2024/10/on-the-nature-of-time/">“论时间的本质”</a></h2>
-<ul>
-<li>“这篇文章探讨了时间的计算视角，提出时间是宇宙持续进行的计算，由于计算不可约性，我们无法预测未来或‘提前’进入时间。”</li>
-<li>“它讨论了我们对时间线性认知是由于我们的计算限制，而从根本上说，时间可能是多线程的，我们的体验是由我们对ruliad的有限探索所塑造的，ruliad是代表所有计算纠缠极限的一个概念。”</li>
-<li>“结论挑战了诸如时间旅行等传统概念，将时间的计算视角与热力学第二定律对齐，该定律指出熵或无序度倾向于随时间增加。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41782534">反应</a></h3>
-<ul>
-<li>“斯蒂芬·沃尔夫勒姆和朱利安·巴布尔提出时间是一种涌现属性，暗示一个从根本上无时间且包含所有可能状态的宇宙。”</li>
-<li>“巴伯的观点是，时间源于静态几何关系，而沃尔夫拉姆则将其归因于我们在无时间计算框架内的计算限制。”</li>
-<li>“虽然两位理论家都同意现实有一个永恒的基础，但沃尔夫拉姆的观点常被视为推测性和哲学性的，缺乏实证支持，并与永恒主义和块宇宙理论等概念相关。”</li>
-</ul>
-<h2><a href="https://chrisdone.com/posts/htmx-critique/">“对Htmx的温和批评”</a></h2>
-<ul>
-<li>“对Htmx的批评指出了几个问题，包括隐式且不一致的属性继承，这导致了混乱并需要显式声明。- Htmx在DOM元素替换、状态存储和排队模式方面面临挑战，这可能导致浏览器本地状态丢失、状态存储缺陷和不直观的请求处理。- 尽管与React的集成存在问题，但Htmx在与服务器端语言结合使用时提供了好处，可能消除了对TypeScript、序列化和GraphQL的需求，并建议在React中重新实现Htmx以解决这些问题。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41781457">反应</a></h3>
-<ul>
-<li>“对Htmx的批评集中在客户端状态冲突和事件复杂性等挑战上，这些问题在较大的项目中可能会成为问题。”</li>
-<li>“讨论包括与 React 的比较，强调了关于前端复杂性和不同工具适用性的持续争论。”</li>
-<li>“尽管受到批评，Htmx 因其在特定任务中的简单性和有效性而受到重视，这强调了为每个项目选择合适工具的重要性。”</li>
-</ul>
-<h2><a href="https://arxiv.org/abs/2410.00907">“只需加法即可实现节能语言模型”</a></h2>
-<ul>
-<li>“论文《Addition is All You Need for Energy-efficient Language Models》介绍了L-Mul算法，该算法使用整数加法来近似浮点乘法，从而降低计算和能量成本。- L-Mul比8位浮点乘法具有更高的精度，并且可以将元素级张量乘法的能量成本降低多达95%，点积的能量成本降低80%。- 在各种任务上的测试表明，L-Mul保持了与传统方法相当的精度，使其成为变压器模型中可行的替代方案。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41784591">反应</a></h3>
-<ul>
-<li>“讨论的重点是通过采用定点运算和整数运算来提高语言模型的能效，这比浮点计算更高效，尤其是在缺乏浮点单元的系统中。”</li>
-<li>“人们对基于加法的神经网络架构很感兴趣，以进一步降低能耗，尽管与IEEE 754浮点标准相比，其实用性和准确性仍然存在担忧。”</li>
-<li>“辩论包括在各种计算环境中精确性和性能之间的权衡，并推测像英伟达这样的大公司可能会如何影响人工智能研究方向，可能限制对高效计算方法的探索。”</li>
-</ul>
-<h2><a href="https://entropicthoughts.com/practices-of-reliable-software-design">“可靠软件设计实践”</a></h2>
-<ul>
-<li>《可靠软件设计实践》由kqr撰写，介绍了开发可靠软件的八个基本实践，重点是创建快速的内存缓存。- 关键实践包括使用现成的解决方案如Redis，优先考虑成本和可靠性而非功能，并快速部署最少的功能以了解必要的内容。- 其他实践包括使用简单的数据结构、提前预留资源、设置最大值以防止性能问题、简化测试过程，以及嵌入性能计数器以跟踪系统行为。</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41781777">反应</a></h3>
-<ul>
-<li>“冗余，即拥有多条独立的成功路径，对于构建可靠的软件系统至关重要，这一点在像谷歌搜索和RAID 5这样的系统中得到了证明。虽然冗余增强了可靠性，但它也可能引入复杂性和低效率，特别是在现代系统中，故障往往是由组件之间的交互而非单个组件故障引起的。平衡效率和可靠性是必不可少的，现实世界的例子表明，过度优化可能导致系统脆弱性；因此，使用易于理解的简单子系统和定期维护是实现可靠性的关键。”</li>
-</ul>
-<h2><a href="https://roman.pt/posts/dont-let-dicts-spoil-your-code/">不要让字典破坏你的代码</a></h2>
-<ul>
-<li>“在 Python 中，字典(dicts)是可变且不透明的，这可能会使代码的维护和扩展变得复杂。- 建议使用 dataclasses 或 Pydantic 等工具将字典转换为结构化数据模型，以便更好地管理代码。- 对于遗留代码，可以使用 TypedDicts 来添加结构，并建议对键值存储使用 Mapping 注解以防止技术债务。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41781855">反应</a></h3>
-<ul>
-<li>“这篇文章强调在开发过程的早期使用值对象，例如数据类，来处理数据，以确保清晰的数据定义并避免可选字段。- 它建议虽然字典对于动态数据很有用，但过度使用可能导致代码混乱，对于已知数据应使用结构化类型以提高代码清晰度并减少错误。- Python 提供了如数据类、TypedDict 和 Pydantic 等工具，以促进更好的数据处理，推动代码的简洁和高效。”</li>
-</ul>
-<h2><a href="https://www.ft.com/content/f6e84608-e0e5-48c5-a0eb-dde7675fb608">“美国在具有里程碑意义的反垄断案件中考虑拆分谷歌”</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41784287">反应</a></h3>
-<ul>
-<li>“美国正在考虑一项具有里程碑意义的反垄断案件，可能会拆分谷歌，针对其在搜索和广告领域的主导地位。”</li>
-<li>“此案可能为未来针对大型科技公司的监管行动建立先例，反映出对竞争和创新受阻的担忧。”</li>
-<li>“这场辩论强调了在促进市场竞争与维护大型科技公司(如谷歌)所提供的服务(包括安卓和YouTube)带来的利益之间的紧张关系。”</li>
-</ul>
-<h2><a href="https://github.com/alebeck/boring">我制作了一个SSH隧道管理器来学习Go语言</a></h2>
-<ul>
-<li>“Boring Tunnel Manager 是一个轻量级的命令行工具，用于管理 SSH(安全外壳)隧道，支持本地和远程连接。”</li>
-<li>“用户使用TOML(Tom&#39;s Obvious, Minimal Language)文件配置隧道，可以选择指定主机、用户和端口等详细信息。”</li>
-<li>“该工具兼容macOS和Linux，并提供自动重新连接和与ssh-agent集成进行安全认证等功能。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41785511">反应</a></h3>
-<ul>
-<li>“一个新的SSH隧道管理器已经使用Go编程语言开发，并在GitHub上发布，展示了通过Go的库将SSH服务器嵌入应用程序的简便性。”</li>
-<li>“尽管 Go 的 SSH 库具有用户友好的特性，但未解决的问题导致人们使用第三方解决方案，而本项目旨在解决这些问题。”</li>
-<li>“未来的增强功能可能包括Windows支持和SSH多路复用，该项目已经收到了积极的反馈，并对进一步改进的建议持开放态度。”</li>
-</ul>
-<h2><a href="https://www.theguardian.com/world/2024/oct/07/germany-influence-of-english-idiots-apostrophe">“德国人谴责英语影响，‘白痴撇号’获得批准”</a></h2>
-<ul>
-<li>“德国放宽了关于使用撇号表示所有格的规则，允许使用像“Rosi&#39;s Bar”这样的形式，这在传统上在德语中是不正确的。- 德国语法委员会现在允许使用撇号来分隔专有名词中的属格“s”，引发了关于英语对德语影响的辩论。- 这一变化引发了关于国际影响对德语的讨论，一些人主张使用德语替代英语术语。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41787647">反应</a></h3>
-<ul>
-<li>“德国人正在讨论英语对他们语言的影响，特别是关于在特定情况下(如商业名称)批准使用‘傻瓜撇号’，而不是在个人物品上。”</li>
-<li>“这场讨论强调了语言演变与保护之间的紧张关系，对于语言是应该自然适应还是保持文化身份存在不同意见。”</li>
-<li>“这场辩论也反映了英语在全球范围内的广泛影响以及在维护语言标准方面的挑战。”</li>
-</ul>
-<h2><a href="https://forum.makemkv.com/forum/viewtopic.php?t=18856">“什么是LibreDrive (2019)”</a></h2>
-<ul>
-<li>“LibreDrive 是一种光盘驱动器模式，允许在没有固件限制的情况下直接访问数据，从而能够读取 UHD 光盘并绕过 AACS 主机吊销。”</li>
-<li>“它使用存储在易失性存储器中的固件扩展，确保在断电后不留痕迹，并由开源的LibDriveIO库支持。”</li>
-<li>“这种方法允许使用不依赖于特定驱动器型号或固件版本的通用工具，从而提高与MakeMKV等软件的兼容性。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41784069">反应</a></h3>
-<ul>
-<li>“LibreDrive 是 LibDriveIO 库的一部分，于 2019 年宣布，但其源代码尚未发布，这引发了关于创作者退休后可能发布的猜测。”</li>
-<li>“MakeMKV 是一个相关工具，可以将蓝光光盘 (BD) 和 DVD 转换为 MKV 文件，提供命令行界面 (CLI) 以实现自动化，尽管一些用户更喜欢 MP4 以获得更广泛的兼容性。”</li>
-<li>“围绕LibreDrive和MakeMKV的讨论包括数字版权管理(DRM)和区域限制的挑战，用户正在寻找解决方法，同时关于DMCA违规的法律问题仍然存在。”</li>
-</ul>
-<h2><a href="https://discuss.python.org/t/pep-760-no-more-bare-excepts/67182">“PEP 760：不再使用裸露的 except”</a></h2>
-<ul>
-<li>“PEP 760，由Pablo Galindo Salgado和Brett Cannon提出，建议在Python中不允许使用裸<code>except:</code>子句，以提高错误处理的精确性。- 该提案旨在通过要求明确的异常类型来防止宽泛的异常处理，这可能会掩盖重要错误。- PEP鼓励开发人员采用更精确的错误处理实践，更多细节可在弃用、工具和被拒绝的想法中找到。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41788026">反应</a></h3>
-<ul>
-<li>“PEP 760 提议在 Python 中不允许使用裸 <code>except:</code> 子句，这些子句目前会捕获所有异常，包括系统退出和键盘中断等关键异常。”</li>
-<li>“批评者认为，这一变化可能会破坏现有代码，要求用户升级或修补依赖项，这对于偶然使用Python的用户来说可能是一个负担。”</li>
-<li>“该提案引发了关于向后兼容性及其对 Python 生态系统影响的辩论，一些人建议这应该是一个代码检查规则，而不是语言更改。”</li>
-</ul>
-<h2><a href="https://chipsandcheese.com/p/lunar-lakes-igpu-debut-of-intels">“Lunar Lake的iGPU：英特尔Xe2架构的首次亮相”</a></h2>
-<ul>
-<li>“英特尔的Lunar Lake引入了Xe2图形架构，大幅提升了轻薄笔记本中集成GPU的效率和性能。- Xe2架构具有八个Xe核心，分为两个渲染切片，在缓存、矢量引擎和光线追踪能力方面有所改进，显示出相较于其前身Meteor Lake的显著性能提升。- 英特尔的战略强调效率和功率优化，使用更多缓存以减少DRAM访问，并预览即将推出的Battlemage独立GPU，表明其在提升GPU性能方面的强烈关注。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41780929">反应</a></h3>
-<ul>
-<li>“英特尔的Xe2架构随着Lunar Lake的集成GPU(iGPU)首次亮相，旨在统一其产品线中的图形处理，并进入独立GPU市场。”</li>
-<li>“Linux对Xe2的支持和电源管理仍在开发中，而开源社区则继续增强Xe1 SR-IOV图形虚拟化。”</li>
-<li>“讨论强调了英特尔对新硬件和驱动程序架构的关注，以及社区的贡献，并涉及视频编码/解码，比较硬件和软件编码的质量和速度。”</li>
-</ul>
-<h2><a href="https://www.arnaldur.be/writing/about/an-n-ball-between-n-balls">“n-球之间的n-球”</a></h2>
-<ul>
-<li>“这篇文章通过一个几何思想实验展示了高维形状的惊人特性，从二维正方形开始并扩展到更高维度。- 它揭示了在高维中，中心球(或n球)可以超出周围形状，挑战了人们对空间和体积的直观预期。- 讨论包括n球的数学性质，显示随着维度增加，围绕它们的空间增长速度比n球本身更快，并通过互动可视化和进一步分析加以支持。”</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41789242">反应</a></h3>
-<ul>
-<li>“这篇文章探讨了高维几何，重点是n球(n维空间中的球体)如何保持对称性，而n立方体(n维空间中的立方体)随着维度的增加变得‘尖刺’。”</li>
-<li>“它强调，在维度 n≥10 时，中心 n-球可以超出 n-立方体的边界，说明了高维空间的复杂性。”</li>
-<li>“讨论包括用户评论和对“维度诅咒”的引用，用户对几何动画和思想实验表现出浓厚的兴趣。”</li>
-</ul>
-<head>
-  <meta property="og:title" content="“化学诺贝尔奖：计算蛋白质设计和蛋白质结构预测”" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=%E2%80%9C%E5%8C%96%E5%AD%A6%E8%AF%BA%E8%B4%9D%E5%B0%94%E5%A5%96%EF%BC%9A%E8%AE%A1%E7%AE%97%E8%9B%8B%E7%99%BD%E8%B4%A8%E8%AE%BE%E8%AE%A1%E5%92%8C%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%BB%93%E6%9E%84%E9%A2%84%E6%B5%8B%E2%80%9D&subheading=2024%E5%B9%B410%E6%9C%889%E6%97%A5%E6%98%9F%E6%9C%9F%E4%B8%89%3A%20%E9%BB%91%E5%AE%A2%E6%96%B0%E9%97%BB%E6%91%98%E8%A6%81" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/zh/Hans/2024/10/09</link>
-            <guid isPermaLink="false">2024-10-09T00:00:00.000Z</guid>
-            <pubDate>Wed, 09 Oct 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

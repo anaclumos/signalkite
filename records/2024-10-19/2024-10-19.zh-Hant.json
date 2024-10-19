@@ -1,0 +1,106 @@
+[
+  {
+    "id": 41886256,
+    "title": "「在 Linux CPU 排程器中實現懶惰搶佔的漫長道路」",
+    "originLink": "https://lwn.net/SubscriberLink/994322/45aa5211a50bc63a/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41886256",
+    "commentBody": "",
+    "originSummary": [
+      "「Linux 核心的 CPU 排程器正在引入“懶惰搶佔”，這是一個旨在簡化排程並提升系統效能的新概念。」",
+      "Lazy preemption 的目標是用 PREEMPT_LAZY 取代現有的 PREEMPT_NONE 和 PREEMPT_VOLUNTARY 模式，並使用一個新的標誌 TIF_NEED_RESCHED_LAZY，允許任務運行更長時間，除非需要立即搶佔。",
+      "「此變更旨在使核心更小、更簡單，並具有更可預測的延遲，儘管在全面實施之前需要進行廣泛的測試和調整。」"
+    ],
+    "commentSummary": [
+      "Linux CPU 排程器正在探索懶惰搶佔技術，以簡化核心並實現更可預測的延遲，類似於 EEVDF(最早合格虛擬截止期限優先)模型。",
+      "搶先機制允許系統快速回應事件，但可能對整體吞吐量產生負面影響並增加鎖競爭，因此需要在不同的搶先模式之間取得平衡以適應各種工作負載。",
+      "初步測試顯示，懶惰搶佔相較於現有的 PREEMPT_VOLUNTARY 模式略微降低了吞吐量，這突顯了在核心中管理事件優先級和搶佔層級的複雜性。"
+    ],
+    "points": 182,
+    "commentCount": 47,
+    "retryCount": 0,
+    "time": 1729322996
+  },
+  {
+    "id": 41884740,
+    "title": "「美國調查特斯拉的全自動駕駛軟體，涉及240萬輛汽車，因致命車禍後展開」",
+    "originLink": "https://www.reuters.com/business/autos-transportation/nhtsa-opens-probe-into-24-mln-tesla-vehicles-over-full-self-driving-collisions-2024-10-18/",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41884740",
+    "commentBody": "",
+    "originSummary": [],
+    "commentSummary": [
+      "「美國正在對特斯拉的全自動駕駛(FSD)軟體進行調查，該軟體安裝在240萬輛車上，原因是一宗致命事故。」",
+      "「這項調查強調了對自動駕駛技術安全性和可靠性的持續關注。」",
+      "「對特斯拉 FSD 軟體的審查可能對未來自駕車的法規和發展產生重大影響。」"
+    ],
+    "points": 139,
+    "commentCount": 7,
+    "retryCount": 0,
+    "time": 1729298775
+  },
+  {
+    "id": 41882955,
+    "title": "Express v5",
+    "originLink": "https://expressjs.com/2024/10/15/v5-release.html",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41882955",
+    "commentBody": "",
+    "originSummary": [
+      "Express v5 已經發佈，這是 Node.js 框架的一次重大更新，重點在於穩定性、安全性和簡化維護。",
+      "「主要更新包括停止支援較舊的 Node.js 版本、改進的路徑匹配、增強的安全性、Promise 支援以及對 body parser 的更改。」",
+      "為了保持 API 的一致性，已移除不建議使用的方法簽名，並為從 v4 升級的用戶提供了詳細的遷移指南。"
+    ],
+    "commentSummary": [
+      "「經過十年，Express v5 已經發佈，帶來了重大更新，例如增強的安全性和對非同步處理程序的支援。- 發佈延遲是為了優先進行安全審核並確保穩定版本，這反映了團隊對可靠性的承諾。- 雖然一些使用者在升級時面臨挑戰，但 Express 團隊的努力受到讚揚，並與其他框架如 Fastify 和 Koa 進行了比較。」"
+    ],
+    "points": 137,
+    "commentCount": 37,
+    "retryCount": 0,
+    "time": 1729281731
+  },
+  {
+    "id": 41888061,
+    "title": "麥肯錫及其諮詢競爭對手是否已經變得過於龐大？",
+    "originLink": "https://www.economist.com/business/2024/03/25/have-mckinsey-and-its-consulting-rivals-got-too-big",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41888061",
+    "commentBody": "",
+    "originSummary": [
+      "「一份由前麥肯錫合夥人撰寫的匿名備忘錄批評該諮詢公司快速擴張且缺乏策略重點，並指出其聲譽正面臨風險。」",
+      "此備忘錄強調了整個行業對於像麥肯錫這樣的大型顧問公司是否擴展過度的更廣泛關注。",
+      "其他熱門的商業話題包括 Nike 的行銷成功、大型科技公司的人工智慧策略，以及人工智慧在客戶服務中的日益增加的使用。"
+    ],
+    "commentSummary": [
+      "討論批評了像麥肯錫這樣的大型顧問公司，因為它們優先考慮短期利益、助長有害的工作環境，以及參與可疑的道德行為。",
+      "人們對這些公司在企業決策中具有重大影響力表示擔憂，這些公司通常充當高管的責任屏障，提供政治掩護而非戰略價值。",
+      "批評延伸到他們參與有爭議的專案，並有建議指出他們的規模和影響力導致缺乏問責性。"
+    ],
+    "points": 114,
+    "commentCount": 105,
+    "retryCount": 0,
+    "time": 1729349208
+  },
+  {
+    "id": 41885231,
+    "title": "「如何利用 Claude 的功能進行互動式視覺化」",
+    "originLink": "https://github.com/anthropics/anthropic-quickstarts/tree/main/financial-data-analyst",
+    "originBody": "",
+    "commentLink": "https://news.ycombinator.com/item?id=41885231",
+    "commentBody": "",
+    "originSummary": [
+      "Claude Financial Data Analyst 是一個使用 Next.js 的應用程式，透過 Claude 的人工智慧進行互動式財務數據分析，具備智能數據分析和多格式檔案支援的功能。",
+      "該應用程式支援各種資料視覺化，包括折線圖、長條圖、區域圖、堆疊區域圖和圓餅圖，並需要 Node.js 18+ 和 Anthropic API 金鑰進行設定。",
+      "它是使用技術堆疊構建的，前端包括 Next.js、React、TailwindCSS 和 Recharts，後端則使用 Next.js API Routes 和 Anthropic SDK，提供在環境數據和社群媒體分析等多個領域的應用案例。"
+    ],
+    "commentSummary": [
+      "由於 Claude 的回應出現了意料之外的變化，一家公司將其大型語言模型(LLM)後端從 Claude 轉換為 ChatGPT，這突顯了一致性 API 輸出的重要性。",
+      "圍繞著使用 Claude 開發應用程式的挑戰和潛力展開討論，有些人質疑在其上創建最小層的價值，而另一些人則看到利基市場的機會。",
+      "對話強調了對可靠 API 回應的需求、對開源專案的興趣，以及對 Claude 中更強大基本功能的需求。"
+    ],
+    "points": 98,
+    "commentCount": 26,
+    "retryCount": 0,
+    "time": 1729305569
+  }
+]

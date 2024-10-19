@@ -15,12 +15,81 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 18 Oct 2024 19:08:08 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 19 Oct 2024 19:05:05 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/it.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Fri, 18 Oct 2024 00:00:00 GMT</pubDate>
+        <pubDate>Sat, 19 Oct 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[it]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-10-19]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/10/19&#39;</h2>
+<h1>2024-10-19</h1>
+<h2><a href="https://lwn.net/SubscriberLink/994322/45aa5211a50bc63a/">Il lungo cammino verso la preemption pigra nel pianificatore della CPU di Linux</a></h2>
+<ul>
+<li>Il pianificatore della CPU del kernel Linux sta introducendo la &quot;preemption pigra&quot;, un nuovo concetto progettato per semplificare la pianificazione e migliorare le prestazioni del sistema.</li>
+<li>Il preemption pigro mira a sostituire le modalità esistenti PREEMPT_NONE e PREEMPT_VOLUNTARY con PREEMPT_LAZY, utilizzando un nuovo flag, TIF_NEED_RESCHED_LAZY, per consentire ai compiti di funzionare più a lungo a meno che non sia necessaria una preemption immediata.</li>
+<li>Questo cambiamento mira a rendere il kernel più piccolo e semplice, con latenze più prevedibili, anche se richiede test approfonditi e aggiustamenti prima della piena implementazione.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41886256">Reazioni</a></h3>
+<ul>
+<li>Il pianificatore della CPU di Linux sta esplorando la preemption pigra per semplificare il kernel e ottenere latenze più prevedibili, simile al modello EEVDF (Earliest Eligible Virtual Deadline First).</li>
+<li>Il preemption, che consente ai sistemi di rispondere rapidamente agli eventi, può influire negativamente sul throughput complessivo e aumentare la contesa dei lock, rendendo necessaria una bilanciamento tra le diverse modalità di preemption per vari carichi di lavoro.</li>
+<li>Il test iniziale indica che la preemption pigra riduce leggermente il throughput rispetto alla modalità PREEMPT_VOLUNTARY esistente, evidenziando la complessità della gestione della priorità degli eventi e dei livelli di preemption nel kernel.</li>
+</ul>
+<h2><a href="https://www.reuters.com/business/autos-transportation/nhtsa-opens-probe-into-24-mln-tesla-vehicles-over-full-self-driving-collisions-2024-10-18/">Indagine degli Stati Uniti sul software Full Self-Driving di Tesla in 2,4 milioni di auto dopo un incidente mortale</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=41884740">Reazioni</a></h3>
+<ul>
+<li>Negli Stati Uniti è in corso un&#39;indagine sul software Full Self-Driving (FSD) di Tesla, installato in 2,4 milioni di veicoli, a causa di un incidente mortale.</li>
+<li>Questa indagine mette in evidenza le preoccupazioni persistenti sulla sicurezza e l&#39;affidabilità delle tecnologie di guida autonoma.</li>
+<li>Il controllo del software FSD di Tesla potrebbe avere implicazioni significative per il futuro delle normative e dello sviluppo delle auto a guida autonoma.</li>
+</ul>
+<h2><a href="https://expressjs.com/2024/10/15/v5-release.html">Express v5</a></h2>
+<ul>
+<li>Express v5 è stato rilasciato, segnando un aggiornamento significativo per il framework Node.js, concentrandosi su stabilità, sicurezza e semplificazione della manutenzione.</li>
+<li>Le principali novità includono l&#39;abbandono del supporto per le versioni più vecchie di Node.js, un miglioramento del matching dei percorsi, una sicurezza potenziata, il supporto per le promesse e modifiche al body parser.</li>
+<li>Le firme dei metodi deprecati sono state rimosse per un&#39;API coerente, ed è disponibile una guida dettagliata alla migrazione per coloro che effettuano l&#39;aggiornamento dalla versione v4.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41882955">Reazioni</a></h3>
+<ul>
+<li>Express v5 è stato rilasciato dopo un decennio, con importanti aggiornamenti come una sicurezza migliorata e il supporto per gestori asincroni. - Il rilascio è stato ritardato per dare priorità agli audit di sicurezza e garantire una versione stabile, riflettendo l&#39;impegno del team per l&#39;affidabilità. - Mentre alcuni utenti affrontano sfide nell&#39;aggiornamento, il team di Express è lodato per i loro sforzi e vengono fatte comparazioni con altri framework come Fastify e Koa.</li>
+</ul>
+<h2><a href="https://www.economist.com/business/2024/03/25/have-mckinsey-and-its-consulting-rivals-got-too-big">McKinsey e i suoi rivali nel settore della consulenza sono diventati troppo grandi?</a></h2>
+<ul>
+<li>Un memo anonimo da ex partner di McKinsey critica la società di consulenza per la sua rapida crescita e la mancanza di focus strategico, suggerendo che la sua reputazione è a rischio.</li>
+<li>Questo promemoria evidenzia preoccupazioni più ampie nel settore riguardo al fatto che le principali società di consulenza, come McKinsey, si siano espanse troppo.</li>
+<li>Altri argomenti di tendenza nel mondo degli affari includono il successo del marketing di Nike, le strategie di intelligenza artificiale delle grandi aziende tecnologiche e l&#39;uso crescente dell&#39;IA nel servizio clienti.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41888061">Reazioni</a></h3>
+<ul>
+<li>I commenti criticano le grandi società di consulenza come McKinsey per dare priorità ai guadagni a breve termine, promuovere ambienti di lavoro tossici e impegnarsi in pratiche etiche discutibili.</li>
+<li>Si sollevano preoccupazioni riguardo alla significativa influenza di queste aziende nel processo decisionale aziendale, spesso agendo come uno scudo di responsabilità per i dirigenti e fornendo copertura politica piuttosto che valore strategico.</li>
+<li>Le critiche si estendono al loro coinvolgimento in progetti controversi, con suggerimenti che la loro dimensione e influenza contribuiscano a una mancanza di responsabilità.</li>
+</ul>
+<h2><a href="https://github.com/anthropics/anthropic-quickstarts/tree/main/financial-data-analyst">Come sfruttare le capacità di Claude con la visualizzazione interattiva</a></h2>
+<ul>
+<li>Claude Financial Data Analyst è un&#39;applicazione Next.js che sfrutta l&#39;IA di Claude per l&#39;analisi interattiva dei dati finanziari tramite chat, con funzionalità di analisi intelligente dei dati e supporto per file in più formati.</li>
+<li>Questa app supporta varie visualizzazioni di dati, tra cui grafici a linee, a barre, ad area, ad area impilata e a torta, e richiede Node.js 18+ e una chiave API di Anthropic per l&#39;installazione.</li>
+<li>È costruito con uno stack tecnologico che comprende Next.js, React, TailwindCSS e Recharts per il frontend, e Next.js API Routes e Anthropic SDK per il backend, offrendo casi d&#39;uso in campi diversi come i dati ambientali e l&#39;analisi dei social media.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41885231">Reazioni</a></h3>
+<ul>
+<li>Una azienda ha trasferito il backend del suo Modello di Linguaggio di Grandi Dimensioni (LLM) da Claude a ChatGPT a causa di cambiamenti imprevisti nelle risposte di Claude, sottolineando l&#39;importanza di output API coerenti.</li>
+<li>Si aprono discussioni sulle sfide e il potenziale dello sviluppo di applicazioni con Claude, con alcuni che mettono in dubbio il valore di creare strati minimi su di esso e altri che vedono opportunità di nicchia.</li>
+<li>La conversazione sottolinea la necessità di risposte API affidabili, l&#39;interesse per i progetti open-source e la richiesta di funzionalità di base più robuste in Claude.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Il lungo cammino verso la preemption pigra nel pianificatore della CPU di Linux" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Il%20lungo%20cammino%20verso%20la%20preemption%20pigra%20nel%20pianificatore%20della%20CPU%20di%20Linux&subheading=sabato%2019%20ottobre%202024%3A%20Riassunto%20di%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/it/2024/10/19</link>
+            <guid isPermaLink="false">2024-10-19T00:00:00.000Z</guid>
+            <pubDate>Sat, 19 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-10-18]]></title>
             <description
@@ -1470,161 +1539,6 @@
             <link>https://hn.cho.sh/it/2024/10/10</link>
             <guid isPermaLink="false">2024-10-10T00:00:00.000Z</guid>
             <pubDate>Thu, 10 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-10-09]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/10/09&#39;</h2>
-<h1>2024-10-09</h1>
-<h2><a href="https://www.nobelprize.org/prizes/chemistry/2024/press-release/">Chimica Nobel: Progettazione computazionale delle proteine e previsione della struttura delle proteine</a></h2>
-<ul>
-<li>Il Premio Nobel per la Chimica 2024 è stato assegnato a David Baker per il suo lavoro nel design computazionale delle proteine e a Demis Hassabis e John M. Jumper per lo sviluppo di AlphaFold2, un modello di intelligenza artificiale per la previsione della struttura delle proteine. Questi progressi hanno significative implicazioni scientifiche, come l&#39;aiuto nella comprensione della resistenza agli antibiotici e lo sviluppo di enzimi per la degradazione della plastica. Il premio è diviso, con Baker che riceve metà, mentre Hassabis e Jumper condividono l&#39;altra metà.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41786101">Reazioni</a></h3>
-<ul>
-<li>Il Premio Nobel per la Chimica è stato assegnato per i progressi nella progettazione computazionale delle proteine e nella previsione della struttura delle proteine, evidenziando l&#39;impatto di AlphaFold. La rapida previsione della struttura proteica di AlphaFold è paragonata a scoperte passate come CRISPR, sebbene presenti limitazioni, come il non risolvere completamente il ripiegamento delle proteine. Il premio riconosce anche i contributi di David Baker con Rosetta, sottolineando la natura in evoluzione del riconoscimento scientifico e il ruolo dell&#39;IA nella ricerca.</li>
-</ul>
-<h2><a href="https://www.siliconvalley.com/2024/10/07/h-1b-visa-company-supplying-thousands-of-tech-workers-to-silicon-valley-discriminated-against-non-indians-jury-finds/">Cognizant è stata giudicata colpevole di discriminazione nei confronti dei dipendenti non indiani</a></h2>
-<ul>
-<li>Una giuria ha stabilito che Cognizant ha discriminato i dipendenti non indiani, favorendo i lavoratori indiani con visti H-1B, portando a reclami di trattamento ingiusto e licenziamento.</li>
-<li>Cognizant intende presentare ricorso contro il verdetto, affermando il suo impegno per la diversità e la non discriminazione, nonostante la raccomandazione della giuria per danni punitivi.</li>
-<li>Il caso sottolinea le preoccupazioni riguardanti il processo dei visti H-1B, comprese le accuse di ottenere visti per lavori inesistenti, potenzialmente a svantaggio dei lavoratori statunitensi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41785265">Reazioni</a></h3>
-<ul>
-<li>Cognizant è stata giudicata colpevole di discriminazione nei confronti dei dipendenti non indiani, sollevando preoccupazioni sui pregiudizi culturali e sulle dinamiche sul posto di lavoro.</li>
-<li>Il dibattito esplora come le differenze culturali, come il collettivismo rispetto all&#39;individualismo, possano influenzare le decisioni manageriali e portare a pregiudizi.</li>
-<li>Questa situazione ha innescato una conversazione più ampia sull&#39;impatto dell&#39;outsourcing, la necessità di inclusività e le sfide dell&#39;integrazione di contesti culturali diversi nelle forze lavoro globali.</li>
-</ul>
-<h2><a href="https://writings.stephenwolfram.com/2024/10/on-the-nature-of-time/">Alla natura del tempo</a></h2>
-<ul>
-<li>Il post esplora la visione computazionale del tempo, suggerendo che il tempo è il calcolo continuo dell&#39;universo e, a causa dell&#39;irriducibilità computazionale, non possiamo prevedere il futuro o &quot;saltare avanti&quot; nel tempo.</li>
-<li>Discute di come la nostra percezione del tempo come lineare sia dovuta ai nostri limiti computazionali, mentre fondamentalmente il tempo potrebbe essere multithreaded, e la nostra esperienza è modellata dalla nostra esplorazione limitata del ruliad, un concetto che rappresenta il limite intrecciato di tutti i calcoli.</li>
-<li>Il finale sfida i concetti tradizionali come il viaggio nel tempo, allineando la visione computazionale del tempo con la Seconda Legge della termodinamica, che afferma che l&#39;entropia, o disordine, tende ad aumentare nel tempo.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41782534">Reazioni</a></h3>
-<ul>
-<li>Stephen Wolfram e Julian Barbour propongono che il tempo sia una proprietà emergente, suggerendo un universo che è fondamentalmente senza tempo e contiene tutti gli stati possibili.</li>
-<li>Il punto di vista di Barbour è che il tempo emerge da relazioni geometriche statiche, mentre Wolfram lo attribuisce alle nostre limitazioni computazionali all&#39;interno di un quadro computazionale senza tempo.</li>
-<li>Pur essendo entrambi i teorici d&#39;accordo su una base senza tempo per la realtà, le idee di Wolfram sono spesso considerate speculative e filosofiche, prive di supporto empirico, e si riferiscono a concetti come l&#39;eternalismo e le teorie dell&#39;universo a blocchi.</li>
-</ul>
-<h2><a href="https://chrisdone.com/posts/htmx-critique/">Una modesta critica di Htmx</a></h2>
-<ul>
-<li>Una critica a Htmx identifica diversi problemi, tra cui l&#39;eredità delle proprietà problematica, che è implicita e incoerente, portando a confusione e richiedendo dichiarazioni esplicite. Htmx affronta sfide con la sostituzione degli elementi DOM, l&#39;archiviazione dello stato e la modalità di accodamento, che possono comportare la perdita dello stato locale del browser, un&#39;archiviazione dello stato difettosa e una gestione delle richieste non intuitiva. Nonostante i problemi di integrazione con React, Htmx offre vantaggi quando utilizzato con linguaggi lato server, potenzialmente eliminando la necessità di TypeScript, serializzazione e GraphQL, con un suggerimento di reimplementare Htmx in React per affrontare queste preoccupazioni.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41781457">Reazioni</a></h3>
-<ul>
-<li>La critica a Htmx si concentra su sfide come i conflitti di stato lato client e la complessità degli eventi, che possono essere problematici in progetti più grandi.</li>
-<li>La discussione include confronti con React, evidenziando il dibattito in corso sulla complessità del frontend e l&#39;idoneità di diversi strumenti.</li>
-<li>Nonostante le critiche, Htmx è apprezzato per la sua semplicità ed efficacia in compiti specifici, sottolineando l&#39;importanza di selezionare lo strumento appropriato per ogni progetto.</li>
-</ul>
-<h2><a href="https://arxiv.org/abs/2410.00907">Per i modelli linguistici efficienti dal punto di vista energetico, basta l&#39;addizione</a></h2>
-<ul>
-<li>Il documento &quot;Addition is All You Need for Energy-efficient Language Models&quot; presenta l&#39;algoritmo L-Mul, che utilizza l&#39;addizione di numeri interi per approssimare la moltiplicazione in virgola mobile, riducendo i costi di calcolo ed energetici. L-Mul raggiunge una precisione superiore rispetto alla moltiplicazione in virgola mobile a 8 bit e può ridurre i costi energetici fino al 95% per le moltiplicazioni di tensori elemento per elemento e all&#39;80% per i prodotti scalari. I test su vari compiti hanno dimostrato che L-Mul mantiene una precisione paragonabile ai metodi tradizionali, rendendolo un sostituto valido nei modelli transformer.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41784591">Reazioni</a></h3>
-<ul>
-<li>Il dibattito si concentra sul miglioramento dell&#39;efficienza energetica nei modelli linguistici utilizzando l&#39;aritmetica a punto fisso e le operazioni intere, che sono più efficienti rispetto ai calcoli in virgola mobile, soprattutto nei sistemi privi di unità a virgola mobile.</li>
-<li>Esiste interesse per le architetture basate sull&#39;addizione per le reti neurali al fine di ridurre ulteriormente i costi energetici, sebbene permangano preoccupazioni sulla praticità e l&#39;accuratezza rispetto agli standard a virgola mobile IEEE 754.</li>
-<li>Il dibattito include compromessi tra precisione e prestazioni in vari ambienti informatici, con speculazioni su come grandi aziende come Nvidia potrebbero influenzare le direzioni della ricerca sull&#39;IA, potenzialmente limitando l&#39;esplorazione di metodi computazionali efficienti.</li>
-</ul>
-<h2><a href="https://entropicthoughts.com/practices-of-reliable-software-design">Pratiche di progettazione software affidabile</a></h2>
-<ul>
-<li>Le &quot;Pratiche di Progettazione Software Affidabile&quot; di kqr presentano otto pratiche essenziali per sviluppare software affidabile, concentrandosi sulla creazione di una cache veloce in memoria. - Le pratiche chiave includono l&#39;uso di soluzioni pronte all&#39;uso come Redis, la priorità al costo e all&#39;affidabilità rispetto alle funzionalità, e il rapido dispiegamento di funzionalità minime per apprendere ciò che è necessario. - Ulteriori pratiche coinvolgono l&#39;uso di strutture dati semplici, la prenotazione anticipata delle risorse, l&#39;impostazione di massimi per prevenire problemi di prestazioni, facilitare i test e incorporare contatori di prestazioni per monitorare il comportamento del sistema.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41781777">Reazioni</a></h3>
-<ul>
-<li>Ridondanza, ovvero avere più percorsi indipendenti verso il successo, è cruciale per costruire sistemi software affidabili, come dimostrato da sistemi come Google Search e RAID 5. Sebbene la ridondanza aumenti l&#39;affidabilità, può anche introdurre complessità e inefficienza, in particolare nei sistemi moderni dove i guasti spesso derivano da interazioni tra componenti piuttosto che da guasti di singoli componenti. Bilanciare efficienza e affidabilità è essenziale, con esempi reali che mostrano che un&#39;eccessiva ottimizzazione può portare a fragilità del sistema; pertanto, l&#39;uso di sottosistemi semplici e ben compresi e la manutenzione regolare sono fondamentali per raggiungere l&#39;affidabilità.</li>
-</ul>
-<h2><a href="https://roman.pt/posts/dont-let-dicts-spoil-your-code/">Non lasciare che i dizionari rovinino il tuo codice</a></h2>
-<ul>
-<li>Dizionari (dict) in Python sono mutabili e opachi, il che può complicare la manutenzione e l&#39;estensione del codice. - Si consiglia di convertire i dict in modelli di dati strutturati utilizzando strumenti come dataclasses o Pydantic per una migliore gestione del codice. - Per il codice legacy, TypedDicts possono essere utilizzati per aggiungere struttura, e si suggeriscono annotazioni Mapping per gli archivi chiave-valore per prevenire il debito tecnico.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41781855">Reazioni</a></h3>
-<ul>
-<li>Il post sottolinea l&#39;importanza di utilizzare oggetti di valore, come le dataclass, per gestire i dati nelle prime fasi del processo di sviluppo, al fine di garantire definizioni di dati chiare ed evitare campi opzionali. Suggerisce che, sebbene i dizionari siano utili per i dati dinamici, un loro uso eccessivo può portare a un codice disordinato, e che tipi strutturati dovrebbero essere utilizzati per dati noti per migliorare la chiarezza del codice e ridurre i bug. Python fornisce strumenti come dataclass, TypedDict e Pydantic per facilitare una migliore gestione dei dati, promuovendo un codice pulito ed efficiente.</li>
-</ul>
-<h2><a href="https://www.ft.com/content/f6e84608-e0e5-48c5-a0eb-dde7675fb608">USA valuta la separazione di Google in un caso storico di antitrust</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41784287">Reazioni</a></h3>
-<ul>
-<li>Gli Stati Uniti stanno contemplando un caso antitrust storico per potenzialmente smantellare Google, mirando al suo dominio nei settori della ricerca e della pubblicità.</li>
-<li>Questo caso potrebbe stabilire un precedente per future azioni normative contro le grandi aziende tecnologiche, riflettendo preoccupazioni riguardo alla concorrenza e all&#39;innovazione soffocate.</li>
-<li>Il dibattito sottolinea la tensione tra il promuovere la concorrenza di mercato e preservare i benefici offerti da grandi aziende tecnologiche come Google, che includono servizi come Android e YouTube.</li>
-</ul>
-<h2><a href="https://github.com/alebeck/boring">Ho creato un gestore di tunnel SSH per imparare Go</a></h2>
-<ul>
-<li>Boring Tunnel Manager è uno strumento leggero da riga di comando per gestire i tunnel SSH (Secure Shell), supportando sia le connessioni locali che remote.</li>
-<li>Gli utenti configurano i tunnel utilizzando un file TOML (Tom&#39;s Obvious, Minimal Language), con opzioni per specificare dettagli come host, utente e porta.</li>
-<li>Lo strumento è compatibile con macOS e Linux e offre funzionalità come la riconnessione automatica e l&#39;integrazione con ssh-agent per un&#39;autenticazione sicura.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41785511">Reazioni</a></h3>
-<ul>
-<li>Un nuovo gestore di tunnel SSH è stato sviluppato utilizzando il linguaggio di programmazione Go ed è disponibile su GitHub, dimostrando la facilità di incorporare server SSH nelle applicazioni con le librerie di Go.</li>
-<li>Nonostante la natura intuitiva delle librerie SSH di Go, problemi irrisolti hanno portato all&#39;uso di soluzioni di terze parti, che questo progetto mira a risolvere.</li>
-<li>Le future migliorie potrebbero includere il supporto per Windows e il multiplexing SSH, con il progetto che ha già ricevuto feedback positivi ed è aperto a suggerimenti per ulteriori miglioramenti.</li>
-</ul>
-<h2><a href="https://www.theguardian.com/world/2024/oct/07/germany-influence-of-english-idiots-apostrophe">Gli tedeschi denunciano l&#39;influenza dell&#39;inglese mentre l&#39;apostrofo dell&#39;idiota ottiene l&#39;approvazione</a></h2>
-<ul>
-<li>Germania ha allentato le sue regole sull&#39;uso degli apostrofi per il possesso, permettendo forme come &quot;Rosi&#39;s Bar&quot;, che non era tradizionalmente corretto in tedesco. Il Consiglio per l&#39;Ortografia Tedesca ora consente l&#39;uso dell&#39;apostrofo per separare il genitivo &#39;s&#39; nei nomi propri, suscitando dibattiti sull&#39;influenza dell&#39;inglese sulla lingua tedesca. Questo cambiamento ha portato a discussioni sulle influenze internazionali sul tedesco, con alcuni che sostengono alternative tedesche ai termini inglesi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41787647">Reazioni</a></h3>
-<ul>
-<li>Gli tedeschi stanno discutendo sull&#39;influenza dell&#39;inglese nella loro lingua, concentrandosi sull&#39;approvazione dell&#39;&quot;apostrofo dell&#39;idiota&quot; in contesti specifici, come i nomi delle aziende ma non gli oggetti personali.</li>
-<li>Questa discussione sottolinea la tensione tra l&#39;evoluzione e la conservazione della lingua, con opinioni divergenti su se la lingua debba adattarsi organicamente o mantenere l&#39;identità culturale.</li>
-<li>Il dibattito riflette anche la più ampia influenza globale dell&#39;inglese e le sfide nel mantenere gli standard linguistici.</li>
-</ul>
-<h2><a href="https://forum.makemkv.com/forum/viewtopic.php?t=18856">Che cos&#39;è LibreDrive (2019)</a></h2>
-<ul>
-<li>LibreDrive è una modalità per unità disco ottiche che consente l&#39;accesso diretto ai dati senza restrizioni del firmware, permettendo la lettura di dischi UHD e bypassando la revoca dell&#39;host AACS.</li>
-<li>Utilizza un&#39;estensione del firmware memorizzata nella memoria volatile, garantendo che non rimanga alcuna traccia dopo lo spegnimento, ed è supportato dalla libreria open-source LibDriveIO.</li>
-<li>Questo approccio consente strumenti universali che non dipendono da modelli di unità specifici o versioni del firmware, migliorando la compatibilità con software come MakeMKV.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41784069">Reazioni</a></h3>
-<ul>
-<li>LibreDrive, parte della libreria LibDriveIO, è stato annunciato nel 2019, ma il suo codice sorgente non è stato rilasciato, portando a speculazioni su un possibile rilascio futuro al momento del pensionamento del creatore.</li>
-<li>MakeMKV è uno strumento correlato che converte i dischi Blu-ray (BD) e i DVD in file MKV, offrendo un&#39;interfaccia a riga di comando (CLI) per l&#39;automazione, anche se alcuni utenti preferiscono MP4 per una compatibilità più ampia.</li>
-<li>Le discussioni su LibreDrive e MakeMKV includono sfide con la gestione dei diritti digitali (DRM) e le restrizioni regionali, con gli utenti che trovano soluzioni alternative, mentre persistono preoccupazioni legali riguardo alle violazioni del DMCA.</li>
-</ul>
-<h2><a href="https://discuss.python.org/t/pep-760-no-more-bare-excepts/67182">PEP 760: Niente più except senza specifica</a></h2>
-<ul>
-<li>PEP 760, proposto da Pablo Galindo Salgado e Brett Cannon, suggerisce di vietare le clausole <code>except:</code> nude in Python per migliorare la precisione nella gestione degli errori. - La proposta mira a prevenire una gestione delle eccezioni troppo ampia che può oscurare errori significativi richiedendo tipi di eccezioni espliciti. - Il PEP incoraggia gli sviluppatori ad adottare pratiche di gestione degli errori più precise, con ulteriori dettagli disponibili su deprecazione, strumenti e idee respinte.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41788026">Reazioni</a></h3>
-<ul>
-<li>PEP 760 propone di vietare le clausole <code>except:</code> nude in Python, che attualmente catturano tutte le eccezioni, comprese quelle critiche come le uscite di sistema e le interruzioni da tastiera.</li>
-<li>Critici sostengono che questo cambiamento potrebbe rompere il codice esistente, richiedendo agli utenti di aggiornare o correggere le dipendenze, il che potrebbe essere oneroso per gli utenti occasionali di Python.</li>
-<li>Il progetto ha suscitato un dibattito sulla compatibilità retroattiva e il suo impatto sull&#39;ecosistema di Python, con alcuni che suggeriscono che dovrebbe essere una regola del linter piuttosto che un cambiamento del linguaggio.</li>
-</ul>
-<h2><a href="https://chipsandcheese.com/p/lunar-lakes-igpu-debut-of-intels">L&#39;iGPU di Lunar Lake: Debutto dell&#39;architettura Xe2 di Intel</a></h2>
-<ul>
-<li>Il Lunar Lake di Intel introduce l&#39;architettura grafica Xe2, migliorando significativamente l&#39;efficienza e le prestazioni per le GPU integrate nei laptop sottili e leggeri. L&#39;architettura Xe2 presenta otto Xe Core divisi in due Render Slice, con miglioramenti nella cache, nei motori vettoriali e nelle capacità di raytracing, mostrando notevoli guadagni di prestazioni rispetto al suo predecessore, Meteor Lake. La strategia di Intel enfatizza l&#39;efficienza e l&#39;ottimizzazione della potenza, utilizzando più cache per ridurre l&#39;accesso alla DRAM, e anticipa le prossime GPU discrete Battlemage, indicando un forte focus sul miglioramento delle prestazioni delle GPU.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41780929">Reazioni</a></h3>
-<ul>
-<li>Il debutto dell&#39;architettura Xe2 di Intel avviene con la GPU integrata (iGPU) di Lunar Lake, con l&#39;obiettivo di unificare la grafica nella loro linea di prodotti ed entrare nel mercato delle GPU discrete.</li>
-<li>Il supporto Linux e la gestione dell&#39;alimentazione per Xe2 sono ancora in fase di sviluppo, mentre la comunità open-source continua a migliorare la virtualizzazione grafica SR-IOV di Xe1.</li>
-<li>Le discussioni sottolineano l&#39;attenzione di Intel su una nuova architettura hardware e driver, con contributi della comunità, e toccano l&#39;argomento della codifica/decodifica video, confrontando la qualità e la velocità della codifica hardware e software.</li>
-</ul>
-<h2><a href="https://www.arnaldur.be/writing/about/an-n-ball-between-n-balls">Una n-palla tra n-palle</a></h2>
-<ul>
-<li>Il articolo presenta un esperimento mentale geometrico che illustra le sorprendenti proprietà delle forme ad alta dimensione, partendo da un quadrato 2D e estendendosi a dimensioni superiori. Rivela che in dimensioni più elevate, la sfera centrale (o n-palla) può estendersi oltre la forma circostante, sfidando le aspettative intuitive riguardo lo spazio e il volume. La discussione include proprietà matematiche delle n-palle, mostrando che con l&#39;aumentare delle dimensioni, lo spazio intorno a esse cresce più velocemente delle n-palle stesse, supportato da visualizzazioni interattive e ulteriori analisi.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41789242">Reazioni</a></h3>
-<ul>
-<li>Il post esplora la geometria ad alta dimensione, concentrandosi su come le n-sfere (sfere nello spazio n-dimensionale) rimangano simmetriche, mentre gli n-cubi (cubi nello spazio n-dimensionale) diventino &quot;spinosi&quot; con l&#39;aumentare delle dimensioni.</li>
-<li>Si evidenzia che in dimensioni n≥10, la sfera n-centrale può estendersi oltre i confini del n-cubo, illustrando le complessità delle dimensioni superiori.</li>
-<li>Il dibattito include commenti degli utenti e riferimenti alla &quot;maledizione della dimensionalità&quot;, con utenti che esprimono fascino per le animazioni geometriche e gli esperimenti mentali.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Chimica Nobel: Progettazione computazionale delle proteine e previsione della struttura delle proteine" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Chimica%20Nobel%3A%20Progettazione%20computazionale%20delle%20proteine%20e%20previsione%20della%20struttura%20delle%20proteine&subheading=mercoled%C3%AC%209%20ottobre%202024%3A%20Riassunto%20di%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/it/2024/10/09</link>
-            <guid isPermaLink="false">2024-10-09T00:00:00.000Z</guid>
-            <pubDate>Wed, 09 Oct 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
