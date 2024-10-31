@@ -15,12 +15,164 @@
             <link>https://hn.cho.sh</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 30 Oct 2024 19:10:02 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 31 Oct 2024 19:08:38 GMT</lastBuildDate>
         <atom:link href="https://hn.cho.sh/rss/newsletter/pt.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Wed, 30 Oct 2024 00:00:00 GMT</pubDate>
+        <pubDate>Thu, 31 Oct 2024 00:00:00 GMT</pubDate>
         <copyright><![CDATA[2023 Sunghyun Cho]]></copyright>
         <language><![CDATA[pt]]></language>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[2024-10-31]]></title>
+            <description
+      ><![CDATA[<hr>
+<h2>slug: &#39;/2024/10/31&#39;</h2>
+<h1>2024-10-31</h1>
+<h2><a href="https://www.gamingonlinux.com/2024/10/steam-games-will-now-need-to-fully-disclose-kernel-level-anti-cheat-on-store-pages/">Os jogos da Steam precisarão divulgar anti-cheat em nível de kernel nas páginas da loja</a></h2>
+<ul>
+<li>Valve exige que os desenvolvedores divulguem mecanismos de anti-cheat em nível de kernel nas páginas da loja Steam, aumentando a transparência para os jogadores. - Este requisito é crucial para os usuários, especialmente aqueles no Steam Deck/Linux, pois o anti-cheat em nível de kernel pode impedir que jogos rodem com Proton. - Atualizações recentes do Steam também abordam questões como spam de banners de editoras e melhoram o suporte a jogos no Linux.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41999314">Reações</a></h3>
+<ul>
+<li>Agora, a Steam exige que os jogos divulguem o uso de anti-cheat em nível de kernel em suas páginas de loja, abordando preocupações de privacidade e estabilidade do sistema.</li>
+<li>Anti-cheat em nível de kernel pode interferir com software não relacionado e representar riscos de segurança, gerando debate entre os jogadores sobre acesso ao sistema e confiança.</li>
+<li>A comunidade de jogos está dividida entre equilibrar medidas eficazes de combate a trapaças e manter a confiança dos usuários e a integridade do sistema.</li>
+</ul>
+<h2><a href="https://despairlabs.com/blog/posts/2024-10-27-openzfs-dedup-is-good-dont-use-it/">Deduplicação do OpenZFS é boa agora e você não deve usá-la</a></h2>
+<ul>
+<li>OpenZFS 2.3.0 introduz o &#39;Fast Dedup&#39;, uma melhoria em relação à deduplicação tradicional, abordando problemas de alto uso de memória e desempenho.</li>
+<li>Apesar das melhorias, a desduplicação não é recomendada para cargas de trabalho de uso geral devido ao overhead e blocos duplicados infrequentes; a clonagem de blocos do OpenZFS 2.2 é uma alternativa mais simples.</li>
+<li>Fast Dedup otimiza o uso da memória e a eficiência ao refinar a tabela de deduplicação e adicionar um log de deduplicação, mas é mais adequado para cargas de trabalho específicas com alta duplicação de dados.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=42000784">Reações</a></h3>
+<ul>
+<li>Deduplicação do OpenZFS teve melhorias, mas continua inadequada para a maioria dos usuários devido aos seus altos requisitos de memória e poder de processamento. - A deduplicação é principalmente vantajosa para cenários específicos, como armazenamento de máquinas virtuais, onde a redundância de dados é prevalente. - Alternativas como compressão ou clonagem de blocos baseada em arquivos são geralmente mais eficientes, e os usuários devem avaliar suas necessidades e compensações antes de optar pela deduplicação.</li>
+</ul>
+<h2><a href="https://arxiv.org/abs/2410.21333">Pensar em cadeia pode prejudicar o desempenho em tarefas onde o raciocínio torna os humanos piores</a></h2>
+<ul>
+<li>O artigo explora como o prompting de Cadeia de Pensamento (CoT), tipicamente benéfico para grandes modelos de linguagem, pode na verdade diminuir o desempenho em tarefas específicas. Identifica tarefas como aprendizado estatístico implícito e reconhecimento visual onde o pensamento verbal, semelhante ao CoT, impacta negativamente tanto o desempenho humano quanto o dos modelos. O estudo liga a psicologia cognitiva com as avaliações de CoT, fornecendo insights sobre quando o CoT deve ser evitado em favor de métodos zero-shot, que não dependem de exemplos prévios ou etapas de raciocínio.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41999340">Reações</a></h3>
+<ul>
+<li>Raciocínio em cadeia de pensamento (CoT) pode impactar negativamente o desempenho em tarefas que se beneficiam do processamento subconsciente, como aprendizado estatístico implícito e reconhecimento visual. Tanto em humanos quanto em IA, o excesso de pensamento pode interromper atalhos mentais e desacelerar processos, o que pode nem sempre ser vantajoso. Esse fenômeno é observado no desenvolvimento de IA e em atividades humanas como esportes e criatividade, onde o processamento intuitivo frequentemente leva a melhores resultados.</li>
+</ul>
+<h2><a href="https://openai.com/index/introducing-chatgpt-search/">Apresentando o ChatGPT Search</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=42008569">Reações</a></h3>
+<ul>
+<li>ChatGPT Search é um novo recurso da OpenAI que integra motores de busca tradicionais com grandes modelos de linguagem (LLMs) para aprimorar a recuperação de informações online. O recurso visa combater a prevalência de conteúdo otimizado para SEO nos motores de busca atuais, priorizando o conteúdo desejado pelo usuário. Inicialmente disponível para usuários do ChatGPT Plus e Team, há planos para uma disponibilidade mais ampla, embora existam preocupações sobre potenciais anúncios e filtragem de spam de SEO.</li>
+</ul>
+<h2><a href="https://zed.dev/blog/remote-development">SSH Remoting</a></h2>
+<ul>
+<li>Zed aborda problemas de desempenho na programação com grandes bases de código ao permitir o acesso remoto a projetos via SSH, permitindo que a interface do usuário seja executada localmente enquanto utiliza hardware em nuvem para servidores de linguagem e tarefas.</li>
+<li>O UI de &#39;Projetos Remotos&#39; no Zed simplifica a configuração de conexões, e a plataforma suporta colaboração via SSH, garantindo sincronização perfeita entre diferentes sistemas.</li>
+<li>Zed está disponível para macOS e Linux, e a equipe está ativamente buscando feedback e contratando novos membros, indicando desenvolvimento contínuo e engajamento da comunidade.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=42004206">Reações</a></h3>
+<ul>
+<li>Zed, combinado com SSH Remoting e Orbstack, oferece um ambiente de desenvolvimento Linux rápido no macOS, proporcionando uma experiência simplificada semelhante ao Windows Subsystem for Linux (WSL) e Visual Studio Code (VSCode).</li>
+<li>Os usuários apreciam a velocidade e a integração nativa do Zed, mas alguns sentem falta de recursos como depuração e apontam problemas como renderização de texto e falta de certas integrações.</li>
+<li>Natureza de código aberto do Zed e potencial para colaboração são atraentes, embora preocupações sobre sua sustentabilidade a longo prazo e monetização persistam, tornando-o uma alternativa promissora, mas incerta, aos editores tradicionais.</li>
+</ul>
+<h2><a href="https://build.shepherd.com/p/hi-google-please-stop-the-bed-a-desperate">Oi Google, por favor, pare de estragar tudo: um apelo desesperado da web indie</a></h2>
+<ul>
+<li>Sites independentes estão enfrentando um declínio significativo na visibilidade nos resultados de busca do Google, apesar de seguirem as diretrizes, com o Shepherd.com relatando uma queda de 86% no tráfego ao longo de 16 meses.</li>
+<li>Essa tendência está afetando inúmeros sites, levando a perdas substanciais de tráfego e dificuldades financeiras, enquanto outros mecanismos de busca como Bing e DuckDuckGo estão classificando conteúdos independentes de forma mais favorável.</li>
+<li>O apelo é para que o Google melhore seus algoritmos de mecanismo de busca e aprimore a comunicação com os proprietários de sites para proteger a web independente.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=42000651">Reações</a></h3>
+<ul>
+<li>A comunidade da web indie expressa frustração com os resultados de busca do Google, que tendem a priorizar agregadores de links de afiliados em vez de conteúdo autêntico.</li>
+<li>Críticos afirmam que os algoritmos do Google favorecem grandes marcas e a receita de anúncios, marginalizando sites independentes.</li>
+<li>Há um apelo para considerar motores de busca alternativos como Kagi ou DuckDuckGo e uma mudança mais ampla para longe do domínio do Google, destacando preocupações sobre a qualidade das buscas e seu impacto em pequenos editores.</li>
+</ul>
+<h2><a href="https://www.quantamagazine.org/it-might-be-possible-to-detect-gravitons-after-all-20241030/">Pode ser possível detectar grávitons, afinal</a></h2>
+<ul>
+<li>A nova proposta experimental sugere que detectar grávitons, as partículas teóricas responsáveis pela gravidade, pode ser mais viável do que se acreditava anteriormente.</li>
+<li>A abordagem aproveita os avanços na compreensão das ondas gravitacionais e na tecnologia quântica, potencialmente permitindo a detecção em um ambiente de laboratório modesto dentro de alguns anos.</li>
+<li>Embora o experimento possa não provar definitivamente a existência de grávitons, ele representa um avanço significativo no estudo da gravidade quântica, semelhante a como a luz foi demonstrada ser quantizada em fótons.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=42001642">Reações</a></h3>
+<ul>
+<li>A discussão sobre a detecção de grávitons gira em torno de saber se a gravidade é quantizada, uma questão fundamental na física.</li>
+<li>Detectar grávitons forneceria evidências para a gravidade quantizada, mas provar sua existência é um desafio significativo que requer tecnologia avançada.</li>
+<li>A discussão também menciona brevemente as diferenças culturais na linguagem, como o uso metafórico de &#39;guerra&#39; no inglês americano.</li>
+</ul>
+<h2><a href="https://www.topyappers.com/">Banco de Dados de Influenciadores do TikTok com Áudio Analisado</a></h2>
+<ul>
+<li>A base de dados de Influenciadores do TikTok foi desenvolvida, contendo 400.000 influenciadores, seus vídeos e legendas de áudio, permitindo uma análise detalhada dos produtos promovidos usando um Modelo de Linguagem de Grande Escala (LLM). A base de dados permite que os usuários consultem e identifiquem influenciadores discutindo produtos específicos, incluindo os de concorrentes, e os categoriza em mais de 3.000 subcategorias para marketing direcionado. O criador está buscando testadores beta para fornecer feedback e sugestões de melhorias.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=42005516">Reações</a></h3>
+<ul>
+<li>A TikTok Influencers Database, chamada topyappers.com, foi desenvolvida, apresentando 400.000 influenciadores e analisando o áudio dos vídeos para identificar produtos promovidos. - O banco de dados permite que os usuários busquem influenciadores discutindo produtos específicos e os organiza em mais de 3.000 subcategorias. - O criador está buscando testadores beta para feedback e planeja expandir o banco de dados para incluir outras plataformas como Instagram, YouTube, Twitter e LinkedIn.</li>
+</ul>
+<h2><a href="https://www.giantfreakinrobot.com/tech/google-creators-event.html">Eu participei do evento de conversa de criadores do Google, e ele se transformou em um funeral</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=42002262">Reações</a></h3>
+<ul>
+<li>Participantes de um evento do Google expressaram preocupações sobre seus sites estarem sendo injustamente rebaixados, embora o Google tenha negado qualquer prática de shadow-banning.</li>
+<li>O artigo carece de detalhes específicos sobre como o Google identificou os proprietários dos sites, levando a críticas sobre a falta de evidências e transparência.</li>
+<li>Discussões destacam ceticismo em relação às práticas comerciais do Google e os desafios de manter classificações de busca justas.</li>
+</ul>
+<h2><a href="https://microsoft.github.io/genaiscript/">Roteirização de IA Generativa</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=42001811">Reações</a></h3>
+<ul>
+<li>Roteirização de IA Generativa permite que os usuários criem prompts para Modelos de Linguagem de Grande Escala (LLMs) usando JavaScript, visando atender tanto a não programadores quanto a desenvolvedores web.</li>
+<li>Alguns usuários acham a documentação complexa, possivelmente devido a ela ser mantida por um LLM, e sugerem simplificação para melhor clareza sobre seu propósito e funcionalidade.</li>
+<li>O instrumento integra LLMs na criação de scripts com uma sintaxe JavaScript simplificada, mas sua necessidade é questionada, pois tarefas semelhantes podem ser realizadas com ferramentas existentes; ele não coleta dados, e as consultas são enviadas a um provedor configurado.</li>
+</ul>
+<h2><a href="https://www.eff.org/deeplinks/2024/10/sorry-gas-companies-parody-isnt-infringement-even-if-it-creeps-you-out">Desculpe, Companhias de Gás – Paródia Não é Infração (Mesmo Que Isso Te Assuste)</a></h2>
+<ul>
+<li>Modest Proposals, um grupo ativista, usou a paródia para criticar o impacto ambiental e humano da indústria de Gás Natural Liquefeito (GNL) ao criar uma empresa falsa satírica, Repaer. - O site de paródia, que incluía logotipos de empresas reais de GNL, enfrentou ameaças legais da TotalEnergies e Equinor, levando à sua remoção temporária. - A Electronic Frontier Foundation (EFF) defendeu o site como ativismo não comercial, resultando na mudança do site para um novo host, com as empresas permanecendo em silêncio após a resistência.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=42006265">Reações</a></h3>
+<ul>
+<li>Paródia e sátira são formas de expressão protegidas e não constituem violação de direitos autorais, mesmo que deixem as empresas desconfortáveis.</li>
+<li>A Electronic Frontier Foundation (EFF) teve que se envolver em um complexo processo de contranotificação de DMCA com a Netlify, apesar de a questão não ser uma reivindicação legítima de DMCA, ilustrando a natureza onerosa de tais processos.</li>
+<li>A situação destaca o debate contínuo sobre a liberdade de expressão, as responsabilidades dos provedores de hospedagem e a possível necessidade de avisos para evitar confusão ao usar nomes e logotipos de empresas reais em ativismo.</li>
+</ul>
+<h2><a href="https://www.deepseek.com/">DeepSeek v2.5 – LLM de código aberto comparável ao GPT-4, mas 95% mais barato</a></h2>
+<ul>
+<li>DeepSeek-V2.5 é um novo modelo que combina capacidades gerais e de codificação, oferecendo recursos aprimorados de API e web com um comprimento de contexto de 128K na API. É competitivamente precificado entre $0,14-$0,28 por milhão de tokens e se destaca em matemática, codificação e raciocínio, superando modelos como o GPT-4 em benchmarks como AlignBench e MT-Bench. Com 236 bilhões de parâmetros, o DeepSeek-V2.5 apoia o desenvolvimento de código aberto e fornece acesso à API de baixo custo, compatível com a API da OpenAI para uma experiência de usuário perfeita.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=41999151">Reações</a></h3>
+<ul>
+<li>DeepSeek v2.5 é um modelo de linguagem de código aberto que oferece uma alternativa econômica ao GPT-4, sendo 95% mais barato.</li>
+<li>Embora tenha um bom desempenho em alguns benchmarks, ele fica aquém do GPT-4o no manuseio de imagens e tarefas complexas, além de exigir hardware significativo para inferência.</li>
+<li>Apesar de sua neutralidade política, preocupações sobre privacidade de dados e a potencial influência do governo chinês persistem, e ele enfrenta dificuldades com certos tópicos sensíveis.</li>
+</ul>
+<h2><a href="https://entropicthoughts.com/probability-generating-functions">Funções Geradoras de Probabilidade</a></h2>
+<ul>
+<li>Funções geradoras de probabilidade (PGFs) codificam sequências de probabilidades em um único polinômio, ajudando a compreender distribuições de probabilidade como sorteios de cartas ou lançamentos de moedas.</li>
+<li>PGFs permitem o cálculo de expectativas e variâncias através de derivadas e podem ser multiplicadas para encontrar distribuições de somas de variáveis aleatórias independentes.</li>
+<li>O artigo também menciona funções características, relacionadas às PGFs, que envolvem números complexos e têm aplicações na teoria das probabilidades, embora exijam uma análise avançada para um entendimento mais profundo.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=42004976">Reações</a></h3>
+<ul>
+<li>Funções geradoras de probabilidade são essenciais na teoria das probabilidades e estão intimamente relacionadas às transformadas de Fourier, auxiliando na análise de distribuições de probabilidade. A função característica, um tipo de transformada de Fourier, simplifica operações como convolução, tornando-se uma ferramenta poderosa na teoria das probabilidades. Essas funções têm aplicações além da probabilidade, incluindo combinatória e física, onde se relacionam a conceitos como diagramas de Feynman, aprimorando a compreensão em vários campos científicos.</li>
+</ul>
+<h2><a href="https://adsknews.autodesk.com/en/news/autodesk-launches-wonder-animation-video-to-3d-scene-technology/">Wonder Animation – Vídeo para Animação 3D</a></h2>
+<ul>
+<li>Wonder Dynamics, uma empresa da Autodesk, lançou a versão beta do Wonder Animation, uma ferramenta de IA projetada para filmes de animação. A ferramenta utiliza a tecnologia de Vídeo para Cena 3D, convertendo sequências de vídeo em cenas animadas em 3D, enquanto permite que os artistas mantenham o controle criativo. O Wonder Animation suporta integração com softwares como Maya, Blender e Unreal, com o objetivo de democratizar o trabalho de efeitos visuais (VFX) para criadores.</li>
+</ul>
+<h3><a href="https://news.ycombinator.com/item?id=42001852">Reações</a></h3>
+<ul>
+<li>Wonder Animation da Autodesk é uma ferramenta que converte vídeo em animação 3D, exigindo modelos 3D pré-rigados.</li>
+<li>Os usuários apreciam sua interface amigável e velocidade, mas observam limitações no trabalho com a câmera e na composição.</li>
+<li>Embora automatize tarefas como o rastreamento de câmeras, ainda não é avançado o suficiente para substituir o rastreamento manual em cenários complexos, tornando-o útil, mas não totalmente confiável para cineastas independentes.</li>
+</ul>
+<h2><a href="https://www.tandfonline.com/doi/full/10.1080/00031305.2019.1583913">Indo para um Mundo Além de &quot;p &lt; 0,05&quot; (2019)</a></h2>
+<h3><a href="https://news.ycombinator.com/item?id=42005635">Reações</a></h3>
+<ul>
+<li>O uso excessivo de médias e valores p, especialmente o limiar de 0,05, pode enganar e contribuir para a crise de replicação em campos científicos como a psicologia. Ferramentas como o JASP oferecem alternativas aos métodos estatísticos tradicionais, incentivando uma consideração mais cuidadosa e contextual na pesquisa. Pressões institucionais e a falta de compreensão estatística entre os pesquisadores podem levar a vieses e à aplicação inadequada do método científico, afetando o progresso científico.</li>
+</ul>
+<head>
+  <meta property="og:title" content="Os jogos da Steam precisarão divulgar anti-cheat em nível de kernel nas páginas da loja" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Os%20jogos%20da%20Steam%20precisar%C3%A3o%20divulgar%20anti-cheat%20em%20n%C3%ADvel%20de%20kernel%20nas%20p%C3%A1ginas%20da%20loja&subheading=quinta-feira%2C%2031%20de%20outubro%20de%202024%3A%20Resumo%20do%20Hacker%20News" />
+</head>
+]]></description>
+            <link>https://hn.cho.sh/pt/2024/10/31</link>
+            <guid isPermaLink="false">2024-10-31T00:00:00.000Z</guid>
+            <pubDate>Thu, 31 Oct 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-10-30]]></title>
             <description
@@ -1507,101 +1659,6 @@
             <link>https://hn.cho.sh/pt/2024/10/22</link>
             <guid isPermaLink="false">2024-10-22T00:00:00.000Z</guid>
             <pubDate>Tue, 22 Oct 2024 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-10-21]]></title>
-            <description
-      ><![CDATA[<hr>
-<h2>slug: &#39;/2024/10/21&#39;</h2>
-<h1>2024-10-21</h1>
-<h2><a href="https://www.bbc.com/news/articles/cm2yl8pjgn2o">Egito declarado livre da malária após esforço de 100 anos</a></h2>
-<ul>
-<li>A Organização Mundial da Saúde (OMS) declarou o Egito livre da malária após quase um século de esforços de erradicação, marcando uma conquista significativa em saúde pública.</li>
-<li>Egito é o terceiro país na Região do Mediterrâneo Oriental da OMS a alcançar este status, após os Emirados Árabes Unidos e Marrocos.</li>
-<li>O certificado exige evidências de interrupção da transmissão da malária por pelo menos três anos consecutivos, e a OMS enfatiza a importância da vigilância contínua para manter esse status.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41903616">Reações</a></h3>
-<ul>
-<li>Egito foi certificado como livre de malária pela Organização Mundial da Saúde (OMS) após um esforço de um século, enfatizando a importância de compreender a transmissão e a ecologia das doenças.</li>
-<li>A conquista envolveu estratégias como monitoramento, testes e colaboração com países vizinhos, juntamente com técnicas como inseticidas e controles biológicos direcionados às larvas de mosquitos.</li>
-<li>Certificação da OMS exige evidências de interrupção da transmissão da malária por três anos e medidas para prevenir seu restabelecimento, com o forte sistema de vigilância do Egito desempenhando um papel crucial.</li>
-</ul>
-<h2><a href="https://techcrunch.com/2024/10/17/microsoft-said-it-lost-weeks-of-security-logs-for-its-customers-cloud-products/">Microsoft disse que perdeu semanas de registros de segurança dos produtos em nuvem de seus clientes</a></h2>
-<ul>
-<li>Microsoft enfrentou um bug em seus agentes de monitoramento interno, resultando em mais de duas semanas de ausência de logs de segurança para certos produtos em nuvem, de 2 de setembro a 19 de setembro.</li>
-<li>As produtos afetados incluem Microsoft Entra, Sentinel, Defender for Cloud e Purview, impactando a capacidade dos defensores de rede de detectar intrusões.</li>
-<li>Microsoft resolveu o problema e informou os clientes afetados, em meio a críticas anteriores por reter registros de segurança de departamentos do governo dos EUA.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41898723">Reações</a></h3>
-<ul>
-<li>Microsoft sofreu uma perda de registros de segurança de semanas para seus produtos em nuvem, levantando preocupações sobre a confiabilidade do Azure, o serviço de computação em nuvem da Microsoft.</li>
-<li>Os usuários criticaram o Azure por sua interface, segurança, problemas de login e desempenho inconsistente, sugerindo que os serviços de nuvem da Microsoft podem estar mal integrados.</li>
-<li>O incidente levanta preocupações mais amplas sobre o foco da Microsoft em vendas em detrimento da qualidade do produto e sua capacidade de fornecer serviços de nuvem seguros e confiáveis, apesar dos preços competitivos do Azure.</li>
-</ul>
-<h2><a href="https://lists.ubuntu.com/archives/ubuntu-announce/2004-October/000003.html">Hoje é o 20º aniversário do Ubuntu</a></h2>
-<ul>
-<li>Ubuntu 4.10 &quot;The Warty Warthog Release&quot; marca a estreia de uma nova distribuição Linux, oferecendo uma combinação das extensas funcionalidades do Debian com um processo de instalação amigável e atualizações regulares.</li>
-<li>Esta versão oferece suporte para processadores x86, amd64 e ppc, e inclui recursos principais como GNOME 2.8, Firefox 0.9, Evolution 2.0 e OpenOffice.org 1.1.2, além de suporte aprimorado a hardware.</li>
-<li>Ubuntu enfatiza seu compromisso com o software livre, oferecendo a distribuição sem custo, com opções para download ou solicitação de um CD gratuito, e incentiva o envolvimento da comunidade para lançamentos futuros.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41898736">Reações</a></h3>
-<ul>
-<li>Ubuntu comemora seu 20º aniversário, destacando seu papel significativo em tornar o Linux mais acessível por meio de um processo de instalação amigável.</li>
-<li>Apesar de algumas críticas em relação às mudanças recentes, como os snaps (um sistema de empacotamento e implantação de software) e os anúncios do Ubuntu Pro, o Ubuntu ainda é valorizado por sua contribuição para popularizar o Linux.</li>
-<li>A distribuição inicial de CDs gratuitos pelo Ubuntu desempenhou um papel crucial ao permitir que usuários com acesso limitado à internet explorassem o Linux, consolidando seu status como uma escolha recomendada para novos usuários.</li>
-</ul>
-<h2><a href="https://github.com/maoserr/epublifier">Epublifier – raspar páginas (livros, manuais) para leitura offline</a></h2>
-<ul>
-<li>Epublifier é uma ferramenta que converte sites em livros ePub, tornando-os acessíveis para eReaders ao extrair páginas HTML e compilá-las no formato ePub.</li>
-<li>Permite que usuários avançados personalizem o processo de análise usando JavaScript e oferece suporte a sites populares como Novel Update e Wuxia World, além de sites personalizados com elementos específicos.</li>
-<li>O instrumento requer um ambiente Windows 10 e NPM 8.1.2 para construção, e reconhece o uso de jEpub em seu desenvolvimento.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41903864">Reações</a></h3>
-<ul>
-<li>Epublifier é uma ferramenta projetada para extrair páginas da web, como livros e manuais, para permitir a leitura offline, elogiada por sua interface gráfica de usuário (GUI) amigável que melhora a flexibilidade na extração de conteúdo.</li>
-<li>É capaz de lidar com sites complexos e remover pop-ups, oferecendo modos tanto para navegação quanto para busca de páginas, o que o diferencia dos raspadores de web típicos.</li>
-<li>Embora as preocupações legais variem de acordo com a localização, cópias privadas são geralmente permitidas, e a ferramenta é valorizada por melhorar a funcionalidade dos leitores de e-books e as experiências de leitura offline.</li>
-</ul>
-<h2><a href="https://github.com/aotakeda/learn-thing">Crie mapas mentais para aprender coisas novas usando IA</a></h2>
-<h3><a href="https://news.ycombinator.com/item?id=41898076">Reações</a></h3>
-<ul>
-<li>A nova ferramenta de IA permite que os usuários criem mapas mentais inserindo um tópico, gerando um mapa de aprendizado com links para cada subtópico.</li>
-<li>O instrumento pode ser utilizado tanto com modelos locais quanto externos, e o feedback dos usuários é incentivado.</li>
-<li>Embora elogiado por seu potencial de aprendizado, alguns usuários sugerem melhorias, como melhor validação de links e integração com outras plataformas, observando que mapas gerados por IA podem diferir de mapas mentais tradicionais.</li>
-</ul>
-<h2><a href="https://news.mit.edu/2024/mit-team-takes-major-step-toward-fully-3d-printed-active-electronics-1015">A um passo de eletrônicos ativos totalmente impressos em 3D</a></h2>
-<ul>
-<li>Pesquisadores do MIT criaram portas lógicas sem semicondutores usando polímero dopado com cobre impresso em 3D, potencialmente simplificando a fabricação de eletrônicos.</li>
-<li>Essa inovação poderia democratizar a produção de eletrônicos ao possibilitar a criação de hardware inteligente fora dos centros tradicionais de manufatura, apesar de ainda não igualar o desempenho dos semicondutores.</li>
-<li>O projeto baseia-se no trabalho com bobinas magnéticas e utiliza uma propriedade de resistência única do polímero dopado com cobre, com objetivos futuros de imprimir eletrônicos totalmente funcionais e explorar mais funcionalidades.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41899873">Reações</a></h3>
-<ul>
-<li>Pesquisadores do MIT avançaram na tecnologia de impressão 3D ao criar um fusível reinicializável e um dispositivo semelhante a um transistor usando filamento de PLA (Ácido Polilático) infundido com cobre.</li>
-<li>A inovação é significativa devido ao uso de um único material, mas ainda não alcança eletrônicos ativos totalmente funcionais.</li>
-<li>O descobrimento do efeito de Coeficiente de Temperatura Positivo (PTC) do filamento é importante, embora a tecnologia ainda esteja em seus estágios iniciais e não esteja pronta para aplicação ampla.</li>
-</ul>
-<h2><a href="https://nolanlawson.com/2024/10/20/why-im-skeptical-of-rewriting-javascript-tools-in-faster-languages/">Séptico em reescrever ferramentas JavaScript em linguagens &#39;mais rápidas&#39;</a></h2>
-<ul>
-<li>Nolan Lawson questiona a tendência de reescrever ferramentas JavaScript em linguagens como Rust, Zig e Go, sugerindo que JavaScript é frequentemente suficientemente rápido.</li>
-<li>Ele aponta que melhorias de desempenho podem ser feitas otimizando as ferramentas atuais de JavaScript, aproveitando seu cache de bytecode e o compilador JIT (Just-In-Time).</li>
-<li>Lawson adverte que o uso de linguagens mais novas pode criar uma divisão, limitando a acessibilidade e a capacidade de depuração, e potencialmente afastando desenvolvedores comuns de contribuir.</li>
-</ul>
-<h3><a href="https://news.ycombinator.com/item?id=41898603">Reações</a></h3>
-<ul>
-<li>O debate gira em torno de saber se reescrever ferramentas JavaScript em linguagens mais rápidas como Rust ou Go é benéfico, com alguns argumentando que a velocidade do JavaScript é suficiente, enquanto outros veem ganhos de desempenho ao usar linguagens tipadas estaticamente.</li>
-<li>Reescrever em linguagens como Rust ou Go pode levar a melhorias significativas de desempenho, como demonstrado por ferramentas como o esbuild.</li>
-<li>A discussão também considera a facilidade de modificar dependências do JavaScript e a familiaridade com a linguagem, ponderando isso em relação aos potenciais benefícios de usar linguagens mais rápidas.</li>
-</ul>
-<head>
-  <meta property="og:title" content="Egito declarado livre da malária após esforço de 100 anos" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://og.cho.sh/api/og/?title=Egito%20declarado%20livre%20da%20mal%C3%A1ria%20ap%C3%B3s%20esfor%C3%A7o%20de%20100%20anos&subheading=segunda-feira%2C%2021%20de%20outubro%20de%202024%3A%20Resumo%20do%20Hacker%20News" />
-</head>
-]]></description>
-            <link>https://hn.cho.sh/pt/2024/10/21</link>
-            <guid isPermaLink="false">2024-10-21T00:00:00.000Z</guid>
-            <pubDate>Mon, 21 Oct 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
