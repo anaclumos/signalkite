@@ -69,7 +69,7 @@ const navigation2 = [
       },
       {
         name: "Schedules",
-        href: "/schedules",
+        href: "/settings/schedules",
       },
     ],
   },
