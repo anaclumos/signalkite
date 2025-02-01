@@ -1,17 +1,16 @@
 {
-  "name": "template-planner",
-  "version": "0.1.0",
-  "private": true,
+  "name": "signalkite",
+  "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "format": "biome format --write .",
-    "check": "biome check --write ."
+    "commit": "git-cz"
   },
   "dependencies": {
     "@commitlint/cli": "^19.6.1",
+    "@commitlint/cz-commitlint": "^19.6.0",
+    "@commitlint/prompt-cli": "^19.7.0",
     "@radix-ui/react-accordion": "^1.2.2",
     "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/react-dropdown-menu": "^2.1.4",
@@ -22,6 +21,7 @@
     "@radix-ui/react-visually-hidden": "^1.1.1",
     "@remixicon/react": "^4.6.0",
     "clsx": "^2.1.1",
+    "cz-emoji": "^1.3.2-canary.2",
     "lefthook": "^1.10.10",
     "lucide-react": "^0.473.0",
     "next": "15.1.4",
@@ -37,11 +37,7 @@
     "@types/node": "^22.10.7",
     "@types/react": "19.0.4",
     "@types/react-dom": "19.0.2",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "15.1.4",
     "postcss": "^8.5.1",
-    "prettier": "^3.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.10",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3"
   },
@@ -51,5 +47,14 @@
       "@types/react-dom": "19.0.2"
     }
   },
-  "trustedDependencies": ["@biomejs/biome"]
+  "trustedDependencies": ["@biomejs/biome"],
+  "config": {
+    "commitizen": {
+      "path": "cz-emoji"
+    }
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"],
+    "parserPreset": "conventional-changelog-conventionalcommits"
+  }
 }
