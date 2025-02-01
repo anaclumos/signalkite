@@ -18,6 +18,7 @@ import {
 import { Logo } from "@/public/Logo"
 import { RiArrowDownSFill } from "@remixicon/react"
 import { House, PackageSearch, Settings, Telescope } from "lucide-react"
+import Link from "next/link"
 import { usePathname } from "next/navigation"
 import * as React from "react"
 import { cx, focusRing } from "../lib/utils"
@@ -68,7 +69,7 @@ const navigation2 = [
       },
       {
         name: "Schedules",
-        href: "/settings/schedules",
+        href: "/schedules",
       },
     ],
   },
@@ -89,21 +90,23 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   }
   return (
     <Sidebar {...props} className="bg-gray-50 dark:bg-gray-925">
-      <SidebarHeader className="px-3 py-4">
-        <div className="flex items-center gap-3">
-          <span className="flex size-9 items-center justify-center rounded-md bg-white p-1.5 shadow-sm ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-800">
-            <Logo className="size-6 text-blue-500 dark:text-blue-500" />
-          </span>
-          <div>
-            <span className="block text-sm font-semibold text-gray-900 dark:text-gray-50">
-              {siteConfig.name}
+      <Link href="/">
+        <SidebarHeader className="px-3 py-4">
+          <div className="flex items-center gap-3">
+            <span className="flex size-9 items-center justify-center rounded-md bg-white p-0.5 shadow-sm ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-800">
+              <Logo className="size-8 text-blue-500 dark:text-blue-500" />
             </span>
-            <span className="block text-xs text-gray-900 dark:text-gray-50">
-              {siteConfig.description}
-            </span>
+            <div>
+              <span className="block text-sm font-semibold text-gray-900 dark:text-gray-50">
+                {siteConfig.name}
+              </span>
+              <span className="block text-xs text-gray-900 dark:text-gray-50">
+                {siteConfig.description}
+              </span>
+            </div>
           </div>
-        </div>
-      </SidebarHeader>
+        </SidebarHeader>
+      </Link>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>

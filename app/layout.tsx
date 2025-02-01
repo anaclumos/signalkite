@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     creator: `@${siteConfig.creator}`,
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.svg",
   },
 }
 
