@@ -1,7 +1,8 @@
 export const siteConfig = {
-  name: "Planner",
-  url: "https://planner.tremor.so",
-  description: "The simplest dashboard template.",
+  name: "SignalKite",
+  url: "https://www.signalkite.com",
+  description: "Alerts on Everything",
+  creator: "anaclumos",
   baseLinks: {
     quotes: {
       overview: "/quotes/overview",

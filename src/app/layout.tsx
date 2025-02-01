@@ -4,34 +4,22 @@ import { Breadcrumbs } from "@/components/ui/navigation/Breadcrumbs"
 import { ClerkProvider } from "@clerk/nextjs"
 import type { Metadata } from "next"
 import { ThemeProvider } from "next-themes"
-import localFont from "next/font/local"
 import { cookies } from "next/headers"
 import "./globals.css"
 import { siteConfig } from "./siteConfig"
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-})
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-})
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yoururl.com"),
+  metadataBase: new URL(siteConfig.url),
   title: siteConfig.name,
   description: siteConfig.description,
   keywords: ["Dashboard", "Data Visualization", "Software"],
   authors: [
     {
-      name: "yourname",
-      url: "",
+      name: siteConfig.name,
+      url: siteConfig.url,
     },
   ],
-  creator: "yourname",
+  creator: siteConfig.creator,
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -44,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    creator: "@yourname",
+    creator: `@${siteConfig.creator}`,
   },
   icons: {
     icon: "/favicon.ico",
@@ -62,9 +50,7 @@ export default async function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" className="h-full" suppressHydrationWarning>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} bg-white-50 h-full antialiased dark:bg-gray-950`}
-        >
+        <body className="bg-white-50 h-full antialiased dark:bg-gray-950">
           <ThemeProvider
             defaultTheme="system"
             disableTransitionOnChange

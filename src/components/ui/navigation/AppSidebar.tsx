@@ -1,4 +1,5 @@
 "use client"
+import { siteConfig } from "@/app/siteConfig"
 import { Divider } from "@/components/Divider"
 import { Input } from "@/components/Input"
 import {
@@ -106,10 +107,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </span>
           <div>
             <span className="block text-sm font-semibold text-gray-900 dark:text-gray-50">
-              Innovex Systems
+              {siteConfig.name}
             </span>
             <span className="block text-xs text-gray-900 dark:text-gray-50">
-              Premium Starter Plan
+              {siteConfig.description}
             </span>
           </div>
         </div>
