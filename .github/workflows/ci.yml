@@ -6,6 +6,7 @@ on:
 
 jobs:
   quality:
+    name: 🏆 Quality Checks
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -14,9 +15,10 @@ jobs:
         uses: biomejs/setup-biome@v2
         with:
           version: latest
-      - name: Biome CI
+      - name: Run Quality Checks
         run: biome ci .
   test:
+    name: 💯 Unit Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,5 +27,5 @@ jobs:
         uses: oven-sh/setup-bun@v2
       - name: Install dependencies
         run: bun i
-      - name: Vitest
+      - name: Run Unit Tests
         run: bun test
