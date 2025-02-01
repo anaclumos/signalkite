@@ -93,6 +93,6 @@ export const formatters: FormatterFunctions = {
       style: "decimal",
       minimumFractionDigits: decimals,
       maximumFractionDigits: decimals,
-    }).format(number)}M`
+    }).format(number / 1_000_000)}M`
   },
 }
