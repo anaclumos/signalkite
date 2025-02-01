@@ -2,6 +2,7 @@
 
 import React from "react"
 
+import Link from "next/link"
 import { cx, focusRing } from "../../lib/utils"
 
 type Bar<T> = T & {
@@ -100,7 +101,7 @@ function BarListInner<T>(
             >
               <div className={cx("absolute left-2 flex max-w-full pr-2")}>
                 {item.href ? (
-                  <a
+                  <Link
                     href={item.href}
                     className={cx(
                       // base
@@ -117,7 +118,7 @@ function BarListInner<T>(
                     onClick={(event) => event.stopPropagation()}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ) : (
                   <p
                     className={cx(

@@ -18,7 +18,7 @@ import {
   TableRoot,
   TableRow,
 } from "@/components/ui/table"
-import { quotes } from "@/data/data"
+import { quotes } from "@/data/quotes"
 import { Download } from "lucide-react"
 import { Fragment } from "react"
 import { cx } from "../../../lib/utils"

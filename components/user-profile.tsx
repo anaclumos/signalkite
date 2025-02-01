@@ -13,8 +13,8 @@ import { Suspense } from "react"
 
 export const UserProfileLoading = () => {
   return (
-    <div className="flex justify-center items-center h-full">
-      <Spinner className="w-full my-2.5" />
+    <div className="flex justify-center items-center h-9">
+      <Spinner className="w-full" />
     </div>
   )
 }

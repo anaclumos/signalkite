@@ -45,7 +45,9 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   const cookieStore = await cookies()
-  const defaultOpen = cookieStore.get("sidebar:state")?.value === "true"
+  const defaultOpen = cookieStore.get("sidebar:state")?.value
+    ? cookieStore.get("sidebar:state")?.value === "true"
+    : true
 
   return (
     <ClerkProvider>
@@ -58,13 +60,12 @@ export default async function RootLayout({
           >
             <SidebarProvider defaultOpen={defaultOpen}>
               <AppSidebar />
-              <div className="w-full">
+              <div className="w-full flex flex-col">
                 <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-2 border-b border-gray-200 bg-white px-4 dark:border-gray-800 dark:bg-gray-950">
                   <SidebarTrigger className="-ml-1" />
-                  <div className="mr-2 h-4 w-px bg-gray-200 dark:bg-gray-800" />
                   <Breadcrumbs />
                 </header>
-                <main>{children}</main>
+                <main className="flex-1">{children}</main>
               </div>
             </SidebarProvider>
           </ThemeProvider>

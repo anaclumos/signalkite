@@ -9,6 +9,7 @@ import {
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden"
 import { RiCloseLine } from "@remixicon/react"
 import { PanelLeft } from "lucide-react"
+import Link from "next/link"
 import * as React from "react"
 import { useIsMobile } from "../../lib/use-mobile"
 import { cx, focusRing } from "../../lib/utils"
@@ -204,7 +205,8 @@ const SidebarTrigger = React.forwardRef<
   const { toggleSidebar } = useSidebar()
 
   return (
-    <button
+    <Button
+      variant="ghost"
       ref={ref}
       data-sidebar="trigger"
       className={cx(
@@ -222,7 +224,7 @@ const SidebarTrigger = React.forwardRef<
         aria-hidden="true"
       />
       <span className="sr-only">Toggle Sidebar</span>
-    </button>
+    </Button>
   )
 })
 SidebarTrigger.displayName = "SidebarTrigger"
@@ -286,8 +288,9 @@ const SidebarLink = React.forwardRef<
 >(({ children, isActive, icon, notifications, className, ...props }, ref) => {
   const Icon = icon
   return (
-    <a
+    <Link
       ref={ref}
+      href={props.href ?? ""}
       aria-current={isActive ? "page" : undefined}
       data-active={isActive}
       className={cx(
@@ -307,7 +310,7 @@ const SidebarLink = React.forwardRef<
           {notifications}
         </span>
       )}
-    </a>
+    </Link>
   )
 })
 SidebarLink.displayName = "SidebarLink"
@@ -367,8 +370,9 @@ const SidebarSubLink = React.forwardRef<
   }
 >(({ isActive, children, className, ...props }, ref) => {
   return (
-    <a
+    <Link
       ref={ref}
+      href={props.href ?? ""}
       aria-current={isActive ? "page" : undefined}
       data-active={isActive}
       className={cx(
@@ -386,7 +390,7 @@ const SidebarSubLink = React.forwardRef<
         />
       )}
       {children}
-    </a>
+    </Link>
   )
 })
 SidebarSubLink.displayName = "SidebarSubLink"

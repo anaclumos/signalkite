@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/sidebar"
 import { Logo } from "@/public/Logo"
 import { RiArrowDownSFill } from "@remixicon/react"
-import { BookText, House, PackageSearch } from "lucide-react"
+import { House, PackageSearch, Settings, Telescope } from "lucide-react"
 import { usePathname } from "next/navigation"
 import * as React from "react"
 import { cx, focusRing } from "../lib/utils"
@@ -25,7 +25,7 @@ import { UserProfile } from "./user-profile"
 
 const navigation = [
   {
-    name: "Home",
+    name: "Dashboard",
     href: "/",
     icon: House,
   },
@@ -38,46 +38,37 @@ const navigation = [
 
 const navigation2 = [
   {
-    name: "Sales",
+    name: "Observatory",
     href: "#",
-    icon: BookText,
+    icon: Telescope,
     children: [
       {
-        name: "Quotes",
-        href: "#",
-        active: true,
+        name: "All Kites",
+        href: "/observatory/kites",
       },
       {
-        name: "Orders",
-        href: "#",
-        active: false,
-      },
-      {
-        name: "Insights & Reports",
-        href: "#",
-        active: false,
+        name: "Past Executions",
+        href: "/observatory/past-executions",
       },
     ],
   },
+
   {
-    name: "Products",
+    name: "Settings",
     href: "#",
-    icon: PackageSearch,
+    icon: Settings,
     children: [
       {
-        name: "Items",
-        href: "#",
-        active: false,
+        name: "Notification Channels",
+        href: "/settings/notification-channels",
       },
       {
-        name: "Variants",
-        href: "#",
-        active: false,
+        name: "Prompts",
+        href: "/settings/prompts",
       },
       {
-        name: "Suppliers",
-        href: "#",
-        active: false,
+        name: "Schedules",
+        href: "/settings/schedules",
       },
     ],
   },
@@ -129,8 +120,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               {navigation.map((item) => (
                 <SidebarMenuItem key={item.name}>
                   <SidebarLink
-                    href="#"
-                    isActive={pathname === item.href}
+                    href={item.href}
+                    isActive={
+                      pathname === "/" ? pathname.startsWith(item.href) : false
+                    }
                     icon={item.icon}
                   >
                     {item.name}
@@ -148,7 +141,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenu className="space-y-4">
               {navigation2.map((item) => (
                 <SidebarMenuItem key={item.name}>
-                  {/* @CHRIS/SEV: discussion whether to componentize (-> state mgmt) */}
                   <button
                     onClick={() => toggleMenu(item.name)}
                     className={cx(
@@ -180,7 +172,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         <SidebarMenuItem key={child.name}>
                           <SidebarSubLink
                             href={child.href}
-                            isActive={child.active}
+                            isActive={pathname.startsWith(child.href)}
                           >
                             {child.name}
                           </SidebarSubLink>
@@ -195,7 +187,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <div className="border-t border-gray-200 dark:border-gray-800" />
         <UserProfile />
       </SidebarFooter>
     </Sidebar>
