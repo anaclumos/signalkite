@@ -1,14 +1,9 @@
-/** @type {import('next').NextConfig} */
+import { NextConfig } from "next"
 
-const nextConfig = {
-  redirects: async () => {
-    return [
-      {
-        source: "/",
-        destination: "/quotes/overview",
-        permanent: true,
-      },
-    ]
+const nextConfig: NextConfig = {
+  experimental: {
+    ppr: "incremental",
+    reactCompiler: true,
   },
 }
 
