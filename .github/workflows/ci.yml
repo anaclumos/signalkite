@@ -6,7 +6,7 @@ on:
 
 jobs:
   quality:
-    name: 🏆 Should Pass Quality Checks
+    name: 💅 Code Style
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,7 +18,7 @@ jobs:
       - name: Run Quality Checks
         run: biome ci .
   test:
-    name: 💯 Should Pass Unit Tests
+    name: 💯 Unit Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,7 +30,7 @@ jobs:
       - name: Run Unit Tests
         run: bun run test
   build:
-    name: 📦 Should Build
+    name: 📦 Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
