@@ -6,7 +6,7 @@ import * as React from "react"
 
 import { cx, focusRing } from "@/lib/utils"
 
-import { Button } from "./Button"
+import { Button } from "./button"
 
 const Drawer = (
   props: React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Root>,
@@ -16,7 +16,7 @@ const Drawer = (
 Drawer.displayName = "Drawer"
 
 const DrawerTrigger = React.forwardRef<
-  React.ComponentRef<typeof DrawerPrimitives.Trigger>,
+  React.ElementRef<typeof DrawerPrimitives.Trigger>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Trigger>
 >(({ className, ...props }, ref) => {
   return (
@@ -26,7 +26,7 @@ const DrawerTrigger = React.forwardRef<
 DrawerTrigger.displayName = "Drawer.Trigger"
 
 const DrawerClose = React.forwardRef<
-  React.ComponentRef<typeof DrawerPrimitives.Close>,
+  React.ElementRef<typeof DrawerPrimitives.Close>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Close>
 >(({ className, ...props }, ref) => {
   return (
@@ -40,7 +40,7 @@ const DrawerPortal = DrawerPrimitives.Portal
 DrawerPortal.displayName = "DrawerPortal"
 
 const DrawerOverlay = React.forwardRef<
-  React.ComponentRef<typeof DrawerPrimitives.Overlay>,
+  React.ElementRef<typeof DrawerPrimitives.Overlay>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Overlay>
 >(({ className, ...props }, forwardedRef) => {
   return (
@@ -67,7 +67,7 @@ const DrawerOverlay = React.forwardRef<
 DrawerOverlay.displayName = "DrawerOverlay"
 
 const DrawerContent = React.forwardRef<
-  React.ComponentRef<typeof DrawerPrimitives.Content>,
+  React.ElementRef<typeof DrawerPrimitives.Content>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Content>
 >(({ className, ...props }, forwardedRef) => {
   return (
@@ -124,7 +124,7 @@ const DrawerHeader = React.forwardRef<
 DrawerHeader.displayName = "Drawer.Header"
 
 const DrawerTitle = React.forwardRef<
-  React.ComponentRef<typeof DrawerPrimitives.Title>,
+  React.ElementRef<typeof DrawerPrimitives.Title>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Title>
 >(({ className, ...props }, forwardedRef) => (
   <DrawerPrimitives.Title
@@ -151,7 +151,7 @@ const DrawerBody = React.forwardRef<
 DrawerBody.displayName = "Drawer.Body"
 
 const DrawerDescription = React.forwardRef<
-  React.ComponentRef<typeof DrawerPrimitives.Description>,
+  React.ElementRef<typeof DrawerPrimitives.Description>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitives.Description>
 >(({ className, ...props }, forwardedRef) => {
   return (

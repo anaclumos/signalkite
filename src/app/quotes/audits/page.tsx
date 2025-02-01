@@ -5,9 +5,9 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/Accordion"
-import { Button } from "@/components/Button"
-import { Input } from "@/components/Input"
+} from "@/components/ui/accordion"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { sections } from "@/data/data"
 import { RiCheckboxCircleFill, RiErrorWarningFill } from "@remixicon/react"
 import { Link, SlidersHorizontal } from "lucide-react"

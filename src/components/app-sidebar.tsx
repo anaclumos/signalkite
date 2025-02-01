@@ -1,7 +1,7 @@
 "use client"
-import { siteConfig } from "@/app/siteConfig"
-import { Divider } from "@/components/Divider"
-import { Input } from "@/components/Input"
+import { siteConfig } from "@/app/site-config"
+import { Divider } from "@/components/ui/divider"
+import { Input } from "@/components/ui/input"
 import {
   Sidebar,
   SidebarContent,
@@ -14,28 +14,25 @@ import {
   SidebarMenuItem,
   SidebarMenuSub,
   SidebarSubLink,
-} from "@/components/Sidebar"
+} from "@/components/ui/sidebar"
 import { cx, focusRing } from "@/lib/utils"
 import { RiArrowDownSFill } from "@remixicon/react"
 import { BookText, House, PackageSearch } from "lucide-react"
+import { usePathname } from "next/navigation"
 import * as React from "react"
-import { Logo } from "../../../../public/Logo"
-import { UserProfile } from "./UserProfile"
+import { Logo } from "../../public/Logo"
+import { UserProfile } from "./user-profile"
 
 const navigation = [
   {
     name: "Home",
-    href: "#",
+    href: "/",
     icon: House,
-    notifications: false,
-    active: false,
   },
   {
-    name: "Inbox",
-    href: "#",
+    name: "Marketplace",
+    href: "/marketplace",
     icon: PackageSearch,
-    notifications: 2,
-    active: false,
   },
 ] as const
 
@@ -87,6 +84,7 @@ const navigation2 = [
 ] as const
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const pathname = usePathname()
   const [openMenus, setOpenMenus] = React.useState<string[]>([
     navigation2[0].name,
     navigation2[1].name,
@@ -132,9 +130,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <SidebarMenuItem key={item.name}>
                   <SidebarLink
                     href="#"
-                    isActive={item.active}
+                    isActive={pathname === item.href}
                     icon={item.icon}
-                    notifications={item.notifications}
                   >
                     {item.name}
                   </SidebarLink>

@@ -39,7 +39,7 @@ const DropdownMenuSubMenuTrigger = React.forwardRef<
     ref={forwardedRef}
     className={cx(
       // base
-      "relative flex cursor-default select-none items-center rounded py-1.5 pl-2 pr-1 outline-none transition-colors data-[state=checked]:font-semibold sm:text-sm",
+      "relative flex cursor-default items-center rounded py-1.5 pr-1 pl-2 transition-colors outline-none select-none data-[state=checked]:font-semibold sm:text-sm",
       // text color
       "text-gray-900 dark:text-gray-50",
       // disabled
@@ -155,7 +155,7 @@ const DropdownMenuItem = React.forwardRef<
     ref={forwardedRef}
     className={cx(
       // base
-      "group/DropdownMenuItem relative flex cursor-pointer select-none items-center rounded py-1.5 pl-2 pr-1 outline-none transition-colors data-[state=checked]:font-semibold sm:text-sm",
+      "group/DropdownMenuItem relative flex cursor-pointer items-center rounded py-1.5 pr-1 pl-2 transition-colors outline-none select-none data-[state=checked]:font-semibold sm:text-sm",
       // text color
       "text-gray-900 dark:text-gray-50",
       // disabled
@@ -206,7 +206,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
       ref={forwardedRef}
       className={cx(
         // base
-        "relative flex cursor-pointer select-none items-center gap-x-2 rounded py-1.5 pl-8 pr-1 outline-none transition-colors data-[state=checked]:font-semibold sm:text-sm",
+        "relative flex cursor-pointer items-center gap-x-2 rounded py-1.5 pr-1 pl-8 transition-colors outline-none select-none data-[state=checked]:font-semibold sm:text-sm",
         // text color
         "text-gray-900 dark:text-gray-50",
         // disabled
@@ -254,74 +254,62 @@ DropdownMenuCheckboxItem.displayName = "DropdownMenuCheckboxItem"
 
 const DropdownMenuRadioItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitives.RadioItem>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitives.RadioItem> & {
+  Omit<
+    React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitives.RadioItem>,
+    "asChild"
+  > & {
     shortcut?: string
     hint?: string
-    iconType?: "check" | "radio"
   }
->(
-  (
-    { className, hint, shortcut, children, iconType = "radio", ...props },
-    forwardedRef,
-  ) => (
-    <DropdownMenuPrimitives.RadioItem
-      ref={forwardedRef}
-      className={cx(
-        // base
-        "group/DropdownMenuRadioItem relative flex cursor-pointer select-none items-center gap-x-2 rounded py-1.5 pl-8 pr-1 outline-none transition-colors data-[state=checked]:font-semibold sm:text-sm",
-        // text color
-        "text-gray-900 dark:text-gray-50",
-        // disabled
-        "data-[disabled]:pointer-events-none data-[disabled]:text-gray-400 data-[disabled]:hover:bg-none dark:data-[disabled]:text-gray-600",
-        // focus
-        "focus-visible:bg-gray-100 focus-visible:dark:bg-gray-900",
-        // hover
-        "hover:bg-gray-100 hover:dark:bg-gray-900",
-        className,
-      )}
-      {...props}
-    >
-      {iconType === "radio" ? (
-        <span className="absolute left-2 flex size-4 items-center justify-center">
-          <RiRadioButtonFill
-            aria-hidden="true"
-            className="size-full shrink-0 text-blue-500 group-data-[state=checked]/DropdownMenuRadioItem:flex group-data-[state=unchecked]/DropdownMenuRadioItem:hidden dark:text-blue-500"
-          />
-          <RiCheckboxBlankCircleLine
-            aria-hidden="true"
-            className="size-full shrink-0 text-gray-300 group-data-[state=unchecked]/DropdownMenuRadioItem:flex group-data-[state=checked]/DropdownMenuRadioItem:hidden dark:text-gray-700"
-          />
-        </span>
-      ) : iconType === "check" ? (
-        <span className="absolute left-2 flex size-4 items-center justify-center">
-          <RiCheckLine
-            aria-hidden="true"
-            className="size-full shrink-0 text-gray-800 group-data-[state=checked]/DropdownMenuRadioItem:flex group-data-[state=unchecked]/DropdownMenuRadioItem:hidden dark:text-gray-200"
-          />
-        </span>
-      ) : null}
-      {children}
-      {hint && (
-        <span
-          className={cx(
-            "ml-auto text-sm font-normal text-gray-400 dark:text-gray-600",
-          )}
-        >
-          {hint}
-        </span>
-      )}
-      {shortcut && (
-        <span
-          className={cx(
-            "ml-auto text-sm font-normal tracking-widest text-gray-400 dark:border-gray-800 dark:text-gray-600",
-          )}
-        >
-          {shortcut}
-        </span>
-      )}
-    </DropdownMenuPrimitives.RadioItem>
-  ),
-)
+>(({ className, hint, shortcut, children, ...props }, forwardedRef) => (
+  <DropdownMenuPrimitives.RadioItem
+    ref={forwardedRef}
+    className={cx(
+      // base
+      "group/DropdownMenuRadioItem relative flex cursor-pointer items-center gap-x-2 rounded py-1.5 pr-1 pl-8 transition-colors outline-none select-none data-[state=checked]:font-semibold sm:text-sm",
+      // text color
+      "text-gray-900 dark:text-gray-50",
+      // disabled
+      "data-[disabled]:pointer-events-none data-[disabled]:text-gray-400 data-[disabled]:hover:bg-none dark:data-[disabled]:text-gray-600",
+      // focus
+      "focus-visible:bg-gray-100 focus-visible:dark:bg-gray-900",
+      // hover
+      "hover:bg-gray-100 hover:dark:bg-gray-900",
+      className,
+    )}
+    {...props}
+  >
+    <span className="absolute left-2 flex size-4 items-center justify-center">
+      <RiRadioButtonFill
+        aria-hidden="true"
+        className="size-full shrink-0 text-blue-500 group-data-[state=checked]/DropdownMenuRadioItem:flex group-data-[state=unchecked]/DropdownMenuRadioItem:hidden dark:text-blue-500"
+      />
+      <RiCheckboxBlankCircleLine
+        aria-hidden="true"
+        className="size-full shrink-0 text-gray-300 group-data-[state=checked]/DropdownMenuRadioItem:hidden group-data-[state=unchecked]/DropdownMenuRadioItem:flex dark:text-gray-700"
+      />
+    </span>
+    {children}
+    {hint && (
+      <span
+        className={cx(
+          "ml-auto text-sm font-normal text-gray-400 dark:text-gray-600",
+        )}
+      >
+        {hint}
+      </span>
+    )}
+    {shortcut && (
+      <span
+        className={cx(
+          "ml-auto text-sm font-normal tracking-widest text-gray-400 dark:border-gray-800 dark:text-gray-600",
+        )}
+      >
+        {shortcut}
+      </span>
+    )}
+  </DropdownMenuPrimitives.RadioItem>
+))
 DropdownMenuRadioItem.displayName = "DropdownMenuRadioItem"
 
 const DropdownMenuLabel = React.forwardRef<

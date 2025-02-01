@@ -1,5 +1,5 @@
-import { Button } from "@/components/Button"
-import { Spinner } from "@/components/Spinner"
+import { Button } from "@/components/ui/button"
+import { Spinner } from "@/components/ui/spinner"
 import {
   ClerkLoaded,
   ClerkLoading,

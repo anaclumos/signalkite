@@ -1,14 +1,14 @@
 // Tremor Accordion [v0.0.1]
 
 import * as AccordionPrimitives from "@radix-ui/react-accordion"
-import { RiArrowDownSLine } from "@remixicon/react"
+import { RiAddLine } from "@remixicon/react"
 import React from "react"
 
 import { cx } from "@/lib/utils"
 
 const Accordion = AccordionPrimitives.Root
 
-Accordion.displayName = "Accordion"
+Accordion.displayName = "AccordionItem"
 
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitives.Trigger>,
@@ -18,23 +18,23 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitives.Trigger
       className={cx(
         // base
-        "group flex flex-1 cursor-pointer items-center justify-between py-3 text-left text-sm font-medium leading-none",
+        "group flex flex-1 cursor-pointer items-center justify-between py-3 text-left text-sm leading-none font-medium",
         // text color
         "text-gray-900 dark:text-gray-50",
         // disabled
         "data-[disabled]:cursor-default data-[disabled]:text-gray-400 dark:data-[disabled]:text-gray-600",
         //focus
-        "focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500",
+        "focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none focus-visible:ring-inset",
         className,
       )}
       {...props}
       ref={forwardedRef}
     >
       {children}
-      <RiArrowDownSLine
+      <RiAddLine
         className={cx(
           // base
-          "size-5 shrink-0 transition-transform duration-150 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-data-[state=open]:rotate-180",
+          "size-5 shrink-0 transition-transform duration-150 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-data-[state=open]:-rotate-45",
           // text color
           "text-gray-400 dark:text-gray-600",
           // disabled
@@ -56,7 +56,7 @@ const AccordionContent = React.forwardRef<
   <AccordionPrimitives.Content
     ref={forwardedRef}
     className={cx(
-      "transform-gpu data-[state=closed]:animate-accordionClose data-[state=open]:animate-accordionOpen",
+      "data-[state=closed]:animate-accordionClose data-[state=open]:animate-accordionOpen transform-gpu",
     )}
     {...props}
   >
