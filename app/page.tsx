@@ -1,33 +1,12 @@
-import { OnboardingCard } from "@/components/onboarding-card"
-
 export default function Page() {
   return (
-    <OnboardingCard
-      title="Welcome to your Dashboard"
-      caption="This is a high-level overview of reporters that you hired, recent Stories, active Subscriptions, and upcoming Schedules."
-      data={[
-        {
-          title: "Recent Stories",
-          description:
-            "View newly discovered Stories from your reporters and subscriptions.",
-          linkText: "View Stories",
-          href: "/stories",
-        },
-        {
-          title: "Your Stats",
-          description:
-            "See your reporters, active Subscriptions, and upcoming Schedules at a glance.",
-          linkText: "View Dashboard",
-          href: "/dashboard",
-        },
-        {
-          title: "Quick Actions",
-          description:
-            "Hire a new Reporter, explore the Marketplace, or manage your Subscriptions.",
-          linkText: "Hire a Reporter",
-          href: "/marketplace",
-        },
-      ]}
-    />
+    <div className="flex flex-col items-center justify-center py-12">
+      <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-6xl">
+        every.news
+      </h1>
+      <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">
+        Hire unlimited AI news reporters. Free & Open Source.
+      </p>
+    </div>
   )
 }
