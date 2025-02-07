@@ -39,17 +39,17 @@ const navigation = [
 
 const navigation2 = [
   {
-    name: "Observatory",
+    name: "Newsroom",
     href: "#",
     icon: Telescope,
     children: [
       {
         name: "All Reporters",
-        href: "/observatory/reporters",
+        href: "/newsroom/reporters",
       },
       {
-        name: "Past Executions",
-        href: "/observatory/past-executions",
+        name: "Archives",
+        href: "/newsroom/archives",
       },
     ],
   },
