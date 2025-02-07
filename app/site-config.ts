@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "SignalKite",
-  url: "https://www.signalkite.com",
-  description: "Alerts on Everything",
+  name: "every.news",
+  url: "https://every.news",
+  description: "hire AI reporters",
   creator: "anaclumos",
 }
 

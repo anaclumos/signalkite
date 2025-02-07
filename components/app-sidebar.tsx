@@ -44,8 +44,8 @@ const navigation2 = [
     icon: Telescope,
     children: [
       {
-        name: "All Kites",
-        href: "/observatory/kites",
+        name: "All Reporters",
+        href: "/observatory/reporters",
       },
       {
         name: "Past Executions",
