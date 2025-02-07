@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "every.news",
   url: "https://every.news",
-  description: "hire AI reporters",
+  description: "hire unlimited AI reporters",
   creator: "anaclumos",
 }
 
