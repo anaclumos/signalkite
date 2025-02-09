@@ -4,6 +4,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ChevronRight } from "lucide-react"
 import Link from "next/link"
+import { Fragment } from "react"
 
 interface NavBarProps {
   breadcrumbs: Array<{
@@ -29,8 +30,8 @@ export function NavBar({ breadcrumbs, actions, viewToggle }: NavBarProps) {
         <nav aria-label="Breadcrumb" className="ml-2">
           <ol role="list" className="flex items-center text-sm gap-2">
             {breadcrumbs.map((crumb, index) => (
-              <>
-                <li key={crumb.href} className="flex items-center">
+              <Fragment key={crumb.href}>
+                <li className="flex items-center">
                   <Link
                     href={crumb.href}
                     className={
@@ -51,7 +52,7 @@ export function NavBar({ breadcrumbs, actions, viewToggle }: NavBarProps) {
                     aria-hidden="true"
                   />
                 )}
-              </>
+              </Fragment>
             ))}
           </ol>
         </nav>

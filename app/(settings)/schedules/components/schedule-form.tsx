@@ -4,10 +4,24 @@ import cronstrue from "cronstrue"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
-import { createSchedule, updateSchedule } from "@/app/actions/schedules"
+import {
+  createSchedule,
+  deleteSchedule,
+  updateSchedule,
+} from "@/app/actions/schedules"
 import { NavBar } from "@/components/nav-bar"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import { Divider } from "@/components/ui/divider"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -20,7 +34,7 @@ import {
 } from "@/components/ui/select"
 import { daysOfWeek } from "@/lib/const"
 import type { Schedule, ScheduleReporter } from "@prisma/client"
-
+import Link from "next/link"
 type ScheduleWithReporters = Schedule & {
   ScheduleReporters: ScheduleReporter[]
 }
@@ -126,7 +140,7 @@ export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
       })
     }
 
-    router.push("/settings/schedules")
+    router.push("/schedules")
   }
 
   const breadcrumbs = [
@@ -141,9 +155,44 @@ export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
     })
   }
 
+  async function handleDelete() {
+    if (schedule) {
+      await deleteSchedule(schedule.id)
+      router.push("/schedules")
+    }
+  }
+
   return (
     <>
-      <NavBar breadcrumbs={breadcrumbs} />
+      <NavBar
+        breadcrumbs={breadcrumbs}
+        actions={
+          schedule && (
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="destructive">Delete</Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Delete Schedule</DialogTitle>
+                  <DialogDescription>
+                    Are you sure you want to delete this schedule? This action
+                    cannot be undone.
+                  </DialogDescription>
+                </DialogHeader>
+                <DialogFooter>
+                  <DialogClose asChild>
+                    <Button variant="secondary">Cancel</Button>
+                  </DialogClose>
+                  <form action={handleDelete}>
+                    <Button variant="destructive">Delete</Button>
+                  </form>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+          )
+        }
+      />
 
       <form action={handleSubmit}>
         {/* Schedule Info Section */}
@@ -165,6 +214,7 @@ export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
                   Name
                 </Label>
                 <Input
+                  data-1p-ignore
                   type="text"
                   id="name"
                   name="name"
@@ -297,13 +347,11 @@ export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
         <Divider />
 
         <div className="flex items-center justify-end space-x-4 p-4 md:p-8">
-          <Button
-            variant="secondary"
-            onClick={() => router.push("/settings/schedules")}
-            type="button"
-          >
-            Cancel
-          </Button>
+          <Link href="/schedules">
+            <Button variant="secondary" type="button">
+              Cancel
+            </Button>
+          </Link>
           <Button type="submit">
             {mode === "create" ? "Create Schedule" : "Save Changes"}
           </Button>

@@ -83,3 +83,22 @@ export async function deletePrompt(id: string) {
     },
   })
 }
+
+export async function getPrompts() {
+  const user = await getCurrentUser()
+
+  return db.prompt.findMany({
+    where: { creatorId: user.id },
+    orderBy: {
+      createdAt: "desc",
+    },
+  })
+}
+
+export async function getPrompt(id: string) {
+  const user = await getCurrentUser()
+
+  return db.prompt.findUnique({
+    where: { id: id, creatorId: user.id },
+  })
+}

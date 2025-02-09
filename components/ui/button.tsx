@@ -23,8 +23,12 @@ const buttonVariants = tv({
         "border-transparent",
         // text color
         "text-white dark:text-white",
+        // border color
+        "border-blue-700 dark:border-blue-500",
         // background color
-        "bg-blue-500 dark:bg-blue-500",
+        "bg-blue-600 dark:bg-blue-700",
+        // shadow
+        "shadow-blue-500/20 dark:shadow-blue-500/20",
         // hover color
         "hover:bg-blue-600 dark:hover:bg-blue-600",
         // disabled
@@ -36,10 +40,14 @@ const buttonVariants = tv({
         "border-gray-300 dark:border-gray-800",
         // text color
         "text-gray-900 dark:text-gray-50",
+        // border color
+        "border-slate-300 dark:border-slate-800",
         // background color
-        "bg-white dark:bg-gray-950",
-        //hover color
-        "hover:bg-gray-50 dark:hover:bg-gray-900/60",
+        "bg-slate-200 dark:bg-slate-900",
+        // shadow
+        "shadow-slate-300/20 dark:shadow-slate-800/20",
+        // hover color
+        "hover:bg-gray-300/70 dark:hover:bg-gray-800/80",
         // disabled
         "disabled:text-gray-400",
         "disabled:dark:text-gray-600",
@@ -52,7 +60,12 @@ const buttonVariants = tv({
         // text color
         "text-gray-900 dark:text-gray-50",
         // background color
+        // border color
+        "border-gray-300 dark:border-gray-800",
+        // background color
         "bg-gray-200 dark:bg-gray-900",
+        // shadow
+        "shadow-gray-300/20 dark:shadow-gray-800/20",
         // hover color
         "hover:bg-gray-300/70 dark:hover:bg-gray-800/80",
         // disabled
@@ -77,8 +90,12 @@ const buttonVariants = tv({
         "text-white",
         // border
         "border-transparent",
+        // border color
+        "border-red-700 dark:border-red-500",
         // background color
         "bg-red-600 dark:bg-red-700",
+        // shadow
+        "shadow-red-500/20 dark:shadow-red-500/20",
         // hover color
         "hover:bg-red-700 dark:hover:bg-red-600",
         // disabled
