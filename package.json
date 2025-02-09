@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "commit": "git-cz",
     "db:init:test": "DATABASE_URL=postgresql://postgres:postgres@localhost:5432/postgres prisma db push --skip-generate && DATABASE_URL=postgresql://postgres:postgres@localhost:5432/postgres prisma generate --no-engine",
