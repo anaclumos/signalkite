@@ -1,6 +1,7 @@
 "use client"
 
 import { NavBar } from "@/components/nav-bar"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import {
@@ -13,7 +14,6 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Tabs, TabsContent } from "@/components/ui/tabs"
-import { cx } from "@/lib/utils"
 import { Schedule } from "@prisma/client"
 import {
   ColumnDef,
@@ -61,16 +61,9 @@ export function SchedulesTable({ initialSchedules }: SchedulesTableProps) {
         cell: ({ getValue }) => {
           const isPaused = getValue<boolean>()
           return (
-            <span
-              className={cx(
-                "inline-flex items-center rounded-full px-2 py-1 text-xs font-medium",
-                isPaused
-                  ? "bg-yellow-50 text-yellow-800 dark:bg-yellow-400/10 dark:text-yellow-500"
-                  : "bg-green-50 text-green-800 dark:bg-green-400/10 dark:text-green-500",
-              )}
-            >
+            <Badge variant={isPaused ? "default" : "success"}>
               {isPaused ? "Paused" : "Active"}
-            </span>
+            </Badge>
           )
         },
       },
@@ -141,25 +134,18 @@ export function SchedulesTable({ initialSchedules }: SchedulesTableProps) {
             <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
               {schedules.map((schedule) => (
                 <Link key={schedule.id} href={`/schedules/${schedule.id}`}>
-                  <Card className="p-4 transition hover:bg-gray-50 dark:hover:bg-gray-900">
-                    <h3 className="font-medium">{schedule.name}</h3>
+                  <Card className="space-y-2 p-4 transition hover:bg-gray-50 dark:hover:bg-gray-900">
+                    <h3 className="flex items-center justify-between gap-2 font-medium">
+                      {schedule.name}{" "}
+                      <Badge variant={schedule.paused ? "default" : "success"}>
+                        {schedule.paused ? "Paused" : "Active"}
+                      </Badge>
+                    </h3>
                     <p className="mt-1 text-sm text-gray-500">
                       {cronstrue.toString(schedule.cron)}
                       {", "}
                       {schedule.timezone.split("/").pop()} time
                     </p>
-                    <div className="mt-4">
-                      <span
-                        className={cx(
-                          "inline-flex items-center rounded-full px-2 py-1 text-xs font-medium",
-                          schedule.paused
-                            ? "bg-yellow-50 text-yellow-800 dark:bg-yellow-400/10 dark:text-yellow-500"
-                            : "bg-green-50 text-green-800 dark:bg-green-400/10 dark:text-green-500",
-                        )}
-                      >
-                        {schedule.paused ? "Paused" : "Active"}
-                      </span>
-                    </div>
                   </Card>
                 </Link>
               ))}
