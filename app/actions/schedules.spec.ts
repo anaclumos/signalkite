@@ -74,6 +74,7 @@ describe("Schedule Actions", () => {
       name: "Midnight schedule",
       cron: "0 0 * * *",
       reporterIds: [reporter1.id, reporter2.id],
+      timezone: "America/New_York",
     })
 
     expect(schedule).toHaveProperty("id")
@@ -95,6 +96,7 @@ describe("Schedule Actions", () => {
       data: {
         name: "My schedule",
         cron: "0 * * * *",
+        timezone: "America/New_York",
         ownerId: testUserId,
         ScheduleReporters: {
           create: [{ reporterId: reporter1.id }],
@@ -122,6 +124,7 @@ describe("Schedule Actions", () => {
       data: {
         name: "Delete me",
         cron: "* * * * *",
+        timezone: "America/New_York",
         ownerId: testUserId,
       },
     })
@@ -135,6 +138,7 @@ describe("Schedule Actions", () => {
       data: {
         name: "Test schedule",
         cron: "* * * * *",
+        timezone: "America/New_York",
         ownerId: testUserId,
       },
     })
@@ -150,6 +154,7 @@ describe("Schedule Actions", () => {
     const s1 = await db.schedule.create({
       data: {
         name: "Sched 1",
+        timezone: "America/New_York",
         cron: "* * * * *",
         ownerId: testUserId,
       },
@@ -157,6 +162,7 @@ describe("Schedule Actions", () => {
     const s2 = await db.schedule.create({
       data: {
         name: "Sched 2",
+        timezone: "America/New_York",
         cron: "* * * * *",
         ownerId: testUserId,
       },

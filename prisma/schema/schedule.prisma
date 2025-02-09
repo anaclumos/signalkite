@@ -7,6 +7,8 @@ model Schedule {
     name              String             @db.VarChar(100)
     /// The cron expression defining when the Schedule runs.
     cron              String             @db.VarChar(100)
+    /// The timezone of the Schedule.
+    timezone          String             @db.VarChar(100)
     /// Timestamp indicating when the schedule is next due to run.
     nextRunAt         DateTime?
     /// Timestamp of the last time this schedule ran.

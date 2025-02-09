@@ -2,23 +2,28 @@
 
 import { db } from "@/prisma"
 import { auth } from "@clerk/nextjs/server"
+import { forbidden } from "next/navigation"
 
 export async function getCurrentUser() {
   const { userId } = await auth()
 
   if (!userId) {
-    throw new Error("Unauthorized")
+    forbidden()
   }
 
-  const user = await db.user.findUnique({
+  let dbUser = await db.user.findUnique({
     where: {
       authProviderUid: userId,
     },
   })
 
-  if (!user) {
-    throw new Error("User not found")
+  if (!dbUser) {
+    dbUser = await db.user.create({
+      data: {
+        authProviderUid: userId,
+      },
+    })
   }
 
-  return user
+  return dbUser
 }

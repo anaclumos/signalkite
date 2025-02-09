@@ -16,6 +16,10 @@ const scheduleInputSchema = z.object({
     .string()
     .min(1, "Cron expression is required")
     .max(100, "Cron expression must be 100 characters or less"),
+  timezone: z
+    .string()
+    .min(1, "Timezone is required")
+    .max(100, "Timezone must be 100 characters or less"),
   reporterIds: z.array(z.string()).optional(),
 })
 
@@ -27,18 +31,23 @@ const scheduleUpdateSchema = z.object({
     .max(100, "Cron expression must be 100 characters or less")
     .optional(),
   paused: z.boolean().optional(),
+  timezone: z
+    .string()
+    .max(100, "Timezone must be 100 characters or less")
+    .optional(),
   reporterIds: z.array(z.string()).optional(),
 })
 
 export async function createSchedule({
   name,
   cron,
+  timezone,
   reporterIds,
 }: z.infer<typeof scheduleInputSchema>) {
-  // Validate input
   const validatedData = scheduleInputSchema.parse({
     name,
     cron,
+    timezone,
     reporterIds,
   })
 
@@ -49,6 +58,7 @@ export async function createSchedule({
       data: {
         name: validatedData.name,
         cron: validatedData.cron,
+        timezone: validatedData.timezone,
         ownerId: user.id,
       },
     })
@@ -71,6 +81,7 @@ export async function updateSchedule({
   name,
   cron,
   paused,
+  timezone,
   reporterIds,
 }: z.infer<typeof scheduleUpdateSchema>) {
   // Validate input
@@ -168,7 +179,6 @@ export async function getSchedule(id: string) {
         orderBy: {
           startedAt: "desc",
         },
-        take: 5,
       },
     },
   })

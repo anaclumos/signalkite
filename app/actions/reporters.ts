@@ -182,7 +182,6 @@ export async function getReporter(id: string) {
         orderBy: {
           createdAt: "desc",
         },
-        take: 5,
       },
     },
   })
