@@ -1,0 +1,269 @@
+Below is a holistic walkthrough of the technology stack, project structure, data models, and design/development strategies used in **every.news**. This guide is primarily for future software developers looking to grasp the concepts, architecture, and technology choices behind this codebase. We’ll cover:
+
+1. **Project Overview & Philosophy**  
+2. **Monorepo / Directory Structure**  
+3. **Data Modeling (Prisma)**  
+4. **Next.js 13+ App Router & React 19**  
+5. **Partial Prerendering & Server Actions**  
+6. **Tailwind CSS & Theming**  
+7. **UI Components & Patterns**  
+8. **Clerk Authentication & Middleware**  
+9. **Scheduling, Subscriptions & Strategies**  
+10. **Testing, Linting & Automation**  
+
+---
+
+## 1. Project Overview & Philosophy
+
+**every.news** is an open-source platform where users can “hire unlimited AI reporters.” Conceptually, a **Reporter** is a scanning or scraping entity that runs on a schedule, fetches stories from external sources (Hacker News, WHOIS lookups, web search, etc.), and publishes or alerts them to subscribers.
+
+Key goals / philosophies:
+
+- **Modern, scalable design.** We want to keep up-to-date with Next.js 13’s _App Router_, partial prerendering, and the latest React 19 features.  
+- **Developer-centric.** The project uses TypeScript, Prisma, Clerk, and a well-organized `app/` directory approach for clarity and maintainability.  
+- **Flexible data model.** We use a relational schema in PostgreSQL, with Prisma as the data layer, to handle advanced relationships (e.g. Subscriptions, Schedules, many-to-many associations).  
+- **Accessible UI/UX.** Tailwind is used extensively for styling, with a strong preference for re-usable, composable components in the `components/ui` directory.
+
+---
+
+## 2. Monorepo / Directory Structure
+
+A quick look at the top-level directories and their purposes:
+
+```
+anaclumos-every.news/
+├── .github/workflows/ci.yml
+├── app/
+│   ├── dashboard/
+│   ├── marketplace/
+│   ├── newsroom/
+│   │   ├── archives/
+│   │   └── reporters/
+│   ├── settings/
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── middleware.ts
+│   └── page.tsx
+├── components/
+│   ├── app-sidebar.tsx
+│   ├── breadcrumbs.tsx
+│   ├── ui/ (all UI primitives)
+│   ├── user-profile.tsx
+│   └── onboarding-card.tsx
+├── data/ (Static or demo data for seeds, placeholder chart data)
+├── lib/ (Custom hooks, utilities, data fetching, etc.)
+├── prisma/
+│   ├── schema.prisma (all data models)
+│   └── index.ts (Prisma Client initialization)
+├── public/ (Static assets, brand logos, etc.)
+├── tailwind.config.ts
+├── next.config.ts
+├── tsconfig.json
+├── vitest.config.ts
+└── ...
+```
+
+### Highlights:
+
+- **`app/`** directory uses Next.js **App Router**. In Next.js 13+, every folder with `page.tsx` is a route. Sub-routes (like `app/newsroom/archives`) have their own layout or pages.  
+- **`components/ui/`** folder contains custom “Tremor Blocks” style UI components. This is **similar but different from shadcn**—we are **not** using shadcn here. Always refer to `"/components/ui"` to understand the available building blocks for the interface.  
+- **`prisma/`** houses the `schema.prisma` and the Prisma client initialization. This is our single source of truth for the database schema.  
+- **`lib/`** holds custom hooks (`use-mobile`, `use-toast`, etc.), chart utilities, and general helper files (like `utils.ts`).
+
+---
+
+## 3. Data Modeling (Prisma)
+
+In `prisma/schema.prisma`, you’ll see a well-thought-out relational schema for our news/reporters platform. Key models:
+
+1. **User**  
+   - Uniquely identified by `id` (ULID) and `authProviderUid` from Clerk.  
+   - Has relationships to `Reporter`, `Schedule`, `NotificationChannel`, etc.
+
+2. **Reporter**  
+   - A “virtual AI Reporter” that monitors a data source.  
+   - Has a `strategy` (like `EXA_SEARCH`, `WHOIS_LOOKUP`, or `HN_BEST_STORIES`), and a `status` (active, paused, archived).  
+   - Optionally references a `Prompt` for post-processing.
+
+3. **Schedule**  
+   - Defines a cron expression and times to run certain Reporters.  
+   - Ties to multiple Reporters via a many-to-many join table `ScheduleReporter`.
+
+4. **Interview**  
+   - Each time a Reporter “scans,” we store that event in an Interview.  
+   - The discovered `Stories` link back to the Interview that found them.
+
+5. **Story**  
+   - Represents actual content discovered, with `title`, `url`, `summary`, etc.  
+   - Optionally references a `Prompt` to transform or post-process the story content.
+
+6. **Subscription**  
+   - A user can subscribe to a Reporter owned by another user.  
+   - Optionally references a `NotificationChannel` for delivering updates.
+
+7. **Prompt**  
+   - Reusable chunk of text that can be used for AI post-processing.  
+   - E.g., instructions for rewriting or summarizing.
+
+8. **NotificationChannel**  
+   - Abstract representation of how a user wants to be notified (Email, SMS, Slack).  
+   - Contains `type` plus JSON `settings`.
+
+**Why Prisma?**  
+- **Type Safety**: You get typed model definitions in your code.  
+- **Migrations**: Running `prisma migrate` handles schema changes.  
+- **Dev Experience**: Simplifies complex queries with an intuitive API.
+
+---
+
+## 4. Next.js 13+ App Router & React 19
+
+We use the **App Router** from Next.js 13, which means:
+
+- **`layout.tsx`** vs `pages/_app.tsx`: Layouts are hierarchical. `app/layout.tsx` is the root layout that wraps all pages; sub-layouts in `newsroom/archives/layout.tsx` can further wrap child routes.  
+- **React 19**: We can leverage new features like stable concurrent APIs, partial prerendering, and more advanced concurrency.  
+- **Server Components**: The new default. We load data on the server, returning fully-hydrated JSON for the client, thus reducing JS bundle size.  
+- **`metadata`** for SEO: `app/layout.tsx` exports a `metadata` object for easy open graph, keywords, etc.
+
+**Why the new Router?**  
+- Collocated: Route logic, layout, and metadata are in close proximity.  
+- Powerful server actions: You can define server-based form actions to handle data without writing a separate API route.
+
+---
+
+## 5. Partial Prerendering & Server Actions
+
+In the **`next.config.ts`** you may see references to experimental flags like:
+
+```ts
+// next.config.ts
+export default {
+  experimental: {
+    ppr: "incremental", // partial prerendering
+    reactCompiler: true, 
+  },
+};
+```
+
+- **Partial Prerendering** (PPR) is an experimental Next.js feature that allows pages to be partially prerendered while deferring other parts to client side. This speeds up TTFB and reduces the load on the server.  
+- **Server Actions**: Instead of building a separate `/api` folder for form submissions or data manipulations, we can define “action” functions inside the server component’s code. This is a new approach in the Next.js 13 ecosystem.
+
+**Example**: 
+```ts
+"use server"
+
+// Inside a server component
+export async function handleCreateReporter(data: FormData) {
+  // create new reporter in the DB
+}
+```
+Users no longer need a separate API route to handle form submission; the server action function is automatically called on the server side.
+
+---
+
+## 6. Tailwind CSS & Theming
+
+**Tailwind** is used throughout:
+
+- **`tailwind.config.ts`**: We configure `darkMode: "selector"` or `"class"`. By default, Next Themes is used to detect user preference.  
+- **Utility-First**: The code primarily uses utility classes like `bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50`, etc.  
+- **Theming**: Dark mode is toggled automatically via `ThemeProvider` from `next-themes`.
+
+**Why Tailwind?**  
+- **Developer velocity**: Utility classes speed up prototyping.  
+- **Design consistency**: Consistent spacing, colors, and breakpoints.  
+- **Easily themable**: Dark mode is straightforward—just prefix with `dark:`.
+
+---
+
+## 7. UI Components & Patterns
+
+We have a **`components/ui`** folder containing small, composable building blocks:
+
+- We are using **Tremor Blocks**, which is similar but different from shadcn. We are **not** using ShadCN. Always refer to the `"/components/ui"` folder to understand how these blocks and patterns are structured for charts, input components, accordions, tables, and more.  
+
+- **Buttons** (`button.tsx`): Default, secondary, ghost, destructive, etc.  
+- **Inputs / Textarea / Select**: All rely on consistent Tailwind styling + focus rings.  
+- **Charts**: We rely on custom wrappers around Recharts (like `BarChart`, `LineChart`, `AreaChart`, etc.).  
+- **Dialog, Drawer, Toast**: Based on Radix UI primitives.  
+- **Sidebar**: A fully re-usable, collapsible sidebar (`sidebar.tsx`), bridging typical dashboard nav patterns.  
+
+**Design pattern**:  
+1. Each component is typically a function component with TypeScript, either controlled or uncontrolled.  
+2. Minimal logic in these UI wrappers, but well-documented.  
+3. We reuse them in the `app/` route pages to maintain consistency.
+
+---
+
+## 8. Clerk Authentication & Middleware
+
+We use **Clerk** for authentication. The highlights:
+
+- **`@clerk/nextjs`**: Provides server-based and client-based authentication wrappers.  
+- **Middleware**: `app/middleware.ts` calls `clerkMiddleware()`, handling SSR session verification.  
+- **User Profiles**: The `UserProfile` component in `components/user-profile.tsx` uses `<ClerkProvider>`, `<SignedIn>`, `<UserButton>`, etc.
+
+**Why Clerk?**  
+- Zero friction to set up.  
+- Covers social logins, multi-factor, session management, user invites, etc.
+
+---
+
+## 9. Scheduling, Subscriptions & Strategies
+
+### Scheduling
+
+- **Schedules** define `cron` expressions plus references to multiple Reporters via a many-to-many.  
+- A single `Schedule` can spawn multiple **Interviews** across all the linked **Reporters**.  
+- **Runs** represent each invocation of a schedule. Each run can result in multiple interviews.
+
+### Subscriptions
+
+- Users can subscribe to a Reporter.  
+- Optionally, they pick a **NotificationChannel** (Email, SMS, Slack).  
+- When a new Story is discovered, the system checks for subscription, triggers notifications accordingly.
+
+### Strategies
+
+- We store enumerations in Prisma for `ReporterStrategyType` (like `EXA_SEARCH`, `HN_BEST_STORIES`, etc.).  
+- The idea is that each Reporter uses a different approach to fetch data externally.  
+- The actual logic is or can be in a separate function (e.g., `fetchHackerNewsStories()`). The stored `Reporter` just indicates which approach is relevant.
+
+---
+
+## 10. Testing, Linting & Automation
+
+**every.news** leverages:
+
+1. **Vitest**  
+   - A lightweight alternative to Jest. We put our tests in `**/*.spec.ts`.  
+   - `bun run test` from the CLI runs these tests quickly.
+
+2. **Biome** (Rome-based lint + formatting)  
+   - Configuration in `biome.json`.  
+   - We ensure code is formatted and linted pre-commit/push (`lefthook.yml`).
+
+3. **GitHub Actions**  
+   - Defined in `.github/workflows/ci.yml`.  
+   - The CI pipeline runs “Quality Checks” with Biome, unit tests with Vitest, and attempts a production build.
+
+**Why Bun + Vitest + Biome?**  
+- **Bun** is a new high-speed JS runtime, drastically faster installs and run times.  
+- **Vitest** is simpler, lighter, faster than Jest. Good dev experience.  
+- **Biome** merges Prettier & ESLint functionality in one.
+
+---
+
+## Conclusion
+
+In essence, **every.news** showcases a modern full-stack approach:
+
+1. **Next.js 13** + **React 19** = SSR, partial prerendering, server actions.  
+2. **Prisma** + **PostgreSQL** = simple, robust relational data.  
+3. **Tailwind** + **Tremor Blocks** = composable, consistent design system.  
+4. **Clerk** for authentication, making user-based flows straightforward.  
+5. **Schedules** & **Strategies** drive the “AI reporter” logic for discovering new stories.
+
+All these components fit together to form a cutting-edge developer experience—designed to be maintainable, flexible, and intuitive for both new and experienced engineers. By following these patterns—server actions, partial prerendering, typed data models, utility-first CSS—developers can evolve the codebase confidently while staying on the cutting edge of web technology.
+
+Happy coding with **every.news**!
