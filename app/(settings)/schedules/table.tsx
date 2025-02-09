@@ -1,8 +1,8 @@
 "use client"
 
+import { NavBar } from "@/components/nav-bar"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { SidebarTrigger } from "@/components/ui/sidebar"
 import {
   Table,
   TableBody,
@@ -12,7 +12,7 @@ import {
   TableRoot,
   TableRow,
 } from "@/components/ui/table"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent } from "@/components/ui/tabs"
 import { cx } from "@/lib/utils"
 import { Schedule } from "@prisma/client"
 import {
@@ -23,7 +23,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table"
 import cronstrue from "cronstrue"
-import { ChevronRight, LayoutGrid, List } from "lucide-react"
+import { LayoutGrid, List } from "lucide-react"
 import Link from "next/link"
 import React, { useMemo, useState } from "react"
 
@@ -115,53 +115,25 @@ export function SchedulesTable({ initialSchedules }: SchedulesTableProps) {
 
   return (
     <div>
-      <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-2 border-b border-gray-200 bg-white px-4 dark:border-gray-800 dark:bg-gray-950">
-        <SidebarTrigger className="-ml-1" />
-        <div className="flex items-center justify-between w-full">
-          <nav aria-label="Breadcrumb" className="ml-2">
-            <ol role="list" className="flex items-center space-x-3 text-sm">
-              <li className="flex">
-                <Link
-                  href="/"
-                  className="text-gray-500 transition hover:text-gray-700 dark:text-gray-400 hover:dark:text-gray-300"
-                >
-                  Home
-                </Link>
-              </li>
-              <ChevronRight
-                className="size-4 shrink-0 text-gray-600 dark:text-gray-400"
-                aria-hidden="true"
-              />
-              <li className="flex">
-                <Link
-                  href="/schedules"
-                  className="text-gray-500 transition hover:text-gray-700 dark:text-gray-400 hover:dark:text-gray-300"
-                >
-                  Schedules
-                </Link>
-              </li>
-            </ol>
-          </nav>
-          <div className="flex items-center gap-4">
-            <Tabs
-              value={activeView}
-              onValueChange={(value) => setActiveView(value as "grid" | "list")}
-            >
-              <TabsList variant="solid">
-                <TabsTrigger value="grid">
-                  <LayoutGrid className="size-4" />
-                </TabsTrigger>
-                <TabsTrigger value="list">
-                  <List className="size-4" />
-                </TabsTrigger>
-              </TabsList>
-            </Tabs>
-            <Link href={`/schedules/new`}>
-              <Button>Create</Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <NavBar
+        breadcrumbs={[
+          { title: "Home", href: "/" },
+          { title: "Schedules", href: "/schedules" },
+        ]}
+        viewToggle={{
+          value: activeView,
+          onChange: (value) => setActiveView(value as "grid" | "list"),
+          options: [
+            { value: "grid", icon: <LayoutGrid className="size-4" /> },
+            { value: "list", icon: <List className="size-4" /> },
+          ],
+        }}
+        actions={
+          <Link href={`/schedules/new`}>
+            <Button>Create</Button>
+          </Link>
+        }
+      />
 
       <Tabs
         value={activeView}

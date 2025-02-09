@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 
 import { createSchedule, updateSchedule } from "@/app/actions/schedules"
+import { NavBar } from "@/components/nav-bar"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Divider } from "@/components/ui/divider"
@@ -128,8 +129,22 @@ export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
     router.push("/settings/schedules")
   }
 
+  const breadcrumbs = [
+    { title: "Home", href: "/" },
+    { title: "Schedules", href: "/schedules" },
+  ]
+
+  if (mode === "edit" && schedule) {
+    breadcrumbs.push({
+      title: schedule.name,
+      href: `/schedules/${schedule.id}`,
+    })
+  }
+
   return (
     <>
+      <NavBar breadcrumbs={breadcrumbs} />
+
       <form action={handleSubmit}>
         {/* Schedule Info Section */}
         <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
