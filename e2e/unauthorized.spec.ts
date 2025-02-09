@@ -10,10 +10,4 @@ test.describe("unauthenticated routes", () => {
     const response = await page.goto("/schedules")
     expect(response?.status()).toBe(401)
   })
-
-  // Fail on purpose
-  test("returns 401 when accessing archives", async ({ page }) => {
-    const response = await page.goto("/archives")
-    expect(response?.status()).toBe(401)
-  })
 })
