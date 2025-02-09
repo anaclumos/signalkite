@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import {
   Table,
@@ -11,6 +12,7 @@ import {
   TableRoot,
   TableRow,
 } from "@/components/ui/table"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { cx } from "@/lib/utils"
 import { Schedule } from "@prisma/client"
 import {
@@ -21,19 +23,18 @@ import {
   useReactTable,
 } from "@tanstack/react-table"
 import cronstrue from "cronstrue"
-import { ChevronRight } from "lucide-react"
+import { ChevronRight, LayoutGrid, List } from "lucide-react"
 import Link from "next/link"
-import React, { useMemo } from "react"
+import React, { useMemo, useState } from "react"
 
 interface SchedulesTableProps {
   initialSchedules: Schedule[]
 }
 
 export function SchedulesTable({ initialSchedules }: SchedulesTableProps) {
-  // Schedules list
   const [schedules] = React.useState<Schedule[]>(initialSchedules)
+  const [activeView, setActiveView] = useState<"grid" | "list">("grid")
 
-  // Define columns as a JSON array (no columnHelper)
   const columns = useMemo<ColumnDef<Schedule>[]>(
     () => [
       {
@@ -141,47 +142,99 @@ export function SchedulesTable({ initialSchedules }: SchedulesTableProps) {
               </li>
             </ol>
           </nav>
-          <Link href={`/schedules/new`}>
-            <Button>Create</Button>
-          </Link>
+          <div className="flex items-center gap-4">
+            <Tabs
+              value={activeView}
+              onValueChange={(value) => setActiveView(value as "grid" | "list")}
+            >
+              <TabsList variant="solid">
+                <TabsTrigger value="grid">
+                  <LayoutGrid className="size-4" />
+                </TabsTrigger>
+                <TabsTrigger value="list">
+                  <List className="size-4" />
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
+            <Link href={`/schedules/new`}>
+              <Button>Create</Button>
+            </Link>
+          </div>
         </div>
       </header>
 
-      <TableRoot>
-        <Table>
-          <TableHead>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => (
-                  <TableHeaderCell key={header.id}>
-                    {flexRender(
-                      header.column.columnDef.header,
-                      header.getContext(),
-                    )}
-                  </TableHeaderCell>
-                ))}
-              </TableRow>
-            ))}
-          </TableHead>
-
-          <TableBody className="divide-y divide-gray-200">
-            {table.getRowModel().rows.map((row) => (
-              <TableRow key={row.id}>
-                {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id}>
-                    <Link href={`/schedules/${row.original.id}`}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext(),
+      <Tabs
+        value={activeView}
+        onValueChange={(value) => setActiveView(value as "grid" | "list")}
+        className="w-full"
+      >
+        <TabsContent value="grid">
+          <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
+            {schedules.map((schedule) => (
+              <Link key={schedule.id} href={`/schedules/${schedule.id}`}>
+                <Card className="p-4 transition hover:bg-gray-50 dark:hover:bg-gray-900">
+                  <h3 className="font-medium">{schedule.name}</h3>
+                  <p className="mt-1 text-sm text-gray-500">
+                    {cronstrue.toString(schedule.cron)}
+                    {", "}
+                    {schedule.timezone.split("/").pop()} time
+                  </p>
+                  <div className="mt-4">
+                    <span
+                      className={cx(
+                        "inline-flex items-center rounded-full px-2 py-1 text-xs font-medium",
+                        schedule.paused
+                          ? "bg-yellow-50 text-yellow-800 dark:bg-yellow-400/10 dark:text-yellow-500"
+                          : "bg-green-50 text-green-800 dark:bg-green-400/10 dark:text-green-500",
                       )}
-                    </Link>
-                  </TableCell>
-                ))}
-              </TableRow>
+                    >
+                      {schedule.paused ? "Paused" : "Active"}
+                    </span>
+                  </div>
+                </Card>
+              </Link>
             ))}
-          </TableBody>
-        </Table>
-      </TableRoot>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="list">
+          <TableRoot>
+            <Table>
+              <TableHead>
+                {table.getHeaderGroups().map((headerGroup) => (
+                  <TableRow key={headerGroup.id}>
+                    {headerGroup.headers.map((header) => (
+                      <TableHeaderCell key={header.id}>
+                        {flexRender(
+                          header.column.columnDef.header,
+                          header.getContext(),
+                        )}
+                      </TableHeaderCell>
+                    ))}
+                  </TableRow>
+                ))}
+              </TableHead>
+
+              <TableBody className="divide-y divide-gray-200">
+                {table.getRowModel().rows.map((row) => (
+                  <TableRow key={row.id}>
+                    {row.getVisibleCells().map((cell) => (
+                      <TableCell key={cell.id}>
+                        <Link href={`/schedules/${row.original.id}`}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext(),
+                          )}
+                        </Link>
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableRoot>
+        </TabsContent>
+      </Tabs>
     </div>
   )
 }

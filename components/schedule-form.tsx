@@ -273,7 +273,7 @@ export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
 
               <div className="col-span-full text-sm text-gray-600 dark:text-gray-400">
                 {cronstrue.toString(generateCronString())},{" "}
-                {timezone.split("/")[1]} time.
+                {timezone.split("/").pop()} time.
               </div>
             </div>
           </div>
