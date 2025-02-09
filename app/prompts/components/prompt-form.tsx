@@ -1,8 +1,18 @@
 "use client"
 
-import { createPrompt, updatePrompt } from "@/app/actions/prompts"
+import { createPrompt, deletePrompt, updatePrompt } from "@/app/actions/prompts"
 import { NavBar } from "@/components/nav-bar"
 import { Button } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import { Divider } from "@/components/ui/divider"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -18,6 +28,13 @@ interface PromptFormProps {
 
 export function PromptForm({ prompt, mode }: PromptFormProps) {
   const router = useRouter()
+
+  async function handleDelete() {
+    if (prompt) {
+      await deletePrompt(prompt.id)
+      router.push("/prompts")
+    }
+  }
 
   async function handleSubmit(formData: FormData) {
     const description = formData.get("description") as string
@@ -53,7 +70,35 @@ export function PromptForm({ prompt, mode }: PromptFormProps) {
 
   return (
     <>
-      <NavBar breadcrumbs={breadcrumbs} />
+      <NavBar
+        breadcrumbs={breadcrumbs}
+        actions={
+          prompt && (
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="destructive">Delete</Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Delete Prompt</DialogTitle>
+                  <DialogDescription>
+                    Are you sure you want to delete this prompt? This action
+                    cannot be undone.
+                  </DialogDescription>
+                </DialogHeader>
+                <DialogFooter>
+                  <DialogClose asChild>
+                    <Button variant="secondary">Cancel</Button>
+                  </DialogClose>
+                  <form action={handleDelete}>
+                    <Button variant="destructive">Delete</Button>
+                  </form>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+          )
+        }
+      />
 
       <form action={handleSubmit}>
         {/* Prompt Info Section */}
