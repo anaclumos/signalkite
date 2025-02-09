@@ -61,15 +61,15 @@ const navigation2 = [
     children: [
       {
         name: "Notification Channels",
-        href: "/settings/notification-channels",
+        href: "/notification-channels",
       },
       {
         name: "Prompts",
-        href: "/settings/prompts",
+        href: "/prompts",
       },
       {
         name: "Schedules",
-        href: "/settings/schedules",
+        href: "/schedules",
       },
     ],
   },
