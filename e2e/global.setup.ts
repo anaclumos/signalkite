@@ -31,8 +31,7 @@ setup("authenticate", async ({ page }) => {
       password: process.env.E2E_CLERK_USER_PASSWORD!,
     },
   })
-  await page.goto("/dashboard")
-  await page.waitForSelector("h1:has-text('Dashboard')")
-
+  const response = await page.goto("/dashboard")
+  expect(response?.status()).toBe(200)
   await page.context().storageState({ path: authFile })
 })
