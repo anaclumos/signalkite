@@ -1,20 +1,35 @@
 "use server"
 
 import { db } from "@/prisma"
+import { z } from "zod"
 import { getCurrentUser } from "./auth"
+
+// Validation schemas
+const subscriptionInputSchema = z.object({
+  reporterId: z.string().min(1, "Reporter ID is required"),
+  notificationChannelId: z.string().optional(),
+})
+
+const subscriptionUpdateSchema = z.object({
+  reporterId: z.string().min(1, "Reporter ID is required"),
+  notificationChannelId: z.string().nullable().optional(),
+})
 
 export async function createSubscription({
   reporterId,
   notificationChannelId,
-}: {
-  reporterId: string
-  notificationChannelId?: string
-}) {
+}: z.infer<typeof subscriptionInputSchema>) {
+  // Validate input
+  const validatedData = subscriptionInputSchema.parse({
+    reporterId,
+    notificationChannelId,
+  })
+
   const user = await getCurrentUser()
 
-  if (notificationChannelId) {
+  if (validatedData.notificationChannelId) {
     const channel = await db.notificationChannel.findUnique({
-      where: { id: notificationChannelId },
+      where: { id: validatedData.notificationChannelId },
     })
     if (!channel || channel.userId !== user.id) {
       throw new Error("Invalid notification channel")
@@ -23,7 +38,7 @@ export async function createSubscription({
 
   const reporter = await db.reporter.findUnique({
     where: {
-      id: reporterId,
+      id: validatedData.reporterId,
       deletedAt: null,
     },
   })
@@ -35,8 +50,8 @@ export async function createSubscription({
   return db.subscription.create({
     data: {
       userId: user.id,
-      reporterId,
-      notificationChannelId,
+      reporterId: validatedData.reporterId,
+      notificationChannelId: validatedData.notificationChannelId,
     },
     include: {
       reporter: true,
@@ -48,17 +63,20 @@ export async function createSubscription({
 export async function updateSubscription({
   reporterId,
   notificationChannelId,
-}: {
-  reporterId: string
-  notificationChannelId?: string | null
-}) {
+}: z.infer<typeof subscriptionUpdateSchema>) {
+  // Validate input
+  const validatedData = subscriptionUpdateSchema.parse({
+    reporterId,
+    notificationChannelId,
+  })
+
   const user = await getCurrentUser()
 
   const subscription = await db.subscription.findUnique({
     where: {
       userId_reporterId: {
         userId: user.id,
-        reporterId,
+        reporterId: validatedData.reporterId,
       },
     },
   })
@@ -66,9 +84,9 @@ export async function updateSubscription({
     throw new Error("Subscription not found")
   }
 
-  if (notificationChannelId) {
+  if (validatedData.notificationChannelId) {
     const channel = await db.notificationChannel.findUnique({
-      where: { id: notificationChannelId },
+      where: { id: validatedData.notificationChannelId },
     })
     if (!channel || channel.userId !== user.id) {
       throw new Error("Invalid notification channel")
@@ -79,11 +97,11 @@ export async function updateSubscription({
     where: {
       userId_reporterId: {
         userId: user.id,
-        reporterId,
+        reporterId: validatedData.reporterId,
       },
     },
     data: {
-      notificationChannelId,
+      notificationChannelId: validatedData.notificationChannelId,
     },
     include: {
       reporter: true,
@@ -93,13 +111,19 @@ export async function updateSubscription({
 }
 
 export async function deleteSubscription(reporterId: string) {
+  // Validate input
+  const validatedReporterId = z
+    .string()
+    .min(1, "Reporter ID is required")
+    .parse(reporterId)
+
   const user = await getCurrentUser()
 
   const subscription = await db.subscription.findUnique({
     where: {
       userId_reporterId: {
         userId: user.id,
-        reporterId,
+        reporterId: validatedReporterId,
       },
     },
   })
@@ -112,7 +136,7 @@ export async function deleteSubscription(reporterId: string) {
     where: {
       userId_reporterId: {
         userId: user.id,
-        reporterId,
+        reporterId: validatedReporterId,
       },
     },
   })

@@ -1,31 +1,61 @@
 "use server"
 
 import { db } from "@/prisma"
+import { z } from "zod"
 import { getCurrentUser } from "./auth"
+
+// Validation schemas
+const scheduleIdSchema = z.string().min(1, "Schedule ID is required")
+
+const scheduleInputSchema = z.object({
+  name: z
+    .string()
+    .min(1, "Name is required")
+    .max(100, "Name must be 100 characters or less"),
+  cron: z
+    .string()
+    .min(1, "Cron expression is required")
+    .max(100, "Cron expression must be 100 characters or less"),
+  reporterIds: z.array(z.string()).optional(),
+})
+
+const scheduleUpdateSchema = z.object({
+  id: scheduleIdSchema,
+  name: z.string().max(100, "Name must be 100 characters or less").optional(),
+  cron: z
+    .string()
+    .max(100, "Cron expression must be 100 characters or less")
+    .optional(),
+  paused: z.boolean().optional(),
+  reporterIds: z.array(z.string()).optional(),
+})
 
 export async function createSchedule({
   name,
   cron,
   reporterIds,
-}: {
-  name: string
-  cron: string
-  reporterIds?: string[]
-}) {
+}: z.infer<typeof scheduleInputSchema>) {
+  // Validate input
+  const validatedData = scheduleInputSchema.parse({
+    name,
+    cron,
+    reporterIds,
+  })
+
   const user = await getCurrentUser()
 
   return db.$transaction(async (tx) => {
     const schedule = await tx.schedule.create({
       data: {
-        name,
-        cron,
+        name: validatedData.name,
+        cron: validatedData.cron,
         ownerId: user.id,
       },
     })
 
-    if (reporterIds?.length) {
+    if (validatedData.reporterIds?.length) {
       await tx.scheduleReporter.createMany({
-        data: reporterIds.map((reporterId) => ({
+        data: validatedData.reporterIds.map((reporterId) => ({
           scheduleId: schedule.id,
           reporterId,
         })),
@@ -42,17 +72,20 @@ export async function updateSchedule({
   cron,
   paused,
   reporterIds,
-}: {
-  id: string
-  name?: string
-  cron?: string
-  paused?: boolean
-  reporterIds?: string[]
-}) {
+}: z.infer<typeof scheduleUpdateSchema>) {
+  // Validate input
+  const validatedData = scheduleUpdateSchema.parse({
+    id,
+    name,
+    cron,
+    paused,
+    reporterIds,
+  })
+
   const user = await getCurrentUser()
 
   const schedule = await db.schedule.findUnique({
-    where: { id },
+    where: { id: validatedData.id },
     include: {
       ScheduleReporters: true,
     },
@@ -64,22 +97,22 @@ export async function updateSchedule({
 
   return db.$transaction(async (tx) => {
     const updatedSchedule = await tx.schedule.update({
-      where: { id },
+      where: { id: validatedData.id },
       data: {
-        name,
-        cron,
-        paused,
+        name: validatedData.name,
+        cron: validatedData.cron,
+        paused: validatedData.paused,
       },
     })
 
-    if (reporterIds) {
+    if (validatedData.reporterIds) {
       await tx.scheduleReporter.deleteMany({
-        where: { scheduleId: id },
+        where: { scheduleId: validatedData.id },
       })
-      if (reporterIds.length > 0) {
+      if (validatedData.reporterIds.length > 0) {
         await tx.scheduleReporter.createMany({
-          data: reporterIds.map((reporterId) => ({
-            scheduleId: id,
+          data: validatedData.reporterIds.map((reporterId) => ({
+            scheduleId: validatedData.id,
             reporterId,
           })),
         })
@@ -91,10 +124,13 @@ export async function updateSchedule({
 }
 
 export async function deleteSchedule(id: string) {
+  // Validate input
+  const validatedId = scheduleIdSchema.parse(id)
+
   const user = await getCurrentUser()
 
   const schedule = await db.schedule.findUnique({
-    where: { id },
+    where: { id: validatedId },
   })
 
   if (!schedule || schedule.ownerId !== user.id) {
@@ -102,7 +138,7 @@ export async function deleteSchedule(id: string) {
   }
 
   return db.schedule.update({
-    where: { id },
+    where: { id: validatedId },
     data: {
       deletedAt: new Date(),
     },
@@ -110,10 +146,13 @@ export async function deleteSchedule(id: string) {
 }
 
 export async function getSchedule(id: string) {
+  // Validate input
+  const validatedId = scheduleIdSchema.parse(id)
+
   const user = await getCurrentUser()
 
   const schedule = await db.schedule.findUnique({
-    where: { id },
+    where: { id: validatedId },
     include: {
       ScheduleReporters: {
         include: {
