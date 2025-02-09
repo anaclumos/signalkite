@@ -1,6 +1,5 @@
 import { AppSidebar } from "@/components/app-sidebar"
-import { Breadcrumbs } from "@/components/breadcrumbs"
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { SidebarProvider } from "@/components/ui/sidebar"
 import { ClerkProvider } from "@clerk/nextjs"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -62,10 +61,6 @@ export default async function RootLayout({
             <SidebarProvider defaultOpen={defaultOpen}>
               <AppSidebar />
               <div className="w-full flex flex-col">
-                <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-2 border-b border-gray-200 bg-white px-4 dark:border-gray-800 dark:bg-gray-950">
-                  <SidebarTrigger className="-ml-1" />
-                  <Breadcrumbs />
-                </header>
                 <main className="flex-1">{children}</main>
               </div>
             </SidebarProvider>
