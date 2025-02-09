@@ -44,6 +44,7 @@ jobs:
       - name: Run Unit Tests
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+          NODE_ENV: test
         run: bun run test
   build:
     name: 📦 Build
