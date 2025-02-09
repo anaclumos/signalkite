@@ -129,7 +129,6 @@ export default function Overview() {
                                 ? "default"
                                 : "default"
                         }
-                        className="rounded-full"
                       >
                         <span
                           className={cx(
