@@ -1,6 +1,5 @@
 "use client"
 import { siteConfig } from "@/app/site-config"
-import { Divider } from "@/components/ui/divider"
 import { Input } from "@/components/ui/input"
 import {
   Sidebar,
@@ -9,7 +8,6 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarHeader,
-  SidebarLink,
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuSub,
@@ -26,18 +24,22 @@ import { UserProfile } from "./user-profile"
 
 const navigation = [
   {
-    name: "Dashboard",
-    href: "/dashboard",
+    name: "Home",
+    href: "/",
     icon: House,
+    children: [
+      {
+        name: "Dashboard",
+        href: "/dashboard",
+        icon: House,
+      },
+      {
+        name: "Marketplace",
+        href: "/marketplace",
+        icon: PackageSearch,
+      },
+    ],
   },
-  {
-    name: "Marketplace",
-    href: "/marketplace",
-    icon: PackageSearch,
-  },
-] as const
-
-const navigation2 = [
   {
     name: "Newsroom",
     href: "#",
@@ -78,8 +80,9 @@ const navigation2 = [
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname()
   const [openMenus, setOpenMenus] = React.useState<string[]>([
-    navigation2[0].name,
-    navigation2[1].name,
+    navigation[0].name,
+    navigation[1].name,
+    navigation[2].name,
   ])
   const toggleMenu = (name: string) => {
     setOpenMenus((prev: string[]) =>
@@ -117,32 +120,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             />
           </SidebarGroupContent>
         </SidebarGroup>
-        <SidebarGroup className="pt-0">
-          <SidebarGroupContent>
-            <SidebarMenu className="space-y-1">
-              {navigation.map((item) => (
-                <SidebarMenuItem key={item.name}>
-                  <SidebarLink
-                    href={item.href}
-                    isActive={
-                      pathname === "/" ? pathname.startsWith(item.href) : false
-                    }
-                    icon={item.icon}
-                  >
-                    {item.name}
-                  </SidebarLink>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-        <div className="px-3">
-          <Divider className="my-0 py-0" />
-        </div>
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu className="space-y-4">
-              {navigation2.map((item) => (
+              {navigation.map((item) => (
                 <SidebarMenuItem key={item.name}>
                   <button
                     onClick={() => toggleMenu(item.name)}
