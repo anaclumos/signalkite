@@ -8,24 +8,10 @@ import {
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
-import { createReporter, getReporters } from "@/app/actions/reporters"
+import { getReporters } from "@/app/actions/reporters"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
 import { Divider } from "@/components/ui/divider"
-import { Input } from "@/components/ui/input"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 import {
   Table,
   TableBody,
@@ -35,9 +21,8 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/lib/use-toast"
-import { Reporter, ReporterStatus, ReporterStrategyType } from "@prisma/client"
+import { Reporter, ReporterStatus } from "@prisma/client"
 
 type ReporterWithRelations = Reporter & {
   Prompt: {
@@ -59,8 +44,6 @@ type ReporterWithRelations = Reporter & {
 
 export default function ReportersPage() {
   const [reporters, setReporters] = useState<ReporterWithRelations[]>([])
-  const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
   const { toast } = useToast()
   const router = useRouter()
 
@@ -79,50 +62,6 @@ export default function ReportersPage() {
           error instanceof Error ? error.message : "An error occurred",
         variant: "error",
       })
-    }
-  }
-
-  async function handleCreateReporter(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    setIsLoading(true)
-
-    const formData = new FormData(event.currentTarget)
-    const name = formData.get("name")
-    const description = formData.get("description")
-    const strategy = formData.get("strategy")
-
-    if (!name || !strategy) {
-      toast({
-        title: "Error creating reporter",
-        description: "Name and strategy are required",
-        variant: "error",
-      })
-      setIsLoading(false)
-      return
-    }
-
-    try {
-      await createReporter({
-        name: name.toString(),
-        description: description?.toString(),
-        strategy: strategy.toString() as ReporterStrategyType,
-      })
-
-      setIsCreateDialogOpen(false)
-      loadReporters()
-      toast({
-        title: "Reporter created",
-        description: "Your new reporter has been created successfully.",
-      })
-    } catch (error) {
-      toast({
-        title: "Error creating reporter",
-        description:
-          error instanceof Error ? error.message : "An error occurred",
-        variant: "error",
-      })
-    } finally {
-      setIsLoading(false)
     }
   }
 
@@ -163,7 +102,7 @@ export default function ReportersPage() {
               </TabsTrigger>
             </TabsList>
             <div className="hidden h-8 w-px bg-gray-200 dark:bg-gray-800 sm:block" />
-            <Button onClick={() => setIsCreateDialogOpen(true)}>
+            <Button onClick={() => router.push("/newsroom/reporters/new")}>
               Add reporter
             </Button>
           </div>
@@ -304,59 +243,6 @@ export default function ReportersPage() {
           </Table>
         </TabsContent>
       </Tabs>
-
-      <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Create new reporter</DialogTitle>
-          </DialogHeader>
-          <form onSubmit={handleCreateReporter} className="space-y-4">
-            <div>
-              <Input name="name" placeholder="Reporter name" required />
-            </div>
-            <div>
-              <Textarea
-                name="description"
-                placeholder="Description (optional)"
-                rows={3}
-              />
-            </div>
-            <div>
-              <Select
-                name="strategy"
-                defaultValue={ReporterStrategyType.EXA_SEARCH}
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder="Select a strategy" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value={ReporterStrategyType.EXA_SEARCH}>
-                    EXA Search
-                  </SelectItem>
-                  <SelectItem value={ReporterStrategyType.WHOIS_LOOKUP}>
-                    WHOIS Lookup
-                  </SelectItem>
-                  <SelectItem value={ReporterStrategyType.HN_BEST_STORIES}>
-                    HN Best Stories
-                  </SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div className="flex justify-end space-x-2">
-              <Button
-                type="button"
-                variant="secondary"
-                onClick={() => setIsCreateDialogOpen(false)}
-              >
-                Cancel
-              </Button>
-              <Button type="submit" disabled={isLoading}>
-                {isLoading ? "Creating..." : "Create"}
-              </Button>
-            </div>
-          </form>
-        </DialogContent>
-      </Dialog>
     </div>
   )
 }
