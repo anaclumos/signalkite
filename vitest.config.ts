@@ -6,6 +6,7 @@ export default defineConfig({
     globals: true,
     environment: "node",
     include: ["**/*.spec.ts"],
+    exclude: ["e2e/**"],
     setupFiles: ["./lib/setup.ts"],
     alias: {
       "@": path.resolve(__dirname, "./"),
