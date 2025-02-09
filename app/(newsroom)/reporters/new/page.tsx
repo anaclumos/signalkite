@@ -29,7 +29,7 @@ export default function NewReporter() {
       strategy,
     })
 
-    router.push("/newsroom/reporters")
+    router.push("/reporters")
   }
 
   return (
@@ -140,7 +140,7 @@ export default function NewReporter() {
         <div className="flex items-center justify-end space-x-4 p-4 md:p-8">
           <Button
             variant="secondary"
-            onClick={() => router.push("/newsroom/reporters")}
+            onClick={() => router.push("/reporters")}
             type="button"
           >
             Cancel

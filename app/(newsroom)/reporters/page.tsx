@@ -102,7 +102,7 @@ export default function ReportersPage() {
               </TabsTrigger>
             </TabsList>
             <div className="hidden h-8 w-px bg-gray-200 dark:bg-gray-800 sm:block" />
-            <Button onClick={() => router.push("/newsroom/reporters/new")}>
+            <Button onClick={() => router.push("/reporters/new")}>
               Add reporter
             </Button>
           </div>
@@ -131,7 +131,7 @@ export default function ReportersPage() {
                       <h3 className="text-sm font-medium text-gray-900 dark:text-gray-50">
                         <button
                           onClick={() =>
-                            router.push(`/newsroom/reporters/${reporter.id}`)
+                            router.push(`/reporters/${reporter.id}`)
                           }
                           className="focus:outline-none"
                         >
@@ -229,9 +229,7 @@ export default function ReportersPage() {
                   </TableCell>
                   <TableCell className="text-right">
                     <button
-                      onClick={() =>
-                        router.push(`/newsroom/reporters/${reporter.id}`)
-                      }
+                      onClick={() => router.push(`/reporters/${reporter.id}`)}
                       className="font-medium text-blue-500 dark:text-blue-500"
                     >
                       Edit<span className="sr-only">{reporter.name}</span>

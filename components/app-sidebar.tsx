@@ -45,11 +45,11 @@ const navigation2 = [
     children: [
       {
         name: "All Reporters",
-        href: "/newsroom/reporters",
+        href: "/reporters",
       },
       {
         name: "Archives",
-        href: "/newsroom/archives",
+        href: "/archives",
       },
     ],
   },
