@@ -4,9 +4,10 @@ import { ScheduleForm } from "./form"
 export default async function SchedulesPage({
   params,
 }: {
-  params: { scheduleId: string }
+  params: Promise<{ scheduleId: string }>
 }) {
-  const schedule = await getSchedule(params.scheduleId)
+  const { scheduleId } = await params
+  const schedule = await getSchedule(scheduleId)
 
   return <ScheduleForm schedule={schedule} />
 }
