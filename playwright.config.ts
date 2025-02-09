@@ -19,7 +19,7 @@ export default defineConfig({
   outputDir: "test-results/",
 
   webServer: {
-    command: "bun run build && bun run start",
+    command: "bun run ci",
     url: baseURL,
     timeout: 120 * 1000,
     reuseExistingServer: !process.env.CI,
