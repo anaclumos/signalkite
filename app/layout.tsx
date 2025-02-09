@@ -2,12 +2,13 @@ import { AppSidebar } from "@/components/app-sidebar"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { ClerkProvider } from "@clerk/nextjs"
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import { ThemeProvider } from "next-themes"
 import { cookies } from "next/headers"
 import "./globals.css"
 import { siteConfig } from "./site-config"
-
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: siteConfig.name,
@@ -69,6 +70,8 @@ export default async function RootLayout({
               </div>
             </SidebarProvider>
           </ThemeProvider>
+          <SpeedInsights />
+          <Analytics />
         </body>
       </html>
     </ClerkProvider>
