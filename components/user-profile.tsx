@@ -28,12 +28,12 @@ export function UserProfile() {
       <ClerkLoaded>
         <SignedOut>
           <div className="flex gap-2">
-            <SignInButton mode="modal">
+            <SignInButton>
               <Button variant="secondary" className="flex-1">
                 Sign in
               </Button>
             </SignInButton>
-            <SignUpButton mode="modal">
+            <SignUpButton>
               <Button className="flex-1">Sign up</Button>
             </SignUpButton>
           </div>
