@@ -21,7 +21,7 @@ import {
 import { quotes } from "@/data/quotes"
 import { Download } from "lucide-react"
 import { Fragment } from "react"
-import { cx } from "../../../lib/utils"
+import { cx } from "../../lib/utils"
 
 const colorClasses = [
   "bg-blue-500 dark:bg-blue-500",
