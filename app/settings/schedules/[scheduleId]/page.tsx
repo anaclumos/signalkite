@@ -1,5 +1,5 @@
 import { getSchedule } from "@/app/actions/schedules"
-import { ScheduleForm } from "./form"
+import { ScheduleForm } from "@/components/schedule-form"
 
 export default async function SchedulesPage({
   params,
@@ -9,5 +9,5 @@ export default async function SchedulesPage({
   const { scheduleId } = await params
   const schedule = await getSchedule(scheduleId)
 
-  return <ScheduleForm schedule={schedule} />
+  return <ScheduleForm schedule={schedule} mode="edit" />
 }

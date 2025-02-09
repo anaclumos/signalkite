@@ -4,7 +4,7 @@ import cronstrue from "cronstrue"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
-import { updateSchedule } from "@/app/actions/schedules"
+import { createSchedule, updateSchedule } from "@/app/actions/schedules"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Divider } from "@/components/ui/divider"
@@ -17,48 +17,52 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { daysOfWeek } from "@/lib/const"
 import type { Schedule, ScheduleReporter } from "@prisma/client"
-
-const daysOfWeek = [
-  { id: "MON", label: "Monday" },
-  { id: "TUE", label: "Tuesday" },
-  { id: "WED", label: "Wednesday" },
-  { id: "THU", label: "Thursday" },
-  { id: "FRI", label: "Friday" },
-  { id: "SAT", label: "Saturday" },
-  { id: "SUN", label: "Sunday" },
-]
 
 type ScheduleWithReporters = Schedule & {
   ScheduleReporters: ScheduleReporter[]
 }
 
-export function ScheduleForm({
-  schedule,
-}: { schedule: ScheduleWithReporters }) {
+interface ScheduleFormProps {
+  schedule?: ScheduleWithReporters
+  mode: "create" | "edit"
+}
+
+export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
   const router = useRouter()
 
-  // Parse initial cron expression
-  const cronParts = schedule.cron.split(" ")
-  const [hour, setHour] = useState(cronParts[1])
-  const [minute, setMinute] = useState(cronParts[0])
-  const [timezone, setTimezone] = useState(schedule.timezone)
+  // Parse initial cron expression or set defaults
+  const initialCronParts = schedule?.cron.split(" ") || [
+    "0",
+    "8",
+    "*",
+    "*",
+    "*",
+  ]
+  const [hour, setHour] = useState(initialCronParts[1])
+  const [minute, setMinute] = useState(initialCronParts[0])
+  const [timezone, setTimezone] = useState(
+    schedule?.timezone || Intl.DateTimeFormat().resolvedOptions().timeZone,
+  )
 
-  // Parse days from cron expression
+  // Parse days from cron expression or set empty
   const initialDays = new Set<string>()
-  const daysPart = cronParts[4]
-  if (daysPart !== "*") {
-    if (daysPart.includes("-")) {
-      // Handle range (e.g., MON-FRI)
-      const [start, end] = daysPart.split("-")
-      const startIndex = daysOfWeek.findIndex((d) => d.id === start)
-      const endIndex = daysOfWeek.findIndex((d) => d.id === end)
-      for (let i = startIndex; i <= endIndex; i++) {
-        initialDays.add(daysOfWeek[i].id)
+  if (schedule) {
+    const daysPart = initialCronParts[4]
+    if (daysPart !== "*") {
+      if (daysPart.includes("-")) {
+        // Handle range (e.g., MON-FRI)
+        const [start, end] = daysPart.split("-")
+        const startIndex = daysOfWeek.findIndex((d) => d.id === start)
+        const endIndex = daysOfWeek.findIndex((d) => d.id === end)
+        for (let i = startIndex; i <= endIndex; i++) {
+          initialDays.add(daysOfWeek[i].id)
+        }
+      } else {
+        // Handle comma-separated list
+        daysPart.split(",").forEach((day) => initialDays.add(day))
       }
-    } else {
-      // Handle comma-separated list
-      daysPart.split(",").forEach((day) => initialDays.add(day))
     }
   }
   const [selectedDays, setSelectedDays] = useState<Set<string>>(initialDays)
@@ -106,12 +110,20 @@ export function ScheduleForm({
     const name = formData.get("name") as string
     const cron = generateCronString()
 
-    await updateSchedule({
-      id: schedule.id,
-      name,
-      cron,
-      timezone,
-    })
+    if (mode === "edit" && schedule) {
+      await updateSchedule({
+        id: schedule.id,
+        name,
+        cron,
+        timezone,
+      })
+    } else {
+      await createSchedule({
+        name,
+        cron,
+        timezone,
+      })
+    }
 
     router.push("/settings/schedules")
   }
@@ -126,7 +138,9 @@ export function ScheduleForm({
               Schedule Information
             </h2>
             <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
-              Edit your schedule configuration.
+              {mode === "create"
+                ? "Create a new schedule to run your reporters at specific times."
+                : "Edit your schedule configuration."}
             </p>
           </div>
           <div className="md:col-span-2">
@@ -139,7 +153,7 @@ export function ScheduleForm({
                   type="text"
                   id="name"
                   name="name"
-                  defaultValue={schedule.name}
+                  defaultValue={schedule?.name || "My Morning Digest"}
                   className="mt-2"
                   required
                   maxLength={100}
@@ -163,7 +177,7 @@ export function ScheduleForm({
           </div>
           <div className="md:col-span-2">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-6">
-              <div className="col-span-full sm:col-span-3">
+              <div className="col-span-full sm:col-span-2">
                 <Label className="font-medium">Hour</Label>
                 <Select
                   name="hour"
@@ -185,7 +199,7 @@ export function ScheduleForm({
                 </Select>
               </div>
 
-              <div className="col-span-full sm:col-span-3">
+              <div className="col-span-full sm:col-span-2">
                 <Label className="font-medium">Minute</Label>
                 <Select
                   name="minute"
@@ -205,7 +219,7 @@ export function ScheduleForm({
                 </Select>
               </div>
 
-              <div className="col-span-full">
+              <div className="col-span-full sm:col-span-2">
                 <Label className="font-medium">Timezone</Label>
                 <Select
                   name="timezone"
@@ -275,7 +289,9 @@ export function ScheduleForm({
           >
             Cancel
           </Button>
-          <Button type="submit">Save Changes</Button>
+          <Button type="submit">
+            {mode === "create" ? "Create Schedule" : "Save Changes"}
+          </Button>
         </div>
       </form>
     </>
