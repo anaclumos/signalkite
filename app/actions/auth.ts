@@ -1,3 +1,5 @@
+"use server"
+
 import { db } from "@/prisma"
 import { auth } from "@clerk/nextjs/server"
 

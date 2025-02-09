@@ -1,3 +1,5 @@
+"use server"
+
 import { db } from "@/prisma"
 import { getCurrentUser } from "./auth"
 
@@ -10,18 +12,15 @@ export async function createSubscription({
 }) {
   const user = await getCurrentUser()
 
-  // Check if notification channel belongs to user if provided
   if (notificationChannelId) {
     const channel = await db.notificationChannel.findUnique({
       where: { id: notificationChannelId },
     })
-
     if (!channel || channel.userId !== user.id) {
       throw new Error("Invalid notification channel")
     }
   }
 
-  // Check if reporter exists and is not archived
   const reporter = await db.reporter.findUnique({
     where: {
       id: reporterId,
@@ -33,7 +32,6 @@ export async function createSubscription({
     throw new Error("Reporter not found")
   }
 
-  // Create subscription
   return db.subscription.create({
     data: {
       userId: user.id,
@@ -56,7 +54,6 @@ export async function updateSubscription({
 }) {
   const user = await getCurrentUser()
 
-  // Check if subscription exists
   const subscription = await db.subscription.findUnique({
     where: {
       userId_reporterId: {
@@ -65,17 +62,14 @@ export async function updateSubscription({
       },
     },
   })
-
   if (!subscription) {
     throw new Error("Subscription not found")
   }
 
-  // Check if notification channel belongs to user if provided
   if (notificationChannelId) {
     const channel = await db.notificationChannel.findUnique({
       where: { id: notificationChannelId },
     })
-
     if (!channel || channel.userId !== user.id) {
       throw new Error("Invalid notification channel")
     }

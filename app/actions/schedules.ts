@@ -1,3 +1,5 @@
+"use server"
+
 import { db } from "@/prisma"
 import { getCurrentUser } from "./auth"
 
@@ -61,7 +63,6 @@ export async function updateSchedule({
   }
 
   return db.$transaction(async (tx) => {
-    // Update schedule details
     const updatedSchedule = await tx.schedule.update({
       where: { id },
       data: {
@@ -71,16 +72,10 @@ export async function updateSchedule({
       },
     })
 
-    // If reporterIds is provided, update reporter associations
     if (reporterIds) {
-      // Delete existing associations
       await tx.scheduleReporter.deleteMany({
-        where: {
-          scheduleId: id,
-        },
+        where: { scheduleId: id },
       })
-
-      // Create new associations
       if (reporterIds.length > 0) {
         await tx.scheduleReporter.createMany({
           data: reporterIds.map((reporterId) => ({

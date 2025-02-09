@@ -1,3 +1,5 @@
+"use server"
+
 import { db } from "@/prisma"
 import { ReporterStatus, ReporterStrategyType } from "@prisma/client"
 import { getCurrentUser } from "./auth"

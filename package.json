@@ -6,13 +6,13 @@
     "build": "next build",
     "start": "next start",
     "commit": "git-cz",
-    "test": "vitest",
+    "db:init:test": "DATABASE_URL=postgresql://postgres:postgres@localhost:5432/postgres prisma db push --skip-generate && DATABASE_URL=postgresql://postgres:postgres@localhost:5432/postgres prisma generate --no-engine",
+    "test": "NODE_ENV=test bun run db:init:test && NODE_ENV=test vitest run",
     "format": "biome format --write .",
     "lint": "biome lint --write .",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
-    "postinstall": "prisma generate",
     "bump": "bunx npm-check-updates -i"
   },
   "dependencies": {
@@ -67,7 +67,8 @@
     "postcss": "^8.5.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3",
-    "vitest": "^3.0.5"
+    "vitest": "^3.0.5",
+    "@types/bun": "latest"
   },
   "trustedDependencies": ["@biomejs/biome"],
   "config": {
@@ -78,5 +79,7 @@
   "commitlint": {
     "extends": ["@commitlint/config-conventional"],
     "parserPreset": "conventional-changelog-conventionalcommits"
-  }
+  },
+  "module": "index.ts",
+  "type": "module"
 }
