@@ -3,12 +3,29 @@
 import {
   RiLayoutGridLine,
   RiListUnordered,
-  RiStackLine,
+  RiRobot2Line,
 } from "@remixicon/react"
+import { useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
 
+import { createReporter, getReporters } from "@/app/actions/reporters"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
 import { Divider } from "@/components/ui/divider"
+import { Input } from "@/components/ui/input"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import {
   Table,
   TableBody,
@@ -18,136 +35,107 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Textarea } from "@/components/ui/textarea"
+import { useToast } from "@/lib/use-toast"
+import { Reporter, ReporterStatus, ReporterStrategyType } from "@prisma/client"
 
-const data = [
-  {
-    name: "Test Workspace",
-    icon: RiStackLine,
-    href: "#",
-    details: [
-      {
-        type: "Storage",
-        value: "5/10GB",
-      },
-      {
-        type: "Users",
-        value: "89/100",
-      },
-      {
-        type: "Requests",
-        value: "995/10K",
-      },
-      {
-        type: "Status",
-        value: "Live",
-      },
-    ],
-  },
-  {
-    name: "BI Workspace",
-    icon: RiStackLine,
-    href: "#",
-    details: [
-      {
-        type: "Storage",
-        value: "9.8/10GB",
-      },
-      {
-        type: "Users",
-        value: "23/100",
-      },
-      {
-        type: "Requests",
-        value: "435/10K",
-      },
-      {
-        type: "Status",
-        value: "Inactive",
-      },
-    ],
-  },
-  {
-    name: "Livestream",
-    icon: RiStackLine,
-    href: "#",
-    details: [
-      {
-        type: "Storage",
-        value: "5.6/10GB",
-      },
-      {
-        type: "Users",
-        value: "79/100",
-      },
-      {
-        type: "Requests",
-        value: "642/10K",
-      },
-      {
-        type: "Status",
-        value: "Live",
-      },
-    ],
-  },
-  {
-    name: "Prod Workspace",
-    icon: RiStackLine,
-    href: "#",
-    details: [
-      {
-        type: "Storage",
-        value: "9.8/10GB",
-      },
-      {
-        type: "Users",
-        value: "23/100",
-      },
-      {
-        type: "Requests",
-        value: "435/10K",
-      },
-      {
-        type: "Status",
-        value: "Inactive",
-      },
-    ],
-  },
-  {
-    name: "Test Pipelines",
-    icon: RiStackLine,
-    href: "#",
-    details: [
-      {
-        type: "Storage",
-        value: "5.9/10GB",
-      },
-      {
-        type: "Users",
-        value: "89/100",
-      },
-      {
-        type: "Requests",
-        value: "995/10K",
-      },
-      {
-        type: "Status",
-        value: "Live",
-      },
-    ],
-  },
-]
+type ReporterWithRelations = Reporter & {
+  Prompt: {
+    id: string
+    text: string | null
+    createdAt: Date
+    updatedAt: Date
+    deletedAt: Date | null
+    description: string | null
+    creatorId: string
+  } | null
+  Stories: any[]
+  _count: {
+    Stories: number
+    News: number
+    Subscriptions: number
+  }
+}
 
-export default function Example() {
+export default function ReportersPage() {
+  const [reporters, setReporters] = useState<ReporterWithRelations[]>([])
+  const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const { toast } = useToast()
+  const router = useRouter()
+
+  useEffect(() => {
+    loadReporters()
+  }, [])
+
+  async function loadReporters() {
+    try {
+      const data = await getReporters()
+      setReporters(data)
+    } catch (error) {
+      toast({
+        title: "Error loading reporters",
+        description:
+          error instanceof Error ? error.message : "An error occurred",
+        variant: "error",
+      })
+    }
+  }
+
+  async function handleCreateReporter(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    setIsLoading(true)
+
+    const formData = new FormData(event.currentTarget)
+    const name = formData.get("name")
+    const description = formData.get("description")
+    const strategy = formData.get("strategy")
+
+    if (!name || !strategy) {
+      toast({
+        title: "Error creating reporter",
+        description: "Name and strategy are required",
+        variant: "error",
+      })
+      setIsLoading(false)
+      return
+    }
+
+    try {
+      await createReporter({
+        name: name.toString(),
+        description: description?.toString(),
+        strategy: strategy.toString() as ReporterStrategyType,
+      })
+
+      setIsCreateDialogOpen(false)
+      loadReporters()
+      toast({
+        title: "Reporter created",
+        description: "Your new reporter has been created successfully.",
+      })
+    } catch (error) {
+      toast({
+        title: "Error creating reporter",
+        description:
+          error instanceof Error ? error.message : "An error occurred",
+        variant: "error",
+      })
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
     <div className="p-4">
-      <Tabs defaultValue="tab1">
+      <Tabs defaultValue="grid">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <h3 className="text-sm font-medium text-gray-900 dark:text-gray-50">
-              Workspaces
+              Reporters
             </h3>
             <span className="inline-flex size-6 items-center justify-center rounded-full bg-gray-100 text-xs font-medium text-gray-900 dark:bg-gray-800 dark:text-gray-50">
-              {data.length}
+              {reporters.length}
             </span>
           </div>
           <div className="flex items-center space-x-4">
@@ -156,7 +144,7 @@ export default function Example() {
               className="-mx-1 bg-transparent dark:bg-transparent"
             >
               <TabsTrigger
-                value="tab1"
+                value="grid"
                 className="rounded-md py-1.5 data-[state=active]:text-blue-500 data-[state=active]:ring-1 data-[state=active]:ring-inset data-[state=active]:ring-gray-200 data-[state=active]:dark:bg-[#090E1A] data-[state=active]:dark:text-blue-500 data-[state=active]:dark:ring-gray-800"
               >
                 <RiLayoutGridLine
@@ -165,7 +153,7 @@ export default function Example() {
                 />
               </TabsTrigger>
               <TabsTrigger
-                value="tab2"
+                value="list"
                 className="rounded-md py-1.5 data-[state=active]:text-blue-500 data-[state=active]:ring-1 data-[state=active]:ring-inset data-[state=active]:ring-gray-200 data-[state=active]:dark:bg-[#090E1A] data-[state=active]:dark:text-blue-500 data-[state=active]:dark:ring-gray-800"
               >
                 <RiListUnordered
@@ -175,18 +163,20 @@ export default function Example() {
               </TabsTrigger>
             </TabsList>
             <div className="hidden h-8 w-px bg-gray-200 dark:bg-gray-800 sm:block" />
-            <Button>Add workspace</Button>
+            <Button onClick={() => setIsCreateDialogOpen(true)}>
+              Add reporter
+            </Button>
           </div>
         </div>
         <Divider className="my-4" />
-        <TabsContent value="tab1">
+        <TabsContent value="grid">
           <ul
             role="list"
             className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
           >
-            {data.map((workspace) => (
+            {reporters.map((reporter) => (
               <Card
-                key={workspace.name}
+                key={reporter.id}
                 className="relative overflow-hidden p-0"
                 asChild
               >
@@ -194,20 +184,24 @@ export default function Example() {
                   <div className="border-b border-gray-200 bg-gray-50 p-6 dark:border-gray-800 dark:bg-gray-900">
                     <div className="flex items-center space-x-3">
                       <span className="flex size-12 items-center justify-center rounded-md border border-gray-200 bg-white dark:border-gray-800 dark:bg-[#090E1A]">
-                        <workspace.icon
+                        <RiRobot2Line
                           className="size-5 text-gray-500 dark:text-gray-500"
                           aria-hidden={true}
                         />
                       </span>
                       <h3 className="text-sm font-medium text-gray-900 dark:text-gray-50">
-                        <a href={workspace.href} className="focus:outline-none">
-                          {/* Extend link to entire card */}
+                        <button
+                          onClick={() =>
+                            router.push(`/newsroom/reporters/${reporter.id}`)
+                          }
+                          className="focus:outline-none"
+                        >
                           <span
                             className="absolute inset-0"
                             aria-hidden={true}
                           />
-                          {workspace.name}
-                        </a>
+                          {reporter.name}
+                        </button>
                       </h3>
                     </div>
                   </div>
@@ -216,27 +210,38 @@ export default function Example() {
                       role="list"
                       className="divide-y divide-gray-200 text-sm text-gray-500 dark:divide-gray-800 dark:text-gray-500"
                     >
-                      {workspace.details.map((item) => (
-                        <li
-                          key={item.type}
-                          className="flex items-center justify-between py-2.5"
+                      <li className="flex items-center justify-between py-2.5">
+                        <span>Strategy</span>
+                        <span className="font-medium text-gray-900 dark:text-gray-50">
+                          {reporter.strategy}
+                        </span>
+                      </li>
+                      <li className="flex items-center justify-between py-2.5">
+                        <span>Stories</span>
+                        <span className="font-medium text-gray-900 dark:text-gray-50">
+                          {reporter._count.Stories}
+                        </span>
+                      </li>
+                      <li className="flex items-center justify-between py-2.5">
+                        <span>Scans</span>
+                        <span className="font-medium text-gray-900 dark:text-gray-50">
+                          {reporter._count.News}
+                        </span>
+                      </li>
+                      <li className="flex items-center justify-between py-2.5">
+                        <span>Status</span>
+                        <span
+                          className={`inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium ring-1 ring-inset ${
+                            reporter.status === ReporterStatus.ACTIVE
+                              ? "bg-emerald-100 text-emerald-800 ring-emerald-600/10 dark:bg-emerald-400/10 dark:text-emerald-500 dark:ring-emerald-400/20"
+                              : reporter.status === ReporterStatus.PAUSED
+                                ? "bg-yellow-100 text-yellow-800 ring-yellow-600/10 dark:bg-yellow-400/10 dark:text-yellow-500 dark:ring-yellow-400/20"
+                                : "bg-gray-50 text-gray-700 ring-gray-200 dark:bg-gray-900 dark:text-gray-400 dark:ring-gray-800"
+                          }`}
                         >
-                          <span>{item.type}</span>
-                          {item.value === "Live" ? (
-                            <span className="inline-flex items-center rounded-md bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-800 ring-1 ring-inset ring-emerald-600/10 dark:bg-emerald-400/10 dark:text-emerald-500 dark:ring-emerald-400/20">
-                              {item.value}
-                            </span>
-                          ) : item.value === "Inactive" ? (
-                            <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-0.5 text-xs font-medium text-gray-700 ring-1 ring-inset ring-gray-200 dark:bg-gray-900 dark:text-gray-400 dark:ring-gray-800">
-                              {item.value}
-                            </span>
-                          ) : (
-                            <span className="font-medium text-gray-900 dark:text-gray-50">
-                              {item.value}
-                            </span>
-                          )}
-                        </li>
-                      ))}
+                          {reporter.status}
+                        </span>
+                      </li>
                     </ul>
                   </div>
                 </li>
@@ -244,14 +249,14 @@ export default function Example() {
             ))}
           </ul>
         </TabsContent>
-        <TabsContent value="tab2">
+        <TabsContent value="list">
           <Table>
             <TableHead>
               <TableRow>
                 <TableHeaderCell>Name</TableHeaderCell>
-                <TableHeaderCell>Storage</TableHeaderCell>
-                <TableHeaderCell>Users</TableHeaderCell>
-                <TableHeaderCell>Requests/Limit</TableHeaderCell>
+                <TableHeaderCell>Strategy</TableHeaderCell>
+                <TableHeaderCell>Stories</TableHeaderCell>
+                <TableHeaderCell>Scans</TableHeaderCell>
                 <TableHeaderCell>Status</TableHeaderCell>
                 <TableHeaderCell>
                   <span className="sr-only">Edit</span>
@@ -259,39 +264,39 @@ export default function Example() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {data.map((workspace) => (
+              {reporters.map((reporter) => (
                 <TableRow
-                  key={workspace.name}
+                  key={reporter.id}
                   className="hover:bg-gray-50 hover:dark:bg-gray-900"
                 >
                   <TableCell className="font-medium text-gray-900 dark:text-gray-50">
-                    {workspace.name}
+                    {reporter.name}
                   </TableCell>
-                  <TableCell>{workspace.details[0].value}</TableCell>
-                  <TableCell>{workspace.details[1].value}</TableCell>
-                  <TableCell>{workspace.details[2].value}</TableCell>
+                  <TableCell>{reporter.strategy}</TableCell>
+                  <TableCell>{reporter._count.Stories}</TableCell>
+                  <TableCell>{reporter._count.News}</TableCell>
                   <TableCell>
-                    {workspace.details[3].value === "Live" ? (
-                      <span className="inline-flex items-center rounded-md bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-800 ring-1 ring-inset ring-emerald-600/10 dark:bg-emerald-400/10 dark:text-emerald-500 dark:ring-emerald-400/20">
-                        {workspace.details[3].value}
-                      </span>
-                    ) : workspace.details[3].value === "Inactive" ? (
-                      <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-0.5 text-xs font-medium text-gray-700 ring-1 ring-inset ring-gray-200 dark:bg-gray-900 dark:text-gray-400 dark:ring-gray-800">
-                        {workspace.details[3].value}
-                      </span>
-                    ) : (
-                      <span className="font-medium text-gray-900 dark:text-gray-50">
-                        {workspace.details[3].value}
-                      </span>
-                    )}
+                    <span
+                      className={`inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium ring-1 ring-inset ${
+                        reporter.status === ReporterStatus.ACTIVE
+                          ? "bg-emerald-100 text-emerald-800 ring-emerald-600/10 dark:bg-emerald-400/10 dark:text-emerald-500 dark:ring-emerald-400/20"
+                          : reporter.status === ReporterStatus.PAUSED
+                            ? "bg-yellow-100 text-yellow-800 ring-yellow-600/10 dark:bg-yellow-400/10 dark:text-yellow-500 dark:ring-yellow-400/20"
+                            : "bg-gray-50 text-gray-700 ring-gray-200 dark:bg-gray-900 dark:text-gray-400 dark:ring-gray-800"
+                      }`}
+                    >
+                      {reporter.status}
+                    </span>
                   </TableCell>
                   <TableCell className="text-right">
-                    <a
-                      href={workspace.href}
+                    <button
+                      onClick={() =>
+                        router.push(`/newsroom/reporters/${reporter.id}`)
+                      }
                       className="font-medium text-blue-500 dark:text-blue-500"
                     >
-                      Edit<span className="sr-only">{workspace.name}</span>
-                    </a>
+                      Edit<span className="sr-only">{reporter.name}</span>
+                    </button>
                   </TableCell>
                 </TableRow>
               ))}
@@ -299,6 +304,59 @@ export default function Example() {
           </Table>
         </TabsContent>
       </Tabs>
+
+      <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Create new reporter</DialogTitle>
+          </DialogHeader>
+          <form onSubmit={handleCreateReporter} className="space-y-4">
+            <div>
+              <Input name="name" placeholder="Reporter name" required />
+            </div>
+            <div>
+              <Textarea
+                name="description"
+                placeholder="Description (optional)"
+                rows={3}
+              />
+            </div>
+            <div>
+              <Select
+                name="strategy"
+                defaultValue={ReporterStrategyType.EXA_SEARCH}
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a strategy" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value={ReporterStrategyType.EXA_SEARCH}>
+                    EXA Search
+                  </SelectItem>
+                  <SelectItem value={ReporterStrategyType.WHOIS_LOOKUP}>
+                    WHOIS Lookup
+                  </SelectItem>
+                  <SelectItem value={ReporterStrategyType.HN_BEST_STORIES}>
+                    HN Best Stories
+                  </SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="flex justify-end space-x-2">
+              <Button
+                type="button"
+                variant="secondary"
+                onClick={() => setIsCreateDialogOpen(false)}
+              >
+                Cancel
+              </Button>
+              <Button type="submit" disabled={isLoading}>
+                {isLoading ? "Creating..." : "Create"}
+              </Button>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }

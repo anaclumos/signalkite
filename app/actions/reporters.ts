@@ -85,6 +85,47 @@ export async function deleteReporter(id: string) {
   })
 }
 
+export async function getReporters() {
+  const user = await getCurrentUser()
+
+  return db.reporter.findMany({
+    where: {
+      creatorId: user.id,
+      deletedAt: null,
+    },
+    include: {
+      Prompt: true,
+      Stories: {
+        where: {
+          deletedAt: null,
+        },
+        orderBy: {
+          createdAt: "desc",
+        },
+        take: 1,
+      },
+      _count: {
+        select: {
+          Stories: {
+            where: {
+              deletedAt: null,
+            },
+          },
+          News: {
+            where: {
+              deletedAt: null,
+            },
+          },
+          Subscriptions: true,
+        },
+      },
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  })
+}
+
 export async function getReporter(id: string) {
   const user = await getCurrentUser()
 

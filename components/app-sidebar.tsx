@@ -27,7 +27,7 @@ import { UserProfile } from "./user-profile"
 const navigation = [
   {
     name: "Dashboard",
-    href: "/",
+    href: "/dashboard",
     icon: House,
   },
   {
