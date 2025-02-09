@@ -1,6 +1,7 @@
 "use server"
 
 import { db } from "@/prisma"
+import { notFound } from "next/navigation"
 import { z } from "zod"
 import { getCurrentUser } from "./auth"
 
@@ -103,7 +104,7 @@ export async function updateSchedule({
   })
 
   if (!schedule || schedule.ownerId !== user.id) {
-    throw new Error("Unauthorized or schedule not found")
+    notFound()
   }
 
   return db.$transaction(async (tx) => {
@@ -145,7 +146,7 @@ export async function deleteSchedule(id: string) {
   })
 
   if (!schedule || schedule.ownerId !== user.id) {
-    throw new Error("Unauthorized or schedule not found")
+    notFound()
   }
 
   return db.schedule.update({
@@ -184,7 +185,7 @@ export async function getSchedule(id: string) {
   })
 
   if (!schedule || schedule.ownerId !== user.id) {
-    throw new Error("Schedule not found or access denied")
+    notFound()
   }
 
   return schedule

@@ -2,6 +2,7 @@
 
 import { db } from "@/prisma"
 import { ReporterStatus, ReporterStrategyType } from "@prisma/client"
+import { notFound } from "next/navigation"
 import { z } from "zod"
 import { getCurrentUser } from "./auth"
 
@@ -77,7 +78,7 @@ export async function updateReporter({
   })
 
   if (!reporter || reporter.creatorId !== user.id) {
-    throw new Error("Unauthorized or reporter not found")
+    notFound()
   }
 
   return db.reporter.update({
@@ -103,7 +104,7 @@ export async function deleteReporter(id: string) {
   })
 
   if (!reporter || reporter.creatorId !== user.id) {
-    throw new Error("Unauthorized or reporter not found")
+    notFound()
   }
 
   return db.reporter.update({
@@ -191,7 +192,7 @@ export async function getReporter(id: string) {
     (reporter.creatorId !== user.id &&
       reporter.status === ReporterStatus.ARCHIVED)
   ) {
-    throw new Error("Reporter not found or access denied")
+    notFound()
   }
 
   return reporter

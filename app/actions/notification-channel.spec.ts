@@ -160,7 +160,7 @@ describe("Notification Channel Actions", () => {
         id: channel.id,
         name: "Should fail",
       }),
-    ).rejects.toThrow("Unauthorized or channel not found")
+    ).rejects.toThrow()
 
     await db.notificationChannel.deleteMany({ where: { userId: otherUser.id } })
     await db.user.delete({ where: { id: otherUser.id } })

@@ -1,6 +1,7 @@
 "use server"
 
 import { db } from "@/prisma"
+import { notFound } from "next/navigation"
 import { z } from "zod"
 import { getCurrentUser } from "./auth"
 
@@ -50,7 +51,7 @@ export async function updatePrompt({
   })
 
   if (!prompt || prompt.creatorId !== user.id) {
-    throw new Error("Unauthorized or prompt not found")
+    notFound()
   }
 
   return db.prompt.update({
@@ -73,7 +74,7 @@ export async function deletePrompt(id: string) {
   })
 
   if (!prompt || prompt.creatorId !== user.id) {
-    throw new Error("Unauthorized or prompt not found")
+    notFound()
   }
 
   return db.prompt.update({
@@ -98,7 +99,17 @@ export async function getPrompts() {
 export async function getPrompt(id: string) {
   const user = await getCurrentUser()
 
-  return db.prompt.findUnique({
+  const prompt = await db.prompt.findUnique({
     where: { id: id, creatorId: user.id },
+    include: {
+      Reporters: true,
+      Stories: true,
+    },
   })
+
+  if (!prompt || prompt.creatorId !== user.id) {
+    notFound()
+  }
+
+  return prompt
 }

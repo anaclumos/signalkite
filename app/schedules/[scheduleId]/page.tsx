@@ -1,5 +1,5 @@
-import { ScheduleForm } from "@/app/(settings)/schedules/components/schedule-form"
 import { getSchedule } from "@/app/actions/schedules"
+import { ScheduleForm } from "@/app/schedules/components/schedule-form"
 
 export default async function SchedulesPage({
   params,

@@ -1,6 +1,7 @@
 "use server"
 
 import { db } from "@/prisma"
+import { notFound } from "next/navigation"
 import { z } from "zod"
 import { getCurrentUser } from "./auth"
 
@@ -32,7 +33,7 @@ export async function createSubscription({
       where: { id: validatedData.notificationChannelId },
     })
     if (!channel || channel.userId !== user.id) {
-      throw new Error("Invalid notification channel")
+      notFound()
     }
   }
 
@@ -44,7 +45,7 @@ export async function createSubscription({
   })
 
   if (!reporter) {
-    throw new Error("Reporter not found")
+    notFound()
   }
 
   return db.subscription.create({
@@ -81,7 +82,7 @@ export async function updateSubscription({
     },
   })
   if (!subscription) {
-    throw new Error("Subscription not found")
+    notFound()
   }
 
   if (validatedData.notificationChannelId) {
@@ -89,7 +90,7 @@ export async function updateSubscription({
       where: { id: validatedData.notificationChannelId },
     })
     if (!channel || channel.userId !== user.id) {
-      throw new Error("Invalid notification channel")
+      notFound()
     }
   }
 
@@ -129,7 +130,7 @@ export async function deleteSubscription(reporterId: string) {
   })
 
   if (!subscription) {
-    throw new Error("Subscription not found")
+    notFound()
   }
 
   return db.subscription.delete({

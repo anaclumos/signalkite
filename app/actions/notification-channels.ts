@@ -2,6 +2,7 @@
 
 import { db } from "@/prisma"
 import { NotificationChannelType } from "@prisma/client"
+import { notFound } from "next/navigation"
 import { z } from "zod"
 import { getCurrentUser } from "./auth"
 
@@ -66,7 +67,7 @@ export async function updateNotificationChannel({
   })
 
   if (!channel || channel.userId !== user.id) {
-    throw new Error("Unauthorized or channel not found")
+    notFound()
   }
 
   return db.notificationChannel.update({
@@ -94,7 +95,7 @@ export async function deleteNotificationChannel(id: string) {
   })
 
   if (!channel || channel.userId !== user.id) {
-    throw new Error("Unauthorized or channel not found")
+    notFound()
   }
 
   return db.notificationChannel.update({
@@ -130,7 +131,7 @@ export async function getNotificationChannel(id: string) {
   })
 
   if (!channel || channel.userId !== user.id) {
-    throw new Error("Channel not found or access denied")
+    notFound()
   }
 
   return channel

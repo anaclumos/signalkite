@@ -145,8 +145,6 @@ describe("Subscription Actions", () => {
   })
 
   it("throws if subscription not found on delete", async () => {
-    await expect(deleteSubscription("non-existent-reporter")).rejects.toThrow(
-      "Subscription not found",
-    )
+    await expect(deleteSubscription("non-existent-reporter")).rejects.toThrow()
   })
 })

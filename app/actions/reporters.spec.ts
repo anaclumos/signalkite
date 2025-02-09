@@ -119,9 +119,7 @@ describe("Reporter Actions", () => {
       },
     })
 
-    await expect(getReporter(r.id)).rejects.toThrow(
-      "Reporter not found or access denied",
-    )
+    await expect(getReporter(r.id)).rejects.toThrow()
 
     await db.reporter.deleteMany({ where: { creatorId: otherUser.id } })
     await db.user.delete({ where: { id: otherUser.id } })
