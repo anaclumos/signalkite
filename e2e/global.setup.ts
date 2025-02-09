@@ -1,7 +1,7 @@
 import path from "path"
 import { fileURLToPath } from "url"
 import { clerk, clerkSetup } from "@clerk/testing/playwright"
-import { test as setup } from "@playwright/test"
+import { expect, test as setup } from "@playwright/test"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
