@@ -110,85 +110,90 @@ export function PromptsTable({ initialPrompts }: PromptsTableProps) {
           </Link>
         }
       />
+      {prompts.length === 0 ? (
+        <div className="py-8 text-center text-gray-500">
+          No prompts found. Create your first prompt to get started.
+        </div>
+      ) : (
+        <Tabs
+          value={activeView}
+          onValueChange={(value) => setActiveView(value as "grid" | "list")}
+          className="w-full"
+        >
+          <TabsContent value="grid">
+            <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
+              {prompts.map((prompt) => (
+                <Link key={prompt.id} href={`/prompts/${prompt.id}`}>
+                  <Card className="p-4 transition hover:bg-gray-50 dark:hover:bg-gray-900">
+                    <h3 className="font-medium">
+                      {prompt.description || "Untitled Prompt"}
+                    </h3>
+                    <p className="mt-1 text-sm text-gray-500">
+                      {prompt.text
+                        ? prompt.text.length > 100
+                          ? prompt.text.slice(0, 100) + "..."
+                          : prompt.text
+                        : "No text"}
+                    </p>
+                    <div className="mt-4 flex gap-2">
+                      <span className="text-xs text-gray-500">
+                        {prompt.Reporters?.length || 0} Reporters
+                      </span>
+                      <span className="text-xs text-gray-500">
+                        {prompt.Stories?.length || 0} Stories
+                      </span>
+                    </div>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </TabsContent>
 
-      <Tabs
-        value={activeView}
-        onValueChange={(value) => setActiveView(value as "grid" | "list")}
-        className="w-full"
-      >
-        <TabsContent value="grid">
-          <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
-            {prompts.map((prompt) => (
-              <Link key={prompt.id} href={`/prompts/${prompt.id}`}>
-                <Card className="p-4 transition hover:bg-gray-50 dark:hover:bg-gray-900">
-                  <h3 className="font-medium">
-                    {prompt.description || "Untitled Prompt"}
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">
-                    {prompt.text
-                      ? prompt.text.length > 100
-                        ? prompt.text.slice(0, 100) + "..."
-                        : prompt.text
-                      : "No text"}
-                  </p>
-                  <div className="mt-4 flex gap-2">
-                    <span className="text-xs text-gray-500">
-                      {prompt.Reporters?.length || 0} Reporters
-                    </span>
-                    <span className="text-xs text-gray-500">
-                      {prompt.Stories?.length || 0} Stories
-                    </span>
-                  </div>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </TabsContent>
-
-        <TabsContent value="list">
-          <TableRoot>
-            {prompts.length === 0 ? (
-              <div className="py-8 text-center text-gray-500">
-                No prompts found. Create your first prompt to get started.
-              </div>
-            ) : (
-              <Table>
-                <TableHead>
-                  {table.getHeaderGroups().map((headerGroup) => (
-                    <TableRow key={headerGroup.id}>
-                      {headerGroup.headers.map((header) => (
-                        <TableHeaderCell key={header.id}>
-                          {flexRender(
-                            header.column.columnDef.header,
-                            header.getContext(),
-                          )}
-                        </TableHeaderCell>
-                      ))}
-                    </TableRow>
-                  ))}
-                </TableHead>
-
-                <TableBody className="divide-y divide-gray-200">
-                  {table.getRowModel().rows.map((row) => (
-                    <TableRow key={row.id}>
-                      {row.getVisibleCells().map((cell) => (
-                        <TableCell key={cell.id}>
-                          <Link href={`/prompts/${row.original.id}`}>
+          <TabsContent value="list">
+            <TableRoot>
+              {prompts.length === 0 ? (
+                <div className="py-8 text-center text-gray-500">
+                  No prompts found. Create your first prompt to get started.
+                </div>
+              ) : (
+                <Table>
+                  <TableHead>
+                    {table.getHeaderGroups().map((headerGroup) => (
+                      <TableRow key={headerGroup.id}>
+                        {headerGroup.headers.map((header) => (
+                          <TableHeaderCell key={header.id}>
                             {flexRender(
-                              cell.column.columnDef.cell,
-                              cell.getContext(),
+                              header.column.columnDef.header,
+                              header.getContext(),
                             )}
-                          </Link>
-                        </TableCell>
-                      ))}
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            )}
-          </TableRoot>
-        </TabsContent>
-      </Tabs>
+                          </TableHeaderCell>
+                        ))}
+                      </TableRow>
+                    ))}
+                  </TableHead>
+
+                  <TableBody className="divide-y divide-gray-200">
+                    {table.getRowModel().rows.map((row) => (
+                      <TableRow key={row.id}>
+                        {row.getVisibleCells().map((cell) => (
+                          <TableCell key={cell.id}>
+                            <Link href={`/prompts/${row.original.id}`}>
+                              {flexRender(
+                                cell.column.columnDef.cell,
+                                cell.getContext(),
+                              )}
+                            </Link>
+                          </TableCell>
+                        ))}
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              )}
+            </TableRoot>
+          </TabsContent>
+        </Tabs>
+      )}
     </div>
   )
 }
