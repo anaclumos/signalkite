@@ -1,4 +1,4 @@
-import { db } from "@/prisma/db"
+import { db } from "@/prisma"
 import { ReporterStatus, ReporterStrategyType } from "@prisma/client"
 import { getCurrentUser } from "./auth"
 
@@ -99,7 +99,7 @@ export async function getReporter(id: string) {
         },
         take: 10,
       },
-      Interviews: {
+      News: {
         where: {
           deletedAt: null,
         },

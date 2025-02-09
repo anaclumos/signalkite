@@ -1,4 +1,4 @@
-import { db } from "@/prisma/db"
+import { db } from "@/prisma"
 import { getCurrentUser } from "./auth"
 
 export async function createPrompt({

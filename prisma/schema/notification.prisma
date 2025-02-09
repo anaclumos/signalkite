@@ -1,0 +1,24 @@
+/// A NotificationChannel represents a means of delivering notifications (Email, SMS, Slack).
+/// It also stores any necessary configuration in the `settings` field.
+model NotificationChannel {
+    /// The unique identifier for the NotificationChannel.
+    id           String                  @id @default(ulid())
+    /// A human-readable name for this notification channel.
+    name         String                  @db.VarChar(100)
+    /// The type of channel: EMAIL, SMS, or SLACK.
+    type         NotificationChannelType
+    /// A JSON field to store configuration or credentials for this channel.
+    settings     Json
+    /// Timestamp when the NotificationChannel was created.
+    createdAt    DateTime                @default(now()) @db.Timestamptz()
+    /// Timestamp when the NotificationChannel was last updated.
+    updatedAt    DateTime                @default(now()) @updatedAt @db.Timestamptz()
+    /// Soft-delete timestamp; if set, the channel is considered deleted.
+    deletedAt    DateTime?
+    /// Foreign key referencing the User who owns this NotificationChannel.
+    userId       String?
+    /// The User who owns this NotificationChannel.
+    user         User?                   @relation(fields: [userId], references: [id])
+    /// The subscriptions that use this NotificationChannel for notifications.
+    Subscription Subscription[]
+}

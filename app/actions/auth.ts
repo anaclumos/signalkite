@@ -1,4 +1,4 @@
-import { db } from "@/prisma/db"
+import { db } from "@/prisma"
 import { auth } from "@clerk/nextjs/server"
 
 export async function getCurrentUser() {

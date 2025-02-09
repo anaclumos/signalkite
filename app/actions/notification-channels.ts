@@ -1,4 +1,4 @@
-import { db } from "@/prisma/db"
+import { db } from "@/prisma"
 import { NotificationChannelType } from "@prisma/client"
 import { getCurrentUser } from "./auth"
 

@@ -1,0 +1,27 @@
+/// A User represents a person who uses the application.
+/// This model contains user-related fields and the relationships
+/// the user has with other models.
+model User {
+    /// The unique identifier for the user.
+    id              String    @id @default(ulid())
+    /// The unique identifier from the auth provider.
+    authProviderUid String    @unique
+    /// Timestamp when the user record was created.
+    createdAt       DateTime  @default(now()) @db.Timestamptz()
+    /// Timestamp when the user record was last updated.
+    updatedAt       DateTime  @default(now()) @updatedAt @db.Timestamptz()
+    /// Soft-delete timestamp; if set, the user is considered deleted but may be recoverable.
+    deletedAt       DateTime?
+    /// The timestamp of the user's last login.
+    lastLogin       DateTime?
+
+    /// The list of Reporters created by this user.
+    Reporters     Reporter[]
+    /// The list of Schedules owned by this user.
+    Schedules     Schedule[]
+    /// The list of NotificationChannels created/owned by this user.
+    Channels      NotificationChannel[]
+    /// The list of Subscriptions this user has made to other users' Reporters.
+    Subscriptions Subscription[]
+    Prompt        Prompt[]
+}

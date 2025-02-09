@@ -74,7 +74,7 @@ anaclumos-every.news/
 
 ## 3. Data Modeling (Prisma)
 
-In `prisma/schema.prisma`, you’ll see a well-thought-out relational schema for our news/reporters platform. Key models:
+In `prisma/schema` folder, you’ll see a well-thought-out relational schema for our news/reporters platform. Key models:
 
 1. **User**  
    - Uniquely identified by `id` (ULID) and `authProviderUid` from Clerk.  
@@ -89,9 +89,9 @@ In `prisma/schema.prisma`, you’ll see a well-thought-out relational schema for
    - Defines a cron expression and times to run certain Reporters.  
    - Ties to multiple Reporters via a many-to-many join table `ScheduleReporter`.
 
-4. **Interview**  
-   - Each time a Reporter “scans,” we store that event in an Interview.  
-   - The discovered `Stories` link back to the Interview that found them.
+4. **News**  
+   - Each time a Reporter “scans,” a Reporter will create a News (which contains multiple Stories).
+   - The discovered `Stories` link back to the News that found them.
 
 5. **Story**  
    - Represents actual content discovered, with `title`, `url`, `summary`, etc.  
@@ -214,8 +214,8 @@ We use **Clerk** for authentication. The highlights:
 ### Scheduling
 
 - **Schedules** define `cron` expressions plus references to multiple Reporters via a many-to-many.  
-- A single `Schedule` can spawn multiple **Interviews** across all the linked **Reporters**.  
-- **Runs** represent each invocation of a schedule. Each run can result in multiple interviews.
+- A single `Schedule` can spawn multiple **News** across all the linked **Reporters**.  
+- **Runs** represent each invocation of a schedule. Each run can result in multiple News.
 
 ### Subscriptions
 
