@@ -21,14 +21,14 @@ jobs:
     name: 💯 Unit Tests
     runs-on: ubuntu-latest
     services:
-      postgres:
+      db:
         image: postgres:latest
         env:
-          POSTGRES_DB: postgres
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: everynewsdb
+          POSTGRES_USER: everynewsusername
+          POSTGRES_PASSWORD: everynewspassword
         ports:
-          - 5432:5432
+          - 54321:5432
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -43,10 +43,10 @@ jobs:
         run: bun i
       - name: Run Unit Tests
         env:
-          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+          DATABASE_URL: postgresql://everynewsusername:everynewspassword@localhost:54321/everynewsdb
           NODE_ENV: test
         run: bun run test
-  build:
+  build:  
     name: 📦 Build
     runs-on: ubuntu-latest
     steps:
@@ -58,21 +58,21 @@ jobs:
         run: bun i
       - name: Build
         env:
-          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+          DATABASE_URL: postgresql://everynewsusername:everynewspassword@localhost:54321/everynewsdb
         run: bun run build
   playwright:
     name: 🎭 Playwright
     timeout-minutes: 60
     runs-on: ubuntu-latest
     services:
-      postgres:
+      db:
         image: postgres:latest
         env:
-          POSTGRES_DB: postgres
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: everynewsdb
+          POSTGRES_USER: everynewsusername
+          POSTGRES_PASSWORD: everynewspassword
         ports:
-          - 5432:5432
+          - 54321:5432
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -100,12 +100,12 @@ jobs:
       run: bunx playwright install --with-deps
     - name: Run Playwright tests
       env:
-        DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+        DATABASE_URL: postgresql://everynewsusername:everynewspassword@localhost:54321/everynewsdb
         NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
         CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
         E2E_CLERK_USER_USERNAME: ${{ secrets.E2E_CLERK_USER_USERNAME }}
         E2E_CLERK_USER_PASSWORD: ${{ secrets.E2E_CLERK_USER_PASSWORD }}
-      run: bun playwright
+      run: bun run e2e
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
