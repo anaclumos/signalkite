@@ -4,18 +4,24 @@
   "scripts": {
     "dev": "next dev --turbo",
     "build": "prisma generate && next build",
-    "ci": "prisma db push && next build && bun run start",
     "start": "next start",
+
     "commit": "git-cz",
-    "db:push": "prisma db push",
-    "test": "bun run db:push && vitest run",
     "format": "biome format --write .",
     "lint": "biome lint --write .",
-    "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev",
-    "prisma:studio": "prisma studio",
     "bump": "bunx npm-check-updates -i",
-    "playwright": "playwright test"
+
+    "db:setup": "bun run if-mac-prepare-docker && bun run db:generate && bun run db:push",
+    "db:push": "prisma db push",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio",
+
+    "ci": "prisma db push && next build && bun run start",
+    "test": "bun run db:push && vitest run",
+    "e2e": "playwright test",
+
+    "if-mac-prepare-docker": "if [ \"$(uname)\" = \"Darwin\" ]; then colima start && (docker ps -a | grep 'postgres-everynews' > /dev/null || docker run --name postgres-everynews -e POSTGRES_USER=everynewsusername -e POSTGRES_PASSWORD=everynewspassword -e POSTGRES_DB=everynewsdb -p 54321:5432 -d postgres:latest); fi && bun run db:push"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.11.1",
