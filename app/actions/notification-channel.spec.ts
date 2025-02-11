@@ -51,6 +51,7 @@ describe("Notification Channel Actions", () => {
   it("creates a notification channel", async () => {
     const channel = await upsertNotificationChannel({
       name: "My Email Channel",
+      description: "My Email Channel",
       type: NotificationChannelType.EMAIL,
       settings: { email: "test@example.com" },
     })
@@ -66,6 +67,7 @@ describe("Notification Channel Actions", () => {
     const channel = await db.notificationChannel.create({
       data: {
         name: "Temp Channel",
+        description: "Temp Channel",
         type: NotificationChannelType.TEXT,
         settings: { phone: "+123456789" },
         userId: testUserId,
@@ -75,6 +77,7 @@ describe("Notification Channel Actions", () => {
     const updated = await upsertNotificationChannel({
       id: channel.id,
       name: "Updated Channel",
+      description: "Updated Channel",
       type: NotificationChannelType.TEXT,
       settings: { phone: "+987654321" },
     })
@@ -159,6 +162,7 @@ describe("Notification Channel Actions", () => {
       upsertNotificationChannel({
         id: channel.id,
         name: "Should fail",
+        description: "Should fail",
         type: NotificationChannelType.TEXT,
         settings: {},
       }),
