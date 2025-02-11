@@ -5,6 +5,8 @@ model NotificationChannel {
     id           String                  @id @default(ulid())
     /// A human-readable name for this notification channel.
     name         String                  @db.VarChar(100)
+    /// A short description or name for the notification channel.
+    description  String?
     /// The type of channel: EMAIL, SMS, or SLACK.
     type         NotificationChannelType
     /// A JSON field to store configuration or credentials for this channel.
