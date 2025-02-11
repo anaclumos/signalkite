@@ -107,8 +107,8 @@ export function NotificationChannelsTable({
           { title: "Notification Channels", href: "/notification-channels" },
         ]}
         actions={
-          <Button variant="secondary" onClick={() => openUserProfile()}>
-            Edit Email & Phone from Profile
+          <Button onClick={() => openUserProfile()}>
+            Edit Profile Contacts
           </Button>
         }
         viewToggle={{
