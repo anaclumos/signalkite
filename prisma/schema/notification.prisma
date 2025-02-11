@@ -9,6 +9,8 @@ model NotificationChannel {
     type         NotificationChannelType
     /// A JSON field to store configuration or credentials for this channel.
     settings     Json
+    /// The Clerk ID for this channel if it's linked to a Clerk resource
+    clerkId      String?                 @unique
     /// Timestamp when the NotificationChannel was created.
     createdAt    DateTime                @default(now()) @db.Timestamptz()
     /// Timestamp when the NotificationChannel was last updated.

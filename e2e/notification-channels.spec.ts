@@ -1,106 +1,127 @@
 import { expect, test } from "@playwright/test"
+import { mockClerkUser } from "./utils/mock-clerk"
 
 test.describe("Notification Channels", () => {
   test.beforeEach(async ({ page }) => {
-    // Go to notification channels page
+    // Mock authenticated user with email and phone
+    await mockClerkUser(page, {
+      id: "user_123",
+      emailAddresses: [
+        {
+          id: "email_123",
+          emailAddress: "test@example.com",
+        },
+      ],
+      phoneNumbers: [
+        {
+          id: "phone_123",
+          phoneNumber: "+1234567890",
+        },
+      ],
+      primaryEmailAddressId: "email_123",
+      primaryPhoneNumberId: "phone_123",
+    })
+  })
+
+  test("should display Clerk email and SMS channels", async ({ page }) => {
+    // Navigate to notification channels page
     await page.goto("/notification-channels")
+
+    // Check if email channel is displayed
+    await expect(page.getByText("Email - test@example.com")).toBeVisible()
+    await expect(page.getByText("EMAIL")).toBeVisible()
+    await expect(page.getByText("Configured")).toBeVisible()
+
+    // Check if SMS channel is displayed
+    await expect(page.getByText("SMS - +1234567890")).toBeVisible()
+    await expect(page.getByText("SMS")).toBeVisible()
+    await expect(page.getByText("Configured")).toBeVisible()
   })
 
-  test("should navigate to individual channel page", async ({ page }) => {
-    // Click first channel in the grid
-    await page.click("a[href^='/notification-channels/']")
+  test("should sync channels on page load", async ({ page }) => {
+    // Navigate to notification channels page
+    await page.goto("/notification-channels")
 
-    // Verify we're on a channel page
-    await expect(page).toHaveURL(/\/notification-channels\/[\w-]+/)
-
-    // Verify form elements are present
-    await expect(page.getByLabel("Name")).toBeVisible()
-    await expect(page.getByLabel("Type")).toBeVisible()
-    await expect(page.getByLabel("Settings")).toBeVisible()
-  })
-
-  test("should handle non-existent channel", async ({ page }) => {
-    // Try to access non-existent channel
-    await page.goto("/notification-channels/non-existent-id")
-
-    // Should show error message
-    await expect(page.getByText("Channel not found")).toBeVisible()
-  })
-
-  test("should create new notification channel", async ({ page }) => {
-    // Go to new channel page
-    await page.goto("/notification-channels/new")
-
-    // Fill out form
-    await page.getByLabel("Name").fill("Test Email Channel")
-    await page.getByRole("combobox").click()
-    await page.getByRole("option", { name: "Email" }).click()
-    await page.getByLabel("Settings").fill(
-      JSON.stringify(
-        {
-          smtp_server: "smtp.test.com",
-          port: 587,
-          username: "test@example.com",
-        },
-        null,
-        2,
-      ),
+    // Wait for sync to complete
+    await page.waitForResponse((response) =>
+      response.url().includes("/notification-channels"),
     )
 
-    // Create channel
-    await page.getByRole("button", { name: "Create Channel" }).click()
-
-    // Should redirect back to channels page
-    await expect(page).toHaveURL("/notification-channels")
-
-    // New channel should be visible
-    await expect(page.getByText("Test Email Channel")).toBeVisible()
+    // Verify channels are displayed
+    await expect(page.getByText("Email - test@example.com")).toBeVisible()
+    await expect(page.getByText("SMS - +1234567890")).toBeVisible()
   })
 
-  test("should edit notification channel", async ({ page }) => {
-    // Go to first channel
-    await page.click("a[href^='/notification-channels/']")
+  test("should handle no Clerk channels", async ({ page }) => {
+    // Mock user without email or phone
+    await mockClerkUser(page, {
+      id: "user_123",
+      emailAddresses: [],
+      phoneNumbers: [],
+    })
 
-    // Edit name
-    await page.getByLabel("Name").fill("Updated Channel Name")
+    // Navigate to notification channels page
+    await page.goto("/notification-channels")
 
-    // Edit settings
-    await page.getByLabel("Settings").fill(
-      JSON.stringify(
-        {
-          smtp_server: "smtp.updated.com",
-          port: 587,
-          username: "updated@example.com",
-        },
-        null,
-        2,
-      ),
-    )
-
-    // Save changes
-    await page.getByRole("button", { name: "Save Changes" }).click()
-
-    // Should redirect back to channels page
-    await expect(page).toHaveURL("/notification-channels")
-
-    // Updated name should be visible
-    await expect(page.getByText("Updated Channel Name")).toBeVisible()
+    // Check if empty state message is displayed
+    await expect(page.getByText("No notification channels found")).toBeVisible()
   })
 
-  test("should delete notification channel", async ({ page }) => {
-    // Go to first channel
-    await page.click("a[href^='/notification-channels/']")
+  test("should redirect to sign in when not authenticated", async ({
+    page,
+  }) => {
+    // Clear auth state
+    await page.evaluate(() => window.localStorage.clear())
 
-    // Click delete button
-    await page.getByRole("button", { name: "Delete" }).click()
+    // Try to access notification channels page
+    await page.goto("/notification-channels")
 
-    // Confirm deletion in dialog
-    await page.getByRole("button", { name: "Delete" }).click()
+    // Should be redirected to sign in
+    expect(page.url()).toContain("/sign-in")
+  })
 
-    // Should redirect back to channels page
-    await expect(page).toHaveURL("/notification-channels")
+  test("should handle webhook events", async ({ page, request }) => {
+    // Create webhook payload for user.created event
+    const webhookPayload = {
+      type: "user.created",
+      data: {
+        id: "user_123",
+        email_addresses: [
+          {
+            id: "email_123",
+            email_address: "test@example.com",
+          },
+        ],
+        phone_numbers: [
+          {
+            id: "phone_123",
+            phone_number: "+1234567890",
+          },
+        ],
+        primary_email_address_id: "email_123",
+        primary_phone_number_id: "phone_123",
+      },
+    }
 
-    // Deleted channel should not be visible
-    await expect(page.getByText("Updated Channel Name")).not.toBeVisible()
+    // Send webhook request
+    const response = await request.post("/api/webhooks", {
+      data: webhookPayload,
+      headers: {
+        "svix-id": "msg_123",
+        "svix-timestamp": Date.now().toString(),
+        "svix-signature": "test_signature",
+      },
+    })
+
+    // Verify webhook response
+    expect(response.status()).toBe(200)
+    expect(await response.text()).toBe("Webhook processed")
+
+    // Navigate to notification channels page
+    await page.goto("/notification-channels")
+
+    // Verify channels were created
+    await expect(page.getByText("Email - test@example.com")).toBeVisible()
+    await expect(page.getByText("SMS - +1234567890")).toBeVisible()
   })
 })
