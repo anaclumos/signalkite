@@ -56,8 +56,8 @@ export function PromptsTable({ initialPrompts }: PromptsTableProps) {
       basePath="/prompts"
       entityName="Prompts"
       renderCard={(prompt) => ({
-        title: prompt.description || "Untitled Prompt",
-        description: prompt.text,
+        title: prompt.name || "Untitled Prompt",
+        description: prompt.description,
       })}
       actions={
         <Link href="/prompts/new">
