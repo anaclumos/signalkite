@@ -6,7 +6,7 @@ import { z } from "zod"
 import { getCurrentUser } from "./auth"
 
 const promptUpsertSchema = z.object({
-  id: z.string().optional(),
+  id: z.string(),
   description: z.string().optional(),
   text: z.string().optional(),
 })
@@ -18,7 +18,7 @@ export async function upsertPrompt({
 }: z.infer<typeof promptUpsertSchema>) {
   const user = await getCurrentUser()
 
-  if (id) {
+  if (id.length > 0) {
     // Validate input for update
     const validatedData = promptUpsertSchema.parse({ id, description, text })
 

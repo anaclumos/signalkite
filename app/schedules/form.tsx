@@ -2,20 +2,8 @@
 
 import { useState } from "react"
 
-import { NavBar } from "@/components/nav-bar"
-import { Button } from "@/components/ui/button"
+import { EntityForm } from "@/components/entity-form"
 import { Checkbox } from "@/components/ui/checkbox"
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import { Divider } from "@/components/ui/divider"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import {
@@ -28,7 +16,6 @@ import {
 import { daysOfWeek } from "@/lib/const"
 import { getCronDescription } from "@/lib/cron"
 import type { Schedule } from "@prisma/client"
-import Link from "next/link"
 import { deleteScheduleAction, submit } from "./server"
 
 interface ScheduleFormProps {
@@ -83,99 +70,49 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
     })
   }
 
-  const breadcrumbs = [
-    { title: "Home", href: "/" },
-    { title: "Schedules", href: "/schedules" },
-  ]
-
-  if (schedule) {
-    breadcrumbs.push({
-      title: schedule.name,
-      href: `/schedules/${schedule.id}`,
-    })
-  }
-
   return (
-    <>
-      <NavBar
-        breadcrumbs={breadcrumbs}
-        actions={
-          schedule && (
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button variant="destructive">Delete</Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Delete Schedule</DialogTitle>
-                  <DialogDescription>
-                    Are you sure you want to delete this schedule? This action
-                    cannot be undone.
-                  </DialogDescription>
-                </DialogHeader>
-                <DialogFooter>
-                  <DialogClose asChild>
-                    <Button variant="secondary">Cancel</Button>
-                  </DialogClose>
-                  <form
-                    action={() => schedule && deleteScheduleAction(schedule.id)}
-                  >
-                    <Button variant="destructive">Delete</Button>
-                  </form>
-                </DialogFooter>
-              </DialogContent>
-            </Dialog>
-          )
-        }
-      />
-
-      <form action={submit}>
-        <input type="hidden" name="id" value={schedule?.id || ""} />
-        <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
-          <div>
-            <h2 className="font-semibold text-gray-900 dark:text-gray-50">
-              Schedule Information
-            </h2>
-            <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
-              {schedule
-                ? "Edit your schedule configuration."
-                : "Create a new schedule to run your reporters at specific times."}
-            </p>
-          </div>
-          <div className="md:col-span-2">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-6">
-              <div className="col-span-full">
-                <Label htmlFor="name" className="font-medium">
-                  Name
-                </Label>
-                <Input
-                  data-1p-ignore
-                  type="text"
-                  id="name"
-                  name="name"
-                  defaultValue={schedule?.name || "My Morning Digest"}
-                  className="mt-2"
-                  required
-                  maxLength={100}
-                />
+    <EntityForm
+      title="Schedules"
+      entityId={schedule?.id}
+      entityName={schedule?.name}
+      backUrl="/schedules"
+      onDelete={schedule ? deleteScheduleAction : undefined}
+      onSubmit={submit}
+      submitLabel={schedule ? "Save Changes" : "Create Schedule"}
+      sections={[
+        {
+          title: "Schedule Information",
+          description: schedule
+            ? "Edit your schedule configuration."
+            : "Create a new schedule to run your reporters at specific times.",
+          children: (
+            <>
+              <input type="hidden" name="id" value={schedule?.id || ""} />
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-6">
+                <div className="col-span-full">
+                  <Label htmlFor="name" className="font-medium">
+                    Name
+                  </Label>
+                  <Input
+                    data-1p-ignore
+                    type="text"
+                    id="name"
+                    name="name"
+                    defaultValue={schedule?.name || "My Morning Digest"}
+                    className="mt-2"
+                    required
+                    maxLength={100}
+                  />
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <Divider />
-
-        <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
-          <div>
-            <h2 className="font-semibold text-gray-900 dark:text-gray-50">
-              Time Information
-            </h2>
-            <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
-              Configure when this schedule should run using the cron expression
-              editor.
-            </p>
-          </div>
-          <div className="md:col-span-2">
+            </>
+          ),
+        },
+        {
+          title: "Time Information",
+          description:
+            "Configure when this schedule should run using the cron expression editor.",
+          children: (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-6">
               <div className="col-span-full sm:col-span-2">
                 <Label className="font-medium">Hour</Label>
@@ -275,22 +212,9 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
                 {getCronDescription({ minute, hour, selectedDays, timezone })}
               </div>
             </div>
-          </div>
-        </div>
-
-        <Divider />
-
-        <div className="flex items-center justify-end space-x-4 p-4 md:p-8">
-          <Link href="/schedules">
-            <Button variant="secondary" type="button">
-              Cancel
-            </Button>
-          </Link>
-          <Button type="submit">
-            {schedule ? "Save Changes" : "Create Schedule"}
-          </Button>
-        </div>
-      </form>
-    </>
+          ),
+        },
+      ]}
+    />
   )
 }

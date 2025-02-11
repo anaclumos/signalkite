@@ -7,7 +7,7 @@ import { z } from "zod"
 import { getCurrentUser } from "./auth"
 
 const channelUpsertSchema = z.object({
-  id: z.string().min(1, "Channel ID is required").optional(),
+  id: z.string(),
   name: z
     .string()
     .min(1, "Name is required")
@@ -29,7 +29,7 @@ export async function upsertNotificationChannel({
 }: z.infer<typeof channelUpsertSchema>) {
   const user = await getCurrentUser()
 
-  if (id) {
+  if (id.length > 0) {
     // Validate input for update
     const validatedData = channelUpdateSchema.parse({ id, name, settings })
 

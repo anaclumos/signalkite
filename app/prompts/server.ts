@@ -3,9 +3,8 @@
 import { deletePrompt, upsertPrompt } from "@/app/actions/prompts"
 import { redirect } from "next/navigation"
 
-export async function deletePromptAction(formData: FormData) {
-  const promptId = formData.get("promptId") as string
-  await deletePrompt(promptId)
+export async function deletePromptAction(id: string) {
+  await deletePrompt(id)
   redirect("/prompts")
 }
 

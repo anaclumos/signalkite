@@ -1,9 +1,8 @@
 "use server"
 
-import { deleteSchedule } from "@/app/actions/schedules"
+import { deleteSchedule, upsertSchedule } from "@/app/actions/schedules"
 import { generateCronString } from "@/lib/cron"
 import { redirect } from "next/navigation"
-import { createSchedule, updateSchedule } from "../actions/schedules"
 
 export async function deleteScheduleAction(scheduleId: string) {
   await deleteSchedule(scheduleId)
@@ -18,21 +17,14 @@ export async function submit(formData: FormData) {
     new Set(formData.getAll("selectedDays") as string[]),
   )
   const timezone = formData.get("timezone") as string
-  const scheduleId = formData.get("id") as string | null
-  if (scheduleId) {
-    await updateSchedule({
-      id: scheduleId,
-      name,
-      cron,
-      timezone,
-    })
-  } else {
-    await createSchedule({
-      name,
-      cron,
-      timezone,
-    })
-  }
+  const scheduleId = formData.get("id") as string
+
+  await upsertSchedule({
+    id: scheduleId,
+    name,
+    cron,
+    timezone,
+  })
 
   redirect("/schedules")
 }

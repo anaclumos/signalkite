@@ -7,7 +7,7 @@ import { z } from "zod"
 import { getCurrentUser } from "./auth"
 
 const reporterUpsertSchema = z.object({
-  id: z.string().min(1, "Reporter ID is required").optional(),
+  id: z.string(),
   name: z
     .string()
     .min(1, "Name is required")
@@ -32,7 +32,7 @@ export async function upsertReporter({
 }: z.infer<typeof reporterUpsertSchema>) {
   const user = await getCurrentUser()
 
-  if (id) {
+  if (id.length > 0) {
     // Validate input for update
     const validatedData = reporterUpsertSchema.parse({
       id,
