@@ -28,14 +28,13 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
-import { NotificationChannelType } from "@prisma/client"
+import { NotificationChannel, NotificationChannelType } from "@prisma/client"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
-import type { NotificationChannelWithRelations } from "../types"
 
 interface NotificationChannelFormProps {
-  channel?: NotificationChannelWithRelations
+  channel?: NotificationChannel
   mode: "create" | "edit"
 }
 

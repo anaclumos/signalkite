@@ -2,7 +2,6 @@ import { db } from "@/prisma"
 import { currentUser } from "@clerk/nextjs/server"
 import { NotificationChannelType } from "@prisma/client"
 import { beforeEach, describe, expect, it, vi } from "vitest"
-import { NotificationChannelWithRelations } from "./types"
 
 // Mock Clerk's currentUser
 vi.mock("@clerk/nextjs/server", () => ({
@@ -79,8 +78,7 @@ describe("NotificationChannelsPage", () => {
         createdAt: new Date(),
         updatedAt: new Date(),
         deletedAt: null,
-        Subscription: [],
-      } as NotificationChannelWithRelations,
+      },
     ])
 
     // Import and render the page
@@ -168,8 +166,7 @@ describe("NotificationChannelsPage", () => {
         createdAt: new Date(),
         updatedAt: new Date(),
         deletedAt: null,
-        Subscription: [],
-      } as NotificationChannelWithRelations,
+      },
     ])
 
     // Import and render the page
