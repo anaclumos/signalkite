@@ -1,9 +1,6 @@
 import path, { dirname } from "node:path"
 import { fileURLToPath } from "node:url"
 import { defineConfig, devices } from "@playwright/test"
-import dotenv from "dotenv"
-
-dotenv.config()
 
 const PORT = process.env.PORT || 3000
 const baseURL = `http://localhost:${PORT}`
