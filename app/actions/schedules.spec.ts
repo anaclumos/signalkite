@@ -70,6 +70,7 @@ describe("Schedule Actions", () => {
     })
 
     const schedule = await upsertSchedule({
+      id: "",
       name: "Midnight schedule",
       cron: "0 0 * * *",
       reporterIds: [reporter1.id, reporter2.id],

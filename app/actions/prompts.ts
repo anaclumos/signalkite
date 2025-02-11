@@ -20,7 +20,7 @@ export async function upsertPrompt({
 }: z.infer<typeof promptUpsertSchema>) {
   const user = await getCurrentUser()
 
-  if (id.length > 0) {
+  if (id?.length > 0) {
     // Validate input for update
     const validatedData = promptUpsertSchema.parse({
       id,

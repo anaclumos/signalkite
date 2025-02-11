@@ -33,7 +33,7 @@ export async function upsertSchedule({
 }: z.infer<typeof scheduleUpsertSchema>) {
   const user = await getCurrentUser()
 
-  if (id.length > 0) {
+  if (id?.length > 0) {
     // Validate input for update
     const validatedData = scheduleUpsertSchema.parse({
       id,

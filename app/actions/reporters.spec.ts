@@ -47,6 +47,7 @@ describe("Reporter Actions", () => {
 
   it("creates a reporter", async () => {
     const reporter = await upsertReporter({
+      id: "",
       name: "My new reporter",
       description: "It fetches data from somewhere",
     })

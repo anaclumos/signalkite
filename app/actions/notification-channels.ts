@@ -29,7 +29,7 @@ export async function upsertNotificationChannel({
 }: z.infer<typeof channelUpsertSchema>) {
   const user = await getCurrentUser()
 
-  if (id.length > 0) {
+  if (id?.length > 0) {
     // Validate input for update
     const validatedData = channelUpsertSchema.parse({
       id,
