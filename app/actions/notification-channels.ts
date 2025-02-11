@@ -6,10 +6,8 @@ import { notFound } from "next/navigation"
 import { z } from "zod"
 import { getCurrentUser } from "./auth"
 
-// Validation schemas
-const channelIdSchema = z.string().min(1, "Channel ID is required")
-
-const channelInputSchema = z.object({
+const channelUpsertSchema = z.object({
+  id: z.string().min(1, "Channel ID is required").optional(),
   name: z
     .string()
     .min(1, "Name is required")
@@ -18,75 +16,62 @@ const channelInputSchema = z.object({
   settings: z.record(z.string(), z.any()),
 })
 
-const channelUpdateSchema = z.object({
-  id: channelIdSchema,
-  name: z.string().max(100, "Name must be 100 characters or less").optional(),
-  settings: z.record(z.string(), z.any()).optional(),
+const channelUpdateSchema = channelUpsertSchema.extend({
+  id: z.string().min(1, "Channel ID is required"),
+  type: z.nativeEnum(NotificationChannelType).optional(),
 })
 
-export async function createNotificationChannel({
+export async function upsertNotificationChannel({
+  id,
   name,
   type,
   settings,
-}: z.infer<typeof channelInputSchema>) {
-  // Validate input
-  const validatedData = channelInputSchema.parse({
-    name,
-    type,
-    settings,
-  })
-
+}: z.infer<typeof channelUpsertSchema>) {
   const user = await getCurrentUser()
 
-  return db.notificationChannel.create({
-    data: {
-      name: validatedData.name,
-      type: validatedData.type,
-      settings: validatedData.settings,
-      userId: user.id,
-    },
-  })
-}
+  if (id) {
+    // Validate input for update
+    const validatedData = channelUpdateSchema.parse({ id, name, settings })
 
-export async function updateNotificationChannel({
-  id,
-  name,
-  settings,
-}: z.infer<typeof channelUpdateSchema>) {
-  // Validate input
-  const validatedData = channelUpdateSchema.parse({
-    id,
-    name,
-    settings,
-  })
+    const channel = await db.notificationChannel.findUnique({
+      where: { id: validatedData.id },
+    })
 
-  const user = await getCurrentUser()
+    if (!channel || channel.userId !== user.id) {
+      notFound()
+    }
 
-  const channel = await db.notificationChannel.findUnique({
-    where: { id: validatedData.id },
-  })
+    return db.notificationChannel.update({
+      where: { id: validatedData.id },
+      data: {
+        name: validatedData.name,
+        settings: {
+          ...(channel.settings as Record<string, any>),
+          ...validatedData.settings,
+        },
+      },
+    })
+  } else {
+    // Validate input for create
+    if (!type) {
+      throw new Error("Type is required when creating a notification channel")
+    }
+    const validatedData = channelUpsertSchema.parse({ name, type, settings })
 
-  if (!channel || channel.userId !== user.id) {
-    notFound()
+    return db.notificationChannel.create({
+      data: {
+        name: validatedData.name,
+        type: validatedData.type,
+        settings: validatedData.settings,
+        userId: user.id,
+      },
+    })
   }
-
-  return db.notificationChannel.update({
-    where: { id: validatedData.id },
-    data: {
-      name: validatedData.name,
-      settings: validatedData.settings
-        ? {
-            ...(channel.settings as Record<string, any>),
-            ...validatedData.settings,
-          }
-        : undefined,
-    },
-  })
 }
 
 export async function deleteNotificationChannel(id: string) {
   // Validate input
-  const validatedId = channelIdSchema.parse(id)
+  const validatedId = z.string().min(1, "Channel ID is required").parse(id)
 
   const user = await getCurrentUser()
 
@@ -122,7 +107,7 @@ export async function getNotificationChannels() {
 
 export async function getNotificationChannel(id: string) {
   // Validate input
-  const validatedId = channelIdSchema.parse(id)
+  const validatedId = z.string().min(1, "Channel ID is required").parse(id)
 
   const user = await getCurrentUser()
 

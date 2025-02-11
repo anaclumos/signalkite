@@ -1,9 +1,8 @@
 import {
-  createSchedule,
   deleteSchedule,
   getSchedule,
   getSchedules,
-  updateSchedule,
+  upsertSchedule,
 } from "@/app/actions/schedules"
 import { db } from "@/prisma"
 import {
@@ -70,7 +69,7 @@ describe("Schedule Actions", () => {
       data: { name: "Rep2", creatorId: testUserId },
     })
 
-    const schedule = await createSchedule({
+    const schedule = await upsertSchedule({
       name: "Midnight schedule",
       cron: "0 0 * * *",
       reporterIds: [reporter1.id, reporter2.id],
@@ -104,9 +103,11 @@ describe("Schedule Actions", () => {
       },
     })
 
-    const updated = await updateSchedule({
+    const updated = await upsertSchedule({
       id: schedule.id,
       name: "Updated schedule",
+      cron: "0 * * * *",
+      timezone: "America/New_York",
       reporterIds: [reporter2.id],
     })
 

@@ -1,8 +1,7 @@
 import {
-  createSubscription,
   deleteSubscription,
   getSubscriptions,
-  updateSubscription,
+  upsertSubscription,
 } from "@/app/actions/subscriptions"
 import { db } from "@/prisma"
 import {
@@ -62,7 +61,7 @@ describe("Subscription Actions", () => {
       },
     })
 
-    const subscription = await createSubscription({
+    const subscription = await upsertSubscription({
       reporterId: reporter.id,
     })
 
@@ -92,7 +91,7 @@ describe("Subscription Actions", () => {
       },
     })
 
-    const subscription = await createSubscription({
+    const subscription = await upsertSubscription({
       reporterId: reporter.id,
       notificationChannelId: channel.id,
     })
@@ -110,7 +109,7 @@ describe("Subscription Actions", () => {
       },
     })
 
-    await createSubscription({ reporterId: reporter.id })
+    await upsertSubscription({ reporterId: reporter.id })
 
     const channel = await db.notificationChannel.create({
       data: {
@@ -121,7 +120,7 @@ describe("Subscription Actions", () => {
       },
     })
 
-    const updated = await updateSubscription({
+    const updated = await upsertSubscription({
       reporterId: reporter.id,
       notificationChannelId: channel.id,
     })
@@ -135,7 +134,7 @@ describe("Subscription Actions", () => {
       data: { name: "Reporter sub", creatorId: testUserId },
     })
 
-    await createSubscription({ reporterId: reporter.id })
+    await upsertSubscription({ reporterId: reporter.id })
     const subsBefore = await getSubscriptions()
     expect(subsBefore.length).toBe(1)
 

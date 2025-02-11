@@ -1,8 +1,7 @@
 import {
-  createReporter,
   deleteReporter,
   getReporter,
-  updateReporter,
+  upsertReporter,
 } from "@/app/actions/reporters"
 import { db } from "@/prisma"
 import { ReporterStatus, ReporterStrategyType } from "@prisma/client"
@@ -47,7 +46,7 @@ describe("Reporter Actions", () => {
   })
 
   it("creates a reporter", async () => {
-    const reporter = await createReporter({
+    const reporter = await upsertReporter({
       name: "My new reporter",
       description: "It fetches data from somewhere",
     })
@@ -66,7 +65,7 @@ describe("Reporter Actions", () => {
       },
     })
 
-    const updated = await updateReporter({
+    const updated = await upsertReporter({
       id: r.id,
       name: "Updated name",
       status: ReporterStatus.PAUSED,

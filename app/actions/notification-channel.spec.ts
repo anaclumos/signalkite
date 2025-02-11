@@ -1,9 +1,8 @@
 import {
-  createNotificationChannel,
   deleteNotificationChannel,
   getNotificationChannel,
   getNotificationChannels,
-  updateNotificationChannel,
+  upsertNotificationChannel,
 } from "@/app/actions/notification-channels"
 import { db } from "@/prisma"
 import { NotificationChannelType } from "@prisma/client"
@@ -50,7 +49,7 @@ describe("Notification Channel Actions", () => {
   })
 
   it("creates a notification channel", async () => {
-    const channel = await createNotificationChannel({
+    const channel = await upsertNotificationChannel({
       name: "My Email Channel",
       type: NotificationChannelType.EMAIL,
       settings: { email: "test@example.com" },
@@ -73,9 +72,10 @@ describe("Notification Channel Actions", () => {
       },
     })
 
-    const updated = await updateNotificationChannel({
+    const updated = await upsertNotificationChannel({
       id: channel.id,
       name: "Updated Channel",
+      type: NotificationChannelType.TEXT,
       settings: { phone: "+987654321" },
     })
 
@@ -156,9 +156,11 @@ describe("Notification Channel Actions", () => {
     })
 
     await expect(
-      updateNotificationChannel({
+      upsertNotificationChannel({
         id: channel.id,
         name: "Should fail",
+        type: NotificationChannelType.TEXT,
+        settings: {},
       }),
     ).rejects.toThrow()
 

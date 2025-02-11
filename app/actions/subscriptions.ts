@@ -5,29 +5,23 @@ import { notFound } from "next/navigation"
 import { z } from "zod"
 import { getCurrentUser } from "./auth"
 
-// Validation schemas
-const subscriptionInputSchema = z.object({
-  reporterId: z.string().min(1, "Reporter ID is required"),
-  notificationChannelId: z.string().optional(),
-})
-
-const subscriptionUpdateSchema = z.object({
+const subscriptionUpsertSchema = z.object({
   reporterId: z.string().min(1, "Reporter ID is required"),
   notificationChannelId: z.string().nullable().optional(),
 })
 
-export async function createSubscription({
+export async function upsertSubscription({
   reporterId,
   notificationChannelId,
-}: z.infer<typeof subscriptionInputSchema>) {
-  // Validate input
-  const validatedData = subscriptionInputSchema.parse({
+}: z.infer<typeof subscriptionUpsertSchema>) {
+  const validatedData = subscriptionUpsertSchema.parse({
     reporterId,
     notificationChannelId,
   })
 
   const user = await getCurrentUser()
 
+  // Check if notification channel exists and belongs to user
   if (validatedData.notificationChannelId) {
     const channel = await db.notificationChannel.findUnique({
       where: { id: validatedData.notificationChannelId },
@@ -37,6 +31,7 @@ export async function createSubscription({
     }
   }
 
+  // Check if reporter exists
   const reporter = await db.reporter.findUnique({
     where: {
       id: validatedData.reporterId,
@@ -48,32 +43,8 @@ export async function createSubscription({
     notFound()
   }
 
-  return db.subscription.create({
-    data: {
-      userId: user.id,
-      reporterId: validatedData.reporterId,
-      notificationChannelId: validatedData.notificationChannelId,
-    },
-    include: {
-      reporter: true,
-      notificationChannel: true,
-    },
-  })
-}
-
-export async function updateSubscription({
-  reporterId,
-  notificationChannelId,
-}: z.infer<typeof subscriptionUpdateSchema>) {
-  // Validate input
-  const validatedData = subscriptionUpdateSchema.parse({
-    reporterId,
-    notificationChannelId,
-  })
-
-  const user = await getCurrentUser()
-
-  const subscription = await db.subscription.findUnique({
+  // Check if subscription exists
+  const existingSubscription = await db.subscription.findUnique({
     where: {
       userId_reporterId: {
         userId: user.id,
@@ -81,34 +52,38 @@ export async function updateSubscription({
       },
     },
   })
-  if (!subscription) {
-    notFound()
-  }
 
-  if (validatedData.notificationChannelId) {
-    const channel = await db.notificationChannel.findUnique({
-      where: { id: validatedData.notificationChannelId },
+  if (existingSubscription) {
+    // Update
+    return db.subscription.update({
+      where: {
+        userId_reporterId: {
+          userId: user.id,
+          reporterId: validatedData.reporterId,
+        },
+      },
+      data: {
+        notificationChannelId: validatedData.notificationChannelId,
+      },
+      include: {
+        reporter: true,
+        notificationChannel: true,
+      },
     })
-    if (!channel || channel.userId !== user.id) {
-      notFound()
-    }
-  }
-
-  return db.subscription.update({
-    where: {
-      userId_reporterId: {
+  } else {
+    // Create
+    return db.subscription.create({
+      data: {
         userId: user.id,
         reporterId: validatedData.reporterId,
+        notificationChannelId: validatedData.notificationChannelId,
       },
-    },
-    data: {
-      notificationChannelId: validatedData.notificationChannelId,
-    },
-    include: {
-      reporter: true,
-      notificationChannel: true,
-    },
-  })
+      include: {
+        reporter: true,
+        notificationChannel: true,
+      },
+    })
+  }
 }
 
 export async function deleteSubscription(reporterId: string) {

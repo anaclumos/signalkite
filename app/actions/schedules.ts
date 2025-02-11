@@ -5,10 +5,8 @@ import { notFound } from "next/navigation"
 import { z } from "zod"
 import { getCurrentUser } from "./auth"
 
-// Validation schemas
-const scheduleIdSchema = z.string().min(1, "Schedule ID is required")
-
-const scheduleInputSchema = z.object({
+const scheduleUpsertSchema = z.object({
+  id: z.string().min(1, "Schedule ID is required").optional(),
   name: z
     .string()
     .min(1, "Name is required")
@@ -21,123 +19,105 @@ const scheduleInputSchema = z.object({
     .string()
     .min(1, "Timezone is required")
     .max(100, "Timezone must be 100 characters or less"),
-  reporterIds: z.array(z.string()).optional(),
-})
-
-const scheduleUpdateSchema = z.object({
-  id: scheduleIdSchema,
-  name: z.string().max(100, "Name must be 100 characters or less").optional(),
-  cron: z
-    .string()
-    .max(100, "Cron expression must be 100 characters or less")
-    .optional(),
   paused: z.boolean().optional(),
-  timezone: z
-    .string()
-    .max(100, "Timezone must be 100 characters or less")
-    .optional(),
   reporterIds: z.array(z.string()).optional(),
 })
 
-export async function createSchedule({
-  name,
-  cron,
-  timezone,
-  reporterIds,
-}: z.infer<typeof scheduleInputSchema>) {
-  const validatedData = scheduleInputSchema.parse({
-    name,
-    cron,
-    timezone,
-    reporterIds,
-  })
-
-  const user = await getCurrentUser()
-
-  return db.$transaction(async (tx) => {
-    const schedule = await tx.schedule.create({
-      data: {
-        name: validatedData.name,
-        cron: validatedData.cron,
-        timezone: validatedData.timezone,
-        ownerId: user.id,
-      },
-    })
-
-    if (validatedData.reporterIds?.length) {
-      await tx.scheduleReporter.createMany({
-        data: validatedData.reporterIds.map((reporterId) => ({
-          scheduleId: schedule.id,
-          reporterId,
-        })),
-      })
-    }
-
-    return schedule
-  })
-}
-
-export async function updateSchedule({
+export async function upsertSchedule({
   id,
   name,
   cron,
-  paused,
   timezone,
+  paused,
   reporterIds,
-}: z.infer<typeof scheduleUpdateSchema>) {
-  // Validate input
-  const validatedData = scheduleUpdateSchema.parse({
-    id,
-    name,
-    cron,
-    paused,
-    reporterIds,
-  })
-
+}: z.infer<typeof scheduleUpsertSchema>) {
   const user = await getCurrentUser()
 
-  const schedule = await db.schedule.findUnique({
-    where: { id: validatedData.id },
-    include: {
-      ScheduleReporters: true,
-    },
-  })
+  if (id) {
+    // Validate input for update
+    const validatedData = scheduleUpsertSchema.parse({
+      id,
+      name,
+      cron,
+      timezone,
+      paused,
+      reporterIds,
+    })
 
-  if (!schedule || schedule.ownerId !== user.id) {
-    notFound()
-  }
-
-  return db.$transaction(async (tx) => {
-    const updatedSchedule = await tx.schedule.update({
+    const schedule = await db.schedule.findUnique({
       where: { id: validatedData.id },
-      data: {
-        name: validatedData.name,
-        cron: validatedData.cron,
-        paused: validatedData.paused,
+      include: {
+        ScheduleReporters: true,
       },
     })
 
-    if (validatedData.reporterIds) {
-      await tx.scheduleReporter.deleteMany({
-        where: { scheduleId: validatedData.id },
+    if (!schedule || schedule.ownerId !== user.id) {
+      notFound()
+    }
+
+    return db.$transaction(async (tx) => {
+      const updatedSchedule = await tx.schedule.update({
+        where: { id: validatedData.id },
+        data: {
+          name: validatedData.name,
+          cron: validatedData.cron,
+          timezone: validatedData.timezone,
+          paused: validatedData.paused,
+        },
       })
-      if (validatedData.reporterIds.length > 0) {
+
+      if (validatedData.reporterIds) {
+        await tx.scheduleReporter.deleteMany({
+          where: { scheduleId: validatedData.id },
+        })
+        if (validatedData.reporterIds.length > 0) {
+          await tx.scheduleReporter.createMany({
+            data: validatedData.reporterIds.map((reporterId) => ({
+              scheduleId: schedule.id,
+              reporterId,
+            })),
+          })
+        }
+      }
+
+      return updatedSchedule
+    })
+  } else {
+    // Validate input for create
+    const validatedData = scheduleUpsertSchema.parse({
+      name,
+      cron,
+      timezone,
+      reporterIds,
+    })
+
+    return db.$transaction(async (tx) => {
+      const schedule = await tx.schedule.create({
+        data: {
+          name: validatedData.name,
+          cron: validatedData.cron,
+          timezone: validatedData.timezone,
+          ownerId: user.id,
+        },
+      })
+
+      if (validatedData.reporterIds?.length) {
         await tx.scheduleReporter.createMany({
           data: validatedData.reporterIds.map((reporterId) => ({
-            scheduleId: validatedData.id,
+            scheduleId: schedule.id,
             reporterId,
           })),
         })
       }
-    }
 
-    return updatedSchedule
-  })
+      return schedule
+    })
+  }
 }
 
 export async function deleteSchedule(id: string) {
   // Validate input
-  const validatedId = scheduleIdSchema.parse(id)
+  const validatedId = z.string().min(1, "Schedule ID is required").parse(id)
 
   const user = await getCurrentUser()
 
@@ -159,7 +139,7 @@ export async function deleteSchedule(id: string) {
 
 export async function getSchedule(id: string) {
   // Validate input
-  const validatedId = scheduleIdSchema.parse(id)
+  const validatedId = z.string().min(1, "Schedule ID is required").parse(id)
 
   const user = await getCurrentUser()
 

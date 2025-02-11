@@ -58,9 +58,11 @@ export function PromptForm({ prompt, mode }: PromptFormProps) {
                   <DialogClose asChild>
                     <Button variant="secondary">Cancel</Button>
                   </DialogClose>
-                  <form action={() => prompt && deletePromptAction(prompt.id)}>
-                    <Button variant="destructive">Delete</Button>
-                  </form>
+                  {prompt && (
+                    <form action={deletePromptAction}>
+                      <Button variant="destructive">Delete</Button>
+                    </form>
+                  )}
                 </DialogFooter>
               </DialogContent>
             </Dialog>
@@ -68,10 +70,7 @@ export function PromptForm({ prompt, mode }: PromptFormProps) {
         }
       />
 
-      <form
-        action={(formData) => submitPromptAction(formData, mode, prompt?.id)}
-      >
-        {/* Prompt Info Section */}
+      <form action={submitPromptAction}>
         <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
           <div>
             <h2 className="font-semibold text-gray-900 dark:text-gray-50">

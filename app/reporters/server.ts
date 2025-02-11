@@ -1,10 +1,11 @@
 "use server"
 
-import { createReporter } from "@/app/actions/reporters"
+import { upsertReporter } from "@/app/actions/reporters"
 import { ReporterStrategyType } from "@prisma/client"
 import { redirect } from "next/navigation"
 
 export async function submitReporterAction(formData: FormData) {
+  const id = formData.get("id") as string
   const name = formData.get("name") as string
   const description = formData.get("description") as string
   const strategy = formData.get("strategy") as ReporterStrategyType
@@ -13,7 +14,8 @@ export async function submitReporterAction(formData: FormData) {
     "notificationChannels",
   ) as string[]
 
-  await createReporter({
+  await upsertReporter({
+    id,
     name,
     description,
     strategy,
