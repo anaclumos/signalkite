@@ -30,6 +30,7 @@ describe("upsertPrompt", () => {
   it("should create a new prompt when no id is provided", async () => {
     const mockPrompt = {
       id: "prompt-1",
+      name: "New Prompt",
       createdAt: new Date(),
       updatedAt: new Date(),
       deletedAt: null,
@@ -42,6 +43,7 @@ describe("upsertPrompt", () => {
     vi.mocked(db.prompt.create).mockResolvedValue(mockPrompt)
 
     const result = await upsertPrompt({
+      name: "New Prompt",
       description: "New Prompt",
       text: "New text",
     })
@@ -49,6 +51,7 @@ describe("upsertPrompt", () => {
     expect(result).toEqual(mockPrompt)
     expect(db.prompt.create).toHaveBeenCalledWith({
       data: {
+        name: "New Prompt",
         description: "New Prompt",
         text: "New text",
         creatorId: "user-1",
@@ -59,6 +62,7 @@ describe("upsertPrompt", () => {
   it("should update an existing prompt when id is provided", async () => {
     const existingPrompt = {
       id: "prompt-1",
+      name: "Old Prompt",
       createdAt: new Date(),
       updatedAt: new Date(),
       deletedAt: null,
@@ -69,6 +73,7 @@ describe("upsertPrompt", () => {
 
     const updatedPrompt = {
       ...existingPrompt,
+      name: "Updated Prompt",
       description: "Updated Prompt",
       text: "Updated text",
     }
@@ -79,6 +84,7 @@ describe("upsertPrompt", () => {
 
     const result = await upsertPrompt({
       id: "prompt-1",
+      name: "Updated Prompt",
       description: "Updated Prompt",
       text: "Updated text",
     })
@@ -87,6 +93,7 @@ describe("upsertPrompt", () => {
     expect(db.prompt.update).toHaveBeenCalledWith({
       where: { id: "prompt-1" },
       data: {
+        name: "Updated Prompt",
         description: "Updated Prompt",
         text: "Updated text",
       },
@@ -100,6 +107,7 @@ describe("upsertPrompt", () => {
     await expect(
       upsertPrompt({
         id: "non-existent",
+        name: "Updated Prompt",
         description: "Updated Prompt",
         text: "Updated text",
       }),
@@ -109,6 +117,7 @@ describe("upsertPrompt", () => {
   it("should throw notFound when updating prompt owned by different user", async () => {
     const existingPrompt = {
       id: "prompt-1",
+      name: "Old Prompt",
       createdAt: new Date(),
       updatedAt: new Date(),
       deletedAt: null,
@@ -123,6 +132,7 @@ describe("upsertPrompt", () => {
     await expect(
       upsertPrompt({
         id: "prompt-1",
+        name: "Updated Prompt",
         description: "Updated Prompt",
         text: "Updated text",
       }),
@@ -142,6 +152,7 @@ describe("getPrompt", () => {
     }
     const mockPrompt = {
       id: "prompt-1",
+      name: "Test Prompt",
       createdAt: new Date(),
       updatedAt: new Date(),
       deletedAt: null,
@@ -194,6 +205,7 @@ describe("getPrompt", () => {
     }
     const mockPrompt = {
       id: "prompt-1",
+      name: "Test Prompt",
       createdAt: new Date(),
       updatedAt: new Date(),
       deletedAt: null,
@@ -223,6 +235,7 @@ describe("deletePrompt", () => {
     }
     const mockPrompt = {
       id: "prompt-1",
+      name: "Test Prompt",
       createdAt: new Date(),
       updatedAt: new Date(),
       deletedAt: null,
@@ -275,6 +288,7 @@ describe("deletePrompt", () => {
     }
     const mockPrompt = {
       id: "prompt-1",
+      name: "Test Prompt",
       createdAt: new Date(),
       updatedAt: new Date(),
       deletedAt: null,
