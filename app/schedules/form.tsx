@@ -27,20 +27,15 @@ import {
 } from "@/components/ui/select"
 import { daysOfWeek } from "@/lib/const"
 import { getCronDescription } from "@/lib/cron"
-import type { Schedule, ScheduleReporter } from "@prisma/client"
+import type { Schedule } from "@prisma/client"
 import Link from "next/link"
 import { deleteScheduleAction, submit } from "./server"
 
-type ScheduleWithReporters = Schedule & {
-  ScheduleReporters: ScheduleReporter[]
-}
-
 interface ScheduleFormProps {
-  schedule?: ScheduleWithReporters
-  mode: "create" | "edit"
+  schedule?: Schedule
 }
 
-export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
+export function ScheduleForm({ schedule }: ScheduleFormProps) {
   // Parse initial cron expression or set defaults
   const initialCronParts = schedule?.cron.split(" ") || [
     "0",
@@ -93,7 +88,7 @@ export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
     { title: "Schedules", href: "/schedules" },
   ]
 
-  if (mode === "edit" && schedule) {
+  if (schedule) {
     breadcrumbs.push({
       title: schedule.name,
       href: `/schedules/${schedule.id}`,
@@ -142,9 +137,9 @@ export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
               Schedule Information
             </h2>
             <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
-              {mode === "create"
-                ? "Create a new schedule to run your reporters at specific times."
-                : "Edit your schedule configuration."}
+              {schedule
+                ? "Edit your schedule configuration."
+                : "Create a new schedule to run your reporters at specific times."}
             </p>
           </div>
           <div className="md:col-span-2">
@@ -292,7 +287,7 @@ export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
             </Button>
           </Link>
           <Button type="submit">
-            {mode === "create" ? "Create Schedule" : "Save Changes"}
+            {schedule ? "Save Changes" : "Create Schedule"}
           </Button>
         </div>
       </form>

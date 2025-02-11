@@ -1,5 +1,7 @@
 // Tremor Input [v1.0.5]
 
+"use client"
+
 import { RiEyeFill, RiEyeOffFill, RiSearchLine } from "@remixicon/react"
 import React from "react"
 import { type VariantProps, tv } from "tailwind-variants"

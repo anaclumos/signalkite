@@ -14,22 +14,21 @@ import { Divider } from "@/components/ui/divider"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { Prompt } from "@prisma/client"
 import Link from "next/link"
 import { deletePromptAction, submitPromptAction } from "./server"
-import type { PromptWithRelations } from "./types"
 
 interface PromptFormProps {
-  prompt?: PromptWithRelations
-  mode: "create" | "edit"
+  prompt?: Prompt
 }
 
-export function PromptForm({ prompt, mode }: PromptFormProps) {
+export function PromptForm({ prompt }: PromptFormProps) {
   const breadcrumbs = [
     { title: "Home", href: "/" },
     { title: "Prompts", href: "/prompts" },
   ]
 
-  if (mode === "edit" && prompt) {
+  if (prompt) {
     breadcrumbs.push({
       title: prompt.description || "Untitled Prompt",
       href: `/prompts/${prompt.id}`,
@@ -77,9 +76,9 @@ export function PromptForm({ prompt, mode }: PromptFormProps) {
               Prompt Information
             </h2>
             <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
-              {mode === "create"
-                ? "Create a new prompt to use for post-processing stories and content."
-                : "Edit your prompt configuration."}
+              {prompt
+                ? "Edit your prompt configuration."
+                : "Create a new prompt to use for post-processing stories and content."}
             </p>
           </div>
           <div className="md:col-span-2">
@@ -126,7 +125,7 @@ export function PromptForm({ prompt, mode }: PromptFormProps) {
             </Button>
           </Link>
           <Button type="submit">
-            {mode === "create" ? "Create Prompt" : "Save Changes"}
+            {prompt ? "Save Changes" : "Create Prompt"}
           </Button>
         </div>
       </form>

@@ -30,12 +30,10 @@ import { deleteChannelAction, submitChannelAction } from "./server"
 
 interface NotificationChannelFormProps {
   channel?: NotificationChannel
-  mode: "create" | "edit"
 }
 
 export function NotificationChannelForm({
   channel,
-  mode,
 }: NotificationChannelFormProps) {
   const [type, setType] = useState<NotificationChannelType>(
     channel?.type || NotificationChannelType.EMAIL,
@@ -46,7 +44,7 @@ export function NotificationChannelForm({
     { title: "Notification Channels", href: "/notification-channels" },
   ]
 
-  if (mode === "edit" && channel) {
+  if (channel) {
     breadcrumbs.push({
       title: channel.name,
       href: `/notification-channels/${channel.id}`,
@@ -88,9 +86,7 @@ export function NotificationChannelForm({
       />
 
       <form
-        action={(formData) =>
-          submitChannelAction(formData, mode, channel?.id, type)
-        }
+        action={(formData) => submitChannelAction(formData, channel?.id, type)}
       >
         <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
           <div>
@@ -98,9 +94,9 @@ export function NotificationChannelForm({
               Channel Information
             </h2>
             <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
-              {mode === "create"
-                ? "Create a new notification channel to deliver updates."
-                : "Edit your notification channel configuration."}
+              {channel
+                ? "Edit your notification channel configuration."
+                : "Create a new notification channel to deliver updates."}
             </p>
           </div>
           <div className="md:col-span-2">
@@ -131,7 +127,7 @@ export function NotificationChannelForm({
                   onValueChange={(value) =>
                     setType(value as NotificationChannelType)
                   }
-                  disabled={mode === "edit"}
+                  disabled={Boolean(channel)}
                 >
                   <SelectTrigger className="mt-2">
                     <SelectValue placeholder="Select a channel type" />
@@ -182,7 +178,7 @@ export function NotificationChannelForm({
             </Button>
           </Link>
           <Button type="submit">
-            {mode === "create" ? "Create Channel" : "Save Changes"}
+            {channel ? "Save Changes" : "Create Channel"}
           </Button>
         </div>
       </form>

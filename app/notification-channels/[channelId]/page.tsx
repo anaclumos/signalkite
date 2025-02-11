@@ -14,5 +14,5 @@ export default async function NotificationChannelPage({
     notFound()
   }
 
-  return <NotificationChannelForm channel={channel} mode="edit" />
+  return <NotificationChannelForm channel={channel} />
 }

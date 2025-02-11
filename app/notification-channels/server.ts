@@ -1,9 +1,8 @@
 "use server"
 
 import {
-  createNotificationChannel,
   deleteNotificationChannel,
-  updateNotificationChannel,
+  upsertNotificationChannel,
 } from "@/app/actions/notification-channels"
 import { NotificationChannelType } from "@prisma/client"
 import { redirect } from "next/navigation"
@@ -15,7 +14,6 @@ export async function deleteChannelAction(channelId: string) {
 
 export async function submitChannelAction(
   formData: FormData,
-  mode: "create" | "edit",
   channelId?: string,
   type?: NotificationChannelType,
 ) {
@@ -30,19 +28,11 @@ export async function submitChannelAction(
     return
   }
 
-  if (mode === "edit" && channelId) {
-    await updateNotificationChannel({
-      id: channelId,
-      name,
-      settings,
-    })
-  } else {
-    await createNotificationChannel({
-      name,
-      type: type || NotificationChannelType.EMAIL,
-      settings,
-    })
-  }
-
+  await upsertNotificationChannel({
+    id: channelId,
+    name,
+    type: type || NotificationChannelType.EMAIL,
+    settings,
+  })
   redirect("/notification-channels")
 }
