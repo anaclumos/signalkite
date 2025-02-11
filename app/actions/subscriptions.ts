@@ -118,12 +118,11 @@ export async function deleteSubscription(reporterId: string) {
   })
 }
 
-export async function getSubscriptions() {
-  const user = await getCurrentUser()
-
+async function _getSubscriptions(userId: string) {
+  "use cache"
   return db.subscription.findMany({
     where: {
-      userId: user.id,
+      userId,
     },
     include: {
       reporter: true,
@@ -133,4 +132,9 @@ export async function getSubscriptions() {
       createdAt: "desc",
     },
   })
+}
+
+export async function getSubscriptions() {
+  const user = await getCurrentUser()
+  return _getSubscriptions(user.id)
 }

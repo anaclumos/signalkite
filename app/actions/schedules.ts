@@ -137,11 +137,9 @@ export async function deleteSchedule(id: string) {
   })
 }
 
-export async function getSchedule(id: string) {
-  // Validate input
+async function _getSchedule(id: string, userId: string) {
+  "use cache"
   const validatedId = z.string().min(1, "Schedule ID is required").parse(id)
-
-  const user = await getCurrentUser()
 
   const schedule = await db.schedule.findUnique({
     where: { id: validatedId },
@@ -164,19 +162,23 @@ export async function getSchedule(id: string) {
     },
   })
 
-  if (!schedule || schedule.ownerId !== user.id) {
+  if (!schedule || schedule.ownerId !== userId) {
     notFound()
   }
 
   return schedule
 }
 
-export async function getSchedules() {
+export async function getSchedule(id: string) {
   const user = await getCurrentUser()
+  return _getSchedule(id, user.id)
+}
 
+async function _getSchedules(userId: string) {
+  "use cache"
   return db.schedule.findMany({
     where: {
-      ownerId: user.id,
+      ownerId: userId,
       deletedAt: null,
     },
     include: {
@@ -190,4 +192,9 @@ export async function getSchedules() {
       createdAt: "desc",
     },
   })
+}
+
+export async function getSchedules() {
+  const user = await getCurrentUser()
+  return _getSchedules(user.id)
 }

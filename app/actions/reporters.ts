@@ -130,12 +130,11 @@ export async function deleteReporter(id: string) {
   })
 }
 
-export async function getReporters() {
-  const user = await getCurrentUser()
-
+async function _getReporters(userId: string) {
+  "use cache"
   return db.reporter.findMany({
     where: {
-      creatorId: user.id,
+      creatorId: userId,
       deletedAt: null,
     },
     include: {
@@ -171,11 +170,14 @@ export async function getReporters() {
   })
 }
 
-export async function getReporter(id: string) {
-  // Validate input
-  const validatedId = z.string().min(1, "Reporter ID is required").parse(id)
-
+export async function getReporters() {
   const user = await getCurrentUser()
+  return _getReporters(user.id)
+}
+
+async function _getReporter(id: string, userId: string) {
+  "use cache"
+  const validatedId = z.string().min(1, "Reporter ID is required").parse(id)
 
   const reporter = await db.reporter.findUnique({
     where: { id: validatedId },
@@ -203,11 +205,16 @@ export async function getReporter(id: string) {
 
   if (
     !reporter ||
-    (reporter.creatorId !== user.id &&
+    (reporter.creatorId !== userId &&
       reporter.status === ReporterStatus.ARCHIVED)
   ) {
     notFound()
   }
 
   return reporter
+}
+
+export async function getReporter(id: string) {
+  const user = await getCurrentUser()
+  return _getReporter(id, user.id)
 }
