@@ -6,22 +6,37 @@ const nextConfig: NextConfig = {
     reactCompiler: true,
     authInterrupts: true,
     useCache: true,
+    optimizePackageImports: ["@remixicon/react"],
   },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      // Add a custom cache group for remixicon
-      config.optimization.splitChunks = {
-        ...config.optimization.splitChunks,
-        cacheGroups: {
-          ...config.optimization.splitChunks?.cacheGroups,
-          remixicon: {
-            test: /[\\/]node_modules[\\/](@remixicon\/react)[\\/]/,
-            name: "remixicon-chunk",
-            chunks: "all",
-            enforce: true,
+  webpack: (config) => {
+    config.optimization.splitChunks = {
+      chunks: "async",
+      minSize: 10000,
+      minRemainingSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 50,
+      maxInitialRequests: 50,
+      enforceSizeThreshold: 50000,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          reuseExistingChunk: true,
+          name(module: any) {
+            const packageName = module.context.match(
+              /[\\/]node_modules[\\/](.*?)([\\/]|$)/,
+            )[1]
+            return `npm.${packageName.replace("@", "")}`
           },
         },
-      }
+        remixicon: {
+          test: /[\\/]node_modules[\\/]@remixicon[\\/]/,
+          name: "remixicon",
+          chunks: "all",
+          priority: 20,
+          reuseExistingChunk: true,
+        },
+      },
     }
     return config
   },
