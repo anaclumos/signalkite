@@ -2,7 +2,7 @@
 CREATE TYPE "ReporterStrategyType" AS ENUM ('EXA_SEARCH', 'WHOIS_LOOKUP', 'HN_BEST_STORIES');
 
 -- CreateEnum
-CREATE TYPE "NotificationChannelType" AS ENUM ('EMAIL', 'SMS', 'PUSH', 'SLACK');
+CREATE TYPE "NotificationChannelType" AS ENUM ('EMAIL', 'TEXT', 'PUSH', 'SLACK');
 
 -- CreateEnum
 CREATE TYPE "ReporterStatus" AS ENUM ('ACTIVE', 'PAUSED', 'ARCHIVED');
@@ -40,8 +40,10 @@ CREATE TABLE "News" (
 CREATE TABLE "NotificationChannel" (
     "id" TEXT NOT NULL,
     "name" VARCHAR(100) NOT NULL,
+    "description" TEXT,
     "type" "NotificationChannelType" NOT NULL,
     "settings" JSONB NOT NULL,
+    "clerkId" TEXT,
     "createdAt" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "deletedAt" TIMESTAMP(3),
@@ -53,6 +55,7 @@ CREATE TABLE "NotificationChannel" (
 -- CreateTable
 CREATE TABLE "Prompt" (
     "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
     "description" TEXT,
     "text" TEXT,
     "createdAt" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -84,6 +87,7 @@ CREATE TABLE "Schedule" (
     "id" TEXT NOT NULL,
     "name" VARCHAR(100) NOT NULL,
     "cron" VARCHAR(100) NOT NULL,
+    "timezone" VARCHAR(100) NOT NULL,
     "nextRunAt" TIMESTAMP(3),
     "lastRunAt" TIMESTAMP(3),
     "paused" BOOLEAN NOT NULL DEFAULT false,
@@ -143,6 +147,9 @@ CREATE INDEX "Story_newsId_createdAt_idx" ON "Story"("newsId", "createdAt");
 
 -- CreateIndex
 CREATE INDEX "News_reporterId_idx" ON "News"("reporterId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "NotificationChannel_clerkId_key" ON "NotificationChannel"("clerkId");
 
 -- CreateIndex
 CREATE INDEX "Reporter_creatorId_idx" ON "Reporter"("creatorId");
