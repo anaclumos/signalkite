@@ -85,7 +85,6 @@ export async function deletePrompt(id: string) {
 }
 
 async function _getPrompts(userId: string) {
-  "use cache"
   return db.prompt.findMany({
     where: { creatorId: userId, deletedAt: null },
     orderBy: {
@@ -100,7 +99,6 @@ export async function getPrompts() {
 }
 
 async function _getPrompt(id: string, userId: string) {
-  "use cache"
   const prompt = await db.prompt.findUnique({
     where: { id: id, creatorId: userId },
     include: {

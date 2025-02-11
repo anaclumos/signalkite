@@ -119,7 +119,6 @@ export async function deleteSubscription(reporterId: string) {
 }
 
 async function _getSubscriptions(userId: string) {
-  "use cache"
   return db.subscription.findMany({
     where: {
       userId,

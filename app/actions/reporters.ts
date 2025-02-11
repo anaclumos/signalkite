@@ -131,7 +131,6 @@ export async function deleteReporter(id: string) {
 }
 
 async function _getReporters(userId: string) {
-  "use cache"
   return db.reporter.findMany({
     where: {
       creatorId: userId,
@@ -176,7 +175,6 @@ export async function getReporters() {
 }
 
 async function _getReporter(id: string, userId: string) {
-  "use cache"
   const validatedId = z.string().min(1, "Reporter ID is required").parse(id)
 
   const reporter = await db.reporter.findUnique({

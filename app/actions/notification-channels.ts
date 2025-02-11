@@ -98,7 +98,6 @@ export async function deleteNotificationChannel(id: string) {
 }
 
 async function _getNotificationChannels(userId: string) {
-  "use cache"
   return db.notificationChannel.findMany({
     where: {
       userId,
@@ -116,7 +115,6 @@ export async function getNotificationChannels() {
 }
 
 async function _getNotificationChannel(id: string, userId: string) {
-  "use cache"
   const validatedId = z.string().min(1, "Channel ID is required").parse(id)
 
   const channel = await db.notificationChannel.findUnique({

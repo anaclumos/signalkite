@@ -138,7 +138,6 @@ export async function deleteSchedule(id: string) {
 }
 
 async function _getSchedule(id: string, userId: string) {
-  "use cache"
   const validatedId = z.string().min(1, "Schedule ID is required").parse(id)
 
   const schedule = await db.schedule.findUnique({
@@ -175,7 +174,6 @@ export async function getSchedule(id: string) {
 }
 
 async function _getSchedules(userId: string) {
-  "use cache"
   return db.schedule.findMany({
     where: {
       ownerId: userId,
