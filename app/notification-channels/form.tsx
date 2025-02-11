@@ -33,7 +33,7 @@ export function NotificationChannelForm({
       entityName={channel?.name}
       backUrl="/notification-channels"
       onDelete={channel ? deleteChannelAction : undefined}
-      onSubmit={(formData) => submitChannelAction(formData, channel?.id, type)}
+      onSubmit={submitChannelAction}
       submitLabel={channel ? "Save Changes" : "Create Channel"}
       sections={[
         {

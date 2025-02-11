@@ -12,12 +12,10 @@ export async function deleteChannelAction(channelId: string) {
   redirect("/notification-channels")
 }
 
-export async function submitChannelAction(
-  formData: FormData,
-  channelId?: string,
-  type?: NotificationChannelType,
-) {
+export async function submitChannelAction(formData: FormData) {
+  const id = formData.get("id") as string
   const name = formData.get("name") as string
+  const type = formData.get("type") as NotificationChannelType
   const settingsStr = formData.get("settings") as string
   let settings = {}
 
@@ -29,9 +27,9 @@ export async function submitChannelAction(
   }
 
   await upsertNotificationChannel({
-    id: channelId,
+    id,
     name,
-    type: type || NotificationChannelType.EMAIL,
+    type,
     settings,
   })
   redirect("/notification-channels")

@@ -2,17 +2,17 @@
 
 import { EntityTable } from "@/components/entity-table"
 import { Button } from "@/components/ui/button"
+import { Prompt } from "@prisma/client"
 import { ColumnDef } from "@tanstack/react-table"
 import Link from "next/link"
 import { useMemo } from "react"
-import { PromptWithRelations } from "./types"
 
 interface PromptsTableProps {
-  initialPrompts: PromptWithRelations[]
+  initialPrompts: Prompt[]
 }
 
 export function PromptsTable({ initialPrompts }: PromptsTableProps) {
-  const columns = useMemo<ColumnDef<PromptWithRelations>[]>(
+  const columns = useMemo<ColumnDef<Prompt>[]>(
     () => [
       {
         header: "Description",
@@ -29,18 +29,6 @@ export function PromptsTable({ initialPrompts }: PromptsTableProps) {
           if (!text) return "-"
           return text.length > 100 ? text.slice(0, 100) + "..." : text
         },
-      },
-      {
-        header: "Linked Reporters",
-        accessorKey: "Reporters",
-        enableSorting: false,
-        cell: ({ row }) => row.original.Reporters?.length || 0,
-      },
-      {
-        header: "Linked Stories",
-        accessorKey: "Stories",
-        enableSorting: false,
-        cell: ({ row }) => row.original.Stories?.length || 0,
       },
       {
         header: "Created",
@@ -70,16 +58,6 @@ export function PromptsTable({ initialPrompts }: PromptsTableProps) {
       renderCard={(prompt) => ({
         title: prompt.description || "Untitled Prompt",
         description: prompt.text,
-        stats: [
-          {
-            label: "Reporters",
-            value: prompt.Reporters?.length || 0,
-          },
-          {
-            label: "Stories",
-            value: prompt.Stories?.length || 0,
-          },
-        ],
       })}
       actions={
         <Link href="/prompts/new">
