@@ -17,7 +17,7 @@
     "ci": "prisma db push && next build && bun run start",
     "test": "bun run db:push && vitest run",
     "e2e": "playwright test",
-    "if-mac-prepare-docker": "if [ \"$(uname)\" = \"Darwin\" ]; then colima start && (docker ps -a | grep 'postgres-everynews' > /dev/null || docker run --name postgres-everynews -e POSTGRES_USER=everynewsusername -e POSTGRES_PASSWORD=everynewspassword -e POSTGRES_DB=everynewsdb -p 54321:5432 -d postgres:latest); fi && bun run db:push"
+    "db:docker": "docker run --name postgres-everynews -e POSTGRES_USER=everynewsusername -e POSTGRES_PASSWORD=everynewspassword -e POSTGRES_DB=everynewsdb -p 54321:5432 -d postgres:latest"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.11.1",
