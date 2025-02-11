@@ -19,18 +19,29 @@ export async function submitChannelAction(formData: FormData) {
   const settingsStr = formData.get("settings") as string
   let settings = {}
 
+  if (!name?.trim()) {
+    throw new Error("Name is required")
+  }
+
   try {
     settings = JSON.parse(settingsStr)
   } catch (error) {
     console.error("Invalid JSON settings:", error)
-    return
+    throw new Error("Invalid JSON settings")
   }
 
-  await upsertNotificationChannel({
-    id,
-    name,
-    type,
-    settings,
-  })
-  redirect("/notification-channels")
+  try {
+    await upsertNotificationChannel({
+      id,
+      name,
+      type,
+      settings,
+    })
+    redirect("/notification-channels")
+  } catch (error) {
+    if (error instanceof Error) {
+      throw error
+    }
+    throw new Error("Failed to save notification channel")
+  }
 }

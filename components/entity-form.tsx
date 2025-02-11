@@ -56,7 +56,7 @@ export function EntityForm({
   }
 
   return (
-    <>
+    <div className="flex flex-col pb-4">
       <NavBar
         breadcrumbs={breadcrumbs}
         actions={
@@ -85,19 +85,12 @@ export function EntityForm({
                 </DialogContent>
               </Dialog>
             )}
-            <div className="flex items-center justify-end gap-2">
-              <Link href={backUrl}>
-                <Button variant="secondary" type="button">
-                  Cancel
-                </Button>
-              </Link>
-              <Button type="submit">{submitLabel}</Button>
-            </div>
           </>
         }
       />
 
       <form action={onSubmit}>
+        <input type="hidden" name="id" value={entityId} />
         {sections.map((section, index) => (
           <div key={section.title}>
             <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
@@ -114,9 +107,16 @@ export function EntityForm({
             {index < sections.length - 1 && <Divider />}
           </div>
         ))}
-
         <Divider />
+        <div className="flex items-center justify-end gap-2 p-4">
+          <Link href={backUrl}>
+            <Button variant="secondary" type="button">
+              Cancel
+            </Button>
+          </Link>
+          <Button type="submit">{submitLabel}</Button>
+        </div>
       </form>
-    </>
+    </div>
   )
 }

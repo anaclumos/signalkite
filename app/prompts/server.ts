@@ -10,11 +10,13 @@ export async function deletePromptAction(id: string) {
 
 export async function submitPromptAction(formData: FormData) {
   const id = formData.get("id") as string
+  const name = formData.get("name") as string
   const description = formData.get("description") as string
   const text = formData.get("text") as string
 
   await upsertPrompt({
     id,
+    name,
     description,
     text,
   })

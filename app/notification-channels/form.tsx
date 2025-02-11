@@ -52,9 +52,7 @@ export function NotificationChannelForm({
                   id="name"
                   name="name"
                   defaultValue={channel?.name || ""}
-                  className="mt-2"
                   placeholder="A descriptive name for this channel"
-                  required
                   maxLength={100}
                 />
               </div>
@@ -71,7 +69,7 @@ export function NotificationChannelForm({
                   }
                   disabled={Boolean(channel)}
                 >
-                  <SelectTrigger className="mt-2">
+                  <SelectTrigger>
                     <SelectValue placeholder="Select a channel type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -100,7 +98,6 @@ export function NotificationChannelForm({
                   }
                   className="mt-2 min-h-[200px] font-mono"
                   placeholder="Enter the channel settings as JSON"
-                  required
                 />
                 <p className="mt-1 text-sm text-gray-500">
                   Configure the settings for your notification channel in JSON

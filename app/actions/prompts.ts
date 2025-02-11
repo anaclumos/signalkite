@@ -7,12 +7,14 @@ import { getCurrentUser } from "./auth"
 
 const promptUpsertSchema = z.object({
   id: z.string(),
+  name: z.string(),
   description: z.string().optional(),
   text: z.string().optional(),
 })
 
 export async function upsertPrompt({
   id,
+  name,
   description,
   text,
 }: z.infer<typeof promptUpsertSchema>) {
@@ -20,7 +22,12 @@ export async function upsertPrompt({
 
   if (id.length > 0) {
     // Validate input for update
-    const validatedData = promptUpsertSchema.parse({ id, description, text })
+    const validatedData = promptUpsertSchema.parse({
+      id,
+      name,
+      description,
+      text,
+    })
 
     const prompt = await db.prompt.findUnique({
       where: { id: validatedData.id },
@@ -33,13 +40,14 @@ export async function upsertPrompt({
     return db.prompt.update({
       where: { id: validatedData.id },
       data: {
+        name: validatedData.name,
         description: validatedData.description,
         text: validatedData.text,
       },
     })
   } else {
     // Validate input for create
-    const validatedData = promptUpsertSchema.parse({ description, text })
+    const validatedData = promptUpsertSchema.parse({ name, description, text })
 
     return db.prompt.create({
       data: {

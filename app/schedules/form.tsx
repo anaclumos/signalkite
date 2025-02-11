@@ -87,9 +87,8 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
             : "Create a new schedule to run your reporters at specific times.",
           children: (
             <>
-              <input type="hidden" name="id" value={schedule?.id || ""} />
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-6">
-                <div className="col-span-full">
+                <div className="col-span-full gap-2 flex flex-col">
                   <Label htmlFor="name" className="font-medium">
                     Name
                   </Label>
@@ -99,8 +98,6 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
                     id="name"
                     name="name"
                     defaultValue={schedule?.name || "My Morning Digest"}
-                    className="mt-2"
-                    required
                     maxLength={100}
                   />
                 </div>
@@ -114,14 +111,14 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
             "Configure when this schedule should run using the cron expression editor.",
           children: (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-6">
-              <div className="col-span-full sm:col-span-2">
+              <div className="col-span-full sm:col-span-2 gap-2 flex flex-col">
                 <Label className="font-medium">Hour</Label>
                 <Select
                   name="hour"
                   value={hour}
                   onValueChange={(val) => setHour(val)}
                 >
-                  <SelectTrigger className="mt-2">
+                  <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -136,14 +133,14 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
                 </Select>
               </div>
 
-              <div className="col-span-full sm:col-span-2">
+              <div className="col-span-full sm:col-span-2 gap-2 flex flex-col">
                 <Label className="font-medium">Minute</Label>
                 <Select
                   name="minute"
                   value={minute}
                   onValueChange={(val) => setMinute(val)}
                 >
-                  <SelectTrigger className="mt-2">
+                  <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -156,14 +153,14 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
                 </Select>
               </div>
 
-              <div className="col-span-full sm:col-span-2">
+              <div className="col-span-full sm:col-span-2 gap-2 flex flex-col">
                 <Label className="font-medium">Timezone</Label>
                 <Select
                   name="timezone"
                   value={timezone}
                   onValueChange={(val) => setTimezone(val)}
                 >
-                  <SelectTrigger className="mt-2">
+                  <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>

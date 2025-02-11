@@ -12,18 +12,18 @@ const channelUpsertSchema = z.object({
     .string()
     .min(1, "Name is required")
     .max(100, "Name must be 100 characters or less"),
+  description: z
+    .string()
+    .min(1, "Description is required")
+    .max(100, "Description must be 100 characters or less"),
   type: z.nativeEnum(NotificationChannelType),
   settings: z.record(z.string(), z.any()),
-})
-
-const channelUpdateSchema = channelUpsertSchema.extend({
-  id: z.string().min(1, "Channel ID is required"),
-  type: z.nativeEnum(NotificationChannelType).optional(),
 })
 
 export async function upsertNotificationChannel({
   id,
   name,
+  description,
   type,
   settings,
 }: z.infer<typeof channelUpsertSchema>) {
@@ -31,7 +31,12 @@ export async function upsertNotificationChannel({
 
   if (id.length > 0) {
     // Validate input for update
-    const validatedData = channelUpdateSchema.parse({ id, name, settings })
+    const validatedData = channelUpsertSchema.parse({
+      id,
+      name,
+      description,
+      settings,
+    })
 
     const channel = await db.notificationChannel.findUnique({
       where: { id: validatedData.id },
@@ -61,6 +66,7 @@ export async function upsertNotificationChannel({
     return db.notificationChannel.create({
       data: {
         name: validatedData.name,
+        description: validatedData.description,
         type: validatedData.type,
         settings: validatedData.settings,
         userId: user.id,

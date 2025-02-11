@@ -66,8 +66,6 @@ function NewReporterForm({
                   id="name"
                   name="name"
                   placeholder="My Reporter"
-                  className="mt-2"
-                  required
                   maxLength={100}
                 />
               </div>
@@ -79,7 +77,6 @@ function NewReporterForm({
                   id="description"
                   name="description"
                   placeholder="What will this reporter monitor?"
-                  className="mt-2"
                   rows={4}
                 />
               </div>
@@ -158,7 +155,7 @@ function NewReporterForm({
                   Schedules
                 </Label>
                 <Select name="schedules">
-                  <SelectTrigger className="mt-2">
+                  <SelectTrigger>
                     <SelectValue placeholder="Select a schedule" />
                   </SelectTrigger>
                   <SelectContent>
@@ -178,7 +175,7 @@ function NewReporterForm({
                   Notification Channels
                 </Label>
                 <Select name="notificationChannels">
-                  <SelectTrigger className="mt-2">
+                  <SelectTrigger>
                     <SelectValue placeholder="Select a notification channel" />
                   </SelectTrigger>
                   <SelectContent>
