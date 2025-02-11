@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
 import {
@@ -9,6 +11,8 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs"
+import { dark } from "@clerk/themes"
+import { useTheme } from "next-themes"
 import { Suspense } from "react"
 
 export const UserProfileLoading = () => {
@@ -20,6 +24,8 @@ export const UserProfileLoading = () => {
 }
 
 export function UserProfile() {
+  const { resolvedTheme } = useTheme()
+
   return (
     <Suspense fallback={<UserProfileLoading />}>
       <ClerkLoading>
@@ -42,12 +48,14 @@ export function UserProfile() {
           <UserButton
             showName
             appearance={{
+              baseTheme: resolvedTheme === "dark" ? dark : undefined,
               elements: {
                 userButtonBox: "flex flex-row-reverse justify-end p-2 w-full",
                 userButtonTrigger: "w-full",
                 rootBox: "w-full",
               },
             }}
+            fallback={<UserProfileLoading />}
           />
         </SignedIn>
       </ClerkLoaded>

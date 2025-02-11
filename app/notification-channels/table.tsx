@@ -142,7 +142,7 @@ export function NotificationChannelsTable({
                     <Badge variant="neutral">{startCase(channel.type)}</Badge>
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">
-                    Automatically synced from User Account
+                    Synced from User Account
                   </p>
                 </Card>
               ))}
