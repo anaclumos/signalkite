@@ -1,3 +1,8 @@
+- Use Next.js 
+
+Use authInterrupts, such as unauthorized() and forbidden() instead of return new Response("Unauthorized", { status: 401 }) or return new Response("Forbidden", { status: 403 })
+
+
 ## **Directory Structure**
 - **`app/` (Next.js App Router)**
   - Subfolders for each route, each containing `page.tsx` and optionally `layout.tsx`.
@@ -86,8 +91,6 @@
   - Automate CI with linting, tests, and builds.
 - **Bun (Optional for Speed)**
   - Faster installs and test runs.
-
-
 
 ## **Implementation Tips**
 - Keep **server logic** in server components or actions.
