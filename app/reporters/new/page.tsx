@@ -1,7 +1,6 @@
 import { getNotificationChannels } from "@/app/actions/notification-channels"
 import { getSchedules } from "@/app/actions/schedules"
-import { Button } from "@/components/ui/button"
-import { Divider } from "@/components/ui/divider"
+import { EntityForm } from "@/components/entity-form"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import {
@@ -9,7 +8,13 @@ import {
   RadioCardIndicator,
   RadioCardItem,
 } from "@/components/ui/radio-card-group"
-import { Select } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import {
   NotificationChannel,
@@ -17,7 +22,6 @@ import {
   Schedule,
 } from "@prisma/client"
 import { RiGlobalLine, RiNewspaperLine, RiSearchLine } from "@remixicon/react"
-import Link from "next/link"
 import { submitReporterAction } from "../server"
 
 export default async function NewReporter() {
@@ -42,19 +46,16 @@ function NewReporterForm({
   notificationChannels,
 }: NewReporterFormProps) {
   return (
-    <>
-      <form action={submitReporterAction}>
-        <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
-          <div>
-            <h2 className="font-semibold text-gray-900 dark:text-gray-50">
-              Reporter Information
-            </h2>
-            <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
-              Create a new reporter to monitor and discover stories.
-            </p>
-          </div>
-          T
-          <div className="md:col-span-2">
+    <EntityForm
+      title="Reporters"
+      backUrl="/reporters"
+      onSubmit={submitReporterAction}
+      submitLabel="Create Reporter"
+      sections={[
+        {
+          title: "Reporter Information",
+          description: "Create a new reporter to monitor and discover stories.",
+          children: (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-6">
               <div className="col-span-full">
                 <Label htmlFor="name" className="font-medium">
@@ -82,77 +83,91 @@ function NewReporterForm({
                   rows={4}
                 />
               </div>
-              <div className="col-span-full space-y-4">
-                <Label className="font-medium">Strategy</Label>
-                <RadioCardGroup
-                  name="strategy"
-                  defaultValue={ReporterStrategyType.EXA_SEARCH}
-                  className="grid-cols-1"
-                >
-                  <RadioCardItem value={ReporterStrategyType.EXA_SEARCH}>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <RiSearchLine className="size-5 text-gray-500" />
-                        <div>
-                          <div className="font-medium text-gray-900 dark:text-gray-50">
-                            EXA Search
-                          </div>
-                          <div className="text-sm text-gray-500">
-                            Search across multiple sources
-                          </div>
+            </div>
+          ),
+        },
+        {
+          title: "Strategy",
+          description: "Choose how this reporter will discover stories.",
+          children: (
+            <div className="space-y-4">
+              <RadioCardGroup
+                name="strategy"
+                defaultValue={ReporterStrategyType.EXA_SEARCH}
+                className="grid-cols-1"
+              >
+                <RadioCardItem value={ReporterStrategyType.EXA_SEARCH}>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <RiSearchLine className="size-5 text-gray-500" />
+                      <div>
+                        <div className="font-medium text-gray-900 dark:text-gray-50">
+                          EXA Search
+                        </div>
+                        <div className="text-sm text-gray-500">
+                          Search across multiple sources
                         </div>
                       </div>
-                      <RadioCardIndicator />
                     </div>
-                  </RadioCardItem>
-                  <RadioCardItem value={ReporterStrategyType.WHOIS_LOOKUP}>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <RiGlobalLine className="size-5 text-gray-500" />
-                        <div>
-                          <div className="font-medium text-gray-900 dark:text-gray-50">
-                            WHOIS Lookup
-                          </div>
-                          <div className="text-sm text-gray-500">
-                            Monitor domain registrations
-                          </div>
+                    <RadioCardIndicator />
+                  </div>
+                </RadioCardItem>
+                <RadioCardItem value={ReporterStrategyType.WHOIS_LOOKUP}>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <RiGlobalLine className="size-5 text-gray-500" />
+                      <div>
+                        <div className="font-medium text-gray-900 dark:text-gray-50">
+                          WHOIS Lookup
+                        </div>
+                        <div className="text-sm text-gray-500">
+                          Monitor domain registrations
                         </div>
                       </div>
-                      <RadioCardIndicator />
                     </div>
-                  </RadioCardItem>
-                  <RadioCardItem value={ReporterStrategyType.HN_BEST_STORIES}>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <RiNewspaperLine className="size-5 text-gray-500" />
-                        <div>
-                          <div className="font-medium text-gray-900 dark:text-gray-50">
-                            HN Best Stories
-                          </div>
-                          <div className="text-sm text-gray-500">
-                            Track top Hacker News stories
-                          </div>
+                    <RadioCardIndicator />
+                  </div>
+                </RadioCardItem>
+                <RadioCardItem value={ReporterStrategyType.HN_BEST_STORIES}>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <RiNewspaperLine className="size-5 text-gray-500" />
+                      <div>
+                        <div className="font-medium text-gray-900 dark:text-gray-50">
+                          HN Best Stories
+                        </div>
+                        <div className="text-sm text-gray-500">
+                          Track top Hacker News stories
                         </div>
                       </div>
-                      <RadioCardIndicator />
                     </div>
-                  </RadioCardItem>
-                </RadioCardGroup>
-                <p className="text-xs text-gray-500 dark:text-gray-500">
-                  The strategy determines how this reporter will discover
-                  stories.
-                </p>
-              </div>
+                    <RadioCardIndicator />
+                  </div>
+                </RadioCardItem>
+              </RadioCardGroup>
+            </div>
+          ),
+        },
+        {
+          title: "Configuration",
+          description: "Set up when to run and where to send notifications.",
+          children: (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-6">
               <div className="col-span-full">
                 <Label htmlFor="schedules" className="font-medium">
                   Schedules
                 </Label>
                 <Select name="schedules">
-                  {schedules.map((schedule) => (
-                    <option key={schedule.id} value={schedule.id}>
-                      {schedule.name}
-                    </option>
-                  ))}
+                  <SelectTrigger className="mt-2">
+                    <SelectValue placeholder="Select a schedule" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {schedules.map((schedule) => (
+                      <SelectItem key={schedule.id} value={schedule.id}>
+                        {schedule.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
                 </Select>
                 <p className="mt-1 text-xs text-gray-500">
                   Select when this reporter should run.
@@ -163,29 +178,25 @@ function NewReporterForm({
                   Notification Channels
                 </Label>
                 <Select name="notificationChannels">
-                  {notificationChannels.map((channel) => (
-                    <option key={channel.id} value={channel.id}>
-                      {channel.name}
-                    </option>
-                  ))}
+                  <SelectTrigger className="mt-2">
+                    <SelectValue placeholder="Select a notification channel" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {notificationChannels.map((channel) => (
+                      <SelectItem key={channel.id} value={channel.id}>
+                        {channel.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
                 </Select>
                 <p className="mt-1 text-xs text-gray-500">
                   Select where to send notifications when stories are found.
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-        <Divider />
-        <div className="flex items-center justify-end space-x-4 p-4 md:p-8">
-          <Link href="/reporters">
-            <Button variant="secondary" type="button">
-              Cancel
-            </Button>
-          </Link>
-          <Button type="submit">Create Reporter</Button>
-        </div>
-      </form>
-    </>
+          ),
+        },
+      ]}
+    />
   )
 }
