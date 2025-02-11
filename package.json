@@ -2,25 +2,21 @@
   "name": "every.news",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "prisma generate && next build",
     "start": "next start",
-
     "commit": "git-cz",
     "format": "biome format --write .",
     "lint": "biome lint --write .",
     "bump": "bunx npm-check-updates -i",
-
     "db:setup": "bun run if-mac-prepare-docker && bun run db:generate && bun run db:push",
     "db:push": "prisma db push",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio",
-
     "ci": "prisma db push && next build && bun run start",
     "test": "bun run db:push && vitest run",
     "e2e": "playwright test",
-
     "if-mac-prepare-docker": "if [ \"$(uname)\" = \"Darwin\" ]; then colima start && (docker ps -a | grep 'postgres-everynews' > /dev/null || docker run --name postgres-everynews -e POSTGRES_USER=everynewsusername -e POSTGRES_PASSWORD=everynewspassword -e POSTGRES_DB=everynewsdb -p 54321:5432 -d postgres:latest); fi && bun run db:push"
   },
   "dependencies": {
@@ -70,6 +66,7 @@
     "react-day-picker": "8.10.1",
     "react-dom": "19.0.0",
     "recharts": "^2.15.1",
+    "svix": "^1.45.1",
     "tailwind-merge": "^2.6.0",
     "tailwind-variants": "^0.3.1",
     "zod": "^3.24.1"
