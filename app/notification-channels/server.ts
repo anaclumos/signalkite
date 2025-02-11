@@ -15,6 +15,7 @@ export async function deleteChannelAction(channelId: string) {
 export async function submitChannelAction(formData: FormData) {
   const id = formData.get("id") as string
   const name = formData.get("name") as string
+  const description = formData.get("description") as string
   const type = formData.get("type") as NotificationChannelType
   const settingsStr = formData.get("settings") as string
   let settings = {}
@@ -30,18 +31,12 @@ export async function submitChannelAction(formData: FormData) {
     throw new Error("Invalid JSON settings")
   }
 
-  try {
-    await upsertNotificationChannel({
-      id,
-      name,
-      type,
-      settings,
-    })
-    redirect("/notification-channels")
-  } catch (error) {
-    if (error instanceof Error) {
-      throw error
-    }
-    throw new Error("Failed to save notification channel")
-  }
+  await upsertNotificationChannel({
+    id,
+    name,
+    description,
+    type,
+    settings,
+  })
+  redirect("/notification-channels")
 }
