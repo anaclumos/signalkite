@@ -6,10 +6,14 @@ import { z } from "zod"
 import { getCurrentUser } from "./auth"
 
 const promptUpsertSchema = z.object({
-  id: z.string(),
+  id: z.string().optional(),
   name: z.string(),
   description: z.string().optional(),
   text: z.string().optional(),
+})
+
+const promptDeleteSchema = z.object({
+  id: z.string(),
 })
 
 export async function upsertPrompt({
@@ -20,7 +24,7 @@ export async function upsertPrompt({
 }: z.infer<typeof promptUpsertSchema>) {
   const user = await getCurrentUser()
 
-  if (id?.length > 0) {
+  if (id && id.length > 0) {
     // Validate input for update
     const validatedData = promptUpsertSchema.parse({
       id,
@@ -60,7 +64,7 @@ export async function upsertPrompt({
 
 export async function deletePrompt(id: string) {
   // Validate input
-  const validatedId = promptUpsertSchema.parse({ id })
+  const validatedId = promptDeleteSchema.parse({ id })
 
   const user = await getCurrentUser()
 
@@ -84,7 +88,7 @@ export async function getPrompts() {
   const user = await getCurrentUser()
 
   return db.prompt.findMany({
-    where: { creatorId: user.id },
+    where: { creatorId: user.id, deletedAt: null },
     orderBy: {
       createdAt: "desc",
     },
