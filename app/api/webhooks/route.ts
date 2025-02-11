@@ -89,12 +89,12 @@ export async function POST(req: Request) {
     }
 
     if (primaryPhone) {
-      // Create/update SMS notification channel
+      // Create/update TEXT notification channel
       await db.notificationChannel.upsert({
         where: { clerkId: primaryPhone.id },
         create: {
-          name: `SMS - ${primaryPhone.phone_number}`,
-          type: "SMS",
+          name: `TEXT - ${primaryPhone.phone_number}`,
+          type: "TEXT",
           settings: { phone: primaryPhone.phone_number },
           clerkId: primaryPhone.id,
           user: {

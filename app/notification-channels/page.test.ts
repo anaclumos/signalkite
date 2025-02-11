@@ -116,7 +116,7 @@ describe("NotificationChannelsPage", () => {
     })
   })
 
-  it("should sync SMS notification channel from Clerk", async () => {
+  it("should sync TEXT notification channel from Clerk", async () => {
     // Create a partial mock of the User type with only the properties we need
     const mockUser = {
       id: "user_123",
@@ -146,8 +146,8 @@ describe("NotificationChannelsPage", () => {
     // Mock successful channel upsert
     vi.mocked(db.notificationChannel.upsert).mockResolvedValue({
       id: "channel_456",
-      name: "SMS - +1234567890",
-      type: NotificationChannelType.SMS,
+      name: "TEXT - +1234567890",
+      type: NotificationChannelType.TEXT,
       settings: { phone: "+1234567890" },
       clerkId: "phone_123",
       userId: "db_user_123",
@@ -160,8 +160,8 @@ describe("NotificationChannelsPage", () => {
     vi.mocked(db.notificationChannel.findMany).mockResolvedValue([
       {
         id: "channel_456",
-        name: "SMS - +1234567890",
-        type: NotificationChannelType.SMS,
+        name: "TEXT - +1234567890",
+        type: NotificationChannelType.TEXT,
         settings: { phone: "+1234567890" },
         clerkId: "phone_123",
         userId: "db_user_123",
@@ -189,8 +189,8 @@ describe("NotificationChannelsPage", () => {
     expect(db.notificationChannel.upsert).toHaveBeenCalledWith({
       where: { clerkId: "phone_123" },
       create: {
-        name: "SMS - +1234567890",
-        type: "SMS",
+        name: "TEXT - +1234567890",
+        type: "TEXT",
         settings: { phone: "+1234567890" },
         clerkId: "phone_123",
         user: {

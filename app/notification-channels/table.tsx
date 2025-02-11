@@ -2,6 +2,7 @@
 
 import { NavBar } from "@/components/nav-bar"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import {
   Table,
@@ -13,6 +14,8 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Tabs, TabsContent } from "@/components/ui/tabs"
+import { useClerk } from "@clerk/nextjs"
+import { NotificationChannel } from "@prisma/client"
 import {
   ColumnDef,
   flexRender,
@@ -20,51 +23,53 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
+import { startCase } from "es-toolkit/string"
+import parsePhoneNumber from "libphonenumber-js"
 import { LayoutGrid, List } from "lucide-react"
 import React, { useMemo, useState } from "react"
-import { NotificationChannelWithRelations } from "./types"
 
 interface NotificationChannelsTableProps {
-  initialChannels: NotificationChannelWithRelations[]
+  initialChannels: NotificationChannel[]
 }
 
 export function NotificationChannelsTable({
   initialChannels,
 }: NotificationChannelsTableProps) {
-  const [channels] =
-    React.useState<NotificationChannelWithRelations[]>(initialChannels)
+  const [channels] = React.useState<NotificationChannel[]>(initialChannels)
   const [activeView, setActiveView] = useState<"grid" | "list">("grid")
 
-  const columns = useMemo<ColumnDef<NotificationChannelWithRelations>[]>(
+  const columns = useMemo<ColumnDef<NotificationChannel>[]>(
     () => [
       {
         header: "Name",
         accessorKey: "name",
         enableSorting: true,
-        cell: ({ row }) => row.original.name || "-",
+        cell: ({ row }) => {
+          const name = row.original.name
+          if (!name) return "-"
+          const phoneNumber = parsePhoneNumber(name)
+          if (phoneNumber) {
+            return phoneNumber.formatInternational()
+          }
+          return name
+        },
       },
       {
         header: "Type",
         accessorKey: "type",
         enableSorting: true,
-        cell: ({ row }) => row.original.type,
+        cell: ({ row }) => (
+          <Badge variant="neutral">{startCase(row.original.type)}</Badge>
+        ),
       },
       {
-        header: "Settings",
-        accessorKey: "settings",
+        header: "Source",
+        accessorKey: "clerkId",
         enableSorting: false,
         cell: ({ row }) => {
-          const settings = row.original.settings as Record<string, unknown>
-          return Object.keys(settings).length > 0
-            ? "Configured"
-            : "Not Configured"
+          const clerkId = row.original.clerkId
+          return clerkId ? "Synced from User Account" : "Manually Added"
         },
-      },
-      {
-        header: "Subscriptions",
-        accessorKey: "Subscription",
-        enableSorting: false,
-        cell: ({ row }) => row.original.Subscription?.length || 0,
       },
       {
         header: "Created",
@@ -84,13 +89,15 @@ export function NotificationChannelsTable({
     [],
   )
 
-  const table = useReactTable<NotificationChannelWithRelations>({
+  const table = useReactTable<NotificationChannel>({
     data: channels,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getRowId: (originalRow) => originalRow.id,
   })
+
+  const { openUserProfile } = useClerk()
 
   return (
     <div>
@@ -99,6 +106,11 @@ export function NotificationChannelsTable({
           { title: "Home", href: "/" },
           { title: "Notification Channels", href: "/notification-channels" },
         ]}
+        actions={
+          <Button variant="secondary" onClick={() => openUserProfile()}>
+            Edit Email & Phone from Profile
+          </Button>
+        }
         viewToggle={{
           value: activeView,
           onChange: (value) => setActiveView(value as "grid" | "list"),
@@ -123,21 +135,15 @@ export function NotificationChannelsTable({
             <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
               {channels.map((channel) => (
                 <Card key={channel.id} className="p-4">
-                  <h3 className="font-medium">{channel.name}</h3>
+                  <h3 className="flex items-center justify-between gap-2 font-medium">
+                    {channel.type === "TEXT"
+                      ? parsePhoneNumber(channel.name)?.formatInternational()
+                      : channel.name}
+                    <Badge variant="neutral">{startCase(channel.type)}</Badge>
+                  </h3>
                   <p className="mt-1 text-sm text-gray-500">
-                    <Badge variant="default">{channel.type}</Badge>
+                    Automatically synced from User Account
                   </p>
-                  <div className="mt-4 flex gap-2">
-                    <span className="text-xs text-gray-500">
-                      {channel.Subscription?.length || 0} Subscriptions
-                    </span>
-                    <span className="text-xs text-gray-500">
-                      {Object.keys(channel.settings as Record<string, unknown>)
-                        .length > 0
-                        ? "Configured"
-                        : "Not Configured"}
-                    </span>
-                  </div>
                 </Card>
               ))}
             </div>

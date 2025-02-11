@@ -23,18 +23,18 @@ test.describe("Notification Channels", () => {
     })
   })
 
-  test("should display Clerk email and SMS channels", async ({ page }) => {
+  test("should display Clerk email and TEXT channels", async ({ page }) => {
     // Navigate to notification channels page
     await page.goto("/notification-channels")
 
     // Check if email channel is displayed
-    await expect(page.getByText("Email - test@example.com")).toBeVisible()
+    await expect(page.getByText("test@example.com")).toBeVisible()
     await expect(page.getByText("EMAIL")).toBeVisible()
     await expect(page.getByText("Configured")).toBeVisible()
 
-    // Check if SMS channel is displayed
-    await expect(page.getByText("SMS - +1234567890")).toBeVisible()
-    await expect(page.getByText("SMS")).toBeVisible()
+    // Check if TEXT channel is displayed
+    await expect(page.getByText("+1234567890")).toBeVisible()
+    await expect(page.getByText("TEXT")).toBeVisible()
     await expect(page.getByText("Configured")).toBeVisible()
   })
 
@@ -49,7 +49,7 @@ test.describe("Notification Channels", () => {
 
     // Verify channels are displayed
     await expect(page.getByText("Email - test@example.com")).toBeVisible()
-    await expect(page.getByText("SMS - +1234567890")).toBeVisible()
+    await expect(page.getByText("TEXT - +1234567890")).toBeVisible()
   })
 
   test("should handle no Clerk channels", async ({ page }) => {
@@ -122,6 +122,6 @@ test.describe("Notification Channels", () => {
 
     // Verify channels were created
     await expect(page.getByText("Email - test@example.com")).toBeVisible()
-    await expect(page.getByText("SMS - +1234567890")).toBeVisible()
+    await expect(page.getByText("TEXT - +1234567890")).toBeVisible()
   })
 })

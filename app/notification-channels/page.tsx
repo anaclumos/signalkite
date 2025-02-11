@@ -1,10 +1,6 @@
-import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import { db } from "@/prisma"
-import { UserProfile } from "@clerk/nextjs"
 import { currentUser } from "@clerk/nextjs/server"
 import { NotificationChannelsTable } from "./table"
-import { NotificationChannelWithRelations } from "./types"
 
 export default async function NotificationChannelsPage() {
   const user = await currentUser()
@@ -56,7 +52,7 @@ export default async function NotificationChannelsPage() {
       where: { clerkId: phone.id },
       create: {
         name: `${phone.phone}`,
-        type: "SMS",
+        type: "TEXT",
         settings: { phone: phone.phone },
         clerkId: phone.id,
         user: {
@@ -72,7 +68,7 @@ export default async function NotificationChannelsPage() {
   })
 
   // Get all channels for this user with relations
-  const channels = (await db.notificationChannel.findMany({
+  const channels = await db.notificationChannel.findMany({
     where: {
       user: {
         authProviderUid: user.id,
@@ -85,29 +81,7 @@ export default async function NotificationChannelsPage() {
     orderBy: {
       createdAt: "desc",
     },
-  })) as NotificationChannelWithRelations[]
+  })
 
-  return (
-    <div className="container mx-auto py-10">
-      <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Notification Channels</h1>
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="secondary">Edit Email & Phone</Button>
-          </DialogTrigger>
-          <DialogContent className="max-w-3xl p-0 sm:p-0">
-            <UserProfile />
-          </DialogContent>
-        </Dialog>
-      </div>
-      <div className="mb-4 rounded-lg bg-yellow-50 p-4 text-sm text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-200">
-        <p>
-          Notification channels are automatically synced with your Clerk
-          profile. Click the &quot;Edit Email & Phone&quot; button to manage
-          your email and phone settings.
-        </p>
-      </div>
-      <NotificationChannelsTable initialChannels={channels} />
-    </div>
-  )
+  return <NotificationChannelsTable initialChannels={channels} />
 }

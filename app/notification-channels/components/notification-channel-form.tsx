@@ -177,8 +177,8 @@ export function NotificationChannelForm({
                     <SelectItem value={NotificationChannelType.EMAIL}>
                       Email
                     </SelectItem>
-                    <SelectItem value={NotificationChannelType.SMS}>
-                      SMS
+                    <SelectItem value={NotificationChannelType.TEXT}>
+                      TEXT
                     </SelectItem>
                     <SelectItem value={NotificationChannelType.SLACK}>
                       Slack

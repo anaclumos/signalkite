@@ -67,7 +67,7 @@ describe("Notification Channel Actions", () => {
     const channel = await db.notificationChannel.create({
       data: {
         name: "Temp Channel",
-        type: NotificationChannelType.SMS,
+        type: NotificationChannelType.TEXT,
         settings: { phone: "+123456789" },
         userId: testUserId,
       },
@@ -149,7 +149,7 @@ describe("Notification Channel Actions", () => {
     const channel = await db.notificationChannel.create({
       data: {
         name: "Other's channel",
-        type: NotificationChannelType.SMS,
+        type: NotificationChannelType.TEXT,
         settings: {},
         userId: otherUser.id,
       },
