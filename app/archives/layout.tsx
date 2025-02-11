@@ -4,7 +4,7 @@ import { Divider } from "@/components/ui/divider"
 import React from "react"
 import { MetricsCards } from "./metrics"
 
-export default function Layout({
+export default async function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode

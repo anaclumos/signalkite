@@ -1,6 +1,6 @@
 "use cache"
 
-export default function Page() {
+export default async function Page() {
   return (
     <div className="flex flex-col items-center justify-center py-12">
       <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-6xl">

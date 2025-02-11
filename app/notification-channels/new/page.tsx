@@ -2,6 +2,6 @@
 
 import { NotificationChannelForm } from "@/app/notification-channels/form"
 
-export default function NewNotificationChannel() {
+export default async function NewNotificationChannel() {
   return <NotificationChannelForm />
 }

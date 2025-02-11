@@ -2,6 +2,6 @@
 
 import { PromptForm } from "@/app/prompts/form"
 
-export default function NewPrompt() {
+export default async function NewPrompt() {
   return <PromptForm />
 }

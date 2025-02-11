@@ -2,6 +2,6 @@
 
 import { ScheduleForm } from "@/app/schedules/form"
 
-export default function NewSchedule() {
+export default async function NewSchedule() {
   return <ScheduleForm />
 }

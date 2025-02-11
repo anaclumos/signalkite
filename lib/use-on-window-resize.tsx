@@ -1,5 +1,7 @@
 // Tremor Raw useOnWindowResize [v0.0.0]
 
+"use client"
+
 import * as React from "react"
 
 export const useOnWindowResize = (handler: { (): void }) => {

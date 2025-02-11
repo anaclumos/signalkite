@@ -2,7 +2,7 @@
 
 import { OnboardingCard } from "@/components/onboarding-card"
 
-export default function Page() {
+export default async function Page() {
   return (
     <OnboardingCard
       title="Welcome to your Dashboard"
