@@ -1,8 +1,8 @@
 "use client"
 
+import { EntityCard } from "@/components/entity-card"
 import { NavBar } from "@/components/nav-bar"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import {
   Table,
   TableBody,
@@ -123,28 +123,23 @@ export function PromptsTable({ initialPrompts }: PromptsTableProps) {
           <TabsContent value="grid">
             <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
               {prompts.map((prompt) => (
-                <Link key={prompt.id} href={`/prompts/${prompt.id}`}>
-                  <Card className="p-4 transition hover:bg-gray-50 dark:hover:bg-gray-900">
-                    <h3 className="font-medium">
-                      {prompt.description || "Untitled Prompt"}
-                    </h3>
-                    <p className="mt-1 text-sm text-gray-500">
-                      {prompt.text
-                        ? prompt.text.length > 100
-                          ? prompt.text.slice(0, 100) + "..."
-                          : prompt.text
-                        : "No text"}
-                    </p>
-                    <div className="mt-4 flex gap-2">
-                      <span className="text-xs text-gray-500">
-                        {prompt.Reporters?.length || 0} Reporters
-                      </span>
-                      <span className="text-xs text-gray-500">
-                        {prompt.Stories?.length || 0} Stories
-                      </span>
-                    </div>
-                  </Card>
-                </Link>
+                <EntityCard
+                  key={prompt.id}
+                  id={prompt.id}
+                  href={`/prompts/${prompt.id}`}
+                  title={prompt.description || "Untitled Prompt"}
+                  description={prompt.text}
+                  stats={[
+                    {
+                      label: "Reporters",
+                      value: prompt.Reporters?.length || 0,
+                    },
+                    {
+                      label: "Stories",
+                      value: prompt.Stories?.length || 0,
+                    },
+                  ]}
+                />
               ))}
             </div>
           </TabsContent>

@@ -1,9 +1,9 @@
 "use client"
 
+import { EntityCard } from "@/components/entity-card"
 import { NavBar } from "@/components/nav-bar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import {
   Table,
   TableBody,
@@ -134,17 +134,22 @@ export function NotificationChannelsTable({
           <TabsContent value="grid">
             <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
               {channels.map((channel) => (
-                <Card key={channel.id} className="p-4">
-                  <h3 className="flex items-center justify-between gap-2 font-medium">
-                    {channel.type === "TEXT"
-                      ? parsePhoneNumber(channel.name)?.formatInternational()
-                      : channel.name}
-                    <Badge variant="neutral">{startCase(channel.type)}</Badge>
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">
-                    Synced from User Account
-                  </p>
-                </Card>
+                <EntityCard
+                  key={channel.id}
+                  id={channel.id}
+                  href="#"
+                  title={
+                    channel.type === "TEXT"
+                      ? parsePhoneNumber(channel.name)?.formatInternational() ||
+                        channel.name
+                      : channel.name
+                  }
+                  description="Synced from User Account"
+                  badge={{
+                    label: startCase(channel.type),
+                    variant: "default",
+                  }}
+                />
               ))}
             </div>
           </TabsContent>

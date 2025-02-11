@@ -1,9 +1,9 @@
 "use client"
 
+import { EntityCard } from "@/components/entity-card"
 import { NavBar } from "@/components/nav-bar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import {
   Table,
   TableBody,
@@ -133,21 +133,17 @@ export function SchedulesTable({ initialSchedules }: SchedulesTableProps) {
           <TabsContent value="grid">
             <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
               {schedules.map((schedule) => (
-                <Link key={schedule.id} href={`/schedules/${schedule.id}`}>
-                  <Card className="space-y-2 p-4 transition hover:bg-gray-50 dark:hover:bg-gray-900">
-                    <h3 className="flex items-center justify-between gap-2 font-medium">
-                      {schedule.name}{" "}
-                      <Badge variant={schedule.paused ? "default" : "success"}>
-                        {schedule.paused ? "Paused" : "Active"}
-                      </Badge>
-                    </h3>
-                    <p className="mt-1 text-sm text-gray-500">
-                      {cronstrue.toString(schedule.cron)}
-                      {", "}
-                      {schedule.timezone.split("/").pop()} time
-                    </p>
-                  </Card>
-                </Link>
+                <EntityCard
+                  key={schedule.id}
+                  id={schedule.id}
+                  href={`/schedules/${schedule.id}`}
+                  title={schedule.name}
+                  description={`${cronstrue.toString(schedule.cron)}, ${schedule.timezone.split("/").pop()} time`}
+                  badge={{
+                    label: schedule.paused ? "Paused" : "Active",
+                    variant: schedule.paused ? "default" : "success",
+                  }}
+                />
               ))}
             </div>
           </TabsContent>

@@ -1,9 +1,9 @@
 "use client"
 
+import { EntityCard } from "@/components/entity-card"
 import { NavBar } from "@/components/nav-bar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import {
   Table,
   TableBody,
@@ -157,48 +157,33 @@ export function ReportersTable({ initialReporters }: ReportersTableProps) {
           <TabsContent value="grid">
             <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
               {reporters.map((reporter) => (
-                <Link key={reporter.id} href={`/reporters/${reporter.id}`}>
-                  <Card className="space-y-2 p-4 transition hover:bg-gray-50 dark:hover:bg-gray-900">
-                    <div className="flex items-center gap-3">
-                      <div className="flex size-10 items-center justify-center rounded-md border border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900">
-                        <Bot className="size-5 text-gray-500" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="flex items-center justify-between gap-2 font-medium">
-                          {reporter.name}{" "}
-                          <Badge
-                            variant={
-                              reporter.status === ReporterStatus.ACTIVE
-                                ? "success"
-                                : reporter.status === ReporterStatus.PAUSED
-                                  ? "warning"
-                                  : "default"
-                            }
-                          >
-                            {reporter.status}
-                          </Badge>
-                        </h3>
-                        <p className="mt-1 text-sm text-gray-500">
-                          {reporter.strategy}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="mt-4 grid grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <div className="text-gray-500">Stories</div>
-                        <div className="font-medium">
-                          {reporter._count.Stories}
-                        </div>
-                      </div>
-                      <div>
-                        <div className="text-gray-500">Scans</div>
-                        <div className="font-medium">
-                          {reporter._count.News}
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                </Link>
+                <EntityCard
+                  key={reporter.id}
+                  id={reporter.id}
+                  href={`/reporters/${reporter.id}`}
+                  title={reporter.name}
+                  description={reporter.strategy}
+                  icon={<Bot className="size-5 text-gray-500" />}
+                  badge={{
+                    label: reporter.status,
+                    variant:
+                      reporter.status === ReporterStatus.ACTIVE
+                        ? "success"
+                        : reporter.status === ReporterStatus.PAUSED
+                          ? "warning"
+                          : "default",
+                  }}
+                  stats={[
+                    {
+                      label: "Stories",
+                      value: reporter._count.Stories,
+                    },
+                    {
+                      label: "Scans",
+                      value: reporter._count.News,
+                    },
+                  ]}
+                />
               ))}
             </div>
           </TabsContent>
