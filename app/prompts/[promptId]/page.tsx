@@ -13,5 +13,5 @@ export default async function PromptsPage({
     notFound()
   }
 
-  return <PromptForm prompt={prompt} mode="edit" />
+  return <PromptForm prompt={prompt} />
 }

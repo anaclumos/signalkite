@@ -1,5 +1,6 @@
 import { getSchedule } from "@/app/actions/schedules"
 import { ScheduleForm } from "@/app/schedules/form"
+import { notFound } from "next/navigation"
 
 export default async function SchedulesPage({
   params,
@@ -9,5 +10,9 @@ export default async function SchedulesPage({
   const { scheduleId } = await params
   const schedule = await getSchedule(scheduleId)
 
-  return <ScheduleForm schedule={schedule} mode="edit" />
+  if (!schedule) {
+    notFound()
+  }
+
+  return <ScheduleForm schedule={schedule} />
 }
