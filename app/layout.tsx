@@ -1,5 +1,3 @@
-"use cache"
-
 import { AppSidebar } from "@/components/app-sidebar"
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { ClerkProvider } from "@clerk/nextjs"
