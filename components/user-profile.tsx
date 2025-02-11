@@ -10,6 +10,7 @@ import {
   SignedIn,
   SignedOut,
   UserButton,
+  useClerk,
 } from "@clerk/nextjs"
 import { dark } from "@clerk/themes"
 import { useTheme } from "next-themes"
@@ -25,6 +26,7 @@ export const UserProfileLoading = () => {
 
 export function UserProfile() {
   const { resolvedTheme } = useTheme()
+  const { openUserProfile, user } = useClerk()
 
   return (
     <Suspense fallback={<UserProfileLoading />}>
@@ -45,13 +47,21 @@ export function UserProfile() {
           </div>
         </SignedOut>
         <SignedIn>
-          <UserButton
-            showName
-            appearance={{
-              baseTheme: resolvedTheme === "dark" ? dark : undefined,
-            }}
-            fallback={<UserProfileLoading />}
-          />
+          <Button
+            variant="ghost"
+            onClick={() => openUserProfile()}
+            className="flex items-center justify-start gap-4 px-3 py-2 rounded-lg"
+          >
+            <UserButton
+              appearance={{
+                baseTheme: resolvedTheme === "dark" ? dark : undefined,
+              }}
+              fallback={<UserProfileLoading />}
+            />
+            <span className="font-medium">
+              {user?.fullName ?? "User profile"}
+            </span>
+          </Button>
         </SignedIn>
       </ClerkLoaded>
     </Suspense>
