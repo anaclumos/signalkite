@@ -1,5 +1,3 @@
-"use cache"
-
 import { getReporter } from "@/app/actions/reporters"
 import { Card } from "@/components/ui/card"
 import {

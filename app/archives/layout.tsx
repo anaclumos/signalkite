@@ -1,5 +1,3 @@
-"use cache"
-
 import { Divider } from "@/components/ui/divider"
 import React from "react"
 import { MetricsCards } from "./metrics"

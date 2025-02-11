@@ -1,5 +1,3 @@
-"use cache"
-
 import { OnboardingCard } from "@/components/onboarding-card"
 
 export default async function Page() {

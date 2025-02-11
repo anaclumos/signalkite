@@ -1,5 +1,3 @@
-"use cache"
-
 import { getSchedule } from "@/app/actions/schedules"
 import { ScheduleForm } from "@/app/schedules/form"
 import { notFound } from "next/navigation"

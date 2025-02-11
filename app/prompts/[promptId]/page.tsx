@@ -1,5 +1,3 @@
-"use cache"
-
 import { getPrompt } from "@/app/actions/prompts"
 import { PromptForm } from "@/app/prompts/form"
 import { notFound } from "next/navigation"
