@@ -1,3 +1,5 @@
+"use cache"
+
 import { getSchedules } from "@/app/actions/schedules"
 import { SchedulesTable } from "./table"
 

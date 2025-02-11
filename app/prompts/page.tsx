@@ -1,3 +1,5 @@
+"use cache"
+
 import { getPrompts } from "@/app/actions/prompts"
 import { PromptsTable } from "./table"
 

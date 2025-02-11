@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     ppr: "incremental",
     reactCompiler: true,
     authInterrupts: true,
+    useCache: true,
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {

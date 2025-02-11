@@ -1,3 +1,5 @@
+"use cache"
+
 import { db } from "@/prisma"
 import { auth, currentUser } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"

@@ -1,3 +1,5 @@
+"use cache"
+
 import { getNotificationChannels } from "@/app/actions/notification-channels"
 import { getSchedules } from "@/app/actions/schedules"
 import { EntityForm } from "@/components/entity-form"

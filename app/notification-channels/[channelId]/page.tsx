@@ -1,3 +1,5 @@
+"use cache"
+
 import { getNotificationChannel } from "@/app/actions/notification-channels"
 import { NotificationChannelForm } from "@/app/notification-channels/form"
 import { notFound } from "next/navigation"
