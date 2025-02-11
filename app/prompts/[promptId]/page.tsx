@@ -1,5 +1,5 @@
 import { getPrompt } from "@/app/actions/prompts"
-import { PromptForm } from "@/app/prompts/components/prompt-form"
+import { PromptForm } from "@/app/prompts/form"
 import { notFound } from "next/navigation"
 export default async function PromptsPage({
   params,

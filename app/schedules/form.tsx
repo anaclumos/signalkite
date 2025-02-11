@@ -1,14 +1,7 @@
 "use client"
 
-import cronstrue from "cronstrue"
-import { useRouter } from "next/navigation"
 import { useState } from "react"
 
-import {
-  createSchedule,
-  deleteSchedule,
-  updateSchedule,
-} from "@/app/actions/schedules"
 import { NavBar } from "@/components/nav-bar"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -33,8 +26,11 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { daysOfWeek } from "@/lib/const"
+import { getCronDescription } from "@/lib/cron"
 import type { Schedule, ScheduleReporter } from "@prisma/client"
 import Link from "next/link"
+import { deleteScheduleAction, submit } from "./server"
+
 type ScheduleWithReporters = Schedule & {
   ScheduleReporters: ScheduleReporter[]
 }
@@ -45,8 +41,6 @@ interface ScheduleFormProps {
 }
 
 export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
-  const router = useRouter()
-
   // Parse initial cron expression or set defaults
   const initialCronParts = schedule?.cron.split(" ") || [
     "0",
@@ -94,55 +88,6 @@ export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
     })
   }
 
-  function generateCronString() {
-    const selectedDaysArray = Array.from(selectedDays).sort()
-    let dayOfWeek = "*"
-
-    if (selectedDaysArray.length > 0) {
-      // Check if days are consecutive
-      const isConsecutive = selectedDaysArray.every((day, index) => {
-        if (index === 0) return true
-        const prevDay = daysOfWeek.findIndex(
-          (d) => d.id === selectedDaysArray[index - 1],
-        )
-        const currDay = daysOfWeek.findIndex((d) => d.id === day)
-        return currDay - prevDay === 1
-      })
-
-      if (isConsecutive && selectedDaysArray.length > 1) {
-        // Use range syntax (e.g., MON-FRI)
-        dayOfWeek = `${selectedDaysArray[0]}-${selectedDaysArray[selectedDaysArray.length - 1]}`
-      } else {
-        // Use comma-separated list
-        dayOfWeek = selectedDaysArray.join(",")
-      }
-    }
-
-    return `${minute} ${hour} * * ${dayOfWeek}`
-  }
-
-  async function handleSubmit(formData: FormData) {
-    const name = formData.get("name") as string
-    const cron = generateCronString()
-
-    if (mode === "edit" && schedule) {
-      await updateSchedule({
-        id: schedule.id,
-        name,
-        cron,
-        timezone,
-      })
-    } else {
-      await createSchedule({
-        name,
-        cron,
-        timezone,
-      })
-    }
-
-    router.push("/schedules")
-  }
-
   const breadcrumbs = [
     { title: "Home", href: "/" },
     { title: "Schedules", href: "/schedules" },
@@ -153,13 +98,6 @@ export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
       title: schedule.name,
       href: `/schedules/${schedule.id}`,
     })
-  }
-
-  async function handleDelete() {
-    if (schedule) {
-      await deleteSchedule(schedule.id)
-      router.push("/schedules")
-    }
   }
 
   return (
@@ -184,7 +122,9 @@ export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
                   <DialogClose asChild>
                     <Button variant="secondary">Cancel</Button>
                   </DialogClose>
-                  <form action={handleDelete}>
+                  <form
+                    action={() => schedule && deleteScheduleAction(schedule.id)}
+                  >
                     <Button variant="destructive">Delete</Button>
                   </form>
                 </DialogFooter>
@@ -194,8 +134,8 @@ export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
         }
       />
 
-      <form action={handleSubmit}>
-        {/* Schedule Info Section */}
+      <form action={submit}>
+        <input type="hidden" name="id" value={schedule?.id || ""} />
         <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
           <div>
             <h2 className="font-semibold text-gray-900 dark:text-gray-50">
@@ -317,7 +257,7 @@ export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
                       >
                         <Checkbox
                           id={`day-${day.id}`}
-                          name="days[]"
+                          name="selectedDays"
                           value={day.id}
                           checked={selectedDays.has(day.id)}
                           onCheckedChange={(checked) =>
@@ -337,8 +277,7 @@ export function ScheduleForm({ schedule, mode }: ScheduleFormProps) {
               </div>
 
               <div className="col-span-full text-sm text-gray-600 dark:text-gray-400">
-                {cronstrue.toString(generateCronString())},{" "}
-                {timezone.split("/").pop()} time.
+                {getCronDescription({ minute, hour, selectedDays, timezone })}
               </div>
             </div>
           </div>

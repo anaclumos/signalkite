@@ -1,4 +1,4 @@
-import { ScheduleForm } from "@/app/schedules/components/schedule-form"
+import { ScheduleForm } from "@/app/schedules/form"
 
 export default function NewSchedule() {
   return <ScheduleForm mode="create" />

@@ -1,10 +1,5 @@
 "use client"
 
-import {
-  createNotificationChannel,
-  deleteNotificationChannel,
-  updateNotificationChannel,
-} from "@/app/actions/notification-channels"
 import { NavBar } from "@/components/nav-bar"
 import { Button } from "@/components/ui/button"
 import {
@@ -30,8 +25,8 @@ import {
 import { Textarea } from "@/components/ui/textarea"
 import { NotificationChannel, NotificationChannelType } from "@prisma/client"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { deleteChannelAction, submitChannelAction } from "./server"
 
 interface NotificationChannelFormProps {
   channel?: NotificationChannel
@@ -42,46 +37,9 @@ export function NotificationChannelForm({
   channel,
   mode,
 }: NotificationChannelFormProps) {
-  const router = useRouter()
   const [type, setType] = useState<NotificationChannelType>(
     channel?.type || NotificationChannelType.EMAIL,
   )
-
-  async function handleDelete() {
-    if (channel) {
-      await deleteNotificationChannel(channel.id)
-      router.push("/notification-channels")
-    }
-  }
-
-  async function handleSubmit(formData: FormData) {
-    const name = formData.get("name") as string
-    const settingsStr = formData.get("settings") as string
-    let settings = {}
-
-    try {
-      settings = JSON.parse(settingsStr)
-    } catch (error) {
-      console.error("Invalid JSON settings:", error)
-      return
-    }
-
-    if (mode === "edit" && channel) {
-      await updateNotificationChannel({
-        id: channel.id,
-        name,
-        settings,
-      })
-    } else {
-      await createNotificationChannel({
-        name,
-        type,
-        settings,
-      })
-    }
-
-    router.push("/notification-channels")
-  }
 
   const breadcrumbs = [
     { title: "Home", href: "/" },
@@ -117,7 +75,9 @@ export function NotificationChannelForm({
                   <DialogClose asChild>
                     <Button variant="secondary">Cancel</Button>
                   </DialogClose>
-                  <form action={handleDelete}>
+                  <form
+                    action={() => channel && deleteChannelAction(channel.id)}
+                  >
                     <Button variant="destructive">Delete</Button>
                   </form>
                 </DialogFooter>
@@ -127,7 +87,11 @@ export function NotificationChannelForm({
         }
       />
 
-      <form action={handleSubmit}>
+      <form
+        action={(formData) =>
+          submitChannelAction(formData, mode, channel?.id, type)
+        }
+      >
         <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
           <div>
             <h2 className="font-semibold text-gray-900 dark:text-gray-50">

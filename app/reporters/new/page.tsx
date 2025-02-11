@@ -1,6 +1,5 @@
-"use client"
-
-import { createReporter } from "@/app/actions/reporters"
+import { getNotificationChannels } from "@/app/actions/notification-channels"
+import { getSchedules } from "@/app/actions/schedules"
 import { Button } from "@/components/ui/button"
 import { Divider } from "@/components/ui/divider"
 import { Input } from "@/components/ui/input"
@@ -10,31 +9,41 @@ import {
   RadioCardIndicator,
   RadioCardItem,
 } from "@/components/ui/radio-card-group"
+import { Select } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
-import { ReporterStrategyType } from "@prisma/client"
+import {
+  NotificationChannel,
+  ReporterStrategyType,
+  Schedule,
+} from "@prisma/client"
 import { RiGlobalLine, RiNewspaperLine, RiSearchLine } from "@remixicon/react"
-import { useRouter } from "next/navigation"
+import Link from "next/link"
+import { submitReporterAction } from "../server"
 
-export default function NewReporter() {
-  const router = useRouter()
-
-  async function handleSubmit(formData: FormData) {
-    const name = formData.get("name") as string
-    const description = formData.get("description") as string
-    const strategy = formData.get("strategy") as ReporterStrategyType
-
-    await createReporter({
-      name,
-      description,
-      strategy,
-    })
-
-    router.push("/reporters")
-  }
+export default async function NewReporter() {
+  const schedules = await getSchedules()
+  const notificationChannels = await getNotificationChannels()
 
   return (
+    <NewReporterForm
+      schedules={schedules}
+      notificationChannels={notificationChannels}
+    />
+  )
+}
+
+interface NewReporterFormProps {
+  schedules: Schedule[]
+  notificationChannels: NotificationChannel[]
+}
+
+function NewReporterForm({
+  schedules,
+  notificationChannels,
+}: NewReporterFormProps) {
+  return (
     <>
-      <form action={handleSubmit}>
+      <form action={submitReporterAction}>
         <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
           <div>
             <h2 className="font-semibold text-gray-900 dark:text-gray-50">
@@ -44,6 +53,7 @@ export default function NewReporter() {
               Create a new reporter to monitor and discover stories.
             </p>
           </div>
+          T
           <div className="md:col-span-2">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-6">
               <div className="col-span-full">
@@ -133,18 +143,46 @@ export default function NewReporter() {
                   stories.
                 </p>
               </div>
+              <div className="col-span-full">
+                <Label htmlFor="schedules" className="font-medium">
+                  Schedules
+                </Label>
+                <Select name="schedules">
+                  {schedules.map((schedule) => (
+                    <option key={schedule.id} value={schedule.id}>
+                      {schedule.name}
+                    </option>
+                  ))}
+                </Select>
+                <p className="mt-1 text-xs text-gray-500">
+                  Select when this reporter should run.
+                </p>
+              </div>
+              <div className="col-span-full">
+                <Label htmlFor="notificationChannels" className="font-medium">
+                  Notification Channels
+                </Label>
+                <Select name="notificationChannels">
+                  {notificationChannels.map((channel) => (
+                    <option key={channel.id} value={channel.id}>
+                      {channel.name}
+                    </option>
+                  ))}
+                </Select>
+                <p className="mt-1 text-xs text-gray-500">
+                  Select where to send notifications when stories are found.
+                </p>
+              </div>
             </div>
           </div>
         </div>
         <Divider />
         <div className="flex items-center justify-end space-x-4 p-4 md:p-8">
-          <Button
-            variant="secondary"
-            onClick={() => router.push("/reporters")}
-            type="button"
-          >
-            Cancel
-          </Button>
+          <Link href="/reporters">
+            <Button variant="secondary" type="button">
+              Cancel
+            </Button>
+          </Link>
           <Button type="submit">Create Reporter</Button>
         </div>
       </form>

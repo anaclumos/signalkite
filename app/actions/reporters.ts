@@ -17,6 +17,8 @@ const reporterInputSchema = z.object({
   description: z.string().optional(),
   strategy: z.nativeEnum(ReporterStrategyType).optional(),
   promptId: z.string().optional(),
+  scheduleIds: z.array(z.string()).optional(),
+  notificationChannelIds: z.array(z.string()).optional(),
 })
 
 const reporterUpdateSchema = z.object({
@@ -33,6 +35,8 @@ export async function createReporter({
   description,
   strategy,
   promptId,
+  scheduleIds,
+  notificationChannelIds,
 }: z.infer<typeof reporterInputSchema>) {
   // Validate input
   const validatedData = reporterInputSchema.parse({
@@ -40,16 +44,41 @@ export async function createReporter({
     description,
     strategy,
     promptId,
+    scheduleIds,
+    notificationChannelIds,
   })
 
   const user = await getCurrentUser()
 
-  return db.reporter.create({
-    data: {
-      ...validatedData,
-      strategy: validatedData.strategy || ReporterStrategyType.EXA_SEARCH,
-      creatorId: user.id,
-    },
+  return db.$transaction(async (tx) => {
+    const reporter = await tx.reporter.create({
+      data: {
+        ...validatedData,
+        strategy: validatedData.strategy || ReporterStrategyType.EXA_SEARCH,
+        creatorId: user.id,
+      },
+    })
+
+    if (validatedData.scheduleIds?.length) {
+      await tx.scheduleReporter.createMany({
+        data: validatedData.scheduleIds.map((scheduleId) => ({
+          scheduleId,
+          reporterId: reporter.id,
+        })),
+      })
+    }
+
+    if (validatedData.notificationChannelIds?.length) {
+      await tx.subscription.createMany({
+        data: validatedData.notificationChannelIds.map((channelId) => ({
+          notificationChannelId: channelId,
+          reporterId: reporter.id,
+          userId: user.id,
+        })),
+      })
+    }
+
+    return reporter
   })
 }
 

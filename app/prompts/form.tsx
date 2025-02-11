@@ -1,6 +1,3 @@
-"use client"
-
-import { createPrompt, deletePrompt, updatePrompt } from "@/app/actions/prompts"
 import { NavBar } from "@/components/nav-bar"
 import { Button } from "@/components/ui/button"
 import {
@@ -18,8 +15,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
-import type { PromptWithRelations } from "../types"
+import { deletePromptAction, submitPromptAction } from "./server"
+import type { PromptWithRelations } from "./types"
 
 interface PromptFormProps {
   prompt?: PromptWithRelations
@@ -27,35 +24,6 @@ interface PromptFormProps {
 }
 
 export function PromptForm({ prompt, mode }: PromptFormProps) {
-  const router = useRouter()
-
-  async function handleDelete() {
-    if (prompt) {
-      await deletePrompt(prompt.id)
-      router.push("/prompts")
-    }
-  }
-
-  async function handleSubmit(formData: FormData) {
-    const description = formData.get("description") as string
-    const text = formData.get("text") as string
-
-    if (mode === "edit" && prompt) {
-      await updatePrompt({
-        id: prompt.id,
-        description,
-        text,
-      })
-    } else {
-      await createPrompt({
-        description,
-        text,
-      })
-    }
-
-    router.push("/prompts")
-  }
-
   const breadcrumbs = [
     { title: "Home", href: "/" },
     { title: "Prompts", href: "/prompts" },
@@ -90,7 +58,7 @@ export function PromptForm({ prompt, mode }: PromptFormProps) {
                   <DialogClose asChild>
                     <Button variant="secondary">Cancel</Button>
                   </DialogClose>
-                  <form action={handleDelete}>
+                  <form action={() => prompt && deletePromptAction(prompt.id)}>
                     <Button variant="destructive">Delete</Button>
                   </form>
                 </DialogFooter>
@@ -100,7 +68,9 @@ export function PromptForm({ prompt, mode }: PromptFormProps) {
         }
       />
 
-      <form action={handleSubmit}>
+      <form
+        action={(formData) => submitPromptAction(formData, mode, prompt?.id)}
+      >
         {/* Prompt Info Section */}
         <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
           <div>
