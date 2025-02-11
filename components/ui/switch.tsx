@@ -10,36 +10,36 @@ const switchVariants = tv({
   slots: {
     root: [
       // base
-      "group relative isolate inline-flex shrink-0 cursor-pointer items-center rounded-full p-0.5 ring-1 shadow-inner transition-all outline-none ring-inset",
+      "group relative isolate inline-flex shrink-0 cursor-pointer items-center rounded-full p-0.5 ring-1 shadow-inner transition-all outline-hidden ring-inset",
       "bg-gray-200 dark:bg-gray-950",
       // ring color
       "ring-black/5 dark:ring-gray-800",
       // checked
-      "data-[state=checked]:bg-blue-500 data-[state=checked]:dark:bg-blue-500",
+      "data-[state=checked]:bg-blue-500 dark:data-[state=checked]:bg-blue-500",
       // disabled
-      "data-[disabled]:cursor-default",
+      "data-disabled:cursor-default",
       // disabled checked
-      "data-[disabled]:data-[state=checked]:bg-blue-200",
-      "data-[disabled]:data-[state=checked]:ring-gray-300",
+      "data-disabled:data-[state=checked]:bg-blue-200",
+      "data-disabled:data-[state=checked]:ring-gray-300",
       // disabled checked dark
-      "data-[disabled]:data-[state=checked]:dark:ring-gray-900",
-      "data-[disabled]:data-[state=checked]:dark:bg-blue-900",
+      "dark:data-disabled:data-[state=checked]:ring-gray-900",
+      "dark:data-disabled:data-[state=checked]:bg-blue-900",
       // disabled unchecked
-      "data-[disabled]:data-[state=unchecked]:ring-gray-300",
-      "data-[disabled]:data-[state=unchecked]:bg-gray-100",
+      "data-disabled:data-[state=unchecked]:ring-gray-300",
+      "data-disabled:data-[state=unchecked]:bg-gray-100",
       // disabled unchecked dark
-      "data-[disabled]:data-[state=unchecked]:dark:ring-gray-700",
-      "data-[disabled]:data-[state=unchecked]:dark:bg-gray-800",
+      "dark:data-disabled:data-[state=unchecked]:ring-gray-700",
+      "dark:data-disabled:data-[state=unchecked]:bg-gray-800",
       focusRing,
     ],
     thumb: [
       // base
-      "pointer-events-none relative inline-block transform appearance-none rounded-full border-none shadow-lg transition-all duration-150 ease-in-out outline-none focus:border-none focus:outline-transparent focus:outline-none",
+      "pointer-events-none relative inline-block transform appearance-none rounded-full border-none shadow-lg transition-all duration-150 ease-in-out outline-hidden focus:border-none focus:outline-transparent focus:outline-hidden",
       // background color
       "bg-white dark:bg-gray-50",
       // disabled
-      "group-data-[disabled]:shadow-none",
-      "group-data-[disabled]:bg-gray-50 group-data-[disabled]:dark:bg-gray-500",
+      "group-data-disabled:shadow-none",
+      "group-data-disabled:bg-gray-50 dark:group-data-disabled:bg-gray-500",
     ],
   },
   variants: {

@@ -96,7 +96,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <Link href="/">
         <SidebarHeader className="px-3 py-4">
           <div className="flex items-center gap-3">
-            <span className="flex size-9 items-center justify-center rounded-md bg-white p-0.5 shadow-sm ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-800">
+            <span className="flex size-9 items-center justify-center rounded-md bg-white p-0.5 shadow-xs ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-800">
               <Logo className="size-8 text-blue-500 dark:text-blue-500" />
             </span>
             <div>
@@ -116,7 +116,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <Input
               type="search"
               placeholder="Search items..."
-              className="[&>input]:sm:py-1.5"
+              className="sm:[&>input]:py-1.5"
             />
           </SidebarGroupContent>
         </SidebarGroup>
@@ -128,7 +128,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <button
                     onClick={() => toggleMenu(item.name)}
                     className={cx(
-                      "flex w-full items-center justify-between gap-x-2.5 rounded-md p-2 text-base text-gray-900 transition hover:bg-gray-200/50 sm:text-sm dark:text-gray-400 hover:dark:bg-gray-900 hover:dark:text-gray-50",
+                      "flex w-full items-center justify-between gap-x-2.5 rounded-md p-2 text-base text-gray-900 transition hover:bg-gray-200/50 sm:text-sm dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-50",
                       focusRing,
                     )}
                   >

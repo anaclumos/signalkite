@@ -49,11 +49,6 @@ export function UserProfile() {
             showName
             appearance={{
               baseTheme: resolvedTheme === "dark" ? dark : undefined,
-              elements: {
-                userButtonBox: "flex flex-row-reverse justify-end p-2 w-full",
-                userButtonTrigger: "w-full",
-                rootBox: "w-full",
-              },
             }}
             fallback={<UserProfileLoading />}
           />

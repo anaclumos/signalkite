@@ -22,9 +22,9 @@ const AccordionTrigger = React.forwardRef<
         // text color
         "text-gray-900 dark:text-gray-50",
         // disabled
-        "data-[disabled]:cursor-default data-[disabled]:text-gray-400 dark:data-[disabled]:text-gray-600",
+        "data-disabled:cursor-default data-disabled:text-gray-400 dark:data-disabled:text-gray-600",
         //focus
-        "focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none focus-visible:ring-inset",
+        "focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-hidden focus-visible:ring-inset",
         className,
       )}
       {...props}
@@ -38,7 +38,7 @@ const AccordionTrigger = React.forwardRef<
           // text color
           "text-gray-400 dark:text-gray-600",
           // disabled
-          "group-data-[disabled]:text-gray-300 group-data-[disabled]:dark:text-gray-700",
+          "group-data-disabled:text-gray-300 dark:group-data-disabled:text-gray-700",
         )}
         aria-hidden="true"
         focusable="false"

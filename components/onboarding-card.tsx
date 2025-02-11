@@ -37,7 +37,7 @@ export function OnboardingCard({ title, caption, data }: OnboardingCardProps) {
               </div>
               <a
                 href={item.href}
-                className="mt-4 text-sm font-medium text-blue-500 hover:text-blue-600 dark:text-blue-500 hover:dark:text-blue-600"
+                className="mt-4 text-sm font-medium text-blue-500 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-600"
               >
                 {item.linkText} &#8594;
               </a>

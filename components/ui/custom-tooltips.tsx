@@ -29,7 +29,7 @@ export const CustomTooltip = ({ payload, active }: TooltipProps) => {
             <span
               className={cx(
                 getColorClassName(category.color, "bg"),
-                "w-1 rounded",
+                "w-1 rounded-sm",
               )}
               aria-hidden="true"
             />
@@ -51,7 +51,7 @@ export const CustomTooltip = ({ payload, active }: TooltipProps) => {
             parseFloat(percentageDiff) >= 0
               ? "bg-emerald-100 text-emerald-600 dark:bg-emerald-400/20 dark:text-emerald-400"
               : "bg-red-100 text-red-600 dark:bg-red-400/20 dark:text-red-400",
-            "rounded px-1.5 py-1 text-xs font-medium",
+            "rounded-sm px-1.5 py-1 text-xs font-medium",
           )}
         >
           <p>{percentageDiff}</p>
@@ -82,7 +82,7 @@ export const CustomTooltip2 = ({
                 category === "Quotes"
                   ? "bg-blue-500 dark:bg-blue-500"
                   : "bg-gray-300 dark:bg-gray-700",
-                "w-1 rounded",
+                "w-1 rounded-sm",
               )}
               aria-hidden="true"
             />
@@ -103,7 +103,7 @@ export const CustomTooltip2 = ({
         ))}
       </ul>
       <div className="border-t border-gray-200 p-2 dark:border-gray-800">
-        <p className="inline-flex w-full justify-center rounded bg-gray-100 px-1.5 py-1 text-xs text-gray-600 dark:bg-gray-400/20 dark:text-gray-400">
+        <p className="inline-flex w-full justify-center rounded-sm bg-gray-100 px-1.5 py-1 text-xs text-gray-600 dark:bg-gray-400/20 dark:text-gray-400">
           {ratio > 0.3
             ? "Critical ratio"
             : ratio > 0.25
@@ -138,7 +138,7 @@ export const CustomTooltip3 = ({ payload, active }: TooltipProps) => {
         {payload.map((category, index) => (
           <li key={index} className="flex space-x-2.5">
             <span
-              className={cx(chartColors[category.color].bg, "w-1 rounded")}
+              className={cx(chartColors[category.color].bg, "w-1 rounded-sm")}
               aria-hidden="true"
             />
             <div className="space-y-0.5">
@@ -162,7 +162,7 @@ export const CustomTooltip3 = ({ payload, active }: TooltipProps) => {
                   width: `${cappedValue}%`,
                   transition: "all duration-300",
                 }}
-                className="absolute h-1.5 rounded-r-full bg-gradient-to-r from-gray-400 to-gray-300 dark:from-gray-400 dark:to-gray-500"
+                className="absolute h-1.5 rounded-r-full bg-linear-to-r from-gray-400 to-gray-300 dark:from-gray-400 dark:to-gray-500"
               />
             </span>
           ) : (
@@ -172,7 +172,7 @@ export const CustomTooltip3 = ({ payload, active }: TooltipProps) => {
                   width: `${Math.abs(cappedValue)}%`,
                   transition: "all duration-300",
                 }}
-                className="absolute right-0 h-1.5 rounded-l-full bg-gradient-to-l from-gray-400 to-gray-300 dark:from-gray-400 dark:to-gray-500"
+                className="absolute right-0 h-1.5 rounded-l-full bg-linear-to-l from-gray-400 to-gray-300 dark:from-gray-400 dark:to-gray-500"
               />
             </span>
           )}
@@ -219,7 +219,7 @@ export const CustomTooltip4 = ({ payload, active }: TooltipProps) => {
           <span
             className={cx(
               `bg-${payload[0].color}-500 dark:bg-${payload[0].color}-500`,
-              "w-1 rounded",
+              "w-1 rounded-sm",
             )}
             aria-hidden="true"
           />
@@ -234,7 +234,7 @@ export const CustomTooltip4 = ({ payload, active }: TooltipProps) => {
         </li>
         <li className="flex space-x-2.5">
           <span
-            className="w-1 rounded bg-gray-400 dark:bg-gray-600"
+            className="w-1 rounded-sm bg-gray-400 dark:bg-gray-600"
             aria-hidden="true"
           />
           <div className="space-y-0.5">
@@ -248,7 +248,7 @@ export const CustomTooltip4 = ({ payload, active }: TooltipProps) => {
         </li>
       </ul>
       <div className="border-t border-gray-200 p-2 dark:border-gray-800">
-        <p className="inline-flex w-full justify-center rounded bg-gray-100 px-1.5 py-1 text-xs text-gray-600 dark:bg-gray-400/20 dark:text-gray-400">
+        <p className="inline-flex w-full justify-center rounded-sm bg-gray-100 px-1.5 py-1 text-xs text-gray-600 dark:bg-gray-400/20 dark:text-gray-400">
           <span className="mr-1">{peerDifference}</span>
           {parseFloat(peerDifference) > 0
             ? "above benchmark"

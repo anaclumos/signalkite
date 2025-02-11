@@ -22,8 +22,8 @@ describe("focusInput", () => {
   it("should contain the correct focus classes", () => {
     expect(focusInput).toEqual([
       "focus:ring-2",
-      "focus:ring-blue-200 focus:dark:ring-blue-700/30",
-      "focus:border-blue-500 focus:dark:border-blue-700",
+      "focus:ring-blue-200 dark:focus:ring-blue-700/30",
+      "focus:border-blue-500 dark:focus:border-blue-700",
     ])
   })
 })

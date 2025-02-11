@@ -37,7 +37,7 @@ export function NavBar({ breadcrumbs, actions, viewToggle }: NavBarProps) {
                     className={
                       index === breadcrumbs.length - 1
                         ? "text-gray-900 dark:text-gray-50"
-                        : "text-gray-500 transition hover:text-gray-700 dark:text-gray-400 hover:dark:text-gray-300"
+                        : "text-gray-500 transition hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
                     }
                     aria-current={
                       index === breadcrumbs.length - 1 ? "page" : undefined

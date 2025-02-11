@@ -106,7 +106,7 @@ const LegendItem = ({ name, color, onClick }: LegendItemProps) => {
     <div
       className={cx(
         // base
-        "group inline-flex flex-nowrap items-center gap-2 whitespace-nowrap rounded px-2 py-1 transition",
+        "group inline-flex flex-nowrap items-center gap-2 whitespace-nowrap rounded-sm px-2 py-1 transition",
         hasOnValueChange
           ? "cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800"
           : "cursor-default",
@@ -120,7 +120,7 @@ const LegendItem = ({ name, color, onClick }: LegendItemProps) => {
       <span
         className={cx(
           getGradientColorClassName(color),
-          "h-1.5 w-14 rounded-full bg-gradient-to-r",
+          "h-1.5 w-14 rounded-full bg-linear-to-r",
         )}
       />
       <span className="text-xs text-gray-700 dark:text-gray-300">High</span>
@@ -273,7 +273,7 @@ const ChartTooltip = ({
                 <span
                   aria-hidden="true"
                   className={cx(
-                    "size-2 shrink-0 rounded-sm",
+                    "size-2 shrink-0 rounded-xs",
                     getColorClassName(color, "bg"),
                   )}
                 />

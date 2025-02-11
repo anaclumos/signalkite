@@ -23,23 +23,23 @@ SelectValue.displayName = "SelectValue"
 const selectTriggerStyles = [
   cx(
     // base
-    "group/trigger flex w-full items-center justify-between gap-2 truncate rounded-md border px-3 py-2 shadow-sm transition outline-none select-none sm:text-sm",
+    "group/trigger flex w-full items-center justify-between gap-2 truncate rounded-md border px-3 py-2 shadow-xs transition outline-hidden select-none sm:text-sm",
     // border color
     "border-gray-300 dark:border-gray-800",
     // text color
     "text-gray-900 dark:text-gray-50",
     // placeholder
-    "data-[placeholder]:text-gray-500 data-[placeholder]:dark:text-gray-500",
+    "data-placeholder:text-gray-500 dark:data-placeholder:text-gray-500",
     // background color
     "bg-white dark:bg-gray-950",
     // hover
-    "hover:bg-gray-50 hover:dark:bg-gray-950/50",
+    "hover:bg-gray-50 dark:hover:bg-gray-950/50",
     // disabled
-    "data-[disabled]:bg-gray-100 data-[disabled]:text-gray-400",
-    "data-[disabled]:dark:border-gray-700 data-[disabled]:dark:bg-gray-800 data-[disabled]:dark:text-gray-500",
+    "data-disabled:bg-gray-100 data-disabled:text-gray-400",
+    "dark:data-disabled:border-gray-700 dark:data-disabled:bg-gray-800 dark:data-disabled:text-gray-500",
     focusInput,
     // invalid (optional)
-    "aria-[invalid=true]:dark:ring-red-400/20 aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-red-200 aria-[invalid=true]:border-red-500 invalid:ring-2 invalid:ring-red-200 invalid:border-red-500",
+    "dark:aria-invalid:ring-red-400/20 aria-invalid:ring-2 aria-invalid:ring-red-200 aria-invalid:border-red-500 invalid:ring-2 invalid:ring-red-200 invalid:border-red-500",
   ),
 ]
 
@@ -69,7 +69,7 @@ const SelectTrigger = React.forwardRef<
             // text color
             "text-gray-400 dark:text-gray-600",
             // disabled
-            "group-data-[disabled]/trigger:text-gray-300 group-data-[disabled]/trigger:dark:text-gray-600",
+            "group-data-disabled/trigger:text-gray-300 dark:group-data-disabled/trigger:text-gray-600",
           )}
         />
       </SelectPrimitives.Icon>
@@ -138,7 +138,7 @@ const SelectContent = React.forwardRef<
           // widths
           "max-w-[95vw] min-w-[calc(var(--radix-select-trigger-width)-2px)]",
           // heights
-          "max-h-[--radix-select-content-available-height]",
+          "max-h-(--radix-select-content-available-height)",
           // background color
           "bg-white dark:bg-gray-950",
           // text color
@@ -203,15 +203,15 @@ const SelectItem = React.forwardRef<
       ref={forwardedRef}
       className={cx(
         // base
-        "grid cursor-pointer grid-cols-[1fr_20px] gap-x-2 rounded px-3 py-2 transition-colors outline-none data-[state=checked]:font-semibold sm:text-sm",
+        "grid cursor-pointer grid-cols-[1fr_20px] gap-x-2 rounded-sm px-3 py-2 transition-colors outline-hidden data-[state=checked]:font-semibold sm:text-sm",
         // text color
         "text-gray-900 dark:text-gray-50",
         // disabled
-        "data-[disabled]:pointer-events-none data-[disabled]:text-gray-400 data-[disabled]:hover:bg-none dark:data-[disabled]:text-gray-600",
+        "data-disabled:pointer-events-none data-disabled:text-gray-400 data-disabled:hover:bg-none dark:data-disabled:text-gray-600",
         // focus
-        "focus-visible:bg-gray-100 focus-visible:dark:bg-gray-900",
+        "focus-visible:bg-gray-100 dark:focus-visible:bg-gray-900",
         // hover
-        "hover:bg-gray-100 hover:dark:bg-gray-900",
+        "hover:bg-gray-100 dark:hover:bg-gray-900",
         className,
       )}
       {...props}

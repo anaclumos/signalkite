@@ -16,7 +16,7 @@ const Checkbox = React.forwardRef<
       checked={checked}
       className={cx(
         // base
-        "relative inline-flex size-4 shrink-0 appearance-none items-center justify-center rounded ring-1 shadow-sm transition duration-100 outline-none ring-inset enabled:cursor-pointer",
+        "relative inline-flex size-4 shrink-0 appearance-none items-center justify-center rounded-sm ring-1 shadow-xs transition duration-100 outline-hidden ring-inset enabled:cursor-pointer",
         // text color
         "text-white dark:text-gray-50",
         // background color
@@ -24,8 +24,8 @@ const Checkbox = React.forwardRef<
         // ring color
         "ring-gray-300 dark:ring-gray-800",
         // disabled
-        "data-[disabled]:bg-gray-100 data-[disabled]:text-gray-400 data-[disabled]:ring-gray-300",
-        "data-[disabled]:dark:bg-gray-800 data-[disabled]:dark:text-gray-500 data-[disabled]:dark:ring-gray-700",
+        "data-disabled:bg-gray-100 data-disabled:text-gray-400 data-disabled:ring-gray-300",
+        "dark:data-disabled:bg-gray-800 dark:data-disabled:text-gray-500 dark:data-disabled:ring-gray-700",
         // checked and enabled
         "enabled:data-[state=checked]:bg-blue-500 enabled:data-[state=checked]:ring-0 enabled:data-[state=checked]:ring-transparent",
         // indeterminate
