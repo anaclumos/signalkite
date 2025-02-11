@@ -1,5 +1,3 @@
-"use cache"
-
 import { db } from "@/prisma"
 import { currentUser } from "@clerk/nextjs/server"
 import { NotificationChannelsTable } from "./table"

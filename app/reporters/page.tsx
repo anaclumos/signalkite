@@ -1,5 +1,3 @@
-"use cache"
-
 import { getReporters } from "@/app/actions/reporters"
 import { ReportersTable } from "./table"
 
