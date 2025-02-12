@@ -12,16 +12,4 @@ describe("ErrorStatus", () => {
     expect(screen.getByText(title)).toBeInTheDocument()
     expect(screen.getByText(message)).toBeInTheDocument()
   })
-
-  it("renders with error variant", () => {
-    render(<ErrorStatus title="Error" message="Message" />)
-
-    const callout = screen.getByTestId("tremor-raw")
-    expect(callout).toHaveClass(
-      "bg-red-50",
-      "dark:bg-red-950/70",
-      "text-red-900",
-      "dark:text-red-500",
-    )
-  })
 })

@@ -1,4 +1,4 @@
-import { Callout } from "./callout"
+import { Callout } from "@/components/ui/callout"
 
 interface ErrorStatusProps {
   title: string
