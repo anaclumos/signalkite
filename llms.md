@@ -89,6 +89,7 @@
 ## Special Gotchas
 - Use "import { cx } from "@/lib/utils" to combine tailwind classes.
 - Use authInterrupts, such as unauthorized() and forbidden() instead of return new Response("Unauthorized", { status: 401 }) or return new Response("Forbidden", { status: 403 })
+- Always read Prisma schema files before writing code.
 
 | Emoji | Description |
 |-------|-------------|
