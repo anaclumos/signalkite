@@ -6,7 +6,11 @@ export function generateCronString(
   hour: string,
   selectedDays: Set<string>,
 ) {
-  const selectedDaysArray = Array.from(selectedDays).sort()
+  const selectedDaysArray = Array.from(selectedDays).sort((a, b) => {
+    const aIndex = daysOfWeek.findIndex((d) => d.id === a)
+    const bIndex = daysOfWeek.findIndex((d) => d.id === b)
+    return aIndex - bIndex
+  })
   let dayOfWeek = "*"
 
   if (selectedDaysArray.length > 0) {

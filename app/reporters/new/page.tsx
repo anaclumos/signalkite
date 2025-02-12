@@ -1,4 +1,3 @@
-import { getNotificationChannels } from "@/app/actions/notification-channels"
 import { getSchedules } from "@/app/actions/schedules"
 import { EntityForm } from "@/components/entity-form"
 import { Input } from "@/components/ui/input"
@@ -16,35 +15,21 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
-import {
-  NotificationChannel,
-  ReporterStrategyType,
-  Schedule,
-} from "@prisma/client"
+import { ReporterStrategyType, Schedule } from "@prisma/client"
 import { RiGlobalLine, RiNewspaperLine, RiSearchLine } from "@remixicon/react"
 import { submitReporterAction } from "../server"
 
 export default async function NewReporter() {
   const schedules = await getSchedules()
-  const notificationChannels = await getNotificationChannels()
 
-  return (
-    <NewReporterForm
-      schedules={schedules}
-      notificationChannels={notificationChannels}
-    />
-  )
+  return <NewReporterForm schedules={schedules} />
 }
 
 interface NewReporterFormProps {
   schedules: Schedule[]
-  notificationChannels: NotificationChannel[]
 }
 
-function NewReporterForm({
-  schedules,
-  notificationChannels,
-}: NewReporterFormProps) {
+function NewReporterForm({ schedules }: NewReporterFormProps) {
   return (
     <EntityForm
       title="Reporters"
@@ -146,50 +131,28 @@ function NewReporterForm({
           ),
         },
         {
-          title: "Configuration",
-          description: "Set up when to run and where to send notifications.",
+          title: "Schedule",
+          description: "Set up when this reporter should run.",
           children: (
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-6">
-              <div className="col-span-full">
-                <Label htmlFor="schedules" className="font-medium">
-                  Schedules
-                </Label>
-                <Select name="schedules">
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a schedule" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {schedules.map((schedule) => (
-                      <SelectItem key={schedule.id} value={schedule.id}>
-                        {schedule.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <p className="mt-1 text-xs text-gray-500">
-                  Select when this reporter should run.
-                </p>
-              </div>
-              <div className="col-span-full">
-                <Label htmlFor="notificationChannels" className="font-medium">
-                  Notification Channels
-                </Label>
-                <Select name="notificationChannels">
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a notification channel" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {notificationChannels.map((channel) => (
-                      <SelectItem key={channel.id} value={channel.id}>
-                        {channel.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <p className="mt-1 text-xs text-gray-500">
-                  Select where to send notifications when stories are found.
-                </p>
-              </div>
+            <div className="col-span-full">
+              <Label htmlFor="schedules" className="font-medium">
+                Schedule
+              </Label>
+              <Select name="schedules">
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a schedule" />
+                </SelectTrigger>
+                <SelectContent>
+                  {schedules.map((schedule) => (
+                    <SelectItem key={schedule.id} value={schedule.id}>
+                      {schedule.name}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <p className="mt-1 text-xs text-gray-500">
+                Select when this reporter should run.
+              </p>
             </div>
           ),
         },

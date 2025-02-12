@@ -11,10 +11,16 @@ export async function deleteScheduleAction(scheduleId: string) {
 
 export async function submit(formData: FormData) {
   const name = formData.get("name") as string
+  const selectedDays = formData.getAll("selectedDays") as string[]
+
+  if (selectedDays.length === 0) {
+    throw new Error("At least one day must be selected")
+  }
+
   const cron = generateCronString(
     formData.get("minute") as string,
     formData.get("hour") as string,
-    new Set(formData.getAll("selectedDays") as string[]),
+    new Set(selectedDays),
   )
   const timezone = formData.get("timezone") as string
   const scheduleId = formData.get("id") as string

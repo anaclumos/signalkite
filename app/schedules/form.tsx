@@ -37,7 +37,7 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
     schedule?.timezone || Intl.DateTimeFormat().resolvedOptions().timeZone,
   )
 
-  // Parse days from cron expression or set empty
+  // Parse days from cron expression or set all days by default
   const initialDays = new Set<string>()
   if (schedule) {
     const daysPart = initialCronParts[4]
@@ -55,6 +55,9 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
         daysPart.split(",").forEach((day) => initialDays.add(day))
       }
     }
+  } else {
+    // Set all days selected by default for new schedules
+    daysOfWeek.forEach((day) => initialDays.add(day.id))
   }
   const [selectedDays, setSelectedDays] = useState<Set<string>>(initialDays)
 

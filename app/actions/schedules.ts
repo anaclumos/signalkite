@@ -11,10 +11,7 @@ const scheduleUpsertSchema = z.object({
     .string()
     .min(1, "Name is required")
     .max(100, "Name must be 100 characters or less"),
-  cron: z
-    .string()
-    .min(1, "Cron expression is required")
-    .max(100, "Cron expression must be 100 characters or less"),
+  cron: z.string().max(100, "Cron expression must be 100 characters or less"),
   timezone: z
     .string()
     .min(1, "Timezone is required")

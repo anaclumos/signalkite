@@ -29,9 +29,24 @@ test.describe("Schedules", () => {
     await expect(page.getByText("Schedule not found")).toBeVisible()
   })
 
-  test("should create new schedule", async ({ page }) => {
+  test("should create new schedule with all days selected by default", async ({
+    page,
+  }) => {
     // Go to new schedule page
     await page.goto("/schedules/new")
+
+    // Verify all days are checked by default
+    for (const day of [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ]) {
+      await expect(page.getByLabel(day)).toBeChecked()
+    }
 
     // Fill out form
     await page.getByLabel("Name").fill("Test Schedule")
@@ -42,11 +57,6 @@ test.describe("Schedules", () => {
 
     await page.getByRole("combobox", { name: "Minute" }).click()
     await page.getByRole("option", { name: "30" }).click()
-
-    // Select days
-    await page.getByLabel("Monday").check()
-    await page.getByLabel("Wednesday").check()
-    await page.getByLabel("Friday").check()
 
     // Create schedule
     await page.getByRole("button", { name: "Create Schedule" }).click()
@@ -84,6 +94,45 @@ test.describe("Schedules", () => {
 
     // Updated schedule should be visible
     await expect(page.getByText("Updated Schedule")).toBeVisible()
+  })
+
+  test("should show error when no days are selected", async ({ page }) => {
+    // Go to new schedule page
+    await page.goto("/schedules/new")
+
+    // Fill out form
+    await page.getByLabel("Name").fill("Test Schedule")
+
+    // Select time
+    await page.getByRole("combobox", { name: "Hour" }).click()
+    await page.getByRole("option", { name: "9" }).click()
+
+    await page.getByRole("combobox", { name: "Minute" }).click()
+    await page.getByRole("option", { name: "30" }).click()
+
+    // Uncheck all days
+    for (const day of [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ]) {
+      await page.getByLabel(day).uncheck()
+    }
+
+    // Try to create schedule
+    await page.getByRole("button", { name: "Create Schedule" }).click()
+
+    // Should show error message
+    await expect(
+      page.getByText("At least one day must be selected"),
+    ).toBeVisible()
+
+    // Should stay on the same page
+    await expect(page).toHaveURL("/schedules/new")
   })
 
   test("should delete schedule", async ({ page }) => {

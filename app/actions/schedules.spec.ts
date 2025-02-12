@@ -4,6 +4,8 @@ import {
   getSchedules,
   upsertSchedule,
 } from "@/app/actions/schedules"
+import { submit } from "@/app/schedules/server"
+import { generateCronString } from "@/lib/cron"
 import { db } from "@/prisma"
 import {
   afterAll,
@@ -150,6 +152,29 @@ describe("Schedule Actions", () => {
     expect(found.id).toBe(schedule.id)
     expect(Array.isArray(found.ScheduleReporters)).toBe(true)
     expect(Array.isArray(found.Runs)).toBe(true)
+  })
+
+  it("generates correct cron string with all days selected", () => {
+    const minute = "0"
+    const hour = "9"
+    const allDays = new Set(["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"])
+
+    const cron = generateCronString(minute, hour, allDays)
+    expect(cron).toBe("0 9 * * MON-SUN")
+  })
+
+  it("throws error when creating schedule with no days selected", async () => {
+    const formData = new FormData()
+    formData.append("name", "Test Schedule")
+    formData.append("minute", "0")
+    formData.append("hour", "9")
+    formData.append("timezone", "America/New_York")
+
+    // Don't append any selectedDays to simulate no days selected
+
+    await expect(async () => {
+      await submit(formData)
+    }).rejects.toThrow("At least one day must be selected")
   })
 
   it("gets schedules for a user (excluding deleted)", async () => {

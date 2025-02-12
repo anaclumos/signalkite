@@ -17,7 +17,6 @@ const reporterUpsertSchema = z.object({
   status: z.nativeEnum(ReporterStatus).optional(),
   promptId: z.string().nullable().optional(),
   scheduleIds: z.array(z.string()).optional(),
-  notificationChannelIds: z.array(z.string()).optional(),
 })
 
 export async function upsertReporter({
@@ -28,7 +27,6 @@ export async function upsertReporter({
   status,
   promptId,
   scheduleIds,
-  notificationChannelIds,
 }: z.infer<typeof reporterUpsertSchema>) {
   const user = await getCurrentUser()
 
@@ -69,7 +67,6 @@ export async function upsertReporter({
       strategy,
       promptId,
       scheduleIds,
-      notificationChannelIds,
     })
 
     return db.$transaction(async (tx) => {
@@ -88,16 +85,6 @@ export async function upsertReporter({
           data: validatedData.scheduleIds.map((scheduleId) => ({
             scheduleId,
             reporterId: reporter.id,
-          })),
-        })
-      }
-
-      if (validatedData.notificationChannelIds?.length) {
-        await tx.subscription.createMany({
-          data: validatedData.notificationChannelIds.map((channelId) => ({
-            notificationChannelId: channelId,
-            reporterId: reporter.id,
-            userId: user.id,
           })),
         })
       }
