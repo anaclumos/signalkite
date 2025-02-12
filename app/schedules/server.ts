@@ -20,16 +20,16 @@ export async function submitScheduleAction(
   if (!name?.trim()) {
     return {
       success: false,
-      statusTitle: "Validation Error",
-      statusDescription: "Name is required",
+      statusTitle: "Name Required",
+      statusDescription: "Please enter a name for the schedule.",
     }
   }
 
   if (selectedDays.length === 0) {
     return {
       success: false,
-      statusTitle: "Validation Error",
-      statusDescription: "At least one day must be selected",
+      statusTitle: "At Least One Day Required",
+      statusDescription: "Please select at least one day for the schedule.",
     }
   }
 
@@ -39,8 +39,8 @@ export async function submitScheduleAction(
   if (!timezone) {
     return {
       success: false,
-      statusTitle: "Validation Error",
-      statusDescription: "Timezone is required",
+      statusTitle: "Timezone Required",
+      statusDescription: "Please enter a timezone for the schedule.",
     }
   }
 

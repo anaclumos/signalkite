@@ -27,8 +27,8 @@ export async function submitChannelAction(
   if (!name?.trim()) {
     return {
       success: false,
-      statusTitle: "Validation Error",
-      statusDescription: "Name is required",
+      statusTitle: "Name is required",
+      statusDescription: "Please enter a name for the notification channel",
     }
   }
 

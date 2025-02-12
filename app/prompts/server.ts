@@ -21,16 +21,16 @@ export async function submitPromptAction(
   if (!name?.trim()) {
     return {
       success: false,
-      statusTitle: "Validation Error",
-      statusDescription: "Name is required",
+      statusTitle: "Name Required",
+      statusDescription: "Please enter a name for the prompt.",
     }
   }
 
   if (!text?.trim()) {
     return {
       success: false,
-      statusTitle: "Validation Error",
-      statusDescription: "Prompt text is required",
+      statusTitle: "Prompt Text Required",
+      statusDescription: "Please enter a prompt text.",
     }
   }
 

@@ -18,16 +18,16 @@ export async function submitReporterAction(
   if (!name?.trim()) {
     return {
       success: false,
-      statusTitle: "Validation Error",
-      statusDescription: "Name is required",
+      statusTitle: "Name Required",
+      statusDescription: "Please enter a name for the reporter.",
     }
   }
 
   if (!strategy) {
     return {
       success: false,
-      statusTitle: "Validation Error",
-      statusDescription: "Strategy is required",
+      statusTitle: "Strategy Required",
+      statusDescription: "Please select a strategy for the reporter.",
     }
   }
 
