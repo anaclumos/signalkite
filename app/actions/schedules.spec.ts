@@ -4,7 +4,7 @@ import {
   getSchedules,
   upsertSchedule,
 } from "@/app/actions/schedules"
-import { submit } from "@/app/schedules/server"
+import { submitScheduleAction } from "@/app/schedules/server"
 import { generateCronString } from "@/lib/cron"
 import { db } from "@/prisma"
 import {
@@ -170,10 +170,8 @@ describe("Schedule Actions", () => {
     formData.append("hour", "9")
     formData.append("timezone", "America/New_York")
 
-    // Don't append any selectedDays to simulate no days selected
-
     await expect(async () => {
-      await submit(formData)
+      await submitScheduleAction(null, formData)
     }).rejects.toThrow("At least one day must be selected")
   })
 

@@ -16,7 +16,7 @@ import {
 import { daysOfWeek } from "@/lib/const"
 import { getCronDescription } from "@/lib/cron"
 import type { Schedule } from "@prisma/client"
-import { deleteScheduleAction, submit } from "./server"
+import { deleteScheduleAction, submitScheduleAction } from "./server"
 
 interface ScheduleFormProps {
   schedule?: Schedule
@@ -80,7 +80,7 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
       entityName={schedule?.name}
       backUrl="/schedules"
       onDelete={schedule ? deleteScheduleAction : undefined}
-      onSubmit={submit}
+      onSubmit={submitScheduleAction}
       submitLabel={schedule ? "Save Changes" : "Create Schedule"}
       sections={[
         {

@@ -2,19 +2,46 @@
 
 import { deleteSchedule, upsertSchedule } from "@/app/actions/schedules"
 import { generateCronString } from "@/lib/cron"
+import { FormState } from "@/types/forms"
 import { redirect } from "next/navigation"
 
-export async function deleteScheduleAction(scheduleId: string) {
+export async function deleteScheduleAction(scheduleId: string): Promise<void> {
   await deleteSchedule(scheduleId)
   redirect("/schedules")
 }
 
-export async function submit(formData: FormData) {
+export async function submitScheduleAction(
+  prevState: FormState | null,
+  formData: FormData,
+): Promise<FormState | null> {
   const name = formData.get("name") as string
   const selectedDays = formData.getAll("selectedDays") as string[]
 
+  if (!name?.trim()) {
+    return {
+      success: false,
+      statusTitle: "Validation Error",
+      statusDescription: "Name is required",
+    }
+  }
+
   if (selectedDays.length === 0) {
-    throw new Error("At least one day must be selected")
+    return {
+      success: false,
+      statusTitle: "Validation Error",
+      statusDescription: "At least one day must be selected",
+    }
+  }
+
+  const timezone = formData.get("timezone") as string
+  const scheduleId = formData.get("id") as string
+
+  if (!timezone) {
+    return {
+      success: false,
+      statusTitle: "Validation Error",
+      statusDescription: "Timezone is required",
+    }
   }
 
   const cron = generateCronString(
@@ -22,8 +49,6 @@ export async function submit(formData: FormData) {
     formData.get("hour") as string,
     new Set(selectedDays),
   )
-  const timezone = formData.get("timezone") as string
-  const scheduleId = formData.get("id") as string
 
   await upsertSchedule({
     id: scheduleId,
@@ -33,4 +58,7 @@ export async function submit(formData: FormData) {
   })
 
   redirect("/schedules")
+  return {
+    success: true,
+  }
 }

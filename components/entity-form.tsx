@@ -13,14 +13,10 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Divider } from "@/components/ui/divider"
+import { FormSection, FormState } from "@/types/forms"
 import Link from "next/link"
-import { ReactNode } from "react"
-
-interface FormSection {
-  title: string
-  description: string
-  children: ReactNode
-}
+import { useActionState } from "react"
+import { useFormStatus } from "react-dom"
 
 interface EntityFormProps {
   title: string
@@ -29,8 +25,21 @@ interface EntityFormProps {
   backUrl: string
   sections: FormSection[]
   onDelete?: (id: string) => Promise<void>
-  onSubmit: (formData: FormData) => Promise<void>
+  onSubmit: (
+    prevState: FormState | null,
+    formData: FormData,
+  ) => Promise<FormState | null>
   submitLabel: string
+}
+
+function SubmitButton({ label }: { label: string }) {
+  const { pending } = useFormStatus()
+
+  return (
+    <Button type="submit" disabled={pending}>
+      {pending ? "Saving..." : label}
+    </Button>
+  )
 }
 
 export function EntityForm({
@@ -43,6 +52,10 @@ export function EntityForm({
   onSubmit,
   submitLabel,
 }: EntityFormProps) {
+  const [status, formAction] = useActionState<FormState | null, FormData>(
+    onSubmit,
+    null,
+  )
   const breadcrumbs = [
     { title: "Home", href: "/" },
     { title, href: backUrl },
@@ -89,7 +102,15 @@ export function EntityForm({
         }
       />
 
-      <form action={onSubmit}>
+      <form action={formAction}>
+        {status && !status.success && (
+          <div className="mx-4 mb-4 text-sm text-red-500" role="alert">
+            {status.statusTitle && (
+              <div className="font-medium">{status.statusTitle}</div>
+            )}
+            {status.statusDescription && <div>{status.statusDescription}</div>}
+          </div>
+        )}
         <input type="hidden" name="id" value={entityId} />
         {sections.map((section, index) => (
           <div key={section.title}>
@@ -114,7 +135,7 @@ export function EntityForm({
               Cancel
             </Button>
           </Link>
-          <Button type="submit">{submitLabel}</Button>
+          <SubmitButton label={submitLabel} />
         </div>
       </form>
     </div>
