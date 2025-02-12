@@ -13,9 +13,10 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Divider } from "@/components/ui/divider"
+import { toast } from "@/lib/use-toast"
 import { FormSection, FormState } from "@/types/forms"
 import Link from "next/link"
-import { useActionState } from "react"
+import { useActionState, useEffect } from "react"
 import { useFormStatus } from "react-dom"
 
 interface EntityFormProps {
@@ -68,6 +69,16 @@ export function EntityForm({
     })
   }
 
+  useEffect(() => {
+    if (status && !status.success) {
+      toast({
+        title: status.statusTitle || "Error",
+        description: status.statusDescription || "An error occurred",
+        variant: "error",
+      })
+    }
+  }, [status])
+
   return (
     <div className="flex flex-col pb-4">
       <NavBar
@@ -103,14 +114,6 @@ export function EntityForm({
       />
 
       <form action={formAction}>
-        {status && !status.success && (
-          <div className="mx-4 mb-4 text-sm text-red-500" role="alert">
-            {status.statusTitle && (
-              <div className="font-medium">{status.statusTitle}</div>
-            )}
-            {status.statusDescription && <div>{status.statusDescription}</div>}
-          </div>
-        )}
         <input type="hidden" name="id" value={entityId} />
         {sections.map((section, index) => (
           <div key={section.title}>

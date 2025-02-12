@@ -1,5 +1,6 @@
 import { AppSidebar } from "@/components/app-sidebar"
 import { SidebarProvider } from "@/components/ui/sidebar"
+import { Toaster } from "@/components/ui/toaster"
 import { ClerkProvider } from "@clerk/nextjs"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -67,6 +68,7 @@ export default async function RootLayout({
           </ThemeProvider>
           <SpeedInsights />
           <Analytics />
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
