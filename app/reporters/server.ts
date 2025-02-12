@@ -40,7 +40,4 @@ export async function submitReporterAction(
   })
 
   redirect("/reporters")
-  return {
-    success: true,
-  }
 }

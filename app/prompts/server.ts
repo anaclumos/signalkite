@@ -42,7 +42,4 @@ export async function submitPromptAction(
   })
 
   redirect("/prompts")
-  return {
-    success: true,
-  }
 }

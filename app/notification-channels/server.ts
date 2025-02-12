@@ -52,7 +52,4 @@ export async function submitChannelAction(
   })
 
   redirect("/notification-channels")
-  return {
-    success: true,
-  }
 }
