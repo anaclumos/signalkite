@@ -154,7 +154,7 @@ async function _getReporters(userId: string) {
               deletedAt: null,
             },
           },
-          News: {
+          Issues: {
             where: {
               deletedAt: null,
             },
@@ -190,7 +190,7 @@ async function _getReporter(id: string, userId: string) {
         },
         take: 10,
       },
-      News: {
+      Issues: {
         where: {
           deletedAt: null,
         },

@@ -59,14 +59,14 @@ export default async function ReporterPage({
                   <TableCell>-</TableCell>
                 </TableRow>
               ))}
-              {reporter.News.map((news) => (
-                <TableRow key={news.id}>
-                  <TableCell>News</TableCell>
+              {reporter.Issues.map((issue) => (
+                <TableRow key={issue.id}>
+                  <TableCell>Issue</TableCell>
                   <TableCell>
-                    {new Date(news.createdAt).toLocaleString()}
+                    {new Date(issue.createdAt).toLocaleString()}
                   </TableCell>
                   <TableCell>
-                    {news.successful ? "Success" : "Failed"}
+                    {issue.successful ? "Success" : "Failed"}
                   </TableCell>
                 </TableRow>
               ))}

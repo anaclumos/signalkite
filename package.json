@@ -8,7 +8,7 @@
     "format": "biome format --write .",
     "lint": "biome lint --write .",
     "bump": "bunx npm-check-updates -i",
-    "db:setup": "bun run if-mac-prepare-docker && bun run db:generate && bun run db:push",
+    "db:setup": "bun run db:docker && bun run db:generate && bun run db:push",
     "db:push": "prisma db push",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",

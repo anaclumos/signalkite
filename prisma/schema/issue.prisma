@@ -1,4 +1,4 @@
-/// A Story is a piece of content discovered by a News from a specific Reporter.
+/// A Story is a piece of content discovered by an Issue from a specific Reporter.
 /// It holds the data about the discovered URL, title, summary, and other meta fields.
 model Story {
     /// The unique identifier for the Story.
@@ -17,45 +17,45 @@ model Story {
     deletedAt  DateTime?
     /// Foreign key referencing the Prompt used by this Story for post-processing.
     promptId   String?
-    /// The ID of the News that discovered this Story.
-    newsId     String
+    /// The ID of the Issue that discovered this Story.
+    issueId    String
     /// Foreign key referencing the Reporter this Story belongs to (optional).
     reporterId String?
 
     /// The Prompt referenced by this Story for post-processing.
     Prompt   Prompt?   @relation(fields: [promptId], references: [id])
-    /// The News that discovered this Story.
-    News     News      @relation(fields: [newsId], references: [id])
+    /// The Issue that discovered this Story.
+    Issue    Issue     @relation(fields: [issueId], references: [id])
     /// The Reporter this Story belongs to (if applicable).
     Reporter Reporter? @relation(fields: [reporterId], references: [id])
 
-    @@index([newsId, createdAt])
+    @@index([issueId, createdAt])
 }
 
-/// A News represents a single run or scan performed by a Reporter at a given moment in time.
+/// An Issue represents a single run or scan performed by a Reporter at a given moment in time.
 /// It stores whether the scan was successful and references all discovered Stories.
-model News {
-    /// The unique identifier for the News.
+model Issue {
+    /// The unique identifier for the Issue.
     id         String  @id @default(ulid())
     /// Foreign key referencing the Reporter that discovered this.
     reporterId String
-    /// Optional foreign key referencing the Run that triggered this News.
+    /// Optional foreign key referencing the Run that triggered this Issue.
     runId      String?
     /// Whether the scan was successful or not.
     successful Boolean @default(true)
 
-    /// Timestamp when the News was created.
+    /// Timestamp when the Issue was created.
     createdAt DateTime  @default(now()) @db.Timestamptz()
-    /// Timestamp when the News was last updated.
+    /// Timestamp when the Issue was last updated.
     updatedAt DateTime  @default(now()) @updatedAt @db.Timestamptz()
-    /// Soft-delete timestamp; if set, the News is considered deleted.
+    /// Soft-delete timestamp; if set, the Issue is considered deleted.
     deletedAt DateTime?
 
-    /// The Reporter that discovered this News.
+    /// The Reporter that discovered this Issue.
     Reporter Reporter @relation(fields: [reporterId], references: [id])
-    /// The Run that triggered this News (if any).
+    /// The Run that triggered this Issue (if any).
     Run      Run?     @relation(fields: [runId], references: [id])
-    /// The Stories discovered by this News.
+    /// The Stories discovered by this Issue.
     Stories  Story[]
 
     @@index([reporterId])

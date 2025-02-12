@@ -60,8 +60,8 @@ model Reporter {
     /// The Prompt referenced by this Reporter for post-processing.
     Prompt Prompt? @relation(fields: [promptId], references: [id])
 
-    /// The list of News (scans) that have been performed for this Reporter.
-    News              News[]
+    /// The list of Issues (scans) that have been performed for this Reporter.
+    Issues            Issue[]
     /// The list of Stories discovered for this Reporter.
     Stories           Story[]
     /// The join model that associates Reporters with Schedules (many-to-many relation).

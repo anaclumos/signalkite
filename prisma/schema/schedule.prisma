@@ -50,7 +50,7 @@ model ScheduleReporter {
 }
 
 /// A Run represents a batch execution triggered by a Schedule.
-/// When a Schedule runs at its specified cron time, it creates a Run that can trigger multiple News (for multiple Reporters).
+/// When a Schedule runs at its specified cron time, it creates a Run that can trigger multiple Issues (for multiple Reporters).
 model Run {
     /// The unique identifier for the Run.
     id          String    @id @default(ulid())
@@ -64,6 +64,6 @@ model Run {
     /// The Schedule that triggered this Run.
     schedule Schedule? @relation(fields: [scheduleId], references: [id])
 
-    /// The News (Reporter scans) initiated by this Run.
-    News News[]
+    /// The Issues (Reporter scans) initiated by this Run.
+    Issues Issue[]
 }

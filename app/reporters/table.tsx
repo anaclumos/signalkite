@@ -22,7 +22,7 @@ type ReporterWithRelations = Reporter & {
   Stories: any[]
   _count: {
     Stories: number
-    News: number
+    Issues: number
     Subscriptions: number
   }
 }
@@ -52,7 +52,7 @@ export function ReportersTable({ initialReporters }: ReportersTableProps) {
       },
       {
         header: "Scans",
-        accessorKey: "_count.News",
+        accessorKey: "_count.Issues",
         enableSorting: true,
       },
       {
@@ -121,7 +121,7 @@ export function ReportersTable({ initialReporters }: ReportersTableProps) {
           },
           {
             label: "Scans",
-            value: reporter._count.News,
+            value: reporter._count.Issues,
           },
         ],
       })}

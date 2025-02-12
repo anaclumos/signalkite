@@ -100,7 +100,7 @@ describe("Reporter Actions", () => {
     const found = await getReporter(r.id)
     expect(found).toBeDefined()
     expect(found.id).toBe(r.id)
-    expect(Array.isArray(found.News)).toBe(true)
+    expect(Array.isArray(found.Issues)).toBe(true)
     expect(Array.isArray(found.Stories)).toBe(true)
   })
 
