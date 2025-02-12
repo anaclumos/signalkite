@@ -64,6 +64,7 @@ describe("NotificationChannelsPage", () => {
       createdAt: new Date(),
       updatedAt: new Date(),
       deletedAt: null,
+      description: null,
     })
 
     // Mock findMany to return the created channel
@@ -78,6 +79,7 @@ describe("NotificationChannelsPage", () => {
         createdAt: new Date(),
         updatedAt: new Date(),
         deletedAt: null,
+        description: null,
       },
     ])
 
@@ -144,7 +146,7 @@ describe("NotificationChannelsPage", () => {
     // Mock successful channel upsert
     vi.mocked(db.notificationChannel.upsert).mockResolvedValue({
       id: "channel_456",
-      name: "TEXT - +1234567890",
+      name: "+1234567890",
       type: NotificationChannelType.TEXT,
       settings: { phone: "+1234567890" },
       clerkId: "phone_123",
@@ -152,6 +154,7 @@ describe("NotificationChannelsPage", () => {
       createdAt: new Date(),
       updatedAt: new Date(),
       deletedAt: null,
+      description: null,
     })
 
     // Mock findMany to return the created channel
@@ -166,10 +169,10 @@ describe("NotificationChannelsPage", () => {
         createdAt: new Date(),
         updatedAt: new Date(),
         deletedAt: null,
+        description: null,
       },
     ])
 
-    // Import and render the page
     const { default: NotificationChannelsPage } = await import("./page")
     await NotificationChannelsPage()
 

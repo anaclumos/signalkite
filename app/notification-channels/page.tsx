@@ -31,7 +31,7 @@ export default async function NotificationChannelsPage() {
     await db.notificationChannel.upsert({
       where: { clerkId: email.id },
       create: {
-        name: `${email.email}`,
+        name: `Email - ${email.email}`,
         type: "EMAIL",
         settings: { email: email.email },
         clerkId: email.id,
@@ -51,7 +51,7 @@ export default async function NotificationChannelsPage() {
     await db.notificationChannel.upsert({
       where: { clerkId: phone.id },
       create: {
-        name: `${phone.phone}`,
+        name: `TEXT - ${phone.phone}`,
         type: "TEXT",
         settings: { phone: phone.phone },
         clerkId: phone.id,

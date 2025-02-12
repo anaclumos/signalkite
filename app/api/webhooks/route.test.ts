@@ -77,6 +77,7 @@ describe("Webhook Handler", () => {
       createdAt: new Date(),
       updatedAt: new Date(),
       deletedAt: null,
+      description: null,
     })
 
     // Import and call the webhook handler
@@ -174,7 +175,7 @@ describe("Webhook Handler", () => {
     // Mock successful channel upsert
     vi.mocked(db.notificationChannel.upsert).mockResolvedValue({
       id: "channel_456",
-      name: "TEXT - +1234567890",
+      name: "+1234567890",
       type: NotificationChannelType.TEXT,
       settings: { phone: "+1234567890" },
       clerkId: "phone_123",
@@ -182,6 +183,7 @@ describe("Webhook Handler", () => {
       createdAt: new Date(),
       updatedAt: new Date(),
       deletedAt: null,
+      description: null,
     })
 
     // Import and call the webhook handler

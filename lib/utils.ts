@@ -61,6 +61,30 @@ type FormatterFunctions = {
   million: (params: MillionParams) => string
 }
 
+type FormDataValue = string | string[] | null
+
+export function getFormData(
+  data: FormData | Record<string, any>,
+  key: string,
+): FormDataValue {
+  if (data instanceof FormData) {
+    const value = data.get(key)
+    return value !== null ? value.toString() : null
+  }
+  return data[key] ?? null
+}
+
+export function getAllFormData(
+  data: FormData | Record<string, any>,
+  key: string,
+): string[] {
+  if (data instanceof FormData) {
+    return data.getAll(key).map((value) => value.toString())
+  }
+  const value = data[key]
+  return Array.isArray(value) ? value : value ? [value.toString()] : []
+}
+
 export const formatters: FormatterFunctions = {
   currency: ({
     number,
