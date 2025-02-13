@@ -29,6 +29,10 @@ import { submitReporterAction } from "./server"
 
 interface ReporterFormProps {
   schedules: Schedule[]
+  prompts: {
+    id: string
+    name: string
+  }[]
   reporter?: {
     id: string
     name?: string | null
@@ -44,7 +48,11 @@ function SubmitButton() {
   )
 }
 
-export function ReporterForm({ schedules, reporter }: ReporterFormProps) {
+export function ReporterForm({
+  schedules,
+  prompts,
+  reporter,
+}: ReporterFormProps) {
   const [status, formAction] = useActionState<FormState | null, FormData>(
     submitReporterAction,
     null,
@@ -212,6 +220,39 @@ export function ReporterForm({ schedules, reporter }: ReporterFormProps) {
                 </Select>
                 <p className="mt-1 text-xs text-gray-500">
                   Select when this reporter should run.
+                </p>
+              </div>
+            </div>
+          </div>
+          <Divider />
+          <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
+            <div>
+              <h2 className="font-semibold text-gray-900 dark:text-gray-50">
+                Prompt
+              </h2>
+              <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
+                Select a prompt to process the stories.
+              </p>
+            </div>
+            <div className="md:col-span-2">
+              <div className="col-span-full">
+                <Label htmlFor="prompt" className="font-medium">
+                  Prompt
+                </Label>
+                <Select name="prompt">
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a prompt" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {prompts.map((prompt) => (
+                      <SelectItem key={prompt.id} value={prompt.id}>
+                        {prompt.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <p className="mt-1 text-xs text-gray-500">
+                  Select a prompt to process discovered stories.
                 </p>
               </div>
             </div>

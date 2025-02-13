@@ -58,6 +58,27 @@ describe("Reporter Actions", () => {
     expect(reporter.creatorId).toBe(testUserId)
   })
 
+  it("creates a reporter with a prompt", async () => {
+    const prompt = await db.prompt.create({
+      data: {
+        name: "Test Prompt",
+        text: "Test prompt text",
+        creatorId: testUserId,
+      },
+    })
+
+    const reporter = await upsertReporter({
+      id: "",
+      name: "Reporter with prompt",
+      promptId: prompt.id,
+    })
+
+    expect(reporter).toHaveProperty("id")
+    expect(reporter.promptId).toBe(prompt.id)
+
+    await db.prompt.delete({ where: { id: prompt.id } })
+  })
+
   it("updates a reporter", async () => {
     const r = await db.reporter.create({
       data: {

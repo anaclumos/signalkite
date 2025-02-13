@@ -14,6 +14,7 @@ export async function submitReporterAction(
   const description = formData.get("description") as string
   const strategy = formData.get("strategy") as ReporterStrategyType
   const scheduleIds = formData.getAll("schedules") as string[]
+  const promptId = formData.get("prompt") as string | null
 
   if (!name?.trim()) {
     return {
@@ -37,6 +38,7 @@ export async function submitReporterAction(
     description,
     strategy,
     scheduleIds,
+    promptId,
   })
 
   redirect("/reporters")
