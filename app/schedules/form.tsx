@@ -92,14 +92,15 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
   const breadcrumbs = [
     { title: "Home", href: "/" },
     { title: "Schedules", href: "/schedules" },
+    ...(schedule?.id
+      ? [
+          {
+            title: schedule.name || "Untitled Schedule",
+            href: `/schedules/${schedule.id}`,
+          },
+        ]
+      : [{ title: "New Schedule", href: "/schedules/new" }]),
   ]
-
-  if (schedule?.id && schedule?.name) {
-    breadcrumbs.push({
-      title: schedule.name,
-      href: `/schedules/${schedule.id}`,
-    })
-  }
 
   if (status && !status.success) {
     toast({
@@ -180,7 +181,7 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
                     type="text"
                     id="name"
                     name="name"
-                    defaultValue={schedule?.name || "My Morning Digest"}
+                    defaultValue={schedule?.name || "Untitled Schedule"}
                     maxLength={100}
                   />
                 </div>

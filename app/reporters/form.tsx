@@ -29,6 +29,10 @@ import { submitReporterAction } from "./server"
 
 interface ReporterFormProps {
   schedules: Schedule[]
+  reporter?: {
+    id: string
+    name?: string | null
+  }
 }
 
 function SubmitButton() {
@@ -40,7 +44,7 @@ function SubmitButton() {
   )
 }
 
-export function ReporterForm({ schedules }: ReporterFormProps) {
+export function ReporterForm({ schedules, reporter }: ReporterFormProps) {
   const [status, formAction] = useActionState<FormState | null, FormData>(
     submitReporterAction,
     null,
@@ -48,6 +52,14 @@ export function ReporterForm({ schedules }: ReporterFormProps) {
   const breadcrumbs = [
     { title: "Home", href: "/" },
     { title: "Reporters", href: "/reporters" },
+    ...(reporter?.id
+      ? [
+          {
+            title: reporter.name || "Untitled Reporter",
+            href: `/reporters/${reporter.id}`,
+          },
+        ]
+      : [{ title: "New Reporter", href: "/reporters/new" }]),
   ]
 
   if (status && !status.success) {
@@ -83,6 +95,7 @@ export function ReporterForm({ schedules }: ReporterFormProps) {
                     type="text"
                     id="name"
                     name="name"
+                    defaultValue="Untitled Reporter"
                     placeholder="My Reporter"
                     maxLength={100}
                   />

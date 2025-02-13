@@ -57,14 +57,15 @@ export function NotificationChannelForm({
   const breadcrumbs = [
     { title: "Home", href: "/" },
     { title: "Notification Channels", href: "/notification-channels" },
+    ...(channel?.id
+      ? [
+          {
+            title: channel.name || "Untitled Channel",
+            href: `/notification-channels/${channel.id}`,
+          },
+        ]
+      : [{ title: "New Channel", href: "/notification-channels/new" }]),
   ]
-
-  if (channel?.id && channel?.name) {
-    breadcrumbs.push({
-      title: channel.name,
-      href: `/notification-channels/${channel.id}`,
-    })
-  }
 
   if (status && !status.success) {
     toast({
@@ -132,7 +133,7 @@ export function NotificationChannelForm({
                     type="text"
                     id="name"
                     name="name"
-                    defaultValue={channel?.name || ""}
+                    defaultValue={channel?.name || "Untitled Channel"}
                     placeholder="A descriptive name for this channel"
                     maxLength={100}
                   />

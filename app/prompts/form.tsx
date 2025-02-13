@@ -45,14 +45,10 @@ export function PromptForm({ prompt }: PromptFormProps) {
   const breadcrumbs = [
     { title: "Home", href: "/" },
     { title: "Prompts", href: "/prompts" },
+    ...(prompt?.id
+      ? [{ title: prompt.name, href: `/prompts/${prompt.id}` }]
+      : [{ title: "New Prompt", href: "/prompts/new" }]),
   ]
-
-  if (prompt?.id && prompt?.name) {
-    breadcrumbs.push({
-      title: prompt.name,
-      href: `/prompts/${prompt.id}`,
-    })
-  }
 
   if (status && !status.success) {
     toast({
@@ -120,7 +116,7 @@ export function PromptForm({ prompt }: PromptFormProps) {
                     type="text"
                     id="name"
                     name="name"
-                    defaultValue={prompt?.name || ""}
+                    defaultValue={prompt?.name || "Untitled Prompt"}
                     placeholder="Prompt"
                     maxLength={100}
                   />
