@@ -17,6 +17,13 @@ const reporterUpsertSchema = z.object({
   status: z.nativeEnum(ReporterStatus).optional(),
   promptId: z.string().nullable().optional(),
   scheduleIds: z.array(z.string()).optional(),
+  metadata: z
+    .union([
+      z.object({ query: z.string(), storyCount: z.number() }),
+      z.object({ domain: z.string() }),
+      z.object({ bestStoryCount: z.number() }),
+    ])
+    .optional(),
 })
 
 export async function upsertReporter({
@@ -27,6 +34,7 @@ export async function upsertReporter({
   status,
   promptId,
   scheduleIds,
+  metadata,
 }: z.infer<typeof reporterUpsertSchema>) {
   const user = await getCurrentUser()
 
@@ -39,6 +47,7 @@ export async function upsertReporter({
       strategy,
       status,
       promptId,
+      metadata,
     })
 
     const reporter = await db.reporter.findUnique({
@@ -57,6 +66,7 @@ export async function upsertReporter({
         strategy: validatedData.strategy,
         status: validatedData.status,
         promptId: validatedData.promptId,
+        metadata: validatedData.metadata,
       },
     })
   } else {
@@ -67,6 +77,7 @@ export async function upsertReporter({
       strategy,
       promptId,
       scheduleIds,
+      metadata,
     })
 
     return db.$transaction(async (tx) => {
@@ -77,6 +88,7 @@ export async function upsertReporter({
           strategy: validatedData.strategy || ReporterStrategyType.EXA_SEARCH,
           promptId: validatedData.promptId,
           creatorId: user.id,
+          metadata: validatedData.metadata,
         },
       })
 

@@ -23,7 +23,7 @@ import { FormState } from "@/types/forms"
 import { ReporterStrategyType, Schedule } from "@prisma/client"
 import { RiGlobalLine, RiNewspaperLine, RiSearchLine } from "@remixicon/react"
 import Link from "next/link"
-import { useActionState } from "react"
+import { useActionState, useState } from "react"
 import { useFormStatus } from "react-dom"
 import { submitReporterAction } from "./server"
 
@@ -53,6 +53,8 @@ export function ReporterForm({
   prompts,
   reporter,
 }: ReporterFormProps) {
+  const [selectedStrategy, setSelectedStrategy] =
+    useState<ReporterStrategyType>(ReporterStrategyType.EXA_SEARCH)
   const [status, formAction] = useActionState<FormState | null, FormData>(
     submitReporterAction,
     null,
@@ -95,10 +97,8 @@ export function ReporterForm({
             </div>
             <div className="md:col-span-2">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-6">
-                <div className="col-span-full">
-                  <Label htmlFor="name" className="font-medium">
-                    Name
-                  </Label>
+                <div className="col-span-full flex flex-col gap-2">
+                  <Label htmlFor="name">Name</Label>
                   <Input
                     type="text"
                     id="name"
@@ -108,10 +108,8 @@ export function ReporterForm({
                     maxLength={100}
                   />
                 </div>
-                <div className="col-span-full">
-                  <Label htmlFor="description" className="font-medium">
-                    Description
-                  </Label>
+                <div className="col-span-full flex flex-col gap-2">
+                  <Label htmlFor="description">Description</Label>
                   <Textarea
                     id="description"
                     name="description"
@@ -136,8 +134,11 @@ export function ReporterForm({
               <div className="space-y-4">
                 <RadioCardGroup
                   name="strategy"
-                  defaultValue={ReporterStrategyType.EXA_SEARCH}
-                  className="grid-cols-1"
+                  value={selectedStrategy}
+                  onValueChange={(value) =>
+                    setSelectedStrategy(value as ReporterStrategyType)
+                  }
+                  className="grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
                 >
                   <RadioCardItem value={ReporterStrategyType.EXA_SEARCH}>
                     <div className="flex items-center justify-between">
@@ -195,6 +196,65 @@ export function ReporterForm({
           <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
             <div>
               <h2 className="font-semibold text-gray-900 dark:text-gray-50">
+                Metadata
+              </h2>
+              <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
+                Provide additional metadata specific to the selected strategy.
+              </p>
+            </div>
+            <div className="md:col-span-2">
+              {selectedStrategy === ReporterStrategyType.EXA_SEARCH && (
+                <>
+                  <div className="col-span-full flex flex-col gap-2">
+                    <Label htmlFor="metadata_query">Query</Label>
+                    <Input
+                      type="text"
+                      id="metadata_query"
+                      name="metadata_query"
+                      placeholder="Enter search query"
+                    />
+                  </div>
+                  <div className="col-span-full flex flex-col gap-2 mt-4">
+                    <Label htmlFor="metadata_storyCount">Story Count</Label>
+                    <Input
+                      type="number"
+                      id="metadata_storyCount"
+                      name="metadata_storyCount"
+                      placeholder="Enter story count"
+                    />
+                  </div>
+                </>
+              )}
+              {selectedStrategy === ReporterStrategyType.WHOIS_LOOKUP && (
+                <div className="col-span-full flex flex-col gap-2">
+                  <Label htmlFor="metadata_domain">Domain</Label>
+                  <Input
+                    type="text"
+                    id="metadata_domain"
+                    name="metadata_domain"
+                    placeholder="Enter domain name"
+                  />
+                </div>
+              )}
+              {selectedStrategy === ReporterStrategyType.HN_BEST_STORIES && (
+                <div className="col-span-full flex flex-col gap-2">
+                  <Label htmlFor="metadata_bestStoryCount">
+                    Best Story Count
+                  </Label>
+                  <Input
+                    type="number"
+                    id="metadata_bestStoryCount"
+                    name="metadata_bestStoryCount"
+                    placeholder="Enter best story count"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+          <Divider />
+          <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
+            <div>
+              <h2 className="font-semibold text-gray-900 dark:text-gray-50">
                 Schedule
               </h2>
               <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
@@ -202,10 +262,8 @@ export function ReporterForm({
               </p>
             </div>
             <div className="md:col-span-2">
-              <div className="col-span-full">
-                <Label htmlFor="schedules" className="font-medium">
-                  Schedule
-                </Label>
+              <div className="col-span-full flex flex-col gap-2">
+                <Label htmlFor="schedules">Schedule</Label>
                 <Select name="schedules">
                   <SelectTrigger>
                     <SelectValue placeholder="Select a schedule" />
@@ -235,10 +293,8 @@ export function ReporterForm({
               </p>
             </div>
             <div className="md:col-span-2">
-              <div className="col-span-full">
-                <Label htmlFor="prompt" className="font-medium">
-                  Prompt
-                </Label>
+              <div className="col-span-full flex flex-col gap-2">
+                <Label htmlFor="prompt">Prompt</Label>
                 <Select name="prompt">
                   <SelectTrigger>
                     <SelectValue placeholder="Select a prompt" />

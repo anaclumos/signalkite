@@ -51,6 +51,8 @@ model Reporter {
     deletedAt   DateTime?
     /// Foreign key referencing the Prompt used by this Reporter for post-processing.
     promptId    String?
+    /// Adding JSON metadata for reporter-specific configuration.
+    metadata    Json?
 
     /// The user who created this Reporter (its owner).
     creator   User   @relation(fields: [creatorId], references: [id])
