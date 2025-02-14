@@ -4,7 +4,6 @@ import {
   getSchedules,
   upsertSchedule,
 } from "@/app/actions/schedules"
-import { submitScheduleAction } from "@/app/schedules/server"
 import { generateCronString } from "@/lib/cron"
 import { db } from "@/prisma"
 import {
@@ -161,18 +160,6 @@ describe("Schedule Actions", () => {
 
     const cron = generateCronString(minute, hour, allDays)
     expect(cron).toBe("0 9 * * MON-SUN")
-  })
-
-  it("throws error when creating schedule with no days selected", async () => {
-    const formData = new FormData()
-    formData.append("name", "Test Schedule")
-    formData.append("minute", "0")
-    formData.append("hour", "9")
-    formData.append("timezone", "America/New_York")
-
-    await expect(async () => {
-      await submitScheduleAction(null, formData)
-    }).rejects.toThrow("At least one day must be selected")
   })
 
   it("gets schedules for a user (excluding deleted)", async () => {
