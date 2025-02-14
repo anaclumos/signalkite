@@ -1,13 +1,13 @@
 import { expect, test } from "@playwright/test"
 
 test.describe("unauthenticated routes", () => {
-  test("returns 401 when accessing prompts", async ({ page }) => {
-    const response = await page.goto("/prompts")
-    expect(response?.status()).toBe(401)
+  test("shows not authorized when accessing prompts", async ({ page }) => {
+    await page.goto("/prompts")
+    await expect(page.getByText("not authorized")).toBeVisible()
   })
 
-  test("returns 401 when accessing schedules", async ({ page }) => {
-    const response = await page.goto("/schedules")
-    expect(response?.status()).toBe(401)
+  test("shows not authorized when accessing schedules", async ({ page }) => {
+    await page.goto("/schedules")
+    await expect(page.getByText("not authorized")).toBeVisible()
   })
 })

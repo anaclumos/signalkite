@@ -33,12 +33,12 @@ export function UserProfile() {
     <>
       <SignedOut>
         <div className="flex gap-2">
-          <SignInButton>
+          <SignInButton mode="modal">
             <Button variant="secondary" className="flex-1">
               Sign in
             </Button>
           </SignInButton>
-          <SignUpButton>
+          <SignUpButton mode="modal">
             <Button className="flex-1">Sign up</Button>
           </SignUpButton>
         </div>
