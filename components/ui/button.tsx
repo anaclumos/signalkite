@@ -101,6 +101,8 @@ const buttonVariants = tv({
         // disabled
         "disabled:bg-red-300 disabled:text-white",
         "dark:disabled:bg-red-950 dark:disabled:text-red-400",
+        // when focused with keyboard, it should be red not blue
+        "focus:outline-red-500 dark:focus:outline-red-500",
       ],
     },
   },
