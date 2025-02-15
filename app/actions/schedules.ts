@@ -1,6 +1,7 @@
 "use server"
 
 import { db } from "@/prisma"
+import { CronExpressionParser } from "cron-parser"
 import { notFound } from "next/navigation"
 import { z } from "zod"
 import { getCurrentUser } from "./auth"
@@ -41,6 +42,11 @@ export async function upsertSchedule({
       reporterIds,
     })
 
+    const updateInterval = CronExpressionParser.parse(validatedData.cron, {
+      tz: validatedData.timezone,
+    })
+    const updateNextRunAt = updateInterval.next().toDate()
+
     const schedule = await db.schedule.findUnique({
       where: { id: validatedData.id },
       include: {
@@ -52,7 +58,7 @@ export async function upsertSchedule({
       notFound()
     }
 
-    return db.$transaction(async (tx) => {
+    return db.$transaction(async (tx: any) => {
       const updatedSchedule = await tx.schedule.update({
         where: { id: validatedData.id },
         data: {
@@ -60,6 +66,7 @@ export async function upsertSchedule({
           cron: validatedData.cron,
           timezone: validatedData.timezone,
           paused: validatedData.paused,
+          nextRunAt: updateNextRunAt,
         },
       })
 
@@ -69,7 +76,7 @@ export async function upsertSchedule({
         })
         if (validatedData.reporterIds.length > 0) {
           await tx.scheduleReporter.createMany({
-            data: validatedData.reporterIds.map((reporterId) => ({
+            data: validatedData.reporterIds.map((reporterId: string) => ({
               scheduleId: schedule.id,
               reporterId,
             })),
@@ -88,19 +95,25 @@ export async function upsertSchedule({
       reporterIds,
     })
 
-    return db.$transaction(async (tx) => {
+    const interval = CronExpressionParser.parse(validatedData.cron, {
+      tz: validatedData.timezone,
+    })
+    const nextRunAt = interval.next().toDate()
+
+    return db.$transaction(async (tx: any) => {
       const schedule = await tx.schedule.create({
         data: {
           name: validatedData.name,
           cron: validatedData.cron,
           timezone: validatedData.timezone,
           ownerId: user.id,
+          nextRunAt,
         },
       })
 
       if (validatedData.reporterIds?.length) {
         await tx.scheduleReporter.createMany({
-          data: validatedData.reporterIds.map((reporterId) => ({
+          data: validatedData.reporterIds.map((reporterId: string) => ({
             scheduleId: schedule.id,
             reporterId,
           })),
@@ -113,9 +126,7 @@ export async function upsertSchedule({
 }
 
 export async function deleteSchedule(id: string) {
-  // Validate input
   const validatedId = z.string().min(1, "Schedule ID is required").parse(id)
-
   const user = await getCurrentUser()
 
   const schedule = await db.schedule.findUnique({

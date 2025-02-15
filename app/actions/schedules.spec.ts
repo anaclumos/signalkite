@@ -6,6 +6,7 @@ import {
 } from "@/app/actions/schedules"
 import { generateCronString } from "@/lib/cron"
 import { db } from "@/prisma"
+import CronExpressionParser from "cron-parser"
 import {
   afterAll,
   afterEach,
@@ -83,6 +84,12 @@ describe("Schedule Actions", () => {
       where: { scheduleId: schedule.id },
     })
     expect(sr.length).toBe(2)
+
+    const interval = CronExpressionParser.parse(schedule.cron, {
+      tz: schedule.timezone,
+    })
+    const nextRunAt = interval.next().toDate()
+    expect(schedule.nextRunAt).toStrictEqual(nextRunAt)
   })
 
   it("updates a schedule (including its reporter associations)", async () => {
@@ -188,5 +195,34 @@ describe("Schedule Actions", () => {
     const all = await getSchedules()
     expect(all.length).toBe(1)
     expect(all[0].id).toBe(s2.id)
+  })
+
+  // Additional test to verify nextRunAt gets updated when the schedule is updated
+  it("updates nextRunAt when schedule cron is changed", async () => {
+    const schedule = await db.schedule.create({
+      data: {
+        name: "Test nextRunAt",
+        cron: "0 12 * * *",
+        timezone: "America/New_York",
+        ownerId: testUserId,
+      },
+    })
+
+    // Store the current nextRunAt to compare
+    const originalSchedule = await db.schedule.findUnique({
+      where: { id: schedule.id },
+    })
+    expect(originalSchedule?.nextRunAt).toBeDefined()
+
+    // Update to a new cron expression
+    const updated = await upsertSchedule({
+      id: schedule.id,
+      name: "Updated for nextRunAt",
+      cron: "30 13 * * *", // changed the time
+      timezone: "America/Los_Angeles", // changed the timezone
+    })
+
+    expect(updated.nextRunAt).toBeDefined()
+    expect(updated.nextRunAt).not.toBe(originalSchedule?.nextRunAt)
   })
 })

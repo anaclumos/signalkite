@@ -12,9 +12,8 @@
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "ci": "prisma db push && next build && bun run start",
-    "test": "bun run db:push && vitest run",
+    "test": "prisma db push && vitest run",
     "e2e": "playwright test",
-
     "studio": "prisma studio",
     "docker": "colima status | grep -q 'not running' && colima start; docker rm -f postgres-everynews || true; docker run --name postgres-everynews -e POSTGRES_USER=everynewsusername -e POSTGRES_PASSWORD=everynewspassword -e POSTGRES_DB=everynewsdb -p 54321:5432 -d postgres:latest && sleep 10 && prisma generate && prisma migrate deploy"
   },
@@ -49,13 +48,14 @@
     "@vercel/speed-insights": "^1.2.0",
     "babel-plugin-react-compiler": "^19.0.0-beta-714736e-20250131",
     "clsx": "^2.1.1",
+    "cron-parser": "^5.0.0",
     "cronstrue": "^2.54.0",
     "cz-emoji": "^1.3.2-canary.2",
     "date-fns": "^4.1.0",
     "es-toolkit": "^1.32.0",
     "libphonenumber-js": "^1.11.19",
     "lucide-react": "^0.475.0",
-    "next": "^15.2.0-canary.55",
+    "next": "^15.1.7",
     "next-themes": "^0.4.4",
     "prisma": "^6.3.1",
     "react": "^19.1.0-canary-cd90a4d8-20250210",
@@ -66,7 +66,7 @@
     "svix": "^1.45.1",
     "tailwind-merge": "^2.6.0",
     "tailwind-variants": "^0.3.1",
-    "zod": "^3.24.1"
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
