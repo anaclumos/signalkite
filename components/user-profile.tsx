@@ -44,18 +44,19 @@ export function UserProfile() {
         </div>
       </SignedOut>
       <SignedIn>
-        <Button
-          variant="ghost"
-          className="flex items-center justify-start gap-4 px-3 py-2 rounded-lg"
-        >
-          <UserButton
-            appearance={{
-              baseTheme: resolvedTheme === "dark" ? dark : undefined,
-            }}
-            fallback={<Skeleton className="w-7 h-7 rounded-full" />}
-          />
-          <span className="font-medium">{user?.fullName ?? "User"}</span>
-        </Button>
+        <UserButton
+          appearance={{
+            baseTheme: resolvedTheme === "dark" ? dark : undefined,
+            elements: {
+              rootBox: "!w-full",
+              userButtonTrigger: "!w-full",
+              userButtonBox: "!w-full !flex-row-reverse !justify-end p-3",
+              userButtonOuterIdentifier: "font-medium !text-sm",
+            },
+          }}
+          fallback={<Skeleton className="w-7 h-7 rounded-full" />}
+          showName={true}
+        />
       </SignedIn>
     </>
   )
