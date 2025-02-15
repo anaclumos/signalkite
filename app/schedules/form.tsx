@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { useFormStatus } from "react-dom"
 
 import { NavBar } from "@/components/nav-bar"
 import { Button } from "@/components/ui/button"
@@ -33,38 +32,62 @@ import { DAYS_OF_WEEK, buildCronExpression } from "@/lib/cron"
 import { FormState } from "@/types/forms"
 import type { Schedule } from "@prisma/client"
 
+import { SubmitButton } from "@/components/submit-button"
 import { Callout } from "@/components/ui/callout"
 import { CronDate, parseExpression } from "cron-parser"
 import cronstrue from "cronstrue"
 import { useActionState } from "react"
 import { deleteScheduleAction, submitScheduleAction } from "./server"
 
-/**
- * If your existing code uses the schedule prop from the server,
- * this component can be used to create or edit a schedule.
- */
 interface ScheduleFormProps {
   schedule?: Schedule
 }
 
-/**
- * Simple helper button for form submissions, showing pending state
- */
-function SubmitButton({ label }: { label: string }) {
-  const { pending } = useFormStatus()
-  return (
-    <Button type="submit" disabled={pending}>
-      {pending ? "Saving..." : label}
-    </Button>
-  )
+function parseInitialFields(
+  cronExpression: string,
+  tz?: string,
+): {
+  initialMinute: number[]
+  initialHour: number[]
+  initialDays: number[]
+  initialTimezone: string
+  error: string | null
+} {
+  try {
+    const interval = parseExpression(cronExpression, {
+      currentDate: new Date(),
+      tz: tz || Intl.DateTimeFormat().resolvedOptions().timeZone,
+    })
+    const { hour, minute, dayOfWeek } = interval.fields
+    return {
+      initialMinute: Array.from(minute.values()),
+      initialHour: Array.from(hour.values()),
+      initialDays: Array.from(dayOfWeek.values()).filter((day) => day !== 7),
+      initialTimezone: tz || Intl.DateTimeFormat().resolvedOptions().timeZone,
+      error: null,
+    }
+  } catch (err: any) {
+    return {
+      initialMinute: [0],
+      initialHour: [8],
+      initialDays: [0, 1, 2, 3, 4, 5, 6],
+      initialTimezone: tz || Intl.DateTimeFormat().resolvedOptions().timeZone,
+      error: err.message || "Invalid cron expression",
+    }
+  }
 }
 
 export function ScheduleForm({ schedule }: ScheduleFormProps) {
   const defaultCron = "0 8 * * *"
   const initialCron = schedule?.cron ?? defaultCron
 
-  const { initialMinute, initialHour, initialDays, initialTimezone } =
-    parseInitialFields(initialCron, schedule?.timezone)
+  const {
+    initialMinute,
+    initialHour,
+    initialDays,
+    initialTimezone,
+    error: parseError,
+  } = parseInitialFields(initialCron, schedule?.timezone)
 
   const [minute, setMinute] = useState<number[]>(initialMinute)
   const [hour, setHour] = useState<number[]>(initialHour)
@@ -80,12 +103,14 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
     null,
   )
 
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(parseError)
   const [nextRun, setNextRun] = useState<CronDate | null>(null)
+  const [expression, setExpression] = useState<string | null>(initialCron)
 
   useEffect(() => {
-    const expression = buildCronExpression({ minute, hour, day: selectedDay })
     try {
+      const expression = buildCronExpression({ minute, hour, day: selectedDay })
+      setExpression(expression)
       const interval = parseExpression(expression, {
         tz: timezone,
       })
@@ -331,14 +356,24 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
                     </ul>
                   </fieldset>
                 </div>
-                <Callout
-                  variant="default"
-                  title={`Runs ${cronstrue.toString(buildCronExpression({ minute, hour, day: selectedDay }))}`}
-                  className="col-span-full"
-                >
-                  Next run is at {nextRun?.toDate().toLocaleString()}.
-                </Callout>
-                {error && <Callout variant="error" title={error} />}
+                {nextRun && (
+                  <Callout
+                    variant="default"
+                    title={`Runs ${expression ? cronstrue.toString(expression) : "Invalid cron expression"}`}
+                    className="col-span-full"
+                  >
+                    Next run is at {nextRun?.toDate().toLocaleString()}.
+                  </Callout>
+                )}
+                {error && (
+                  <Callout
+                    variant="error"
+                    title="Error"
+                    className="col-span-full"
+                  >
+                    {error}
+                  </Callout>
+                )}
               </div>
             </div>
           </div>
@@ -352,47 +387,12 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
               </Button>
             </Link>
             <SubmitButton
-              label={schedule ? "Save Changes" : "Create Schedule"}
+              defaultLabel={schedule ? "Save Changes" : "Create Schedule"}
+              submittingLabel="Saving..."
             />
           </div>
         </div>
       </form>
     </div>
   )
-}
-
-/**
- * parseInitialFields()
- * Given an existing cron expression + optional timezone, parse it with
- * cron-parser to return "friendly" initial states for hour, minute, dayOfWeek, etc.
- */
-function parseInitialFields(
-  cronExpression: string,
-  tz?: string,
-): {
-  initialMinute: number[]
-  initialHour: number[]
-  initialDays: number[]
-  initialTimezone: string
-} {
-  try {
-    const interval = parseExpression(cronExpression, {
-      currentDate: new Date(),
-      tz: tz || Intl.DateTimeFormat().resolvedOptions().timeZone,
-    })
-    const { hour, minute, dayOfWeek } = interval.fields
-    return {
-      initialMinute: Array.from(minute.values()),
-      initialHour: Array.from(hour.values()),
-      initialDays: Array.from(dayOfWeek.values()).filter((day) => day !== 7),
-      initialTimezone: tz || Intl.DateTimeFormat().resolvedOptions().timeZone,
-    }
-  } catch {
-    return {
-      initialMinute: [0],
-      initialHour: [8],
-      initialDays: [0, 1, 2, 3, 4, 5, 6],
-      initialTimezone: tz || Intl.DateTimeFormat().resolvedOptions().timeZone,
-    }
-  }
 }
