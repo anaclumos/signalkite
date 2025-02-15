@@ -141,7 +141,7 @@ const Sidebar = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>(
           <DrawerContent
             // data-sidebar="sidebar"
             // data-mobile="true"
-            className="bg-gray-50 dark:bg-gray-900 p-0 text-gray-900 dark:text-gray-50"
+            className="bg-gray-50 dark:bg-gray-950 p-0 text-gray-900 dark:text-gray-50"
           >
             <VisuallyHidden.Root>
               <DrawerTitle>Sidebar</DrawerTitle>
@@ -187,7 +187,7 @@ const Sidebar = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>(
         >
           <div
             data-sidebar="sidebar"
-            className="bg-gray-50 dark:bg-gray-900 flex h-full w-full flex-col"
+            className="bg-gray-50 dark:bg-gray-950 flex h-full w-full flex-col"
           >
             {children}
           </div>

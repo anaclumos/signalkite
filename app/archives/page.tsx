@@ -1,5 +1,4 @@
 "use client"
-
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -20,9 +19,9 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { quotes } from "@/data/quotes"
+import { cx } from "@/lib/utils"
 import { Download } from "lucide-react"
 import { Fragment } from "react"
-import { cx } from "../../lib/utils"
 
 const colorClasses = [
   "bg-blue-500 dark:bg-blue-500",

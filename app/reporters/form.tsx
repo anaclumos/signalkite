@@ -144,12 +144,12 @@ export function ReporterForm({
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <RiSearchLine className="size-5 text-gray-500" />
-                        <div>
+                        <div className="flex flex-col gap-1">
                           <div className="font-medium text-gray-900 dark:text-gray-50">
-                            EXA Search
+                            Web Search
                           </div>
                           <div className="text-sm text-gray-500">
-                            Search across multiple sources
+                            Are there any new developments of the matter?
                           </div>
                         </div>
                       </div>
@@ -160,12 +160,12 @@ export function ReporterForm({
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <RiGlobalLine className="size-5 text-gray-500" />
-                        <div>
+                        <div className="flex flex-col gap-1">
                           <div className="font-medium text-gray-900 dark:text-gray-50">
                             WHOIS Lookup
                           </div>
                           <div className="text-sm text-gray-500">
-                            Monitor domain registrations
+                            Has the domain been expired and released?
                           </div>
                         </div>
                       </div>
@@ -176,12 +176,12 @@ export function ReporterForm({
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <RiNewspaperLine className="size-5 text-gray-500" />
-                        <div>
+                        <div className="flex flex-col gap-1">
                           <div className="font-medium text-gray-900 dark:text-gray-50">
-                            HN Best Stories
+                            Hacker News
                           </div>
                           <div className="text-sm text-gray-500">
-                            Track top Hacker News stories
+                            What are the top stories on Hacker News?
                           </div>
                         </div>
                       </div>
@@ -196,10 +196,10 @@ export function ReporterForm({
           <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
             <div>
               <h2 className="font-semibold text-gray-900 dark:text-gray-50">
-                Metadata
+                Settings
               </h2>
               <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
-                Provide additional metadata specific to the selected strategy.
+                Provide additional settings specific to the selected strategy.
               </p>
             </div>
             <div className="md:col-span-2">
@@ -239,13 +239,15 @@ export function ReporterForm({
               {selectedStrategy === ReporterStrategyType.HN_BEST_STORIES && (
                 <div className="col-span-full flex flex-col gap-2">
                   <Label htmlFor="metadata_bestStoryCount">
-                    Best Story Count
+                    How many stories should the reporter interview? (Max 20)
                   </Label>
                   <Input
                     type="number"
                     id="metadata_bestStoryCount"
                     name="metadata_bestStoryCount"
-                    placeholder="Enter best story count"
+                    placeholder="How many stories?"
+                    defaultValue={10}
+                    max={20}
                   />
                 </div>
               )}
