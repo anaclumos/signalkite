@@ -60,7 +60,7 @@ export function NotificationChannelForm({
     ...(channel?.id
       ? [
           {
-            title: channel.name || "Untitled Channel",
+            title: channel.name || "New Channel",
             href: `/notification-channels/${channel.id}`,
           },
         ]
@@ -133,7 +133,7 @@ export function NotificationChannelForm({
                     type="text"
                     id="name"
                     name="name"
-                    defaultValue={channel?.name || "Untitled Channel"}
+                    defaultValue={channel?.name || "New Channel"}
                     placeholder="A descriptive name for this channel"
                     maxLength={100}
                   />

@@ -116,7 +116,7 @@ export function PromptForm({ prompt }: PromptFormProps) {
                     type="text"
                     id="name"
                     name="name"
-                    defaultValue={prompt?.name || "Untitled Prompt"}
+                    defaultValue={prompt?.name || "New Prompt"}
                     placeholder="Prompt"
                     maxLength={100}
                   />

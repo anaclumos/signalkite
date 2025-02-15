@@ -65,7 +65,7 @@ export function ReporterForm({
     ...(reporter?.id
       ? [
           {
-            title: reporter.name || "Untitled Reporter",
+            title: reporter.name || "New Reporter",
             href: `/reporters/${reporter.id}`,
           },
         ]
@@ -103,7 +103,7 @@ export function ReporterForm({
                     type="text"
                     id="name"
                     name="name"
-                    defaultValue="Untitled Reporter"
+                    defaultValue="New Reporter"
                     placeholder="My Reporter"
                     maxLength={100}
                   />

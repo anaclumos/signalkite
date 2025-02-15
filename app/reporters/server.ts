@@ -14,7 +14,10 @@ export async function submitReporterAction(
   const description = formData.get("description") as string
   const strategy = formData.get("strategy") as ReporterStrategyType
   const scheduleIds = formData.getAll("schedules") as string[]
-  const promptId = formData.get("prompt") as string | null
+  let promptId = formData.get("prompt") as string | null
+  if (promptId === "") {
+    promptId = null
+  }
 
   if (!name?.trim()) {
     return {

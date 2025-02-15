@@ -95,7 +95,7 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
     ...(schedule?.id
       ? [
           {
-            title: schedule.name || "Untitled Schedule",
+            title: schedule.name || "New Schedule",
             href: `/schedules/${schedule.id}`,
           },
         ]
@@ -181,7 +181,7 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
                     type="text"
                     id="name"
                     name="name"
-                    defaultValue={schedule?.name || "Untitled Schedule"}
+                    defaultValue={schedule?.name || "New Schedule"}
                     maxLength={100}
                   />
                 </div>
@@ -212,13 +212,14 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      {Array.from({ length: 24 }, (_, i) => i.toString()).map(
-                        (option) => (
-                          <SelectItem key={option} value={option}>
-                            {option === "*" ? "Every" : option}
-                          </SelectItem>
-                        ),
-                      )}
+                      {[
+                        "*",
+                        ...Array.from({ length: 24 }, (_, i) => i.toString()),
+                      ].map((option) => (
+                        <SelectItem key={option} value={option}>
+                          {option === "*" ? "Every" : option}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </div>
@@ -234,7 +235,15 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      {["0", "15", "30", "45"].map((option) => (
+                      {[
+                        ...(process.env.NODE_ENV === "development"
+                          ? ["*"]
+                          : []),
+                        "0",
+                        "15",
+                        "30",
+                        "45",
+                      ].map((option) => (
                         <SelectItem key={option} value={option}>
                           {option === "*" ? "Every" : option}
                         </SelectItem>
