@@ -1,7 +1,7 @@
 "use server"
 
 import { deleteSchedule, upsertSchedule } from "@/app/actions/schedules"
-import { buildCronExpression } from "@/lib/cron"
+import { buildCron } from "@/lib/cron"
 import { FormState } from "@/types/forms"
 import { redirect } from "next/navigation"
 
@@ -44,7 +44,7 @@ export async function submitScheduleAction(
     }
   }
 
-  const cron = buildCronExpression({
+  const cron = buildCron({
     minute:
       formData.get("minute") === "*"
         ? "*"

@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest"
-import { DAYS_OF_WEEK, buildCronExpression } from "./cron"
+import { DAYS_OF_WEEK, buildCron } from "./cron"
 
-describe("buildCronExpression", () => {
+describe("buildCron", () => {
   it("should handle all minutes/hours/days with *", () => {
-    const result = buildCronExpression({
+    const result = buildCron({
       minute: "*",
       hour: "*",
       day: "*",
@@ -16,7 +16,7 @@ describe("buildCronExpression", () => {
     const allHours = Array.from({ length: 24 }, (_, i) => i)
     const allDays = Array.from({ length: 7 }, (_, i) => i)
 
-    const result = buildCronExpression({
+    const result = buildCron({
       minute: allMinutes,
       hour: allHours,
       day: allDays,
@@ -25,7 +25,7 @@ describe("buildCronExpression", () => {
   })
 
   it("should format consecutive numbers into ranges", () => {
-    const result = buildCronExpression({
+    const result = buildCron({
       minute: [0, 1, 2, 3, 15, 16, 17, 45],
       hour: [9, 10, 11, 12],
       day: [1, 2, 3],
@@ -34,7 +34,7 @@ describe("buildCronExpression", () => {
   })
 
   it("should handle single numbers", () => {
-    const result = buildCronExpression({
+    const result = buildCron({
       minute: [30],
       hour: [12],
       day: [3],
@@ -44,7 +44,7 @@ describe("buildCronExpression", () => {
 
   it("should throw an error if an empty array is provided", () => {
     expect(() =>
-      buildCronExpression({
+      buildCron({
         minute: [],
         hour: [],
         day: [],
@@ -53,7 +53,7 @@ describe("buildCronExpression", () => {
   })
 
   it("should handle non-consecutive numbers", () => {
-    const result = buildCronExpression({
+    const result = buildCron({
       minute: [0, 15, 30, 45],
       hour: [9, 12, 15, 18],
       day: [1, 3, 5],

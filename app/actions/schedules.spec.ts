@@ -4,7 +4,7 @@ import {
   getSchedules,
   upsertSchedule,
 } from "@/app/actions/schedules"
-import { buildCronExpression } from "@/lib/cron"
+import { buildCron } from "@/lib/cron"
 import { db } from "@/prisma"
 import { parseExpression } from "cron-parser"
 import {
@@ -164,7 +164,7 @@ describe("Schedule Actions", () => {
     const minute = [0]
     const hour = [9]
     const day = [1, 2, 3, 4, 5, 6, 0]
-    const cron = buildCronExpression({ minute, hour, day })
+    const cron = buildCron({ minute, hour, day })
     expect(cron).toBe("0 9 * * *")
   })
 

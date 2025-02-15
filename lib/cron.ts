@@ -1,3 +1,5 @@
+import { parseExpression } from "cron-parser"
+
 export const DAYS_OF_WEEK = [
   { id: "SUN", label: "Sunday", index: 0 },
   { id: "MON", label: "Monday", index: 1 },
@@ -8,7 +10,7 @@ export const DAYS_OF_WEEK = [
   { id: "SAT", label: "Saturday", index: 6 },
 ] as const
 
-export function buildCronExpression({
+export function buildCron({
   minute,
   hour,
   day,
@@ -46,7 +48,7 @@ export function buildCronExpression({
   return `${minutePart} ${hourPart} * * ${dayPart}`
 }
 
-export function formatConsecutiveNumbers(numbers: number[]): string {
+function formatConsecutiveNumbers(numbers: number[]): string {
   if (numbers.length === 0) return ""
 
   // Sort the numbers to ensure consecutive runs are in order
@@ -78,4 +80,35 @@ export function formatConsecutiveNumbers(numbers: number[]): string {
   )
 
   return ranges.join(",")
+}
+
+export function parseCron(
+  cronExpression: string,
+  tz?: string,
+): {
+  minute: number[]
+  hour: number[]
+  days: number[]
+  timezone: string
+} {
+  try {
+    const interval = parseExpression(cronExpression, {
+      currentDate: new Date(),
+      tz: tz || Intl.DateTimeFormat().resolvedOptions().timeZone,
+    })
+    const { hour, minute, dayOfWeek } = interval.fields
+    return {
+      minute: Array.from(minute.values()),
+      hour: Array.from(hour.values()),
+      days: Array.from(dayOfWeek.values()).filter((day) => day !== 7),
+      timezone: tz || Intl.DateTimeFormat().resolvedOptions().timeZone,
+    }
+  } catch {
+    return {
+      minute: [0],
+      hour: [8],
+      days: [0, 1, 2, 3, 4, 5, 6],
+      timezone: tz || Intl.DateTimeFormat().resolvedOptions().timeZone,
+    }
+  }
 }
