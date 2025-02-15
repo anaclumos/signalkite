@@ -32,7 +32,7 @@ export function UserProfile() {
   return (
     <>
       <SignedOut>
-        <div className="flex gap-2">
+        <div className="flex gap-2 p-2">
           <SignInButton mode="modal">
             <Button variant="secondary" className="flex-1">
               Sign in
