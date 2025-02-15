@@ -97,10 +97,10 @@ export function SchedulesTable({ initialSchedules }: SchedulesTableProps) {
       <NavBar
         breadcrumbs={[
           { title: "Home", href: "/" },
-          { title: "Reporters", href: "/reporters" },
+          { title: "Schedules", href: "/schedules" },
         ]}
         actions={
-          <Link href="/reporters/new">
+          <Link href="/schedules/new">
             <Button>Create</Button>
           </Link>
         }
