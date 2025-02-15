@@ -62,7 +62,9 @@ export default async function RootLayout({
             <SidebarProvider defaultOpen={defaultOpen}>
               <AppSidebar />
               <div className="w-full flex flex-col">
-                <main className="flex-1">{children}</main>
+                <main className="h-screen flex flex-col overflow-y-auto">
+                  {children}
+                </main>
               </div>
             </SidebarProvider>
           </ThemeProvider>

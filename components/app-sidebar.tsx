@@ -13,7 +13,6 @@ import {
   SidebarMenuSub,
   SidebarSubLink,
 } from "@/components/ui/sidebar"
-import { Logo } from "@/public/Logo"
 import { RiArrowDownSFill } from "@remixicon/react"
 import { House, PackageSearch, Settings, Telescope } from "lucide-react"
 import Link from "next/link"
@@ -94,13 +93,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props} className="bg-gray-50 dark:bg-gray-925">
       <Link href="/">
-        <SidebarHeader className="px-3 py-4">
+        <SidebarHeader className="p-4">
           <div className="flex items-center gap-3">
-            <span className="flex size-9 items-center justify-center rounded-md bg-white p-0.5 shadow-xs ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-800">
-              <Logo className="size-8 text-blue-500 dark:text-blue-500" />
-            </span>
             <div>
-              <span className="block text-sm font-semibold text-gray-900 dark:text-gray-50">
+              <span className="block text-lg font-semibold text-gray-900 dark:text-gray-50">
                 {siteConfig.name}
               </span>
               <span className="block text-xs text-gray-900 dark:text-gray-50">
