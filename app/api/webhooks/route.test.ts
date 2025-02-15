@@ -260,27 +260,34 @@ describe("Webhook Handler", () => {
   })
 
   it("should handle invalid webhook signature", async () => {
-    // Mock Svix verify to throw
-    const mockWebhook = new Webhook("test_signing_secret")
-    vi.mocked(mockWebhook.verify).mockImplementation(() => {
-      throw new Error("Invalid signature")
-    })
-    vi.mocked(Webhook).mockImplementation(() => mockWebhook)
+    // Mock console.error to suppress error output
+    const originalError = console.error
+    console.error = vi.fn()
+    try {
+      // Mock Svix verify to throw
+      const mockWebhook = new Webhook("test_signing_secret")
+      vi.mocked(mockWebhook.verify).mockImplementation(() => {
+        throw new Error("Invalid signature")
+      })
+      vi.mocked(Webhook).mockImplementation(() => mockWebhook)
 
-    const { POST } = await import("./route")
-    const response = await POST(
-      new Request("http://localhost:3000/api/webhooks", {
-        method: "POST",
-        headers: {
-          "svix-id": "msg_123",
-          "svix-timestamp": "1234567890",
-          "svix-signature": "invalid_signature",
-        },
-        body: JSON.stringify({}),
-      }),
-    )
+      const { POST } = await import("./route")
+      const response = await POST(
+        new Request("http://localhost:3000/api/webhooks", {
+          method: "POST",
+          headers: {
+            "svix-id": "msg_123",
+            "svix-timestamp": "1234567890",
+            "svix-signature": "invalid_signature",
+          },
+          body: JSON.stringify({}),
+        }),
+      )
 
-    expect(response.status).toBe(400)
-    expect(await response.text()).toBe("Error: Verification error")
+      expect(response.status).toBe(400)
+      expect(await response.text()).toBe("Error: Verification error")
+    } finally {
+      console.error = originalError
+    }
   })
 })
