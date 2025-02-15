@@ -1,11 +1,25 @@
 "use client"
 
-import { EntityTable } from "@/components/entity-table"
+import { NavBar } from "@/components/nav-bar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeaderCell,
+  TableRoot,
+  TableRow,
+} from "@/components/ui/table"
 import { Reporter, ReporterStatus } from "@prisma/client"
-import { ColumnDef } from "@tanstack/react-table"
-import { Bot } from "lucide-react"
+import {
+  ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  getSortedRowModel,
+  useReactTable,
+} from "@tanstack/react-table"
 import Link from "next/link"
 import { useMemo } from "react"
 
@@ -94,43 +108,68 @@ export function ReportersTable({ initialReporters }: ReportersTableProps) {
     [],
   )
 
+  const table = useReactTable<ReporterWithRelations>({
+    data: initialReporters,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getRowId: (row) => row.id,
+  })
+
   return (
-    <EntityTable
-      data={initialReporters}
-      columns={columns}
-      getRowId={(row) => row.id}
-      basePath="/reporters"
-      entityName="Reporters"
-      renderCard={(reporter) => ({
-        title: reporter.name,
-        description: reporter.strategy,
-        icon: <Bot className="size-5 text-gray-500" />,
-        badge: {
-          label: reporter.status,
-          variant:
-            reporter.status === ReporterStatus.ACTIVE
-              ? "success"
-              : reporter.status === ReporterStatus.PAUSED
-                ? "warning"
-                : "default",
-        },
-        stats: [
-          {
-            label: "Stories",
-            value: reporter._count.Stories,
-          },
-          {
-            label: "Scans",
-            value: reporter._count.Issues,
-          },
-        ],
-      })}
-      actions={
-        <Link href="/reporters/new">
-          <Button>Create</Button>
-        </Link>
-      }
-      emptyMessage="No reporters found. Create your first reporter to get started."
-    />
+    <div>
+      <NavBar
+        breadcrumbs={[
+          { title: "Home", href: "/" },
+          { title: "Reporters", href: "/reporters" },
+        ]}
+        actions={
+          <Link href="/reporters/new">
+            <Button>Create</Button>
+          </Link>
+        }
+      />
+
+      {initialReporters.length === 0 ? (
+        <div className="py-8 text-center text-gray-500">
+          No reporters found. Create your first reporter to get started.
+        </div>
+      ) : (
+        <TableRoot>
+          <Table>
+            <TableHead>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => (
+                    <TableHeaderCell key={header.id}>
+                      {flexRender(
+                        header.column.columnDef.header,
+                        header.getContext(),
+                      )}
+                    </TableHeaderCell>
+                  ))}
+                </TableRow>
+              ))}
+            </TableHead>
+            <TableBody className="divide-y divide-gray-200">
+              {table.getRowModel().rows.map((row) => (
+                <TableRow key={row.id}>
+                  {row.getVisibleCells().map((cell) => (
+                    <TableCell key={cell.id}>
+                      <Link href={`/reporters/${row.id}`}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </Link>
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableRoot>
+      )}
+    </div>
   )
 }
