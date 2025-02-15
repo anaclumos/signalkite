@@ -40,7 +40,9 @@ export function NotificationChannelsTable({
         accessorKey: "type",
         enableSorting: true,
         cell: ({ row }) => (
-          <Badge variant="neutral">{startCase(row.original.type)}</Badge>
+          <Badge variant={row.original.type === "TEXT" ? "success" : "default"}>
+            {startCase(row.original.type)}
+          </Badge>
         ),
       },
       {

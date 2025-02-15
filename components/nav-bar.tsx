@@ -1,7 +1,6 @@
 "use client"
 
 import { SidebarTrigger } from "@/components/ui/sidebar"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ChevronRight } from "lucide-react"
 import Link from "next/link"
 import { Fragment } from "react"
@@ -12,17 +11,9 @@ interface NavBarProps {
     href: string
   }>
   actions?: React.ReactNode
-  viewToggle?: {
-    value: string
-    onChange: (value: string) => void
-    options: Array<{
-      value: string
-      icon: React.ReactNode
-    }>
-  }
 }
 
-export function NavBar({ breadcrumbs, actions, viewToggle }: NavBarProps) {
+export function NavBar({ breadcrumbs, actions }: NavBarProps) {
   return (
     <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-2 border-b border-gray-200 bg-white px-4 dark:border-gray-800 dark:bg-gray-950">
       <SidebarTrigger className="-ml-1" />
@@ -57,20 +48,7 @@ export function NavBar({ breadcrumbs, actions, viewToggle }: NavBarProps) {
           </ol>
         </nav>
 
-        <div className="flex items-center gap-4">
-          {viewToggle && (
-            <Tabs value={viewToggle.value} onValueChange={viewToggle.onChange}>
-              <TabsList variant="solid">
-                {viewToggle.options.map((option) => (
-                  <TabsTrigger key={option.value} value={option.value}>
-                    {option.icon}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </Tabs>
-          )}
-          {actions}
-        </div>
+        <div className="flex items-center gap-4">{actions}</div>
       </div>
     </header>
   )
