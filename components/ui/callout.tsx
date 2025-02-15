@@ -35,9 +35,9 @@ const calloutVariants = tv({
       ],
       neutral: [
         // text color
-        "text-gray-900 dark:text-gray-400",
+        "text-zinc-900 dark:text-zinc-400",
         // background color
-        "bg-gray-100 dark:bg-gray-800/70",
+        "bg-zinc-100 dark:bg-zinc-800/70",
       ],
     },
   },

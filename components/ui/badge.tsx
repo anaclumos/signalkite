@@ -16,8 +16,8 @@ const badgeVariants = tv({
         "dark:bg-blue-400/10 dark:text-blue-400 dark:ring-blue-400/30",
       ],
       neutral: [
-        "bg-gray-50 text-gray-900 ring-gray-500/30",
-        "dark:bg-gray-400/10 dark:text-gray-400 dark:ring-gray-400/20",
+        "bg-zinc-50 text-zinc-900 ring-zinc-500/30",
+        "dark:bg-zinc-400/10 dark:text-zinc-400 dark:ring-zinc-400/20",
       ],
       success: [
         "bg-emerald-50 text-emerald-900 ring-emerald-600/30",

@@ -131,7 +131,7 @@ export function ReportersTable({ initialReporters }: ReportersTableProps) {
       />
 
       {initialReporters.length === 0 ? (
-        <div className="py-8 text-center text-gray-500">
+        <div className="py-8 text-center text-zinc-500">
           No reporters found. Create your first reporter to get started.
         </div>
       ) : (
@@ -151,7 +151,7 @@ export function ReportersTable({ initialReporters }: ReportersTableProps) {
                 </TableRow>
               ))}
             </TableHead>
-            <TableBody className="divide-y divide-gray-200">
+            <TableBody className="divide-y divide-zinc-200">
               {table.getRowModel().rows.map((row) => (
                 <TableRow key={row.id}>
                   {row.getVisibleCells().map((cell) => (

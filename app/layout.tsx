@@ -50,7 +50,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
-      <body className="bg-white-50 h-full antialiased dark:bg-gray-950">
+      <body className="bg-white-50 h-full antialiased dark:bg-zinc-950">
         <Providers defaultOpen={defaultOpen}>
           <AppSidebar />
           <div className="w-full flex flex-col">

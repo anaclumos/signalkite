@@ -38,7 +38,7 @@ const RadioGroupIndicator = React.forwardRef<
           // indicator
           "bg-white",
           // disabled
-          "group-data-disabled:bg-gray-400 dark:group-data-disabled:bg-gray-500",
+          "group-data-disabled:bg-zinc-400 dark:group-data-disabled:bg-zinc-500",
         )}
       />
     </RadioGroupPrimitives.Indicator>
@@ -65,15 +65,15 @@ const RadioGroupItem = React.forwardRef<
           // base
           "flex size-4 shrink-0 items-center justify-center rounded-full border shadow-xs",
           // border color
-          "border-gray-300 dark:border-gray-800",
+          "border-zinc-300 dark:border-zinc-800",
           // background color
-          "bg-white dark:bg-gray-950",
+          "bg-white dark:bg-zinc-950",
           // checked
           "group-data-[state=checked]:border-0 group-data-[state=checked]:border-transparent group-data-[state=checked]:bg-blue-500",
           // disabled
           "group-data-disabled:border",
-          "group-data-disabled:border-gray-300 group-data-disabled:bg-gray-100 group-data-disabled:text-gray-400",
-          "dark:group-data-disabled:border-gray-700 dark:group-data-disabled:bg-gray-800",
+          "group-data-disabled:border-zinc-300 group-data-disabled:bg-zinc-100 group-data-disabled:text-zinc-400",
+          "dark:group-data-disabled:border-zinc-700 dark:group-data-disabled:bg-zinc-800",
           // focus
           focusRing,
         )}

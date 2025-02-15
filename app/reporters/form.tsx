@@ -79,10 +79,10 @@ export function ReporterForm({
         <div>
           <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
             <div>
-              <h2 className="font-semibold text-gray-900 dark:text-gray-50">
+              <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">
                 Reporter Information
               </h2>
-              <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
+              <p className="mt-1 text-sm/6 text-zinc-500 dark:text-zinc-500">
                 Create a new reporter to monitor and discover stories.
               </p>
             </div>
@@ -114,10 +114,10 @@ export function ReporterForm({
           <Divider />
           <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
             <div>
-              <h2 className="font-semibold text-gray-900 dark:text-gray-50">
+              <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">
                 Strategy
               </h2>
-              <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
+              <p className="mt-1 text-sm/6 text-zinc-500 dark:text-zinc-500">
                 Choose how this reporter will discover stories.
               </p>
             </div>
@@ -134,12 +134,12 @@ export function ReporterForm({
                   <RadioCardItem value={ReporterStrategyType.EXA_SEARCH}>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <RiSearchLine className="size-5 text-gray-500" />
+                        <RiSearchLine className="size-5 text-zinc-500" />
                         <div className="flex flex-col gap-1">
-                          <div className="font-medium text-gray-900 dark:text-gray-50">
+                          <div className="font-medium text-zinc-900 dark:text-zinc-50">
                             Web Search
                           </div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-sm text-zinc-500">
                             Are there any new developments of the matter?
                           </div>
                         </div>
@@ -150,12 +150,12 @@ export function ReporterForm({
                   <RadioCardItem value={ReporterStrategyType.WHOIS_LOOKUP}>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <RiGlobalLine className="size-5 text-gray-500" />
+                        <RiGlobalLine className="size-5 text-zinc-500" />
                         <div className="flex flex-col gap-1">
-                          <div className="font-medium text-gray-900 dark:text-gray-50">
+                          <div className="font-medium text-zinc-900 dark:text-zinc-50">
                             WHOIS Lookup
                           </div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-sm text-zinc-500">
                             Has the domain been expired and released?
                           </div>
                         </div>
@@ -166,12 +166,12 @@ export function ReporterForm({
                   <RadioCardItem value={ReporterStrategyType.HN_BEST_STORIES}>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <RiNewspaperLine className="size-5 text-gray-500" />
+                        <RiNewspaperLine className="size-5 text-zinc-500" />
                         <div className="flex flex-col gap-1">
-                          <div className="font-medium text-gray-900 dark:text-gray-50">
+                          <div className="font-medium text-zinc-900 dark:text-zinc-50">
                             Hacker News
                           </div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-sm text-zinc-500">
                             What are the top stories on Hacker News?
                           </div>
                         </div>
@@ -186,10 +186,10 @@ export function ReporterForm({
           <Divider />
           <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
             <div>
-              <h2 className="font-semibold text-gray-900 dark:text-gray-50">
+              <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">
                 Settings
               </h2>
-              <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
+              <p className="mt-1 text-sm/6 text-zinc-500 dark:text-zinc-500">
                 Provide additional settings specific to the selected strategy.
               </p>
             </div>
@@ -247,10 +247,10 @@ export function ReporterForm({
           <Divider />
           <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
             <div>
-              <h2 className="font-semibold text-gray-900 dark:text-gray-50">
+              <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">
                 Schedule
               </h2>
-              <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
+              <p className="mt-1 text-sm/6 text-zinc-500 dark:text-zinc-500">
                 Set up when this reporter should run.
               </p>
             </div>
@@ -269,7 +269,7 @@ export function ReporterForm({
                     ))}
                   </SelectContent>
                 </Select>
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-zinc-500">
                   Select when this reporter should run.
                 </p>
               </div>
@@ -278,10 +278,10 @@ export function ReporterForm({
           <Divider />
           <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
             <div>
-              <h2 className="font-semibold text-gray-900 dark:text-gray-50">
+              <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">
                 Prompt
               </h2>
-              <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
+              <p className="mt-1 text-sm/6 text-zinc-500 dark:text-zinc-500">
                 Select a prompt to process the stories.
               </p>
             </div>
@@ -300,7 +300,7 @@ export function ReporterForm({
                     ))}
                   </SelectContent>
                 </Select>
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-zinc-500">
                   Select a prompt to process discovered stories.
                 </p>
               </div>

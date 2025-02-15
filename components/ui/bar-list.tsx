@@ -76,7 +76,7 @@ function BarListInner<T>(
                 ? [
                     "-m-0! cursor-pointer",
                     // hover
-                    "hover:bg-gray-50 dark:hover:bg-gray-900",
+                    "hover:bg-zinc-50 dark:hover:bg-zinc-900",
                   ]
                 : "",
             )}
@@ -107,7 +107,7 @@ function BarListInner<T>(
                       // base
                       "truncate rounded-sm text-sm whitespace-nowrap",
                       // text color
-                      "text-gray-900 dark:text-gray-50",
+                      "text-zinc-900 dark:text-zinc-50",
                       // hover
                       "hover:underline hover:underline-offset-2",
                       // focus
@@ -125,7 +125,7 @@ function BarListInner<T>(
                       // base
                       "truncate text-sm whitespace-nowrap",
                       // text color
-                      "text-gray-900 dark:text-gray-50",
+                      "text-zinc-900 dark:text-zinc-50",
                     )}
                   >
                     {item.name}
@@ -151,7 +151,7 @@ function BarListInner<T>(
                 // base
                 "truncate text-sm leading-none whitespace-nowrap",
                 // text color
-                "text-gray-900 dark:text-gray-50",
+                "text-zinc-900 dark:text-zinc-50",
               )}
             >
               {valueFormatter(item.value)}

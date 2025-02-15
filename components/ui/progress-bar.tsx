@@ -17,8 +17,8 @@ const progressBarVariants = tv({
         bar: "bg-blue-500 dark:bg-blue-500",
       },
       neutral: {
-        background: "bg-gray-200 dark:bg-gray-500/40",
-        bar: "bg-gray-500 dark:bg-gray-500",
+        background: "bg-zinc-200 dark:bg-zinc-500/40",
+        bar: "bg-zinc-500 dark:bg-zinc-500",
       },
       warning: {
         background: "bg-yellow-200 dark:bg-yellow-500/30",
@@ -97,7 +97,7 @@ const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
               // base
               "ml-2 text-sm leading-none font-medium whitespace-nowrap",
               // text color
-              "text-gray-900 dark:text-gray-50",
+              "text-zinc-900 dark:text-zinc-50",
             )}
           >
             {label}

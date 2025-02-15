@@ -28,13 +28,13 @@ export default async function ReporterPage({
       <Card>
         <div className="space-y-2">
           <h2 className="text-xl font-semibold break-all">{reporter.name}</h2>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-zinc-600 dark:text-zinc-400">
             {reporter.description || "No description"}
           </p>
-          <div className="text-sm text-gray-500">
+          <div className="text-sm text-zinc-500">
             Strategy: {reporter.strategy}
           </div>
-          <div className="text-sm text-gray-500">Status: {reporter.status}</div>
+          <div className="text-sm text-zinc-500">Status: {reporter.status}</div>
         </div>
       </Card>
 

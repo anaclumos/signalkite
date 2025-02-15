@@ -49,9 +49,9 @@ const Block = ({
             // base
             "w-auto rounded-md px-2 py-1 text-sm shadow-md",
             // text color
-            "text-white dark:text-gray-900",
+            "text-white dark:text-zinc-900",
             // background color
-            "bg-gray-900 dark:bg-gray-50",
+            "bg-zinc-900 dark:bg-zinc-50",
           )}
         >
           {tooltip}
@@ -73,7 +73,7 @@ const Tracker = React.forwardRef<HTMLDivElement, TrackerProps>(
   (
     {
       data = [],
-      defaultBackgroundColor = "bg-gray-400 dark:bg-gray-400",
+      defaultBackgroundColor = "bg-zinc-400 dark:bg-zinc-400",
       className,
       hoverEffect,
       ...props

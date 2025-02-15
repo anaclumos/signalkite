@@ -88,10 +88,10 @@ export function PromptForm({ prompt }: PromptFormProps) {
         <div>
           <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
             <div>
-              <h2 className="font-semibold text-gray-900 dark:text-gray-50">
+              <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">
                 Prompt Information
               </h2>
-              <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
+              <p className="mt-1 text-sm/6 text-zinc-500 dark:text-zinc-500">
                 {prompt
                   ? "Edit your prompt configuration."
                   : "Create a new prompt to use for post-processing stories and content."}

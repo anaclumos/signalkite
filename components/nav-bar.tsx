@@ -15,7 +15,7 @@ interface NavBarProps {
 
 export function NavBar({ breadcrumbs, actions }: NavBarProps) {
   return (
-    <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-2 border-b border-gray-200 bg-white px-4 dark:border-gray-800 dark:bg-gray-950">
+    <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-2 border-b border-zinc-200 bg-white px-4 dark:border-zinc-800 dark:bg-zinc-950">
       <SidebarTrigger className="-ml-1" />
       <div className="flex w-full items-center justify-between">
         <nav aria-label="Breadcrumb" className="ml-2">
@@ -27,8 +27,8 @@ export function NavBar({ breadcrumbs, actions }: NavBarProps) {
                     href={crumb.href}
                     className={
                       index === breadcrumbs.length - 1
-                        ? "text-gray-900 dark:text-gray-50"
-                        : "text-gray-500 transition hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                        ? "text-zinc-900 dark:text-zinc-50"
+                        : "text-zinc-500 transition hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-300"
                     }
                     aria-current={
                       index === breadcrumbs.length - 1 ? "page" : undefined
@@ -39,7 +39,7 @@ export function NavBar({ breadcrumbs, actions }: NavBarProps) {
                 </li>
                 {index < breadcrumbs.length - 1 && (
                   <ChevronRight
-                    className="size-4 shrink-0 text-gray-600 dark:text-gray-400 ml-0.5"
+                    className="size-4 shrink-0 text-zinc-600 dark:text-zinc-400 ml-0.5"
                     aria-hidden="true"
                   />
                 )}

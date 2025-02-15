@@ -18,14 +18,14 @@ const Checkbox = React.forwardRef<
         // base
         "relative inline-flex size-4 shrink-0 appearance-none items-center justify-center rounded-sm ring-1 shadow-xs transition duration-100 outline-hidden ring-inset enabled:cursor-pointer",
         // text color
-        "text-white dark:text-gray-50",
+        "text-white dark:text-zinc-50",
         // background color
-        "bg-white dark:bg-gray-950",
+        "bg-white dark:bg-zinc-950",
         // ring color
-        "ring-gray-300 dark:ring-gray-800",
+        "ring-zinc-300 dark:ring-zinc-800",
         // disabled
-        "data-disabled:bg-gray-100 data-disabled:text-gray-400 data-disabled:ring-gray-300",
-        "dark:data-disabled:bg-gray-800 dark:data-disabled:text-gray-500 dark:data-disabled:ring-gray-700",
+        "data-disabled:bg-zinc-100 data-disabled:text-zinc-400 data-disabled:ring-zinc-300",
+        "dark:data-disabled:bg-zinc-800 dark:data-disabled:text-zinc-500 dark:data-disabled:ring-zinc-700",
         // checked and enabled
         "enabled:data-[state=checked]:bg-blue-500 enabled:data-[state=checked]:ring-0 enabled:data-[state=checked]:ring-transparent",
         // indeterminate

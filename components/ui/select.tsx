@@ -25,18 +25,18 @@ const selectTriggerStyles = [
     // base
     "group/trigger flex w-full items-center justify-between gap-2 truncate rounded-md border px-3 py-2 shadow-xs transition outline-hidden select-none sm:text-sm",
     // border color
-    "border-gray-300 dark:border-gray-800",
+    "border-zinc-300 dark:border-zinc-800",
     // text color
-    "text-gray-900 dark:text-gray-50",
+    "text-zinc-900 dark:text-zinc-50",
     // placeholder
-    "data-placeholder:text-gray-500 dark:data-placeholder:text-gray-500",
+    "data-placeholder:text-zinc-500 dark:data-placeholder:text-zinc-500",
     // background color
-    "bg-white dark:bg-gray-950",
+    "bg-white dark:bg-zinc-950",
     // hover
-    "hover:bg-gray-50 dark:hover:bg-gray-950/50",
+    "hover:bg-zinc-50 dark:hover:bg-zinc-950/50",
     // disabled
-    "data-disabled:bg-gray-100 data-disabled:text-gray-400",
-    "dark:data-disabled:border-gray-700 dark:data-disabled:bg-gray-800 dark:data-disabled:text-gray-500",
+    "data-disabled:bg-zinc-100 data-disabled:text-zinc-400",
+    "dark:data-disabled:border-zinc-700 dark:data-disabled:bg-zinc-800 dark:data-disabled:text-zinc-500",
     focusInput,
     // invalid (optional)
     "dark:aria-invalid:ring-red-400/20 aria-invalid:ring-2 aria-invalid:ring-red-200 aria-invalid:border-red-500 invalid:ring-2 invalid:ring-red-200 invalid:border-red-500",
@@ -67,9 +67,9 @@ const SelectTrigger = React.forwardRef<
             // base
             "size-4 shrink-0",
             // text color
-            "text-gray-400 dark:text-gray-600",
+            "text-zinc-400 dark:text-zinc-600",
             // disabled
-            "group-data-disabled/trigger:text-gray-300 dark:group-data-disabled/trigger:text-gray-600",
+            "group-data-disabled/trigger:text-zinc-300 dark:group-data-disabled/trigger:text-zinc-600",
           )}
         />
       </SelectPrimitives.Icon>
@@ -140,11 +140,11 @@ const SelectContent = React.forwardRef<
           // heights
           "max-h-(--radix-select-content-available-height)",
           // background color
-          "bg-white dark:bg-gray-950",
+          "bg-white dark:bg-zinc-950",
           // text color
-          "text-gray-900 dark:text-gray-50",
+          "text-zinc-900 dark:text-zinc-50",
           // border color
-          "border-gray-200 dark:border-gray-800",
+          "border-zinc-200 dark:border-zinc-800",
           // transition
           "will-change-[transform,opacity]",
           // "data-[state=open]:animate-slideDownAndFade",
@@ -185,7 +185,7 @@ const SelectGroupLabel = React.forwardRef<
       // base
       "px-3 py-2 text-xs font-medium tracking-wide",
       // text color
-      "text-gray-500 dark:text-gray-500",
+      "text-zinc-500 dark:text-zinc-500",
       className,
     )}
     {...props}
@@ -205,13 +205,13 @@ const SelectItem = React.forwardRef<
         // base
         "grid cursor-pointer grid-cols-[1fr_20px] gap-x-2 rounded-sm px-3 py-2 transition-colors outline-hidden data-[state=checked]:font-semibold sm:text-sm",
         // text color
-        "text-gray-900 dark:text-gray-50",
+        "text-zinc-900 dark:text-zinc-50",
         // disabled
-        "data-disabled:pointer-events-none data-disabled:text-gray-400 data-disabled:hover:bg-none dark:data-disabled:text-gray-600",
+        "data-disabled:pointer-events-none data-disabled:text-zinc-400 data-disabled:hover:bg-none dark:data-disabled:text-zinc-600",
         // focus
-        "focus-visible:bg-gray-100 dark:focus-visible:bg-gray-900",
+        "focus-visible:bg-zinc-100 dark:focus-visible:bg-zinc-900",
         // hover
-        "hover:bg-gray-100 dark:hover:bg-gray-900",
+        "hover:bg-zinc-100 dark:hover:bg-zinc-900",
         className,
       )}
       {...props}
@@ -221,7 +221,7 @@ const SelectItem = React.forwardRef<
       </SelectPrimitives.ItemText>
       <SelectPrimitives.ItemIndicator>
         <RiCheckLine
-          className="size-5 shrink-0 text-gray-800 dark:text-gray-200"
+          className="size-5 shrink-0 text-zinc-800 dark:text-zinc-200"
           aria-hidden="true"
         />
       </SelectPrimitives.ItemIndicator>
@@ -241,7 +241,7 @@ const SelectSeparator = React.forwardRef<
       // base
       "-mx-1 my-1 h-px",
       // background color
-      "bg-gray-300 dark:bg-gray-700",
+      "bg-zinc-300 dark:bg-zinc-700",
       className,
     )}
     {...props}

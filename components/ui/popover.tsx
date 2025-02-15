@@ -73,11 +73,11 @@ const PopoverContent = React.forwardRef<
             // base
             "max-h-[var(--radix-popper-available-height)] min-w-60 overflow-hidden rounded-md border p-2.5 text-sm shadow-md",
             // border color
-            "border-gray-200 dark:border-gray-800",
+            "border-zinc-200 dark:border-zinc-800",
             // text color
-            "text-gray-900 dark:text-gray-50",
+            "text-zinc-900 dark:text-zinc-50",
             // background color
-            "bg-white dark:bg-gray-950",
+            "bg-white dark:bg-zinc-950",
             // transition
             "will-change-[transform,opacity]",
             "data-[state=closed]:animate-hide",

@@ -11,35 +11,35 @@ const switchVariants = tv({
     root: [
       // base
       "group relative isolate inline-flex shrink-0 cursor-pointer items-center rounded-full p-0.5 ring-1 shadow-inner transition-all outline-hidden ring-inset",
-      "bg-gray-200 dark:bg-gray-950",
+      "bg-zinc-200 dark:bg-zinc-950",
       // ring color
-      "ring-black/5 dark:ring-gray-800",
+      "ring-black/5 dark:ring-zinc-800",
       // checked
       "data-[state=checked]:bg-blue-500 dark:data-[state=checked]:bg-blue-500",
       // disabled
       "data-disabled:cursor-default",
       // disabled checked
       "data-disabled:data-[state=checked]:bg-blue-200",
-      "data-disabled:data-[state=checked]:ring-gray-300",
+      "data-disabled:data-[state=checked]:ring-zinc-300",
       // disabled checked dark
-      "dark:data-disabled:data-[state=checked]:ring-gray-900",
+      "dark:data-disabled:data-[state=checked]:ring-zinc-900",
       "dark:data-disabled:data-[state=checked]:bg-blue-900",
       // disabled unchecked
-      "data-disabled:data-[state=unchecked]:ring-gray-300",
-      "data-disabled:data-[state=unchecked]:bg-gray-100",
+      "data-disabled:data-[state=unchecked]:ring-zinc-300",
+      "data-disabled:data-[state=unchecked]:bg-zinc-100",
       // disabled unchecked dark
-      "dark:data-disabled:data-[state=unchecked]:ring-gray-700",
-      "dark:data-disabled:data-[state=unchecked]:bg-gray-800",
+      "dark:data-disabled:data-[state=unchecked]:ring-zinc-700",
+      "dark:data-disabled:data-[state=unchecked]:bg-zinc-800",
       focusRing,
     ],
     thumb: [
       // base
       "pointer-events-none relative inline-block transform appearance-none rounded-full border-none shadow-lg transition-all duration-150 ease-in-out outline-hidden focus:border-none focus:outline-transparent focus:outline-hidden",
       // background color
-      "bg-white dark:bg-gray-50",
+      "bg-white dark:bg-zinc-50",
       // disabled
       "group-data-disabled:shadow-none",
-      "group-data-disabled:bg-gray-50 dark:group-data-disabled:bg-gray-500",
+      "group-data-disabled:bg-zinc-50 dark:group-data-disabled:bg-zinc-500",
     ],
   },
   variants: {

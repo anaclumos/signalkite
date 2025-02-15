@@ -151,10 +151,10 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
         <div>
           <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
             <div>
-              <h2 className="font-semibold text-gray-900 dark:text-gray-50">
+              <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">
                 Schedule Information
               </h2>
-              <p className="mt-1 text-sm text-gray-500 dark:text-gray-500">
+              <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-500">
                 {schedule
                   ? "Edit your schedule configuration."
                   : "Create a new schedule to run your reports at specific times."}
@@ -184,10 +184,10 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
           {/* --- TIME INFORMATION --- */}
           <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
             <div>
-              <h2 className="font-semibold text-gray-900 dark:text-gray-50">
+              <h2 className="font-semibold text-zinc-900 dark:text-zinc-50">
                 Time Information
               </h2>
-              <p className="mt-1 text-sm text-gray-500 dark:text-gray-500">
+              <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-500">
                 Configure when this schedule should run using the cron
                 expression editor.
               </p>
@@ -307,10 +307,10 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
                 {/* Days of Week */}
                 <div className="col-span-full">
                   <fieldset className="mt-6">
-                    <legend className="text-sm font-medium text-gray-900 dark:text-gray-50">
+                    <legend className="text-sm font-medium text-zinc-900 dark:text-zinc-50">
                       Days of Week
                     </legend>
-                    <ul className="mt-4 divide-y divide-gray-200 dark:divide-gray-800">
+                    <ul className="mt-4 divide-y divide-zinc-200 dark:divide-zinc-800">
                       {DAYS_OF_WEEK.map((day) => {
                         const dayNum = Number(day.index)
                         const checked = cronFields.days.includes(dayNum)

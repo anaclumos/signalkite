@@ -91,15 +91,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     )
   }
   return (
-    <Sidebar {...props} className="bg-gray-50 dark:bg-gray-925">
+    <Sidebar {...props} className="bg-zinc-50 dark:bg-zinc-925">
       <Link href="/">
         <SidebarHeader className="p-4">
           <div className="flex items-center gap-3">
             <div>
-              <span className="block text-lg font-semibold text-gray-900 dark:text-gray-50">
+              <span className="block text-lg font-semibold text-zinc-900 dark:text-zinc-50">
                 {siteConfig.name}
               </span>
-              <span className="block text-xs text-gray-900 dark:text-gray-50">
+              <span className="block text-xs text-zinc-900 dark:text-zinc-50">
                 {siteConfig.description}
               </span>
             </div>
@@ -124,7 +124,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <button
                     onClick={() => toggleMenu(item.name)}
                     className={cx(
-                      "flex w-full items-center justify-between gap-x-2.5 rounded-md p-2 text-base text-gray-900 transition hover:bg-gray-200/50 sm:text-sm dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-50",
+                      "flex w-full items-center justify-between gap-x-2.5 rounded-md p-2 text-base text-zinc-900 transition hover:bg-zinc-200/50 sm:text-sm dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-50",
                       focusRing,
                     )}
                   >
@@ -140,14 +140,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         openMenus.includes(item.name)
                           ? "rotate-0"
                           : "-rotate-90",
-                        "size-5 shrink-0 transform text-gray-400 transition-transform duration-150 ease-in-out dark:text-gray-600",
+                        "size-5 shrink-0 transform text-zinc-400 transition-transform duration-150 ease-in-out dark:text-zinc-600",
                       )}
                       aria-hidden="true"
                     />
                   </button>
                   {item.children && openMenus.includes(item.name) && (
                     <SidebarMenuSub>
-                      <div className="absolute inset-y-0 left-4 w-px bg-gray-300 dark:bg-gray-800" />
+                      <div className="absolute inset-y-0 left-4 w-px bg-zinc-300 dark:bg-zinc-800" />
                       {item.children.map((child) => (
                         <SidebarMenuItem key={child.name}>
                           <SidebarSubLink

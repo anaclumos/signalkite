@@ -36,7 +36,7 @@ const Slider = React.forwardRef<
       <SliderPrimitive.Track
         className={cx(
           // base
-          "relative grow overflow-hidden rounded-full bg-gray-200 dark:bg-gray-800",
+          "relative grow overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-800",
           // orientation
           "data-[orientation='horizontal']:h-1.5 data-[orientation='horizontal']:w-full",
           "data-[orientation='vertical']:h-full data-[orientation='vertical']:w-1.5",
@@ -50,7 +50,7 @@ const Slider = React.forwardRef<
             "data-[orientation='horizontal']:h-full",
             "data-[orientation='vertical']:w-full",
             // disabled
-            "data-disabled:bg-gray-300 dark:data-disabled:bg-gray-700",
+            "data-disabled:bg-zinc-300 dark:data-disabled:bg-zinc-700",
           )}
         />
       </SliderPrimitive.Track>
@@ -61,11 +61,11 @@ const Slider = React.forwardRef<
             // base
             "block size-[17px] shrink-0 rounded-full border shadow-sm transition-all",
             // boder color
-            "border-gray-400 dark:border-gray-500",
+            "border-zinc-400 dark:border-zinc-500",
             // background color
             "bg-white",
             // disabled
-            "data-disabled:pointer-events-none data-disabled:bg-gray-200 dark:data-disabled:border-gray-800 dark:data-disabled:bg-gray-600",
+            "data-disabled:pointer-events-none data-disabled:bg-zinc-200 dark:data-disabled:border-zinc-800 dark:data-disabled:bg-zinc-600",
             focusRing,
             "outline-offset-0",
           )}

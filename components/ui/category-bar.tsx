@@ -58,7 +58,7 @@ const BarLabels = ({ values }: { values: number[] }) => {
         // base
         "relative mb-2 flex h-5 w-full text-sm font-medium",
         // text color
-        "text-gray-700 dark:text-gray-300",
+        "text-zinc-700 dark:text-zinc-300",
       )}
     >
       {values.map((widthPercentage, index) => {
@@ -189,7 +189,7 @@ const CategoryBar = React.forwardRef<HTMLDivElement, CategoryBarProps>(
                     aria-hidden="true"
                     className={cx(
                       "relative mx-auto h-4 w-1 rounded-full ring-2",
-                      "ring-white dark:ring-gray-950",
+                      "ring-white dark:ring-zinc-950",
                       markerBgColor,
                     )}
                   >
@@ -203,7 +203,7 @@ const CategoryBar = React.forwardRef<HTMLDivElement, CategoryBarProps>(
                 <div
                   className={cx(
                     "mx-auto h-4 w-1 rounded-full ring-2",
-                    "ring-white dark:ring-gray-950",
+                    "ring-white dark:ring-zinc-950",
                     markerBgColor,
                   )}
                 />

@@ -79,7 +79,7 @@ const DrawerContent = React.forwardRef<
             // base
             "fixed inset-y-2 mx-auto flex w-[95vw] flex-1 flex-col overflow-y-auto rounded-md border p-4 shadow-lg focus:outline-hidden max-sm:inset-x-2 sm:inset-y-2 sm:right-2 sm:max-w-lg sm:p-6",
             // border color
-            "border-gray-200 dark:border-gray-900",
+            "border-zinc-200 dark:border-zinc-900",
             // background color
             "bg-white dark:bg-[#090E1A]",
             // transition
@@ -103,7 +103,7 @@ const DrawerHeader = React.forwardRef<
   return (
     <div
       ref={ref}
-      className="flex items-start justify-between gap-x-4 border-b border-gray-200 pb-4 dark:border-gray-900"
+      className="flex items-start justify-between gap-x-4 border-b border-zinc-200 pb-4 dark:border-zinc-900"
       {...props}
     >
       <div className={cx("mt-1 flex flex-col gap-y-1", className)}>
@@ -112,7 +112,7 @@ const DrawerHeader = React.forwardRef<
       <DrawerPrimitives.Close asChild>
         <Button
           variant="ghost"
-          className="aspect-square p-1 hover:bg-gray-100 dark:hover:bg-gray-400/10"
+          className="aspect-square p-1 hover:bg-zinc-100 dark:hover:bg-zinc-400/10"
         >
           <RiCloseLine className="size-6" aria-hidden="true" />
         </Button>
@@ -133,7 +133,7 @@ const DrawerTitle = React.forwardRef<
       // base
       "text-base font-semibold",
       // text color
-      "text-gray-900 dark:text-gray-50",
+      "text-zinc-900 dark:text-zinc-50",
       className,
     )}
     {...props}
@@ -157,7 +157,7 @@ const DrawerDescription = React.forwardRef<
   return (
     <DrawerPrimitives.Description
       ref={forwardedRef}
-      className={cx("text-gray-500 dark:text-gray-500", className)}
+      className={cx("text-zinc-500 dark:text-zinc-500", className)}
       {...props}
     />
   )
@@ -172,7 +172,7 @@ const DrawerFooter = ({
   return (
     <div
       className={cx(
-        "flex flex-col-reverse border-t border-gray-200 pt-4 sm:flex-row sm:justify-end sm:space-x-2 dark:border-gray-900",
+        "flex flex-col-reverse border-t border-zinc-200 pt-4 sm:flex-row sm:justify-end sm:space-x-2 dark:border-zinc-900",
         className,
       )}
       {...props}

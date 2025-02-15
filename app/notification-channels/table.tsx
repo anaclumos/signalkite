@@ -111,7 +111,7 @@ export function NotificationChannelsTable({
       />
 
       {initialChannels.length === 0 ? (
-        <div className="py-8 text-center text-gray-500">
+        <div className="py-8 text-center text-zinc-500">
           No notification channels found. Use the &quot;Edit Email &amp;
           Phone&quot; button to add channels.
         </div>
@@ -133,7 +133,7 @@ export function NotificationChannelsTable({
               ))}
             </TableHead>
 
-            <TableBody className="divide-y divide-gray-200">
+            <TableBody className="divide-y divide-zinc-200">
               {table.getRowModel().rows.map((row) => (
                 <TableRow key={row.id}>
                   {row.getVisibleCells().map((cell) => (
