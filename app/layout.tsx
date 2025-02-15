@@ -1,13 +1,11 @@
 import { AppSidebar } from "@/components/app-sidebar"
-import { SidebarProvider } from "@/components/ui/sidebar"
 import { Toaster } from "@/components/ui/toaster"
-import { ClerkProvider } from "@clerk/nextjs"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
-import { ThemeProvider } from "next-themes"
 import { cookies } from "next/headers"
 import "./globals.css"
+import { Providers } from "./providers"
 import { siteConfig } from "./site-config"
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -51,28 +49,21 @@ export default async function RootLayout({
     : true
 
   return (
-    <ClerkProvider>
-      <html lang="en" className="h-full" suppressHydrationWarning>
-        <body className="bg-white-50 h-full antialiased dark:bg-gray-950">
-          <ThemeProvider
-            defaultTheme="system"
-            disableTransitionOnChange
-            attribute="class"
-          >
-            <SidebarProvider defaultOpen={defaultOpen}>
-              <AppSidebar />
-              <div className="w-full flex flex-col">
-                <main className="h-screen flex flex-col overflow-y-auto">
-                  {children}
-                </main>
-              </div>
-            </SidebarProvider>
-          </ThemeProvider>
+    <html lang="en" className="h-full" suppressHydrationWarning>
+      <body className="bg-white-50 h-full antialiased dark:bg-gray-950">
+        <Providers defaultOpen={defaultOpen}>
+          <AppSidebar />
+          <div className="w-full flex flex-col">
+            <main className="h-screen flex flex-col overflow-y-auto">
+              {children}
+            </main>
+          </div>
+
           <SpeedInsights />
           <Analytics />
           <Toaster />
-        </body>
-      </html>
-    </ClerkProvider>
+        </Providers>
+      </body>
+    </html>
   )
 }
