@@ -133,7 +133,7 @@ export function SchedulesTable({ initialSchedules }: SchedulesTableProps) {
                 <TableRow key={row.id}>
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
-                      <Link href={`/schedules/${row.original.id}`}>
+                      <Link key={row.id} href={`/schedules/${row.original.id}`}>
                         {flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext(),

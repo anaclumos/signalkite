@@ -1,5 +1,9 @@
 "use client"
 
+import Link from "next/link"
+import { useEffect, useState } from "react"
+import { useFormStatus } from "react-dom"
+
 import { NavBar } from "@/components/nav-bar"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -23,20 +27,29 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { daysOfWeek } from "@/lib/const"
-import { getCronDescription } from "@/lib/cron"
 import { toast } from "@/lib/use-toast"
+
+import { DAYS_OF_WEEK, buildCronExpression } from "@/lib/cron"
 import { FormState } from "@/types/forms"
 import type { Schedule } from "@prisma/client"
-import Link from "next/link"
-import { useActionState, useState } from "react"
-import { useFormStatus } from "react-dom"
+
+import { Callout } from "@/components/ui/callout"
+import { CronDate, parseExpression } from "cron-parser"
+import cronstrue from "cronstrue"
+import { useActionState } from "react"
 import { deleteScheduleAction, submitScheduleAction } from "./server"
 
+/**
+ * If your existing code uses the schedule prop from the server,
+ * this component can be used to create or edit a schedule.
+ */
 interface ScheduleFormProps {
   schedule?: Schedule
 }
 
+/**
+ * Simple helper button for form submissions, showing pending state
+ */
 function SubmitButton({ label }: { label: string }) {
   const { pending } = useFormStatus()
   return (
@@ -47,55 +60,51 @@ function SubmitButton({ label }: { label: string }) {
 }
 
 export function ScheduleForm({ schedule }: ScheduleFormProps) {
-  // Parse initial cron expression or set defaults
-  const initialCronParts = schedule?.cron.split(" ") || [
-    "0",
-    "8",
-    "*",
-    "*",
-    "*",
-  ]
-  const [hour, setHour] = useState(initialCronParts[1])
-  const [minute, setMinute] = useState(initialCronParts[0])
-  const [timezone, setTimezone] = useState(
-    schedule?.timezone || Intl.DateTimeFormat().resolvedOptions().timeZone,
-  )
+  const defaultCron = "0 8 * * *"
+  const initialCron = schedule?.cron ?? defaultCron
 
-  // Parse days from cron expression or set all days by default
-  const initialDays = new Set<string>()
-  if (schedule) {
-    const daysPart = initialCronParts[4]
-    if (daysPart !== "*") {
-      if (daysPart.includes("-")) {
-        // Handle range (e.g., MON-FRI)
-        const [start, end] = daysPart.split("-")
-        const startIndex = daysOfWeek.findIndex((d) => d.id === start)
-        const endIndex = daysOfWeek.findIndex((d) => d.id === end)
-        for (let i = startIndex; i <= endIndex; i++) {
-          initialDays.add(daysOfWeek[i].id)
-        }
-      } else {
-        // Handle comma-separated list
-        daysPart.split(",").forEach((day) => initialDays.add(day))
-      }
-    }
-  } else {
-    // Set all days selected by default for new schedules
-    daysOfWeek.forEach((day) => initialDays.add(day.id))
-  }
-  const [selectedDays, setSelectedDays] = useState<Set<string>>(initialDays)
+  const { initialMinute, initialHour, initialDays, initialTimezone } =
+    parseInitialFields(initialCron, schedule?.timezone)
+
+  const [minute, setMinute] = useState<number[]>(initialMinute)
+  const [hour, setHour] = useState<number[]>(initialHour)
+  const [selectedDay, setSelectedDay] = useState<number[]>(initialDays)
+  const [timezone, setTimezone] = useState(
+    schedule?.timezone ||
+      Intl.DateTimeFormat().resolvedOptions().timeZone ||
+      "UTC",
+  )
 
   const [status, formAction] = useActionState<FormState | null, FormData>(
     submitScheduleAction,
     null,
   )
+
+  const [error, setError] = useState<string | null>(null)
+  const [nextRun, setNextRun] = useState<CronDate | null>(null)
+
+  useEffect(() => {
+    const expression = buildCronExpression({ minute, hour, day: selectedDay })
+    try {
+      const interval = parseExpression(expression, {
+        tz: timezone,
+      })
+      const next = interval.next()
+      setNextRun(next)
+      setError(null)
+    } catch (err: any) {
+      setNextRun(null)
+      setError(err.message || "Invalid cron expression")
+    }
+  }, [minute, hour, selectedDay, timezone])
+
   const breadcrumbs = [
     { title: "Home", href: "/" },
     { title: "Schedules", href: "/schedules" },
     ...(schedule?.id
       ? [
           {
-            title: schedule.name || "New Schedule",
+            title: schedule.name || "Edit Schedule",
             href: `/schedules/${schedule.id}`,
           },
         ]
@@ -107,18 +116,6 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
       title: status.statusTitle || "Error",
       description: status.statusDescription || "An error occurred",
       variant: "error",
-    })
-  }
-
-  function handleDayCheckedChange(dayId: string, checked: boolean) {
-    setSelectedDays((prev) => {
-      const newSet = new Set(prev)
-      if (checked) {
-        newSet.add(dayId)
-      } else {
-        newSet.delete(dayId)
-      }
-      return newSet
     })
   }
 
@@ -158,16 +155,17 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
 
       <form action={formAction}>
         <input type="hidden" name="id" value={schedule?.id} />
+
         <div>
           <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
             <div>
               <h2 className="font-semibold text-gray-900 dark:text-gray-50">
                 Schedule Information
               </h2>
-              <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
+              <p className="mt-1 text-sm text-gray-500 dark:text-gray-500">
                 {schedule
                   ? "Edit your schedule configuration."
-                  : "Create a new schedule to run your reporters at specific times."}
+                  : "Create a new schedule to run your reports at specific times."}
               </p>
             </div>
             <div className="md:col-span-2">
@@ -188,36 +186,46 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
               </div>
             </div>
           </div>
+
           <Divider />
+
           <div className="grid grid-cols-1 gap-10 p-4 md:grid-cols-3 md:p-8">
             <div>
               <h2 className="font-semibold text-gray-900 dark:text-gray-50">
                 Time Information
               </h2>
-              <p className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
+              <p className="mt-1 text-sm text-gray-500 dark:text-gray-500">
                 Configure when this schedule should run using the cron
                 expression editor.
               </p>
             </div>
+
             <div className="md:col-span-2">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-6">
                 <div className="col-span-full sm:col-span-2 gap-2 flex flex-col">
                   <Label className="font-medium">Hour</Label>
                   <Select
                     name="hour"
-                    value={hour}
-                    onValueChange={(val) => setHour(val)}
+                    value={hour.length === 24 ? "*" : hour[0]?.toString()}
+                    onValueChange={(val) =>
+                      setHour(
+                        val === "*"
+                          ? Array.from({ length: 24 }, (_, i) => i)
+                          : [Number(val)],
+                      )
+                    }
                   >
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      {[
-                        "*",
-                        ...Array.from({ length: 24 }, (_, i) => i.toString()),
-                      ].map((option) => (
-                        <SelectItem key={option} value={option}>
-                          {option === "*" ? "Every" : option}
+                      <SelectItem key="*" value="*">
+                        Every
+                      </SelectItem>
+                      {Array.from({ length: 24 }, (_, i) => i).map((option) => (
+                        <SelectItem key={option} value={option.toString()}>
+                          {option > 12 ? option - 12 : option}{" "}
+                          {option > 12 ? "PM" : "AM"}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -228,26 +236,34 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
                   <Label className="font-medium">Minute</Label>
                   <Select
                     name="minute"
-                    value={minute}
-                    onValueChange={(val) => setMinute(val)}
+                    value={minute.length === 60 ? "*" : minute[0]?.toString()}
+                    onValueChange={(val) =>
+                      setMinute(
+                        val === "*"
+                          ? Array.from({ length: 60 }, (_, i) => i)
+                          : [Number(val)],
+                      )
+                    }
                   >
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      {[
-                        ...(process.env.NODE_ENV === "development"
-                          ? ["*"]
-                          : []),
-                        "0",
-                        "15",
-                        "30",
-                        "45",
-                      ].map((option) => (
-                        <SelectItem key={option} value={option}>
-                          {option === "*" ? "Every" : option}
-                        </SelectItem>
-                      ))}
+                      <SelectItem key="*" value="*">
+                        Every
+                      </SelectItem>
+                      <SelectItem key="0" value="0">
+                        0
+                      </SelectItem>
+                      <SelectItem key="15" value="15">
+                        15
+                      </SelectItem>
+                      <SelectItem key="30" value="30">
+                        30
+                      </SelectItem>
+                      <SelectItem key="45" value="45">
+                        45
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -257,6 +273,7 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
                   <Select
                     name="timezone"
                     value={timezone}
+                    defaultValue={initialTimezone}
                     onValueChange={(val) => setTimezone(val)}
                   >
                     <SelectTrigger>
@@ -278,39 +295,56 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
                       Days of Week
                     </legend>
                     <ul className="mt-4 divide-y divide-gray-200 dark:divide-gray-800">
-                      {daysOfWeek.map((day) => (
-                        <li
-                          key={day.id}
-                          className="flex items-center gap-x-3 py-3"
-                        >
-                          <Checkbox
-                            id={`day-${day.id}`}
-                            name="selectedDays"
-                            value={day.id}
-                            checked={selectedDays.has(day.id)}
-                            onCheckedChange={(checked) =>
-                              handleDayCheckedChange(day.id, !!checked)
-                            }
-                          />
-                          <Label
-                            htmlFor={`day-${day.id}`}
-                            className="font-medium"
+                      {DAYS_OF_WEEK.map((day) => {
+                        const dayNum = Number(day.index)
+                        return (
+                          <li
+                            key={day.id}
+                            className="flex items-center gap-x-3 py-3"
                           >
-                            {day.label}
-                          </Label>
-                        </li>
-                      ))}
+                            <Checkbox
+                              id={`day-${day.id}`}
+                              name="selectedDays"
+                              value={dayNum.toString()}
+                              checked={selectedDay.includes(dayNum)}
+                              onCheckedChange={(checked) => {
+                                setSelectedDay((prev) => {
+                                  if (checked) {
+                                    return Array.from(
+                                      new Set([...prev, dayNum]),
+                                    )
+                                  } else {
+                                    return prev.filter((d) => d !== dayNum)
+                                  }
+                                })
+                              }}
+                            />
+                            <Label
+                              htmlFor={`day-${day.id}`}
+                              className="font-medium"
+                            >
+                              {day.label}
+                            </Label>
+                          </li>
+                        )
+                      })}
                     </ul>
                   </fieldset>
                 </div>
-
-                <div className="col-span-full text-sm text-gray-600 dark:text-gray-400">
-                  {getCronDescription({ minute, hour, selectedDays, timezone })}
-                </div>
+                <Callout
+                  variant="default"
+                  title={`Runs ${cronstrue.toString(buildCronExpression({ minute, hour, day: selectedDay }))}`}
+                  className="col-span-full"
+                >
+                  Next run is at {nextRun?.toDate().toLocaleString()}.
+                </Callout>
+                {error && <Callout variant="error" title={error} />}
               </div>
             </div>
           </div>
+
           <Divider />
+
           <div className="flex items-center justify-end gap-2 p-4">
             <Link href="/schedules">
               <Button variant="secondary" type="button">
@@ -325,4 +359,40 @@ export function ScheduleForm({ schedule }: ScheduleFormProps) {
       </form>
     </div>
   )
+}
+
+/**
+ * parseInitialFields()
+ * Given an existing cron expression + optional timezone, parse it with
+ * cron-parser to return "friendly" initial states for hour, minute, dayOfWeek, etc.
+ */
+function parseInitialFields(
+  cronExpression: string,
+  tz?: string,
+): {
+  initialMinute: number[]
+  initialHour: number[]
+  initialDays: number[]
+  initialTimezone: string
+} {
+  try {
+    const interval = parseExpression(cronExpression, {
+      currentDate: new Date(),
+      tz: tz || Intl.DateTimeFormat().resolvedOptions().timeZone,
+    })
+    const { hour, minute, dayOfWeek } = interval.fields
+    return {
+      initialMinute: Array.from(minute.values()),
+      initialHour: Array.from(hour.values()),
+      initialDays: Array.from(dayOfWeek.values()).filter((day) => day !== 7),
+      initialTimezone: tz || Intl.DateTimeFormat().resolvedOptions().timeZone,
+    }
+  } catch {
+    return {
+      initialMinute: [0],
+      initialHour: [8],
+      initialDays: [0, 1, 2, 3, 4, 5, 6],
+      initialTimezone: tz || Intl.DateTimeFormat().resolvedOptions().timeZone,
+    }
+  }
 }

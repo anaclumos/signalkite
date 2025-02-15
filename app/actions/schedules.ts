@@ -1,7 +1,7 @@
 "use server"
 
 import { db } from "@/prisma"
-import { CronExpressionParser } from "cron-parser"
+import { parseExpression } from "cron-parser"
 import { notFound } from "next/navigation"
 import { z } from "zod"
 import { getCurrentUser } from "./auth"
@@ -32,7 +32,6 @@ export async function upsertSchedule({
   const user = await getCurrentUser()
 
   if (id && id.length > 0) {
-    // Validate input for update
     const validatedData = scheduleUpsertSchema.parse({
       id,
       name,
@@ -42,7 +41,7 @@ export async function upsertSchedule({
       reporterIds,
     })
 
-    const updateInterval = CronExpressionParser.parse(validatedData.cron, {
+    const updateInterval = parseExpression(validatedData.cron, {
       tz: validatedData.timezone,
     })
     const updateNextRunAt = updateInterval.next().toDate()
@@ -95,9 +94,10 @@ export async function upsertSchedule({
       reporterIds,
     })
 
-    const interval = CronExpressionParser.parse(validatedData.cron, {
+    const interval = parseExpression(validatedData.cron, {
       tz: validatedData.timezone,
     })
+
     const nextRunAt = interval.next().toDate()
 
     return db.$transaction(async (tx: any) => {

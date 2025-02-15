@@ -1,7 +1,7 @@
 "use server"
 
 import { deleteSchedule, upsertSchedule } from "@/app/actions/schedules"
-import { generateCronString } from "@/lib/cron"
+import { buildCronExpression } from "@/lib/cron"
 import { FormState } from "@/types/forms"
 import { redirect } from "next/navigation"
 
@@ -44,11 +44,17 @@ export async function submitScheduleAction(
     }
   }
 
-  const cron = generateCronString(
-    formData.get("minute") as string,
-    formData.get("hour") as string,
-    new Set(selectedDays),
-  )
+  const cron = buildCronExpression({
+    minute:
+      formData.get("minute") === "*"
+        ? "*"
+        : [parseInt(formData.get("minute") as string)],
+    hour:
+      formData.get("hour") === "*"
+        ? "*"
+        : [parseInt(formData.get("hour") as string)],
+    day: selectedDays.map((day) => parseInt(day)),
+  })
 
   await upsertSchedule({
     id: scheduleId,

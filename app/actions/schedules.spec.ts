@@ -4,9 +4,9 @@ import {
   getSchedules,
   upsertSchedule,
 } from "@/app/actions/schedules"
-import { generateCronString } from "@/lib/cron"
+import { buildCronExpression } from "@/lib/cron"
 import { db } from "@/prisma"
-import CronExpressionParser from "cron-parser"
+import { parseExpression } from "cron-parser"
 import {
   afterAll,
   afterEach,
@@ -85,7 +85,7 @@ describe("Schedule Actions", () => {
     })
     expect(sr.length).toBe(2)
 
-    const interval = CronExpressionParser.parse(schedule.cron, {
+    const interval = parseExpression(schedule.cron, {
       tz: schedule.timezone,
     })
     const nextRunAt = interval.next().toDate()
@@ -161,12 +161,11 @@ describe("Schedule Actions", () => {
   })
 
   it("generates correct cron string with all days selected", () => {
-    const minute = "0"
-    const hour = "9"
-    const allDays = new Set(["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"])
-
-    const cron = generateCronString(minute, hour, allDays)
-    expect(cron).toBe("0 9 * * MON-SUN")
+    const minute = [0]
+    const hour = [9]
+    const day = [1, 2, 3, 4, 5, 6, 0]
+    const cron = buildCronExpression({ minute, hour, day })
+    expect(cron).toBe("0 9 * * *")
   })
 
   it("gets schedules for a user (excluding deleted)", async () => {
