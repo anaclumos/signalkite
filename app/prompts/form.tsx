@@ -1,6 +1,7 @@
 "use client"
 
 import { NavBar } from "@/components/nav-bar"
+import { SubmitButton } from "@/components/submit-button"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -21,20 +22,10 @@ import { FormState } from "@/types/forms"
 import { Prompt } from "@prisma/client"
 import Link from "next/link"
 import { useActionState } from "react"
-import { useFormStatus } from "react-dom"
 import { deletePromptAction, submitPromptAction } from "./server"
 
 interface PromptFormProps {
   prompt?: Prompt
-}
-
-function SubmitButton({ label }: { label: string }) {
-  const { pending } = useFormStatus()
-  return (
-    <Button type="submit" disabled={pending}>
-      {pending ? "Saving..." : label}
-    </Button>
-  )
 }
 
 export function PromptForm({ prompt }: PromptFormProps) {
@@ -46,7 +37,7 @@ export function PromptForm({ prompt }: PromptFormProps) {
     { title: "Home", href: "/" },
     { title: "Prompts", href: "/prompts" },
     ...(prompt?.id
-      ? [{ title: prompt.name, href: `/prompts/${prompt.id}` }]
+      ? [{ title: prompt.name || "New Prompt", href: `/prompts/${prompt.id}` }]
       : [{ title: "New Prompt", href: "/prompts/new" }]),
   ]
 
@@ -156,7 +147,10 @@ export function PromptForm({ prompt }: PromptFormProps) {
                 Cancel
               </Button>
             </Link>
-            <SubmitButton label={prompt ? "Save Changes" : "Create Prompt"} />
+            <SubmitButton
+              defaultLabel={prompt ? "Save Changes" : "Create Prompt"}
+              submittingLabel="Saving..."
+            />
           </div>
         </div>
       </form>

@@ -1,6 +1,7 @@
 "use client"
 
 import { NavBar } from "@/components/nav-bar"
+import { SubmitButton } from "@/components/submit-button"
 import { Button } from "@/components/ui/button"
 import { Divider } from "@/components/ui/divider"
 import { Input } from "@/components/ui/input"
@@ -24,7 +25,6 @@ import { ReporterStrategyType, Schedule } from "@prisma/client"
 import { RiGlobalLine, RiNewspaperLine, RiSearchLine } from "@remixicon/react"
 import Link from "next/link"
 import { useActionState, useState } from "react"
-import { useFormStatus } from "react-dom"
 import { submitReporterAction } from "./server"
 
 interface ReporterFormProps {
@@ -37,15 +37,6 @@ interface ReporterFormProps {
     id: string
     name?: string | null
   }
-}
-
-function SubmitButton() {
-  const { pending } = useFormStatus()
-  return (
-    <Button type="submit" disabled={pending}>
-      {pending ? "Saving..." : "Create Reporter"}
-    </Button>
-  )
 }
 
 export function ReporterForm({
@@ -322,7 +313,10 @@ export function ReporterForm({
                 Cancel
               </Button>
             </Link>
-            <SubmitButton />
+            <SubmitButton
+              defaultLabel={reporter ? "Save Changes" : "Create Reporter"}
+              submittingLabel="Saving..."
+            />
           </div>
         </div>
       </form>
