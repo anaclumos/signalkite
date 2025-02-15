@@ -65,7 +65,7 @@ export function EntityTable<T>({
   actions,
   emptyMessage = "No items found.",
 }: EntityTableProps<T>) {
-  const [activeView, setActiveView] = useState<"grid" | "list">("grid")
+  const [activeView, setActiveView] = useState<"grid" | "list">("list")
 
   const table = useReactTable<T>({
     data,

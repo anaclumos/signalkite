@@ -23,7 +23,7 @@ export function SchedulesTable({ initialSchedules }: SchedulesTableProps) {
         cell: ({ row }) => row.original.name,
       },
       {
-        header: "Cron Expression",
+        header: "Schedule",
         accessorKey: "cron",
         enableSorting: false,
         cell: ({ row }) => cronstrue.toString(row.original.cron),
