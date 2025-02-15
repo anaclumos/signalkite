@@ -17,9 +17,9 @@ import { RiArrowDownSFill } from "@remixicon/react"
 import { House, PackageSearch, Settings, Telescope } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import * as React from "react"
+import { Suspense, useState } from "react"
 import { cx, focusRing } from "../lib/utils"
-import { UserProfile } from "./user-profile"
+import { UserProfile, UserProfileLoading } from "./user-profile"
 
 const navigation = [
   {
@@ -78,7 +78,7 @@ const navigation = [
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname()
-  const [openMenus, setOpenMenus] = React.useState<string[]>([
+  const [openMenus, setOpenMenus] = useState<string[]>([
     navigation[0].name,
     navigation[1].name,
     navigation[2].name,
@@ -167,7 +167,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <UserProfile />
+        <Suspense fallback={<UserProfileLoading />}>
+          <UserProfile />
+        </Suspense>
       </SidebarFooter>
     </Sidebar>
   )

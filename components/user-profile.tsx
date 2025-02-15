@@ -15,15 +15,15 @@ import { useTheme } from "next-themes"
 
 export const UserProfileLoading = () => {
   return (
-    <div className="flex justify-center items-center h-9">
-      <Skeleton className="w-full h-full" />
+    <div className="flex justify-center items-center h-13 w-full">
+      <Skeleton className="w-full h-full bg-gray-200 dark:bg-gray-800" />
     </div>
   )
 }
 
 export function UserProfile() {
   const { resolvedTheme } = useTheme()
-  const { user, isLoaded } = useUser()
+  const { isLoaded } = useUser()
 
   if (!isLoaded) {
     return <UserProfileLoading />
