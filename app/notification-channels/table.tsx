@@ -23,7 +23,6 @@ import {
 } from "@tanstack/react-table"
 import { startCase } from "es-toolkit/string"
 import parsePhoneNumber from "libphonenumber-js"
-import Link from "next/link"
 import { useMemo } from "react"
 
 interface NotificationChannelsTableProps {
@@ -138,12 +137,10 @@ export function NotificationChannelsTable({
                 <TableRow key={row.id}>
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
-                      <Link href={`/notification-channels/${row.id}`}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </Link>
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext(),
+                      )}
                     </TableCell>
                   ))}
                 </TableRow>
