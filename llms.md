@@ -16,7 +16,7 @@
 - `next.config.ts`
   - Next.js configuration (e.g., experimental features, prerendering).
 ## Data Modeling (Prisma)
-- Define models in `prisma/schema.prisma`.
+- Define models in `prisma/schema/*.prisma` (Separated from `schema.prisma`).
 - Run `npx prisma migrate dev` for database updates.
 - Use `npx prisma generate` to generate the Prisma client.
 - Fetch and update data using Prisma in server components.
@@ -83,88 +83,13 @@
 - Always add e2e tests and Vitest spec tests at the end. e2e tests are located in the e2e folder, and the Vitest spec test should be colocated with .test.ts
 - after the file name.
 ## Commit Messages
-- When everything is done, print what should be a commit message with:
-  - :emoji_text: (scope) description
+- When everything is done, print what should be a commit message as conventional commit.
+  - type(scope): description
+  - type must be one of [build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test]
 - You should use the ASCII representation of the emoji, not the Unicode itself. For example, :sparkles: is correct, not ✨.
+
 ## Special Gotchas
+
 - Use "import { cx } from "@/lib/utils" to combine tailwind classes.
 - Use authInterrupts, such as unauthorized() and forbidden() instead of return new Response("Unauthorized", { status: 401 }) or return new Response("Forbidden", { status: 403 })
-- Always read Prisma schema files before writing code.
-
-| Emoji | Description |
-|-------|-------------|
-| 🎨 | Improving structure / format of the code |
-| ⚡️ | Improving performance |
-| 🔥 | Removing code or files |
-| 🐛 | Fixing a bug |
-| 🚑 | Critical hotfix |
-| ✨ | Introducing new features |
-| 📝 | Writing docs |
-| 🚀 | Deploying stuff |
-| 💄 | Updating the UI and style files |
-| 🎉 | Initial commit |
-| ✅ | Adding tests |
-| 🔒 | Fixing security issues |
-| 🍎 | Fixing something on macOS |
-| 🐧 | Fixing something on Linux |
-| 🏁 | Fixing something on Windows |
-| 🤖 | Fixing something on Android |
-| 🍏 | Fixing something on iOS |
-| 🔖 | Releasing / Version tags |
-| 🚨 | Removing linter warnings |
-| 🚧 | Work in progress |
-| 💚 | Fixing CI Build |
-| ⬇️ | Downgrading dependencies |
-| ⬆️ | Upgrading dependencies |
-| 📌 | Pinning dependencies to specific versions |
-| 👷 | Adding CI build system |
-| 📈 | Adding analytics or tracking code |
-| ♻️ | Refactoring code |
-| 🐳 | Work about Docker |
-| ➕ | Adding a dependency |
-| ➖ | Removing a dependency |
-| 🔧 | Changing configuration files |
-| 🌐 | Internationalization and localization |
-| ✏️ | Fixing typos |
-| 💩 | Writing bad code that needs to be improved |
-| ⏪ | Reverting changes |
-| 🔀 | Merging branches |
-| 📦 | Updating compiled files or packages |
-| 👽 | Updating code due to external API changes |
-| 🚚 | Moving or renaming files |
-| 📄 | Adding or updating license |
-| 💥 | Introducing breaking changes |
-| 🍱 | Adding or updating assets |
-| 👌 | Updating code due to code review changes |
-| ♿️ | Improving accessibility |
-| 💡 | Documenting source code |
-| 🍻 | Writing code drunkenly |
-| 💬 | Updating text and literals |
-| 🗃 | Performing database related changes |
-| 🔊 | Adding logs |
-| 🔇 | Removing logs |
-| 👥 | Adding contributor(s) |
-| 🚸 | Improving user experience / usability |
-| 🏗 | Making architectural changes |
-| 📱 | Working on responsive design |
-| 🤡 | Mocking things |
-| 🥚 | Adding an easter egg |
-| 🙈 | Adding or updating a .gitignore file |
-| 📸 | Adding or updating snapshots |
-| ⚗ | Experimenting new things |
-| 🔍 | Improving SEO |
-| ☸️ | Work about Kubernetes |
-| 🏷️ | Adding or updating types (Flow, TypeScript) |
-| 🌱 | Adding or updating seed files |
-| 🚩 | Adding, updating, or removing feature flags |
-| 💫 | Adding or updating animations and transitions |
-| 🗑️ | Deprecate code that needs to be cleaned up |
-| 🛂 | Work on code related to authorization, roles and permissions |
-| 🩹 | Simple fix for a non-critical issue |
-| 🧐 | Data exploration/inspection |
-| ⚰️ | Remove dead code |
-| 🧪 | Add a failing test |
-| 👔 | Add or update business logic |
-| 🩺 | Add or update healthcheck |
-| 🧱 | Infrastructure related changes |
-| 🧑‍💻 | Improve developer experience |
+- Always read Prisma schema files before writing code, inside `prisma/schema/*.prisma`
