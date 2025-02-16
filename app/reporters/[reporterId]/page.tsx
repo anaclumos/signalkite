@@ -22,7 +22,6 @@ type ReporterIssue = {
   stories: Story[]
 }
 
-// Hardcoded data for multiple issues
 const issues: ReporterIssue[] = [
   {
     id: 1,
@@ -86,6 +85,126 @@ const issues: ReporterIssue[] = [
       },
     ],
   },
+  {
+    id: 3,
+    issueNumber: 43,
+    publishedDate: "July 2023",
+    summary:
+      "Emphasis on advanced React patterns, state management, plus additional Next.js insights.",
+    author: "Jane Doe",
+    stories: [
+      {
+        id: 105,
+        title: "Deeper Dive into React Hooks",
+        date: "July 10, 2023",
+        excerpt:
+          "Exploring complex patterns with custom hooks for data fetching, caching, and side effects...",
+      },
+      {
+        id: 106,
+        title: "Breaking Down Next.js 13 Features",
+        date: "July 11, 2023",
+        excerpt:
+          "From App Router to Layouts, here's how Next.js 13 changes the way we structure apps...",
+      },
+    ],
+  },
+  {
+    id: 4,
+    issueNumber: 43,
+    publishedDate: "July 2023",
+    summary:
+      "Emphasis on advanced React patterns, state management, plus additional Next.js insights.",
+    author: "Jane Doe",
+    stories: [
+      {
+        id: 105,
+        title: "Deeper Dive into React Hooks",
+        date: "July 10, 2023",
+        excerpt:
+          "Exploring complex patterns with custom hooks for data fetching, caching, and side effects...",
+      },
+      {
+        id: 106,
+        title: "Breaking Down Next.js 13 Features",
+        date: "July 11, 2023",
+        excerpt:
+          "From App Router to Layouts, here's how Next.js 13 changes the way we structure apps...",
+      },
+    ],
+  },
+  {
+    id: 5,
+    issueNumber: 43,
+    publishedDate: "July 2023",
+    summary:
+      "Emphasis on advanced React patterns, state management, plus additional Next.js insights.",
+    author: "Jane Doe",
+    stories: [
+      {
+        id: 105,
+        title: "Deeper Dive into React Hooks",
+        date: "July 10, 2023",
+        excerpt:
+          "Exploring complex patterns with custom hooks for data fetching, caching, and side effects...",
+      },
+      {
+        id: 106,
+        title: "Breaking Down Next.js 13 Features",
+        date: "July 11, 2023",
+        excerpt:
+          "From App Router to Layouts, here's how Next.js 13 changes the way we structure apps...",
+      },
+    ],
+  },
+  {
+    id: 6,
+    issueNumber: 43,
+    publishedDate: "July 2023",
+    summary:
+      "Emphasis on advanced React patterns, state management, plus additional Next.js insights.",
+    author: "Jane Doe",
+    stories: [
+      {
+        id: 105,
+        title: "Deeper Dive into React Hooks",
+        date: "July 10, 2023",
+        excerpt:
+          "Exploring complex patterns with custom hooks for data fetching, caching, and side effects...",
+      },
+      {
+        id: 106,
+        title: "Breaking Down Next.js 13 Features",
+        date: "July 11, 2023",
+        excerpt:
+          "From App Router to Layouts, here's how Next.js 13 changes the way we structure apps...",
+      },
+    ],
+  },
+  {
+    id: 7,
+    issueNumber: 43,
+    publishedDate: "July 2023",
+    summary:
+      "Emphasis on advanced React patterns, state management, plus additional Next.js insights.",
+    author: "Jane Doe",
+    stories: [
+      {
+        id: 105,
+        title: "Deeper Dive into React Hooks",
+        date: "July 10, 2023",
+        excerpt:
+          "Exploring complex patterns with custom hooks for data fetching, caching, and side effects...",
+      },
+      {
+        id: 106,
+        title: "Breaking Down Next.js 13 Features",
+        date: "July 11, 2023",
+        excerpt:
+          "From App Router to Layouts, here's how Next.js 13 changes the way we structure apps...",
+      },
+    ],
+  },
 ]
 
 export default function StickyIssuesPage() {
@@ -110,18 +229,15 @@ export default function StickyIssuesPage() {
       <main className="mx-auto w-full">
         {issues.map((issue) => (
           <Fragment key={issue.id}>
-            <section className="md:flex md:gap-6 md:border-zinc-200 dark:md:border-zinc-800 p-4 mx-auto max-w-6xl">
+            <section className="md:flex md:gap-6 md:border-zinc-200 dark:md:border-zinc-800 p-12 mx-auto max-w-6xl">
               {/* Left: Sticky side panel */}
               <div className="md:w-72 md:shrink-0 pb-4 px-1">
-                <div className="sticky top-20 space-y-3">
+                <div className="sticky top-28 space-y-3">
                   <h1 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">
                     Issue #{issue.issueNumber}
                   </h1>
                   <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                    Published: {issue.publishedDate}
-                  </p>
-                  <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                    Author: {issue.author}
+                    Published by {issue.author} on {issue.publishedDate}
                   </p>
                   <p className="mt-4 text-sm text-zinc-700 dark:text-zinc-300">
                     {issue.summary}
@@ -133,28 +249,28 @@ export default function StickyIssuesPage() {
               <div className="md:mt-0 md:flex-1">
                 <div className="flex flex-col gap-4">
                   {issue.stories.map((story) => (
-                    <Card key={story.id} className="p-4">
-                      <Link
-                        href={`/reporters/${reporter?.id ?? "new"}/issues/${
-                          issue.id
-                        }/stories/${story.id}`}
-                      >
-                        <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-50 hover:underline">
+                    <Link
+                      key={story.id}
+                      href={`/stories/${story.id}`}
+                      className="group"
+                    >
+                      <Card key={story.id} className="p-4">
+                        <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-50 group-hover:underline">
                           {story.title}
                         </h3>
-                      </Link>
-                      <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-                        {story.date}
-                      </p>
-                      <p className="mt-2 text-sm text-zinc-700 dark:text-zinc-300">
-                        {story.excerpt}
-                      </p>
-                    </Card>
+                        <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+                          {story.date}
+                        </p>
+                        <p className="mt-2 text-sm text-zinc-700 dark:text-zinc-300">
+                          {story.excerpt}
+                        </p>
+                      </Card>
+                    </Link>
                   ))}
                 </div>
               </div>
             </section>
-            <Divider />
+            <Divider className="my-0" />
           </Fragment>
         ))}
       </main>
