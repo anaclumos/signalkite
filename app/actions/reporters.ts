@@ -180,21 +180,20 @@ async function _getReporter(id: string, userId: string) {
     where: { id: validatedId },
     include: {
       Prompt: true,
-      Stories: {
-        where: {
-          deletedAt: null,
-        },
-        orderBy: {
-          createdAt: "desc",
-        },
-        take: 10,
-      },
       Issues: {
         where: {
           deletedAt: null,
         },
         orderBy: {
           createdAt: "desc",
+        },
+        take: 20,
+        include: {
+          Stories: {
+            where: {
+              deletedAt: null,
+            },
+          },
         },
       },
     },

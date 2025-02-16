@@ -1,267 +1,20 @@
-"use client"
-
+import { getReporter } from "@/app/actions/reporters"
 import { NavBar } from "@/components/nav-bar"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Divider } from "@/components/ui/divider"
-import { toast } from "@/lib/use-toast"
-import { FormState } from "@/types/forms"
 import Link from "next/link"
-import { useParams } from "next/navigation"
-import { Fragment, useActionState, useEffect } from "react"
-import { subscribeToReporter, unsubscribeFromReporter } from "./server"
+import { Fragment } from "react"
 
-type Story = {
-  id: number
-  title: string
-  date: string
-  excerpt: string
-}
+export default async function ReporterPage({
+  params,
+}: { params: { reporterId: string } }) {
+  const reporter = await getReporter(params.reporterId)
 
-type ReporterIssue = {
-  id: number
-  issueNumber: number
-  publishedDate: string
-  summary: string
-  author: string
-  stories: Story[]
-}
-
-const issues: ReporterIssue[] = [
-  {
-    id: 1,
-    issueNumber: 42,
-    publishedDate: "July 2023",
-    summary:
-      "Focus on advanced React patterns, state management, and deeper insights into Next.js App Router best practices.",
-    author: "John Smith",
-    stories: [
-      {
-        id: 101,
-        title: "Modern React Patterns",
-        date: "July 7, 2023",
-        excerpt:
-          "An in-depth look at the latest best practices and patterns used in modern React development...",
-      },
-      {
-        id: 102,
-        title: "Exploring Next.js App Router",
-        date: "July 8, 2023",
-        excerpt:
-          "A guide to structuring and routing your Next.js application using the new App Router...",
-      },
-      {
-        id: 103,
-        title: "Server-side Rendering with Next.js",
-        date: "July 14, 2023",
-        excerpt:
-          "Learn how to optimize your Next.js application for server-side rendering and improve performance...",
-      },
-      {
-        id: 104,
-        title: "A Guide to Next.js Middleware",
-        date: "July 21, 2023",
-        excerpt:
-          "Leverage Next.js Middleware for custom server-side redirects, request modifications, and more...",
-      },
-    ],
-  },
-  {
-    id: 2,
-    issueNumber: 43,
-    publishedDate: "July 2023",
-    summary:
-      "Emphasis on advanced React patterns, state management, plus additional Next.js insights.",
-    author: "Jane Doe",
-    stories: [
-      {
-        id: 105,
-        title: "Deeper Dive into React Hooks",
-        date: "July 10, 2023",
-        excerpt:
-          "Exploring complex patterns with custom hooks for data fetching, caching, and side effects...",
-      },
-      {
-        id: 106,
-        title: "Breaking Down Next.js 13 Features",
-        date: "July 11, 2023",
-        excerpt:
-          "From App Router to Layouts, here's how Next.js 13 changes the way we structure apps...",
-      },
-    ],
-  },
-  {
-    id: 3,
-    issueNumber: 43,
-    publishedDate: "July 2023",
-    summary:
-      "Emphasis on advanced React patterns, state management, plus additional Next.js insights.",
-    author: "Jane Doe",
-    stories: [
-      {
-        id: 105,
-        title: "Deeper Dive into React Hooks",
-        date: "July 10, 2023",
-        excerpt:
-          "Exploring complex patterns with custom hooks for data fetching, caching, and side effects...",
-      },
-      {
-        id: 106,
-        title: "Breaking Down Next.js 13 Features",
-        date: "July 11, 2023",
-        excerpt:
-          "From App Router to Layouts, here's how Next.js 13 changes the way we structure apps...",
-      },
-    ],
-  },
-  {
-    id: 4,
-    issueNumber: 43,
-    publishedDate: "July 2023",
-    summary:
-      "Emphasis on advanced React patterns, state management, plus additional Next.js insights.",
-    author: "Jane Doe",
-    stories: [
-      {
-        id: 105,
-        title: "Deeper Dive into React Hooks",
-        date: "July 10, 2023",
-        excerpt:
-          "Exploring complex patterns with custom hooks for data fetching, caching, and side effects...",
-      },
-      {
-        id: 106,
-        title: "Breaking Down Next.js 13 Features",
-        date: "July 11, 2023",
-        excerpt:
-          "From App Router to Layouts, here's how Next.js 13 changes the way we structure apps...",
-      },
-    ],
-  },
-  {
-    id: 5,
-    issueNumber: 43,
-    publishedDate: "July 2023",
-    summary:
-      "Emphasis on advanced React patterns, state management, plus additional Next.js insights.",
-    author: "Jane Doe",
-    stories: [
-      {
-        id: 105,
-        title: "Deeper Dive into React Hooks",
-        date: "July 10, 2023",
-        excerpt:
-          "Exploring complex patterns with custom hooks for data fetching, caching, and side effects...",
-      },
-      {
-        id: 106,
-        title: "Breaking Down Next.js 13 Features",
-        date: "July 11, 2023",
-        excerpt:
-          "From App Router to Layouts, here's how Next.js 13 changes the way we structure apps...",
-      },
-    ],
-  },
-  {
-    id: 6,
-    issueNumber: 43,
-    publishedDate: "July 2023",
-    summary:
-      "Emphasis on advanced React patterns, state management, plus additional Next.js insights.",
-    author: "Jane Doe",
-    stories: [
-      {
-        id: 105,
-        title: "Deeper Dive into React Hooks",
-        date: "July 10, 2023",
-        excerpt:
-          "Exploring complex patterns with custom hooks for data fetching, caching, and side effects...",
-      },
-      {
-        id: 106,
-        title: "Breaking Down Next.js 13 Features",
-        date: "July 11, 2023",
-        excerpt:
-          "From App Router to Layouts, here's how Next.js 13 changes the way we structure apps...",
-      },
-    ],
-  },
-  {
-    id: 7,
-    issueNumber: 43,
-    publishedDate: "July 2023",
-    summary:
-      "Emphasis on advanced React patterns, state management, plus additional Next.js insights.",
-    author: "Jane Doe",
-    stories: [
-      {
-        id: 105,
-        title: "Deeper Dive into React Hooks",
-        date: "July 10, 2023",
-        excerpt:
-          "Exploring complex patterns with custom hooks for data fetching, caching, and side effects...",
-      },
-      {
-        id: 106,
-        title: "Breaking Down Next.js 13 Features",
-        date: "July 11, 2023",
-        excerpt:
-          "From App Router to Layouts, here's how Next.js 13 changes the way we structure apps...",
-      },
-    ],
-  },
-]
-
-export default function StickyIssuesPage({
-  isSubscribed,
-}: {
-  isSubscribed: boolean
-}) {
-  const { reporterId } = useParams<{ reporterId: string }>()
-
-  const [subscribeStatus, subscribeAction] = useActionState<
-    FormState | null,
-    FormData
-  >(subscribeToReporter, null)
-
-  const [unsubscribeStatus, unsubscribeAction] = useActionState<
-    FormState | null,
-    FormData
-  >(unsubscribeFromReporter, null)
-
-  useEffect(() => {
-    if (subscribeStatus && !subscribeStatus.success) {
-      toast({
-        title: subscribeStatus.statusTitle || "Error",
-        description: subscribeStatus.statusDescription || "An error occurred",
-        variant: "error",
-      })
-    }
-  }, [subscribeStatus])
-
-  useEffect(() => {
-    if (unsubscribeStatus && !unsubscribeStatus.success) {
-      toast({
-        title: unsubscribeStatus.statusTitle || "Error",
-        description: unsubscribeStatus.statusDescription || "An error occurred",
-        variant: "error",
-      })
-    }
-  }, [unsubscribeStatus])
-
-  // Example reporter object
-  const reporter = { id: reporterId, name: "My Awesome Reporter" }
-
-  // Simple breadcrumb example (you might tailor this if you’re listing multiple issues on the same page)
   const breadcrumbs = [
     { title: "Home", href: "/" },
     { title: "Reporters", href: "/reporters" },
-    {
-      title: reporter?.name || "New Reporter",
-      href: `/reporters/${reporter?.id ?? "new"}`,
-    },
-    // Possibly a final "Issues" crumb if you prefer:
-    { title: "Issues", href: "#" },
+    { title: reporter.name, href: `/reporters/${reporter.id}` },
   ]
 
   return (
@@ -269,23 +22,13 @@ export default function StickyIssuesPage({
       <NavBar
         breadcrumbs={breadcrumbs}
         actions={
-          <form action={isSubscribed ? unsubscribeAction : subscribeAction}>
-            <input type="hidden" name="reporterId" value={reporterId} />
-            <Button
-              type="submit"
-              variant={isSubscribed ? "destructive" : "primary"}
-              disabled={
-                (isSubscribed && unsubscribeStatus?.success === false) ||
-                (!isSubscribed && subscribeStatus?.success === false)
-              }
-            >
-              {isSubscribed ? "Unsubscribe" : "Subscribe"}
-            </Button>
-          </form>
+          <Button type="submit" variant={"primary"}>
+            {"Subscribe"}
+          </Button>
         }
       />
       <main className="mx-auto w-full">
-        {issues.map((issue) => (
+        {reporter.Issues.map((issue) => (
           <Fragment key={issue.id}>
             <section className="md:flex md:gap-6 md:border-zinc-200 dark:md:border-zinc-800 p-12 mx-auto max-w-6xl">
               {/* Left: Sticky side panel */}
@@ -293,14 +36,14 @@ export default function StickyIssuesPage({
                 <div className="sticky top-28 space-y-3">
                   <div className="flex justify-between items-center">
                     <h1 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">
-                      Issue #{issue.issueNumber}
+                      {issue.title}
                     </h1>
                   </div>
                   <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                    Published by {issue.author} on {issue.publishedDate}
+                    {issue.createdAt.toString()}
                   </p>
                   <p className="mt-4 text-sm text-zinc-700 dark:text-zinc-300">
-                    {issue.summary}
+                    {issue.description}
                   </p>
                 </div>
               </div>
@@ -308,7 +51,7 @@ export default function StickyIssuesPage({
               {/* Right: Scrollable story list */}
               <div className="md:mt-0 md:flex-1">
                 <div className="flex flex-col gap-4">
-                  {issue.stories.map((story) => (
+                  {issue.Stories.map((story) => (
                     <Link
                       key={story.id}
                       href={`/stories/${story.id}`}
@@ -319,10 +62,7 @@ export default function StickyIssuesPage({
                           {story.title}
                         </h3>
                         <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-                          {story.date}
-                        </p>
-                        <p className="mt-2 text-sm text-zinc-700 dark:text-zinc-300">
-                          {story.excerpt}
+                          {story.summary}
                         </p>
                       </Card>
                     </Link>
