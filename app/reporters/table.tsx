@@ -12,7 +12,8 @@ import {
   TableRoot,
   TableRow,
 } from "@/components/ui/table"
-import { Reporter, ReporterStatus } from "@prisma/client"
+import { getStrategyLabel } from "@/lib/strategy"
+import { Reporter as PrismaReporter, ReporterStatus } from "@prisma/client"
 import {
   ColumnDef,
   flexRender,
@@ -20,8 +21,16 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
+import { startCase } from "es-toolkit/string"
 import Link from "next/link"
 import { useMemo } from "react"
+
+type Reporter = PrismaReporter & {
+  _count: {
+    stories: number
+    issues: number
+  }
+}
 
 interface ReportersTableProps {
   initialReporters: Reporter[]
@@ -40,15 +49,16 @@ export function ReportersTable({ initialReporters }: ReportersTableProps) {
         header: "Strategy",
         accessorKey: "strategy",
         enableSorting: true,
+        cell: ({ row }) => getStrategyLabel(row.original.strategy),
       },
       {
-        header: "Stories",
-        accessorKey: "_count.Stories",
+        header: "Issues",
+        accessorKey: "_count.issues",
         enableSorting: true,
       },
       {
-        header: "Scans",
-        accessorKey: "_count.Issues",
+        header: "Stories",
+        accessorKey: "_count.stories",
         enableSorting: true,
       },
       {
@@ -67,7 +77,7 @@ export function ReportersTable({ initialReporters }: ReportersTableProps) {
                     : "default"
               }
             >
-              {status}
+              {startCase(status)}
             </Badge>
           )
         },

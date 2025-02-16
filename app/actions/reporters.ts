@@ -138,15 +138,6 @@ export async function getReporters() {
     },
     include: {
       prompt: true,
-      stories: {
-        where: {
-          deletedAt: null,
-        },
-        orderBy: {
-          createdAt: "desc",
-        },
-        take: 1,
-      },
       _count: {
         select: {
           stories: {

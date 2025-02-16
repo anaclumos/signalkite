@@ -48,7 +48,7 @@ export default async function ReporterPage({
                     </h1>
                   </div>
                   <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                    {issue.createdAt.toString()}
+                    {issue.createdAt.toLocaleString()}
                   </p>
                   <p className="mt-4 text-sm text-zinc-700 dark:text-zinc-300">
                     {issue.description}
