@@ -108,12 +108,15 @@ export async function deleteSubscription(reporterId: string) {
     notFound()
   }
 
-  return db.subscription.delete({
+  return db.subscription.update({
     where: {
       userId_reporterId: {
         userId: user.id,
         reporterId: validatedReporterId,
       },
+    },
+    data: {
+      deletedAt: new Date(),
     },
   })
 }
@@ -122,6 +125,7 @@ async function _getSubscriptions(userId: string) {
   return db.subscription.findMany({
     where: {
       userId,
+      deletedAt: null,
     },
     include: {
       reporter: true,

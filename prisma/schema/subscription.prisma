@@ -11,9 +11,11 @@ model Subscription {
     notificationChannelId String?
 
     /// Timestamp when the Subscription was created.
-    createdAt DateTime @default(now()) @db.Timestamptz()
+    createdAt DateTime  @default(now()) @db.Timestamptz()
     /// Timestamp when the Subscription was last updated.
-    updatedAt DateTime @default(now()) @updatedAt @db.Timestamptz()
+    updatedAt DateTime  @default(now()) @updatedAt @db.Timestamptz()
+    /// Soft-delete timestamp; if set, the Subscription is considered deleted.
+    deletedAt DateTime?
 
     /// The User who is subscribing to the Reporter.
     user                User                 @relation(fields: [userId], references: [id])
