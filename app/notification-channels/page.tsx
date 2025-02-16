@@ -76,7 +76,7 @@ export default async function NotificationChannelsPage() {
       deletedAt: null,
     },
     include: {
-      Subscription: true,
+      subscription: true,
     },
     orderBy: {
       createdAt: "desc",

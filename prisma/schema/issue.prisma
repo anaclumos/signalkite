@@ -23,11 +23,11 @@ model Story {
     reporterId String?
 
     /// The Prompt referenced by this Story for post-processing.
-    Prompt   Prompt?   @relation(fields: [promptId], references: [id])
+    prompt   Prompt?   @relation(fields: [promptId], references: [id])
     /// The Issue that discovered this Story.
-    Issue    Issue     @relation(fields: [issueId], references: [id])
+    issue    Issue     @relation(fields: [issueId], references: [id])
     /// The Reporter this Story belongs to (if applicable).
-    Reporter Reporter? @relation(fields: [reporterId], references: [id])
+    reporter Reporter? @relation(fields: [reporterId], references: [id])
 
     @@index([issueId, createdAt])
 }
@@ -56,11 +56,11 @@ model Issue {
     deletedAt DateTime?
 
     /// The Reporter that discovered this Issue.
-    Reporter Reporter @relation(fields: [reporterId], references: [id])
+    reporter Reporter @relation(fields: [reporterId], references: [id])
     /// The Run that triggered this Issue (if any).
-    Run      Run?     @relation(fields: [runId], references: [id])
+    run      Run?     @relation(fields: [runId], references: [id])
     /// The Stories discovered by this Issue.
-    Stories  Story[]
+    stories  Story[]
 
     @@index([reporterId])
 }

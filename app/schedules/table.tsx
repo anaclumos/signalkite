@@ -63,7 +63,7 @@ export function SchedulesTable({ initialSchedules }: SchedulesTableProps) {
       },
       {
         header: "Linked Reporters",
-        accessorKey: "ScheduleReporters",
+        accessorKey: "ScheduledReporters",
         enableSorting: false,
       },
       {

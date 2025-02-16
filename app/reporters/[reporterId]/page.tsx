@@ -3,13 +3,21 @@ import { NavBar } from "@/components/nav-bar"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Divider } from "@/components/ui/divider"
+import { Issue as PrismaIssue, Story } from "@prisma/client"
 import Link from "next/link"
 import { Fragment } from "react"
 
+type Issue = PrismaIssue & {
+  stories: Story[]
+}
+
 export default async function ReporterPage({
   params,
-}: { params: { reporterId: string } }) {
-  const reporter = await getReporter(params.reporterId)
+}: {
+  params: Promise<{ reporterId: string }>
+}) {
+  const { reporterId } = await params
+  const reporter = await getReporter(reporterId)
 
   const breadcrumbs = [
     { title: "Home", href: "/" },
@@ -28,7 +36,7 @@ export default async function ReporterPage({
         }
       />
       <main className="mx-auto w-full">
-        {reporter.Issues.map((issue) => (
+        {reporter.issues.map((issue: Issue) => (
           <Fragment key={issue.id}>
             <section className="md:flex md:gap-6 md:border-zinc-200 dark:md:border-zinc-800 p-12 mx-auto max-w-6xl">
               {/* Left: Sticky side panel */}
@@ -51,7 +59,7 @@ export default async function ReporterPage({
               {/* Right: Scrollable story list */}
               <div className="md:mt-0 md:flex-1">
                 <div className="flex flex-col gap-4">
-                  {issue.Stories.map((story) => (
+                  {issue.stories.map((story: Story) => (
                     <Link
                       key={story.id}
                       href={`/stories/${story.id}`}

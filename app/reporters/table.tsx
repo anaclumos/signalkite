@@ -23,30 +23,12 @@ import {
 import Link from "next/link"
 import { useMemo } from "react"
 
-type ReporterWithRelations = Reporter & {
-  Prompt: {
-    id: string
-    text: string | null
-    createdAt: Date
-    updatedAt: Date
-    deletedAt: Date | null
-    description: string | null
-    creatorId: string
-  } | null
-  Stories: any[]
-  _count: {
-    Stories: number
-    Issues: number
-    Subscriptions: number
-  }
-}
-
 interface ReportersTableProps {
-  initialReporters: ReporterWithRelations[]
+  initialReporters: Reporter[]
 }
 
 export function ReportersTable({ initialReporters }: ReportersTableProps) {
-  const columns = useMemo<ColumnDef<ReporterWithRelations>[]>(
+  const columns = useMemo<ColumnDef<Reporter>[]>(
     () => [
       {
         header: "Name",
@@ -108,7 +90,7 @@ export function ReportersTable({ initialReporters }: ReportersTableProps) {
     [],
   )
 
-  const table = useReactTable<ReporterWithRelations>({
+  const table = useReactTable<Reporter>({
     data: initialReporters,
     columns,
     getCoreRowModel: getCoreRowModel(),

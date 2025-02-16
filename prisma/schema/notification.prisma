@@ -24,5 +24,5 @@ model NotificationChannel {
     /// The User who owns this NotificationChannel.
     user         User?                   @relation(fields: [userId], references: [id])
     /// The subscriptions that use this NotificationChannel for notifications.
-    Subscription Subscription[]
+    subscription Subscription[]
 }

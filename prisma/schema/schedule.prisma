@@ -1,40 +1,40 @@
 /// A Schedule defines when (at what cron interval) certain Reporters should be scanned.
-/// Schedules are owned by a User and can be linked to multiple Reporters via ScheduleReporter.
+/// Schedules are owned by a User and can be linked to multiple Reporters via ScheduledReporter.
 model Schedule {
     /// The unique identifier for the Schedule.
-    id                String             @id @default(ulid())
+    id                 String              @id @default(ulid())
     /// A human-readable name for the Schedule.
-    name              String             @db.VarChar(100)
+    name               String              @db.VarChar(100)
     /// The cron expression defining when the Schedule runs.
-    cron              String             @db.VarChar(100)
+    cron               String              @db.VarChar(100)
     /// The timezone of the Schedule.
-    timezone          String             @db.VarChar(100)
+    timezone           String              @db.VarChar(100)
     /// Timestamp indicating when the schedule is next due to run.
-    nextRunAt         DateTime?
+    nextRunAt          DateTime?
     /// Timestamp of the last time this schedule ran.
-    lastRunAt         DateTime?
+    lastRunAt          DateTime?
     /// Whether the schedule is currently paused.
-    paused            Boolean            @default(false)
+    paused             Boolean             @default(false)
     /// The owner (User) of this schedule.
-    owner             User               @relation(fields: [ownerId], references: [id])
+    owner              User                @relation(fields: [ownerId], references: [id])
     /// Foreign key referencing the User who owns this schedule.
-    ownerId           String
+    ownerId            String
     /// Timestamp when the Schedule was created.
-    createdAt         DateTime           @default(now()) @db.Timestamptz()
+    createdAt          DateTime            @default(now()) @db.Timestamptz()
     /// Timestamp when the Schedule was last updated.
-    updatedAt         DateTime           @default(now()) @updatedAt @db.Timestamptz()
+    updatedAt          DateTime            @default(now()) @updatedAt @db.Timestamptz()
     /// Soft-delete timestamp; if set, the Schedule is considered deleted.
-    deletedAt         DateTime?
+    deletedAt          DateTime?
     /// The join records linking this Schedule with Reporters that should be run on this schedule.
-    ScheduleReporters ScheduleReporter[]
+    scheduledReporters ScheduledReporter[]
     /// The Runs that have been executed by this Schedule.
-    Runs              Run[]
+    runs               Run[]
 }
 
-/// A ScheduleReporter model acts as a join model for the many-to-many relationship between Schedules and Reporters.
+/// A ScheduledReporter model acts as a join model for the many-to-many relationship between Schedules and Reporters.
 /// This allows multiple Reporters to be associated with a single Schedule and vice versa.
-model ScheduleReporter {
-    /// The unique identifier for the ScheduleReporter record.
+model ScheduledReporter {
+    /// The unique identifier for the ScheduledReporter record.
     id         String @id @default(ulid())
     /// Foreign key referencing the Schedule.
     scheduleId String
@@ -65,5 +65,5 @@ model Run {
     schedule Schedule? @relation(fields: [scheduleId], references: [id])
 
     /// The Issues (Reporter scans) initiated by this Run.
-    Issues Issue[]
+    issues Issue[]
 }

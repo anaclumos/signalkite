@@ -49,7 +49,7 @@ export async function upsertSchedule({
     const schedule = await db.schedule.findUnique({
       where: { id: validatedData.id },
       include: {
-        ScheduleReporters: true,
+        scheduledReporters: true,
       },
     })
 
@@ -70,11 +70,11 @@ export async function upsertSchedule({
       })
 
       if (validatedData.reporterIds) {
-        await tx.scheduleReporter.deleteMany({
+        await tx.scheduledReporter.deleteMany({
           where: { scheduleId: validatedData.id },
         })
         if (validatedData.reporterIds.length > 0) {
-          await tx.scheduleReporter.createMany({
+          await tx.scheduledReporter.createMany({
             data: validatedData.reporterIds.map((reporterId: string) => ({
               scheduleId: schedule.id,
               reporterId,
@@ -112,7 +112,7 @@ export async function upsertSchedule({
       })
 
       if (validatedData.reporterIds?.length) {
-        await tx.scheduleReporter.createMany({
+        await tx.scheduledReporter.createMany({
           data: validatedData.reporterIds.map((reporterId: string) => ({
             scheduleId: schedule.id,
             reporterId,
@@ -151,12 +151,12 @@ async function _getSchedule(id: string, userId: string) {
   const schedule = await db.schedule.findUnique({
     where: { id: validatedId },
     include: {
-      ScheduleReporters: {
+      scheduledReporters: {
         include: {
           reporter: true,
         },
       },
-      Runs: {
+      runs: {
         where: {
           completedAt: {
             not: null,
@@ -188,7 +188,7 @@ async function _getSchedules(userId: string) {
       deletedAt: null,
     },
     include: {
-      ScheduleReporters: {
+      scheduledReporters: {
         include: {
           reporter: true,
         },

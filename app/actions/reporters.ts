@@ -93,7 +93,7 @@ export async function upsertReporter({
       })
 
       if (validatedData.scheduleIds?.length) {
-        await tx.scheduleReporter.createMany({
+        await tx.scheduledReporter.createMany({
           data: validatedData.scheduleIds.map((scheduleId) => ({
             scheduleId,
             reporterId: reporter.id,
@@ -136,8 +136,8 @@ async function _getReporters(userId: string) {
       deletedAt: null,
     },
     include: {
-      Prompt: true,
-      Stories: {
+      prompt: true,
+      stories: {
         where: {
           deletedAt: null,
         },
@@ -148,17 +148,17 @@ async function _getReporters(userId: string) {
       },
       _count: {
         select: {
-          Stories: {
+          stories: {
             where: {
               deletedAt: null,
             },
           },
-          Issues: {
+          issues: {
             where: {
               deletedAt: null,
             },
           },
-          Subscriptions: true,
+          subscriptions: true,
         },
       },
     },
@@ -173,14 +173,12 @@ export async function getReporters() {
   return _getReporters(user.id)
 }
 
-async function _getReporter(id: string, userId: string) {
-  const validatedId = z.string().min(1, "Reporter ID is required").parse(id)
-
+async function _getReporter(validatedId: string, userId: string) {
   const reporter = await db.reporter.findUnique({
     where: { id: validatedId },
     include: {
-      Prompt: true,
-      Issues: {
+      prompt: true,
+      issues: {
         where: {
           deletedAt: null,
         },
@@ -189,7 +187,7 @@ async function _getReporter(id: string, userId: string) {
         },
         take: 20,
         include: {
-          Stories: {
+          stories: {
             where: {
               deletedAt: null,
             },
@@ -199,11 +197,7 @@ async function _getReporter(id: string, userId: string) {
     },
   })
 
-  if (
-    !reporter ||
-    (reporter.creatorId !== userId &&
-      reporter.status === ReporterStatus.ARCHIVED)
-  ) {
+  if (!reporter || reporter.creatorId !== userId) {
     notFound()
   }
 
@@ -212,5 +206,6 @@ async function _getReporter(id: string, userId: string) {
 
 export async function getReporter(id: string) {
   const user = await getCurrentUser()
-  return _getReporter(id, user.id)
+  const validatedId = z.string().min(1, "Reporter ID is required").parse(id)
+  return _getReporter(validatedId, user.id)
 }

@@ -60,16 +60,16 @@ model Reporter {
     creatorId String
 
     /// The Prompt referenced by this Reporter for post-processing.
-    Prompt Prompt? @relation(fields: [promptId], references: [id])
+    prompt Prompt? @relation(fields: [promptId], references: [id])
 
     /// The list of Issues (scans) that have been performed for this Reporter.
-    Issues            Issue[]
+    issues             Issue[]
     /// The list of Stories discovered for this Reporter.
-    Stories           Story[]
+    stories            Story[]
     /// The join model that associates Reporters with Schedules (many-to-many relation).
-    ScheduleReporters ScheduleReporter[]
+    scheduledReporters ScheduledReporter[]
     /// Subscriptions from other users who are interested in updates from this Reporter.
-    Subscriptions     Subscription[]
+    subscriptions      Subscription[]
 
     @@index([creatorId])
 }

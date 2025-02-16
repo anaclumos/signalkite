@@ -105,8 +105,8 @@ async function _getPrompt(id: string, userId: string) {
   const prompt = await db.prompt.findUnique({
     where: { id: id, creatorId: userId },
     include: {
-      Reporters: true,
-      Stories: true,
+      reporters: true,
+      stories: true,
     },
   })
 

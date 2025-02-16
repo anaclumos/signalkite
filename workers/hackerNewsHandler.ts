@@ -17,7 +17,7 @@ export const hackerNewsHandler = schedules.task({
         nextRunAt: { lte: new Date() },
       },
       include: {
-        ScheduleReporters: {
+        scheduledReporters: {
           include: { reporter: true },
         },
       },
@@ -28,7 +28,7 @@ export const hackerNewsHandler = schedules.task({
     // Aggregate reporters with Hacker News strategy from the due schedules
     let hackersReporters: Reporter[] = []
     for (const schedule of dueSchedules) {
-      for (const sr of schedule.ScheduleReporters) {
+      for (const sr of schedule.scheduledReporters) {
         const reporter = sr.reporter
         if (
           reporter.strategy === "HN_BEST_STORIES" &&

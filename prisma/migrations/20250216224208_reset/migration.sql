@@ -17,15 +17,17 @@ CREATE TABLE "Story" (
     "updatedAt" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "deletedAt" TIMESTAMP(3),
     "promptId" TEXT,
-    "newsId" TEXT NOT NULL,
+    "issueId" TEXT NOT NULL,
     "reporterId" TEXT,
 
     CONSTRAINT "Story_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
-CREATE TABLE "News" (
+CREATE TABLE "Issue" (
     "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "description" TEXT,
     "reporterId" TEXT NOT NULL,
     "runId" TEXT,
     "successful" BOOLEAN NOT NULL DEFAULT true,
@@ -33,7 +35,7 @@ CREATE TABLE "News" (
     "updatedAt" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "deletedAt" TIMESTAMP(3),
 
-    CONSTRAINT "News_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Issue_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -77,6 +79,7 @@ CREATE TABLE "Reporter" (
     "updatedAt" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "deletedAt" TIMESTAMP(3),
     "promptId" TEXT,
+    "metadata" JSONB,
     "creatorId" TEXT NOT NULL,
 
     CONSTRAINT "Reporter_pkey" PRIMARY KEY ("id")
@@ -100,12 +103,12 @@ CREATE TABLE "Schedule" (
 );
 
 -- CreateTable
-CREATE TABLE "ScheduleReporter" (
+CREATE TABLE "ScheduledReporter" (
     "id" TEXT NOT NULL,
     "scheduleId" TEXT NOT NULL,
     "reporterId" TEXT NOT NULL,
 
-    CONSTRAINT "ScheduleReporter_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "ScheduledReporter_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -143,10 +146,10 @@ CREATE TABLE "User" (
 );
 
 -- CreateIndex
-CREATE INDEX "Story_newsId_createdAt_idx" ON "Story"("newsId", "createdAt");
+CREATE INDEX "Story_issueId_createdAt_idx" ON "Story"("issueId", "createdAt");
 
 -- CreateIndex
-CREATE INDEX "News_reporterId_idx" ON "News"("reporterId");
+CREATE INDEX "Issue_reporterId_idx" ON "Issue"("reporterId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "NotificationChannel_clerkId_key" ON "NotificationChannel"("clerkId");
@@ -155,7 +158,7 @@ CREATE UNIQUE INDEX "NotificationChannel_clerkId_key" ON "NotificationChannel"("
 CREATE INDEX "Reporter_creatorId_idx" ON "Reporter"("creatorId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "ScheduleReporter_scheduleId_reporterId_key" ON "ScheduleReporter"("scheduleId", "reporterId");
+CREATE UNIQUE INDEX "ScheduledReporter_scheduleId_reporterId_key" ON "ScheduledReporter"("scheduleId", "reporterId");
 
 -- CreateIndex
 CREATE INDEX "Subscription_userId_idx" ON "Subscription"("userId");
@@ -173,16 +176,16 @@ CREATE UNIQUE INDEX "User_authProviderUid_key" ON "User"("authProviderUid");
 ALTER TABLE "Story" ADD CONSTRAINT "Story_promptId_fkey" FOREIGN KEY ("promptId") REFERENCES "Prompt"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Story" ADD CONSTRAINT "Story_newsId_fkey" FOREIGN KEY ("newsId") REFERENCES "News"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Story" ADD CONSTRAINT "Story_issueId_fkey" FOREIGN KEY ("issueId") REFERENCES "Issue"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Story" ADD CONSTRAINT "Story_reporterId_fkey" FOREIGN KEY ("reporterId") REFERENCES "Reporter"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "News" ADD CONSTRAINT "News_reporterId_fkey" FOREIGN KEY ("reporterId") REFERENCES "Reporter"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Issue" ADD CONSTRAINT "Issue_reporterId_fkey" FOREIGN KEY ("reporterId") REFERENCES "Reporter"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "News" ADD CONSTRAINT "News_runId_fkey" FOREIGN KEY ("runId") REFERENCES "Run"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "Issue" ADD CONSTRAINT "Issue_runId_fkey" FOREIGN KEY ("runId") REFERENCES "Run"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "NotificationChannel" ADD CONSTRAINT "NotificationChannel_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -200,10 +203,10 @@ ALTER TABLE "Reporter" ADD CONSTRAINT "Reporter_promptId_fkey" FOREIGN KEY ("pro
 ALTER TABLE "Schedule" ADD CONSTRAINT "Schedule_ownerId_fkey" FOREIGN KEY ("ownerId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "ScheduleReporter" ADD CONSTRAINT "ScheduleReporter_scheduleId_fkey" FOREIGN KEY ("scheduleId") REFERENCES "Schedule"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "ScheduledReporter" ADD CONSTRAINT "ScheduledReporter_scheduleId_fkey" FOREIGN KEY ("scheduleId") REFERENCES "Schedule"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "ScheduleReporter" ADD CONSTRAINT "ScheduleReporter_reporterId_fkey" FOREIGN KEY ("reporterId") REFERENCES "Reporter"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "ScheduledReporter" ADD CONSTRAINT "ScheduledReporter_reporterId_fkey" FOREIGN KEY ("reporterId") REFERENCES "Reporter"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Run" ADD CONSTRAINT "Run_scheduleId_fkey" FOREIGN KEY ("scheduleId") REFERENCES "Schedule"("id") ON DELETE SET NULL ON UPDATE CASCADE;

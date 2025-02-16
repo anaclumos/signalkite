@@ -38,7 +38,7 @@ describe("Schedule Actions", () => {
   })
 
   afterAll(async () => {
-    await db.scheduleReporter.deleteMany({
+    await db.scheduledReporter.deleteMany({
       where: {
         schedule: {
           ownerId: testUserId,
@@ -52,7 +52,7 @@ describe("Schedule Actions", () => {
   })
 
   afterEach(async () => {
-    await db.scheduleReporter.deleteMany({
+    await db.scheduledReporter.deleteMany({
       where: {
         schedule: {
           ownerId: testUserId,
@@ -80,7 +80,7 @@ describe("Schedule Actions", () => {
     })
 
     expect(schedule).toHaveProperty("id")
-    const sr = await db.scheduleReporter.findMany({
+    const sr = await db.scheduledReporter.findMany({
       where: { scheduleId: schedule.id },
     })
     expect(sr.length).toBe(2)
@@ -106,7 +106,7 @@ describe("Schedule Actions", () => {
         cron: "0 * * * *",
         timezone: "America/New_York",
         ownerId: testUserId,
-        ScheduleReporters: {
+        ScheduledReporters: {
           create: [{ reporterId: reporter1.id }],
         },
       },
@@ -122,7 +122,7 @@ describe("Schedule Actions", () => {
 
     expect(updated.name).toBe("Updated schedule")
 
-    const sr = await db.scheduleReporter.findMany({
+    const sr = await db.scheduledReporter.findMany({
       where: { scheduleId: schedule.id },
     })
     expect(sr.length).toBe(1)
@@ -156,7 +156,7 @@ describe("Schedule Actions", () => {
     const found = await getSchedule(schedule.id)
     expect(found).toBeDefined()
     expect(found.id).toBe(schedule.id)
-    expect(Array.isArray(found.ScheduleReporters)).toBe(true)
+    expect(Array.isArray(found.ScheduledReporters)).toBe(true)
     expect(Array.isArray(found.Runs)).toBe(true)
   })
 

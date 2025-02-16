@@ -11,6 +11,7 @@
     "db:setup": "bun run db:docker && bun run db:generate && bun run db:push",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
+    "db:push": "prisma db push",
     "ci": "prisma db push && next build && bun run start",
     "test": "prisma db push && vitest run",
     "e2e": "playwright test",
