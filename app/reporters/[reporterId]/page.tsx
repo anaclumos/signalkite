@@ -1,10 +1,15 @@
 "use client"
 
 import { NavBar } from "@/components/nav-bar"
+import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Divider } from "@/components/ui/divider"
+import { toast } from "@/lib/use-toast"
+import { FormState } from "@/types/forms"
 import Link from "next/link"
-import { Fragment } from "react"
+import { useParams } from "next/navigation"
+import { Fragment, useActionState, useEffect } from "react"
+import { subscribeToReporter, unsubscribeFromReporter } from "./server"
 
 type Story = {
   id: number
@@ -207,9 +212,45 @@ const issues: ReporterIssue[] = [
   },
 ]
 
-export default function StickyIssuesPage() {
+export default function StickyIssuesPage({
+  isSubscribed,
+}: {
+  isSubscribed: boolean
+}) {
+  const { reporterId } = useParams<{ reporterId: string }>()
+
+  const [subscribeStatus, subscribeAction] = useActionState<
+    FormState | null,
+    FormData
+  >(subscribeToReporter, null)
+
+  const [unsubscribeStatus, unsubscribeAction] = useActionState<
+    FormState | null,
+    FormData
+  >(unsubscribeFromReporter, null)
+
+  useEffect(() => {
+    if (subscribeStatus && !subscribeStatus.success) {
+      toast({
+        title: subscribeStatus.statusTitle || "Error",
+        description: subscribeStatus.statusDescription || "An error occurred",
+        variant: "error",
+      })
+    }
+  }, [subscribeStatus])
+
+  useEffect(() => {
+    if (unsubscribeStatus && !unsubscribeStatus.success) {
+      toast({
+        title: unsubscribeStatus.statusTitle || "Error",
+        description: unsubscribeStatus.statusDescription || "An error occurred",
+        variant: "error",
+      })
+    }
+  }, [unsubscribeStatus])
+
   // Example reporter object
-  const reporter = { id: "abc123", name: "My Awesome Reporter" }
+  const reporter = { id: reporterId, name: "My Awesome Reporter" }
 
   // Simple breadcrumb example (you might tailor this if you’re listing multiple issues on the same page)
   const breadcrumbs = [
@@ -225,7 +266,24 @@ export default function StickyIssuesPage() {
 
   return (
     <>
-      <NavBar breadcrumbs={breadcrumbs} />
+      <NavBar
+        breadcrumbs={breadcrumbs}
+        actions={
+          <form action={isSubscribed ? unsubscribeAction : subscribeAction}>
+            <input type="hidden" name="reporterId" value={reporterId} />
+            <Button
+              type="submit"
+              variant={isSubscribed ? "destructive" : "primary"}
+              disabled={
+                (isSubscribed && unsubscribeStatus?.success === false) ||
+                (!isSubscribed && subscribeStatus?.success === false)
+              }
+            >
+              {isSubscribed ? "Unsubscribe" : "Subscribe"}
+            </Button>
+          </form>
+        }
+      />
       <main className="mx-auto w-full">
         {issues.map((issue) => (
           <Fragment key={issue.id}>
@@ -233,9 +291,11 @@ export default function StickyIssuesPage() {
               {/* Left: Sticky side panel */}
               <div className="md:w-72 md:shrink-0 pb-4 px-1">
                 <div className="sticky top-28 space-y-3">
-                  <h1 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">
-                    Issue #{issue.issueNumber}
-                  </h1>
+                  <div className="flex justify-between items-center">
+                    <h1 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">
+                      Issue #{issue.issueNumber}
+                    </h1>
+                  </div>
                   <p className="text-sm text-zinc-500 dark:text-zinc-400">
                     Published by {issue.author} on {issue.publishedDate}
                   </p>
