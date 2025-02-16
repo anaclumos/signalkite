@@ -19,9 +19,9 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           // base
           "relative w-full rounded-lg border p-6 text-left shadow-xs",
           // background color
-          "bg-white dark:bg-[#090E1A]",
+          "bg-white dark:bg-zinc-900",
           // border color
-          "border-zinc-200 dark:border-zinc-900",
+          "border-zinc-200 dark:border-zinc-800",
           className,
         )}
         tremor-id="tremor-raw"
