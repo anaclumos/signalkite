@@ -95,10 +95,11 @@ export async function deleteNotificationChannel(id: string) {
   })
 }
 
-async function _getNotificationChannels(userId: string) {
+export async function getNotificationChannels() {
+  const user = await getCurrentUser()
   return db.notificationChannel.findMany({
     where: {
-      userId,
+      userId: user.id,
       deletedAt: null,
     },
     orderBy: {
@@ -107,26 +108,17 @@ async function _getNotificationChannels(userId: string) {
   })
 }
 
-export async function getNotificationChannels() {
+export async function getNotificationChannel(id: string) {
   const user = await getCurrentUser()
-  return _getNotificationChannels(user.id)
-}
-
-async function _getNotificationChannel(id: string, userId: string) {
   const validatedId = z.string().min(1, "Channel ID is required").parse(id)
 
   const channel = await db.notificationChannel.findUnique({
     where: { id: validatedId },
   })
 
-  if (!channel || channel.userId !== userId) {
+  if (!channel || channel.userId !== user.id) {
     notFound()
   }
 
   return channel
-}
-
-export async function getNotificationChannel(id: string) {
-  const user = await getCurrentUser()
-  return _getNotificationChannel(id, user.id)
 }

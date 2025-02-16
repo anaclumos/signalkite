@@ -106,7 +106,7 @@ describe("Schedule Actions", () => {
         cron: "0 * * * *",
         timezone: "America/New_York",
         ownerId: testUserId,
-        ScheduledReporters: {
+        scheduledReporters: {
           create: [{ reporterId: reporter1.id }],
         },
       },
@@ -156,8 +156,8 @@ describe("Schedule Actions", () => {
     const found = await getSchedule(schedule.id)
     expect(found).toBeDefined()
     expect(found.id).toBe(schedule.id)
-    expect(Array.isArray(found.ScheduledReporters)).toBe(true)
-    expect(Array.isArray(found.Runs)).toBe(true)
+    expect(Array.isArray(found.scheduledReporters)).toBe(true)
+    expect(Array.isArray(found.runs)).toBe(true)
   })
 
   it("generates correct cron string with all days selected", () => {

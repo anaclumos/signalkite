@@ -129,10 +129,11 @@ export async function deleteReporter(id: string) {
   })
 }
 
-async function _getReporters(userId: string) {
+export async function getReporters() {
+  const user = await getCurrentUser()
   return db.reporter.findMany({
     where: {
-      creatorId: userId,
+      creatorId: user.id,
       deletedAt: null,
     },
     include: {
@@ -168,12 +169,10 @@ async function _getReporters(userId: string) {
   })
 }
 
-export async function getReporters() {
+export async function getReporter(id: string) {
   const user = await getCurrentUser()
-  return _getReporters(user.id)
-}
+  const validatedId = z.string().min(1, "Reporter ID is required").parse(id)
 
-async function _getReporter(validatedId: string, userId: string) {
   const reporter = await db.reporter.findUnique({
     where: { id: validatedId },
     include: {
@@ -197,15 +196,9 @@ async function _getReporter(validatedId: string, userId: string) {
     },
   })
 
-  if (!reporter || reporter.creatorId !== userId) {
+  if (!reporter || reporter.creatorId !== user.id) {
     notFound()
   }
 
   return reporter
-}
-
-export async function getReporter(id: string) {
-  const user = await getCurrentUser()
-  const validatedId = z.string().min(1, "Reporter ID is required").parse(id)
-  return _getReporter(validatedId, user.id)
 }

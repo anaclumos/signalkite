@@ -87,37 +87,29 @@ export async function deletePrompt(id: string) {
   })
 }
 
-async function _getPrompts(userId: string) {
+export async function getPrompts() {
+  const user = await getCurrentUser()
   return db.prompt.findMany({
-    where: { creatorId: userId, deletedAt: null },
+    where: { creatorId: user.id, deletedAt: null },
     orderBy: {
       createdAt: "desc",
     },
   })
 }
 
-export async function getPrompts() {
+export async function getPrompt(id: string) {
   const user = await getCurrentUser()
-  return _getPrompts(user.id)
-}
-
-async function _getPrompt(id: string, userId: string) {
   const prompt = await db.prompt.findUnique({
-    where: { id: id, creatorId: userId },
+    where: { id: id, creatorId: user.id },
     include: {
       reporters: true,
       stories: true,
     },
   })
 
-  if (!prompt || prompt.creatorId !== userId) {
+  if (!prompt || prompt.creatorId !== user.id) {
     notFound()
   }
 
   return prompt
-}
-
-export async function getPrompt(id: string) {
-  const user = await getCurrentUser()
-  return _getPrompt(id, user.id)
 }

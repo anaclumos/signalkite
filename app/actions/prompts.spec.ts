@@ -172,8 +172,8 @@ describe("getPrompt", () => {
     expect(db.prompt.findUnique).toHaveBeenCalledWith({
       where: { id: "prompt-1", creatorId: "user-1" },
       include: {
-        Reporters: true,
-        Stories: true,
+        reporters: true,
+        stories: true,
       },
     })
   })
