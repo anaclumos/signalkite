@@ -1,0 +1,333 @@
+/// A Story is a piece of content discovered by an Issue from a specific Reporter.
+/// It holds the data about the discovered URL, title, summary, and other meta fields.
+model Story {
+    /// The unique identifier for the Story.
+    id         String    @id @default(ulid())
+    /// The title of the Story (possibly processed with prompts).
+    title      String
+    /// The URL where the Story content can be found.
+    url        String    @db.VarChar(2048)
+    /// A summary or snippet of the content of the Story.
+    summary    String?
+    /// Timestamp when the Story was created.
+    createdAt  DateTime  @default(now()) @db.Timestamptz()
+    /// Timestamp when the Story was last updated.
+    updatedAt  DateTime  @default(now()) @updatedAt @db.Timestamptz()
+    /// Soft-delete timestamp; if set, the Story is considered deleted.
+    deletedAt  DateTime?
+    /// Foreign key referencing the Prompt used by this Story for post-processing.
+    promptId   String?
+    /// The ID of the Issue that discovered this Story.
+    issueId    String
+    /// Foreign key referencing the Reporter this Story belongs to (optional).
+    reporterId String?
+
+    /// The Prompt referenced by this Story for post-processing.
+    prompt   Prompt?   @relation(fields: [promptId], references: [id])
+    /// The Issue that discovered this Story.
+    issue    Issue     @relation(fields: [issueId], references: [id])
+    /// The Reporter this Story belongs to (if applicable).
+    reporter Reporter? @relation(fields: [reporterId], references: [id])
+
+    @@index([issueId, createdAt])
+}
+
+/// An Issue represents a single run or scan performed by a Reporter at a given moment in time.
+/// It stores whether the scan was successful and references all discovered Stories.
+model Issue {
+    /// The unique identifier for the Issue.
+    id          String  @id @default(ulid())
+    /// The title of the Issue (possibly processed with prompts).
+    title       String
+    /// A summary or snippet of the content of the Issue.
+    description String?
+    /// Foreign key referencing the Reporter that discovered this.
+    reporterId  String
+    /// Optional foreign key referencing the Run that triggered this Issue.
+    runId       String?
+    /// Whether the scan was successful or not.
+    successful  Boolean @default(true)
+
+    /// Timestamp when the Issue was created.
+    createdAt DateTime  @default(now()) @db.Timestamptz()
+    /// Timestamp when the Issue was last updated.
+    updatedAt DateTime  @default(now()) @updatedAt @db.Timestamptz()
+    /// Soft-delete timestamp; if set, the Issue is considered deleted.
+    deletedAt DateTime?
+
+    /// The Reporter that discovered this Issue.
+    reporter Reporter @relation(fields: [reporterId], references: [id])
+    /// The Run that triggered this Issue (if any).
+    run      Run?     @relation(fields: [runId], references: [id])
+    /// The Stories discovered by this Issue.
+    stories  Story[]
+
+    @@index([reporterId])
+}
+/// A NotificationChannel represents a means of delivering notifications (Email, SMS, Slack).
+/// It also stores any necessary configuration in the `settings` field.
+model NotificationChannel {
+    /// The unique identifier for the NotificationChannel.
+    id           String                  @id @default(ulid())
+    /// A human-readable name for this notification channel.
+    name         String                  @db.VarChar(100)
+    /// A short description or name for the notification channel.
+    description  String?
+    /// The type of channel: EMAIL, SMS, or SLACK.
+    type         NotificationChannelType
+    /// A JSON field to store configuration or credentials for this channel.
+    settings     Json
+    /// The Clerk ID for this channel if it's linked to a Clerk resource
+    clerkId      String?                 @unique
+    /// Timestamp when the NotificationChannel was created.
+    createdAt    DateTime                @default(now()) @db.Timestamptz()
+    /// Timestamp when the NotificationChannel was last updated.
+    updatedAt    DateTime                @default(now()) @updatedAt @db.Timestamptz()
+    /// Soft-delete timestamp; if set, the channel is considered deleted.
+    deletedAt    DateTime?
+    /// Foreign key referencing the User who owns this NotificationChannel.
+    userId       String?
+    /// The User who owns this NotificationChannel.
+    user         User?                   @relation(fields: [userId], references: [id])
+    /// The subscriptions that use this NotificationChannel for notifications.
+    subscription Subscription[]
+}
+/// A Prompt is a reusable entity that can store text used for post-processing
+/// titles and descriptions of Stories or other content. Multiple Reporters or Stories
+/// can reference the same Prompt, making it reusable across the system.
+model Prompt {
+    /// The unique identifier for the Prompt.
+    id          String    @id @default(ulid())
+    /// A short description or name for the prompt.
+    name        String
+    /// A short description or name for the prompt.
+    description String?
+    /// The actual text/content of the prompt used for post-processing.
+    text        String?
+    /// Timestamp when the Prompt was created.
+    createdAt   DateTime  @default(now()) @db.Timestamptz()
+    /// Timestamp when the Prompt was last updated.
+    updatedAt   DateTime  @default(now()) @updatedAt @db.Timestamptz()
+    /// Soft-delete timestamp; if set, the Prompt is considered deleted.
+    deletedAt   DateTime?
+
+    /// The user who created this Prompt (its owner).
+    creator   User   @relation(fields: [creatorId], references: [id])
+    /// Foreign key referencing the creator of this Prompt.
+    creatorId String
+
+    /// The Reporters that reference this Prompt for post-processing.
+    reporters Reporter[]
+    /// The Stories that reference this Prompt for post-processing.
+    stories   Story[]
+}
+/// Represents different strategies that a Reporter can use to gather or discover stories.
+enum ReporterStrategyType {
+    /// Use EXA_SEARCH as the data fetching strategy.
+    EXA_SEARCH
+    /// Use WHOIS_LOOKUP as the data fetching strategy.
+    WHOIS_LOOKUP
+    /// Use HN_BEST_STORIES (Hacker News best stories feed) as the data fetching strategy.
+    HN_BEST_STORIES
+}
+
+/// Represents the type of notification channel through which a user can receive notifications.
+enum NotificationChannelType {
+    /// Notifications via Email.
+    EMAIL
+    /// Notifications via TEXT.
+    TEXT
+    /// Notifications via Web Push.
+    PUSH
+    /// Notifications via Slack.
+    SLACK
+}
+
+/// Represents the possible statuses of a Reporter.
+enum ReporterStatus {
+    /// The Reporter is actively scanning or ready to be scanned.
+    ACTIVE
+    /// The Reporter is paused and not currently running scans, but visible at the marketplace.
+    PAUSED
+    /// The Reporter is archived and not visible or active, but still exists in the database, and only visible to the owner.
+    ARCHIVED
+}
+
+/// A Reporter represents a "data stream" or a monitored topic/keyword set that the user wants to track.
+/// Each Reporter uses a specific strategy to discover stories and can have multiple stories and news.
+model Reporter {
+    /// The unique identifier for the Reporter.
+    id          String               @id @default(ulid())
+    /// The human-readable name of the Reporter.
+    name        String               @db.VarChar(100)
+    /// An optional description of what the Reporter is monitoring.
+    description String?              @db.Text()
+    /// The strategy this Reporter uses to fetch or discover data.
+    strategy    ReporterStrategyType @default(EXA_SEARCH)
+    /// The current operational status of the Reporter.
+    status      ReporterStatus       @default(ACTIVE)
+    /// Timestamp when the Reporter record was created.
+    createdAt   DateTime             @default(now()) @db.Timestamptz()
+    /// Timestamp when the Reporter record was last updated.
+    updatedAt   DateTime             @default(now()) @updatedAt @db.Timestamptz()
+    /// Soft-delete timestamp; if set, the Reporter is considered deleted or archived.
+    deletedAt   DateTime?
+    /// Foreign key referencing the Prompt used by this Reporter for post-processing.
+    promptId    String?
+    /// Adding JSON metadata for reporter-specific configuration.
+    metadata    Json?
+
+    /// The user who created this Reporter (its owner).
+    creator   User   @relation(fields: [creatorId], references: [id])
+    /// Foreign key referencing the creator of this Reporter.
+    creatorId String
+
+    /// The Prompt referenced by this Reporter for post-processing.
+    prompt Prompt? @relation(fields: [promptId], references: [id])
+
+    /// The list of Issues (scans) that have been performed for this Reporter.
+    issues             Issue[]
+    /// The list of Stories discovered for this Reporter.
+    stories            Story[]
+    /// The join model that associates Reporters with Schedules (many-to-many relation).
+    scheduledReporters ScheduledReporter[]
+    /// Subscriptions from other users who are interested in updates from this Reporter.
+    subscriptions      Subscription[]
+
+    @@index([creatorId])
+}
+/// A Schedule defines when (at what cron interval) certain Reporters should be scanned.
+/// Schedules are owned by a User and can be linked to multiple Reporters via ScheduledReporter.
+model Schedule {
+    /// The unique identifier for the Schedule.
+    id                 String              @id @default(ulid())
+    /// A human-readable name for the Schedule.
+    name               String              @db.VarChar(100)
+    /// The cron expression defining when the Schedule runs.
+    cron               String              @db.VarChar(100)
+    /// The timezone of the Schedule.
+    timezone           String              @db.VarChar(100)
+    /// Timestamp indicating when the schedule is next due to run.
+    nextRunAt          DateTime?
+    /// Timestamp of the last time this schedule ran.
+    lastRunAt          DateTime?
+    /// Whether the schedule is currently paused.
+    paused             Boolean             @default(false)
+    /// The owner (User) of this schedule.
+    owner              User                @relation(fields: [ownerId], references: [id])
+    /// Foreign key referencing the User who owns this schedule.
+    ownerId            String
+    /// Timestamp when the Schedule was created.
+    createdAt          DateTime            @default(now()) @db.Timestamptz()
+    /// Timestamp when the Schedule was last updated.
+    updatedAt          DateTime            @default(now()) @updatedAt @db.Timestamptz()
+    /// Soft-delete timestamp; if set, the Schedule is considered deleted.
+    deletedAt          DateTime?
+    /// The join records linking this Schedule with Reporters that should be run on this schedule.
+    scheduledReporters ScheduledReporter[]
+    /// The Runs that have been executed by this Schedule.
+    runs               Run[]
+}
+
+/// A ScheduledReporter model acts as a join model for the many-to-many relationship between Schedules and Reporters.
+/// This allows multiple Reporters to be associated with a single Schedule and vice versa.
+model ScheduledReporter {
+    /// The unique identifier for the ScheduledReporter record.
+    id         String @id @default(ulid())
+    /// Foreign key referencing the Schedule.
+    scheduleId String
+    /// Foreign key referencing the Reporter.
+    reporterId String
+
+    /// The Schedule in the relationship.
+    schedule Schedule @relation(fields: [scheduleId], references: [id])
+    /// The Reporter in the relationship.
+    reporter Reporter @relation(fields: [reporterId], references: [id])
+
+    @@unique([scheduleId, reporterId])
+}
+
+/// A Run represents a batch execution triggered by a Schedule.
+/// When a Schedule runs at its specified cron time, it creates a Run that can trigger multiple Issues (for multiple Reporters).
+model Run {
+    /// The unique identifier for the Run.
+    id          String    @id @default(ulid())
+    /// Foreign key referencing the Schedule that triggered this Run.
+    scheduleId  String?
+    /// Timestamp when the Run started.
+    startedAt   DateTime  @default(now()) @db.Timestamptz()
+    /// Timestamp when the Run completed.
+    completedAt DateTime?
+
+    /// The Schedule that triggered this Run.
+    schedule Schedule? @relation(fields: [scheduleId], references: [id])
+
+    /// The Issues (Reporter scans) initiated by this Run.
+    issues Issue[]
+}
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["prismaSchemaFolder"]
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+/// A Subscription allows a User (subscriber) to subscribe to a Reporter owned by another User.
+/// Subscriptions may optionally reference a specific NotificationChannel for delivering updates.
+model Subscription {
+    /// The unique identifier for the Subscription.
+    id                    String  @id @default(ulid())
+    /// Foreign key referencing the User who is subscribing.
+    userId                String
+    /// Foreign key referencing the Reporter being subscribed to.
+    reporterId            String
+    /// Optional foreign key referencing the NotificationChannel used for this subscription.
+    notificationChannelId String?
+
+    /// Timestamp when the Subscription was created.
+    createdAt DateTime  @default(now()) @db.Timestamptz()
+    /// Timestamp when the Subscription was last updated.
+    updatedAt DateTime  @default(now()) @updatedAt @db.Timestamptz()
+    /// Soft-delete timestamp; if set, the Subscription is considered deleted.
+    deletedAt DateTime?
+
+    /// The User who is subscribing to the Reporter.
+    user                User                 @relation(fields: [userId], references: [id])
+    /// The Reporter being subscribed to by the user.
+    reporter            Reporter             @relation(fields: [reporterId], references: [id])
+    /// The NotificationChannel (if any) that this subscription uses to send notifications.
+    notificationChannel NotificationChannel? @relation(fields: [notificationChannelId], references: [id])
+
+    @@unique([userId, reporterId]) // Ensures a user cannot subscribe to the same Reporter more than once.
+    @@index([userId])
+    @@index([reporterId])
+}
+/// A User represents a person who uses the application.
+/// This model contains user-related fields and the relationships
+/// the user has with other models.
+model User {
+    /// The unique identifier for the user.
+    id              String    @id @default(ulid())
+    /// The unique identifier from the auth provider.
+    authProviderUid String    @unique
+    /// Timestamp when the user record was created.
+    createdAt       DateTime  @default(now()) @db.Timestamptz()
+    /// Timestamp when the user record was last updated.
+    updatedAt       DateTime  @default(now()) @updatedAt @db.Timestamptz()
+    /// Soft-delete timestamp; if set, the user is considered deleted but may be recoverable.
+    deletedAt       DateTime?
+    /// The timestamp of the user's last login.
+    lastLogin       DateTime?
+
+    /// The list of Reporters created by this user.
+    reporters     Reporter[]
+    /// The list of Schedules owned by this user.
+    schedules     Schedule[]
+    /// The list of NotificationChannels created/owned by this user.
+    channels      NotificationChannel[]
+    /// The list of Subscriptions this user has made to other users' Reporters.
+    subscriptions Subscription[]
+    prompts       Prompt[]
+}
