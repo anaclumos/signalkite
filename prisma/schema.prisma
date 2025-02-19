@@ -64,6 +64,7 @@ model Issue {
 
     @@index([reporterId])
 }
+
 /// A NotificationChannel represents a means of delivering notifications (Email, SMS, Slack).
 /// It also stores any necessary configuration in the `settings` field.
 model NotificationChannel {
@@ -92,6 +93,7 @@ model NotificationChannel {
     /// The subscriptions that use this NotificationChannel for notifications.
     subscription Subscription[]
 }
+
 /// A Prompt is a reusable entity that can store text used for post-processing
 /// titles and descriptions of Stories or other content. Multiple Reporters or Stories
 /// can reference the same Prompt, making it reusable across the system.
@@ -121,6 +123,7 @@ model Prompt {
     /// The Stories that reference this Prompt for post-processing.
     stories   Story[]
 }
+
 /// Represents different strategies that a Reporter can use to gather or discover stories.
 enum ReporterStrategyType {
     /// Use EXA_SEARCH as the data fetching strategy.
@@ -196,6 +199,7 @@ model Reporter {
 
     @@index([creatorId])
 }
+
 /// A Schedule defines when (at what cron interval) certain Reporters should be scanned.
 /// Schedules are owned by a User and can be linked to multiple Reporters via ScheduledReporter.
 model Schedule {
@@ -265,6 +269,7 @@ model Run {
     /// The Issues (Reporter scans) initiated by this Run.
     issues Issue[]
 }
+
 generator client {
     provider        = "prisma-client-js"
     previewFeatures = ["prismaSchemaFolder"]
@@ -274,6 +279,7 @@ datasource db {
     provider = "postgresql"
     url      = env("DATABASE_URL")
 }
+
 /// A Subscription allows a User (subscriber) to subscribe to a Reporter owned by another User.
 /// Subscriptions may optionally reference a specific NotificationChannel for delivering updates.
 model Subscription {
@@ -304,6 +310,7 @@ model Subscription {
     @@index([userId])
     @@index([reporterId])
 }
+
 /// A User represents a person who uses the application.
 /// This model contains user-related fields and the relationships
 /// the user has with other models.
