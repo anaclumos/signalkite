@@ -69,29 +69,29 @@ model Issue {
 /// It also stores any necessary configuration in the `settings` field.
 model NotificationChannel {
     /// The unique identifier for the NotificationChannel.
-    id           String                  @id @default(ulid())
+    id            String                  @id @default(ulid())
     /// A human-readable name for this notification channel.
-    name         String                  @db.VarChar(100)
+    name          String                  @db.VarChar(100)
     /// A short description or name for the notification channel.
-    description  String?
+    description   String?
     /// The type of channel: EMAIL, SMS, or SLACK.
-    type         NotificationChannelType
+    type          NotificationChannelType
     /// A JSON field to store configuration or credentials for this channel.
-    settings     Json
+    settings      Json
     /// The Clerk ID for this channel if it's linked to a Clerk resource
-    clerkId      String?                 @unique
+    clerkId       String?                 @unique
     /// Timestamp when the NotificationChannel was created.
-    createdAt    DateTime                @default(now()) @db.Timestamptz()
+    createdAt     DateTime                @default(now()) @db.Timestamptz()
     /// Timestamp when the NotificationChannel was last updated.
-    updatedAt    DateTime                @default(now()) @updatedAt @db.Timestamptz()
+    updatedAt     DateTime                @default(now()) @updatedAt @db.Timestamptz()
     /// Soft-delete timestamp; if set, the channel is considered deleted.
-    deletedAt    DateTime?
+    deletedAt     DateTime?
     /// Foreign key referencing the User who owns this NotificationChannel.
-    userId       String?
+    userId        String?
     /// The User who owns this NotificationChannel.
-    user         User?                   @relation(fields: [userId], references: [id])
+    user          User?                   @relation(fields: [userId], references: [id])
     /// The subscriptions that use this NotificationChannel for notifications.
-    subscription Subscription[]
+    subscriptions Subscription[]
 }
 
 /// A Prompt is a reusable entity that can store text used for post-processing

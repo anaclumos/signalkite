@@ -1,11 +1,12 @@
+import { getNotificationChannels } from "@/app/actions/notification-channels"
 import { getReporter } from "@/app/actions/reporters"
 import { NavBar } from "@/components/nav-bar"
-import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Divider } from "@/components/ui/divider"
 import { Issue as PrismaIssue, Story } from "@prisma/client"
 import Link from "next/link"
 import { Fragment } from "react"
+import { SubscribeButton } from "./subscribe-button"
 
 type Issue = PrismaIssue & {
   stories: Story[]
@@ -17,7 +18,10 @@ export default async function ReporterPage({
   params: Promise<{ reporterId: string }>
 }) {
   const { reporterId } = await params
-  const reporter = await getReporter(reporterId)
+  const [reporter, notificationChannels] = await Promise.all([
+    getReporter(reporterId),
+    getNotificationChannels(),
+  ])
 
   const breadcrumbs = [
     { title: "Home", href: "/" },
@@ -30,9 +34,10 @@ export default async function ReporterPage({
       <NavBar
         breadcrumbs={breadcrumbs}
         actions={
-          <Button type="submit" variant={"primary"}>
-            {"Subscribe"}
-          </Button>
+          <SubscribeButton
+            reporter={reporter}
+            notificationChannels={notificationChannels}
+          />
         }
       />
       <main className="mx-auto w-full">
@@ -56,7 +61,6 @@ export default async function ReporterPage({
                 </div>
               </div>
 
-              {/* Right: Scrollable story list */}
               <div className="md:mt-0 md:flex-1">
                 <div className="flex flex-col gap-4">
                   {issue.stories.map((story: Story) => (

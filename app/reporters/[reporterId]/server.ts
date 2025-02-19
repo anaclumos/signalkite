@@ -11,8 +11,9 @@ export async function subscribeToReporter(
   formData: FormData,
 ): Promise<FormState> {
   const reporterId = formData.get("reporterId") as string
+  const notificationChannelId = formData.get("notificationChannelId") as string
   try {
-    await upsertSubscription({ reporterId })
+    await upsertSubscription({ reporterId, notificationChannelId })
     return {
       success: true,
       statusTitle: "Subscribed",

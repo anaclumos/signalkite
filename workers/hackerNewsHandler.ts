@@ -1,5 +1,5 @@
 import type { Reporter } from "@prisma/client"
-import { logger, schedules, wait } from "@trigger.dev/sdk/v3"
+import { logger, schedules } from "@trigger.dev/sdk/v3"
 import { Resend } from "resend"
 import { db } from "../prisma"
 
@@ -23,6 +23,43 @@ export const hackerNewsHandler = schedules.task({
       },
     })
 
+    // {
+    //   "dueSchedules": [
+    //     {
+    //       "id": "01JMFBF8Z7TKBQZ6WRBJT1ZEBG",
+    //       "cron": "* * * * *",
+    //       "name": "New Schedule",
+    //       "paused": false,
+    //       "ownerId": "01JMFBD0WEG3H3661J4A2R8N7C",
+    //       "timezone": "Asia/Seoul",
+    //       "createdAt": "2025-02-19T14:58:26.407Z",
+    //       "deletedAt": null,
+    //       "lastRunAt": null,
+    //       "nextRunAt": "2025-02-19T14:59:00.000Z",
+    //       "updatedAt": "2025-02-19T14:58:36.024Z",
+    //       "scheduledReporters": [
+    //         {
+    //           "id": "01JMFBFYYNQ7WW0HYX44ZAH2WE",
+    //           "reporterId": "01JMFBFYYK4R4NCTG6PW99BJ9Q",
+    //           "scheduleId": "01JMFBF8Z7TKBQZ6WRBJT1ZEBG",
+    //           "reporter": {
+    //             "id": "01JMFBFYYK4R4NCTG6PW99BJ9Q",
+    //             "name": "My HN",
+    //             "status": "ACTIVE",
+    //             "metadata": null,
+    //             "promptId": null,
+    //             "strategy": "HN_BEST_STORIES",
+    //             "createdAt": "2025-02-19T14:58:48.915Z",
+    //             "creatorId": "01JMFBD0WEG3H3661J4A2R8N7C",
+    //             "deletedAt": null,
+    //             "updatedAt": "2025-02-19T14:58:48.915Z",
+    //             "description": ""
+    //           }
+    //         }
+    //       ]
+    //     }
+    //   ]
+    // }
     logger.log("Retrieved due schedules with reporters", { dueSchedules })
 
     // Aggregate reporters with Hacker News strategy from the due schedules
@@ -50,56 +87,68 @@ export const hackerNewsHandler = schedules.task({
       [],
     )
 
+    // {
+    //   "reporters": [
+    //     {
+    //       "id": "01JMFBFYYK4R4NCTG6PW99BJ9Q",
+    //       "name": "My HN",
+    //       "status": "ACTIVE",
+    //       "strategy": "HN_BEST_STORIES"
+    //     }
+    //   ]
+    // }
     logger.log("Retrieved Hacker News reporters", {
       reporters: uniqueHackersReporters.map((r) => ({
         id: r.id,
         name: r.name,
-        strategy: r.strategy,
         status: r.status,
+        strategy: r.strategy,
       })),
     })
 
-    // Process each reporter (placeholder logic)
-    for (const reporter of uniqueHackersReporters) {
-      logger.log(`Processing reporter id: ${reporter.id}`)
-      // TODO: Add fetching and processing logic for Hacker News stories
-      await wait.for({ seconds: 1 })
+    // Find all active subscriptions for these reporters
+    const subscriptions = await db.subscription.findMany({
+      where: {
+        reporterId: {
+          in: uniqueHackersReporters.map((r) => r.id),
+        },
+        deletedAt: null,
+      },
+      include: {
+        notificationChannel: true,
+      },
+    })
+    logger.log("Retrieved subscriptions", {
+      subscriptions: subscriptions.map((s) => ({
+        id: s.id,
+        reporterId: s.reporterId,
+        notificationChannelId: s.notificationChannelId,
+      })),
+    })
 
-      // Query subscriptions for this reporter including notification channel and user
-      const subscriptions = await db.subscription.findMany({
-        where: { reporterId: reporter.id },
-        include: { notificationChannel: true, user: true },
-      })
-
-      // For each subscription, send an email if the channel type is EMAIL
-      for (const subscription of subscriptions) {
-        if (
-          subscription.notificationChannel &&
-          subscription.notificationChannel.type === "EMAIL"
-        ) {
-          const channelSettings = subscription.notificationChannel.settings as {
-            from: string
+    // Send emails to all subscriptions with EMAIL notification channels
+    for (const subscription of subscriptions) {
+      if (!subscription?.notificationChannel) continue
+      if (subscription?.notificationChannel?.type === "EMAIL") {
+        try {
+          const metadata = subscription.notificationChannel.settings as {
+            email: string
           }
-          const userEmail = (subscription.user as unknown as { email: string })
-            .email
-          try {
-            await resend.emails.send({
-              from: channelSettings.from,
-              to: userEmail,
-              subject: "Hacker News Update",
-              html: `<p>New stories are available for Reporter ${reporter.name}.</p>`,
-            })
-            logger.log(`Email sent to ${userEmail} for reporter ${reporter.id}`)
-          } catch (error) {
-            console.error(
-              `Failed to send email to ${userEmail} for reporter ${reporter.id}`,
-              error as any,
-            )
-            logger.error(
-              `Failed to send email to ${userEmail} for reporter ${reporter.id}`,
-              error as any,
-            )
-          }
+          await resend.emails.send({
+            from: "Every.news <notifications@updates.every.news>",
+            to: metadata.email,
+            subject: "Hello World",
+            text: "Hello World",
+          })
+          logger.log("Sent email successfully", {
+            subscriptionId: subscription.id,
+            email: metadata.email,
+          })
+        } catch (error) {
+          logger.error("Failed to send email", {
+            subscriptionId: subscription.id,
+            error,
+          })
         }
       }
     }
