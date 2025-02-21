@@ -58,6 +58,7 @@ describe("Subscription Actions", () => {
       data: {
         name: "Subscribable Reporter",
         creatorId: reporterOwner.id,
+        strategy: "exa-search",
       },
     })
 
@@ -88,6 +89,7 @@ describe("Subscription Actions", () => {
       data: {
         name: "Another Reporter",
         creatorId: testUserId,
+        strategy: "exa-search",
       },
     })
 
@@ -106,6 +108,7 @@ describe("Subscription Actions", () => {
       data: {
         name: "Reporter to subscribe",
         creatorId: testUserId,
+        strategy: "exa-search",
       },
     })
 
@@ -131,7 +134,11 @@ describe("Subscription Actions", () => {
 
   it("deletes a subscription", async () => {
     const reporter = await db.reporter.create({
-      data: { name: "Reporter sub", creatorId: testUserId },
+      data: {
+        name: "Reporter sub",
+        creatorId: testUserId,
+        strategy: "exa-search",
+      },
     })
 
     await upsertSubscription({ reporterId: reporter.id })

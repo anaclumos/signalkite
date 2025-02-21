@@ -1,7 +1,7 @@
 "use server"
 
 import { db } from "@/prisma"
-import { ReporterStatus, ReporterStrategyType } from "@prisma/client"
+import { ReporterStatus } from "@prisma/client"
 import { notFound } from "next/navigation"
 import { z } from "zod"
 import { getCurrentUser } from "./auth"
@@ -13,7 +13,7 @@ const reporterUpsertSchema = z.object({
     .min(1, "Name is required")
     .max(100, "Name must be 100 characters or less"),
   description: z.string().optional(),
-  strategy: z.nativeEnum(ReporterStrategyType).optional(),
+  strategy: z.enum(["exa-search", "hn-best-stories"]),
   status: z.nativeEnum(ReporterStatus).optional(),
   promptId: z.string().nullable().optional(),
   scheduleIds: z.array(z.string()).optional(),
@@ -85,7 +85,7 @@ export async function upsertReporter({
         data: {
           name: validatedData.name,
           description: validatedData.description,
-          strategy: validatedData.strategy || ReporterStrategyType.EXA_SEARCH,
+          strategy: validatedData.strategy || "exa-search",
           promptId: validatedData.promptId,
           creatorId: user.id,
           metadata: validatedData.metadata,
@@ -140,11 +140,6 @@ export async function getReporters() {
       prompt: true,
       _count: {
         select: {
-          stories: {
-            where: {
-              deletedAt: null,
-            },
-          },
           issues: {
             where: {
               deletedAt: null,

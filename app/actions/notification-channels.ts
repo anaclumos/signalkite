@@ -1,7 +1,6 @@
 "use server"
 
 import { db } from "@/prisma"
-import { NotificationChannelType } from "@prisma/client"
 import { notFound } from "next/navigation"
 import { z } from "zod"
 import { getCurrentUser } from "./auth"
@@ -13,7 +12,7 @@ const channelUpsertSchema = z.object({
     .min(1, "Name is required")
     .max(100, "Name must be 100 characters or less"),
   description: z.string().optional(),
-  type: z.nativeEnum(NotificationChannelType),
+  type: z.enum(["EMAIL", "SLACK", "TEXT"]),
   settings: z.record(z.string(), z.any()),
 })
 

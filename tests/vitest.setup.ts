@@ -1,7 +1,23 @@
 import { auth } from "@clerk/nextjs/server"
 import { PrismaClient } from "@prisma/client"
-import { vi } from "vitest"
+import * as matchers from "@testing-library/jest-dom/matchers"
+import "@testing-library/jest-dom/vitest"
+import { expect, vi } from "vitest"
 import { DeepMockProxy, mockDeep } from "vitest-mock-extended"
+
+Object.defineProperty(window, "matchMedia", {
+  writable: true,
+  value: vi.fn().mockImplementation((query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: vi.fn(), // Deprecated
+    removeListener: vi.fn(), // Deprecated
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  })),
+})
 
 vi.mock("@clerk/nextjs", () => ({
   auth: () =>
@@ -57,3 +73,5 @@ export const createPrismaError = (code: string, message: string) => {
   error.code = code
   return error
 }
+
+expect.extend(matchers)

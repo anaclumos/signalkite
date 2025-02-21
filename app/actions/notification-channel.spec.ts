@@ -5,7 +5,6 @@ import {
   upsertNotificationChannel,
 } from "@/app/actions/notification-channels"
 import { db } from "@/prisma"
-import { NotificationChannelType } from "@prisma/client"
 import {
   afterAll,
   afterEach,
@@ -52,13 +51,13 @@ describe("Notification Channel Actions", () => {
     const channel = await upsertNotificationChannel({
       name: "My Email Channel",
       description: "My Email Channel",
-      type: NotificationChannelType.EMAIL,
+      type: "EMAIL",
       settings: { email: "test@example.com" },
     })
 
     expect(channel).toHaveProperty("id")
     expect(channel.name).toBe("My Email Channel")
-    expect(channel.type).toBe(NotificationChannelType.EMAIL)
+    expect(channel.type).toBe("EMAIL")
     expect(channel.settings).toEqual({ email: "test@example.com" })
     expect(channel.userId).toBe(testUserId)
   })
@@ -68,8 +67,8 @@ describe("Notification Channel Actions", () => {
       data: {
         name: "Temp Channel",
         description: "Temp Channel",
-        type: NotificationChannelType.TEXT,
-        settings: { phone: "+123456789" },
+        type: "EMAIL",
+        settings: { email: "test@example.com" },
         userId: testUserId,
       },
     })
@@ -78,19 +77,19 @@ describe("Notification Channel Actions", () => {
       id: channel.id,
       name: "Updated Channel",
       description: "Updated Channel",
-      type: NotificationChannelType.TEXT,
-      settings: { phone: "+987654321" },
+      type: "EMAIL",
+      settings: { email: "test@example.com" },
     })
 
     expect(updated.name).toBe("Updated Channel")
-    expect(updated.settings).toMatchObject({ phone: "+987654321" })
+    expect(updated.settings).toMatchObject({ email: "test@example.com" })
   })
 
   it("deletes a notification channel (soft-delete)", async () => {
     const channel = await db.notificationChannel.create({
       data: {
         name: "Channel to delete",
-        type: NotificationChannelType.EMAIL,
+        type: "EMAIL",
         settings: {},
         userId: testUserId,
       },
@@ -104,16 +103,16 @@ describe("Notification Channel Actions", () => {
     const ch1 = await db.notificationChannel.create({
       data: {
         name: "Channel A",
-        type: NotificationChannelType.SLACK,
+        type: "SLACK",
         settings: {},
         userId: testUserId,
       },
     })
 
-    const ch2 = await db.notificationChannel.create({
+    await db.notificationChannel.create({
       data: {
         name: "Channel B",
-        type: NotificationChannelType.EMAIL,
+        type: "EMAIL",
         settings: {},
         userId: testUserId,
       },
@@ -130,7 +129,7 @@ describe("Notification Channel Actions", () => {
     const channel = await db.notificationChannel.create({
       data: {
         name: "Single Channel",
-        type: NotificationChannelType.EMAIL,
+        type: "EMAIL",
         settings: { email: "hi@example.com" },
         userId: testUserId,
       },
@@ -152,7 +151,7 @@ describe("Notification Channel Actions", () => {
     const channel = await db.notificationChannel.create({
       data: {
         name: "Other's channel",
-        type: NotificationChannelType.TEXT,
+        type: "EMAIL",
         settings: {},
         userId: otherUser.id,
       },
@@ -163,7 +162,7 @@ describe("Notification Channel Actions", () => {
         id: channel.id,
         name: "Should fail",
         description: "Should fail",
-        type: NotificationChannelType.TEXT,
+        type: "EMAIL",
         settings: {},
       }),
     ).rejects.toThrow()

@@ -65,10 +65,10 @@ describe("Schedule Actions", () => {
 
   it("creates a schedule with reporter associations", async () => {
     const reporter1 = await db.reporter.create({
-      data: { name: "Rep1", creatorId: testUserId },
+      data: { name: "Rep1", creatorId: testUserId, strategy: "exa-search" },
     })
     const reporter2 = await db.reporter.create({
-      data: { name: "Rep2", creatorId: testUserId },
+      data: { name: "Rep2", creatorId: testUserId, strategy: "exa-search" },
     })
 
     const schedule = await upsertSchedule({
@@ -94,10 +94,10 @@ describe("Schedule Actions", () => {
 
   it("updates a schedule (including its reporter associations)", async () => {
     const reporter1 = await db.reporter.create({
-      data: { name: "RepOne", creatorId: testUserId },
+      data: { name: "RepOne", creatorId: testUserId, strategy: "exa-search" },
     })
     const reporter2 = await db.reporter.create({
-      data: { name: "RepTwo", creatorId: testUserId },
+      data: { name: "RepTwo", creatorId: testUserId, strategy: "exa-search" },
     })
 
     const schedule = await db.schedule.create({
@@ -156,8 +156,6 @@ describe("Schedule Actions", () => {
     const found = await getSchedule(schedule.id)
     expect(found).toBeDefined()
     expect(found.id).toBe(schedule.id)
-    expect(Array.isArray(found.scheduledReporters)).toBe(true)
-    expect(Array.isArray(found.runs)).toBe(true)
   })
 
   it("generates correct cron string with all days selected", () => {

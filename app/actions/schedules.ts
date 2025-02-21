@@ -157,16 +157,6 @@ export async function getSchedule(id: string) {
           reporter: true,
         },
       },
-      runs: {
-        where: {
-          completedAt: {
-            not: null,
-          },
-        },
-        orderBy: {
-          startedAt: "desc",
-        },
-      },
     },
   })
 

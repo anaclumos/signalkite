@@ -4,7 +4,7 @@ import {
   upsertReporter,
 } from "@/app/actions/reporters"
 import { db } from "@/prisma"
-import { ReporterStatus, ReporterStrategyType } from "@prisma/client"
+import { ReporterStatus } from "@prisma/client"
 import {
   afterAll,
   afterEach,
@@ -50,11 +50,12 @@ describe("Reporter Actions", () => {
       id: "",
       name: "My new reporter",
       description: "It fetches data from somewhere",
+      strategy: "exa-search",
     })
 
     expect(reporter).toHaveProperty("id")
     expect(reporter.name).toBe("My new reporter")
-    expect(reporter.strategy).toBe(ReporterStrategyType.EXA_SEARCH)
+    expect(reporter.strategy).toBe("exa-search")
     expect(reporter.creatorId).toBe(testUserId)
   })
 
@@ -71,6 +72,7 @@ describe("Reporter Actions", () => {
       id: "",
       name: "Reporter with prompt",
       promptId: prompt.id,
+      strategy: "exa-search",
     })
 
     expect(reporter).toHaveProperty("id")
@@ -84,6 +86,7 @@ describe("Reporter Actions", () => {
       data: {
         name: "Old name",
         creatorId: testUserId,
+        strategy: "exa-search",
       },
     })
 
@@ -91,6 +94,7 @@ describe("Reporter Actions", () => {
       id: r.id,
       name: "Updated name",
       status: ReporterStatus.PAUSED,
+      strategy: "exa-search",
     })
 
     expect(updated.name).toBe("Updated name")
@@ -102,6 +106,7 @@ describe("Reporter Actions", () => {
       data: {
         name: "To delete",
         creatorId: testUserId,
+        strategy: "exa-search",
       },
     })
 
@@ -115,6 +120,7 @@ describe("Reporter Actions", () => {
       data: {
         name: "Test Reporter",
         creatorId: testUserId,
+        strategy: "exa-search",
       },
     })
 
@@ -136,6 +142,7 @@ describe("Reporter Actions", () => {
         name: "Other archived reporter",
         creatorId: otherUser.id,
         status: ReporterStatus.ARCHIVED,
+        strategy: "exa-search",
       },
     })
 

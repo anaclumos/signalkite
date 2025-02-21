@@ -86,7 +86,6 @@
 - When everything is done, print what should be a commit message as conventional commit.
   - type(scope): description
   - type must be one of [build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test]
-- You should use the ASCII representation of the emoji, not the Unicode itself. For example, :sparkles: is correct, not ✨.
 
 ## Special Gotchas
 
