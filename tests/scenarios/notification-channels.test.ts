@@ -29,7 +29,7 @@ test.describe("Notification Channels", () => {
 
     // Check if email channel is displayed
     await expect(page.getByText("test@example.com")).toBeVisible()
-    await expect(page.getByText("EMAIL")).toBeVisible()
+    await expect(page.getByText("email")).toBeVisible()
     await expect(page.getByText("Configured")).toBeVisible()
 
     // Check if TEXT channel is displayed

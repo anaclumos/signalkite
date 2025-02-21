@@ -12,7 +12,7 @@ const channelUpsertSchema = z.object({
     .min(1, "Name is required")
     .max(100, "Name must be 100 characters or less"),
   description: z.string().optional(),
-  type: z.enum(["EMAIL", "SLACK", "TEXT"]),
+  type: z.enum(["email", "slack", "text"]),
   settings: z.record(z.string(), z.any()),
 })
 

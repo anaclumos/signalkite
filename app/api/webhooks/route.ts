@@ -73,7 +73,7 @@ export async function POST(req: Request) {
         where: { clerkId: primaryEmail.id },
         create: {
           name: `Email - ${primaryEmail.email_address}`,
-          type: "EMAIL",
+          type: "email",
           settings: { email: primaryEmail.email_address },
           clerkId: primaryEmail.id,
           user: {

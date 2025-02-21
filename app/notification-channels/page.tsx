@@ -32,7 +32,7 @@ export default async function NotificationChannelsPage() {
       where: { clerkId: email.id },
       create: {
         name: `Email - ${email.email}`,
-        type: "EMAIL",
+        type: "email",
         settings: { email: email.email },
         clerkId: email.id,
         user: {

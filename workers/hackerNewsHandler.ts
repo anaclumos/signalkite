@@ -129,7 +129,7 @@ export const hackerNewsHandler = schedules.task({
     // Send emails to all subscriptions with EMAIL notification channels
     for (const subscription of subscriptions) {
       if (!subscription?.notificationChannel) continue
-      if (subscription?.notificationChannel?.type === "EMAIL") {
+      if (subscription?.notificationChannel?.type === "email") {
         try {
           const metadata = subscription.notificationChannel.settings as {
             email: string

@@ -101,7 +101,7 @@ describe("NotificationChannelsPage", () => {
       where: { clerkId: "email_123" },
       create: {
         name: "Email - test@example.com",
-        type: "EMAIL",
+        type: "email",
         settings: { email: "test@example.com" },
         clerkId: "email_123",
         user: {

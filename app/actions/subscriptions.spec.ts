@@ -79,7 +79,7 @@ describe("Subscription Actions", () => {
     const channel = await db.notificationChannel.create({
       data: {
         name: "Test Channel",
-        type: "EMAIL",
+        type: "email",
         settings: {},
         userId: testUserId,
       },
@@ -117,7 +117,7 @@ describe("Subscription Actions", () => {
     const channel = await db.notificationChannel.create({
       data: {
         name: "New Channel",
-        type: "EMAIL",
+        type: "email",
         settings: {},
         userId: testUserId,
       },

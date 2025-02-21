@@ -1,5 +1,4 @@
 import { db } from "@/prisma"
-import { NotificationChannelType } from "@prisma/client"
 import { Webhook } from "svix"
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
 
@@ -70,9 +69,8 @@ describe("Webhook Handler", () => {
     vi.mocked(db.notificationChannel.upsert).mockResolvedValue({
       id: "channel_123",
       name: "Email - test@example.com",
-      type: NotificationChannelType.EMAIL,
+      type: "email",
       settings: { email: "test@example.com" },
-      clerkId: "email_123",
       userId: "db_user_123",
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -128,7 +126,7 @@ describe("Webhook Handler", () => {
       where: { clerkId: "email_123" },
       create: {
         name: "Email - test@example.com",
-        type: "EMAIL",
+        type: "email",
         settings: { email: "test@example.com" },
         clerkId: "email_123",
         user: {
@@ -176,9 +174,8 @@ describe("Webhook Handler", () => {
     vi.mocked(db.notificationChannel.upsert).mockResolvedValue({
       id: "channel_456",
       name: "+1234567890",
-      type: NotificationChannelType.TEXT,
+      type: "text",
       settings: { phone: "+1234567890" },
-      clerkId: "phone_123",
       userId: "db_user_123",
       createdAt: new Date(),
       updatedAt: new Date(),

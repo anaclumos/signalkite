@@ -51,13 +51,13 @@ describe("Notification Channel Actions", () => {
     const channel = await upsertNotificationChannel({
       name: "My Email Channel",
       description: "My Email Channel",
-      type: "EMAIL",
+      type: "email",
       settings: { email: "test@example.com" },
     })
 
     expect(channel).toHaveProperty("id")
     expect(channel.name).toBe("My Email Channel")
-    expect(channel.type).toBe("EMAIL")
+    expect(channel.type).toBe("email")
     expect(channel.settings).toEqual({ email: "test@example.com" })
     expect(channel.userId).toBe(testUserId)
   })
@@ -67,7 +67,7 @@ describe("Notification Channel Actions", () => {
       data: {
         name: "Temp Channel",
         description: "Temp Channel",
-        type: "EMAIL",
+        type: "email",
         settings: { email: "test@example.com" },
         userId: testUserId,
       },
@@ -77,7 +77,7 @@ describe("Notification Channel Actions", () => {
       id: channel.id,
       name: "Updated Channel",
       description: "Updated Channel",
-      type: "EMAIL",
+      type: "email",
       settings: { email: "test@example.com" },
     })
 
@@ -89,7 +89,7 @@ describe("Notification Channel Actions", () => {
     const channel = await db.notificationChannel.create({
       data: {
         name: "Channel to delete",
-        type: "EMAIL",
+        type: "email",
         settings: {},
         userId: testUserId,
       },
@@ -112,7 +112,7 @@ describe("Notification Channel Actions", () => {
     await db.notificationChannel.create({
       data: {
         name: "Channel B",
-        type: "EMAIL",
+        type: "email",
         settings: {},
         userId: testUserId,
       },
@@ -129,7 +129,7 @@ describe("Notification Channel Actions", () => {
     const channel = await db.notificationChannel.create({
       data: {
         name: "Single Channel",
-        type: "EMAIL",
+        type: "email",
         settings: { email: "hi@example.com" },
         userId: testUserId,
       },
@@ -151,7 +151,7 @@ describe("Notification Channel Actions", () => {
     const channel = await db.notificationChannel.create({
       data: {
         name: "Other's channel",
-        type: "EMAIL",
+        type: "email",
         settings: {},
         userId: otherUser.id,
       },
@@ -162,7 +162,7 @@ describe("Notification Channel Actions", () => {
         id: channel.id,
         name: "Should fail",
         description: "Should fail",
-        type: "EMAIL",
+        type: "email",
         settings: {},
       }),
     ).rejects.toThrow()

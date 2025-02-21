@@ -1,9 +1,5 @@
 import { faker } from "@faker-js/faker"
-import {
-  PrismaClient,
-  ReporterStatus,
-  ReporterStrategyType,
-} from "@prisma/client"
+import { PrismaClient, ReporterStatus } from "@prisma/client"
 
 const prisma = new PrismaClient()
 
@@ -31,9 +27,10 @@ async function main() {
           data: {
             name: faker.book.series(),
             description: faker.lorem.paragraph(),
-            strategy: faker.helpers.arrayElement(
-              Object.values(ReporterStrategyType),
-            ),
+            strategy: faker.helpers.arrayElement([
+              "exa-search",
+              "hn-best-stories",
+            ]),
             status: ReporterStatus.ACTIVE,
             creatorId: user.id,
           },
@@ -68,7 +65,6 @@ async function main() {
                     url: faker.internet.url(),
                     summary: faker.lorem.paragraph(),
                     issueId: issue.id,
-                    reporterId: reporter.id,
                   },
                 })
               }),
