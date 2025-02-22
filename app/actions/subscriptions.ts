@@ -1,15 +1,24 @@
 "use server"
 
+// Import required dependencies
 import { db } from "@/prisma"
 import { notFound } from "next/navigation"
 import { z } from "zod"
 import { getCurrentUser } from "./auth"
 
+// Zod schema for validating subscription creation/update data
 const subscriptionUpsertSchema = z.object({
-  reporterId: z.string().min(1, "Reporter ID is required"),
-  notificationChannelId: z.string().nullable().optional(),
+  reporterId: z.string().min(1, "Reporter ID is required"), // Required reporter reference
+  notificationChannelId: z.string().nullable().optional(), // Optional notification channel
 })
 
+/**
+ * Creates or updates a subscription to a reporter
+ * @param reporterId - ID of reporter to subscribe to
+ * @param notificationChannelId - Optional notification channel ID
+ * @returns Created or updated subscription with related entities
+ * @throws {notFound} If reporter or notification channel not found
+ */
 export async function upsertSubscription({
   reporterId,
   notificationChannelId,
@@ -21,7 +30,7 @@ export async function upsertSubscription({
 
   const user = await getCurrentUser()
 
-  // Check if notification channel exists and belongs to user
+  // Verify notification channel exists and belongs to user
   if (validatedData.notificationChannelId) {
     const channel = await db.notificationChannel.findUnique({
       where: { id: validatedData.notificationChannelId },
@@ -31,7 +40,7 @@ export async function upsertSubscription({
     }
   }
 
-  // Check if reporter exists
+  // Verify reporter exists and is active
   const reporter = await db.reporter.findUnique({
     where: {
       id: validatedData.reporterId,
@@ -43,7 +52,7 @@ export async function upsertSubscription({
     notFound()
   }
 
-  // Check if subscription exists
+  // Check for existing subscription
   const existingSubscription = await db.subscription.findUnique({
     where: {
       userId_reporterId: {
@@ -54,7 +63,7 @@ export async function upsertSubscription({
   })
 
   if (existingSubscription) {
-    // Update
+    // Update existing subscription
     return db.subscription.update({
       where: {
         userId_reporterId: {
@@ -66,12 +75,12 @@ export async function upsertSubscription({
         notificationChannelId: validatedData.notificationChannelId,
       },
       include: {
-        reporter: true,
-        notificationChannel: true,
+        reporter: true, // Include reporter details
+        notificationChannel: true, // Include channel details
       },
     })
   } else {
-    // Create
+    // Create new subscription
     return db.subscription.create({
       data: {
         userId: user.id,
@@ -79,13 +88,19 @@ export async function upsertSubscription({
         notificationChannelId: validatedData.notificationChannelId,
       },
       include: {
-        reporter: true,
-        notificationChannel: true,
+        reporter: true, // Include reporter details
+        notificationChannel: true, // Include channel details
       },
     })
   }
 }
 
+/**
+ * Soft deletes a subscription
+ * @param reporterId - ID of reporter to unsubscribe from
+ * @returns Updated subscription with deletedAt timestamp
+ * @throws {notFound} If subscription not found
+ */
 export async function deleteSubscription(reporterId: string) {
   // Validate input
   const validatedReporterId = z
@@ -95,6 +110,7 @@ export async function deleteSubscription(reporterId: string) {
 
   const user = await getCurrentUser()
 
+  // Verify subscription exists
   const subscription = await db.subscription.findUnique({
     where: {
       userId_reporterId: {
@@ -108,6 +124,7 @@ export async function deleteSubscription(reporterId: string) {
     notFound()
   }
 
+  // Soft delete by setting deletedAt timestamp
   return db.subscription.update({
     where: {
       userId_reporterId: {
@@ -121,19 +138,23 @@ export async function deleteSubscription(reporterId: string) {
   })
 }
 
+/**
+ * Retrieves all active subscriptions for current user
+ * @returns Array of subscriptions with related entities
+ */
 export async function getSubscriptions() {
   const user = await getCurrentUser()
   return db.subscription.findMany({
     where: {
       userId: user.id,
-      deletedAt: null,
+      deletedAt: null, // Only return active subscriptions
     },
     include: {
-      reporter: true,
-      notificationChannel: true,
+      reporter: true, // Include reporter details
+      notificationChannel: true, // Include channel details
     },
     orderBy: {
-      createdAt: "desc",
+      createdAt: "desc", // Most recent first
     },
   })
 }

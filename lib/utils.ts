@@ -1,43 +1,43 @@
-// Tremor Raw cx [v0.0.0]
+// Utility functions for styling, form handling, and number formatting
 
+// Import styling utilities
 import clsx, { type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
+// Combines and merges Tailwind CSS classes using clsx and tailwind-merge
 export function cx(...args: ClassValue[]) {
   return twMerge(clsx(...args))
 }
 
-// Tremor Raw focusInput [v0.0.1]
-
+// Focus state styles for input elements
 export const focusInput = [
-  // base
+  // Base focus ring style
   "focus:ring-2",
-  // ring color
+  // Ring color for light and dark modes
   "focus:ring-blue-200 dark:focus:ring-blue-700/30",
-  // border color
+  // Border color for light and dark modes
   "focus:border-blue-500 dark:focus:border-blue-700",
 ]
 
-// Tremor Raw focusRing [v0.0.1]
-
+// Focus ring styles for interactive elements
 export const focusRing = [
-  // base
+  // Base outline style with offset
   "outline outline-offset-2 outline-0 focus-visible:outline-2",
-  // outline color
+  // Outline color for light and dark modes
   "outline-blue-500 dark:outline-blue-500",
 ]
 
-// Tremor Raw hasErrorInput [v0.0.1]
-
+// Error state styles for input elements
 export const hasErrorInput = [
-  // base
+  // Base ring style
   "ring-2",
-  // border color
+  // Error border color for light and dark modes
   "border-red-500 dark:border-red-700",
-  // ring color
+  // Error ring color for light and dark modes
   "ring-red-200 dark:ring-red-700/30",
 ]
 
+// Type definitions for number formatting parameters
 interface CurrencyParams {
   number: number
   maxFractionDigits?: number
@@ -54,6 +54,7 @@ interface MillionParams {
   decimals?: number
 }
 
+// Type definition for number formatting functions
 type FormatterFunctions = {
   currency: (params: CurrencyParams) => string
   unit: (number: number) => string
@@ -61,8 +62,10 @@ type FormatterFunctions = {
   million: (params: MillionParams) => string
 }
 
+// Type for form data values
 type FormDataValue = string | string[] | null
 
+// Retrieves a single value from FormData or object
 export function getFormData(
   data: FormData | Record<string, any>,
   key: string,
@@ -74,6 +77,7 @@ export function getFormData(
   return data[key] ?? null
 }
 
+// Retrieves all values for a key from FormData or object
 export function getAllFormData(
   data: FormData | Record<string, any>,
   key: string,
@@ -85,7 +89,9 @@ export function getAllFormData(
   return Array.isArray(value) ? value : value ? [value.toString()] : []
 }
 
+// Collection of number formatting functions
 export const formatters: FormatterFunctions = {
+  // Formats number as currency with specified options
   currency: ({
     number,
     maxFractionDigits = 2,
@@ -98,12 +104,14 @@ export const formatters: FormatterFunctions = {
     }).format(number)
   },
 
+  // Formats number with decimal style
   unit: (number: number): string => {
     return new Intl.NumberFormat("en-US", {
       style: "decimal",
     }).format(number)
   },
 
+  // Formats number as percentage with specified decimals
   percentage: ({ number, decimals = 1 }: PercentageParams): string => {
     return new Intl.NumberFormat("en-US", {
       style: "percent",
@@ -112,6 +120,7 @@ export const formatters: FormatterFunctions = {
     }).format(number)
   },
 
+  // Formats number in millions with specified decimals
   million: ({ number, decimals = 1 }: MillionParams): string => {
     return `${new Intl.NumberFormat("en-US", {
       style: "decimal",

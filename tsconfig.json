@@ -1,34 +1,62 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    // JavaScript target version
+    "target": "ES2017", // Compile to ES2017 features
+
+    // Libraries to include in compilation
+    "lib": [
+      "dom", // DOM APIs
+      "dom.iterable", // DOM Iteration APIs
+      "esnext" // Latest ECMAScript features
+    ],
+
+    // JavaScript support
+    "allowJs": true, // Allow JavaScript files
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "strict": true, // Enable all strict type checking options
+    "noEmit": true, // Don't emit output (Next.js handles this)
+
+    // Module settings
+    "esModuleInterop": true, // Enable CommonJS/ES module interoperability
+    "module": "esnext", // Use ES modules
+    "moduleResolution": "bundler", // Use bundler module resolution
+    "resolveJsonModule": true, // Allow importing JSON files
+    "isolatedModules": true, // Ensure each file can be safely transpiled
+    "jsx": "preserve", // Preserve JSX for Next.js
+
+    // Build optimization
+    "incremental": true, // Enable incremental compilation
+
+    // Next.js specific
     "plugins": [
       {
-        "name": "next"
+        "name": "next" // Next.js TypeScript plugin
       }
     ],
+
+    // Path aliases
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"] // Map @ to project root
     },
-    "types": ["vitest", "node"]
+
+    // Type definitions
+    "types": [
+      "vitest", // Vitest testing types
+      "node" // Node.js types
+    ]
   },
+
+  // Files to include in compilation
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "trigger.config.ts"
+    "next-env.d.ts", // Next.js type definitions
+    "**/*.ts", // All TypeScript files
+    "**/*.tsx", // All TypeScript React files
+    ".next/types/**/*.ts", // Next.js generated types
+    "trigger.config.ts" // Trigger.dev configuration
   ],
-  "exclude": ["node_modules"]
+
+  // Files to exclude from compilation
+  "exclude": [
+    "node_modules" // Exclude dependencies
+  ]
 }

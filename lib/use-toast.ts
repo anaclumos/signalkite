@@ -1,33 +1,41 @@
 "use client"
 
+import type { ToastActionElement, ToastProps } from "@/components/ui/toast"
 import React from "react"
 
-import type { ToastActionElement, ToastProps } from "@/components/ui/toast"
+// Configuration constants
+const TOAST_LIMIT = 4 // Maximum number of toasts shown simultaneously
+const TOAST_REMOVE_DELAY = 1000000 // Delay before removing dismissed toasts (in ms)
 
-const TOAST_LIMIT = 4
-const TOAST_REMOVE_DELAY = 1000000
-
+// Type definitions for toast properties
 type ToasterToast = ToastProps & {
-  id: string
-  title?: React.ReactNode
-  description?: React.ReactNode
-  action?: ToastActionElement
+  id: string // Unique identifier
+  title?: React.ReactNode // Toast title content
+  description?: React.ReactNode // Toast description content
+  action?: ToastActionElement // Optional interactive element
 }
 
+// Action type constants for reducer
 const actionTypes = {
-  ADD_TOAST: "ADD_TOAST",
-  UPDATE_TOAST: "UPDATE_TOAST",
-  DISMISS_TOAST: "DISMISS_TOAST",
-  REMOVE_TOAST: "REMOVE_TOAST",
+  ADD_TOAST: "ADD_TOAST", // Add new toast
+  UPDATE_TOAST: "UPDATE_TOAST", // Update existing toast
+  DISMISS_TOAST: "DISMISS_TOAST", // Mark toast for dismissal
+  REMOVE_TOAST: "REMOVE_TOAST", // Remove toast from state
 } as const
 
+// Counter for generating unique IDs
 let count = 0
 
+/**
+ * Generates a unique ID for toasts
+ * @returns {string} Unique identifier
+ */
 function genId() {
   count = (count + 1) % Number.MAX_VALUE
   return count.toString()
 }
 
+// Type definitions for reducer actions
 type ActionType = typeof actionTypes
 
 type Action =
@@ -48,12 +56,18 @@ type Action =
       toastId?: ToasterToast["id"]
     }
 
+// State interface for toast management
 interface State {
   toasts: ToasterToast[]
 }
 
+// Map to track timeouts for toast removal
 const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>()
 
+/**
+ * Queues a toast for removal after delay
+ * @param toastId - ID of toast to remove
+ */
 const addToRemoveQueue = (toastId: string) => {
   if (toastTimeouts.has(toastId)) {
     return
@@ -70,6 +84,12 @@ const addToRemoveQueue = (toastId: string) => {
   toastTimeouts.set(toastId, timeout)
 }
 
+/**
+ * Reducer for managing toast state
+ * @param state - Current toast state
+ * @param action - Action to perform
+ * @returns Updated state
+ */
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "ADD_TOAST":
@@ -89,6 +109,7 @@ export const reducer = (state: State, action: Action): State => {
     case "DISMISS_TOAST": {
       const { toastId } = action
 
+      // Queue single or all toasts for removal
       if (toastId) {
         addToRemoveQueue(toastId)
       } else {
@@ -123,12 +144,16 @@ export const reducer = (state: State, action: Action): State => {
   }
 }
 
+// State management
 const listeners: Array<(state: State) => void> = []
-
 let memoryState: State = { toasts: [] }
 
-// Updated with https://github.com/shadcn-ui/ui/pull/1038/files
+/**
+ * Dispatches actions to update toast state
+ * @param action - Action to dispatch
+ */
 function dispatch(action: Action) {
+  // Prevent duplicate toasts
   if (action.type === "ADD_TOAST") {
     const toastExists = memoryState.toasts.some((t) => t.id === action.toast.id)
     if (toastExists) {
@@ -141,11 +166,18 @@ function dispatch(action: Action) {
   })
 }
 
+// Type for toast creation without ID
 type Toast = Omit<ToasterToast, "id">
 
+/**
+ * Creates and manages a toast notification
+ * @param props - Toast properties
+ * @returns Object with toast control methods
+ */
 function toast({ ...props }: Toast & { id?: string }) {
   const id = props?.id || genId()
 
+  // Methods for controlling the toast
   const update = (props: Toast) =>
     dispatch({
       type: "UPDATE_TOAST",
@@ -172,12 +204,34 @@ function toast({ ...props }: Toast & { id?: string }) {
   }
 }
 
+/**
+ * React hook for toast functionality
+ * @returns Toast state and control methods
+ *
+ * @example
+ * ```tsx
+ * function MyComponent() {
+ *   const { toast } = useToast();
+ *
+ *   const showToast = () => {
+ *     toast({
+ *       title: "Success",
+ *       description: "Operation completed",
+ *     });
+ *   };
+ *
+ *   return <button onClick={showToast}>Show Toast</button>;
+ * }
+ * ```
+ */
 function useToast() {
   const [state, setState] = React.useState<State>(memoryState)
 
   React.useEffect(() => {
+    // Subscribe to state changes
     listeners.push(setState)
     return () => {
+      // Cleanup subscription
       const index = listeners.indexOf(setState)
       if (index > -1) {
         listeners.splice(index, 1)

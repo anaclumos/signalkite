@@ -1,13 +1,15 @@
-// Tremor Custom chartColors
+// Chart utility functions and color definitions for Tremor charts
 
+// Type for different color utility classes (background, stroke, fill, text)
 export type ColorUtility = "bg" | "stroke" | "fill" | "text"
 
+// Color definitions for chart elements with light/dark mode variants
 export const chartColors = {
   blue: {
-    bg: "bg-blue-500 dark:bg-blue-500",
-    stroke: "stroke-blue-500 dark:stroke-blue-500",
-    fill: "fill-blue-500 dark:fill-blue-500",
-    text: "text-blue-500 dark:text-blue-500",
+    bg: "bg-blue-500 dark:bg-blue-500", // Background color
+    stroke: "stroke-blue-500 dark:stroke-blue-500", // Border/line color
+    fill: "fill-blue-500 dark:fill-blue-500", // Fill color
+    text: "text-blue-500 dark:text-blue-500", // Text color
   },
   lightBlue: {
     bg: "bg-blue-300/50 dark:bg-blue-800/50",
@@ -99,8 +101,10 @@ export const chartColors = {
   }
 }
 
+// Type for available chart color keys
 export type AvailableChartColorsKeys = keyof typeof chartColors
 
+// Gradient color definitions for charts with light/dark mode variants
 export const chartGradientColors = {
   blue: "from-blue-200 to-blue-500 dark:from-blue-200/10 dark:to-blue-400",
   lightBlue: "from-blue-200 to-blue-500 dark:from-blue-200/10 dark:to-blue-400",
@@ -124,12 +128,13 @@ export const chartGradientColors = {
   red: "from-red-200 to-red-500 dark:from-red-200/10 dark:to-red-400",
 } as const satisfies Record<string, string>
 
+// Conditional color definitions based on value ranges (low, medium, high, critical)
 export const chartConditionalColors = {
   blue: {
-    low: "fill-blue-200 dark:fill-blue-300",
-    medium: "fill-blue-300 dark:fill-blue-400",
-    high: "fill-blue-400 dark:fill-blue-500",
-    critical: "fill-blue-500 dark:fill-blue-600",
+    low: "fill-blue-200 dark:fill-blue-300", // For values <= 0.25
+    medium: "fill-blue-300 dark:fill-blue-400", // For values <= 0.50
+    high: "fill-blue-400 dark:fill-blue-500", // For values <= 0.75
+    critical: "fill-blue-500 dark:fill-blue-600", // For values > 0.75
   },
   lightBlue: {
     low: "fill-blue-200 dark:fill-blue-300",
@@ -215,14 +220,22 @@ export const chartConditionalColors = {
     high: "fill-zinc-400 dark:fill-zinc-500",
     critical: "fill-zinc-500 dark:fill-zinc-600",
   },
-}
+} as const
 
+// Type for conditional color keys
 export type AvailableChartConditionalColorsKeys = keyof typeof chartColors
 
+// Array of all available chart color keys
 export const AvailableChartColors: AvailableChartColorsKeys[] = Object.keys(
   chartColors,
 ) as Array<AvailableChartColorsKeys>
 
+/**
+ * Maps categories to colors in a cyclic manner
+ * @param categories - Array of category names
+ * @param colors - Array of available colors
+ * @returns Map of category to color assignments
+ */
 export const constructCategoryColors = (
   categories: string[],
   colors: AvailableChartColorsKeys[],
@@ -234,6 +247,12 @@ export const constructCategoryColors = (
   return categoryColors
 }
 
+/**
+ * Gets the CSS class name for a specific color and utility type
+ * @param color - The color key
+ * @param type - The utility type (bg, stroke, fill, text)
+ * @returns CSS class name string
+ */
 export const getColorClassName = (
   color: AvailableChartColorsKeys,
   type: ColorUtility,
@@ -247,12 +266,23 @@ export const getColorClassName = (
   return chartColors[color]?.[type] ?? fallbackColor[type]
 }
 
+/**
+ * Gets the gradient color class name for a color
+ * @param color - The color key
+ * @returns Gradient CSS class name string
+ */
 export const getGradientColorClassName = (
   color: AvailableChartColorsKeys,
 ): string => {
   return chartGradientColors[color]
 }
 
+/**
+ * Gets conditional color class name based on value
+ * @param value - Numeric value between 0 and 1
+ * @param color - The color key
+ * @returns CSS class name for the appropriate color level
+ */
 export const getConditionalColorClassName = (
   value: number,
   color: AvailableChartConditionalColorsKeys,
@@ -272,8 +302,13 @@ export const getConditionalColorClassName = (
   return classes.critical
 }
 
-// Tremor Raw getYAxisDomain [v0.0.0]
-
+/**
+ * Determines Y-axis domain for charts
+ * @param autoMinValue - Whether to auto-calculate minimum value
+ * @param minValue - Optional minimum value
+ * @param maxValue - Optional maximum value
+ * @returns Array containing min and max domain values
+ */
 export const getYAxisDomain = (
   autoMinValue: boolean,
   minValue: number | undefined,
@@ -284,8 +319,12 @@ export const getYAxisDomain = (
   return [minDomain, maxDomain]
 }
 
-// Tremor Raw hasOnlyOneValueForKey [v0.1.0]
-
+/**
+ * Checks if an array of objects has only one unique value for a specific key
+ * @param array - Array of objects to check
+ * @param keyToCheck - Key to check for unique values
+ * @returns Boolean indicating if only one unique value exists
+ */
 export function hasOnlyOneValueForKey(
   array: any[],
   keyToCheck: string,

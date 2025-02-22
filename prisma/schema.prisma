@@ -1,172 +1,185 @@
+// Database configuration for PostgreSQL
 datasource db {
     provider = "postgresql"
     url      = env("DATABASE_URL")
 }
 
+// Prisma Client generator configuration
 generator client {
     provider = "prisma-client-js"
 }
 
+// Enum for Reporter status states
 enum ReporterStatus {
-    ACTIVE
-    PAUSED
-    ARCHIVED
+    ACTIVE // Reporter is actively generating content
+    PAUSED // Reporter is temporarily stopped
+    ARCHIVED // Reporter is hidden from UI but preserved
 }
 
+// User model representing system users
 model User {
-    id              String                @id @default(ulid())
-    authProviderUid String                @unique
-    createdAt       DateTime              @default(now()) @db.Timestamptz()
-    updatedAt       DateTime              @default(now()) @updatedAt @db.Timestamptz()
-    deletedAt       DateTime?
-    lastLogin       DateTime?
-    reporters       Reporter[]
-    schedules       Schedule[]
-    channels        NotificationChannel[]
-    subscriptions   Subscription[]
-    prompts         Prompt[]
-    RelevancyPrompt RelevancyPrompt[]
+    id              String                @id @default(ulid()) // Unique identifier using ULID
+    authProviderUid String                @unique // External auth provider ID
+    createdAt       DateTime              @default(now()) @db.Timestamptz() // Creation timestamp
+    updatedAt       DateTime              @default(now()) @updatedAt @db.Timestamptz() // Last update timestamp
+    deletedAt       DateTime? // Soft delete timestamp
+    lastLogin       DateTime? // Last user login timestamp
+    reporters       Reporter[] // Created reporters
+    schedules       Schedule[] // User's schedules
+    channels        NotificationChannel[] // User's notification channels
+    subscriptions   Subscription[] // User's subscriptions
+    prompts         Prompt[] // User's prompts
+    RelevancyPrompt RelevancyPrompt[] // User's relevancy prompts
 }
 
+// Reporter model for AI-based content gatherers
 model Reporter {
-    id                 String              @id @default(ulid())
-    name               String              @db.VarChar(100)
-    description        String?             @db.Text()
-    strategy           String              @db.VarChar(100)
-    status             ReporterStatus      @default(ACTIVE)
-    relevancyThreshold Float?
-    createdAt          DateTime            @default(now()) @db.Timestamptz()
-    updatedAt          DateTime            @default(now()) @updatedAt @db.Timestamptz()
-    deletedAt          DateTime?
-    promptId           String?
-    relevancyPromptId  String?
-    metadata           Json?
-    creatorId          String
-    creator            User                @relation(fields: [creatorId], references: [id])
-    prompt             Prompt?             @relation(fields: [promptId], references: [id])
-    issues             Issue[]
-    scheduledReporters ScheduledReporter[]
-    subscriptions      Subscription[]
-    RelevancyPrompt    RelevancyPrompt?    @relation(fields: [relevancyPromptId], references: [id])
+    id                 String              @id @default(ulid()) // Unique identifier
+    name               String              @db.VarChar(100) // Reporter name
+    description        String?             @db.Text() // Optional description
+    strategy           String              @db.VarChar(100) // Content gathering strategy
+    status             ReporterStatus      @default(ACTIVE) // Current status
+    relevancyThreshold Float? // Minimum relevancy score
+    createdAt          DateTime            @default(now()) @db.Timestamptz() // Creation time
+    updatedAt          DateTime            @default(now()) @updatedAt @db.Timestamptz() // Update time
+    deletedAt          DateTime? // Soft delete time
+    promptId           String? // Optional prompt reference
+    relevancyPromptId  String? // Optional relevancy prompt reference
+    metadata           Json? // Additional configuration
+    creatorId          String // Creator reference
+    creator            User                @relation(fields: [creatorId], references: [id]) // Creator relation
+    prompt             Prompt?             @relation(fields: [promptId], references: [id]) // Prompt relation
+    issues             Issue[] // Generated issues
+    scheduledReporters ScheduledReporter[] // Schedule associations
+    subscriptions      Subscription[] // User subscriptions
+    RelevancyPrompt    RelevancyPrompt?    @relation(fields: [relevancyPromptId], references: [id]) // Relevancy prompt
 
-    @@index([creatorId])
+    @@index([creatorId]) // Index on creator ID
 }
 
+// Issue model for batches of stories
 model Issue {
-    id          String    @id @default(ulid())
-    title       String
-    description String?
-    reporterId  String
-    reporter    Reporter  @relation(fields: [reporterId], references: [id])
-    successful  Boolean   @default(true)
-    createdAt   DateTime  @default(now()) @db.Timestamptz()
-    updatedAt   DateTime  @default(now()) @updatedAt @db.Timestamptz()
-    deletedAt   DateTime?
-    stories     Story[]
+    id          String    @id @default(ulid()) // Unique identifier
+    title       String // Issue title
+    description String? // Optional description
+    reporterId  String // Associated reporter
+    reporter    Reporter  @relation(fields: [reporterId], references: [id]) // Reporter relation
+    successful  Boolean   @default(true) // Issue generation status
+    createdAt   DateTime  @default(now()) @db.Timestamptz() // Creation time
+    updatedAt   DateTime  @default(now()) @updatedAt @db.Timestamptz() // Update time
+    deletedAt   DateTime? // Soft delete time
+    stories     Story[] // Contained stories
 
-    @@index([reporterId])
+    @@index([reporterId]) // Index on reporter ID
 }
 
+// Story model for individual content pieces
 model Story {
-    id                String           @id @default(ulid())
-    title             String
-    url               String           @db.VarChar(2048)
-    summary           String?
-    relevancyScore    Float?
-    createdAt         DateTime         @default(now()) @db.Timestamptz()
-    updatedAt         DateTime         @default(now()) @updatedAt @db.Timestamptz()
-    deletedAt         DateTime?
-    promptId          String?
-    prompt            Prompt?          @relation(fields: [promptId], references: [id])
-    relevancyPromptId String?
-    relevancyPrompt   RelevancyPrompt? @relation(fields: [relevancyPromptId], references: [id])
-    issueId           String
-    issue             Issue            @relation(fields: [issueId], references: [id])
+    id                String           @id @default(ulid()) // Unique identifier
+    title             String // Story title
+    url               String           @db.VarChar(2048) // Source URL
+    summary           String? // Optional summary
+    relevancyScore    Float? // Relevancy score
+    createdAt         DateTime         @default(now()) @db.Timestamptz() // Creation time
+    updatedAt         DateTime         @default(now()) @updatedAt @db.Timestamptz() // Update time
+    deletedAt         DateTime? // Soft delete time
+    promptId          String? // Optional prompt reference
+    prompt            Prompt?          @relation(fields: [promptId], references: [id]) // Prompt relation
+    relevancyPromptId String? // Optional relevancy prompt reference
+    relevancyPrompt   RelevancyPrompt? @relation(fields: [relevancyPromptId], references: [id]) // Relevancy prompt
+    issueId           String // Associated issue
+    issue             Issue            @relation(fields: [issueId], references: [id]) // Issue relation
 
-    @@index([issueId, createdAt])
+    @@index([issueId, createdAt]) // Compound index
 }
 
+// Subscription model linking users to reporters
 model Subscription {
-    id                    String               @id @default(ulid())
-    userId                String
-    reporterId            String
-    notificationChannelId String?
-    createdAt             DateTime             @default(now()) @db.Timestamptz()
-    updatedAt             DateTime             @default(now()) @updatedAt @db.Timestamptz()
-    deletedAt             DateTime?
-    user                  User                 @relation(fields: [userId], references: [id])
-    reporter              Reporter             @relation(fields: [reporterId], references: [id])
-    notificationChannel   NotificationChannel? @relation(fields: [notificationChannelId], references: [id])
+    id                    String               @id @default(ulid()) // Unique identifier
+    userId                String // User reference
+    reporterId            String // Reporter reference
+    notificationChannelId String? // Optional channel reference
+    createdAt             DateTime             @default(now()) @db.Timestamptz() // Creation time
+    updatedAt             DateTime             @default(now()) @updatedAt @db.Timestamptz() // Update time
+    deletedAt             DateTime? // Soft delete time
+    user                  User                 @relation(fields: [userId], references: [id]) // User relation
+    reporter              Reporter             @relation(fields: [reporterId], references: [id]) // Reporter relation
+    notificationChannel   NotificationChannel? @relation(fields: [notificationChannelId], references: [id]) // Channel relation
 
-    @@unique([userId, reporterId])
-    @@index([userId])
-    @@index([reporterId])
+    @@unique([userId, reporterId]) // Unique constraint
+    @@index([userId]) // User index
+    @@index([reporterId]) // Reporter index
 }
 
+// NotificationChannel model for delivery methods
 model NotificationChannel {
-    id            String         @id @default(ulid())
-    name          String         @db.VarChar(100)
-    description   String?
-    type          String         @db.VarChar(50)
-    settings      Json
-    userId        String?
-    user          User?          @relation(fields: [userId], references: [id])
-    createdAt     DateTime       @default(now()) @db.Timestamptz()
-    updatedAt     DateTime       @default(now()) @updatedAt @db.Timestamptz()
-    deletedAt     DateTime?
-    subscriptions Subscription[]
+    id            String         @id @default(ulid()) // Unique identifier
+    name          String         @db.VarChar(100) // Channel name
+    description   String? // Optional description
+    type          String         @db.VarChar(50) // Channel type (EMAIL, SMS, etc)
+    settings      Json // Channel configuration
+    userId        String? // Optional user reference
+    user          User?          @relation(fields: [userId], references: [id]) // User relation
+    createdAt     DateTime       @default(now()) @db.Timestamptz() // Creation time
+    updatedAt     DateTime       @default(now()) @updatedAt @db.Timestamptz() // Update time
+    deletedAt     DateTime? // Soft delete time
+    subscriptions Subscription[] // Associated subscriptions
 }
 
+// Prompt model for AI content generation
 model Prompt {
-    id          String     @id @default(ulid())
-    name        String
-    description String?
-    text        String?
-    creatorId   String
-    creator     User       @relation(fields: [creatorId], references: [id])
-    createdAt   DateTime   @default(now()) @db.Timestamptz()
-    updatedAt   DateTime   @default(now()) @updatedAt @db.Timestamptz()
-    deletedAt   DateTime?
-    reporters   Reporter[]
-    stories     Story[]
+    id          String     @id @default(ulid()) // Unique identifier
+    name        String // Prompt name
+    description String? // Optional description
+    text        String? // Prompt text
+    creatorId   String // Creator reference
+    creator     User       @relation(fields: [creatorId], references: [id]) // Creator relation
+    createdAt   DateTime   @default(now()) @db.Timestamptz() // Creation time
+    updatedAt   DateTime   @default(now()) @updatedAt @db.Timestamptz() // Update time
+    deletedAt   DateTime? // Soft delete time
+    reporters   Reporter[] // Associated reporters
+    stories     Story[] // Associated stories
 }
 
+// RelevancyPrompt model for content scoring
 model RelevancyPrompt {
-    id          String     @id @default(ulid())
-    name        String
-    description String?
-    text        String?
-    creatorId   String
-    creator     User       @relation(fields: [creatorId], references: [id])
-    createdAt   DateTime   @default(now()) @db.Timestamptz()
-    updatedAt   DateTime   @default(now()) @updatedAt @db.Timestamptz()
-    deletedAt   DateTime?
-    reporters   Reporter[]
-    stories     Story[]
+    id          String     @id @default(ulid()) // Unique identifier
+    name        String // Prompt name
+    description String? // Optional description
+    text        String? // Prompt text
+    creatorId   String // Creator reference
+    creator     User       @relation(fields: [creatorId], references: [id]) // Creator relation
+    createdAt   DateTime   @default(now()) @db.Timestamptz() // Creation time
+    updatedAt   DateTime   @default(now()) @updatedAt @db.Timestamptz() // Update time
+    deletedAt   DateTime? // Soft delete time
+    reporters   Reporter[] // Associated reporters
+    stories     Story[] // Associated stories
 }
 
+// Schedule model for timed operations
 model Schedule {
-    id                 String              @id @default(ulid())
-    name               String              @db.VarChar(100)
-    cron               String              @db.VarChar(255)
-    timezone           String              @db.VarChar(100)
-    nextRunAt          DateTime?
-    lastRunAt          DateTime?
-    paused             Boolean             @default(false)
-    ownerId            String
-    createdAt          DateTime            @default(now()) @db.Timestamptz()
-    updatedAt          DateTime            @default(now()) @updatedAt @db.Timestamptz()
-    deletedAt          DateTime?
-    owner              User                @relation(fields: [ownerId], references: [id])
-    scheduledReporters ScheduledReporter[]
+    id                 String              @id @default(ulid()) // Unique identifier
+    name               String              @db.VarChar(100) // Schedule name
+    cron               String              @db.VarChar(255) // Cron expression
+    timezone           String              @db.VarChar(100) // Timezone
+    nextRunAt          DateTime? // Next execution time
+    lastRunAt          DateTime? // Last execution time
+    paused             Boolean             @default(false) // Pause state
+    ownerId            String // Owner reference
+    createdAt          DateTime            @default(now()) @db.Timestamptz() // Creation time
+    updatedAt          DateTime            @default(now()) @updatedAt @db.Timestamptz() // Update time
+    deletedAt          DateTime? // Soft delete time
+    owner              User                @relation(fields: [ownerId], references: [id]) // Owner relation
+    scheduledReporters ScheduledReporter[] // Associated reporters
 }
 
+// ScheduledReporter model linking schedules to reporters
 model ScheduledReporter {
-    id         String   @id @default(ulid())
-    scheduleId String
-    reporterId String
-    schedule   Schedule @relation(fields: [scheduleId], references: [id])
-    reporter   Reporter @relation(fields: [reporterId], references: [id])
+    id         String   @id @default(ulid()) // Unique identifier
+    scheduleId String // Schedule reference
+    reporterId String // Reporter reference
+    schedule   Schedule @relation(fields: [scheduleId], references: [id]) // Schedule relation
+    reporter   Reporter @relation(fields: [reporterId], references: [id]) // Reporter relation
 
-    @@unique([scheduleId, reporterId])
+    @@unique([scheduleId, reporterId]) // Unique constraint
 }

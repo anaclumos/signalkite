@@ -1,16 +1,40 @@
+// Import required dependencies
 import type { Reporter } from "@prisma/client"
 import { logger, schedules } from "@trigger.dev/sdk/v3"
 import { Resend } from "resend"
 import { db } from "../prisma"
 
+// Initialize email service with API key
 const resend = new Resend(process.env.RESEND_API_KEY || "")
 
+/**
+ * Scheduled task for handling Hacker News content distribution
+ * This worker:
+ * 1. Finds due schedules and their reporters
+ * 2. Filters for active Hacker News reporters
+ * 3. Retrieves associated subscriptions
+ * 4. Sends notifications via configured channels
+ */
 export const hackerNewsHandler = schedules.task({
+  // Unique task identifier
   id: "hacker-news-handler",
+
+  // Run every 5 minutes
+  // */5 = At every 5th minute
   cron: "*/5 * * * *",
+
+  // Maximum execution time (5 minutes)
   maxDuration: 300,
+
+  /**
+   * Task execution function
+   * Processes Hacker News content and sends notifications
+   */
   run: async () => {
-    // Query schedules that are due to run (not paused and nextRunAt is due)
+    // Find schedules that are:
+    // - Not paused
+    // - Due to run (nextRunAt <= current time)
+    // Include their associated reporters
     const dueSchedules = await db.schedule.findMany({
       where: {
         paused: false,
@@ -24,7 +48,9 @@ export const hackerNewsHandler = schedules.task({
     })
     logger.log("Retrieved due schedules with reporters", { dueSchedules })
 
-    // Aggregate reporters with Hacker News strategy from the due schedules
+    // Extract and filter reporters:
+    // - Must use Hacker News strategy
+    // - Must be active status
     let hackersReporters: Reporter[] = []
     for (const schedule of dueSchedules) {
       for (const sr of schedule.scheduledReporters) {
@@ -37,6 +63,9 @@ export const hackerNewsHandler = schedules.task({
         }
       }
     }
+
+    // Remove duplicate reporters
+    // A reporter might be scheduled multiple times
     const uniqueHackersReporters = hackersReporters.reduce<Reporter[]>(
       (acc, reporter) => {
         if (!acc.find((r) => r.id === reporter.id)) {
@@ -55,7 +84,8 @@ export const hackerNewsHandler = schedules.task({
       })),
     })
 
-    // Find all active subscriptions for these reporters
+    // Find active subscriptions for filtered reporters
+    // Include notification channel details for delivery
     const subscriptions = await db.subscription.findMany({
       where: {
         reporterId: {
@@ -75,25 +105,36 @@ export const hackerNewsHandler = schedules.task({
       })),
     })
 
-    // Send emails to all subscriptions with EMAIL notification channels
+    // Process email notifications
+    // Iterate through subscriptions and send emails
+    // where notification channel type is 'email'
     for (const subscription of subscriptions) {
+      // Skip if no notification channel configured
       if (!subscription?.notificationChannel) continue
+
+      // Handle email notifications
       if (subscription?.notificationChannel?.type === "email") {
         try {
+          // Extract email from channel settings
           const metadata = subscription.notificationChannel.settings as {
             email: string
           }
+
+          // Send email notification
           await resend.emails.send({
             from: "Every.news <notifications@updates.every.news>",
             to: metadata.email,
             subject: "Hello World",
             text: "Hello World",
           })
+
+          // Log successful email delivery
           logger.log("Sent email successfully", {
             subscriptionId: subscription.id,
             email: metadata.email,
           })
         } catch (error) {
+          // Log email delivery failures
           logger.error("Failed to send email", {
             subscriptionId: subscription.id,
             error,

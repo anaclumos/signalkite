@@ -1,28 +1,49 @@
+// Import required Trigger.dev utilities
 import { logger, schedules, wait } from "@trigger.dev/sdk/v3"
 
+/**
+ * Example scheduled task definition
+ * Demonstrates basic scheduling and task execution features
+ */
 export const firstScheduledTask = schedules.task({
+  // Unique identifier for this task
   id: "first-scheduled-task",
-  // Every hour
+
+  // Schedule using cron syntax
+  // "0 * * * *" = Run at the start of every hour
+  // Min | Hour | Day of Month | Month | Day of Week
   cron: "0 * * * *",
-  // Set an optional maxDuration to prevent tasks from running indefinitely
-  maxDuration: 300, // Stop executing after 300 secs (5 mins) of compute
+
+  // Task execution time limit
+  // Prevents runaway tasks by stopping execution after specified duration
+  maxDuration: 300, // 5 minutes in seconds
+
+  /**
+   * Task execution function
+   * @param payload - Contains execution context like timestamps
+   * @param ctx - Additional context and helper functions
+   */
   run: async (payload, { ctx }) => {
-    // The payload contains the last run timestamp that you can use to check if this is the first run
-    // And calculate the time since the last run
+    // Calculate time since last execution
+    // For first run, lastTimestamp will be undefined
     const distanceInMs =
       payload.timestamp.getTime() -
       (payload.lastTimestamp ?? new Date()).getTime()
 
+    // Log task start with timing information
     logger.log("First scheduled tasks", { payload, distanceInMs })
 
-    // Wait for 5 seconds
+    // Simulate some work with a delay
+    // Useful for testing and demonstration
     await wait.for({ seconds: 5 })
 
-    // Format the timestamp using the timezone from the payload
+    // Format execution timestamp in user's timezone
+    // This ensures consistent time display across different server locations
     const formatted = payload.timestamp.toLocaleString("en-US", {
       timeZone: payload.timezone,
     })
 
+    // Log formatted timestamp
     logger.log(formatted)
   },
 })

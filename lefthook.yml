@@ -1,19 +1,38 @@
+# Lefthook Git Hooks Configuration
+# Defines automated checks and tasks for different Git operations
+
+# Runs before pushing changes to remote
 pre-push:
   commands:
     biome:
-      name: 🛡️ Guarding Against Bad Code
+      name: 🛡️ Guarding Against Bad Code  # Descriptive name for the check
+      # Files to check (JavaScript, TypeScript, JSON, etc.)
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
+      # Run Biome check on pushed files
+      # --no-errors-on-unmatched: Don't error on unmatched files
+      # --files-ignore-unknown: Skip unknown file types
+      # --colors=off: Disable color output
       run: bunx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {push_files}
 
+# Runs before committing changes
 pre-commit:
   commands:
     biome:
-      name: 🧹 Making Sure Everything is Formatted & Linted
+      name: 🧹 Making Sure Everything is Formatted & Linted  # Descriptive name
+      # Files to check and format
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
+      # Run Biome check and auto-fix on staged files
+      # --write: Fix issues automatically
+      # --no-errors-on-unmatched: Don't error on unmatched files
+      # --files-ignore-unknown: Skip unknown file types
+      # --colors=off: Disable color output
       run: bunx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
-      stage_fixed: true
+      stage_fixed: true  # Stage files that were auto-fixed
 
+# Runs when committing to validate commit message
 commit-msg:
   commands:
     "lint commit message":
+      # Validate commit message format using commitlint
+      # {1} refers to the commit message file
       run: bunx commitlint --edit {1}
