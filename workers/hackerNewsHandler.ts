@@ -22,44 +22,6 @@ export const hackerNewsHandler = schedules.task({
         },
       },
     })
-
-    // {
-    //   "dueSchedules": [
-    //     {
-    //       "id": "01JMFBF8Z7TKBQZ6WRBJT1ZEBG",
-    //       "cron": "* * * * *",
-    //       "name": "New Schedule",
-    //       "paused": false,
-    //       "ownerId": "01JMFBD0WEG3H3661J4A2R8N7C",
-    //       "timezone": "Asia/Seoul",
-    //       "createdAt": "2025-02-19T14:58:26.407Z",
-    //       "deletedAt": null,
-    //       "lastRunAt": null,
-    //       "nextRunAt": "2025-02-19T14:59:00.000Z",
-    //       "updatedAt": "2025-02-19T14:58:36.024Z",
-    //       "scheduledReporters": [
-    //         {
-    //           "id": "01JMFBFYYNQ7WW0HYX44ZAH2WE",
-    //           "reporterId": "01JMFBFYYK4R4NCTG6PW99BJ9Q",
-    //           "scheduleId": "01JMFBF8Z7TKBQZ6WRBJT1ZEBG",
-    //           "reporter": {
-    //             "id": "01JMFBFYYK4R4NCTG6PW99BJ9Q",
-    //             "name": "My HN",
-    //             "status": "ACTIVE",
-    //             "metadata": null,
-    //             "promptId": null,
-    //             "strategy": "HN_BEST_STORIES",
-    //             "createdAt": "2025-02-19T14:58:48.915Z",
-    //             "creatorId": "01JMFBD0WEG3H3661J4A2R8N7C",
-    //             "deletedAt": null,
-    //             "updatedAt": "2025-02-19T14:58:48.915Z",
-    //             "description": ""
-    //           }
-    //         }
-    //       ]
-    //     }
-    //   ]
-    // }
     logger.log("Retrieved due schedules with reporters", { dueSchedules })
 
     // Aggregate reporters with Hacker News strategy from the due schedules
@@ -75,8 +37,6 @@ export const hackerNewsHandler = schedules.task({
         }
       }
     }
-
-    // Deduplicate reporters by id
     const uniqueHackersReporters = hackersReporters.reduce<Reporter[]>(
       (acc, reporter) => {
         if (!acc.find((r) => r.id === reporter.id)) {
@@ -86,17 +46,6 @@ export const hackerNewsHandler = schedules.task({
       },
       [],
     )
-
-    // {
-    //   "reporters": [
-    //     {
-    //       "id": "01JMFBFYYK4R4NCTG6PW99BJ9Q",
-    //       "name": "My HN",
-    //       "status": "ACTIVE",
-    //       "strategy": "HN_BEST_STORIES"
-    //     }
-    //   ]
-    // }
     logger.log("Retrieved Hacker News reporters", {
       reporters: uniqueHackersReporters.map((r) => ({
         id: r.id,
