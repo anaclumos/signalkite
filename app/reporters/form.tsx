@@ -21,7 +21,7 @@ import {
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "@/lib/use-toast"
 import { FormState } from "@/types/forms"
-import { ReporterStrategyType, Schedule } from "@prisma/client"
+import { Schedule } from "@prisma/client"
 import { RiGlobalLine, RiNewspaperLine, RiSearchLine } from "@remixicon/react"
 import Link from "next/link"
 import { useActionState, useState } from "react"
@@ -44,8 +44,7 @@ export function ReporterForm({
   prompts,
   reporter,
 }: ReporterFormProps) {
-  const [selectedStrategy, setSelectedStrategy] =
-    useState<ReporterStrategyType>(ReporterStrategyType.EXA_SEARCH)
+  const [selectedStrategy, setSelectedStrategy] = useState<string>("exa-search")
   const [status, formAction] = useActionState<FormState | null, FormData>(
     submitReporterAction,
     null,
@@ -126,12 +125,10 @@ export function ReporterForm({
                 <RadioCardGroup
                   name="strategy"
                   value={selectedStrategy}
-                  onValueChange={(value) =>
-                    setSelectedStrategy(value as ReporterStrategyType)
-                  }
+                  onValueChange={(value) => setSelectedStrategy(value)}
                   className="grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
                 >
-                  <RadioCardItem value={ReporterStrategyType.EXA_SEARCH}>
+                  <RadioCardItem value="exa-search">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <RiSearchLine className="size-5 text-zinc-500" />
@@ -147,7 +144,7 @@ export function ReporterForm({
                       <RadioCardIndicator />
                     </div>
                   </RadioCardItem>
-                  <RadioCardItem value={ReporterStrategyType.WHOIS_LOOKUP}>
+                  <RadioCardItem value="whois-lookup">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <RiGlobalLine className="size-5 text-zinc-500" />
@@ -163,7 +160,7 @@ export function ReporterForm({
                       <RadioCardIndicator />
                     </div>
                   </RadioCardItem>
-                  <RadioCardItem value={ReporterStrategyType.HN_BEST_STORIES}>
+                  <RadioCardItem value="hn-best-stories">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <RiNewspaperLine className="size-5 text-zinc-500" />
@@ -194,7 +191,7 @@ export function ReporterForm({
               </p>
             </div>
             <div className="md:col-span-2">
-              {selectedStrategy === ReporterStrategyType.EXA_SEARCH && (
+              {selectedStrategy === "exa-search" && (
                 <>
                   <div className="col-span-full flex flex-col gap-2">
                     <Label htmlFor="metadata_query">Query</Label>
@@ -216,7 +213,7 @@ export function ReporterForm({
                   </div>
                 </>
               )}
-              {selectedStrategy === ReporterStrategyType.WHOIS_LOOKUP && (
+              {selectedStrategy === "whois-lookup" && (
                 <div className="col-span-full flex flex-col gap-2">
                   <Label htmlFor="metadata_domain">Domain</Label>
                   <Input
@@ -227,7 +224,7 @@ export function ReporterForm({
                   />
                 </div>
               )}
-              {selectedStrategy === ReporterStrategyType.HN_BEST_STORIES && (
+              {selectedStrategy === "hn-best-stories" && (
                 <div className="col-span-full flex flex-col gap-2">
                   <Label htmlFor="metadata_bestStoryCount">
                     How many stories should the reporter interview? (Max 20)

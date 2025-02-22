@@ -61,15 +61,6 @@ export function NotificationChannelsTable({
         ),
       },
       {
-        header: "Source",
-        accessorKey: "clerkId",
-        enableSorting: false,
-        cell: ({ row }) => {
-          const clerkId = row.original.clerkId
-          return clerkId ? "Synced from User Account" : "Manually Added"
-        },
-      },
-      {
         header: "Created",
         accessorKey: "createdAt",
         enableSorting: true,

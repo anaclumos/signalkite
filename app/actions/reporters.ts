@@ -136,19 +136,6 @@ export async function getReporters() {
       creatorId: user.id,
       deletedAt: null,
     },
-    include: {
-      prompt: true,
-      _count: {
-        select: {
-          issues: {
-            where: {
-              deletedAt: null,
-            },
-          },
-          subscriptions: true,
-        },
-      },
-    },
     orderBy: {
       createdAt: "desc",
     },

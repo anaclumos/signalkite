@@ -13,7 +13,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { getStrategyLabel } from "@/lib/strategy"
-import { Reporter as PrismaReporter, ReporterStatus } from "@prisma/client"
+import { Reporter, ReporterStatus } from "@prisma/client"
 import {
   ColumnDef,
   flexRender,
@@ -24,13 +24,6 @@ import {
 import { startCase } from "es-toolkit/string"
 import Link from "next/link"
 import { useMemo } from "react"
-
-type Reporter = PrismaReporter & {
-  _count: {
-    stories: number
-    issues: number
-  }
-}
 
 interface ReportersTableProps {
   initialReporters: Reporter[]

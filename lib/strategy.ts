@@ -1,12 +1,10 @@
-import { ReporterStrategyType } from "@prisma/client"
-
-export function getStrategyLabel(strategy: ReporterStrategyType) {
+export function getStrategyLabel(strategy: string) {
   switch (strategy) {
-    case "WHOIS_LOOKUP":
+    case "whois-lookup":
       return "Domain Search"
-    case "HN_BEST_STORIES":
+    case "hn-best-stories":
       return "Hacker News Best Stories"
-    case "EXA_SEARCH":
+    case "exa-search":
       return "Internet Search"
     default:
       return "Unknown"

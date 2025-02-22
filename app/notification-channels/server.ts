@@ -5,7 +5,6 @@ import {
   upsertNotificationChannel,
 } from "@/app/actions/notification-channels"
 import { FormState } from "@/types/forms"
-import { NotificationChannelType } from "@prisma/client"
 import { redirect } from "next/navigation"
 
 export async function deleteChannelAction(channelId: string): Promise<void> {
@@ -20,7 +19,7 @@ export async function submitChannelAction(
   const id = formData.get("id") as string
   const name = formData.get("name") as string
   const description = formData.get("description") as string
-  const type = formData.get("type") as NotificationChannelType
+  const type = formData.get("type") as "email" | "slack" | "text"
   const settingsStr = formData.get("settings") as string
   let settings = {}
 

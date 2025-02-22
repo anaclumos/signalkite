@@ -1,6 +1,5 @@
 import { db } from "@/prisma"
 import { currentUser } from "@clerk/nextjs/server"
-import { NotificationChannelType } from "@prisma/client"
 import { beforeEach, describe, expect, it, vi } from "vitest"
 
 // Mock Clerk's currentUser
@@ -57,9 +56,9 @@ describe("NotificationChannelsPage", () => {
     vi.mocked(db.notificationChannel.upsert).mockResolvedValue({
       id: "channel_123",
       name: "Email - test@example.com",
-      type: NotificationChannelType.EMAIL,
+      type: "email",
       settings: { email: "test@example.com" },
-      clerkId: "email_123",
+
       userId: "db_user_123",
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -72,9 +71,9 @@ describe("NotificationChannelsPage", () => {
       {
         id: "channel_123",
         name: "Email - test@example.com",
-        type: NotificationChannelType.EMAIL,
+        type: "email",
         settings: { email: "test@example.com" },
-        clerkId: "email_123",
+
         userId: "db_user_123",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -98,20 +97,20 @@ describe("NotificationChannelsPage", () => {
 
     // Verify channel was created/updated
     expect(db.notificationChannel.upsert).toHaveBeenCalledWith({
-      where: { clerkId: "email_123" },
-      create: {
-        name: "Email - test@example.com",
-        type: "email",
-        settings: { email: "test@example.com" },
-        clerkId: "email_123",
-        user: {
-          connect: {
-            authProviderUid: "user_123",
+      where: {
+        create: {
+          name: "Email - test@example.com",
+          type: "email",
+          settings: { email: "test@example.com" },
+          user: {
+            connect: {
+              authProviderUid: "user_123",
+            },
           },
         },
-      },
-      update: {
-        settings: { email: "test@example.com" },
+        update: {
+          settings: { email: "test@example.com" },
+        },
       },
     })
   })
@@ -147,9 +146,9 @@ describe("NotificationChannelsPage", () => {
     vi.mocked(db.notificationChannel.upsert).mockResolvedValue({
       id: "channel_456",
       name: "+1234567890",
-      type: NotificationChannelType.TEXT,
+      type: "text",
       settings: { phone: "+1234567890" },
-      clerkId: "phone_123",
+
       userId: "db_user_123",
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -162,9 +161,9 @@ describe("NotificationChannelsPage", () => {
       {
         id: "channel_456",
         name: "TEXT - +1234567890",
-        type: NotificationChannelType.TEXT,
+        type: "text",
         settings: { phone: "+1234567890" },
-        clerkId: "phone_123",
+
         userId: "db_user_123",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -187,20 +186,21 @@ describe("NotificationChannelsPage", () => {
 
     // Verify channel was created/updated
     expect(db.notificationChannel.upsert).toHaveBeenCalledWith({
-      where: { clerkId: "phone_123" },
-      create: {
-        name: "TEXT - +1234567890",
-        type: "TEXT",
-        settings: { phone: "+1234567890" },
-        clerkId: "phone_123",
-        user: {
-          connect: {
-            authProviderUid: "user_123",
+      where: {
+        create: {
+          name: "TEXT - +1234567890",
+          type: "TEXT",
+          settings: { phone: "+1234567890" },
+
+          user: {
+            connect: {
+              authProviderUid: "user_123",
+            },
           },
         },
-      },
-      update: {
-        settings: { phone: "+1234567890" },
+        update: {
+          settings: { phone: "+1234567890" },
+        },
       },
     })
   })
