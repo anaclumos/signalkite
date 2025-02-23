@@ -2,9 +2,76 @@
 
 // Import required dependencies
 import { db } from "@/prisma"
+import { clerkClient } from "@clerk/nextjs/server"
 import { notFound } from "next/navigation"
 import { z } from "zod"
 import { getCurrentUser } from "./auth"
+
+/**
+ * Syncs notification channels from Clerk user profile
+ * @returns Array of created/updated notification channels
+ */
+export async function syncNotificationChannelsFromClerk() {
+  const user = await getCurrentUser()
+  const clerk = await clerkClient()
+  const clerkUser = await clerk.users.getUser(user.authProviderUid)
+
+  const channels = []
+
+  // Sync email channels
+  for (const email of clerkUser.emailAddresses) {
+    if (email.verification?.status === "verified") {
+      channels.push({
+        name: email.emailAddress,
+        type: "EMAIL",
+        settings: { email: email.emailAddress },
+      })
+    }
+  }
+
+  // Sync phone channels
+  for (const phone of clerkUser.phoneNumbers) {
+    if (phone.verification?.status === "verified") {
+      channels.push({
+        name: phone.phoneNumber,
+        type: "TEXT",
+        settings: { phone: phone.phoneNumber },
+      })
+    }
+  }
+
+  // Upsert each channel
+  const results = await Promise.all(
+    channels.map(async (channel) => {
+      // Check if channel already exists
+      const existing = await db.notificationChannel.findFirst({
+        where: {
+          userId: user.id,
+          name: channel.name,
+          deletedAt: null,
+        },
+      })
+
+      if (existing) {
+        return db.notificationChannel.update({
+          where: { id: existing.id },
+          data: {
+            settings: channel.settings,
+          },
+        })
+      }
+
+      return db.notificationChannel.create({
+        data: {
+          ...channel,
+          userId: user.id,
+        },
+      })
+    }),
+  )
+
+  return results
+}
 
 // Zod schema for validating notification channel data
 const channelUpsertSchema = z.object({

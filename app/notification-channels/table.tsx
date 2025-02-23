@@ -23,7 +23,9 @@ import {
 } from "@tanstack/react-table"
 import { startCase } from "es-toolkit/string"
 import parsePhoneNumber from "libphonenumber-js"
+import { useRouter } from "next/navigation"
 import { useMemo } from "react"
+import { syncNotificationChannelsFromClerk } from "../actions/notification-channels"
 
 interface NotificationChannelsTableProps {
   initialChannels: NotificationChannel[]
@@ -33,6 +35,7 @@ export function NotificationChannelsTable({
   initialChannels,
 }: NotificationChannelsTableProps) {
   const { openUserProfile } = useClerk()
+  const router = useRouter()
 
   const columns = useMemo<ColumnDef<NotificationChannel>[]>(
     () => [
@@ -94,9 +97,20 @@ export function NotificationChannelsTable({
           { title: "Notification Channels", href: "/notification-channels" },
         ]}
         actions={
-          <Button onClick={() => openUserProfile()}>
-            Edit Profile Contacts
-          </Button>
+          <div className="flex gap-2">
+            <Button onClick={() => openUserProfile()}>
+              Edit Profile Contacts
+            </Button>
+            <Button
+              variant="secondary"
+              onClick={async () => {
+                await syncNotificationChannelsFromClerk()
+                router.refresh()
+              }}
+            >
+              Sync from Clerk
+            </Button>
+          </div>
         }
       />
 
