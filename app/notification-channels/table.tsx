@@ -12,6 +12,7 @@ import {
   TableRoot,
   TableRow,
 } from "@/components/ui/table"
+import { toast } from "@/lib/use-toast"
 import { useClerk } from "@clerk/nextjs"
 import { NotificationChannel } from "@prisma/client"
 import {
@@ -98,17 +99,20 @@ export function NotificationChannelsTable({
         ]}
         actions={
           <div className="flex gap-2">
-            <Button onClick={() => openUserProfile()}>
-              Edit Profile Contacts
+            <Button variant="secondary" onClick={() => openUserProfile()}>
+              Edit Profile
             </Button>
             <Button
-              variant="secondary"
               onClick={async () => {
                 await syncNotificationChannelsFromClerk()
+                toast({
+                  title: "Notification channels synced from profile",
+                  variant: "success",
+                })
                 router.refresh()
               }}
             >
-              Sync from Clerk
+              Sync from Profile
             </Button>
           </div>
         }

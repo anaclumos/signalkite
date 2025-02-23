@@ -16,8 +16,7 @@
     "test": "prisma db push && vitest run",
     "e2e": "playwright test",
     "studio": "prisma studio",
-    "docker": "docker rm -f postgres-everynews || true; docker run --name postgres-everynews -e POSTGRES_USER=everynewsusername -e POSTGRES_PASSWORD=everynewspassword -e POSTGRES_DB=everynewsdb -p 54321:5432 -d postgres:latest && sleep 10 && prisma generate && prisma migrate deploy",
-    "cron": "bunx trigger.dev@latest dev"
+    "docker": "docker rm -f postgres-everynews || true; docker run --name postgres-everynews -e POSTGRES_USER=everynewsusername -e POSTGRES_PASSWORD=everynewspassword -e POSTGRES_DB=everynewsdb -p 54321:5432 -d postgres:latest && sleep 10 && prisma generate && prisma migrate deploy"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.12.0",
@@ -45,7 +44,6 @@
     "@react-stately/datepicker": "^3.12.0",
     "@remixicon/react": "^4.6.0",
     "@tanstack/react-table": "^8.21.2",
-    "@trigger.dev/sdk": "3.3.16",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "babel-plugin-react-compiler": "^19.0.0-beta-714736e-20250131",
